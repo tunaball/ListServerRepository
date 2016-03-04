@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Apache &amp; ifconfig
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Apache%20%26%20ifconfig&In-Reply-To=20041018111903.GH332%40Dark-Age.local">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001216.html">
+   <LINK REL="Next"  HREF="001218.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Apache &amp; ifconfig</H1>
+    <B>Pedro fp</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Apache%20%26%20ifconfig&In-Reply-To=20041018111903.GH332%40Dark-Age.local"
+       TITLE="[X-Unix] Apache &amp; ifconfig">lists at pedro.Net.au
+       </A><BR>
+    <I>Mon Oct 18 16:14:11 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001216.html">[X-Unix] Apache &amp; ifconfig
+</A></li>
+        <LI>Next message: <A HREF="001218.html">[X-Unix] Apache &amp; ifconfig - success!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1217">[ date ]</a>
+              <a href="thread.html#1217">[ thread ]</a>
+              <a href="subject.html#1217">[ subject ]</a>
+              <a href="author.html#1217">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>G'day Folks
+
+Thanks for replies so far. A few bits about what I'm up to ...
+
+I'm very much a learner with Apache, that's why I'm working my way 
+through ATDG &amp; some of what I do may be due to ignorance.
+
+The setup I'm trying to create a testing server only. It will never be 
+accessed from outside my LAN &amp; seldom from any computer but the Mac it 
+resides on. For other computers on my LAN I understand the need to have 
+the appropriate entries in the hosts files of those computers.
+
+Some of the test sites will need SSL. Currently 2 do &amp; it's a realistic 
+future consideration for any of the ones in the setup shown in my 
+original post. Until I came upon the need for SSL I had all my virtual 
+servers on 127.0.0.1 with Apache listening on different ports for each 
+one &amp; not bothering with names so I was using localhost:8080, 
+localhost:8081 etc. Of course that came unstuck when I first needed to 
+setup SSL for one of them. Advice I've taken from a friend who's 
+helping with my httpd.conf is that sticking with separate IP addresses 
+is the safest, although not necessarily simplest, option for my needs.
+
+I  now have pedro.mars.local on 192.168.18.1 &amp; plowman.mars.local on 
+192.168.18.2 both working but when I moved on to the next ones 
+[starting with shakti.mars.local on 192.168.18.11] they aren't working 
+for me. Pinging them I get &quot;Host is down&quot; by either name or IP address 
+&amp; I can't see why given they're so similar to the ones that do work.
+
+On 18/10/2004, at 9:19 PM, Eugene wrote:
+
+&gt;<i> On Mon, Oct 18, 2004 at 11:52:37AM +0200, Jakob Peterh&#228;nsel wrote:
+</I>&gt;<i>
+</I>&gt;<i> : The GUI [Off Topic?] way of adding more than one IP to an interface 
+</I>&gt;<i> in
+</I>&gt;<i> : X, is to select Network Port Configurations in the Show pop-up in
+</I>&gt;<i> : Network CP, select en1 and hit Duplicate. Then you can even give it a
+</I>&gt;<i> : name like &quot;en1-host2.com&quot; or something...
+</I>&gt;<i>
+</I>&gt;<i> The GUI method saves the IP aliases into the NetInfo database.  So the
+</I>&gt;<i> settings are preserved through restarts.  But using ifconfig manually,
+</I>&gt;<i> the settings are lost on restarts and the commands must be re-entered
+</I>&gt;<i> every time.
+</I>
+On this I take it I'd configure TCP/IP manually with the IP address 
+being that of the virtual server I want using it. However what do I put 
+for Subnet Mask, Router, DNS Servers &amp; Search Domains? Can it be done 
+through NetInfo Manager? If so how? I'm Googling that as I send this :)
+
+TIA &amp;
+Cheers, Pedro :-)
+
+Web: &lt;<A HREF="http://www.pedro.net.au">http://www.pedro.net.au</A>&gt;                    PGP Key ID: 387CD96F
+Instant messaging...  AIM: bandidoOfOz  ICQ: 27671678  Jabber: pedrofp
+                       MSN: <A HREF="../../../mailman/listinfo/x-unix.html">mail at pedro.net.au</A>           Yahoo: pedro_fp
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+&quot;Not everything that counts can be counted, and
+not everything that can be counted counts.&quot;
+   sign over Albert Einstein's desk at Princeton
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001216.html">[X-Unix] Apache &amp; ifconfig
+</A></li>
+	<LI>Next message: <A HREF="001218.html">[X-Unix] Apache &amp; ifconfig - success!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1217">[ date ]</a>
+              <a href="thread.html#1217">[ thread ]</a>
+              <a href="subject.html#1217">[ subject ]</a>
+              <a href="author.html#1217">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Alternate RAM
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:duolist%40listserver.themacintoshguy.com?Subject=Alternate%20RAM&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000865.html">
+   <LINK REL="Next"  HREF="000868.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Alternate RAM</H1>
+    <B>Dan K</B> 
+    <A HREF="mailto:duolist%40listserver.themacintoshguy.com?Subject=Alternate%20RAM&In-Reply-To="
+       TITLE="Alternate RAM">macdan at comcast.net
+       </A><BR>
+    <I>Sun Jan 19 17:12:22 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000865.html">Alternate RAM
+</A></li>
+        <LI>Next message: <A HREF="000868.html">[Duo2400] Re: Alternate RAM
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#867">[ date ]</a>
+              <a href="thread.html#867">[ thread ]</a>
+              <a href="subject.html#867">[ subject ]</a>
+              <a href="author.html#867">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Doggone limit on message length! This is the third time I'm posting this, 
+only this time without the quoted stuff.
+
+I've come to the conclusion (based on all reports) that a &quot;standard&quot; 3.3v 
+EDO SODIMM will _NOT_ work in a 2400 without some modification. Whether 
+that mod is trivial, and therefore actually _do-able_, or not is the 
+question now.
+
+I'm not sure, but what it looks like to me is that perhaps a pair of 
+address lines need to be swapped on a standard sodimm to allow use in a 
+2400. Possibly. Maybe. : &gt;)
+
+&quot;. . . the connections to device address bits 9 and 10 must be swapped on 
+the DIMM.&quot;
+
+What that exactly means, heck if I know. Swapped compared to . . . ?
+
+A &quot;standard JEDEC SO-DIMM&quot; _may_(?) just describe the mechanical spec and 
+not the electrical spec. As I have no idea what a &quot;standard&quot; 3.3v EDO 
+SODIMM's electrical specs are, anyone out there knowledgable enough to 
+compare that with the 2400's requirements? (see below)
+
+Dan K (ignernt az dawg spyt n prowd uv it!)
+
+------------------------------------------------------------------------
+&gt;<i>From the &quot;Delta Guide to the PowerBook 2400c Computer&quot; devnote
+</I>
+&lt;<A HREF="http://developer.apple.com/techpubs/hardware/Developer_Notes/Macintosh_CPU">http://developer.apple.com/techpubs/hardware/Developer_Notes/Macintosh_CPU</A>
+s-PPC_Portable/PowerBook_2400c.pdf&gt;
+
+RAM Expansion
+
+The PowerBook 2400c computer accommodates one SO (small outline) DIMM for 
+RAM expansion. The DIMM can have either 16 or 32 MB of additional RAM.
+
+The mechanical characteristics of the RAM expansion DIMM are given in the 
+JEDEC speci&#222;cation for the 144-pin 8-byte DRAM SO DIMM. The PowerBook 
+2400c computer can accommodate an SO DIMM with a height of 1.0, 1.25, or 
+1.5 inches. While the JEDEC speci&#222;cation for the SO DIMM de&#222;nes a Serial 
+Presence Detect (SPD) feature that contains the attributes of the module, 
+the Macintosh PowerBook 2400c computer does not support the SPD feature. 
+The computer requires the DIMM to contain EDO DRAM devices with access 
+times of 60 ns or less.
+
+The electrical characteristics of the DIMM must be the same as those of 
+the RAM expansion module for the PowerBook 3400 computer, as described in 
+the PowerBook 3400 Developer Note. To obtain that developer note, please 
+refer to &#179;Supplemental Reference Documents&#178; on page vii. 
+
+IMPORTANT - Unlike the RAM expansion module for the PowerBook 3400 
+computer, the SO DIMM for the PowerBook 2400c computer does not require 
+an address buffer.
+
+The PowerBook 2400c computer can accept a DIMM that uses 64-megabit DRAM 
+devices. The electrical characteristics of such a DIMM must be the same 
+as those of the corresponding expansion module for the PowerBook 3400 
+computer: the DRAM devices must be 4 M by 16-bit devices with 12-by-10 
+address multiplexing, and the connections to device address bits 9 and 10 
+must be swapped on the DIMM.
+------------------------------------------------------------------------
+&gt;<i>From the &quot;Macintosh PowerBook 3400 Computer&quot; devnote
+</I>
+&lt;<A HREF="http://developer.apple.com/techpubs/hardware/Developer_Notes/Macintosh_CPU">http://developer.apple.com/techpubs/hardware/Developer_Notes/Macintosh_CPU</A>
+s-PPC_Portable/PowerBook_3400.pdf&gt;
+
+Table 4-13 {lists the types of DRAM devices possible, along with the pin 
+assignments}
+Type of DRAM device
+512K by 8; 10 row bits, 9 column bits
+2M by 8; 12 row bits, 9 column bits
+1M by 4 or 1M by 16; 10 row bits, 10 column bits
+2M by 8; 11 row bits, 10 column bits
+4M by 1 or 4M by 4; 11 row bits, 11 column bits
+4 M by 16; 12 row bits, 10 column bits
+
+RAM Banks
+The RAM expansion card can have up to four banks of RAM. Banks can be 4 
+MB, 8 MB, 16 MB, or 32 MB in size. 
+
+DRAM Device Requirements
+The DRAM devices used in a RAM expansion card must meet the following 
+minimum speci&#222;cations:
+* Power supply voltage: 3.3 V 
+* Access type: EDO
+* Access time: 60 ns or shorter access time 
+* Refresh: CBR, extended refresh capable (L-type)
+* Refresh cycle: 15.6 ms 
+
+RAM Expansion Card Electrical Limits
+The RAM expansion card must not exceed the following maximum current 
+limits on the +3 V supply:
+* Active 500 mA 
+* Standby 24 mA
+* Sleep 12 mA 
+During system sleep at the 15.6 &#181;s refresh rate, the current for the 
+entire RAM card must not exceed 12 mA. Vendors of cards that exceed the 
+refresh-current restriction will be required to state in their user 
+manuals that their cards may reduce the amount of time the computer can 
+remain in sleep mode before running down the battery.
+
+The capacitive loading on the signal lines must not exceed the following 
+limits:
+* DATA(0&#173;63): 50 pF 
+* RADDR(0&#173;11): 140 pF
+* /RAMWE: 140 pF 
+* RAMOE: 140 pF 
+* /RAS(n): 80 pF 
+* /CAS(n): 50 pF
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000865.html">Alternate RAM
+</A></li>
+	<LI>Next message: <A HREF="000868.html">[Duo2400] Re: Alternate RAM
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#867">[ date ]</a>
+              <a href="thread.html#867">[ thread ]</a>
+              <a href="subject.html#867">[ subject ]</a>
+              <a href="author.html#867">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/duolist.html">More information about the DuoList
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

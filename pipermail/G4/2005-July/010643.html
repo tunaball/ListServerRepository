@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] G4 MDD HD ?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20G4%20MDD%20HD%20%3F&In-Reply-To=f0521060cbf01afbeaee9%40%5B192.168.1.100%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010641.html">
+   <LINK REL="Next"  HREF="010642.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] G4 MDD HD ?</H1>
+    <B>Harry Freeman</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20G4%20MDD%20HD%20%3F&In-Reply-To=f0521060cbf01afbeaee9%40%5B192.168.1.100%5D"
+       TITLE="[G4] G4 MDD HD ?">harry at gifutiger.com
+       </A><BR>
+    <I>Mon Jul 18 13:37:09 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010641.html">[G4] G4 MDD HD ?
+</A></li>
+        <LI>Next message: <A HREF="010642.html">[G4] Non-G4, but still computer relevant
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10643">[ date ]</a>
+              <a href="thread.html#10643">[ thread ]</a>
+              <a href="subject.html#10643">[ subject ]</a>
+              <a href="author.html#10643">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Greetings ( + )!( + )
+
+On Jul 18, 2005, at 12:14 PM, John Baltutis wrote:
+
+&gt;<i> On 07/18/05, Harry Freeman &lt;<A HREF="../../../mailman/listinfo/g4.html">harry at gifutiger.com</A>&gt; wrote:
+</I>&gt;&gt;<i> On Jul 17, 2005, at 5:58 PM, Daniel Brieck Jr. wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> No james you are exactly right the G4 MDD supports auto sensing ports
+</I>&gt;&gt;&gt;<i> I researched this before hand to say what I did originally to make
+</I>&gt;&gt;&gt;<i> things less confusing... So no gotchas there John...
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> <A HREF="http://docs.info.apple.com/article.html?artnum=42717">http://docs.info.apple.com/article.html?artnum=42717</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> How do they do that?
+</I>&gt;<i>
+</I>&gt;<i> The document answers:
+</I>&gt;<i>
+</I>&gt;<i> &quot;Many later Macintosh computers are able to use either a 
+</I>&gt;<i> straight-through
+</I>&gt;<i> Ethernet cable or a crossover Ethernet cable automatically through the 
+</I>&gt;<i> use
+</I>&gt;<i> of Auto-Medium Dependent Interface Crossover (Auto-MDIX). Other 
+</I>&gt;<i> Macintosh
+</I>&gt;<i> computers require the use of an Ethernet crossover cable because they 
+</I>&gt;<i> only
+</I>&gt;<i> work with the Medium Dependent Interface (MDI)
+</I>&gt;<i>
+</I>&gt;<i> Auto-MDIX automatically switches between MDI and MDI-X, which allows 
+</I>&gt;<i> either
+</I>&gt;<i> type of cable to be connected regardless of whether you are connecting 
+</I>&gt;<i> two
+</I>&gt;<i> computers directly, or you are connecting to a hub or switch. MDI 
+</I>&gt;<i> devices
+</I>&gt;<i> connected to Auto-MDIX devices do not require a crossover Ethernet 
+</I>&gt;<i> cable.&quot;
+</I>&gt;<i> _______________________________________________
+</I>
+Thanks John ( + )!( + )
+
+That's got me started so I guess that I can find out more than I ever 
+wanted to know. I've got a background in ethernet (been retired for 
+about 6 years now) and what I was looking for is &quot;How do they do that&quot; 
+What I remember is (well as best that I can remember with out diggin 
+out the old books) the every device on the ethernet interface holds 
+it's transmit line at a low-level until it wants to transmit, at which 
+time it then raises the level on the transmit pair to the high-state. 
+Then there is the guard timer (to avoid collision) during which time 
+the device requesting to send waits to make sure that no other device 
+on the network wants to send. If during this interval the requesting 
+device receive line pair  goes high it means that another device is 
+wanting to send also. At which time (since both devices are wanting to 
+send (a collision)) they both access an random number generator which 
+is used as a timer, and then again start the request to send scenario. 
+Since both devices more than likely have not accessed the same random 
+number then one or the other will be granted permission to send. That 
+is of course unless another device has started the request to sent 
+process, and if there is collision again then the who process is 
+repeated.
+
+Sort of a simplistic explanation, I hope that everyone understands.
+
+So my question is &quot;How Do They Do That?&quot; I'll do a some research 
+because now I know that it is called Auto-MDIX
+
+I'm guessing that the device that has Auto-MDIX  senses that it's 
+receive pair never goes' low or that there is an receiver on both of 
+the pairs and which ever one senses the ethernet address broadcast the 
+receive pair and the other the transmit pair.
+
+It looks like HP holds the patent, I guess that I'll have to search the 
+IEEE web page to see if there is a &quot;White Paper&quot; on how the Auto-MDIX 
+is implemented.
+
+
+
+Best Regards, /\*_*/\
+
+Harry (*^_^*)
+I know, when people see a cat's litter box, they always say, &quot;Oh, have 
+you got a cat?&quot;&#160; Just once I want to say, &quot;No, it's for company!&quot;
+
+</PRE>
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010641.html">[G4] G4 MDD HD ?
+</A></li>
+	<LI>Next message: <A HREF="010642.html">[G4] Non-G4, but still computer relevant
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10643">[ date ]</a>
+              <a href="thread.html#10643">[ thread ]</a>
+              <a href="subject.html#10643">[ subject ]</a>
+              <a href="author.html#10643">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

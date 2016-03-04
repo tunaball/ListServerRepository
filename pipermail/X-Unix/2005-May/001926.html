@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] External drive volume doesn't automount?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20External%20drive%20volume%20doesn%27t%20automount%3F&In-Reply-To=25F6D9F7-E54F-46F5-BDF4-2F37F34602A2%40pursued-with.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001915.html">
+   <LINK REL="Next"  HREF="001897.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] External drive volume doesn't automount?</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20External%20drive%20volume%20doesn%27t%20automount%3F&In-Reply-To=25F6D9F7-E54F-46F5-BDF4-2F37F34602A2%40pursued-with.net"
+       TITLE="[X-Unix] External drive volume doesn't automount?">magill at mcgillsociety.org
+       </A><BR>
+    <I>Tue May 10 11:39:48 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001915.html">[X-Unix] External drive volume doesn't automount?
+</A></li>
+        <LI>Next message: <A HREF="001897.html">[X-Unix] Limiting thru put
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1926">[ date ]</a>
+              <a href="thread.html#1926">[ thread ]</a>
+              <a href="subject.html#1926">[ subject ]</a>
+              <a href="author.html#1926">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 10 May, 2005, at 02:58, Kevin Stevens wrote:
+&gt;<i> On May 8, 2005, at 11:14, Kevin Stevens wrote:
+</I>&gt;<i>
+</I>&gt;&gt;&gt;<i> I haven't looked for at the issue under Tiger. Under Tiger, home  
+</I>&gt;&gt;&gt;<i> directories on external volumes, i.e. FireWire drives, simply  
+</I>&gt;&gt;&gt;<i> work. Implying that the default was again changed, but I have not  
+</I>&gt;&gt;&gt;<i> explored why it works. I installed Tiger on an clean internal  
+</I>&gt;&gt;&gt;<i> partition and then used the setup assistant to copy stuff over.  
+</I>&gt;&gt;&gt;<i> The process very nicely copied my old sym-links for the home  
+</I>&gt;&gt;&gt;<i> directories an everything was &quot;just there&quot; as expected.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> This partition doesn't contain user home directories.  The  
+</I>&gt;&gt;<i> external partition with home directories is &quot;OS X&quot;, and it does  
+</I>&gt;&gt;<i> automount, though it is also a mirrored partition with the  
+</I>&gt;&gt;<i> internal drive, which might cause that independently.  I'll report  
+</I>&gt;&gt;<i> findings back.
+</I>&gt;<i>
+</I>&gt;<i> The macosxhints tip worked under Tiger, though for some reason I  
+</I>&gt;<i> had to create the file from scratch - using the &quot;defaults&quot; syntax  
+</I>&gt;<i> mentioned in the hint produced an odd binary file - didn't bother  
+</I>&gt;<i> to chase down the reason.  Thanks!
+</I>
+plist files in Tiger are now binary. (primarily for speed)
+
+You can convert them back to text with a command line utility.
+
+ From another list, just last week:
+
+Begin forwarded message:
+
+&gt;<i> From: Nicholas Riley &lt;<A HREF="../../../mailman/listinfo/x-unix.html">njriley at uiuc.edu</A>&gt;
+</I>&gt;<i> Date: 30 April, 2005 16:43:47 EDT
+</I>&gt;<i> To: <A HREF="../../../mailman/listinfo/x-unix.html">macosx-admin at omnigroup.com</A>
+</I>&gt;<i> Subject: Re: Plist Files in Tiger - Binary?
+</I>&gt;<i>
+</I>&gt;<i> On Sat, Apr 30, 2005 at 12:46:06PM -0700, EatingPie wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Looks like the .plist files are binary in Tiger.  At least the
+</I>&gt;&gt;<i> com.apple.* and .GlobalPreferences.plist files.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Can anyone give an explanation as to *why* this has happened.
+</I>&gt;<i>
+</I>&gt;<i> An up to 3-5x improvement in performance; details of the binary plist
+</I>&gt;<i> format are mentioned in the release notes:
+</I>&gt;<i>
+</I>&gt;<i> &lt;<A HREF="http://developer.apple.com/releasenotes/CoreFoundation/">http://developer.apple.com/releasenotes/CoreFoundation/</A> 
+</I>&gt;<i> CoreFoundation.html&gt;
+</I>&gt;<i> &lt;<A HREF="http://developer.apple.com/releasenotes/Carbon/HIToolbox.html">http://developer.apple.com/releasenotes/Carbon/HIToolbox.html</A>&gt;
+</I>&gt;<i> &lt;<A HREF="http://developer.apple.com/releasenotes/Cocoa/Foundation.html">http://developer.apple.com/releasenotes/Cocoa/Foundation.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i> And is there a UNIX command line utility for editing them?  Maybe  
+</I>&gt;&gt;<i> something
+</I>&gt;&gt;<i> like an emacs mode, or even a conversion program.
+</I>&gt;<i>
+</I>&gt;<i> plutil -convert &lt;file&gt; will do an in-place conversion.  (pl won't,
+</I>&gt;<i> which is rather irritating, as I'm used to doing &quot;pl &lt; file&quot; to see a
+</I>&gt;<i> property list in a readable format.)
+</I>&gt;<i>
+</I>&gt;<i> -- 
+</I>&gt;<i> Nicholas Riley &lt;<A HREF="../../../mailman/listinfo/x-unix.html">njriley at uiuc.edu</A>&gt; | &lt;<A HREF="http://www.uiuc.edu/ph/www/">http://www.uiuc.edu/ph/www/</A> 
+</I>&gt;<i> njriley&gt;
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> MacOSX-admin mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">MacOSX-admin at omnigroup.com</A>
+</I>&gt;<i> <A HREF="http://www.omnigroup.com/mailman/listinfo/macosx-admin">http://www.omnigroup.com/mailman/listinfo/macosx-admin</A>
+</I>
+T.T.F.N.
+William H. Magill
+# Beige G3 [Rev A motherboard - 300 MHz 768 Meg] OS X 10.2.8
+# Flat-panel iMac (2.1) [800MHz - Super Drive - 768 Meg] OS X 10.3.8
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg] Tru64 5.1a
+# XP1000  [Alpha 21264-3 (EV6) - 256 meg] FreeBSD 5.3
+# XP1000  [Alpha 21264-A (EV 6.7) - 384 meg] FreeBSD 5.3
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001915.html">[X-Unix] External drive volume doesn't automount?
+</A></li>
+	<LI>Next message: <A HREF="001897.html">[X-Unix] Limiting thru put
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1926">[ date ]</a>
+              <a href="thread.html#1926">[ thread ]</a>
+              <a href="subject.html#1926">[ subject ]</a>
+              <a href="author.html#1926">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

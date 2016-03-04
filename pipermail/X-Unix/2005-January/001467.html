@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Login Hooks running items on login a little bit too
+	quickly
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Login%20Hooks%20running%20items%20on%20login%20a%20little%20bit%20too%0A%09quickly&In-Reply-To=BE048271.376FB%25opa%40nyc.rr.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001466.html">
+   <LINK REL="Next"  HREF="001471.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Login Hooks running items on login a little bit too
+	quickly</H1>
+    <B>Juan Manuel Palacios</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Login%20Hooks%20running%20items%20on%20login%20a%20little%20bit%20too%0A%09quickly&In-Reply-To=BE048271.376FB%25opa%40nyc.rr.com"
+       TITLE="[X-Unix] Login Hooks running items on login a little bit too
+	quickly">jmpalaciosp at eml.cc
+       </A><BR>
+    <I>Sat Jan  8 08:27:54 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001466.html">[X-Unix] Login Hooks running items on login a little bit too quickly
+</A></li>
+        <LI>Next message: <A HREF="001471.html">[X-Unix] Login Hooks running items on login a little bit too
+	quickly
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1467">[ date ]</a>
+              <a href="thread.html#1467">[ thread ]</a>
+              <a href="subject.html#1467">[ subject ]</a>
+              <a href="author.html#1467">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jan 7, 2005, at 7:16 PM, Our PAl Al wrote:
+
+&gt;<i> I don't want to hard code a delay in my shell script since delay times 
+</I>&gt;<i> until
+</I>&gt;<i> the Finder is up can vary by machine. Anybody know how a shell script 
+</I>&gt;<i> could
+</I>&gt;<i> determine if the Finder is is fully up before proceeding to execute?
+</I>&gt;<i>
+</I>&gt;<i> - opa
+</I>
+
+$[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: Pendulum](28/0,0)-&gt; ps -ax | grep [F]inder
+   412  ??  S      0:16.91 
+/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder 
+-psn_0_786433
+$[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: Pendulum](29/0,0)-&gt; echo $?
+0
+$[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: Pendulum](30/0,0)-&gt; ps -ax | grep [F]ooooo
+$[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: Pendulum](31/0,0)-&gt; echo $?
+1
+
+	So I'd use:
+
+ps -ax | grep [F]inder 2&gt;&amp;1 &gt;/dev/null
+if [ $(echo $?) == 0 ] ; then &quot;proceed with your script ; fi
+
+	Hope that helps! Regards,...
+
+
+		Juan
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001466.html">[X-Unix] Login Hooks running items on login a little bit too quickly
+</A></li>
+	<LI>Next message: <A HREF="001471.html">[X-Unix] Login Hooks running items on login a little bit too
+	quickly
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1467">[ date ]</a>
+              <a href="thread.html#1467">[ thread ]</a>
+              <a href="subject.html#1467">[ subject ]</a>
+              <a href="author.html#1467">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

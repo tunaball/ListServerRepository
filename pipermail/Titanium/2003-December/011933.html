@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] PowerBook &quot;power&quot;... or lack thereof
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20PowerBook%20%22power%22...%20or%20lack%20thereof&In-Reply-To=list-9996534%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011932.html">
+   <LINK REL="Next"  HREF="011934.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] PowerBook &quot;power&quot;... or lack thereof</H1>
+    <B>Kynan Shook</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20PowerBook%20%22power%22...%20or%20lack%20thereof&In-Reply-To=list-9996534%40mail.ninewire.com"
+       TITLE="[Ti] PowerBook &quot;power&quot;... or lack thereof">kynan at cs.wisc.edu
+       </A><BR>
+    <I>Tue Dec 30 10:19:20 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011932.html">[Ti] line-in on my Al-book - no signal
+</A></li>
+        <LI>Next message: <A HREF="011934.html">[Ti] PowerBook &quot;power&quot;... or lack thereof
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11933">[ date ]</a>
+              <a href="thread.html#11933">[ thread ]</a>
+              <a href="subject.html#11933">[ subject ]</a>
+              <a href="author.html#11933">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>What happens if you go into the Energy Saver control panel and change 
+the processor performance from the battery's default Automatic to 
+Highest?  Also, check the power adapter settings; Highest is the 
+default for the power adapter, but Automatic is available as well.  
+Automatic is usually the best choice as far as a balance between power 
+consumption and heat produced, and getting enough speed.  It usually 
+works fairly well; the speed of the processor goes up and down as 
+needed.  However, there seem to be certain applications that just don't 
+trigger the processor to speed up appropriately, it would seem; perhaps 
+ArcExplorer is one of them.  The Automatic setting will allow your 
+PowerBook to automatically go between 1.25 GHz and 765 MHz.
+There are other possibilities as well.  One is the amount of cache.  
+The PowerBook has 512 K of L2 cache, and no L3 cache.  The PowerMac 
+probably has 256 K of L2 cache and 1 MB of L3 cache.  The L3 cache 
+might be just right to help speed up this particular application.  I've 
+done a lot of testing with my 17&quot; 1 GHz PowerBook (which has a 256 K L2 
+and a 1 MB L3 cache), and in almost no cases does the L3 cache actually 
+help performance in any measurable way.  It helps significantly if the 
+L2 cache is not present; you can still retain about 80% of the speed 
+gain given by the L2 cache with just the L3 cache and no L2 cache, but 
+the speed difference between both L2 and L3 running and only L2 running 
+is almost always miniscule.  Now, that's not always; some people have 
+reported that Virtual PC, for example, runs much faster on the machines 
+with this L3 cache.  Perhaps your application is another example, 
+though besides VPC, I haven't heard of any others that lose significant 
+speed from the change in cache.  Doubling the L2 and removing the L3 in 
+almost all cases will make the computer much faster...  Unless, of 
+course, you have more data to be cached than fits in 512 K (well, 
+actually, it depends on cache placement policies, and where in memory 
+the data is stored, and all that, but we'll ignore that).  If you're 
+really curious to test this theory, you can install the optional CHUD 
+tools from Apple's developer tools installer.  Among the things 
+installed is a Hardware preference pane which should allow you to 
+selectively enable and disable the caches on your G4, so you could see 
+what it's like with no L3 cache.
+On modern computers, RAM is very slow compared to the speed of the 
+processor.  However, if RAM is considered slow, that makes the hard 
+drive several orders of magnitude worse than glacial.  We're talking 
+about the CPU waiting millions and millions and millions of cycles if 
+it suddenly needs something off the hard drive.  If there is a lot of 
+hard drive access (you can listen for it), that might also explain some 
+of the slowdown.  The PowerBook's drive runs somewhat slower than a 
+desktop drive; most PowerBooks use a 4200 RPM drive, as opposed to the 
+usual desktop standards of 5400 or 7200.  This is done mostly for power 
+consumption issues, but also to reduce the amount of noise produced.  
+5400 RPM laptop drives are available, but they're hotter, louder, and 
+will shorten your battery life.  One advantage of laptop drives is that 
+the data must be packed into a smaller space on the hard drive, so even 
+though the drive is spinning more slowly, often the data is passing 
+under the heads at nearly the same speed (the heads cover less area in 
+a specific amount of time, but the bit density is often significantly 
+higher in the smaller drives).  However, it could be a contributing 
+factor.
+
+Anyway, that should give you a few ideas on what could influence the 
+speeds...  Hope your brain didn't explode there!
+
+Chris Olson &lt;<A HREF="../../../mailman/listinfo/titanium.html">chris at astcomm.net</A>&gt; writes:
+&gt;<i> Background info:
+</I>&gt;<i> 1.25 Ghz G4 AlBook w/1.0 GB RAM.
+</I>&gt;<i> I'm working with ESRI shapefiles in ArcExplorer.  Polygon files seem to
+</I>&gt;<i> render pretty quickly, however, point data files are very slow.  Some
+</I>&gt;<i> of the point files I'm working with have ~148,000 data points within a
+</I>&gt;<i> few minutes of latitude/longitude.  It'll take the PowerBook up to 30
+</I>&gt;<i> seconds to render a file, and every time you do a query on an
+</I>&gt;<i> underlying layer, it has to re-render the map, which is time consuming
+</I>&gt;<i> and quite slow.
+</I>&gt;<i>
+</I>&gt;<i> Taking the same project to my single processor 1.25 Ghz G4 Power Mac
+</I>&gt;<i> (1.0 GB 333 Mhz DDR SDRAM)  is a dramatic difference.  The same file
+</I>&gt;<i> that takes 30 seconds on the PowerBook takes less than 5 seconds on the
+</I>&gt;<i> Power Mac.  Video RAM is the same - 64 MB, although the Power Mac has
+</I>&gt;<i> an ATI Radeon 9000 and the PB has an ATI Radeon 9600 mobility.  I don't
+</I>&gt;<i> think it's a video issue - I believe it's a difference in processor
+</I>&gt;<i> power.
+</I>&gt;<i>
+</I>&gt;<i> Any reason for this?  Anybody else work with ArcExplorer on a
+</I>&gt;<i> PowerBook?  I'd be happy to zip up and send a dataset and project file
+</I>&gt;<i> for somebody with experience to try for curiosity's sake.
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011932.html">[Ti] line-in on my Al-book - no signal
+</A></li>
+	<LI>Next message: <A HREF="011934.html">[Ti] PowerBook &quot;power&quot;... or lack thereof
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11933">[ date ]</a>
+              <a href="thread.html#11933">[ thread ]</a>
+              <a href="subject.html#11933">[ subject ]</a>
+              <a href="author.html#11933">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

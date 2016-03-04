@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Hiding apps from the command line
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11730097%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000537.html">
+   <LINK REL="Next"  HREF="000539.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Hiding apps from the command line</H1>
+    <B>Simon Forster</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11730097%40mail.ninewire.com"
+       TITLE="[X-Unix] Hiding apps from the command line">simon-lists at ldml.com
+       </A><BR>
+    <I>Fri Mar 26 08:17:46 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000537.html">[X-Unix] Hiding apps from the command line
+</A></li>
+        <LI>Next message: <A HREF="000539.html">[X-Unix] Hiding apps from the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#538">[ date ]</a>
+              <a href="thread.html#538">[ thread ]</a>
+              <a href="subject.html#538">[ subject ]</a>
+              <a href="author.html#538">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 26 Mar 2004, at 16:12, Kirk McElhearn wrote:
+
+&gt;<i> So how can we get it to work if two args are not supplied? That's a 
+</I>&gt;<i> waste...
+</I>&gt;<i> It has something to do with the tell Finder bit.
+</I>
+I took your hint from a post a few mins ago:
+
+------Start------
+
+
+#!/bin/sh
+# This script lets you hide a specified application, the Finder, all
+# applications but the Finder, or all applications other than a 
+specified
+# application.
+# Syntax is as follows:
+#
+# hide -o [appname] - hides all other apps
+# hide -a           - hides all apps but Finder
+# hide -f           - hides Finder
+# hide -v [appname] - shows specified app
+# hide -t           - toggles shown apps
+# hide -x           - shows terminal
+# hide [appname]   	- hides specified app
+#
+# For applications whose names contain spaces, they must be quoted,
+# ie, hide &quot;microsoft word&quot;.  This command is case-insensitive.
+
+osascript &lt;&lt;END
+	set arg1 to &quot;$1&quot;
+	set arg2 to &quot;$2&quot;
+	tell application &quot;Finder&quot;
+		if arg1 begins with &quot;-&quot; then
+			if arg1 contains &quot;o&quot; then set visible of every process whose visible 
+is true and name is not arg2 to false
+			if arg1 contains &quot;a&quot; then set visible of every process whose visible 
+is true and name is not &quot;Finder&quot; and name is not arg2 to false
+			if arg1 contains &quot;f&quot; then set visible of process &quot;Finder&quot; to false
+			if arg1 contains &quot;v&quot; then tell me to tell application arg2 to 
+activate
+			if arg1 contains &quot;t&quot; then
+				set theVisible to name of every process whose visible is true
+				repeat with theProcess in every process
+					if theVisible contains name of theProcess then
+						set visible of contents of theProcess to false
+					else
+						set visible of contents of theProcess to true
+					end if
+				end repeat
+			end if
+			if arg1 contains &quot;x&quot; then tell application &quot;Terminal&quot; to activate
+		else if exists application process arg1 then
+			set visible of application process arg1 to false
+		end if
+	end tell
+END
+
+
+
+--------END-------
+
+Seems to fix it on my system. Watch out for stray line breaks though.
+
+Simon Forster
+_____________________________________________________
+  LDML Ltd, 62 Pall Mall, London, SW1Y 5HZ, UK
+  Tel: +44 (0)70 9230 5244   Fax: +44 (0)70 9230 5247
+_____________________________________________________
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000537.html">[X-Unix] Hiding apps from the command line
+</A></li>
+	<LI>Next message: <A HREF="000539.html">[X-Unix] Hiding apps from the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#538">[ date ]</a>
+              <a href="thread.html#538">[ thread ]</a>
+              <a href="subject.html#538">[ subject ]</a>
+              <a href="author.html#538">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

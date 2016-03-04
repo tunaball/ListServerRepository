@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Warning received from Network Administrator
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Warning%20received%20from%20Network%20Administrator&In-Reply-To=p06230904c1ed5ac935e8%40%5B128.125.78.17%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="016692.html">
+   <LINK REL="Next"  HREF="016700.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Warning received from Network Administrator</H1>
+    <B>Earle Jones</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Warning%20received%20from%20Network%20Administrator&In-Reply-To=p06230904c1ed5ac935e8%40%5B128.125.78.17%5D"
+       TITLE="[X4U] Warning received from Network Administrator">earle.jones at comcast.net
+       </A><BR>
+    <I>Mon Feb  5 17:57:20 PST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="016692.html">[X4U] Warning received from Network Administrator
+</A></li>
+        <LI>Next message: <A HREF="016700.html">[X4U] Warning received from Network Administrator
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#16694">[ date ]</a>
+              <a href="thread.html#16694">[ thread ]</a>
+              <a href="subject.html#16694">[ subject ]</a>
+              <a href="author.html#16694">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Wow!  6,000 messages in ten minutes!
+
+I had a similar problem a couple of years ago.  It turned out to be a  
+&quot;Denial of Service&quot; attack, aimed at my local ISP, who was ATT at  
+that time.  It kept up for almost a week, during which my throughput  
+was down to nil.  Most of the messages were pretty short -- 3 or 4 k  
+bytes.
+
+I chased down the source IP addresses, most of which were in Korea or  
+South America.  But those IPs were probably not the real offenders,  
+but just 'repeaters' whose systems had been taken over by the true  
+offenders.
+
+After Comcast took over from ATTBI, I have never had the problem .
+
+I use a shareware program called &quot;IP Net Monitor&quot; which costs about  
+$20.  It constantly monitors all IP traffic both in and out of my  
+machine.
+
+It has several tools, including 'Ping', 'Finger', 'WhoIs', and a 'TCP  
+Dump'.  I used the 'TCP Dump' to log all traffic over a period of 10  
+or 20 seconds.  Then I used 'WhoIs' to identify the IP addresses.  In  
+many cases the Admin for the ISP was given with an email address.   
+Most of these were innocent users who did not even know that they  
+were being used by someone else.
+
+Here's what a little bit of 'TCP Dump' produces:
+
+IP 10.0.1.2.8101 &gt; 10.0.1.4.2646: . 31978:33426(1448) ack 1 win 65535  
+&lt;nop,nop,timestamp 141463952 34259372&gt;
+IP 10.0.1.4.2646 &gt; 10.0.1.2.8101: . ack 14602 win 18824  
+&lt;nop,nop,timestamp 34259372 141463952&gt;
+IP 10.0.1.4.2646 &gt; 10.0.1.2.8101: . ack 16050 win 17376  
+&lt;nop,nop,timestamp 34259372 141463952&gt;
+IP 10.0.1.4.2646 &gt; 10.0.1.2.8101: . ack 33426 win 5792  
+&lt;nop,nop,timestamp 34259374 141463952&gt;
+IP 10.0.1.2.8101 &gt; 10.0.1.4.2646: . 33426:34874(1448) ack 1 win 65535  
+&lt;nop,nop,timestamp 141463952 34259374&gt;
+IP 10.0.1.2.8101 &gt; 10.0.1.4.2646: . 34874:36322(1448) ack 1 win 65535  
+&lt;nop,nop,timestamp 141463952 34259374&gt;
+IP 10.0.1.2.8101 &gt; 10.0.1.4.2646: . 36322:37770(1448) ack 1 win 65535  
+&lt;nop,nop,timestamp 141463952 34259374&gt;
+IP 10.0.1.2.8101 &gt; 10.0.1.4.2646: . 37770:39218(1448) ack 1 win 65535  
+&lt;nop,nop,timestamp 141463952 34259374&gt;
+IP 10.0.1.4.2646 &gt; 10.0.1.2.8101: . ack 36322 win 7240  
+&lt;nop,nop,timestamp 34259374 141463952&gt;
+IP 10.0.1.2.8101 &gt; 10.0.1.4.2646: . 39218:40666(1448) ack 1 win 65535  
+&lt;nop,nop,timestamp 141463952 34259374&gt;
+IP 10.0.1.2.8101 &gt; 10.0.1.4.2646: . 40666:42114(1448) ack 1 win 65535  
+&lt;nop,nop,timestamp 141463952 34259374&gt;
+IP 10.0.1.2.8101 &gt; 10.0.1.4.2646: . 42114:43562(1448) ack 1 win 65535  
+&lt;nop,nop,timestamp 141463952 34259374&gt;
+IP 10.0.1.4.2646 &gt; 10.0.1.2.8101: . ack 43562 win 4344  
+&lt;nop,nop,timestamp 34259375 141463952&gt;
+IP 10.0.1.2.8101 &gt; 10.0.1.4.2646: . 43562:45010(1448) ack 1 win 65535  
+&lt;nop,nop,timestamp 141463952 34259375&gt;
+IP 10.0.1.2.8101 &gt; 10.0.1.4.2646: . 45010:46458(1448) ack 1 win 65535  
+&lt;nop,nop,timestamp 141463952 34259375&gt;
+IP 10.0.1.2.8101 &gt; 10.0.1.4.2646: . 46458:47906(1448) ack 1 win 65535  
+&lt;nop,nop,timestamp 141463952 34259375&gt;
+IP 10.0.1.4.2646 &gt; 10.0.1.2.8101: . ack 46458 win 5792  
+&lt;nop,nop,timestamp 34259376 141463952&gt;
+IP 10.0.1.2.8101 &gt; 10.0.1.4.2646: . 47906:49354(1448) ack 1 win 65535  
+&lt;nop,nop,timestamp 141463952 34259376&gt;
+IP 10.0.1.2.8101 &gt; 10.0.1.4.2646: . 49354:50802(1448) ack 1 win 65535  
+&lt;nop,nop,timestamp 141463952 34259376&gt;
+IP 10.0.1.2.8101 &gt; 10.0.1.4.2646: . 50802:52250(1448) ack 1 win 65535  
+&lt;nop,nop,timestamp 141463952 34259376&gt;
+IP 10.0.1.4.2646 &gt; 10.0.1.2.8101: . ack 49354 win 7240  
+&lt;nop,nop,timestamp 34259376 141463952&gt;
+
+This was the log for about two seconds.  Nothing of particular  
+interest, since I recognize the IP addresses.
+
+IPNetMonitor was written by:
+
+    <A HREF="http://www.sustworks.com/site/sup.html">http://www.sustworks.com/site/sup.html</A>
+
+They seem to be a good bunch.
+
+Good luck!
+
+earle
+*
+
+
+
+
+
+
+On Feb 5, 2007, at 2:17 PM, Paul Biddlecomb wrote:
+
+&gt;<i>
+</I>&gt;<i> I received the notice from my Network Administrator:
+</I>&gt;<i>
+</I>&gt;<i> Your host connected to yetzirah.org over 6000 times between 09:03  
+</I>&gt;<i> and 09:13.  Files over 1 megabytes were transferred.  We suspect  
+</I>&gt;<i> that your host may be compromised, or misconfigured.  If so, you  
+</I>&gt;<i> may have to reinstall your system, install updated service packs,  
+</I>&gt;<i> and any relevant security patches, as other backdoors may have been  
+</I>&gt;<i> installed by hackers.  If your host causes network problems, it  
+</I>&gt;<i> will be blocked.
+</I>&gt;<i>
+</I>&gt;<i> How can I verify what may have happened?  What log file might show  
+</I>&gt;<i> files that may have been transferred?  I have the IP of the  
+</I>&gt;<i> offending computer.  My system is as follows:
+</I>&gt;<i>
+</I>&gt;<i> Dual 1GHz PowerPC G4Mac OS 10.4.8Safari 2.0.4
+</I>&gt;<i>
+</I>&gt;<i> Anyone heard of this yetzirah.org?
+</I>&gt;<i>
+</I>&gt;<i> Any help would be appreciated.
+</I>&gt;<i>
+</I>&gt;<i> Thanks,
+</I>&gt;<i> Paul
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X4U mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">X4U at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">http://listserver.themacintoshguy.com/mailman/listinfo/x4u</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>          <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="016692.html">[X4U] Warning received from Network Administrator
+</A></li>
+	<LI>Next message: <A HREF="016700.html">[X4U] Warning received from Network Administrator
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#16694">[ date ]</a>
+              <a href="thread.html#16694">[ thread ]</a>
+              <a href="subject.html#16694">[ subject ]</a>
+              <a href="author.html#16694">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

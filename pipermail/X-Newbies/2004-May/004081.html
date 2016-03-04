@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Newbies] ooooh!
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20ooooh%21&In-Reply-To=list-12600608%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004080.html">
+   <LINK REL="Next"  HREF="004082.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Newbies] ooooh!</H1>
+    <B>matblack at mac.com</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20ooooh%21&In-Reply-To=list-12600608%40mail.ninewire.com"
+       TITLE="[X Newbies] ooooh!">matblack at mac.com
+       </A><BR>
+    <I>Thu May  6 08:48:41 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004080.html">[X Newbies] ooooh!
+</A></li>
+        <LI>Next message: <A HREF="004082.html">[X Newbies] ooooh!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4081">[ date ]</a>
+              <a href="thread.html#4081">[ thread ]</a>
+              <a href="subject.html#4081">[ subject ]</a>
+              <a href="author.html#4081">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks... that helps explain some...
+so are these instructions I would enter into Terminal?
+I am the Admin... is that somehow different from root?
+TIA
+m
+
+&gt;&gt;<i> [...] a little app called FNSWITCH [...] I cannot seem to find the 
+</I>&gt;&gt;<i> last of three installed components to delete [...]
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The problem is that the last item AppleADBKeyboard.kext is owned by 
+</I>&gt;&gt;<i> root, cannot be trashed[...]
+</I>&gt;<i>
+</I>&gt;<i> &quot;Cannot seem to find&quot; or &quot;can't trash because it's owned by root&quot;? 
+</I>&gt;<i> Different kettles of fish.
+</I>&gt;<i>
+</I>&gt;&gt;<i> [...] The software are installed in the following places:[...]
+</I>&gt;<i>
+</I>&gt;<i> That seems pretty clear -- what's the problem, aren't the items where 
+</I>&gt;<i> the author says they should be?
+</I>&gt;<i>
+</I>&gt;&gt;<i> rm -rf /Library/PreferencePanes/fnSwitch.prefPane/
+</I>&gt;<i>
+</I>&gt;<i> Deletes the prefpane.
+</I>&gt;<i>
+</I>&gt;&gt;<i> rm -rf /Library/StartupItems/fnStartup/
+</I>&gt;<i>
+</I>&gt;<i> Deletes the startup item.
+</I>&gt;<i>
+</I>&gt;&gt;<i> cd /System/Library/Extensions
+</I>&gt;&gt;<i> touch .
+</I>&gt;&gt;<i> mv AppleADBKeyboard.kext /Users/Shared/AppleADBKeyboard_fnSwtich.kext
+</I>&gt;<i>
+</I>&gt;<i> (Typo here, I guess -- should be _fnSwitch.)
+</I>&gt;<i>
+</I>&gt;&gt;<i> cp -r /Users/Shared/AppleADBKeyboard&lt;timestamp&gt;.kext 
+</I>&gt;&gt;<i> ./AppleADBKeyboard.kext
+</I>&gt;&gt;<i> or
+</I>&gt;&gt;<i> cp -r /Users/Shared/AppleADBKeyboard.kext ./AppleADBKeyboard.kext
+</I>&gt;<i>
+</I>&gt;<i> It looks like the fnSwitch installer moves Apple's kext to 
+</I>&gt;<i> /Users/Shared/ as a backup, and replaces it with its own. These lines 
+</I>&gt;<i> reverse the procedure: the move the fnSwitch-installed kext to 
+</I>&gt;<i> /Users/Shared/ under a different name (so as not to replace Apple's), 
+</I>&gt;<i> then brings back the original kext to its location.
+</I>&gt;<i>
+</I>&gt;<i> It also looks like the developer assumed you'd be logged in as root. 
+</I>&gt;<i> That's easily solved: precede the commands with sudo, as in
+</I>&gt;<i>
+</I>&gt;<i> $sudo mv AppleADBKeyboard.kext 
+</I>&gt;<i> /Users/Shared/AppleADBKeyboard_fnSwitch.kext
+</I>&gt;<i>
+</I>&gt;<i> For details on sudo
+</I>&gt;<i>
+</I>&gt;<i> $man sudo
+</I>&gt;<i>
+</I>&gt;<i> If you prefer a GUI method, select AppleADBKeyboard.kext in Finder, do 
+</I>&gt;<i> a Get Info, and change its ownership, move it where it should go, then 
+</I>&gt;<i> change again its ownership.
+</I>&gt;<i>
+</I>&gt;<i> f
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-newbies.html">X-Newbies-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-newbies.html">X-Newbies-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-newbies.html">X-Newbies-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;<i> Mac ISP Serious Mac Internet Solutions From NineWire!   
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older 
+</I>&gt;<i> Mac! Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>   Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;<i>
+</I>&gt;<i> OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s - 
+</I>&gt;<i> <A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>_______________________________________
+Matthew Guemple
+c. 646.734.6601
+<A HREF="../../../mailman/listinfo/x-newbies.html">matblack at mac.com</A>
+www.creativehotlist.com/m_guemple
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004080.html">[X Newbies] ooooh!
+</A></li>
+	<LI>Next message: <A HREF="004082.html">[X Newbies] ooooh!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4081">[ date ]</a>
+              <a href="thread.html#4081">[ thread ]</a>
+              <a href="subject.html#4081">[ subject ]</a>
+              <a href="author.html#4081">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

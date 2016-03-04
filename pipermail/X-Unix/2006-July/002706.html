@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to determine which network component is failing
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20determine%20which%20network%20component%20is%20failing&In-Reply-To=F407C029-5784-4B2C-82BC-3F28A8E855F0%40charter.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002703.html">
+   <LINK REL="Next"  HREF="002707.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to determine which network component is failing</H1>
+    <B>Wing Wong</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20determine%20which%20network%20component%20is%20failing&In-Reply-To=F407C029-5784-4B2C-82BC-3F28A8E855F0%40charter.net"
+       TITLE="[X-Unix] How to determine which network component is failing">wingedpower at gmail.com
+       </A><BR>
+    <I>Mon Jul 24 17:02:45 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002703.html">[X-Unix] How to determine which network component is failing
+</A></li>
+        <LI>Next message: <A HREF="002707.html">[X-Unix] How to determine which network component is failing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2706">[ date ]</a>
+              <a href="thread.html#2706">[ thread ]</a>
+              <a href="subject.html#2706">[ subject ]</a>
+              <a href="author.html#2706">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 7/24/06, Charles Howse &lt;<A HREF="../../../mailman/listinfo/x-unix.html">chowse at charter.net</A>&gt; wrote:
+&gt;<i>
+</I>&gt;<i> On Jul 24, 2006, at 12:29 PM, Wing Wong wrote:
+</I>&gt;<i> &gt; If your Linksys router has been updated with an &quot;opened&quot; firmware and
+</I>&gt;<i> &gt; you have shell access to the box. You can issue the dhcp release/renew
+</I>&gt;<i> &gt; via an automated SSH session. Just install your DSA public key entry
+</I>&gt;<i> &gt; onto the router and script the reboot from your workstation. If you
+</I>&gt;<i> &gt; want, you can also script the reboot from within the router itself.
+</I>&gt;<i>
+</I>&gt;<i> Now there's an idea!
+</I>&gt;<i> I have indeed just upgraded the firmware on the router, from the
+</I>&gt;<i> linksys site.
+</I>&gt;<i> I tried ssh'ing to the router ($ ssh 192.168.254.254), but it never
+</I>&gt;<i> answered.  :-(
+</I>&gt;<i> Is there some way to get into the router that I'm not thinking about?
+</I>
+The firmware I'm referring to is the SVEASOFT firmware. It's a
+customized version of the firmware which includes dropbear(minimal ssh
+daemon/client set) as well as a few other apps. I have it running on 2
+WRT54G routers and they serve as &quot;lite&quot; servers. I've done the same to
+a Buffalotech NAS storage unit(160GB) and use it as an RSYNC/CIFS/NFS
+server.
+
+Isn't customized firmware fun? ^_-
+
+There are some tricks to uploading the firmware. I took a couple of
+hours hitting several stores until I found the units(serial
+code/production run) which would accept the firmware through a web
+update.
+
+The SVEASOFT firmware also let's you do other things like selective
+port forwarding, QOS, port/trunk bonding, etc.
+
+&gt;<i> I hate to install lynx, just on principle, heheh., but that's not a
+</I>&gt;<i> bad idea.
+</I>&gt;<i> Maybe Stroller will see something in the web page code and we can do
+</I>&gt;<i> it that way.
+</I>
+Well, either lynx or some scripting with curl. I use lynx since it's
+easier for me to work with it. :) Nothing like a customized lynx+shell
+script wrapper to auto-play a web based adventure game for you. ^_-
+
+The SVEASOFT site allows for firmware downloads with a minimum
+membership. It's a worthwhile effort as their code has made life ALOT
+easier and my routers more useful.
+
+Good luck!
+
+Wing.
+
+-- 
+Wing Wong
+<A HREF="../../../mailman/listinfo/x-unix.html">wingedpower at gmail.com</A>
+</PRE>
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002703.html">[X-Unix] How to determine which network component is failing
+</A></li>
+	<LI>Next message: <A HREF="002707.html">[X-Unix] How to determine which network component is failing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2706">[ date ]</a>
+              <a href="thread.html#2706">[ thread ]</a>
+              <a href="subject.html#2706">[ subject ]</a>
+              <a href="author.html#2706">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

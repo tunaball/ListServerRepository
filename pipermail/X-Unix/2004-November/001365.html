@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Semi-newbe question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Semi-newbe%20question&In-Reply-To=D7209EA5-40ED-11D9-AF7F-003065F95C54%40direcway.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001364.html">
+   <LINK REL="Next"  HREF="001362.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Semi-newbe question</H1>
+    <B>Xavier Noria</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Semi-newbe%20question&In-Reply-To=D7209EA5-40ED-11D9-AF7F-003065F95C54%40direcway.com"
+       TITLE="[X-Unix] Semi-newbe question">fxn at hashref.com
+       </A><BR>
+    <I>Sun Nov 28 03:29:23 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001364.html">[X-Unix] Semi-newbe question
+</A></li>
+        <LI>Next message: <A HREF="001362.html">[X-Unix] &gt;console login problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1365">[ date ]</a>
+              <a href="thread.html#1365">[ thread ]</a>
+              <a href="subject.html#1365">[ subject ]</a>
+              <a href="author.html#1365">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Nov 28, 2004, at 4:30 AM, Russell McGaha wrote:
+
+&gt;<i> Folks;
+</I>&gt;<i> 	I need a few pointers on an appropriate way to do the following:
+</I>&gt;<i> 		I've two files, call them file1 &amp; file2.
+</I>&gt;<i> 		formated as follows: text1, text2, .... textx [return] ie [ascii 
+</I>&gt;<i> chr(13)]
+</I>&gt;<i> 						textxy, ..., textxx [return]
+</I>&gt;<i>
+</I>&gt;<i> (in other words a csv text file) and I need to take the coma's out and 
+</I>&gt;<i> replace them with returns. (what I'd REALY like to do is combine them 
+</I>&gt;<i> [textx1,texty1, return textx2,texty2, ... ect] but THAT&quot;S gravy, I'd 
+</I>&gt;<i> settle for just the biscuit right now.  BTW each file is a copy of 
+</I>&gt;<i> hundred K, and I've got  to do this on a repetitive basis [one to two 
+</I>&gt;<i> times a week.
+</I>&gt;<i> 		I USED to be able do just whip up a small program to do the job but; 
+</I>&gt;<i> I'm woefully out of practice, so I'd be grateful for a cmd line 
+</I>&gt;<i> EXAMPLE of how to do this.
+</I>
+I asked before for the conventions, but we might not need them because 
+the csv Python module has a dialect guesser.
+
+I wrote this simple Python script, in principle nothing extra needs to 
+be installed, Python comes with Mac OS X. The usage is:
+
+     $ python combine_csv.py file1 file2 result
+
+The script does that pairing you wanted, i.e., &quot;[textx1,texty1, return 
+textx2,texty2, ... ect]&quot; and assumes both input files have the same 
+length in lines (otherwise the pairing itself is ill-defined).
+
+I tested it a bit but I am sure it has some hidden assumptiom, please 
+if it does not work, or it does not do what you wanted, or the dialect 
+guesser can't guess the dialect, or whatever, don't hesitate to report 
+the problem.
+
+-- fxn
+
+import sys, csv
+
+# Process parameters
+if len(sys.argv) != 4:
+     print &quot;Usage: python %s file1 file2 result&quot; % sys.argv[0]
+     sys.exit(1)
+(file1, file2, result) = sys.argv[1:]
+
+# Guess CSV dialect
+csv_sample = open(file1).read(1024)
+csv_dialect_guesser = csv.Sniffer()
+csv_dialect = csv_dialect_guesser.sniff(csv_sample)
+if csv_dialect == None:
+     print &quot;Sorry, the files have an unknown CSV dialect&quot;
+     sys.exit(1)
+
+# Process files
+csv1 = csv.reader(open(file1))
+csv2 = csv.reader(open(file2))
+csvr = csv.writer(open(result, &quot;w&quot;), dialect=csv_dialect)
+for row1, row2 in zip(csv1, csv2):
+     for field1, field2 in zip(row1, row2):
+         csvr.writerow([field1, field2])
+
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001364.html">[X-Unix] Semi-newbe question
+</A></li>
+	<LI>Next message: <A HREF="001362.html">[X-Unix] &gt;console login problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1365">[ date ]</a>
+              <a href="thread.html#1365">[ thread ]</a>
+              <a href="subject.html#1365">[ subject ]</a>
+              <a href="author.html#1365">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

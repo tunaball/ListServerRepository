@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Remove last ten lines of files
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Remove%20last%20ten%20lines%20of%20files&In-Reply-To=list-10036182%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000319.html">
+   <LINK REL="Next"  HREF="000342.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Remove last ten lines of files</H1>
+    <B>Victor Eijkhout</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Remove%20last%20ten%20lines%20of%20files&In-Reply-To=list-10036182%40mail.ninewire.com"
+       TITLE="[X-Unix] Remove last ten lines of files">eijkhout at cs.utk.edu
+       </A><BR>
+    <I>Mon Jan  5 12:32:49 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000319.html">[X-Unix] Postfix howto
+</A></li>
+        <LI>Next message: <A HREF="000342.html">[X-Unix] Remove last ten lines of files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#331">[ date ]</a>
+              <a href="thread.html#331">[ thread ]</a>
+              <a href="subject.html#331">[ subject ]</a>
+              <a href="author.html#331">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 21:45 +0900 2004/01/02, Kino wrote:
+&gt;<i>On Jan 2, 2004, at 8:04 PM, Kuestner, Bjoern wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i>does anybody have a simple solution to remove the last ten lines of files
+</I>&gt;&gt;<i>(of variable length).
+</I>&gt;<i>
+</I>&gt;<i>#! /bin/sh
+</I>&gt;<i>
+</I>&gt;<i>i=`grep -c $ $*`
+</I>&gt;<i>j=`expr $i - 10`
+</I>&gt;<i>if [ $j -lt 1 ]; then
+</I>&gt;<i>j=$i
+</I>&gt;<i>fi
+</I>&gt;<i>head -n $j $*
+</I>
+  awk -v n=`tail -n +10 YOURFILE | wc -l` 'NR&lt;n {print}' YOURFILE
+
+Tada!
+
+-- 
+Victor Eijkhout &lt;<A HREF="../../../mailman/listinfo/x-unix.html">eijkhout at cs.utk.edu</A>&gt;, 329 Claxton, Comp Sci, UT, 
+Knoxville TN 37996.
+tel: 865 974 9308 (W), 865 673 6998 (H), 865 974 8296 (F)
+<A HREF="http://www.cs.utk.edu/~eijkhout/">http://www.cs.utk.edu/~eijkhout/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000319.html">[X-Unix] Postfix howto
+</A></li>
+	<LI>Next message: <A HREF="000342.html">[X-Unix] Remove last ten lines of files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#331">[ date ]</a>
+              <a href="thread.html#331">[ thread ]</a>
+              <a href="subject.html#331">[ subject ]</a>
+              <a href="author.html#331">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

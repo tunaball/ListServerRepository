@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Backdoor method to add users
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Backdoor%20method%20to%20add%20users&In-Reply-To=list-10982042%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000340.html">
+   <LINK REL="Next"  HREF="000343.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Backdoor method to add users</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Backdoor%20method%20to%20add%20users&In-Reply-To=list-10982042%40mail.ninewire.com"
+       TITLE="[X-Unix] Backdoor method to add users">magill at mcgillsociety.org
+       </A><BR>
+    <I>Sat Feb 21 10:49:16 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000340.html">[X-Unix] Backdoor method to add users
+</A></li>
+        <LI>Next message: <A HREF="000343.html">[X-Unix] Backdoor method to add users
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#341">[ date ]</a>
+              <a href="thread.html#341">[ thread ]</a>
+              <a href="subject.html#341">[ subject ]</a>
+              <a href="author.html#341">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 21 Feb, 2004, at 08:06, Alex wrote:
+&gt;&gt;<i> I am not aware of any hard limit on OS X on number of users.
+</I>&gt;<i> Good question -- what's the max number of users? There must be a limit.
+</I>
+On 21 Feb, 2004, at 10:19, Barry Lyden wrote:
+&gt;<i> max number of users on a UNIX system is usually a kernel tunable 
+</I>&gt;<i> parameter.
+</I>
+Not really.
+
+The &quot;max users&quot; parameter is one of the most misunderstood and badly 
+named parameters in Unix. [And the fact that it means different things 
+in different contexts doesn't help.] And as far as I can tell, it does 
+not exist in OS X. (Being MACH, it should not exist.)
+
+&quot;Max users&quot; is NOT a limit on the number of userids  (UIDs) which can 
+exist on a system OR on the number of simultaneous users which can be 
+logged on.
+
+Historically it was a value used during the kernel generation process 
+which caused other values associated with static table structures to be 
+modified (ie recalculated) -- to change system memory allocations for 
+buffers and the like. Contemporary systems are much more dynamic. 
+[Other PROGRAMS (not operating systems), like SAMBA, use the term to 
+mean something completely different.]
+
+On any Unix system there are two different concepts concerning the 
+maximum number of users any given system configuration can support.
+
+The first is the number of uids in the &quot;login data base&quot; (historically, 
+/etc/passwd).
+The &quot;UID&quot; must be unique for every user on the &quot;system&quot;... (which can 
+included many systems, but I'm not going to include clusters and the 
+like here.) This is a numeric value whose maximum value is determined 
+by both the number of bits the hardware architecture supports (as in 
+8/16/32/64) and by the coding of the kernel to support a particular 
+&quot;address&quot; space. This number is hard and fast and is knowable. [Off 
+hand, I don't know what value OSX supports, but if OS X is 64 bit 
+clean, it supports a 64 bit number, unlike Intel machines which only 
+are 32 bit machines. Yeah, you can play all kinds of double-32 games 
+like both Sun and HP did before they managed to get their OS to be 64 
+bit clean, but that also is a different issue.]
+
+The second concept has to do with the maximum number of simultaneous or 
+active processes any given system can support (kern.maxproc  and 
+kern.maxprocperuid). The settings of these values also control kernel 
+table space. kern.maxproc is the total number of simultaneous processes 
+an OS X system can have running -- the default is 532 for client. The 
+maxprocperuid default number is 100. While these numbers can be set 
+arbitrarily, a knowledge of system architecting will quickly show that 
+you can't put 10 tons of crap in a 5 ton truck.
+
+Once you get a system beyond a few hundreds of users, you begin to 
+encounter all kinds of issues which bear little relationship to the 
+basic OS and more to do with the hardware itself.
+
+Once you get beyond a few thousand users and start pushing ten thousand 
+users, you start seeing REALLY weird interactions between hardware and 
+software design philosophies.
+
+One thing which is true -- large multi-user timesharing systems are 
+surprisingly few and far between. Five to ten thousand users of ONE 
+system is a REALLY big user community, and there are very few systems 
+around which are big enough to handle them. They are called 
+&quot;mainframes.&quot; Virtually all &quot;Super Computers,&quot; by contrast have 
+surprisingly small user communities -- typically only a couple hundred 
+users. One simple reason is called &quot;overhead.&quot; The more users you have 
+on a system, the more resources are required to oversee their usage 
+requirements.
+
+So in short. There is no effective limit on the number of UIDS a given 
+system can support. But there is a real limit to the number of UIDS a 
+given set of resources can support.
+
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000 - [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000340.html">[X-Unix] Backdoor method to add users
+</A></li>
+	<LI>Next message: <A HREF="000343.html">[X-Unix] Backdoor method to add users
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#341">[ date ]</a>
+              <a href="thread.html#341">[ thread ]</a>
+              <a href="subject.html#341">[ subject ]</a>
+              <a href="author.html#341">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

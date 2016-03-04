@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [iBook] Samba networking questions
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BiBook%5D%20Samba%20networking%20questions&In-Reply-To=44eba12904120805295a20b483%40mail.gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011190.html">
+   <LINK REL="Next"  HREF="011191.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[iBook] Samba networking questions</H1>
+    <B>Alexandre Leroux</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BiBook%5D%20Samba%20networking%20questions&In-Reply-To=44eba12904120805295a20b483%40mail.gmail.com"
+       TITLE="[iBook] Samba networking questions">alexandreleroux at gmail.com
+       </A><BR>
+    <I>Wed Dec  8 18:03:26 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011190.html">[iBook] Samba networking questions
+</A></li>
+        <LI>Next message: <A HREF="011191.html">[iBook] Word 2001
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11199">[ date ]</a>
+              <a href="thread.html#11199">[ thread ]</a>
+              <a href="subject.html#11199">[ subject ]</a>
+              <a href="author.html#11199">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Jean-Paul,
+
+On Wed, 8 Dec 2004 21:29:01 +0800, Fearsome Orange
+&lt;<A HREF="../../../mailman/listinfo/ibook.html">fearsome.orange at gmail.com</A>&gt; wrote:
+&gt;<i> I have a mixed network (two Windows machines and this here iBook).  I
+</I>&gt;<i> have turned on Windows sharing on the iBook, and while I can see it
+</I>&gt;<i> from the WinXP machine, I cannot connect.  When I connect I get a
+</I>&gt;<i> window that asks for my password, and the username is:
+</I>&gt;<i> ip.address.of.ibook\Guest
+</I>&gt;<i> which I cannot change (it's 'greyed out').
+</I>
+It worked for me (with a router) after I followed instructions given
+by Richard on this list in August:
+
+&#171;
+Well, just to make sure that you can share files across the network try the
+following:
+
+Windows machine (as an administrator user):
+
+Right click a folder (for example 'shared documents' at C//Documents and
+Settings/All Users/ Shared Documents) and ensure that the properties dialog
+box shows a check mark next to the folder to 'share this folder on the
+network', give it a name (no spaces allowed) and click okay.
+
+In Control Panel, go to Network Connections and right click on the Local
+Area Connection and then on status, click on the support tab of the
+following dialog box and note the IP address (you'll need this to connect to
+the computer from the Mac.
+
+On the Mac:
+
+To simply have a one way connection (i.e. Allowing the Mac to browse the XP
+machine but not the other way around) just do the following...
+
+In Finder go to the 'Go' menu bar Heading and then to 'connect to server...'
+click this and in the following dialog box type the following:
+
+<A HREF="smb://xxx.xxx.xxx.xxx/name">smb://xxx.xxx.xxx.xxx/name</A> of shared folder on XP machine
+
+Where xxx.xxx.xxx.xxx is the IP address of the XP machine from above steps
+and 'name of shared...' is the name you chose to call the shared folder in
+the dialog box on the XP machine.
+
+Click connect and a new dialog box with workgroup, user name and password
+fields are available...you should only have to type the password field using
+the password from the user account on the XP machine (as if you were logging
+onto it directly). Press okay and a new finder window should appear with the
+shared document folder...
+
+To be able to share the other way as well (XP can look at and use Mac
+folders) do:
+
+On the Mac:
+
+Open system preferences, go to sharing icon and turn on windows sharing (you
+may need to authenticate yourself if you have protected important sys prefs
+by typing an admin user password). That's it from the Mac side...you are now
+vunerable to any windows machine (with the right password).
+
+On the XP machine:
+
+(Note: I tried to get this working as well but without success :-( Maybe
+you'll have better luck.
+
+In the start menu click on my network places (or get there from any open
+window using the left hand side navigation links).
+
+See if your Mac shows up? If not try this;
+
+On the left hand side links choose: MS windows network and navigate to see
+if you see your mac showing up.
+
+If not try: view workgroup computers and navigate to see if you can find it.
+
+If not then last chance is by using a 'dreaded' wizard...use the left link
+for add a network place and click through the next buttons till you get to
+Internet or network address box: type \\192.168.0.2\your shortlogin name
+here (subsituting the appropriate details from your macs IP address and your
+login name) click next and finally it *should* appear...type a name for the
+mac on this network and click next and then finish. (Note I did not get past
+this stage myself so hopefully someone else will be able to help further
+here or you will get lucky).
+
+Whatever bizarre name that windows gives your mac 'samba ...' double click
+the icon and log in and you can exchange files...
+
+The above ramblings are from my own experience and frustration at the last
+minute of trying to exchange files between the two worlds and some helping
+guidance from the 'missing manual panther edition by David pogue' which is a
+great book and worth getting...
+
+After all that and assuming that you can exchange files both directions from
+both machines...go to system preferences and go to the sharing icon...change
+to the internet tab/button and make the appropriate choices, such as share
+the connection you have (how you currently get online...i.e. Airport) and
+then below in the box tick the connection of how the XP machine is trying to
+connect (i.e Ethernet) and then turn the internet sharing button on.
+
+Hopefully this will allow you to share files and internet connections along
+the network.
+&#187;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011190.html">[iBook] Samba networking questions
+</A></li>
+	<LI>Next message: <A HREF="011191.html">[iBook] Word 2001
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11199">[ date ]</a>
+              <a href="thread.html#11199">[ thread ]</a>
+              <a href="subject.html#11199">[ subject ]</a>
+              <a href="author.html#11199">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

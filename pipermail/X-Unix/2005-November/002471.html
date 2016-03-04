@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] zsh / spotlight / application completion
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20zsh%20/%20spotlight%20/%20application%20completion&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002467.html">
+   <LINK REL="Next"  HREF="002472.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] zsh / spotlight / application completion</H1>
+    <B>Brian Medley</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20zsh%20/%20spotlight%20/%20application%20completion&In-Reply-To="
+       TITLE="[X-Unix] zsh / spotlight / application completion">bpm-list-osx-unix at 4321.tv
+       </A><BR>
+    <I>Wed Nov 16 08:46:35 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002467.html">[X-Unix] Using AppleScript to Start Apps... Hidden
+</A></li>
+        <LI>Next message: <A HREF="002472.html">[X-Unix] Re: zsh / spotlight / application completion
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2471">[ date ]</a>
+              <a href="thread.html#2471">[ thread ]</a>
+              <a href="subject.html#2471">[ subject ]</a>
+              <a href="author.html#2471">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I use zsh and want to have intelligent completion for open(1).  I
+believe the command 
+
+    $ compctl -f -x 'c[-1,-a]' -M 'b:=*' -k _apps -- open
+
+provides this.  I believe what this does is:
+    
+    a) per default complete on filenames and directories
+    b) iff the previous word is &quot;-a&quot; then perform completion
+    using the _apps arrary.
+
+This means that without &quot;-a&quot; filenames and directories are
+completed and that _after_ the application has been completed
+filenames and directories will be completed; therefore an
+argument can supplied to the application.
+
+To populate the _apps array I use:
+
+    $ typeset -a _apps
+    $ _apps=(${(f)&quot;$(mdfind &quot;kMDItemKind == 'Application'&quot;)&quot;})
+
+An example run is below.
+
+[<A HREF="../../../mailman/listinfo/x-unix.html">bpm at snafu</A>] c:~&gt;typeset -a _apps
+[<A HREF="../../../mailman/listinfo/x-unix.html">bpm at snafu</A>] c:~&gt;_apps=(${(f)&quot;$(mdfind &quot;kMDItemKind == 'Application'&quot;)&quot;})
+[<A HREF="../../../mailman/listinfo/x-unix.html">bpm at snafu</A>] c:~&gt;echo ${#_apps}
+398
+[<A HREF="../../../mailman/listinfo/x-unix.html">bpm at snafu</A>] c:~&gt;echo ${_apps[0]}
+/Applications/iPhoto.app
+[<A HREF="../../../mailman/listinfo/x-unix.html">bpm at snafu</A>] c:~&gt;compctl -f -x 'c[-1,-a]' -M 'b:=*' -k _apps -- open
+[<A HREF="../../../mailman/listinfo/x-unix.html">bpm at snafu</A>] c:~&gt;open -a /Library/Application\ Support/Adobe/Workflow/Adobe\ Workgroup\ Helper
+[<A HREF="../../../mailman/listinfo/x-unix.html">bpm at snafu</A>] c:~&gt;open -a Photo
+/Applications/Adobe\ Photoshop\ Elements\ 2/Photoshop\ Elements\ 2.0
+/Applications/Hewlett-Packard/HP\ Photo\ and\ Imaging\ Software/HP\ E-mail\ Portal/HP\ E-mail\ Portal
+...
+/Applications/Hewlett-Packard/HP\ Photo\ and\ Imaging\ Software/HP\ Tools/HP\ Image\ Dropper.app
+/Applications/iPhoto.app
+/Library/Documentation/Applications/iPhoto/iPhoto\ Getting\ Started.app
+
+-- 
+~`^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-., \|/  (___)  \|/ _,.-=~'`^`
+                                      @~./'O o`\.~@
+      &quot;Knowledge is Power&quot;           /__( \___/ )__\  *PPPFFBT!*
+         -- Francis Bacon               `\__`U_/'
+ _.-=~'``'~=-._.-=~'``'~=-._.-=~'`^`'~= &lt;____|'  ^^`'~=-.,__,.-=
+~'^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-.,__,.-==--^'~=-.,__,.-=~'`^`
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002467.html">[X-Unix] Using AppleScript to Start Apps... Hidden
+</A></li>
+	<LI>Next message: <A HREF="002472.html">[X-Unix] Re: zsh / spotlight / application completion
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2471">[ date ]</a>
+              <a href="thread.html#2471">[ thread ]</a>
+              <a href="subject.html#2471">[ subject ]</a>
+              <a href="author.html#2471">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

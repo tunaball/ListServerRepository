@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] ps oddity
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20ps%20oddity&In-Reply-To=C0CD5AE8.393%25beyond.theframe%40verizon.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002678.html">
+   <LINK REL="Next"  HREF="002680.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] ps oddity</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20ps%20oddity&In-Reply-To=C0CD5AE8.393%25beyond.theframe%40verizon.net"
+       TITLE="[X-Unix] ps oddity">ecrist at secure-computing.net
+       </A><BR>
+    <I>Sun Jul  2 11:12:59 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002678.html">[X-Unix] ps oddity
+</A></li>
+        <LI>Next message: <A HREF="002680.html">[X-Unix] ps oddity
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2679">[ date ]</a>
+              <a href="thread.html#2679">[ thread ]</a>
+              <a href="subject.html#2679">[ subject ]</a>
+              <a href="author.html#2679">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+I won't repeat what Adrian already said, but he's exactly right.   
+You're looking at much description information about a print process.
+
+
+On Jul 2, 2006, at 10:13 AM, Ethan Rips wrote:
+
+&gt;<i> Hello--
+</I>&gt;<i>
+</I>&gt;<i> When I run ps &#8211;auxww in the tcsh shell (on OS X 10.3.9), the  
+</I>&gt;<i> following is interpolated amidst the list of processes:
+</I>&gt;<i>
+</I>&gt;<i> lp         374   0.0  0.2    50240   1624  ??  S     8:38AM   0:00.20
+</I>&gt;<i> HP_LaserJet_1200 1359 scripter
+</I>&gt;<i> Recipe: Thai Steak With Coriander Pesto - New York Times - Mozilla 1
+</I>&gt;<i> HPwmSwitch=Off
+</I>&gt;<i> HPwmText=Draft
+</I>&gt;<i> HPwmBrightness=Medium
+</I>&gt;<i> HPwmTextAngle=Deg45 Smoothing=PrinterDefault
+</I>&gt;<i> HPwmFontSize=pt48
+</I>&gt;<i> HPwmPages=AllPages
+</I>&gt;<i> HPwmFont=HelveticaB
+</I>&gt;<i> HPHalftone=PrinterDefault Resolution=600x600x2dpi
+</I>&gt;<i> HPwmTextStyle=Medium
+</I>&gt;<i> HPEconoMode=PrinterDefault AP_D_InputSlot= nocollate
+</I>&gt;<i> media=Letter
+</I>&gt;<i> com.apple.print.PrinterInfo.PMColorDeviceID..n.=-1129443005  
+</I>&gt;<i> OutputOrder=Normal
+</I>&gt;<i> [SNIP&#8212;another 25 or 26 lines starting with &#8220;com.&#8221;]
+</I>&gt;<i> This repeats several times with modifications (i.e., once again  
+</I>&gt;<i> starting with &#8220;lp&#8221; &amp; once starting with the following line:
+</I>&gt;<i>
+</I>&gt;<i> root       376   0.0  0.1    27972    824  ??  S     8:38AM    
+</I>&gt;<i> 2:55.91 <A HREF="usb://Hewlett-Packard/HP%20LaserJet%201200?">usb://Hewlett-Packard/HP%20LaserJet%201200?</A> 
+</I>&gt;<i> serial=00CNCB539970 1359 scripter
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> I noticed a binary called lp in usr/bin, but I can&#8217;t find a file  
+</I>&gt;<i> named &#8220;Thai Steak With Coriander Pesto&#8221; anywhere on my hard drive.
+</I>&gt;<i>
+</I>&gt;<i> So the obvious question is, Where is this coming from &amp; what do I  
+</I>&gt;<i> have to do to get rid of it?
+</I>&gt;<i>
+</I>&gt;<i> Another weird question: When trying to run sudo, I&#8217;m prompted for a  
+</I>&gt;<i> password. Evidently, I&#8217;ve forgotten whatever password I used to use  
+</I>&gt;<i> for sudo. What, if anything, can I do?
+</I>&gt;<i>
+</I>&gt;<i> Thanks.
+</I>&gt;<i>
+</I>&gt;<i> Dolphy
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>          <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+- -----
+Eric F Crist
+Secure Computing Networks
+<A HREF="http://www.secure-computing.net">http://www.secure-computing.net</A>
+
+
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.3 (Darwin)
+
+iEYEARECAAYFAkSoDKsACgkQUVeKtG0kPmpoAQCeIAuRJbhd7cPW7ou4VMQt5FN7
+dnYAnRg0Cnm8lhcOo5a5ZNJyvVB2a2fE
+=3+TY
+-----END PGP SIGNATURE-----
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002678.html">[X-Unix] ps oddity
+</A></li>
+	<LI>Next message: <A HREF="002680.html">[X-Unix] ps oddity
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2679">[ date ]</a>
+              <a href="thread.html#2679">[ thread ]</a>
+              <a href="subject.html#2679">[ subject ]</a>
+              <a href="author.html#2679">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] DRAM failure (was Hard drive or hard drive controller gone)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20DRAM%20failure%20%28was%20Hard%20drive%20or%20hard%20drive%20controller%20gone%29&In-Reply-To=BFF27997.AC59%25jamesrob%40sonic.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011762.html">
+   <LINK REL="Next"  HREF="011661.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] DRAM failure (was Hard drive or hard drive controller gone)</H1>
+    <B>Eric Morrison</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20DRAM%20failure%20%28was%20Hard%20drive%20or%20hard%20drive%20controller%20gone%29&In-Reply-To=BFF27997.AC59%25jamesrob%40sonic.net"
+       TITLE="[X4U] DRAM failure (was Hard drive or hard drive controller gone)">sysadmin at high-perform.com
+       </A><BR>
+    <I>Tue Jan 17 12:25:18 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011762.html">[X4U] Chinese on an iBook. Any advice?
+</A></li>
+        <LI>Next message: <A HREF="011661.html">[X4U] pdf preference in safari
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11674">[ date ]</a>
+              <a href="thread.html#11674">[ thread ]</a>
+              <a href="subject.html#11674">[ subject ]</a>
+              <a href="author.html#11674">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi:
+
+You may have already tried all these things but if you haven't it may be
+worth a shot.
+
+Have you reset the pram? (boot holding down Apple Option P R until it chimes
+three or four times and then let it start normally)
+
+Definitely boot into open firmware (boot holding down Apple Option O F) and
+type the following with a return after each line:
+
+reset-nvram
+set-defaults
+reset-all
+
+after the last return the machine will reboot.
+
+Also, try simply unplugging the machine from all electrical power for an
+hour and then plug it back in and try again.
+
+Finally, not sure if this machine has it, but on some of these machines
+there is a reset switch on the motherboard. It's a tiny little switch
+somewhere on the motherboard. If it were me, I would search that out to see
+if there is one and if there is, press it (I believe you should unplug the
+machine before doing so). I've had machines that wouldn't boot at all and
+simply pressing this button completely resolved the problem.
+
+Finally, unconnect and reconnect connectors inside the machine. May simply
+be a bad connection between some components.
+
+You may have a bad motherboard... in which case this is all for naught...
+but then again, you might not!
+
+Good luck.
+
+... e
+
+
+On 1/17/06 1:38 PM, &quot;Jim Robertson&quot; &lt;<A HREF="../../../mailman/listinfo/x4u.html">jamesrob at sonic.net</A>&gt; wrote:
+
+&gt;<i> On 1/16/06 7:40 PM, &quot;John Baltutis&quot; &lt;<A HREF="../../../mailman/listinfo/x4u.html">baltwo at san.rr.com</A>&gt; wrote:
+</I>&gt;<i> 
+</I>&gt;&gt;<i> That's a pretty good price for DRAM and that's a pretty good machine. BTW,
+</I>&gt;&gt;<i> can't you return the bad ones? Most suppliers have lifetime guarantees on
+</I>&gt;&gt;<i> those
+</I>&gt;&gt;<i> modules.
+</I>&gt;<i> 
+</I>&gt;<i> The $75 price was from the Chip Merchant. It's more like $100 from crucial.
+</I>&gt;<i> My problem is that my son's MDD G4 may no longer be &quot;a pretty good machine.&quot;
+</I>&gt;<i> One hard drive has failed, one DIMM slot may have failed, and two DRAM
+</I>&gt;<i> modules seem to have failed in fairly short order. Also, neither of the 512
+</I>&gt;<i> MB sticks were purchased from top-tier sources, so I doubt I'd be able to
+</I>&gt;<i> return either for credit.
+</I>&gt;<i> 
+</I>&gt;<i> Curiously, when the machine contains ONLY the 256 MB DRAM stick from Apple
+</I>&gt;<i> and it runs memtest in single user mode, it's happy to do so for hours on
+</I>&gt;<i> end, but even with that module living alone in the box, running Mac OS X
+</I>&gt;<i> 10.4.4 it will freeze up within a few hours.
+</I>&gt;<i> 
+</I>&gt;<i> I'm now running (or sitting) with the machine booted from the Tiger
+</I>&gt;<i> installer DVD-Rom doing nothing. Disk Utility doesn't find anything wrong
+</I>&gt;<i> with the new Seagate 300 GB drive's volume, permissions repair just fine.
+</I>&gt;<i> I'm running out of ideas to sort out what's wrong.
+</I>&gt;<i> 
+</I>&gt;&gt;<i> I don't understand the &quot;can't use&quot; bit with the 300 GB HD. Put it into
+</I>&gt;&gt;<i> something like the Argosy USB/FW enclosure ($38 + S&amp;H) and it should work
+</I>&gt;&gt;<i> with
+</I>&gt;&gt;<i> any of your machines.
+</I>&gt;<i> 
+</I>&gt;<i> Now THAT's a great idea. Struggling with this the past several days has
+</I>&gt;<i> rekindled my notion that there cannot be too many backups, and what I do now
+</I>&gt;<i> for my dual 1.8 GHz G5 is backup to another SATA drive inside the same box.
+</I>&gt;<i> Backing up to an external drive as well sounds like a smart idea.
+</I>&gt;<i> 
+</I>&gt;<i> Jim Robertson
+</I>
+
+Eric Morrison
+Insigniam Performance&#129;
+Catalyzing Breakthough Results
+www.insigniam.com
+1.610.667.7822
+
+This email message is for the sole use of the intended recipient(s) and may
+contain confidential and privileged information. Any unauthorized review,
+use, disclosure or distribution is prohibited. If you are not the intended
+recipient, please contact the sender by reply email and destroy all copies
+of the original message. Thank you.
+
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011762.html">[X4U] Chinese on an iBook. Any advice?
+</A></li>
+	<LI>Next message: <A HREF="011661.html">[X4U] pdf preference in safari
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11674">[ date ]</a>
+              <a href="thread.html#11674">[ thread ]</a>
+              <a href="subject.html#11674">[ subject ]</a>
+              <a href="author.html#11674">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

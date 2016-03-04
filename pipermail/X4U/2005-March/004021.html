@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Re: Terminal | Emptying the trash
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Re%3A%20Terminal%20%7C%20Emptying%20the%20trash&In-Reply-To=20050317192144.DB6B4342225%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004017.html">
+   <LINK REL="Next"  HREF="004019.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Re: Terminal | Emptying the trash</H1>
+    <B>Timothy Luoma</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Re%3A%20Terminal%20%7C%20Emptying%20the%20trash&In-Reply-To=20050317192144.DB6B4342225%40listserver.themacintoshguy.com"
+       TITLE="[X4U] Re: Terminal | Emptying the trash">lists at tntluoma.com
+       </A><BR>
+    <I>Thu Mar 17 13:30:53 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004017.html">[X4U] Terminal | Emptying the trash
+</A></li>
+        <LI>Next message: <A HREF="004019.html">[X4U] MacMice
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4021">[ date ]</a>
+              <a href="thread.html#4021">[ thread ]</a>
+              <a href="subject.html#4021">[ subject ]</a>
+              <a href="author.html#4021">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Mar 17, 2005, at 2:17 PM, Randy B.Singer wrote:
+
+&gt;<i> If there are several locked files in the Trash, you can unlock them all
+</I>&gt;<i> at the same time in Terminal. Follow these steps:
+</I>&gt;<i>
+</I>&gt;<i>    1. Open Terminal.
+</I>&gt;<i>       Type: chflags -R nouchg
+</I>&gt;<i>       Note: Type one space (not pictured) after nouchg in the line 
+</I>&gt;<i> above,
+</I>&gt;<i> so that it ends in &quot;nouchg &quot;. Do not press Return yet.
+</I>&gt;<i>    2. Double-click the Trash icon in the Dock to reveal the contents of
+</I>&gt;<i> the Trash. If necessary, arrange the Finder window so that a portion of
+</I>&gt;<i> the Terminal window is still visible.
+</I>&gt;<i>    3. Press the Command-A key combination to select all files in the
+</I>&gt;<i> Trash.
+</I>&gt;<i>    4. Drag the files from the Trash to the Terminal window.
+</I>&gt;<i>       Note: This automatically enters the pathname for each file. This
+</I>&gt;<i> eliminates the need to individually empty multiple Trash directories,
+</I>&gt;<i> particularly when multiple disks or volumes are present.
+</I>&gt;<i>    5. Press Return. No special text message will be shown indicating 
+</I>&gt;<i> that
+</I>&gt;<i> the command was successful.
+</I>&gt;<i>    6. Empty the Trash.
+</I>
+There's an easier Unixy way to do this
+
+1) Open Terminal
+
+2) paste this line
+
+		find ~/.Trash -exec chflags -R nouchg { } \;
+
+	# which says &quot;Goto ~/.Trash/ and run the command 'chflags -R nouchg' 
+on everything in it
+
+3) then paste this line
+
+		find ~/.Trash -exec rm -f {} \;
+
+	# which says &quot;Goto ~/.Trash and delete everything in it
+
+TJL
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004017.html">[X4U] Terminal | Emptying the trash
+</A></li>
+	<LI>Next message: <A HREF="004019.html">[X4U] MacMice
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4021">[ date ]</a>
+              <a href="thread.html#4021">[ thread ]</a>
+              <a href="subject.html#4021">[ subject ]</a>
+              <a href="author.html#4021">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

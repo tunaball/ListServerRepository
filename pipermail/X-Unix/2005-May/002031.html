@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Disable user accounts?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Disable%20user%20accounts%3F&In-Reply-To=20050521155953.GA585%40sage.che.pitt.edu">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002029.html">
+   <LINK REL="Next"  HREF="002032.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Disable user accounts?</H1>
+    <B>cheryl schneider</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Disable%20user%20accounts%3F&In-Reply-To=20050521155953.GA585%40sage.che.pitt.edu"
+       TITLE="[X-Unix] Disable user accounts?">cheryl at themacworks.com
+       </A><BR>
+    <I>Sat May 21 10:37:58 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002029.html">[X-Unix] Disable user accounts?
+</A></li>
+        <LI>Next message: <A HREF="002032.html">[X-Unix] How to monitor inbound/outbound network traffic?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2031">[ date ]</a>
+              <a href="thread.html#2031">[ thread ]</a>
+              <a href="subject.html#2031">[ subject ]</a>
+              <a href="author.html#2031">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On May 21, 2005, at 11:59 AM, John Harrold wrote:
+
+&gt;<i> Sometime in May Eric F Crist assaulted the keyboard and produced:
+</I>&gt;<i> | I was curious about disabling user accounts.  On every other *nix
+</I>&gt;<i> | system I administer, I use pw to set the lock attribute, or on
+</I>&gt;<i> | systems without pw, I add a * to the user password field.   
+</I>&gt;<i> Obviously,
+</I>&gt;<i> | vipw doesn't really apply to Mac OS X, as user accounts aren't kept
+</I>&gt;<i> | in the /etc/master.passwd file.
+</I>
+You can edit  /etc/master.passwd file. You also have to configure  
+Directory Access to enable the 'BSD Flat File and NIS' plugin and to  
+include the local search path to the config. Disable other  
+authentication search paths. Otherwise, OS X won't look for them.
+
+One caveat, the password in /etc/master.passwd is stored in crypt  
+form, not shadow hash, so it's less secure. Another thing is NetInfo  
+doesn't consult /etc/master.passwd making it is possible to assign  
+the same uid to different accounts.
+
+
+&gt;<i> If you just want to disable the user and not delete them, you can  
+</I>&gt;<i> probably
+</I>&gt;<i> find something in Applications--&gt;Utilities--&gt;Netinfo Manager. You  
+</I>&gt;<i> can try
+</I>&gt;<i> changing their shell to /urs/bin/false.
+</I>&gt;<i>
+</I>&gt;<i> ----------------------------------------------------------
+</I>&gt;<i>                             | /&quot;\
+</I>&gt;<i>  john harrold               | \ / ASCII ribbon campaign
+</I>&gt;<i>  jmh at member.fsf.org      |  X  against HTML mail
+</I>&gt;<i>  the most useful idiot      | / \
+</I>&gt;<i> ----------------------------------------------------------
+</I>
+Cheryl
+
+--------------------------------
+Cheryl Schneider
+The Mac Works, Inc.
+ACSA, ACN, ACT, APP
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002029.html">[X-Unix] Disable user accounts?
+</A></li>
+	<LI>Next message: <A HREF="002032.html">[X-Unix] How to monitor inbound/outbound network traffic?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2031">[ date ]</a>
+              <a href="thread.html#2031">[ thread ]</a>
+              <a href="subject.html#2031">[ subject ]</a>
+              <a href="author.html#2031">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

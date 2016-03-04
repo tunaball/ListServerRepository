@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] FTP via Airport Extreme
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20FTP%20via%20Airport%20Extreme&In-Reply-To=list-14574952%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="007598.html">
+   <LINK REL="Next"  HREF="007600.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] FTP via Airport Extreme</H1>
+    <B>Perry The Cynic</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20FTP%20via%20Airport%20Extreme&In-Reply-To=list-14574952%40mail.ninewire.com"
+       TITLE="[G4] FTP via Airport Extreme">perry at cynic.org
+       </A><BR>
+    <I>Wed Jul  7 09:12:15 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="007598.html">[G4] How to Change from Entourage to Mail
+</A></li>
+        <LI>Next message: <A HREF="007600.html">[G4] FTP via Airport Extreme
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7599">[ date ]</a>
+              <a href="thread.html#7599">[ thread ]</a>
+              <a href="subject.html#7599">[ subject ]</a>
+              <a href="author.html#7599">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Your base station is acting as a NAT gateway, and your powerbook is hidden 
+behind it. You can get out, but you can't get in - nobody on the wire side 
+of the base station can see what's behind it. You shouldn't be able to 
+connect to it (from the wire side) with anything - file sharing, ssh, etc. 
+- though you can connect *out* just fine.
+
+The easiest thing is to turn off NAT on the base station. Then everything 
+works normal. The downside is that you need to have a separate IP address 
+for your powerbook (one visible from wherever you want to FTP from).
+
+The other possibility is to do port mapping: 
+&lt;<A HREF="http://docs.info.apple.com/article.html?artnum=150745">http://docs.info.apple.com/article.html?artnum=150745</A>&gt;. The port number 
+for FTP is 21. You will probably have to use &quot;active&quot; (not passive) FTP to 
+connect to your server (unless there's a NAT helper for FTP built into the 
+base station software - I don't know that).
+
+Cheers
+  -- perry
+
+--On Wednesday, July 7, 2004 8:33 AM -0400 &quot;Wilkin, Wayne (Mass)&quot; 
+&lt;<A HREF="../../../mailman/listinfo/g4.html">Wayne.Wilkin at Staples.com</A>&gt; wrote:
+
+&gt;<i> Setup:
+</I>&gt;<i> Cable Modem/Airport Extreme/Netgear 8 port router
+</I>&gt;<i> Computers:
+</I>&gt;<i> 1 Laptop/1 G4 733/1 dual 125
+</I>&gt;<i> All computers and airport software are running X.3.4, all airport software
+</I>&gt;<i> and firmware up to date.
+</I>&gt;<i> 2 G4's are plugged into the router, laptop is wireless.
+</I>&gt;<i> The 733 is running as an FTP site only
+</I>&gt;<i> The dual 125 is a regular desktop station.
+</I>&gt;<i> The airports IP is 64.x.x.x
+</I>&gt;<i> The G4's and laptop get their IP's from the basestation. 10.0.1.6, .7, .8
+</I>&gt;<i> The .7 system is the FTP computer.
+</I>&gt;<i> Problem:
+</I>&gt;<i> I can access the FTP computer via FTP software but only within my own
+</I>&gt;<i> network. If I try to access from outside my network, say from my work, no
+</I>&gt;<i> dice. I know it has something to do with the setup on the Airport but
+</I>&gt;<i> can't figure it out. Thanks in advance, Wayne.
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> G4ist, a listserv for discussion of everything G4.
+</I>&gt;<i> FAQ at &lt;<A HREF="../../../../www.themacintoshguy.com/lists/G4.html">http://www.themacintoshguy.com/lists/G4.html</A>&gt;.
+</I>&gt;<i> Send a message to &lt;<A HREF="../../../mailman/listinfo/g4.html">G4-DIGEST at themacintoshguy.com</A>&gt; to switch to the digest.
+</I>&gt;<i>
+</I>&gt;<i> XRouter | Share your DSL or cable modem between multiple computers!
+</I>&gt;<i> Dr. Bott | Now $139.99      &lt;<A HREF="http://www.drbott.com/prod/xrouter.html">http://www.drbott.com/prod/xrouter.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> Dr. Bott LLC   4-port USB Hub in translucent Graphite!
+</I>&gt;<i> Dr. Bott LLC   &lt;<A HREF="http://www.drbott.com/prod/ghub.html">http://www.drbott.com/prod/ghub.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> Small Dog Electronics   <A HREF="http://www.smalldog.com">http://www.smalldog.com</A>  | Canon Digital Cameras |
+</I>&gt;<i> --Quicksilver &amp; refurbished G4's arriving daily! |   and Camcorders!!    |
+</I>&gt;<i>
+</I>&gt;<i> MacResQ Specials: LaCie SCSI CDR From $99! PowerBook 3400/200 Only $879!
+</I>&gt;<i> Norton AntiVirus 6 Only $19! We Stock PARTS! &lt;<A HREF="http://www.macresq.com">http://www.macresq.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s -
+</I>&gt;<i> <A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>
+
+
+---------------------------------------------------------------------------
+Perry The Cynic                                             <A HREF="../../../mailman/listinfo/g4.html">perry at cynic.org</A>
+To a blind optimist, an optimistic realist must seem like an Accursed Cynic.
+---------------------------------------------------------------------------
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="007598.html">[G4] How to Change from Entourage to Mail
+</A></li>
+	<LI>Next message: <A HREF="007600.html">[G4] FTP via Airport Extreme
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7599">[ date ]</a>
+              <a href="thread.html#7599">[ thread ]</a>
+              <a href="subject.html#7599">[ subject ]</a>
+              <a href="author.html#7599">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

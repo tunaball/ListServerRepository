@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] sudo -s behavior changed in 10.5?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20sudo%20-s%20behavior%20changed%20in%2010.5%3F&In-Reply-To=f05210601c3e57aa3301e%40%5B192.168.0.109%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003045.html">
+   <LINK REL="Next"  HREF="003052.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] sudo -s behavior changed in 10.5?</H1>
+    <B>Robar Philip</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20sudo%20-s%20behavior%20changed%20in%2010.5%3F&In-Reply-To=f05210601c3e57aa3301e%40%5B192.168.0.109%5D"
+       TITLE="[X-Unix] sudo -s behavior changed in 10.5?">philip.robar at gmail.com
+       </A><BR>
+    <I>Sat Feb 23 01:50:58 PST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003045.html">[X-Unix] sudo -s behavior changed in 10.5?
+</A></li>
+        <LI>Next message: <A HREF="003052.html">[X-Unix] MySQL and PhpMyAdmin
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3047">[ date ]</a>
+              <a href="thread.html#3047">[ thread ]</a>
+              <a href="subject.html#3047">[ subject ]</a>
+              <a href="author.html#3047">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Feb 22, 2008, at 11:26 PM, John Baltutis wrote:
+&gt;<i> On 02/22/08, Phillip Burk &lt;<A HREF="../../../mailman/listinfo/x-unix.html">philburk at mac.com</A>&gt; wrote:
+</I>&gt;&gt;<i> On Feb 21, 2008, at 9:47 AM, Eric F Crist wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> It may be something in your setup - it works fine for me.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> OK, then, which files should I be checking?  The only ones associated
+</I>&gt;&gt;<i> with the shell (bash) environment that I know of are /etc/profile, /
+</I>&gt;&gt;<i> etc/bashrc, /etc/sudoers and /etc/environment.  /etc/environment
+</I>&gt;&gt;<i> doesn't exist and editing the others seems to have no effect  
+</I>&gt;&gt;<i> whatsoever.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> It's definitely a puzzle and it affects both the imaged 10.5.2
+</I>&gt;&gt;<i> machines at my office as well as my personal 10.5.2 Mac Book Pro that
+</I>&gt;&gt;<i> was not imaged but rather manually installed.
+</I>
+
+&gt;<i> I set up everything in ~.bash_profile (creating it, if it doesn't  
+</I>&gt;<i> exist).
+</I>
+This is too simplistic of an answer as it ignores the distinction  
+between login/non-login, interactive/non-interactive, and restricted  
+shell invocations. See bash(1) for details or a good bash reference  
+and/or tutorial. In particular see the &quot;INVOCATION&quot; section of the  
+bash man page.
+
+/etc/environment is an X Window System environment variable and is not  
+relevant to this discussion.
+
+/etc/bashrc is there for example only and I would argue that Apple  
+reading it by default is bad form as it's documented in neither the  
+man page nor the bash manual. (<A HREF="http://www.faqs.org/docs/bashman/bashref.html#SEC_Top">http://www.faqs.org/docs/bashman/bashref.html#SEC_Top</A> 
+) Plus its being included by /etc/profile violates the separation  
+between interactive and non-interactive shells. Looks like I need to  
+file a bug.
+
+Phil
+
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003045.html">[X-Unix] sudo -s behavior changed in 10.5?
+</A></li>
+	<LI>Next message: <A HREF="003052.html">[X-Unix] MySQL and PhpMyAdmin
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3047">[ date ]</a>
+              <a href="thread.html#3047">[ thread ]</a>
+              <a href="subject.html#3047">[ subject ]</a>
+              <a href="author.html#3047">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

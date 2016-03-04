@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Who command
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Who%20command&In-Reply-To=DF1DE1CA-53C1-11D9-BCFB-00306583718C%40mchsi.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001412.html">
+   <LINK REL="Next"  HREF="001416.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Who command</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Who%20command&In-Reply-To=DF1DE1CA-53C1-11D9-BCFB-00306583718C%40mchsi.com"
+       TITLE="[X-Unix] Who command">magill at mcgillsociety.org
+       </A><BR>
+    <I>Thu Dec 23 15:24:54 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001412.html">[X-Unix] Who command
+</A></li>
+        <LI>Next message: <A HREF="001416.html">[X-Unix] Re: X-Unix Digest, Vol 4, Issue 5
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1424">[ date ]</a>
+              <a href="thread.html#1424">[ thread ]</a>
+              <a href="subject.html#1424">[ subject ]</a>
+              <a href="author.html#1424">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 21 Dec, 2004, at 21:33, Andrew Hartung wrote:
+&gt;<i> The output from the 'who' command has a double entry I've never seen 
+</I>&gt;<i> before:
+</I>&gt;<i>
+</I>&gt;<i> ahartung console  Dec 21 20:21
+</I>&gt;<i> ahartung ttyp1    Dec 21 20:27
+</I>&gt;<i>
+</I>Both &quot;who&quot; and &quot;w&quot; collect information from the &quot;utmp&quot; file -- which is 
+never to be considered to contain accurate information!  While usually 
+correct, utmp and wtmp files are NOT guaranteed. &quot;last&quot; which depends 
+upon &quot;lastlog&quot; has a similar problem.
+
+Basically, there are many ways in which these files have initial 
+entries made in them, but not the matching termination entries. ... 
+application crashes being the most common.
+
+My stystem currently shows the following (the current time is 17:01, 23 
+Dec 2004):
+
+  dun&gt; w
+16:59  up 1 day, 21:47, 3 users, load averages: 0.21 0.14 0.13
+USER     TTY      FROM              LOGIN@  IDLE WHAT
+magill   console  -                10:03    6:56 -
+magill   p1       -                16:50       - w
+magill   p2       -                Tue20   1day  -
+
+  dun&gt; who -H
+USER     LINE     WHEN          FROM
+magill   console  Dec 23 10:03
+magill   ttyp1    Dec 23 16:50
+magill   ttyp2    Dec 21 20:08
+
+Note that I only have on terminal window open at this point.
+However as soon as I open a second window, I get:
+
+dun&gt; w
+17:02  up 1 day, 21:50, 3 users, load averages: 0.18 0.14 0.13
+USER     TTY      FROM              LOGIN@  IDLE WHAT
+magill   console  -                10:03    6:59 -
+magill   p1       -                16:50       - -bash
+magill   p2       -                17:02       - w
+
+  dun&gt; who -H
+USER     LINE     WHEN          FROM
+magill   console  Dec 23 10:03
+magill   ttyp1    Dec 23 16:50
+magill   ttyp2    Dec 23 17:02
+
+What this is telling you is that the &quot;p&quot; entries are simply a table 
+whose entries get overwritten as new data is added. If no new data is 
+added, the entries don't get overwritten.
+
+Why don't they get overwritten?
+
+One primary reason is that folks do not &quot;exit&quot; their terminal (shell) 
+sessions before they quit the Terminal application. Since the shell 
+never exits, but is killed by the parent process (terminal.app) the 
+termination processing of the shell which would update wtmp never 
+happens.
+
+Note: /var/log/wtmp and lastlog are (or should be) cycled by &quot;periodic&quot; 
+- monthly or weekly.
+/var/run/utmp is cycled at every reboot.
+
+As for the &quot;console&quot; entry&quot; -- /dev/console is the interface to 
+/Applications/Utilities/Console.app and the file 
+/library/log/console/console.log and 
+/library/log/console/&lt;userid&gt;/console.log
+
+In my case, looking at the latter file, the console log was opened at:
+2004-12-23 10:03:08 -0500
+When a number of entries were written to the file by my Keyspan Media 
+remote the first time I logged in this morning.
+
+If you launch the console.app the first window that will open by 
+default is the &quot;console.log&quot; window.
+This shows you some &quot;stuff&quot; about your login window. There usually is 
+not much.
+
+The &quot;tty&quot; entries, &quot;p1,&quot; &quot;p2,&quot; etc., are created &quot;solely&quot; by unix 
+processes, normally only by terminal windows spawned from terminal.app 
+(or remote logins via ssh).
+
+  = = =
+&gt;<i> I've never seen the console entry before when using this command. I 
+</I>&gt;<i> have been have some odd problems with Mail.app and a start-up hang; 
+</I>&gt;<i> could this double log on be an indicator of my problems?
+</I>
+Startup hangs and problems with mail.app are probably related to 
+communications.
+
+If you are configured to be &quot;always on&quot; (as opposed to dial-up) there 
+are a number of times during the startup process when the system looks 
+for information on the net - If your DSL or Cable modem ISP happens to 
+be having communications problems, these queries need to time-out 
+before the startup process continues.  The same is true of Mail. When 
+you launch it, it attempts to contact your POP or IMAP server to check 
+for new mail, and to update any indexes involved. If your network link 
+is down, or if it is simply congested (i.e. slow), this process can 
+take an extended period of time.
+
+In the Console app, if you go to view/show log list, you can find a 
+whole collection of logs which might point fingers at problems.
+
+But a lot more information is needed to determine what your startup 
+hang might actually be.
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]-Tru64 5.1a
+# XP1000  [Alpha 21264-3 (EV6) - 256 meg] Open BSD 3.6
+# XP1000  [Alpha 21264-A (EV 6.7) - 384 meg] FreeBSD
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001412.html">[X-Unix] Who command
+</A></li>
+	<LI>Next message: <A HREF="001416.html">[X-Unix] Re: X-Unix Digest, Vol 4, Issue 5
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1424">[ date ]</a>
+              <a href="thread.html#1424">[ thread ]</a>
+              <a href="subject.html#1424">[ subject ]</a>
+              <a href="author.html#1424">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

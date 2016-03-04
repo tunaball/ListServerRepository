@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Servers] Mounting Home Directories with SMB via LDAP
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20Mounting%20Home%20Directories%20with%20SMB%20via%20LDAP&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000054.html">
+   <LINK REL="Next"  HREF="000057.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Servers] Mounting Home Directories with SMB via LDAP</H1>
+    <B>Beck, Forrest</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20Mounting%20Home%20Directories%20with%20SMB%20via%20LDAP&In-Reply-To="
+       TITLE="[X Servers] Mounting Home Directories with SMB via LDAP">forrest at da.org
+       </A><BR>
+    <I>Fri Jan 24 16:23:30 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000054.html">[X Servers] Mounting Home Directories with SMB via LDAP
+</A></li>
+        <LI>Next message: <A HREF="000057.html">[X Servers] Mounting Home Directories with SMB via LDAP
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#55">[ date ]</a>
+              <a href="thread.html#55">[ thread ]</a>
+              <a href="subject.html#55">[ subject ]</a>
+              <a href="author.html#55">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks.  
+
+Do you think that it would be wise to have the client authenticate to my OSX server and the OSX server contain a Network Netinfo Database (for wgm) and Authenticate the clients against AD?  This would fix alot of problems I am having, if it is at all possible.......  The only thing I am looking to accomplish is to centralize my password database.  I still want to keep my functionality of wgm.  i guess I should also let you know, I am doing this all without Services for Unix.  I am hoping that when my SFU order comes in it will tie up alot of loose ends.
+
+Forrest
+
+
+---------- Original Message ----------------------------------
+From: Michael Bartosh &lt;<A HREF="../../../mailman/listinfo/x-servers.html">mbartosh at mac.com</A>&gt;
+Reply-To: &quot;Mac OS X Servers&quot; &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers at lists.themacintoshguy.com</A>&gt;
+Date:  Fri, 24 Jan 2003 15:40:14 -0800
+
+&gt;<i>
+</I>&gt;<i>Note:
+</I>&gt;<i>
+</I>&gt;&gt;<i>Currently my Mounts CN contains the following:
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i>1&gt; cn: Faculty:/Users; 
+</I>&gt;<i>
+</I>&gt;<i>This means the share will be mounted at /Network/Servers/Faculty/Users/
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i> 1&gt; userSharedFolderOther: /Network/Servers/faculty/Users/fbeck; 
+</I>&gt;<i>
+</I>&gt;<i>...But this says the user's path will be below
+</I>&gt;<i>
+</I>&gt;<i>/Network/Servers/faculty
+</I>&gt;<i>
+</I>&gt;<i>...Note the capitalization.
+</I>&gt;<i>
+</I>&gt;<i>FWIW I'm not a fan of poluting enterprise directory with mounts classes. It's easiest to keep them in a peer Open Directory (this way you can use wgm to manage mac specific data, if that's your thing).
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>----------
+</I>&gt;<i>Check out the Mac OS X email list FAQ
+</I>&gt;<i><A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i>To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>To switch to the DIGEST mode, E-mail to &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>Need help from a real person? Try.  &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>----------
+</I>&gt;<i>$14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your Mac ISP 
+</I>&gt;<i>Serious Mac Internet Solutions From NineWire!   <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i>DVIator   | Run Dual ADC displays on your G4 or just one on an older Mac! 
+</I>&gt;<i>Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>   Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000054.html">[X Servers] Mounting Home Directories with SMB via LDAP
+</A></li>
+	<LI>Next message: <A HREF="000057.html">[X Servers] Mounting Home Directories with SMB via LDAP
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#55">[ date ]</a>
+              <a href="thread.html#55">[ thread ]</a>
+              <a href="subject.html#55">[ subject ]</a>
+              <a href="author.html#55">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

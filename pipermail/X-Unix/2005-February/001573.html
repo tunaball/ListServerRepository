@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Unlinking a file... illegal characters?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Unlinking%20a%20file...%20illegal%20characters%3F&In-Reply-To=20050225160652.GT1240%404321.tv">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001572.html">
+   <LINK REL="Next"  HREF="001575.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Unlinking a file... illegal characters?</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Unlinking%20a%20file...%20illegal%20characters%3F&In-Reply-To=20050225160652.GT1240%404321.tv"
+       TITLE="[X-Unix] Unlinking a file... illegal characters?">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Fri Feb 25 09:07:32 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001572.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+        <LI>Next message: <A HREF="001575.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1573">[ date ]</a>
+              <a href="thread.html#1573">[ thread ]</a>
+              <a href="subject.html#1573">[ subject ]</a>
+              <a href="author.html#1573">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Feb 25, 2005, at 4:06 pm, Brian Medley wrote:
+
+&gt;<i> On Fri, Feb 25, 2005 at 09:37:58AM +0000, Stroller wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Thank you - this is exactly what I had in mind, except that I =
+</I>couldn't
+&gt;&gt;<i> see the -1 option in `man ls`.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Unfortunately:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>   $ ls legoland/
+</I>&gt;&gt;<i>   e??y??y??y??vk??????..??????
+</I>&gt;&gt;<i>   339 /Volumes/CLEARLIGHT/foo $ ls -lFa -i legoland/
+</I>&gt;&gt;<i>   ls: e??y??y??y??vk??????..??????: File name too long
+</I>&gt;&gt;<i>   total 128
+</I>&gt;&gt;<i>   731381 drwxrwxrwx  1 stroller  admin  32768 22 Nov 03:27 ./
+</I>&gt;&gt;<i>   772975 drwxrwxrwx  1 stroller  admin  32768 25 Feb 01:53 ../
+</I>&gt;&gt;<i>   $
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Can you suggest any other way to find the inode number?
+</I>&gt;<i>
+</I>&gt;<i> Might try this:
+</I>&gt;<i>
+</I>&gt;<i> #! /usr/bin/perl
+</I>&gt;<i>
+</I>&gt;<i> use strict;
+</I>&gt;<i> use warnings;
+</I>&gt;<i>
+</I>&gt;<i> MAIN:
+</I>&gt;<i> {
+</I>&gt;<i>     opendir(DIR, &quot;.&quot;) or die &quot;error: opendir: $!\n&quot;;
+</I>&gt;<i>     my @files =3D readdir(DIR);
+</I>&gt;<i>     close(DIR);
+</I>&gt;<i>
+</I>&gt;<i>     foreach my $f (@files) {
+</I>&gt;<i>         my $inode =3D (stat($f))[1];
+</I>&gt;<i>
+</I>&gt;<i>         print &quot;$f: $inode\n&quot;;
+</I>&gt;<i>     }
+</I>&gt;<i>
+</I>&gt;<i>     exit 0;
+</I>&gt;<i> }
+</I>
+:<i>(
+</I>
+   $ ./inodes.pl
+   .: 224409
+   ..: 25105
+   .bash_history: 225308
+   .bash_profile: 605048
+   .bashrc: 605034
+   .CFUserTextEncoding: 224419
+   .DS_Store: 224620
+   .irssi: 1032016
+   .lpoptions: 624653
+   .mplayer: 583432
+   .profile: 445041
+   .ssh: 224985
+   .Trash: 224614
+   .viminfo: 1034823
+   Applications: 605115
+   Desktop: 224420
+   Documents: 224422
+   foo: 420235
+   Library: 224410
+   Movies: 224460
+   Music: 224462
+   Pictures: 224464
+   Public: 224466
+   Sites: 224470
+   Stuff: 400314
+   inodes.pl: 1035526
+   $ cd /Volumes/CLEARLIGHT/foo/legoland
+   $ ~stroller/inodes.pl
+   .: 731381
+   ..: 772975
+   Use of uninitialized value in concatenation (.) or string at=20
+/Users/stroller/inodes.pl line 15.
+   e=ED=A5y=ED=C3y=ED=C3y=ED=C3vk=89=C6=A5=89=C6=A5..=89=C6=A5=89=C6=A5:
+   $
+
+Would I be over-optimistic if I suggested that a different quoting=20
+method in the script might fix this? As you suggested, I thought about=20=
+
+writing a program to do the job, but I never got as far in C as=20
+file-handling.
+
+Stroller.
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001572.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+	<LI>Next message: <A HREF="001575.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1573">[ date ]</a>
+              <a href="thread.html#1573">[ thread ]</a>
+              <a href="subject.html#1573">[ subject ]</a>
+              <a href="author.html#1573">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

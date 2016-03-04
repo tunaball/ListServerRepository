@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Can't erase SanDisk
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Can%27t%20erase%20SanDisk&In-Reply-To=p06240505c117800adc4d%40%5B66.183.234.242%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="014613.html">
+   <LINK REL="Next"  HREF="014616.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Can't erase SanDisk</H1>
+    <B>Mark Gilchrist</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Can%27t%20erase%20SanDisk&In-Reply-To=p06240505c117800adc4d%40%5B66.183.234.242%5D"
+       TITLE="[X4U] Can't erase SanDisk">markg5 at myrealbox.com
+       </A><BR>
+    <I>Sun Aug 27 11:01:32 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="014613.html">[X4U] Can't erase SanDisk
+</A></li>
+        <LI>Next message: <A HREF="014616.html">[X4U] What program can import dvd's?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14614">[ date ]</a>
+              <a href="thread.html#14614">[ thread ]</a>
+              <a href="subject.html#14614">[ subject ]</a>
+              <a href="author.html#14614">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 27 Aug 2006, at 18:08, Rod Duncan wrote:
+
+&gt;<i> Might be built into the firmware of the drive.
+</I>
+My SanDisk Cruzer micro is a single partition straight out of the  
+box; I don't know how to find the Firmware version though ... System  
+profiler doesn't give me anything
+
+&gt;&gt;<i> We can't figure out a way using Disk Utility to erase that volume.  
+</I>&gt;&gt;<i> Doing a Get Info on it indicates it is locked (as is the SanDisk  
+</I>&gt;&gt;<i> icon as well).
+</I>
+I take it that you've unchecked the box that say &quot;locked&quot;? Yes I  
+thought you had, but I had to check!
+
+Hang on a mo'
+
+My Cruzer doesn't have a box to say it's locked! Even more confusing!  
+And I've just run &quot;Chlorine&quot; (from anomalyindustries.net) and I can't  
+even lock it that way!
+
+What are you &quot;Get Info&quot;ing on - the files or the actual drive?
+
+&gt;&gt;<i> All the Disk Utility options are greyed out.
+</I>
+
+I've just tried something really scary: you could try the Terminal!
+
+Open a terminal window and type
+
+&quot;diskutil list&quot;
+
+Look for the name of your disk - it will have a number like disk4 or  
+something
+
+Then type
+
+&quot;diskutil eraseDisk HFS+ (name) disk4&quot;
+
+Notes: The HFS+ gives you a normal HFS+ file system
+The name is the name you want it to be called - and don't use the  
+brackets. According to the help bit ...
+
+eraseDisk             (Erase an existing disk, removing all volumes)
+
+and
+
+Disk Utility Tool
+Usage:  diskutil eraseDisk [format] newName
+         &lt;OS9Drivers, APMFormat, MBRFormat, GPTFormat&gt;
+         [Mount Point|Disk Identifier|Device Node]
+Completely erase an existing disk.  All volumes on this disk will be  
+destroyed.
+Ownership of the affected disk is required.
+Format is the specific filesystem name you want to erase it as. (HFS 
++, etc.)
+You cannot erase the boot disk.
+Example: diskutil eraseDisk UFS UntitledUFS disk3
+Valid filesystems: &quot;Case-sensitive HFS+&quot; &quot;Journaled HFS+&quot; &quot;Case- 
+sensitive Journaled HFS+&quot; &quot;HFS+&quot; &quot;HFS&quot; &quot;MS-DOS FAT32&quot; &quot;MS-DOS FAT16&quot;  
+&quot;MS-DOS&quot; &quot;MS-DOS FAT12&quot; &quot;UFS&quot; &quot;Linux&quot; &quot;Swap&quot;
+
+( I like the &quot;You cannot erase the boot disk&quot;!)
+
+I tried it, on a memory stick ... but I removed all other drives  
+first just in case.
+
+It might work but I cannot promise - or be held responsible!
+
+-- 
+M
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="014613.html">[X4U] Can't erase SanDisk
+</A></li>
+	<LI>Next message: <A HREF="014616.html">[X4U] What program can import dvd's?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14614">[ date ]</a>
+              <a href="thread.html#14614">[ thread ]</a>
+              <a href="subject.html#14614">[ subject ]</a>
+              <a href="author.html#14614">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] compiling php
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20compiling%20php&In-Reply-To=504040188-1211886864-cardhu_decombobulator_blackberry.rim.net-369783288-%40bxe160.bisx.prod.on.blackberry">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003135.html">
+   <LINK REL="Next"  HREF="003137.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] compiling php</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20compiling%20php&In-Reply-To=504040188-1211886864-cardhu_decombobulator_blackberry.rim.net-369783288-%40bxe160.bisx.prod.on.blackberry"
+       TITLE="[X-Unix] compiling php">ecrist at secure-computing.net
+       </A><BR>
+    <I>Tue May 27 08:57:21 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003135.html">[X-Unix] compiling php
+</A></li>
+        <LI>Next message: <A HREF="003137.html">[X-Unix] compiling php
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3136">[ date ]</a>
+              <a href="thread.html#3136">[ thread ]</a>
+              <a href="subject.html#3136">[ subject ]</a>
+              <a href="author.html#3136">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On May 27, 2008, at 6:12 AM, Eric F Crist wrote:
+
+&gt;<i> The module is ignored because you need to add it to the PHP  
+</I>&gt;<i> Extensions config file. Add it there and I'm sure you'll be fine.
+</I>&gt;<i>
+</I>&gt;<i> -----Original Message-----
+</I>&gt;<i> From: Giovanni Cutolo &lt;<A HREF="../../../mailman/listinfo/x-unix.html">cutolo at unina.it</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> Hi all,
+</I>&gt;<i>
+</I>&gt;<i> I am trying to compile php 5.2.6 on my MacBook (Leopard), since I need
+</I>&gt;<i> the pgsql module that is not in the php build shipped by Apple (why?,
+</I>&gt;<i> if I may ask). So I try with
+</I>&gt;<i>
+</I>...
+
+&gt;<i> that is: compiling the module itself (using the source of php 5.2.5)
+</I>&gt;<i> and then moving it to the appropriate (?) location in the pre-existing
+</I>&gt;<i> installation of php. No avail: the module is simply ignored.
+</I>
+
+To elaborate from my earlier email, I found this is /private/etc/ 
+php.ini.default, about 50% of the way down:
+
+; If you wish to have an extension loaded automatically, use the  
+following
+; syntax:
+;
+;   extension=modulename.extension
+;
+; For example, on Windows:
+;
+;   extension=msql.dll
+;
+; ... or under UNIX:
+;
+;   extension=msql.so
+;
+; Note that it should be the name of the module only; no directory  
+information
+; needs to go here.  Specify the location of the extension with the
+; extension_dir directive above.
+
+That file, in it's entirety, is a good read for configuring PHP.   
+You'll need to make sure your module gets loaded in the correct  
+location, as well as adding the appropriate extension=foo line.
+
+HTH
+
+-----
+Eric F Crist
+Secure Computing Networks
+
+
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003135.html">[X-Unix] compiling php
+</A></li>
+	<LI>Next message: <A HREF="003137.html">[X-Unix] compiling php
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3136">[ date ]</a>
+              <a href="thread.html#3136">[ thread ]</a>
+              <a href="subject.html#3136">[ subject ]</a>
+              <a href="author.html#3136">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

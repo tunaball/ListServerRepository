@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] automounting when a network becomes available
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20automounting%20when%20a%20network%20becomes%20available&In-Reply-To=20050315002749.GB26003%40sage.che.pitt.edu">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001624.html">
+   <LINK REL="Next"  HREF="001629.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] automounting when a network becomes available</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20automounting%20when%20a%20network%20becomes%20available&In-Reply-To=20050315002749.GB26003%40sage.che.pitt.edu"
+       TITLE="[X-Unix] automounting when a network becomes available">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Tue Mar 15 02:41:45 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001624.html">[X-Unix] automounting when a network becomes available
+</A></li>
+        <LI>Next message: <A HREF="001629.html">[X-Unix] automounting when a network becomes available
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1625">[ date ]</a>
+              <a href="thread.html#1625">[ thread ]</a>
+              <a href="subject.html#1625">[ subject ]</a>
+              <a href="author.html#1625">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Mar 15, 2005, at 12:27 am, John Harrold wrote:
+
+&gt;<i> I lug my powerbook around with me from school and home. I'd like to 
+</I>&gt;<i> set it
+</I>&gt;<i> up such that when a specific network becomes available nfs or samba 
+</I>&gt;<i> volumes
+</I>&gt;<i> are automatically mounted. Either that or the volumes are automatically
+</I>&gt;<i> mounted when I enter directories. I'm not sure how to go about doing 
+</I>&gt;<i> this.
+</I>
+I'd do it with a bash script, run as a cron job every few minutes.
+
+It's a bit early in the morning for me to be writing Bash, so this 
+won't work:
+
+   #!/bin/bash
+   if `smbclient -L mysever`
+   then
+      mkdir /Volumes/sharename
+      mount_smbfs  //servername/sharename /Volumes/sharename
+   fi
+
+Unfortunately, shares mounted in Volumes by `mount_smbfs` don't seem to 
+appear in the Finder, so one of us'll have to find another way to do 
+this - either Applescript or a Darwin CLI interface I can't find right 
+now. This seems quite interesting &amp; useful to me, so I might well have 
+a crack at it.
+
+Stroller.
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001624.html">[X-Unix] automounting when a network becomes available
+</A></li>
+	<LI>Next message: <A HREF="001629.html">[X-Unix] automounting when a network becomes available
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1625">[ date ]</a>
+              <a href="thread.html#1625">[ thread ]</a>
+              <a href="subject.html#1625">[ subject ]</a>
+              <a href="author.html#1625">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Apps] Sending large attachments
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-apps%40listserver.themacintoshguy.com?Subject=%5BX-Apps%5D%20Sending%20large%20attachments&In-Reply-To=list-14650291%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001540.html">
+   <LINK REL="Next"  HREF="001542.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Apps] Sending large attachments</H1>
+    <B>Gretchen Hayman</B> 
+    <A HREF="mailto:x-apps%40listserver.themacintoshguy.com?Subject=%5BX-Apps%5D%20Sending%20large%20attachments&In-Reply-To=list-14650291%40mail.ninewire.com"
+       TITLE="[X-Apps] Sending large attachments">gretchen at sedl.org
+       </A><BR>
+    <I>Mon Jul 12 12:28:59 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001540.html">[X-Apps] Sending large attachments
+</A></li>
+        <LI>Next message: <A HREF="001542.html">iDVD Woes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1541">[ date ]</a>
+              <a href="thread.html#1541">[ thread ]</a>
+              <a href="subject.html#1541">[ subject ]</a>
+              <a href="author.html#1541">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jul 11, 2004, at 09:16, Ed Graf wrote:
+
+&gt;<i> I wish to send an email with a largish attachment (CD image that when 
+</I>&gt;<i> stuffed is just under 300 meg).
+</I>
+If you're running your own mail server, go check the logs, as there is 
+probably a message in it about this.  If you're not running your own 
+server, I would imagine there is a conversation going on something like 
+this, where CLIENT is your MUA (e.g. Mail, Eudora, Entourage) and 
+SERVER is the mail server that your mail goes through:
+
+CLIENT:   EHLO &lt;hostname&gt;
+SERVER:   200 Hello, &lt;hostname&gt;
+CLIENT:   MAIL FROM:&lt;someone&gt; SIZE=999999999
+SERVER:   552 That's too big.  Go away.
+CLIENT:   QUIT
+
+Depending on the client and that you use and the MTA you are talking 
+to, you may or may not get some feedback about this failing.  If you 
+are using Mail, which version are you using?  When I try sending a 10MB 
+file, I get a nice bounce notice from my mail server saying that the 
+message size exceeds the allowed limit for the server I'm trying to 
+use.
+
+I don't think you're going to find many (if any) MTAs that will pass 
+e-mail as large as you want to send; some MUAs won't handle it either.  
+E-mail is really for sending small amounts of data, not vast quantities 
+like 300MB.  Snail mail a CD of this data, if you have no way to share 
+via FTP, HTTP or rsyncX.
+
+Hope this helps,
+
+Gretchen
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001540.html">[X-Apps] Sending large attachments
+</A></li>
+	<LI>Next message: <A HREF="001542.html">iDVD Woes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1541">[ date ]</a>
+              <a href="thread.html#1541">[ thread ]</a>
+              <a href="subject.html#1541">[ subject ]</a>
+              <a href="author.html#1541">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-apps.html">More information about the X-Apps
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

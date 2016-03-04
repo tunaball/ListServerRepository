@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Trying to get rid of unwanted files
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Trying%20to%20get%20rid%20of%20unwanted%20files&In-Reply-To=list-12750605%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000788.html">
+   <LINK REL="Next"  HREF="000791.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Trying to get rid of unwanted files</H1>
+    <B>Cloyce D. Spradling</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Trying%20to%20get%20rid%20of%20unwanted%20files&In-Reply-To=list-12750605%40mail.ninewire.com"
+       TITLE="[X-Unix] Trying to get rid of unwanted files">cloyce+xunix at headgear.org
+       </A><BR>
+    <I>Thu May 13 13:56:54 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000788.html">[X-Unix] How to change the MAC address
+</A></li>
+        <LI>Next message: <A HREF="000791.html">[X-Unix] Trying to get rid of unwanted files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#790">[ date ]</a>
+              <a href="thread.html#790">[ thread ]</a>
+              <a href="subject.html#790">[ subject ]</a>
+              <a href="author.html#790">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Fri, May 14, 2004 at 06:49:20AM +1000, Mark Gibson wrote:
+
+:<i> OK. I'll give rm -f * a go (as I don't want to confirm each deletion).
+</I>
+You won't need -f if you aren't using the 'rm' alias that comes standard.
+Invoke it with its full path (probably /bin/rm or /usr/bin/rm; no OSX system
+on hand to check), and no confirmation will be needed.
+
+You probably _do_ want the -f, though, in order to make it return success
+no matter what happens.
+
+:<i> My concern is that there seems to be an upper limit to the number of 
+</I>:<i> files that rm can cope with.
+</I>
+It's actually a shell issue.  To get around it, use xargs:
+
+  cd &lt;CUPS dir&gt;; ls | xargs rm -f
+
+Of course, one you've started using the Dreaded Pipe, there's no reason
+to stop there:
+
+  cd &lt;CUPS dir&gt;; ls | grep -v '^tmp$' | xargs rm -rf
+
+and get that directory _REALLY_ clean!
+
+--
+Cloyce
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000788.html">[X-Unix] How to change the MAC address
+</A></li>
+	<LI>Next message: <A HREF="000791.html">[X-Unix] Trying to get rid of unwanted files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#790">[ date ]</a>
+              <a href="thread.html#790">[ thread ]</a>
+              <a href="subject.html#790">[ subject ]</a>
+              <a href="author.html#790">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

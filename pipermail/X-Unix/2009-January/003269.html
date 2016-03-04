@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Sed - remove line numbers
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Sed%20-%20remove%20line%20numbers&In-Reply-To=7A6D8A05-B4A1-4A60-9648-B4589D5F9E8E%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003268.html">
+   <LINK REL="Next"  HREF="003270.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Sed - remove line numbers</H1>
+    <B>Charles Howse</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Sed%20-%20remove%20line%20numbers&In-Reply-To=7A6D8A05-B4A1-4A60-9648-B4589D5F9E8E%40secure-computing.net"
+       TITLE="[X-Unix] Sed - remove line numbers">chowse at charter.net
+       </A><BR>
+    <I>Sat Jan 24 15:37:50 PST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003268.html">[X-Unix] Sed - remove line numbers
+</A></li>
+        <LI>Next message: <A HREF="003270.html">[X-Unix] Sed - remove line numbers
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3269">[ date ]</a>
+              <a href="thread.html#3269">[ thread ]</a>
+              <a href="subject.html#3269">[ subject ]</a>
+              <a href="author.html#3269">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Filipp, Eric,
+Thanks very much!  The result of the work is an Applescript that opens  
+a new Mail message and inserts a random tagline from that 100 line  
+text file...
+
+--
+Thanks,
+Charles
+
+Reasons it's great to be a guy...
+Car mechanics tell you the truth.
+
+--
+Thanks,
+Charles
+
+Reasons it's great to be a guy...
+You can rationalize any behavior with the handy phrase &quot;F*#k it!&quot;
+
+--
+Thanks,
+Charles
+
+Signs you're getting old...
+6:00 AM is when you get up, not when you go to bed.
+
+--
+Thanks,
+Charles
+
+Signs you're getting old...
+Your car insurance goes down and your payments go up.
+
+
+
+On Jan 24, 2009, at 5:21 PM, Eric F Crist wrote:
+
+&gt;<i> On Jan 24, 2009, at 5:09 PM, Filipp Lepalaan wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Probably not the most efficient way of doing it, but:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> cat filename | sed -E 's/^[0-9]+\. //' | tr -s '\n'
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> The only good way I can see to clean this up would be to do the  
+</I>&gt;<i> following:
+</I>&gt;<i>
+</I>&gt;<i> sed -E 's/^[0-9]+\. //' filename | tr -s '\n'
+</I>&gt;<i>
+</I>&gt;<i> No reason to cat, since sed can pull the file in, and it will output  
+</I>&gt;<i> it, by default to stdout, where you can grab it with tr.
+</I>&gt;<i>
+</I>&gt;<i> ---
+</I>&gt;<i> Eric Crist
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003268.html">[X-Unix] Sed - remove line numbers
+</A></li>
+	<LI>Next message: <A HREF="003270.html">[X-Unix] Sed - remove line numbers
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3269">[ date ]</a>
+              <a href="thread.html#3269">[ thread ]</a>
+              <a href="subject.html#3269">[ subject ]</a>
+              <a href="author.html#3269">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

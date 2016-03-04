@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] FW: G4 Disk Capacity Limit - Real or Logical?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20FW%3A%20G4%20Disk%20Capacity%20Limit%20-%20Real%20or%20Logical%3F&In-Reply-To=C4D75D8C.58362%25jomph%40xs4all.nl">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="017919.html">
+   <LINK REL="Next"  HREF="017918.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] FW: G4 Disk Capacity Limit - Real or Logical?</H1>
+    <B>shopdog at mac.com</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20FW%3A%20G4%20Disk%20Capacity%20Limit%20-%20Real%20or%20Logical%3F&In-Reply-To=C4D75D8C.58362%25jomph%40xs4all.nl"
+       TITLE="[G4] FW: G4 Disk Capacity Limit - Real or Logical?">shopdog at mac.com
+       </A><BR>
+    <I>Fri Sep 19 07:37:38 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="017919.html">[G4] MDD G4 has some quirks
+</A></li>
+        <LI>Next message: <A HREF="017918.html">[G4] Re: G4 Digest, Vol 49, Issue 9
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17917">[ date ]</a>
+              <a href="thread.html#17917">[ thread ]</a>
+              <a href="subject.html#17917">[ subject ]</a>
+              <a href="author.html#17917">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello everyone:
+
+I have a PowerMac G4 AGP Graphics machine (the same one I've posted  
+about before).
+
+This machine, I believe, has the 128GB disk capacity limit, at least  
+according to Apple's official stance.
+
+I have a few questions that some of the gurus on this list might be  
+able to answer:
+
+1) I have the machine currently set up with 2 IDE hard drives, stacked  
+in &quot;Position 3&quot; in the chassis: the original drive, 20GB (actually  
+19.1GB), and a second, 120GB (actually 115GB). These are RAIDed  
+together via OS X, into a 133.9GB combined drive.  I've been using the  
+machine in this manner for over 2 years, with no ill effects.  Does  
+this mean that there is a physical disc capacity limit of 128GB limit,  
+but not a limit as to how many such 128GB physical discs can be RAIDed  
+together to span their combined capacity?
+
+2) There are two other spaces for hard drives, &quot;Position 2&quot; and  
+&quot;Position 1&quot;.  Although originally meant for SCSI drives, I believe  
+these will accommodate IDE drives, but it is my understanding that the  
+IDE bus will only allow 2 IDE drives in the chain.  Is that true?  If  
+it is not true, what cables to I need to get in order to chain the two  
+new drives to the previous 2?  If it is true, then how do I add 2 more  
+drives?  With a PCI card, I suppose?  Are there any other ways?
+
+3) Is it possible to purchase brackets to use in &quot;Position 2&quot; and  
+&quot;Position 1&quot;, so that those Positions will accommodate stacked drives,  
+the way &quot;Position 3&quot; does?  Of course, I could pull the brackets from  
+another G4 (which I don't have), but can the bracket be purchased  
+separately, or is there a suitable substitute bracket?
+
+3) Has anyone successfully replaced the internal Zip drive with an IDE  
+drive?
+
+4) Regarding these &quot;hardware hack&quot; commands on a previous post (from  
+J.M.P. Hissell) to enable the higher disk capacity:
+
+&gt;<i> ATA-2 commands:
+</I>&gt;<i>
+</I>&gt;<i> #! /bin/bash -
+</I>&gt;<i>
+</I>&gt;<i> if kextstat -lb com.apple.driver.KeyLargoATA | grep -F -q  
+</I>&gt;<i> KeyLargoATA &amp;&amp;
+</I>&gt;<i> ! ioreg -rStp IODeviceTree -n ata-2 -w0 | grep -F -q lba-48
+</I>&gt;<i> then read -rd $'\000' nvram nvramrc &lt;&lt;&lt; &quot;`nvram nvramrc 2&gt;&amp;-`&quot;
+</I>&gt;<i> if sudo nvram 'use-nvramrc?=true' \
+</I>&gt;<i> nvramrc='dev mac-io/ata-2 0 0 &quot; lba-48&quot; property device-end'&quot;  
+</I>&gt;<i> $nvramrc&quot;
+</I>&gt;<i> then echo '48-bit LBA support will be enabled on the next reboot.'; fi
+</I>&gt;<i> fi
+</I>
+How are these commands actually implemented?  I've never attempted  
+anything like this before.  If anyone could provide some detail, that  
+would be great.
+
+Thanks, everyone!
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="017919.html">[G4] MDD G4 has some quirks
+</A></li>
+	<LI>Next message: <A HREF="017918.html">[G4] Re: G4 Digest, Vol 49, Issue 9
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17917">[ date ]</a>
+              <a href="thread.html#17917">[ thread ]</a>
+              <a href="subject.html#17917">[ subject ]</a>
+              <a href="author.html#17917">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

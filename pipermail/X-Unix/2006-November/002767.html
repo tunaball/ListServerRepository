@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: [PB] Compiling on MacOS X (source was written for
+	winblow...) [moved from PB]
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20%5BPB%5D%20Compiling%20on%20MacOS%20X%20%28source%20was%20written%20for%0A%09winblow...%29%20%5Bmoved%20from%20PB%5D&In-Reply-To=B694841D-4970-48A8-BD49-EDF7EDC9458C%40gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="002768.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: [PB] Compiling on MacOS X (source was written for
+	winblow...) [moved from PB]</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20%5BPB%5D%20Compiling%20on%20MacOS%20X%20%28source%20was%20written%20for%0A%09winblow...%29%20%5Bmoved%20from%20PB%5D&In-Reply-To=B694841D-4970-48A8-BD49-EDF7EDC9458C%40gmail.com"
+       TITLE="[X-Unix] Re: [PB] Compiling on MacOS X (source was written for
+	winblow...) [moved from PB]">ecrist at secure-computing.net
+       </A><BR>
+    <I>Sat Nov 25 18:48:11 PST 2006</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="002768.html">[X-Unix] Re: [PB] Compiling on MacOS X (source was written for
+	winblow...) [moved from PB]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2767">[ date ]</a>
+              <a href="thread.html#2767">[ thread ]</a>
+              <a href="subject.html#2767">[ subject ]</a>
+              <a href="author.html#2767">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Nov 25, 2006, at 3:25 PM, Philip J Robar wrote:
+
+&gt;<i>
+</I>&gt;<i> On Nov 25, 2006, at 1:09 PM, Eric F Crist wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Please help me understand the following output:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> root# gcc *.c -o test
+</I>&gt;&gt;<i> /usr/bin/ld: Undefined symbols:
+</I>&gt;&gt;<i> _mysql_close
+</I>&gt;&gt;<i> _mysql_error
+</I>&gt;&gt;<i> _mysql_fetch_row
+</I>&gt;&gt;<i> _mysql_field_count
+</I>&gt;&gt;<i> _mysql_free_result
+</I>&gt;&gt;<i> _mysql_init
+</I>&gt;&gt;<i> _mysql_num_fields
+</I>&gt;&gt;<i> _mysql_num_rows
+</I>&gt;&gt;<i> _mysql_options
+</I>&gt;&gt;<i> _mysql_query
+</I>&gt;&gt;<i> _mysql_real_connect
+</I>&gt;&gt;<i> _mysql_select_db
+</I>&gt;&gt;<i> _mysql_store_result
+</I>&gt;&gt;<i> _mysql_use_result
+</I>&gt;&gt;<i> collect2: ld returned 1 exit status
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> How do I fix this?
+</I>&gt;<i>
+</I>&gt;<i> You don't have the MySQL database installed, or at least it's  
+</I>&gt;<i> libraries are not in the default/specified location(s). Assuming  
+</I>&gt;<i> that you're trying to compile an Open Source program, it should  
+</I>&gt;<i> include a README or INSTALL file that talks about the program's  
+</I>&gt;<i> dependencies.
+</I>&gt;<i>
+</I>&gt;<i> By the way, a better place to ask questions like this would be the  
+</I>&gt;<i> themacintoshguy's x-unix mailing list.
+</I>&gt;<i>
+</I>&gt;<i> Also, if this is an Open Source program, you might also check to  
+</I>&gt;<i> see if it is supported in MacPorts, (<A HREF="http://www.macports.org/">http://www.macports.org/</A>),  
+</I>&gt;<i> which would simplify getting, compiling, installing and resolving  
+</I>&gt;<i> dependency issues like this.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Phil
+</I>&gt;<i> --
+</I>
+It's not an open-source project as we would know it.  It's actually a  
+world of warcraft mod that requires and .exe to parse some log  
+files.  It's written in C, and I've moved the mysql sources/includes  
+into a location that my compiler can find, I think.  It looks to me  
+like most things are working, should I install mysql on my laptop?
+
+Thanks for the help.
+
+
+-----
+Eric F Crist
+Secure Computing Networks
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="002768.html">[X-Unix] Re: [PB] Compiling on MacOS X (source was written for
+	winblow...) [moved from PB]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2767">[ date ]</a>
+              <a href="thread.html#2767">[ thread ]</a>
+              <a href="subject.html#2767">[ subject ]</a>
+              <a href="author.html#2767">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

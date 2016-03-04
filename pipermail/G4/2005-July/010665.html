@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Setting the computer's clock
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Setting%20the%20computer%27s%20clock&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010661.html">
+   <LINK REL="Next"  HREF="010667.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Setting the computer's clock</H1>
+    <B>Steve Goldstein</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Setting%20the%20computer%27s%20clock&In-Reply-To="
+       TITLE="[G4] Setting the computer's clock">sng at cox.net
+       </A><BR>
+    <I>Wed Jul 20 11:58:08 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010661.html">[G4] av software
+</A></li>
+        <LI>Next message: <A HREF="010667.html">[G4] Setting the computer's clock
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10665">[ date ]</a>
+              <a href="thread.html#10665">[ thread ]</a>
+              <a href="subject.html#10665">[ subject ]</a>
+              <a href="author.html#10665">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>They get their time from their [restricted access?]  Stratum Two NTP [Network Time Protocol] server:  time.apple.com:
+
+Start: 7/20/05    2:33:42 PM 
+;; Query: time.apple.com ,type = ANY , class = ANY
+
+;; ANSWERS:
+time.apple.com	445	IN	A	17.254.0.31
+time.apple.com	445	IN	A	17.254.0.26
+time.apple.com	445	IN	A	17.254.0.27
+time.apple.com	445	IN	A	17.254.0.28
+
+;; AUTHORITY RECORDS:
+apple.com	398304	IN	NS	nserver.apple.com
+apple.com	398304	IN	NS	nserver2.apple.com
+apple.com	398304	IN	NS	nserver3.apple.com
+apple.com	398304	IN	NS	nserver4.apple.com
+apple.com	398304	IN	NS	nserver.asia.apple.com
+apple.com	398304	IN	NS	nserver.euro.apple.com
+
+;; ADDITIONAL RECORDS:
+nserver.asia.apple.com	167012	IN	A	203.120.14.5
+nserver.euro.apple.com	61878	IN	A	17.72.133.64
+nserver.apple.com	407523	IN	A	17.254.0.50
+
+See: <A HREF="http://ntp.isc.org/bin/view/Main/WebHome">http://ntp.isc.org/bin/view/Main/WebHome</A>
+
+Note also: <A HREF="http://ntp.isc.org/bin/view/Support/KnownOsIssues#Section_9.2.4.">http://ntp.isc.org/bin/view/Support/KnownOsIssues#Section_9.2.4.</A>
+
+9.2.4. MacOS X
+The MacOS X method of enabling ntpd is to go to the Apple menu option System Preferences..., then into the Date &amp; Time sheet, then go to the Date &amp; Time sub-panel, and click on the radio button labeled Set Date &amp; Time automatically, which allows you to select a time server to use from a drop-down, or you can fill in the name of your own preferred time server.
+Note that every time you exit this preference sheet, the system will re-write your /etc/ntp.conf based on the information you have provided.
+	*	Even if you have provided your own /etc/ntp.conf, there is no way to prevent the system from re-writing it based on the content of this field.
+	*	Even if you don't make any changes to this preference, just by going into this sub-panel and exiting back out, MacOS X will re-write your /etc/ntp.conf.
+Unfortunately, when MacOS X creates the /etc/ntp.conf file, it will do nasty things like appending &quot;minpoll 12 maxpoll 17&quot; to every single line, including those lines which do not have a &quot;server&quot; directive.
+	*	Worse, any line that had more than two arguments will get the rest truncated and replaced by &quot;minpoll 12 maxpoll 17&quot;.
+	*	All lines will get the directive &quot;server&quot; prepended to them, even if they weren't originally server directives.
+Here's a sample input /etc/ntp.conf file:
+         tos minclock 4 minsane 4
+         server time.euro.apple.com iburst
+         server de.pool.ntp.org iburst
+         server fr.pool.ntp.org iburst
+         server nl.pool.ntp.org iburst
+         server uk.pool.ntp.org iburst
+         server 0.europe.pool.ntp.org iburst
+         server 1.europe.pool.ntp.org iburst
+         server 2.europe.pool.ntp.org iburst
+         server 127.127.1.0              # Local clock
+         fudge 127.127.1.0 stratum 14    # Undisciplined
+         statsdir /var/ntp/ntpstats
+         filegen peerstats file peerstats type day enable
+         filegen loopstats file loopstats type day enable
+         filegen clockstats file clockstats type day enable
+Here's what MacOS X will munge this into:
+         server tos minpoll 12 maxpoll 17
+         server time.euro.apple.com minpoll 12 maxpoll 17
+         server de.pool.ntp.org minpoll 12 maxpoll 17
+         server fr.pool.ntp.org minpoll 12 maxpoll 17
+         server nl.pool.ntp.org minpoll 12 maxpoll 17
+         server uk.pool.ntp.org minpoll 12 maxpoll 17
+         server 0.europe.pool.ntp.org minpoll 12 maxpoll 17
+         server 1.europe.pool.ntp.org minpoll 12 maxpoll 17
+         server 2.europe.pool.ntp.org minpoll 12 maxpoll 17
+         server 127.127.1.0              # minpoll 12 maxpoll 17
+         server fudge minpoll 12 maxpoll 17
+         server statsdir minpoll 12 maxpoll 17
+         server filegen minpoll 12 maxpoll 17
+         server filegen minpoll 12 maxpoll 17
+         server filegen minpoll 12 maxpoll 17
+The result is totally bogus, won't parse, and will prevent ntpd from starting up.
+If you're going to maintain your own /etc/ntp.conf file, you need to make sure you save a copy to something like /etc/ntp.conf.save.europe (or whatever you prefer), so that you can restore a good working copy after MacOS X munges it beyond recognition.
+You will probably also want to change the code in /System/Library/StartupItems/NetworkTime/NetworkTime so as to remove the call to ntpdate and change the invocation of ntpd to include a &quot;-g&quot; option on the command line.
+Otherwise, you will probably want to start and stop ntpd manually, outside of the control of MacOS X.
+
+
+At 8:37 AM -0700 7/20/05, Harry Freeman wrote:
+&gt;<i>Perhaps only Apple, or someone that has worked for apple can tell us, but the system probably get the time from either WWV, WWVB and WWVH.
+</I></PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010661.html">[G4] av software
+</A></li>
+	<LI>Next message: <A HREF="010667.html">[G4] Setting the computer's clock
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10665">[ date ]</a>
+              <a href="thread.html#10665">[ thread ]</a>
+              <a href="subject.html#10665">[ subject ]</a>
+              <a href="author.html#10665">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

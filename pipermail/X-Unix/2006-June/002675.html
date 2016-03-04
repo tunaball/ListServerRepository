@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] BBEdit Unicode UTF-8 Encoding Prefix Makes Scripts Fail
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20BBEdit%20Unicode%20UTF-8%20Encoding%20Prefix%20Makes%20Scripts%20Fail&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002674.html">
+   <LINK REL="Next"  HREF="002676.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] BBEdit Unicode UTF-8 Encoding Prefix Makes Scripts Fail</H1>
+    <B>Jerry Krinock</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20BBEdit%20Unicode%20UTF-8%20Encoding%20Prefix%20Makes%20Scripts%20Fail&In-Reply-To="
+       TITLE="[X-Unix] BBEdit Unicode UTF-8 Encoding Prefix Makes Scripts Fail">jerry at ieee.org
+       </A><BR>
+    <I>Fri Jun 30 08:42:34 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002674.html">[X-Unix] Spotlight indexing Maildir from alternative MUA
+</A></li>
+        <LI>Next message: <A HREF="002676.html">[X-Unix] BBEdit Unicode UTF-8 Encoding Prefix Makes Scripts Fail
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2675">[ date ]</a>
+              <a href="thread.html#2675">[ thread ]</a>
+              <a href="subject.html#2675">[ subject ]</a>
+              <a href="author.html#2675">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I write just enough perl and shell scripts to be dangerous.  Sometimes they
+just &quot;don't work&quot;, and I finally discovered why.
+
+If you save a perl script (or any text file) using BBEdit with Unicode UTF-8
+encoding, it will add three bytes at the beginning
+(0xefbbff), before your shebang.  I guess this identifies the encoding.
+BBEdit does not show these characters.
+
+When you try and run such a script, the system barfs on it: &quot;Can't execute
+binary file&quot;, &quot;Server error&quot; if it's remote, etc.
+
+I wonder if I'm the only one which has ever been bit by this...Maybe this is
+one of the reasons why all you smart guys use vi?
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002674.html">[X-Unix] Spotlight indexing Maildir from alternative MUA
+</A></li>
+	<LI>Next message: <A HREF="002676.html">[X-Unix] BBEdit Unicode UTF-8 Encoding Prefix Makes Scripts Fail
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2675">[ date ]</a>
+              <a href="thread.html#2675">[ thread ]</a>
+              <a href="subject.html#2675">[ subject ]</a>
+              <a href="author.html#2675">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

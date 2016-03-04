@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [iBook] Second Hand Mac woes
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BiBook%5D%20Second%20Hand%20Mac%20woes&In-Reply-To=84CD996E-6694-11D9-B370-000A95ED991E%40neostrada.pl">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011407.html">
+   <LINK REL="Next"  HREF="011417.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[iBook] Second Hand Mac woes</H1>
+    <B>Larry Kollar</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BiBook%5D%20Second%20Hand%20Mac%20woes&In-Reply-To=84CD996E-6694-11D9-B370-000A95ED991E%40neostrada.pl"
+       TITLE="[iBook] Second Hand Mac woes">kollar at alltel.net
+       </A><BR>
+    <I>Fri Jan 14 19:42:06 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011407.html">[iBook] Second Hand Mac woes
+</A></li>
+        <LI>Next message: <A HREF="011417.html">[iBook] Second Hand Mac woes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11409">[ date ]</a>
+              <a href="thread.html#11409">[ thread ]</a>
+              <a href="subject.html#11409">[ subject ]</a>
+              <a href="author.html#11409">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Alex Santos 100MB Neostrada Mail wrote:
+
+&gt;<i> I had an idea, if I startup with apple S, can I use a unix command to 
+</I>&gt;<i> create a new user and login the newly created user from the login 
+</I>&gt;<i> window?
+</I>
+Yes. You might also be able to see what accounts are set up on the 
+computer &amp; change those passwords.
+
+In single-user mode, type:
+
+	nidump passwd .
+
+If NetInfo is working, it will list all the accounts configured. There 
+are a bunch of accounts created by the system for the system, but they 
+all look like this:
+
+	larry:xyreRxk:501:20::0:0:Larry Kollar:/Users/larry:/bin/tcsh
+
+(I replaced the encrypted password with my own gibberish for this 
+example.)
+
+That first number in the string of four, the UID, is the one you're 
+interested in. Any account with a UID over 500 is a user account. 
+Pretend for a moment it's my computer you bought:
+
+	# passwd larry
+	Changing password for larry.
+	New password:
+
+Type anything you want for a new password, then type it again when the 
+Mac prompts you for it.
+
+Now that you've fixed it, press Ctrl-D to exit single-user mode, then 
+log in with the user name and changed password. Presto, you are in OSX. 
+Chances are, that account is an &quot;admin&quot; account, so you can create your 
+own account using the normal System Preferences dialogs.
+--
+Larry Kollar    k  o  l  l  a  r  @  a  l  l  t  e  l  .  n  e  t
+&quot;The hardest part of all this is the part that requires thinking.&quot;
+-- Paul Tyson, on xml-doc 
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011407.html">[iBook] Second Hand Mac woes
+</A></li>
+	<LI>Next message: <A HREF="011417.html">[iBook] Second Hand Mac woes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11409">[ date ]</a>
+              <a href="thread.html#11409">[ thread ]</a>
+              <a href="subject.html#11409">[ subject ]</a>
+              <a href="author.html#11409">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

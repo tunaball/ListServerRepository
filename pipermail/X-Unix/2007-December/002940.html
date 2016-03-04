@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] SSH and GUI apps
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20SSH%20and%20GUI%20apps&In-Reply-To=C38C4355.2E4A4%25dkoller%40mindspring.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002929.html">
+   <LINK REL="Next"  HREF="002936.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] SSH and GUI apps</H1>
+    <B>Mac Daddy</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20SSH%20and%20GUI%20apps&In-Reply-To=C38C4355.2E4A4%25dkoller%40mindspring.com"
+       TITLE="[X-Unix] SSH and GUI apps">macdaddee at gmail.com
+       </A><BR>
+    <I>Tue Dec 18 21:04:21 PST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002929.html">[X-Unix] SSH and GUI apps
+</A></li>
+        <LI>Next message: <A HREF="002936.html">Screen Sharing to Windows (was Re: [X-Unix] SSH and GUI apps)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2940">[ date ]</a>
+              <a href="thread.html#2940">[ thread ]</a>
+              <a href="subject.html#2940">[ subject ]</a>
+              <a href="author.html#2940">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>VNC will let you see the whole Linux Desktop in a Timbuktu-kind of  
+way. Check out the &quot;Remote Desktop&quot; System preference RHEL 5 has under  
+one of its menus. YOUR PASSWORD IS NOT ENCRYPTED OVER THE CONNECTION  
+THOUGH! A security risk. Bad! BAD! You can get around that with ssh  
+port forwarding, which is a little more complicated than I will go  
+into here. Go a-googling :)
+
+But you can run the apps directly by themselves, which is what I was  
+doing in my post. Just do an 'ssh -Y &lt;username&gt;@&lt;machine&gt;' from the  
+Leopard Terminal. Then run the app from the command line. ssh encrypts  
+your password, and all the data, so the security problem isn't there.
+
+For example, type 'firefox' (or even better, 'firefox &amp;', which will  
+let you get your cli back. Try both and you'll see), and firefox under  
+X11, from the RHEL5 box you're logged into, will run, sending its  
+display to your Mac. If you're a newbie, a good way to really &quot;get&quot;  
+this concept is to try a file download in this browser and watch as  
+the Save dialog presents you the file system of the remote machine,  
+NOT your Mac. It really is running there. You're just getting the  
+window.
+
+In Linux, the entire &quot;Finder&quot; and the apps are all in X-Windows, so  
+you can do the same with any app (try typing 'nautilus &amp;'). Not quite  
+a need for the entirety of the Desktop when you can do this. If you  
+can launch it from the command line when you're sitting AT the box, X- 
+Windows will let you launch it from ANY command line on ANY box.
+
+- md
+
+
+On Dec 17, 2007, at 3:16 PM, Don Koller wrote:
+
+&gt;<i> Can I ssh (from my Mac -- Terminal) to my new Red Hat Linux 5  
+</I>&gt;<i> server, and run graphical interface programs (like remote desktop&#8212;if  
+</I>&gt;<i> there is such a thing; or Firefox)?
+</I>&gt;<i> I&#8217;m running Leopard 10.5.1 on a dual 2.3GHz G5, with Xcode from  
+</I>&gt;<i> Leopard installed.
+</I>&gt;<i> I&#8217;m a Linux newbie.
+</I>&gt;<i>
+</I>&gt;<i> Don Koller
+</I>&gt;<i> Rockville, MD
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <A HREF="../attachments/20071219/e2048ac2/attachment.html">http://listserver.themacintoshguy.com/pipermail/x-unix/attachments/20071219/e2048ac2/attachment.html</A>
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002929.html">[X-Unix] SSH and GUI apps
+</A></li>
+	<LI>Next message: <A HREF="002936.html">Screen Sharing to Windows (was Re: [X-Unix] SSH and GUI apps)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2940">[ date ]</a>
+              <a href="thread.html#2940">[ thread ]</a>
+              <a href="subject.html#2940">[ subject ]</a>
+              <a href="author.html#2940">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

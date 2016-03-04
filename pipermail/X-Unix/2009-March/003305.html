@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] find and (c|m)time
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20find%20and%20%28c%7Cm%29time&In-Reply-To=d2ecb10b0903281600s449ffd49rc01c110c25af6b96%40mail.gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003304.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] find and (c|m)time</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20find%20and%20%28c%7Cm%29time&In-Reply-To=d2ecb10b0903281600s449ffd49rc01c110c25af6b96%40mail.gmail.com"
+       TITLE="[X-Unix] find and (c|m)time">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Sun Mar 29 02:31:24 PDT 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003304.html">[X-Unix] find and (c|m)time
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3305">[ date ]</a>
+              <a href="thread.html#3305">[ thread ]</a>
+              <a href="subject.html#3305">[ subject ]</a>
+              <a href="author.html#3305">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 19:00 -0400 28/3/09, TjL wrote:
+&gt;<i>If I am looking for files in a specific folder which were CREATED more
+</I>&gt;<i>than 24 hours ago, should I be using
+</I>&gt;<i>find . -type f -ctime +1 -print
+</I>&gt;<i>or
+</I>&gt;<i>find . -type f -mtime +1 -print
+</I>&gt;<i>AFAICT, 'atime' is reset by using 'find' itself, which I don't want.
+</I>
+Yes, atime is last accessed time.
+
+&gt;<i>For as long as I've used Un*x, you'd think I'd know this one, but 
+</I>&gt;<i>I'm not sure.
+</I>&gt;<i>      -ctime n
+</I>&gt;<i>              True if the difference between the time of last change 
+</I>&gt;<i>of file status information and
+</I>&gt;<i>              the time find was started, rounded up to the next full 
+</I>&gt;<i>24-hour period, is n 24-hour
+</I>&gt;<i>              periods.
+</I>&gt;<i>      -mtime n
+</I>&gt;<i>              True if the difference between the file last 
+</I>&gt;<i>modification time and the time find was
+</I>&gt;<i>              started, rounded up to the next full 24-hour period, is 
+</I>&gt;<i>n 24-hour periods.
+</I>
+ctime is most likely right. The creation time is not kept under Unix, 
+and I don't know it the HFS+ created time can be accessed by 
+modifications to standard Unix commands. ctime will be the time of 
+the latest chmod, chown, ..., which will be the creation time if none 
+of the metedata has been changed since.
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+HP-UX specialist of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x-unix.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003304.html">[X-Unix] find and (c|m)time
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3305">[ date ]</a>
+              <a href="thread.html#3305">[ thread ]</a>
+              <a href="subject.html#3305">[ subject ]</a>
+              <a href="author.html#3305">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

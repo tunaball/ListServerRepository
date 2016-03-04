@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Loop structure syntax question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Loop%20structure%20syntax%20question&In-Reply-To=1D446700-0068-4C2A-833D-8E290E564F6D%40gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002475.html">
+   <LINK REL="Next"  HREF="002477.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Loop structure syntax question</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Loop%20structure%20syntax%20question&In-Reply-To=1D446700-0068-4C2A-833D-8E290E564F6D%40gmail.com"
+       TITLE="[X-Unix] Loop structure syntax question">magill at mcgillsociety.org
+       </A><BR>
+    <I>Wed Nov 23 17:17:58 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002475.html">[X-Unix] Loop structure syntax question
+</A></li>
+        <LI>Next message: <A HREF="002477.html">[X-Unix] Re: Loop structure syntax question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2476">[ date ]</a>
+              <a href="thread.html#2476">[ thread ]</a>
+              <a href="subject.html#2476">[ subject ]</a>
+              <a href="author.html#2476">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 23 Nov, 2005, at 16:07, Mac Daddy wrote:
+&gt;<i> This thing is, this script NEVER fails when run by hand! Only when  
+</I>&gt;<i> run in cron.
+</I>&gt;<i> I have the script set to run in  #!/bin/csh because this 'foreach'  
+</I>&gt;<i> loop structure above fails if I run it under /bin/sh or /bin/bash  
+</I>&gt;<i> and the code was given to me by someone else who uses csh on Solaris.
+</I>
+This is a common problem for folks new to &quot;multi-lingual&quot; scripting  
+and cron.
+
+Jobs run from cron have no meaningful environment. They actually have  
+the very basic, default, root environment but the primary thing which  
+is missing is a &quot;full&quot; $PATH. The default root environment is  
+different from the default user environment.
+
+That means that unless you either specify the full path of a command,  
+the command will not be found.
+
+If you throw some diagnostic (display) commands into the script, and  
+write std-err to a disk file, you will quickly discover just what is  
+&quot;not found.&quot;
+
+(Put the line &quot;set -xv&quot; in the csh script to turn on printing and  
+expansion.
+(Use something like:
+# test periodic stuff
+# 32 17 * * * root periodic daily &gt; /var/log/periodic.out1 2&gt;&amp;1
+
+to capture the output of the script in the file &quot;/var/log periodic.out1&quot;
+2&gt;&amp;1 writes both standard error and standard out into standard out.
+
+The other thing which trips up folks writing for cron for the first  
+time, is WHERE your script is executing from. Everyone always assumes  
+that it is executing &quot;where they want it to execute.&quot; But in reality,  
+it executes as root from root's home directory (which is not /).
+
+There are several ways to solve your problem.
+
+&quot;man 5 crontab&quot; will give you most of the techniques.
+
+T.T.F.N.
+William H. Magill
+# Beige G3 [Rev A motherboard - 300 MHz 768 Meg] OS X 10.2.8
+# Flat-panel iMac (2.1) [800MHz - Super Drive - 768 Meg] OS X 10.4.1
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg] Tru64 5.1a
+# XP1000  [Alpha 21264-3 (EV6) - 256 meg] FreeBSD 5.3
+# XP1000  [Alpha 21264-A (EV 6.7) - 384 meg] FreeBSD 5.3
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002475.html">[X-Unix] Loop structure syntax question
+</A></li>
+	<LI>Next message: <A HREF="002477.html">[X-Unix] Re: Loop structure syntax question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2476">[ date ]</a>
+              <a href="thread.html#2476">[ thread ]</a>
+              <a href="subject.html#2476">[ subject ]</a>
+              <a href="author.html#2476">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

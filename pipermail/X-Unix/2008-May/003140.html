@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to REALLY kill Finder.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20REALLY%20kill%20Finder.&In-Reply-To=2D266F7F-57E3-460F-B601-3DCBD5189910%40myrealbox.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003131.html">
+   <LINK REL="Next"  HREF="003141.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to REALLY kill Finder.</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20REALLY%20kill%20Finder.&In-Reply-To=2D266F7F-57E3-460F-B601-3DCBD5189910%40myrealbox.com"
+       TITLE="[X-Unix] How to REALLY kill Finder.">macmonster at myrealbox.com
+       </A><BR>
+    <I>Tue May 27 17:14:50 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003131.html">[X-Unix] How to REALLY kill Finder.
+</A></li>
+        <LI>Next message: <A HREF="003141.html">[X-Unix] How to REALLY kill Finder.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3140">[ date ]</a>
+              <a href="thread.html#3140">[ thread ]</a>
+              <a href="subject.html#3140">[ subject ]</a>
+              <a href="author.html#3140">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 23 May 2008, at 20:49, Stroller wrote:
+&gt;<i> ...
+</I>&gt;<i> If I look for the process using `ps` I see the process name in  
+</I>&gt;<i> brackets:
+</I>&gt;<i>   $ ps -wwwwwx | grep Finder
+</I>&gt;<i>   5958 ?? E 0:00.00 (Finder)
+</I>&gt;<i>   $
+</I>&gt;<i> I presume the brackets indicate that Finder is behaving badly, but  
+</I>&gt;<i> `man ps` doesn't seem to explain exactly what they mean. Apparently  
+</I>&gt;<i> the &quot;E&quot; in the above line indicates that the process is trying to  
+</I>&gt;<i> exit.
+</I>&gt;<i>
+</I>&gt;<i> Anyway, I can't get any further using `kill -9 5958` or anything  
+</I>&gt;<i> else I've tried so far.
+</I>
+I got an update to this on the Apple discussion forums, and I suspect  
+the author has assessed the problem correctly:
+
+   --------------------------------------------------------------
+   Strolls wrote: *Obviously I could sort this by rebooting my computer,
+   but I really don't want to do that right now.* Can anyone suggest
+   a way of *properly* killing this process so that Finder can restart?
+
+   Hi, I think you might be stuck with a restart. I believe that when
+   you get the process name in parentheses in the process listing,
+   your process is hung waiting for something from the kernel. Of
+   course, I can't find that information now, but I've seen it quite
+   a bit in with Final Cut Pro.
+
+   Something would happen to the SCSI RAID controller, then Final Cut
+   Pro would hang or crash, but it wouldn't re-launch. A quick look
+   at the running processes showed an entry for Final Cut, but with
+   parentheses around it. It was unkillable, even with sudo, and a
+   restart was all I could do.
+
+   In some cases, normal shutdowns were also impossible, and I had no
+   choice but to hold down the power switch to kill the machine. I'd
+   usually give it 5 or 10 minutes just to be sure, though. But that
+   could have been related to the SCSI controllers, too.
+
+   Since networking and some of the file sharing stuff runs at the
+   kernel level, it's possible that force-quitting the Finder caused
+   a problem in the kernel that will require a restart to fix.
+
+   charlie
+   --------------------------------------------------------------
+   To view or respond to this message, visit
+   &lt;<A HREF="http://discussions.apple.com/thread.jspa?">http://discussions.apple.com/thread.jspa?</A> 
+messageID=7265139#7265139&gt; To
+   view the full topic, visit:
+   &lt;<A HREF="http://discussions.apple.com/thread.jspa?threadID=1532060">http://discussions.apple.com/thread.jspa?threadID=1532060</A>&gt;
+
+I actually made the restart yesterday, because I needed to rummage  
+around in some folders and stuff. I did indeed finally have to hold  
+down the power switch in order to induce the restart.
+
+Stroller.
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003131.html">[X-Unix] How to REALLY kill Finder.
+</A></li>
+	<LI>Next message: <A HREF="003141.html">[X-Unix] How to REALLY kill Finder.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3140">[ date ]</a>
+              <a href="thread.html#3140">[ thread ]</a>
+              <a href="subject.html#3140">[ subject ]</a>
+              <a href="author.html#3140">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

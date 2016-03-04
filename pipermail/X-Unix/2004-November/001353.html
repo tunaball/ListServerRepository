@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: Putting Serial # into System Profiler 
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Putting%20Serial%20%23%20into%20System%20Profiler%20&In-Reply-To=4BB067C2-3ED0-11D9-BC13-000D932A32C4%40Web.DE">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001335.html">
+   <LINK REL="Next"  HREF="001357.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: Putting Serial # into System Profiler </H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Putting%20Serial%20%23%20into%20System%20Profiler%20&In-Reply-To=4BB067C2-3ED0-11D9-BC13-000D932A32C4%40Web.DE"
+       TITLE="[X-Unix] Re: Putting Serial # into System Profiler ">magill at mcgillsociety.org
+       </A><BR>
+    <I>Fri Nov 26 10:24:28 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001335.html">[X-Unix] Re: Putting Serial # into System Profiler 
+</A></li>
+        <LI>Next message: <A HREF="001357.html">[X-Unix] Re: Putting Serial # into System Profiler 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1353">[ date ]</a>
+              <a href="thread.html#1353">[ thread ]</a>
+              <a href="subject.html#1353">[ subject ]</a>
+              <a href="author.html#1353">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 25 Nov, 2004, at 05:53, Peter Dyballa wrote:
+&gt;<i> Am 24.11.2004 um 23:26 schrieb 
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">x-unix-request at listserver.themacintoshguy.com</A>:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Apple System Profiler displays the serial number in only about half of
+</I>&gt;&gt;<i> our company computers (mostly iMacs). How would one go about entering
+</I>&gt;&gt;<i> serial numbers into the Apple System Profiler for the rest of them?
+</I>&gt;<i>
+</I>&gt;<i> The serial number is stored in the OpenBoot PROM (OBP).
+</I>
+This is totally dependent on the particular box. I think it is true for 
+all new G4 and G5 machines, but I can't find any sort of confirmation 
+on that. Older Apple docs (circa 1999) indicate that there was no 
+reliable serial number recorded except that on the outside shipping 
+box. My beige G3 (an OF box) does not have the serial number.
+
+Some older Macs stored the serial number in the boot block on the hard 
+disk.
+
+&gt;<i> There probably is more than way to access it, the first one being 
+</I>&gt;<i> burning, the second a hard reset/PROM reset. The third one would be 
+</I>&gt;<i> Forth, the programming language of OBP while your 'in the OBP', having 
+</I>&gt;<i> booted while pressing alt-Apple-O-F (OF = Open Firmware). In this 
+</I>&gt;<i> state you can list devices, change working directories, set boot 
+</I>&gt;<i> paths, list your environment ...
+</I>&gt;<i>
+</I>&gt;<i> ioreg can retrieve quite a lot of settings from OBP. 'ioreg -l -p 
+</I>&gt;<i> IODeviceTree | grep IOPlatformSerialNumber' returns that serial 
+</I>&gt;<i> number.
+</I>&gt;<i>
+</I>&gt;<i> There are a few places with documentation on the OpenBoot PROM, coming 
+</I>&gt;<i> from DEC/Digital, adopted by Sun and Apple too. These two companies 
+</I>&gt;<i> have some docs around ...
+</I>
+I believe that &quot;OpenBoot PROM&quot; is in fact a Sun-ism; &quot;OpenFirmware&quot; and 
+&quot;OpenProm&quot; are the IEEE standard names, which Apple utilizes.
+<A HREF="http://www.openfirmware.org/">http://www.openfirmware.org/</A>
+
+You can find a number of Apple documents (including the SDK) by 
+searching the developer site for &quot;openfirmware&quot; and &quot;openprom&quot;.
+
+See also Apple's OF site:
+<A HREF="http://bananajr6000.apple.com/">http://bananajr6000.apple.com/</A>
+It has all of the Apple OF technotes.
+
+It's not clear to me if the Serial Number is now stored in the PROM, 
+but it if really is, then a prom reset should restore it. (CMD-OPT-P-R, 
+wait for the second beep.) However, it is in the OpenFirmware as 
+&quot;serial-number,&quot; and does not show up as an environmental variable.
+
+You can display it from OF by simply typing &quot;.properties.&quot;  (It does 
+not display via
+&quot;nvram -p&quot;.)
+
+
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001335.html">[X-Unix] Re: Putting Serial # into System Profiler 
+</A></li>
+	<LI>Next message: <A HREF="001357.html">[X-Unix] Re: Putting Serial # into System Profiler 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1353">[ date ]</a>
+              <a href="thread.html#1353">[ thread ]</a>
+              <a href="subject.html#1353">[ subject ]</a>
+              <a href="author.html#1353">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

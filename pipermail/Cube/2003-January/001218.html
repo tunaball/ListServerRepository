@@ -1,0 +1,356 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [CUBE] osx stuck on login
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20osx%20stuck%20on%20login&In-Reply-To=list-4478373%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001224.html">
+   <LINK REL="Next"  HREF="001220.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[CUBE] osx stuck on login</H1>
+    <B>ivan melicoff</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20osx%20stuck%20on%20login&In-Reply-To=list-4478373%40mail.ninewire.com"
+       TITLE="[CUBE] osx stuck on login">ivan at bbx.com.mx
+       </A><BR>
+    <I>Thu Jan 16 14:29:23 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001224.html">[CUBE] AW: [CUBE] AW: [CUBE] AW: [CUBE] Final Cut Express
+</A></li>
+        <LI>Next message: <A HREF="001220.html">[CUBE] osx stuck on login
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1218">[ date ]</a>
+              <a href="thread.html#1218">[ thread ]</a>
+              <a href="subject.html#1218">[ subject ]</a>
+              <a href="author.html#1218">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>finally after df-k I got the dev and it was disk0s5
+then ran 
+#mount -w -t hfs /dev/disk0s5/
+got this:
+
+usage: mount [-dfruvw] [-options] [-t ufs |  external_type ] special node
+              mount [adfruvw]  [-t ufs |  external_type ]
+               mount: [-dfruvw]  special  |  node
+
+
+
+on 1/16/03 11:21 AM, mike at <A HREF="../../../mailman/listinfo/cube.html">mfoverbo at int287.k12.mn.us</A> wrote:
+
+&gt;<i> try to run the command 'mount -a', which ought to mount your
+</I>&gt;<i> filesystems with proper permissions.  After that, you can run the 'ln
+</I>&gt;<i> -s /private/tmp /tmp' command described earlier, and it should work.
+</I>&gt;<i> If you get some funky error message with 'mount -a', try running 'fsck
+</I>&gt;<i> -y' and then run 'mount -a' again.
+</I>&gt;<i> 
+</I>&gt;<i> if that still doesn't work, you could try this (not sure if this is
+</I>&gt;<i> implemented correctly in osx):
+</I>&gt;<i> 
+</I>&gt;<i> # df -k
+</I>&gt;<i> 
+</I>&gt;<i> look for the first line to say something like /dev/disk0s9 -- my
+</I>&gt;<i> computer says disk0s9, yours may say something different.  Other
+</I>&gt;<i> columns say devfs, fdesc, etc.  You don't care about those right now.
+</I>&gt;<i> Force a mount of it with read/write priveleges.  Don't cut &amp; paste
+</I>&gt;<i> here, replace disk0s9 with whatever your df -k output is.
+</I>&gt;<i> 
+</I>&gt;<i> # mount -w -t hfs /dev/disk0s9 /
+</I>&gt;<i> 
+</I>&gt;<i> As far as entourage, I can't help you there: I don't have use for an
+</I>&gt;<i> office suite.   I reset my preferences by, umm, going back to where
+</I>&gt;<i> preferences are set in applications and changing them back to what they
+</I>&gt;<i> used to be.
+</I>&gt;<i> 
+</I>&gt;<i> mike
+</I>&gt;<i> 
+</I>&gt;<i> On Thursday, January 16, 2003, at 01:04 PM, ivan melicoff wrote:
+</I>&gt;<i> 
+</I>&gt;&gt;<i> I don't know anything about command lines so if anyone can give advice
+</I>&gt;&gt;<i> as if
+</I>&gt;&gt;<i> you were talking with a band new &quot;switcher&quot; it would really help :) I
+</I>&gt;&gt;<i> started using Macs in late 98 but only recently started with OSX so I
+</I>&gt;&gt;<i> don't
+</I>&gt;&gt;<i> know much.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> Anyway I think I did what you said Mike and this is what happened...
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> I booted while pressing CMD+s and after I got
+</I>&gt;&gt;<i> sh-2.05a#
+</I>&gt;&gt;<i> I typed  ln -s /private/tmp /tmp
+</I>&gt;&gt;<i> I got this response:
+</I>&gt;&gt;<i> ln:  /tmp/tmp: Read-only ile system
+</I>&gt;&gt;<i> sh-2.05a#
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> From where did you rename your library folder? from OS0? How did you
+</I>&gt;&gt;&gt;<i> reset
+</I>&gt;&gt;<i> your preferences? And what mail did you restore? I use (or used)
+</I>&gt;&gt;<i> Entourage...
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> thanks
+</I>&gt;&gt;<i> ivan
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> on 1/15/03 6:08 PM, mike at <A HREF="../../../mailman/listinfo/cube.html">mfoverbo at int287.k12.mn.us</A> wrote:
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> you might have problems with the symlink from /tmp to /private/tmp
+</I>&gt;&gt;&gt;<i> directory -- I heard rumors that safari munged that.
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> to restore it:
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> # ln -s /private/tmp /tmp
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> I've also had problems (earlier on in osx, around 10.1.0) with
+</I>&gt;&gt;&gt;<i> applications that corrupted the dock -- i'd login and it would log me
+</I>&gt;&gt;&gt;<i> right out again.  my situation degraded from there, and I ended up
+</I>&gt;&gt;&gt;<i> having to rename my library folder and reset all my preferences and
+</I>&gt;&gt;&gt;<i> mail by hand.
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> it's a bummer and it took time, but it got me back to working order.
+</I>&gt;&gt;&gt;<i> it might work for you too.
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> hope this helps,
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> mike
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> On Wednesday, January 15, 2003, at 07:48 PM, ivan melicoff wrote:
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> Booted into OS9 through installation CD and deleted all safari
+</I>&gt;&gt;&gt;&gt;<i> related
+</I>&gt;&gt;&gt;&gt;<i> files. Restarted into OSX and still same problems.
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> thnx
+</I>&gt;&gt;&gt;&gt;<i> ivan
+</I>&gt;&gt;&gt;&gt;<i> on 1/15/03 4:49 PM, Jeffrey M. Swiger at <A HREF="../../../mailman/listinfo/cube.html">N8NOE at comcast.net</A> wrote:
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> While booting hold ( CMD &amp; S ) and then Type ( FSCK -Y ) then hit
+</I>&gt;&gt;&gt;&gt;&gt;<i> enter.. Fist this will check your drive files for
+</I>&gt;&gt;&gt;&gt;&gt;<i> errors. At this point you could remove or replace the Safari
+</I>&gt;&gt;&gt;&gt;&gt;<i> Files?...
+</I>&gt;&gt;&gt;&gt;&gt;<i> What is all the trouble with Safari?..
+</I>&gt;&gt;&gt;&gt;&gt;<i> I've seen post about Jaguar and safari causing all these problems, I
+</I>&gt;&gt;&gt;&gt;&gt;<i> have no Idea why everyone is having
+</I>&gt;&gt;&gt;&gt;&gt;<i> troubles. I even tie my Newton into the Cube wirelessly and if
+</I>&gt;&gt;&gt;&gt;&gt;<i> anything
+</I>&gt;&gt;&gt;&gt;&gt;<i> is causing problems, the Cube is VERY
+</I>&gt;&gt;&gt;&gt;&gt;<i> RF sensitive! If any 70cm or 10M Signals is generated, the cube just
+</I>&gt;&gt;&gt;&gt;&gt;<i> shuts-off or reboots, It's annoying, but not
+</I>&gt;&gt;&gt;&gt;&gt;<i> much I can do about it... Check your file system, If you have to
+</I>&gt;&gt;&gt;&gt;&gt;<i> Remove
+</I>&gt;&gt;&gt;&gt;&gt;<i> it at this point, your ROOT as a default
+</I>&gt;&gt;&gt;&gt;&gt;<i> when you boot to FreeBSD this way!....
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> Jeff
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> On Wednesday, January 15, 2003, at 05:39 PM, ivan melicoff wrote:
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> Hey, have a huge problem. Can't acces OS X because it gets stuck in
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> the
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> &quot;loggin in&quot; window.  All I can do is acces the disk by booting into
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> OS9 from
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> an installation CD but that is no help since I can'to do anything
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> from
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> there. Also this login window appeared all of a sudden I never set
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> it
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> up in
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> the first place.
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> I am running  OS X 10.2 on a dual 1GHZ tower.
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> thansk for any pointers yoo can give.
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> ivan
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> ----------
+</I>&gt;&gt;&gt;&gt;&gt;<i> Check out the Cube email list FAQ
+</I>&gt;&gt;&gt;&gt;&gt;<i> <A HREF="http://www.themacintoshguy.com/lists/Cube.html">http://www.themacintoshguy.com/lists/Cube.html</A>
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;&gt;&gt;&gt;<i> To switch to the DIGEST mode, E-mail to
+</I>&gt;&gt;&gt;&gt;&gt;<i> &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;&gt;&gt;&gt;<i> Need help from a real person? Try.
+</I>&gt;&gt;&gt;&gt;&gt;<i> &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> ----------
+</I>&gt;&gt;&gt;&gt;&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your
+</I>&gt;&gt;&gt;&gt;&gt;<i> Mac ISP
+</I>&gt;&gt;&gt;&gt;&gt;<i> Serious Mac Internet Solutions From NineWire!
+</I>&gt;&gt;&gt;&gt;&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> T3Hub  |  3 Port USB Hub weighs less than an ounce!
+</I>&gt;&gt;&gt;&gt;&gt;<i> Dr. Bott|   &lt;<A HREF="http://www.drbott.com/prod/T3Hub.html">http://www.drbott.com/prod/T3Hub.html</A>&gt;
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> Cyberian   | Support this list when you buy at Outpost.com!
+</I>&gt;&gt;&gt;&gt;&gt;<i> Outpost    | <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> ADC Extension | Extend the built in cable of your flat panel by 10
+</I>&gt;&gt;&gt;&gt;&gt;<i> ft.
+</I>&gt;&gt;&gt;&gt;&gt;<i> Dr. Bott    |    &lt;<A HREF="http://www.drbott.com/prod/ADCExtension.html">http://www.drbott.com/prod/ADCExtension.html</A>&gt;
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> ----------
+</I>&gt;&gt;&gt;&gt;<i> Check out the Cube email list FAQ
+</I>&gt;&gt;&gt;&gt;<i> <A HREF="http://www.themacintoshguy.com/lists/Cube.html">http://www.themacintoshguy.com/lists/Cube.html</A>
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;&gt;&gt;<i> To switch to the DIGEST mode, E-mail to
+</I>&gt;&gt;&gt;&gt;<i> &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;&gt;&gt;<i> Need help from a real person? Try.
+</I>&gt;&gt;&gt;&gt;<i> &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> ----------
+</I>&gt;&gt;&gt;&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your
+</I>&gt;&gt;&gt;&gt;<i> Mac ISP
+</I>&gt;&gt;&gt;&gt;<i> Serious Mac Internet Solutions From NineWire!
+</I>&gt;&gt;&gt;&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> T3Hub  |  3 Port USB Hub weighs less than an ounce!
+</I>&gt;&gt;&gt;&gt;<i> Dr. Bott|   &lt;<A HREF="http://www.drbott.com/prod/T3Hub.html">http://www.drbott.com/prod/T3Hub.html</A>&gt;
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> Cyberian   | Support this list when you buy at Outpost.com!
+</I>&gt;&gt;&gt;&gt;<i> Outpost    | <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> ADC Extension | Extend the built in cable of your flat panel by 10
+</I>&gt;&gt;&gt;&gt;<i> ft.
+</I>&gt;&gt;&gt;&gt;<i> Dr. Bott    |    &lt;<A HREF="http://www.drbott.com/prod/ADCExtension.html">http://www.drbott.com/prod/ADCExtension.html</A>&gt;
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> ----------
+</I>&gt;&gt;&gt;<i> Check out the Cube email list FAQ
+</I>&gt;&gt;&gt;<i> <A HREF="http://www.themacintoshguy.com/lists/Cube.html">http://www.themacintoshguy.com/lists/Cube.html</A>
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;&gt;<i> To switch to the DIGEST mode, E-mail to
+</I>&gt;&gt;&gt;<i> &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;&gt;<i> Need help from a real person? Try.
+</I>&gt;&gt;&gt;<i> &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> ----------
+</I>&gt;&gt;&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your
+</I>&gt;&gt;&gt;<i> Mac ISP
+</I>&gt;&gt;&gt;<i> Serious Mac Internet Solutions From NineWire!
+</I>&gt;&gt;&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> T3Hub  |  3 Port USB Hub weighs less than an ounce!
+</I>&gt;&gt;&gt;<i> Dr. Bott|   &lt;<A HREF="http://www.drbott.com/prod/T3Hub.html">http://www.drbott.com/prod/T3Hub.html</A>&gt;
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> Cyberian   | Support this list when you buy at Outpost.com!
+</I>&gt;&gt;&gt;<i> Outpost    | <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> ADC Extension | Extend the built in cable of your flat panel by 10 ft.
+</I>&gt;&gt;&gt;<i> Dr. Bott    |    &lt;<A HREF="http://www.drbott.com/prod/ADCExtension.html">http://www.drbott.com/prod/ADCExtension.html</A>&gt;
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> ----------
+</I>&gt;&gt;<i> Check out the Cube email list FAQ
+</I>&gt;&gt;<i> <A HREF="http://www.themacintoshguy.com/lists/Cube.html">http://www.themacintoshguy.com/lists/Cube.html</A>
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;<i> To switch to the DIGEST mode, E-mail to
+</I>&gt;&gt;<i> &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;<i> Need help from a real person? Try.
+</I>&gt;&gt;<i> &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> ----------
+</I>&gt;&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your
+</I>&gt;&gt;<i> Mac ISP
+</I>&gt;&gt;<i> Serious Mac Internet Solutions From NineWire!
+</I>&gt;&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> T3Hub  |  3 Port USB Hub weighs less than an ounce!
+</I>&gt;&gt;<i> Dr. Bott|   &lt;<A HREF="http://www.drbott.com/prod/T3Hub.html">http://www.drbott.com/prod/T3Hub.html</A>&gt;
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> Cyberian   | Support this list when you buy at Outpost.com!
+</I>&gt;&gt;<i> Outpost    | <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> ADC Extension | Extend the built in cable of your flat panel by 10 ft.
+</I>&gt;&gt;<i> Dr. Bott    |    &lt;<A HREF="http://www.drbott.com/prod/ADCExtension.html">http://www.drbott.com/prod/ADCExtension.html</A>&gt;
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Cube email list FAQ
+</I>&gt;<i> <A HREF="http://www.themacintoshguy.com/lists/Cube.html">http://www.themacintoshguy.com/lists/Cube.html</A>
+</I>&gt;<i> 
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> 
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your Mac ISP
+</I>&gt;<i> Serious Mac Internet Solutions From NineWire!   <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i> 
+</I>&gt;<i> T3Hub  |  3 Port USB Hub weighs less than an ounce!
+</I>&gt;<i> Dr. Bott|   &lt;<A HREF="http://www.drbott.com/prod/T3Hub.html">http://www.drbott.com/prod/T3Hub.html</A>&gt;
+</I>&gt;<i> 
+</I>&gt;<i> Cyberian   | Support this list when you buy at Outpost.com!
+</I>&gt;<i> Outpost    | <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+</I>&gt;<i> 
+</I>&gt;<i> ADC Extension | Extend the built in cable of your flat panel by 10 ft.
+</I>&gt;<i> Dr. Bott    |    &lt;<A HREF="http://www.drbott.com/prod/ADCExtension.html">http://www.drbott.com/prod/ADCExtension.html</A>&gt;
+</I>&gt;<i> 
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001224.html">[CUBE] AW: [CUBE] AW: [CUBE] AW: [CUBE] Final Cut Express
+</A></li>
+	<LI>Next message: <A HREF="001220.html">[CUBE] osx stuck on login
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1218">[ date ]</a>
+              <a href="thread.html#1218">[ thread ]</a>
+              <a href="subject.html#1218">[ subject ]</a>
+              <a href="author.html#1218">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Servers] AppleMail vs. sendmail
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20AppleMail%20vs.%20sendmail&In-Reply-To=list-6069022%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000158.html">
+   <LINK REL="Next"  HREF="000160.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Servers] AppleMail vs. sendmail</H1>
+    <B>Brent Baisley</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20AppleMail%20vs.%20sendmail&In-Reply-To=list-6069022%40mail.ninewire.com"
+       TITLE="[X Servers] AppleMail vs. sendmail">brent at landover.com
+       </A><BR>
+    <I>Thu May  8 07:27:08 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000158.html">AppleMail vs. sendmail
+</A></li>
+        <LI>Next message: <A HREF="000160.html">[X Servers] AppleMail vs. sendmail
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#159">[ date ]</a>
+              <a href="thread.html#159">[ thread ]</a>
+              <a href="subject.html#159">[ subject ]</a>
+              <a href="author.html#159">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>If you want to implement a powerful email server that you can do just 
+about anything with, than sendmail is what you are looking for. 
+However, sendmail's power is equal to it's complexity. I have three 
+solid years of Unix experience (12 years of Mac) and I've been playing 
+with sendmail for about 6 months so far. While I am using it for 
+internal use, my comfort level with it is not high enough to implement 
+it for external use.
+I would recommend looking into qmail. Qmail is also open source and is 
+designed as a sendmail replacement, but much easier to configure. Any 
+programs you may have written that use sendmail will also work with 
+qmail without change. This part is important for me.
+
+One important thing to know about sendmail is that it is strictly an 
+mail transfer agent (MTA). It is not a POP3 or IMAP server, which means 
+&quot;out of the box&quot; you can't use your standard email client to connect to 
+it. You need to also run something like qpopper from Eudora. It's free 
+and easy to implement, but it is another piece that you need to 
+implement.
+
+Postfix is also a free open source email server you can look into. Like 
+qmail, it's designed to replace sendmail.
+
+On Thursday, May 8, 2003, at 05:09 AM, Sytse Kuijk wrote:
+
+&gt;<i> OS X server 10.2.5, AppleMail smtp server.
+</I>&gt;<i>
+</I>&gt;<i> We have been using the AppleMail stuff since installation here some 
+</I>&gt;<i> time ago. It works relatively well, but there is an annoying issue I 
+</I>&gt;<i> do not seem able to resolve. I hope someone has experience around here 
+</I>&gt;<i> with this sort of stuff.
+</I>&gt;<i>
+</I>&gt;<i> There are certain addresses (hosts) that, when we send mail to it, the 
+</I>&gt;<i> mail is returned with a non delivery message. When checking at low 
+</I>&gt;<i> level (tcpdump) I see that for correctly working destinations, the 
+</I>&gt;<i> mail is sent by the server immediately after receiving it on the 
+</I>&gt;<i> server. For the not working destinations, the server does not even 
+</I>&gt;<i> attempt to make a connection, it just sits on the mail for 4 hours, 
+</I>&gt;<i> sends a warning to the sender, waits another 68 hours, and sends a non 
+</I>&gt;<i> delivery message. Sounds to me that these addresses are damned by 
+</I>&gt;<i> something in the AppleMail configuration (DNS settings?), so I wonder 
+</I>&gt;<i> how I can reset all the tables etc. the AppleMail has.
+</I>&gt;<i>
+</I>&gt;<i> One alternative is ditching AppleMail and using sendmail. Is that a 
+</I>&gt;<i> better way to go? I never set that up, it is difficult to make it 
+</I>&gt;<i> secure?
+</I>&gt;<i>
+</I>-- 
+Brent Baisley
+Systems Architect
+Landover Associates, Inc.
+Search &amp; Advisory Services for Advanced Technology Environments
+p: 212.759.6400/800.759.0577
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000158.html">AppleMail vs. sendmail
+</A></li>
+	<LI>Next message: <A HREF="000160.html">[X Servers] AppleMail vs. sendmail
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#159">[ date ]</a>
+              <a href="thread.html#159">[ thread ]</a>
+              <a href="subject.html#159">[ subject ]</a>
+              <a href="author.html#159">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

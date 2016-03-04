@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] SCSI ID question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20SCSI%20ID%20question&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="006078.html">
+   <LINK REL="Next"  HREF="006080.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] SCSI ID question</H1>
+    <B>Simon Muir</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20SCSI%20ID%20question&In-Reply-To="
+       TITLE="[G4] SCSI ID question">simonm at muircom.demon.co.uk
+       </A><BR>
+    <I>Thu Mar  4 00:25:14 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="006078.html">[G4] CD tray problem
+</A></li>
+        <LI>Next message: <A HREF="006080.html">CD try problem , etc.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6079">[ date ]</a>
+              <a href="thread.html#6079">[ thread ]</a>
+              <a href="subject.html#6079">[ subject ]</a>
+              <a href="author.html#6079">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I realised this didn't go to the list earlier. SCSI is becoming less
+relevant for desktop Macs these days but there still appears to be a lot
+of duff gen about! There's one typo I spotted below: SCSI only comes in
+8- and 16- bit versions. There's no 6-bit! For the propellor headed,
+there was a 32-bit version defined in the SCSI-2 spec, but never
+implemented, as it would have used two cables!
+
+-----Original message-----
+Subject:    [G4] SCSI ID question
+To:         Ron Steinke &lt;<A HREF="../../../mailman/listinfo/g4.html">ronsteinke at mac.com</A>&gt;
+From:       Simon Muir &lt;<A HREF="../../../mailman/listinfo/g4.html">simonm at muircom.demon.co.uk</A>&gt;
+Date:       Tue, 2 Mar 2004 22:00:00 +0000
+Message-ID: &lt;<A HREF="../../../mailman/listinfo/g4.html">9XNB4IPgPQRAFwUv at muircom.demon.co.uk</A>&gt;
+
+On the subject of &quot;[G4] SCSI ID question,&quot; Ron Steinke said:
+ &gt;The SCSI socket on the mother board gives you the ability to attach up
+ &gt;to eight SCSI devices to that circuit (SCSI IDs from &quot;0&quot; to &quot;7&quot; equals
+ &gt;8 devices).
+
+No it doesn't, at least it's not quite that simple.
+
+You can have SEVEN devices, plus the host bus adapter on a standard
+narrow SCSI bus. You can have FIFTEEN on a wide SCSI bus (plus the HBA).
+It's because the data lines represent SCSI IDs during the initial stages
+of a SCSI transaction - 8-bit equals eight lines, and 16-bit equals 16.
+
+That said, you never want to have that many, for any number of good
+reasons, not least performance. As a rule of thumb, the faster the bus,
+the shorter the cables need to be and the less devices you want on it.
+
+The other key thing is bus priority. SCSI IDs actually matter, because
+they determine which device wins if two devices want the bus at the same
+time. In 6-bit (narrow, old-fashioned) SCSI, ID7 is highest priority,
+and ID0 lowest. Encouraging people to put the bootable disk at ID0 (in
+the IBM-PC world) was rather dumb!
+
+In wide SCSI they had to keep backwards compatibility, so it's a little
+more awkward:
+
+HIGHEST   7 6 5 4 3 2 1 0 15 14 13 12 11 10 9 8  Lowest
+
+That way, a narrow device using the bus can't be confused by SCSI ID's
+it can't 'see' (15 thru 8). Both wide and narrow devices can be made to
+work fine on buses of the opposite type, provided connectors and SCSI
+IDs are chosen carefully.
+
+ &gt;The primary limiting factor here is the number of power
+ &gt;connections that are available and the power output of the power
+ &gt;supply.
+
+This is true for internal devices, but irrelevant if external devices
+are being used.
+
+ &gt;As long as you provide the SCSI devices with different identities (no
+ &gt;duplicate numbers), you should see each device as a separate icon on
+ &gt;your desktop when you boot-up.
+
+It's a REALLY good idea to put your usual bootable disk at ID 6 (wide or
+narrow, it doesn't matter), and any other bootable disks at 5, filling
+downwards to zero. This is especialyl true if you plan to use OS10,
+which is heavily based on BSD UNIX underneath the hood.
+
+ &gt;You can then treat each device as an
+ &gt;individual site and choose to store your data in whichever location you
+ &gt;want. If you want, you can install separate operating systems on each
+ &gt;drive and choose to start up from different drives as the need arises.
+ &gt;Just remember to identify each drive as a separate identity.
+ &gt;
+ &gt;Look for the SCSI identification bridge pins on the drives. They are
+ &gt;usually identified by the letters &quot;A0, A1 and A2&quot; or just as &quot;0, 1, and
+ &gt;2&quot; printed on the circuit board. &quot;0&quot; equals ID-1, &quot;1&quot; equals ID-2, and
+ &gt;&quot;2&quot; equals ID-4.
+
+NO, they don't - it's binary.
+
+The first pin is the first bit of the binary number and so on. There are
+three sets of jumpers for narrow SCSI and an extra pin for wide SCSI. DO
+NOT USE ID 7 AT ALL (it is reserved for host bus adapters, such as the
+one on your motherboard).
+
+         Jumpers
+IDs     8 4 2 1
+  0      : : : :
+  1      : : : I
+  2      : : I :
+  3      : : I I
+  4      : I : :
+  5      : I : I
+  6      : I I : (put your main boot disk here)
+  7      : I I I (don't do it!)
+  8      I : : : (wide buses only from here on down)
+  9      I : : I
+10      I : I :
+11      I : I I
+12      I I : :
+13      I I : I
+14      I I I :
+15      I I I I
+
+Hope the above helps.
+
+
+Regards,
+
+Simonm.
+
+-- 
+simonm|at|muircom|dot|demon|.|c|oh|dot|u|kay
+SIMON MUIR, UK INDEPENDENCE PARTY, BRISTOL                  www.ukip.org
+EUROPEANS AGAINST THE EU                     www.members.aol.com/eurofaq
+GT250A'76  R80/RT'86  110CSW TD'88  www.kc3ltd.co.uk/profile/eurofollie/
+-----End of original message from Simon Muir-----
+
+-- 
+Simon D. Muir                 +44 -117-962-9761
+Bristol, United Kingdom       +44 -796-601-2038 (M)
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="006078.html">[G4] CD tray problem
+</A></li>
+	<LI>Next message: <A HREF="006080.html">CD try problem , etc.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6079">[ date ]</a>
+              <a href="thread.html#6079">[ thread ]</a>
+              <a href="subject.html#6079">[ subject ]</a>
+              <a href="author.html#6079">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

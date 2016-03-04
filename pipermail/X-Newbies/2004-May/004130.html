@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Newbies] Pine to Eudora migration
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20Pine%20to%20Eudora%20migration&In-Reply-To=list-12927088%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004129.html">
+   <LINK REL="Next"  HREF="004131.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Newbies] Pine to Eudora migration</H1>
+    <B>Scott</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20Pine%20to%20Eudora%20migration&In-Reply-To=list-12927088%40mail.ninewire.com"
+       TITLE="[X Newbies] Pine to Eudora migration">scott-xlists at scotist.com
+       </A><BR>
+    <I>Fri May 21 20:35:15 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004129.html">Preview and multi-page save
+</A></li>
+        <LI>Next message: <A HREF="004131.html">HelpViewer
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4130">[ date ]</a>
+              <a href="thread.html#4130">[ thread ]</a>
+              <a href="subject.html#4130">[ subject ]</a>
+              <a href="author.html#4130">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>There are utilities to do this, but in a pinch you can do it in 
+Terminal. Normally I don't recommend Terminal fixes on the Newbies 
+list. I assume, however, that most folks using pine has at least a 
+passing familiarity with command line usage.
+
+1.  Copy the pine mailbox to the Eudora mail folder, changing newline 
+characters to carriage returns:
+
+cd ~/Documents/Eudora\ Folder/Mail\ Folder
+
+tr   '\n'   '\r'  &lt; ~/mail/name_of_mailbox &gt;name_of_mailbox
+
+Set the correct type and creator codes:
+/Developer/Tools/SetFile  -c &quot;CSOm&quot; -t &quot;TEXT&quot; name_of_mailbox
+
+
+Launch Eudora.
+
+This is roughly the reverse of what I did in migrating from Eudora to 
+Mail a couple of years ago, before Mail.app had a decent Eudora import 
+function. Migrating from Eudora to Mail requires changing returns to 
+newlines, but does not require setting type/creator code.
+
+-- 
+Scott
+
+On May 21, 2004, at 12:24, Raoul Armfield wrote:
+
+&gt;<i> Has anyone here ever migrated pine mailboxes to Eudora?  I know how to
+</I>&gt;<i> do this for the PC but I can not find anything on the web that tells me
+</I>&gt;<i> how to do this on the MAC
+</I>&gt;<i>
+</I>&gt;<i> Raoul
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-newbies.html">X-Newbies-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-newbies.html">X-Newbies-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-newbies.html">X-Newbies-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;<i> Mac ISP
+</I>&gt;<i> Serious Mac Internet Solutions From NineWire!   
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older 
+</I>&gt;<i> Mac!
+</I>&gt;<i> Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>    Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>   this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;<i>
+</I>&gt;<i> OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s - 
+</I>&gt;<i> <A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004129.html">Preview and multi-page save
+</A></li>
+	<LI>Next message: <A HREF="004131.html">HelpViewer
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4130">[ date ]</a>
+              <a href="thread.html#4130">[ thread ]</a>
+              <a href="subject.html#4130">[ subject ]</a>
+              <a href="author.html#4130">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Finding a process that's keeping a file open
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Finding%20a%20process%20that%27s%20keeping%20a%20file%20open&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005919.html">
+   <LINK REL="Next"  HREF="005921.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Finding a process that's keeping a file open</H1>
+    <B>Joseph B. Gurman</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Finding%20a%20process%20that%27s%20keeping%20a%20file%20open&In-Reply-To="
+       TITLE="[G4] Finding a process that's keeping a file open">gurman at gsfc.nasa.gov
+       </A><BR>
+    <I>Fri Feb 13 05:57:02 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005919.html">unsubscribing
+</A></li>
+        <LI>Next message: <A HREF="005921.html">FAXing Frustration
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5920">[ date ]</a>
+              <a href="thread.html#5920">[ thread ]</a>
+              <a href="subject.html#5920">[ subject ]</a>
+              <a href="author.html#5920">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>     Vicki of Niue wrote:
+
+&gt;<i>There is a way to find out via the terminal which process is hogging
+</I>&gt;<i>the image, and then kill that process, but right now I don't remember
+</I>&gt;<i>the procedure. Anyone else?
+</I>
+lsof -Fp | grep &lt;filename&gt;
+
+where &lt;filename&gt; is the name of the annoyingly open file, will return 
+the process ID (pid) of the offending process; the output, however, 
+will be preceded by a &quot;p,&quot; so to kill the process in one shell line, 
+you'd have to use awk or something similar. I'm lazy and un-awk-aware 
+enough to do it in two steps, the second being
+
+kill -9 &lt;pid&gt;
+
+where &lt;pid&gt; is the number following the &quot;p&quot; in the output from lsof.
+
+     CAUTION: I don't know what you'll be killing when you do that, so 
+proceed at your own risk. No warranty, written or implied, &amp;c. NASA 
+and its interplanetary probes cannot be held responsible for loss, 
+breakage, or polishing of rocks. And so on.
+
+     HTH,
+
+						Joe Gurman
+
+-- 
+&quot;I love deadlines. I love the whooshing sound they make as they go by.&quot;
+                                                             - Douglas 
+Adams, 1952 - 2001
+
+Joseph B. Gurman, NASA Goddard Space Flight Center, Solar Physics
+Branch, Greenbelt MD 20771 USA
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005919.html">unsubscribing
+</A></li>
+	<LI>Next message: <A HREF="005921.html">FAXing Frustration
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5920">[ date ]</a>
+              <a href="thread.html#5920">[ thread ]</a>
+              <a href="subject.html#5920">[ subject ]</a>
+              <a href="author.html#5920">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

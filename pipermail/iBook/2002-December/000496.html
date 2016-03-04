@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [P1] iBook Slowdown (cpu sys =93 %)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20iBook%20Slowdown%20%28cpu%20sys%20%3D93%20%25%29&In-Reply-To=list-4046480%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000499.html">
+   <LINK REL="Next"  HREF="000495.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[P1] iBook Slowdown (cpu sys =93 %)</H1>
+    <B>Larry Blodgett</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20iBook%20Slowdown%20%28cpu%20sys%20%3D93%20%25%29&In-Reply-To=list-4046480%40mail.ninewire.com"
+       TITLE="[P1] iBook Slowdown (cpu sys =93 %)">lblodgett at macosx.com
+       </A><BR>
+    <I>Tue Dec 10 15:06:44 PST 2002</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000499.html">[P1] iBook, iSynch &amp; Palm
+</A></li>
+        <LI>Next message: <A HREF="000495.html">[P1] Chats, was Re: [P1] net2phone like app for the mac ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#496">[ date ]</a>
+              <a href="thread.html#496">[ thread ]</a>
+              <a href="subject.html#496">[ subject ]</a>
+              <a href="author.html#496">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Richard, thanks for your help. You gave me a lot of things to think about.
+
+&gt;<i>Am 10/12/02 21:02 schrieb &quot;Larry Blodgett&quot; unter &lt;<A HREF="../../../mailman/listinfo/ibook.html">lblodgett at macosx.com</A>&gt;:
+</I>&gt;<i>
+</I>&gt;&gt;<i>  I dual boot my iBook (MacOS9 and MacOS 10.2.2) and normally run in
+</I>&gt;&gt;<i>  MacOS9.  I generally boot into 10 about once a week.  MacOS 10 ran
+</I>&gt;&gt;<i>  just fine until 2 days back.  I noticed it was really slow, slow,
+</I>&gt;&gt;<i>  slow.  It took maybe 10 minutes to boot and it seems like the system
+</I>&gt;&gt;<i>  is working very hard.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  So I went to the terminal and here are the results (notice the CPU
+</I>&gt;&gt;<i>  sys =92.7%  also note the  0 kernel_tas  97.9%)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  What could be wrong here and how do I fix it? I would rather not
+</I>&gt;&gt;<i>  reinstall the system if possible.
+</I>&gt;<i>
+</I>&gt;&gt;<i>   347 IomegaDriv   0.4%  0:40.25   1    22    32   136K   732K   676K  14.2M
+</I>&gt;&gt;<i>   346 Snard        0.0%  0:03.97   1    55    98  1.56M  3.55M  3.25M  40.1M
+</I>&gt;&gt;<i>   296 xinetd       0.0%  0:00.11   1    10    15    96K   452K   264K  1.43M
+</I>&gt;&gt;<i>   174 ATSServer    2.2%  1:10.83   2    34   112   424K  2.98M  2.32M  27.0M
+</I>&gt;&gt;<i>    62 dynamic_pa   0.0%  0:00.01   1    10    14    56K   312K   100K  1.29M
+</I>&gt;&gt;<i>    57 update       0.0%  0:01.92   1     7    13    52K   304K   104K  1.26M
+</I>&gt;&gt;<i>     0 kernel_tas  97.9% 93:59.04  24     0     -      -      -  25.8M+  285M+
+</I>&gt;<i>
+</I>&gt;<i>Larry,
+</I>&gt;<i>
+</I>&gt;<i>at the risk of showing my ignorance of the system here goes...
+</I>&gt;<i>
+</I>&gt;<i>It used to be that when the system booted it checked for servers, I believe
+</I>&gt;<i>in one of the OS X updates they addressed this but it may still be affecting
+</I>&gt;<i>you here...I don't remember how to tell the system that it should not search
+</I>&gt;<i>or connect to the servers but there should be a disable method somewhere?
+</I>&gt;<i>(as Neo said...help, need help here) This may be the cause of the long boot
+</I>&gt;<i>time...
+</I>&gt;<i>
+</I>&gt;<i>What are your Unix log cleaning routines? Do you use macJanitor or clean
+</I>&gt;<i>these up otherwise? Not sure if this would have an effect here though.
+</I>&gt;<i>
+</I>&gt;<i>You have an external drive hooked up here? (or more?) PID 347...are these
+</I>&gt;<i>affecting you? Your PID 174 seems to be quite active, I have not noticed
+</I>&gt;<i>mine using any memory, may not mean anything though.
+</I>&gt;<i>
+</I>&gt;<i>And there may be a conflict with Snard and the finder? Is this the PID 296
+</I>&gt;<i>as well or is this from using fink or other Darwin X window servers? (my
+</I>&gt;<i>ignorance really shines through here...)
+</I>&gt;<i>
+</I>&gt;<i>Finally to add to my ramblings of sourcing the problem or making it worse,
+</I>&gt;<i>did you open, change or delete files in OS X while booted in OS 9? Did you
+</I>&gt;<i>rebuild the OS X desktop (partition) from OS 9? I mistakenly did that
+</I>&gt;<i>once...ONCE...don't ask.
+</I>&gt;<i>
+</I>&gt;<i>Not much help I know but maybe food for thought...if not hopefully at least
+</I>&gt;<i>good for a laugh...If you want I can email you a copy of my listed processes
+</I>&gt;<i>from top to compare?
+</I>&gt;<i>
+</I>&gt;<i>HTH,
+</I>&gt;<i>
+</I>&gt;<i>Richard
+</I>
+-- 
+Larry Blodgett
+email:  (<A HREF="../../../mailman/listinfo/ibook.html">lblodgett at mac.com</A>)
+email:  (<A HREF="../../../mailman/listinfo/ibook.html">lblodgett at macosx.com</A>)
+
+In theory, practice and theory are the same,
+but in practice they are different.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000499.html">[P1] iBook, iSynch &amp; Palm
+</A></li>
+	<LI>Next message: <A HREF="000495.html">[P1] Chats, was Re: [P1] net2phone like app for the mac ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#496">[ date ]</a>
+              <a href="thread.html#496">[ thread ]</a>
+              <a href="subject.html#496">[ subject ]</a>
+              <a href="author.html#496">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Need to promote an account
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Need%20to%20promote%20an%20account&In-Reply-To=p06230902c1a8d17ddaf8%40%5B192.168.1.199%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="015998.html">
+   <LINK REL="Next"  HREF="016000.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Need to promote an account</H1>
+    <B>lisa c</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Need%20to%20promote%20an%20account&In-Reply-To=p06230902c1a8d17ddaf8%40%5B192.168.1.199%5D"
+       TITLE="[X4U] Need to promote an account">jaguar at gmu.edu
+       </A><BR>
+    <I>Fri Dec 15 15:01:52 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="015998.html">[X4U] Need to promote an account
+</A></li>
+        <LI>Next message: <A HREF="016000.html">[X4U] Need to promote an account
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15999">[ date ]</a>
+              <a href="thread.html#15999">[ thread ]</a>
+              <a href="subject.html#15999">[ subject ]</a>
+              <a href="author.html#15999">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>If root is already enabled you can try the following to change the root 
+password.  Once the root password is changed you can log into the GUI 
+as root and then you should be able to promote the account back to 
+Admin.  (The following will have you go into single user mode. :) )  (I 
+think you can also reset the root password with the system install CD, 
+but I've used the information below to reset a password when I did not 
+have access to the CD.  As an aside, you can reset the password for any 
+account on the box with the following steps as long as you know the 
+account's short name)
+-lisa c
+
+   Restart the system while holding down &quot;command-s&quot; until you see the 
+system scrolling text.  (if you've ever watched a linux or UNIX system 
+boot, that is type of information you will see)  The machine is now 
+booting into single user mode
+
+    At the Localhost% prompt type:
+
+       /sbin/mount -uw /
+       /sbin/SystemStarter
+
+       You will then see various services starting up.
+
+   when you get the localhost% prompt again type:
+
+       passwd root
+(if you don't see the localhost% prompt after the services start you 
+might have to press return once to get the prompt to appear)
+
+       you will be prompted to type in the new root password twice
+
+       once you have done that type reboot and allow the system to boot 
+normally
+
+       you can now login as root using the root password you just set
+
+
+
+On Dec 15, 2006, at 5:27 PM, Mark Gibson wrote:
+
+&gt;<i> At 14:16 -0800 15/12/06, Mark Paul wrote:
+</I>&gt;&gt;<i> You can check on Netinfo Manager. One option may be to boot from a 
+</I>&gt;&gt;<i> System CD and create the account from there.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Dec 15, 2006, at 2:08 PM, Mark Gibson wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> At 17:00 -0500 15/12/06, Neil Laubenthal wrote:
+</I>&gt;&gt;&gt;&gt;<i> Are there any other admin accounts? If not . . .and if the root 
+</I>&gt;&gt;&gt;&gt;<i> account wasn't enabled . . .I don't know of any way to do it.
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Might be something sneaky I don't know about though.
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> On Dec 15, 2006, at 02:40, Mark Gibson wrote:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> Hi,
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> A colleague has somehow demoted the admin account on his machine 
+</I>&gt;&gt;&gt;&gt;&gt;<i> to merely &quot;standard&quot;. Amazingly enough he can now do very little 
+</I>&gt;&gt;&gt;&gt;&gt;<i> on the machine. :)
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> I tried creating a new &quot;admin&quot; account but I need an current one 
+</I>&gt;&gt;&gt;&gt;&gt;<i> to unlock the padlock.
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> Any ideas on how I can &quot;promote&quot; an existing standard account back 
+</I>&gt;&gt;&gt;&gt;&gt;<i> to &quot;Administrative&quot; status?
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> Happy to futz around in the Terminal or single user mode if that's 
+</I>&gt;&gt;&gt;&gt;&gt;<i> what's required.
+</I>&gt;&gt;&gt;&gt;&gt;<i> --
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> No I'm afraid she &quot;demoted&quot; both her own account and the &quot;emergency 
+</I>&gt;&gt;&gt;<i> use only&quot; admin account i had setup.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I think root is enabled (but have forgotten how to check).
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> If it is can I &quot;fix&quot; it via the terminal or single user mode?
+</I>&gt;<i>
+</I>&gt;<i> By &quot;System CD&quot; do you mean a 10.4.x DVD or the System Restore discs 
+</I>&gt;<i> that came with the machine, I have both.
+</I>&gt;<i>
+</I>&gt;<i> Either way what is that procedure (apart from &quot;erase and install&quot;)?
+</I>&gt;<i> -- 
+</I>&gt;<i>
+</I>&gt;<i> Regards,
+</I>&gt;<i>
+</I>&gt;<i> Mark (}-:
+</I>&gt;<i> +61 (0)4 1927 7198
+</I>&gt;<i> Skype / AIM / iChat: gibsonm1
+</I>&gt;<i>
+</I>&gt;<i> Our greatest fear is that the Internet will become a vehicle of free 
+</I>&gt;<i> distribution of information.
+</I>&gt;<i>                               --Ken Wasch, President of the Software
+</I>&gt;<i>                            Publishers' Association, 5 September 1995
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X4U mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">X4U at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">http://listserver.themacintoshguy.com/mailman/listinfo/x4u</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random 
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="015998.html">[X4U] Need to promote an account
+</A></li>
+	<LI>Next message: <A HREF="016000.html">[X4U] Need to promote an account
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15999">[ date ]</a>
+              <a href="thread.html#15999">[ thread ]</a>
+              <a href="subject.html#15999">[ subject ]</a>
+              <a href="author.html#15999">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

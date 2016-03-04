@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Altering .bashrc in bash to add to $PATH
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Altering%20.bashrc%20in%20bash%20to%20add%20to%20%24PATH&In-Reply-To=list-10156779%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000686.html">
+   <LINK REL="Next"  HREF="000708.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Altering .bashrc in bash to add to $PATH</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Altering%20.bashrc%20in%20bash%20to%20add%20to%20%24PATH&In-Reply-To=list-10156779%40mail.ninewire.com"
+       TITLE="[X-Unix] Altering .bashrc in bash to add to $PATH">magill at mcgillsociety.org
+       </A><BR>
+    <I>Thu Jan  8 13:08:10 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000686.html">[X-Unix] *BSD on x86 question
+</A></li>
+        <LI>Next message: <A HREF="000708.html">[X-Unix] script question (cron - adobefnt*.lst)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#697">[ date ]</a>
+              <a href="thread.html#697">[ thread ]</a>
+              <a href="subject.html#697">[ subject ]</a>
+              <a href="author.html#697">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 08 Jan, 2004, at 10:11, Doug McNutt wrote:
+
+&gt;<i> At 22:05 -0800 1/7/04, Robert Ameeti wrote:
+</I>&gt;&gt;<i> echo $SHELL gives me /bin/bash
+</I>&gt;&gt;<i> echo $PATH gives me /bin:/sbin:/usr/bin:/usr/sbin
+</I>&gt;<i>
+</I>&gt;<i> I'm a tcsh kind of guy but I have had similar problems.
+</I>&gt;<i>
+</I>&gt;<i> A solution is to create a directory $HOME/.MacOSX/ and place a file 
+</I>&gt;<i> there named environment.plist.
+</I>&gt;<i>
+</I>&gt;<i> The file gets formatted as XML and can define your full path for 
+</I>&gt;<i> everything in your login session to OS neXt. It is honored by pretty 
+</I>&gt;<i> much anything you do - BBEdit worksheets, AppleScript, Execute Text 
+</I>&gt;<i> service. Terminal though is likely to overwrite the PATH if if it's 
+</I>&gt;<i> allowed to source login files from /etc/.
+</I>&gt;<i>
+</I>&gt;<i> There is an Apple tech note on preparation of environment.plist.
+</I>&gt;<i>
+</I>&gt;<i> I have also found it helpful to add an echo or two to $HOME/.tcshrc 
+</I>&gt;<i> (er - .bashrc) with output directed to a log file. You can learn a lot 
+</I>&gt;<i> by seeing just how often and when it gets executed. Print out the 
+</I>&gt;<i> $SHLVL variable as well as $PATH
+</I>
+The important thing to understand here is that you are talking about 
+apples and oranges.
+They just look the same because they are both round:
+
+   ...  The traditional Unix &quot;dot files&quot; (aka &quot;Resource Control&quot; or 
+&quot;.rc&quot; files)
+         and &quot;environment.plist.&quot;
+
+If you are using the Aqua GUI (i.e. LoginWindow), the environment.plist 
+is processed FIRST and all children of that process (like terminal) 
+will inherit it's environment. If you then launch the terminal 
+application, you invoke yet another initialization process (of which 
+there can be several, depending upon Terminal's settings) and THEN 
+invoke the shell setups.
+
+However, if you are running batch jobs, or logging in via ssh, then 
+ONLY the traditional Unix dot files are accessed.  (Which ones depend 
+on which shell and how it is invoked, with is a longwinded discussion. 
+... and X11 uses even different ones.)
+
+The consequence is -- you MUST make changes to both the 
+&quot;environment.plist&quot; and
+your ~/.profile (or whichever) file. There are also implications to 
+modifying the &quot;system wide&quot;
+/etc/profile or /etc/*.login files which are different.
+
+Second point -- &quot;REAL Unix&quot; applications running from the command line 
+will normally utilize &quot;dot&quot; files. However, GUI based applications -- 
+especially if they adhere to the OS X guidelines, will NOT access ANY 
+&quot;.rc&quot; files, but rather will read some XML file.
+
+The entire issue and process of &quot;initialization files&quot; is like Perl -- 
+There is more than one way to do the job.   ... one of the main reasons 
+that SysAdmins get paid more than programmers.
+
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000 - [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000686.html">[X-Unix] *BSD on x86 question
+</A></li>
+	<LI>Next message: <A HREF="000708.html">[X-Unix] script question (cron - adobefnt*.lst)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#697">[ date ]</a>
+              <a href="thread.html#697">[ thread ]</a>
+              <a href="subject.html#697">[ subject ]</a>
+              <a href="author.html#697">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

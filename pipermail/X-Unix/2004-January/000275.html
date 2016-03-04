@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] missing man pages (fixed)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20missing%20man%20pages%20%28fixed%29&In-Reply-To=list-10074581%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000264.html">
+   <LINK REL="Next"  HREF="000297.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] missing man pages (fixed)</H1>
+    <B>Xavier Noria</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20missing%20man%20pages%20%28fixed%29&In-Reply-To=list-10074581%40mail.ninewire.com"
+       TITLE="[X-Unix] missing man pages (fixed)">fxn at hashref.com
+       </A><BR>
+    <I>Mon Jan  5 05:30:29 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000264.html">[X-Unix] missing man pages
+</A></li>
+        <LI>Next message: <A HREF="000297.html">[X-Unix] Postfix howto
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#275">[ date ]</a>
+              <a href="thread.html#275">[ thread ]</a>
+              <a href="subject.html#275">[ subject ]</a>
+              <a href="author.html#275">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Jan 5, 2004, at 1:58 PM, torhildr wrote:
+
+&gt;<i> Nope.
+</I>&gt;<i> Base OS X 10.3. No Developer/Xcode Tools.
+</I>
+That was very valuable feedback.
+
+Thanks to that I focused on the first CD. The missing man pages AFAICT 
+come from
+
+     /System/Installation/Packages/BSD.pkg
+
+I discovered it by trial and error. Inside BSD.pkg there's a file 
+called Archive.pax.gz that looks like the one with the packed archives. 
+To inspect its contents:
+
+     $ gunzip Archive.pax.gz
+     $ pax -vf Archive.pax
+
+I saw missing man pages there, so I went ahead and double-clicked the 
+package. I had done some software updates here, I hope I have not 
+broken the system.
+
+Now man perror works, and the count under man3 is greater than the one 
+torhildr reported:
+
+     <A HREF="../../../mailman/listinfo/x-unix.html">fxn at conway</A>:/usr/share/man/man3% ls | wc -l
+         3988
+
+which in principle is OK, because looks like I have additional dev 
+packages installed.
+
+I would like to understand why those pages were not there, if I figure 
+it out I'll write again.
+
+Thank you all for your help!!!
+
+-- fxn
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000264.html">[X-Unix] missing man pages
+</A></li>
+	<LI>Next message: <A HREF="000297.html">[X-Unix] Postfix howto
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#275">[ date ]</a>
+              <a href="thread.html#275">[ thread ]</a>
+              <a href="subject.html#275">[ subject ]</a>
+              <a href="author.html#275">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

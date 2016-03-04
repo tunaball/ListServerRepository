@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Mac sharing internet through BT
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:bluetooth-mac%40listserver.themacintoshguy.com?Subject=Mac%20sharing%20internet%20through%20BT&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001462.html">
+   <LINK REL="Next"  HREF="001464.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Mac sharing internet through BT</H1>
+    <B>Martim Weinstein</B> 
+    <A HREF="mailto:bluetooth-mac%40listserver.themacintoshguy.com?Subject=Mac%20sharing%20internet%20through%20BT&In-Reply-To="
+       TITLE="Mac sharing internet through BT">emdub at mac.com
+       </A><BR>
+    <I>Mon Aug 25 03:09:53 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001462.html">[BTM] Bluetooth
+</A></li>
+        <LI>Next message: <A HREF="001464.html">t610 Sync time disparity
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1463">[ date ]</a>
+              <a href="thread.html#1463">[ thread ]</a>
+              <a href="subject.html#1463">[ subject ]</a>
+              <a href="author.html#1463">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>As promised:
+
+First my configuration: Powerbook G4 500 Mhz, OS 10.2.6, generic USB BT 
+module (brandless), Tungsten T and a heavy dose of patience. The Tibook 
+is receiving net from an airport station connected to another mac which 
+is sharing it's connection. So basically I'm sharing through BT a 
+already shared connection... oh, one more thing: my Firewall is off. 
+There is something about opening ports 8827 and 8775 in order to work 
+with WebPro (Tungsten browser) but since I don't use my firewall I 
+didn't test it.
+
+None of this stuff is of my authoring, I got most of it out of 
+Macosxhints.com and used some common sense and troubleshooting. Some of 
+the stuff I did, I don't understand too deeply (like the script!), so 
+I'm just describing what works for me.
+
+Link on the article I used (most of the stuff is from the comments 
+section):
+
+&lt;<A HREF="http://www.macosxhints.com/article.php?story=20021103062212288">http://www.macosxhints.com/article.php?story=20021103062212288</A>&gt;
+
+Configuring the Mac:
+
+1- activate another port in network preferences that allows you to 
+share your main connection. To make a port your main connection port 
+just drag it to the top. Even if you don't use it, you'll need it open 
+otherwise the script below might not work. No configuration needed of 
+this port.
+
+2- Share that connection activating it in Sharing in the system 
+preferences. No need to configure anything.
+
+3- Paste the following script into script editor. Keep it as a script 
+at first so you can make alterations as necessary.
+
+set runresult to &quot;&quot;
+  tell me to activate
+  display dialog &quot;Turn Bluetooth Internet Sharing ON?&quot; buttons 
+{&quot;Cancel&quot;, &quot;Yes&quot;} default button 2
+  set userchoice to button returned of result
+  if userchoice = &quot;Yes&quot; then
+          with timeout of 20 seconds
+                  try
+                          do shell script &quot;sudo 
+/usr/libexec/InternetSharing&quot; with administrator privileges
+                          set runresult to &quot;Statement 1 done&quot; &amp; return
+                  on error errormsj
+                          display dialog errormsj as string
+                          set runresult to runresult &amp; &quot;Statement one 
+failed&quot; * errormsj &amp; return
+                  end try
+                  try
+                          do shell script &quot;sudo /usr/sbin/pppd 
+/dev/tty.Bluetooth-PDA-Sync 115200 noauth local passive proxyarp 
+asyncmap 0 silent persist :10.1.1.201 &amp;&quot;
+                          set runresult to &quot;Internet Sharing ON&quot; &amp; return
+                  on error errormsj
+                          display dialog errormsj as string
+                          set runresult to runresult &amp; &quot;Statement 2 
+failed&quot; * errormsj &amp; return
+                  end try
+          end timeout
+          tell me to activate
+          display dialog (runresult as string) buttons {&quot;OK&quot;} default 
+button 1
+  end if
+
+For my LAN I changed the ip on  &quot;proxyarp asyncmap 0 silent persist 
+:<i>10.1.1.201 &amp;&quot; to 192.168.0.5 since it's the ip range I use. Not sure 
+</I>if it made a difference, but again, I'm only describing what I have 
+since what I have is working.
+
+4- Run the script. Once it works you can save it as an application and 
+even include it in the login items...
+
+Configuring the Tungsten (This is just copy, paste from macosxhints):
+
+1- Launch the Prefs application on your Palm Powered handheld.
+2- Select the Connection panel.
+3- Touch the New... button.
+4- Give the new connection a descriptive name such as Bluetooth to 
+Macintosh.
+5- Set Connect to to PC.
+6- Set Via to Bluetooth.
+7- Touch the box labeled Tap to Find and select your Macintosh.
+8- Touch Details....
+9- Set Speed to 115,200 bps.
+10- Set Flow Ctl to Automatic.
+11- Touch OK twice to return to the Connection panel.
+12- Select the Network panel.
+13- Choose the UUNet service. Rename it something descriptive, such as 
+Bluetooth to Macintosh.
+14- Set Connection to the connection you just created previously in 
+this section.
+15- Leave the User Name and Password entries blank.
+16- Touch Details... and ensure that Conection type is set to PPP and 
+IP Address is checked. Uncheck Query DNS and enter the addresses of 
+local Primary and Secondary DNS servers for your network. THIS IS VERY 
+IMPORTANT!
+17- Set the Idle timeout to however long you'd like the connection to 
+remain active before timing out. (I set mine to never)
+18- Touch Script... and make sure that the only entry in the script is 
+End.
+19- Touch OK twice.
+
+Testing the connection and troubleshooting:
+
+1- Simply go to WebPro and see if it loads any page... no?
+
+2- Is BT activated on the Tungsten? Did you press connect in the 
+Connection panel? Yes, should be you answer to both. If youre getting 
+&quot;serial&quot; errors it is probably one of these. It was for me. On my palm, 
+everytime I switch it off, I have to activate BT and press connect 
+again.
+
+3- You can also try substituting the IP address for webpro.palm.com 
+(63.97.179.33) in Web Pro's (menu) Options &gt; Preferences &gt; Advanced.  
+That eliminates the potential DNS problems with the host address, 
+anyway.
+
+4- You can figure out whether your connection is working by using ping 
+from within your Palm.  Go to Prefs &gt; Network &gt; (your Service name) &gt; 
+(menu) Options &gt; View Log WITHYOUR CONNECTION ACTIVE.  Scroll to the 
+bottom of the log and you can test ping there.  Grafitti in &quot;ping 
+63.97.179.33&quot; return (downward left slash, not the Done button), and if 
+your connection is talking to the outside world, it should have one 
+line that says &quot;Pinging 63.97.179.33 with 32 bytes of data:&quot; and then 
+it should return &quot;Reply from 63.97.179.33: bytes=32 time=110ms 
+TTL=125&quot;.  If it times out, then you are not talking to the webpro site 
+at the very least.  If it works,  I would ping a non-IP address like 
+apple.com to test your DNS lookup.  If it works there, then both the 
+connection and your DNS servers are working.  Beware that I got errors 
+from some sites I pinged, including macosxhints.com, probably because 
+they set up their ping services strange.
+
+
+Good luck! If anybody has any further questions feel free to ask, I 
+just can't promise I'll be able to answer them since this is mostly 
+copy paste of what worked for me! ;-)
+
+
+
+-mw
+
+There cannot be a crisis today; my schedule is already full.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001462.html">[BTM] Bluetooth
+</A></li>
+	<LI>Next message: <A HREF="001464.html">t610 Sync time disparity
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1463">[ date ]</a>
+              <a href="thread.html#1463">[ thread ]</a>
+              <a href="subject.html#1463">[ subject ]</a>
+              <a href="author.html#1463">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/bluetooth-mac.html">More information about the Bluetooth-mac
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

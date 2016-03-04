@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Newbies] DiskWarrior recovery help.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20DiskWarrior%20recovery%20help.&In-Reply-To=2552fa090611201441v14fa39e6jb4f76f1e993651c2%40mail.gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="006888.html">
+   <LINK REL="Next"  HREF="006891.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Newbies] DiskWarrior recovery help.</H1>
+    <B>Steven Rogers</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20DiskWarrior%20recovery%20help.&In-Reply-To=2552fa090611201441v14fa39e6jb4f76f1e993651c2%40mail.gmail.com"
+       TITLE="[X-Newbies] DiskWarrior recovery help.">srogers1 at austin.rr.com
+       </A><BR>
+    <I>Mon Nov 20 20:32:01 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="006888.html">[X-Newbies] DiskWarrior recovery help.
+</A></li>
+        <LI>Next message: <A HREF="006891.html">[X-Newbies] DiskWarrior recovery help.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6890">[ date ]</a>
+              <a href="thread.html#6890">[ thread ]</a>
+              <a href="subject.html#6890">[ subject ]</a>
+              <a href="author.html#6890">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Nov 20, 2006, at 4:41 PM, Brian Durant wrote:
+
+&gt;<i> Why is /mnt/osx2 &quot;read-only? I ran 'sudo mount /dev/sdc12 /mnt/osx2  
+</I>&gt;<i> -o umask=000 -t hfsplus
+</I>
+If you have the volume listed in /etc/fstab like:
+
+/dev/sdb3 /mnt/osx hfsplus,noauto,user,rw 0 0
+
+it should mount read/write (that's what the rw does) with:
+
+sudo mount -a
+
+Try unmounting it, then just do &quot;sudo mount -a&quot;  There may be  
+something wrong with the explicit manual mount command - seems like  
+it should work for read/write access, but I don't know ubuntu that  
+well. When you give an explicit manual mount command, it doesn't  
+matter what's in fstab, so it's either one or the other:  sudo mount / 
+mnt/blah blah -t blah - o blah  *OR* add it to fstab and do &quot;sudo  
+mount -a&quot;.
+
+SR
+</PRE>
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="006888.html">[X-Newbies] DiskWarrior recovery help.
+</A></li>
+	<LI>Next message: <A HREF="006891.html">[X-Newbies] DiskWarrior recovery help.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6890">[ date ]</a>
+              <a href="thread.html#6890">[ thread ]</a>
+              <a href="subject.html#6890">[ subject ]</a>
+              <a href="author.html#6890">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] custom ipfw setup
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20custom%20ipfw%20setup&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001871.html">
+   <LINK REL="Next"  HREF="001873.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] custom ipfw setup</H1>
+    <B>David Haines</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20custom%20ipfw%20setup&In-Reply-To="
+       TITLE="[X-Unix] custom ipfw setup">haines.d at comcast.net
+       </A><BR>
+    <I>Tue Apr 26 14:48:51 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001871.html">[X-Unix] Using the CLI to delete &quot;pesky&quot; files/folders
+</A></li>
+        <LI>Next message: <A HREF="001873.html">[X-Unix] CLI mail sending on 10.3.9
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1872">[ date ]</a>
+              <a href="thread.html#1872">[ thread ]</a>
+              <a href="subject.html#1872">[ subject ]</a>
+              <a href="author.html#1872">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Unit is running 10.3.9 OS X Client.
+
+I'm trying to add custom rules to ipfw, and while I can easily do so during
+a current session, the new rules are not persistent across restarts.
+
+I have created a folder: Firewall
+in /Library/StartupItems
+listing (re permissions) is:
+-rwxr-xr-x  1 root  admin   71 26 Apr 16:06 Firewall
+-rwxr-xr-x  1 root  admin  211 26 Apr 16:22 StartupParameters.plist
+
+Firewall is as follows:
+
+#!/bin/sh
+/sbin/ipfw add deny tcp from any to any 80 out setup via en0
+
+and StartupParameters.plist is as follows:
+
+{
+Description = (&quot;Firewall&quot;);
+Provides = (&quot;Firewall&quot;);
+Requires = (&quot;Portmap&quot;,&quot;Resolver&quot;);
+OrderPreference = &quot;Late&quot;;
+Messages =
+     {
+     Start = &quot;Starting Firewall&quot;;
+     Stop = &quot;Stopping Firewall&quot;;
+     };
+}
+
+I also tried OrderPreference =&quot;None&quot;;
+
+but that doesn't work either.
+Some at macosxhints.com say go with Requires = (&quot;Super Server&quot;);
+whatever that really in fact is.
+
+The point is, 
+
+After a restart, the rule is not active.
+Port 80 here is just for testing.
+
+I can manually invoke the item with:
+
+sudo SystemStarter start &quot;Firewall&quot;
+
+and it works !
+
+So... what in the OS X startup process is blowing this out ?
+
+The client GUI/System Preference pane is not set to run the client
+hacked/hobbled/compromised firewall.
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001871.html">[X-Unix] Using the CLI to delete &quot;pesky&quot; files/folders
+</A></li>
+	<LI>Next message: <A HREF="001873.html">[X-Unix] CLI mail sending on 10.3.9
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1872">[ date ]</a>
+              <a href="thread.html#1872">[ thread ]</a>
+              <a href="subject.html#1872">[ subject ]</a>
+              <a href="author.html#1872">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

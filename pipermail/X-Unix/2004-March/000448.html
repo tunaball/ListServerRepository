@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Copying to multiple directories
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Copying%20to%20multiple%20directories&In-Reply-To=list-11324352%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000447.html">
+   <LINK REL="Next"  HREF="000449.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Copying to multiple directories</H1>
+    <B>James Bucanek</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Copying%20to%20multiple%20directories&In-Reply-To=list-11324352%40mail.ninewire.com"
+       TITLE="[X-Unix] Copying to multiple directories">subscriber at gloaming.com
+       </A><BR>
+    <I>Thu Mar 11 07:11:22 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000447.html">[X-Unix] Copying to multiple directories
+</A></li>
+        <LI>Next message: <A HREF="000449.html">[X-Unix] Copying to multiple directories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#448">[ date ]</a>
+              <a href="thread.html#448">[ thread ]</a>
+              <a href="subject.html#448">[ subject ]</a>
+              <a href="author.html#448">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Harvey Riekoff wrote on Wednesday, March 10, 2004:
+
+&gt;<i>I need to copy &quot;fileA&quot; to every users library folder in the Users 
+</I>&gt;<i>directory. The file resides at t he root level. The command that I have 
+</I>&gt;<i>been using is: cp -r fileA /Users/*/Library.  There is obviously 
+</I>&gt;<i>something that I am doing wrong because nothing is copying. Any help 
+</I>&gt;<i>would be appreciated.
+</I>
+Harvey,
+
+The cp command's syntax is like this (use 'man ls' for the gory details):
+
+    cp source_file target_file
+    
+- or -
+
+    cp source_file [ source_file2 ...] target_directory
+
+You can either copy one to another file, or you can copy one or more files to a single destination directory.
+
+Remembering Shell Lessons 101, the wildcard globbing is done by the shell, not the tool.  When you use 'cp -r fileA /Users/*/Library' you aren't passing two arguments to the cp command.  You're passing 5: 'cp -r fileA /Users/A/Library /Users/B/Library /Users/C/Library /Users/D/Library'
+
+The cp command gets this, looks at the last argument, sees that it's a directory, and switches into the second mode.  That is, it will attempt to copy the first four arguments (one file and three directories) into the last directory.
+
+The -r option is useless.  There is no -r option for the cp command.
+
+If you meant -R, then it would have copyied the entire Library folder of the first three users into the Library folder of the last user.  So you're lucky you used the wrong option!
+
+The solution to your problem is run the cp command once for each destination user.  So you use the commands
+
+    cp fileA /Users/A/Library
+    cp filaA /Users/B/Library
+
+
+    Brian Medley wrote on Wednesday, March 10, 2004:
+    &gt;$ ls -d /Users/*/Library | xargs -I % echo cp fileA %
+    &gt;cp fileA /Users/bpm/Library
+    &gt;cp fileA /Users/jasonp/Library
+    &gt;cp fileA /Users/jmh/Library
+
+Brian's solution does this by using the ls command to list the directory names (echo would had do it too), then pipes this list to xargs.  xargs takes, as input, a list of filenames and executes a command with that list as the arguments.  It's primarily used to repeatedly executed commands with a list of files that too long to fit on one command line, but Brian has used it here with the -l (replace string) option to execute the command once for each input line (i.e. each directory name), replacing the '%' with the directory.  So, xargs takes the input (/Users/A/Library, /Users/B/Library, ...) and inserts that into the template ('echo cp fileA %'), and executes the command once for each.  This results in the output
+
+    cp fileA /Users/bpm/Library
+    cp fileA /Users/jasonp/Library
+    ...
+
+Brian obviously used the 'echo' command as a demonstration.  To do the actual copy, you'd omit that and let xargs execute the actual cp command.
+
+A little less obscure solution is to write a loop, although you're more likely to see this solution in a script.
+
+    (this example is in tcsh; bash has a different syntax)
+    [whiterabbit:~] james% foreach i ( /Users/*/Library )
+    foreach? echo cp fileA $i
+    foreach? end
+    cp fileA /Users/james/Library
+    cp fileA /Users/testing/Library
+
+The 'foreach' commands starts a loop that sets the 'i' variable to each argument in the list.  It then executes the subsequent list of commands using a different value for i until the list is exhausted.
+
+And finally,
+
+Harvey Riekoff wrote on Thursday, March 11, 2004:
+&gt;<i>Also when I run the command &quot;$ ls -d /Users/*/Library | xargs -I % echo  
+</I>&gt;<i>cp fileA %&quot;  I get the following message &quot;su: $: Command not found&quot;
+</I>
+The '$' is not part of the command.  It's Brian's bash command prompt.  The command starts with 'ls ...'.
+
+Hope that helps,
+
+James
+
+______________________________________________________
+James Bucanek       &lt;mailto:<A HREF="../../../mailman/listinfo/x-unix.html">privatereply at gloaming.com</A>&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000447.html">[X-Unix] Copying to multiple directories
+</A></li>
+	<LI>Next message: <A HREF="000449.html">[X-Unix] Copying to multiple directories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#448">[ date ]</a>
+              <a href="thread.html#448">[ thread ]</a>
+              <a href="subject.html#448">[ subject ]</a>
+              <a href="author.html#448">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

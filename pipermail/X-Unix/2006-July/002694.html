@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to determine which network component is failing
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20determine%20which%20network%20component%20is%20failing&In-Reply-To=23381B6E-463B-4EFC-A7A7-10371F3D8F61%40charter.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002693.html">
+   <LINK REL="Next"  HREF="002701.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to determine which network component is failing</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20determine%20which%20network%20component%20is%20failing&In-Reply-To=23381B6E-463B-4EFC-A7A7-10371F3D8F61%40charter.net"
+       TITLE="[X-Unix] How to determine which network component is failing">macmonster at myrealbox.com
+       </A><BR>
+    <I>Mon Jul 24 06:57:04 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002693.html">[X-Unix] How to determine which network component is failing
+</A></li>
+        <LI>Next message: <A HREF="002701.html">[X-Unix] How to determine which network component is failing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2694">[ date ]</a>
+              <a href="thread.html#2694">[ thread ]</a>
+              <a href="subject.html#2694">[ subject ]</a>
+              <a href="author.html#2694">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 23 Jul 2006, at 15:44, Charles Howse wrote:
+&gt;<i> ...
+</I>&gt;<i> I have been working with curl to get the ip address, but it returns  
+</I>&gt;<i> a real mess:
+</I>&gt;<i> [<A HREF="../../../mailman/listinfo/x-unix.html">charles at larry</A>:~]$ curl -s <A HREF="http://192.168.254.254/Status_Router.htm">http://192.168.254.254/Status_Router.htm</A>
+</I>&gt;<i> &lt;HTML&gt;&lt;HEAD&gt;&lt;TITLE&gt;Setup&lt;/TITLE&gt;&lt;META http-equiv=Content-Language  
+</I>&gt;<i> content=en-us&gt;&lt;META http-equiv=Content-Type content='text/html;  
+</I>&gt;<i> charset=iso-8859-1'&gt;&lt;style fprolloverstyle&gt;A:hover {color: #00FFFF} 
+</I>&gt;<i> BODY{FONT: 10pt Arial,Helvetica,sans-serif; COLOR: black}TH {FONT:  
+</I>&gt;<i> bold 10pt Arial,Helvetica,sans-serif; COLOR: white;}TABLE {FONT:  
+</I>&gt;<i> 10pt Arial,Helvetica,sans-serif; COLOR: black; BORDER: Medium White  
+</I>&gt;<i> None; border-collapse: collapse}TD{font-size: 8pt; font-family:  
+</I>&gt;<i> Arial, Helvetica, sans-serif}.num{FONT: 8pt Courier,serif;}.bar 
+</I>&gt;<i> {background-color:white;}A{text-decoration: none;}A:link{color:  
+</I>&gt;<i> #ffffff;}A:visited{color: #ffffff;}A:hover {color: #00FFFF;}.small  
+</I>&gt;<i> A:link{color: #B5B5E6;}.small A:visited{color: #B5B5E6;}.small  
+</I>&gt;<i> A:hover {color: #00FFFF;}&lt;/style&gt;&lt;SCRIPT  
+</I>&gt;<i> language=JavaScript&gt;function pppoeAction(F,I){   F.pppoeAct.value =  
+</I>&gt;<i> I;   F.submit();}function DHCPAct(F,I){      F.dhcpAction.value =  
+</I>&gt;<i> I; F.submit();}function showAlert(){alert('');}&lt;/SCRIPT&gt;...
+</I>&gt;<i> [snip a ton of html garbage]
+</I>
+Ummm... it would be. You need to grep it.
+
+For my router:
+   $ curl -u admin:password <A HREF="http://pornpipe/doc/online.sht">http://pornpipe/doc/online.sht</A> 2&gt; /dev/ 
+null | grep -o '[[:digit:]]\{1,3\}[\.][[:digit:]]\{1,3\}[\.] 
+[[:digit:]]\{1,3\}[\.][[:digit:]]\{1,3\}'
+   192.168.1.43
+   212.104.130.9
+   192.168.1.1
+   82.153.1.4
+   213.152.39.89
+
+On my system the status page &lt;<A HREF="http://pornpipe/doc/online.sht">http://pornpipe/doc/online.sht</A>&gt; shows  
+192.168.1.43 as the primary DNS server for the LAN, secondary DNS  
+212.104.130.9 (my ISP's DNS server?), 192.168.1.1 is &quot;LAN Status, IP  
+address&quot;, 82.153.1.4 is the WAN gateway IP and finally 213.152.39.89  
+is the router's globally-addressable IP.
+
+Note that my grepping is probably a little clumsy, as I've never used  
+&quot;repetition operators&quot; before. I wanted to grep for &quot;three times  
+[[:digit:]]\{1,3\}[\.] and then [[:digit:]]\{1,3\} again&quot; but  
+couldn't work out how to express that in a way that applied the  
+&quot;three times&quot; to the &quot;[[:digit:]]\{1,3\}[\.]&quot;; hence I just copied &amp;  
+pasted the statement three times.
+
+Experiment with this line &amp; you'll understand it better - remove the  
+&quot;2&gt; /dev/null&quot; and you'll see that `curl` displays its status to  
+stderr. The &quot;-o&quot; tells grep to display only the parts it finds that  
+actually match the expression; I use this a LOT in my shell scripts.
+
+I might extract only the IP I'm interested in by heading &amp; tailing  
+the output (for some reason that sounds so much nicer to me than &quot;by  
+use of `head` and `tail`&quot;) but there are probably more elegant ways  
+of doing it - what happens if you're offline and the router's webpage  
+only shows the first 3 of those IPs? A good Bash script will probably  
+contain an &quot;if $variable is NULL then&quot; statement - I can't remember  
+off the top of my head how to do that but I know it's described in  
+the Advanced Bash Scripting Guide which is a free download and always  
+close at hand when I'm writing Bash scripts here.
+
+&gt;<i> I use static addresses on all the lan computers.  The dhcp server  
+</I>&gt;<i> on the router is turned off.
+</I>&gt;<i> One issue might be that the modem's lan address is 192.168.100.1,  
+</I>&gt;<i> and the default address for the router is 192.168.1.1.  I have  
+</I>&gt;<i> changed that to 192.168.254.254, and set the computers to  
+</I>&gt;<i> 192.168.254.*/255.255.255.0.
+</I>&gt;<i> Do you think it would help anything to set the router to  
+</I>&gt;<i> 192.168.100.254, and the computers to 192.168.100.*/255.255.255.0?
+</I>&gt;<i> Then everything would be on the same subnet.
+</I>
+Ummm... *rubs eyes*
+It's kinda early in the morning here, so please excuse me if I'm  
+reading that incorrectly... but the point of a router is that it  
+routes between two different subnets. Ummmm... if the modem has a  
+192.168.x.y IP address then that suggests it's already doing some  
+NATting (certainly if the modem's external address is different). If  
+you put both interfaces of the router in the same subnet I don't  
+think it would work any more.
+
+I haven't seen the source from the webpage that you use to reboot the  
+router, yet. Perhaps you could repost it, please? Since that'll be  
+plain-text html then an attachment would probably be quite acceptable  
+to the list. Use your web-browser to navigate to that page and use  
+&quot;View &gt; Source&quot;, but make sure you're not viewing just the source to  
+a frameset. The &quot;--form&quot; parameter to `curl` may allow for button  
+presses on a webpage.
+
+Stroller.
+
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002693.html">[X-Unix] How to determine which network component is failing
+</A></li>
+	<LI>Next message: <A HREF="002701.html">[X-Unix] How to determine which network component is failing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2694">[ date ]</a>
+              <a href="thread.html#2694">[ thread ]</a>
+              <a href="subject.html#2694">[ subject ]</a>
+              <a href="author.html#2694">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

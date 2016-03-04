@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] BASH problem?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20BASH%20problem%3F&In-Reply-To=AFD11D7C-48B3-11D9-B8F2-000A95A4E370%40hashref.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001389.html">
+   <LINK REL="Next"  HREF="001392.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] BASH problem?</H1>
+    <B>Larry Helms</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20BASH%20problem%3F&In-Reply-To=AFD11D7C-48B3-11D9-B8F2-000A95A4E370%40hashref.com"
+       TITLE="[X-Unix] BASH problem?">lhelms at sonic.net
+       </A><BR>
+    <I>Sun Dec 12 08:53:34 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001389.html">[X-Unix] BASH problem?
+</A></li>
+        <LI>Next message: <A HREF="001392.html">[X-Unix] BASH problem?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1391">[ date ]</a>
+              <a href="thread.html#1391">[ thread ]</a>
+              <a href="subject.html#1391">[ subject ]</a>
+              <a href="author.html#1391">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Been coding long?  Or just reading about it... JUST KIDDING!
+
+Seriously though, you've made a very simple syntactic error.
+You need to remove the SPACE between 'Myday' and `date
+
+I cut-n-pasted this little tidbit onto my system...
+Made that change, chmod'd the file... And was able to execute
+it is no problems.
+______________________________________________________________________
+    Cosmo :: /Users/lhelms
+    lhelms &gt; vi bob
+
+    #!/bin/tcsh -x
+
+    set Myday=`date '+%a'`
+    echo $Myday `date` | tee -a tempfile
+    setenv CVSROOT :pserver:<A HREF="../../../mailman/listinfo/x-unix.html">anonymous at cvs-mirror.mozilla.org</A>:/cvsroot
+
+    env | grep -i shell
+    ~
+    ~
+    ~
+    &quot;bob&quot; 7L, 161C written
+
+__________ Change security so you can execute the script.
+
+    Cosmo :: /Users/lhelms
+    lhelms &gt; chmod 755 bob
+
+__________ Shows that I'm executing under the
+
+    Cosmo :: /Users/lhelms
+    lhelms &gt; env|grep -i shell
+    SHELL=/bin/zsh
+
+__________ Now, execute bob.
+
+    Cosmo :: /Users/lhelms
+    lhelms &gt; ./bob
+
+    Executing /Users/lhelms/.cshrc
+
+    set Myday=`date '+%a'`
+    date +%a
+    tee -a tempfile
+    echo Sun `date`
+    date
+    Sun Sun Dec 12 08:41:09 PST 2004
+    setenv CVSROOT :pserver:<A HREF="../../../mailman/listinfo/x-unix.html">anonymous at cvs-mirror.mozilla.org</A>:/cvsroot
+
+__________ Display contents of tempfile
+
+    Cosmo :: /Users/lhelms
+    lhelms &gt; cat tempfile
+    Sun Sun Dec 12 08:41:09 PST 2004
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001389.html">[X-Unix] BASH problem?
+</A></li>
+	<LI>Next message: <A HREF="001392.html">[X-Unix] BASH problem?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1391">[ date ]</a>
+              <a href="thread.html#1391">[ thread ]</a>
+              <a href="subject.html#1391">[ subject ]</a>
+              <a href="author.html#1391">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

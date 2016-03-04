@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Possibly OT:  Static IP, what have you done for me lately?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Possibly%20OT%3A%20%20Static%20IP%2C%20what%20have%20you%20done%20for%20me%20lately%3F&In-Reply-To=74BEEC20-3468-47DD-ABAC-C80B3E9815D8%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="017321.html">
+   <LINK REL="Next"  HREF="017325.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Possibly OT:  Static IP, what have you done for me lately?</H1>
+    <B>Neil Laubenthal</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Possibly%20OT%3A%20%20Static%20IP%2C%20what%20have%20you%20done%20for%20me%20lately%3F&In-Reply-To=74BEEC20-3468-47DD-ABAC-C80B3E9815D8%40mac.com"
+       TITLE="[X4U] Possibly OT:  Static IP, what have you done for me lately?">neil at laubenthal.net
+       </A><BR>
+    <I>Sat May  5 04:47:25 PDT 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="017321.html">[X4U] Possibly OT:  Static IP, what have you done for me lately?
+</A></li>
+        <LI>Next message: <A HREF="017325.html">[X4U] Possibly OT:  Static IP, what have you done for me lately?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17324">[ date ]</a>
+              <a href="thread.html#17324">[ thread ]</a>
+              <a href="subject.html#17324">[ subject ]</a>
+              <a href="author.html#17324">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Depends on what the terms of service with BellSouth are.
+
+Speakeasy for instance (my DSL provider) has no restrictions . . . so  
+I run my own mail and web servers as well as connect via ssh to  
+either my IP or the domain that resolves to my IP.
+
+Usually though . . . phone company DSL lines TOS ban servers . . .  
+and they usually back things up by blocking typical protocols. You  
+can get around blocks by using some obscure ports of course . . . but  
+their traffic logs will show the traffic and if they wanted to they  
+can come back (assuming they bother to examine their logs, which may  
+not happen unless there's a bandwidth hog or issue with something  
+else) and cancel your service over it.
+
+So . . . check your TOS and see.
+
+Of course . . .even with a dynamic IP you can still run all of these  
+servers . . . you simply use a service like dyndns.org to resolve  
+your domain to your dynamically changing IP from the ISP. Most  
+current routers have a dyndns client built in which reports your IP  
+to dyndns.org whenever it changes so that tim.net or whatever domain  
+you register will always point to your IP even though it's subject to  
+change. Once that is done . . . servers still work. If your router  
+doesn't have a built in client . . . there is a Mac client that gets  
+your external IP from the router and then reports it back to dyndns.org.
+
+Obscure protocols . . . sure, those work just like the mail and web  
+protocols . . . you can point ssh (port 22) or timbuktu (487 I think)  
+to your home domain or IP (either static or DHCP) and they will  
+connect just fine.
+
+
+On May 5, 2007, at 05:19, Tim Collier wrote:
+
+&gt;<i> Dear List Members:
+</I>&gt;<i>
+</I>&gt;<i> I'm pretty certain that this is off-topic but other might learn  
+</I>&gt;<i> from your responses (especially me).  I'll start off by telling you  
+</I>&gt;<i> why we have a static IP now.  We've had Comcast as our ISP for  
+</I>&gt;<i> several years now and they go down occasionally.  Over the past  
+</I>&gt;<i> week, they were down more than up and I was getting frustrated.  My  
+</I>&gt;<i> wife and I talked it over and decided that we'd also sign up for  
+</I>&gt;<i> BellSouth DSL.  The price was good and was not going to be a real  
+</I>&gt;<i> burden just so if one goes down we still have the other.  OK, that  
+</I>&gt;<i> said, part of BellSouth's package includes a Static IP address, it  
+</I>&gt;<i> sounded like a good idea and I opted for it (it was free with my  
+</I>&gt;<i> plan).
+</I>&gt;<i> Now, we get to my question.  What can I actually do with it?  Can I  
+</I>&gt;<i> run a website in my home?  Can I use some of those obscure  
+</I>&gt;<i> protocols to connect to the house from outside?  Can any of you  
+</I>&gt;<i> suggest other ways I might use this?
+</I>&gt;<i> I'm at the point where I'm saying &quot;cool, I have a static IP&quot;, but  
+</I>&gt;<i> what can I do with it?
+</I>&gt;<i>
+</I>&gt;<i> Tim
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X4U mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">X4U at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">http://listserver.themacintoshguy.com/mailman/listinfo/x4u</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="017321.html">[X4U] Possibly OT:  Static IP, what have you done for me lately?
+</A></li>
+	<LI>Next message: <A HREF="017325.html">[X4U] Possibly OT:  Static IP, what have you done for me lately?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17324">[ date ]</a>
+              <a href="thread.html#17324">[ thread ]</a>
+              <a href="subject.html#17324">[ subject ]</a>
+              <a href="author.html#17324">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

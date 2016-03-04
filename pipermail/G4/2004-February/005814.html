@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] OS X SMP
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20OS%20X%20SMP&In-Reply-To=list-10726852%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005812.html">
+   <LINK REL="Next"  HREF="005815.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] OS X SMP</H1>
+    <B>Jonathan Armstrong</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20OS%20X%20SMP&In-Reply-To=list-10726852%40mail.ninewire.com"
+       TITLE="[G4] OS X SMP">karlarmstrong at mac.com
+       </A><BR>
+    <I>Sun Feb  8 14:53:48 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005812.html">[G4] OS X ?
+</A></li>
+        <LI>Next message: <A HREF="005815.html">[G4] OS X ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5814">[ date ]</a>
+              <a href="thread.html#5814">[ thread ]</a>
+              <a href="subject.html#5814">[ subject ]</a>
+              <a href="author.html#5814">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Feb 8, 2004, at 10:55 AM, sr ferenczy wrote:
+
+&gt;<i> true, inter-machine communications is a result of infiniband and some 
+</I>&gt;<i> custom software, but intra-machine communication is still by the OS. 
+</I>&gt;<i> if OS X couldnt get above 60% efficiency with SMP, then the whole 
+</I>&gt;<i> cluster couldnt. They probably have kernel level controls with their 
+</I>&gt;<i> software, but i would think intra-machine, all code would have to go 
+</I>&gt;<i> through the X kernel... maybe not though...?
+</I>&gt;<i>
+</I>&gt;<i> sandor
+</I>
+Actually, it doesn't really mean anything to say the OS gets X% scaling 
+efficiency. If the threads are highly decoupled, you can get near 100% 
+scaling benefit with any fabric and OS. If the threads are highly 
+coupled, it can quickly become an intractable software problem for any 
+cluster. The factors that determine scalability are how much 
+synchronization is required by the application, and the synchronization 
+performance across nodes. The kernel overhead will generally be a minor 
+factor, sometimes orders of magnitude less.
+
+Think about a system like <A HREF="../../../mailman/listinfo/g4.html">SETI at home.</A> Each node in this system works 
+independently on a block of data, and the time spent retrieving and 
+sending data is a relatively small part of the overall effort. This 
+system achieves nearly 100% scaling performance even with a slow 
+dial-up fabric; 10 equivalent machines will do 10 times the work of one 
+machine, and it really doesn't matter what kind a machines they are, or 
+what OS they are running.
+
+On the other hand, systems that depend on entirely Symmetric multi 
+processing (SMP) usually break down with more than a handful of 
+processors. That's why SMP machines are usually limited to 2-4 
+processors. Unlike a cluster, an SMP machine must share resources 
+almost all the time. In particular, the memory bandwidth can easily 
+become choked if more than about 4 processors are sharing it. That's 
+why big iron SGIs and Suns, and even the bigger Xeon machines use 
+asymmetric multi processing to squeeze as many as 256 processors into 
+one system.
+
+Bottom line is that for ideal applications Clusters will always scale 
+perfectly. Of course there are no ideal applications that do much of 
+anything useful. The challenge is to architect your problems in a way 
+that makes the least use of sychronization, and at the same time make 
+your system synchronization as efficient as possible. The range of 
+applications that can be tackled on massive cluster grows with both 
+efforts.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005812.html">[G4] OS X ?
+</A></li>
+	<LI>Next message: <A HREF="005815.html">[G4] OS X ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5814">[ date ]</a>
+              <a href="thread.html#5814">[ thread ]</a>
+              <a href="subject.html#5814">[ subject ]</a>
+              <a href="author.html#5814">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

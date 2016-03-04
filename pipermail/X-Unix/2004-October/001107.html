@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Networking when booting OS X in text mode
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Networking%20when%20booting%20OS%20X%20in%20text%20mode&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="001108.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Networking when booting OS X in text mode</H1>
+    <B>Alexandre Gauthier</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Networking%20when%20booting%20OS%20X%20in%20text%20mode&In-Reply-To="
+       TITLE="[X-Unix] Networking when booting OS X in text mode">supernaut at underwares.org
+       </A><BR>
+    <I>Wed Oct  6 23:21:25 PDT 2004</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="001108.html">[X-Unix] Networking when booting OS X in text mode
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1107">[ date ]</a>
+              <a href="thread.html#1107">[ thread ]</a>
+              <a href="subject.html#1107">[ subject ]</a>
+              <a href="author.html#1107">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello,
+As most of you already know, you can use OS X in almost pure 
+frambuffered console mode by doing a few nasty tweaks and typing 
+ &gt;console as the username in the login prompt. This should dump you in 
+pure text mode, no graphical window server whatsoever.
+
+However, my concern is the following.
+
+*** The Wrong:
+Apparently, OS X seems to initialize networking for, say, airport in my 
+case, only when a graphical session is started.
+It seems that all adapters are brought up, but they don't seem to follow 
+the profile currently applied. They just stand there, basically, in 
+&quot;unknown&quot; state. Following this logic, they only seem to work when you 
+are _logged in_ as well. I don't think networking is fully operational 
+(at least in the case of 802.11b) until you have started a session. At 
+least in my case.
+I understand why that would happen, since profiles and the airport 
+manager seem to only apply inside your session since the airport applet 
+is only launched then.
+
+*** The what:
+Well, I would like to know if there is a way to enable networking while 
+in full text-mode-only-we-like-framebuffered-consoles mode.
+So far, ifconfig returns the interface (ne1), but it is in the state 
+&quot;unknown&quot;.
+
+*** The why:
+Don't ask why I want to do this ;) I just feel like it. It has to do 
+with me being easily distracted when programming bash (I tend to do 
+everything in perl, whenever I can. As for if that is a good or a bad 
+habit... ;P), and a strange, utterly immoral fondness for text 
+environnements.
+
+Anyways, this e-mail is most likely not making much sense, sorry -- but 
+it's 2:13 AM and I've been up for well over 35 hours.
+I'll re-read this tommorow and when I'll come to my senses and ponder 
+about parsing this message through sed and awk in order to make some 
+sense out of it, and then i'll follow it up with another one saying how 
+sorry I am, and with precisions.
+
+Why am I not sending it only tommorow instead? Well, I just tought of 
+that six lines ago, and I will send it anyways because i'm cool like that.
+
+Thank you all in advance for your patience
+
+--
+Alexandre Gauthier
+<A HREF="../../../mailman/listinfo/x-unix.html">supernaut at underwares.org</A>
+
+underwares.org
+Obscure IT knowledge Open Database
+
+The human brain operates at only 10% of its capacity. The rest is 
+overhead for the operating system.
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="001108.html">[X-Unix] Networking when booting OS X in text mode
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1107">[ date ]</a>
+              <a href="thread.html#1107">[ thread ]</a>
+              <a href="subject.html#1107">[ subject ]</a>
+              <a href="author.html#1107">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

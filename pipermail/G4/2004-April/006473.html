@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] defraging a Mac
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20defraging%20a%20Mac&In-Reply-To=list-11918517%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="006472.html">
+   <LINK REL="Next"  HREF="006474.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] defraging a Mac</H1>
+    <B>Alex</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20defraging%20a%20Mac&In-Reply-To=list-11918517%40mail.ninewire.com"
+       TITLE="[G4] defraging a Mac">alist at sprint.ca
+       </A><BR>
+    <I>Mon Apr  5 08:36:16 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="006472.html">[G4] defraging a Mac (the 85% rule)
+</A></li>
+        <LI>Next message: <A HREF="006474.html">Netscape 7.02 Reinstall
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6473">[ date ]</a>
+              <a href="thread.html#6473">[ thread ]</a>
+              <a href="subject.html#6473">[ subject ]</a>
+              <a href="author.html#6473">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Monday, Apr 5, 2004, at 08:52 Canada/Eastern, sr ferenczy wrote:
+
+&gt;<i> [...] actually, i WAS wrong... no specific number, but since os 9.1, 
+</I>&gt;<i> apple has allowed &quot;more than 2 forks&quot;
+</I>&gt;<i> <A HREF="http://www.speedtools.com/Users%20Guides/Disk%20Defrag%20Guide.pdf">http://www.speedtools.com/Users%20Guides/Disk%20Defrag%20Guide.pdf</A> 
+</I>&gt;<i> [...]
+</I>
+TN1150 (to which I referred you) explains:
+
+    &quot;Future Support for Named Forks
+
+     Files on an HFS volume have two forks: a data fork and a resource
+     fork, either of which may be empty (zero length). [...]
+
+     HFS Plus has an attribute file, another B-tree, that can be used to
+     store additional information for a file or directory. [...] The
+     contents of the attribute file's records have not been fully defined
+     yet, but the goal is to provide an arbitrary number of forks,
+     identified by Unicode names, for any file or directory.&quot;
+
+The operative terms from Apple (i.e., the horse's mouth) are &quot;future 
+support&quot;, &quot;have not been fully defined yet&quot;, and &quot;goal&quot;. In other 
+words, it's something that Apple intends to implement (and has put the 
+APIs in place for), but hasn't yet -- and may never do. So let's make 
+things clear: HFS+ files can have two -- and only two -- forks now. In 
+the future they may, or may not, have an arbitrary number of forks, but 
+we ain't there yet.
+
+&gt;&gt;&gt;<i> [...] i do know that many os x defragging tools do NOT worry about 
+</I>&gt;&gt;&gt;<i> keeping individual forks contiguous with the entire file, rather 
+</I>&gt;&gt;&gt;<i> they only keep forks contiguous with themselves.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> That's a new one for me -- but I'm always keen to learn new stuff. 
+</I>&gt;&gt;<i> Could you provide more details?
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://www.speedtools.com/Users%20Guides/Disk%20Defrag%20Guide.pdf">http://www.speedtools.com/Users%20Guides/Disk%20Defrag%20Guide.pdf</A>
+</I>
+AFAICT, the only relevant passages are
+
+    &quot;[...] Intech believes it is much more important to keep each fork 
+within a
+     file contiguous (in one piece) than it is to keep an entire file
+     with multiple forks contiguous. [...]&quot;
+
+    &quot;[...] while Disk Defrag will attempt to make the forks of a file
+     sequential to each other, the main priority is to remove the
+     fragments of each fork of a file. [...]&quot;
+
+I'm not quite sure how you read there that &quot;many os x defragging tools&quot; 
+do it. My reading is that only one is supposed to do what you describe: 
+Disk Defrag.
+
+&gt;&gt;<i> Is HFS+, as implemented under Panther, the first desktop OS to do 
+</I>&gt;&gt;<i> this type of clustering? Is its algorithm superior to other FSs which 
+</I>&gt;&gt;<i> do adaptive clustering? And on what criteria did you decide HFS+ is 
+</I>&gt;&gt;<i> better than, say, ext3 or ReiserFS?
+</I>&gt;<i>
+</I>&gt;<i> i was speaking desktop - basically windows and macintosh - consumer 
+</I>&gt;<i> machines [...]
+</I>
+It appears we do not have the same definition of desktop machine OSs. 
+My definition also includes Linux, OS/2, BeOS.
+
+&gt;<i> [...] i know very few (in fact none) consumer types who run linux.
+</I>
+Check out the OS X for Users list -- you'll find quite a few. And it's 
+fairly natural -- if you know your way around Linux well, you are 
+already half-way to being a Mac OS X expert.
+
+&gt;&gt;<i> But this whole discussion is about a bogus issue, driven chiefly by 
+</I>&gt;&gt;<i> the &quot;mine is bigger than yours&quot; syndrome. (Or perhaps not bogus, but 
+</I>&gt;&gt;<i> certainly of interest chiefly to geeks who eat OS specs for 
+</I>&gt;&gt;<i> breakfast.) It's not the file system that really counts, it's a 
+</I>&gt;&gt;<i> combination of features, FS included.
+</I>&gt;<i>
+</I>&gt;<i> nah, its about trying to get the highest performance out of the 
+</I>&gt;<i> machines we have without having to splurge for a brand spanking new 
+</I>&gt;<i> machine.
+</I>
+How's that? If you decide that NTFS is better than HFS+, you'll buy a 
+new PC, but if you know that HFS+ is better than NTFS, you'll get the 
+highest performance out of your Mac?! Gimme a break!
+
+&gt;<i> its also about trying to maintain a very useful knowledge about the 
+</I>&gt;<i> working of software i use daily [...]
+</I>
+Arguing FS esoterica and which FS is &quot;better&quot; helps you maintain &quot;a 
+very useful knowledge about the working of software i use daily&quot;? 
+Wouldn't reading Apple Tech Notes or the Inside Macintosh series or the 
+Darwin man pages be of slightly more value in achieving such a laudable 
+goal?
+
+Let's get real. You've made the choice to use a Mac. If you use a Mac, 
+you've got one FS choice: HFS+. (For obvious reasons, UFS is only 
+suitable for specific tasks.) If you use Win, you have basically two 
+choices: FAT32 or NTFS. If you use Linux, you have multiple choices: 
+ext2, ext3, Reiser, XFS, JFS, etc. (For the sake of brevity, I omitted 
+older FSs, like MFS, FAT16, VFAT, etc.) So, for Linux users it makes 
+sense to argue about FSs -- they have a choice. For Win users, it makes 
+less sense -- they're pretty much argued out. For us, it makes no sense 
+whatever.
+
+&gt;<i> [...] simply pointing out what appear to be erroneous/misleading 
+</I>&gt;<i> statements.
+</I>
+And those are?...
+
+&gt;<i> [...] i got most of my information from one source, but trust software 
+</I>&gt;<i> developers as big as intech to know what they are doing.
+</I>
+You trust Intech more than Apple when it comes to the specifications of 
+the file system designed by Apple? It's your privilege, of course.
+
+f
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="006472.html">[G4] defraging a Mac (the 85% rule)
+</A></li>
+	<LI>Next message: <A HREF="006474.html">Netscape 7.02 Reinstall
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6473">[ date ]</a>
+              <a href="thread.html#6473">[ thread ]</a>
+              <a href="subject.html#6473">[ subject ]</a>
+              <a href="author.html#6473">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+</body></html>

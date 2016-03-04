@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] chmod &quot;just doesn't work&quot; on /Volumes/OtherMac
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20chmod%20%22just%20doesn%27t%20work%22%20on%20/Volumes/OtherMac&In-Reply-To=AD25B927-998D-4508-B4F1-E34954093672%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003344.html">
+   <LINK REL="Next"  HREF="003345.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] chmod &quot;just doesn't work&quot; on /Volumes/OtherMac</H1>
+    <B>Jerry Krinock</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20chmod%20%22just%20doesn%27t%20work%22%20on%20/Volumes/OtherMac&In-Reply-To=AD25B927-998D-4508-B4F1-E34954093672%40mac.com"
+       TITLE="[X-Unix] chmod &quot;just doesn't work&quot; on /Volumes/OtherMac">jerry at ieee.org
+       </A><BR>
+    <I>Fri Jul 17 22:00:28 PDT 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003344.html">[X-Unix] chmod &quot;just doesn't work&quot; on /Volumes/OtherMac
+</A></li>
+        <LI>Next message: <A HREF="003345.html">[X-Unix] chmod &quot;just doesn't work&quot; on /Volumes/OtherMac
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3346">[ date ]</a>
+              <a href="thread.html#3346">[ thread ]</a>
+              <a href="subject.html#3346">[ subject ]</a>
+              <a href="author.html#3346">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 2009 Jul 07, at 10:15, Eric F Crist wrote:
+
+&gt;<i> It should work just fine.  Is the file system mounted read/write, or  
+</I>&gt;<i> read only?  You can check the real status of a command with 'echo  
+</I>&gt;<i> $?', if you get anything other than 0, there was a problem.On 2009  
+</I>&gt;<i> Jul 07, at 11:27, Filipp Lepalaan wrote:
+</I>
+
+On 2009 Jul 07, at 11:27, Filipp Lepalaan wrote:
+
+&gt;<i> mount | grep Pb800HD
+</I>&gt;<i>
+</I>&gt;<i> If the output of that includes &quot;noowners&quot; then that is the case.  
+</I>&gt;<i> Then you can use the Finder to enable ownership or remount it  
+</I>&gt;<i> manually.
+</I>
+Thanks, but still no explanation.  Everything looks OK.  It &quot;just  
+doesn't work...&quot;.  By the way, I have since tried this on another Mac  
+and got the same result.  I'd concluded that this was the way it was  
+supposed to work.  Weird.
+
+Jerrys-Mac-Mini:Volumes jk$ ls -al
+total 16
+drwxrwxrwt@  7 root  admin   238 Jul 17 21:32 .
+drwxrwxr-x  50 root  admin  1768 Jun 30 05:48 ..
+lrwxr-xr-x   1 root  admin     1 Jul 16 13:19 JMiniHD -&gt; /
+drwxrwxr-t  16 root  admin   612 Jul  8 12:41 JTimeHD
+drwx------  35 jk    staff  1146 Jul  9 15:24 Pb800HD
+drwxrwxr-x  13 root  admin   510 Jun  5 22:35 Spare
+Jerrys-Mac-Mini:Volumes jk$ chmod -v 777 Pb800HD
+Pb800HD
+Jerrys-Mac-Mini:Volumes jk$ echo $?
+0
+Jerrys-Mac-Mini:Volumes jk$ mount | grep Pb800HD
+afp_2lZ2Za000bB10000oM0000VU-1.2e000005 on /Volumes/Pb800HD (afpfs,  
+nodev, nosuid, mounted by jk)
+Jerrys-Mac-Mini:Volumes jk$ ls -al
+total 16
+drwxrwxrwt@  7 root  admin   238 Jul 17 21:32 .
+drwxrwxr-x  50 root  admin  1768 Jun 30 05:48 ..
+lrwxr-xr-x   1 root  admin     1 Jul 16 13:19 JMiniHD -&gt; /
+drwxrwxr-t  16 root  admin   612 Jul  8 12:41 JTimeHD
+drwx------  35 jk    staff  1146 Jul  9 15:24 Pb800HD
+drwxrwxr-x  13 root  admin   510 Jun  5 22:35 Spare
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003344.html">[X-Unix] chmod &quot;just doesn't work&quot; on /Volumes/OtherMac
+</A></li>
+	<LI>Next message: <A HREF="003345.html">[X-Unix] chmod &quot;just doesn't work&quot; on /Volumes/OtherMac
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3346">[ date ]</a>
+              <a href="thread.html#3346">[ thread ]</a>
+              <a href="subject.html#3346">[ subject ]</a>
+              <a href="author.html#3346">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

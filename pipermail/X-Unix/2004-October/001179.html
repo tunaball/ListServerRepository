@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Grep and backreferences with BBEdit
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Grep%20and%20backreferences%20with%20BBEdit&In-Reply-To=20041012183135.GP17336%404321.tv">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001178.html">
+   <LINK REL="Next"  HREF="001180.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Grep and backreferences with BBEdit</H1>
+    <B>Nick Scalise</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Grep%20and%20backreferences%20with%20BBEdit&In-Reply-To=20041012183135.GP17336%404321.tv"
+       TITLE="[X-Unix] Grep and backreferences with BBEdit">nickscalise at mac.com
+       </A><BR>
+    <I>Tue Oct 12 11:44:01 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001178.html">[X-Unix] Grep and backreferences with BBEdit
+</A></li>
+        <LI>Next message: <A HREF="001180.html">[X-Unix] Grep and backreferences with BBEdit
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1179">[ date ]</a>
+              <a href="thread.html#1179">[ thread ]</a>
+              <a href="subject.html#1179">[ subject ]</a>
+              <a href="author.html#1179">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE> On Tuesday, October 12, 2004, at 01:31PM, Brian Medley &lt;<A HREF="../../../mailman/listinfo/x-unix.html">bpm-list-osx-unix at 4321.tv</A>&gt; wrote:
+
+&gt;<i>On Tue, Oct 12, 2004 at 01:12:25PM -0500, Nick Scalise wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> I do not have a strictly unix question. I am very weak at grep
+</I>&gt;&gt;<i> and could use some rudimentary help.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> In BBEdit 6.5, I am wanting to do a search and replace for all
+</I>&gt;&gt;<i> occurances of &lt;a href=&quot;name.jpg&quot;&gt;, where 'name' is the
+</I>&gt;&gt;<i> variable. I want to add a images/ to the beginning of the
+</I>&gt;&gt;<i> 'name' variable.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> So, I think I have the first part figured out, I find &lt;a
+</I>&gt;&gt;<i> href=&quot;[a-zA-Z0-9+]+.jpg&quot;&gt; using grep in BBEdit's find dialog,
+</I>&gt;&gt;<i> this seems to produce the desired result. Please let me know if
+</I>&gt;&gt;<i> there is a better way.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> Where I am lost is the backreference part. What is the pattern
+</I>&gt;&gt;<i> I would add in the replace dialog that would add 'images/'  so
+</I>&gt;&gt;<i> that the original &lt;a href='name.jpg'&gt; would end up &lt;a
+</I>&gt;&gt;<i> href=&quot;images/name.jpg&quot;&gt;
+</I>&gt;<i>
+</I>&gt;<i>Even though you didn't mention it, I would use perl:
+</I>&gt;<i>
+</I>&gt;<i>    $ cat test.html
+</I>&gt;<i>    &lt;a href=&quot;name.jpg&quot;&gt;
+</I>&gt;<i>    &lt;h1&gt;blah&lt;/h1&gt;
+</I>&gt;<i>    &lt;a href=&quot;name2.jpg&quot;&gt;
+</I>&gt;<i>    name2.jpg
+</I>&gt;<i>    &lt;a href=&quot;blue.jpg&quot;&gt;
+</I>&gt;<i>    $ perl -p -i.bak -e 's#&lt;a href=&quot;([\w\.]+)&quot;&gt;#&lt;a href=&quot;images/$1&quot;&gt;#' test.html
+</I>&gt;<i>    $ cat test.html
+</I>&gt;<i>    &lt;a href=&quot;images/name.jpg&quot;&gt;
+</I>&gt;<i>    &lt;h1&gt;blah&lt;/h1&gt;
+</I>&gt;<i>    &lt;a href=&quot;images/name2.jpg&quot;&gt;
+</I>&gt;<i>    name2.jpg
+</I>&gt;<i>    &lt;a href=&quot;images/blue.jpg&quot;&gt;
+</I>&gt;<i>    $ cat test.html.bak 
+</I>&gt;<i>    &lt;a href=&quot;name.jpg&quot;&gt;
+</I>&gt;<i>    &lt;h1&gt;blah&lt;/h1&gt;
+</I>&gt;<i>    &lt;a href=&quot;name2.jpg&quot;&gt;
+</I>&gt;<i>    name2.jpg
+</I>&gt;<i>    &lt;a href=&quot;blue.jpg&quot;&gt;
+</I>&gt;<i>    $
+</I>&gt;<i>
+</I>&gt;<i>'perldoc perlrun' for more details
+</I>
+Thanks for the effort, but this is way over my head. But I gave it a go anyway.
+
+I created a test.html file with:
+
+    &lt;a href=&quot;name.jpg&quot;&gt;
+    &lt;h1&gt;blah&lt;/h1&gt;
+    &lt;a href=&quot;name2.jpg&quot;&gt;
+    name2.jpg
+    &lt;a href=&quot;blue.jpg&quot;&gt;
+
+in it and then ran the perl line: 
+
+perl -p -i.bak -e 's#&lt;a href=&quot;([\w\.]+)&quot;&gt;#&lt;a href=&quot;images/$1&quot;&gt;#' test.html
+
+It only changed the first line:
+
+&lt;a href=&quot;images/name.jpg&quot;&gt;
+&lt;a href=&quot;name.jpg&quot;&gt; 
+&lt;h1&gt;blah&lt;/h1&gt; 
+&lt;a href=&quot;name2.jpg&quot;&gt; 
+&#160;name2.jpg 
+&lt;a href=&quot;blue.jpg&quot;&gt; 
+
+Anybody with a BBedit solution?
+
+--
+Nick Scalise
+<A HREF="../../../mailman/listinfo/x-unix.html">nickscalise at mac.com</A>
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001178.html">[X-Unix] Grep and backreferences with BBEdit
+</A></li>
+	<LI>Next message: <A HREF="001180.html">[X-Unix] Grep and backreferences with BBEdit
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1179">[ date ]</a>
+              <a href="thread.html#1179">[ thread ]</a>
+              <a href="subject.html#1179">[ subject ]</a>
+              <a href="author.html#1179">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

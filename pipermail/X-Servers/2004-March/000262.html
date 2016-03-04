@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Servers] Server Monitor can't connect
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20Server%20Monitor%20can%27t%20connect&In-Reply-To=list-11765917%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000261.html">
+   <LINK REL="Next"  HREF="000263.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Servers] Server Monitor can't connect</H1>
+    <B>Dalton Hamilton</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20Server%20Monitor%20can%27t%20connect&In-Reply-To=list-11765917%40mail.ninewire.com"
+       TITLE="[X Servers] Server Monitor can't connect">dalton_hamilton at mac.com
+       </A><BR>
+    <I>Sun Mar 28 16:18:38 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000261.html">Server Monitor can't connect
+</A></li>
+        <LI>Next message: <A HREF="000263.html">Is OS X Server right  for us?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#262">[ date ]</a>
+              <a href="thread.html#262">[ thread ]</a>
+              <a href="subject.html#262">[ subject ]</a>
+              <a href="author.html#262">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I can't remember all t he problems I had getting various things to work 
+on my Xserves but I do remember there needed to be a user in the local 
+netinfo domain and it the password cold NOT be set to &quot;password 
+server.&quot;  I know this is vague but try creating a user in the local 
+netinfo domain and do not set the password to password server.
+
+Good luck
+Dalton Hamilton
+
+
+On Mar 28, 2004, at 11:49 AM, James Bucanek wrote:
+
+&gt;<i> I'm having the darnest time with Server Monitor (OS X Server 10.3.3 + 
+</I>&gt;<i> XServe G5).
+</I>&gt;<i>
+</I>&gt;<i> I just unpacked a new G5 XServe yesterday (whoo hoo!) and set it up at 
+</I>&gt;<i> home.  I'll eventually be transferring to a Co-location facility, but 
+</I>&gt;<i> I just plugged it into the LAN so I can spend some time getting it set 
+</I>&gt;<i> up over the next couple of weeks.
+</I>&gt;<i>
+</I>&gt;<i> Everything seems to be working just fine, except that the Server 
+</I>&gt;<i> Monitor application won't work.  I either get the status &quot;Waiting for 
+</I>&gt;<i> response&quot; or &quot;User name or password is incorrect&quot; (they're not).
+</I>&gt;<i>
+</I>&gt;<i> The log just reports &quot;Failed to contact server&quot; over and over again.  
+</I>&gt;<i> This happens regardless of how I address the server (IP address, 
+</I>&gt;<i> Rendezvous name, &quot;localhost&quot;, or &quot;127.0.0.1&quot;).  And it has the same 
+</I>&gt;<i> problem from another workstation on the network or run locally on the 
+</I>&gt;<i> XServe itself.
+</I>&gt;<i>
+</I>&gt;<i> I've scoured Apple's support pages, and there is only one technote 
+</I>&gt;<i> about Server Monitor not connecting where reverse DNS lookup isn't 
+</I>&gt;<i> available (I'm not running any DNS at the house).  The note says this 
+</I>&gt;<i> can be fixed by changing the X Server's HOSTNAME to 'localhost' in 
+</I>&gt;<i> /etc/hostconfig, then addressing the server by it's IP address.  I did 
+</I>&gt;<i> both of these, and it doesn't make any difference.  I even reinstalled 
+</I>&gt;<i> the Server OS from the CDs.  No difference.
+</I>&gt;<i>
+</I>&gt;<i> That would be a non-issue if I could be assured that it will work when 
+</I>&gt;<i> DNS is available.  When it gets installed at the CoLo, it will have a 
+</I>&gt;<i> proper domain name, reverse lookup, and all that.  I'm running 
+</I>&gt;<i> Timbuktu for my remote administration, do I don't (technically) *need* 
+</I>&gt;<i> Server Monitor to get things working.  But I'm worried since I can't 
+</I>&gt;<i> make it work even with the changes I made in the technote.  And I will 
+</I>&gt;<i> definitely want Server Monitor working once it's install remotely.
+</I>&gt;<i>
+</I>&gt;<i> Has anyone else had this problem?  Can I expect the problem to go away 
+</I>&gt;<i> once it has a proper domain name?  And is there something I can do 
+</I>&gt;<i> about it while it's installed locally?
+</I>&gt;<i>
+</I>&gt;<i> ______________________________________________________
+</I>&gt;<i> James Bucanek       &lt;mailto:<A HREF="../../../mailman/listinfo/x-servers.html">privatereply at gloaming.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;<i> Mac ISP
+</I>&gt;<i> Serious Mac Internet Solutions From NineWire!   
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older 
+</I>&gt;<i> Mac!
+</I>&gt;<i> Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>    Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>   this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000261.html">Server Monitor can't connect
+</A></li>
+	<LI>Next message: <A HREF="000263.html">Is OS X Server right  for us?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#262">[ date ]</a>
+              <a href="thread.html#262">[ thread ]</a>
+              <a href="subject.html#262">[ subject ]</a>
+              <a href="author.html#262">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

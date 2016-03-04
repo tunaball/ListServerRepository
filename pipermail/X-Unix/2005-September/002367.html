@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] how to determine if FW drive is attached
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20how%20to%20determine%20if%20FW%20drive%20is%20attached&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002364.html">
+   <LINK REL="Next"  HREF="002368.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] how to determine if FW drive is attached</H1>
+    <B>Timothy Luoma</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20how%20to%20determine%20if%20FW%20drive%20is%20attached&In-Reply-To="
+       TITLE="[X-Unix] how to determine if FW drive is attached">lists at tntluoma.com
+       </A><BR>
+    <I>Mon Sep  5 20:06:35 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002364.html">[X-Unix] debugger ?
+</A></li>
+        <LI>Next message: <A HREF="002368.html">[X-Unix] how to determine if FW drive is attached
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2367">[ date ]</a>
+              <a href="thread.html#2367">[ thread ]</a>
+              <a href="subject.html#2367">[ subject ]</a>
+              <a href="author.html#2367">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+I am using the script below to determine whether or not my Maxtor  
+external FW drive is attached (not necessarily mounted, just  
+physically just attached).
+
+
+#!/bin/sh
+
+FWDRIVE_ATTACHED=`system_profiler |\
+     fgrep -B2 'GUID: 0x10B920003D6BFB' |\
+     tr '\012' ' ' |\
+     sed 's#  *# #g' `
+
+IS_ATTACHED=&quot; Manufacturer: Maxtor Model: 0x3020 GUID:  
+0x10B920003D6BFB &quot;
+
+if [ &quot;$IS_ATTACHED&quot; = &quot;$FWDRIVE_ATTACHED&quot; ]
+then
+
+     echo &quot;FW drive is attached&quot;
+
+else
+
+     echo &quot;FW drive is not attached&quot;
+
+fi
+
+exit 0
+#EOF
+
+There are a lot of Apple-specific utilities that I'm not familiar  
+with.  I'm trying to figure out if there is a way to do this w/o  
+using 'system_profiler' which is fairly CPU intensive.
+
+TjL
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002364.html">[X-Unix] debugger ?
+</A></li>
+	<LI>Next message: <A HREF="002368.html">[X-Unix] how to determine if FW drive is attached
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2367">[ date ]</a>
+              <a href="thread.html#2367">[ thread ]</a>
+              <a href="subject.html#2367">[ subject ]</a>
+              <a href="author.html#2367">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

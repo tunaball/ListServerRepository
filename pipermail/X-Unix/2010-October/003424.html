@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to *quietly* unarchive a .bz2 file?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20How%20to%20%2Aquietly%2A%20unarchive%20a%20.bz2%20file%3F&In-Reply-To=%3C810FD054-89E3-4752-8EA8-2824C8751A3B%40unibas.ch%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003422.html">
+   <LINK REL="Next"  HREF="003425.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X-Unix] How to *quietly* unarchive a .bz2 file?</H1>
+    <B>Robert Frank</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20How%20to%20%2Aquietly%2A%20unarchive%20a%20.bz2%20file%3F&In-Reply-To=%3C810FD054-89E3-4752-8EA8-2824C8751A3B%40unibas.ch%3E"
+       TITLE="[X-Unix] How to *quietly* unarchive a .bz2 file?">robert.frank at unibas.ch
+       </A><BR>
+    <I>Sun Oct  3 23:31:53 PDT 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003422.html">[X-Unix] How to *quietly* unarchive a .bz2 file?
+</A></li>
+        <LI>Next message: <A HREF="003425.html">[X-Unix] How to *quietly* unarchive a .bz2 file?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3424">[ date ]</a>
+              <a href="thread.html#3424">[ thread ]</a>
+              <a href="subject.html#3424">[ subject ]</a>
+              <a href="author.html#3424">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Well, Jerry, I'm astonished that all which responded missed the point:
+
+tar DOES handle bzip (according to the man page), but no  
+automatically. You really just have to read the manpage and you will  
+see that you have to use the -j flag.
+
+tar xjf /var/log/system.log.0.bz2  (note the j in the option list)
+
+should do the trick too.
+
+-Robert
+
+On 03/10/2010, at 21:00 , Jerry Krinock wrote:
+
+&gt;<i> For remote diagnosis of problems, I have a script which  
+</I>&gt;<i> unarchives .bz2 system logs, filters them for certain keywords, and  
+</I>&gt;<i> zips the resulting text into an archive which the user can email to  
+</I>&gt;<i> me.
+</I>&gt;<i>
+</I>&gt;<i> This works except that for unarchiving the .bz2 logs, I use /usr/bin/ 
+</I>&gt;<i> open, which launches the Archive Utility app, which opens a Finder  
+</I>&gt;<i> window that activates for each .bz2 file, creating visual pollution  
+</I>&gt;<i> and intercepting any keystrokes which the user might be typing in  
+</I>&gt;<i> another app.  Very annoying.
+</I>&gt;<i>
+</I>&gt;<i> Archive Utility.app is in /System/Library/CoreServices and has no  
+</I>&gt;<i> documentation.
+</I>&gt;<i>
+</I>&gt;<i> It appears that on Linux, people use 'bunzip' or 'tar -x' for this.   
+</I>&gt;<i> Well, bunzip seems to not exist on Mac OS X, and although 'man tar'  
+</I>&gt;<i> says that &quot;this implementation recognizes bzip2 compression  
+</I>&gt;<i> automatically when reading archives&quot;, it doesn't work on a .bz2?
+</I>&gt;<i>
+</I>&gt;<i> JerryMacMini:~ jk$ tar -x -f /var/log/system.log.0.bz2
+</I>&gt;<i> tar: This does not look like a tar archive
+</I>&gt;<i> tar: Skipping to next header
+</I>&gt;<i> tar: Archive contains obsolescent base-64 headers
+</I>&gt;<i> tar: Error exit delayed from previous errors
+</I>&gt;<i>
+</I>&gt;<i> I get the same problem if I use the -j option (which, according to  
+</I>&gt;<i> 'man tar', is not necessary for extracting)
+</I>&gt;<i>
+</I>&gt;<i> JerryMacMini:~ jk$ tar -x -j -f /var/log/system.log.0.bz2
+</I>&gt;<i> tar: This does not look like a tar archive
+</I>&gt;<i> tar: Skipping to next header
+</I>&gt;<i> tar: Archive contains obsolescent base-64 headers
+</I>&gt;<i> tar: Error exit delayed from previous errors
+</I>&gt;<i>
+</I>&gt;<i> How can I quietly unarchive a .bz2 file?
+</I>&gt;<i>
+</I>&gt;<i> Thanks,
+</I>&gt;<i>
+</I>&gt;<i> Jerry
+</I>&gt;<i>
+</I>
+Departement Informatik   HPWC   tel   +41 (0)61 267 14 66
+Universit&#228;t Basel                              fax. +41 (0)61 267 14 61
+Robert Frank
+Klingelbergstrasse 50                     <A HREF="../../../mailman/listinfo/x-unix.html">Robert.Frank at unibas.ch</A>
+CH-4056 Basel
+Switzerland                                        <A HREF="http://www.informatik.unibas.ch/personen/frank_r.html">http://www.informatik.unibas.ch/personen/frank_r.html</A>
+
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003422.html">[X-Unix] How to *quietly* unarchive a .bz2 file?
+</A></li>
+	<LI>Next message: <A HREF="003425.html">[X-Unix] How to *quietly* unarchive a .bz2 file?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3424">[ date ]</a>
+              <a href="thread.html#3424">[ thread ]</a>
+              <a href="subject.html#3424">[ subject ]</a>
+              <a href="author.html#3424">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

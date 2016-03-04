@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] script: setting directory ownership to the name of that
+	directory ?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20script%3A%20setting%20directory%20ownership%20to%20the%20name%20of%20that%0A%09directory%20%3F&In-Reply-To=BF24AE84.1F43%25macosxforme%40gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002285.html">
+   <LINK REL="Next"  HREF="002290.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] script: setting directory ownership to the name of that
+	directory ?</H1>
+    <B>Gregory Rupp</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20script%3A%20setting%20directory%20ownership%20to%20the%20name%20of%20that%0A%09directory%20%3F&In-Reply-To=BF24AE84.1F43%25macosxforme%40gmail.com"
+       TITLE="[X-Unix] script: setting directory ownership to the name of that
+	directory ?">ruppgregory at yahoo.com
+       </A><BR>
+    <I>Sun Aug 14 06:38:02 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002285.html">[X-Unix] script: setting directory ownership to the name of that
+ directory ?
+</A></li>
+        <LI>Next message: <A HREF="002290.html">[X-Unix] Expression/script edit series of txt files in separate
+	subdirectories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2286">[ date ]</a>
+              <a href="thread.html#2286">[ thread ]</a>
+              <a href="subject.html#2286">[ subject ]</a>
+              <a href="author.html#2286">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hey
+
+Sounds like you need a for loop.  Using BASH try something like this:
+
+Here's a test directory:
+
+imac:/tmp/TEST greg$ ls -al
+total 0
+drwxr-xr-x   5 greg  wheel  170 Aug 14 07:26 .
+drwxrwxrwt   9 root  wheel  306 Aug 14 07:25 ..
+drwxr-xr-x   2 greg  wheel   68 Aug 14 07:25 user1
+drwxr-xr-x   2 greg  wheel   68 Aug 14 07:25 user2
+drwxr-xr-x   2 greg  wheel   68 Aug 14 07:26 user3
+
+
+Then the for loop:
+
+imac:/tmp/TEST greg$ for DIRECTORY in `ls 
+-1`                                                           
+ &gt; do
+ &gt; chown greg:greg $DIRECTORY
+ &gt; done
+
+
+The result:
+
+imac:/tmp/TEST greg$ ls -al
+total 0
+drwxr-xr-x   5 greg  wheel  170 Aug 14 07:26 .
+drwxrwxrwt   9 root  wheel  306 Aug 14 07:25 ..
+drwxr-xr-x   2 greg  greg    68 Aug 14 07:25 user1
+drwxr-xr-x   2 greg  greg    68 Aug 14 07:25 user2
+drwxr-xr-x   2 greg  greg    68 Aug 14 07:26 user3
+
+
+The &quot;ls -1&quot; gives you the names without all the other stuff so you don't 
+need the awk statement.  Change/add statements between the &quot;do&quot; and the 
+&quot;done&quot; as needed.
+
+HTH,
+Greg
+
+
+macosxforme wrote:
+
+&gt;<i>I am certain that this is easy for most of you, and probably rather basic...
+</I>&gt;<i>
+</I>&gt;<i>I have a base folder/directory, and within it, will be a long list (800 or
+</I>&gt;<i>so) of directories.
+</I>&gt;<i>
+</I>&gt;<i>Each directory will bear the name of a user. So, the user will already exist
+</I>&gt;<i>on the system (OS X Server, not client)
+</I>&gt;<i>
+</I>&gt;<i>What I need to do, is read the listing of those folders, and set the owner
+</I>&gt;<i>of each directory to be the name of the directory itself - ie:
+</I>&gt;<i>chown admin-name:$dirname $dirname   ... ?
+</I>&gt;<i>
+</I>&gt;<i>I've been fumbling with this for a couple days...
+</I>&gt;<i>
+</I>&gt;<i>I can do
+</I>&gt;<i>ls -l | awk '{print $9}'
+</I>&gt;<i>
+</I>&gt;<i>(or, could use: basename )
+</I>&gt;<i>but how do I store that value, and then use the stored value for chown...  ?
+</I>&gt;<i>
+</I>&gt;<i>grumble... 
+</I>&gt;<i>
+</I>&gt;<i>getting the name of each directory and for each directory setting owner (ie:
+</I>&gt;<i>chown admin:directoryname directoryname
+</I>&gt;<i>and then doing the same on the next directory, etc.
+</I>&gt;<i>
+</I>&gt;<i>such that
+</I>&gt;<i>
+</I>&gt;<i>drw-rw-r--    2 admin  usera     68 Aug 13 22:24 usera
+</I>&gt;<i>drw-rw-r--    2 admin  userb     68 Aug 13 18:04 userb
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>Any and all input welcome and appreciated, TIA
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>_______________________________________________
+</I>&gt;<i>X-Unix mailing list
+</I>&gt;<i><A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i><A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i>Listmom is trying to clean out his closets! Vintage Mac and random stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002285.html">[X-Unix] script: setting directory ownership to the name of that
+ directory ?
+</A></li>
+	<LI>Next message: <A HREF="002290.html">[X-Unix] Expression/script edit series of txt files in separate
+	subdirectories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2286">[ date ]</a>
+              <a href="thread.html#2286">[ thread ]</a>
+              <a href="subject.html#2286">[ subject ]</a>
+              <a href="author.html#2286">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

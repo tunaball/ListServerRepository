@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to determine which network component is failing
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20determine%20which%20network%20component%20is%20failing&In-Reply-To=48A6DAB2-FEBD-49EC-97DD-1DEAFE21F298%40myrealbox.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002694.html">
+   <LINK REL="Next"  HREF="002708.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to determine which network component is failing</H1>
+    <B>Charles Howse</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20determine%20which%20network%20component%20is%20failing&In-Reply-To=48A6DAB2-FEBD-49EC-97DD-1DEAFE21F298%40myrealbox.com"
+       TITLE="[X-Unix] How to determine which network component is failing">chowse at charter.net
+       </A><BR>
+    <I>Mon Jul 24 14:19:53 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002694.html">[X-Unix] How to determine which network component is failing
+</A></li>
+        <LI>Next message: <A HREF="002708.html">[X-Unix] How to determine which network component is failing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2701">[ date ]</a>
+              <a href="thread.html#2701">[ thread ]</a>
+              <a href="subject.html#2701">[ subject ]</a>
+              <a href="author.html#2701">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Jul 24, 2006, at 8:57 AM, Stroller wrote:
+
+&gt;<i>
+</I>&gt;<i> Ummm... it would be. You need to grep it.
+</I>&gt;<i>
+</I>
+Yes, I understand, I've been curling/grepping the modem's signal data  
+page to get the levels.
+curl -s <A HREF="http://192.168.100.1/signaldata.html">http://192.168.100.1/signaldata.html</A> | grep dB | tr -d \&lt;TD\&gt;  
+|<i> tr -d /
+</I>returns:
+37 dB
+-5 dBmV
+55 dBmV
+where 37 is the s/n ratio, -5 is the downstream power level, and 55  
+is the upstream power level.
+
+
+&gt;<i>
+</I>&gt;<i> For my router:
+</I>&gt;<i>   $ curl -u admin:password <A HREF="http://pornpipe/doc/online.sht">http://pornpipe/doc/online.sht</A> 2&gt; /dev/ 
+</I>&gt;<i> null | grep -o '[[:digit:]]\{1,3\}[\.][[:digit:]]\{1,3\}[\.] 
+</I>&gt;<i> [[:digit:]]\{1,3\}[\.][[:digit:]]\{1,3\}'
+</I>&gt;<i>   192.168.1.43
+</I>&gt;<i>   212.104.130.9
+</I>&gt;<i>   192.168.1.1
+</I>&gt;<i>   82.153.1.4
+</I>&gt;<i>   213.152.39.89
+</I>&gt;<i>
+</I>
+That works for my router.  The ISP gateway ip is the 3rd line of 6.
+[<A HREF="../../../mailman/listinfo/x-unix.html">charles at larry</A>:~]$ curl -u admin:pw <A HREF="http://192.168.100.254/">http://192.168.100.254/</A> 
+Status_Router.htm 2&gt; /dev/null | grep -o '[[:digit:]]\{1,3\}[\.] 
+[[:digit:]]\{1,3\}[\.][[:digit:]]\{1,3\}[\.][[:digit:]]\{1,3\}' |  
+head -3 | tail -1
+24.159.76.1
+[<A HREF="../../../mailman/listinfo/x-unix.html">charles at larry</A>:~]$
+
+
+&gt;<i> I might extract only the IP I'm interested in by heading &amp; tailing  
+</I>&gt;<i> the output (for some reason that sounds so much nicer to me than  
+</I>&gt;<i> &quot;by use of `head` and `tail`&quot;) but there are probably more elegant  
+</I>&gt;<i> ways of doing it - what happens if you're offline and the router's  
+</I>&gt;<i> webpage only shows the first 3 of those IPs? A good Bash script  
+</I>&gt;<i> will probably contain an &quot;if $variable is NULL then&quot; statement - I  
+</I>&gt;<i> can't remember off the top of my head how to do that but I know  
+</I>&gt;<i> it's described in the Advanced Bash Scripting Guide which is a free  
+</I>&gt;<i> download and always close at hand when I'm writing Bash scripts here.
+</I>&gt;<i>
+</I>
+On my router, I've only seen an ip of 0.0.0.0, the correct ip, and  
+the old ip if the lease has expired.
+So maybe I won't run into a null, but I'll script it anyway.  Good  
+idea.  Got me a local copy of The ABSG!
+
+&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i> I use static addresses on all the lan computers.  The dhcp server  
+</I>&gt;&gt;<i> on the router is turned off.
+</I>&gt;&gt;<i> One issue might be that the modem's lan address is 192.168.100.1,  
+</I>&gt;&gt;<i> and the default address for the router is 192.168.1.1.  I have  
+</I>&gt;&gt;<i> changed that to 192.168.254.254, and set the computers to  
+</I>&gt;&gt;<i> 192.168.254.*/255.255.255.0.
+</I>&gt;&gt;<i> Do you think it would help anything to set the router to  
+</I>&gt;&gt;<i> 192.168.100.254, and the computers to 192.168.100.*/255.255.255.0?
+</I>&gt;&gt;<i> Then everything would be on the same subnet.
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Ummm... *rubs eyes*
+</I>&gt;<i> It's kinda early in the morning here, so please excuse me if I'm  
+</I>&gt;<i> reading that incorrectly... but the point of a router is that it  
+</I>&gt;<i> routes between two different subnets. Ummmm... if the modem has a  
+</I>&gt;<i> 192.168.x.y IP address then that suggests it's already doing some  
+</I>&gt;<i> NATting (certainly if the modem's external address is different).  
+</I>&gt;<i> If you put both interfaces of the router in the same subnet I don't  
+</I>&gt;<i> think it would work any more.
+</I>&gt;<i>
+</I>
+I've removed my original comments after receiving the bounce msg from  
+the list server.
+I must humbly correct myself.  When I set the routers address to  
+192.168.100.254 and the computers to 192.168.100.*/255.255.255.0,  
+everything worked, but I couldn't ping the modem nor see it's  
+internal web page.
+I've set everything back to the way I had it, and all is well.
+
+&gt;<i> I haven't seen the source from the webpage that you use to reboot  
+</I>&gt;<i> the router, yet. Perhaps you could repost it, please? Since that'll  
+</I>&gt;<i> be plain-text html then an attachment would probably be quite  
+</I>&gt;<i> acceptable to the list. Use your web-browser to navigate to that  
+</I>&gt;<i> page and use &quot;View &gt; Source&quot;, but make sure you're not viewing just  
+</I>&gt;<i> the source to a frameset.
+</I>&gt;<i>
+</I>
+It's too big for the 5k limit.  It bounced.
+I've posted it here:
+<A HREF="http://bubbabbq.homeunix.net/router_status.html">http://bubbabbq.homeunix.net/router_status.html</A>
+
+&gt;<i> The &quot;--form&quot; parameter to `curl` may allow for button presses on a  
+</I>&gt;<i> webpage.
+</I>&gt;<i>
+</I>
+Hmmm...I'll have to play with that.
+Thanks for all the info!  :-)
+
+
+
+--
+How I make Great Barbecue -
+<A HREF="http://bubbabbq.homeunix.net/bbq.html">http://bubbabbq.homeunix.net/bbq.html</A>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002694.html">[X-Unix] How to determine which network component is failing
+</A></li>
+	<LI>Next message: <A HREF="002708.html">[X-Unix] How to determine which network component is failing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2701">[ date ]</a>
+              <a href="thread.html#2701">[ thread ]</a>
+              <a href="subject.html#2701">[ subject ]</a>
+              <a href="author.html#2701">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

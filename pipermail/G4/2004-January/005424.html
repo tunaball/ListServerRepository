@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Panther upgrade
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Panther%20upgrade&In-Reply-To=list-10065831%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005423.html">
+   <LINK REL="Next"  HREF="005425.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Panther upgrade</H1>
+    <B>Doug McNutt</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Panther%20upgrade&In-Reply-To=list-10065831%40mail.ninewire.com"
+       TITLE="[G4] Panther upgrade">douglist at macnauchtan.com
+       </A><BR>
+    <I>Sat Jan 17 10:32:55 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005423.html">Dvd-R media
+</A></li>
+        <LI>Next message: <A HREF="005425.html">Pioneer DVR-103
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5424">[ date ]</a>
+              <a href="thread.html#5424">[ thread ]</a>
+              <a href="subject.html#5424">[ subject ]</a>
+              <a href="author.html#5424">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 13:32 -0700 1/4/04, I wrote:
+&gt;<i>At 22:56 -0800 1/3/04, Perry The Cynic wrote:
+</I>&gt;<i> &gt;In general: lighten up.
+</I>&gt;<i>I do feel better this morning.  Panther will get installed.
+</I>
+Once again. I appreciate the hand holding. Panther is running.
+
+I took some notes which I think might be interesting here. though I'm not so sure the &lt;<A HREF="../../../mailman/listinfo/g4.html">X-Unix at lists.themacintoshguy.com</A>&gt; list wouldn't be more appropriate. I have some associated scripting code to contribute and I'll offer it there.
+
+The word &quot;still&quot; should be taken with the connotation that a bug was reported to Apple from Jaguar.
+
+***  my notes ***
+
+My four displays with older ATI cards and Apple monochrome monitors first used on my IIFX came up just fine. It was a welcome surprise after all I had heard.
+
+A test AppleWorks document got its lower edge below bottom of main screen and I was unable to change its size. That may be because the right and left displays extend below the main monitor. The UNIX clock cannot be moved above the menu bar to the top monitor. X11 gave me fits in the past and I'm looking forward to redoing my .x11initrc file once again.
+
+/etc/csh.login still overwrites the PATH variable set up in environment.plist. That causes the Terminal application to behave strangely when compared to BBEdit worksheets and AppleScript. Easily fixed, if you're a superuser, by deleting the content of /etc/csh.login but one wonders if some downloaded security update will &quot;repair&quot; that.
+
+Someone told me that Finder on Panther would run UNIX executables from a double click. That may be true for X11 apps but it doesn't work for a simple shell script or a compiled tool. One has to apply a *.command extension and that brings up Terminal and spoils the whole idea. Run shell script from AppleScript works as it did in Jaguar.
+
+If I create a directory  using Terminal while the enclosing folder is showing in a column view of a finder window it will not appear in the finder window until something is done, with finder active, to cause a refresh. This does not happen all the time but it's annoying when it does.
+
+A folder window opened on my SE/30 AppleTalk server will not get updated when its contents change by network activity. Viewing as list and then resetting to view as icon will force the update but just resorting, say by date, does not. The same folder, kept open on my 8500, updates properly.
+
+Safari still converts domain names to lower case before accessing the /etc/hosts file or, what's more likely, before making a system call to look up a domain. That makes for a problem when a local machine uses a name with mixed case in it. It's OK to demand that domain names be processed in a case insensitive fashion. It's not OK to demand that they be expressed in all lower case in other places. The fix is to make double entries in /etc/hosts with alternate spellings but they look funny when I copy the file into my Linux box.
+
+Finder no longer opens a window into the startup disk to replace a window left up at logout which pointed to a network disk. That caused my startup AppleScript to fail but left me with another problem. I want that window to be just a changing bunch of files that I can drag and drop onto local applications. The window now comes up with a bar of disk icons down the left side that I have to remove each time I log in. I want a window full of small icons like I get automatically in OS 9. Clicking the button at the top right changes the window position which I don't want. It appears that no amount of AppleScripting can automate that.
+
+In small icon view, with text to the right, Finder still truncates file names with . . . in the middle even though there is lots of room in the window.
+
+It is possible to create a case sensitive partition by booting the installer CD into single user mode. But you can't proceed to install Panther on that partition. The installer goes into an infinite loop without comment.
+
+A Carbon Copy clone of Panther made onto a case sensitive HFS+ partition will not boot. The startup code simply moves over to the original HFS+ partition with nothing left in any known log file. It's possible that the behavior is specific to my sawtooth G4 and its ROM.
+
+But.  Case sensitive partitions do work. Finder windows honor the differences.  Applications run from them and links to them are honored in everything I have tried. A remaining question is whether or not an update from Apple will work. I'll wait a bit before I try to move my entire $HOME directory to a case sensitive partition. For now all I need that way are the backups and working area for my Linux and Solaris efforts on distant machines.
+
+Immediately after the install I tried a &quot;which perl&quot; request from Terminal. It didn't work and that led to some man requests which didn't work either. $MANPAGE was not defined and I'm not so sure it should be given the state of BSD. A missing file, /usr/share/man/whatis.db, led me to an external man page for &quot;which&quot; and I figured out that the whatis.db could be written automatically during execution of a periodic script.  I executed the daily, weekly, and monthly periodic scripts and a whole lot of things started working.
+
+The CD-ROM tray on G4 sawtooth opens on startup. Nothing in it. Problem went away. I wonder if it had anything to do with the periodic scripts?
+
+-- 
+--&gt;  There are 10 kinds of people:  those who understand binary, and those who don't &lt;--
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005423.html">Dvd-R media
+</A></li>
+	<LI>Next message: <A HREF="005425.html">Pioneer DVR-103
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5424">[ date ]</a>
+              <a href="thread.html#5424">[ thread ]</a>
+              <a href="subject.html#5424">[ subject ]</a>
+              <a href="author.html#5424">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

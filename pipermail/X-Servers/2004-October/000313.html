@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Servers] Re: Newbie with setup questions
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX-Servers%5D%20Re%3A%20Newbie%20with%20setup%20questions&In-Reply-To=319F885A-2712-11D9-BF01-000D9366F4BA%40schneider.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000312.html">
+   <LINK REL="Next"  HREF="000314.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Servers] Re: Newbie with setup questions</H1>
+    <B>Peter C.S. Adams</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX-Servers%5D%20Re%3A%20Newbie%20with%20setup%20questions&In-Reply-To=319F885A-2712-11D9-BF01-000D9366F4BA%40schneider.net"
+       TITLE="[X-Servers] Re: Newbie with setup questions">adamsp at cs.umb.edu
+       </A><BR>
+    <I>Tue Oct 26 05:03:47 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000312.html">[X-Servers] Re: Newbie with setup questions
+</A></li>
+        <LI>Next message: <A HREF="000314.html">[X-Servers] RAID 5 on a G5 Xserve?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#313">[ date ]</a>
+              <a href="thread.html#313">[ thread ]</a>
+              <a href="subject.html#313">[ subject ]</a>
+              <a href="author.html#313">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thus spake Ken Schneider &lt;<A HREF="../../../mailman/listinfo/x-servers.html">ken at schneider.net</A>&gt;, circa 10/26/2004 1:45 AM:
+&gt;<i> I dread trying to setup all those users with different shares with OS X
+</I>&gt;<i> Server.
+</I>
+Well, it's not so bad that you should approach it with DREAD. It's just
+stupid on Apple's part. Some trial and error will get you going. When you
+set up a user, go to the Home tab and use (IIRC)
+
+/Network/server.fqdn/share_point/User_Directory
+
+When you save the user, it will create a home directory for them ...
+somewhere. Look for it and if it's in the right place, great ... if not,
+adjust the path and try again. Why you can't drag and drop into the
+Workgroup manager window, I can't imagine!
+
+Anyway, once you have gotten the path correct, under FTP settings (can't
+remember if this is a user setting or a site setting) specify User Home or
+User Home and FTP Root or they won't see their home directory via FTP.
+
+Also, in Server Admin, make sure to click &quot;Enable Secure FTP&quot; so people can
+use SFTP; otherwise their passwords will be transmitted in clear text.
+
+Make sure you specify a Login Shell in the User's setup (Workgroup Manager).
+Users without a Login Shell will not be able to connect via FTP. This is a
+handy way to enable some people to have FTP and others not, but be aware
+that this also enables them to SSH in to the command line, so watch out whom
+you give administrative privileges to!
+
+Once you have all this set up, create a Saved Profile so you can re-use the
+settings. This will make subsequent users easier to set up.
+
+Have fun,
+      peter
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000312.html">[X-Servers] Re: Newbie with setup questions
+</A></li>
+	<LI>Next message: <A HREF="000314.html">[X-Servers] RAID 5 on a G5 Xserve?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#313">[ date ]</a>
+              <a href="thread.html#313">[ thread ]</a>
+              <a href="subject.html#313">[ subject ]</a>
+              <a href="author.html#313">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

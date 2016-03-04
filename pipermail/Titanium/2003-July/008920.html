@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Speed up
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Speed%20up&In-Reply-To=list-7590998%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="008919.html">
+   <LINK REL="Next"  HREF="008921.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Speed up</H1>
+    <B>Ron nie</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Speed%20up&In-Reply-To=list-7590998%40mail.ninewire.com"
+       TITLE="[Ti] Speed up">ron00000 at yahoo.com
+       </A><BR>
+    <I>Thu Jul 17 11:49:20 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="008919.html">[Ti] Speed up
+</A></li>
+        <LI>Next message: <A HREF="008921.html">[Ti] Speed up
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8920">[ date ]</a>
+              <a href="thread.html#8920">[ thread ]</a>
+              <a href="subject.html#8920">[ subject ]</a>
+              <a href="author.html#8920">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>hi.. very nice info but i am really new to this and
+can you please tell me how do i get to the Terminal.
+thanks a lot!!
+
+
+--- Loren Schooley &lt;<A HREF="../../../mailman/listinfo/titanium.html">loren at flash.net</A>&gt; wrote:
+&gt;<i> I know this is an old subject, but I have found very
+</I>&gt;<i> few who utilize and
+</I>&gt;<i> take advantage of it, and that is using sysctl to
+</I>&gt;<i> boost browser and other
+</I>&gt;<i> download speeds. I tested it out with different
+</I>&gt;<i> numbers and the results
+</I>&gt;<i> proved accordingly. This hack works!
+</I>&gt;<i> 
+</I>&gt;<i> Open Terminal and type sysctl -a
+</I>&gt;<i> 
+</I>&gt;<i> The listing should contain the following lines:
+</I>&gt;<i> 
+</I>&gt;<i>  net.inet.tcp.sendspace: xxxxx
+</I>&gt;<i>  net.inet.tcp.recvspace: xxxxx
+</I>&gt;<i>  net.inet.tcp.delayed_ack: 1
+</I>&gt;<i>  net.inet.udp.recvspace: xxxxx
+</I>&gt;<i> 
+</I>&gt;<i> The OSX default is 32768. It's recommended you
+</I>&gt;<i> double it.
+</I>&gt;<i> Hell I maxxed it out, works GREAT! --&gt;131072. Most
+</I>&gt;<i> recommend 65536.
+</I>&gt;<i> 
+</I>&gt;<i> 1---
+</I>&gt;<i> 
+</I>&gt;<i>  Free:Loren:~&gt; sudo sysctl -w
+</I>&gt;<i> net.inet.tcp.rcvspace=131072
+</I>&gt;<i>  Free:Loren:~&gt; sudo sysctl -w
+</I>&gt;<i> net.inet.tcp.sendspace=131072
+</I>&gt;<i> 
+</I>&gt;<i> Wow, this brought my connection from 32K per second
+</I>&gt;<i> to 128K per second.
+</I>&gt;<i> And it's a very blatant improvement.
+</I>&gt;<i> 
+</I>&gt;<i> 2---
+</I>&gt;<i>  
+</I>&gt;<i> Free:Loren:~&gt; sudo sysctl -w
+</I>&gt;<i> net.inet.udp.recvspace=73728
+</I>&gt;<i>     Hmm, couldn't see much difference. But other
+</I>&gt;<i> sites recommend it.
+</I>&gt;<i> 
+</I>&gt;<i> 3----
+</I>&gt;<i> 
+</I>&gt;<i> Then there is 
+</I>&gt;<i> 
+</I>&gt;<i>     net.inet.tcp.delayed_ack: 1
+</I>&gt;<i> 
+</I>&gt;<i> I changed it to 0
+</I>&gt;<i> 
+</I>&gt;<i> Delayed acks reduces the amount of bandwidth on a
+</I>&gt;<i> network, but piggy-backing
+</I>&gt;<i> ack packets on other outgoing packets. If you turn
+</I>&gt;<i> off delayed acks, you can
+</I>&gt;<i> reduce latency associated with some transfers (i.e.:
+</I>&gt;<i> some situations
+</I>&gt;<i> associated with downloading files via Windows
+</I>&gt;<i> networking).
+</I>&gt;<i> 
+</I>&gt;<i>  Free:Loren:~&gt; sudo sysctl -w
+</I>&gt;<i> net.inet.tcp.delayed_ack=0
+</I>&gt;<i> 
+</I>&gt;<i> -----
+</I>&gt;<i> 
+</I>&gt;<i> No need to reboot. The bottom line is that OSX
+</I>&gt;<i> defaults at a slower speed.
+</I>&gt;<i> My pages flick now instead of growl. 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Titanium email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/Titanium.html">http://www.themacintoshguy.com/lists/Titanium.html</A>
+</I>&gt;<i> 
+</I>&gt;<i> To unsubscribe, E-mail to:
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/titanium.html">Titanium-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/titanium.html">Titanium-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try. 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/titanium.html">Titanium-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> 
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web
+</I>&gt;<i> Hosting from your Mac ISP 
+</I>&gt;<i> Serious Mac Internet Solutions From NineWire!  
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i> 
+</I>&gt;<i> RoadTools $30 PodiumPad available at Apple retail
+</I>&gt;<i> stores, $20 Traveler 
+</I>&gt;<i> CoolPad at Staples. Both in white for iBooks at
+</I>&gt;<i> &lt;<A HREF="http://roadtools.com">http://roadtools.com</A>&gt;
+</I>&gt;<i> 
+</I>&gt;<i>   Cyberian   | Support this list when you buy at
+</I>&gt;<i> Outpost.com!
+</I>&gt;<i>   Outpost    |         <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+</I>
+__________________________________
+Do you Yahoo!?
+SBC Yahoo! DSL - Now only $29.95 per month!
+<A HREF="http://sbc.yahoo.com">http://sbc.yahoo.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="008919.html">[Ti] Speed up
+</A></li>
+	<LI>Next message: <A HREF="008921.html">[Ti] Speed up
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8920">[ date ]</a>
+              <a href="thread.html#8920">[ thread ]</a>
+              <a href="subject.html#8920">[ subject ]</a>
+              <a href="author.html#8920">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

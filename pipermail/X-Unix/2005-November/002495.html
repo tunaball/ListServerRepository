@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Processor/process Context Switching
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Processor/process%20Context%20Switching&In-Reply-To=438CFD58.10705%40underwares.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002494.html">
+   <LINK REL="Next"  HREF="002496.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Processor/process Context Switching</H1>
+    <B>gurple</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Processor/process%20Context%20Switching&In-Reply-To=438CFD58.10705%40underwares.org"
+       TITLE="[X-Unix] Processor/process Context Switching">gurple at mac.com
+       </A><BR>
+    <I>Wed Nov 30 00:22:44 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002494.html">[X-Unix] Processor/process Context Switching
+</A></li>
+        <LI>Next message: <A HREF="002496.html">[X-Unix] question about 'find'
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2495">[ date ]</a>
+              <a href="thread.html#2495">[ thread ]</a>
+              <a href="subject.html#2495">[ subject ]</a>
+              <a href="author.html#2495">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Alexandre,
+
+You're right, it is installed on your PowerBook. However, and this  
+may be an indictment of my lack of keen observation, it is a version  
+that doesn't provide the detailed view of the system I'm used to on  
+SunOS or HP/UX. I have, however, found a tool called 'latency' that  
+does report on process context switching. It seems to only want to  
+report cumulative stats as the tool is run rather than independent  
+slices.
+
+For example, here is what &quot;typical&quot; 'sar' output would look like  
+having been instructed to tick twice at a two second interval:
+
+Solaris 10
+-----------------------------------------------------------
+-bash-3.00$ sar -w 2 2
+
+SunOS localhost 5.10 Generic i86pc    11/30/2005
+
+00:13:52 swpin/s bswin/s swpot/s bswot/s pswch/s
+00:13:54    0.00     0.0    0.00     0.0     124
+00:13:56    0.00     0.0    0.00     0.0     150
+
+Average     0.00     0.0    0.00     0.0     137
+-----------------------------------------------------------
+
+Here is the output of 'latency' having run 10 seconds
+
+MacOS X 10.4.3
+-----------------------------------------------------------
+localhost:~ user$ sudo latency
+Wed Nov 30 09:17:47                             0:00:10
+                      SCHEDULER     INTERRUPTS
+---------------------------------------------
+total_samples             8945          14042
+
+delays &lt;  10 usecs        7616          14011
+delays &lt;  20 usecs        1064             20
+delays &lt;  30 usecs         193              6
+delays &lt;  40 usecs          13              3
+delays &lt;  50 usecs           9              2
+delays &lt;  60 usecs           7              0
+delays &lt;  70 usecs           6              0
+delays &lt;  80 usecs           8              0
+delays &lt;  90 usecs           4              0
+delays &lt; 100 usecs           1              0
+total  &lt; 100 usecs        8921          14042
+
+delays &lt; 200 usecs          19              0
+delays &lt; 300 usecs           2              0
+delays &lt; 400 usecs           0              0
+delays &lt; 500 usecs           0              0
+delays &lt; 600 usecs           1              0
+delays &lt; 700 usecs           1              0
+delays &lt; 800 usecs           0              0
+delays &lt; 900 usecs           1              0delays &lt;   1  
+msec            0    e
+-----------------------------------------------------------
+
+'latency' will work but it's not as friendly for my needs.
+
+Cheers,
+gurple
+
+--
+We've secretly replaced his regular signature with Folgers Crystals&#174;
+
+On Nov 30, 2005, at 2:16, Alexandre Gauthier wrote:
+
+&gt;<i> Well, I doubt I have installed it manually, but apparently /usr/bin/ 
+</I>&gt;<i> sar
+</I>&gt;<i> is present on my OS X 10.4 Powerbook.
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002494.html">[X-Unix] Processor/process Context Switching
+</A></li>
+	<LI>Next message: <A HREF="002496.html">[X-Unix] question about 'find'
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2495">[ date ]</a>
+              <a href="thread.html#2495">[ thread ]</a>
+              <a href="subject.html#2495">[ subject ]</a>
+              <a href="author.html#2495">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

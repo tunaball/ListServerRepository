@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] compiling php
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20compiling%20php&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003133.html">
+   <LINK REL="Next"  HREF="003135.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] compiling php</H1>
+    <B>Giovanni Cutolo</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20compiling%20php&In-Reply-To="
+       TITLE="[X-Unix] compiling php">cutolo at unina.it
+       </A><BR>
+    <I>Tue May 27 00:52:29 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003133.html">[X-Unix] Was Folder, Became Application. Help!
+</A></li>
+        <LI>Next message: <A HREF="003135.html">[X-Unix] compiling php
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3134">[ date ]</a>
+              <a href="thread.html#3134">[ thread ]</a>
+              <a href="subject.html#3134">[ subject ]</a>
+              <a href="author.html#3134">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi all,
+
+I am trying to compile php 5.2.6 on my MacBook (Leopard), since I need  
+the pgsql module that is not in the php build shipped by Apple (why?,  
+if I may ask). So I try with
+
+./compile  /SourceCache/apache_mod_php/apache_mod_php-44/php/configure  
+--prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info -- 
+disable-dependency-tracking --with-apxs2=/usr/sbin/apxs --with-ldap=/ 
+usr --with-kerberos=/usr --enable-cli --with-zlib-dir=/usr --enable- 
+trans-sid --with-xml --enable-exif --enable-ftp --enable-mbstring -- 
+enable-mbregex --enable-dbx --enable-sockets --with-iodbc=/usr --with- 
+curl=/usr --with-config-file-path=/etc --sysconfdir=/private/etc -- 
+with-mysql-sock=/var/mysql --with-mysqli=/usr/bin/mysql_config --with- 
+mysql=/usr  --with-pgsql=shared,/Library/PostgreSQL8/ --with-openssl -- 
+with-xmlrpc --with-xsl=/usr --without-pear
+
+
+(that is, the compilation options chosen by Apple, as I can read them  
+from the phpinfo command, plus  --with-pgsql=shared,/Library/ 
+PostgreSQL8/  .
+
+Well, this fails because, apparently, of some problems with openssl  
+(which I also need, of course):
+
+........
+Configuring extensions
+checking whether to enable LIBXML support... yes
+checking libxml2 install dir... no
+checking for xml2-config path... (cached) /usr/bin/xml2-config
+checking whether libxml build works... (cached) yes
+checking for OpenSSL support... yes
+checking for Kerberos support... /usr
+checking for krb5-config... /usr/bin/krb5-config
+checking for DSA_get_default_method in -lssl... no
+checking for pkg-config... no
+configure: error: Cannot find OpenSSL's libraries
+
+
+
+
+Does anybody have any hint on why this happens and what could I do to  
+fix it?  Unless I am wrong the libraries are in place.  I also tried  
+the trick suggested by
+<A HREF="http://www.heritage-tech.net/165/getting-additional-php-modules-without-totally-recompiling/">http://www.heritage-tech.net/165/getting-additional-php-modules-without-totally-recompiling/</A>
+(also see <A HREF="http://www2.russbrooks.com:8080/2007/11/4/install-postgresql-on-mac-os-x-10-5-leopard#comment-138">http://www2.russbrooks.com:8080/2007/11/4/install-postgresql-on-mac-os-x-10-5-leopard#comment-138</A> 
+  )
+that is: compiling the module itself (using the source of php 5.2.5)  
+and then moving it to the appropriate (?) location in the pre-existing  
+installation of php. No avail: the module is simply ignored.
+
+Thank in advance.
+
+Giovanni Cutolo
+
+
+
+
+
+========================================
+Dr. Giovanni Cutolo
+Dipartimento di Matematica e Applicazioni &quot;R. Caccioppoli&quot;
+Universita` degli Studi di Napoli &quot;Federico II&quot;
+tel.: +39 081675695
+fax (not personal): +39 0817662106
+<A HREF="http://www.dma.unina.it/~cutolo/">http://www.dma.unina.it/~cutolo/</A>
+e-mail:  <A HREF="../../../mailman/listinfo/x-unix.html">cutolo at unina.it</A>
+
+
+
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003133.html">[X-Unix] Was Folder, Became Application. Help!
+</A></li>
+	<LI>Next message: <A HREF="003135.html">[X-Unix] compiling php
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3134">[ date ]</a>
+              <a href="thread.html#3134">[ thread ]</a>
+              <a href="subject.html#3134">[ subject ]</a>
+              <a href="author.html#3134">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Mount Mac firewire drive on Windows?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Mount%20Mac%20firewire%20drive%20on%20Windows%3F&In-Reply-To=a06110401bdbc21b0db92%40%5B192.168.254.100%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001677.html">
+   <LINK REL="Next"  HREF="001671.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Mount Mac firewire drive on Windows?</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Mount%20Mac%20firewire%20drive%20on%20Windows%3F&In-Reply-To=a06110401bdbc21b0db92%40%5B192.168.254.100%5D"
+       TITLE="[X4U] Mount Mac firewire drive on Windows?">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Sat Nov 13 17:27:08 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001677.html">[X4U] Mount Mac firewire drive on Windows?
+</A></li>
+        <LI>Next message: <A HREF="001671.html">[X4U] Booting from cdrom
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1678">[ date ]</a>
+              <a href="thread.html#1678">[ thread ]</a>
+              <a href="subject.html#1678">[ subject ]</a>
+              <a href="author.html#1678">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Nov 13, 2004, at 8:45 pm, Anne-Marie Concepcion wrote:
+
+&gt;<i> I've got everything working in a 2-Mac/1-PC network, everyone can 
+</I>&gt;<i> mount everyone else's main drives using the OS's built-in software. 
+</I>&gt;<i> (Macs are 10.3.5, PC is Windows XP Pro, SP2).
+</I>&gt;<i>
+</I>&gt;<i> But... the one thing I need to do I can't figure out. I have a 
+</I>&gt;<i> Firewire hanging off one of my Macs. I want to turn this into a &quot;quasi 
+</I>&gt;<i> file server&quot; so the Macs and the PC can all read/write to it.
+</I>&gt;<i>
+</I>&gt;<i> I can't figure out which network address to tell Windows to add a 
+</I>&gt;<i> Network Connection for the firewire drive.
+</I>
+It's the network address of whatever Mac it's connected to, silly!
+
+The article you refer to mentions the /etc/smb.conf file. It's much 
+abbreviated from Samba's distribution example, but if you add something 
+like:
+
+[Something]
+     comment = Wot it sez.
+     path = /Volumes/Some\ Thing/
+     guest account = guest
+     valid users = stroller
+     writeable = Yes
+     guest ok = Yes
+
+You will probably do ok. You may need to put quotes around the path, if 
+it has a space in it.
+
+Remember that one network address can have multiple network shares. If 
+you want to understand what's going on, check out the 
+&lt;<A HREF="http://www.tldp.org/HOWTO/SMB-HOWTO.html">http://www.tldp.org/HOWTO/SMB-HOWTO.html</A>&gt; - it might take a little 
+while to assimilate, but any GUI tools that other posters may suggest 
+will only act as editors for the smb.conf file, so that file is worth 
+spending time on.
+
+Stroller.
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001677.html">[X4U] Mount Mac firewire drive on Windows?
+</A></li>
+	<LI>Next message: <A HREF="001671.html">[X4U] Booting from cdrom
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1678">[ date ]</a>
+              <a href="thread.html#1678">[ thread ]</a>
+              <a href="subject.html#1678">[ subject ]</a>
+              <a href="author.html#1678">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] mail from terminal
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20mail%20from%20terminal&In-Reply-To=529EF4DD-4354-4BB0-92CB-6F4AB03379F2%40acedsl.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001824.html">
+   <LINK REL="Next"  HREF="001838.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] mail from terminal</H1>
+    <B>Simon Forster</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20mail%20from%20terminal&In-Reply-To=529EF4DD-4354-4BB0-92CB-6F4AB03379F2%40acedsl.com"
+       TITLE="[X-Unix] mail from terminal">simon-lists at ldml.com
+       </A><BR>
+    <I>Thu Apr 21 07:17:10 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001824.html">[X-Unix] mail from terminal
+</A></li>
+        <LI>Next message: <A HREF="001838.html">[X-Unix] mail from terminal
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1825">[ date ]</a>
+              <a href="thread.html#1825">[ thread ]</a>
+              <a href="subject.html#1825">[ subject ]</a>
+              <a href="author.html#1825">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 21 Apr 2005, at 14:30, Ben Gold wrote:
+
+&gt;<i> I'd like to be able to simply send an email from the terminal.  How do 
+</I>&gt;<i> I do this?
+</I>&gt;<i>
+</I>&gt;<i> Is there a command that can accept all the info? SMTP, etc.  Or do I 
+</I>&gt;<i> need to configure the unix mail program?
+</I>
+python
+ &gt;&gt;&gt;import smtplib
+ &gt;&gt;&gt;server = smtplib.SMTP('192.168.0.7')
+ &gt;&gt;&gt;server.sendmail('<A HREF="../../../mailman/listinfo/x-unix.html">from at ldml.com</A>', '<A HREF="../../../mailman/listinfo/x-unix.html">simon-lists at ldml.com</A>', 'Subject: 
+Some Stuff\n\nHere\'s a test email.')
+ &gt;&gt;&gt;server.quit()
+
+Works when using an open Sendmail SMTP server within our local network. 
+A more complete script can be found at 
+&lt;<A HREF="http://python.fyxm.net/doc/2.4/lib/SMTP-example.html">http://python.fyxm.net/doc/2.4/lib/SMTP-example.html</A>&gt;.
+
+Another server we have requires a POP connection before it'll accept 
+outgoing mail - so we have a subroutine to do this. In fact it'd be 
+quite trivial to write a quick Python script which you call from the 
+command line with 2 arguments - the subject and the message. Better 
+still write a simple SMTP server into the Python script &amp; then it's all 
+self contained!
+
+HTH
+
+Simon Forster
+_____________________________________________________
+  LDML Ltd, 62 Pall Mall, London, SW1Y 5HZ, UK
+  Tel: +44 (0)70 9230 5244   Fax: +44 (0)70 9230 5247
+_____________________________________________________
+
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001824.html">[X-Unix] mail from terminal
+</A></li>
+	<LI>Next message: <A HREF="001838.html">[X-Unix] mail from terminal
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1825">[ date ]</a>
+              <a href="thread.html#1825">[ thread ]</a>
+              <a href="subject.html#1825">[ subject ]</a>
+              <a href="author.html#1825">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

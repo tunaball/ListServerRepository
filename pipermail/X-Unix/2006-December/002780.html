@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Backup and Restore of Symbolic Links
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Backup%20and%20Restore%20of%20Symbolic%20Links&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002779.html">
+   <LINK REL="Next"  HREF="002781.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Backup and Restore of Symbolic Links</H1>
+    <B>Jerry Krinock</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Backup%20and%20Restore%20of%20Symbolic%20Links&In-Reply-To="
+       TITLE="[X-Unix] Backup and Restore of Symbolic Links">jerry at ieee.org
+       </A><BR>
+    <I>Wed Dec  6 12:34:31 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002779.html">[X-Unix] enable remote desktop from CLI
+</A></li>
+        <LI>Next message: <A HREF="002781.html">[X-Unix] Backup and Restore of Symbolic Links
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2780">[ date ]</a>
+              <a href="thread.html#2780">[ thread ]</a>
+              <a href="subject.html#2780">[ subject ]</a>
+              <a href="author.html#2780">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Traffic has been slow lately.  Here's something I figured out yesterday.
+
+Say you have a file A.txt and a symbolic link (symlink) ALink which links to
+it, at the root level of your boot drive.  The data in Alink is the string
+&quot;/A.txt&quot;.
+
+Many backup regimens are based on the unix &quot;cp&quot; command or engines which
+behave similarly.  By default, cp does not &quot;follow&quot; symlinks.  Say that you
+cp both A.txt and ALink to a mounted Firedrive named FW.  Now doubleclick on
+the copy of Alink on FW.  Because the data in Alink is the string &quot;/A.txt&quot;,
+you will open /A.txt on your boot drive, NOT on FW.
+
+The same thing happens if you have a file on FW, create a symlink to it on
+FW, and then cp both of them over to your boot drive.  When you doubleclick
+on the symlink copy on the boot drive, you'll open the target file on FW,
+because the text in the symlink file begins with &quot;/Volumes/FW/...&quot;.  Unmount
+FW, doubleclick the symlink again and you'll get &quot;no such file&quot;, &quot;file not
+found&quot;, or whatever.
+
+Thinking back, I believe I have been confounded by this behavior more than
+once in my life.
+
+However, say FW is bootable and you re-boot from FW.  If you doubleclick on
+this symlink now, you'll get the target file on the FW drive, as expected,
+because the &quot;/&quot; in &quot;/A.txt&quot; is now, in fact, FW.
+
+The same thing will happen if you &quot;restore&quot; (cp) files copied from your boot
+drive to FW, back to your boot drive.
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002779.html">[X-Unix] enable remote desktop from CLI
+</A></li>
+	<LI>Next message: <A HREF="002781.html">[X-Unix] Backup and Restore of Symbolic Links
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2780">[ date ]</a>
+              <a href="thread.html#2780">[ thread ]</a>
+              <a href="subject.html#2780">[ subject ]</a>
+              <a href="author.html#2780">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

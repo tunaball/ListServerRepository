@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Leopard Issues
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Leopard%20Issues&In-Reply-To=593E244B-2F86-4689-B642-ED39BDFF31B9%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="019327.html">
+   <LINK REL="Next"  HREF="019348.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Leopard Issues</H1>
+    <B>John Douglass - User</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Leopard%20Issues&In-Reply-To=593E244B-2F86-4689-B642-ED39BDFF31B9%40mac.com"
+       TITLE="[X4U] Leopard Issues">douglass at cs.clemson.edu
+       </A><BR>
+    <I>Thu Dec  6 07:27:06 PST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="019327.html">[X4U] Leopard Issues
+</A></li>
+        <LI>Next message: <A HREF="019348.html">[X4U] Leopard Issues
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19346">[ date ]</a>
+              <a href="thread.html#19346">[ thread ]</a>
+              <a href="subject.html#19346">[ subject ]</a>
+              <a href="author.html#19346">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Dec 5, 2007, at 8:39 AM, Jon Warms wrote:
+
+&gt;<i>
+</I>&gt;<i> One poster asked about the 10.5 installation. It was a clean install
+</I>&gt;<i> from the Leopard DVD onto a just-formatted HDD.
+</I>&gt;<i>
+</I>&gt;<i> On Dec 5, 2007, Robert Ameeti &lt;<A HREF="../../../mailman/listinfo/x4u.html">Robert at Ameeti.net</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;&gt;&gt;<i> I went to the Westell modem site (192.168.1.1). The connection
+</I>&gt;&gt;&gt;<i> summary shows a primary DNS of 71.250.0.12, and a secondary DNS of
+</I>&gt;&gt;&gt;<i> 71.242.0.12. I couldn't change them. In any case, since both
+</I>&gt;&gt;&gt;<i> computers use the Westell, these DNS can't be reason for the
+</I>&gt;&gt;&gt;<i> different results.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Look at the DNS settings of each computer in the System Preferences,
+</I>&gt;&gt;<i> not on the router. The DNS of the computer overrides the routers.
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;&gt;<i> In any event, when I type &quot;chevrolet&quot;, in the MacBook I get the
+</I>&gt;&gt;&gt;<i> Verizon-Yahoo search program
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Does that really pass the smell test?
+</I>&gt;<i>
+</I>&gt;<i> Huh? WTF does that mean? (Why do you add that garbage into
+</I>&gt;<i> otherwise-helpful-postings?)
+</I>&gt;<i>
+</I>&gt;<i> I used &quot;chevrolet&quot; because I hadn't used it before on either computer.
+</I>&gt;<i>
+</I>&gt;<i> Thanks for the DNS explanation. Earlier, you suggested changing the
+</I>&gt;<i> DNS in my computer. I did that on both computers. The 10.4.11 machine
+</I>&gt;<i> added the &quot;.com&quot; (and the www). On the MacBook, there was a
+</I>&gt;<i> delay of several seconds, and then the Verizon search page came up.
+</I>&gt;<i> I assume it tried the changed DNS, which failed, and then tried the
+</I>&gt;<i> DNS in the router, which didn't fail, but routed the address to  
+</I>&gt;<i> Verizon.
+</I>&gt;<i> So domain guessing never got applied.
+</I>&gt;<i>
+</I>&gt;<i> But it's still not an answer. Whatever is going on has changed from
+</I>&gt;<i> 10.4.11 to 10.5.1. a) I'd like to understand what has
+</I>&gt;<i> changed, and b) I'd like to know how I can undo the change.
+</I>
+Apple does not control all the portions of their OS as the underlying
+Unix implementation is built upon a myriad of open source components  
+(as all
+Unix variants are).  I'm not sure this can be &quot;undone&quot; as the underlying
+change may be completely outside of their control.
+
+I have been researching the RFCs a bit more and have found several  
+interesting
+discussions regarding this type of problem.  The fact of the matter is  
+the DNS
+server that Verizon has is breaking the RFC by returning NOERROR  
+instead of
+NXDOMAIN.  Most interestingly is some information referenced at  
+Wikipedia
+regarding VeriSign's Site Finder (which I had forgotten about).
+
+<A HREF="http://en.wikipedia.org/wiki/Site_Finder">http://en.wikipedia.org/wiki/Site_Finder</A>
+
+Note the &quot;See Also&quot; section regarding site redirects and ISP (Comcast,  
+Earthink, etc.).
+Now google &quot;Verizon DNS site redirect&quot; -- and well, you'll get lots of  
+interesting
+information -- here is a good one:
+
+<A HREF="http://www.consumeraffairs.com/news04/2007/11/verizon_search.html">http://www.consumeraffairs.com/news04/2007/11/verizon_search.html</A>
+
+Note the &quot;opt out&quot; procedure in the article.
+
+Sorry for all the external references but it is worth the reading if  
+you are interested
+in what is really happening.
+
+Now, again -- I agree the behavior has changed, but I stress I believe  
+that
+change is in fact beyond Apple's direct control.  Apple does NOT want to
+be in the game of forking private copies of underlying open source  
+tools in
+order to maintain what in fact is incorrect behavior.  The new  
+behavior from
+Apple in your case is the correct behavior, the bad player here IS  
+Verizon
+not Apple.
+
+I would look into using either opting out of Verizon's &lt;sarcasm&gt;great&lt;/ 
+sarcasm&gt;
+  DNS feature or using OpenDNS (<A HREF="https://www.opendns.com">https://www.opendns.com</A>) as your DNS
+servers.  Should solve your problems (you may need to clear your DNS  
+caches/reboot
+after making changes because at this point you'll have bad data cached).
+
+-- John
+
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="019327.html">[X4U] Leopard Issues
+</A></li>
+	<LI>Next message: <A HREF="019348.html">[X4U] Leopard Issues
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19346">[ date ]</a>
+              <a href="thread.html#19346">[ thread ]</a>
+              <a href="subject.html#19346">[ subject ]</a>
+              <a href="author.html#19346">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

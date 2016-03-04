@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] /dev/fd/*
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20/dev/fd/%2A&In-Reply-To=list-10897275%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000311.html">
+   <LINK REL="Next"  HREF="000313.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] /dev/fd/*</H1>
+    <B>Jeep Hauser</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20/dev/fd/%2A&In-Reply-To=list-10897275%40mail.ninewire.com"
+       TITLE="[X-Unix] /dev/fd/*">jhauser at usc.edu
+       </A><BR>
+    <I>Wed Feb 18 09:23:09 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000311.html">Defragmenting?
+</A></li>
+        <LI>Next message: <A HREF="000313.html">[X-Unix] Defragmenting?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#312">[ date ]</a>
+              <a href="thread.html#312">[ thread ]</a>
+              <a href="subject.html#312">[ subject ]</a>
+              <a href="author.html#312">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 6:35 PM +0000 2/17/04, Stroller wrote:
+&gt;<i>
+</I>&gt;<i>Which means about as much to me as it does to you, however these 
+</I>&gt;<i>links are perhaps enlightening:
+</I>
+Heheh, yes. And thanks for those links, it got the brain synapses shooting.
+
+&gt;<i>My best guess is that you had iPhoto open at the time. I suspect 
+</I>&gt;<i>that if you rebooted &amp; tried this `find` command again with  minimal 
+</I>&gt;<i>applications open it would find far fewer results. But to avoid such 
+</I>&gt;<i>spurious matches you should probably use something like `find / 
+</I>&gt;<i>-mmin -180 -not -path /dev -ls`  [2]
+</I>
+&gt;<i>Try it again, excluding /dev (if the command I just gave doesn't 
+</I>&gt;<i>work, then just pipe the output to `grep -v /dev`   ;-])
+</I>
+Actually, iPhoto wasn't open, nor have most of the other files that 
+were found. That's why I was wondering why the pointers in /dev were 
+still there. I rebooted and ran the command again, and still got a 
+lot of garbage in /dev.
+
+The stuff in /dev is also found in their &quot;actual&quot; locations with that 
+command. For instance:
+
+	Dec 30 02:17 /Volumes/Hard Drive/Applications/Adobe Reader 
+6.0/Adobe Reader 6.0.app/Contents/PkgInfo
+
+	Dec 30 02:17 /Applications/Publishing/Adobe Reader 6.0/Adobe 
+Reader 6.0.app/Contents/PkgInfo
+
+Neither of those are in /dev, but are found as modified within the 
+last 180 minutes. You can see by the date, they clearly are not.
+
+A sample of something in /dev and at their real location would be this:
+
+	Jun 23 21:00 /dev/fd/3/Pictures/NYC Fall 2001/NYC_Day6/DSC00359.JPG
+
+	Jun 23 21:00 /Users/jhauser/Pictures/NYC Fall 
+2001/NYC_Day6/DSC00359.JPG
+
+I'm beginning to think that something isn't cleaning up properly, or 
+find on MOSX is having troubles.
+
+&gt;<i>It doesn't help that the BSD man page for `find` is pants. The GNU 
+</I>&gt;<i>one (on my Linux system) seems to answer your question:
+</I>
+Yes! Thanks again - good tip for me to check out my Linux box when my 
+MOSX man pages crap out.
+
+Jeep
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000311.html">Defragmenting?
+</A></li>
+	<LI>Next message: <A HREF="000313.html">[X-Unix] Defragmenting?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#312">[ date ]</a>
+              <a href="thread.html#312">[ thread ]</a>
+              <a href="subject.html#312">[ subject ]</a>
+              <a href="author.html#312">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

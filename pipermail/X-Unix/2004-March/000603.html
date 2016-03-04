@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] virex cron
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20virex%20cron&In-Reply-To=list-11763561%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000602.html">
+   <LINK REL="Next"  HREF="000604.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] virex cron</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20virex%20cron&In-Reply-To=list-11763561%40mail.ninewire.com"
+       TITLE="[X-Unix] virex cron">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Sun Mar 28 21:28:15 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000602.html">[X-Unix] Stopping the WebDAV Exploit in Apache
+</A></li>
+        <LI>Next message: <A HREF="000604.html">Monitoring file usage and emailing based on changes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#603">[ date ]</a>
+              <a href="thread.html#603">[ thread ]</a>
+              <a href="subject.html#603">[ subject ]</a>
+              <a href="author.html#603">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Mar 28, 2004, at 4:29 pm, lists3-200402 wrote:
+&gt;&gt;<i>
+</I>&gt;&gt;<i> I think this should do it:
+</I>&gt;&gt;<i>    /usr/local/vscanx/vscanx --move /SERVER/VOLUME/VIREX_OUT/QUARANTINE
+</I>&gt;&gt;<i> /SERVER/VOLUME/SHARE --recursive --unzip --atime-preserve
+</I>&gt;&gt;<i> --ignore-links  --summary &gt;&gt; /SERVER/VOLUME/VIREX_OUT/SUMMARY.TXT &amp;&amp;
+</I>&gt;&gt;<i> echo &quot;Finished at:&quot;  &gt;&gt; /SERVER/VOLUME/VIREX_OUT/SUMMARY.TXT &amp;&amp; date 
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> /SERVER/VOLUME/VIREX_OUT/SUMMARY.TXT
+</I>
+Actually, upon reflection, I see this is a little inelegant. I'd make 
+it shorter thus:
+
+    /usr/local/vscanx/vscanx --move /SERVER/VOLUME/VIREX_OUT/QUARANTINE 
+/SERVER/VOLUME/SHARE --recursive --unzip --atime-preserve 
+--ignore-links  --summary &gt;&gt; /SERVER/VOLUME/VIREX_OUT/SUMMARY.TXT &amp;&amp; 
+echo &quot;Finished at: `date`&quot;  &gt;&gt; /SERVER/VOLUME/VIREX_OUT/SUMMARY.TXT
+
+&gt;<i> wow, dude, you rock!
+</I>
+Thank you, I'm flattered.
+
+&gt;<i> the only problem i noticed is that now i get this error in the 
+</I>&gt;<i> terminal when i run the cron script manually (cut/paste into root 
+</I>&gt;<i> terminal):
+</I>&gt;<i>
+</I>&gt;<i> 	/SERVER/VOLUME/VIREX_OUT/QUARANTINE
+</I>&gt;<i>         file could not be opened.
+</I>
+I'm not very good on permissions, but what do you mean by the &quot;root 
+terminal&quot;..? You are logged in as the root user, then..? If I change to 
+root user, my prompt changes thus:
+
+silva:~ stroller $ sudo su -
+Password:
+silva:~ root#
+
+The # is used as the prompt for root, the $ for ordinary users.
+(Since the Americans call&#160;# the &quot;pound sign&quot; (which is what I call &#163;), 
+and root is also known as the &quot;super user&quot;, is this a reflection upon 
+the importance of my nation..?)
+
+In you are logged in as root, I suspect cron is getting the same 
+message, you're just not seeing it (it may be in the logfiles 
+somewhere).
+
+If you're trying this as normal user, try copying &amp; pasting to the 
+terminal:
+
+    sudo /usr/local/vscanx/vscanx --move 
+/SERVER/VOLUME/VIREX_OUT/QUARANTINE /SERVER/VOLUME/SHARE --recursive 
+--unzip --atime-preserve --ignore-links  --summary &gt;&gt; 
+/SERVER/VOLUME/VIREX_OUT/SUMMARY.TXT &amp;&amp;
+sudo echo &quot;Finished at:&quot;  &gt;&gt; /SERVER/VOLUME/VIREX_OUT/SUMMARY.TXT &amp;&amp; 
+sudo date &gt;&gt; /SERVER/VOLUME/VIREX_OUT/SUMMARY.TXT
+
+`sudo` means &quot;do as superuser&quot;, and must be applied to each command in 
+turn. Running the original line with only one sudo at the start only 
+applies it to the first command, not to the 2nd or third. I don't 
+recommend using `sudo` in your cron job - I'm guessing that's running 
+with root privs anyway, and I don't know what the effect would be.
+
+Stroller.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000602.html">[X-Unix] Stopping the WebDAV Exploit in Apache
+</A></li>
+	<LI>Next message: <A HREF="000604.html">Monitoring file usage and emailing based on changes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#603">[ date ]</a>
+              <a href="thread.html#603">[ thread ]</a>
+              <a href="subject.html#603">[ subject ]</a>
+              <a href="author.html#603">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

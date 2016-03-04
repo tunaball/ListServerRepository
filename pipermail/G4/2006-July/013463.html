@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] OpenFirmware can't open bootdevice anymore
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20OpenFirmware%20can%27t%20open%20bootdevice%20anymore&In-Reply-To=4A2CB83F-8795-463B-90DF-9BBC8552617E%40troutnc.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="013461.html">
+   <LINK REL="Next"  HREF="013448.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] OpenFirmware can't open bootdevice anymore</H1>
+    <B>Till Wimmer</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20OpenFirmware%20can%27t%20open%20bootdevice%20anymore&In-Reply-To=4A2CB83F-8795-463B-90DF-9BBC8552617E%40troutnc.com"
+       TITLE="[G4] OpenFirmware can't open bootdevice anymore">g4-lisz at tonarchiv.ch
+       </A><BR>
+    <I>Mon Jul  3 11:37:13 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="013461.html">[G4] OpenFirmware can't open bootdevice anymore
+</A></li>
+        <LI>Next message: <A HREF="013448.html">[G4] Wishing to remove Classic
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13463">[ date ]</a>
+              <a href="thread.html#13463">[ thread ]</a>
+              <a href="subject.html#13463">[ subject ]</a>
+              <a href="author.html#13463">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks Wayne,
+
+i didn't check the reset-nvram yet...
+
+I was lucky when i could reach the level for  choosing safe mode ;)
+
+The problem is that the OpenFirmware doesn't _see_ the disk...
+
+bg
+Till
+
+Wayne Clodfelter wrote:
+
+&gt;<i> I feel your pain. I still find boot-up problems to be the fly in the  
+</I>&gt;<i> ointment that is Macintosh. When it works, it's great. When it  
+</I>&gt;<i> doesn't, it's truly a bear finding something that works.
+</I>&gt;<i>
+</I>&gt;<i> Things I usually try:
+</I>&gt;<i>
+</I>&gt;<i> Zap the PRAM several (5 to 7) times with Command-Option-P-R at startup.
+</I>&gt;<i>
+</I>&gt;<i> Boot into open firmware with Command-Option-O-F
+</I>&gt;<i> type at the prompt: reset-nvram &lt;return&gt;
+</I>&gt;<i> reset-all &lt;return&gt;
+</I>&gt;<i>
+</I>&gt;<i> Start up in safe mode:
+</I>&gt;<i> From shut-down, power up and at startup tone, press shift key and  
+</I>&gt;<i> hold until &quot;safe bootappears.
+</I>&gt;<i> After the system is fully up, restart normally.
+</I>&gt;<i>
+</I>&gt;<i> Start up in single user mode:
+</I>&gt;<i> Power up and at tone, press and hold Command-S until you see white  
+</I>&gt;<i> text...
+</I>&gt;<i> At command line, type:
+</I>&gt;<i> fsck -y &lt;return&gt; you may have to precede this command with /sbin/
+</I>&gt;<i> reboot &lt;return&gt;
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> If you have another X or 9 boot partition, try using Command-Option- 
+</I>&gt;<i> Shift-Delete to bypass the default boot partition. Appending a number  
+</I>&gt;<i> (3 or 5 or whatever) sometimes helps to select a specific boot drive.
+</I>&gt;<i>
+</I>&gt;<i> The last time I had a boot problem, I even had to swap in an ATA  
+</I>&gt;<i> drive with a boot partition, because my Quicksilver would not find a  
+</I>&gt;<i> backup boot partition on a secondary SATA drive.
+</I>&gt;<i> Why, I don't know.
+</I>&gt;<i>
+</I>&gt;<i> HTH. Good luck!
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Jul 3, 2006, at 9:33 AM, Till Wimmer wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Hello
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Yesterday I booted into Os9 and did some work there (Protools) -  
+</I>&gt;&gt;<i> everything worked fine. Then I changed the startup disk back to Os  
+</I>&gt;&gt;<i> 10.3.9 using the control panel.
+</I>&gt;&gt;<i> But after rebooting only the &quot;no system found&quot; icon came up. Next i  
+</I>&gt;&gt;<i> rebooted holding down the option key, but there was no system  folder 
+</I>&gt;&gt;<i> displayed for selection.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Of course i resetted PRAM, pressed the PMU button... still the &quot;no  
+</I>&gt;&gt;<i> system found&quot; icon!
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Then i put my PPC linux disk in it and.. IT WORKED!  Putting back  my 
+</I>&gt;&gt;<i> OsX / Os 9 disk - no booting.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> OpenFirmware says:
+</I>&gt;&gt;<i> 0 &gt; boot hd:,\\:tbxi  can't OPEN: hd:,\\:tbxi
+</I>&gt;&gt;<i> ok
+</I>&gt;&gt;<i> 0 &gt;
+</I>&gt;&gt;<i> It tried this with ide0, ide1, hd, ultra0, ultra1...
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> My next step was to put the OsX/Os9 system disk in an other mac and  
+</I>&gt;&gt;<i> run Disk Utility on it. It reported no problem.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Now i'm at my wit's end.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Is there a tool to check every partition on a disk i.e. all the  
+</I>&gt;&gt;<i> relevant things for booting? Maybe i deleted some driver on the the  
+</I>&gt;&gt;<i> disk?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> It's a G4 Digital Audio with OsX 10.3.9 and Os 9.2.2
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Any help would be much appreciated!
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Till
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> -- 
+</I>&gt;&gt;<i> ********************************************************
+</I>&gt;&gt;<i> *        &quot;Deutschland vor!&quot; - Die WM Gegenhymne        *
+</I>&gt;&gt;<i> *  <A HREF="http://www.zittrige-haende.com/download/antiwm.mp3">http://www.zittrige-haende.com/download/antiwm.mp3</A>  *
+</I>&gt;&gt;<i> ********************************************************
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> G4 mailing list
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">G4 at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">http://listserver.themacintoshguy.com/mailman/listinfo/g4</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;&gt;<i> stuff:
+</I>&gt;&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Regards,
+</I>&gt;<i>
+</I>&gt;<i> Wayne Clodfelter
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">wayne at troutnc.com</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> G4 mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">G4 at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">http://listserver.themacintoshguy.com/mailman/listinfo/g4</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+
+
+-- 
+********************************************************
+*        &quot;Deutschland vor!&quot; - Die WM Gegenhymne        *
+*  <A HREF="http://www.zittrige-haende.com/download/antiwm.mp3">http://www.zittrige-haende.com/download/antiwm.mp3</A>  *
+********************************************************
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="013461.html">[G4] OpenFirmware can't open bootdevice anymore
+</A></li>
+	<LI>Next message: <A HREF="013448.html">[G4] Wishing to remove Classic
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13463">[ date ]</a>
+              <a href="thread.html#13463">[ thread ]</a>
+              <a href="subject.html#13463">[ subject ]</a>
+              <a href="author.html#13463">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

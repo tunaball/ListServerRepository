@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] need help with a command
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20need%20help%20with%20a%20command&In-Reply-To=60e470fefc6706cf8c90aca7f09f1ec8%40myrealbox.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001605.html">
+   <LINK REL="Next"  HREF="001600.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] need help with a command</H1>
+    <B>Eugene</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20need%20help%20with%20a%20command&In-Reply-To=60e470fefc6706cf8c90aca7f09f1ec8%40myrealbox.com"
+       TITLE="[X-Unix] need help with a command">list-themacintoshguy at fsck.net
+       </A><BR>
+    <I>Thu Mar  3 01:00:50 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001605.html">[X-Unix] need help with a command
+</A></li>
+        <LI>Next message: <A HREF="001600.html">[X-Unix] Re: PATH ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1606">[ date ]</a>
+              <a href="thread.html#1606">[ thread ]</a>
+              <a href="subject.html#1606">[ subject ]</a>
+              <a href="author.html#1606">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Wed, Mar 02, 2005 at 01:37:51PM +0000, Stroller wrote:
+:<i> 
+</I>:<i> On Mar 2, 2005, at 11:41 am, Eugene wrote:
+</I>:<i> 
+</I>:<i> &gt;: ... Also, sometimes it's best handling directories and
+</I>:<i> &gt;: non-directory files separately when changing permissions,
+</I>:<i> &gt;: e.g.  setting the 'x' (execute) bit makes sense for
+</I>:<i> &gt;: directories but not for non-executable traditional Unix
+</I>:<i> &gt;: files.  So, you could construct two commands like:
+</I>:<i> &gt;:
+</I>:<i> &gt;:  find PATH -type d -not -name '~Archive' -exec chmod DIR-MODE {} \;
+</I>:<i> &gt;:  find PATH -type f -exec chmod NONDIR-MODE {} \;
+</I>:<i> &gt;:
+</I>:<i> &gt;: ... for changing dirs and regular files separately.
+</I>:<i> &gt;
+</I>:<i> &gt;Or do it all at once?
+</I>:<i> &gt;
+</I>:<i> &gt;	find PATH \(-type d -o -type f) -not \( -type d -a -name '~Archive' 
+</I>:<i> &gt;\) -exec chmod MODE &quot;{}&quot; \;
+</I>:<i> 
+</I>:<i> That'll apply the same permissions to the directories as to the regular 
+</I>:<i> files. As Scott said, we want directories to have +xxx permissions, but 
+</I>:<i> not h4x0r.sh or tr0j4n.exe which got saved there by mistake.
+</I>
+I wasn't responding to Scott.  I was responding specifically to
+the original poster, Don &lt;<A HREF="../../../mailman/listinfo/x-unix.html">poolmouse_nyc at mac.com</A>&gt;, and his request.
+Don never stated exactly what kind of permissions he wanted to
+apply.  And knowing the permissions issues with directories, I
+just went for the nastiest single-line command I could think of.
+
+
+-- 
+Eugene Lee
+<A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001605.html">[X-Unix] need help with a command
+</A></li>
+	<LI>Next message: <A HREF="001600.html">[X-Unix] Re: PATH ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1606">[ date ]</a>
+              <a href="thread.html#1606">[ thread ]</a>
+              <a href="subject.html#1606">[ subject ]</a>
+              <a href="author.html#1606">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

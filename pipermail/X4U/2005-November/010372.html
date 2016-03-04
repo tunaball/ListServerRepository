@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Duplicate files
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Duplicate%20files&In-Reply-To=BFB0A8B4.2C96%25chowse%40charter.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010420.html">
+   <LINK REL="Next"  HREF="010404.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Duplicate files</H1>
+    <B>Eugene</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Duplicate%20files&In-Reply-To=BFB0A8B4.2C96%25chowse%40charter.net"
+       TITLE="[X4U] Duplicate files">list-themacintoshguy at fsck.net
+       </A><BR>
+    <I>Mon Nov 28 23:36:18 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010420.html">[X4U] Duplicate files
+</A></li>
+        <LI>Next message: <A HREF="010404.html">[X4U] Duplicate files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10372">[ date ]</a>
+              <a href="thread.html#10372">[ thread ]</a>
+              <a href="subject.html#10372">[ subject ]</a>
+              <a href="author.html#10372">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Mon, Nov 28, 2005 at 12:29:40PM CST, Charles Howse &lt;<A HREF="../../../mailman/listinfo/x4u.html">chowse at charter.net</A>&gt; wrote:
+:<i> Richard Gilmore &lt;<A HREF="../../../mailman/listinfo/x4u.html">rgilmor at uwo.ca</A>&gt; wrote:
+</I>:<i> &gt;
+</I>:<i> &gt; The files have the exact same names unless iPhoto renames without telling
+</I>:<i> &gt; me. But iPhoto has put them into different folders. I wouldn't have imported
+</I>:<i> &gt; so many photos but I thought iPhoto was supposed to check and see if you
+</I>:<i> &gt; were importing the same photo more than once.
+</I>:<i> 
+</I>:<i> I would post to the [X-Unix] list on this server, and ask for help there.
+</I>:<i> Someone can surely help you with a shell script that will do exactly what
+</I>:<i> you need.
+</I>:<i> I played with it a bit, and I'm sure it can be done, though I didn't quite
+</I>:<i> get there in the limited time I've played with it.  :-)
+</I>:<i> 
+</I>:<i> You need something akin to:
+</I>:<i> $ find ~/Pictures -name '*.jpg' (but only output the part of the filename
+</I>:<i> after the last '/', i.e. holiday.jpg); then write that to a file, sort the
+</I>:<i> file, uniq -d the file for duplicate lines.  There's your list of dups, then
+</I>:<i> you can act on that to backup the files.
+</I>
+This one-liner pretty much does it:
+
+	find . -name '*.txt' -print0 | xargs -0 basename | sort | uniq -d
+
+Hope this helps.
+
+
+-- 
+Eugene
+<A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010420.html">[X4U] Duplicate files
+</A></li>
+	<LI>Next message: <A HREF="010404.html">[X4U] Duplicate files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10372">[ date ]</a>
+              <a href="thread.html#10372">[ thread ]</a>
+              <a href="subject.html#10372">[ subject ]</a>
+              <a href="author.html#10372">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

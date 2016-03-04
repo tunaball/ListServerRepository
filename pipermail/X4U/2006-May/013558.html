@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] &quot;Searching&quot; question under 10.4 
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20%22Searching%22%20question%20under%2010.4%20&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="013557.html">
+   <LINK REL="Next"  HREF="013571.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] &quot;Searching&quot; question under 10.4 </H1>
+    <B>Lee Licata</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20%22Searching%22%20question%20under%2010.4%20&In-Reply-To="
+       TITLE="[X4U] &quot;Searching&quot; question under 10.4 ">lazilicata at gmail.com
+       </A><BR>
+    <I>Tue May 23 23:21:48 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="013557.html">[X4U] Front Row and Movie Trailers
+</A></li>
+        <LI>Next message: <A HREF="013571.html">Fwd: [X4U] &quot;Searching&quot; question under 10.4 Lesson Learned
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13558">[ date ]</a>
+              <a href="thread.html#13558">[ thread ]</a>
+              <a href="subject.html#13558">[ subject ]</a>
+              <a href="author.html#13558">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>To John and the list,
+
+Thank you John for your hint.
+
+I took your advice but instead of using terminal, I logged in as the  
+root, made all files visible, found the plist in question, opened it  
+in property editor, noted that the &quot;included&quot; strings line was empty,  
+and after making a duplicate of the original, added to the included  
+strings the folders you listed below.
+
+Quit root, restarted in admin mode, and waited HOURS for spotlight to  
+re-index.
+
+Then, tested. Found all the files I tested. Thank you for your tip!!!
+
+Lee
+
+
+Message: 7
+Date: Wed, 10 May 2006 12:02:26 -0700
+From: John Baltutis &lt;<A HREF="../../../mailman/listinfo/x4u.html">baltwo at san.rr.com</A>&gt;
+Subject: Re: [X4U] &quot;Searching&quot; question under 10.4
+To: <A HREF="../../../mailman/listinfo/x4u.html">x4u at listserver.themacintoshguy.com</A>
+
+On 05/10/06, Lee Licata &lt;<A HREF="../../../mailman/listinfo/x4u.html">lazilicata at gmail.com</A>&gt; wrote:
+
+&gt;<i>
+</I>&gt;<i> I have been following this thread quite closely.
+</I>&gt;<i>
+</I>&gt;<i> So, I tried something.
+</I>&gt;<i>
+</I>&gt;<i> I went to my hard drive, System&gt; Library&gt; CFMSupport and picked the
+</I>&gt;<i> file &quot;CarbonLib&quot; as an guinea pig.
+</I>&gt;<i>
+</I>&gt;<i> I then went to Spotlight to search that file.
+</I>&gt;<i>
+</I>&gt;<i> Nope, Nada, never found.
+</I>&gt;<i>
+</I>&gt;<i> Then, using the Find command, did the same.
+</I>&gt;<i>
+</I>&gt;<i> Same results.
+</I>&gt;<i>
+</I>&gt;<i> Then, as suggested by a previous poster, reconfigured a specific Find
+</I>&gt;<i> routine where I manually entered both the System folder and the
+</I>&gt;<i> Library folder as specific places to search.
+</I>&gt;<i>
+</I>&gt;<i> Re-performed the search.
+</I>&gt;<i>
+</I>&gt;<i> Nope, Nada, etc. etc.
+</I>&gt;<i>
+</I>&gt;<i> So, am I doing something wrong? Is there another way to search? Or,
+</I>&gt;<i> did Apple just make searching/finding such files not possible?
+</I>&gt;<i>
+</I>
+The following is based on a hint by Tim Wilson-Brown. As always, use  
+it at your
+own risk.
+
+To force Spotlight to search in excluded places, you need to modify the
+_rules.plist file stored in the hidden .Spotlight-V100 directory.
+
+Do this while logged into an admin user account:
+
+Launch the Terminal app.
+Enter this command, substituting your user shortname for &lt;username&gt;  
+(without
+the brackets), hit the return key, enter your password (type it in  
+carefully
+because it won't show up on the screen), and hit the return key:
+
+sudo cp /.Spotlight-V100/_rules.plist /Users/&lt;username&gt;/Desktop/ 
+_rules.plist
+
+This copies the _rules.plist file to your desktop. Now, select it, CMD 
++D tomake
+a backup copy, CMD+I, and change its owernship from system, with no  
+access for
+you, to ownership to you by clicking on the lock, entering your  
+password, and
+selecting your user shortname. That should give you Read &amp; Write  
+access. Drop
+the file onto TextEdit and add whichever directories you wantto  
+search to the
+INCLUDE list. You can see what yours currently looks like with this  
+command:
+
+sudo cat /.Spotlight-V100/_rules.plist
+
+My modified _rules.plist file looks like this, which allows me to  
+search the
+developer docs and a whole lot more:
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple Computer//DTD PLIST 1.0//EN&quot;
+&quot;<A HREF="http://www.apple.com/DTDs/PropertyList-1.0.dtd">http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;</A>&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;dict&gt;
+         &lt;key&gt;EXCLUDE&lt;/key&gt;
+         &lt;array/&gt;
+         &lt;key&gt;INCLUDE&lt;/key&gt;
+         &lt;array&gt;
+                 &lt;string&gt;/System&lt;/string&gt;
+                 &lt;string&gt;/Library&lt;/string&gt;
+                 &lt;string&gt;/Developer/ADC Reference Library&lt;/string&gt;
+                 &lt;string&gt;/etc&lt;/string&gt;
+                 &lt;string&gt;/private&lt;/string&gt;
+                 &lt;string&gt;/usr&lt;/string&gt;
+                 &lt;string&gt;/bin&lt;/string&gt;
+                 &lt;string&gt;/sbin&lt;/string&gt;
+         &lt;/array&gt;
+         &lt;key&gt;NOTE&lt;/key&gt;
+         &lt;string&gt;Specify paths to include or exclude, preceeding  
+rules which
+target user-homes with ~/&lt;/string&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+
+After changing the _rules.plist file to suit your needs, save it,  
+select it,
+CMD+I, and change the ownership back to system, and click on the lock.
+
+Enter this command and replace the original file with the one you  
+modified:
+
+sudo cp /Users/&lt;username&gt;/Desktop/_rules.plist  /.Spotlight-V100/ 
+_rules.plist
+
+Restart and note that Spotlight will start reindexing. When it  
+finishes, you
+should be able to search for anything located in the now included  
+directories.
+
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="013557.html">[X4U] Front Row and Movie Trailers
+</A></li>
+	<LI>Next message: <A HREF="013571.html">Fwd: [X4U] &quot;Searching&quot; question under 10.4 Lesson Learned
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13558">[ date ]</a>
+              <a href="thread.html#13558">[ thread ]</a>
+              <a href="subject.html#13558">[ subject ]</a>
+              <a href="author.html#13558">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

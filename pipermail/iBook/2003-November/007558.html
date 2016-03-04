@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [P1] slow iBook
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20slow%20iBook&In-Reply-To=list-9423141%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="007557.html">
+   <LINK REL="Next"  HREF="007559.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[P1] slow iBook</H1>
+    <B>Zoki</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20slow%20iBook&In-Reply-To=list-9423141%40mail.ninewire.com"
+       TITLE="[P1] slow iBook">zoki.news at linuxix.net
+       </A><BR>
+    <I>Sun Nov 23 23:51:35 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="007557.html">[P1] Tmobile hotspot
+</A></li>
+        <LI>Next message: <A HREF="007559.html">[P1] Tmobile hotspot
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7558">[ date ]</a>
+              <a href="thread.html#7558">[ thread ]</a>
+              <a href="subject.html#7558">[ subject ]</a>
+              <a href="author.html#7558">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Le 23/11/2003 18:20, &#171;&#160;Don Hinkle&#160;&#187; &lt;<A HREF="../../../mailman/listinfo/ibook.html">donhinkle at mac.com</A>&gt; a &#233;crit&#160;:
+
+&gt;<i> My iBook is noticably running slow on nearly everything, especially on
+</I>&gt;<i> Mail and Safari, with delays before showing messages after I click on
+</I>&gt;<i> them, etc.
+</I>&gt;<i> I do have Cocktail and run it occasionally, but I only fix permissions
+</I>&gt;<i> and run the Cron scripts because I don't understand the other
+</I>&gt;<i> utilities. The Help file doesn't explain much either because frankly
+</I>&gt;<i> it's too technical for me.
+</I>&gt;<i> Can someone spell out the other utilities and what they do in simply
+</I>&gt;<i> lingo?
+</I>&gt;<i> Much thanks in advance!
+</I>&gt;<i> -don
+</I>
+
+*** You might want to check if your mailboxes aren't becoming too big.
+Another issue with Mail is that it becomes slower when your Address book is
+filling up. It has to reread the addressbook database in order to fill in
+the address field when writing a message.
+
+My tip would be to check and purge Mail. Just take a mailbox (not a folder
+with a collection of mailboxes) and drag it from Mail to your backup disk
+(if you have any), otherwise to your desktop and than burn it on a CD.
+
+Another issue you might have is your disk filling ip with data and not
+having enough space for the OS X system files, like the swap.
+
+Cocktail 3.1.1
+
+- Journaling on/off
+A way of making the disk remember the data when your system crashed. That
+way it can recover missing info faster during reboot. I have it on.
+
+- Prebind
+Optimize your system. Can't hurt.
+
+- Scripts
+Run system tasks that would normally run if your Mac was running 24/24. This
+is UNIX stuff. Just do it. I run &quot;ALL&quot; on the iBook since it's not always
+on.
+
+- Cache
+Data stocked in order to speed up the system. It can become very big. Up to
+you if you want to run it or not. Can't do any harm.
+
+- Startup
+Choose if you want to see what your system is doing when you're booting. Not
+useful to you.
+
+- Files Locked
+If you don't know what it means... means  you don't need it... ;-))
+
+- DS Store
+GUI config files. Let them be, they don't take up that much space.
+
+- Logs
+Removes old logs. Run this once in a while.
+
+- Links
+Creates UNIX type links, like in ln -sfi [target] [link_name]. An Apple link
+(create alias) doesn't allow to redirect data to another place on the disk.
+UNIX links do.
+Ex.: Move Mail dir to your $HOME/Documents/Mail folder, delete the original
+in Library and create there a &quot;ln -sfi /Users/[username]/Documents/Mail
+Mail&quot; link and Mail will go on working and all your mail will now go to
+/Users/[username]/Documents/Mail.
+
+- Misc
+UNIX has a command called &quot;chattr&quot; (change attribute) which allows you to
+lock files or folders in a special way.
+
+man chattr on Linux gives this explenation:
+
+A  file  with  the `a' attribute set can only be open in append mode for
+writing.  Only the superuser can set or clear this attribute.
+
+A file with the `c' attribute set is automatically compressed on the disk by
+the kernel.  A  read from  this  file  returns  uncompressed data. A write
+to this file compresses data before storing
+them on the disk.
+
+A file with the `d' attribute set is not candidate for backup when the
+dump(8) program is run.
+
+A file with the `i' attribute cannot be modified: it cannot be deleted or
+renamed, no link can be
+created  to this file and no data can be written to the file. Only the
+superuser can set or clear
+this attribute.
+
+A file with the `j' attribute has all of its data written to the ext3
+journal before being  written  to the file itself, if the filesystem is
+mounted with the &quot;data=ordered&quot; or &quot;data=writeback&quot;
+options.  When the filesystem is mounted with the  &quot;data=journalled&quot;  option
+all  file  data  is already journalled and this attribute has no effect.
+
+When  a file with the `s' attribute set is deleted, its blocks are zeroed
+and written back to the
+disk.
+
+When a file with the `S' attribute set is modified, the changes are written
+synchronously on  the
+disk; this is equivalent to the `sync' mount option applied to a subset of
+the files.
+
+A  file  with  the 't' attribute will not have a partial block fragment at
+the of the file merged
+with other files (for those filesystems which  support  tail-merging).
+This  is  necessary  for
+applications  such  as  LILO  which  read the filesystem directly, and who
+don't understand tail-
+merged files.
+
+When a file with the `u' attribute set is deleted, its contents are saved.
+This allows the  user
+to ask for its undeletion.
+
+- Network optimisation
+Not very complicateed
+
+- Ports
+Allows to redirect some ports in case your ISP blocks the standard ones.
+Allows you to run Apache on port 6565 instead of the default port 80. Allows
+you also to avoid scans on standard ports. <A HREF="http://www.mysite.com:6565">http://www.mysite.com:6565</A> isn't
+standard so before somebody finds you... it may take a while. You don't know
+what this means? You don't need it :-)
+
+- DHCP
+Get a new lease from your ISP. Maybe you prolong the lease time of your
+actual IP address or you get a new one.
+
+- Interface and Pilot
+Not very complicated.
+
+Without joking, if you don't know what it means, you probably don't need it.
+Otherwise you will have to dive more into tech stuff.
+
+Anyhow, knowing what Cocktail does isn't the solution of your issue. Try to
+take care of Mail, purge address (read= backup by dragging them (one or
+several at a time) to your backup disk) and maybe empty Safari's cache and
+come back to tell us if it solved your problem.
+
+-- 
+Cheers,
+Zoran. 
+
+Windows software isn't released, it's allowed to escape.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="007557.html">[P1] Tmobile hotspot
+</A></li>
+	<LI>Next message: <A HREF="007559.html">[P1] Tmobile hotspot
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7558">[ date ]</a>
+              <a href="thread.html#7558">[ thread ]</a>
+              <a href="subject.html#7558">[ subject ]</a>
+              <a href="author.html#7558">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

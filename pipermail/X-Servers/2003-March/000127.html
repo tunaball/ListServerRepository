@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Servers] Invisible disk space usage
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20Invisible%20disk%20space%20usage&In-Reply-To=list-5447248%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000126.html">
+   <LINK REL="Next"  HREF="000128.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Servers] Invisible disk space usage</H1>
+    <B>Jerome Camus</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20Invisible%20disk%20space%20usage&In-Reply-To=list-5447248%40mail.ninewire.com"
+       TITLE="[X Servers] Invisible disk space usage">camus at iwant2go2.com
+       </A><BR>
+    <I>Thu Mar 27 11:50:51 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000126.html">[X Servers] Xserve only 100BaseTX
+</A></li>
+        <LI>Next message: <A HREF="000128.html">newbie questions
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#127">[ date ]</a>
+              <a href="thread.html#127">[ thread ]</a>
+              <a href="subject.html#127">[ subject ]</a>
+              <a href="author.html#127">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanx Ken,
+
+I found the offending program in the meantime...  There weren't that 
+many smoking guns to hunt for!
+
+And yes, I could see how the program was acting up - essentially a 
+bad index making any attempt to read the data go into a tizzy not 
+ever reaching an end-of-file.  replaced it with a backUp and this are 
+running Ok again...
+
+I instinctively knew that virtual memory could end-up being limitless 
+(i.e not pre-defined but based on what the machine has available). 
+Now I know for real.  Thanx for the pointer !
+
+&gt;<i>On Thursday, March 27, 2003, at 03:13 AM, Jerome Camus wrote:
+</I>&gt;&gt;<i>A strange behaviour has appeared in the past 48 hours on an OS X server
+</I>&gt;&gt;<i>10.1.4.  Apparently, the available disk space is dropping precipitously
+</I>&gt;&gt;<i>- about 3 gb being consumed daily...
+</I>&gt;<i>
+</I>&gt;<i>I had seen this sort of behavior back when I was running some less-well-
+</I>&gt;<i>behaved application programs that ate up virtual memory quite irresponsibly.
+</I>&gt;<i>
+</I>&gt;<i>Swap files were being created at a rather high rate, chewing up disk space
+</I>&gt;<i>at the rate of 80MB each time a new file was created.  Rebooting will,
+</I>&gt;<i>of course, kill the offending application and it will start over from
+</I>&gt;<i>scratch, slowly (or perhaps not so slowly) eating up disk space all over
+</I>&gt;<i>again.
+</I>&gt;<i>
+</I>&gt;<i>Next time you see disk space disappearing like that, check how many
+</I>&gt;<i>files of the form &quot;swapfileNN&quot; you have in /private/var/vm.  If it's
+</I>&gt;<i>more than just a few, then that's a definite clue.
+</I>&gt;<i>
+</I>&gt;<i>Next, you'll want to see which programs are running currently and see
+</I>&gt;<i>who is pigging out on virtual memory.  Start up a terminal window and
+</I>&gt;<i>make it as large (high and wide) as you have space for, and then execute
+</I>&gt;<i>the command:
+</I>&gt;<i>
+</I>&gt;<i>     ps auxww | more
+</I>&gt;<i>
+</I>&gt;<i>Have a look at the VSZ column and look for any programs that look like
+</I>&gt;<i>they have excessively large numbers there.
+</I>&gt;<i>
+</I>&gt;<i>Can't tell you exactly what to do with the offending program if/when
+</I>&gt;<i>you find it, though.  That'll depend on who wrote it and if they are
+</I>&gt;<i>willing to fix it.
+</I>&gt;<i>
+</I>&gt;<i>/K
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>----------
+</I>&gt;<i>Check out the Mac OS X email list FAQ
+</I>&gt;<i><A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i>To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i>&lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>Need help from a real person? Try. 
+</I>&gt;<i>&lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>----------
+</I>&gt;<i>$14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;<i>Mac ISP Serious Mac Internet Solutions From NineWire! 
+</I>&gt;<i><A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i>DVIator   | Run Dual ADC displays on your G4 or just one on an older 
+</I>&gt;<i>Mac! Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>   Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000126.html">[X Servers] Xserve only 100BaseTX
+</A></li>
+	<LI>Next message: <A HREF="000128.html">newbie questions
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#127">[ date ]</a>
+              <a href="thread.html#127">[ thread ]</a>
+              <a href="subject.html#127">[ subject ]</a>
+              <a href="author.html#127">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

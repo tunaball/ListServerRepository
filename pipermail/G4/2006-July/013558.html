@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] how to reinstall os9 disk drivers
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20how%20to%20reinstall%20os9%20disk%20drivers&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="013571.html">
+   <LINK REL="Next"  HREF="013560.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] how to reinstall os9 disk drivers</H1>
+    <B>Till Wimmer</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20how%20to%20reinstall%20os9%20disk%20drivers&In-Reply-To="
+       TITLE="[G4] how to reinstall os9 disk drivers">g4-lisz at tonarchiv.ch
+       </A><BR>
+    <I>Wed Jul 12 19:10:48 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="013571.html">[G4] Patch for Apple USB modem?
+</A></li>
+        <LI>Next message: <A HREF="013560.html">[G4] sharing printer with pc
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13558">[ date ]</a>
+              <a href="thread.html#13558">[ thread ]</a>
+              <a href="subject.html#13558">[ subject ]</a>
+              <a href="author.html#13558">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello,
+
+I'm looking for a tool which reinstalls the Os9.2.2 disk drivers.
+
+I own a system with OsX 10.3.9 and Os 9.2.2. Somehow the partition table 
+of my HDD was corrupted but i managed to make the OsX boot again.
+
+The classic system is just a subfolder on the OsX partition, and it's 
+displayed for selection when running Startup Disk Preferences. But after 
+rebooting the folder icon with the question mark is show.
+
+pdisk doesn't show any driver settings (offsets):
+--------------------
+pdisk /dev/disk0 -dump
+/dev/disk0  map block size=512
+
+   #:                 type name                 length   base     ( size )
+   1:  Apple_partition_map Apple                    63 @ 1      
+   2:       Apple_Driver43 Macintosh                56 @ 64     
+   3:       Apple_Driver43 Macintosh                56 @ 120    
+   4:     Apple_Driver_ATA Macintosh                56 @ 176    
+   5:     Apple_Driver_ATA Macintosh                56 @ 232    
+   6:       Apple_FWDriver Macintosh               512 @ 288    
+   7:   Apple_Driver_IOKit Macintosh               512 @ 800    
+   8:        Apple_Patches Patch Partition         512 @ 1312   
+   9:           Apple_Free Extra                262144 @ 1824     (128.0M)
+  10:            Apple_HFS Apple_HFS_Untitled_2 59766448 @ 263968   ( 28.5G)
+  11:           Apple_Free Extra                    16 @ 60030416
+
+Device block size=512, Number of Blocks=60030432
+DeviceType=0x0, DeviceId=0x0
+--------------------
+
+That's why i think i have to reinstall the drivers...
+
+Any help would be much appreciated!
+
+bg - Till
+
+-- 
+********************************************************
+*        &quot;Deutschland vor!&quot; - Die WM Gegenhymne        *
+*  <A HREF="http://www.zittrige-haende.com/download/antiwm.mp3">http://www.zittrige-haende.com/download/antiwm.mp3</A>  *
+********************************************************
+
+</PRE>
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="013571.html">[G4] Patch for Apple USB modem?
+</A></li>
+	<LI>Next message: <A HREF="013560.html">[G4] sharing printer with pc
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13558">[ date ]</a>
+              <a href="thread.html#13558">[ thread ]</a>
+              <a href="subject.html#13558">[ subject ]</a>
+              <a href="author.html#13558">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

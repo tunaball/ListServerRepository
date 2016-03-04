@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Panther &quot;Archive&quot; from command-line?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Panther%20%22Archive%22%20from%20command-line%3F&In-Reply-To=list-14754667%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000057.html">
+   <LINK REL="Next"  HREF="000059.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Panther &quot;Archive&quot; from command-line?</H1>
+    <B>Scott J. Kramer</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Panther%20%22Archive%22%20from%20command-line%3F&In-Reply-To=list-14754667%40mail.ninewire.com"
+       TITLE="[X-Unix] Panther &quot;Archive&quot; from command-line?">x-unix at sjk.us
+       </A><BR>
+    <I>Fri Jul 16 14:10:14 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000057.html">[X-Unix] Panther &quot;Archive&quot; from command-line?
+</A></li>
+        <LI>Next message: <A HREF="000059.html">[X-Unix] Changing the default shell
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#58">[ date ]</a>
+              <a href="thread.html#58">[ thread ]</a>
+              <a href="subject.html#58">[ subject ]</a>
+              <a href="author.html#58">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>--On Friday, July 16, 2004 15:44 -0400 Stephen Jonke &lt;<A HREF="../../../mailman/listinfo/x-unix.html">sjj_public at mac.com</A>&gt; 
+wrote:
+
+&gt;<i> &quot;open&quot; is dependent on the GUI and will have the same window server
+</I>&gt;<i> issues as BOMArchiveHelper, because it uses BOMArchiveHelper.
+</I>
+Exactly, and I thought you wanted a suggestion that didn't rely on the
+GUI.  Using hdiutil and disk images is another possibility.
+
+&gt;<i> Also it's possible the currently logged in user has something other than
+</I>&gt;<i> BOMArchiveHelper as the default application for .zip files.
+</I>
+Good point.
+
+&gt;<i> I will try ditto.
+</I>
+Works great when its limitations aren't a factor.
+
+A minor warning if you're seriously considered about data integrity:
+
+When &quot;archive cloning&quot; home directory hierarchies with ditto a few months
+ago I noticed a peculiar permissions problem with a couple files even
+though the files appeared to be owned and readable/writable by me.  I'm
+not sure if it was during creation or restoring but the resources forks
+weren't readable (writable?) but using sudo to create (or restore?) the
+archives avoided the problem.
+
+There's a way files originally created while authenticated will look like
+they're owned by a non-authenticated user when running non-authenticated,
+but will appear to be root-owned when authenticated.  For instance:
+
+  % ls -l
+  total 128
+  -rw-r--r--  1 me   unknown  61636 17 May 19:52 Macintosh HD Report.pdf
+
+  % sudo ls -l
+  total 128
+  -rw-r--r--  1 root  unknown  61636 17 May 19:52 Macintosh HD Report.pdf
+
+I understand how that can happen but don't have a concise explanation
+(yet).  Just wanted to mention it since I suspect it was the reason
+behind the resource fork snafu with ditto mentioned above and can have
+similar permission-related side effects with other programs depending
+on their authentication context.
+
+-sjk
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000057.html">[X-Unix] Panther &quot;Archive&quot; from command-line?
+</A></li>
+	<LI>Next message: <A HREF="000059.html">[X-Unix] Changing the default shell
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#58">[ date ]</a>
+              <a href="thread.html#58">[ thread ]</a>
+              <a href="subject.html#58">[ subject ]</a>
+              <a href="author.html#58">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

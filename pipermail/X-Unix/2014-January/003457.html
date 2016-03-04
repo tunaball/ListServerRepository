@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Can't rm or mv Library/Preferences/*.plist files?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20Can%27t%20rm%20or%20mv%20Library/Preferences/%2A.plist%20files%3F&In-Reply-To=%3CC8127E6D-9037-48A8-85BE-6D967A649660%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003456.html">
+   <LINK REL="Next"  HREF="003459.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X-Unix] Can't rm or mv Library/Preferences/*.plist files?</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20Can%27t%20rm%20or%20mv%20Library/Preferences/%2A.plist%20files%3F&In-Reply-To=%3CC8127E6D-9037-48A8-85BE-6D967A649660%40gmail.com%3E"
+       TITLE="[X-Unix] Can't rm or mv Library/Preferences/*.plist files?">whmagill at gmail.com
+       </A><BR>
+    <I>Tue Jan 28 05:58:26 PST 2014</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003456.html">[X-Unix] Can't rm or mv Library/Preferences/*.plist files?
+</A></li>
+        <LI>Next message: <A HREF="003459.html">[X-Unix] Can't rm or mv Library/Preferences/*.plist files?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3457">[ date ]</a>
+              <a href="thread.html#3457">[ thread ]</a>
+              <a href="subject.html#3457">[ subject ]</a>
+              <a href="author.html#3457">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jan 28, 2014, at 3:13 AM, Stroller &lt;<A HREF="../../../mailman/listinfo/x-unix.html">stroller at stellar.eclipse.co.uk</A>&gt; wrote:
+
+&gt;<i> Having recently upgraded to Mavericks, one of the apps I use regularly is crashing a lot, so I want to remove the Preferences (and Application Support) files and see if it behaves any better. Devs and other users all tell me that this build works for them on Mavericks.
+</I>&gt;<i> 
+</I>&gt;<i> I created a directory in my homedir and moved the files in the normal way:
+</I>&gt;<i> 
+</I>&gt;<i>  mkdir MyPrefs
+</I>&gt;<i>  ls Library/Preferences/*appname*.plist
+</I>&gt;<i>  mv Library/Preferences/*appname*.plist MyPrefs
+</I>&gt;<i> 
+</I>&gt;<i> But as soon as I restarted the app, it had remembered my details, and was trying to log on as me to my default server - not what I expected!
+</I>&gt;<i> 
+</I>&gt;<i> When I checked again, Library/Preferences/*appname*.plist was present, and it was exactly the same&#185; as the plist I'd just backed up.
+</I>&gt;<i> 
+</I>&gt;<i> I think I noticed this behaviour under Lion 10.7 - it annoyed me then, but I ignored it for the time being. With Mavericks I feel a bit more committed to OS X, and I want to find out what's going on - could anyone possibly explain please?
+</I>&gt;<i> 
+</I>&gt;<i> I assume that the app is recovering the preferences from a cache directory or something - where is it, and what purpose does it serve, please?
+</I>
+&gt;<i> &#185; Near enough - I had to `plutil -convert xml1 *plist` and run a diff, to find that the only change was today's date, seeming to indicate when the app had been last run. I.E. the preferences file had been re-created when I launched the app, and saved when I quit it.
+</I>
+I don't Know all the answers here... or maybe not the correct ones; just a bunch. (I'm a SysAdmin, not a Developer, who has been retired since Lion was released.)
+
+1- There ARE significant differences between Lion and Mountain Lion with some things.
+2- plutil no longer exists under Mavericks. (I use Text Wrangler.) ---  I'm not completely certain what the fact that Apple pulled plutil from Mavericks implies.
+3- Memory management is &quot;radically&quot; changed in Mavericks  -- <A HREF="http://www.apple.com/osx/advanced-technologies/">http://www.apple.com/osx/advanced-technologies/</A>
+
+ One thing which I see as a result of this is that ?Many?Certain? Apps -- DO NOT QUIT. That is to say when you quit an App, it does not clear itself from Memory -- but hangs around &quot;just in case&quot; -- this is part of the &quot;instant on&quot; effect.  Related to this is the &quot;memory compression&quot; mechanism.
+
+All of which is to say -- yeah, when you quit an app, it doesn't &quot;go away.&quot; -- Part of what doesn't go away is the &quot;plist&quot; information. ?Most?Many? Apps load their plist information into memory when first launched and will use that copy, not the copy on disk. WHEN the disk copy is written back (if at all) to disk is unique to the individual app. There is also a mechanic which causes an app to &quot;create&quot; a missing plist file based on internal information - i.e. defaults. This is the desired effect when you remove the .plist file -- the assumption is that the file is corrupt, not that the values are &quot;wrong.&quot; But since there are &quot;more current&quot; values in memory, it uses those.
+
+And again, this is compounded by the &quot;fast reboot&quot; issue -- Many Apps as well as OSX itself attempt to &quot;cache&quot; themselves when they quit, to allow them to &quot;reload faster.&quot;
+There are a number of options relating to this.
+
+Preferences -&gt; General - check &quot;Close windows when quitting an application&quot; -- a &quot;negative&quot; option. The explanation &quot;When selected, open documents and windows will not be restored when you re-open an application.&quot; 
+
+Then when you reboot, a box will pop-up asking, and I'm paraphrasing, check if you want to &quot;remember your open apps. &quot;
+
+So, one thing which I do any time I am trying to clear an app -- after doing what you did (deleting the existing plist files, etc. -- POWER CYCLE (not reboot!). There are situations where you do NOT want to empty the trash first, (deleting system plist files, for example).
+
+Other than that, I also periodically simply erase ~/Library/Caches (and let it be rebuilt on power cycle.
+
+I don't know that any of this successfully explains your issue, but hopefully it helps.
+
+
+T.T.F.N.
+William H. Magill
+# iMac11,3 Core i7 [2.93GHz - 8 GB 1067MHz] OS X 10.9
+# Macmini6,1 Intel Core i5 [2.5 Ghz - 4GB 1600MHz] OS X 10.8.5
+
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at icloud.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+
+
+
+
+
+
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003456.html">[X-Unix] Can't rm or mv Library/Preferences/*.plist files?
+</A></li>
+	<LI>Next message: <A HREF="003459.html">[X-Unix] Can't rm or mv Library/Preferences/*.plist files?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3457">[ date ]</a>
+              <a href="thread.html#3457">[ thread ]</a>
+              <a href="subject.html#3457">[ subject ]</a>
+              <a href="author.html#3457">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

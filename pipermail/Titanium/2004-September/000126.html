@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Advice Re: Security Update/!st Time App Launch Issue
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Advice%20Re%3A%20Security%20Update/%21st%20Time%20App%20Launch%20Issue&In-Reply-To=3E69F14B-0FDA-11D9-A40C-00039301ACF8%40astcomm.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000129.html">
+   <LINK REL="Next"  HREF="000128.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Advice Re: Security Update/!st Time App Launch Issue</H1>
+    <B>b</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Advice%20Re%3A%20Security%20Update/%21st%20Time%20App%20Launch%20Issue&In-Reply-To=3E69F14B-0FDA-11D9-A40C-00039301ACF8%40astcomm.net"
+       TITLE="[Ti] Advice Re: Security Update/!st Time App Launch Issue">syrflip at verizon.net
+       </A><BR>
+    <I>Sun Sep 26 10:47:36 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000129.html">[Ti] Advice Re: Security Update/!st Time App Launch Issue
+</A></li>
+        <LI>Next message: <A HREF="000128.html">[Ti] Advice Re: Security Update/!st Time App Launch Issue
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#126">[ date ]</a>
+              <a href="thread.html#126">[ thread ]</a>
+              <a href="subject.html#126">[ subject ]</a>
+              <a href="author.html#126">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Chris Olson paused, thought it over, and spoke thusly:
+
+&gt;<i>On Sep 26, 2004, at 8:16 AM, Peter Krug wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i>But how do you know for sure which subsystems were affected and 
+</I>&gt;&gt;<i>which programs to restart?  Or should I RTF man pages?  They always 
+</I>&gt;&gt;<i>seem to confuse me - sample commands explaining the variables would 
+</I>&gt;&gt;<i>be real helpful for me.
+</I>&gt;<i>
+</I>&gt;<i>The documentation is fairly thorough on which systems are affected 
+</I>&gt;<i>just by reading the supporting information on Apple's website 
+</I>&gt;<i>regarding the update.  If it's at all confusing, I'd recommend the 
+</I>&gt;<i>reboot option until you get a better handle on BSD systems in 
+</I>&gt;<i>general, the Darwin system in particular, and understand how the 
+</I>&gt;<i>init system works.
+</I>&gt;<i>
+</I>&gt;<i>Perhaps this link to the ADC documentation would be helpful:
+</I>&gt;<i><A HREF="http://developer.apple.com/documentation/MacOSX/Conceptual/BPSystemStartup/Tasks/ManagingStartupItems.html">http://developer.apple.com/documentation/MacOSX/Conceptual/BPSystemStartup/Tasks/ManagingStartupItems.html</A>
+</I>&gt;<i>
+</I>
+Very interesting reading, going through the entire boot process. I 
+have a simple question, though.
+
+I installed the 2004-08-09 security update, that was mainly involving 
+the png issue.
+
+Instead of rebooting, i tried using the SystemStarter to just run 
+what i thought was the service involved in the update. I goofed on 
+that one, because CoreGraphics isn't a service. I think it just 
+popints to a couple of other scripts. (&lt;--guessing on that one). 
+However, in thinking back I am thinking coreservicesd was probably 
+what i wanted to restart. Does that sound about right?
+
+Instead, i goofed up somehow. i ran SystemStarter restart, with no 
+service argument. All seemed well, but in very short order i had some 
+invisible file eating startup drive space. I went from 3.3 GB of free 
+space, down to less than 330k, in several minutes. Heheh, a bit 
+scary, so i rebooted. I checked file sizes of all the Home 
+directories, as well as System, and the Libraries, and all seemed to 
+be sized normally. So it was a real mystery. As the apps were killed 
+by the reboot, i could see additional free space opening up, and it 
+wasn't VM, because my swap files are on an external drive...
+
+Question is two-fold: Was coreservicesd the appropriate service to 
+add to the arguments,as far as the update in question was concerned, 
+and what might have been the cause of the mystery free space 
+disappearance?
+
+thanks,
+~flipper
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000129.html">[Ti] Advice Re: Security Update/!st Time App Launch Issue
+</A></li>
+	<LI>Next message: <A HREF="000128.html">[Ti] Advice Re: Security Update/!st Time App Launch Issue
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#126">[ date ]</a>
+              <a href="thread.html#126">[ thread ]</a>
+              <a href="subject.html#126">[ subject ]</a>
+              <a href="author.html#126">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Panther upgrade
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Panther%20upgrade&In-Reply-To=list-10309519%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005455.html">
+   <LINK REL="Next"  HREF="005457.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Panther upgrade</H1>
+    <B>perry at cynic.org</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Panther%20upgrade&In-Reply-To=list-10309519%40mail.ninewire.com"
+       TITLE="[G4] Panther upgrade">perry at cynic.org
+       </A><BR>
+    <I>Mon Jan 19 15:14:41 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005455.html">[G4] Connecting from my Mac to my Virtual PC Windows XP
+</A></li>
+        <LI>Next message: <A HREF="005457.html">Images D/L on desktop
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5456">[ date ]</a>
+              <a href="thread.html#5456">[ thread ]</a>
+              <a href="subject.html#5456">[ subject ]</a>
+              <a href="author.html#5456">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Most of you probably aren't interested in this anymore, but anyway...
+
+On Sat, Jan 17, 2004 at 11:32:55AM -0700, Doug McNutt wrote:
+&gt;<i> I took some notes which I think might be interesting here. though I'm not so sure the &lt;<A HREF="../../../mailman/listinfo/g4.html">X-Unix at lists.themacintoshguy.com</A>&gt; list wouldn't be more appropriate. I have some associated scripting code to contribute and I'll offer it there.
+</I>&gt;<i> 
+</I>&gt;<i> My four displays with older ATI cards and Apple monochrome monitors first used on my IIFX came up just fine. It was a welcome surprise after all I had heard.
+</I>
+It's a hit-or-miss kind of deal. Some old cards still work; some don't. It
+turns out that the *really* old ones are more likely to still work; it's
+the graphics acceleration for the merely &quot;old&quot; cards that often causes
+trouble. Do note that those really old cards are very slow.
+
+&gt;<i> A test AppleWorks document got its lower edge below bottom of main screen and I was unable to change its size. That may be because the right and left displays extend below the main monitor. The UNIX clock cannot be moved above the menu bar to the top monitor. X11 gave me fits in the past and I'm looking forward to redoing my .x11initrc file once again.
+</I>
+You will have some continuing problems if you place the menu bar on anything
+but a &quot;top&quot; display. In other words, don't put a display *above* the one
+with the menu bar. Having left and right displays &quot;hung above&quot; the menu
+bar is fine.
+
+Many things don't want to be moved across the menu bar, including the clock
+window.
+
+If you can't &quot;fish&quot; a window out of invisible space, try
+ (*) Clicking on the grow button
+ (*) Moving the window to another display, then clicking the grow button
+ (*) Using the display preferences, rearranging the displays slightly
+
+And of course, Expose should let you &quot;get a handle on&quot; a window even if
+its entire title is obscured.
+
+&gt;<i> /etc/csh.login still overwrites the PATH variable set up in environment.plist. That causes the Terminal application to behave strangely when compared to BBEdit worksheets and AppleScript. Easily fixed, if you're a superuser, by deleting the content of /etc/csh.login but one wonders if some downloaded security update will &quot;repair&quot; that.
+</I>
+My recommendation would be to ditch csh and use bash, but I realize this
+is a religious matter... Do note that bash is the default shell these
+days, and csh probably doesn't get a whole lot of testing anymore.
+
+&gt;<i> If I create a directory  using Terminal while the enclosing folder is showing in a column view of a finder window it will not appear in the finder window until something is done, with finder active, to cause a refresh. This does not happen all the time but it's annoying when it does.
+</I>
+There was a conscious decision that the Finder would not poll for changes
+in directories (unlike the OS 9 one). There's a &quot;change notification&quot;
+machinery in place, but it's not quite fully done yet. Yes, it's annoying.
+At least you know the file's really there. :-)
+
+&gt;<i> A folder window opened on my SE/30 AppleTalk server will not get updated when its contents change by network activity. Viewing as list and then resetting to view as icon will force the update but just resorting, say by date, does not. The same folder, kept open on my 8500, updates properly.
+</I>
+Same problem, same reason.
+
+&gt;<i> Safari still converts domain names to lower case before accessing the /etc/hosts file or, what's more likely, before making a system call to look up a domain. That makes for a problem when a local machine uses a name with mixed case in it. It's OK to demand that domain names be processed in a case insensitive fashion. It's not OK to demand that they be expressed in all lower case in other places. The fix is to make double entries in /etc/hosts with alternate spellings but they look funny when I copy the file into my Linux box.
+</I>
+It's less ugly to use aliases in /etc/hosts:
+
+1.2.3.4 thehostname TheHostName TheHostname thehostname.my.domain
+
+&gt;<i> A Carbon Copy clone of Panther made onto a case sensitive HFS+ partition will not boot. The startup code simply moves over to the original HFS+ partition with nothing left in any known log file. It's possible that the behavior is specific to my sawtooth G4 and its ROM.
+</I>
+Boot fall-over indicates that something failed really early attempting to
+boot your partition. Yes, it's possible that it's specific to your ROM.
+You did make sure there's no firmware update for your hardware, right?
+
+&gt;<i> But.  Case sensitive partitions do work. Finder windows honor the differences.  Applications run from them and links to them are honored in everything I have tried. A remaining question is whether or not an update from Apple will work. I'll wait a bit before I try to move my entire $HOME directory to a case sensitive partition. For now all I need that way are the backups and working area for my Linux and Solaris efforts on distant machines.
+</I>
+Cool. Keep some bandages handy, in case the bleeding edge catches you. :-)
+
+Anyway, good luck!
+
+Cheers
+  -- perry
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005455.html">[G4] Connecting from my Mac to my Virtual PC Windows XP
+</A></li>
+	<LI>Next message: <A HREF="005457.html">Images D/L on desktop
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5456">[ date ]</a>
+              <a href="thread.html#5456">[ thread ]</a>
+              <a href="subject.html#5456">[ subject ]</a>
+              <a href="author.html#5456">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

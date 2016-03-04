@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Newbies] Re: How the Grinch Stole 45GB of My Hard Drive
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20Re%3A%20How%20the%20Grinch%20Stole%2045GB%20of%20My%20Hard%20Drive&In-Reply-To=list-3908328%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000124.html">
+   <LINK REL="Next"  HREF="000126.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Newbies] Re: How the Grinch Stole 45GB of My Hard Drive</H1>
+    <B>Gene Huh</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20Re%3A%20How%20the%20Grinch%20Stole%2045GB%20of%20My%20Hard%20Drive&In-Reply-To=list-3908328%40mail.ninewire.com"
+       TITLE="[X Newbies] Re: How the Grinch Stole 45GB of My Hard Drive">gshuh at earthlink.net
+       </A><BR>
+    <I>Sun Dec  1 13:18:37 PST 2002</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000124.html">[X Newbies] iPrint for LaserWriter 300 (serial)
+</A></li>
+        <LI>Next message: <A HREF="000126.html">[X Newbies] Trojans in the woodpile
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#125">[ date ]</a>
+              <a href="thread.html#125">[ thread ]</a>
+              <a href="subject.html#125">[ subject ]</a>
+              <a href="author.html#125">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+&gt;<i>
+</I>&gt;<i>I've done a million Get Infos on files, folders, groups of files and
+</I>&gt;<i>folders, etc. The only place that is showing a grossly inflated size is
+</I>&gt;<i>my own Users/Me folder (Get Info says it's 47.34GB), but when I look at
+</I>&gt;<i>it, either in the Finder or in Unix,  simply does not show anywhere
+</I>&gt;<i>near that much space being used for the files that are visible.
+</I>&gt;<i>
+</I>&gt;<i>Now I know that with Unix, programs and files can sometime end up in
+</I>&gt;<i>strange places, and can often end up being invisible, so I thought I'd
+</I>&gt;<i>post here in case somebody could let me know of any Stupid Unix Tricks
+</I>&gt;<i>(or OS X Tricks) that might help find out what's suddenly sucking up
+</I>&gt;<i>half my drive space, 'cause I'm stumped.
+</I>&gt;<i>
+</I>&gt;<i>Thanks,
+</I>&gt;<i>--Aaron*-
+</I>
+
+Aaron,
+
+I think that swapfiles and the system logs that others have mentioned 
+are not normally located in your /Users/Me folder, which you had 
+already indicated was the bloated one.
+
+In the event this is a weird directory-related error, the simplest 
+thing to try is to run Disk Utility off the OS X CD.
+
+In the event that the above and other strategies suggested here don't 
+work, the following might be worth a try.  It uses the Finder's Find 
+command to maximal effect, as it can indeed be used to find invisible 
+files.
+
+(I'm assuming, with a 17&quot; flat panel iMac, that you're using OS 10.2 
+or higher.  I don't know if the following works in 10.1.x.)
+
+(1) Go to the Finder.  Use the Find command (apple-F).  Click on the 
+&quot;Search in:&quot; menu and select &quot;Specific places,&quot;  then click on the 
+little box named &quot;Add&quot; (up and to the right).  In the dialog box that 
+pops up, select your &quot;Home&quot; folder and click &quot;Choose.&quot;  Make sure 
+this is the only checked item in the list of places to search.  This 
+allows you to focus your search on your home folder (which, again, 
+you had indicated is the one that is bloated.)
+
+(2) Then, click &quot;Add criteria...&quot; (at the bottom) and select 'size'. 
+Click &quot;Add criteria...&quot; again and select &quot;visibility&quot;.  At this point 
+there are probably more than two criteria listed in the &quot;Search for 
+items whose:&quot; box.   Eliminate all criteria  but &quot;size&quot; and 
+&quot;visibility&quot; by clicking on the minus sign next to (i.e., to the 
+right of) the irrelevant ones.
+
+(3) Now, set size to &quot;is greater than&quot; 10000 KB.  Set &quot;visibility&quot; to 
+&quot;all&quot;.  Click Search.  This should generate a new window with a list 
+of all sizeable files that are either visible *or* invisible.  Once 
+this has finished, sort the list by size by clicking on the &quot;size&quot; 
+column header once or twice.  This should identify all big invisible 
+files in your home folder.  You can repeat this search with different 
+criteria as needed to help narrow things down.
+
+(4) Hopefully there will be a culprit in there somewhere!  I'm 
+guessing a series of BIG invisible temporary files, like maybe from 
+lots of burned CDs or DVDs.  Let us know what you find ;)
+
+Apologies if this is a little longwinded; since this is the X-Newbies 
+group I didn't want to make any assumptions about previous knowledge. 
+Apologies also if this has already been suggested.
+
+Hope this helps,
+Gene (digest mode)
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000124.html">[X Newbies] iPrint for LaserWriter 300 (serial)
+</A></li>
+	<LI>Next message: <A HREF="000126.html">[X Newbies] Trojans in the woodpile
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#125">[ date ]</a>
+              <a href="thread.html#125">[ thread ]</a>
+              <a href="subject.html#125">[ subject ]</a>
+              <a href="author.html#125">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

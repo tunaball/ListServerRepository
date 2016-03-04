@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Stopping the WebDAV Exploit in Apache
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Stopping%20the%20WebDAV%20Exploit%20in%20Apache&In-Reply-To=list-11757104%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000599.html">
+   <LINK REL="Next"  HREF="000601.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Stopping the WebDAV Exploit in Apache</H1>
+    <B>Dean Suhr</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Stopping%20the%20WebDAV%20Exploit%20in%20Apache&In-Reply-To=list-11757104%40mail.ninewire.com"
+       TITLE="[X-Unix] Stopping the WebDAV Exploit in Apache">deansuhr at carpedis.com
+       </A><BR>
+    <I>Sun Mar 28 08:24:57 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000599.html">virex cron
+</A></li>
+        <LI>Next message: <A HREF="000601.html">macos-x-server digest, Vol 3 #2702 - 19 msgs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#600">[ date ]</a>
+              <a href="thread.html#600">[ thread ]</a>
+              <a href="subject.html#600">[ subject ]</a>
+              <a href="author.html#600">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>on 3/27/04 18:42, Scott Haneda at <A HREF="../../../mailman/listinfo/x-unix.html">scott at newgeo.com</A> wrote:
+</I>
+&gt;<i> I am serving up my mrtg stats on port 80 just so I can see
+</I>&gt;<i> what is going on no matter where I am.
+</I>...
+&gt;<i>
+</I>&gt;<i> The first thing I did what start tracking the worms and other issues
+</I>&gt;<i> # create special cases to get code red and others out of my logs!
+</I>&gt;<i> SetEnvIfNoCase Request_URI &quot;/cmd\.exe&quot; msjunk
+</I>...
+&gt;<i> 
+</I>&gt;<i> I send these logs to a serrate log...
+</I>&gt;<i> CustomLog &quot;/private/var/log/httpd/msjunk_log&quot; virtual env=msjunk
+</I>&gt;<i> CustomLog &quot;/private/var/log/httpd/msjunk_IP_log&quot; justIP env=msjunk
+</I>&gt;<i> 
+</I>&gt;<i> One is the full request, the last one is just the IP
+</I>&gt;<i> 
+</I>&gt;<i> Every 5 minutes cron picks up the IP log and adds it to a blackhole list so
+</I>&gt;<i> they can not talk to me again.
+</I>
+
+Scott,
+
+This is very interesting but I admit way over my head.  I am struggling with
+getting WebDAV to work properly just for joint GoLive development work.
+Using WebDAV for some more &quot;interesting&quot; things like this has some appeal to
+me.  Can you walk me (and the rest of us) through a bit more of what exactly
+is going on here so that we can better understand?
+
+I've read some about the WebDAV exploit so I have some concerns.  Is this
+just a IIS concern? Would it help to have HTTP and WebDAV on separate ports?
+Is there a way to do that while running only one Apache instanciation on one
+server?  If not, how would we run two instanciations?
+
+Dean
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000599.html">virex cron
+</A></li>
+	<LI>Next message: <A HREF="000601.html">macos-x-server digest, Vol 3 #2702 - 19 msgs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#600">[ date ]</a>
+              <a href="thread.html#600">[ thread ]</a>
+              <a href="subject.html#600">[ subject ]</a>
+              <a href="author.html#600">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

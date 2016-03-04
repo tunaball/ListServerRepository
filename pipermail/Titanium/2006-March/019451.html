@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] powerbook crashing [panic.log]
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20powerbook%20crashing%20%5Bpanic.log%5D&In-Reply-To=4CF99601-B53F-40B9-A188-FCD3637009A0%40consultant.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="019450.html">
+   <LINK REL="Next"  HREF="019457.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] powerbook crashing [panic.log]</H1>
+    <B>Kynan Shook</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20powerbook%20crashing%20%5Bpanic.log%5D&In-Reply-To=4CF99601-B53F-40B9-A188-FCD3637009A0%40consultant.com"
+       TITLE="[Ti] powerbook crashing [panic.log]">kshook at cae.wisc.edu
+       </A><BR>
+    <I>Wed Mar 22 16:03:22 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="019450.html">[Ti] powerbook crashing [panic.log]
+</A></li>
+        <LI>Next message: <A HREF="019457.html">[Ti] powerbook crashing [panic.log]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19451">[ date ]</a>
+              <a href="thread.html#19451">[ thread ]</a>
+              <a href="subject.html#19451">[ subject ]</a>
+              <a href="author.html#19451">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Well, in theory, they should all get logged, but I have seen them get  
+missed myself, and I'm not always sure why.
+
+In 10.2, when they changed from the behavior of dumping ugly text all  
+over your screen to putting up a multi-lingual message, they  
+redirected the text to the PRAM.  Then, the next time you reboot, the  
+OS sees that there is a panic log in the PRAM, and writes it to  
+disk.  It's done this way because writing to the PRAM is a more basic  
+access; once the kernel has panicked, there is no guarantee that the  
+OS is in a state where it would be possible to write to the disk.
+
+There are two reasons why a panic won't be logged.  The first is if  
+you have turned on remote debugging in Open Firmware - this is used  
+by people who write kernel code.  Once the kernel panics, they can  
+use a second computer to tap into memory and the kernel and see what  
+went wrong.  You would almost certainly know if you had turned this  
+on.  If you think you might've turned it on, type &quot;nvram boot-args&quot;  
+on the command line; if it prints out just &quot;boot-args&quot;, it's off.  If  
+it prints anything after &quot;boot-args&quot;, then you have a non-standard  
+setup - specifically, if it spits out &quot;debug=0x(something)&quot;, then it  
+won't save a panic log.
+
+The other time it won't save the panic log is if you reset PRAM.  One  
+could do this inadvertently by using the button on the back of  
+certain TiBooks, under the keyboard of others, or by pressing a  
+certain key combo.  To properly reboot a panicked Mac, you should  
+either press Command-Control-Power or hold down the power button for  
+several seconds.
+
+Now, I know I've had logs not saved when neither of these is the case  
+- of course, if the computer panics while booting, before it can  
+write to the log, the old panic will get overwritten.  Also, I  
+believe the information is only saved for 1 reboot, so if you boot  
+into Single User Mode, boot to a CD, or something else immediately  
+after the panic, you may lose the log.  However, I don't know what  
+else causes it to miss some panics.  Perhaps changed permissions  
+somewhere, I suppose.  Or maybe the kernel is in really bad shape,  
+and can't even manage to write to PRAM.
+
+If all else fails and you want to see your panic, it's also possible  
+to disable the graphical panic display, and go back to the text on  
+your screen.
+
+HTH,
+
+On Mar 22, 2006, at 12:27 PM, Dr Trevor J. Hutley wrote:
+&gt;<i>
+</I>&gt;<i> On 22 Mar 2006, at 20:49, Kynan Shook wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> What do you see in the file /Library/Logs/panic.log?
+</I>&gt;<i>
+</I>&gt;<i> Kynan - since I have occasional kernel panics, (i had one this  
+</I>&gt;<i> afternoon), I was interested to read about this panic.log (which I  
+</I>&gt;<i> never knew about).
+</I>&gt;<i> When I open mine, the last entry is in mid-Feb, which is strange,  
+</I>&gt;<i> as I must have 10 panics since then, including the one I just  
+</I>&gt;<i> mentioned.
+</I>&gt;<i> Does that mean that they are not all logged?
+</I>&gt;<i>
+</I>&gt;<i> Trevor
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="019450.html">[Ti] powerbook crashing [panic.log]
+</A></li>
+	<LI>Next message: <A HREF="019457.html">[Ti] powerbook crashing [panic.log]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19451">[ date ]</a>
+              <a href="thread.html#19451">[ thread ]</a>
+              <a href="subject.html#19451">[ subject ]</a>
+              <a href="author.html#19451">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

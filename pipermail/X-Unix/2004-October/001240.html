@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Apache &amp; ifconfig - success!
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Apache%20%26%20ifconfig%20-%20success%21&In-Reply-To=EA67A5EA-23DA-11D9-933D-000D9366C144%40pedro.Net.au">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001239.html">
+   <LINK REL="Next"  HREF="001219.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Apache &amp; ifconfig - success!</H1>
+    <B>Eugene</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Apache%20%26%20ifconfig%20-%20success%21&In-Reply-To=EA67A5EA-23DA-11D9-933D-000D9366C144%40pedro.Net.au"
+       TITLE="[X-Unix] Apache &amp; ifconfig - success!">list-themacintoshguy at fsck.net
+       </A><BR>
+    <I>Fri Oct 22 01:58:34 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001239.html">[X-Unix] Apache &amp; ifconfig - success!
+</A></li>
+        <LI>Next message: <A HREF="001219.html">[X-Unix] Apache &amp; ifconfig
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1240">[ date ]</a>
+              <a href="thread.html#1240">[ thread ]</a>
+              <a href="subject.html#1240">[ subject ]</a>
+              <a href="author.html#1240">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Fri, Oct 22, 2004 at 01:31:52PM +1000, Pedro fp wrote:
+:<i> 
+</I>:<i> On 21/10/2004, at 8:24 PM, Eugene wrote:
+</I>:<i> 
+</I>:<i> &gt;Do you have another DirectoryIndex directive in your httpd.conf that
+</I>:<i> &gt;does NOT include index.php?
+</I>:<i> 
+</I>:<i> As it turns out I do, part of the default OS X configuration I guess ...
+</I>:<i> 
+</I>:<i> &lt;IfModule mod_dir.c&gt;
+</I>:<i>     DirectoryIndex index.html
+</I>:<i> &lt;/IfModule&gt;
+</I>:<i> 
+</I>:<i> That entire block is repeated within the &lt;IfModule mod_php4.c&gt; block ...
+</I>:<i> 
+</I>:<i> &lt;IfModule mod_php4.c&gt;
+</I>:<i>     # If php is turned on, we repsect .php and .phps files.
+</I>:<i>     AddType application/x-httpd-php .php
+</I>:<i>     AddType application/x-httpd-php-source .phps
+</I>:<i> 
+</I>:<i>     # Since most users will want index.php to work we
+</I>:<i>     # also automatically enable index.php
+</I>:<i>     &lt;IfModule mod_dir.c&gt;
+</I>:<i>         DirectoryIndex index.html index.php
+</I>:<i>     &lt;/IfModule&gt;
+</I>:<i> &lt;/IfModule&gt;
+</I>:<i> 
+</I>:<i> With, as you can see, the difference being the addition of index.php
+</I>
+If Apache is processing the directives in order of appearance,
+then the directives should be re-ordered.  Move the mod_dir.c
+block *before* the mod_php4.c block.  While this still guarantees
+a default setting of index.html for DirectoryIndex, it also adds
+index.php if it detects PHP support.  If this works, comment out
+the DirectoryIndex lines in your &lt;VirtualHost&gt; blocks and see if
+it still works as expected.
+
+
+-- 
+Eugene Lee
+<A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001239.html">[X-Unix] Apache &amp; ifconfig - success!
+</A></li>
+	<LI>Next message: <A HREF="001219.html">[X-Unix] Apache &amp; ifconfig
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1240">[ date ]</a>
+              <a href="thread.html#1240">[ thread ]</a>
+              <a href="subject.html#1240">[ subject ]</a>
+              <a href="author.html#1240">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

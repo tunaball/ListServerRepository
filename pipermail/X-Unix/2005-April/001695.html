@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How secure is OS X storage of Unix passwords
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20secure%20is%20OS%20X%20storage%20of%20Unix%20passwords&In-Reply-To=7FCDBC939F90FF48BF910CA2BB90D482023AF0FC%40ibfftpspe1n006.de.ad.drkw.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001693.html">
+   <LINK REL="Next"  HREF="001696.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How secure is OS X storage of Unix passwords</H1>
+    <B>James Bucanek</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20secure%20is%20OS%20X%20storage%20of%20Unix%20passwords&In-Reply-To=7FCDBC939F90FF48BF910CA2BB90D482023AF0FC%40ibfftpspe1n006.de.ad.drkw.net"
+       TITLE="[X-Unix] How secure is OS X storage of Unix passwords">subscriber at gloaming.com
+       </A><BR>
+    <I>Mon Apr  4 08:21:27 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001693.html">[X-Unix] How secure is OS X storage of Unix passwords
+</A></li>
+        <LI>Next message: <A HREF="001696.html">[X-Unix] How secure is OS X storage of Unix passwords
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1695">[ date ]</a>
+              <a href="thread.html#1695">[ thread ]</a>
+              <a href="subject.html#1695">[ subject ]</a>
+              <a href="author.html#1695">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Kuestner, Bjoern wrote on Monday, April 4, 2005:
+
+&gt;<i>Keychain holds a lot of passwords for OS X users: Web site access, disk
+</I>&gt;<i>images, etc.
+</I>&gt;<i>
+</I>&gt;<i>Most users have only their default keychain which is protected by their
+</I>&gt;<i>login password.
+</I>&gt;<i>
+</I>&gt;<i>Where and how secure does OS X store login passwords?
+</I>
+In Panther: encrypted Shadowhash files.  Pretty darn secure, because no one but root has access to the shadowhash files, making them impossible to crack using standard password guessing/hacking techniques.
+
+&gt;<i>I understand OS X loads /etc/passwd into the netinfo DB. 
+</I>
+/etc/passwd is never used for anything except single-user boot.  Doring normal operation the file is ignored.  /etc/passwd is never loaded into the NIDB (unless you use the command-line tools to do it yourself, which would be kind of pointless since it's empty).  Read the comments in the file.
+
+&gt;<i>Does OS X use the same standard &quot;crypt&quot; algorithm from traditional unix?
+</I>
+For passwords stored in the NIDB (i.e. passwords created on a pre-Panther system), then I believe the answer is yes.  Passwords created, or updated, in Panther are stored in the Shadowhash using sha1 + salt.
+
+&gt;<i>Is that really only 56-bit long as I read on several web pages on the
+</I>&gt;<i>subject?
+</I>
+Pre-Panther, yes.  Panther and later, no.
+
+&gt;<i>What good is then having sensitive data on the laptop within a 128-bit-key
+</I>&gt;<i>encrypted disk image?
+</I>
+Is that a retorical question? For data, 128 bit AES encryption is considered &quot;strong&quot; encryption.
+
+&lt;<A HREF="http://www.apple.com/macosx/features/security/">http://www.apple.com/macosx/features/security/</A>&gt;
+&lt;<A HREF="http://images.apple.com/macosx/pdf/Security_in_Mac_OS_X.pdf">http://images.apple.com/macosx/pdf/Security_in_Mac_OS_X.pdf</A>&gt;
+
+-- 
+James Bucanek &lt;mailto:<A HREF="../../../mailman/listinfo/x-unix.html">privatereply at gloaming.com</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001693.html">[X-Unix] How secure is OS X storage of Unix passwords
+</A></li>
+	<LI>Next message: <A HREF="001696.html">[X-Unix] How secure is OS X storage of Unix passwords
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1695">[ date ]</a>
+              <a href="thread.html#1695">[ thread ]</a>
+              <a href="subject.html#1695">[ subject ]</a>
+              <a href="author.html#1695">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Loop structure syntax question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Loop%20structure%20syntax%20question&In-Reply-To=1D446700-0068-4C2A-833D-8E290E564F6D%40gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002474.html">
+   <LINK REL="Next"  HREF="002476.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Loop structure syntax question</H1>
+    <B>Philip J Robar</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Loop%20structure%20syntax%20question&In-Reply-To=1D446700-0068-4C2A-833D-8E290E564F6D%40gmail.com"
+       TITLE="[X-Unix] Loop structure syntax question">pjrobar at areyoureallythatstupid.org
+       </A><BR>
+    <I>Wed Nov 23 15:43:36 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002474.html">[X-Unix] Loop structure syntax question
+</A></li>
+        <LI>Next message: <A HREF="002476.html">[X-Unix] Loop structure syntax question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2475">[ date ]</a>
+              <a href="thread.html#2475">[ thread ]</a>
+              <a href="subject.html#2475">[ subject ]</a>
+              <a href="author.html#2475">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Nov 23, 2005, at 1:07 PM, Mac Daddy wrote:
+
+&gt;<i> I have a script running on several macs, a small part of which fails.
+</I>&gt;<i>
+</I>&gt;<i> ---------------------------------- snippet
+</I>&gt;<i> f# Add Admin users first.
+</I>&gt;<i>
+</I>&gt;<i> foreach login ( `cat ./logins_Y.txt` )
+</I>&gt;<i> dscl . merge /groups/cq users &quot;$login&quot;@&lt;mydomain.com&gt;
+</I>&gt;<i> end
+</I>&gt;<i>
+</I>&gt;<i> # Add normal Users next
+</I>&gt;<i>
+</I>&gt;<i> foreach login ( `cat ./logins_A.txt` )
+</I>&gt;<i> dscl . merge /groups/cq users &quot;$login&quot;@&lt;mydomain.com&gt;
+</I>&gt;<i> end
+</I>&gt;<i> --------------------------  end snippet
+</I>&gt;<i>
+</I>&gt;<i> This reads two text files on disk and then adds each name read into  
+</I>&gt;<i> a special group in the Netinfo db. It's part of a larger script,  
+</I>&gt;<i> and the larger script fails somewhere in the second loop reading  
+</I>&gt;<i> &quot;logins_A.txt&quot;, leaving the group only partially filled with  
+</I>&gt;<i> usernames. VERY BAD, as the group is used for authentication on the  
+</I>&gt;<i> machine.
+</I>&gt;<i>
+</I>&gt;<i> This thing is, this script NEVER fails when run by hand! Only when  
+</I>&gt;<i> run in cron. I have the script set to run in #!/bin/csh because  
+</I>&gt;<i> this 'foreach' loop structure above fails if I run it under /bin/sh  
+</I>&gt;<i> or /bin/bash and the code was given to me by someone else who uses  
+</I>&gt;<i> csh on Solaris.
+</I>&gt;<i>
+</I>&gt;<i> I think it's /bin/csh that's the problem, since when invoked by  
+</I>&gt;<i> hand, I'm using /bin/bash, which in turn is invoking this script  
+</I>&gt;<i> that runs under /bin/csh. There's no problem then. It's the only  
+</I>&gt;<i> thing I can think of. I even have a SECOND script in the cron set  
+</I>&gt;<i> to run under #!/bin/sh which checks to see if the first one fails,  
+</I>&gt;<i> notifies me if it does, then re-runs the first script as an attempt  
+</I>&gt;<i> to correct the situation before I can check. This check script  
+</I>&gt;<i> works every single time, further making me think /bin/csh by itself  
+</I>&gt;<i> is the problem.
+</I>&gt;<i>
+</I>&gt;<i> ANYWAY, I'd gladly have the script run under /bin/sh or /bin/bash  
+</I>&gt;<i> IF I just knew the proper syntax for the 'foreach' structure under  
+</I>&gt;<i> one of the other shells, but I can't figure it out and haven't  
+</I>&gt;<i> found it yet.
+</I>&gt;<i>
+</I>&gt;<i> Can somebody help me out with the proper syntax for one of the  
+</I>&gt;<i> other shells please?
+</I>
+First of all I've give the standard advice that using the C shell for  
+scripting is a poor choice. See <A HREF="http://www.faqs.org/faqs/unix-faq/">http://www.faqs.org/faqs/unix-faq/</A> 
+shell/csh-whynot/.
+
+Second, I don't think that you've looked very hard for the sh/bash  
+looping structure as the internet is rife with scripting tutorials  
+which I and others on this list have referenced numerous times.
+
+	Advanced Bash-Scripting Guide, An in-depth exploration of the art of  
+shell scripting; <A HREF="http://www.tldp.org/LDP/abs/html/index.html">http://www.tldp.org/LDP/abs/html/index.html</A>
+	See in particular: <A HREF="http://www.tldp.org/LDP/abs/html/loops1.html">http://www.tldp.org/LDP/abs/html/loops1.html</A>
+
+	<A HREF="http://www.shelldorado.com/">http://www.shelldorado.com/</A>
+
+	for login in $(cat ./logins_A.txt); do
+		dscl . merge /groups/cq users ${login}@mydomain.com
+	done														
+
+$(...) Is the modern form of command substitution.
+${...} Isolates the variable name from characters that follow it so  
+that they are not interpreted as part of the variable name. Although  
+in this particular case it's not needed, it's still good form to use  
+it so as to clearly communicate what you're doing.
+
+Third, without an error message it's hard to know where to even start  
+at debugging your code, but here's something to think about. '@' is a  
+command in the C shell and '&lt;' and '&gt;' are special characters. You're  
+not escaping any of them from their special meaning to the shell.
+
+You might also want to think about who the script is run by and what  
+name space is present when running it by hand versus cron.
+
+
+Phil
+--
+&quot;To announce that there must be no criticism of the President, or  
+that we are to stand by the President, right or wrong, is not only  
+unpatriotic and servile, but is morally treasonable to the American  
+public.&quot; -- Teddy Roosevelt
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002474.html">[X-Unix] Loop structure syntax question
+</A></li>
+	<LI>Next message: <A HREF="002476.html">[X-Unix] Loop structure syntax question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2475">[ date ]</a>
+              <a href="thread.html#2475">[ thread ]</a>
+              <a href="subject.html#2475">[ subject ]</a>
+              <a href="author.html#2475">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

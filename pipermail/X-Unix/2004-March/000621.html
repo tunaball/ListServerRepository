@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Command ?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Command%20%3F&In-Reply-To=list-11781839%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000620.html">
+   <LINK REL="Next"  HREF="000622.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Command ?</H1>
+    <B>James Bucanek</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Command%20%3F&In-Reply-To=list-11781839%40mail.ninewire.com"
+       TITLE="[X-Unix] Command ?">subscriber at gloaming.com
+       </A><BR>
+    <I>Mon Mar 29 09:04:14 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000620.html">[X-Unix] Command ?
+</A></li>
+        <LI>Next message: <A HREF="000622.html">[X-Unix] Monitoring file usage and emailing based on changes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#621">[ date ]</a>
+              <a href="thread.html#621">[ thread ]</a>
+              <a href="subject.html#621">[ subject ]</a>
+              <a href="author.html#621">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Rick wrote on Monday, March 29, 2004:
+&gt;<i>Now, for this information:
+</I>&gt;<i>
+</I>&gt;<i>VM: 3.08G + 78.6M   20969(0) pageins, 96(0) pageouts
+</I>&gt;<i>
+</I>&gt;<i>This is showing me that there are some pageouts,
+</I>&gt;<i>or VM is being used, and I don't have enough memory?
+</I>&gt;<i>
+</I>&gt;<i>1.1GB Mac OS 10.3.3
+</I>&gt;<i>
+</I>&gt;<i>Is there a way, of making sure you never use VM ?
+</I>
+Sure: Stop using OS X.
+
+Seriously, Virtual Memory is integral to how the Darwin kernel manages memory and processes.  It is impossible to avoid virtual memory and page ins.  Now page outs are a different matter, but still not the end of the world.  What you want to avoid is *excessive* page ins/outs.
+
+Leave top running where you can see it (or get a cool system monitor application like iPulse) and watch the page in/out numbers in parentheses.  These is the &quot;deltas&quot;, or the number of page ins/outs since the last time top updated its display.  Set top's update interval to something like 10 seconds (top -s 10) so these changes don't fly past too fast to see.
+
+If the delta numbers stay at, or near, zero then you don't have a memory problem.  If they start to spike up, and your applications start to slow down, then you're exceeding your physical RAM.
+______________________________________________________
+James Bucanek       &lt;mailto:<A HREF="../../../mailman/listinfo/x-unix.html">privatereply at gloaming.com</A>&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000620.html">[X-Unix] Command ?
+</A></li>
+	<LI>Next message: <A HREF="000622.html">[X-Unix] Monitoring file usage and emailing based on changes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#621">[ date ]</a>
+              <a href="thread.html#621">[ thread ]</a>
+              <a href="subject.html#621">[ subject ]</a>
+              <a href="author.html#621">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

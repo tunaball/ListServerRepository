@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [P1] Logging in as root
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20Logging%20in%20as%20root&In-Reply-To=list-4706691%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002187.html">
+   <LINK REL="Next"  HREF="002189.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[P1] Logging in as root</H1>
+    <B>Richard McKay</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20Logging%20in%20as%20root&In-Reply-To=list-4706691%40mail.ninewire.com"
+       TITLE="[P1] Logging in as root">richard.mckay1 at virgin.net
+       </A><BR>
+    <I>Sun Feb  2 16:12:59 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002187.html">[P1] stuck clock-internet connect
+</A></li>
+        <LI>Next message: <A HREF="002189.html">OT: security issues with wifi (was: anyone know any good call by
+	call dialup ISPs in California?)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2188">[ date ]</a>
+              <a href="thread.html#2188">[ thread ]</a>
+              <a href="subject.html#2188">[ subject ]</a>
+              <a href="author.html#2188">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Meg St. Clair wrote the following:
+
+&gt;<i> While I enjoyed your analogies, they don't answer the question: What exactly
+</I>&gt;<i> will happen? I get the, &quot;it's bad, don't do it, there are better ways&quot;. But
+</I>&gt;<i> I was always an obnoxious child. I've never been willing to take No as an
+</I>&gt;<i> answer with out a reason.
+</I>&gt;<i> 
+</I>&gt;<i> If I just log on as root and delete a file (which I find a lot easier to
+</I>&gt;<i> remember how to do than the syntax of sudo), what specific bad things will
+</I>&gt;<i> happen?
+</I>
+If you are responsible and think twice before acting (ie pressing return)
+then absolutely nothing bad will happen...however...
+
+Human nature dictates that we will inevitably act first and then think about
+what we just did...if you do this with Unix and root then because it gives
+you ultimate power and does not ask &quot;have you really thought about this
+action before you press that key?&quot; it can be terrible as then you could need
+to do a clean install and reconfigure the entire system or worse! (see
+below). If you do not make money with your iBook or are not running a server
+for others to get at their data or other items it will not be of as much
+importance...as a traditional mac user we can accept that we have needed to
+do a reinstall once in a while...that's why we make backups...but if there
+is a lot of valuable information or money involved with the equipment being
+operational then the risk of a crash or reinstall is very expensive or
+irreplaceable...this is why they always say don't do it...if you don't use
+root the chances are much lower that you can really mess up the system (with
+normal setup you may indeed have to delete the user and create a new one but
+the system itself is still churning along happily)
+
+If you are willing to do a reinstall and will not lose money by not having
+an operational system for the time it takes to reinstall then by all means
+have a good play (I am a firm believer that one needs to thoroughly thrash
+things before respecting them, you won't learn anything if you don't try it
+out...it will go wrong somewhere but hey you made a backup, right? and are
+accepting the fact that it *will* go wrong sometime so its not that terrible
+when it does crash and it allows you to learn more about the system normally
+reserved only for other eyes...It is a good way to learn about the unix
+environment and the fantastic advantages that a powerful and open system
+allows. Any good system administrator worth her/his salt will tell you that
+they also had a good look around and really screwed things up and required a
+clean install the first time or two, but how else will you learn the system
+better than the usual GUI interface allows...
+
+...security is a whole other issue...if root is not activated then it will
+be considerably harder for hackers to gain control of your laptop as many
+attach methods are based on having root power (thus the normal methodology
+of only using sudo to do these tasks...after the task you are logged out of
+root automatically and root doesn't need to be activated to do any of the
+tasks...
+
+...besides the above normal thoughts of preventative medicine, there is one
+real danger that potentially can not be reset by a clean install...
+
+If you start changing too many configuration files or such hidden files (.
+files) then the potential is there to change the settings for such things as
+modem or sound or other hardware like ethernet or monitor settings and the
+services that use them...this would be unlikely but you could potentially
+set the volume to damaging levels to the speakers that a normal user would
+never have access to, or the modem could be configured wrong and cause
+serious problems, the display settings could cause damage to the monitor but
+again it would require a good knowledge of which files and an editor to view
+them and change them...The golden rule is really important with unix as it
+*really* gives the user the power to do *anything* no matter how
+damaging...Think twice, act once...
+
+Most unix people have nightmares about having to reinstall the entire OS and
+its hard won sleekness and custom settings of files...etc...the other
+reasons are mostly based on financial loss by not having an operational
+system...As a mac user that wants to understand the beauty of the OS and
+what is going on behind the scenes have a go...but be prepared to reinstall
+if all starts to go weird or things don't work anymore...educate yourself
+about what the command you are about to type is really going to do...before
+you hit return and nothing bad should happen regardless of what user you are
+logged in as...
+
+My 0.02
+
+Richard
+--
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002187.html">[P1] stuck clock-internet connect
+</A></li>
+	<LI>Next message: <A HREF="002189.html">OT: security issues with wifi (was: anyone know any good call by
+	call dialup ISPs in California?)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2188">[ date ]</a>
+              <a href="thread.html#2188">[ thread ]</a>
+              <a href="subject.html#2188">[ subject ]</a>
+              <a href="author.html#2188">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

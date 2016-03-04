@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] text file parsing?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20text%20file%20parsing%3F&In-Reply-To=20060503134026.4D3C4761BC0%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002660.html">
+   <LINK REL="Next"  HREF="002662.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] text file parsing?</H1>
+    <B>Robert Frank</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20text%20file%20parsing%3F&In-Reply-To=20060503134026.4D3C4761BC0%40listserver.themacintoshguy.com"
+       TITLE="[X-Unix] text file parsing?">robert.frank at unibas.ch
+       </A><BR>
+    <I>Wed May  3 07:40:55 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002660.html">[X-Unix] text file parsing?
+</A></li>
+        <LI>Next message: <A HREF="002662.html">[X-Unix] text file parsing?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2661">[ date ]</a>
+              <a href="thread.html#2661">[ thread ]</a>
+              <a href="subject.html#2661">[ subject ]</a>
+              <a href="author.html#2661">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 03/05/2006, at 15:40 , x-unix- 
+<A HREF="../../../mailman/listinfo/x-unix.html">request at listserver.themacintoshguy.com</A> wrote:
+
+&gt;<i> I'm trying to write a bash script for something I thought would be
+</I>&gt;<i> simple, but haven't been able to figure it out.
+</I>&gt;<i>
+</I>&gt;<i> I have some files that are essentially text files, but have binary
+</I>&gt;<i> data in them.  For instance, using grep I need to use the &quot;-a&quot; option
+</I>&gt;<i> to get any output.
+</I>&gt;<i>
+</I>&gt;<i> When one opens these files in a text editor you see a readable text
+</I>Hmm, sounds like they might be utf-8? These files will look like  
+normal text files except for some characters which aren't ASCII. In  
+fact, utf-8 and utf-16 text files will often )(but not always, such  
+as xml files) start with a special sequence which tells the reading  
+software that this is a utf-8 file.
+
+As to the end, this could be some kind of 'signature' in a non-ASCII  
+code.
+Try opening them in TextEdit with another than the default encoding,  
+just to see. Or use XCode to recode/interprete the file contents.
+
+You can use od on a command line to look at the character sequences  
+('od -b' for decmal output, 'od -c' for character output, where non- 
+displayable characters will be in ocal or with a special code).
+
+Once you know exactly what you have and what you want to throw away,  
+it should be quite simple to use sed, awk, or perl to get the job  
+done. You could also just delete any characters less than a space  
+with tr -d 'character set'.
+
+If it is just the first line, and then from a well known point on all  
+the rest, sed would be:
+
+sed '1,1d; /pattern/,$d' file &gt;new_file
+where pattern is the unique pattern from which line on all will be  
+discarded.
+You could also usd a substitution to keep the line from which on you  
+will discard the rest.
+
+There are, of course, many other ways of accomplishing the same!
+
+Robert
+
+
+&gt;<i> file.  However, the first line of the file is a few &quot;garbage&quot;
+</I>&gt;<i> characters, and the last 1-10 pages are all &quot;garbage&quot; binary  
+</I>&gt;<i> characters.
+</I>&gt;<i>
+</I>&gt;<i> All I'd like to do is make a script that would strip off the first
+</I>&gt;<i> line and then remove all the garbage characters from the end of the
+</I>&gt;<i> file.  The text of the files always end with the same set of
+</I>&gt;<i> characters so I had hoped to find a way to basically do something  
+</I>&gt;<i> like:
+</I>&gt;<i>
+</I>&gt;<i> 	delete from the end of $EndString to the end of the file
+</I>&gt;<i>
+</I>&gt;<i> 	where $EndString would be the last text I want to keep and is unique
+</I>&gt;<i> in the file.
+</I>&gt;<i>
+</I>&gt;<i> The fact that the file has binary data may make line counting hard,
+</I>&gt;<i> grep didn't seem to be able to return a line number.
+</I>&gt;<i>
+</I>&gt;<i> Ben
+</I>
+Departement Informatik   FGB   tel   +41 (0)61 267 14 66
+Universit&#228;t Basel                          fax. +41 (0)61 267 14 61
+Robert Frank
+Klingelbergstrasse 50                 <A HREF="../../../mailman/listinfo/x-unix.html">Robert.Frank at unibas.ch</A>
+CH-4056 Basel
+Switzerland                                   http:// 
+www.informatik.unibas.ch/personen/frank_r.html
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002660.html">[X-Unix] text file parsing?
+</A></li>
+	<LI>Next message: <A HREF="002662.html">[X-Unix] text file parsing?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2661">[ date ]</a>
+              <a href="thread.html#2661">[ thread ]</a>
+              <a href="subject.html#2661">[ subject ]</a>
+              <a href="author.html#2661">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

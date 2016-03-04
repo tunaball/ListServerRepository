@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] kernel panics across different volumes; RAM?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20kernel%20panics%20across%20different%20volumes%3B%20RAM%3F&In-Reply-To=20050920145625.3EFB55182F1%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011071.html">
+   <LINK REL="Next"  HREF="011073.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] kernel panics across different volumes; RAM?</H1>
+    <B>John Baltutis</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20kernel%20panics%20across%20different%20volumes%3B%20RAM%3F&In-Reply-To=20050920145625.3EFB55182F1%40listserver.themacintoshguy.com"
+       TITLE="[G4] kernel panics across different volumes; RAM?">baltwo at san.rr.com
+       </A><BR>
+    <I>Tue Sep 20 10:46:32 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011071.html">[G4] Hardware browser
+</A></li>
+        <LI>Next message: <A HREF="011073.html">[G4] kernel panics across different volumes; RAM?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11072">[ date ]</a>
+              <a href="thread.html#11072">[ thread ]</a>
+              <a href="subject.html#11072">[ subject ]</a>
+              <a href="author.html#11072">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 09/19/05, Wayne Clodfelter &lt;<A HREF="../../../mailman/listinfo/g4.html">wayne at troutnc.com</A>&gt; wrote extensively about
+KPs, suspect RAM, and ended with:
+&gt;<i>
+</I>&gt;<i> So my question(s) to the list (are):
+</I>&gt;<i> Is the RAM the primary suspect?
+</I>
+Yes. Tiger's RAM requirements are more stringent than Panther's.
+
+&gt;<i> Could PC 133 and PC 100 sticks co-exist under Panther for 2 years with no
+</I>&gt;<i>  problem, and become problematic under Tiger? Even to the point of showing
+</I>&gt;<i> up under Panther?
+</I>
+Yes. However, IIRC, the all mixed RAM modules will operate at the lowest
+capability among the set.
+
+&gt;<i> Even to the point of showing up under Panther?
+</I>
+Yes, if the bad RAM screwed up the underlying machine defaults when
+panicing. I suggest resetting the machine's default settings, using the
+following steps:
+
+Restart the machine booting into Open Firmware (holding down these keys
+until you get a text screen: OPT+ CMD + O + F). Then, enter these commands,
+following each with hitting the return key:
+
+reset-nvram
+set-defaults
+reset-all
+
+For details, see &lt;<A HREF="http://docs.info.apple.com/article.html?artnum=60285">http://docs.info.apple.com/article.html?artnum=60285</A>&gt;.
+Note that, although the article is an overview for network servers, &quot;most
+of the information included applies broadly to all PCI Macintosh systems&quot;
+and is, IMHO, their definitive guide to Open Firmware and I recommend its
+perusal.
+
+Once the machine boots up, you should test the RAM modules, one at a time,
+with the Apple Hardware Test that came with the machine. If that's not
+available, then try MemTest, available at &lt;<A HREF="http://www.memtestosx.org/">http://www.memtestosx.org/</A>&gt;.
+
+&gt;<i> Could it still be software induced?
+</I>
+Not as far as I know, but the panics could have screwed up the machine's
+defaults-see above.
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011071.html">[G4] Hardware browser
+</A></li>
+	<LI>Next message: <A HREF="011073.html">[G4] kernel panics across different volumes; RAM?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11072">[ date ]</a>
+              <a href="thread.html#11072">[ thread ]</a>
+              <a href="subject.html#11072">[ subject ]</a>
+              <a href="author.html#11072">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

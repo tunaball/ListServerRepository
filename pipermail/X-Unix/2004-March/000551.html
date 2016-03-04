@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Hiding apps from the command line
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11727984%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000550.html">
+   <LINK REL="Next"  HREF="000554.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Hiding apps from the command line</H1>
+    <B>Kent Harris</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11727984%40mail.ninewire.com"
+       TITLE="[X-Unix] Hiding apps from the command line">ksh at vine.com
+       </A><BR>
+    <I>Fri Mar 26 10:02:40 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000550.html">[X-Unix] Hiding apps from the command line
+</A></li>
+        <LI>Next message: <A HREF="000554.html">[X-Unix] FW: [X-Unix] Hiding apps from the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#551">[ date ]</a>
+              <a href="thread.html#551">[ thread ]</a>
+              <a href="subject.html#551">[ subject ]</a>
+              <a href="author.html#551">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Here's how us old farts do it:
+
+#! /bin/sh
+#*********************************************************************** 
+*****
+#*********************************************************************** 
+*****
+#
+# Install this script as &quot;~/bin/hide&quot; with 0755 permissions.
+#
+# trap 'rm -f /tmp/hide$$; exit 1' 1 2 3 15
+#
+PROG=`basename $0`
+VERSION=&quot;1.0&quot;
+# VERSION=&quot;$Id$&quot;
+USAGE=&quot;eval echo usage: $PROG [options] application; grep \&quot;^#@\&quot; $0 |\
+	sed s/#@//; exit 1&quot;
+#@  hide app           =&gt; hide specified application &quot;app&quot;
+#@  hide -a[ll]        =&gt; hide all applications but the Finder
+#@  hide -a[ll] app    =&gt; hide all but specified application
+#@  hide -r[eveal]     =&gt; reveal all applications
+#@  hide -r[eveal] app =&gt; reveal specified application
+#@  hide -v[ersion]    =&gt; print version and exit
+#@  hide               =&gt; print this usage message
+
+# Validate command line arguments.
+CMDLINE=$*
+until test -z &quot;$1&quot; ; do
+	case $1 in
+	-a*) CSTR=&quot;every process whose visible is true and name is not  
+\&quot;Finder\&quot; to false&quot;;;
+	-r*)  CSTR=&quot;every process whose visible is false to true&quot;;;
+	-v) echo ${VERSION}; exit 0;;
+	-*) $USAGE;;
+	 *) APPLICATION=&quot;$*&quot;; break;;
+	esac
+	shift
+done
+
+[ &quot;${CSTR}&quot; -o &quot;${APPLICATION}&quot; ] || $USAGE
+
+if [ &quot;${APPLICATION}&quot; ] ; then
+	CSTR=&quot;application process \&quot;${APPLICATION}\&quot; to false&quot;
+	set -- $CMDLINE
+	until test -z &quot;$1&quot; ; do
+		case $1 in
+		-a*) CSTR=&quot;every process whose visible is true and name is not  
+\&quot;${APPLICATION}\&quot; &quot; ;;
+		-r*) CSTR=&quot;application process \&quot;${APPLICATION}\&quot; to true&quot;;;
+		*) break;;
+		esac
+		shift
+	done
+osascript&lt;&lt;XXX
+	tell application &quot;Finder&quot;
+		if exists application process &quot;${APPLICATION}&quot; then
+			set visible of ${CSTR}
+		end if
+	end tell
+XXX
+else
+osascript&lt;&lt;YYY
+	tell application &quot;Finder&quot;
+	set visible of ${CSTR}
+	end tell
+YYY
+fi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000550.html">[X-Unix] Hiding apps from the command line
+</A></li>
+	<LI>Next message: <A HREF="000554.html">[X-Unix] FW: [X-Unix] Hiding apps from the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#551">[ date ]</a>
+              <a href="thread.html#551">[ thread ]</a>
+              <a href="subject.html#551">[ subject ]</a>
+              <a href="author.html#551">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

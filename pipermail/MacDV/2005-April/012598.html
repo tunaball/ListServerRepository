@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MacDV] Re: iMovie HD 5.0.2 bugs and fixes
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20iMovie%20HD%205.0.2%20bugs%20and%20fixes&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="012599.html">
+   <LINK REL="Next"  HREF="012600.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MacDV] Re: iMovie HD 5.0.2 bugs and fixes</H1>
+    <B>Matti Haveri</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20iMovie%20HD%205.0.2%20bugs%20and%20fixes&In-Reply-To="
+       TITLE="[MacDV] Re: iMovie HD 5.0.2 bugs and fixes">matti.haveri at sjoki.uta.fi
+       </A><BR>
+    <I>Sun Apr 17 04:40:48 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="012599.html">[MacDV] iMovie HD 5.0.2 bugs and fixes
+</A></li>
+        <LI>Next message: <A HREF="012600.html">[MacDV] DVD won't burn all the way
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12598">[ date ]</a>
+              <a href="thread.html#12598">[ thread ]</a>
+              <a href="subject.html#12598">[ subject ]</a>
+              <a href="author.html#12598">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>[continued from the previous message]
+
+- Sometimes iMovie HD 5.0.2 projects with only still images fail to 
+burn in iDVD 5.0.1
+
+iDVD 5 sometimes has an error if it tries to encode an iMovie HD 
+project consisting only of imported still images and no sound track.
+
+For example: I can produce the error when trying to burn this simple 
+project: Create a PAL-DV project with iMovie 5.0.2. Import two 
+2048x1536 JPEGs to it with Ken Burns turned off. Send the project to 
+iDVD 5.0.1 and let iMovie render the stills when it prompts it. Then 
+encode the project as a disk image. At the very end of the encoding 
+process there is an alert &quot;Encoding Video. Error during 
+rendering/encoding:&quot; and making the disk image fails.
+
+The error can sometimes be prevented if a short video clip with audio 
+is inserted to the beginning of the iMovie project. Sometimes this 
+doesn't work and iDVD's error message at the end of the encoding is: 
+&quot;Errors were found during the burning process. The error #-1 was 
+reported&quot;. (This applies to iMovie 5.0.1 and iDVD 5.0 -- I haven't 
+seen this in later versions).
+
+- There may be single whiter frames with iMovie HD 5.0.2 projects 
+burned in iDVD 5.0.1
+
+This is mentioned in an Apple knowledgebase article: If you create a 
+slideshow movie in iMovie HD 5.0.1 containing chapter markers it may 
+produce white frames when burned to DVD using iDVD 5. It seems that 
+in iMovie HD 5.0.2 the frames are not all white anymore but whiter 
+than they should be.
+
+For example: I can produce the error with this simple project: Create 
+a PAL-DV project with iMovie 5.0.2. Import ten 2048x1536 JPEGs to it 
+with Ken Burns turned off. Add a chapter marker to every 2nd still 
+image so that there are 4 chapter markers. Send the project to iDVD 
+5.0.1 and don't let iMovie render the stills when it prompts it 
+(iMovie HD renders jaggy stills so the rendering prompt must be 
+ignored). Then encode the project as a disk image. Mount the disk 
+image and play it via the DVD Palyer.app or inspect the encoded .VOB 
+frame-by-frame via MPEG Streamclip or QuickTime Player: There is a 
+single whiter frame (i.e. white flash) at every spot where there is a 
+chapter marker so there are 5 white flashes in this 50 second DVD 
+(there is an additional whiter frame at the very beginning). The 
+whiter frame pattern is always the same at the chapter marker spot: 
+previous image - 1 frame of the next image - whiter frame - the rest 
+of the next image and so on.
+
+- The quality of imported still images which are saved back as frames 
+is bad in iMovie HD 5.0.2
+
+iMovie 5.0.2 fixes:
+
+- The titles bug was fixed in iMovie HD 5.0.2 for NTSC but in PAL the 
+bug persists! In iMovie HD 5.0.2 added Titles distort interlacing 
+lines in the underlying PAL video.
+
+- Slow-motion Effects are now correctly deinterlaced so they don't 
+flicker on an interlaced TV.
+
+The slo-mo effect is rendered when sending the project to tape or 
+iDVD. You can force rendering by doing a dummy export to tape with no 
+camcorder attached.
+
+- Digitizing analog 8mm/Hi8 tapes on Sony D8 camcorders reportedly 
+now works in iMovie HD 5.0.2.
+
+- iMovie HD 5.0.2 now deinterlaces the video when importing and 
+rendering 4:3 DV files to a 16:9 DV Widescreen project. I don't know 
+whether this should be considered a feature or a bug.
+
+But there is a related real a bug that I didn't bother to add to the 
+bug section because it may be too weird:
+
+With imported NTSC or PAL .dv or .mov the interlacing is distorted if 
+the .dv or .mov has its High Quality flag (and no other playback 
+quality flag) enabled. IMO the imported clip's playback setting 
+should be just a PLAYBACK setting. It should NOT alter the behaviour 
+of the .mov or .dv file in any other way!! (Unlike .mov files, the 
+.dv files can't save the playback quality setting but applications 
+like Toast and MPEG Streamclip store the playback quality info in the 
+.dv file's resource fork).
+
+- For more info, updates, workarounds and examples, check:
+
+&lt;<A HREF="http://www.sjoki.uta.fi/~shmhav/iMovie_HD_bugs.html">http://www.sjoki.uta.fi/~shmhav/iMovie_HD_bugs.html</A>&gt;
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="012599.html">[MacDV] iMovie HD 5.0.2 bugs and fixes
+</A></li>
+	<LI>Next message: <A HREF="012600.html">[MacDV] DVD won't burn all the way
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12598">[ date ]</a>
+              <a href="thread.html#12598">[ thread ]</a>
+              <a href="subject.html#12598">[ subject ]</a>
+              <a href="author.html#12598">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

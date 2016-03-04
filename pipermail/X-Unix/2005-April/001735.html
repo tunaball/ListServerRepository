@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: MAC address swap conundrum
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20MAC%20address%20swap%20conundrum&In-Reply-To=20050410161706.46F4237577B%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001734.html">
+   <LINK REL="Next"  HREF="001736.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: MAC address swap conundrum</H1>
+    <B>SeaSoft Systems</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20MAC%20address%20swap%20conundrum&In-Reply-To=20050410161706.46F4237577B%40listserver.themacintoshguy.com"
+       TITLE="[X-Unix] Re: MAC address swap conundrum">seasoft at west.net
+       </A><BR>
+    <I>Sun Apr 10 12:08:00 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001734.html">[X-Unix] POPFile and Perl installation and setup
+</A></li>
+        <LI>Next message: <A HREF="001736.html">[X-Unix] Re: MAC address swap conundrum
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1735">[ date ]</a>
+              <a href="thread.html#1735">[ thread ]</a>
+              <a href="subject.html#1735">[ subject ]</a>
+              <a href="author.html#1735">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>From: Stroller &lt;<A HREF="../../../mailman/listinfo/x-unix.html">MacMonster at myrealbox.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>On Apr 9, 2005, at 7:43 pm, SeaSoft Systems wrote:
+</I>&gt;<i>
+</I>&gt;&gt;&gt;<i>  From: SeaSoft Systems &lt;<A HREF="../../../mailman/listinfo/x-unix.html">seasoft at west.net</A>&gt;
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>  I have really no clue here. Could anyone with some network expertise
+</I>&gt;&gt;&gt;<i>  help me understand this situation or point me to a resource or more
+</I>&gt;&gt;&gt;<i>  appropriate forum? I have Googled my brains out but have not found
+</I>&gt;&gt;&gt;<i>  anything helpful.
+</I>&gt;&gt;<i>   snip
+</I>&gt;&gt;<i>  So very sorry...
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  I should have Googled *after* I found the system log entries. There is
+</I>&gt;&gt;<i>  in fact quite a lot to be found under &quot;mach_kernel: arp: &quot;
+</I>&gt;<i>
+</I>&gt;<i>Since you've piqued my interest (and probably that of others, too) do
+</I>&gt;<i>you think you could let us know what has caused this, when you've
+</I>&gt;<i>finally got to the bottom of it?
+</I>&gt;<i>
+</I>
+Most certainly; it's a bit long and tortured, but for the terminally curious...
+
+Turns out a year ago I set up a Brother USB printer that also had a 
+network interface. During the printer network setup, I assigned it an 
+unused IP on my LAN (192.168.167.21). After testing, I never used the 
+IP number for printing (I only set up the IP print feature to access 
+the printer via an NT box also on the network). Since I never used 
+the IP print interface, I forgot I had assigned the IP number to the 
+Brother. (DHCP, anyone? :)
+
+I inadvertently set the *same* IP for a web serving iMac when I got 
+my Linksys firewall/router a few months back. The conflict never 
+created a problem, even when the printer was on. Because I was only 
+using the USB connection to the printer, no IP-addressed printer 
+traffic intended for the printer ever hit the network.
+
+Why did the duplicate IP not cause other problems? I'm more than a 
+little fuzzy on this; I am just not sure what the router was doing 
+since whenever the Brother was powered on, there were two 
+(192.168.167.21) IPs online. I have a couple guesses:
+
+1. The router had the errant IP assigned to the iMac server MAC from 
+its initial configuration and simply didn't send any of the server 
+traffic to the printer. The printer, never seeing any IP traffic for 
+itself, never broadcast its IP?
+
+2. Perhaps both the Brother and iMac got the WAN-traffic? And the 
+Brother, not seeing recognizable printing commands, simply ignored 
+them silently?
+
+Sorry I can't be more helpful here; I'm just way out of my league, 
+technically...
+
+The day of the &quot;incident&quot;, however, I actually tried to print using 
+the IP print setup on the OSX machine. It didn't work (timed out or 
+something), and I just printed via USB as usual. It wasn't until days 
+later that I noticed the error messages (quenched automatically by 
+OkeyDokey on the iMac server) that triggered my investigation.
+
+So, the OSX box evidently &quot;re-assigned&quot; the duplicated IP from the 
+iMac server MAC to the printer MAC in an attempt to satisfy my 
+IP-based print commands. I have no idea how this affected the 
+router's handling of WAN I/O to the iMac server. It seems that the 
+router kept sending the WAN/LAN packets to the right machine (iMac 
+server) and that the only real conflict was on the iMac server which 
+then saw the duplicate IP conflict and protested.
+
+Note that whenever I have inadvertently replicated LAN IPs on my own, 
+this has always caused the affected OS8.6 machine to crash; that 
+didn't happen this time.
+
+It was a *very* educational process.
+
+One thing I learned that has altered my OSX behavior and may be of 
+use to other neophytes: Keep a dedicated terminal window open that 
+displays real-time additions to the system.log. This is really, 
+really informative about what's happening on your machine. If you 
+lack a hardware firewall, for example, it will display all the 
+cracking attempts from Russia/China/India/etc. Combined with a 
+WHOIS-type IP lookup, this is extremely fascinating. The command I 
+used was
+
+$ tail -f /var/log/system.log
+
+The -f flag keeps tail adding log records to the bottom of the window 
+as they show up. Hardware firewalls, of course, make this game much 
+less educational :)
+
+This &quot;Tail Window&quot; experiment made me take the OSX box out of the DMZ 
+of my hardware firewall/router; just too much stuff going on from the 
+Internet. Its also quite useful in following &amp; understanding all the 
+&quot;OSX vulnerability&quot; brouhaha currently in progress.
+
+
+Whew,
+
+Richard
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001734.html">[X-Unix] POPFile and Perl installation and setup
+</A></li>
+	<LI>Next message: <A HREF="001736.html">[X-Unix] Re: MAC address swap conundrum
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1735">[ date ]</a>
+              <a href="thread.html#1735">[ thread ]</a>
+              <a href="subject.html#1735">[ subject ]</a>
+              <a href="author.html#1735">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

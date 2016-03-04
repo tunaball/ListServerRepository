@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] how to view &quot;pageouts?&quot;
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20how%20to%20view%20%22pageouts%3F%22&In-Reply-To=20080620130446.C26432AF7514%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="021431.html">
+   <LINK REL="Next"  HREF="021433.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] how to view &quot;pageouts?&quot;</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20how%20to%20view%20%22pageouts%3F%22&In-Reply-To=20080620130446.C26432AF7514%40listserver.themacintoshguy.com"
+       TITLE="[X4U] how to view &quot;pageouts?&quot;">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Sat Jun 21 19:35:47 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="021431.html">[X4U] Hard Drive Recovery How Ridiculous
+</A></li>
+        <LI>Next message: <A HREF="021433.html">[X4U] Re: &quot;Backwards Compatibility&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#21437">[ date ]</a>
+              <a href="thread.html#21437">[ thread ]</a>
+              <a href="subject.html#21437">[ subject ]</a>
+              <a href="author.html#21437">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>From: Ed Gould &lt;<A HREF="../../../mailman/listinfo/x4u.html">edgould1948 at comcast.net</A>&gt;
+</I>&gt;<i>On Jun 19, 2008, at 11:47 AM, David Ledger wrote:
+</I>&gt;&gt;<i>  ---------------------
+</I>&gt;&gt;<i>  SNIP----------------------------------------------------------
+</I>&gt;&gt;<i>  Other than memory mapped file I/O I'd be interested to know what
+</I>&gt;&gt;<i>  these other reasons are.
+</I>&gt;<i>The one or two that come to the top of my mind (there are others of
+</I>&gt;<i>course) are
+</I>&gt;<i>1. The application tells the OS that the page will not be
+</I>&gt;<i>used in quite a long time (perhaps an error routine that is never(?)
+</I>&gt;<i>to be invoked)
+</I>&gt;<i>2. The OS sees a wait issued by the application and
+</I>&gt;<i>due to other issues (like cpu busy, etc) decided to swap the entire
+</I>&gt;<i>application out. Some of the types of wait are either I/O and or
+</I>&gt;<i>waiting on input from the user.
+</I>
+If the cpu is busy but memory is not tight, swapping out an 
+application would only make things worse - more for the cpu to do.
+
+&gt;<i>If the system is overloaded say by
+</I>&gt;<i>cpu usage then the system looks at the the applications that are not
+</I>&gt;<i>doing anything and frees up memory by swapping those applications out
+</I>&gt;<i>or another reason is that the OS keeps track of a a &quot;routine&quot;  and if
+</I>&gt;<i>its no longer in use it it moves it to the ready &quot;que&quot; to be paged
+</I>&gt;<i>out que and so long as the use count does not go up by the time its
+</I>&gt;<i>ready to be paged it is paged out or depending on how the OS is
+</I>&gt;<i>written  maybe just the page is freed and when the routine is need
+</I>&gt;<i>again it is paged in from the swap file, again it depends on how
+</I>&gt;<i>sophisticated the OS is.
+</I>
+What does this mean? Ready queue has nothing to do with pageouts.
+
+&gt;<i>It maybe just because the application says
+</I>&gt;<i>I am stopped and can go no further until an external event occurs
+</I>&gt;<i>like a time expiring at say 2 hours later(ICAL might be an example
+</I>&gt;<i>here).
+</I>
+Why should this cause a pageout if there's plenty of memory?
+
+&gt;<i>The MAC internals on scheduling is not externally published so
+</I>&gt;<i>there may be others as well, its difficult to say what was
+</I>&gt;<i>architected into the OS do I can only guess based on how other
+</I>&gt;<i>systems that *ARE* externalized.
+</I>&gt;<i>
+</I>&gt;<i>I posted a lengthy pageout response yesterday and it was held for
+</I>&gt;<i>length restrictions. Maybe that will answer the question as well.
+</I>
+It's not through yet. I'd still be interested to know what version of 
+Unix this is.
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+HP-UX specialist of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x4u.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="021431.html">[X4U] Hard Drive Recovery How Ridiculous
+</A></li>
+	<LI>Next message: <A HREF="021433.html">[X4U] Re: &quot;Backwards Compatibility&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#21437">[ date ]</a>
+              <a href="thread.html#21437">[ thread ]</a>
+              <a href="subject.html#21437">[ subject ]</a>
+              <a href="author.html#21437">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

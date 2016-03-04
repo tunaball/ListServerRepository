@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] HP LaserJet 4550 Updated
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20HP%20LaserJet%204550%20Updated&In-Reply-To=86E3159E-BDC4-4AAE-B80D-15F020971CD1%40bellsouth.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="018338.html">
+   <LINK REL="Next"  HREF="018330.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] HP LaserJet 4550 Updated</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20HP%20LaserJet%204550%20Updated&In-Reply-To=86E3159E-BDC4-4AAE-B80D-15F020971CD1%40bellsouth.net"
+       TITLE="[X4U] HP LaserJet 4550 Updated">macmonster at myrealbox.com
+       </A><BR>
+    <I>Tue Aug 14 06:15:34 PDT 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="018338.html">[X4U] HP LaserJet 4550 Updated
+</A></li>
+        <LI>Next message: <A HREF="018330.html">[X4U] Spinning BeachBall Delay in Finder
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#18340">[ date ]</a>
+              <a href="thread.html#18340">[ thread ]</a>
+              <a href="subject.html#18340">[ subject ]</a>
+              <a href="author.html#18340">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 13 Aug 2007, at 22:21, David R. Boag wrote:
+&gt;<i>
+</I>&gt;<i> Connection to the internet is via AirPort. HP LJ4550 is connected  
+</I>&gt;<i> directly (no hub or router) to the back of the Mini.  When they  
+</I>&gt;<i> originally set it up, it worked, but about 2-3 months ago, they did  
+</I>&gt;<i> a softwre update via Software Update, and after that, they could no  
+</I>&gt;<i> longer print to the 4550....
+</I>&gt;<i>  When he goes to the network system pref pane and goes to Built-in  
+</I>&gt;<i> Ethernet, under TCP/IP there is NO IP address or anything else  
+</I>&gt;<i> assigned to the Mac. It's pretty much blank. I can't remember where  
+</I>&gt;<i> he got it, but he told me his Mac's Ip address was 192.168.1.104. I  
+</I>&gt;<i> am thinking that that may be the IP address for the AirPort port.
+</I>
+I think this is a clear &amp; accurate analysis indicating the problem.  
+Thank you for posting such an informative report - it helps us very  
+easily help you.
+
+&gt;<i> What I discovered today via phone is that the TCP/IP address of the  
+</I>&gt;<i> printer w/ the JetDirect card inside appears to be 192.0.0.192. ...
+</I>&gt;<i> So we clearly have screwed up network settings. Now, anyone want to  
+</I>&gt;<i> guide me in how to correct these so that he's talking using DHCP  
+</I>&gt;<i> via the AirPort but talking either using Appletalk or TCP/IP to the  
+</I>&gt;<i> 4550? And can the settings on the printer be changed easily or do  
+</I>&gt;<i> you just have to make the IP address on the mac match the first  
+</I>&gt;<i> three parts of the HP's IP?
+</I>
+The IP can - and in this case should - be changed on the printer.
+&lt;<A HREF="http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?">http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?</A> 
+objectID=bpj02326&gt;
+
+How much do you know about IP addresses &amp; subnet masks?
+
+The printer &amp; the Mac's ethernet port should be on the same subnet,  
+but a different one from the airport. All should be allocated private  
+addresses, such as 10.x.y.z or 192.168.x.y
+
+In System Preferences &gt; Network on the Mac DON'T TOUCH ANY OF THE  
+AIRPORT SETTINGS, since the user has never complained of his internet  
+failing. Check that the subnet mask is 255.255.255.0
+
+Providing the subnet mask is 255.255.255.0 for the Airport then this  
+will work, otherwise come back to me:
+
+In System Preferences &gt; Network on the Mac go into the WIRED ETHERNET  
+and set the IP address to be 192.168.99.42 with subnet mask  
+255.255.255.0
+Set the printer's IP to be 192.168.99.105 with subnet mask 255.255.255.0
+
+Configuration should now be straight-forward.
+
+192.0.0.192 seems to be some kind of &quot;special&quot; reserved IP address  
+for printing (or advertising printing services on the network)? - I  
+have never encountered it before and have always simply assigned a  
+proper IP address to it as described above. This is a good &amp; correct  
+practice - I don't think there's any advantage - and possible  
+problems - trying to match your Mac's IP address to that range.
+
+There is a menu option on the printer to print a sample page which  
+shows it's default paper size, lots of other stuff, and the full  
+network settings.
+
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="018338.html">[X4U] HP LaserJet 4550 Updated
+</A></li>
+	<LI>Next message: <A HREF="018330.html">[X4U] Spinning BeachBall Delay in Finder
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#18340">[ date ]</a>
+              <a href="thread.html#18340">[ thread ]</a>
+              <a href="subject.html#18340">[ subject ]</a>
+              <a href="author.html#18340">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

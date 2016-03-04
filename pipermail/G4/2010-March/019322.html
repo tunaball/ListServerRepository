@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Spotlight Usage
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BG4%5D%20Spotlight%20Usage&In-Reply-To=%3C1DC9FB9D-287B-4BA3-8329-29E48C57DD06%40gifutiger.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="019321.html">
+   <LINK REL="Next"  HREF="019323.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[G4] Spotlight Usage</H1>
+    <B>Harry Freeman</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BG4%5D%20Spotlight%20Usage&In-Reply-To=%3C1DC9FB9D-287B-4BA3-8329-29E48C57DD06%40gifutiger.com%3E"
+       TITLE="[G4] Spotlight Usage">gifutiger at gmail.com
+       </A><BR>
+    <I>Sun Mar 14 20:47:14 PDT 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="019321.html">[G4] Spotlight Usage
+</A></li>
+        <LI>Next message: <A HREF="019323.html">[G4] Installing OSX 10.3 on a Powermac G4 quicksilver 800 (2002)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19322">[ date ]</a>
+              <a href="thread.html#19322">[ thread ]</a>
+              <a href="subject.html#19322">[ subject ]</a>
+              <a href="author.html#19322">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks for your reply, however, I am an old time Unix user therefore  
+I'm very familiar with this type of command.
+
+I'm not having trouble getting &quot;Spotlight&quot; to index my drives, it's  
+after taking up to 20 hours to index the 750Gb drive if I unmount  
+(eject) the drive when it is remounted Spotlight no longer know what's  
+on the drive.
+
+I use the &quot;System Preferences~Spotlight~Privacy&quot; to get indexing  
+started. First I use the &quot;+&quot; button and select the drive that I want  
+indexed, then use the &quot;-&quot; button to remove the drive from the privacy  
+list.
+
+Then within a few minuets the &quot;Spotlight&quot; application will begin the  
+indexing.
+When it is done, items that are contained on the drive can be found  
+using Spotlight,
+
+However if the drive is ejected, when it is remounted the items and no  
+longer accessible for finding, using spotlight.
+
+The drive that I'm referring to is a backup drive which I don't want  
+to keep mounted full time, but would like to find items using  
+Spotlight when mounted.
+
+If this is normal I guess I'll have to live with it, but I would think  
+that spotlight should store the database index somewhere, therefore it  
+should be available for use.
+
+Thanks again for your detailed answer
+
+Here's what I found regarding mdutil
+----------------------------------------------------
+mdutil -- manage the metadata stores used by Spotlight
+
+SYNOPSIS
+    mdutil [-pEsav] [-i on | off] volume ...
+
+DESCRIPTION
+    The mdutil command is useful for managing the metadata stores for  
+mounted
+    volumes.
+
+    The following options are available:
+
+    -p  Spotlight caches indexes of some network devices locally.  This
+        option requests that a local caches be flushed to the  
+appropriate
+        network device.
+
+    -E  This flag will cause each local store for the volumes  
+indicated to be
+        erased.  The stores will be rebuilt if appropriate.
+
+    -i on | off
+        Sets the indexing status for the provided volumes to on or  
+off.  Note
+        that indexing may be delayed due to low disk space or other  
+condi-
+        tions.
+
+    -s  Display the indexing status of the listed volumes.
+
+    -a  Apply command to all volumes.
+
+    -v  Print verbose information when available.
+----------------------------------------------------
+
+On Mar 14, 2010, at 8:11 PM, B G wrote:
+
+&gt;<i> Here is a brief synopsis of spotlight.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Spotlight will begin indexing any volume as soon as it is mounted,  
+</I>&gt;<i> with certain exceptions: CDs, DVDs, and network-attached or shared  
+</I>&gt;<i> volumes are not indexed when mounted. Volume means either a hard  
+</I>&gt;<i> drive with a single partition, or a specific partition on a hard  
+</I>&gt;<i> drive with multiple partitions.
+</I>&gt;<i>
+</I>&gt;<i> You can under Tiger stop an indexing from happening but you may end  
+</I>&gt;<i> up with some anomalous data. this has been corrected under leopard
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> 1. Let indexing begin on the volume.
+</I>&gt;<i>
+</I>&gt;<i> 2. Open Terminal, located in the Macintosh HD &gt; Applications &gt;  
+</I>&gt;<i> Utilities folder.
+</I>&gt;<i>
+</I>&gt;<i> 3. At the Terminal prompt, type the following command, exactly as  
+</I>&gt;<i> written:
+</I>&gt;<i> 	
+</I>&gt;<i> 		sudo mdutil -i off /path_to_volume
+</I>&gt;<i> where /path_to_volume is the path of the volume being indexed.
+</I>&gt;<i>
+</I>&gt;<i> 4. Press Return.
+</I>&gt;<i>
+</I>&gt;<i> 5. If prompted for a Password, type your Admin password, then press  
+</I>&gt;<i> Return.
+</I>&gt;<i> You will receive the response:
+</I>&gt;<i>
+</I>&gt;<i> 	&#8226;/path_to_volume/: Indexing disabled for volume.
+</I>&gt;<i> under Tiger or
+</I>&gt;<i>
+</I>&gt;<i> 	 /path_to_volume: Indexing disabled.
+</I>&gt;<i> under Leopard.
+</I>&gt;<i>
+</I>&gt;<i> Spotlight will immediately cease to index the specified volume.
+</I>&gt;<i>
+</I>&gt;<i> 6. If you are using Leopard, skip to step 9.
+</I>&gt;<i>       Otherwise, erase the partial index created by Spotlight under  
+</I>&gt;<i> Tiger. At the Terminal
+</I>&gt;<i>
+</I>&gt;<i>        prompt, type the following command, exactly as written:
+</I>&gt;<i>
+</I>&gt;<i> 	             sudo mdutil -E /path_to_volume
+</I>&gt;<i>  where /path_to_volume is the path of the volume being indexed. [1]
+</I>&gt;<i>
+</I>&gt;<i> 7. Press Return.
+</I>&gt;<i>
+</I>&gt;<i> 8. If prompted for a Password, type your Admin password, then press  
+</I>&gt;<i> Return.
+</I>&gt;<i>       You will receive the response:
+</I>&gt;<i>
+</I>&gt;<i> 	        /path_to_volume/: Volume index removed.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> 9.  At the Terminal prompt, type exit then press Return.
+</I>&gt;<i>
+</I>&gt;<i> 10. Quit (Command-Q) Terminal.
+</I>&gt;<i>
+</I>&gt;<i> If you use the volume frequently just leave it mounted all the time
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Mar 14, 2010, at 5:36 PM, Harry Freeman wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Greetings All
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I'm wondering if someone can give me a clue?
+</I>&gt;&gt;<i> Every time that I index one of my external USB drives, the next  
+</I>&gt;&gt;<i> time that I load that disk onto the desktop
+</I>&gt;&gt;<i> Spotlight doesn't seam to remember any of the items which were  
+</I>&gt;&gt;<i> indexed.
+</I>&gt;&gt;<i> I'm indexing a 750Gb external USB drive, when I'm done the contents  
+</I>&gt;&gt;<i> will be available,
+</I>&gt;&gt;<i> however if I eject the drive then remount a few days later, it  
+</I>&gt;&gt;<i> knows nothing of the contents.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Am I doing something that I shouldn't or do I have to keep it  
+</I>&gt;&gt;<i> mounted forever?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Cheers
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Harry
+</I>&gt;&gt;<i> San Jose, CA
+</I>
+</PRE>
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="019321.html">[G4] Spotlight Usage
+</A></li>
+	<LI>Next message: <A HREF="019323.html">[G4] Installing OSX 10.3 on a Powermac G4 quicksilver 800 (2002)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19322">[ date ]</a>
+              <a href="thread.html#19322">[ thread ]</a>
+              <a href="subject.html#19322">[ subject ]</a>
+              <a href="author.html#19322">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

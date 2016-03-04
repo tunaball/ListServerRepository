@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Newbies] Corrupted User Prefs
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20Corrupted%20User%20Prefs&In-Reply-To=20050615015549.IKMX18814.imta01sl.mx.bigpond.com%40mail.sticare.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005266.html">
+   <LINK REL="Next"  HREF="005277.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Newbies] Corrupted User Prefs</H1>
+    <B>Tony Johansen</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20Corrupted%20User%20Prefs&In-Reply-To=20050615015549.IKMX18814.imta01sl.mx.bigpond.com%40mail.sticare.com"
+       TITLE="[X-Newbies] Corrupted User Prefs">tjoh7019 at bigpond.net.au
+       </A><BR>
+    <I>Fri Jun 17 03:21:18 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005266.html">[X-Newbies] Anti-Virus
+</A></li>
+        <LI>Next message: <A HREF="005277.html">[X-Newbies] Corrupted User Prefs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5276">[ date ]</a>
+              <a href="thread.html#5276">[ thread ]</a>
+              <a href="subject.html#5276">[ subject ]</a>
+              <a href="author.html#5276">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 15/6/2005 11:52 AM, &quot;Randy B. Singer&quot; &lt;<A HREF="../../../mailman/listinfo/x-newbies.html">randy at macattorney.com</A>&gt; wrote:
+
+&gt;<i> You may want to contact the program's developers at this point and ask if
+</I>&gt;<i> the program is known to conflict with any third party software that you
+</I>&gt;<i> might have installed.
+</I>
+Reply from ToonBoomStudio tech support:
+
+There are no known conflicts with third party softwares that we are
+aware of.
+
+I would still check the permissions on the path below:
+Users/user_name/Library/Preferences
+(i.e. Users, Users/user_name, Users/user_name/Library...)
+
+Specifically I would check into why your original account was not able
+to create the Toon Boom Studio Global Library or write files to your
+user space. It becomes less urgent as you now have a working account
+but if you intend to get your main account working, it's a place to start.
+*********************************************************
+
+Pasted post from Alex:
+
+The obvious is to compare your user account with the troubleshooting
+account. What's different -- what does the account which doesn't work
+have that the account which works doesn't?
+
+To begin with, check your Startup Items. Is there anything other than
+iTunes Helper and iCalAlarmScheduler? Use Activity Monitor to check
+your processes. In addition to the visible ones and the ones I just
+mentioned, there should be SystemUIServer, loginwindow, pbs, ATSServer,
+WindowServer. Are there any others?
+
+A corrupt or out-of-spec font may cause problems. Check your Fonts
+folder, as well as the Classic Fonts folder. If you disable those fonts
+(e.g., by moving them to a different folder), does the problem still
+occur?
+
+(1)
+Start up items listed in my main account:
+ABF Hotkey
+iCal Alarm Scheduler
+Window Clock
+wClock
+Launch!
+SpeechSynthesisServer
+Stickies
+Caplio Startup
+iTunes Helper
+Shadow Clipboard
+Quicksilver
+Quicksilver                        Yes, Quicksilver is there twice.
+Microsoft Database Daemon
+
+(2)
+I am not listing items belonging to root, just items belonging to tony
+johansen in Activity Monitor:
+Init
+bpalogin
+login window
+-pbs
+Window Server
+apple spell
+Text Edit
+Font Book
+Word
+Database Daemon
+Entourage
+ShadowClipboard
+Itunes
+Universal access app
+Caplio Starter
+Speech Synthesis Server
+Launch!
+wClock
+ Window Clock
+iCal Alarm Scheduler
+A better finder hotkey
+Image capture extension
+TWAIN bridge
+Finder
+SystemUIServer
+Dock
+Tablet Driver
+FAXstfFrontEnd
+
+(3)
+There are 2 folders for fonts in tonyjohansen/Library  one called fonts the
+other called fonts collection. In both cases I dragged all the contents to a
+temporary folder on the desktop and then tried to launch ToonBoomStudio
+Express. In each case the program crashed as before.
+*******************************
+Pasted post from Michael Winter:
+
+I'd double check that you do indeed have write privileges to all the
+appropriate places within your user space.
+
+I checked every item in tonyjohansen/Library/preferences and they all have
+read+write.
+********************************
+Or for the CLI averse (or if you don't understand those R's, W's and
+X's) just select your Library or Preferences folder, select File-&gt;Get
+Info, and under Ownership &amp; Permissions it should say : You can Read
+and Write.
+
+If you hold down the option-button and hit command-I, you can then
+click around on the different folders and have the info window change
+to show you the data on the different folders you click on.
+
+As above, checked read and write permissions.
+************************************
+
+The differences between the 2 accounts:
+ Less items in the dock,
+ no start up items listed in System priviledges/accounts for second account,
+No other differences are noticeable to me.
+
+To the suggestion that there might be a conflict with a 3rd party software,
+would that not occur in the second account too as all applications are
+available at both locations, isn't it just the files made by the
+applications that are isolated from account to account?
+
+Also, I've wondered if it makes a difference the AMOUNT of applications in
+the dock?
+Also noticed in activity monitor that I have 82.8% Disc usage in the
+partition that has both accounts, could that cause instability that could
+interfere with writing of files to the user space?
+
+Whatever the problem it may be affecting other new things. Tonight I tried
+to install Corel KnockOut2. Several times in a row, each time I clicked the
+install icon the CD ejected. I tried it in the new account but same thing,
+clicking install caused the CD to eject. I restarted, repaired permissions
+and it then installed successfully in the main account. This is getting
+depressing. I have no idea what to do next.
+
+Tony 
+
+
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005266.html">[X-Newbies] Anti-Virus
+</A></li>
+	<LI>Next message: <A HREF="005277.html">[X-Newbies] Corrupted User Prefs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5276">[ date ]</a>
+              <a href="thread.html#5276">[ thread ]</a>
+              <a href="subject.html#5276">[ subject ]</a>
+              <a href="author.html#5276">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

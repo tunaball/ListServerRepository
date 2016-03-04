@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Remote force logout and lockout of user
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Remote%20force%20logout%20and%20lockout%20of%20user&In-Reply-To=list-13944761%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000913.html">
+   <LINK REL="Next"  HREF="000915.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Remote force logout and lockout of user</H1>
+    <B>Alexandre Gauthier</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Remote%20force%20logout%20and%20lockout%20of%20user&In-Reply-To=list-13944761%40mail.ninewire.com"
+       TITLE="[X-Unix] Remote force logout and lockout of user">supernaut at raptorized.com
+       </A><BR>
+    <I>Sun Jun 13 21:42:45 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000913.html">[X-Unix] Remote force logout and lockout of user
+</A></li>
+        <LI>Next message: <A HREF="000915.html">[X-Unix] Zombies
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#914">[ date ]</a>
+              <a href="thread.html#914">[ thread ]</a>
+              <a href="subject.html#914">[ subject ]</a>
+              <a href="author.html#914">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Basically, in a _real_ UNIX environment, you can use the password file and
+just add an exclamation mark in front of their password hash.
+
+I wonder if the wonders of netinfo would be of any help...
+
+On 14/06/04 00:37, &quot;luke&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">etyrnal at ameritech.net</A>&gt; wrote:
+
+&gt;<i> 
+</I>&gt;<i> On Sunday, June 13, 2004, at 06:53  PM, James Bucanek wrote:
+</I>&gt;<i> 
+</I>&gt;&gt;<i> Doesn't work on mine.  Sure, it logs the user out, but loginwindow
+</I>&gt;&gt;<i> just restarts and logs 'em right back in again.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> I also tried 'killall -u baduser' with similar results.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> Personally, I'd just take the gloves off.  Change the password, then
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i>     sudo reboot
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> James
+</I>&gt;<i> 
+</I>&gt;<i> sure would be cool to find out that there is a unix-way to set a
+</I>&gt;<i> enable/disable account bit for a user...
+</I>&gt;<i> 
+</I>&gt;<i> maybe
+</I>&gt;<i> 
+</I>&gt;<i> just rename their account like...
+</I>&gt;<i> 
+</I>&gt;<i> rename it from jackass-teenager to _jackass-teenager  until you figure
+</I>&gt;<i> out what's going on...
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> how is it that they have access in the first place??
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i> 
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> 
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your Mac ISP
+</I>&gt;<i> Serious Mac Internet Solutions From NineWire!   <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i> 
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older Mac!
+</I>&gt;<i> Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i> 
+</I>&gt;<i>    Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>   this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;<i> 
+</I>&gt;<i> OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s -
+</I>&gt;<i> <A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000913.html">[X-Unix] Remote force logout and lockout of user
+</A></li>
+	<LI>Next message: <A HREF="000915.html">[X-Unix] Zombies
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#914">[ date ]</a>
+              <a href="thread.html#914">[ thread ]</a>
+              <a href="subject.html#914">[ subject ]</a>
+              <a href="author.html#914">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

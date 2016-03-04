@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G5] FAT32 formatting in OS X?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g5%40listserver.themacintoshguy.com?Subject=%5BG5%5D%20FAT32%20formatting%20in%20OS%20X%3F&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000462.html">
+   <LINK REL="Next"  HREF="000464.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G5] FAT32 formatting in OS X?</H1>
+    <B>Brian Durant</B> 
+    <A HREF="mailto:g5%40listserver.themacintoshguy.com?Subject=%5BG5%5D%20FAT32%20formatting%20in%20OS%20X%3F&In-Reply-To="
+       TITLE="[G5] FAT32 formatting in OS X?">globetrotterdk at gmail.com
+       </A><BR>
+    <I>Thu Jan 19 05:29:03 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000462.html">[G5] Firewire 800 redux
+</A></li>
+        <LI>Next message: <A HREF="000464.html">[G5] Firmware - how do I find out what version I am using?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#463">[ date ]</a>
+              <a href="thread.html#463">[ thread ]</a>
+              <a href="subject.html#463">[ subject ]</a>
+              <a href="author.html#463">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I am planning to install Linux on an extra internal HD and as I
+understand there are some problems with mounting HFS + vvolumes from
+Linux, I was wondering if there is a way I can create a FAT32
+partition for sharing files between the two systems. I know this can
+be done in Linux, but there is a problem that I quote below from an
+e-mail that I found. So... the big question is if there is a way to
+format FAT32 partitions from OS X?
+
+Here is the e-mail:
+
+&quot;Date: Wed, 3 Apr 2002 11:27:59 +0100
+To: <A HREF="../../../mailman/listinfo/g5.html">debian-powerpc at lists.debian.org</A>
+Subject: Sharing disk space between MacOS X and Linux
+
+Hi,
+
+I spent a few hours figuring out how to do this so I thought I'd share the
+results of my fiddling to save people time in the future.
+
+I have an iBook2 on which I primarily run Linux. However, on occasion I reboot
+into MacOS X -- primarily to watch a DVD or connect to the Internet using the
+built-in 56K modem. For various reasons it is desirable to have a partition
+which both operating systems can use (to exchange downloaded files, etc).
+
+Originally I planned to have a 1.5Gb HFS+ or HFS partition shared between the
+two. However, this didn't work out -- the hfsplus tools don't really &quot;mount&quot;
+the partition into the kernel's VFS tree and the vanilla HFS driver has
+crashed my kernel several times. So I scrapped this idea and the partition lay
+fallow for a few months. A few days ago, however, I was away from my Ethernet
+and wireless networks and urgently needed to download a large postscript file
+to the Linux partition using the 56K modem, so I went looking for a solution.
+
+It occurred to me that both OS X and Linux 2.4 have pretty solid support for
+FAT32. I could reformat and use my 1.5Gb &quot;shared&quot; partition as FAT32 under
+Linux quite happily using 'mkdosfs -F 32' and mounting it with the vfat
+filesystem. Lovely. Indeed, I could mount the same partition under MacOS X
+from the shell, however I couldn't persuade MacOS to automount it and make it
+appear on my desktop, because OS X thought it was an HFS partition without a
+correctly formatted HFS volume due to its type entry in the partition map.
+
+Much fiddling later I discovered the solution: Mac OS X will discover and
+mount the partition correctly as FAT32 if you set the partition type to the
+magic string &quot;DOS_FAT_32&quot;. In mac-fdisk, use the 'd' to delete your partition,
+then use the 'C' (capital C!) option to create a new one covering exactly the
+same sectors on the disk, then enter the type as &quot;DOS_FAT_32&quot;. I partitioned
+under Linux and then formatted under OS X using the Disk Tool in Utilities.
+
+It works very well indeed for me. Under Linux the fstab entry looks like this:
+
+/dev/hda10      /scratch        vfat    defaults,uid=500,gid=500    0 0
+
+
+... and 'mac-fdisk -l' reports:
+
+/dev/hda
+        #                    type name                 length   base  
+  ( size )  system
+dump: name /dev/hda len 8
+/dev/hda1     Apple_partition_map Apple                    63 @ 1     
+  ( 31.5k)  Partition map
+/dev/hda2          Apple_Driver43 Macintosh                54 @ 64    
+  ( 27.0k)  Driver 4.3
+/dev/hda3          Apple_Driver43 Macintosh                74 @ 118   
+  ( 37.0k)  Driver 4.3
+/dev/hda4        Apple_Driver_ATA Macintosh                54 @ 192   
+  ( 27.0k)  Unknown
+/dev/hda5        Apple_Driver_ATA Macintosh                74 @ 246   
+  ( 37.0k)  Unknown
+/dev/hda6          Apple_FWDriver Macintosh               200 @ 320   
+  (100.0k)  Unknown
+/dev/hda7      Apple_Driver_IOKit Macintosh               512 @ 520   
+  (256.0k)  Unknown
+/dev/hda8           Apple_Patches Patch Partition         512 @ 1032  
+  (256.0k)  Unknown
+/dev/hda9               Apple_HFS untitled            5120000 @ 1544  
+  (  2.4G)  HFS
+/dev/hda10             DOS_FAT_32 Scratch             3072000 @
+5121544  (  1.5G)  Unknown
+/dev/hda11        Apple_Bootstrap Bootstrap             65536 @
+8193544  ( 32.0M)  NewWorld bootblock
+/dev/hda12                   Swap Linux               2097152 @
+8259080  (  1.0G)  Unknown
+/dev/hda13        Apple_UNIX_SVR2 Linux              28713848 @
+10356232 ( 13.7G)  Linux native
+
+I'm very pleased with this. The only annoyance is that OS X insists on
+labelling the disk icon &quot;SCRATCH&quot; and won't allow me to rename it to something
+that isn't all-caps. Ho hum, can't have everything ;)
+
+I'd be interested if anyone has solved this problem by a more elegant route
+(preferably involving a &quot;real&quot; filesystem...)&quot;
+
+Cheers,
+
+Brian
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000462.html">[G5] Firewire 800 redux
+</A></li>
+	<LI>Next message: <A HREF="000464.html">[G5] Firmware - how do I find out what version I am using?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#463">[ date ]</a>
+              <a href="thread.html#463">[ thread ]</a>
+              <a href="subject.html#463">[ subject ]</a>
+              <a href="author.html#463">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g5.html">More information about the G5
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

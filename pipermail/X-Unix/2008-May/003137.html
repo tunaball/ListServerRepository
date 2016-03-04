@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] compiling php
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20compiling%20php&In-Reply-To=51FD5E69-E6B0-4CDF-AD8F-E7B898673672%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003136.html">
+   <LINK REL="Next"  HREF="003144.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] compiling php</H1>
+    <B>Alexandre Gauthier</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20compiling%20php&In-Reply-To=51FD5E69-E6B0-4CDF-AD8F-E7B898673672%40secure-computing.net"
+       TITLE="[X-Unix] compiling php">alex at underwares.org
+       </A><BR>
+    <I>Tue May 27 10:29:22 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003136.html">[X-Unix] compiling php
+</A></li>
+        <LI>Next message: <A HREF="003144.html">[X-Unix] compiling php
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3137">[ date ]</a>
+              <a href="thread.html#3137">[ thread ]</a>
+              <a href="subject.html#3137">[ subject ]</a>
+              <a href="author.html#3137">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+
+On Tue, 27 May 2008 10:57:21 -0500, Eric F Crist
+&lt;<A HREF="../../../mailman/listinfo/x-unix.html">ecrist at secure-computing.net</A>&gt; wrote:
+&gt;<i> On May 27, 2008, at 6:12 AM, Eric F Crist wrote:
+</I>&gt;<i> 
+</I>&gt;&gt;<i> The module is ignored because you need to add it to the PHP
+</I>&gt;&gt;<i> Extensions config file. Add it there and I'm sure you'll be fine.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> -----Original Message-----
+</I>&gt;&gt;<i> From: Giovanni Cutolo &lt;<A HREF="../../../mailman/listinfo/x-unix.html">cutolo at unina.it</A>&gt;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Hi all,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I am trying to compile php 5.2.6 on my MacBook (Leopard), since I need
+</I>&gt;&gt;<i> the pgsql module that is not in the php build shipped by Apple (why?,
+</I>&gt;&gt;<i> if I may ask). So I try with
+</I>&gt;&gt;<i>
+</I>&gt;<i> ...
+</I>&gt;<i> 
+</I>&gt;&gt;<i> that is: compiling the module itself (using the source of php 5.2.5)
+</I>&gt;&gt;<i> and then moving it to the appropriate (?) location in the pre-existing
+</I>&gt;&gt;<i> installation of php. No avail: the module is simply ignored.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> To elaborate from my earlier email, I found this is /private/etc/
+</I>&gt;<i> php.ini.default, about 50% of the way down:
+</I>&gt;<i> 
+</I>----- 8&lt;-snip--snip-8&lt;------
+&gt;<i> That file, in it's entirety, is a good read for configuring PHP.
+</I>&gt;<i> You'll need to make sure your module gets loaded in the correct
+</I>&gt;<i> location, as well as adding the appropriate extension=foo line.
+</I>&gt;<i> 
+</I>
+To further complete what Eric said, I'd like to mention that you need to
+comment out the line defining extension_dir as &quot;./&quot; in php.ini, by adding a
+semicolon in front of it.
+
+Then, simply add the name of the module which I assume you compiled by
+running phpize in the module directory, and then installed with make
+install. (most likely pgsql.o)
+
+You may then restart apache running 'sudo apachectl restart'.
+
+I just added GD2 support to the default Apple PHP install, and it worked
+fine.
+
+'phpize' should work out the details for you, such as the module location.
+
+Hope this help.
+
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003136.html">[X-Unix] compiling php
+</A></li>
+	<LI>Next message: <A HREF="003144.html">[X-Unix] compiling php
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3137">[ date ]</a>
+              <a href="thread.html#3137">[ thread ]</a>
+              <a href="subject.html#3137">[ subject ]</a>
+              <a href="author.html#3137">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

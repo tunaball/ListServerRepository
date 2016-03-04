@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] [OT] another very unusual 10.2.5 crash
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20%5BOT%5D%20another%20very%20unusual%2010.2.5%20crash&In-Reply-To=list-5989357%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="006608.html">
+   <LINK REL="Next"  HREF="006607.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] [OT] another very unusual 10.2.5 crash</H1>
+    <B>Kynan Shook</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20%5BOT%5D%20another%20very%20unusual%2010.2.5%20crash&In-Reply-To=list-5989357%40mail.ninewire.com"
+       TITLE="[Ti] [OT] another very unusual 10.2.5 crash">kshook at mac.com
+       </A><BR>
+    <I>Fri May  2 10:00:57 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="006608.html">Fax programs for Tis
+</A></li>
+        <LI>Next message: <A HREF="006607.html">[Ti] 17&quot;  Lid not closing flat, checked out a model at the Apple Store
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6617">[ date ]</a>
+              <a href="thread.html#6617">[ thread ]</a>
+              <a href="subject.html#6617">[ subject ]</a>
+              <a href="author.html#6617">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>As others have already mentioned, this is the new Kernel Panic screen, 
+as of 10.2.  If you want to see the actual panic text, it is stored in 
+PRAM and then written to the hard drive next time you reboot in 
+/Library/Logs/panic.log.
+If you open up this file, you can sometimes do a little bit of 
+detective work; take a look at the logs, specifically the first line 
+(explains why it panicked), and if there is a line labeled &quot;Kernel 
+loadable modules in backtrace (with dependencies):&quot;  Following that 
+line are most likely the culprits; for example, I had problems with my 
+SoundSticks conflicting with high amounts of Airport traffic (this bug 
+has since been fixed) that would show &quot;com.apple.driver.AppleUSBAudio&quot; 
+followed by the dependencies (&quot;com.apple.iokit.IOUSBFamily&quot; and 
+&quot;com.apple.iokit.IOAudioFamily&quot;).  This made it very clear that it was, 
+in fact, the USB Audio that was causing the problem.
+Other kernel panics I've seen have been caused by Thursby's Dave or 
+Symantec SystemWorks.
+
+If you'd like me to interpret, send me the panic.log file privately, 
+and I'll tell you what I think.
+
+Tarik Bilgin &lt;<A HREF="../../../mailman/listinfo/titanium.html">tarik at opalblue.com</A>&gt; writes:
+&gt;<i> Hi there -- seen a very odd problem here which I had never seen before,
+</I>&gt;<i> so I thought I'd ask for your help on a diagnosis.
+</I>&gt;<i>
+</I>&gt;<i> The problem is simple.
+</I>&gt;<i>
+</I>&gt;<i> When I empty the trash, the computer crashes. The way in which it
+</I>&gt;<i> crashes I have never seen before.
+</I>&gt;<i>
+</I>&gt;<i> The desktop goes dark (falls into shadow) and a white panel in 5 or so
+</I>&gt;<i> languages appears telling me to hard boot the computer.
+</I>&gt;<i>
+</I>&gt;<i> Is this the new Apple front end to a kernel panic? I was bemused to see
+</I>&gt;<i> this screen -- took me by surprise!
+</I>&gt;<i>
+</I>&gt;<i> I have now discovered that the files in question are fonts. Not fonts
+</I>&gt;<i> that I am using, but copies of the font files I made.
+</I>&gt;<i>
+</I>
+
+Kynan Shook
+<A HREF="../../../mailman/listinfo/titanium.html">kshook at mac.com</A>
+<A HREF="http://homepage.mac.com/kshook/index.html">http://homepage.mac.com/kshook/index.html</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="006608.html">Fax programs for Tis
+</A></li>
+	<LI>Next message: <A HREF="006607.html">[Ti] 17&quot;  Lid not closing flat, checked out a model at the Apple Store
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6617">[ date ]</a>
+              <a href="thread.html#6617">[ thread ]</a>
+              <a href="subject.html#6617">[ subject ]</a>
+              <a href="author.html#6617">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

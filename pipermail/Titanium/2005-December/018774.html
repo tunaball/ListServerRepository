@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] decompressing a file while its on a server - slightly off
+	topic :-)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20decompressing%20a%20file%20while%20its%20on%20a%20server%20-%20slightly%20off%0A%09topic%20%3A-%29&In-Reply-To=57c362382b30ebb0c3896a9d144e0a46%40em.ca">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="018773.html">
+   <LINK REL="Next"  HREF="018775.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] decompressing a file while its on a server - slightly off
+	topic :-)</H1>
+    <B>Chris Olson</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20decompressing%20a%20file%20while%20its%20on%20a%20server%20-%20slightly%20off%0A%09topic%20%3A-%29&In-Reply-To=57c362382b30ebb0c3896a9d144e0a46%40em.ca"
+       TITLE="[Ti] decompressing a file while its on a server - slightly off
+	topic :-)">chris.olson at astcomm.net
+       </A><BR>
+    <I>Tue Dec 27 22:22:00 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="018773.html">[Ti] decompressing a file while its on a server - slightly off
+	topic :-)
+</A></li>
+        <LI>Next message: <A HREF="018775.html">[Ti] decompressing a file while its on a server - slightly off
+	topic :-)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#18774">[ date ]</a>
+              <a href="thread.html#18774">[ thread ]</a>
+              <a href="subject.html#18774">[ subject ]</a>
+              <a href="author.html#18774">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Dec 27, 2005, at 11:53 PM, T Molnar wrote:
+
+&gt;<i> I gave it a try through terminal and the connect to server dialogue  
+</I>&gt;<i> box,  but my host key verification failed :-(
+</I>&gt;<i> First the ssh protocol 1 wasn't accepted by the server, then when I  
+</I>&gt;<i> changed it to protocol 2
+</I>&gt;<i>  the server responded and warned me my host key had been altered.   
+</I>&gt;<i> And so exited my request.
+</I>
+You evidently logged in (or tried to log in) using a different  
+combination of hostname or username/password combo at some point, and  
+have duplicate host keys in ~/.ssh/known_hosts for the host IP.  If  
+you don't SSH to lots of different machines and have no need to save  
+the host keys it's easiest to not fix the problem and just delete the  
+file, letting the SSH client re-create it.
+
+ From Terminal do:
+rm ~/.ssh/known_hosts
+
+to remove the file.  Note the dot in front of .ssh - it's a hidden  
+directory.  Then try logging in again without using the Connect to  
+Server browser.  At the command line simply type in:
+ssh hostname
+
+replacing hostname with the actual host.  It'll say the authenticity  
+of the host can't be established, cat the RSA key fingerprint, and  
+ask if you really want to connect to this host.  Type in &quot;yes&quot; and  
+it'll prompt you for your password, then connect.
+-- 
+Chris
+
+-------------------------
+PGP Key:  <A HREF="http://astcomm.net/~chris/PGP_Public_Key/">http://astcomm.net/~chris/PGP_Public_Key/</A>
+-------------------------
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <A HREF="../attachments/20051228/98e48c46/attachment.html">http://listserver.themacintoshguy.com/pipermail/titanium/attachments/20051228/98e48c46/attachment.html</A>
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="018773.html">[Ti] decompressing a file while its on a server - slightly off
+	topic :-)
+</A></li>
+	<LI>Next message: <A HREF="018775.html">[Ti] decompressing a file while its on a server - slightly off
+	topic :-)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#18774">[ date ]</a>
+              <a href="thread.html#18774">[ thread ]</a>
+              <a href="subject.html#18774">[ subject ]</a>
+              <a href="author.html#18774">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] &gt;console login problems
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20%3Econsole%20login%20problems&In-Reply-To=D78D219F-18DF-11D9-8A7E-000D9333E43C%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001120.html">
+   <LINK REL="Next"  HREF="001126.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] &gt;console login problems</H1>
+    <B>Justin Herald</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20%3Econsole%20login%20problems&In-Reply-To=D78D219F-18DF-11D9-8A7E-000D9333E43C%40secure-computing.net"
+       TITLE="[X-Unix] &gt;console login problems">justin.herald at sbcglobal.net
+       </A><BR>
+    <I>Fri Oct  8 09:21:23 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001120.html">[X-Unix] &gt;console login problems
+</A></li>
+        <LI>Next message: <A HREF="001126.html">[X-Unix] &gt;console login problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1128">[ date ]</a>
+              <a href="thread.html#1128">[ thread ]</a>
+              <a href="subject.html#1128">[ subject ]</a>
+              <a href="author.html#1128">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I fixed the truncated line but that made no difference.
+
+On Oct 8, 2004, at 12:09 AM, Eric Crist wrote:
+
+&gt;<i> On Oct 7, 2004, at 11:02 PM, Justin Herald wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> -----BEGIN PGP SIGNED MESSAGE-----
+</I>&gt;&gt;<i> Hash: SHA1
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> #
+</I>&gt;&gt;<i> #       @(#)ttys        5.2 (Berkeley) 6/10/93
+</I>&gt;&gt;<i> #
+</I>&gt;&gt;<i> # name  getty                           type    status           
+</I>&gt;&gt;<i> comments
+</I>&gt;&gt;<i> #
+</I>&gt;&gt;<i> # If the console is marked insecure, single-user requires
+</I>&gt;&gt;<i> # the root password.
+</I>&gt;&gt;<i> ##
+</I>&gt;&gt;<i> # Since DirectoryServices is not running by the time we enter
+</I>&gt;&gt;<i> # single-user mode, init will ask for the non-shadow crypt
+</I>&gt;&gt;<i> # password stored for root in /etc/master.passwd.  If no such
+</I>&gt;&gt;<i> # password exists, it will not be possible to enter single-user
+</I>&gt;&gt;<i> # mode from a console marked insecure.
+</I>&gt;&gt;<i> ##
+</I>&gt;&gt;<i> #console        &quot;/usr/libexec/getty std.57600&quot;  vt100   on secure
+</I>&gt;&gt;<i> console  
+</I>&gt;&gt;<i> &quot;/System/Library/CoreServices/loginwindow.app/Contents/MacOS/ 
+</I>&gt;&gt;<i> loginwindo$
+</I>&gt;&gt;<i> #tahoe's only
+</I>&gt;<i>
+</I>&gt;<i> Here's what I've got to the same point in the file.  You must have  
+</I>&gt;<i> truncated that line of text, otherwise, this is what it needs to say:
+</I>&gt;<i>
+</I>&gt;<i> #       @(#)ttys        5.2 (Berkeley) 6/10/93
+</I>&gt;<i> #
+</I>&gt;<i> # name  getty                           type    status           
+</I>&gt;<i> comments
+</I>&gt;<i> #
+</I>&gt;<i> # If the console is marked insecure, single-user requires
+</I>&gt;<i> # the root password.
+</I>&gt;<i> ##
+</I>&gt;<i> # Since DirectoryServices is not running by the time we enter
+</I>&gt;<i> # single-user mode, init will ask for the non-shadow crypt
+</I>&gt;<i> # password stored for root in /etc/master.passwd.  If no such
+</I>&gt;<i> # password exists, it will not be possible to enter single-user
+</I>&gt;<i> # mode from a console marked insecure.
+</I>&gt;<i> ##
+</I>&gt;<i> #console        &quot;/usr/libexec/getty std.57600&quot;  vt100   on secure
+</I>&gt;<i> console  
+</I>&gt;<i> &quot;/System/Library/CoreServices/loginwindow.app/Contents/MacOS/ 
+</I>&gt;<i> loginwindow&quot; vt100 on secure onoption=&quot;/usr/libexec/getty std.9600&quot;
+</I>&gt;<i> #tahoe's only
+</I>&gt;<i>
+</I>&gt;<i> The line starting with console &quot;/System... all the way to std.9600&quot; is  
+</I>&gt;<i> on the same line, fyi.
+</I>&gt;<i> -----
+</I>&gt;<i> Eric F Crist
+</I>&gt;<i> Secure Computing Networks
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>-- Justin Herald
+
+  It's not the valleys in life I dread so much as the dips.
+		-- Garfield
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001120.html">[X-Unix] &gt;console login problems
+</A></li>
+	<LI>Next message: <A HREF="001126.html">[X-Unix] &gt;console login problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1128">[ date ]</a>
+              <a href="thread.html#1128">[ thread ]</a>
+              <a href="subject.html#1128">[ subject ]</a>
+              <a href="author.html#1128">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

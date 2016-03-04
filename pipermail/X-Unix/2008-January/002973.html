@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Sending Commands to Apple External USB Modem
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Sending%20Commands%20to%20Apple%20External%20USB%20Modem&In-Reply-To=p0623090ac3a79cd3a21f%40%5B67.150.247.197%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002972.html">
+   <LINK REL="Next"  HREF="002974.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Sending Commands to Apple External USB Modem</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Sending%20Commands%20to%20Apple%20External%20USB%20Modem&In-Reply-To=p0623090ac3a79cd3a21f%40%5B67.150.247.197%5D"
+       TITLE="[X-Unix] Sending Commands to Apple External USB Modem">ecrist at secure-computing.net
+       </A><BR>
+    <I>Mon Jan  7 04:12:19 PST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002972.html">[X-Unix] Sending Commands to Apple External USB Modem
+</A></li>
+        <LI>Next message: <A HREF="002974.html">[X-Unix] Leopard Short Name Issue
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2973">[ date ]</a>
+              <a href="thread.html#2973">[ thread ]</a>
+              <a href="subject.html#2973">[ subject ]</a>
+              <a href="author.html#2973">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>You'll need a utility such as cu or minicomm, and you'll have to figure out which Tty it's being attached as. The console.log should give you a clue, watch it (tail -f /var/log/console.log) while you plug in the modem. This is an educated guess at best, since I don't have one of these brasties to play with.
+
+HTH
+---
+Eric F Crist
+Secure Computing Networks  
+
+-----Original Message-----
+From: Rick Gordon &lt;<A HREF="../../../mailman/listinfo/x-unix.html">rick at rickgordon.com</A>&gt;
+
+Date: Mon, 7 Jan 2008 01:22:47 
+To:&quot;A place to discuss Mac OS X from the perspective of the command line.&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">x-unix at listserver.themacintoshguy.com</A>&gt;
+Subject: [X-Unix] Sending Commands to Apple External USB Modem
+
+
+Can someone point me in the direction of how to send raw commands to an Apple External USB Modem (v. 92)?
+
+Mainly, I would like to be able to tell the modem to go on hold indefinitely.
+
+Information on &lt;<A HREF="https://modemsite.com/56k/v92c.asp">https://modemsite.com/56k/v92c.asp</A>&gt; lists the following command sequence:
+
+	To make an outgoing call while holding your Internet connection:
+
+	AT+PMHR - response will be value from above chart - server starts timer
+
+	AT+PMHF - your modem does a hook flash; gives you dial-tone on extension phone plugged into modem; You can place your call. When finished and you hang up, the line will RING.
+
+But I'm not sure how to send commands to the modem. (Back in Classic days, with a serial modem, I would have used an application such as HyperTerminal or DataComet, but I've lost touch with how to communicate with an external USB modem under OS X.)
+
+Thanks in advance.
+-- 
+ 
+___________________________________________________
+
+RICK GORDON
+EMERALD VALLEY GRAPHICS AND CONSULTING
+___________________________________________________
+
+WWW:   <A HREF="http://www.shelterpub.com">http://www.shelterpub.com</A>
+_______________________________________________
+X-Unix mailing list
+<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002972.html">[X-Unix] Sending Commands to Apple External USB Modem
+</A></li>
+	<LI>Next message: <A HREF="002974.html">[X-Unix] Leopard Short Name Issue
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2973">[ date ]</a>
+              <a href="thread.html#2973">[ thread ]</a>
+              <a href="subject.html#2973">[ subject ]</a>
+              <a href="author.html#2973">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

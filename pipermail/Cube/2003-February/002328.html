@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [CUBE] PL 1.2 Shipping!
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20PL%201.2%20Shipping%21&In-Reply-To=list-4778541%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002327.html">
+   <LINK REL="Next"  HREF="002329.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[CUBE] PL 1.2 Shipping!</H1>
+    <B>Arturo P&#233;rez</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20PL%201.2%20Shipping%21&In-Reply-To=list-4778541%40mail.ninewire.com"
+       TITLE="[CUBE] PL 1.2 Shipping!">arturo at ethicist.net
+       </A><BR>
+    <I>Thu Feb  6 21:01:14 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002327.html">[CUBE] keyboard that came with cube?
+</A></li>
+        <LI>Next message: <A HREF="002329.html">[CUBE] PL 1.2 Shipping!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2328">[ date ]</a>
+              <a href="thread.html#2328">[ thread ]</a>
+              <a href="subject.html#2328">[ subject ]</a>
+              <a href="author.html#2328">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Thursday, February 6, 2003, at 10:49  PM, Brooks Graham wrote:
+
+&gt;<i>
+</I>&gt;<i> On Thursday, February 6, 2003, at 09:10 PM, Arturo P&#233;rez wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> In reality, even under OSX, no one codes multi-threaded apps except a 
+</I>&gt;&gt;<i> few games and photoshop.  (Someone needs to keep a catalog of those). 
+</I>&gt;&gt;<i>  In this case, the advantage of duals is that you can run 2 seriously 
+</I>&gt;&gt;<i> CPU hogging apps at once.
+</I>&gt;<i>
+</I>&gt;<i> I'd like to submit a dissenting opinion.  (OS X-only.  I have no 
+</I>&gt;<i> experience with OS 1-9)
+</I>&gt;<i>
+</I>&gt;<i> In Unix, there are many processes running at the same time, no matter 
+</I>&gt;<i> what you're doing.  The display service, which shows up as &quot;Window 
+</I>&gt;<i> Manager&quot; in 'top', is a distinct process that gets its own scheduled 
+</I>&gt;<i> CPU allotment.  So, that said, even a single program/process that has 
+</I>&gt;<i> only a single thread, will benefit from a SMP (multi-processor) system 
+</I>&gt;<i> if it draws anything to the screen.
+</I>
+There's an &quot;unless.&quot;  I don't know if Apple's window system lets 
+applications write directly to the screen (X11 does not).  I think 3D 
+games/OpenGL can.  In that case, unless the application is threaded the 
+second processor doesn't help much.
+
+&gt;<i>   &quot;Window Manager&quot; on my system has two active threads (at the 
+</I>&gt;<i> moment).  What I'm trying to say here is that Unix itself will utilize 
+</I>&gt;<i> multiple processors if they are present to schedule processes and 
+</I>&gt;<i> threads.  And there's *always* something that needs CPU time.  Maybe 
+</I>&gt;<i> not a lot of CPU time, but the more CPUs you have, the more that can 
+</I>&gt;<i> happen in parallel.
+</I>
+Actually, you've hit the nail on the head.  That is the #1 reason (to 
+me) for having a dual.  It will make the &quot;user experience&quot; MUCH 
+smoother.
+
+&gt;<i>
+</I>&gt;<i> So, under OS X, you don't need &quot;special applications&quot; that are coded 
+</I>&gt;<i> to be &quot;SMP-aware&quot; to benefit from multiple processors.  All programs 
+</I>&gt;<i> under OS X can and will benefit from SMP.
+</I>
+Well, it depends on what you mean by &quot;benefit&quot; but sure.
+
+&gt;<i> Notice that the top line shows &quot;129 threads&quot;  but what interests me 
+</I>&gt;<i> more is looking at specific apps here:
+</I>&gt;<i>
+</I>&gt;<i> Dreamweaver has 5 threads.  (column &quot;#TH&quot;) Lot's of opportunity for 
+</I>&gt;<i> parallelism
+</I>&gt;<i> Mail has 5 as well.
+</I>&gt;<i> and so on.
+</I>&gt;<i>
+</I>It depends on what those threads are doing.  Recently I read a 
+discussion saying that all OSX apps have two threads:  one for sound 
+and one for UI.  If that is true, unless you're musically inclined, the 
+second processor is not helping.  Another issue is that threads are 
+often used to support asynchronous I/O (like network communication).  
+In that case the threads don't ever help because you're really waiting 
+for the disk or network.
+
+A better way of figuring how much a second processor will help is to 
+use ps instead of top.  What matters is whether you consistently have 
+more than one process in the &quot;runnable&quot; state.  That means it's waiting 
+for the CPU (or has the CPU; i.e. actually running).  That's denoted by 
+the R under the STAT column when you do a
+	ps -aux
+
+On a single processor you'll usually see that only the ps is in the R 
+state.
+
+Hopefully we're not boring the rest of you to death.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002327.html">[CUBE] keyboard that came with cube?
+</A></li>
+	<LI>Next message: <A HREF="002329.html">[CUBE] PL 1.2 Shipping!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2328">[ date ]</a>
+              <a href="thread.html#2328">[ thread ]</a>
+              <a href="subject.html#2328">[ subject ]</a>
+              <a href="author.html#2328">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

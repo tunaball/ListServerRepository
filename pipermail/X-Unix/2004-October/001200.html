@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] .profile v/s .bashrc
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20.profile%20v/s%20.bashrc&In-Reply-To=B0431FAA-1D63-11D9-AC9D-003065C0480E%40sourcelibre.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001199.html">
+   <LINK REL="Next"  HREF="001202.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] .profile v/s .bashrc</H1>
+    <B>Juan Manuel Palacios</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20.profile%20v/s%20.bashrc&In-Reply-To=B0431FAA-1D63-11D9-AC9D-003065C0480E%40sourcelibre.com"
+       TITLE="[X-Unix] .profile v/s .bashrc">jmpalaciosp at eml.cc
+       </A><BR>
+    <I>Wed Oct 13 17:41:14 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001199.html">[X-Unix] .profile v/s .bashrc
+</A></li>
+        <LI>Next message: <A HREF="001202.html">[X-Unix] .profile v/s .bashrc
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1200">[ date ]</a>
+              <a href="thread.html#1200">[ thread ]</a>
+              <a href="subject.html#1200">[ subject ]</a>
+              <a href="author.html#1200">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Oct 13, 2004, at 6:03 PM, Alexandre Quessy wrote:
+
+&gt;<i> Hi!
+</I>&gt;<i>
+</I>&gt;<i> I want to access my aliases wherever I am I'm my shell. So, I wrote 
+</I>&gt;<i> them in my $HOME/.profile file. But there is a problem.
+</I>&gt;<i>
+</I>&gt;<i> When I first log in, it's my &#171;&#160;.profile&#160;&#187; that is executed. If i 
+</I>&gt;<i> change my shell to zsh, for instance, and then I switch back to bash, 
+</I>&gt;<i> it's my &#171;&#160;.bashrc&#160;&#187; that is executed and my aliases that were set in 
+</I>&gt;<i> the &#171;&#160;.profile&#160;&#187; aren't available anymore. Is there a workaround so 
+</I>&gt;<i> that my aliases are always availables ?
+</I>&gt;<i>
+</I>&gt;<i> Thanks.
+</I>&gt;<i>
+</I>&gt;<i> Alexandre Quessy
+</I>&gt;<i> PHP, etc. in Montr&#233;al
+</I>
+
+	Hi Alexandre! Short answer with snippets of my files (note, I don't 
+know if the way I set things up is recommended, but I haven't seen any 
+problems thus far):
+
+$[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: netwox](444/0,1)-&gt; cat ~/.bash_profile | head -20
+
+######
+## User specific bash environment variables.
+## Created by Juan Manuel Palacios,
+## email: <A HREF="../../../mailman/listinfo/x-unix.html">jmpalacios at ml1.net</A>
+######
+
+# If we haven't read ~/.bashrc and ~/.profile lets do it now, 
+practically everything is defined there:
+
+if [ -f ~/.profile ]; then
+         . ~/.profile
+fi
+
+if [ -f ~/.bashrc ]; then
+         . ~/.bashrc
+fi
+
+---snip---
+
+$[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: netwox](446/0,1)-&gt; cat ~/.profile | head -15
+
+######
+## Personal profile for bourne based shells (see also /etc/profile).
+## Created by Juan Manuel Palacios,
+## email: <A HREF="../../../mailman/listinfo/x-unix.html">jmpalacios at ml1.net</A>
+######
+
+# If we haven't read system wide profile lets do it now...
+if [ -f /etc/profile ]; then
+         . /etc/profile
+fi
+
+---snip---
+
+$[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: netwox](447/0,1)-&gt; cat ~/.bashrc | head -15
+
+######
+## User specific bash initialization file.
+## Created by Juan Manuel Palacios,
+## email: <A HREF="../../../mailman/listinfo/x-unix.html">jmpalacios at ml1.net</A>
+######
+
+# If we haven't read /etc/bashrc lets do it now:
+
+if [ -f /etc/bashrc ]; then
+         . /etc/bashrc
+fi
+
+---snip---
+
+	So, by doing this, if I span a login shell and every referenced file 
+exists everything in them will be loaded; on the other hand, if I span 
+a non login shell all I have to do to load my settins (a la login 
+shell) is 'source ~/.bash_profile', every file will be read. So, 
+bearing that, you can put whatever you want wherever you want, 
+permissions allowing of course.
+
+	Hope that helps! Regards,...
+
+
+		Juan
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001199.html">[X-Unix] .profile v/s .bashrc
+</A></li>
+	<LI>Next message: <A HREF="001202.html">[X-Unix] .profile v/s .bashrc
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1200">[ date ]</a>
+              <a href="thread.html#1200">[ thread ]</a>
+              <a href="subject.html#1200">[ subject ]</a>
+              <a href="author.html#1200">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

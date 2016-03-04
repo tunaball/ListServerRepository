@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Login Hooks II - thanks guys. One more issue  - RESOLVED
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Login%20Hooks%20II%20-%20thanks%20guys.%20One%20more%20issue%20%20-%20RESOLVED&In-Reply-To=15044ADB-639C-11D9-A226-003065BD317A%40craigwdesigns.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001479.html">
+   <LINK REL="Next"  HREF="001485.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Login Hooks II - thanks guys. One more issue  - RESOLVED</H1>
+    <B>Our PAl Al</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Login%20Hooks%20II%20-%20thanks%20guys.%20One%20more%20issue%20%20-%20RESOLVED&In-Reply-To=15044ADB-639C-11D9-A226-003065BD317A%40craigwdesigns.com"
+       TITLE="[X-Unix] Login Hooks II - thanks guys. One more issue  - RESOLVED">opa at nyc.rr.com
+       </A><BR>
+    <I>Tue Jan 11 09:37:57 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001479.html">[X-Unix] Login Hooks II - thanks guys. One more issue
+</A></li>
+        <LI>Next message: <A HREF="001485.html">[X-Unix] Login Hooks II - thanks guys. One more issue - RESOLVED
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1483">[ date ]</a>
+              <a href="thread.html#1483">[ thread ]</a>
+              <a href="subject.html#1483">[ subject ]</a>
+              <a href="author.html#1483">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I did think of that. Tried that idea, and even a couple of variations, but
+it didn't work. Have no idea why.
+
+Actually, I solved my problem by junking the Command Line and Login Hooks
+entirely and went a more traditional GUI way. I hinted at that in my last
+post yesterday, and since then found the solution. Did my last test this
+morning.
+
+I defined the item I wanted in the GUI under the User Account in System
+Preferences, instead of using a Login Hook shell script.
+
+I digged until I saw that Login Hooks are placed in
+~/Library/Preferences/com.apple.loginwindow.plist , where they are executed
+as soon as one logs in, before the GUI.
+
+System Preferences makes it's entries in
+~/Library/Preferences/loginwindow.plist, where items are executed after you
+have logged in in the traditional Mac sense, i.e. after you&#185;ve got the
+Finder/Desktop. That&#185;s what I need for my case.
+
+Now if you change the version of EITHER of these files that&#185;s in
+/Library/Preferences/ instead of ~/Library/Preferences/ , you get something
+auto-running for ANY User who logs into the Mac, not just that specific
+account. Success!
+
+Thanks to everyone who answered along the way. I&#185;ve learned a lot of useful
+things for the future, once again.
+
+- opa
+
+
+On 1/11/05 1:43 AM, &quot;Craig&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">craig at craigwdesigns.com</A>&gt; wrote:
+
+&gt;<i> Do you maybe need to just add an &quot;&amp;&quot; after this script's name, in
+</I>&gt;<i> wherever you are calling it from?
+</I>&gt;<i> 
+</I>&gt;<i> - Craig
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <A HREF="../attachments/20050111/41654a63/attachment.html">http://listserver.themacintoshguy.com/pipermail/x-unix/attachments/20050111/41654a63/attachment.html</A>
+</PRE>
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001479.html">[X-Unix] Login Hooks II - thanks guys. One more issue
+</A></li>
+	<LI>Next message: <A HREF="001485.html">[X-Unix] Login Hooks II - thanks guys. One more issue - RESOLVED
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1483">[ date ]</a>
+              <a href="thread.html#1483">[ thread ]</a>
+              <a href="subject.html#1483">[ subject ]</a>
+              <a href="author.html#1483">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

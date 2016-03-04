@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] rsyncx and symlinks
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20rsyncx%20and%20symlinks&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001204.html">
+   <LINK REL="Next"  HREF="001212.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] rsyncx and symlinks</H1>
+    <B>Brian Medley</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20rsyncx%20and%20symlinks&In-Reply-To="
+       TITLE="[X-Unix] rsyncx and symlinks">bpm-list-osx-unix at 4321.tv
+       </A><BR>
+    <I>Thu Oct 14 21:50:00 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001204.html">[X-Unix] Modifying .bashrc to display dns name of machine
+	I'mlogged into
+</A></li>
+        <LI>Next message: <A HREF="001212.html">[X-Unix] Apache &amp; ifconfig
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1207">[ date ]</a>
+              <a href="thread.html#1207">[ thread ]</a>
+              <a href="subject.html#1207">[ subject ]</a>
+              <a href="author.html#1207">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I am using rsyncx v2.1 to try and come up with an automated
+backup strategy.  However, I am getting some warnings related to
+symlinks.  Below is an example and output:
+
+$ sudo /usr/local/bin/rsync --rsync-path=/usr/local/bin/rsync -a --eahfs -v . /Volumes/Backup/test
+building file list ... done
+created directory /Volumes/Backup/test
+./
+accept.8
+cups-lpd.8
+cups-polld.8
+cupsaddsmb.8
+cupsd.8
+chown &quot;/Volumes/Backup/test/disable.8&quot; failed: No such file or directory
+disable.8 -&gt; enable.8
+enable.8
+lpadmin.8
+lpc.8
+lpinfo.8
+lpmove.8
+chown &quot;/Volumes/Backup/test/reject.8&quot; failed: No such file or directory
+reject.8 -&gt; accept.8
+
+wrote 29507 bytes  read 220 bytes  59454.00 bytes/sec
+total size is 28494  speedup is 0.96
+rsync error: some files could not be transferred (code 23) at main.c(639)
+$ chown bpm &quot;/Volumes/Backup/test/reject.8&quot;
+
+Anyone know why rsyncx gives the errors, but chown does not?
+
+-- 
+~`^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-., \|/  (___)  \|/ _,.-=~'`^`
+                                      @~./'O o`\.~@
+      &quot;Knowledge is Power&quot;           /__( \___/ )__\  *PPPFFBT!*
+         -- Francis Bacon               `\__`U_/'
+ _.-=~'``'~=-._.-=~'``'~=-._.-=~'`^`'~= &lt;____|'  ^^`'~=-.,__,.-=
+~'^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-.,__,.-==--^'~=-.,__,.-=~'`^`
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001204.html">[X-Unix] Modifying .bashrc to display dns name of machine
+	I'mlogged into
+</A></li>
+	<LI>Next message: <A HREF="001212.html">[X-Unix] Apache &amp; ifconfig
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1207">[ date ]</a>
+              <a href="thread.html#1207">[ thread ]</a>
+              <a href="subject.html#1207">[ subject ]</a>
+              <a href="author.html#1207">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

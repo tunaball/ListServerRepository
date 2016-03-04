@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Creating users with the command line
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Creating%20users%20with%20the%20command%20line&In-Reply-To=52C10668-1BBC-11D9-898B-000D9366C144%40pedro.Net.au">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001166.html">
+   <LINK REL="Next"  HREF="001168.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Creating users with the command line</H1>
+    <B>Eugene</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Creating%20users%20with%20the%20command%20line&In-Reply-To=52C10668-1BBC-11D9-898B-000D9366C144%40pedro.Net.au"
+       TITLE="[X-Unix] Creating users with the command line">list-themacintoshguy at fsck.net
+       </A><BR>
+    <I>Mon Oct 11 14:51:47 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001166.html">[X-Unix] Creating users with the command line
+</A></li>
+        <LI>Next message: <A HREF="001168.html">[X-Unix] Creating users with the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1167">[ date ]</a>
+              <a href="thread.html#1167">[ thread ]</a>
+              <a href="subject.html#1167">[ subject ]</a>
+              <a href="author.html#1167">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Tue, Oct 12, 2004 at 05:32:44AM +1000, Pedro fp wrote:
+:<i> 
+</I>:<i> Early on ATDG advises creating a user called 'webuser' in a group  
+</I>:<i> 'webgroup'. The authors advise first creating webgroup using the  
+</I>:<i> command ...
+</I>:<i> 	adduser -group webgroup
+</I>:<i> then using addgroup to add webuser however when I attempt to run those  
+</I>:<i> commands I get ...
+</I>:<i> 	-bash: adduser: command not found
+</I>:<i> Can anyone advise how I can do this on OS X.3? The objective is to  
+</I>:<i> create a user who &quot;cannot actually log in&quot; for Apache services to run  
+</I>:<i> as.
+</I>
+The purpose of creating a seperate user/group is to take advantage of
+the Unix user privilege system to isolate Apache from undesired access
+to other non-web files.  Apple has already done so with its installation
+of Apache.  Just use user &quot;www&quot; and group &quot;www&quot;.
+
+
+-- 
+Eugene Lee
+<A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001166.html">[X-Unix] Creating users with the command line
+</A></li>
+	<LI>Next message: <A HREF="001168.html">[X-Unix] Creating users with the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1167">[ date ]</a>
+              <a href="thread.html#1167">[ thread ]</a>
+              <a href="subject.html#1167">[ subject ]</a>
+              <a href="author.html#1167">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

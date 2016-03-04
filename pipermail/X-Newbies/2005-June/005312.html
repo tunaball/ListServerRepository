@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Newbies] EMI CDs and iTunes.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20EMI%20CDs%20and%20iTunes.&In-Reply-To=2552fa090506292051383af191%40mail.gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005311.html">
+   <LINK REL="Next"  HREF="005293.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Newbies] EMI CDs and iTunes.</H1>
+    <B>Alex</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20EMI%20CDs%20and%20iTunes.&In-Reply-To=2552fa090506292051383af191%40mail.gmail.com"
+       TITLE="[X-Newbies] EMI CDs and iTunes.">lists at lexial.ca
+       </A><BR>
+    <I>Wed Jun 29 21:56:04 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005311.html">[X-Newbies] EMI CDs and iTunes.
+</A></li>
+        <LI>Next message: <A HREF="005293.html">[X-Newbies] Hen-Wen
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5312">[ date ]</a>
+              <a href="thread.html#5312">[ thread ]</a>
+              <a href="subject.html#5312">[ subject ]</a>
+              <a href="author.html#5312">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jun 29, 2005, at 23:51, Brian Durant wrote:
+
+&gt;<i> Are there any graphic front ends
+</I>&gt;<i> that work well with cdrao and cdparanoia on OS X?
+</I>
+I don't know of any for cdparanoia; there are one or two for cdrdao:
+
+&lt;<A HREF="http://www.angelfire.com/mac/rnc/MissingCDRDAOgui.sit">http://www.angelfire.com/mac/rnc/MissingCDRDAOgui.sit</A>&gt;
+&lt;<A HREF="http://www.projectomega.org/subcat.php?lg=en&php=products_firestarter">http://www.projectomega.org/subcat.php?lg=en&amp;php=products_firestarter</A>&gt;
+
+I haven't used them, though. I wrote my own scripts. You can use Josh  
+Guffin's scripts as models for your own, or you can use AppleScript.
+
+&lt;<A HREF="http://w3.physics.uiuc.edu/~guffin/unix/cdrdao.html">http://w3.physics.uiuc.edu/~guffin/unix/cdrdao.html</A>&gt;
+
+&gt;<i> If my CD keeps
+</I>&gt;<i> endlessly seeking the CD ad nauseum, how would I get the Finder to
+</I>&gt;<i> stop seeking and then get cdrao and/or cdparanoia to jump in?
+</I>
+You do what you need to do anyway, dismount the CD to give the CLI  
+tools exclusive access to it. For instance, if you have, as I do,  
+several CD drives, first you need to get the id of one you intend to  
+use
+
+% drutil list
+
+then you get the identifier of the audio CD
+
+% drutil status -drive &lt;id&gt;
+
+then you unmount it
+
+% diskutil unmount &lt;identifier&gt;
+
+and then start cdparanoia
+
+% [path]cdparanoia -d 1 -vBa -z=10 &quot;1-&quot; &lt;outfolder&gt;
+
+If all this doesn't make much sense, you could try this tutorial
+
+&lt;<A HREF="http://www.osxfaq.com/Tutorials/LearningCenter/UnixTutorials/">http://www.osxfaq.com/Tutorials/LearningCenter/UnixTutorials/</A> 
+LoseTheMouse/&gt;
+
+
+&lt;0x0192&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005311.html">[X-Newbies] EMI CDs and iTunes.
+</A></li>
+	<LI>Next message: <A HREF="005293.html">[X-Newbies] Hen-Wen
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5312">[ date ]</a>
+              <a href="thread.html#5312">[ thread ]</a>
+              <a href="subject.html#5312">[ subject ]</a>
+              <a href="author.html#5312">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] X 10.4.2 color profiles to match this of a Canon camera
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20X%2010.4.2%20color%20profiles%20to%20match%20this%20of%20a%20Canon%20camera&In-Reply-To=D1ECD037-C483-4B64-9766-3DA9F76B7A01%40videotron.ca">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011463.html">
+   <LINK REL="Next"  HREF="011297.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] X 10.4.2 color profiles to match this of a Canon camera</H1>
+    <B>Said Nuseibeh</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20X%2010.4.2%20color%20profiles%20to%20match%20this%20of%20a%20Canon%20camera&In-Reply-To=D1ECD037-C483-4B64-9766-3DA9F76B7A01%40videotron.ca"
+       TITLE="[X4U] X 10.4.2 color profiles to match this of a Canon camera">photo at studiosaid.com
+       </A><BR>
+    <I>Thu Jan 12 02:40:11 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011463.html">[X4U] Re: Color profiles to match this of a Canon camera: thanks
+</A></li>
+        <LI>Next message: <A HREF="011297.html">[X4U] Server connection issue
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11362">[ date ]</a>
+              <a href="thread.html#11362">[ thread ]</a>
+              <a href="subject.html#11362">[ subject ]</a>
+              <a href="author.html#11362">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello Germaine,
+
+You are indeed a little off-base on the color profile issues. Granted,
+it is quite complicated and almost every explanation I have encountered
+is sadly abstruse, but I think you can easily do better.
+
+The short answer to your question is Yes. The factory installed &quot;sRGB&quot;
+profile applied to your monitor will by itself poorly render the colors.
+
+I understand a profile to be a reference description of how colors are
+mapped mathematically. A profile by itself is fairly useless. However if
+your device, like a monitor or scanner, is calibrated, then the profile
+can be applied in a designated color space and thereby become visually
+and mathematically helpful. The sRGB color space of your camera is the
+manufacturer's way of providing a baseline indication of how the
+device's colors are mapped, an indication which can later be used by
+application and color management software for the interpretation of
+color. sRGB is the default Windows and Web colorspace. You can (and in
+your case probably should) designate that colorspace as a profile for
+your camera's image files, but without a calibrated monitor reference,
+the colors will be mapped in a visually unreliable way: you have not
+closed the loop.
+
+If you care about accurate color then you need to get sophisticated
+about calibrating your monitor. If you opened your image with its sRGB
+profile in three monitors side-by-side, then the image would most likely
+appear differently on each monitor if they are uncalibrated. There are
+numerous packages for sale with pucks that measure the actual colors
+produced by your specific LCD --at a designated color temperature and
+gamma-- and calibrate the colors to a known standard or gamut. Then the
+software will generate a device-specific profile which establishes a
+meaningful way for the color numbers in a file to be translated to the
+screen.
+
+If you do not have $200 to throw toward one of these packages, then at
+least go though the manual calibration procedure for your monitor
+(System Preferences... Displays... Color... Calibrate). You will
+generate a custom monitor profile that will then be used to more
+reliably convert the colors to your screen and retain pleasing colors.
+[However, once calibrated, you should not change your monitor's settings
+(generally 6200-degrees Kelvin and 2.2 gamma, as well as the brightness
+and contrast settings used during calibration).]
+
+
+For further information, Google &quot;Color Management&quot; and read more here:
+
+<A HREF="http://www.adobe.com/digitalimag/ps_pro_primers.html">http://www.adobe.com/digitalimag/ps_pro_primers.html</A>
+<A HREF="http://www.adobe.com/support/forums/main.html">http://www.adobe.com/support/forums/main.html</A>
+<A HREF="http://www.adobeforums.com/cgi-bin/webx?14@@.ee6b362">http://www.adobeforums.com/cgi-bin/webx?14@@.ee6b362</A>
+
+
+Good Luck. Others, please feel welcome to correct any misundertanding,
+confusion, or error introduced on my part.
+
+-Said
+
+
+
+
+
+On Wednesday, January 11, 2006, Germain M. wrote:
+
+&gt;<i>I bought a digital camera, a Canon S2 IS. Exif infos indicate an  
+</I>&gt;<i>&quot;sRVB&quot; color space. Some friends told me I could adjust the LCD  
+</I>&gt;<i>screen of my iMac G5 to the same settings to get exact color  
+</I>&gt;<i>reproduction. I found a color profile named &quot;sRVB&quot; in the &quot;Monitor&quot;  
+</I>&gt;<i>pref pane. I use it and I saw big difference the way the LCD is now  
+</I>&gt;<i>displaying the pictures transferred from the Canon. But everything  
+</I>&gt;<i>now has a bleuish tint. The grey around windows in Mail or Safari is  
+</I>&gt;<i>rather bleuish than greyish. Is this normal? I wonder if I understand  
+</I>&gt;<i>well the principle of matching color profiles. Could this factory  
+</I>&gt;<i>installed &quot;sRVB&quot; profile render poorly the colors. Should I have  
+</I>&gt;<i>another color profile. Or build it? Which I don't know how t do. Do  
+</I>&gt;<i>you think Canon supply color profiles? I need hints abut this. My  
+</I>&gt;<i>universe has gone blue.
+</I></PRE>
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011463.html">[X4U] Re: Color profiles to match this of a Canon camera: thanks
+</A></li>
+	<LI>Next message: <A HREF="011297.html">[X4U] Server connection issue
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11362">[ date ]</a>
+              <a href="thread.html#11362">[ thread ]</a>
+              <a href="subject.html#11362">[ subject ]</a>
+              <a href="author.html#11362">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

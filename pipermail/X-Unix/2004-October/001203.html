@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] UFS volume full?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20UFS%20volume%20full%3F&In-Reply-To=AEDCC5B6-1D97-11D9-9188-000A959CEE6A%40pursued-with.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001201.html">
+   <LINK REL="Next"  HREF="001205.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] UFS volume full?</H1>
+    <B>Eric Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20UFS%20volume%20full%3F&In-Reply-To=AEDCC5B6-1D97-11D9-9188-000A959CEE6A%40pursued-with.net"
+       TITLE="[X-Unix] UFS volume full?">ecrist at secure-computing.net
+       </A><BR>
+    <I>Thu Oct 14 06:09:00 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001201.html">[X-Unix] UFS volume full?
+</A></li>
+        <LI>Next message: <A HREF="001205.html">[X-Unix] UFS volume full?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1203">[ date ]</a>
+              <a href="thread.html#1203">[ thread ]</a>
+              <a href="subject.html#1203">[ subject ]</a>
+              <a href="author.html#1203">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Oct 13, 2004, at 11:15 PM, Kevin Stevens wrote:
+
+&gt;<i> I have a 20GB UFS partition on my G5, which is used exclusively for a 
+</I>&gt;<i> news spool (using leafnode).  Typically, this runs about 10-15% full, 
+</I>&gt;<i> with maybe 50 directories containing thousands of files.  However, 
+</I>&gt;<i> intermittently, the volume will show as being full - df reports 100% 
+</I>&gt;<i> usage (space, not inodes), and write attempts to the volume fail with 
+</I>&gt;<i> disk full messages.
+</I>&gt;<i>
+</I>&gt;<i> When I realize this, I go into the mail spool directory and start 
+</I>&gt;<i> doing du -sh summaries on each of the dozen news subdirectories, to 
+</I>&gt;<i> see where all the space has gone.  Inevitably, I'll get about halfway 
+</I>&gt;<i> through this process, with the directories reporting normal usage; 
+</I>&gt;<i> when the volume will revert to normal status.  Note that I'm not 
+</I>&gt;<i> deleting any files during this process, just touching them with du.
+</I>&gt;<i>
+</I>&gt;<i> Any thoughts?  I was thinking inodes or sparse files somehow, but 
+</I>&gt;<i> nothing really fits the symptoms.  If I hit a file limit in a 
+</I>&gt;<i> directory, would that report the whole volume as full?
+</I>&gt;<i>
+</I>&gt;<i> KeS
+</I>
+Try doing an fsck on the disk to make sure everything is OK.  Other 
+than that, are you using UFS1 or UFS2?  Is the entire 20GB one logical 
+partition?
+
+-----
+Eric F Crist
+Secure Computing Networks
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: PGP.sig
+Type: application/pgp-signature
+Size: 194 bytes
+Desc: This is a digitally signed message part
+Url : <A HREF="../attachments/20041014/3ece72ba/PGP.bin">http://listserver.themacintoshguy.com/pipermail/x-unix/attachments/20041014/3ece72ba/PGP.bin</A>
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001201.html">[X-Unix] UFS volume full?
+</A></li>
+	<LI>Next message: <A HREF="001205.html">[X-Unix] UFS volume full?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1203">[ date ]</a>
+              <a href="thread.html#1203">[ thread ]</a>
+              <a href="subject.html#1203">[ subject ]</a>
+              <a href="author.html#1203">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

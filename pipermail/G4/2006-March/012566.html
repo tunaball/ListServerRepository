@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Re: Bandwith dropped
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Re%3A%20Bandwith%20dropped&In-Reply-To=20060306033839.B7C216B8ADC%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="012565.html">
+   <LINK REL="Next"  HREF="012569.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Re: Bandwith dropped</H1>
+    <B>Michael</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Re%3A%20Bandwith%20dropped&In-Reply-To=20060306033839.B7C216B8ADC%40listserver.themacintoshguy.com"
+       TITLE="[G4] Re: Bandwith dropped">G-2 at att.net
+       </A><BR>
+    <I>Mon Mar  6 06:06:55 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="012565.html">[G4] Type-able PDFs
+</A></li>
+        <LI>Next message: <A HREF="012569.html">[G4] Type-able PDFs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12566">[ date ]</a>
+              <a href="thread.html#12566">[ thread ]</a>
+              <a href="subject.html#12566">[ subject ]</a>
+              <a href="author.html#12566">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+&gt;<i> Date: Sun, 05 Mar 2006 16:50:25 -0500
+</I>&gt;<i> From: James Asherman &lt;<A HREF="../../../mailman/listinfo/g4.html">jimash at optonline.net</A>&gt;
+</I>&gt;<i> Subject: Re: [G4] Re: Bandwith dropped
+</I>
+&gt;<i> On Mar 5, 2006, at 4:39 PM, Michael wrote:
+</I>&gt;<i> 
+</I>&gt;&gt;<i> Dunno why they're so unwilling to reveal much? Do they have no  
+</I>&gt;&gt;<i> faith in the user?  Seems like they'd prefer a scratch install/fix  
+</I>&gt;&gt;<i> to digging into the OS via the Terminal...
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Michael
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> I don't know if you have tried this.
+</I>
+I did...but...well...
+
+&gt;<i>   Go into your network preferences, and configure the ethernet  
+</I>&gt;<i> manually using either the address that is already showing or a  
+</I>&gt;<i> similar one you can get from inside your router.
+</I>&gt;<i> This worked wonders on my #2.
+</I>
+No, didn't work for me.
+
++ I even established a 'new NETWORK' and tried every possible 
+config..with that one.
+
+However, as I've heard of 'fixes' which (worked!?) did not follow the 
+'typical' GUI config/routine - -
+It makes me even more certain that a true fix is possible if I can 
+attack the problem w/out using the GUI.
+See, you used it -  - but were able to override the 'automatic' 
+addressing (which obvious wasn't working, in yer case).
+
+That is, (if/when) a file or code isn't responding to the directive (and 
+in your case you were able to 'jangle' it w/out going to the Terminal) - 
+- I gotta do more &amp; clearly not rely on he GUI to follow my 'orders'.
+
+So, thanks or anudder idear!
+
+I tends to support my point that it's prolly simple glitch and the 'fix' 
+varies (depending on what it takes to shake-up the glitched commands?).
+
+Since I may not be clear on how I'd attack this if I knew a bit 
+more...here's a typical approach in an M$ box with a similar prob:
+
+EX:
+Problem:
+You may experience one or all of the following symptoms:
+*  An error occurred while renewing interface 'Internet': An operation 
+was attempted on something that is not a socket.
+*   When you issue the ipconfig /renew command, you may receive the 
+following error message: &#236;An error occurred while renewing interface 
+local area connection: an operation was attempted on something that is 
+not a socket. Unable to contact driver Error code 2&#238;
+*    In the Device Manager, when you click Show Hidden Devices, TCP/IP 
+Protocol Driver is listed as disabled under &quot;Non-Plug and Play drivers&quot;, 
+with error code 24.
+*   When you create a dial-up connection, you may receive the following 
+error message: Error 720: No PPP Control Protocols Configured
+*   When you issue an ipconfig command at a command prompt, you may 
+receive an error message that is similar to one of the following:
+* The operation failed since no adapter is in the state permissible for 
+this operation
+The attempted operation is not supported for the type of object referenced.
+*    When you issue the Netsh int ip reset resetlog.txt command at a 
+command prompt, you may receive the following error message:
+Initialization function INITHELPERDLL in IPMONTR.DLL failed to start 
+with error code 10107.
+===
+Solution?
+
+Click Start, and then click Run. In the Open box, type regedit, and then 
+click OK. Locate the following registry subkeys:
+HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Winsock
+HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Winsock2
+Right-click each key, and then click Delete. Click Yes to confirm the 
+deletion of each key. Close Regedit.
+Locate the Nettcpip.inf file in %winroot%\inf, and then open the file in 
+Notepad. Locate the [MS-TCPIP.PrimaryInstall] section.
+Edit the Characteristics = 0xa0 entry and replace 0xa0 with 0x80. Save 
+the file, and then exit Notepad.
+In Control Panel, double-click Network Connections, right-click Local 
+Area Connection, and then select Properties.
+On the General tab, click Install, select Protocol, and then click Add. 
+  In the Select Network Protocols window, click Have Disk.
+In the Copy manufacturer's files from: text box, type c:\windows\inf, 
+and then click OK. Select Internet Protocol (TCP/IP), and then click OK.
+Note This step will return you to the Local Area Connection Properties 
+screen, but now the Uninstall button is available.
+Select Internet Protocol (TCP/IP), click Uninstall, and then click Yes.
+Restart your computer
+In Control Panel, double-click Network Connections, right-click Local 
+Area Connection, and then select Properties. On the General tab, click 
+Install, select Protocol, and then click Add. In the Select Network 
+Protocols window, click Have Disk.
+In the Copy Manufacturer's files from text box, type c:\windows\inf, and 
+then click OK. Select Internet Protocol, and then click OK.
+
+Or?
+Start/Run --&gt; cmd.exe
+and then, in the command prompt that opened up, type:
+netsh.exe winsock reset
+and hit Enter. Follow prompts and reboot.
+If that didn't work, see if registering the following DLLs helps:
+  From Start/Run, run the following commands:
+regsvr32 %windir%\system32\atl.dll
+then
+regsvr32 %windir%\system32\hnetcfg.dll
+regsvr32 %windir%\system32\netshell.dll
+regsvr32 %windir%\system32\netcfgx.dll
+regsvr32 %windir%\system32\netman.dll
+
+========
+
+EZ!
+
+Michael
+
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="012565.html">[G4] Type-able PDFs
+</A></li>
+	<LI>Next message: <A HREF="012569.html">[G4] Type-able PDFs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12566">[ date ]</a>
+              <a href="thread.html#12566">[ thread ]</a>
+              <a href="subject.html#12566">[ subject ]</a>
+              <a href="author.html#12566">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

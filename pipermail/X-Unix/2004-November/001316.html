@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Files Whose Names Begin With &quot;.&quot;
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Files%20Whose%20Names%20Begin%20With%20%22.%22&In-Reply-To=BDC9E0CA.718E%25jerry%40ieee.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001327.html">
+   <LINK REL="Next"  HREF="001350.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Files Whose Names Begin With &quot;.&quot;</H1>
+    <B>James Bucanek</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Files%20Whose%20Names%20Begin%20With%20%22.%22&In-Reply-To=BDC9E0CA.718E%25jerry%40ieee.org"
+       TITLE="[X-Unix] Files Whose Names Begin With &quot;.&quot;">subscriber at gloaming.com
+       </A><BR>
+    <I>Wed Nov 24 07:31:00 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001327.html">[X-Unix] Files Whose Names Begin With &quot;.&quot;
+</A></li>
+        <LI>Next message: <A HREF="001350.html">[X-Unix] FreeBSD disk mount
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1316">[ date ]</a>
+              <a href="thread.html#1316">[ thread ]</a>
+              <a href="subject.html#1316">[ subject ]</a>
+              <a href="author.html#1316">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Jerry Krinock wrote on Wednesday, November 24, 2004:
+
+&gt;<i>MyAudioTrack.mp3    2000 KB  contains actual audio
+</I>&gt;<i>.._MyAudioTrack.mp3     4 KB  is useless
+</I>
+The '.._' file is the resource fork of the original file.  Since the file system of your device obviously doesn't support resource forks, OS X stores them as seperate files.  Any OS X application can still make use of the resource fork of the file even on filesystems that can't store resource forks natively.
+
+&gt;<i>How can I remove the useless files?
+</I>
+It's not useless.
+
+&gt;<i>As I found from experiment and by
+</I>&gt;<i>reading &quot;man rm&quot;, rm will not touch anything which begins with &quot;.&quot;
+</I>
+No, the *shell* normally ignores '.' files when doing wildcard expansion -- for obvious reasons.  But if you begin a wildcard with '.' or specify the file(s) explicitly, the filenames will get passed to the rm command.  rm will delete anything it has permission to.
+
+&gt;<i>From doing a Google search I found a suggestion to use ftp to delete the
+</I>&gt;<i>these files, but there must be an easier way!
+</I>
+There is.  Just leave the files alone.
+
+-- 
+James Bucanek &lt;mailto:<A HREF="../../../mailman/listinfo/x-unix.html">privatereply at gloaming.com</A>&gt;
+</PRE>
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001327.html">[X-Unix] Files Whose Names Begin With &quot;.&quot;
+</A></li>
+	<LI>Next message: <A HREF="001350.html">[X-Unix] FreeBSD disk mount
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1316">[ date ]</a>
+              <a href="thread.html#1316">[ thread ]</a>
+              <a href="subject.html#1316">[ subject ]</a>
+              <a href="author.html#1316">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

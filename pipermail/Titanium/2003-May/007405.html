@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] iPod copy on Big Al
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20iPod%20copy%20on%20Big%20Al&In-Reply-To=list-6223568%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="007404.html">
+   <LINK REL="Next"  HREF="007406.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] iPod copy on Big Al</H1>
+    <B>Steve Wozniak</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20iPod%20copy%20on%20Big%20Al&In-Reply-To=list-6223568%40mail.ninewire.com"
+       TITLE="[Ti] iPod copy on Big Al">steve at woz.org
+       </A><BR>
+    <I>Mon May 19 17:25:18 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="007404.html">[Ti] Dual monitor crash on PB667
+</A></li>
+        <LI>Next message: <A HREF="007406.html">[Ti] Dual monitor crash on PB667
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7405">[ date ]</a>
+              <a href="thread.html#7405">[ thread ]</a>
+              <a href="subject.html#7405">[ subject ]</a>
+              <a href="author.html#7405">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Well, I have some answers to the question about how to copy the music from one iPod to another. It took a bit of effort on the part of my son (the real person behind this) to figure out what works. Here is his email to me. It has some generally useful information.
+
+---------------------------------------------------------------------------------------
+
+I've been playing around with the iPods a bit more...
+
+OmniWeb's file browser (designed for FTP but works for local files) shows all invisible files, but can't copy more than one file at a time. If you drag and drop a folder you will end up with a useless .fileloc file, if you double-click a folder it you will browse the contents, and if you right-click and choose &quot;save this folder as&quot; you will get the message &quot;the file was never saved.&quot; If drag-and-drop produced actual references to the local files, it would have made it much easier to open the 20 Music folders in FileBuddy to make them visible so iTunes would not ignore them. In the mean time  I discovered FileBuddy's &quot;search for invisibles&quot; command that can easily make all the relevant folders visible, so they can be dragged into iTunes for processing.
+
+As far as CLI solutions are concerned, if you copy files directly into the hash table in iPod_Control/Music/ then iTunes will not be able to find them. I have verified that copying the entire iPod_Control folder preserves all database information (I guess it was all stored in iPod_Control/iTunes/ ). It doesn't look like copying iPod_Control/iPodPrefs had any effect at all. I ended up using the following command line:
+
+ditto -rsrcFork &quot;/Volumes/Vandervecken/iPod_Control&quot; &quot;/Volumes/Vandervecken II/iPod_Control&quot;
+
+Note that I put the names of files in quotes so that spaces would be handled properly. Although, if you are typing the name of a file on the command line you can usually press tab to automatically complete the name, special characters and all.
+
+[clipped]
+
+--- Jesse
+
+-- 
+
+Regards,
+
+Steve  (is tv wake zone?)
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="007404.html">[Ti] Dual monitor crash on PB667
+</A></li>
+	<LI>Next message: <A HREF="007406.html">[Ti] Dual monitor crash on PB667
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7405">[ date ]</a>
+              <a href="thread.html#7405">[ thread ]</a>
+              <a href="subject.html#7405">[ subject ]</a>
+              <a href="author.html#7405">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

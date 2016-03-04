@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Mac mini as an Internet Gateway.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Mac%20mini%20as%20an%20Internet%20Gateway.&In-Reply-To=aae40771b22a6de5b059eaab50d063d7%40myrealbox.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010757.html">
+   <LINK REL="Next"  HREF="010752.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Mac mini as an Internet Gateway.</H1>
+    <B>Craig A. Finseth</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Mac%20mini%20as%20an%20Internet%20Gateway.&In-Reply-To=aae40771b22a6de5b059eaab50d063d7%40myrealbox.com"
+       TITLE="[X4U] Mac mini as an Internet Gateway.">fin at finseth.com
+       </A><BR>
+    <I>Thu Dec 15 05:51:46 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010757.html">[X4U] Mac mini as an Internet Gateway.
+</A></li>
+        <LI>Next message: <A HREF="010752.html">[X4U] Mac mini as an Internet Gateway.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10759">[ date ]</a>
+              <a href="thread.html#10759">[ thread ]</a>
+              <a href="subject.html#10759">[ subject ]</a>
+              <a href="author.html#10759">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>	...
+   &gt; It also depends on the application load.
+
+   I can't quote any figures on it, so it'd be great to hear from someone 
+   who can, but I don't think we're talking that order of magnitude.
+
+   If you route on a single interface then IMMEDIATELY a packet comes in, 
+   the router acknowledges it on one interface and forwards it to another 
+   computer on ... erm... another interface that happens to be aliased to 
+   the same phyiscal ethernet socket. Bonkl! Bonk! Packet clash! The 
+   TCP/IP stack retransmits each of the packets after a random interval, 
+   but by that time more packets have come in.
+
+Resending the packet should be no different from sending multiple
+packets in a row (e.g., in an FTP session).  Normal Ethernet carrier
+sense will apply and, on a properly configured interface (e.g., no
+duplex mismatches), you should see no performance degradation.
+
+   I wouldn't be surprised to hear that a 100Mbps connection was slowed to 
+   less than kilobits, (ie less than the speed of the DSL connection) or 
+   if it just caused hideous instability, or killer unreliability in 
+   anything trying to use the network interface. When I read about this 
+
+Again, given a properly configured interface, I would be VERY
+surprised to see such degredation.
+
+And if the interface is not properly configured, you'll see this
+problem in any usage pattern.
+
+FWIW, I've been building and programming Ethernet interfaces for over
+25 years.  (Yes, since the days of the original thick cable.)  Which
+is probably way too long (:-).
+
+Craig
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010757.html">[X4U] Mac mini as an Internet Gateway.
+</A></li>
+	<LI>Next message: <A HREF="010752.html">[X4U] Mac mini as an Internet Gateway.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10759">[ date ]</a>
+              <a href="thread.html#10759">[ thread ]</a>
+              <a href="subject.html#10759">[ subject ]</a>
+              <a href="author.html#10759">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

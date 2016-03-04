@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Need to log internet connectivity
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Need%20to%20log%20internet%20connectivity&In-Reply-To=list-14386402%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000979.html">
+   <LINK REL="Next"  HREF="000981.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Need to log internet connectivity</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Need%20to%20log%20internet%20connectivity&In-Reply-To=list-14386402%40mail.ninewire.com"
+       TITLE="[X-Unix] Need to log internet connectivity">magill at mcgillsociety.org
+       </A><BR>
+    <I>Sun Jun 27 11:25:55 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000979.html">[X-Unix] Need to log internet connectivity
+</A></li>
+        <LI>Next message: <A HREF="000981.html">[X-Unix] Need to log internet connectivity
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#980">[ date ]</a>
+              <a href="thread.html#980">[ thread ]</a>
+              <a href="subject.html#980">[ subject ]</a>
+              <a href="author.html#980">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 27 Jun, 2004, at 09:18, Jerry Krinock wrote:
+
+&gt;<i> Our DSL line is intermittent; it goes up and down over periods of 
+</I>&gt;<i> minutes
+</I>&gt;<i> and hours.  To troubleshoot local interference I need to run some 
+</I>&gt;<i> days-long
+</I>&gt;<i> experiments and get a log which would give me something like:
+</I>&gt;<i>
+</I>&gt;<i> 6:04 AM  DSL went down
+</I>&gt;<i> 6:10 AM  DSL came up
+</I>&gt;<i> 7:15 AM  DSL went down
+</I>&gt;<i> 7:22 AM  DSL came up
+</I>&gt;<i> ...
+</I>&gt;<i>
+</I>&gt;<i> What's the *easy* way to get this?
+</I>
+There is nothing inherent in the OS which will give you the 
+information... especially since the definition of &quot;up&quot; and &quot;down&quot; is 
+&quot;relative.&quot;
+
+For example, the DSL modem may in fact be up, but the DSLAM is down.
+Or the Modem and DSLAM may both be functional, but the MAN behind it in 
+never-never land.
+Or the Modem, DSLAM and MAN may be functional but the WAN is 
+unreachable.
+
+[The MAN (metropolitan area network) is the ATM (asynchronous transfer 
+mode) Cloud between my local Central Office and the ISP's Central 
+Office. It is NOT a routed TCP/IP connection, but rather a classic 
+Phone Company Circuit between two central offices -- your configuration 
+may differ.]
+[DSLAM = Digital Subscriber Loop Access Module -- a piece of equipment 
+in the CO - Telco Central Office -- which separates the data and voice 
+streams.]
+
+In my case, with my DSL line I have a real ISP and static addresses, 
+don't have to use PPPOE and DHCP. I have a script which runs 
+periodically on one of my systems which uses ping to determine if 
+certain portions of the network are reachable. So, I can tell if the 
+MAN is down because I can't reach my ISP's router. I can tell if the 
+WAN is down because I can't reach certain servers beyond my ISP's 
+router.
+
+I have had DSL since the beginning, so I have a seriously dumb and 
+non-manageable DSL modem. If I had a &quot;modern&quot; DSL modem, I would be 
+able to query it to determine if there was &quot;sync&quot; (and therefore a 
+working circuit) between the DSL modem and the DSLAM, as well as an 
+assortment of traffic counters. Most &quot;modern&quot; DSL modems, I think, 
+respond to SNMP, and a number of them are &quot;web addressable.&quot;
+
+The only &quot;trick&quot; with such scripts is their period. Too frequent, and 
+you load the connection with lots of non-productive and unnecessary 
+traffic. Too infrequent and you miss what is the normal DSL &quot;dropout&quot; 
+problem -- the 2 minute outage. Similarly, this &quot;granularity of 
+polling&quot; determines how long (or short) the minimum outage will be.
+
+[I use a 10 minute polling interval, which shortens itself if an outage 
+is detected to 2 minutes until the outage clears.]
+
+As far as troubleshooting interference on the DSL line, the most likely 
+problem has to do with the modem loosing sync with the DSLAM. The cause 
+is one of two things -- either you have real &quot;line noise&quot; problem; or 
+you have CO activity which results in the DSLAM being reset on a 
+&quot;routine&quot; basis by Telco technicians.
+
+If you have an active phone line and are using &quot;dongels&quot; instead of a 
+single splitter, they can be a source of &quot;local&quot; line noise, especially 
+if devices are plugged into the phone line without a &quot;dongel.&quot;
+
+I've had DSL now for ?7+ years (it seems like forever), ever since it 
+became available in my CO. Problems are rare now, but there was a 
+definite learning curve in the beginning as the Telco technicians 
+learned how the equipment worked, and especially, as there was a lot of 
+active &quot;coming and going&quot; of new customers. Now, it works with zero 
+outage for months at a time... then suddenly it will go nuts for a day 
+or two, or maybe a week before it settles down again to no-outage 
+activity.
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000979.html">[X-Unix] Need to log internet connectivity
+</A></li>
+	<LI>Next message: <A HREF="000981.html">[X-Unix] Need to log internet connectivity
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#980">[ date ]</a>
+              <a href="thread.html#980">[ thread ]</a>
+              <a href="subject.html#980">[ subject ]</a>
+              <a href="author.html#980">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

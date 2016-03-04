@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Utility &quot;ln&quot; makes a copy instead of hard link?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Utility%20%22ln%22%20makes%20a%20copy%20instead%20of%20hard%20link%3F&In-Reply-To=C05BEC7E.1ECC7%25jerry%40ieee.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002624.html">
+   <LINK REL="Next"  HREF="002633.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Utility &quot;ln&quot; makes a copy instead of hard link?</H1>
+    <B>Brian L. Matthews</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Utility%20%22ln%22%20makes%20a%20copy%20instead%20of%20hard%20link%3F&In-Reply-To=C05BEC7E.1ECC7%25jerry%40ieee.org"
+       TITLE="[X-Unix] Utility &quot;ln&quot; makes a copy instead of hard link?">blmatthews at gmail.com
+       </A><BR>
+    <I>Fri Apr  7 10:38:41 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002624.html">[X-Unix] Utility &quot;ln&quot; makes a copy instead of hard link?
+</A></li>
+        <LI>Next message: <A HREF="002633.html">[X-Unix] Utility &quot;ln&quot; makes a copy instead of hard link?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2625">[ date ]</a>
+              <a href="thread.html#2625">[ thread ]</a>
+              <a href="subject.html#2625">[ subject ]</a>
+              <a href="author.html#2625">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>1.  Create a text file named &quot;1.txt&quot; containing the text &quot;Dog&quot;.
+</I>&gt;<i>2.  Create a &quot;hard link&quot; by the command:
+</I>&gt;<i>         ln 1.txt
+</I>&gt;<i>     Expected result: Should create a &quot;hard link&quot; file
+</I>&gt;<i>     Actual result: Error message:
+</I>&gt;<i>         ln: ./1.txt: File exists
+</I>
+That's what I'd expect to happen. &quot;ln 1.txt&quot; is the same as &quot;ln 1.txt 
+./1.txt&quot;, but ./1.txt already exists (it's 1.txt). Try instead:
+
+$ echo Dog &gt;1.txt
+$ mkdir 2
+$ cd 2
+$ ln ../1.txt
+
+That should work and create a file in the 2 directory called 1.txt 
+hardlinked to ../1.txt.
+
+&gt;<i>3.  Retry to make a &quot;hard link&quot; by the command:
+</I>&gt;<i>         ln 1.txt 2.txt
+</I>&gt;<i>     Result: Now there are two files, 1.txt and 2.txt.
+</I>&gt;<i>4.  Open 1.txt and change contents to &quot;Cat&quot;.
+</I>&gt;<i>5.  Save.
+</I>&gt;<i>6.  Open &quot;2.txt&quot; and read it.
+</I>&gt;<i>7.  Expected result: &quot;Cat&quot;.
+</I>&gt;<i>8.  Actual result: &quot;Dog&quot;
+</I>
+How are you editing 1.txt? Some editors follow this procedure when 
+writing a file:
+
+write the file to a temp file
+delete the original file
+rename the temp file to have the same name as the original file
+
+That breaks hard links. Instead of editing 1.txt, try:
+
+$ echo Cat &gt;1.txt
+
+Then look at the 2.txt, and it should also contain Cat.
+
+Also, if you do an ls -l, 1.txt and 2.txt should have a 2 after the 
+permissions. That's the number of links to the file. Remove one of 
+the two and it will drop to 1, add another hard link, it will 
+increase, etc.
+
+Brian
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002624.html">[X-Unix] Utility &quot;ln&quot; makes a copy instead of hard link?
+</A></li>
+	<LI>Next message: <A HREF="002633.html">[X-Unix] Utility &quot;ln&quot; makes a copy instead of hard link?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2625">[ date ]</a>
+              <a href="thread.html#2625">[ thread ]</a>
+              <a href="subject.html#2625">[ subject ]</a>
+              <a href="author.html#2625">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

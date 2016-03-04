@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Need Script Editing Advice
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Need%20Script%20Editing%20Advice&In-Reply-To=20070202225313.1886920636%40smtp.gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="016639.html">
+   <LINK REL="Next"  HREF="016656.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Need Script Editing Advice</H1>
+    <B>Lars Bertelsen</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Need%20Script%20Editing%20Advice&In-Reply-To=20070202225313.1886920636%40smtp.gmail.com"
+       TITLE="[X4U] Need Script Editing Advice">lbe at mac.com
+       </A><BR>
+    <I>Sun Feb  4 11:20:24 PST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="016639.html">[X4U] Need Script Editing Advice
+</A></li>
+        <LI>Next message: <A HREF="016656.html">[X4U] Firefox 2 slower in Panther
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#16672">[ date ]</a>
+              <a href="thread.html#16672">[ thread ]</a>
+              <a href="subject.html#16672">[ subject ]</a>
+              <a href="author.html#16672">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>In stead of (count words of _str) try length(_str) or mayby size(_str).
+If you look in the documentation you'll be sure to find some place 
+where they discuss string operations; you can find the exact syntax 
+there!
+NB! The above will count everything including spaces. tabs and linefeeds.
+If you don't want that, you'll need to filter oust som of the stuff 
+you don't need. For this, look for a replace() or replaceall() 
+command. I don't know if APplescript has that (it didn't used to!), 
+but maybe it has been included now. Otherwise use google to find some 
+code that will do it for you! It is definitely out there. In 
+principle, what you want is to say something like:
+_str=replace(_str,&quot; &quot;,&quot;&quot;)
+//space
+_str=replace(_str,char(13),&quot;&quot;);
+_str=replace(_str,char(10),&quot;&quot;);
+//the two newline characters
+_str=replace(_str,char(9),&quot;&quot;);
+//tab I believe
+display alert &quot;Word count: &quot; &amp; length(_str);
+
+
+Again, the syntax is almost certainly not correct, but the principle applies!
+
+Lars Bertelsen
+
+
+
+&gt;<i>I saw on Daring Fireball the script below that does a word count in
+</I>&gt;<i>conjunction with ThisService, and want to edit it, so it counts
+</I>&gt;<i>characters. Can anyone tell me what to edit/substitute? Thanks in advance!
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>on process(_str)
+</I>&gt;<i>	tell application &quot;System Events&quot;
+</I>&gt;<i>		set _appname to name of first process whose frontmost is true
+</I>&gt;<i>	end tell
+</I>&gt;<i>	tell application _appname
+</I>&gt;<i>		display alert &quot;Word count: &quot; &amp; (count words of _str)
+</I>&gt;<i>	end tell
+</I>&gt;<i>end process
+</I>&gt;<i>
+</I>&gt;<i>_______________________________________________
+</I>&gt;<i>X4U mailing list
+</I>&gt;<i><A HREF="../../../mailman/listinfo/x4u.html">X4U at listserver.themacintoshguy.com</A>
+</I>&gt;<i><A HREF="../../../mailman/listinfo/x4u.html">http://listserver.themacintoshguy.com/mailman/listinfo/x4u</A>
+</I>&gt;<i>
+</I>&gt;<i>Listmom is trying to clean out his closets! Vintage Mac and random stuff:
+</I>&gt;<i>          <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+
+-- 
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="016639.html">[X4U] Need Script Editing Advice
+</A></li>
+	<LI>Next message: <A HREF="016656.html">[X4U] Firefox 2 slower in Panther
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#16672">[ date ]</a>
+              <a href="thread.html#16672">[ thread ]</a>
+              <a href="subject.html#16672">[ subject ]</a>
+              <a href="author.html#16672">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

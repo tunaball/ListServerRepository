@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Renaming &quot;NO NAME&quot; Flash Disks
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Renaming%20%22NO%20NAME%22%20Flash%20Disks&In-Reply-To=BE020B01.8683%25jerry%40ieee.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001457.html">
+   <LINK REL="Next"  HREF="001461.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Renaming &quot;NO NAME&quot; Flash Disks</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Renaming%20%22NO%20NAME%22%20Flash%20Disks&In-Reply-To=BE020B01.8683%25jerry%40ieee.org"
+       TITLE="[X-Unix] Renaming &quot;NO NAME&quot; Flash Disks">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Wed Jan  5 22:57:27 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001457.html">[X-Unix] Renaming &quot;NO NAME&quot; Flash Disks
+</A></li>
+        <LI>Next message: <A HREF="001461.html">[X-Unix] Renaming &quot;NO NAME&quot; Flash Disks
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1459">[ date ]</a>
+              <a href="thread.html#1459">[ thread ]</a>
+              <a href="subject.html#1459">[ subject ]</a>
+              <a href="author.html#1459">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jan 6, 2005, at 5:22 am, Jerry Krinock wrote:
+&gt;<i>
+</I>&gt;&gt;<i> A drive knows its name by the filesystem label. How is your drive 
+</I>&gt;&gt;<i> formatted?
+</I>&gt;<i>
+</I>&gt;<i> Here is the relevant excerpt of the output from &quot;diskutil list&quot;:
+</I>&gt;<i>
+</I>&gt;<i> /dev/disk3
+</I>&gt;<i>    #:                   type name               size      identifier
+</I>&gt;<i>    0: FDisk_partition_scheme                    *252.0 MB disk3
+</I>&gt;<i>    1:             DOS_FAT_16 NO NAME            251.7 MB  disk3s1&gt; --
+</I>&gt;<i>
+</I>&gt;<i> Back to my question, how can I change the name?
+</I>
+The normal way to change disks' volume names is to use Disk Utility - 
+you can format them there &amp; give them a new name. The option to format 
+in FAT is not available there, however, so I believe `diskutil` to be 
+the correct way.
+
+
+&gt;<i> I tried typing:
+</I>&gt;<i>
+</I>&gt;<i> diskutil rename disk3 MyDisk
+</I>&gt;<i>
+</I>&gt;<i> and it thought about that for 5 seconds or so, and did not return an 
+</I>&gt;<i> error,
+</I>&gt;<i> but nothing got renamed.  I don't want to fool around with diskutil 
+</I>&gt;<i> too much
+</I>&gt;<i> since I'm scared I'll screw something up real bad.
+</I>
+Looing at `man diskutil` I think you got the order of &quot;disk3&quot; &amp; 
+&quot;MyDisk&quot; the wrong way around. If your flash disk is of the USB-key 
+type &amp; has no data on it, then you're safe to experiment because you 
+can always plug it in to a friend's PC to reformat it in FAT or FAT32. 
+I don't think this'll be necessary, tho'.
+
+NAME
+      diskutil - Modify, verify and repair local disks.
+
+SYNOPSIS
+      diskutil verb [options]
+...
+VERBS
+      Each verb is listed with its description and individual arguments.
+
+      list [device]
+                 List the partitions of a disk or all disks.  If no 
+device is
+                 listed, than all partitions on all disks will be 
+displayed.
+...
+      rename name device
+                 Rename a volume.
+...
+      eraseVolume format name device
+                 Erase an existing volume.  Format discussed below.  
+Ownership
+                 of the affected disk is required.
+...
+DEVICES
+      A device parameter to any of the above commands (except where 
+explicitly
+      defined otherwise) is any of the following
+      The device node entry.  Any entry of the form of /dev/disk*.  ex.
+      /dev/disk2
+      The disk identifier.  Any entry of the form of disk*.  ex.  disk1s9
+      The volume mount point.  Any entry of the form of 
+/Volumes/Mountpoint.
+      ex.  /Volumes/Untitled
+
+
+I was reading this to check the format of diskutil's commands - I was 
+going to suggest trying `diskutil eraseDisk MS-DOS MyDisk disk3` to 
+format &amp; rename, but I think something like `diskutil rename MyDisk 
+/dev/diskX ` might well do it - check which disk it is by using 
+`diskutil list`.
+
+Stroller.
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001457.html">[X-Unix] Renaming &quot;NO NAME&quot; Flash Disks
+</A></li>
+	<LI>Next message: <A HREF="001461.html">[X-Unix] Renaming &quot;NO NAME&quot; Flash Disks
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1459">[ date ]</a>
+              <a href="thread.html#1459">[ thread ]</a>
+              <a href="subject.html#1459">[ subject ]</a>
+              <a href="author.html#1459">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Altering .bashrc in bash to add to $PATH
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Altering%20.bashrc%20in%20bash%20to%20add%20to%20%24PATH&In-Reply-To=list-10155630%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000608.html">
+   <LINK REL="Next"  HREF="000630.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Altering .bashrc in bash to add to $PATH</H1>
+    <B>Brian P. Minnebo</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Altering%20.bashrc%20in%20bash%20to%20add%20to%20%24PATH&In-Reply-To=list-10155630%40mail.ninewire.com"
+       TITLE="[X-Unix] Altering .bashrc in bash to add to $PATH">brian at minnebo.net
+       </A><BR>
+    <I>Thu Jan  8 09:22:02 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000608.html">[X-Unix] Altering .bashrc in bash to add to $PATH
+</A></li>
+        <LI>Next message: <A HREF="000630.html">*BSD on x86 question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#619">[ date ]</a>
+              <a href="thread.html#619">[ thread ]</a>
+              <a href="subject.html#619">[ subject ]</a>
+              <a href="author.html#619">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Eugene writes:
+&gt;<i> &gt;The line above looks right.  But the ~/.bashrc file needs to be executed.
+</I>&gt;<i> &gt;The easiest thing to do is to close your current Terminal window and open
+</I>&gt;<i> &gt;a new one.  If the new Terminal window does not get your new $PATH, then
+</I>&gt;<i> &gt;you need remove the line above from ~/.bashrc and insert it into either
+</I>&gt;<i> &gt;~/.profile or ~/.bash_profile (whichever one exists).
+</I>&gt;<i> 
+</I>
+Robert writes
+&gt;<i> As shown above, I only have .bash* files and the .bash files are the ones being created and modified.
+</I>&gt;<i> 
+</I>&gt;<i> Any other ideas?
+</I>
+As Eugene mentions above, try renaming .bashrc:
+
+    $ mv .bashrc .bash_profile
+
+On my (panther) system, I've always had to use .bash_profile.  For instant gratification, you can say:
+
+    $ . ./.bash_profile
+
+You won't know if it worked though, until you pop open some new Terminal windows.
+
+Brian
+-- 
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000608.html">[X-Unix] Altering .bashrc in bash to add to $PATH
+</A></li>
+	<LI>Next message: <A HREF="000630.html">*BSD on x86 question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#619">[ date ]</a>
+              <a href="thread.html#619">[ thread ]</a>
+              <a href="subject.html#619">[ subject ]</a>
+              <a href="author.html#619">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Any CLI multi-line regex find utilities out there?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Any%20CLI%20multi-line%20regex%20find%20utilities%20out%20there%3F&In-Reply-To=670011B5-2810-11D9-BD6E-000A95C4887C%40hjemme.dk">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001261.html">
+   <LINK REL="Next"  HREF="001263.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Any CLI multi-line regex find utilities out there?</H1>
+    <B>Brian Medley</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Any%20CLI%20multi-line%20regex%20find%20utilities%20out%20there%3F&In-Reply-To=670011B5-2810-11D9-BD6E-000A95C4887C%40hjemme.dk"
+       TITLE="[X-Unix] Any CLI multi-line regex find utilities out there?">bpm-list-osx-unix at 4321.tv
+       </A><BR>
+    <I>Wed Oct 27 13:14:07 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001261.html">[X-Unix] Any CLI multi-line regex find utilities out there?
+</A></li>
+        <LI>Next message: <A HREF="001263.html">[X-Unix] Any CLI multi-line regex find utilities out there?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1262">[ date ]</a>
+              <a href="thread.html#1262">[ thread ]</a>
+              <a href="subject.html#1262">[ subject ]</a>
+              <a href="author.html#1262">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Wed, Oct 27, 2004 at 02:04:49PM +0200, Jakob Peterh?nsel wrote:
+
+&gt;<i> I though grep could do it, as BBEdit's version can, but got 
+</I>&gt;<i> disappointed. Grep can't find over multi-lines... 
+</I>&gt;<i> 
+</I>&gt;<i> So, is there any CLI solutions out there that can return a match on 
+</I>&gt;<i> text over multi lines??? 
+</I>&gt;<i> 
+</I>&gt;<i> I would like to do something like: 
+</I>&gt;<i> 
+</I>&gt;<i> echo 'my very long text from a email body' | myRegexCmd 'regex 
+</I>&gt;<i> expression' 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Any help appreciated! 
+</I>
+$ cat test
+a
+b
+c
+1
+2
+3
+perl
+1
+2
+aa
+$ perl -n -0777 -e 'print &quot;$&amp;\n&quot; while m#([a-z]+\n)+#gms' test
+a
+b
+c
+
+perl
+
+aa
+
+$ perl -n -0777 -e 'print &quot;$&amp;\n&quot; while m#(\d+\n)+#gms' test 
+1
+2
+3
+
+1
+2
+
+$ perl -n -0777 -e 'print &quot;$&amp;\n&quot; while m#(1\n2)+#gms' test  
+1
+2
+1
+2
+$
+
+perldoc perlrun for info
+
+-- 
+~`^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-., \|/  (___)  \|/ _,.-=~'`^`
+                                      @~./'O o`\.~@
+      &quot;Knowledge is Power&quot;           /__( \___/ )__\  *PPPFFBT!*
+         -- Francis Bacon               `\__`U_/'
+ _.-=~'``'~=-._.-=~'``'~=-._.-=~'`^`'~= &lt;____|'  ^^`'~=-.,__,.-=
+~'^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-.,__,.-==--^'~=-.,__,.-=~'`^`
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001261.html">[X-Unix] Any CLI multi-line regex find utilities out there?
+</A></li>
+	<LI>Next message: <A HREF="001263.html">[X-Unix] Any CLI multi-line regex find utilities out there?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1262">[ date ]</a>
+              <a href="thread.html#1262">[ thread ]</a>
+              <a href="subject.html#1262">[ subject ]</a>
+              <a href="author.html#1262">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

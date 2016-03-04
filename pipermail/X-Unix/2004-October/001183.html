@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Grep and backreferences with BBEdit
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Grep%20and%20backreferences%20with%20BBEdit&In-Reply-To=5234264.1097604745923.JavaMail.nickscalise%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001182.html">
+   <LINK REL="Next"  HREF="001184.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Grep and backreferences with BBEdit</H1>
+    <B>Rod Buchanan</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Grep%20and%20backreferences%20with%20BBEdit&In-Reply-To=5234264.1097604745923.JavaMail.nickscalise%40mac.com"
+       TITLE="[X-Unix] Grep and backreferences with BBEdit">lists at sofstats.com
+       </A><BR>
+    <I>Tue Oct 12 16:02:49 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001182.html">[X-Unix] Grep and backreferences with BBEdit
+</A></li>
+        <LI>Next message: <A HREF="001184.html">[X-Unix] Grep and backreferences with BBEdit
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1183">[ date ]</a>
+              <a href="thread.html#1183">[ thread ]</a>
+              <a href="subject.html#1183">[ subject ]</a>
+              <a href="author.html#1183">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 10/12/04 1:12 PM, &quot;Nick Scalise&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">nickscalise at mac.com</A>&gt; wrote:
+
+&gt;<i> So, I think I have the first part figured out, I find &lt;a
+</I>&gt;<i> href=&quot;[a-zA-Z0-9+]+.jpg&quot;&gt; using grep in BBEdit's find dialog, this seems to
+</I>&gt;<i> produce the desired result. Please let me know if there is a better way.
+</I>&gt;<i> 
+</I>&gt;<i> Where I am lost is the backreference part. What is the pattern I would add in
+</I>&gt;<i> the replace dialog that would add 'images/'  so that the original &lt;a
+</I>&gt;<i> href='name.jpg'&gt; would end up &lt;a href=&quot;images/name.jpg&quot;&gt;
+</I>
+Search:
+    &lt;a href=&quot;(.+?)&quot;(.*?)&gt;
+
+Replace:
+    &lt;a href=&quot;images/\1&quot;\2&gt;
+
+Changes:
+    &lt;a href=&quot;name.jpg&quot;&gt;
+    &lt;h1&gt;blah&lt;/h1&gt;
+    &lt;a href=&quot;name2.jpg&quot; target=&quot;_new&quot;&gt;name2.jpg&lt;/a&gt;
+    &lt;a href=&quot;blue.jpg&quot;&gt;
+
+to:
+    &lt;a href=&quot;images/name.jpg&quot;&gt;
+    &lt;h1&gt;blah&lt;/h1&gt;
+    &lt;a href=&quot;images/name2.jpg&quot; target=&quot;_new&quot;&gt;name2.jpg&lt;/a&gt;
+    &lt;a href=&quot;images/blue.jpg&quot;&gt;
+
+-- 
+Rod
+
+&quot;Politics and Poker, Politics and Poker,
+Shuffle up the cards And find the joker.
+    -- Sheldon Harnick and Jerry Bock, from &quot;Fiorello&quot;
+
+
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001182.html">[X-Unix] Grep and backreferences with BBEdit
+</A></li>
+	<LI>Next message: <A HREF="001184.html">[X-Unix] Grep and backreferences with BBEdit
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1183">[ date ]</a>
+              <a href="thread.html#1183">[ thread ]</a>
+              <a href="subject.html#1183">[ subject ]</a>
+              <a href="author.html#1183">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Any key for ejecting external firewire burner?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=Any%20key%20for%20ejecting%20external%20firewire%20burner%3F&In-Reply-To=list-9075767%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005953.html">
+   <LINK REL="Next"  HREF="005955.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Any key for ejecting external firewire burner?</H1>
+    <B>John Labovitz</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=Any%20key%20for%20ejecting%20external%20firewire%20burner%3F&In-Reply-To=list-9075767%40mail.ninewire.com"
+       TITLE="Any key for ejecting external firewire burner?">johnl at johnlabovitz.com
+       </A><BR>
+    <I>Sun Nov  2 13:51:10 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005953.html">Panther just lost its virginity ;)
+</A></li>
+        <LI>Next message: <A HREF="005955.html">Upgrade video and processor at the same time?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5954">[ date ]</a>
+              <a href="thread.html#5954">[ thread ]</a>
+              <a href="subject.html#5954">[ subject ]</a>
+              <a href="author.html#5954">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Nov 2, 2003, at 12:35 PM, Lithium wrote:
+
+&gt;<i> But I found a trick. Yes! Terminal can do that.
+</I>&gt;<i>
+</I>&gt;<i> ~ lithium$ drutil tray open
+</I>&gt;<i>
+</I>&gt;<i> The command opens my external drive tray!!! Of cause, you can &quot;close&quot; 
+</I>&gt;<i> the tray.
+</I>&gt;<i> It's not practical. Just for fun ;-)
+</I>&gt;<i> Can I make this command into a script for one click away?
+</I>
+Here's some Applescript that will do that:
+
+	tell application &quot;Terminal&quot; to do script &quot;drutil tray open &amp;&amp; exit&quot;
+
+If you put this script file in ~/Library/Scripts, then you could get to 
+it by the Scripts menu.  (If that's not in your menu, it lives in the 
+same CoreServices directory I mentioned earlier.)
+
+Just in case &quot;drutil&quot; starts ejecting your internal drive, it looks 
+like you can add a &quot;-drive firewire&quot; option to the command and target 
+your Firewire (or USB, as appropriate) drive.
+
+Hey, this is fun!
+
+--
+John Labovitz photography
+www.johnlabovitz.com
+<A HREF="../../../mailman/listinfo/cube.html">johnl at johnlabovitz.com</A>
++1 503.873.6734
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005953.html">Panther just lost its virginity ;)
+</A></li>
+	<LI>Next message: <A HREF="005955.html">Upgrade video and processor at the same time?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5954">[ date ]</a>
+              <a href="thread.html#5954">[ thread ]</a>
+              <a href="subject.html#5954">[ subject ]</a>
+              <a href="author.html#5954">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

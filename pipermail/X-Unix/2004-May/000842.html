@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] SMB and Windows Server2003
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20SMB%20and%20Windows%20Server2003&In-Reply-To=list-13611038%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000840.html">
+   <LINK REL="Next"  HREF="000843.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] SMB and Windows Server2003</H1>
+    <B>Nick Scalise</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20SMB%20and%20Windows%20Server2003&In-Reply-To=list-13611038%40mail.ninewire.com"
+       TITLE="[X-Unix] SMB and Windows Server2003">nickscalise at mac.com
+       </A><BR>
+    <I>Mon May 31 08:40:47 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000840.html">[X-Unix] mail.app and clamav?
+</A></li>
+        <LI>Next message: <A HREF="000843.html">[X-Unix] SMB and Windows Server2003
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#842">[ date ]</a>
+              <a href="thread.html#842">[ thread ]</a>
+              <a href="subject.html#842">[ subject ]</a>
+              <a href="author.html#842">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>When you say that you cannot connect to the shares, is it that you can 
+see them, but your username and password are rejected? Or is it that 
+you cannot see the shares at all from your Mac?
+
+If it is that you can see them but your password is rejected, try this: 
+When using your username and password, enter them in this format:
+
+In the Username text area enter: 'domainname\username'
+Use your domain password here: 'password'
+
+Without the quotes, and this assumes that you are a user in the newly 
+created domain.
+
+I am not near a Windows server, so I cannot test another theory I have, 
+which regards NTLM (Challenge/Response) and permissions.
+
+On Monday, May 31, 2004, at 06:48  AM, Kathy wrote:
+
+&gt;<i> I am having the same problem at my office.  We had a Windows NT4.5 
+</I>&gt;<i> Small Business Server and replaced it with Window 2004 Small Business 
+</I>&gt;<i> Server.  The guy that set it up changed the Domain name, because our 
+</I>&gt;<i> business changed its name.
+</I>&gt;<i>
+</I>&gt;<i> I have administrator rights; and no, I cannot connect to any of the 
+</I>&gt;<i> windows shares.  It seems OS 10 or the Windows box will not 
+</I>&gt;<i> authenticate my user name and password.  I can log into the apple 
+</I>&gt;<i> shares set up.  But, I really need access to the Windows shares.  And 
+</I>&gt;<i> if I change the NT box to let everyone do everything without logging 
+</I>&gt;<i> in, I can connect fine.  That is not really on option though.
+</I>&gt;<i>
+</I>&gt;<i> Kathy
+</I>&gt;<i>
+</I>&gt;&gt;&gt;<i> We added a Windows 20003 server to our operation (much to my dismay).
+</I>&gt;&gt;&gt;<i> My OSX box can no longer authenticate via SMB, I must set up SFM 
+</I>&gt;&gt;&gt;<i> shares
+</I>&gt;&gt;&gt;<i> and use AFP only. Any suggestions?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I just added a couple Windows Server 2003 boxes and have no trouble 
+</I>&gt;&gt;<i> connecting to them through SMB from Mac OS X 10.3.4.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Is this new server in the same domain? (or any domain?) Are there 
+</I>&gt;&gt;<i> Windows shares setup on it? If not, do you have adminstrator access, 
+</I>&gt;&gt;<i> and if so, can you mount <A HREF="smb://servername/c$?">smb://servername/c$?</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> More info please.
+</I>--
+Nick Scalise
+<A HREF="../../../mailman/listinfo/x-unix.html">nickscalise at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000840.html">[X-Unix] mail.app and clamav?
+</A></li>
+	<LI>Next message: <A HREF="000843.html">[X-Unix] SMB and Windows Server2003
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#842">[ date ]</a>
+              <a href="thread.html#842">[ thread ]</a>
+              <a href="subject.html#842">[ subject ]</a>
+              <a href="author.html#842">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

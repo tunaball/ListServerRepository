@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Can you get the path from an inode?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Can%20you%20get%20the%20path%20from%20an%20inode%3F&In-Reply-To=20060502125803.E6CB776C77%40isis.visi.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002657.html">
+   <LINK REL="Next"  HREF="002659.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Can you get the path from an inode?</H1>
+    <B>Wing Wong</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Can%20you%20get%20the%20path%20from%20an%20inode%3F&In-Reply-To=20060502125803.E6CB776C77%40isis.visi.com"
+       TITLE="[X-Unix] Can you get the path from an inode?">wingedpower at gmail.com
+       </A><BR>
+    <I>Tue May  2 09:58:30 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002657.html">[X-Unix] Can you get the path from an inode?
+</A></li>
+        <LI>Next message: <A HREF="002659.html">[X-Unix] Can you get the path from an inode?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2658">[ date ]</a>
+              <a href="thread.html#2658">[ thread ]</a>
+              <a href="subject.html#2658">[ subject ]</a>
+              <a href="author.html#2658">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 5/2/06, Craig A. Finseth &lt;<A HREF="../../../mailman/listinfo/x-unix.html">fin at finseth.com</A>&gt; wrote:
+&gt;&gt;<i>    Could one write a Spotlight-Plugin that does something of the kind?
+</I>[snipped]
+&gt;<i> This is not a cheap operation.  That said, outside of file system
+</I>&gt;<i> analysis tools, I've never had a reason to ever want to do this in my
+</I>&gt;<i> 30+ years of Unix programming.
+</I>&gt;<i>
+</I>&gt;<i> Craig
+</I>
+There would be no way of determining what has and has not changed,
+inode-wise. Ie, you could do a 'find -ctime -1' to limit it to the
+most recent files, but it would still recurse through the whole of the
+filesystem to do it. Depending on the number of and size of your hard
+drive(s), the number of files and folders in it, and the speed of the
+system... the find would take a file to churn and potentially generate
+a sizable file in the process.
+
+I would hope that spotlight has a database/caching mechanism, as
+opposed to performing a fresh find every time it is triggered. :|
+
+As Craig notes, the wikipedia, and quite a few online sources note...
+the inode to file/path lookup tends only to be useful for fixing
+filesystems or recovering data. In day to day use, it isn't really all
+that useful.
+
+Wing
+
+--
+Wing Wong
+<A HREF="../../../mailman/listinfo/x-unix.html">wingedpower at gmail.com</A>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002657.html">[X-Unix] Can you get the path from an inode?
+</A></li>
+	<LI>Next message: <A HREF="002659.html">[X-Unix] Can you get the path from an inode?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2658">[ date ]</a>
+              <a href="thread.html#2658">[ thread ]</a>
+              <a href="subject.html#2658">[ subject ]</a>
+              <a href="author.html#2658">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

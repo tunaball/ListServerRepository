@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] What's in an MP3's resource fork..?     [Was: Re: [X4U] ._annoying_files on SMB shares - can I remove them..?]
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20What%27s%20in%20an%20MP3%27s%20resource%20fork..%3F%20%20%20%20%20%5BWas%3A%20Re%3A%20%5BX4U%5D%20._annoying_files%20on%20SMB%20shares%20-%20can%20I%20remove%20them..%3F%5D&In-Reply-To=list-12261053%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000720.html">
+   <LINK REL="Next"  HREF="000722.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] What's in an MP3's resource fork..?     [Was: Re: [X4U] ._annoying_files on SMB shares - can I remove them..?]</H1>
+    <B>Brian Medley</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20What%27s%20in%20an%20MP3%27s%20resource%20fork..%3F%20%20%20%20%20%5BWas%3A%20Re%3A%20%5BX4U%5D%20._annoying_files%20on%20SMB%20shares%20-%20can%20I%20remove%20them..%3F%5D&In-Reply-To=list-12261053%40mail.ninewire.com"
+       TITLE="[X-Unix] What's in an MP3's resource fork..?     [Was: Re: [X4U] ._annoying_files on SMB shares - can I remove them..?]">bpm-list-osx-unix at 4321.tv
+       </A><BR>
+    <I>Tue Apr 20 18:29:07 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000720.html">[X-Unix] What's in an MP3's resource fork..?     [Was: Re: [X4U] ._annoying_files on SMB shares - can I remove them..?]
+</A></li>
+        <LI>Next message: <A HREF="000722.html">[X-Unix] What's in an MP3's resource fork..?     [Was: Re: [X4U] ._annoying_files on SMB shares - can I remove them..?]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#721">[ date ]</a>
+              <a href="thread.html#721">[ thread ]</a>
+              <a href="subject.html#721">[ subject ]</a>
+              <a href="author.html#721">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Wed, Apr 21, 2004 at 12:36:47AM +0100, Stroller wrote:
+
+&gt;<i> I think we've had this conversation before, and I still fail to
+</I>&gt;<i> understand what useful information can be stored in the
+</I>&gt;<i> resource fork that cannot be stored in the data fork. I realise
+</I>&gt;<i> that it is surely 
+</I>
+My understanding is that there is nothing in a resource fork that
+could not be saved in a data fork.  If there were 3 &quot;thingies&quot; in
+a file (JPEG data, thumbnail, and original url) the JPEG data
+would be in the data fork, thumbnail and url in the resource
+fork.  However, these things could be saved in separate files,
+all with a single data fork.
+
+So, why then did Apple choose to have a seemingly redundant and
+most certainly proprietary (meaning that there exists the
+possibility for data loss / incompatibilities with single fork
+based computers) system?  First they wanted a mechanism to give
+their users easy installation and deletion of applications.  If
+an application has it's data stored in one physical file but
+separated logically by systemmatic and logical APIs then it is a
+boon for the developer and user.
+
+The user doesn't have to worry about application files scattered
+all over the place.  They can uninstall simply by dragging to the
+trash (sound familiar).  However, if this application file is
+copied to a single fork system and back again their are problems.
+
+Yet, the problems weren't really that severe at the time of
+resource fork introduction (not sure exactly when).  This would
+have been the time of BBSes and way before the internet, and in
+addition to this, if you had a network of computers they were
+most often homogenous.  You simply didn't share data with &quot;other&quot;
+computer systems as much.
+
+Now, with millions of different computers connected everywhere,
+Apple is discouraging the use of resource forks in lieu of
+placing everything in a data fork.
+
+A lot of this info came from my recollection of reading sources
+over time.  I would very much like it if someone would comment if
+I have made an error...
+
+-- 
+~`^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-., \|/  (___)  \|/ _,.-=~'`^`
+                                      @~./'O o`\.~@
+      &quot;Knowledge is Power&quot;           /__( \___/ )__\  *PPPFFBT!*
+         -- Francis Bacon               `\__`U_/'
+ _.-=~'``'~=-._.-=~'``'~=-._.-=~'`^`'~= &lt;____|'  ^^`'~=-.,__,.-=
+~'^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-.,__,.-==--^'~=-.,__,.-=~'`^`
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000720.html">[X-Unix] What's in an MP3's resource fork..?     [Was: Re: [X4U] ._annoying_files on SMB shares - can I remove them..?]
+</A></li>
+	<LI>Next message: <A HREF="000722.html">[X-Unix] What's in an MP3's resource fork..?     [Was: Re: [X4U] ._annoying_files on SMB shares - can I remove them..?]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#721">[ date ]</a>
+              <a href="thread.html#721">[ thread ]</a>
+              <a href="subject.html#721">[ subject ]</a>
+              <a href="author.html#721">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

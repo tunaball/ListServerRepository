@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Active Directory and Groups
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=Active%20Directory%20and%20Groups&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000073.html">
+   <LINK REL="Next"  HREF="000076.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Active Directory and Groups</H1>
+    <B>Beck, Forrest</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=Active%20Directory%20and%20Groups&In-Reply-To="
+       TITLE="Active Directory and Groups">forrest at da.org
+       </A><BR>
+    <I>Thu Feb 13 12:29:54 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000073.html">[X Servers] AFP Homes / LDAPv3 / Workgroup Manager
+</A></li>
+        <LI>Next message: <A HREF="000076.html">[X Servers] Run Software Update remotely
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#74">[ date ]</a>
+              <a href="thread.html#74">[ thread ]</a>
+              <a href="subject.html#74">[ subject ]</a>
+              <a href="author.html#74">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hopefully my question is an easy one.
+
+Trying to setup groups in active directory and give permissions to shares on my 
+Xserver with these groups.
+
+What information is needed by OS X to understand members of the group.  -OR- 
+What attribute needs to be mapped under Directory Access for Groups?  I notice 
+now that it maps to userlist, but there isn't a user list attribute inAD.
+
+When looking at lookupd for by group &quot;students&quot;
+
+I get:
+
+[xserver:~] admin% lookupd -d
+lookupd version 272 (root 2002.07.27 09:40:39 UTC)
+Enter command name, &quot;help&quot;, or &quot;quit&quot; to exit
+&gt;<i> groupWithNumber: 777
+</I>Dictionary: &quot;LUServer: group gid 777&quot;
+gid: 777
+name: students
+users: CN=Mac,CN=Users,DC=test,DC=com
++ Category: group
++ Time to live: 60
++ Age: 0 (expires in 60 seconds)
++ Negative: No
++ Cache hits: 0
++ Retain count: 3
+
+
+&gt;<i> 
+</I>
+The current user listing is coming from Active Directories &quot;members&quot; attribute, 
+which is modified when adding users to a group.
+
+Am I on the right path?
+Does OS X need a interger instead of Distinguished Name?
+
+
+Thanks!
+
+Forrest Beck
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000073.html">[X Servers] AFP Homes / LDAPv3 / Workgroup Manager
+</A></li>
+	<LI>Next message: <A HREF="000076.html">[X Servers] Run Software Update remotely
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#74">[ date ]</a>
+              <a href="thread.html#74">[ thread ]</a>
+              <a href="subject.html#74">[ subject ]</a>
+              <a href="author.html#74">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

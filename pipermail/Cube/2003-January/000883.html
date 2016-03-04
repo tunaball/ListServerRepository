@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [CUBE] Fix pre-binding pt 2
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20Fix%20pre-binding%20pt%202&In-Reply-To=list-4358109%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000882.html">
+   <LINK REL="Next"  HREF="000884.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[CUBE] Fix pre-binding pt 2</H1>
+    <B>Alan Thompson</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20Fix%20pre-binding%20pt%202&In-Reply-To=list-4358109%40mail.ninewire.com"
+       TITLE="[CUBE] Fix pre-binding pt 2">athomp2 at mac.com
+       </A><BR>
+    <I>Thu Jan  9 08:41:06 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000882.html">[CUBE] somewhat OT:  new stuff...
+</A></li>
+        <LI>Next message: <A HREF="000884.html">[CUBE] Unpartitioning
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#883">[ date ]</a>
+              <a href="thread.html#883">[ thread ]</a>
+              <a href="subject.html#883">[ subject ]</a>
+              <a href="author.html#883">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>not really a sysadmin question, but basically,
+
+the command/process/app, fix_prebinding, with a process id of 505 
+misbehaved by messing with (likely overwrote it's memory space) a 
+system level process, the message server, which starts at boot, and is 
+launched by the kernel.
+
+the thread crash info is showing the memory space allocated to it, or 
+possibly the offending addresses where it went to retrieve data, but 
+found unexpected results as the fix_prebinding process had written 
+something there...  the powerpc stuff is beyond my cryptic 
+understanding.
+
+
+On Thursday, January 9, 2003, at 04:13 AM, John Guy wrote:
+
+&gt;<i> Date/Time:  2003-01-09 12:00:19 +0000
+</I>&gt;<i> OS Version: 10.2.3 (Build 6G30)
+</I>&gt;<i> Host:       John-Guys-Computer.local.
+</I>&gt;<i>
+</I>&gt;<i> Command:    fix_prebinding
+</I>&gt;<i> PID:        505
+</I>&gt;<i>
+</I>&gt;<i> Exception:  EXC_BAD_ACCESS (0x0001)
+</I>&gt;<i> Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x000002d8
+</I>&gt;<i>
+</I>&gt;<i> Thread 0 Crashed:
+</I>&gt;<i>  #0   0x000152a4 in 0x152a4
+</I>&gt;<i>  #1   0x0000c3d8 in 0xc3d8
+</I>&gt;<i>  #2   0x0000c0ec in 0xc0ec
+</I>&gt;<i>  #3   0x0000b3ac in 0xb3ac
+</I>&gt;<i>  #4   0x00007b20 in 0x7b20
+</I>&gt;<i>  #5   0x00004250 in 0x4250
+</I>&gt;<i>  #6   0x0000290c in 0x290c
+</I>&gt;<i>  #7   0x00002414 in 0x2414
+</I>&gt;<i>  #8   0x00002a2c in 0x2a2c
+</I>&gt;<i>  #9   0x90031c44 in mach_msg_server
+</I>&gt;<i>  #10  0x00002c40 in 0x2c40
+</I>&gt;<i>  #11  0x00002f48 in 0x2f48
+</I>&gt;<i>  #12  0x00002188 in 0x2188
+</I>&gt;<i>  #13  0x00002008 in 0x2008
+</I>&gt;<i>
+</I>&gt;<i> PPC Thread State:
+</I>&gt;<i>   srr0: 0x000152a4 srr1: 0x0200f030                vrsave: 0x00000000
+</I>&gt;<i>    xer: 0x00000000   lr: 0x00015254  ctr: 0x90000f00   mq: 0x00000000
+</I>&gt;<i>     r0: 0x00000d20   r1: 0xbffff430   r2: 0x00000000   r3: 0x001311cc
+</I>&gt;<i>     r4: 0x00000003   r5: 0x00000001   r6: 0x000002d8   r7: 0x00032230
+</I>&gt;<i>     r8: 0x00000c30   r9: 0x00000000  r10: 0x00032230  r11: 0x001211c0
+</I>&gt;<i>    r12: 0x90000f00  r13: 0x000321b8  r14: 0x00032234  r15: 0x00000029
+</I>&gt;<i>    r16: 0x00000ca8  r17: 0x00001614  r18: 0x0012fc50  r19: 0x000000b6
+</I>&gt;<i>    r20: 0x00032234  r21: 0x000321b8  r22: 0x00130de0  r23: 0x0000001a
+</I>&gt;<i>    r24: 0x00032230  r25: 0x011fe354  r26: 0x00032234  r27: 0x0013119c
+</I>&gt;<i>    r28: 0x0000001c  r29: 0x00032230  r30: 0x00000c30  r31: 0x00014914
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000882.html">[CUBE] somewhat OT:  new stuff...
+</A></li>
+	<LI>Next message: <A HREF="000884.html">[CUBE] Unpartitioning
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#883">[ date ]</a>
+              <a href="thread.html#883">[ thread ]</a>
+              <a href="subject.html#883">[ subject ]</a>
+              <a href="author.html#883">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] need help with a command
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20need%20help%20with%20a%20command&In-Reply-To=20050302114123.GY11794%40Dark-Age.local">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001604.html">
+   <LINK REL="Next"  HREF="001606.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] need help with a command</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20need%20help%20with%20a%20command&In-Reply-To=20050302114123.GY11794%40Dark-Age.local"
+       TITLE="[X-Unix] need help with a command">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Wed Mar  2 05:37:51 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001604.html">[X-Unix] need help with a command
+</A></li>
+        <LI>Next message: <A HREF="001606.html">[X-Unix] need help with a command
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1605">[ date ]</a>
+              <a href="thread.html#1605">[ thread ]</a>
+              <a href="subject.html#1605">[ subject ]</a>
+              <a href="author.html#1605">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Mar 2, 2005, at 11:41 am, Eugene wrote:
+
+&gt;<i> ... Also,
+</I>&gt;<i> : sometimes it's best handling directories and non-directory files
+</I>&gt;<i> : separately when changing permissions, e.g. setting the 'x' (execute)
+</I>&gt;<i> : bit makes sense for directories but not for non-executable 
+</I>&gt;<i> traditional
+</I>&gt;<i> : Unix files.  So, you could construct two commands like:
+</I>&gt;<i> :
+</I>&gt;<i> :  find PATH -type d -not -name '~Archive' -exec chmod DIR-MODE {} \;
+</I>&gt;<i> :  find PATH -type f -exec chmod NONDIR-MODE {} \;
+</I>&gt;<i> :
+</I>&gt;<i> : ... for changing dirs and regular files separately.
+</I>&gt;<i>
+</I>&gt;<i> Or do it all at once?
+</I>&gt;<i>
+</I>&gt;<i> 	find PATH \(-type d -o -type f) -not \( -type d -a -name '~Archive' 
+</I>&gt;<i> \) -exec chmod MODE &quot;{}&quot; \;
+</I>
+That'll apply the same permissions to the directories as to the regular 
+files. As Scott said, we want directories to have +xxx permissions, but 
+not h4x0r.sh or tr0j4n.exe which got saved there by mistake.
+
+Stroller.
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001604.html">[X-Unix] need help with a command
+</A></li>
+	<LI>Next message: <A HREF="001606.html">[X-Unix] need help with a command
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1605">[ date ]</a>
+              <a href="thread.html#1605">[ thread ]</a>
+              <a href="subject.html#1605">[ subject ]</a>
+              <a href="author.html#1605">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

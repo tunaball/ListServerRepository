@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> need root help
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=need%20root%20help&In-Reply-To=list-13578737%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="014220.html">
+   <LINK REL="Next"  HREF="014222.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>need root help</H1>
+    <B>Kynan Shook</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=need%20root%20help&In-Reply-To=list-13578737%40mail.ninewire.com"
+       TITLE="need root help">kshook at cae.wisc.edu
+       </A><BR>
+    <I>Sat May 29 14:52:51 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="014220.html">[Ti] need root help
+</A></li>
+        <LI>Next message: <A HREF="014222.html">[Ti] need root help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14221">[ date ]</a>
+              <a href="thread.html#14221">[ thread ]</a>
+              <a href="subject.html#14221">[ subject ]</a>
+              <a href="author.html#14221">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>You have several options, Steve.
+I think the easiest one to work with is probably to enable the root 
+user, log in as such, and change the keyboard preference as the root 
+user.  Detailed steps:
+1. Open Netinfo Manager in the Utilities folder.  From the Security 
+menu, choose Enable Root User.  You will need to provide an 
+administrative password, and if the computer was initially set up with 
+no root password, you'll need to give it one too (otherwise, you'll 
+need to know the root password, or reset it if you don't).
+2. Log out.
+3. In the login window, choose &quot;Other...&quot; to log in as root, and type 
+the root password.
+4. Once you are logged in as root (the name in the menu bar will say 
+System Administrator, if you have fast user switching enabled), open 
+System Preferences, and disable all but your favorite keyboard layout 
+(in this case, US, but you could just as easily switch to anything else 
+your heart desires).
+5. Log out of root.
+6. Log in as your normal user; your preferred keyboard layout should 
+now work properly.  Make sure you know the right way to type your 
+password in this keyboard layout, or you'll have to reset your 
+password!
+7. Go back into NetInfo Manager and disable the root account (Security 
+menu, Disable Root User)
+8. There is no step eight!
+
+OK, so it's not *quite* as easy as getting an iMac on the Internet with 
+Jeff Goldblum's help, but it's not terribly difficult.  There are 
+several other ways to enable the root user, if you prefer; such as 
+&quot;dsenableroot -u username&quot; where username is the username (duh) of an 
+administrative account.  It will then prompt you first for that 
+account's password, and then prompt twice to confirm the root account's 
+password.
+
+While testing to make *sure* that this would work for you, I 
+encountered a problem; namely, after logging in as root the first time, 
+the &quot;Other...&quot; user no longer appeared in the accounts list!  This made 
+it a challenge to go back and set it to QWERTY again.  Going back into 
+NetInfo Manager to re-enable the root account had no effect, though it 
+didn't error out either.  However, if this happens to you, there is an 
+easy shortcut to get from the &quot;list of users&quot; view of accounts to the 
+&quot;name and password boxes&quot; view for the login window.  Press the down 
+arrow once to select a user (any one, doesn't matter), and then press 
+Option-Return; the window will transform to a name and password box.  
+Enter &quot;root&quot; as the user, and type the root password.
+
+I still haven't figured out exactly why this occurred - maybe a corrupt 
+XML file somewhere.  The root user is still enabled, as I can log in as 
+root using the above trick, but NetInfo Manager doesn't think it is 
+enabled.
+
+Anyway, I prefaced this with &quot;you have several options,&quot; so here are 
+the other ways I have heard of, but have not personally tried:
+Supposedly, TinkerTool can change the keyboard layout.  I didn't find 
+this setting in the current version of TinkerTool, though I found a 
+setting that allows you to change the default startup language in 
+TinkerTool System.  Anybody else had any luck with this?
+Also, I read a claim by a software author that his product, SetKbd, 
+could change this - however it looks more like it's automatically 
+setting the keyboard preference *after* you log in.
+URLs:
+<A HREF="http://www.bresink.de/osx/index.html">http://www.bresink.de/osx/index.html</A>
+<A HREF="http://www.jaw.it/pages/download.html">http://www.jaw.it/pages/download.html</A>
+
+
+I think you could also fix this with a clean OS install *without* 
+preserving users and network settings, and then copying the user data 
+from the Previous Systems folder.  Otherwise, it'll probably pick up 
+the same old keyboard settings that root had before.
+
+It's just a random guess, but the preferences file that stores this 
+information may be /Library/Preferences/com.apple.HIToolbox.plist, or 
+some similar file (just do a search for HIToolbox - there are also 
+HIToolbox plists in the ByHost folder).
+HTH,
+
+
+Steve Wozniak &lt;<A HREF="../../../mailman/listinfo/titanium.html">steve at woz.org</A>&gt; writes:
+&gt;<i> When I got a brand new 17&quot; Al, some time ago, I ran the initial 
+</I>&gt;<i> registration screen with a Dvorak keyboard layout selected.
+</I>&gt;<i>
+</I>&gt;<i> This computer belongs to an American (non Dvorak).
+</I>&gt;<i>
+</I>&gt;<i> She sets the only keyboard selection to be QWERTY.
+</I>&gt;<i>
+</I>&gt;<i> Upon certain actions, such as restarting or accessing &quot;About this Mac&quot; 
+</I>&gt;<i> the computer switches to Dvorak. But there's no guarantee that it will 
+</I>&gt;<i> happen right away. It's a quirky intermittant problem that keeps 
+</I>&gt;<i> coming up.
+</I>&gt;<i>
+</I>&gt;<i> The current work-around is to select both QWERTY and Dvorak keyboards 
+</I>&gt;<i> and switch in the menu (or with a keyboard shortcut).
+</I>&gt;<i>
+</I>&gt;<i> The Apple Store geniuses looked at it this week but had no solution. 
+</I>&gt;<i> They said that it was a root level problem. This problem has persisted 
+</I>&gt;<i> throughout system installations and updates. I couldn't swear whether 
+</I>&gt;<i> a clean install has been done or not, but it's likely.
+</I>&gt;<i>
+</I>&gt;<i> Does anyone have suggestions that really might fix this.
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="014220.html">[Ti] need root help
+</A></li>
+	<LI>Next message: <A HREF="014222.html">[Ti] need root help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14221">[ date ]</a>
+              <a href="thread.html#14221">[ thread ]</a>
+              <a href="subject.html#14221">[ subject ]</a>
+              <a href="author.html#14221">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

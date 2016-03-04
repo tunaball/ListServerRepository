@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Preparing to migrate to G4 MDD
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Preparing%20to%20migrate%20to%20G4%20MDD&In-Reply-To=list-10996559%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005977.html">
+   <LINK REL="Next"  HREF="005979.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Preparing to migrate to G4 MDD</H1>
+    <B>Joseph B. Gurman</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Preparing%20to%20migrate%20to%20G4%20MDD&In-Reply-To=list-10996559%40mail.ninewire.com"
+       TITLE="[G4] Preparing to migrate to G4 MDD">gurman at gsfc.nasa.gov
+       </A><BR>
+    <I>Sun Feb 22 11:08:08 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005977.html">Backing up DVD's, List Archive
+</A></li>
+        <LI>Next message: <A HREF="005979.html">[G4] Backing up DVD's
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5978">[ date ]</a>
+              <a href="thread.html#5978">[ thread ]</a>
+              <a href="subject.html#5978">[ subject ]</a>
+              <a href="author.html#5978">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>     Steven wrote:
+
+&gt;<i>I'm new to this list and soon I will be new to using a G4 Mac.
+</I>&gt;<i>I ordered a G4 Dual 1.25GHz Mac which will arrive in a week or two.
+</I>&gt;<i>
+</I>&gt;<i>I have a couple of questions while anticipating the migration.
+</I>&gt;<i>My old Mac has a SCSI drive that contains my user directory.
+</I>&gt;<i>I have to move this to the new G4. I was thinking of installing the
+</I>&gt;<i>drive into the G4. The question I have is does the SCSI card (Adaptec
+</I>&gt;<i>2940U2B) of the old mac work in the new one? The card originally came
+</I>&gt;<i>from a Blue &amp; White I believe. Is it safe to just try it? Do Blue and
+</I>&gt;<i>White and G4 MDD Macs have the same kind of PCI slots?
+</I>&gt;<i>
+</I>&gt;<i>My other question is about the harddrive in the new Mac. It is 80 Gig
+</I>&gt;<i>ATA drive. I'm thinking of adding a second drive of the same make and
+</I>&gt;<i>model to make a faster RAID volume. Anybody know what brand/type drive
+</I>&gt;<i>Apple fits in these Macs? Any chance of buying the same drive seperately
+</I>&gt;<i>in the market? Thanks,
+</I>
+     Unfortunately, according to Adaptec, the 2940U is not supported 
+under OS X on any machine (you don't make it clear whether you mean 
+to run OS 9 or OS X):
+
+<A HREF="http://www.adaptec.com/worldwide/product/markeditorial.html?sess=no&language=English+US&cat=%2fTechnology%2fMacintosh&prodkey=mac_osx_info">http://www.adaptec.com/worldwide/product/markeditorial.html?sess=no&amp;language=English+US&amp;cat=%2fTechnology%2fMacintosh&amp;prodkey=mac_osx_info</A>
+
+     If memory serves, this may even be one of the Adaptec cards that 
+literally prevents G4's from booting in OS X.
+
+     As a matter of personal experience, I would not recommend any 
+Adaptec product for any current or recent Mac running OS X. The page 
+above refers to support through OS  X 10.2.2 (a year ago?), and 
+nothing more recent. We had so much trouble with both disks and tapes 
+on Adaptec SCSO adapters that we gave up on the brand. Atto and 
+Initio are probably better ways to go, though my experience with 
+either under OS X is limited to tapes.
+
+     If all you need to do is transfer your files, though, an Ethernet 
+crossover cable should work, as should booting the G4 in FireWire 
+target disk mode when connected to one of the B&amp;W's FireWire ports. 
+In either case, it's just the cost of the cable (Ethernet or FireWire 
+400) vs. the cost of a new adapter.
+
+     As for the disk drive type, I suspect it varies over time, but 
+the &quot;80&quot; Gbyte drive in my 2 x 1 GHz MDD G4 responds thus to 
+&quot;system_profiler SPIDEDataType&quot; at the Terminal command line (one of 
+the nice features of 10.3 being the command line version of the 
+&quot;System Profiler:&quot;
+
+&gt;<i>     ATA-6 Bus:
+</I>&gt;<i>    
+</I>&gt;<i>       Vendor ID: 0x106b
+</I>&gt;<i>       Device ID: 0x0033
+</I>&gt;<i>       Revision ID: 0x0000
+</I>&gt;<i>    
+</I>&gt;<i>         IBM-IC35L080AVVA07-0:
+</I>&gt;<i>        
+</I>&gt;<i>           Capacity: 76.69 GB
+</I>&gt;<i>           Model: IBM-IC35L080AVVA07-0
+</I>&gt;<i>           Revision: VA4BA52A
+</I>&gt;<i>           Serial Number: VNC4&lt;&amp;c, &amp;c.&gt;
+</I>&gt;<i>           Removable Media: No
+</I>&gt;<i>           Detachable Drive: No
+</I>&gt;<i>           BSD Name: disk0
+</I>&gt;<i>           Protocol: ATA
+</I>&gt;<i>           Unit Number: 0
+</I>&gt;<i>           Socket Type: Internal
+</I>&gt;<i>           OS9 Drivers: Yes
+</I>&gt;<i>        
+</I>&gt;<i>             Mom's disk:
+</I>&gt;<i>            
+</I>&gt;<i>               Capacity: 76.69 GB
+</I>&gt;<i>               Available: 66.42 GB
+</I>&gt;<i>               Writable: Yes
+</I>&gt;<i>               File System: Journaled HFS+
+</I>&gt;<i>               BSD Name: disk0s5
+</I>&gt;<i>               Mount Point: /
+</I>
+     So the drive is a Hitachi (formerly IBM) product. I purchased 
+another, presumably identical drive, and have it in the machine (on 
+the other bus).
+
+     I would very much suggest getting used to the convenience of 
+inexpensive, ATA devices. Unless you are planning on doing 
+direct-to-disk, uncompressed, digital video, you may be happy enough 
+the with speed of the ATA controllers on the G4, and not need a RAID.
+
+     HTH,
+
+						Joe Gurman
+-- 
+&quot;I love deadlines. I love the whooshing sound they make as they go by.&quot;
+                                                             - Douglas 
+Adams, 1952 - 2001
+
+Joseph B. Gurman, NASA Goddard Space Flight Center, Solar Physics
+Branch, Greenbelt MD 20771 USA
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005977.html">Backing up DVD's, List Archive
+</A></li>
+	<LI>Next message: <A HREF="005979.html">[G4] Backing up DVD's
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5978">[ date ]</a>
+              <a href="thread.html#5978">[ thread ]</a>
+              <a href="subject.html#5978">[ subject ]</a>
+              <a href="author.html#5978">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

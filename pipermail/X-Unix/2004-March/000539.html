@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Hiding apps from the command line
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11726663%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000538.html">
+   <LINK REL="Next"  HREF="000540.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Hiding apps from the command line</H1>
+    <B>Michael Grant</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11726663%40mail.ninewire.com"
+       TITLE="[X-Unix] Hiding apps from the command line">soft at bdanube.com
+       </A><BR>
+    <I>Fri Mar 26 08:28:07 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000538.html">[X-Unix] Hiding apps from the command line
+</A></li>
+        <LI>Next message: <A HREF="000540.html">[X-Unix] Hiding apps from the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#539">[ date ]</a>
+              <a href="thread.html#539">[ thread ]</a>
+              <a href="subject.html#539">[ subject ]</a>
+              <a href="author.html#539">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Mar 26, 2004, at 6:15 AM, Eugene Lee wrote:
+
+&gt;<i> 	#!/bin/sh
+</I>&gt;<i> 	osascript &lt;&lt;END
+</I>&gt;<i> 	      tell application &quot;Finder&quot;
+</I>&gt;<i> 	      if exists application process &quot;$1&quot; then
+</I>&gt;<i> 		    set visible of application process &quot;$1&quot; to false
+</I>&gt;<i> 	      end if
+</I>&gt;<i> 	      end tell
+</I>&gt;<i> 	END
+</I>
+I'm getting &quot;cannot execute binary file&quot; here. I checked and the script 
+file is executable for all users. Line endings are Unix. No one else 
+seems to be having this problem--any idea what might be wrong?
+
+BTW in this line:
+
+&gt;<i>    if &quot;$1&quot; is &quot;a&quot;
+</I>&gt;<i>         set visible of every process whose visible is true and name is 
+</I>&gt;<i> not &quot;Finder&quot; and name is not &quot;$1&quot; to false
+</I>
+shouldn't the second occurrence of $1 actually be $2?
+
+Michael
+
+
+-- 
+katerihwai&#233;nstha'
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000538.html">[X-Unix] Hiding apps from the command line
+</A></li>
+	<LI>Next message: <A HREF="000540.html">[X-Unix] Hiding apps from the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#539">[ date ]</a>
+              <a href="thread.html#539">[ thread ]</a>
+              <a href="subject.html#539">[ subject ]</a>
+              <a href="author.html#539">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

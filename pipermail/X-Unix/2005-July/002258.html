@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Networking &quot;guru&quot; needed, dialin PPP not working
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Networking%20%22guru%22%20needed%2C%20dialin%20PPP%20not%20working&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002256.html">
+   <LINK REL="Next"  HREF="002259.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Networking &quot;guru&quot; needed, dialin PPP not working</H1>
+    <B>Timothy Luoma</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Networking%20%22guru%22%20needed%2C%20dialin%20PPP%20not%20working&In-Reply-To="
+       TITLE="[X-Unix] Networking &quot;guru&quot; needed, dialin PPP not working">lists at tntluoma.com
+       </A><BR>
+    <I>Sun Jul 10 19:13:54 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002256.html">[X-Unix] Trashed Receipts (was: X11 issues)
+</A></li>
+        <LI>Next message: <A HREF="002259.html">[X-Unix] Networking &quot;guru&quot; needed, dialin PPP not working
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2258">[ date ]</a>
+              <a href="thread.html#2258">[ thread ]</a>
+              <a href="subject.html#2258">[ subject ]</a>
+              <a href="author.html#2258">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+I have a very strange situation going on which has exhausted my  
+knowledge of what to try.  I am desperately hoping that someone with  
+Unix networking will have a solution, or at least some ideas.
+
+My office LAN is a DSL connection hooked to a Linksys router
+
+                                           |----Office 1 (192.168.1.31)
+DSL --- Linksys Router ----|
+               192.168.1.1         |----Office 2 (192.168.1.32)
+                                           |
+                                           |----Office 3  (192.168.1.33)
+                                           |
+                                           |------My Office ----  
+another Linksys router (B)
+                                                                         
+                      |
+                                                                         
+                      |
+                                                                         
+   |---------------|--------------|
+                                                                         
+   |                                    |
+                                                                         
+   |                                    |
+                                                                         
+   |                                    |
+                                                                      
+FreeBSD                        Powerbook (when at office)
+                                                                   
+(192.168.1.200)
+
+
+The 2nd Linksys router (B) has the network cable plugged into one of  
+the 4 LAN ports, i.e. it is not seen as a hub, it just acts as an  
+&quot;extension cord&quot; letting me plug in 2 machines into the LAN.
+
+The FreeBSD machine is hooked to a phone line which has 'pppd' and  
+'mgetty' setup for dial IN access.  When my Powerbook (running Tiger/ 
+10.4.1) is at home, I dial in to the office network and get an IP of  
+192.168.1.x from the FreeBSD machine.
+
+Here is the problem:
+
+The majority of the time when I dial in to the FreeBSD machine, I  
+cannot access the Internet.  In fact, usually I cannot even ping the  
+router (192.168.1.1).  I can ALWAYS ping the FreeBSD machine, but I  
+cannot ssh into it (the ssh process dies somewhere between lines 4  
+and 5 below, after some time in limbo where nothing seems to happen)
+
+1    debug1: SSH2_MSG_SERVICE_ACCEPT received
+2    debug2: key: /Users/tim/.ssh/identity (0x3006d0)
+3    debug2: key: /Users/tim/.ssh/id_dsa (0x306f80)
+4    debug2: key: /Users/tim/.ssh/id_rsa (0x306fd0)
+5    debug1: Authentications that can continue: publickey,keyboard- 
+interactive
+
+(step 5 shows a successful connection, usually (when it fails) after  
+step 4 I see &quot;connection closed to 192.168.1.200&quot;)
+
+Here's the real mystery.  If I leave the connection up and running  
+and wait, somewhere between 2 minutes and 30 minutes later the  
+connection will &quot;come alive&quot; and suddenly it will work flawlessly.
+
+I can sometimes seem to &quot;wake up&quot; the connection by trying to make  
+connections (ssh, fetch mail, ichat).
+
+It seems to me (although this is just a guess) that SOMETHING is not  
+being initialized properly when the dialin connection is made, but it  
+takes awhile for it to get all sorted out.
+
+The problem is that I have no idea where the problem is or what I  
+should be trying to solve this problem.
+
+
+Any help or even educated guesses would be appreciated.
+
+TjL
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002256.html">[X-Unix] Trashed Receipts (was: X11 issues)
+</A></li>
+	<LI>Next message: <A HREF="002259.html">[X-Unix] Networking &quot;guru&quot; needed, dialin PPP not working
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2258">[ date ]</a>
+              <a href="thread.html#2258">[ thread ]</a>
+              <a href="subject.html#2258">[ subject ]</a>
+              <a href="author.html#2258">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Setting Page Type/Quality
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Setting%20Page%20Type/Quality&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001009.html">
+   <LINK REL="Next"  HREF="001011.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Setting Page Type/Quality</H1>
+    <B>Dan Frakes</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Setting%20Page%20Type/Quality&In-Reply-To="
+       TITLE="[X-Unix] Setting Page Type/Quality">lists at frakes.org
+       </A><BR>
+    <I>Wed Jun 30 12:33:44 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001009.html">[X-Unix] Temp Telnet Activation
+</A></li>
+        <LI>Next message: <A HREF="001011.html">Script - works, but not where I need it to
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1010">[ date ]</a>
+              <a href="thread.html#1010">[ thread ]</a>
+              <a href="subject.html#1010">[ subject ]</a>
+              <a href="author.html#1010">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>James Bucanek &lt;<A HREF="../../../mailman/listinfo/x-unix.html">subscriber at gloaming.com</A>&gt; wrote:
+&gt;&gt;<i>I have tried to change this via <A HREF="http://127.0.0.1:631">http://127.0.0.1:631</A> &gt; do=20
+</I>&gt;&gt;<i>administration task&gt; at this point you password is required in earlier=20
+</I>&gt;&gt;<i>version of Panther &amp; Jaguar this never happened.
+</I>&gt;<i>
+</I>&gt;<i> A security patch (sometime this year) added password authentication to the =
+</I>&gt;<i> admin section of the cups web interface. Unfortunately, cups doesn't seem =
+</I>&gt;<i> to be plugged into NetInfo, so none of your user account passwords will wor=
+</I>&gt;<i> k. Which I suppose makes it pretty darn secure, but not very convenient. =
+</I>&gt;<i> ;)
+</I>
+It was Security Update 2004-04-05 that added &lt;Limit&gt; authentication to
+cupsd.conf.
+
+For those interested in the details, the issue is that the version of CUPS
+currently shipping in OS X doesn't understand the new ShadowHash password
+format of Panther. If you have older accounts, created under Jaguar or
+earlier, that haven't had their passwords updated to Panther's ShadowHash
+format (which occurs when you change your password under Panther), those
+accounts should work with the new CUPS authentication. However, any accounts
+created under Panther, or created under earlier versions of OS X but since
+updated to the new password format, will not be accepted by CUPS'
+authentication dialog. (This is why some users have discovered that some of
+their accounts work but others don't.)
+
+This is a known bug and Apple has already submitted fixes to Easy Software
+Products for inclusion in future versions of CUPS, which should be provided
+with future updates to OS X. (This according to Mac Daily Journal.)
+
+James already provided one solution: to comment out (or remove) the &lt;Limit&gt;
+property in the cupsd.conf file. You could also revert to
+/etc/cups/confd.conf.applesaved, which is the older version of your
+cupsd.conf file from before Security Update 2004-04-05. Finally, if you want
+a challenge, you could revert all your passwords to the previous password
+format ;-)
+
+
+-- 
+----------------------------------
+Get some Mac OS X Power Tools:
+Second Edition available now!
+&lt;<A HREF="http://www.MacOSXPowerTools.com/">http://www.MacOSXPowerTools.com/</A>&gt;
+----------------------------------
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001009.html">[X-Unix] Temp Telnet Activation
+</A></li>
+	<LI>Next message: <A HREF="001011.html">Script - works, but not where I need it to
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1010">[ date ]</a>
+              <a href="thread.html#1010">[ thread ]</a>
+              <a href="subject.html#1010">[ subject ]</a>
+              <a href="author.html#1010">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

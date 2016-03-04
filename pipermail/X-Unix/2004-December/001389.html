@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] BASH problem?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20BASH%20problem%3F&In-Reply-To=C073AFFD-48B0-11D9-9C38-000A27E399B0%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001385.html">
+   <LINK REL="Next"  HREF="001391.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] BASH problem?</H1>
+    <B>Xavier Noria</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20BASH%20problem%3F&In-Reply-To=C073AFFD-48B0-11D9-9C38-000A27E399B0%40mac.com"
+       TITLE="[X-Unix] BASH problem?">fxn at hashref.com
+       </A><BR>
+    <I>Tue Dec  7 16:54:17 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001385.html">[X-Unix] BASH problem?
+</A></li>
+        <LI>Next message: <A HREF="001391.html">[X-Unix] BASH problem?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1389">[ date ]</a>
+              <a href="thread.html#1389">[ thread ]</a>
+              <a href="subject.html#1389">[ subject ]</a>
+              <a href="author.html#1389">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Dec 8, 2004, at 1:33 AM, Russell McGaha wrote:
+
+&gt;<i> Start of script segment
+</I>&gt;<i>
+</I>&gt;<i> #!/bin/tcsh -x
+</I>&gt;<i>
+</I>&gt;<i> set Myday = `date '+%a'`
+</I>&gt;<i> echo $Myday `date` | tee -a tempfile
+</I>&gt;<i> setenv CVSROOT :pserver:<A HREF="../../../mailman/listinfo/x-unix.html">anonymous at cvs-mirror.mozilla.org</A>:/cvsroot
+</I>&gt;<i>
+</I>&gt;<i> end of script segment
+</I>&gt;<i>
+</I>&gt;<i> errors
+</I>&gt;<i>
+</I>&gt;<i> [18:30:21 Tue Dec 07] [localhost:~] russellm$source MozScript1d.txt
+</I>&gt;<i> Tue Dec 7 18:30:53 CST 2004
+</I>&gt;<i> -bash: setenv: command not found
+</I>&gt;<i> -bash: @: command not found
+</I>&gt;<i> -bash: MozScript1d.txt: line 16: syntax error near unexpected token 
+</I>&gt;<i> `else'
+</I>&gt;<i> -bash: MozScript1d.txt: line 16: `       else'
+</I>
+The problem is that &quot;source&quot; tells your current shell to interpret the 
+file (with some additional details which may not be important now).
+
+Just give execution permissions:
+
+     chmod u+x filename
+
+and execute it:
+
+     ./filename
+
+Unless &quot;source&quot; was used on purpose because of those additional 
+details. In such case you'd need to port the script to bash.
+
+-- fxn
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001385.html">[X-Unix] BASH problem?
+</A></li>
+	<LI>Next message: <A HREF="001391.html">[X-Unix] BASH problem?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1389">[ date ]</a>
+              <a href="thread.html#1389">[ thread ]</a>
+              <a href="subject.html#1389">[ subject ]</a>
+              <a href="author.html#1389">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

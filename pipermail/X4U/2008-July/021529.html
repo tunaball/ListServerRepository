@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Why does anybody ever get a USB external hard drive?
+	snipped for size
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Why%20does%20anybody%20ever%20get%20a%20USB%20external%20hard%20drive%3F%0A%09snipped%20for%20size&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="021547.html">
+   <LINK REL="Next"  HREF="021536.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Why does anybody ever get a USB external hard drive?
+	snipped for size</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Why%20does%20anybody%20ever%20get%20a%20USB%20external%20hard%20drive%3F%0A%09snipped%20for%20size&In-Reply-To="
+       TITLE="[X4U] Why does anybody ever get a USB external hard drive?
+	snipped for size">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Wed Jul  9 14:56:13 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="021547.html">[X4U] Cheap Source for .mac
+</A></li>
+        <LI>Next message: <A HREF="021536.html">[X4U] Why does anybody ever get a USB external hard drive?
+	snipped for size
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#21529">[ date ]</a>
+              <a href="thread.html#21529">[ thread ]</a>
+              <a href="subject.html#21529">[ subject ]</a>
+              <a href="author.html#21529">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>From: &quot;John F. Richardson&quot; &lt;<A HREF="../../../mailman/listinfo/x4u.html">richards at spawar.navy.mil</A>&gt;
+</I>&gt;<i>My answer. Price is the main reason.
+</I>
+And availability. Non-Apple shops sell USB only, and if you need a 
+drive now rather than wait till next time you're in a town with an 
+Apple shop that sells FW drives, you'll end up with USB. That's why I 
+have a few USB drives.
+
+&gt;<i>Assumption: an external hard drive is an internal hard drive in a case with
+</I>&gt;<i>various ports.
+</I>
+Of some quality. May only be PC desktop quality; may be PC server 
+quality if you pay for it. May even be XServe / high-end server 
+quality - if you pay a lot.
+
+&gt;<i>I see various drives.
+</I>&gt;<i>Drive 1 is obsolete except for dirt cheap drives.
+</I>
+But Drive 1 is what high street stores sell, mainly (at least in the UK).
+
+&gt;<i>Drive 1: USB 2
+</I>&gt;<i>Drive 2: USB 2, FW400
+</I>&gt;<i>Drive 3: USB 2, FW400, FW800
+</I>&gt;<i>Drive 4: USB 2, FW400, FW800, eSata
+</I>&gt;<i>So, the box specs indicate eSata &gt; FW800 &gt; FW400 &gt; USB 2 [oops, maybe USB 2
+</I>&gt;<i>is close to FW400...I forget]. But assume above is true.
+</I>&gt;<i>Q 1: What internal drive mechanism is in these drives?
+</I>&gt;<i>If a standard IDE drive mechanism, then I claim that USB 2 is
+</I>&gt;<i>just as good as any other. You pay more to have the ports included.
+</I>&gt;<i>Before eSata, I suspect that this was true.
+</I>
+FW is always better than USB. Whatever rate the bits come/go down the 
+wire, with FW the interface dumps/collects the data directly 
+into/from system memory; with USB the CPU has to stop what it's 
+doing, save state, copy the next byte (or 2 or 4 or 8 ... 4k bytes) 
+from/to the interface to/from system memory, restore state, and 
+continue what it was doing each time a byte (2, 4, 8, ..., 4k) 
+arrives/can be sent. Don't know what the number is, or if it's fixed 
+or variable. I've never written a USB driver.
+
+&gt;<i>Definition: native transfer rates = transfer rate from magnetic 
+</I>&gt;<i>storage media sectors to the port.
+</I>
+This is in two parts. The transfer rate from medium to some internal 
+buffer is always storage bit density x rotational speed. It's the 
+transfer from that buffer to the port that can vary. Most drives have 
+a several MB buffer that is used as a queue, which complicates 
+matters. The drive may also do read-ahead into this buffer, which 
+means some data is available immediately and some requires a seek and 
+a data transfer. Similarly, some write requests may be satisfied by 
+writing to the big buffer, giving 'instant write'; some require the 
+data to go to medium before a write is complete. This is on top of 
+'buffered i/o' within the system.
+
+&gt;<i>So, if drive 4 really has an internal storage mechanism that has 
+</I>&gt;<i>native transfer rates that match the eSata specs, then Drive 4 is 
+</I>&gt;<i>the best.
+</I>
+Not all drive boxes with external eSata use Sata drives inside. I've 
+seen one review where this was pointed out as a bad mark.
+
+&gt;<i>But what about 1, 2 &amp; 3? Do they have an internal mechanism with 
+</I>&gt;<i>native transfer rates in the eSata range? Then it is price. Is the 
+</I>&gt;<i>discount worth it?
+</I>
+The board that hangs on the side of the drive is what controls the 
+drive buffering and the drive i/o method. You can't get better than 
+that whatever you bridge to.
+
+&gt;<i>If 1, 2 and 3 have an internal mechanism with native transfer rates 
+</I>&gt;<i>from the storage (seek, latency, cache, etc.,...) to the port 
+</I>&gt;<i>(USB2,FW400/800) then YES .. there is no reason to have a USB 2 
+</I>&gt;<i>drive except price and you get what you pay for.
+</I>
+Except FW is always better than USB.
+
+&gt;<i>So, is there any way to verify the native transfer rates? I have 
+</I>&gt;<i>been assuming that all FW drives just have a bridge chipset that 
+</I>&gt;<i>converts IDE mechanism data streams to use USB/FW protocols. I 
+</I>&gt;<i>believe that the vast majority of original consumer FW drives, even 
+</I>&gt;<i>in 2005 or 2006 had IDE disks inside a case with a bridge chip. I 
+</I>&gt;<i>hope I'm wrong.
+</I>
+You'd be right. Before eSata there only was IDE and SCSI in the 
+market range. No-one made drive boards with native FW or USB as far 
+as I know. They all required a bridge. The market would be too small. 
+Most drives end up as internal PC drives, so IDE (and now Sata) is 
+fine.
+
+&gt;<i>Please list at least the LaCie native rates for FW drives in 
+</I>&gt;<i>2005-2008 time frame. I have asked this (in various forms) several 
+</I>&gt;<i>times over the last two years and never received an answer even for 
+</I>&gt;<i>just one brand name. What are the drives that actually pump data at 
+</I>&gt;<i>FW800 speeds? Any URL's?
+</I>
+There probably isn't an answer to the first bit. It may well change 
+from batch to batch as different drives are used. For genuine 
+sustained FW800 speeds I'd look at the small drive arrays with 
+several drives RAIDed together with RAID5. RAID0 may do it, but I've 
+never liked the reduced reliability. No-one seems to do RAID5 over 5 
+drives, which is the simplest, most logical solution.
+
+&gt;<i>FW was extremely useful for video transfer from camera / high speed device
+</I>&gt;<i>to high performance SCSI or &quot;native FW class&quot; hard disks.
+</I>
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+HP-UX specialist of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x4u.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="021547.html">[X4U] Cheap Source for .mac
+</A></li>
+	<LI>Next message: <A HREF="021536.html">[X4U] Why does anybody ever get a USB external hard drive?
+	snipped for size
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#21529">[ date ]</a>
+              <a href="thread.html#21529">[ thread ]</a>
+              <a href="subject.html#21529">[ subject ]</a>
+              <a href="author.html#21529">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

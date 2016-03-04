@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [CUBE] AW: [CUBE] OSX Server on Cube
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20AW%3A%20%5BCUBE%5D%20OSX%20Server%20on%20Cube&In-Reply-To=list-4664245%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001865.html">
+   <LINK REL="Next"  HREF="001867.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[CUBE] AW: [CUBE] OSX Server on Cube</H1>
+    <B>Erik Ableson</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20AW%3A%20%5BCUBE%5D%20OSX%20Server%20on%20Cube&In-Reply-To=list-4664245%40mail.ninewire.com"
+       TITLE="[CUBE] AW: [CUBE] OSX Server on Cube">eableson at mac.com
+       </A><BR>
+    <I>Fri Jan 31 00:42:54 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001865.html">[CUBE] OT: Safari (hotmail bites)
+</A></li>
+        <LI>Next message: <A HREF="001867.html">Temperature measurements?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1866">[ date ]</a>
+              <a href="thread.html#1866">[ thread ]</a>
+              <a href="subject.html#1866">[ subject ]</a>
+              <a href="author.html#1866">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> I understand, but couldn't standard 10.2.3 also netboot, integrate 
+</I>&gt;<i> with LDAP, or itself be an LDAP server, be a passwd server, home 
+</I>&gt;<i> directory server, etc?
+</I>
+netboot server: no**
+ldap server: yes
+ldap server for netinfo dB: no
+password server: no
+home directory server: yes*
+
+* that is the directories could be hosted, but an authoritative Netinfo 
+domain server would be required to instruct the client where to find 
+these.
+** that is the software isn't available to install on 10.x client
+
+Could all of this software run on 10.2.3 client? Yes since there's no 
+difference in the underlying OS but you can't get most of it separately.
+
+Oh, and WebObjects for pre v5.2 required OS X Server for the deployment 
+package.  I'm not sure about whether that restriction still applies 
+since it is 100% pure java and should be able to run anywhere but the 
+installer used to require Server.  I suspect that it would take a lot 
+of hacking to get that to work on client but could be done.
+
+Towards most of the questions regarding Server vs. Client the simple 
+answer to which to choose is:
+
+Are you building an internet only server?  If yes, then Client will 
+probably do everything you need, with perhaps a little more tinkering 
+at the command line that you'd need to do on Server. (but only a 
+little).  If you want an easy internet server setup with everything 
+ready to go and nice management interfaces then Server is for you.
+
+Is this a Server required to manage the security for multiple other 
+Macs? If yes, then Server is what you need in order to be able to do 
+force clients to netboot, create access policies etc.
+
+There's a whole slew of other pieces that should go into making that 
+decision BTW, but at the base level that's where I'd start.
+
+Cheers,
+
+Erik
+
+&gt;<i> On Thursday, January 30, 2003, at 09:18 AM, Erik Ableson wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> he NetInfo integration with the ability to build hierarchical 
+</I>&gt;&gt;<i> authentication and authorization structures encompassing multiple 
+</I>&gt;&gt;<i> regions of authority, LDAP integration, password server, netboot 
+</I>&gt;&gt;<i> capabilities etc are really very cool.
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001865.html">[CUBE] OT: Safari (hotmail bites)
+</A></li>
+	<LI>Next message: <A HREF="001867.html">Temperature measurements?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1866">[ date ]</a>
+              <a href="thread.html#1866">[ thread ]</a>
+              <a href="subject.html#1866">[ subject ]</a>
+              <a href="author.html#1866">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

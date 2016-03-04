@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Show Hard drive when sharing with windows OT
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Show%20Hard%20drive%20when%20sharing%20with%20windows%20OT&In-Reply-To=061705BA-5EB9-11D9-B214-00039301ACF8%40astcomm.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="015507.html">
+   <LINK REL="Next"  HREF="015500.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Show Hard drive when sharing with windows OT</H1>
+    <B>Chris Olson</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Show%20Hard%20drive%20when%20sharing%20with%20windows%20OT&In-Reply-To=061705BA-5EB9-11D9-B214-00039301ACF8%40astcomm.net"
+       TITLE="[Ti] Show Hard drive when sharing with windows OT">chris.olson at astcomm.net
+       </A><BR>
+    <I>Tue Jan  4 21:20:03 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="015507.html">[Ti] Show Hard drive when sharing with windows OT
+</A></li>
+        <LI>Next message: <A HREF="015500.html">[Ti] Superdrive for Titantium 500?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15508">[ date ]</a>
+              <a href="thread.html#15508">[ thread ]</a>
+              <a href="subject.html#15508">[ subject ]</a>
+              <a href="author.html#15508">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Jan 4, 2005, at 7:27 PM, Chris Olson wrote:
+
+&gt;<i> Mac OS X Hint of week:
+</I>&gt;<i> For advanced configuration of Samba, use SWAT (Samba Web 
+</I>&gt;<i> Administration Tool).
+</I>
+There's a caveat to this little hint.  Apple broke SWAT in the latest 
+incarnations of Panther as I've come to find out.  I got a couple 
+emails already telling me it don't work.  Went to my PowerMac G5 to 
+check it out, which has never had SWAT enabled on it, and by ding golly 
+gee it don't work.
+
+So I did a little poking around to see what Apple broke this time, and 
+here's how to fix it (in addition to my initial instructions):
+Open a Terminal window and either type or drag n drop this command in 
+it:
+cp /etc/xinetd.conf ~/Desktop
+
+Open the file with TextEdit and append the following to it:
+
+  service swat
+  {
+  port = 901
+  socket_type = stream
+  wait = no
+  only_from = localhost
+  user = root
+  server = /usr/sbin/swat
+  server_args = -a
+  log_on_failure += USERID
+  groups = yes
+  disable = no
+  }
+
+Save the file and drag n drop this command into the Terminal window:
+sudo cp ~/Desktop/xinetd.conf /etc/
+
+Drag n drop this command into Terminal:
+ps -ax | grep xinetd
+
+You'll see the xinetd process running there, it'll have a PID (Process 
+ID) number, and you have to kill it.  To kill it type in:
+kill -9 whatever the pid number is
+
+Then drag n drop this command into Terminal, which will restart xinetd. 
+  Alternatively, you can reboot the box:
+xinetd with /usr/sbin/xinetd -inetd_compat -pidfile /var/run/xinetd.pid
+
+Now you'll be able to log in to Samba at <A HREF="http://127.0.0.1:901">http://127.0.0.1:901</A> from 
+localhost only without need to authenticate.
+
+As shown in my nifty little screenshot here:
+<A HREF="http://astcomm.net/~chris.olson/temp/Samba.jpg">http://astcomm.net/~chris.olson/temp/Samba.jpg</A>
+you click on the Shares button to create a new network share.  The guy 
+who started this thread wanted to be able to share all the files on the 
+hard disk instead of just home directories.  So you have to create the 
+Shares.  You create one called 'root' (or whatever you want to call 
+it).  This will bring up another dialog with all the options you can 
+set for that share (like who can access it, etc.).  For the path on 
+this share you use a single forward slash ( / ) which is the Unix 
+symbol for root.  Just like magic, you'll be able to share all the 
+files on the system with that root share.
+
+I don't think this is all that secure myself, but then like 90% of the 
+computing populace runs Windows which has a lot more swiss cheese holes 
+in it than this, so use at your own risk.
+--
+Chris
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="015507.html">[Ti] Show Hard drive when sharing with windows OT
+</A></li>
+	<LI>Next message: <A HREF="015500.html">[Ti] Superdrive for Titantium 500?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15508">[ date ]</a>
+              <a href="thread.html#15508">[ thread ]</a>
+              <a href="subject.html#15508">[ subject ]</a>
+              <a href="author.html#15508">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

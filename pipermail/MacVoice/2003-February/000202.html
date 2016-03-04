@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MV] Re: text to speech to mp3/audio cd
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macvoice%40listserver.themacintoshguy.com?Subject=%5BMV%5D%20Re%3A%20text%20to%20speech%20to%20mp3/audio%20cd&In-Reply-To=list-5014684%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000201.html">
+   <LINK REL="Next"  HREF="000203.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MV] Re: text to speech to mp3/audio cd</H1>
+    <B>Chuck Rogers</B> 
+    <A HREF="mailto:macvoice%40listserver.themacintoshguy.com?Subject=%5BMV%5D%20Re%3A%20text%20to%20speech%20to%20mp3/audio%20cd&In-Reply-To=list-5014684%40mail.ninewire.com"
+       TITLE="[MV] Re: text to speech to mp3/audio cd">theChuck at mac.com
+       </A><BR>
+    <I>Mon Feb 17 22:26:24 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000201.html">[MV] Re: text to speech to mp3/audio cd
+</A></li>
+        <LI>Next message: <A HREF="000203.html">PC Equivalent of English Speech Recognition?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#202">[ date ]</a>
+              <a href="thread.html#202">[ thread ]</a>
+              <a href="subject.html#202">[ subject ]</a>
+              <a href="author.html#202">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Randy (and everyone else):
+
+&quot;message_text&quot; is a variable that needs to be replaced with what you 
+want spoken. Try this instead:
+
+	property default_voice : &quot;Bruce&quot;
+	property target_file : &quot;drive1:test:testAUDIO.aiff&quot;
+
+	set message_text to &quot;Hello World!&quot;
+	say &quot;[[rate 300]]&quot; &amp; message_text using default_voice --saving to 
+target_file
+
+The script above will actually speak the text, which is the first thing 
+you should do to make sure it is working properly. To make it save in a 
+file, you would need to populate the other variable, which is 
+&quot;target_file,&quot; like this:
+
+	property default_voice : &quot;Bruce&quot;
+	property target_file : &quot;drive1:test:testAUDIO.aiff&quot;
+
+	set message_text to &quot;Hello World!&quot;
+	set target_file to &quot;Test Message&quot;
+	say &quot;[[rate 300]]&quot; &amp; message_text using default_voice saving to 
+target_file
+
+This will save an audio file on the main level of your hard drive 
+called &quot;Test Message.&quot;
+
+Hope this helps.
+
+Chuck Rogers
+CommandSets.com
+
+On Monday, February 17, 2003, at 11:51  PM, Randy Decker wrote:
+
+&gt;<i> I would really like to run this script. I tried the script below but 
+</I>&gt;<i> it returned an error. Do you have a reference for the script.
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000201.html">[MV] Re: text to speech to mp3/audio cd
+</A></li>
+	<LI>Next message: <A HREF="000203.html">PC Equivalent of English Speech Recognition?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#202">[ date ]</a>
+              <a href="thread.html#202">[ thread ]</a>
+              <a href="subject.html#202">[ subject ]</a>
+              <a href="author.html#202">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macvoice.html">More information about the MacVoice
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

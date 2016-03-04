@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] shell alias in bash
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20shell%20alias%20in%20bash&In-Reply-To=list-12950385%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000820.html">
+   <LINK REL="Next"  HREF="000822.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] shell alias in bash</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20shell%20alias%20in%20bash&In-Reply-To=list-12950385%40mail.ninewire.com"
+       TITLE="[X-Unix] shell alias in bash">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Sun May 23 10:17:45 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000820.html">[X-Unix] shell alias in bash
+</A></li>
+        <LI>Next message: <A HREF="000822.html">mail.app and clamav?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#821">[ date ]</a>
+              <a href="thread.html#821">[ thread ]</a>
+              <a href="subject.html#821">[ subject ]</a>
+              <a href="author.html#821">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On May 23, 2004, at 1:46 am, R. Welz wrote:
+&gt;<i>
+</I>&gt;<i> In .bash_profile I had defined two aliasis (?)
+</I>&gt;<i> alias top='top -u'
+</I>&gt;<i> alias topold='top'
+</I>
+`man top` says:
+
+        ...The default key for sorting is pid,  but  other  keys
+        can be used instead.  Various output options are available.
+
+OPTIONS
+        Command  line  option  specifications are processed from left to 
+right.
+        Options can be specified more than once.  If  conflicting  
+options  are
+        specified,  later  specifications override earlier ones.  This 
+makes it
+        viable to create a shell alias for top with preferred  defaults  
+speci-
+        fied,  then override those preferred defaults as desired on the 
+command
+        line.
+...
+        -u     Deprecated, equivalent to -ocpu -Otime.
+
+
+
+Therefore:
+   alias top='top -ocpu -Otime'
+   alias topold='top -opid'
+
+Perhaps `topold` will alias to `top -ocpu -Otime -opid`, but this 
+doesn't matter, as the -opid will over-ride the -ocpu.
+
+HTH,
+
+Stroller.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000820.html">[X-Unix] shell alias in bash
+</A></li>
+	<LI>Next message: <A HREF="000822.html">mail.app and clamav?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#821">[ date ]</a>
+              <a href="thread.html#821">[ thread ]</a>
+              <a href="subject.html#821">[ subject ]</a>
+              <a href="author.html#821">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

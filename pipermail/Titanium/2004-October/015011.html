@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] apop and Panther Mail.app
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20apop%20and%20Panther%20Mail.app&In-Reply-To=55657C00-150B-11D9-91F0-00039301ACF8%40astcomm.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="015010.html">
+   <LINK REL="Next"  HREF="015012.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] apop and Panther Mail.app</H1>
+    <B>Justin R.Miller</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20apop%20and%20Panther%20Mail.app&In-Reply-To=55657C00-150B-11D9-91F0-00039301ACF8%40astcomm.net"
+       TITLE="[Ti] apop and Panther Mail.app">incanus at codesorcery.net
+       </A><BR>
+    <I>Sun Oct  3 06:51:42 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="015010.html">[Ti] apop and Panther Mail.app
+</A></li>
+        <LI>Next message: <A HREF="015012.html">[Ti] apop and Panther Mail.app
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15011">[ date ]</a>
+              <a href="thread.html#15011">[ thread ]</a>
+              <a href="subject.html#15011">[ subject ]</a>
+              <a href="author.html#15011">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Oct 3, 2004, at 3:10 AM, Chris Olson wrote:
+
+&gt;<i> When the initial connection is made to a POP server, the server 
+</I>&gt;<i> displays a timestamp in its banner.  The client uses this timestamp to 
+</I>&gt;<i> create an MD5 hash string that is shared between the server and 
+</I>&gt;<i> client.  The next time the client connects to the server (e.g., to 
+</I>&gt;<i> check for new mail) it will issue a command (APOP) and the hash 
+</I>&gt;<i> string.  This reduces the number of times that a user's userid and 
+</I>&gt;<i> password are transmitted in clear text.
+</I>
+To clarify, I believe the challenge-response differs on each login and 
+is based on a combination of the date/time and the user's password, but 
+done in a way so that the user never has to send their actual password 
+over the wire, but instead proves that they know it by complementing 
+the server's hash.  That way they never have to send their password in 
+clear text, not once.
+
+&gt;<i> Tell your friend to tell the ISP's tech support person to get a clue, 
+</I>&gt;<i> and they could start by referring to the specification for POP3 
+</I>&gt;<i> servers which is covered in RFC 1725.
+</I>
+mac2, basically it sounds like the person's ISP's POP3 server is 
+basically advertising that it supports APOP when in fact it sounds like 
+it does not.  You can confirm this by opening Terminal, typing 'telnet 
+&lt;mail server hostname&gt; 110' and then when it greets you, typing 'CAPA' 
+to get a list of the POP3 server's capabilities.  If you see 'APOP' in 
+there, then something is fishy.
+
+-- 
+Justin R. Miller
+<A HREF="../../../mailman/listinfo/titanium.html">incanus at codesorcery.net</A>
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="015010.html">[Ti] apop and Panther Mail.app
+</A></li>
+	<LI>Next message: <A HREF="015012.html">[Ti] apop and Panther Mail.app
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15011">[ date ]</a>
+              <a href="thread.html#15011">[ thread ]</a>
+              <a href="subject.html#15011">[ subject ]</a>
+              <a href="author.html#15011">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

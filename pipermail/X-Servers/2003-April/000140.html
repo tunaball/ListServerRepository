@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Servers] Sendmail Config Question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20Sendmail%20Config%20Question&In-Reply-To=list-5742855%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000139.html">
+   <LINK REL="Next"  HREF="000141.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Servers] Sendmail Config Question</H1>
+    <B>mac acct</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20Sendmail%20Config%20Question&In-Reply-To=list-5742855%40mail.ninewire.com"
+       TITLE="[X Servers] Sendmail Config Question">mac at sun.twlight.net
+       </A><BR>
+    <I>Wed Apr 16 13:54:15 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000139.html">[X Servers] Sendmail Config Question
+</A></li>
+        <LI>Next message: <A HREF="000141.html">[X Servers] Sendmail Config Question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#140">[ date ]</a>
+              <a href="thread.html#140">[ thread ]</a>
+              <a href="subject.html#140">[ subject ]</a>
+              <a href="author.html#140">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>The first place I would have you look to see if you have acutally 
+started sendmail (i.e. from a terminal prompt type:
+
+ps -ax | grep sendmail
+
+you should see at least one instance of sendmail running.  Also, you 
+can telnet to port 25 if it (sendmail) is running and see the sendmail 
+prompts, i.e.
+
+telnet localhost 25
+
+Give us the results from these and then we can move forward from there.
+
+Jerry K
+
+
+
+On Wednesday, April 16, 2003, at 03:32  PM, John May wrote:
+
+&gt;<i> Still no joy =(  It's still using &quot;relay&quot; for the mailer instead of 
+</I>&gt;<i> &quot;esmtp&quot;...
+</I>&gt;<i>
+</I>&gt;<i> Any other ideas?
+</I>&gt;<i>
+</I>&gt;<i> 	- John
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i> My sendmail knowledge is a little rusty; I've been using Postfix for a
+</I>&gt;&gt;<i> couple of years now. :)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I think for your config.mc, something along the lines of
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> OSTYPE(darwin)dnl
+</I>&gt;&gt;<i> DOMAIN(generic)dnl
+</I>&gt;&gt;<i> FEATURE(`nullclient', `mail.pointinspace.com')
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> may do what you want.  That is, _no_ mail will be delivered locally.  
+</I>&gt;&gt;<i> When
+</I>&gt;&gt;<i> I ran sendmail, this is the config I used for my backup MX systems, 
+</I>&gt;&gt;<i> and
+</I>&gt;&gt;<i> other systems where mail might be generated but never checked.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Good luck.
+</I>&gt;&gt;<i> --
+</I>&gt;&gt;<i> Cloyce
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000139.html">[X Servers] Sendmail Config Question
+</A></li>
+	<LI>Next message: <A HREF="000141.html">[X Servers] Sendmail Config Question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#140">[ date ]</a>
+              <a href="thread.html#140">[ thread ]</a>
+              <a href="subject.html#140">[ subject ]</a>
+              <a href="author.html#140">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

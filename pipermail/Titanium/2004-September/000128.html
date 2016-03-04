@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Advice Re: Security Update/!st Time App Launch Issue
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Advice%20Re%3A%20Security%20Update/%21st%20Time%20App%20Launch%20Issue&In-Reply-To=p06110400bd7cae1812e2%40192.168.102.100">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000126.html">
+   <LINK REL="Next"  HREF="000134.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Advice Re: Security Update/!st Time App Launch Issue</H1>
+    <B>Chris Olson</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Advice%20Re%3A%20Security%20Update/%21st%20Time%20App%20Launch%20Issue&In-Reply-To=p06110400bd7cae1812e2%40192.168.102.100"
+       TITLE="[Ti] Advice Re: Security Update/!st Time App Launch Issue">chris.olson at astcomm.net
+       </A><BR>
+    <I>Sun Sep 26 11:12:50 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000126.html">[Ti] Advice Re: Security Update/!st Time App Launch Issue
+</A></li>
+        <LI>Next message: <A HREF="000134.html">[Ti] Advice Re: Security Update/!st Time App Launch Issue
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#128">[ date ]</a>
+              <a href="thread.html#128">[ thread ]</a>
+              <a href="subject.html#128">[ subject ]</a>
+              <a href="author.html#128">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sep 26, 2004, at 12:47 PM, b wrote:
+
+&gt;<i> Question is two-fold: Was coreservicesd the appropriate service to add 
+</I>&gt;<i> to the arguments,as far as the update in question was concerned, and 
+</I>&gt;<i> what might have been the cause of the mystery free space 
+</I>&gt;<i> disappearance?
+</I>
+Well, kind of.  Kill coreservicesd and icons start disappearing all 
+kinds of weird things.
+
+Executing /System/Library/CoreServices/coreservicesd as root fires it 
+up after its dead.  It's probably better to:
+ps -e | grep coreservicesd
+to identify it first, then send it a -HUP signal so you don't hose the 
+look of your desktop while you're trying to figure out how to restart 
+it :-)
+
+On your runaway, you can probably identify the errant process with top. 
+  I'm guess a logging daemon went wild because it got alarmed that you 
+perhaps tried to restart a system process that didn't restart.  
+Anything that eats several gigs in several minutes has to pulling major 
+cpu.  Haven't you ever heard the old Unix admin's last resort?  &quot;kill 
+-9 them all and let inetd sort it out&quot;
+--
+Chris
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000126.html">[Ti] Advice Re: Security Update/!st Time App Launch Issue
+</A></li>
+	<LI>Next message: <A HREF="000134.html">[Ti] Advice Re: Security Update/!st Time App Launch Issue
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#128">[ date ]</a>
+              <a href="thread.html#128">[ thread ]</a>
+              <a href="subject.html#128">[ subject ]</a>
+              <a href="author.html#128">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

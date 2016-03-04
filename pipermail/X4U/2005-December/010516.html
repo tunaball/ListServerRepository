@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] command line cp question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20command%20line%20cp%20question&In-Reply-To=1C0D3892-2505-4B28-9089-EC9C33320089%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010514.html">
+   <LINK REL="Next"  HREF="010517.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] command line cp question</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20command%20line%20cp%20question&In-Reply-To=1C0D3892-2505-4B28-9089-EC9C33320089%40mac.com"
+       TITLE="[X4U] command line cp question">macmonster at myrealbox.com
+       </A><BR>
+    <I>Fri Dec  2 02:43:19 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010514.html">[X4U] command line cp question
+</A></li>
+        <LI>Next message: <A HREF="010517.html">[X4U] command line cp question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10516">[ date ]</a>
+              <a href="thread.html#10516">[ thread ]</a>
+              <a href="subject.html#10516">[ subject ]</a>
+              <a href="author.html#10516">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Dec 2, 2005, at 9:34 am, Kansas Territory wrote:
+&gt;<i>
+</I>&gt;<i> find / -name &quot;*.pl&quot; -exec cp \{} perlscripts/
+</I>&gt;<i>
+</I>&gt;<i> i tried running this from the command line...  I get:
+</I>&gt;<i>
+</I>&gt;<i> find: missing argument to `-exec'
+</I>&gt;<i>
+</I>&gt;<i> I'm trying to run this from a command line.. on  a Linux box if that 
+</I>&gt;<i> makes any difference ?
+</I>
+You forgot the semicolon, which is a terminator:
+
+        -exec command ;
+               Execute  command; ...All following
+               arguments to find are taken to be arguments to the 
+command until
+               an  argument  consisting of `;' is encountered.  The 
+string `{}'
+               is replaced by the current file name being processed  
+everywhere
+               it occurs in the arguments to the command, ...  Both  of  
+these
+               constructions might need to be escaped (with a `\') or 
+quoted to
+               protect them from expansion by the shell.  The command  
+is  exe-
+               cuted in the starting directory.
+
+`man find` is your friend.
+
+As Mr Ledger mentioned, don't forget to exclude the backup directory.
+
+Stroller.
+
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010514.html">[X4U] command line cp question
+</A></li>
+	<LI>Next message: <A HREF="010517.html">[X4U] command line cp question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10516">[ date ]</a>
+              <a href="thread.html#10516">[ thread ]</a>
+              <a href="subject.html#10516">[ subject ]</a>
+              <a href="author.html#10516">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

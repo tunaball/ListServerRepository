@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Servers] Re: Top level of server not visible in Panther Finder
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX-Servers%5D%20Re%3A%20Top%20level%20of%20server%20not%20visible%20in%20Panther%20Finder&In-Reply-To=20041012080252.E5DDC13EBC7%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000306.html">
+   <LINK REL="Next"  HREF="000307.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Servers] Re: Top level of server not visible in Panther Finder</H1>
+    <B>Patrick Ellis</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX-Servers%5D%20Re%3A%20Top%20level%20of%20server%20not%20visible%20in%20Panther%20Finder&In-Reply-To=20041012080252.E5DDC13EBC7%40listserver.themacintoshguy.com"
+       TITLE="[X-Servers] Re: Top level of server not visible in Panther Finder">ellis at champlaincollege.qc.ca
+       </A><BR>
+    <I>Wed Oct 13 12:54:11 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000306.html">[X-Servers] Windoze remote connectivity
+</A></li>
+        <LI>Next message: <A HREF="000307.html">Fwd: RE: [X-Servers] Windoze remote connectivity
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#305">[ date ]</a>
+              <a href="thread.html#305">[ thread ]</a>
+              <a href="subject.html#305">[ subject ]</a>
+              <a href="author.html#305">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Go to the terminal on the server and type;
+
+sudo defaults write /Library/Preferences/com.apple.AppleFileServer
+admin31GetsSp false
+
+
+The non terminal but longer way to do it is open the
+com.apple.AppleFileServer.plist file from /Library/Preferences in a text
+editor such as TextEdit, go to the line below &lt;key&gt;admin31GetSp&lt;/key&gt;
+and change &lt;true/&gt; to &lt;false/&gt;.
+
+It should be saved as plain text not rtf with no .txt extension appended.
+You'll be asked to overwrite the original file.
+
+(I only go this route when I forget the actual terminal command)
+
+Patrick
+
+
+&gt;<i> ------------------------------
+</I>&gt;<i> 
+</I>&gt;<i> Message: 6
+</I>&gt;<i> Date: Thu, 30 Sep 2004 15:54:34 -0400
+</I>&gt;<i> From: John McDaniel &lt;<A HREF="../../../mailman/listinfo/x-servers.html">johnmcd at one.net</A>&gt;
+</I>&gt;<i> Subject: [X-Servers] Top level of server not visible in Panther Finder
+</I>&gt;<i> To: A place to discuss Mac OS X Server and server software on Mac OS
+</I>&gt;<i> X. &lt;<A HREF="../../../mailman/listinfo/x-servers.html">x-servers at listserver.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Message-ID: &lt;<A HREF="../../../mailman/listinfo/x-servers.html">8D7593B8-131A-11D9-9211-003065BDBBFC at one.net</A>&gt;
+</I>&gt;<i> Content-Type: text/plain; charset=US-ASCII; format=flowed
+</I>&gt;<i> 
+</I>&gt;<i> We have recently upgraded to OS X Server v10.3.5 from 10.2.x.
+</I>&gt;<i> 
+</I>&gt;<i> With Jaguar, I could mount the server from my PowerBook on my local
+</I>&gt;<i> network via my server admin account and see the whole server from the
+</I>&gt;<i> top level on down through the share points. I've been told that Panther
+</I>&gt;<i> doesn't work that way. Now, even though logged on as administrator, I
+</I>&gt;<i> can only see the share points.
+</I>&gt;<i> 
+</I>&gt;<i> How can I get back to being able to see the entire server from the top
+</I>&gt;<i> level via the finder on my PowerBook.
+</I>&gt;<i> 
+</I>&gt;<i> TIA, j mcd
+</I>&gt;<i> ---
+</I>&gt;<i> John McDaniel      <A HREF="../../../mailman/listinfo/x-servers.html">johnmcd at one.net</A>
+</I>
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000306.html">[X-Servers] Windoze remote connectivity
+</A></li>
+	<LI>Next message: <A HREF="000307.html">Fwd: RE: [X-Servers] Windoze remote connectivity
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#305">[ date ]</a>
+              <a href="thread.html#305">[ thread ]</a>
+              <a href="subject.html#305">[ subject ]</a>
+              <a href="author.html#305">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

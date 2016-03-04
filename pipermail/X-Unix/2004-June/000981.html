@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Need to log internet connectivity
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Need%20to%20log%20internet%20connectivity&In-Reply-To=list-14389700%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000980.html">
+   <LINK REL="Next"  HREF="000982.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Need to log internet connectivity</H1>
+    <B>Jerry Krinock</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Need%20to%20log%20internet%20connectivity&In-Reply-To=list-14389700%40mail.ninewire.com"
+       TITLE="[X-Unix] Need to log internet connectivity">jerry at ieee.org
+       </A><BR>
+    <I>Sun Jun 27 12:27:24 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000980.html">[X-Unix] Need to log internet connectivity
+</A></li>
+        <LI>Next message: <A HREF="000982.html">[X-Unix] Need to log internet connectivity
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#981">[ date ]</a>
+              <a href="thread.html#981">[ thread ]</a>
+              <a href="subject.html#981">[ subject ]</a>
+              <a href="author.html#981">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>on 04/06/27 11:25, William H. Magill at <A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A> wrote:
+
+&gt;<i> 
+</I>&gt;<i> On 27 Jun, 2004, at 09:18, Jerry Krinock wrote:
+</I>&gt;<i> 
+</I>&gt;&gt;<i> Our DSL line is intermittent; it goes up and down over periods of
+</I>&gt;&gt;<i> minutes
+</I>&gt;&gt;<i> and hours.  To troubleshoot local interference I need to run some
+</I>&gt;&gt;<i> days-long
+</I>&gt;&gt;<i> experiments and get a log which would give me something like:
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> 6:04 AM  DSL went down
+</I>&gt;&gt;<i> 6:10 AM  DSL came up
+</I>&gt;&gt;<i> 7:15 AM  DSL went down
+</I>&gt;&gt;<i> 7:22 AM  DSL came up
+</I>&gt;&gt;<i> ...
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> What's the *easy* way to get this?
+</I>&gt;<i> 
+</I>&gt;<i> There is nothing inherent in the OS which will give you the
+</I>&gt;<i> information... especially since the definition of &quot;up&quot; and &quot;down&quot; is
+</I>&gt;<i> &quot;relative.&quot;
+</I>&gt;<i> 
+</I>&gt;<i> For example, the DSL modem may in fact be up, but the DSLAM is down....
+</I>&gt;<i> Or the Modem and DSLAM may both be functional, but the MAN behind it in
+</I>&gt;<i> never-never land....
+</I>
+Thanks, William.  These details would be nice, but I just want to show my
+ISP that is failed.  They should have a log of failures at the higher
+levels.
+
+&gt;<i> In my case, with my DSL line I have a real ISP and static addresses,
+</I>&gt;<i> don't have to use PPPOE and DHCP. I have a script which runs
+</I>&gt;<i> periodically on one of my systems which uses ping to determine if
+</I>&gt;<i> certain portions of the network are reachable.
+</I>
+I do not have static IP with Earthlink, but I don't think that matters.  I
+think that pinging their POP server, or, say, yahoo.com would be sufficient.
+I presume your script is a cron job?
+
+&gt;<i> I have had DSL since the beginning, so I have a seriously dumb and
+</I>&gt;<i> non-manageable DSL modem.
+</I>
+Mine may be more manageable but you have to connect a Windows PC with and
+old-fashioned RS232 to the &quot;comm&quot; port.  I don't think it is &quot;web
+addressable.&quot;
+
+&gt;<i> The only &quot;trick&quot; with such scripts is their period. Too frequent, and
+</I>&gt;<i> you load the connection with lots of non-productive and unnecessary
+</I>&gt;<i> traffic....
+</I>
+Since this is a temporary troubleshooting, I'm not feeling guilty about
+extravagant use of bandwidth...
+
+During the last hour, I set my pop email client to check for email every 1
+minute.  The trouble I found is that, with PPPoE, once the connection drops,
+it seems the Mac OS defaults to the internal modem (even though it is &quot;not
+configured&quot;), and does not seem try to re-establish PPPoE until I open
+System Preferences &gt; Network &gt; Show: Network Status and click Connect.  This
+is even though I have checked &quot;Connec automatially when needed&quot; and  &quot;Send
+PPP echo packets&quot;, and un-checked &quot;Disconnect if idle&quot;.
+
+Does anyone know if this can be made to reconnect automatically with PPPoE?
+
+&gt;<i> As far as troubleshooting interference on the DSL line, the most likely
+</I>&gt;<i> problem has to do with the modem loosing sync with the DSLAM. The cause
+</I>&gt;<i> is one of two things -- either you have real &quot;line noise&quot; problem; or
+</I>&gt;<i> you have CO activity which results in the DSLAM being reset on a
+</I>&gt;<i> &quot;routine&quot; basis by Telco technicians....
+</I>
+I believe the problem is impulse noise which comes and goes.  Until
+recently, we only had the problem when it rained, but during the past sunny
+week it's been doing it on and off all day.  There is a correlation between
+the DSL being out of sync, with the amount of impulse noise (which sounds
+like kkkkick......kkkkkick) that I hear on our voice telephone.
+
+William, please post your script when you get a chance!!
+
+Thanks again,
+
+Jerry
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000980.html">[X-Unix] Need to log internet connectivity
+</A></li>
+	<LI>Next message: <A HREF="000982.html">[X-Unix] Need to log internet connectivity
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#981">[ date ]</a>
+              <a href="thread.html#981">[ thread ]</a>
+              <a href="subject.html#981">[ subject ]</a>
+              <a href="author.html#981">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

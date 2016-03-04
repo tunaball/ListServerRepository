@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] ethereal for MacOSX
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20ethereal%20for%20MacOSX&In-Reply-To=list-10603290%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000211.html">
+   <LINK REL="Next"  HREF="000213.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] ethereal for MacOSX</H1>
+    <B>Juan Manuel Palacios</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20ethereal%20for%20MacOSX&In-Reply-To=list-10603290%40mail.ninewire.com"
+       TITLE="[X-Unix] ethereal for MacOSX">jmpalaciosp at eml.cc
+       </A><BR>
+    <I>Mon Feb  2 08:39:36 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000211.html">ethereal for MacOSX
+</A></li>
+        <LI>Next message: <A HREF="000213.html">[X-Unix] ethereal for MacOSX
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#212">[ date ]</a>
+              <a href="thread.html#212">[ thread ]</a>
+              <a href="subject.html#212">[ subject ]</a>
+              <a href="author.html#212">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+	Hi Ken! Well, it just so happens that Fink's alternative, DarwinPorts, 
+also offers ethereal for Mac OS X. In any case, as far as I can see, 
+ethereal compiles from source cleanly on Mac OS X, without the need of 
+any patch (I've done this with the 0.9.14 release). But if you can't be 
+bothered to do that I'd advise you to surf over to 
+<A HREF="http://darwinports.opendarwin.org">http://darwinports.opendarwin.org</A> and join the project. It might be a 
+bit of a nuisance at first because you have to fetch it over CVS, but 
+once everything is in place it pays for itself. I'm an active 
+DarwinPorts user and &quot;contributor wannabe&quot; and am well satisfied with 
+what it offers. With just one command I can have ethereal, nmap, dsniff 
+and around 900 other software titles fetched, configured, compiled and 
+installed.
+
+	Regarding ethereal specifically, I've been known among DarwinPorts 
+developers to be quite whimsical about it, hehe! (mainly because I 
+dislike tcpdump). Upon my constant requests a no-X11 build variant was 
+included to the port (meaning that only tethereal, the command line 
+utility, and not ethereal, the GUI, gets built). The release version 
+was also upped to 0.9.16 and then to 0.10.0a, but unfortunately that 
+last one is severely broken. To fix my mistake I learned a bit about 
+diff(1) and submitted a patch to the port which downgrades the release 
+to 0.9.16 again, which is the one I currently have installed 
+(unfortunately the patch has not been included yet in the live CVS 
+repository, so the patch resides locally). If you're interested then 
+either let me know or join the <A HREF="../../../mailman/listinfo/x-unix.html">darwinports at opendarwin.org</A> mailing list, 
+you'll find lots of info there. You can also reach a lot of DarwinPorts 
+users and developers at the irc #opendarwin channel on the freenode 
+network.
+
+	Hope that helps! Regards,...
+
+
+		Juan
+
+
+On Feb 2, 2004, at 12:10 PM, Ken Rossman wrote:
+
+&gt;<i> Has anyone out there found, fetched, and is running ethereal under 
+</I>&gt;<i> MacOSX?
+</I>&gt;<i>
+</I>&gt;<i> I see where there are projects in progress now to get ethereal working
+</I>&gt;<i> for MacOSX, and I have been directed at the fink distributions to find
+</I>&gt;<i> a working version, but I have so far been unsuccessful in obtaining a
+</I>&gt;<i> version of ethereal for MacOSX.
+</I>&gt;<i>
+</I>&gt;<i> Anyone out there actually running ethereal under MacOSX, and if so, 
+</I>&gt;<i> where did
+</I>&gt;<i> you find it?
+</I>&gt;<i>
+</I>&gt;<i> Thanks!
+</I>&gt;<i> KR
+</I>&gt;<i>
+</I>&gt;<i> Ken Rossman
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">rossman at columbia.edu</A>
+</I>&gt;<i> G3 iBook/600MHz/640MB/10.2.8
+</I>&gt;<i> G4 tower/400MHz/512MB/10.2.8
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;<i> Mac ISP Serious Mac Internet Solutions From NineWire!   
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older 
+</I>&gt;<i> Mac! Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>   Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;<i>
+</I>&gt;<i> OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s - 
+</I>&gt;<i> <A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000211.html">ethereal for MacOSX
+</A></li>
+	<LI>Next message: <A HREF="000213.html">[X-Unix] ethereal for MacOSX
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#212">[ date ]</a>
+              <a href="thread.html#212">[ thread ]</a>
+              <a href="subject.html#212">[ subject ]</a>
+              <a href="author.html#212">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

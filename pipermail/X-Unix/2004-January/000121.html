@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] shell scripting
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20shell%20scripting&In-Reply-To=list-10281115%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000119.html">
+   <LINK REL="Next"  HREF="000122.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] shell scripting</H1>
+    <B>Doug McNutt</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20shell%20scripting&In-Reply-To=list-10281115%40mail.ninewire.com"
+       TITLE="[X-Unix] shell scripting">douglist at macnauchtan.com
+       </A><BR>
+    <I>Thu Jan 15 19:02:05 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000119.html">[X-Unix] shell scripting
+</A></li>
+        <LI>Next message: <A HREF="000122.html">[X-Unix] shell scripting
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#121">[ date ]</a>
+              <a href="thread.html#121">[ thread ]</a>
+              <a href="subject.html#121">[ subject ]</a>
+              <a href="author.html#121">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 20:34 -0600 1/15/04, Bert Knabe wrote:
+&gt;<i>I have a relatively simple task, but little programming knowledge. I need to have a folder checked and files copied to another folder. I originally planned to do this in Applescript, but Applescript has proven less than effective.
+</I>
+I'd like to know more about conditions in which folder actions are unreliable. The only thing I have had any problem with is getting the action to occur when the file is not dragged to a folder using the finder but is placed there by a running application other than Finder.
+
+&gt;<i> I need to either have a folder watched, and when new files are added, copy them to another folder on a different volume, or have the folder checked every so often and files added since the last check copied to another folder on a different volume.
+</I>
+It should be straightforward to create a shell executable - x permission bit set - that runs as a cron job (man cron) every half hour. It can check modification dates of files in the source and destination folder and make copies as required.  If the files have Mac resource forks, or if Mac Finder info is important ,/Developer/Tools/CpMac is needed as opposed to a UNIX cp which pays attention only to the data fork.
+
+-- 
+--&gt;  There are 10 kinds of people:  those who understand binary, and those who don't &lt;--
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000119.html">[X-Unix] shell scripting
+</A></li>
+	<LI>Next message: <A HREF="000122.html">[X-Unix] shell scripting
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#121">[ date ]</a>
+              <a href="thread.html#121">[ thread ]</a>
+              <a href="subject.html#121">[ subject ]</a>
+              <a href="author.html#121">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

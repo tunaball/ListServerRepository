@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Weird tcsh vs bash behavior
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Weird%20tcsh%20vs%20bash%20behavior&In-Reply-To=list-10944251%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000325.html">
+   <LINK REL="Next"  HREF="000327.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Weird tcsh vs bash behavior</H1>
+    <B>Kirk McElhearn</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Weird%20tcsh%20vs%20bash%20behavior&In-Reply-To=list-10944251%40mail.ninewire.com"
+       TITLE="[X-Unix] Weird tcsh vs bash behavior">kirklists at wanadoo.fr
+       </A><BR>
+    <I>Thu Feb 19 08:00:34 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000325.html">[X-Unix] Weird tcsh vs bash behavior
+</A></li>
+        <LI>Next message: <A HREF="000327.html">Changing ssh daemon listening port
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#326">[ date ]</a>
+              <a href="thread.html#326">[ thread ]</a>
+              <a href="subject.html#326">[ subject ]</a>
+              <a href="author.html#326">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 2/19/04 4:57 PM, &quot;James Bucanek&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">subscriber at gloaming.com</A>&gt; wrote:
+
+&gt;&gt;<i> But running the same command while in bash doesn't work - is there something
+</I>&gt;&gt;<i> I'm missing? Does bash not see the /rsrc files? Or is it something to do
+</I>&gt;&gt;<i> with the way it globs?
+</I>&gt;<i> 
+</I>&gt;<i> It's not the way the shells glob.  It's probably the way in which they try to
+</I>&gt;<i> resolve the resulting paths.
+</I>&gt;<i> 
+</I>&gt;<i> The magic '/rsrc' isn't really a file -- at least it doesn't have a
+</I>&gt;<i> traditional entry in the UNIX directory structure.  It's a &quot;synthetic&quot; file
+</I>&gt;<i> who's parent &quot;directory&quot; is the file that contains the resource data.  Note
+</I>&gt;<i> that you can also use the synthetic naming convention
+</I>&gt;<i> '&lt;filename&gt;/..namedfork/rsrc'.
+</I>&gt;<i> 
+</I>&gt;<i> So, let's take the example &quot;*/rsrc&quot;.  If the shell reads the current directory
+</I>&gt;<i> and matches all the entries it can find against '*' (both files and
+</I>&gt;<i> directories), then systematically tests each possible &lt;filename&gt;/rsrc using
+</I>&gt;<i> stat(), or some similar call, then it will find all of the synthetic */rsrc
+</I>&gt;<i> files in the directory.
+</I>&gt;<i> 
+</I>&gt;<i> However, if a shell tries to be &quot;smart&quot; it might first exam the type of each
+</I>&gt;<i> entry that matches the '*'.  As it examines each match, it's going to see that
+</I>&gt;<i> they are all files, so it could safely eliminate it as a potential match
+</I>&gt;<i> because files aren't directories, and therefor can't contain children.
+</I>&gt;<i> 
+</I>&gt;<i> I suspect that tcsh is blindly trying each &lt;filename&gt;/rsrc to see if it
+</I>&gt;<i> exists, and bash is looking at &lt;filename&gt;, sees that it's a file, and skips
+</I>&gt;<i> it.
+</I>
+Well, that makes sense, sort of... I do understand that it's more the
+weirdness of HFS+ and resource forks than the actual file system though. So,
+to sum up, bash can't do what tcsh can do here.
+ 
+ 
+Kirk
+ 
+        My latest book: How to Do Everything with Mac OS X Panther
+                  <A HREF="http://www.mcelhearn.com/htde.html">http://www.mcelhearn.com/htde.html</A>
+ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+ . . . . . . .  <A HREF="../../../mailman/listinfo/x-unix.html">kirk at mcelhearn.com</A> | <A HREF="http://www.mcelhearn.com">http://www.mcelhearn.com</A>  . . . . . .
+ . .  Kirk McElhearn | Chemin de la Lauze | 05600 Guillestre | France  . .
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000325.html">[X-Unix] Weird tcsh vs bash behavior
+</A></li>
+	<LI>Next message: <A HREF="000327.html">Changing ssh daemon listening port
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#326">[ date ]</a>
+              <a href="thread.html#326">[ thread ]</a>
+              <a href="subject.html#326">[ subject ]</a>
+              <a href="author.html#326">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

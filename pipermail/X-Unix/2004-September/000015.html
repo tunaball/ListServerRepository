@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to find your DHCP server...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20find%20your%20DHCP%20server...&In-Reply-To=A4913980-08DD-11D9-9F0F-000393768D2C%40mcgillsociety.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000011.html">
+   <LINK REL="Next"  HREF="000012.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to find your DHCP server...</H1>
+    <B>Juan Manuel Palacios</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20find%20your%20DHCP%20server...&In-Reply-To=A4913980-08DD-11D9-9F0F-000393768D2C%40mcgillsociety.org"
+       TITLE="[X-Unix] How to find your DHCP server...">jmpalaciosp at eml.cc
+       </A><BR>
+    <I>Fri Sep 17 13:42:33 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000011.html">[X-Unix] How to find your DHCP server...
+</A></li>
+        <LI>Next message: <A HREF="000012.html">[X-Unix] Rendezvous lookup from command-line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15">[ date ]</a>
+              <a href="thread.html#15">[ thread ]</a>
+              <a href="subject.html#15">[ subject ]</a>
+              <a href="author.html#15">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Sep 17, 2004, at 3:13 PM, William H. Magill wrote:
+
+&gt;<i>
+</I>&gt;<i> On 16 Sep, 2004, at 20:37, Juan Manuel Palacios wrote:
+</I>&gt;<i>
+</I>&gt;&gt;&gt;<i> It does &quot;fail silently,&quot; and $? will yield a &quot;1&quot; ... the program DID 
+</I>&gt;&gt;&gt;<i> complete successfully, it just had nothing to say about the 
+</I>&gt;&gt;&gt;<i> interface.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 	OK, not my taste of &quot;feedback&quot; but ok, fair enough...
+</I>&gt;<i>
+</I>&gt;<i> Not feeback ... that is the way Unix programs have been written since 
+</I>&gt;<i> time immemorial!
+</I>&gt;<i> (And yes, it is very annoying.)
+</I>
+	Most annoying, yes! I really like it when programs exit with a &gt; 0 
+status iff (if and only if) an explicit error was encountered, but 
+*not* when they simply didn't have anything to say about what you 
+requested. Nevertheless, I realize the very point I defend is 
+ambiguous:
+
+$[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: netwib](238/0,1)-&gt; ls Portfile
+-rw-r--r--  1 juan  staff    1K 16 Sep 02:28 Portfile
+
+$[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: netwib](239/0,1)-&gt; echo $?
+0
+
+$[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: netwib](240/0,1)-&gt; ls aaa
+ls: aaa: No such file or directory
+
+$[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: netwib](241/0,1)-&gt; echo $?
+0
+
+	Some could claim ls(1) didn't have anything to say about the 
+inexistent &quot;aaa&quot; file and some others could say &quot;an error happened, 
+therefore exit status should be &gt; 0&quot;. I myself was used to this last 
+behavior, as it was default for Jaguar: the second ls(1) attempt would 
+have yielded $? == 1. But... &quot;anywho&quot;...
+
+&gt;<i>
+</I>&gt;&gt;<i> 	Still, I can't get anything out of ipconfig, and still haven't had 
+</I>&gt;&gt;<i> the chance to ask my Darwin friends, maybe will tonight. In any case, 
+</I>&gt;&gt;<i> thanks for your reply! Regards,...
+</I>&gt;<i>
+</I>&gt;<i> &quot;getpacket&quot; will only work if you are talking to a DHCP server 
+</I>&gt;<i> directly. ...
+</I>&gt;<i> or at least it does when the DCHP server is really a NAT server and is 
+</I>&gt;<i> an AEBS.
+</I>
+	Don't exactly know what &quot;getpacket&quot; is, a library ipconfig depends on? 
+In any case, I'm getting the feeling &quot;ipconfig&quot; is only meant for DHCP 
+networks, which would explain why is has nothing to say about my 
+interface because I have fixed IPs.
+
+&gt;<i>
+</I>&gt;<i> It &quot;should&quot; work with any DHCP server, but since it's a Microsoft 
+</I>&gt;<i> invention, and not standard IP, it might be that the AEBS is gimmicked 
+</I>&gt;<i> to respond to it. I don't know.
+</I>&gt;<i>
+</I>&gt;<i> T.T.F.N.
+</I>&gt;<i> William H. Magill
+</I>&gt;<i>
+</I>
+	Thanks for the explanations. Regards,...
+
+
+		Juan
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000011.html">[X-Unix] How to find your DHCP server...
+</A></li>
+	<LI>Next message: <A HREF="000012.html">[X-Unix] Rendezvous lookup from command-line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15">[ date ]</a>
+              <a href="thread.html#15">[ thread ]</a>
+              <a href="subject.html#15">[ subject ]</a>
+              <a href="author.html#15">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

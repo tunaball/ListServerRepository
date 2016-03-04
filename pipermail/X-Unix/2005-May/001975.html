@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] path for terminal.app and x11
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20path%20for%20terminal.app%20and%20x11&In-Reply-To=20050516131538.GJ18083%40sage.che.pitt.edu">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001976.html">
+   <LINK REL="Next"  HREF="001978.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] path for terminal.app and x11</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20path%20for%20terminal.app%20and%20x11&In-Reply-To=20050516131538.GJ18083%40sage.che.pitt.edu"
+       TITLE="[X-Unix] path for terminal.app and x11">magill at mcgillsociety.org
+       </A><BR>
+    <I>Mon May 16 08:58:48 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001976.html">[X-Unix] path for terminal.app and x11
+</A></li>
+        <LI>Next message: <A HREF="001978.html">[X-Unix] Tiger X11.app and xforwarding in ssh
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1975">[ date ]</a>
+              <a href="thread.html#1975">[ thread ]</a>
+              <a href="subject.html#1975">[ subject ]</a>
+              <a href="author.html#1975">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 16 May, 2005, at 09:15, John Harrold wrote:
+&gt;<i> Sometime in May William H. Magill assaulted the keyboard and produced:
+</I>&gt;<i>
+</I>&gt;<i> | Anything which operates from the AQUA GUI (the login window)  
+</I>&gt;<i> requires
+</I>&gt;<i> | the path (and other similar stuff) be entered in the ~/.MacOSX/
+</I>&gt;<i> | environment.plist file.
+</I>&gt;<i>
+</I>&gt;<i> Now this is mighty interesting. Since I don't seem to have this  
+</I>&gt;<i> directory,
+</I>&gt;<i> I assume that it isn't created when a user account is created.
+</I>
+That is correct. That is explained in the developer docs, QA 1067:
+
+&quot;You will also have to create the environment file yourself.&quot;
+
+&gt;<i> You
+</I>&gt;<i> mentioned the environment.plist file, but I would assume there are  
+</I>&gt;<i> other
+</I>&gt;<i> files which are commonly found in the ~/.MacOSX directory.
+</I>
+No.
+At least at this point in time, environment.plist is the only file
+described as being defined.
+
+Obviously one could just as easily write an application to read some
+other file either in that directory or any other directory.
+
+Many config/state-retention files are kept in /Library/Preferences or
+~/Library/Preferences others are kept in &quot;Application Support.
+
+And, obviously, apps keep things in random places depending entirely  
+upon
+the whim of whoever wrote the app and whatever &quot;style&quot; was currently in
+vogue at the time it was written ... as well as changes over time.
+
+Even &quot;classic unix&quot; apps are quite guilty of this phenomena, where they
+get and store config params or state information are anything but
+consistent. If one examines something like  X11, one discovers that
+there are a HUGE number of options (file locations) for locating  
+different
+parameter information, and the list of which ones override which is just
+as long. &quot;Customization&quot; is accomplished by &quot;flexibility.&quot; The plethora
+of options is used to assure job security for those known as &quot;Unix  
+Gurus&quot;
+or &quot;Unix Wizards.&quot;
+
+&gt;<i> I know that
+</I>&gt;<i> OS X is based on bsd so this might be a System V question since I'm  
+</I>&gt;<i> more
+</I>&gt;<i> familiar with Linux: Is there a skeleton directory similar to /etc/ 
+</I>&gt;<i> skel
+</I>&gt;<i> for the ~/.MacOSX directory that contians files commonly used?
+</I>
+Yes.
+
+A) /usr/share/skel does exist, however since adduser/useradd does not  
+exist,
+    I don't know that it is used for anything by Apple's account  
+creation process.
+
+B) The system's default user template is:
+     /System/Library/User Template .... in the appropriate subdirectory.
+
+C) The Macintosh Manager tool can be used to add and modify templates.
+      (OS X Server).
+
+
+T.T.F.N.
+William H. Magill
+# Beige G3 [Rev A motherboard - 300 MHz 768 Meg] OS X 10.2.8
+# Flat-panel iMac (2.1) [800MHz - Super Drive - 768 Meg] OS X 10.3.8
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg] Tru64 5.1a
+# XP1000  [Alpha 21264-3 (EV6) - 256 meg] FreeBSD 5.3
+# XP1000  [Alpha 21264-A (EV 6.7) - 384 meg] FreeBSD 5.3
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001976.html">[X-Unix] path for terminal.app and x11
+</A></li>
+	<LI>Next message: <A HREF="001978.html">[X-Unix] Tiger X11.app and xforwarding in ssh
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1975">[ date ]</a>
+              <a href="thread.html#1975">[ thread ]</a>
+              <a href="subject.html#1975">[ subject ]</a>
+              <a href="author.html#1975">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

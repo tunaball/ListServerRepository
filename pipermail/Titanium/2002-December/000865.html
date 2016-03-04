@@ -1,0 +1,292 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Apple's True Market Share!
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Apple%27s%20True%20Market%20Share%21&In-Reply-To=list-4070812%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000864.html">
+   <LINK REL="Next"  HREF="000866.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Apple's True Market Share!</H1>
+    <B>Mark C. Langston</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Apple%27s%20True%20Market%20Share%21&In-Reply-To=list-4070812%40mail.ninewire.com"
+       TITLE="[Ti] Apple's True Market Share!">mark at bitshift.org
+       </A><BR>
+    <I>Thu Dec 12 15:59:23 PST 2002</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000864.html">[Ti] Apple's True Market Share!
+</A></li>
+        <LI>Next message: <A HREF="000866.html">[Ti] Apple's True Market Share!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#865">[ date ]</a>
+              <a href="thread.html#865">[ thread ]</a>
+              <a href="subject.html#865">[ subject ]</a>
+              <a href="author.html#865">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Thu, Dec 12, 2002 at 05:23:14PM -0600, Chris Olson wrote:
+&gt;<i> 
+</I>&gt;<i> OK, so which post should I reply to?  And where did this come from? 
+</I>
+It came from your claim that Solaris on x86 isn't fully-functional.
+
+&gt;<i> 
+</I>&gt;<i> I would disagree on being fully funtional.  It suffers a significant 
+</I>&gt;<i> performace penalty on x86, only supports limited hardware, and Solaris 
+</I>&gt;<i> is first and foremost a server OS.
+</I>
+I fail to see how &quot;is not as fast&quot; equates to &quot;lacking in
+functionality&quot;.  Have you attempted to isolate the areas that are
+creating the bottleneck?  Have you used sar, iostat, vmstat, or any
+of a number of other tools to analyze major and minor page faults,
+blocked reads and writes, load per CPU, disk access time, etc., and
+then made use of that information to actually adapt a stock,
+out-of-the-box OS to the platform on which it's running?  Perhaps you've
+heeded the wisdom of people such as Adrian Cockcroft or Jim Mauro, and
+applied what they have to say to the task at hand?
+
+No?  And you complain that it's slow?  Shame on you.  To paraphrase
+an acquaintence of mine, that's like responding to a customer that's
+repeatedly banging a dead parrot on the counter by swapping out the
+counters in the hopes it solves the problem.
+
+
+&gt;<i>  As a server, the x86 port is broken 
+</I>&gt;<i> in several areas, most notably LDAP support, 
+</I>
+It's the same LDAP implementation found on the Sparc version. 
+Could you be more specific?  In particular, what does the SPARC version
+do that the x86 version appears not to do?
+
+&gt;<i>and the fact that it 
+</I>&gt;<i> crashes more often than Windows 2000 Server. 
+</I>
+That sounds more like administrative error than a problem with the OS.
+As is, believe it or not, similar problems with Windows products.
+When you're allowed to specify the hardware on which an OS runs, and
+you're responsible for seeing that the OS is configured properly and
+matched to that hardware, it's very rarely the OS's fault when 
+something goes wrong, no matter how much you may wish it were
+otherwise.  Lack of knowledge or expertise does not translate into
+a de facto software fault.
+
+ 
+
+&gt;<i> We've tried it on HP file 
+</I>&gt;<i> servers and get an average uptime of ~12 days between crashes.
+</I>
+Without further information, this is not only anecdotal, it's
+meaningless.  I've had Solaris run for years unattended.  I've had
+Enterprise 4000's and 3000's crash every day. 
+
+
+You see, it's not the hardware that's to blame; it's not the software
+that's to blame.  It's how one uses both, and the effort one puts
+into ensuring the synergy of the two is appropriate for one's needs.
+
+Though I'm sure you did a stack trace on the coredump, involved the
+appropriate Sun software engineers, and can provide us with the bug
+references in SunSolve to demonstrate that these crashes were an actual
+problem with the OS, and not just some mismatch between what you
+were trying to do, and what you were trying to do it on?
+
+
+
+Find me a hardware platform, and I could almost certainly find you
+someone who has horror stories of repeated crashes.  From PDP-7's
+onward.  Some of those stories will be legitimate OS problems.  Some
+will be application problems.  Some will be configuration issues.
+Some will be PEBCAK.  Some will be willful or accidental misuse.
+Most, if not all, would have a basis for claiming one or the other,
+beyond running in circles, screaming that the OS is to blame because
+it crashed.
+
+
+
+
+&gt;<i>  Running 
+</I>&gt;<i> the c compiler is also an excellent method of getting it to crash. 
+</I>
+That'd be Sun's C compiler, or gcc, or ...?
+
+Yes, C is an excellent gun, which really gives you a wonderful view
+of one's foot.  Or are you trying to get me to believe simply invoking
+the precompiler, the linker, or somesuch causes a kernel panic?
+I'd imagine you've much more likely written something that contains
+a memory leak or stack over/underflow, and tried to run it.
+
+
+&gt;<i> Running it alonside linux on identical hardware, reveals how poorly x86 
+</I>&gt;<i> Solaris really does perform as a server. 
+</I>
+Really?  How fascinating.  You take two systems -- one originally
+developed for x86 hardware (the 386, to be specific, since it was the
+first to have an MMU), and one originally developed for SPARC hardware
+and an architecture that never included IDE drives or a PCI bus
+-- run the two side-by-side on x86 hardware without any sort of
+tuning, and then proudly declare that the one developed natively for
+x86 runs better?
+
+
+Why, nobody would ever believe that!  It's incredible!  Absolutely
+flabberghasting!
+
+
+Perhaps you should re-read my segment on what constitutes a fair test.
+
+
+I'd wager I, or others, could configure said system to provide you
+whichever winner you so choose, simply by changing OS, disk, memory,
+and application parameters.  There are _always_ optimizations that
+will favor one OS or another.  There is no &quot;ceteris paribus&quot; in
+cross-platform testing, period.  Anyone who claims otherwise is
+trying to sell you something.
+
+
+I don't know where people got the idea that _any_ OS sold for
+commodity hardware -- or, indeed, even for a small line of vendor-
+provided hardware -- should perform optimally for all applications 
+out-of-the-box in any hardware configuration.  There are several
+steps to setting up a Unix server:
+
+1)  Determine uses to which system will be put
+2)  Determine resource requirements for uses
+3)  Determine performance requirements for uses
+4)  Adjust 3 in light of 2
+5)  Buy everything
+6)  Install everything
+7)  Remove everything that's not relevant to 1-3
+8)  Tune everything else to minimize 2 and maximize 3.
+
+
+However, every time I see one of these, 'X runs better than Y on Z'
+comparisons, it seems the ONLY thing they've done is 5 and 6.
+Worse, it seems that many people in the IT field thing 5 and 6 is
+adequate for deploying production systems.
+
+
+You'll have to excuse me if I remain skeptical.  You see, I come from a
+more professional background than that, where systems only break for a
+reason, and that reason is always eventually known, and then learned
+from.  And the system is built from the ground up to minimize such
+experiences, because it's designed to meet the needs it will serve.
+
+You don't need your hardware, application, or OS vendor to do this for
+you.  Any set of the three that provide the features you need can be
+configured to meet most any performance requirements, as long as they're
+part of the design phase.  If you just slap something into a generic box
+(or worse, a box that was spec'd for the same task, but using different
+OSes and applications), it'll only meet your needs if you're lucky,
+because then you're expecting the vendors to know what your specific
+needs are.  That's your job, not theirs.
+
+
+Now, back to your, &quot;x86 is evil&quot; sales-pitch:
+
+
+&gt;<i> If I were allowed to do so, I 
+</I>&gt;<i> could post several pages of results from extensive bench tests we've 
+</I>&gt;<i> done on it, on a variety of x86 hardware, but that's comparing it to 
+</I>&gt;<i> linux, not to OS X on x86, so it probably wouldn't make any difference. 
+</I>&gt;<i>   But compare to linux on SPARC vs Solaris on it's native hardware, and 
+</I>&gt;<i> then things are different.  That's *not* what I would call fully 
+</I>&gt;<i> funtional or production environment quality.
+</I>
+Really?  I still fail to see how &quot;slow&quot; equates to &quot;lacking
+functionality&quot;, or how &quot;slow on a given specified platform&quot; equates to
+&quot;shouldn't be deployed in a production environment&quot;, except to say that
+the mouth-breather who deigns to deploy said slow hardware when knowing
+said specification is slow should be fired or demoted, if there's any
+way to appropriately spec the system prior to deployment, or protest its
+deployment.
+
+In short, don't blame Solaris x86 because you got chewed out for
+inadequate QA and performance testing prior to deployment.  If it's
+known-slow on configuration X, you don't deploy configuration X.  You
+deploy configuration X+$FOO, where $FOO is enough to give you the
+performance you need.  See, that's the thing with commodity hardware --
+it's a __commodity__.  When you don't have enough, you just go out and
+buy more, until you do have enough.
+
+Unless you don't have the budget, in which case your mistake was going
+down that road to begin with.  Again, that's _your_ problem, not Solaris
+x86's.
+
+
+&gt;<i> 
+</I>&gt;<i> Your recitation of how stable releases of Solaris are developed, tested, 
+</I>&gt;<i> and released, is correct.
+</I>
+
+Thank you.  I don't need your confirmation, but perhaps it'll quiet
+another person who keeps insisting that &quot;Early Access&quot; is some symbol of
+Sun's unwillingness to support Solaris x86, or to release a final
+version.
+
+-- 
+Mark C. Langston                                    Sr. Unix SysAdmin
+<A HREF="../../../mailman/listinfo/titanium.html">mark at bitshift.org</A>                                       <A HREF="../../../mailman/listinfo/titanium.html">mark at seti.org</A>
+Systems &amp; Network Admin                                SETI Institute
+<A HREF="http://bitshift.org">http://bitshift.org</A>                               <A HREF="http://www.seti.org">http://www.seti.org</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000864.html">[Ti] Apple's True Market Share!
+</A></li>
+	<LI>Next message: <A HREF="000866.html">[Ti] Apple's True Market Share!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#865">[ date ]</a>
+              <a href="thread.html#865">[ thread ]</a>
+              <a href="subject.html#865">[ subject ]</a>
+              <a href="author.html#865">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

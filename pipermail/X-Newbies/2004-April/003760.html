@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Newbies] Maintenance was Re: Problems Installing Apps
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20Maintenance%20was%20Re%3A%20Problems%20Installing%20Apps&In-Reply-To=list-11859134%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003759.html">
+   <LINK REL="Next"  HREF="003761.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Newbies] Maintenance was Re: Problems Installing Apps</H1>
+    <B>birgit rhoads</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20Maintenance%20was%20Re%3A%20Problems%20Installing%20Apps&In-Reply-To=list-11859134%40mail.ninewire.com"
+       TITLE="[X Newbies] Maintenance was Re: Problems Installing Apps">wdlnd at adelphia.net
+       </A><BR>
+    <I>Fri Apr  2 10:20:43 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003759.html">[X Newbies] help! cd, net and help viewer gone south
+</A></li>
+        <LI>Next message: <A HREF="003761.html">Problems Installing Apps
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3760">[ date ]</a>
+              <a href="thread.html#3760">[ thread ]</a>
+              <a href="subject.html#3760">[ subject ]</a>
+              <a href="author.html#3760">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thank you for the scripts.  I put the first one in the terminal but 
+then found out it is not a terminal script, but a CRON job script.  I 
+tried to create the job in Macaroni but that did not work either.  I 
+made a folder in Users/documents/script/maintenance and copied it into 
+there, but could not open it from the brouse on Macaroni edit.  I know 
+zilch about Unix commands/script.  I guess when Safari slows up again, 
+I will trash the icon folder. Now my poor Terminal has a bunch of 
+script written into it that it does not know what to do with;)  Gads, 
+that's poor English.
+Birgit
+
+On Apr 2, 2004, at 1:41 AM, Christiaan Knol wrote:
+
+&gt;<i> To delete the Icon files (hint credit from macosxhints.com) type the 
+</I>&gt;<i> following in the terminal:
+</I>&gt;<i>
+</I>&gt;<i> find $HOME/Library/Safari/Icons -type f -atime +30 -name &quot;*.cache&quot; 
+</I>&gt;<i> -delete
+</I>&gt;<i>
+</I>&gt;<i> This deletes all icons not accessed within 30 days.  Change 30 to 
+</I>&gt;<i> anything else you like.  Remove -delete from the end to see what it 
+</I>&gt;<i> will delete, or add -print just before the -delete to see what it is 
+</I>&gt;<i> deleting.
+</I>&gt;<i>
+</I>&gt;<i> I have the following script run as part of my maintenance scripts 
+</I>&gt;<i> (within Macaroni) which outputs the results to a log file (clears out 
+</I>&gt;<i> caches and icons).  Create a file such as maintenance.sh - I use 
+</I>&gt;<i> Documents/Scripts to store these and insert whatever commands you wish 
+</I>&gt;<i> to use in this file.  I have included mine below as an example.  In 
+</I>&gt;<i> the terminal, issue the following command to make it executable:
+</I>&gt;<i>
+</I>&gt;<i> chmod 755 /Users/your_username/Documents/scripts/maintenance.sh
+</I>&gt;<i>
+</I>&gt;<i> Then within Macaroni create a new job and include the path to the 
+</I>&gt;<i> script file you just created - I also have a log file in that same 
+</I>&gt;<i> directory called maintenance.log  Macaroni will create this for you if 
+</I>&gt;<i> there's not one there.  As an example, I have included my 
+</I>&gt;<i> maintenance.sh script below which I have set to run once a week:
+</I>&gt;<i>
+</I>&gt;<i> #!/bin/sh
+</I>&gt;<i>
+</I>&gt;<i> # echo start message
+</I>&gt;<i> echo &quot;Cache Clean Script Processing&quot;
+</I>&gt;<i>
+</I>&gt;<i> sudo rm -r /Users/your_username/Library/Caches/*
+</I>&gt;<i> sudo rm -r /Library/Caches/*
+</I>&gt;<i> sudo rm -r /System/Library/Caches/*
+</I>&gt;<i>
+</I>&gt;<i> echo &quot;Cache Cleared&quot;
+</I>&gt;<i>
+</I>&gt;<i> echo &quot;Deleting unused Safari Icons&quot;
+</I>&gt;<i>
+</I>&gt;<i> find /Users/your_username/Library/Safari/Icons -type f -atime +7 -name 
+</I>&gt;<i> &quot;*.cache&quot; -delete
+</I>&gt;<i>
+</I>&gt;<i> echo &quot;Icons Cleared&quot;
+</I>&gt;<i>
+</I>&gt;<i> Hope this is of some use...
+</I>&gt;<i>
+</I>&gt;<i> ck
+</I>&gt;<i>
+</I>&gt;<i> On 02/04/2004, at 3:25 PM, birgit rhoads wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Randy, I used and like OnyX and still have it installed.  The thing I 
+</I>&gt;&gt;<i> like better about Macaroni is that is does it's work automatically 
+</I>&gt;&gt;<i> and I could not figure out how to do that with OnyX.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I would like to have a script for Macaroni to tell it to trash the 
+</I>&gt;&gt;<i> Safari Icon folder on a regular basis.  Anyone have a script for 
+</I>&gt;&gt;<i> this?  I need a name for the log file too.  All this is kind of over 
+</I>&gt;&gt;<i> my head.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Birgit
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-newbies.html">X-Newbies-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-newbies.html">X-Newbies-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-newbies.html">X-Newbies-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;<i> Mac ISP Serious Mac Internet Solutions From NineWire!   
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older 
+</I>&gt;<i> Mac! Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>   Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;<i>
+</I>&gt;<i> OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s - 
+</I>&gt;<i> <A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003759.html">[X Newbies] help! cd, net and help viewer gone south
+</A></li>
+	<LI>Next message: <A HREF="003761.html">Problems Installing Apps
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3760">[ date ]</a>
+              <a href="thread.html#3760">[ thread ]</a>
+              <a href="subject.html#3760">[ subject ]</a>
+              <a href="author.html#3760">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

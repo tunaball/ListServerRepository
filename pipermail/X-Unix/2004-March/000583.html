@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Panthers Virtual Memory
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Panthers%20Virtual%20Memory&In-Reply-To=list-11739110%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000582.html">
+   <LINK REL="Next"  HREF="000584.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Panthers Virtual Memory</H1>
+    <B>Adrian Simmons</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Panthers%20Virtual%20Memory&In-Reply-To=list-11739110%40mail.ninewire.com"
+       TITLE="[X-Unix] Panthers Virtual Memory">adriman at ntlworld.com
+       </A><BR>
+    <I>Sat Mar 27 06:17:57 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000582.html">[X-Unix] Panthers Virtual Memory
+</A></li>
+        <LI>Next message: <A HREF="000584.html">[X-Unix] Panthers Virtual Memory
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#583">[ date ]</a>
+              <a href="thread.html#583">[ thread ]</a>
+              <a href="subject.html#583">[ subject ]</a>
+              <a href="author.html#583">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Eugene Lee wrote:
+&gt;<i> Yep, this is the new behavior for Panther, which is not documented in
+</I>&gt;<i> the included man page.
+</I>Well, it does say:
+&quot;-S    The fixed filesize [in bytes] to use for the paging files.  By
+        default dynamic_pager uses variable sized paging files, using
+        larger sized files as paging demands increase.  The -S, -H and -L
+        options disable that default and cause dynamic_pager to use a
+        series of fixed sized external paging files.&quot;
+
+Not *well* documented though.
+
+&gt;<i> Panther uses more VM than previous versions of OS X (in
+</I>&gt;<i> my biased experience).
+</I>It's not just you, tons of people are saying this. But from what I can 
+gather this isn't so much more vm *use* as just more swapfile creation 
+and not disposing of unused swapfiles.
+
+&gt;<i> You can still try &quot;dynamic_pager -S filesize&quot;
+</I>&gt;<i> but I haven't looked at the source to see if Panther even cares about
+</I>&gt;<i> some of those switches.
+</I> From what I've googled this morning it looks like the options used in 
+Jaguar still work, it's just Apple hasn't set any in /etc/rc.
+
+
+&gt;<i> Solution?
+</I>&gt;<i> 	- Reboot more regularly.  This solution sucks in the long-term.
+</I>Certainly does.
+
+&gt;<i> 	- Reformat, and give the partition for OS X as much space as
+</I>I actually have a dedicated swap partition - I know you can debate the 
+merits of this - but I'd rather fix this without having to reformat again.
+
+Option three - play with the dynamic_pager settings in /etc/rc
+
+Jaguar used these settings:
+dynamic_pager -H 40000000 -L 160000000 -S 80000000 -F ${swapdir}/swapfile
+
+Panther, in line 232 of /etc/rc has:
+dynamic_pager -F ${swapdir}/swapfile
+
+ From the man page, it seems dynamic_pager defaults to creating 
+progressively larger swapfiles instead of having swap space fragmented 
+between multiple 80mb chunks as it did with the -S 80000000 setting in 
+jaguar. Also without high and low water mark set (-H and -L), 
+dynamic_pager won't clean away any unused swap files.
+
+So going back to my original post:
+-rw------T   1 root  wheel        64M 25 Mar 15:59 swapfile0
+-rw------T   1 root  wheel        64M 25 Mar 16:15 swapfile1
+-rw------T   1 root  wheel       128M 25 Mar 16:41 swapfile2
+-rw------T   1 root  wheel       256M 25 Mar 16:41 swapfile3
+-rw------T   1 root  wheel       512M 25 Mar 22:07 swapfile4
+
+As I understand this only the 512M swapfile4 was actually being used - 
+had dynamic_pager had -h and -L set correctly it would have removed the 
+other 512M worth of files, and would have been able to fit a 1024M file 
+on my 2gig swap partition instead of warning me the disk was full (with 
+400mb still to go) and telling me to quit applications.
+
+So where does that leave us?
+As I see it there 3 or 4 ways to go here, depending on whether you're 
+using a dedicated swap partition or the main OSX disk, and how much disk 
+space you have free.
+
+Those using the default vm set up by Apple, would do well to add -H and 
+-L options to ensure that disk space is freed up when not needed. 
+Additionally if you have little space left on your disk it might be wise 
+to set a -S option to make vm disk use a little more granular.
+
+For myself with a 2gig swap partition and 512mb of RAM... It seems I 
+could make dynamic_pager clean out my unused swap files by adding -H and 
+-L options, thus increasing my maximum swapfile size to 1gig (in my 2 
+gig partition), but that doesn't seem very efficient.
+Alternatively I can set a swapfile size with -S. This would allow me to 
+pretty much fill my 2gig swap space, and I don't really need -H and -L 
+because it's a dedicated swap partition. The question is how big do I 
+make the swapfiles? Is there any reason why I shouldn't just go for a 
+partition filling 2gig swapfile right off? What advantage to I get by 
+going for smaller sizes?
+
+I'm going to experiment with some of this right now, but I'm interested 
+in peoples thoughts on the latter point.
+
+Adrian
+
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000582.html">[X-Unix] Panthers Virtual Memory
+</A></li>
+	<LI>Next message: <A HREF="000584.html">[X-Unix] Panthers Virtual Memory
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#583">[ date ]</a>
+              <a href="thread.html#583">[ thread ]</a>
+              <a href="subject.html#583">[ subject ]</a>
+              <a href="author.html#583">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

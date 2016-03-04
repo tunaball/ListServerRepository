@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Keychain Certificates? - And more Help
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Keychain%20Certificates%3F%20-%20And%20more%20Help&In-Reply-To=p06240801c3adad506e48%40%5B10.0.1.4%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="019709.html">
+   <LINK REL="Next"  HREF="019711.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Keychain Certificates? - And more Help</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Keychain%20Certificates%3F%20-%20And%20more%20Help&In-Reply-To=p06240801c3adad506e48%40%5B10.0.1.4%5D"
+       TITLE="[X4U] Keychain Certificates? - And more Help">macmonster at myrealbox.com
+       </A><BR>
+    <I>Fri Jan 11 17:56:05 PST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="019709.html">[X4U] Keychain Certificates? - And more Help
+</A></li>
+        <LI>Next message: <A HREF="019711.html">[X4U] Extra Applications folder
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19710">[ date ]</a>
+              <a href="thread.html#19710">[ thread ]</a>
+              <a href="subject.html#19710">[ subject ]</a>
+              <a href="author.html#19710">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 11 Jan 2008, at 23:39, Rod Duncan wrote:
+&gt;<i> ...
+</I>&gt;<i> Long story short we decided to delete the security certificates we  
+</I>&gt;<i> found stored in Keychain. In seemed reasonable at the time however  
+</I>&gt;<i> now, we can't even access MSN as it is looking for a security  
+</I>&gt;<i> certificate. I figured, like a preference, the application would  
+</I>&gt;<i> just restore a new certificate that it needs or finds lacking.
+</I>
+Ooops. There are a number of items stored in different keychains,  
+which are therefore visible in the &quot;Keychain Access&quot; program.
+
+In the left-hand pane of Keychain Access are a number of categories.  
+I think that the stuff one might most safely delete are &quot;Passwords&quot; -  
+I have certainly deleted these if, for instance, I have changed the  
+password on a wireless router and I want to reenter its password (the  
+new one) next time I connect.
+
+I see that the &quot;Certificates&quot; category includes stuff from Thwaite &amp;  
+Verisign - I know those are companies that provide &quot;secure&quot; website  
+certificates to banks &amp; e-commerce websites, so I assume these are  
+the master certificates that ship with the o/s so that Safari knows  
+these sites are &quot;safe&quot; without you having to tell it so.
+
+I note that I also have certificates from named individuals - Bob  
+Smith &amp; the like - as certificates, but upon inspection these are  
+generally signed or issued by one of those larger authorities named  
+above (this sort of signing supports delegation) so I assume that  
+these have been added automatically when I have visited sites.
+
+&gt;<i> We still have the G3 portable to pull information from if we need  
+</I>&gt;<i> to reinstall from there. If we do need to restore these  
+</I>&gt;<i> certificates, where would I find them and where are they accessed  
+</I>&gt;<i> in the system?
+</I>
+   $ sudo find / -iname &quot;*.keychain&quot;
+   /Library/Keychains/System.keychain
+   /Users/stroller/Library/Keychains/login.keychain
+   $
+
+Note also that there's a &quot;Microsoft_Intermediate_Certificates&quot; file  
+in ~/Library/Keychains/&quot;. I guess it could be that that's b0rked?
+
+I know you can copy keychains from one machine to the other - I have  
+done to migrate all my saved passwords from my old laptop to my new  
+one - but exercise caution and backup the original files (from now  
+on, anyway!). I haven't poked my nose in the full implications of  
+moving keychain files around, and I guess there may be a potential  
+for locking oneself out of one's user account (no problem if the  
+machine can be mounted in target mode &amp; changes revoked, I assume). I  
+think it's possible to have a different user &amp; keychain passwords,  
+and that this might produce behaviour which may surprise or confuse  
+the unprepared user.
+
+Stroller.
+
+</PRE>
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="019709.html">[X4U] Keychain Certificates? - And more Help
+</A></li>
+	<LI>Next message: <A HREF="019711.html">[X4U] Extra Applications folder
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19710">[ date ]</a>
+              <a href="thread.html#19710">[ thread ]</a>
+              <a href="subject.html#19710">[ subject ]</a>
+              <a href="author.html#19710">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] A (seemingly) simple question...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20A%20%28seemingly%29%20simple%20question...&In-Reply-To=%3C8729C767-20D4-4410-9946-78D3B7AA02D4%40secure-computing.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003432.html">
+   <LINK REL="Next"  HREF="003434.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X-Unix] A (seemingly) simple question...</H1>
+    <B>Eric Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20A%20%28seemingly%29%20simple%20question...&In-Reply-To=%3C8729C767-20D4-4410-9946-78D3B7AA02D4%40secure-computing.net%3E"
+       TITLE="[X-Unix] A (seemingly) simple question...">ecrist at secure-computing.net
+       </A><BR>
+    <I>Tue May 24 18:12:38 PDT 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003432.html">[X-Unix] A (seemingly) simple question...
+</A></li>
+        <LI>Next message: <A HREF="003434.html">[X-Unix] A (seemingly) simple question...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3433">[ date ]</a>
+              <a href="thread.html#3433">[ thread ]</a>
+              <a href="subject.html#3433">[ subject ]</a>
+              <a href="author.html#3433">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>FWIW, logs are typically stored in /var.  This holds true, even on Macs, though with a twist.  If you look at your system root ('/' on a console), you'll note that there exists a symlink to /private/var.  There's a few other similar juicy bits, as well:
+
+lrwxr-xr-x@   1 root    wheel    11B Apr 17  2010 etc -&gt; private/etc
+dr-xr-xr-x    2 root    wheel     1B May  2 07:54 home
+-rw-r--r--@   1 root    wheel    18M Jan 29 17:18 mach_kernel
+dr-xr-xr-x    2 root    wheel     1B May  2 07:54 net
+drwxr-xr-x@   6 root    wheel   204B Apr 17  2010 private
+drwxr-xr-x@  67 root    wheel   2.2K Mar 23 10:34 sbin
+lrwxr-xr-x@   1 root    wheel    11B Apr 17  2010 tmp -&gt; private/tmp
+drwxr-xr-x@  14 root    wheel   476B Nov 26 20:19 usr
+lrwxr-xr-x@   1 root    wheel    11B Apr 17  2010 var -&gt; private/var
+
+Section 7 of the system manual for hier will shed some light.  (man 7 hier).
+
+Hope this helps.
+
+Eric
+
+
+
+On May 24, 2011, at 16:34:24, Michael Burton wrote:
+
+&gt;<i> On May 24, 2011, at 4:03 PM, William H. Magill wrote:
+</I>&gt;<i> 
+</I>&gt;&gt;<i> I was working on debugging a problem (not with macports) and discovered something I could not find...
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> Where is the &quot;console log&quot; file now?
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> The file(s) which &quot;Console.app&quot; reports as &quot;All Messages&quot; and &quot;Console Messages.&quot;
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> At one time there was an actual file called &quot;console.log,&quot; however find does not find it anymore.
+</I>&gt;&gt;<i> 	(sudo  find . -name \*console.log\* -print )
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> I think you're probably looking for
+</I>&gt;<i> 	/private/var/log/system.log .
+</I>&gt;<i> 
+</I>&gt;<i> I found that by opening the Console application, then using
+</I>&gt;<i> 	lsof -c Console
+</I>&gt;<i> to see what files it had open.
+</I>&gt;<i> 
+</I>&gt;<i> -- 
+</I>&gt;<i> Michael Burton     <A HREF="../../../mailman/listinfo/x-unix.html">michaelburton at brainrow.com</A>     (614) 263-7948
+</I>&gt;<i> Home Page (rarely updated) : <A HREF="http://pathetic.brainrow.com/">http://pathetic.brainrow.com/</A>
+</I>&gt;<i> Blog (occasionally updated): <A HREF="http://brainrow.com/">http://brainrow.com/</A>
+</I>&gt;<i> 
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i> 
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003432.html">[X-Unix] A (seemingly) simple question...
+</A></li>
+	<LI>Next message: <A HREF="003434.html">[X-Unix] A (seemingly) simple question...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3433">[ date ]</a>
+              <a href="thread.html#3433">[ thread ]</a>
+              <a href="subject.html#3433">[ subject ]</a>
+              <a href="author.html#3433">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

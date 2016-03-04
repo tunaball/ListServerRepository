@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to use ESC as Meta in Enhanced Carbon Emacs?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20use%20ESC%20as%20Meta%20in%20Enhanced%20Carbon%20Emacs%3F&In-Reply-To=614D771C-0757-11D9-BFD6-000393768D2C%40mcgillsociety.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000008.html">
+   <LINK REL="Next"  HREF="000019.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to use ESC as Meta in Enhanced Carbon Emacs?</H1>
+    <B>Benjamin L. Russell</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20use%20ESC%20as%20Meta%20in%20Enhanced%20Carbon%20Emacs%3F&In-Reply-To=614D771C-0757-11D9-BFD6-000393768D2C%40mcgillsociety.org"
+       TITLE="[X-Unix] How to use ESC as Meta in Enhanced Carbon Emacs?">dekudekuplex at yahoo.com
+       </A><BR>
+    <I>Sun Sep 19 00:59:45 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000008.html">[X-Unix] How to use ESC as Meta in Enhanced Carbon Emacs?
+</A></li>
+        <LI>Next message: <A HREF="000019.html">[X-Unix] How to use ESC as Meta in Enhanced Carbon Emacs?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#18">[ date ]</a>
+              <a href="thread.html#18">[ thread ]</a>
+              <a href="subject.html#18">[ subject ]</a>
+              <a href="author.html#18">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+--- &quot;William H. Magill&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>&gt;
+wrote:
+
+&gt;<i> [content deleted]
+</I>&gt;<i> 
+</I>&gt;<i> &gt; What else could possibly be the cause?  Are we
+</I>&gt;<i> using
+</I>&gt;<i> &gt; the same version/build of the Terminal
+</I>&gt;<i> application?
+</I>&gt;<i> &gt; Mine is 1.3.1 (v82).
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; -- DekuDekuplex
+</I>&gt;<i> 
+</I>&gt;<i> I was probably looking at the 10.3.5 version instead
+</I>&gt;<i> of 10.2.8 when I 
+</I>&gt;<i> wrote the above.
+</I>&gt;<i> 
+</I>&gt;<i> You are running 10.2.6, correct? (I must have
+</I>&gt;<i> deleted the original, and 
+</I>&gt;<i> there are no archives.)
+</I>
+That is correct.
+
+&gt;<i> What gets inserted in the file if you type &quot;esc&quot; in
+</I>&gt;<i> an emacs buffer? 
+</I>&gt;<i> Since its not recognized you should be able to
+</I>&gt;<i> simply type it as a 
+</I>&gt;<i> character.
+</I>
+If I simply press the &quot;Escape&quot; key, nothing gets
+inserted.  If I type the three-letter string &quot;Esc,&quot;
+then it simply gets inserted verbatim.
+
+What's strange is that the &quot;Escape&quot; key is not
+recognized in any other Mac OS X application in Aqua
+or Darwin, either, unless I simultaneously press the
+&quot;Shift&quot; key, so the &quot;Shift&quot; + &quot;Escape&quot; = &quot;Escape&quot;
+setting seems to be global across all Mac OS X
+applications, whether Aqua or Darwinian.
+
+&gt;<i> You don't have any kind of special keyboard
+</I>&gt;<i> configuration program by 
+</I>&gt;<i> any chance?
+</I>
+No.
+
+&gt;<i> How about a &#129;`/.emacs file?
+</I>
+No.
+
+&gt;<i> The answer must be one of two things.
+</I>&gt;<i> 
+</I>&gt;<i> Since the option key DOES work as escape: the
+</I>&gt;<i> implication is that there 
+</I>&gt;<i> is either a global definition in effect (in the
+</I>&gt;<i> terminal application or 
+</I>&gt;<i> in &quot;keycaps&quot;) which causes the option key to emit
+</I>&gt;<i> the keyboard code for 
+</I>&gt;<i> escape, or emacs has been specifically configured to
+</I>&gt;<i> recognize the 
+</I>&gt;<i> option key instead of the escape key.
+</I>
+In the /Applications/Utilities/Keycaps application,
+when I press the &quot;Escape&quot; key by itself, usually
+nothing happens (I write &quot;usually&quot; because if I hold
+&quot;Escape&quot; for a few seconds, then Keycaps registers the
+key-press, and if I then press &quot;Escape&quot; quickly
+immediately afterwards, sometimes this key-press also
+registers).
+
+However, in Keycaps, if I press &quot;Shift&quot; + &quot;Escape,&quot;
+then both key-presses register.
+
+In any other application, if I press &quot;Escape&quot; by
+itself, nothing happens, but if I press &quot;Shift&quot; +
+&quot;Escape,&quot; then the application responds as if I had
+just pressed &quot;Escape.&quot;
+
+It seems that there must be Mac OS X global
+definitions for &quot;Shift&quot; + &quot;Escape&quot; = &quot;Escape,&quot; and
+&quot;Escape&quot; by itself = NULL.
+
+However, I don't know how to check/edit Mac OS X
+global key definitions.
+
+Would anybody happen to know how to do this?
+
+-- DekuDekuplex
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000008.html">[X-Unix] How to use ESC as Meta in Enhanced Carbon Emacs?
+</A></li>
+	<LI>Next message: <A HREF="000019.html">[X-Unix] How to use ESC as Meta in Enhanced Carbon Emacs?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#18">[ date ]</a>
+              <a href="thread.html#18">[ thread ]</a>
+              <a href="subject.html#18">[ subject ]</a>
+              <a href="author.html#18">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

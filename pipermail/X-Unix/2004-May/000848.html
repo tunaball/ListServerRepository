@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] ping -f -s 1024 ??
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20ping%20-f%20-s%201024%20%3F%3F&In-Reply-To=list-13253125%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000847.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] ping -f -s 1024 ??</H1>
+    <B>Stephen R. Smith</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20ping%20-f%20-s%201024%20%3F%3F&In-Reply-To=list-13253125%40mail.ninewire.com"
+       TITLE="[X-Unix] ping -f -s 1024 ??">ssmith at alignsoft.com
+       </A><BR>
+    <I>Mon May 31 19:47:21 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000847.html">[X-Unix] SMB and Windows Server2003
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#848">[ date ]</a>
+              <a href="thread.html#848">[ thread ]</a>
+              <a href="subject.html#848">[ subject ]</a>
+              <a href="author.html#848">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hey Luke,
+
+Your description of the problem is the opposite of your symptoms, so I'm
+assuming it's a (carefully crafted) typo.  0.1 should be your router, and
+0.2 and 0.100 should be (I'm assuming) your TiBook and G3 respectively.
+
+I'm going to further assume that it's from the 0.2 to 0.100 that you're
+getting 30-40% packet loss, and that to 0.1 (to the Dlink) from 0.2 (the
+TiBook) you're getting no lost packets.
+
+If that's the case, there are a couple of things that might be causing the
+problem.
+
+The NIC in the G3 may be defective - have you tried installing a PCI NIC and
+retesting from this machine?
+
+You haven't mentioned a switch or hub, so I'm assuming that you're plugging
+both machines directly into the wireless router.  The cable between the G3
+and the router may be damaged - a nick or partial break in the cable, or
+poorly connected ends may result in data loss.  Try another known good cable
+(try switching the cables between the laptop and the G3 and see if the
+problem follows the cable).
+
+You may have a bad port on the router - try another port.
+
+If all else fails, and you're not noticing a real world speed problem on the
+G3, stop flood pinging it and move on.
+
+Cheers,
+:<i>Steve
+</I>
+
+
+
+-- 
+Stephen R. Smith                Tel: 905.633.9178
+Senior Developer                Fax: 905.634.1064
+Align Software Inc.             Email: <A HREF="../../../mailman/listinfo/x-unix.html">ssmith at alignsoft.com</A>
+WWW: <A HREF="http://www.alignsoft.com/">http://www.alignsoft.com/</A>
+-----------------------------------------------------------
+     &quot;bringing order to chaos in the information age&quot;
+-----------------------------------------------------------
+
+
+
+&gt;<i> From: luke &lt;<A HREF="../../../mailman/listinfo/x-unix.html">etyrnal at ameritech.net</A>&gt;
+</I>&gt;<i> Reply-To: Mac OS X Unix &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Date: Tue, 25 May 2004 15:03:49 -0500
+</I>&gt;<i> To: Mac OS X Unix &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Subject: [X-Unix] ping -f -s 1024 ??
+</I>&gt;<i> 
+</I>&gt;<i> any idea why my two os x.2.8 machines (450MHz g3 and 867MHz TiBook)
+</I>&gt;<i> lose so many packets?
+</I>&gt;<i> 
+</I>&gt;<i> what i would like to know is this:
+</I>&gt;<i> 
+</I>&gt;<i> i can do a &quot;sudo ping -f -s 1024 192.168.0.1&quot;  -  from my 192.168.0.2
+</I>&gt;<i> machine through my D-Link DI-614+ router and get between 30% and 40%
+</I>&gt;<i> packet loss after 10,000 packets...
+</I>&gt;<i> 
+</I>&gt;<i> but when i do a &quot;sudo -f -s 1024 192.168.0.100&quot;  -  from my 192.168.0.2
+</I>&gt;<i> machine i get ZERO packet loss?
+</I>&gt;<i> 
+</I>&gt;<i> so the D-Link router seems to be able to respond to ALL of the
+</I>&gt;<i> packets... but the G3 doing nothing else but responding to pings can't
+</I>&gt;<i> handle this?
+</I>&gt;<i> 
+</I>&gt;<i> what is going on?
+</I>&gt;<i> 
+</I>&gt;<i> why can a $60 router handle this but not the 100BT G3 ??
+</I>&gt;<i> 
+</I>&gt;<i> thanks 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i> 
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> 
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your Mac ISP
+</I>&gt;<i> Serious Mac Internet Solutions From NineWire!   <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i> 
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older Mac!
+</I>&gt;<i> Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i> 
+</I>&gt;<i>    Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>   this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;<i> 
+</I>&gt;<i> OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s -
+</I>&gt;<i> <A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000847.html">[X-Unix] SMB and Windows Server2003
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#848">[ date ]</a>
+              <a href="thread.html#848">[ thread ]</a>
+              <a href="subject.html#848">[ subject ]</a>
+              <a href="author.html#848">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

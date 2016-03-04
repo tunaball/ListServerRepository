@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Newbies] Re: file locks-can't save files
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20Re%3A%20file%20locks-can%27t%20save%20files&In-Reply-To=BAYC1-PASMTP01D67CD89C0162CC91D377D2000%40cez.ice">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005161.html">
+   <LINK REL="Next"  HREF="005171.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Newbies] Re: file locks-can't save files</H1>
+    <B>Chris Morland</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20Re%3A%20file%20locks-can%27t%20save%20files&In-Reply-To=BAYC1-PASMTP01D67CD89C0162CC91D377D2000%40cez.ice"
+       TITLE="[X-Newbies] Re: file locks-can't save files">cmorland at cra.lacity.org
+       </A><BR>
+    <I>Fri May 27 16:00:06 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005161.html">[X-Newbies] Re: file locks-can't save files
+</A></li>
+        <LI>Next message: <A HREF="005171.html">[X-Newbies] Re: file locks-can't save files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5164">[ date ]</a>
+              <a href="thread.html#5164">[ thread ]</a>
+              <a href="subject.html#5164">[ subject ]</a>
+              <a href="author.html#5164">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Tried all suggestions with no results, but many thanks for all your  
+help all the same.  Solution: time for that custom G5.
+
+On May 26, 2005, at 8:31 PM, Alex wrote:
+
+&gt;<i>
+</I>&gt;<i> On May 26, 2005, at 18:12, Charles Martin wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> [...] your permissions are PROFOUNDLY screwed up [...]
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The easiest solution to this problem that I have found:
+</I>&gt;&gt;<i> 1. Download BatCHmod (available from versiontracker, macupdate, et al)
+</I>&gt;&gt;<i> 2. Run the program.
+</I>&gt;<i>
+</I>&gt;<i> I seriously doubt Charles' diagnosis is correct.
+</I>&gt;<i>
+</I>&gt;<i> If, as I believe, the problem is the immutable flag, then BatChmod  
+</I>&gt;<i> cannot help. It does not handle it.
+</I>&gt;<i>
+</I>&gt;<i> There are two immutable flags, user and system. The former can be  
+</I>&gt;<i> changed with chflags, but, if the system immutable flag is set, then  
+</I>&gt;<i> even root can't change it in multi-user mode.
+</I>&gt;<i>
+</I>&gt;<i> I strongly advise reading the relevant Apple KB doc
+</I>&gt;<i>
+</I>&gt;<i> &lt;<A HREF="http://docs.info.apple.com/article.html?artnum=106237">http://docs.info.apple.com/article.html?artnum=106237</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> and, for slightly more detail
+</I>&gt;<i>
+</I>&gt;<i> &lt;<A HREF="http://www.osxfaq.com/Tutorials/LearningCenter/AdvancedUnix/ugp2/">http://www.osxfaq.com/Tutorials/LearningCenter/AdvancedUnix/ugp2/</A> 
+</I>&gt;<i> page2.ws&gt;
+</I>&gt;<i>
+</I>&gt;&gt;<i> 4. Set permissions as you want them, which should be as follows:
+</I>&gt;&gt;<i> [...]
+</I>&gt;&gt;<i> Under owner, all three boxes (r,w,x) should be checked.
+</I>&gt;&gt;<i> Under Group, just the r and x boxes should be checked.
+</I>&gt;&gt;<i> Under Everyone, just the r and x boxes should be checked.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Check the &quot;Apple ownership and privileges&quot; to &quot;Enclosed files and  
+</I>&gt;&gt;<i> folders.&quot; Leave the &quot;unlock&quot; box unchecked.
+</I>&gt;&gt;<i> 5. Hit Apply.
+</I>&gt;<i>
+</I>&gt;<i> Assuming Charles' diagnosis is right, this is _not_ good advice.  
+</I>&gt;<i> Consider what this action would accomplish. Hit Apply -- and you've  
+</I>&gt;<i> given _every_ user permission to search each and every one of your  
+</I>&gt;<i> folders, read each and every one of your documents, and launch any  
+</I>&gt;<i> scripts you might have. (The only thing they can't do is change or  
+</I>&gt;<i> trash your files.) This is a serious breach of security.
+</I>&gt;<i>
+</I>&gt;<i> User permissions were actually designed in a more subtle manner;  
+</I>&gt;<i> applying a batch change at the top level of your home directory is not  
+</I>&gt;<i> going to restore them to the correct values. Consider, for instance,  
+</I>&gt;<i> the Documents, Public, and Drop Box folders. You do not want to grant  
+</I>&gt;<i> any kind of access to either the group or the world to the former. You  
+</I>&gt;<i> do want to allow everyone to access but not modify the second, and  
+</I>&gt;<i> modify but not see the contents of the latter, otherwise they lose  
+</I>&gt;<i> their raison d'etre.
+</I>&gt;<i>
+</I>&gt;<i> Whenever you propose to use a tool like BatChmod -- which ideally  
+</I>&gt;<i> should come with a tutorial on permissions, but unfortunately doesn't  
+</I>&gt;<i> -- think first long and hard about what the result will actually be.
+</I>&gt;<i>
+</I>&gt;<i> And, btw, if you want to see what permissions should be on your home  
+</I>&gt;<i> folder, check permissions on the appropriate item in  
+</I>&gt;<i> /System/Library/User\ Template/
+</I>&gt;<i>
+</I>&gt;<i> &lt;0x0192&gt;
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Newbies mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-newbies.html">X-Newbies at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-newbies.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-newbies</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005161.html">[X-Newbies] Re: file locks-can't save files
+</A></li>
+	<LI>Next message: <A HREF="005171.html">[X-Newbies] Re: file locks-can't save files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5164">[ date ]</a>
+              <a href="thread.html#5164">[ thread ]</a>
+              <a href="subject.html#5164">[ subject ]</a>
+              <a href="author.html#5164">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

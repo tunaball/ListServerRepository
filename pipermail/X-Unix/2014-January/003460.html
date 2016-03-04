@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Mountain Lion Upgrade Killed Socat
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20Mountain%20Lion%20Upgrade%20Killed%20Socat&In-Reply-To=%3C201401281532.s0SFWr75096828%40x.it.okstate.edu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003462.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X-Unix] Mountain Lion Upgrade Killed Socat</H1>
+    <B>Martin McCormick</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20Mountain%20Lion%20Upgrade%20Killed%20Socat&In-Reply-To=%3C201401281532.s0SFWr75096828%40x.it.okstate.edu%3E"
+       TITLE="[X-Unix] Mountain Lion Upgrade Killed Socat">martin at x.it.okstate.edu
+       </A><BR>
+    <I>Tue Jan 28 07:32:53 PST 2014</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003462.html">[X-Unix] Can't rm or mv Library/Preferences/*.plist files?
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3460">[ date ]</a>
+              <a href="thread.html#3460">[ thread ]</a>
+              <a href="subject.html#3460">[ subject ]</a>
+              <a href="author.html#3460">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>	I used to run Snowleopard and built a virtual FreeBSD
+machine in which console access is via socat. The system did not
+have xcode but I did install a binary of gcc which let me build
+socat and it worked great. Then came the upgrade to Mountain
+Lion last Fall. That appears to have worked perfectly and my
+VirtualBox FreeBSD VM continues to work now but I lost socat.
+Oh, it's still sitting there, mocking me, so to speak, but a
+library that it needs is missing:
+
+dyld: Library not loaded: /usr/lib/libwrap.7.dylib
+  Referenced from: /usr/local/bin/socat
+  Reason: image not found
+
+	All I really want is a working socat again.
+
+	I want to build another VM and will need socat to talk
+to it. I actually needed socat recently when I accidentally
+killed rc.conf on the existing vm. As a computer user who
+happens to be blind, I access the Mac through voiceover.
+VirtualBox's GUI console uses a purely bit-mapped display which
+is worthless to me. I got a fellow worker to act as OCR for a
+few minutes while I rescued the rc.conf file, but socat would
+have been so much less trouble.
+
+	Is there any way I can get socat back without an
+extended xcode odyssey? The socat I do have would probably work
+again with the right library or libraries. If there is a gcc
+binary that works in Mountain Lion, that could work as I saved
+the source.
+
+	Too bad there isn't a compat directive similar to
+FreeBSD which lets all your old binaries work after an upgrade.
+
+	The only reason I built a VM on a Mac was because it had
+the most resources for supporting it. I would rather have built
+it on a Linux or FreeBSD box which is much more friendly toward
+this sort of thing.
+
+Thanks for any useful ideas for quickly rescuing socat.
+
+Martin McCormick
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003462.html">[X-Unix] Can't rm or mv Library/Preferences/*.plist files?
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3460">[ date ]</a>
+              <a href="thread.html#3460">[ thread ]</a>
+              <a href="subject.html#3460">[ subject ]</a>
+              <a href="author.html#3460">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

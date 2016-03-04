@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Internet Sharing
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Internet%20Sharing&In-Reply-To=list-7926421%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="009257.html">
+   <LINK REL="Next"  HREF="009259.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Internet Sharing</H1>
+    <B>Jesse Brown</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Internet%20Sharing&In-Reply-To=list-7926421%40mail.ninewire.com"
+       TITLE="[Ti] Internet Sharing">jesse.brown at mac.com
+       </A><BR>
+    <I>Fri Aug  8 08:13:56 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="009257.html">[Ti] Internet Sharing
+</A></li>
+        <LI>Next message: <A HREF="009259.html">[Ti] Internet Sharing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9258">[ date ]</a>
+              <a href="thread.html#9258">[ thread ]</a>
+              <a href="subject.html#9258">[ subject ]</a>
+              <a href="author.html#9258">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 8/8/03 6:19, &quot;David DelMonte&quot; &lt;<A HREF="../../../mailman/listinfo/titanium.html">ddelmonte at mac.com</A>&gt; wrote:
+
+&gt;<i> I have set everything up now. I still cannot connect using the remote
+</I>&gt;<i> PB. It looks like it's trying to load a page -- I get no errors -- but
+</I>&gt;<i> Safari times out after 60 secs.
+</I>&gt;<i> 
+</I>&gt;<i> I am on OS 10.2.6 on both machines.
+</I>&gt;<i> 
+</I>&gt;<i> Could it be that my internet connection (dual ISDN - 128KB) wont allow
+</I>&gt;<i> multiple access?
+</I>
+
+David,
+
+Let me take a crack at summarizes what you should have set up based on your
+conversation with Woz:
+
+1) Base station Network preferences should be normal Ethernet DHCP, assuming
+your ISDN modem is assigning your base station an IP number through NAT.
+This is how many of them work. So your base station is set with a private
+NAT address &quot;probably&quot; in the 192.168.0.x range.
+
+2) Airport Network Port configuration should be off as it's not needed in
+this case on the base station Network Preferences.
+
+3) Internet Sharing should be on , on the base station where  &quot;Share Your
+Internet Connection...&quot; is checked.
+
+4) Click on the Airport Options to give your Airport network a name and to
+set Encryption and password options if needed.
+
+5) Click the Start button. Your Airport Network should be operational.
+
+6) On the Remote machine you should be able to connect to the Base Station
+if your Airport is turned on and DHCP is set in the Network Preferences. IT
+will probably assign you an Ip in the 10.x.x.x range.
+
+The only hitch I see in this setup is NAT-NAT routing at the base station.
+You have a NAT router with the ISDN modem/router assigning your base station
+a Private NAT address and the Base station assigning your remote machine a
+NAT IP number possibly in the same range.
+
+This may be why you can't connect to the internet because there is an
+attempt to route NAT-NAT through your BS.
+
+Check the IP number on your base station. If it's in the same range as your
+remote machine then this may be the problem - they can't be in the same
+range.  (are they both in the 10.x.x.x range?)
+
+The only workaround that I can figure would be to log onto the ISDN router
+via it's web interface and change the NAT address scheme if that is possible
+to use the 192.168.x.x scheme. You can't change the Base station range as
+far as I know.
+
+In the long run I'm not sure you can route NAT-NAT with simple router
+configurations like we're dealing with. I suspect you would need a more
+robust router and some static routing tables configured. If anyone knows a
+simple workaround, now would be a good time to jump in.
+
+
+-- 
+Jesse
+
+'Tis sweet to hear the watch-dog's honest bark
+    Bay deep mouth'd welcome as we draw near home;
+'Tis sweet to know an eye will mark
+    Our coming, and look brighter when we come.
+- Lord Byron
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="009257.html">[Ti] Internet Sharing
+</A></li>
+	<LI>Next message: <A HREF="009259.html">[Ti] Internet Sharing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9258">[ date ]</a>
+              <a href="thread.html#9258">[ thread ]</a>
+              <a href="subject.html#9258">[ subject ]</a>
+              <a href="author.html#9258">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

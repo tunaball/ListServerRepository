@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [BTM] tmobile with GPRS help
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:bluetooth-mac%40listserver.themacintoshguy.com?Subject=%5BBTM%5D%20tmobile%20with%20GPRS%20help&In-Reply-To=list-11255793%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001866.html">
+   <LINK REL="Next"  HREF="001868.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[BTM] tmobile with GPRS help</H1>
+    <B>Dirk-Willem van Gulik</B> 
+    <A HREF="mailto:bluetooth-mac%40listserver.themacintoshguy.com?Subject=%5BBTM%5D%20tmobile%20with%20GPRS%20help&In-Reply-To=list-11255793%40mail.ninewire.com"
+       TITLE="[BTM] tmobile with GPRS help">dirkx at webweaving.org
+       </A><BR>
+    <I>Sun Mar  7 02:35:56 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001866.html">[BTM] New Bluetooth Headsets?
+</A></li>
+        <LI>Next message: <A HREF="001868.html">[BTM] New Bluetooth Headsets?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1867">[ date ]</a>
+              <a href="thread.html#1867">[ thread ]</a>
+              <a href="subject.html#1867">[ subject ]</a>
+              <a href="author.html#1867">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>It may be the APN - check the script at <A HREF="http://www.webweaving.org/t68/">http://www.webweaving.org/t68/</A>  
+to
+see how you do that (*line with 'internet' in it) and add that APN line
+into your script. That may well help.
+
+Depending on your country your APN with T-Mobile will be something like
+
+	internet.t-d1.de
+
+and your username/password td1/gprs. or alternatively set the APN in
+register 1 and let that '1' at the end of the phone number you are using
+below reference that.
+
+Dw
+
+On Mar 7, 2004, at 1:27 AM, Robert Nicholson wrote:
+
+&gt;<i> So I've followed the instructions here
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://www.raelity.org/gadget/cellphone/nokia/">http://www.raelity.org/gadget/cellphone/nokia/</A> 
+</I>&gt;<i> osx_3650_bluetooth_gprs.html
+</I>&gt;<i>
+</I>&gt;<i> and I'm getting the following.
+</I>&gt;<i>
+</I>&gt;<i> Mar  7 07:23:48 localhost pppd[838]: pppd 2.4.2b1 started by root, uid  
+</I>&gt;<i> 0
+</I>&gt;<i> Mar  7 07:23:53 localhost /usr/libexec/CCLEngine: Nokia GPRS CID1  
+</I>&gt;<i> +CGQREQ
+</I>&gt;<i> Mar  7 07:23:53 localhost /usr/libexec/CCLEngine: CCLWrite : AT\13
+</I>&gt;<i> Mar  7 07:23:53 localhost /usr/libexec/CCLEngine: CCLMatched : OK\13\10
+</I>&gt;<i> Mar  7 07:23:53 localhost /usr/libexec/CCLEngine: CCLWrite : AT+CGMI\13
+</I>&gt;<i> Mar  7 07:23:53 localhost /usr/libexec/CCLEngine: CCLMatched : Nokia
+</I>&gt;<i> Mar  7 07:23:53 localhost /usr/libexec/CCLEngine: CCLWrite :  
+</I>&gt;<i> AT&amp;FE0V1&amp;D2&amp;S0&amp;C1S0=0+IFC=3,1\13
+</I>&gt;<i> Mar  7 07:23:53 localhost /usr/libexec/CCLEngine: CCLMatched : OK\13\10
+</I>&gt;<i> Mar  7 07:23:55 localhost /usr/libexec/CCLEngine: CCLWrite :  
+</I>&gt;<i> AT+CGQREQ=1,2,2,2,4,16\13
+</I>&gt;<i> Mar  7 07:23:55 localhost /usr/libexec/CCLEngine: CCLMatched : OK\13\10
+</I>&gt;<i> Mar  7 07:23:55 localhost /usr/libexec/CCLEngine: Making GPRS  
+</I>&gt;<i> connection
+</I>&gt;<i> Mar  7 07:23:55 localhost /usr/libexec/CCLEngine: CCLWrite :  
+</I>&gt;<i> ATD*99***1#\13
+</I>&gt;<i> Mar  7 07:23:56 localhost /usr/libexec/CCLEngine: CCLMatched : CONNECT
+</I>&gt;<i> Mar  7 07:24:00 localhost pppd[838]: Serial connection established.
+</I>&gt;<i> Mar  7 07:24:00 localhost pppd[838]: Using interface ppp0
+</I>&gt;<i> Mar  7 07:24:00 localhost pppd[838]: Connect: ppp0 &lt;--&gt;  
+</I>&gt;<i> /dev/cu.Bluetooth-Modem
+</I>&gt;<i> Mar  7 07:24:05 localhost pppd[838]: LCP terminated by peer
+</I>&gt;<i> Mar  7 07:24:08 localhost pppd[838]: Connection terminated.
+</I>&gt;<i> Mar  7 07:24:09 localhost /usr/libexec/CCLEngine: CCLWrite : +++
+</I>&gt;<i> Mar  7 07:24:12 localhost /usr/libexec/CCLEngine: CCLWrite : ATH0\13
+</I>&gt;<i> Mar  7 07:24:17 localhost /usr/libexec/CCLEngine: CCLWrite : +++
+</I>&gt;<i> Mar  7 07:24:20 localhost /usr/libexec/CCLEngine: CCLWrite : ATH0\13
+</I>&gt;<i> Mar  7 07:24:24 localhost /usr/libexec/CCLEngine: CCLWrite : +++
+</I>&gt;<i> Mar  7 07:24:27 localhost /usr/libexec/CCLEngine: CCLWrite : ATH0\13
+</I>&gt;<i> Mar  7 07:24:31 localhost pppd[838]: disconnect script failed
+</I>&gt;<i> Mar  7 07:24:32 localhost pppd[838]: Exit.
+</I>&gt;<i> Mar  7 07:24:50 localho
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> #############################################################
+</I>&gt;<i> This message is sent to you because you are subscribed to
+</I>&gt;<i>  the mailing list &lt;<A HREF="../../../mailman/listinfo/bluetooth-mac.html">bluetooth-mac at lists.themacintoshguy.com</A>&gt;.
+</I>&gt;<i> To unsubscribe, E-mail to:  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/bluetooth-mac.html">bluetooth-mac-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/bluetooth-mac.html">bluetooth-mac-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Send administrative queries to   
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/bluetooth-mac.html">bluetooth-mac-request at lists.themacintoshguy.com</A>&gt;
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001866.html">[BTM] New Bluetooth Headsets?
+</A></li>
+	<LI>Next message: <A HREF="001868.html">[BTM] New Bluetooth Headsets?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1867">[ date ]</a>
+              <a href="thread.html#1867">[ thread ]</a>
+              <a href="subject.html#1867">[ subject ]</a>
+              <a href="author.html#1867">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/bluetooth-mac.html">More information about the Bluetooth-mac
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

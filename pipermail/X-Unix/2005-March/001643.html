@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] SSH trouble
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20SSH%20trouble&In-Reply-To=ccc0e0c805031719313c673581%40mail.gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001640.html">
+   <LINK REL="Next"  HREF="001635.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] SSH trouble</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20SSH%20trouble&In-Reply-To=ccc0e0c805031719313c673581%40mail.gmail.com"
+       TITLE="[X-Unix] SSH trouble">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Fri Mar 18 09:15:42 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001640.html">[X-Unix] SSH trouble
+</A></li>
+        <LI>Next message: <A HREF="001635.html">[X-Unix] SSH trouble
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1643">[ date ]</a>
+              <a href="thread.html#1643">[ thread ]</a>
+              <a href="subject.html#1643">[ subject ]</a>
+              <a href="author.html#1643">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Mar 18, 2005, at 3:31 am, Dmytro Koval'ov wrote:
+&gt;<i>
+</I>&gt;<i> What you can do (warning: this wiil disable host sanity checking, so
+</I>&gt;<i> do this only if you know for sure, that yuo are connecting to right
+</I>&gt;<i> host).
+</I>&gt;<i>
+</I>&gt;<i> 1) add line
+</I>&gt;<i> StrictHostKeyChecking no to ~/.ssh/ssh_config
+</I>&gt;<i> 2)
+</I>&gt;<i>   $ rm ~/.ssh/known_hosts
+</I>&gt;<i>   $ ln -s /dev/null ~/.ssh/known_hosts
+</I>&gt;<i>
+</I>&gt;<i> This way your local host ignores the fact that there's is no line in
+</I>&gt;<i> known_hosts corresponding to remote machine, gives you a warning about
+</I>&gt;<i> adding new line and adds new line to /dev/null.
+</I>&gt;<i>
+</I>&gt;<i> Tested. Proved to work.
+</I>
+That's pretty questionable security tho'. If you ssh to multiple 
+machines on a regular basis, then you have ensured that you will never 
+check the key on any of them. Better to just ignore dodgy keys on a 
+per-host basis.
+
+I have the following line in my .bash_profile:
+   alias ssg=&quot;ssh -o StrictHostKeyChecking=no -o 
+UserKnownHostsFile=/dev/null&quot;
+
+So if I want to ssh to a machine on which the host key is likely to 
+change on a regular basis I just `ssg machineIamInstallingFromLiveCD`. 
+It squaks about adding a key to the known hosts file, but only for the 
+duration of this session that's the bitbucket, the same as you have it. 
+I'm pretty sure I tried `alias ssg=&quot;ssh -q -o StrictHostKeyChecking=no 
+-o UserKnownHostsFile=/dev/null&quot;` but that that failed to report some 
+other errors correctly.
+
+Stroller.
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001640.html">[X-Unix] SSH trouble
+</A></li>
+	<LI>Next message: <A HREF="001635.html">[X-Unix] SSH trouble
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1643">[ date ]</a>
+              <a href="thread.html#1643">[ thread ]</a>
+              <a href="subject.html#1643">[ subject ]</a>
+              <a href="author.html#1643">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

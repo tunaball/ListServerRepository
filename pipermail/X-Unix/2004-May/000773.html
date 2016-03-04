@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] running xterm commands from .xinitrc
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20running%20xterm%20commands%20from%20.xinitrc&In-Reply-To=list-12657575%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000772.html">
+   <LINK REL="Next"  HREF="000776.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] running xterm commands from .xinitrc</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20running%20xterm%20commands%20from%20.xinitrc&In-Reply-To=list-12657575%40mail.ninewire.com"
+       TITLE="[X-Unix] running xterm commands from .xinitrc">magill at mcgillsociety.org
+       </A><BR>
+    <I>Tue May 11 20:14:57 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000772.html">[X-Unix] Forwarding X11 and launching apps
+</A></li>
+        <LI>Next message: <A HREF="000776.html">Trying to get rid of unwanted files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#773">[ date ]</a>
+              <a href="thread.html#773">[ thread ]</a>
+              <a href="subject.html#773">[ subject ]</a>
+              <a href="author.html#773">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 09 May, 2004, at 09:21, Adrian Simmons wrote:
+&gt;<i> I'm trying to do things like this:
+</I>&gt;<i> xterm -geometry 80x24 -sb -rightbar -fg white -bg navy -e 
+</I>&gt;<i> .sshconnect.sh &amp;
+</I>&gt;<i>
+</I>&gt;<i> or:
+</I>&gt;<i> xterm -geometry 80x24 -sb -rightbar -fg white -bg navy -e &quot;ssh -X
+</I>&gt;<i> 192.168.0.2&quot; &amp;
+</I>  ...
+&gt;<i> As an aside, the xterm windows now appear under the OSX menu bar - I 
+</I>&gt;<i> can't find the fix for that either, anyone help?
+</I>
+You have to position the window ... you are leaving off the 
+coordinates, only specifying the size:
+
+&quot;-geometry geom               size (in characters) and position&quot;
+
+The default is  &quot;xterm -geometry 80x66+0+0&quot; This positions the window 
+in the upper right hand corner (0,0) ... under the menu bar!
+
+This is one set of corrdinates, toward the left side of the screen, 
+down about a quarter inch, for the command line.
+
+xterm -geometry 80x20+494+51 &amp;
+
+Or put this in your .Xresources file:
+
+xload*geometry:                         180x80-0+25
+
+Note that &quot;+25&quot; is the magic number -- anything less than that will put 
+you under the menu bar!
+
+This will position an Xload on the right margin just below the title 
+bar.
+
+Personally, I find it cleaner to put things I use all the time, like 
+&quot;-sb -rightbar -fg white -bg navy&quot; in the .Xresources file, so that the 
+command line is not as cluttered.
+
+xterm*foreground:                       white
+xterm*background:                       blue
+xterm*rightScrollBar:                   trueM
+
+If you don't find a man page for xterm, use:
+
+man -M /usr/X11R6/man xterm
+
+That is where all of the X11 man pages reside, and the manpath should 
+find them.
+====
+
+I haven't played with executing commands from the xterm command line 
+for a while, but if I remember correctly, the arguments need to be in 
+quotes, not the &quot;command&quot;. So:
+&gt;<i> -e &quot;ssh -X 192.168.0.2&quot;
+</I>should be:
+-3 ssh &quot;-X 192.168.0.2&quot;
+
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000772.html">[X-Unix] Forwarding X11 and launching apps
+</A></li>
+	<LI>Next message: <A HREF="000776.html">Trying to get rid of unwanted files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#773">[ date ]</a>
+              <a href="thread.html#773">[ thread ]</a>
+              <a href="subject.html#773">[ subject ]</a>
+              <a href="author.html#773">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

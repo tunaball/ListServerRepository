@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MacDV] Re: Formatting my hard drive
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20Formatting%20my%20hard%20drive&In-Reply-To=list-9591416%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="008096.html">
+   <LINK REL="Next"  HREF="008098.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MacDV] Re: Formatting my hard drive</H1>
+    <B>Mark M. Florida</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20Formatting%20my%20hard%20drive&In-Reply-To=list-9591416%40mail.ninewire.com"
+       TITLE="[MacDV] Re: Formatting my hard drive">markf at squareblue.com
+       </A><BR>
+    <I>Wed Dec  3 16:51:17 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="008096.html">[MacDV] Re: Formatting my hard drive
+</A></li>
+        <LI>Next message: <A HREF="008098.html">Recommended external FW drives (was Formatting Hard Drive)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8097">[ date ]</a>
+              <a href="thread.html#8097">[ thread ]</a>
+              <a href="subject.html#8097">[ subject ]</a>
+              <a href="author.html#8097">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Dec 3, 2003, at 5:49 PM, Peter van der Linden wrote:
+
+&gt;<i> I don't understand why you believe these system and application files 
+</I>&gt;<i> are somehow magically &quot;not competing&quot; with the scratch files just by 
+</I>&gt;<i> moving them into a separate partition.  Could you explain?   The 
+</I>&gt;<i> slowest part of disk access is head movement, followed by rotational 
+</I>&gt;<i> latency.  Moving things about on the same platter does nothing to 
+</I>&gt;<i> minimize either, and may conceivably make them both worse, no matter 
+</I>&gt;<i> how many partitions you have on one disk.
+</I>
+I don't think it's an issue of the speed of the drive mechanism as much 
+as it is the system finding enough contiguous space to write a 
+continuous data stream like video, audio, and even Photoshop scratch 
+files to an extent.  Like you said, the slowest part of disk access is 
+head movement, and that can definitely minimized by separating your 
+media -- the head won't have to move if it doesn't run into a file in 
+it's way while writing the video data stream...  I only suggested 
+having 2 partitions on the system disk -- one for both OS and apps, and 
+a second for media storage.  I'm not suggesting creating partitions for 
+separating things like video, audio, renders, images, etc...  THAT 
+would be a waste...
+
+&gt;<i> You would have to move the files into a separate disk running under a 
+</I>&gt;<i> separate controller on a separate I/O bus to truly accomplish some 
+</I>&gt;<i> performance improvement.
+</I>
+Not so.  All ATA technologies used in G4s and G5s provide way more 
+bandwidth than a single drive could use -- even writing to two drives 
+in a RAID 0 on the same ATA bus will greatly increase throughput (not 
+that editing DV would ever need that kind of throughput).  Although 
+using two separate buses would in fact be faster just due to the 
+overhead required to manage a task like that on the same bus.
+
+But that's not even the issue here...  ugh.
+
+&gt;<i> Try a benchmark of editing with everything in one partition vs. a 
+</I>&gt;<i> separate partition.  You may surprise yourself.
+</I>
+For short-term use there will probably not be much difference, 
+especially regarding DV video, which is a fairly low-bandwidth stream.
+
+The difference lies in LONG-TERM usage.
+
+By keeping your apples in a different basket than your oranges, every 
+time you add apples or oranges, they can be placed in their own baskets 
+neatly.  And if you need an orange, you won't have to dig through your 
+apples to find one.
+
+By keeping your apps and OS on a separate partition, every time you 
+install new software or an OS update, you don't have to worry as much 
+about fragmentation of your system files or media files since they are 
+on separate partitions.  Also, as your workflow permits, if you get to 
+a point where you can copy all media to a separate partition, you can 
+reformat the original partition and copy your media files back to it 
+for a TRULY defragged drive.
+
+&gt;<i> Partitioning originally had two main uses: 1.  to prevent the system 
+</I>&gt;<i> stopping when /tmp (or some other resource) filled up, and 2. to make 
+</I>&gt;<i> backups easier.  It was never a performance enhancing tool.  
+</I>&gt;<i> Fragmentation has not been a performance problem on modern filesystems 
+</I>&gt;<i> for at least a decade.
+</I>
+It sounds like you're looking at this from a UNIX/Linux perspective 
+where the separate parts of the SYSTEM required their own partition to 
+do their job...  While it is definitely true that the SYSTEM doesn't 
+need separate partitions to work properly, it is much more efficient to 
+keep your video and audio media on a SEPARATE, DEDICATED partition with 
+merely a few hundred files vs. a few HUNDRED THOUSAND files...
+
+I'm looking at this from the perspective of someone who has worked with 
+digital video and print production for over 10 years...  Only recently 
+have systems become fast enough to not worry *AS MUCH* about 
+fragmentation -- but it's still a legitimate concern for video work 
+where huge files are written and deleted in CONTINUOUS STREAMS, and low 
+latency is CRITICAL for a glitch-free workflow.
+
+&gt;<i> Partition all you like, but don't kid yourself its doing anything for 
+</I>&gt;<i> performance.
+</I>
+*TIME* will certainly tell...
+
+- Mark F.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="008096.html">[MacDV] Re: Formatting my hard drive
+</A></li>
+	<LI>Next message: <A HREF="008098.html">Recommended external FW drives (was Formatting Hard Drive)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8097">[ date ]</a>
+              <a href="thread.html#8097">[ thread ]</a>
+              <a href="subject.html#8097">[ subject ]</a>
+              <a href="author.html#8097">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

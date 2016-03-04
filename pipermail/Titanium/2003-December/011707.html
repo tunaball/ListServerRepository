@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] setting the gateway in Jaguar/Network
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20setting%20the%20gateway%20in%20Jaguar/Network&In-Reply-To=list-9775192%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011706.html">
+   <LINK REL="Next"  HREF="011708.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] setting the gateway in Jaguar/Network</H1>
+    <B>Wesley Griffin</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20setting%20the%20gateway%20in%20Jaguar/Network&In-Reply-To=list-9775192%40mail.ninewire.com"
+       TITLE="[Ti] setting the gateway in Jaguar/Network">wgriffin at fraktured.net
+       </A><BR>
+    <I>Mon Dec 15 07:25:12 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011706.html">[Ti] Battery not charging under Panther
+</A></li>
+        <LI>Next message: <A HREF="011708.html">[Ti] Actual Battery Life
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11707">[ date ]</a>
+              <a href="thread.html#11707">[ thread ]</a>
+              <a href="subject.html#11707">[ subject ]</a>
+              <a href="author.html#11707">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Dec 15, 2003, at 1:03 AM, Dr Trevor J. Hutley wrote:
+
+&gt;<i> At 14:02 -0500 14/12/03, Wesley Griffin wrote:
+</I>&gt;&gt;<i>  I'm curious why the DHCP server is not providing the router address 
+</I>&gt;&gt;<i> when it assigns the IP address.
+</I>&gt;<i>
+</I>&gt;<i> Wesley - perhaps I did not explain the situation clearly enough.  The 
+</I>&gt;<i> DHCP server is operating normally - it does assign a router address. 
+</I>&gt;<i> What we want to do is over-ride that router address, and set the 
+</I>&gt;<i> firewall IP address as the router address.  This enables me to by-pass 
+</I>&gt;<i> the firewall for my POP mail account access.
+</I>
+That's what I figured :)
+
+&gt;<i> I understand what you are suggesting, but I do not know where to find 
+</I>&gt;<i> &quot;one of the startup scripts in /etc&quot;, nor do I know how to find and 
+</I>&gt;<i> edit the following:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Or, you could simply edit the /etc/hostconfig file and change the 
+</I>&gt;&gt;<i> line:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> ROUTER=-AUTOMATIC-
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> to
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> ROUTER=&lt;router ip&gt;
+</I>&gt;<i>
+</I>&gt;<i> Could you just give me a pointer on where to find the file that I need 
+</I>&gt;<i> to change ?  I cannot locate this file using Find.
+</I>&gt;<i>
+</I>&gt;<i> It sounds a bit like the autoexec.bat file in DOS that we used to 
+</I>&gt;<i> customize in the old days.....
+</I>
+You'll need to edit this file using the terminal. Do you know vi or 
+pico or emacs? Using one, run this:
+
+sudo vi /etc/hostconfig
+
+(I use vi, but you can substitute pico or emacs for vi). From there, 
+you should simply change the line that says ROUTER=-AUTOMATIC- to 
+ROUTER=&lt;ip&gt; and then save the file.
+
+Running as sudo allows you to edit the file since it is owned by root 
+(which is what Paul explained as well). sudo will prompt you for your 
+password.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011706.html">[Ti] Battery not charging under Panther
+</A></li>
+	<LI>Next message: <A HREF="011708.html">[Ti] Actual Battery Life
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11707">[ date ]</a>
+              <a href="thread.html#11707">[ thread ]</a>
+              <a href="subject.html#11707">[ subject ]</a>
+              <a href="author.html#11707">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

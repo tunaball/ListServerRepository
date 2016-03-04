@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Shared hosting with apache and php, security concerns
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Shared%20hosting%20with%20apache%20and%20php%2C%20security%20concerns&In-Reply-To=list-11511501%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000496.html">
+   <LINK REL="Next"  HREF="000499.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Shared hosting with apache and php, security concerns</H1>
+    <B>Eugene Lee</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Shared%20hosting%20with%20apache%20and%20php%2C%20security%20concerns&In-Reply-To=list-11511501%40mail.ninewire.com"
+       TITLE="[X-Unix] Shared hosting with apache and php, security concerns">list-themacintoshguy at fsck.net
+       </A><BR>
+    <I>Sun Mar 21 03:02:27 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000496.html">[X-Unix] Shared hosting with apache and php, security concerns
+</A></li>
+        <LI>Next message: <A HREF="000499.html">cellphone-ibook communication
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#498">[ date ]</a>
+              <a href="thread.html#498">[ thread ]</a>
+              <a href="subject.html#498">[ subject ]</a>
+              <a href="author.html#498">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sun, Mar 21, 2004 at 05:30:25AM -0500, Alexandre Gauthier wrote:
+:<i> 
+</I>:<i> On 18/03/04 04:33, &quot;Eugene Lee&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">list-themacintoshguy at fsck.net</A>&gt; wrote:
+</I>:<i> &gt; 
+</I>:<i> &gt; Incorrect.  Files (and directories) to be served by Apache need to be
+</I>:<i> &gt; readable by the Apache process.  For example, if you configure Apache to
+</I>:<i> &gt; run as user &quot;www&quot; and group &quot;www&quot;, then served content must be readable
+</I>:<i> &gt; by either the user &quot;www&quot; or anyone within the group &quot;www&quot;.
+</I>:<i> &gt; 
+</I>:<i> &gt; In a shared web server, a typical method is to make all users' web
+</I>:<i> &gt; directories group-readable by Apache, but also disallow all world privs.
+</I>:<i> &gt; Doing this keeps users from accessing each other's web content.
+</I>:<i> 
+</I>:<i> Would you mind describing how to do this more in details? I am interested in
+</I>:<i> finding out.
+</I>
+This is the general idea for each user:
+
+	$ chgrp www ~USER/Sites
+	$ chmod 750 ~USER/Sites
+
+where USER is replaced with the actual username.  The first command
+makes sure that the user's web directory (i.e. &quot;~USER/Sites&quot;) has a
+group ID belonging to the Apache process (i.e. &quot;www&quot;).  The second
+command makes sure that the user still can still modify everything in
+the web directory, yet restricts the Apache process &quot;www&quot; to read-only
+access.  This also takes advantage of the fact that OS X tends is a bit
+sloppy on the security end.  As a result all files and directories in
+the web directory are world-readable unless set otherwise.
+
+BTW, don't read &quot;sloppy&quot; as &quot;insecure&quot;.  That's not true with OS X.
+
+
+-- 
+Eugene Lee
+<A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000496.html">[X-Unix] Shared hosting with apache and php, security concerns
+</A></li>
+	<LI>Next message: <A HREF="000499.html">cellphone-ibook communication
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#498">[ date ]</a>
+              <a href="thread.html#498">[ thread ]</a>
+              <a href="subject.html#498">[ subject ]</a>
+              <a href="author.html#498">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

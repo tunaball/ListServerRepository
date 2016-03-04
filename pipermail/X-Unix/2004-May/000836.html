@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Missing Link
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Missing%20Link&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000835.html">
+   <LINK REL="Next"  HREF="000837.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Missing Link</H1>
+    <B>Dave Higgins</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Missing%20Link&In-Reply-To="
+       TITLE="Missing Link">dave at just4.com
+       </A><BR>
+    <I>Sun May 30 21:38:25 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000835.html">Hello???
+</A></li>
+        <LI>Next message: <A HREF="000837.html">[X-Unix] Missing Link
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#836">[ date ]</a>
+              <a href="thread.html#836">[ thread ]</a>
+              <a href="subject.html#836">[ subject ]</a>
+              <a href="author.html#836">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Maybe someone can help me fill in a missing link.
+
+I'm working up a shell script (#! /bin/sh) to act as a cgi bridge to a 
+SuperCard project that does the actual processing. I can get most of 
+the data from the cgi request by way of printenv, but what I'm missing 
+is the post arguments. With the Revolution CGI engine, and also in 
+PERL, you grab the post args by reading STDIN for the number of 
+characters of $CONTENT_LENGTH. What I need is the shell script 
+equivalent to this PERL line:
+
+read(STDIN, $buffer, $ENV{'CONTENT_LENGTH'});
+
+I would image I would have to use setenv to set $buffer to the contents 
+of what STDIN provides, but the syntax eludes me.
+
+I'm certainly no shell script expert, and I'm learning this as I go 
+along, so please have patience if I seem to miss some basics. I've 
+checked dozens and dozens of shell script &quot;how to&quot; Web sites, which 
+certainly did help to get started, but nobody seems to come close to 
+covering this. They all seem to refer to STDIN as being keyboard input.
+
+I have no problem switching to csh or tcsh if it's easier to do that 
+way, too.
+
+------------------
+
+There is one other alternative method I'd like to try, but I doubt that 
+it's available... Is there a way to &quot;setenv&quot; a global variable? What I 
+mean by that is can I do some special type of &quot;setenv cgiData [printenv 
++ STDIN data]&quot; that can be read by another copy of shell? That could 
+allow me to keep everything in memory and skip passing data to 
+SuperCard by way of file writing/reading and applescripting (with 
+osascript) altogether.
+
+Thanks for any help provided.
+
+Dave.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000835.html">Hello???
+</A></li>
+	<LI>Next message: <A HREF="000837.html">[X-Unix] Missing Link
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#836">[ date ]</a>
+              <a href="thread.html#836">[ thread ]</a>
+              <a href="subject.html#836">[ subject ]</a>
+              <a href="author.html#836">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

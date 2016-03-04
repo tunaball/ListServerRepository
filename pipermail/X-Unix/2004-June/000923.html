@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] &quot;Bad CPU type&quot;
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20%22Bad%20CPU%20type%22&In-Reply-To=list-13951880%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000922.html">
+   <LINK REL="Next"  HREF="000924.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] &quot;Bad CPU type&quot;</H1>
+    <B>Juan Manuel Palacios</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20%22Bad%20CPU%20type%22&In-Reply-To=list-13951880%40mail.ninewire.com"
+       TITLE="[X-Unix] &quot;Bad CPU type&quot;">jmpalaciosp at eml.cc
+       </A><BR>
+    <I>Mon Jun 14 07:53:05 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000922.html">[X-Unix] &quot;Bad CPU type&quot;
+</A></li>
+        <LI>Next message: <A HREF="000924.html">[X-Unix] Remote force logout and lockout of user
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#923">[ date ]</a>
+              <a href="thread.html#923">[ thread ]</a>
+              <a href="subject.html#923">[ subject ]</a>
+              <a href="author.html#923">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+	Hi Victor. The offending command is difficult to catch, but I got it! 
+(scroll down with me...)
+
+On Jun 14, 2004, at 10:05 AM, Victor Eijkhout wrote:
+&gt;<i>
+</I>&gt;<i> I've found mention of that message on 
+</I>&gt;<i> &lt;<A HREF="http://www.hmug.org/man/2/intro.html">http://www.hmug.org/man/2/intro.html</A>&gt; but that doesn't help me any. 
+</I>&gt;<i> All .o and .a files were compiled by me, and I think it all uses the 
+</I>&gt;<i> same gcc.
+</I>&gt;<i>
+</I>&gt;<i> make  all-recursive
+</I>&gt;<i> Making all in Library
+</I>&gt;<i> source='aca.c' object='aca.lo' libtool=yes \
+</I>&gt;<i> depfile='.deps/aca.Plo' tmpdepfile='.deps/aca.TPlo' \
+</I>&gt;<i> depmode=gcc3 /bin/sh ../depcomp \
+</I>
+	Aha! Here, this next line calls gcc with the &quot;-fast&quot; optimization 
+flag. Well, it turns out that Apple's gcc default configuration causes 
+this flag to produce binaries *exclusively&quot; for the G5 architecture... 
+how do you like that?? If you're not on a G5 when compiling gcc will 
+not complain or bail out with an error, it'll just compile along 
+producing a binary which can only be used on G5s. You can still use the 
+flag on other than G5 Apple architectures, but to get usable binaries 
+you need to add &quot;-mcpu=7450&quot;, right after the &quot;-fast&quot; flag. You can try 
+this yourself: write a simple, one liner, test.c C program and compile 
+it with &quot;gcc -fast test.c -o test&quot;, then use file(1) on it (you'll 
+simply get &quot;Mach-O executable ppc&quot;, thus revealing nothing) and try to 
+execute it... see? now compile the same thing with &quot;gcc -fast 
+-mcpu=7450 test.c -o test&quot; and try to execute it... what do you get? It 
+looks like you have some autoconf script editing to do (lines trimmed 
+for reasons of message size):
+
+&gt;<i> /bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.. 
+</I>&gt;<i> -fast   -Wall -Wno-unknown-pragmas -pedantic -c -o aca.lo `test -f 
+</I>&gt;<i> 'aca.c' || echo './'`aca.c
+</I>
+	This next line also uses the &quot;-fast&quot; flag without &quot;-mcpu=7450&quot;....
+
+&gt;<i> gcc -DHAVE_CONFIG_H -I. -I. -I.. -fast -Wall -Wno-unknown-pragmas 
+</I>&gt;<i> -pedantic -c aca.c -MT aca.lo -MD -MP -MF .deps/aca.TPlo -o aca.o
+</I>
+	Another one following...
+
+&gt;<i> /bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.. 
+</I>&gt;<i> -fast   -Wall -Wno-unknown-pragmas -pedantic -c -o basic.lo `test -f 
+</I>&gt;<i> 'basic.c' || echo './'`basic.c
+</I>
+	Yet another one....
+
+&gt;<i> gcc -DHAVE_CONFIG_H -I. -I. -I.. -fast -Wall -Wno-unknown-pragmas 
+</I>&gt;<i> -pedantic -c basic.c -MT basic.lo -MD -MP -MF .deps/basic.TPlo -o 
+</I>&gt;<i> basic.o
+</I>&gt;<i>
+</I>&gt;<i> [whole bunch of similar lines deleted]
+</I>
+
+	And probably a whole bunch of &quot;-fast&quot; flags without the corresponding 
+&quot;-mcpu=7450&quot; !
+
+	Another one following...
+
+&gt;<i> /bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.. 
+</I>&gt;<i> -fast   -Wall -Wno-unknown-pragmas -pedantic -c -o uniformmatrix.lo 
+</I>&gt;<i> `test -f 'uniformmatrix.c' || echo
+</I>
+	And another one...
+
+&gt;<i> gcc -DHAVE_CONFIG_H -I. -I. -I.. -fast -Wall -Wno-unknown-pragmas 
+</I>&gt;<i> -pedantic -c uniformmatrix.c -MT uniformmatrix.lo -MD -MP -MF 
+</I>&gt;<i> .deps/uniformmatrix.TPlo -o
+</I>
+	And another one...
+
+&gt;<i> /bin/sh ../libtool --mode=link gcc  -fast   -Wall -Wno-unknown-pragmas 
+</I>&gt;<i> -pedantic  -release 1.2 -o libhmatrix.la -rpath /usr/local/lib  aca.lo 
+</I>&gt;<i> basic.lo bem3d.lo
+</I>
+	Should I keep on going? :-)
+
+&gt;<i> /bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.. 
+</I>&gt;<i> -fast   -Wall -Wno-unknown-pragmas -pedantic -I../Library -c -o 
+</I>&gt;<i> netcdfsupport.lo `test -f 'netcdfsupport.c' || echo 
+</I>&gt;<i> './'`netcdfsupport.c
+</I>
+	As I was saying...
+
+&gt;<i> gcc -DHAVE_CONFIG_H -I. -I. -I.. -fast -Wall -Wno-unknown-pragmas 
+</I>&gt;<i> -pedantic -I../Library -c netcdfsupport.c -MT netcdfsupport.lo -MD -MP 
+</I>&gt;<i> -MF .deps/
+</I>
+	What were we talking about?
+
+&gt;<i> /bin/sh ../libtool --mode=link gcc  -fast   -Wall -Wno-unknown-pragmas 
+</I>&gt;<i> -pedantic -I../Library   -o libhcontrib.la -rpath /usr/local/lib  
+</I>&gt;<i> netcdfsupport.lo mkdir .libs
+</I>
+	I think I see something here....
+
+&gt;<i> gcc -DHAVE_CONFIG_H -I. -I. -I..     -fast   -Wall 
+</I>&gt;<i> -Wno-unknown-pragmas -pedantic -I../Library -c `test -f 
+</I>&gt;<i> 'example_netcdf.c' || echo './'`example_netcdf.c
+</I>
+	And here....
+
+&gt;<i> /bin/sh ../libtool --mode=link gcc  -fast   -Wall -Wno-unknown-pragmas 
+</I>&gt;<i> -pedantic -I../Library   -o example_netcdf example_netcdf.o 
+</I>&gt;<i> libhcontrib.la ../Library/libhmatrix.la 
+</I>&gt;<i> /System/Library/Frameworks/vecLib.framework/vecLib -lm
+</I>
+	Here...
+
+&gt;<i> gcc -fast -Wall -Wno-unknown-pragmas -pedantic -I../Library -o 
+</I>&gt;<i> example_netcdf example_netcdf.o 
+</I>&gt;<i> /System/Library/Frameworks/vecLib.framework/vecLib 
+</I>&gt;<i> ./.libs/libhcontrib.a ../Library/.libs/libhmatrix.a -lm
+</I>
+	Here...
+
+&gt;<i> gcc -DHAVE_CONFIG_H -I. -I. -I..     -fast   -Wall 
+</I>&gt;<i> -Wno-unknown-pragmas -pedantic -I../Library -c `test -f 
+</I>&gt;<i> 'example_simplefem.c' || echo './'`example_simplefem.c
+</I>
+	Here...
+
+&gt;<i> /bin/sh ../libtool --mode=link gcc  -fast   -Wall -Wno-unknown-pragmas 
+</I>&gt;<i> -pedantic -I../Library  -static -o example_simplefem  
+</I>&gt;<i> example_simplefem.o ../Library/libhmatrix.la 
+</I>&gt;<i> /System/Library/Frameworks/vecLib.framework/vecLib -lm
+</I>
+	And here.
+
+&gt;<i> gcc -fast -Wall -Wno-unknown-pragmas -pedantic -I../Library -o 
+</I>&gt;<i> example_simplefem example_simplefem.o 
+</I>&gt;<i> /System/Library/Frameworks/vecLib.framework/vecLib 
+</I>&gt;<i> ../Library/.libs/libhmatrix.a -lm
+</I>&gt;<i>
+</I>&gt;<i> [more of the same deleted]
+</I>
+	And more of the same you're going to have to fix! Just as the next 
+line...
+
+&gt;<i>
+</I>&gt;<i> /bin/sh ../libtool --mode=link gcc  -fast   -Wall -Wno-unknown-pragmas 
+</I>&gt;<i> -pedantic -I../Library  -static -o example_direct  example_direct.o 
+</I>&gt;<i> ../Library/libhmatrix.la 
+</I>&gt;<i> /System/Library/Frameworks/vecLib.framework/vecLib -lm
+</I>
+	And the next one...
+
+&gt;<i> gcc -fast -Wall -Wno-unknown-pragmas -pedantic -I../Library -o 
+</I>&gt;<i> example_direct example_direct.o 
+</I>&gt;<i> /System/Library/Frameworks/vecLib.framework/vecLib 
+</I>&gt;<i> ../Library/.libs/libhmatrix.a -lm
+</I>&gt;<i>
+</I>
+	Hehe, that's a lot of editing you're going to have to do... or if you 
+manage to regenerate the autoconf script with the &quot;-mcpu=7450&quot; flag 
+passed to your compiler, it'll save you a lot of time and headaches. 
+You can also use the &quot;-O1&quot;, &quot;-O2&quot; or &quot;-O3&quot; optimization flags, which do 
+not lock you into a single platform, but reportedly the &quot;-fast&quot; one is 
+the best one out there; reading gcc's man page helps a lot in this 
+respect. It was fun reading through the &quot;autoconf shit&quot;... ;-) Hope 
+this helps you!
+
+	Regards,...
+
+
+		Juan
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000922.html">[X-Unix] &quot;Bad CPU type&quot;
+</A></li>
+	<LI>Next message: <A HREF="000924.html">[X-Unix] Remote force logout and lockout of user
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#923">[ date ]</a>
+              <a href="thread.html#923">[ thread ]</a>
+              <a href="subject.html#923">[ subject ]</a>
+              <a href="author.html#923">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Postfix troubles
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Postfix%20troubles&In-Reply-To=list-10505685%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000194.html">
+   <LINK REL="Next"  HREF="000196.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Postfix troubles</H1>
+    <B>Michael Grant</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Postfix%20troubles&In-Reply-To=list-10505685%40mail.ninewire.com"
+       TITLE="[X-Unix] Postfix troubles">soft at bdanube.com
+       </A><BR>
+    <I>Wed Jan 28 08:40:25 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000194.html">[X-Unix] Postfix troubles
+</A></li>
+        <LI>Next message: <A HREF="000196.html">[X-Unix] Postfix troubles
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#195">[ date ]</a>
+              <a href="thread.html#195">[ thread ]</a>
+              <a href="subject.html#195">[ subject ]</a>
+              <a href="author.html#195">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Jan 28, 2004, at 10:12 AM, Juan Manuel Palacios wrote:
+
+&gt;<i> 	Hi Michael. The message came through, which means you have a working 
+</I>&gt;<i> local stmp server. I had one with sendmail back in my jaguar days but 
+</I>&gt;<i> since Apple spoiled my cake with Postfix in Panther I haven't had the 
+</I>&gt;<i> time to dig into the proper documentation to set it up again. You 
+</I>&gt;<i> think you could please, if you have the time of course, give me a 
+</I>&gt;<i> quick run down of the needed parameters to set up an smtp server like 
+</I>&gt;<i> yours? On list or off list, whatever you prefer. Hey, you could even 
+</I>&gt;<i> send me your config file with abstracted values for your protection if 
+</I>&gt;<i> you like, without any other explanation, that'll do!
+</I>
+I think the stuff on Mike B.'s link should do the trick.
+What I did differently (besides the actual hostname and domain of 
+course) was, in /etc/postfix/main.cf:
+
+Keep line 105 commented but un-comment line 107 instead, like this:
+#inet_interfaces = all
+#inet_interfaces = $myhostname
+inet_interfaces = $myhostname, localhost
+
+Keep line 239 commented but un-comment line 240 instead, like this:
+#mynetworks_style = subnet
+mynetworks_style = host
+
+Keep line 253 commented (see notes in config file).
+
+Also, instead of rebooting as the hint says, it's enough (since the 
+actual postfix process was already running) to enter the following in 
+the Terminal: sudo /usr/sbin/postfix reload
+
+HTH,
+Michael
+
+PS. Stroller, do you think this should be sufficient to keep spammers 
+from using my machine as an open relay?
+
+
+&gt;&gt;<i> On Jan 27, 2004, at 6:05 PM, Mike Bigley wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Have you done this:
+</I>&gt;&gt;&gt;<i> &lt;<A HREF="http://www.macosxhints.com/article.php?story=20031025022626398">http://www.macosxhints.com/article.php?story=20031025022626398</A>&gt;
+</I>&gt;&gt;&gt;<i> Also search afp548.com for postfix for additional good information
+</I>&gt;&gt;&gt;<i>
+</I>-- 
+Around the year 2005, a sudden spark will catalyze a Crisis mood. 
+Remnants of the old social order will disintegrate. [...] Americans 
+will share a regret about recent mistakes--and a resolute new consensus 
+about what to do. [...] Sometime before the year 2025, America will 
+pass through a great gate in history, commensurate with the American 
+Revolution, Civil War, and twin emergencies of the Great Depression and 
+World War II.
+
+- William Strauss and Neil Howe, The Fourth Turning, 1997
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000194.html">[X-Unix] Postfix troubles
+</A></li>
+	<LI>Next message: <A HREF="000196.html">[X-Unix] Postfix troubles
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#195">[ date ]</a>
+              <a href="thread.html#195">[ thread ]</a>
+              <a href="subject.html#195">[ subject ]</a>
+              <a href="author.html#195">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

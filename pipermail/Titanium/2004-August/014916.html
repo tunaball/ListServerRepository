@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Journeling.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Journeling.&In-Reply-To=list-15766553%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="014915.html">
+   <LINK REL="Next"  HREF="014917.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Journeling.</H1>
+    <B>Kynan Shook</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Journeling.&In-Reply-To=list-15766553%40mail.ninewire.com"
+       TITLE="[Ti] Journeling.">kshook at cae.wisc.edu
+       </A><BR>
+    <I>Thu Aug  5 18:06:30 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="014915.html">[Ti] Apple = Wonderful
+</A></li>
+        <LI>Next message: <A HREF="014917.html">OT Mail functions Was: Just saying Hi
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14916">[ date ]</a>
+              <a href="thread.html#14916">[ thread ]</a>
+              <a href="subject.html#14916">[ subject ]</a>
+              <a href="author.html#14916">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Yes, it does.
+
+Some clarification on all the wonderful things added to 10.3's 
+implementation of HFS+.
+
+When the computer is about to perform an operation on the disk, it 
+first writes what it's going to do to the journal, then marks the 
+journal entry complete, then performs the task, then deletes the 
+journal entry.  When 10.3 or later (or anything else that supports the 
+journal) mounts a drive, it looks in the journal; if there are any 
+entries, and they are marked complete, it performs the task in the 
+journal.  If there are entries but they are not marked complete, they 
+are ignored.  It's slightly slower to write something to disk, but 
+startup is generally a fair amount faster (especially after a crash) 
+since the startup disk doesn't have to be checked for consistency.
+
+Something else that is kept track of is the &quot;temperature&quot; of each file. 
+  The files that are used most often get moved to a special place on the 
+disk, and are automatically defragmented as part of this process.  This 
+space on the disk is allocated such that it is generally the part of 
+the disk that is read at the greatest speed.  There are a number of 
+limitations on what can be considered a hot file; it must be small, 
+frequently read, and never written to, for example.  The hottest files 
+are the ones that are read the most times - technically, it's the 
+number of bytes read divided by the size of the file.
+
+Additionally, there is also some defragmentation going on in the 
+background.  If a file is read with more than 8 extents (fragments), 
+then it is eligible to be defragmented, but only if it is also under 20 
+MB, and there is enough free space available to defragment it.  If this 
+turns out to be true, the file is copied to another location on the 
+disk, and then is deleted from its original location.
+
+Anyway, the bottom line is that Journaled HFS+ is something that most 
+people should be using; the only people that should really consider 
+turning it off are people who are not worried about data integrity, and 
+require peak performance.  Generally, this means that only drives that 
+are ONLY used for digital video should have it turned off; if you don't 
+have a drive just for your digital video, then you probably don't use 
+DV enough to justify turning it off anyway.  I can't really think of 
+any other situation where it would be better to be left off.  Writing 
+to the disk slows down by about 10% or so; so little of your computer's 
+time is spent writing that turning it off won't make much of a 
+difference, except for making reboots after a crash take much, much 
+longer.
+
+You can tell if you have Journalling enabled by either doing a Get Info 
+on your hard drive, or by opening Disk Utility.  DU will also allow you 
+to enable or disable Journalling (which includes the other features 
+mentioned above) as you see fit.  No reformat is necessary, and a 
+Journaled HFS+ drive can be used under an OS that doesn't know about 
+Journalling; the older OS just doesn't take advantage of Journalling's 
+features.  I believe that 10.3 automatically turned on Journalling, 
+after 10.2.2 or so initially added support for it.
+
+In case anybody is feeling sadistic, you can read enough about all of 
+these things and more to make your very own disk utility at:
+<A HREF="http://developer.apple.com/technotes/tn/tn1150.html">http://developer.apple.com/technotes/tn/tn1150.html</A>
+
+Be sure to read the summary at the bottom.  ;-)
+
+
+On Aug 5, 2004, at 10:53 AM, silvo conticello wrote:
+
+&gt;<i> I think that  journaling in Panther includes also some file 
+</I>&gt;<i> defragmentation on the fly. Or am I mistaken?
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="014915.html">[Ti] Apple = Wonderful
+</A></li>
+	<LI>Next message: <A HREF="014917.html">OT Mail functions Was: Just saying Hi
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14916">[ date ]</a>
+              <a href="thread.html#14916">[ thread ]</a>
+              <a href="subject.html#14916">[ subject ]</a>
+              <a href="author.html#14916">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

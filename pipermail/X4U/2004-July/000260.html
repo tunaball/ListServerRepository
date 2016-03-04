@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Setting Shell Defaults for root
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Setting%20Shell%20Defaults%20for%20root&In-Reply-To=list-14602697%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000258.html">
+   <LINK REL="Next"  HREF="000261.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Setting Shell Defaults for root</H1>
+    <B>Rick Gordon</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Setting%20Shell%20Defaults%20for%20root&In-Reply-To=list-14602697%40mail.ninewire.com"
+       TITLE="[X4U] Setting Shell Defaults for root">rick at rickgordon.com
+       </A><BR>
+    <I>Thu Jul  8 12:22:35 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000258.html">[X4U] Setting Shell Defaults for root
+</A></li>
+        <LI>Next message: <A HREF="000261.html">[X4U] Thesaurus
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#260">[ date ]</a>
+              <a href="thread.html#260">[ thread ]</a>
+              <a href="subject.html#260">[ subject ]</a>
+              <a href="author.html#260">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Problem PARTIALLY solved:
+
+Further experimentation shows that adding a .tcshrc file to /private/var/root fixed both the su root problem and the spawning problem while logged in as root. And adding a .tcshrc file to ~ fixed the spawning problem while logged in as myself. I actually used a hard link to create both files:
+
+sudo ln /private/var/csh.login /private/var/root/.tcshrc
+ln /private/var/csh.login ~/.tcshrc
+
+But neither fix handles the changes when executing a sudo command. For instance, in all of the previous scenarios my alias of ls to ls -laFTWkov works, but sudo ls still generates a plain ls result.
+
+Still seeking clues.
+
+Rick Gordon
+
+------------------
+
+On 7/8/04 at 11:53 AM -0700, Rick Gordon wrote in a message entitled
+&quot;Re: [X4U] Setting Shell Defaults for root&quot;:
+
+&gt;<i>Nope. I just tried it and it didn't work. FWIW, /etc is a symbolic link to /private/etc, so my edits in /private/etc/csh.login should have also been recognized according to that consideration.
+</I>&gt;<i>
+</I>&gt;<i>Rick Gordon
+</I>&gt;<i>
+</I>&gt;<i>------------------
+</I>&gt;<i>
+</I>&gt;<i>On 7/8/04 at 1:14 PM -0500, Rod Buchanan wrote in a message entitled
+</I>&gt;<i>&quot;Re: [X4U] Setting Shell Defaults for root&quot;:
+</I>&gt;<i>
+</I>&gt;&gt;<i>On 7/8/04 2:22 AM, &quot;Rick Gordon&quot; &lt;<A HREF="../../../mailman/listinfo/x4u.html">rick at rickgordon.com</A>&gt; wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>I use tcsh as my default shell, and I have my /private/etc/csh.login file customized with numerous aliases, along with other tweaks.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>...
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>Where can I store these commands where they will remain active when I sudo or su root (both of which I do frequently) or spawn a new shell (which I don't do as often)?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>A quick check of &quot;man tcsh&quot; finds:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>&quot;A login shell begins by executing commands from the system files /etc/csh.cshrc and /etc/csh.login. ... Non-login shells read only /etc/csh.cshrc and ~/.tcshrc or ~/.cshrc on startup.&quot;
+</I>&gt;&gt;<i>
+</I>&gt;<i> &gt;I'm not a tcsh user but it looks like /etc/csh.cshrc may be what you're looking for.
+</I>&gt;<i>
+</I>
+-- 
+ 
+___________________________________________________
+
+RICK GORDON
+EMERALD VALLEY GRAPHICS AND CONSULTING
+___________________________________________________
+
+WWW:   <A HREF="http://www.shelterpub.com">http://www.shelterpub.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000258.html">[X4U] Setting Shell Defaults for root
+</A></li>
+	<LI>Next message: <A HREF="000261.html">[X4U] Thesaurus
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#260">[ date ]</a>
+              <a href="thread.html#260">[ thread ]</a>
+              <a href="subject.html#260">[ subject ]</a>
+              <a href="author.html#260">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

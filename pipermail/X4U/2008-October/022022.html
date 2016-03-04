@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] User ID problem
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20User%20ID%20problem&In-Reply-To=393B35FD-6888-4C95-9106-F9AFC9895EA7%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="022021.html">
+   <LINK REL="Next"  HREF="022017.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] User ID problem</H1>
+    <B>Doug McNutt</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20User%20ID%20problem&In-Reply-To=393B35FD-6888-4C95-9106-F9AFC9895EA7%40mac.com"
+       TITLE="[X4U] User ID problem">douglist at macnauchtan.com
+       </A><BR>
+    <I>Sun Oct 19 13:04:34 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="022021.html">[X4U] User ID problem
+</A></li>
+        <LI>Next message: <A HREF="022017.html">[X4U] iPhone
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#22022">[ date ]</a>
+              <a href="thread.html#22022">[ thread ]</a>
+              <a href="subject.html#22022">[ subject ]</a>
+              <a href="author.html#22022">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 11:46 -0500 10/19/08, Russell McGaha wrote:
+&gt;<i>	Longer answer; normally I just use ccc to move to a new HD. 
+</I>&gt;<i>This  time since I had some networking troubles that, after talking 
+</I>&gt;<i>to some  fellow ASP's and research on the support boards, needed 
+</I>&gt;<i>some harsher  methods, I did a backup, a repair permissions, and 
+</I>&gt;<i>then an archive  and install, and that left the ownerships royally 
+</I>&gt;<i>.... messed up.
+</I>&gt;<i>	CHOWN, and CHMOD, are good for single files and folders; but 
+</I>&gt;<i>not so  good on an whole HD.
+</I>&gt;<i>	An archive and install is NOT SUPPOSED to change your UID. 
+</I>&gt;<i>This is  only the second time I've seen this kind of a mess, the 
+</I>&gt;<i>other time  was on a Leopard, which is MUCH easier to mess up 
+</I>&gt;<i>because of the  extended permissions.
+</I>&gt;<i>	I was hoping for someway to set items with an UID of, say 
+</I>&gt;<i>504, to  502 on a whole HD.  I guess I'll just have to do it on a 
+</I>&gt;<i>chase by  chase basis; though doing the /tmp directories and such 
+</I>&gt;<i>will be more  of a challenge.
+</I>
+It took some effort some time ago to set restrictive permissions on a 
+few directories using the recursive capabilities of chmod.  I'm 
+afraid to make changes without testing so here is one that works. It 
+uses tcsh.
+
+# begin copy
+set report = $HEAO/permissions.txt
+date &gt; $report
+foreach xxx ($HEAO $ECHO $SKYLAB)
+	cd $xxx
+	echo &gt;&gt; $report
+	pwd &gt;&gt; $report
+	sudo  chmod -R 600 * &lt; $HOME/Pword &gt;&amp; /dev/null
+	sudo chmod -R u+X * &lt; $HOME/Pword &gt;&amp; /dev/null
+	sudo chmod -R u+x *.pl &lt; $HOME/Pword &gt;&amp; /dev/null
+	sudo chmod -R u+x *.app &lt; $HOME/Pword &gt;&amp; /dev/null
+	ls -laR  &gt;&gt; $report
+end
+bbedit $report
+# end copy
+
+chown has similar features and you can make changes from more to less 
+restrictive in my script. Note the use of +X (upper case) which has 
+special features so it applies to directories only.
+-- 
+
+--&gt; From the U S of A, the only socialist country that refuses to admit it. &lt;--
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="022021.html">[X4U] User ID problem
+</A></li>
+	<LI>Next message: <A HREF="022017.html">[X4U] iPhone
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#22022">[ date ]</a>
+              <a href="thread.html#22022">[ thread ]</a>
+              <a href="subject.html#22022">[ subject ]</a>
+              <a href="author.html#22022">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

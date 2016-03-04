@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Shared hosting with apache and php, security concerns
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Shared%20hosting%20with%20apache%20and%20php%2C%20security%20concerns&In-Reply-To=list-11455521%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000491.html">
+   <LINK REL="Next"  HREF="000493.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Shared hosting with apache and php, security concerns</H1>
+    <B>Robert Frank</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Shared%20hosting%20with%20apache%20and%20php%2C%20security%20concerns&In-Reply-To=list-11455521%40mail.ninewire.com"
+       TITLE="Shared hosting with apache and php, security concerns">robert.frank at unibas.ch
+       </A><BR>
+    <I>Thu Mar 18 01:19:54 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000491.html">[X-Unix] Shared hosting with apache and php, security concerns
+</A></li>
+        <LI>Next message: <A HREF="000493.html">[X-Unix] Shared hosting with apache and php, security concerns
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#492">[ date ]</a>
+              <a href="thread.html#492">[ thread ]</a>
+              <a href="subject.html#492">[ subject ]</a>
+              <a href="author.html#492">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 18 Mar 2004, at 9:37, Mac OS X Unix wrote:
+
+&gt;<i> I somehow get the feeling [...] answer.
+</I>&gt;<i>
+</I>&gt;<i> If this is covered in a article somewhere, please point me to it.
+</I>&gt;<i>
+</I>&gt;<i> Currently I am hosting a few sites on a OS X Client box, running 
+</I>&gt;<i> apache and
+</I>&gt;<i> php, I will not be moving to apache 2 anytime soon.  From what I can 
+</I>&gt;<i> gather,
+</I>&gt;<i> any file that needs to be served on the web needs to be world readable 
+</I>&gt;<i> for ...
+</I>Not true.
+If you run apache as a specific user (www on MACOSX), then you only 
+have to grant read access for that user. Furthermore, if you assign a 
+group (www on MACOSX), then granting read access for that group is also 
+sufficient.
+
+What does that mean?
+In MACOSX, the httpd is started as root, then changed to the user 'www' 
+and the group 'www' (as defined in the /etc/httpd/httpd.conf file with 
+the 'User' and 'Group' directives).
+Thus, any file which is owned by the user 'www' neads only to have a 
+read access for that user, everything else can be removed. Any file 
+which is owned by the group 'www' nead only to have read access for 
+that group. Of course, any intermediate directory needs to be able to 
+be at least traversed (x bit set) by the owner or group of www.
+
+If you have a directory (Documents), then you can change the owenership 
+and group to www for all documents and subdirectories from the 
+commandline with 'chown -R www:www Documents' and after that remove all 
+read and traverse rights for anyone else with 'chmod -R o-rwx 
+Documents'. This will effectively prevent anyone not in the www group 
+from accessing any files.
+
+For user directories (UserDirectory), you can leave the ownership with 
+the user, but change the group to www and remove all access for 
+everyone. This allows the owner to modify the files and will allow the 
+webserver to access the files.
+The commands here: 'chgrp -R www UserDirectory' and 'chmod -R o-rwx 
+UserDirectory'.
+
+The same can be achieved from the Finder using Get Info and then 
+setting the appropriate values.
+
+&gt;<i> I guess the first thing is I need to hope that php does not ever die, 
+</I>&gt;<i> if it
+</I>&gt;<i> were, raw code would be sent out to the browser, and in that raw code 
+</I>&gt;<i> could
+</I>&gt;<i> be for example, connection data to a database.  I can also instruct 
+</I>&gt;<i> users to
+</I>&gt;<i> secure the include files elsewhere, so they will not see those 
+</I>&gt;<i> sensitive
+</I>&gt;<i> files in the event php were to fail.
+</I>Make sure that the http server does not return directory listings. You 
+can disable this in the /etc/httpd/httpd.conf file or in the approprite 
+/etc/httpd/sites/xxxxxxxxxx file (10.3.x) for any given site. As 
+mentioned in other replies, check the values and options for the 
+mod_dir module. Furthermore, I'm sure you can prevent apache httpd from 
+returning certain files in one of the modules (I only know how to do 
+this with Roxen ...), thus, if you agree on a certain file name, say 
+'login.include.php', which contains the sensitive data, then disallow 
+sending this file to any browser - php will still include it, but no 
+user can request the file from the server for viewing. Also, make this 
+file read-only for as few users as necessary (if it belongs to www, 
+then 'chmod u=r login.include.php' will do).
+
+&gt;<i>
+</I>&gt;<i> The trouble I am having is I am able to read outside the current 
+</I>&gt;<i> directly
+</I>&gt;<i> and traverse the entire files system with php using its abilities to 
+</I>&gt;<i> read
+</I>&gt;<i> files.  I can not read files that apache does not have permission to 
+</I>&gt;<i> read, ...
+</I>It is entirely up to you as to which files will be read, as you can 
+catch the request!
+Thus, if you have a mask which allows the remote user to enter a 
+directory, simply check the current directory against a certain path 
+and only allow reading the file if this path matches or does not match.
+
+e.g. say you will only allow reads in a directory /Library/PhpData and 
+all its subdirectories, but nowhere else. Then, when a read request (or 
+change directory request) arrives, create the full path to the 
+directory of the file to read (directory to change to) and change to 
+that directory. Now check if the current directory starts with 
+'/Library/PhpData'. If so, allow the read or change, if not, return an 
+error. This may seam complicated, but is neccessary.
+Assume you are in /Library/PhpData/SomeDir and the user requests a 
+change to the directory ../../StartupItems. Then concatenating the 
+strings ('/Library/PhpData/SomeDir../../StartupItems') will make it 
+seam that the request is within the allowed directory, but when you 
+actually change to the requested directory you will end up in 
+'/Library/StartupItems' - which is not what you want.
+Of course, this only works if all programmers stick to the rules.
+For all other cases, you may want to check the 'chroot' options on 
+filesystems (Don't know the details...).
+
+Departement Informatik             tel  +41 (0)61 267 14 66
+Universitaet Basel                      fax. +41 (0)61 267 14 61
+Robert Frank
+Klingelbergstrasse 50              <A HREF="../../../mailman/listinfo/x-unix.html">Robert.Frank at unibas.ch</A>
+CH-4056 Basel
+Switzerland
+<A HREF="http://www.informatik.unibas.ch/personen/frank_r.html">http://www.informatik.unibas.ch/personen/frank_r.html</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000491.html">[X-Unix] Shared hosting with apache and php, security concerns
+</A></li>
+	<LI>Next message: <A HREF="000493.html">[X-Unix] Shared hosting with apache and php, security concerns
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#492">[ date ]</a>
+              <a href="thread.html#492">[ thread ]</a>
+              <a href="subject.html#492">[ subject ]</a>
+              <a href="author.html#492">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

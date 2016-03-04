@@ -1,0 +1,239 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Applescript to split dv stream files into chunks that iMovie can
+	import
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=Applescript%20to%20split%20dv%20stream%20files%20into%20chunks%20that%20iMovie%20can%0A%09import&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004440.html">
+   <LINK REL="Next"  HREF="004442.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Applescript to split dv stream files into chunks that iMovie can
+	import</H1>
+    <B>Laine Lee</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=Applescript%20to%20split%20dv%20stream%20files%20into%20chunks%20that%20iMovie%20can%0A%09import&In-Reply-To="
+       TITLE="Applescript to split dv stream files into chunks that iMovie can
+	import">llee at txdirect.net
+       </A><BR>
+    <I>Tue Apr 22 12:14:04 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004440.html">[MacDV] Re: Transferring .mov files from mac to pc
+</A></li>
+        <LI>Next message: <A HREF="004442.html">DV Tape playback blockiness
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4441">[ date ]</a>
+              <a href="thread.html#4441">[ thread ]</a>
+              <a href="subject.html#4441">[ subject ]</a>
+              <a href="author.html#4441">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Here's a script you can use to split dv stream movie files into chunks with
+QuickTime Player Pro to work around the iMovie file size limit. It's good
+for bringing any appropriate Quicktime movie into iMovie or even just to
+&quot;recycle&quot; an iMovie 3 output movie. Save it as a application with the Script
+Editor. You'll be prompted for a folder for saving the movie output. After
+you save the script as an application, just drop your movie onto the
+resulting droplet. If you want to change the default folder for saving, just
+open the droplet in the script editor again. Tested in OS X 10.2.
+
+------
+
+property mydestination : choose folder with prompt &#172;
+    &quot;Choose a destination folder for the segments.&quot;
+
+on open sourcefile
+    set this_time to 1
+    --set sourcefile to choose file with prompt &#172;
+    &quot;Choose a movie file you want split into segments.&quot;
+    
+    tell application &quot;QuickTime Player&quot;
+        activate
+        stop every movie
+        try
+            if exists movie 1 then close movie 1
+            
+            -- CHECK FOR THE CORRECT VERSION OF QUICKTIME
+            set the QT_version to (the QuickTime version as string)
+            set the player_version to (the version as string)
+            set the required_version to &quot;5.0.2&quot;
+            if (the QT_version is less than the required_version) or &#172;
+                (the player_version is less than the required_version) then
+                set the error_message to &#172;
+                    &quot;This script requires QuickTime &quot; &amp; &#172;
+                    the required_version &amp; &quot;  or greater.&quot; &amp; &#172;
+                    return &amp; return &amp; &#172;
+                    &quot;Current QuickTime Version: &quot; &amp; QT_version &amp; return &amp; &#172;
+                    &quot;Current QuickTime Player Version: &quot; &amp; player_version
+                my upgrade_QT(error_message)
+            end if
+            
+            -- CHECK FOR QUICKTIME PRO
+            if QuickTime Pro installed is false then
+                set the error_message to &quot;This script requires a
+            QuickTime Pro installation on this system.&quot;
+                my upgrade_QT(error_message)
+            end if
+            
+            set myfile to open sourcefile
+            
+        on error error_message number error_number
+            if the error_number is not -128 then
+                beep
+                display dialog error_message buttons {&quot;Cancel&quot;} default
+button 1
+            end if
+        end try
+        
+        --if not (exists movie 1) then error &quot;No movies are open.&quot;
+        
+    end tell
+    repeat
+        activate
+        display dialog &#172;
+            &quot;Enter the number of seconds for segments.
+            560 should make them less than 2 G in size.&quot; default answer &#172;
+            &quot;560&quot; buttons {&quot;Cancel&quot;, &quot;Set Segment Length&quot;} default button 2
+        copy the result as list to {segment_length_in_seconds, go_ahead}
+        try
+            if the segment_length_in_seconds is not &quot;&quot; then
+                set the segment_length_in_seconds to the &#172;
+                    segment_length_in_seconds as number
+                exit repeat
+            end if
+        end try
+    end repeat
+    
+    
+    repeat
+        try
+            tell application &quot;QuickTime Player&quot;
+                
+                tell movie 1
+                    set the selection end to (the selection start + &#172;
+                        (segment_length_in_seconds * time scale))
+                end tell
+                if (data size of movie 1) &gt; 0 then
+                    set start_name to name of movie 1
+                    cut movie 1
+                    make new movie
+                    paste movie 1
+                   
+                    set mynewfile to ((mydestination as string) &amp; &#172;
+                        start_name &amp; &quot;_&quot; &amp; this_time)
+                    with timeout of 3600 seconds
+                        export movie 1 to file (mynewfile &amp; &quot;.dv&quot;) &#172;
+                            as DV stream using most recent settings
+                    end timeout
+                    close movie 1 without saving
+                else
+                    error number -128
+                end if
+            end tell
+            set this_time to (this_time + 1)
+        on error
+            tell application &quot;QuickTime Player&quot;
+                activate
+                if (data size of movie 1) &gt; 0 then
+                    with timeout of 3600 seconds
+                        export movie 1 to file (((mydestination as string) &amp;
+this_time) &amp; &quot;.dv&quot;) &#172;
+                            as DV stream using most recent settings
+                    end timeout
+                    close movie 1 without saving
+                else
+                    close movie 1 without saving
+                end if
+            end tell
+            exit repeat
+        end try
+    end repeat
+end open
+
+on upgrade_QT(passed_message)
+    tell application &quot;QuickTime Player&quot;
+        activate
+        stop every movie
+        set the target_URL to &quot;<A HREF="http://www.apple.com/quicktime/download/">http://www.apple.com/quicktime/download/&quot;</A>
+        display dialog passed_message &amp; return &amp; return &amp; &#172;
+            &quot;If this computer is currently connected to the Internet, &quot; &amp; &#172;
+            &quot;click the ?pgrade?button to visit the QuickTime Website.&quot;
+buttons &#172;
+            {&quot;Upgrade&quot;, &quot;Cancel&quot;} default button 2
+        ignoring application responses
+            tell application &quot;Finder&quot;
+                open location target_URL
+            end tell
+        end ignoring
+        error number -128
+    end tell
+end upgrade_QT
+
+
+--------
+
+-- 
+Laine Lee
+<A HREF="../../../mailman/listinfo/macdv.html">llee at lonestar.utsa.edu</A>
+<A HREF="http://lonestar.utsa.edu/llee">http://lonestar.utsa.edu/llee</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004440.html">[MacDV] Re: Transferring .mov files from mac to pc
+</A></li>
+	<LI>Next message: <A HREF="004442.html">DV Tape playback blockiness
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4441">[ date ]</a>
+              <a href="thread.html#4441">[ thread ]</a>
+              <a href="subject.html#4441">[ subject ]</a>
+              <a href="author.html#4441">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

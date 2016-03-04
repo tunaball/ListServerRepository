@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] ssh sudo password in clear text
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20ssh%20sudo%20password%20in%20clear%20text&In-Reply-To=080BD80B-3FB1-44A9-BF4A-E684DC56AE3F%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002829.html">
+   <LINK REL="Next"  HREF="002831.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] ssh sudo password in clear text</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20ssh%20sudo%20password%20in%20clear%20text&In-Reply-To=080BD80B-3FB1-44A9-BF4A-E684DC56AE3F%40secure-computing.net"
+       TITLE="[X-Unix] ssh sudo password in clear text">ecrist at secure-computing.net
+       </A><BR>
+    <I>Sun Jun 10 16:06:35 PDT 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002829.html">[X-Unix] ssh sudo password in clear text
+</A></li>
+        <LI>Next message: <A HREF="002831.html">[X-Unix] ssh sudo password in clear text
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2830">[ date ]</a>
+              <a href="thread.html#2830">[ thread ]</a>
+              <a href="subject.html#2830">[ subject ]</a>
+              <a href="author.html#2830">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Jun 10, 2007, at 5:31 PMJun 10, 2007, Eric F Crist wrote:
+
+&gt;<i>
+</I>&gt;<i> On Jun 10, 2007, at 4:50 PMJun 10, 2007, Paul Hess wrote:
+</I>&gt;&gt;&gt;<i> echo &quot;password&quot; | ssh someserver.com sudo mailstuff/sa-learn.sh
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Hi Eric,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Here's the rub that brings me back to square one (unless I  
+</I>&gt;&gt;<i> misunderstand the piping).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> If I use the command above, wouldn't the password be sent to &quot;ssh&quot;  
+</I>&gt;&gt;<i> rather than sent to the &quot;sudo&quot; command?  I think I somehow need to  
+</I>&gt;&gt;<i> put echo &quot;password&quot; into the command line after ssh to be piped to  
+</I>&gt;&gt;<i> sudo but I don't understand the syntax to do that.  I believe it  
+</I>&gt;&gt;<i> has to do with single quotes but I can't find a way to get it right.
+</I>&gt;<i>
+</I>&gt;<i> Paul,
+</I>&gt;<i>
+</I>&gt;<i> The echo &quot;password&quot;  portion of the command gets piped into the  
+</I>&gt;<i> entirety of ssh someserver.com sudo mailstuff/sa-learn.sh.  In this  
+</I>&gt;<i> case, the sudo ... is what reads that input from stdin.
+</I>&gt;<i>
+</I>&gt;<i> To help you understand:
+</I>&gt;<i>
+</I>&gt;<i> foo | bar
+</I>&gt;<i>
+</I>
+Paul,
+
+Something I left out is that in the above example, bar is your ssh  
+command, inclusive of the sudo... stuff.  ssh does you a favor by  
+executing that command for you and exiting.  So, you have the right  
+idea that the echo command is being pipe into ssh and not sudo.  In  
+this particular case, however, sudo is the command that ends up with  
+the piped data (ssh passes it on).
+
+HTH
+-----
+Eric F Crist
+Secure Computing Networks
+
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002829.html">[X-Unix] ssh sudo password in clear text
+</A></li>
+	<LI>Next message: <A HREF="002831.html">[X-Unix] ssh sudo password in clear text
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2830">[ date ]</a>
+              <a href="thread.html#2830">[ thread ]</a>
+              <a href="subject.html#2830">[ subject ]</a>
+              <a href="author.html#2830">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

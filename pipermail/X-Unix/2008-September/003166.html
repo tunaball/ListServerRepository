@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How does one find a string in a binary file, etc.?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20does%20one%20find%20a%20string%20in%20a%20binary%20file%2C%20etc.%3F&In-Reply-To=20080902160700.8B8C220A7E%40heartbeat2.messagingengine.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003165.html">
+   <LINK REL="Next"  HREF="003168.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How does one find a string in a binary file, etc.?</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20does%20one%20find%20a%20string%20in%20a%20binary%20file%2C%20etc.%3F&In-Reply-To=20080902160700.8B8C220A7E%40heartbeat2.messagingengine.com"
+       TITLE="[X-Unix] How does one find a string in a binary file, etc.?">ecrist at secure-computing.net
+       </A><BR>
+    <I>Tue Sep  2 09:56:30 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003165.html">[X-Unix] How does one find a string in a binary
+ file, etc.?
+</A></li>
+        <LI>Next message: <A HREF="003168.html">[X-Unix] How does one find a string in a binary  file, etc.?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3166">[ date ]</a>
+              <a href="thread.html#3166">[ thread ]</a>
+              <a href="subject.html#3166">[ subject ]</a>
+              <a href="author.html#3166">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>you should be able to run 'strings &lt;binary&gt;' where &lt;binary&gt; is the  
+name of the binary file you want to search.
+
+HTH
+
+
+On Sep 2, 2008, at 11:06 AM, Aaron wrote:
+
+&gt;<i> Thanks, Bj&#246;rn, for your quick response.
+</I>&gt;<i>
+</I>&gt;&gt;<i> From: &quot;B. Kuestner&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">kuestner at macnews.de</A>&gt;
+</I>&gt;&gt;<i> Date: Tue, 2 Sep 2008 15:43:00 +0200
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Try &quot;man strings&quot;.
+</I>&gt;<i>
+</I>&gt;<i> That gets a negative result. &quot;man string&quot; turns up a bunch of C  
+</I>&gt;<i> functions. &quot;apropos string&quot; turns up lots and lots of C functions  
+</I>&gt;<i> and a few other useless items. Am I missing something?
+</I>&gt;<i>
+</I>&gt;&gt;<i> If that doesn't solve your problem, you might want to ask the group
+</I>&gt;&gt;<i> again exactly which part you're missing, and we might find answers to
+</I>&gt;&gt;<i> these follow-up questions.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Regards,
+</I>&gt;&gt;<i> Bj&#246;rn
+</I>&gt;<i>
+</I>&gt;<i> Regardless of whether I need them to solve my current problem or  
+</I>&gt;<i> not, I would like to know how to do the following without  
+</I>&gt;<i> programming in anything more complicated than a shell or awk or sed:
+</I>&gt;<i>
+</I>&gt;<i> 1) Search a binary file to see if it contains a certain string.
+</I>&gt;<i>
+</I>&gt;<i> 2) Read a file one (possibly arbitrary-length) block at a time and  
+</I>&gt;<i> process that block before going on to the next, as one can easily do  
+</I>&gt;<i> in a language like C.
+</I>&gt;<i>
+</I>&gt;<i> But, I think I'll be able to solve the problem I'm working on in  
+</I>&gt;<i> other ways. One way is by doing nested splits so as to wind up with  
+</I>&gt;<i> 4-KB files without having enormous numbers of such files around at  
+</I>&gt;<i> any one time. I would then use 'cmp -n' to compare each 4-KB file to  
+</I>&gt;<i> a smaller file containing the common start of each of the files I'm  
+</I>&gt;<i> looking for.
+</I>&gt;<i>
+</I>&gt;<i> - Aaron
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>
+---
+Eric Crist
+
+
+
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003165.html">[X-Unix] How does one find a string in a binary
+ file, etc.?
+</A></li>
+	<LI>Next message: <A HREF="003168.html">[X-Unix] How does one find a string in a binary  file, etc.?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3166">[ date ]</a>
+              <a href="thread.html#3166">[ thread ]</a>
+              <a href="subject.html#3166">[ subject ]</a>
+              <a href="author.html#3166">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

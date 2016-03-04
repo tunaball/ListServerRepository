@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [CUBE] How do I set up Local Network password?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20How%20do%20I%20set%20up%20Local%20Network%20password%3F&In-Reply-To=DACE1485-7A3A-11D8-B8A2-003065718F58%40sympatico.ca">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="007348.html">
+   <LINK REL="Next"  HREF="007354.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[CUBE] How do I set up Local Network password?</H1>
+    <B>J.C. Webber III</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20How%20do%20I%20set%20up%20Local%20Network%20password%3F&In-Reply-To=DACE1485-7A3A-11D8-B8A2-003065718F58%40sympatico.ca"
+       TITLE="[CUBE] How do I set up Local Network password?">jcw at kingoblio.com
+       </A><BR>
+    <I>Sat Mar 20 08:40:41 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="007348.html">How do I set up Local Network password?
+</A></li>
+        <LI>Next message: <A HREF="007354.html">[CUBE] How do I set up Local Network password?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7353">[ date ]</a>
+              <a href="thread.html#7353">[ thread ]</a>
+              <a href="subject.html#7353">[ subject ]</a>
+              <a href="author.html#7353">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Snow White wrote:
+&gt;<i> How do I set up Local Network password?
+</I>&gt;<i> 
+</I>&gt;<i> OK, I know ow to use the GO menu in OSX 10.2.8 and 10.2.6 and my shared 
+</I>&gt;<i> volumes show up
+</I>&gt;<i> 
+</I>&gt;<i> What I cannot do is log in.  I can use Guest Log-in and get the Public 
+</I>&gt;<i> Drop Box.  And I can read and write in it.  But I cannot log-in as a 
+</I>&gt;<i> registered user with a password.  It is always rejected.
+</I>&gt;<i> 
+</I>&gt;<i> Where can I, on the serving computer (10.2) set up what the allowed 
+</I>&gt;<i> Network User Name and Password - so I can get past this problem and on 
+</I>&gt;<i> to a new one?
+</I>&gt;<i> 
+</I>&gt;<i> Where can I set up what Files, Folders, HDs are shared and with what 
+</I>&gt;<i> Users on the serving computer?
+</I>&gt;<i> 
+</I>&gt;<i> I look at Apple and everywhere I could think of for this info - and I 
+</I>&gt;<i> am sure it is right in front of me in the OS.  In OS 9 I could do this 
+</I>&gt;<i> all easily enough with the Share Control Panel and the Get Info Menu to 
+</I>&gt;<i> set read/write for what Network User, but now I cannot find the 
+</I>&gt;<i> equivalent controls.
+</I>
+It sounds to me like you are looking for a central authentication
+management server, like a Windows PDC (Primary Domain Controller).
+
+I believe Macs can set up a similar system using a central Netinfo
+Domain Server (not sure of the exact label).  Anyway, it can be
+configured as a central authentication server and each of the machines
+on your network can be instructed to defer to it for user names and
+passwords and such.
+
+But on a simple home network this is not really necessary.  It would be
+overkill.  It would be like setting up a local DNS service for two or
+three machines.  Silly.  (I know because I'm guilty of having done just
+that for my home network, just to learn how).
+
+But back to the point.  What you need for sharing volumes is an account
+on both machines.  These need not be the same account names and
+passwords, but it makes things simpler for you if they are.
+
+When you first bring up 'Connect to Server' you will see a dialog where
+you fill in the hostname or ip address of the machine you wish to obtain
+files from.  If it's on your local network you can use the machine's
+rendezvous name, eg:  silver.local.  If not, but the machine's name is
+resolvable via DNS, then you can enter it's fully qualified domain name,
+eg:  silver.kingoblio.com.  Otherwise, you'll have to type in it's
+ipaddress.  Then click 'Connect'.  Next you will be presented a dialog
+box that offers you the option to login to the remote machine as either
+'Guest' or as known, registered user of that machine.  And here it
+assumes you will be logging in over there using the same account name
+you use on the machine you're sitting at, so it tries to help you out by
+filling in your full name in the Name:  box.  If this does not EXACTLY
+match the full name on the destination machine it will not work.  I
+found that I had an extra space between my first and last names on one
+of my machines and every attempt to login always failed on the first
+attempt until I replaced the full name with my 'short' name.
+
+Point being, you want to fill in that Name: field with the login
+name of the account on the remote machine.  Either the full name
+or the 'short' name.  Then enter the password you use on that remote
+machine to login as if you where sitting down in front of it.
+
+Next you will see a dialog box offering you the opportunity to mount
+up on your local machine one of the available filesystems on the
+remote machine.  This can be an iPod, an iDisk, your home directory,
+or even the remote machine's entire hard disk (you probably will be
+required to have an administrator's account on the remote machine to
+mount up the whole disk (I would think, but I'm not sure because I
+*am* the administrator on all my machines).
+
+If, on the other hand, you select 'Guest' then you will only be able
+to see the Public Folders.
+
+Does that help?
+
+-- 
+J.C. Webber III
+Technical Lead, Unix System Administrator
+<A HREF="../../../mailman/listinfo/cube.html">jcw at kingoblio.com</A>       www.kingoblio.com
+Please, if you use Windows, do not add my address to your Address Book.
+I do not wish to be spammed or have my email address hijacked by a virus
+and used for fraudulent purposes.  Thank you.
+If you use a Mac, never mind.  Mac's don't get viruses.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="007348.html">How do I set up Local Network password?
+</A></li>
+	<LI>Next message: <A HREF="007354.html">[CUBE] How do I set up Local Network password?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7353">[ date ]</a>
+              <a href="thread.html#7353">[ thread ]</a>
+              <a href="subject.html#7353">[ subject ]</a>
+              <a href="author.html#7353">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

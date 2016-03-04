@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Servers] Invisible disk space usage
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20Invisible%20disk%20space%20usage&In-Reply-To=list-5445269%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000122.html">
+   <LINK REL="Next"  HREF="000125.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Servers] Invisible disk space usage</H1>
+    <B>Ken Rossman</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20Invisible%20disk%20space%20usage&In-Reply-To=list-5445269%40mail.ninewire.com"
+       TITLE="[X Servers] Invisible disk space usage">rossman at columbia.edu
+       </A><BR>
+    <I>Thu Mar 27 06:24:26 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000122.html">[X Servers] Xserve only 100BaseTX
+</A></li>
+        <LI>Next message: <A HREF="000125.html">[X Servers] Xserve only 100BaseTX
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#123">[ date ]</a>
+              <a href="thread.html#123">[ thread ]</a>
+              <a href="subject.html#123">[ subject ]</a>
+              <a href="author.html#123">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Thursday, March 27, 2003, at 03:13 AM, Jerome Camus wrote:
+&gt;<i> A strange behaviour has appeared in the past 48 hours on an OS X server
+</I>&gt;<i> 10.1.4.  Apparently, the available disk space is dropping precipitously
+</I>&gt;<i> - about 3 gb being consumed daily...
+</I>
+I had seen this sort of behavior back when I was running some less-well-
+behaved application programs that ate up virtual memory quite 
+irresponsibly.
+
+Swap files were being created at a rather high rate, chewing up disk 
+space
+at the rate of 80MB each time a new file was created.  Rebooting will,
+of course, kill the offending application and it will start over from
+scratch, slowly (or perhaps not so slowly) eating up disk space all over
+again.
+
+Next time you see disk space disappearing like that, check how many
+files of the form &quot;swapfileNN&quot; you have in /private/var/vm.  If it's
+more than just a few, then that's a definite clue.
+
+Next, you'll want to see which programs are running currently and see
+who is pigging out on virtual memory.  Start up a terminal window and
+make it as large (high and wide) as you have space for, and then execute
+the command:
+
+     ps auxww | more
+
+Have a look at the VSZ column and look for any programs that look like
+they have excessively large numbers there.
+
+Can't tell you exactly what to do with the offending program if/when
+you find it, though.  That'll depend on who wrote it and if they are
+willing to fix it.
+
+/K
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000122.html">[X Servers] Xserve only 100BaseTX
+</A></li>
+	<LI>Next message: <A HREF="000125.html">[X Servers] Xserve only 100BaseTX
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#123">[ date ]</a>
+              <a href="thread.html#123">[ thread ]</a>
+              <a href="subject.html#123">[ subject ]</a>
+              <a href="author.html#123">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

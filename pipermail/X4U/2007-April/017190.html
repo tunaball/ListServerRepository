@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] ghost - disk duplicator type utility for Mac OS X
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20ghost%20-%20disk%20duplicator%20type%20utility%20for%20Mac%20OS%20X&In-Reply-To=462440ED.3030103%40oryx.cc">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="017188.html">
+   <LINK REL="Next"  HREF="017194.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] ghost - disk duplicator type utility for Mac OS X</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20ghost%20-%20disk%20duplicator%20type%20utility%20for%20Mac%20OS%20X&In-Reply-To=462440ED.3030103%40oryx.cc"
+       TITLE="[X4U] ghost - disk duplicator type utility for Mac OS X">macmonster at myrealbox.com
+       </A><BR>
+    <I>Tue Apr 17 06:15:29 PDT 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="017188.html">[X4U] ghost - disk duplicator type utility for Mac OS X
+</A></li>
+        <LI>Next message: <A HREF="017194.html">[X4U] ghost - disk duplicator type utility for Mac OS X
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17190">[ date ]</a>
+              <a href="thread.html#17190">[ thread ]</a>
+              <a href="subject.html#17190">[ subject ]</a>
+              <a href="author.html#17190">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 17 Apr 2007, at 04:37, Jerry Kemp wrote:
+
+&gt;<i> Can anyone suggest a commercial ghost type disk duplicator for Mac  
+</I>&gt;<i> OS X??
+</I>&gt;<i>
+</I>&gt;<i> Without providing a lot of details, this would be used in a  
+</I>&gt;<i> criminal investigation, where a disk would be removed from a  
+</I>&gt;<i> system, imaged and restored to alternate disk drives for analyst.
+</I>
+In order to avoid compromising the investigation the drive needs to  
+be bitwise copied and handled such that it physically cannot be  
+written to during copying.
+
+Bitwise copying is where you take each one or zero on the drive and  
+copy it across to the same place on the target. I usually do this  
+under Linux using the `dd` command  (eg: `dd if=/dev/hda of=/dev/ 
+hdb`) and have not had so much luck using `dd` under OS X - disk- 
+naming convenions are different (eg: &quot;/dev/disk0s3&quot;) but aside from  
+that, it just doesn't seem to behave right, somehow. YMMV.
+
+Bitwise copying ensures that no misunderstandings occur when attempts  
+are made to copy files that the operating-system cannot parse, or  
+filesystems that it is not familiar with. For example, one could  
+install a driver for the Linux EFS filesystem under Windows, make an  
+EFS partition on the hard-drive and store all one's contraband data  
+on there. Were the drive connected to a default install of Windows or  
+OS X, that o/s would be unable to read the files on that partition,  
+thwarting copying in the regular manner. A bitwise copy ensures that  
+- even if you can't read the files themselves - they are preserved  
+(for forensic review on appeal, if necessary). Also allows one can  
+recover recovery from the copy files that were deleted from the file  
+allocation table on the original disk. You can safely copy from a  
+40gig drive to an 80gig drive during a bitwise copy, as all the  
+partition-table information will be retained.
+
+I _think_ that Norton's Ghost for Windows does largely copy  
+partitions that it recognises in a bitwise manner, however I'm not  
+sure how it handles the boot-sector and I'm pretty sure it won't  
+handle arbitrary partition structures that it does not recognise. You  
+would also have to be careful to avoid its options that compress  
+&quot;empty&quot; space on the original drive and consideration of this causes  
+me to wonder how it handles deleted files.
+
+I believe that adaptors can be purchased which can be connected to a  
+standard EIDE hard-drive and which prevent it being written to. Good  
+practices would suggest that you not only connect this to the  
+original when it is copied, but also to the copy during forensic  
+examination (the copy is connected as a &quot;slave&quot; drive on another  
+computer during examination). A duplicator machine is another  
+alternative, as it too blindly copies bitwise.
+
+It is my understanding that rules of evidence may be less strict for  
+civil cases (such that carbon copy cloner might be suitable for  
+copying a drive were you sacking an employee for surfing porn at  
+work) but that unless these procedures are followed then &quot;evidence&quot;  
+obtained from the drive would not be considered sound during a  
+_criminal_ case. IMO - and with all respect - if you have to ask here  
+then you should not be conducting the investigation.
+
+Stroller.
+
+</PRE>
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="017188.html">[X4U] ghost - disk duplicator type utility for Mac OS X
+</A></li>
+	<LI>Next message: <A HREF="017194.html">[X4U] ghost - disk duplicator type utility for Mac OS X
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17190">[ date ]</a>
+              <a href="thread.html#17190">[ thread ]</a>
+              <a href="subject.html#17190">[ subject ]</a>
+              <a href="author.html#17190">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

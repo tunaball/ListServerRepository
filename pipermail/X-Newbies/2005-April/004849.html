@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Newbies] Apple Script-Ref: Slow Start Up
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20Apple%20Script-Ref%3A%20Slow%20Start%20Up&In-Reply-To=ad6874e0dadafff237ea3f95694af8db%40comcast.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004848.html">
+   <LINK REL="Next"  HREF="004852.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Newbies] Apple Script-Ref: Slow Start Up</H1>
+    <B>John McGibney</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20Apple%20Script-Ref%3A%20Slow%20Start%20Up&In-Reply-To=ad6874e0dadafff237ea3f95694af8db%40comcast.net"
+       TITLE="[X-Newbies] Apple Script-Ref: Slow Start Up">ncicchek at optonline.net
+       </A><BR>
+    <I>Thu Apr 14 14:41:53 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004848.html">[X-Newbies] Apple Script-Ref: Slow Start Up
+</A></li>
+        <LI>Next message: <A HREF="004852.html">[X-Newbies] Apple Script-Ref: Slow Start Up
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4849">[ date ]</a>
+              <a href="thread.html#4849">[ thread ]</a>
+              <a href="subject.html#4849">[ subject ]</a>
+              <a href="author.html#4849">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Try this version I just got from the macfixit site:
+
+ property systemList : {&#172;
+ &quot;com.apple.ATS.System.fcache&quot;, &#172;
+ &quot;com.apple.ATSServer.FODB_System&quot;, &#172;
+ &quot;fontTablesAnnex&quot;}
+ property localList : {&#172;
+ &quot;501:Classic.fcache&quot;, &#172;
+ &quot;501:Local.fcache&quot;, &#172;
+ &quot;User.fcache&quot;, &#172;
+ &quot;Classic.fodb&quot;, &#172;
+ &quot;Local.fodb&quot;, &#172;
+ &quot;User.fodb&quot;, &#172;
+ &quot;FondResourceCache&quot;}
+ tell application &quot;Finder&quot;
+ set versionFinder to version as text
+ end tell
+ if versionFinder starts with &quot;10.3&quot; then
+ set localCaches to (&quot;:Library:Caches:com.apple.ATS:&quot; as alias) as text
+ set systemCaches to ((path to &quot;boot&quot;) as text) &amp; &quot;System:Library:Caches:&quot;
+ tell application &quot;Finder&quot;
+ repeat with name in localList
+ try
+ delete file (localCaches &amp; name)
+ end try
+ end repeat
+ repeat with name in systemList
+ try
+ delete file (systemCaches &amp; name)
+ end try
+ end repeat
+ end tell
+ end if
+
+
+
+
+
+&gt;<i> This is in reference to John McGibney's post response of 10 April:
+</I>&gt;<i> Hello John: I read your inputs a few days ago where you were responding
+</I>&gt;<i> to someone's &quot;slow Start Up.&quot; You also recommended running an Apple
+</I>&gt;<i> Script, which I tried, but it gave me an error right at the beginning
+</I>&gt;<i> of the script after clicking Compile.
+</I>&gt;<i> I did as you recommended: &quot;In order to run this script, simply open the
+</I>&gt;<i> application Script Editor
+</I>&gt;<i> (located in Applications/AppleScript on a standard installation),
+</I>&gt;<i> create a new file, paste the above script, click &quot;Compile&quot; then click
+</I>&gt;<i> &quot;Run.&quot; You will be asked for your administrator password several times.
+</I>&gt;<i> 
+</I>&gt;<i> Any thoughts or ideas.
+</I>&gt;<i> 
+</I>&gt;<i> Thanks in advance and regards, Bob
+</I>
+-- 
+QUOTE OF THE DAY:
+If stupidity got me into this mess, than why the hell can't it get me out?
+--
+&quot;The difference between genius and stupidity is genius has its limits.&quot;
+- Albert Einstein
+--
+Every day, man is making bigger and better fool-proof things, and every day,
+nature is making bigger and better fools.
+So far, I think nature is winning. 
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004848.html">[X-Newbies] Apple Script-Ref: Slow Start Up
+</A></li>
+	<LI>Next message: <A HREF="004852.html">[X-Newbies] Apple Script-Ref: Slow Start Up
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4849">[ date ]</a>
+              <a href="thread.html#4849">[ thread ]</a>
+              <a href="subject.html#4849">[ subject ]</a>
+              <a href="author.html#4849">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

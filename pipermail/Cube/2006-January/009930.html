@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Cube] Kernel panics, etc...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCube%5D%20Kernel%20panics%2C%20etc...&In-Reply-To=20060125105132.8039%40smtp.bredband.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="009919.html">
+   <LINK REL="Next"  HREF="009931.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Cube] Kernel panics, etc...</H1>
+    <B>Rob In der Maur</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCube%5D%20Kernel%20panics%2C%20etc...&In-Reply-To=20060125105132.8039%40smtp.bredband.net"
+       TITLE="[Cube] Kernel panics, etc...">ridmaur at xs4all.nl
+       </A><BR>
+    <I>Sat Jan 28 06:40:08 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="009919.html">[Cube] Kernel panics, etc...
+</A></li>
+        <LI>Next message: <A HREF="009931.html">[Cube] Kernel panics, etc...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9930">[ date ]</a>
+              <a href="thread.html#9930">[ thread ]</a>
+              <a href="subject.html#9930">[ subject ]</a>
+              <a href="author.html#9930">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>petter,
+
+I was just skimming through the posts, and noticed your remark.  
+Actually it appeared indeed after 10.4.3! I had the Cube run for a  
+long time on 10.3.x without any problems but decided to upgrade to  
+10.4.4 about three weeks ago and that is when the graphics problems  
+started to occur. So it might not be related to fan issue at all?
+
+Anyway, attached my panic.log.
+
+Unresolved kernel trap(cpu 0): 0x300 - Data access  
+DAR=0x000000004C5460B8 PC=0x0000000000678630
+Latest crash info for cpu 0:
+    Exception state (sv=0x36CB0280)
+       PC=0x00678630; MSR=0x00009030; DAR=0x4C5460B8;  
+DSISR=0x40000000; LR=0x0096B830; R1=0x21E13980; XCP=0x0000000C (0x300  
+- Data access)
+       Backtrace:
+0x0096B7E0 0x0096C574 0x0096C238 0x0094EB88 0x00957D5C 0x0076401C
+          0x00644C2C 0x0003C744 0x000A9894
+       Kernel loadable modules in backtrace (with dependencies):
+          com.apple.nvidia.nv10hal(4.1.8)@0x926000
+             dependency: com.apple.iokit.IOPCIFamily(1.7)@0x43a000
+             dependency: com.apple.NVDAResman(4.1.8)@0x630000
+          com.apple.NVDAResman(4.1.8)@0x630000
+             dependency: com.apple.iokit.IOPCIFamily(1.7)@0x43a000
+             dependency: com.apple.iokit.IOGraphicsFamily(1.4.1) 
+@0x5f6000
+             dependency: com.apple.iokit.IONDRVSupport(1.4.1)@0x61a000
+Proceeding back via exception chain:
+    Exception state (sv=0x36CB0280)
+       previously dumped as &quot;Latest&quot; state. skipping...
+    Exception state (sv=0x36F93C80)
+       PC=0x00000000; MSR=0x0000D030; DAR=0x00000000;  
+DSISR=0x00000000; LR=0x00000000; R1=0x00000000; XCP=0x00000000 (Unknown)
+
+Kernel version:
+Darwin Kernel Version 8.4.0: Tue Jan  3 18:22:10 PST 2006;  
+root:xnu-792.6.56.obj~1/RELEASE_PPC
+panic(cpu 0 caller 0xFFFF0003): 0x300 - Data access
+Latest stack backtrace for cpu 0:
+       Backtrace:
+          0x00095718 0x00095C30 0x0002683C 0x000A8384 0x000ABD00
+Proceeding back via exception chain:
+    Exception state (sv=0x36CB0280)
+       PC=0x00678630; MSR=0x00009030; DAR=0x4C5460B8;  
+DSISR=0x40000000; LR=0x0096B830; R1=0x21E13980; XCP=0x0000000C (0x300  
+- Data access)
+       Backtrace:
+0x0096B7E0 0x0096C574 0x0096C238 0x0094EB88 0x00957D5C 0x0076401C
+          0x00644C2C 0x0003C744 0x000A9894
+       Kernel loadable modules in backtrace (with dependencies):
+          com.apple.nvidia.nv10hal(4.1.8)@0x926000
+             dependency: com.apple.iokit.IOPCIFamily(1.7)@0x43a000
+             dependency: com.apple.NVDAResman(4.1.8)@0x630000
+          com.apple.NVDAResman(4.1.8)@0x630000
+             dependency: com.apple.iokit.IOPCIFamily(1.7)@0x43a000
+             dependency: com.apple.iokit.IOGraphicsFamily(1.4.1) 
+@0x5f6000
+             dependency: com.apple.iokit.IONDRVSupport(1.4.1)@0x61a000
+    Excep
+*********
+
+On Jan 25, 2006, at 11:51 , petter wrote:
+
+&gt;<i> Just a question?
+</I>&gt;<i>
+</I>&gt;<i> Have this begun after the 10.4.3 update?
+</I>&gt;<i> My dad have the same problem - It's the graphics driver thread that
+</I>&gt;<i> crashes all the time for his GF2mx.
+</I>&gt;<i>
+</I>&gt;<i> It begun after upgrading to 10.4.3 and updating gfx card and cube
+</I>&gt;<i> firmware it's still there.
+</I>&gt;<i> So my thought was that it's the system that causes it.
+</I>&gt;<i>
+</I>&gt;<i> can you post your crash report or atleast the first 20 lines about the
+</I>&gt;<i> crashed thread? It should look something like this:
+</I>&gt;<i>
+</I>&gt;<i>       Kernel loadable modules in backtrace (with dependencies):
+</I>&gt;<i>          com.apple.GeForce(4.0.6)@0x8c7000
+</I>&gt;<i>             dependency: com.apple.iokit.IOPCIFamily(1.6)@0x433000
+</I>&gt;<i>             dependency: com.apple.iokit.IOGraphicsFamily(1.4)@0x5eb000
+</I>&gt;<i>             dependency: com.apple.iokit.IONDRVSupport(1.4)@0x60f000
+</I>&gt;<i>             dependency: com.apple.NVDAResman(4.0.6)@0x625000
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i> Hi all,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Suddenly my Cube is experiencing loads of kernel panics. Also the
+</I>&gt;&gt;<i> screen (17&quot; ADC display) sometimes is not displaying properly, as if
+</I>&gt;&gt;<i> either the graphics card or display itself are broken. But it also
+</I>&gt;&gt;<i> might display properly another time...
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Petter
+</I>&gt;<i>
+</I>&gt;<i> -when i run out of red, i use blue
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Cube mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/cube.html">Cube at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/cube.html">http://listserver.themacintoshguy.com/mailman/listinfo/cube</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>          <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="009919.html">[Cube] Kernel panics, etc...
+</A></li>
+	<LI>Next message: <A HREF="009931.html">[Cube] Kernel panics, etc...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9930">[ date ]</a>
+              <a href="thread.html#9930">[ thread ]</a>
+              <a href="subject.html#9930">[ subject ]</a>
+              <a href="author.html#9930">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

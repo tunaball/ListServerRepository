@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] XWindows
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20XWindows&In-Reply-To=20050524125304.GG20530%40sage.che.pitt.edu">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002065.html">
+   <LINK REL="Next"  HREF="002070.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] XWindows</H1>
+    <B>AKappyCT</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20XWindows&In-Reply-To=20050524125304.GG20530%40sage.che.pitt.edu"
+       TITLE="[X-Unix] XWindows">akappy at canfieldtack.com
+       </A><BR>
+    <I>Tue May 24 10:22:00 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002065.html">[X-Unix] XWindows
+</A></li>
+        <LI>Next message: <A HREF="002070.html">[X-Unix] XWindows
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2069">[ date ]</a>
+              <a href="thread.html#2069">[ thread ]</a>
+              <a href="subject.html#2069">[ subject ]</a>
+              <a href="author.html#2069">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks John, your message pointed the way.
+
+printenv DISPLAY returned:
+Powerbook: :0.0
+
+I had been using SSH -2Xl name host
+I tried using SSH -Y and it worked like a charm
+
+Interesting, man SSH (TIger) found no man page, man (Panther) SSH shows 
+no Y flag.
+
+What does the Y flag do? Do you think I need to install the whole XCode 
+kit to get the rest of the man pages?
+
+Andy
+
+
+On May 24, 2005, at 8:53 AM, John Harrold wrote:
+
+&gt;<i> Sometime in May AKappyCT assaulted the keyboard and produced:
+</I>&gt;<i>
+</I>&gt;<i> | My new PowerBook came with Tiger installed - generally a joy to 
+</I>&gt;<i> behold.
+</I>&gt;<i> | Until I got to XWindows.
+</I>&gt;<i> | Got X11 loaded and proceeded to initiate a familiar XWindows session
+</I>&gt;<i> | with my server at the office.
+</I>&gt;<i> |
+</I>&gt;<i> | The result:
+</I>&gt;<i> |
+</I>&gt;<i> | X Error of failed request:  BadAtom (invalid Atom parameter)
+</I>&gt;<i> |   Major opcode of failed request:  18 (X_ChangeProperty)
+</I>&gt;<i> |   Atom id in failed request:  0xba
+</I>&gt;<i> |   Serial number of failed request:  221
+</I>&gt;<i> |   Current serial number in output stream:  224
+</I>&gt;<i>
+</I>&gt;<i> I guess the first question is how are you poiting the remote client to 
+</I>&gt;<i> your
+</I>&gt;<i> x server? I use the x11 forwarding on ssh (-X), though sometimes I 
+</I>&gt;<i> need to
+</I>&gt;<i> use -Y. Run the following on your powerbook and on the remote client:
+</I>&gt;<i>
+</I>&gt;<i> printenv DISPLAY
+</I>&gt;<i>
+</I>&gt;<i> This is what I get:
+</I>&gt;<i>
+</I>&gt;<i> Powerbook:            :0.0
+</I>&gt;<i> Debian (client):      localhost:10.0
+</I>&gt;<i>
+</I>&gt;<i> If you're using ssh, use the -v switch to get the verbose output.
+</I>&gt;<i>
+</I>&gt;<i> -- 
+</I>&gt;<i> ----------------------------------------------------------
+</I>&gt;<i>                             | /&quot;\
+</I>&gt;<i>  john harrold               | \ / ASCII ribbon campaign
+</I>&gt;<i>  jmh at member.fsf.org      |  X  against HTML mail
+</I>&gt;<i>  the most useful idiot      | / \
+</I>&gt;<i> ----------------------------------------------------------
+</I>&gt;<i>  What difference does it make to the dead, the orphans,
+</I>&gt;<i>  and the homeless, whether the mad destruction is brought
+</I>&gt;<i>  under the name of totalitarianism or the holy name of
+</I>&gt;<i>  liberty and democracy?
+</I>&gt;<i>  --Gandhi
+</I>&gt;<i> ----------------------------------------------------------
+</I>&gt;<i>   gpg --keyserver pgp.mit.edu --recv-key B23241CB
+</I>&gt;<i> ----------------------------------------------------------
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random 
+</I>&gt;<i> stuff:
+</I>&gt;<i>          <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002065.html">[X-Unix] XWindows
+</A></li>
+	<LI>Next message: <A HREF="002070.html">[X-Unix] XWindows
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2069">[ date ]</a>
+              <a href="thread.html#2069">[ thread ]</a>
+              <a href="subject.html#2069">[ subject ]</a>
+              <a href="author.html#2069">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

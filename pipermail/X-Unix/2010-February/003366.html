@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] The which command lies?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20The%20which%20command%20lies%3F&In-Reply-To=%3C4EFFE9A4-8485-42BF-9F8D-24C76FB6D818%40xing.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003365.html">
+   <LINK REL="Next"  HREF="003367.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X-Unix] The which command lies?</H1>
+    <B>Michael Ludwig</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20The%20which%20command%20lies%3F&In-Reply-To=%3C4EFFE9A4-8485-42BF-9F8D-24C76FB6D818%40xing.com%3E"
+       TITLE="[X-Unix] The which command lies?">michael.ludwig at xing.com
+       </A><BR>
+    <I>Tue Feb 16 01:39:26 PST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003365.html">[X-Unix] The which command lies?
+</A></li>
+        <LI>Next message: <A HREF="003367.html">[X-Unix] The which command lies?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3366">[ date ]</a>
+              <a href="thread.html#3366">[ thread ]</a>
+              <a href="subject.html#3366">[ subject ]</a>
+              <a href="author.html#3366">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Am 16.02.2010 um 04:01 schrieb Steve Morris:
+
+&gt;<i> `which perl` -e 'print &quot;@INC\n&quot;;'
+</I>&gt;<i>  perl -e 'print &quot;@INC\n&quot;;'
+</I>
+Is perl now an alias? Try:
+
+  alias perl
+
+&gt;<i> Instead these commands gave me totally different results indicating two different installations of perl. It turns out that my redirections were working but &quot;which&quot; wasn't seeing them.
+</I>
+Try the type built-in bash command:
+
+  type perl    # help type
+
+The which command searches the PATH. After installation of a new utility,
+the PATH may need to be updated. This can be done using the hash built-in
+bash command.
+
+  hash -r      # help hash
+  type perl
+
+&gt;<i> What the heck is wrong with the &quot;which&quot; command on OSX? Why do &quot;bash&quot; and &quot;which&quot; disagree on the actual path of the command to run? What is the point of having a &quot;which&quot; command if it doesn't match.
+</I>
+It may turn out that which works as specified.
+
+-- 
+Michael.Ludwig (#) XING.com
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003365.html">[X-Unix] The which command lies?
+</A></li>
+	<LI>Next message: <A HREF="003367.html">[X-Unix] The which command lies?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3366">[ date ]</a>
+              <a href="thread.html#3366">[ thread ]</a>
+              <a href="subject.html#3366">[ subject ]</a>
+              <a href="author.html#3366">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

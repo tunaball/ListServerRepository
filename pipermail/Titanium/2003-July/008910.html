@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Speed up
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=Speed%20up&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="008907.html">
+   <LINK REL="Next"  HREF="008911.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Speed up</H1>
+    <B>Loren Schooley</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=Speed%20up&In-Reply-To="
+       TITLE="Speed up">loren at flash.net
+       </A><BR>
+    <I>Thu Jul 17 07:56:27 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="008907.html">[Ti] Troubleshooting help needed
+</A></li>
+        <LI>Next message: <A HREF="008911.html">[Ti] Troubleshooting help needed
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8910">[ date ]</a>
+              <a href="thread.html#8910">[ thread ]</a>
+              <a href="subject.html#8910">[ subject ]</a>
+              <a href="author.html#8910">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I know this is an old subject, but I have found very few who utilize and
+take advantage of it, and that is using sysctl to boost browser and other
+download speeds. I tested it out with different numbers and the results
+proved accordingly. This hack works!
+
+Open Terminal and type sysctl -a
+
+The listing should contain the following lines:
+
+ net.inet.tcp.sendspace: xxxxx
+ net.inet.tcp.recvspace: xxxxx
+ net.inet.tcp.delayed_ack: 1
+ net.inet.udp.recvspace: xxxxx
+
+The OSX default is 32768. It's recommended you double it.
+Hell I maxxed it out, works GREAT! --&gt;131072. Most recommend 65536.
+
+1---
+
+ Free:Loren:~&gt; sudo sysctl -w net.inet.tcp.rcvspace=131072
+ Free:Loren:~&gt; sudo sysctl -w net.inet.tcp.sendspace=131072
+
+Wow, this brought my connection from 32K per second to 128K per second.
+And it's a very blatant improvement.
+
+2---
+ 
+Free:Loren:~&gt; sudo sysctl -w net.inet.udp.recvspace=73728
+    Hmm, couldn't see much difference. But other sites recommend it.
+
+3----
+
+Then there is 
+
+    net.inet.tcp.delayed_ack: 1
+
+I changed it to 0
+
+Delayed acks reduces the amount of bandwidth on a network, but piggy-backing
+ack packets on other outgoing packets. If you turn off delayed acks, you can
+reduce latency associated with some transfers (i.e.: some situations
+associated with downloading files via Windows networking).
+
+ Free:Loren:~&gt; sudo sysctl -w net.inet.tcp.delayed_ack=0
+
+-----
+
+No need to reboot. The bottom line is that OSX defaults at a slower speed.
+My pages flick now instead of growl. 
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="008907.html">[Ti] Troubleshooting help needed
+</A></li>
+	<LI>Next message: <A HREF="008911.html">[Ti] Troubleshooting help needed
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8910">[ date ]</a>
+              <a href="thread.html#8910">[ thread ]</a>
+              <a href="subject.html#8910">[ subject ]</a>
+              <a href="author.html#8910">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

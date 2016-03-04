@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Mac printing through a Win 2003 Server
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Mac%20printing%20through%20a%20Win%202003%20Server&In-Reply-To=C0E68A07.8C04%25rgilmor%40uwo.ca">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="014183.html">
+   <LINK REL="Next"  HREF="014172.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Mac printing through a Win 2003 Server</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Mac%20printing%20through%20a%20Win%202003%20Server&In-Reply-To=C0E68A07.8C04%25rgilmor%40uwo.ca"
+       TITLE="[X4U] Mac printing through a Win 2003 Server">macmonster at myrealbox.com
+       </A><BR>
+    <I>Fri Jul 21 14:40:10 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="014183.html">[X4U] Mac printing through a Win 2003 Server
+</A></li>
+        <LI>Next message: <A HREF="014172.html">[X4U] Wrong earnings podcast posted on itunes.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14184">[ date ]</a>
+              <a href="thread.html#14184">[ thread ]</a>
+              <a href="subject.html#14184">[ subject ]</a>
+              <a href="author.html#14184">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>[...CONTINUED]
+
+&gt;<i> Second is accessing the printers through a Windows 2003 print  
+</I>&gt;<i> server. I&#8217;ve
+</I>&gt;<i> been to the Apple site and it says this is possible but for  
+</I>&gt;<i> whatever reason
+</I>&gt;<i> nothing is showing up in the Printer Setup Utility in the Windows  
+</I>&gt;<i> Print
+</I>&gt;<i> Server tab. The dual IP thing is still not setup so this is  
+</I>&gt;<i> &#8220;normal&#8221; Windows
+</I>&gt;<i> printing.
+</I>
+I'm guessing this is either because the printers aren't advertising  
+themselves, or advertising (read: broadcast packets) is blocked, or  
+because you're not authenticating as a user on the domain.
+
+What does a Windows user have to do to print to these machines? Can  
+they print if they bring along a laptop from home with a standard  
+install of XP and connect to the network? Or do they have to use a PC  
+that has been imaged with the standard campus install of Windows,  
+logging in (with their password) as &quot;student1942&quot; or whatever?
+
+Whichever, this would appear to be irrelevant if the &quot;dual IP thing&quot;  
+will subsequently break the configuration.
+(although on reflection I think it's maybe the most important advice  
+I can give you - get the &quot;dual IP thing&quot; setup &amp; then study how a  
+Windows box successfully prints to these printers).
+
+&gt;<i> Bonjour does not work with this printer even though it is supposed
+</I>&gt;<i> to.
+</I>
+Even connecting the Mac directly to the printer with a single  
+ethernet cable? (don't forget to make sure both machines have  
+addresses on the same network)
+
+&gt;<i> In the long run Bonjour will be disabled anyway as an option for us  
+</I>&gt;<i> for
+</I>&gt;<i> security and policy reasons.
+</I>
+Indeed.
+
+&gt;<i> Does anybody have any experience printing in a
+</I>&gt;<i> mixed environment like this?
+</I>
+Yes indeed. Would you like to fly me out there for a week's consultancy?
+
+&gt;<i> This is extremely frustrating. Also does
+</I>&gt;<i> anybody know in general what a print server does and why we need  
+</I>&gt;<i> one? I&#8217;m
+</I>&gt;<i> trying to wrap my head around what the print server does and how it  
+</I>&gt;<i> does it?
+</I>
+Hmmmn... back in the old days printers were slow and a computer  
+connecting directly to a printer had to wait, using computing  
+resources, while the job completed. A computer used as a print server  
+allowed several computers to access a single printer, and if one job  
+was already printing then it would store any addition print requests  
+in its queue (in its memory or on its hard-drive), so that those  
+would print out later. Meanwhile the &quot;client&quot; computer (in the  
+&quot;client - server model&quot; that's the computer that had submitted the  
+job) can get on with doing other things and its user can go collect  
+the print out later on.
+
+Now that modern printers have network cards &amp; a decent-sized internal  
+memory, I think the advantages of a print-server are permissions- &amp;  
+accounting-based. A print server might allow a student to print only  
+50 pages per day but leave a professor with no such restriction; it  
+might prevent Joe Student bringing in his laptop from home &amp;  
+anonymously printing out War &amp; Peace; it might prioritise small jobs  
+so that a single-page letter is queued in front of a long  
+dissertation and so that staff get precedence over students.
+
+The print server might keep a copy of every job printed, so that in  
+the event of a security breach you could determine that the lab  
+technician with the spiky hair &amp; the earring had printed out a map of  
+the cosmetics-testing building a week before it was raided by the  
+Animal Liberation Front (it wasn't me, guv! I prefer to get my  
+bunnies from &lt;<A HREF="http://www.rabbitpal.com">http://www.rabbitpal.com</A>&gt;). Finally you can determine  
+in a centralised manner how many pages are being printed on each  
+machine, cost-per-page and that sort of thing; colour laser printers  
+are particularly expensive to run, even when printing only black, and  
+I recall one sysadmin complaining that the sales director had run off  
+a large print-job at 20p per page when only one page was colour (and  
+when the larger black &amp; white printer cost a fraction of a penny per  
+page to run).
+
+But I digress... if you're running a print-server then it's  
+irrelevant if its multi-homed (&quot;dual IP thing&quot;) - you just address  
+the IP of the server itself, whichever IP is on the same network as  
+you. If you're NOT using a print-server then you just address the  
+printer using the printer's normal protocol, but using whichever IP  
+address has been allocated (as forwarding) to it; in this case the  
+printer may not advertise or broadcast &amp; may not be visible in  
+printer setup utility, but if it's available on the network you  
+should be able to access it by typing in its IP.
+
+Stroller.
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="014183.html">[X4U] Mac printing through a Win 2003 Server
+</A></li>
+	<LI>Next message: <A HREF="014172.html">[X4U] Wrong earnings podcast posted on itunes.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14184">[ date ]</a>
+              <a href="thread.html#14184">[ thread ]</a>
+              <a href="subject.html#14184">[ subject ]</a>
+              <a href="author.html#14184">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

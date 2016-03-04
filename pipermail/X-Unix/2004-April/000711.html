@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] PHP 4.3.6 Compile
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20PHP%204.3.6%20Compile&In-Reply-To=list-12240995%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000710.html">
+   <LINK REL="Next"  HREF="000712.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] PHP 4.3.6 Compile</H1>
+    <B>Craig Hoffman</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20PHP%204.3.6%20Compile&In-Reply-To=list-12240995%40mail.ninewire.com"
+       TITLE="[X-Unix] PHP 4.3.6 Compile">choffman at katomic.com
+       </A><BR>
+    <I>Tue Apr 20 05:19:32 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000710.html">[X-Unix] GNU Readline
+</A></li>
+        <LI>Next message: <A HREF="000712.html">[X-Unix] What's in an MP3's resource fork..?     [Was: Re: 
+ [X4U] ._annoying_files on SMB shares - can I remove them..?]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#711">[ date ]</a>
+              <a href="thread.html#711">[ thread ]</a>
+              <a href="subject.html#711">[ subject ]</a>
+              <a href="author.html#711">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Eugene,
+Thanks for responding.  I ran the command and it reports this:
+
+/sw/lib/libjpeg.62.0.0.dylib
+/sw/lib/libjpeg.62.dylib -&gt; libjpeg.62.0.0.dylib
+
+__________________________________
+Craig Hoffman - eClimb Media
+
+v: (847) 644 - 8914
+f: (847) 866 - 1946
+e: <A HREF="../../../mailman/listinfo/x-unix.html">choffman at eclimb.net</A>
+w: www.eclimb.net
+_________________________________
+On Apr 19, 2004, at 11:42 PM, Eugene Lee wrote:
+
+&gt;<i> On Mon, Apr 19, 2004 at 10:06:46PM -0500, Craig Hoffman wrote:
+</I>&gt;<i> :
+</I>&gt;<i> : I am trying to recompile PHP 4.3.6 with GD support.  I have installed
+</I>&gt;<i> : libjpeg, libpng, and libtiff with Fink.  Fink place all this stuff in
+</I>&gt;<i> : the /sw directory.  Every time I run
+</I>&gt;<i> : ./configure I get this:
+</I>&gt;<i> :
+</I>&gt;<i> : configure: error: libjpeg.(a|so) not found.
+</I>&gt;<i> :
+</I>&gt;<i> : Here is my configure:
+</I>&gt;<i> :
+</I>&gt;<i> : ./configure --with-zlib-dir=/usr/local/ --with-jpeg-dir=/sw
+</I>&gt;<i> : --with-png-dir=/sw --with-tiff-dir=/sw --with-gd
+</I>&gt;<i> : --with-mysql=/usr/local/mysql --with-xml --with-pdflib=/sw 
+</I>&gt;<i> --enable-ftp
+</I>&gt;<i> : --enable-ldap --with-freetype-dir=/sw --with-curl=/sw 
+</I>&gt;<i> -enable-calendar
+</I>&gt;<i> : --with-expat-dir=/sw --enable-mime-magic --disable-debug --enable-pic
+</I>&gt;<i> : --enable-sysvsem --enable-sysvshm  --enable-exif --with-gettext
+</I>&gt;<i> : --with-ncurses -with-dom --with-apxs=/usr/sbin/apxs
+</I>&gt;<i> :
+</I>&gt;<i> : What' s interesting is this:
+</I>&gt;<i> : checking for GD support... yes
+</I>&gt;<i> : checking for the location of libjpeg... /sw
+</I>&gt;<i> : checking for the location of libpng... /sw
+</I>&gt;<i> : checking for the location of libXpm... no
+</I>&gt;<i> :
+</I>&gt;<i> : Anyone have idea why this is happening or what I am doing wrong?
+</I>&gt;<i>
+</I>&gt;<i> What does this command report?
+</I>&gt;<i>
+</I>&gt;<i> 	$ ls -l /sw/lib/libjpeg*
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> -- 
+</I>&gt;<i> Eugene Lee
+</I>&gt;<i> <A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;<i> Mac ISP
+</I>&gt;<i> Serious Mac Internet Solutions From NineWire!   
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older 
+</I>&gt;<i> Mac!
+</I>&gt;<i> Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>    Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>   this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;<i>
+</I>&gt;<i> OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s - 
+</I>&gt;<i> <A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000710.html">[X-Unix] GNU Readline
+</A></li>
+	<LI>Next message: <A HREF="000712.html">[X-Unix] What's in an MP3's resource fork..?     [Was: Re: 
+ [X4U] ._annoying_files on SMB shares - can I remove them..?]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#711">[ date ]</a>
+              <a href="thread.html#711">[ thread ]</a>
+              <a href="subject.html#711">[ subject ]</a>
+              <a href="author.html#711">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

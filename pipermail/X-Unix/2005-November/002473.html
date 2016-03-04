@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: zsh / spotlight / application completion
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20zsh%20/%20spotlight%20/%20application%20completion&In-Reply-To=73A7885C-0CCE-42C0-8FF0-D85E1052B81C%40tntluoma.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002472.html">
+   <LINK REL="Next"  HREF="002474.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: zsh / spotlight / application completion</H1>
+    <B>Brian Medley</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20zsh%20/%20spotlight%20/%20application%20completion&In-Reply-To=73A7885C-0CCE-42C0-8FF0-D85E1052B81C%40tntluoma.com"
+       TITLE="[X-Unix] Re: zsh / spotlight / application completion">bpm-list-osx-unix at 4321.tv
+       </A><BR>
+    <I>Wed Nov 16 19:00:32 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002472.html">[X-Unix] Re: zsh / spotlight / application completion
+</A></li>
+        <LI>Next message: <A HREF="002474.html">[X-Unix] Loop structure syntax question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2473">[ date ]</a>
+              <a href="thread.html#2473">[ thread ]</a>
+              <a href="subject.html#2473">[ subject ]</a>
+              <a href="author.html#2473">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Wed, Nov 16, 2005 at 08:55:42PM -0500, Lists wrote:
+
+My bad .. I should have mentioned I was sharing a technique.
+
+Yes, what you describe is related to finding an &quot;i&quot; in the entire
+string.  Please try the following to try and get what you want.
+
+$ typeset -a _apps
+$ _apps=(${(f)&quot;$(mdfind &quot;kMDItemKind == 'Application'&quot; | \
+    perl -MFile::Basename -pe '$_ = &amp;basename($_, &quot;.app&quot;)')&quot;})
+$ compctl -f -x 'c[-1,-a]' -k _apps -- open
+
+While making this it didn't occur to me that -a probably could
+look up most/all Applications like mdfind.  What I changed is
+adding a small perl routine to get just the application name and
+modified the compctl parameters to require a match at the
+beginning of the word.
+
+Therefore i[tab] should match iCal but not OmniOutliner.
+
+&gt;<i> I wasn't sure if you were sharing a technique or asking a question.
+</I>&gt;<i> 
+</I>&gt;<i> I tried your method (I use zsh but never fully &quot;got&quot; compctl).
+</I>&gt;<i> 
+</I>&gt;<i> It doesn't do what I'd want, which is:
+</I>&gt;<i> 
+</I>&gt;<i> 	$ open -a i[tab]
+</I>&gt;<i> 
+</I>&gt;<i> would prompt with
+</I>&gt;<i> 
+</I>&gt;<i> 	$ open -a iCal
+</I>&gt;<i> 	iCal iChat iDVD iMovie\ HD iPhoto\ Diet iPhoto\ Library\ Manager  
+</I>&gt;<i> iPhoto iStumbler iSync iTunes iWork
+</I>&gt;<i> 
+</I>&gt;<i> instead I get
+</I>&gt;<i> 
+</I>&gt;<i>  	open -a /Applications\ \(Mac\ OS\ 9\)/Acrobat\ Reader\ 5.0/Acrobat 
+</I>&gt;<i> \ Reader\ 5.0
+</I>&gt;<i> 	zsh: do you wish to see all 427 possibilities (427 lines)?
+</I>&gt;<i> 
+</I>&gt;<i> presumably because there is an 'i' matched *somewhere* but I intended  
+</I>&gt;<i> for it to *only* match apps which began with the letter &quot;i&quot;
+</I>&gt;<i> 
+</I>&gt;<i> All of my apps (except Finder) are in /Applications (I don't use OS 9  
+</I>&gt;<i> although it is installed)	 and the .app extension is optional, I 
+</I>&gt;<i> believe
+</I>
+-- 
+~`^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-., \|/  (___)  \|/ _,.-=~'`^`
+                                      @~./'O o`\.~@
+      &quot;Knowledge is Power&quot;           /__( \___/ )__\  *PPPFFBT!*
+         -- Francis Bacon               `\__`U_/'
+ _.-=~'``'~=-._.-=~'``'~=-._.-=~'`^`'~= &lt;____|'  ^^`'~=-.,__,.-=
+~'^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-.,__,.-==--^'~=-.,__,.-=~'`^`
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002472.html">[X-Unix] Re: zsh / spotlight / application completion
+</A></li>
+	<LI>Next message: <A HREF="002474.html">[X-Unix] Loop structure syntax question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2473">[ date ]</a>
+              <a href="thread.html#2473">[ thread ]</a>
+              <a href="subject.html#2473">[ subject ]</a>
+              <a href="author.html#2473">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

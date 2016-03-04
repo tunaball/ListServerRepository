@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Unlinking a file... illegal characters?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Unlinking%20a%20file...%20illegal%20characters%3F&In-Reply-To=20050226022449.D220E316E79%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001569.html">
+   <LINK REL="Next"  HREF="001578.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Unlinking a file... illegal characters?</H1>
+    <B>Michael Ziober</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Unlinking%20a%20file...%20illegal%20characters%3F&In-Reply-To=20050226022449.D220E316E79%40listserver.themacintoshguy.com"
+       TITLE="[X-Unix] Unlinking a file... illegal characters?">michaelziober at myrealbox.com
+       </A><BR>
+    <I>Fri Feb 25 22:44:08 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001569.html">[X-Unix] Re: Re: Unlinking a file... illegal characters?
+</A></li>
+        <LI>Next message: <A HREF="001578.html">[X-Unix] Re: Unlinking a file... illegal characters?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1576">[ date ]</a>
+              <a href="thread.html#1576">[ thread ]</a>
+              <a href="subject.html#1576">[ subject ]</a>
+              <a href="author.html#1576">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Fri, 25 Feb 2005 17:07:32 +0000, Stroller &lt;<A HREF="../../../mailman/listinfo/x-unix.html">MacMonster at myrealbox.com</A>&gt; 
+wrote:
+
+&gt;<i> Would I be over-optimistic if I suggested that a different quoting
+</I>&gt;<i> method in the script might fix this? As you suggested, I thought about
+</I>&gt;<i> writing a program to do the job, but I never got as far in C as
+</I>&gt;<i> file-handling.
+</I>
+The inode is the only chance you have to successfully refer to the 
+file. Using &quot;find ... -exec rm {} ;&quot;, or &quot;find ... | xargs rm&quot; aren't 
+going to behave any differently than what you've already tried from the 
+command line.
+
+That said, I would consider trying the following:
+1. Boot into single-user mode.
+2. Use ls -i to get the file's inode.
+3. Use clri to clear the inode.
+4. Use fsck to repair the filesystem OR perform a safe boot.
+5. Perform a normal reboot.
+
+Note that I have NOT tried using clri under OS X, but I assume that 
+since it's present, it has been integrated to work with HFS+ 
+filesystems.
+
+Good luck,
+Michael
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: text/enriched
+Size: 964 bytes
+Desc: not available
+Url : <A HREF="../attachments/20050225/a0705b07/attachment.bin">http://listserver.themacintoshguy.com/pipermail/x-unix/attachments/20050225/a0705b07/attachment.bin</A>
+</PRE>
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001569.html">[X-Unix] Re: Re: Unlinking a file... illegal characters?
+</A></li>
+	<LI>Next message: <A HREF="001578.html">[X-Unix] Re: Unlinking a file... illegal characters?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1576">[ date ]</a>
+              <a href="thread.html#1576">[ thread ]</a>
+              <a href="subject.html#1576">[ subject ]</a>
+              <a href="author.html#1576">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

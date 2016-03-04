@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] open-x11
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20open-x11&In-Reply-To=C9B77BF4-8A71-4776-9840-D2F3D070389C%40fidlet.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002552.html">
+   <LINK REL="Next"  HREF="002554.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] open-x11</H1>
+    <B>Adrian Simmons</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20open-x11&In-Reply-To=C9B77BF4-8A71-4776-9840-D2F3D070389C%40fidlet.com"
+       TITLE="[X-Unix] open-x11">adrinux at gmail.com
+       </A><BR>
+    <I>Fri Jan 27 03:28:46 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002552.html">[X-Unix] open-x11
+</A></li>
+        <LI>Next message: <A HREF="002554.html">[X-Unix] open-x11
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2553">[ date ]</a>
+              <a href="thread.html#2553">[ thread ]</a>
+              <a href="subject.html#2553">[ subject ]</a>
+              <a href="author.html#2553">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Christina Huggins wrote:
+&gt;<i> /opt/local/bin/gimp
+</I>Is that where gimp is? Usually Fink installs things in /sw, although you may 
+have darwinports installed and have gimp installed with that?
+
+&gt;<i> (Note that I can open gimp fine through an x terminal like aterm.)  Does 
+</I>&gt;<i> anyone have a clue as to what might be going on?
+</I>The usual advice is to edit your bash profile (assuming you're using Tiger 
+and the default shell), which can be found at ~/.profile and add the 
+following (assuming you have both fink and darwinports installed):
+
+# set up the path for fink and darwinports
+if [ -f /sw/bin/init.sh ]
+then
+     . /sw/bin/init.sh
+fi
+
+if [ -f /opt/local/bin/port ]
+then
+     append_path PATH /opt/local/bin
+     append_path MANPATH /opt/local/share/man
+fi
+
+
+And this to make X11 apps launch from terminal, set the display:
+
+[[ -z $DISPLAY ]] &amp;&amp; export DISPLAY=':0.0'
+
+
+HTH
+
+-- 
+adrinux (aka Adrian Simmons) &lt;<A HREF="http://adrinux.perlucida.com">http://adrinux.perlucida.com</A>&gt;
+e-mail &lt;mailto:<A HREF="../../../mailman/listinfo/x-unix.html">adrinux at gmail.com</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002552.html">[X-Unix] open-x11
+</A></li>
+	<LI>Next message: <A HREF="002554.html">[X-Unix] open-x11
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2553">[ date ]</a>
+              <a href="thread.html#2553">[ thread ]</a>
+              <a href="subject.html#2553">[ subject ]</a>
+              <a href="author.html#2553">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

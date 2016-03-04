@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Home Networking Questions ( Static IP verses DHCP)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Home%20Networking%20Questions%20%28%20Static%20IP%20verses%20DHCP%29&In-Reply-To=list-14543163%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000181.html">
+   <LINK REL="Next"  HREF="000184.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Home Networking Questions ( Static IP verses DHCP)</H1>
+    <B>James Rice</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Home%20Networking%20Questions%20%28%20Static%20IP%20verses%20DHCP%29&In-Reply-To=list-14543163%40mail.ninewire.com"
+       TITLE="[X4U] Home Networking Questions ( Static IP verses DHCP)">bebugs at vzavenue.net
+       </A><BR>
+    <I>Mon Jul  5 14:55:47 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000181.html">Journaling...
+</A></li>
+        <LI>Next message: <A HREF="000184.html">[X4U] Home Networking Questions ( Static IP verses DHCP)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#183">[ date ]</a>
+              <a href="thread.html#183">[ thread ]</a>
+              <a href="subject.html#183">[ subject ]</a>
+              <a href="author.html#183">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I have my home network setup as mostly static with a small range 
+reserved for DHCP assignments so my Netgear router can assign an address 
+to my tablet pc or my notebook from work.
+
+You set up your router for example as 192.168.0.1.  This becomes your 
+gateway address for all machines on the network.  I define the range of 
+192.168.0.201-232 as the DHCP assignment for temporary notebook 
+assignment.  You then set up an manual address without DHCP enabled  on 
+your workstations in the range of 192.168.0.2-200 with a netmask of 
+255.255.255.0.  I tend to reserve 192.168.0.233-254 for IP based 
+printers, access points, and other IP based equipment.
+
+ The reason I use static at home is I support Winblows boxes, older 
+Macs, newer Macs, Sun workstations, Sgi workstations, a BeBox and 
+several NeXT workstations.  I even have a couple od DOS system with 
+TCP/IP loaded that are connected to the internet.  DHCP is not available 
+or has serious issues on some of these systems as well as I like to have 
+everything neatly assigned so I know it's address.
+
+You need to disable DHCP on the workstations and enter the address 
+manually, and also enter the routers LAN address and the addresses pf 
+the DNS servers provided by your ISP.  The router will still have it's 
+WAN address assigned automatically.  On the Windows 2K box, just go into 
+the connection properties and select &quot;Use this Address&quot; in TCP/IP 
+properties and  enter the address.  The netmask will calculate 
+automatically and then manually enter the gateway and DNS addresses.  
+You probably won't even have to reboot but IE will have to redetect 
+proxy settings the first time you browse.  I don't have my 10.2.8 
+machine up at the moment but it was set up static as well.  Someone else 
+can step you through that one.  If you have any classic systems just set 
+up the address in the TCP/IP control panel as well as the same addresses 
+for the gateway and DNS servers.
+
+James
+
+<A HREF="http://www.vzavenue.net/~jrice54/classiccomp2.html">http://www.vzavenue.net/~jrice54/classiccomp2.html</A>
+
+revDAVE wrote:
+
+&gt;<i> I have a few computers at home - and I have been networking  them using a
+</I>&gt;<i>lynksys router using DHCP.
+</I>&gt;<i>
+</I>&gt;<i> Now, I would prefer to connect them up with static IP's through the router
+</I>&gt;<i>rather than DHCP - so that I can always permanently know that a particular
+</I>&gt;<i>IP is always the same computer even after rebooting etc..
+</I>&gt;<i>
+</I>&gt;<i>*  basically, I would like to leave the Linksys - set up to obtain an IP
+</I>&gt;<i>automatically -  however assign each computer a static/ permanent IP's
+</I>&gt;<i>(ex:xxx.xx.x.162 etc)...
+</I>&gt;<i>
+</I>&gt;<i>How  do I set this up using Panther 10.3.2?
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>* I went to: preferences&gt;network&gt; built-in Ethernet ... Then  configure
+</I>&gt;<i>using DHCP with manual address??? -  I tried putting in a manual address but
+</I>&gt;<i>it did not work ...?
+</I>&gt;<i>
+</I>&gt;<i>Q: - what did I do wrong? How do I set this up?
+</I>&gt;<i>
+</I>&gt;<i>Q: -  I will bet that I need to log into the lynksys -  administration page
+</I>&gt;<i>and set something up there ... What would I change?
+</I>&gt;<i>
+</I>&gt;<i>Q: Also -  I have one computer with Windows 2000 ... How do this one up with
+</I>&gt;<i>a static IP with the router?
+</I>&gt;<i>
+</I>&gt;<i>Thanks in advance for your help - RevDave
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>--
+</I>&gt;<i>Thanks - RevDave
+</I>&gt;<i><A HREF="../../../mailman/listinfo/x4u.html">Lists at domains4days.com</A>
+</I>&gt;<i>[db-lists]
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000181.html">Journaling...
+</A></li>
+	<LI>Next message: <A HREF="000184.html">[X4U] Home Networking Questions ( Static IP verses DHCP)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#183">[ date ]</a>
+              <a href="thread.html#183">[ thread ]</a>
+              <a href="subject.html#183">[ subject ]</a>
+              <a href="author.html#183">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

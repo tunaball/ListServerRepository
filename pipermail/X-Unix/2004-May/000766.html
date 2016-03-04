@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] URL remapped to .local address
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20URL%20remapped%20to%20.local%20address&In-Reply-To=list-12560619%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000765.html">
+   <LINK REL="Next"  HREF="000767.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] URL remapped to .local address</H1>
+    <B>Jakob Peterh&#228;nsel</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20URL%20remapped%20to%20.local%20address&In-Reply-To=list-12560619%40mail.ninewire.com"
+       TITLE="[X-Unix] URL remapped to .local address">jakob at hjemme.dk
+       </A><BR>
+    <I>Wed May  5 01:07:44 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000765.html">[X-Unix] URL remapped to .local address
+</A></li>
+        <LI>Next message: <A HREF="000767.html">[X-Unix] URL remapped to .local address
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#766">[ date ]</a>
+              <a href="thread.html#766">[ thread ]</a>
+              <a href="subject.html#766">[ subject ]</a>
+              <a href="author.html#766">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi All,
+
+
+PLEASE file a bug with Apple and post the Follow-up#/RadarWeb# so we 
+can tag onto it!
+
+____________________________________________
+Jakob Peterh&#228;nsel
+Network Consultant
+Tel: +45 7022 1014
+Fax: +45 7022 1013
+Mob: +45&#160;22 68 49 61
+<A HREF="../../../mailman/listinfo/x-unix.html">jp at netpoint.com</A>
+www.NetPoint.com
+
+
+On 4. maj 2004, at 21:59, Kevin Stevens wrote:
+
+&gt;<i> On Tue, 4 May 2004, Stephen Jonke wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> What would cause a URL to map to a .local address when entered into 
+</I>&gt;&gt;<i> the
+</I>&gt;&gt;<i> web browser? For example, the URL <A HREF="http://mydomain.com:1234/~jukebox">http://mydomain.com:1234/~jukebox</A>
+</I>&gt;&gt;<i> (without an ending slash) turns into
+</I>&gt;&gt;<i> <A HREF="http://mylocalmachine.local/~jukebox/">http://mylocalmachine.local/~jukebox/</A> which fails because I'm trying
+</I>&gt;&gt;<i> this while not on my local network. The machine &quot;mylocalmachine&quot; is
+</I>&gt;&gt;<i> behind an airport base station which has port mapping of port 1234 to
+</I>&gt;&gt;<i> port 80 on mylocalmachine. What's weird is that if I add an ending
+</I>&gt;&gt;<i> slash to the URL, then it works:  <A HREF="http://mydomain.com:1234/~jukebox/">http://mydomain.com:1234/~jukebox/</A>
+</I>&gt;&gt;<i> If I leave out the ending slash, it maps to the .local address.
+</I>&gt;<i>
+</I>&gt;<i> It's a discrepancy between what Apache thinks the hostname is, and 
+</I>&gt;<i> what OS
+</I>&gt;<i> X thinks the hostname is.  More below.
+</I>&gt;<i>
+</I>&gt;&gt;<i> Am I running into a bug with the airport base stations port mapping, 
+</I>&gt;&gt;<i> or
+</I>&gt;&gt;<i> did I set something up some time in the past that is doing this?
+</I>&gt;<i>
+</I>&gt;<i> It's not the port mapping, it's a hostname issue.  I was able to 
+</I>&gt;<i> override
+</I>&gt;<i> it by forcing the host name in the httpd.conf file, but that's an ugly
+</I>&gt;<i> workaround.
+</I>&gt;<i>
+</I>&gt;<i> I'll state here that I am totally unable to control the hostname 
+</I>&gt;<i> setting
+</I>&gt;<i> on my 10.3 G5.
+</I>&gt;<i>
+</I>&gt;<i> - I don't want a .local address, and cannot figure out where to 
+</I>&gt;<i> eliminate
+</I>&gt;<i> it.
+</I>&gt;<i>
+</I>&gt;<i> - My hostname changes dynamically, apparently in response to some cron 
+</I>&gt;<i> job
+</I>&gt;<i> I haven't identified.
+</I>&gt;<i>
+</I>&gt;<i> - hostname -s doesn't stay set.
+</I>&gt;<i> - resolve.conf settings don't stay set.
+</I>&gt;<i> - Changing the /etc/hostconfig HOSTNAME setting from -AUTO- doesn't 
+</I>&gt;<i> stay
+</I>&gt;<i> set.
+</I>&gt;<i>
+</I>&gt;<i> It's frustrating as hell.  I want to use a standard host name on a
+</I>&gt;<i> standard default domain.  When I drop to a shell and ask for the 
+</I>&gt;<i> hostname,
+</I>&gt;<i> God only knows what I'll get from day to day.  Sometimes it's 
+</I>&gt;<i> 'babelfish',
+</I>&gt;<i> which is what I have set.  Sometimes it's 'babelfish.local'.  Sometimes
+</I>&gt;<i> it's 'babelfish.pursued-with.net'.  Sometimes it's &quot;www babelfish mail
+</I>&gt;<i> mailhost&quot;.
+</I>&gt;<i>
+</I>&gt;<i> I *do* know how to control hostname and domain on a standard Linux/BSD
+</I>&gt;<i> box.  Trying to do it on OSX is driving me up a tree.
+</I></PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000765.html">[X-Unix] URL remapped to .local address
+</A></li>
+	<LI>Next message: <A HREF="000767.html">[X-Unix] URL remapped to .local address
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#766">[ date ]</a>
+              <a href="thread.html#766">[ thread ]</a>
+              <a href="subject.html#766">[ subject ]</a>
+              <a href="author.html#766">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

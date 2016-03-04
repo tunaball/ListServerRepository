@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] setting up an ftp server with tiger
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20setting%20up%20an%20ftp%20server%20with%20tiger&In-Reply-To=a061005efc168bc8b8b5a%40%5B192.168.0.7%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="015281.html">
+   <LINK REL="Next"  HREF="015282.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] setting up an ftp server with tiger</H1>
+    <B>alexandre</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20setting%20up%20an%20ftp%20server%20with%20tiger&In-Reply-To=a061005efc168bc8b8b5a%40%5B192.168.0.7%5D"
+       TITLE="[X4U] setting up an ftp server with tiger">mac.k at a2k.ch
+       </A><BR>
+    <I>Mon Oct 30 12:20:28 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="015281.html">[X4U] setting up an ftp server with tiger
+</A></li>
+        <LI>Next message: <A HREF="015282.html">[X4U] fellow luddites?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15293">[ date ]</a>
+              <a href="thread.html#15293">[ thread ]</a>
+              <a href="subject.html#15293">[ subject ]</a>
+              <a href="author.html#15293">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>david
+
+thanks for the additional info.
+
+i downloaded pureFTPd and installed it. runs great and greatly  
+simplifies the setup procedure.
+
+my major problem was configurating the router so that it would  
+forward the traffic to a specific machine on my network. (i also had  
+to get a static ip address from my provider).
+
+i was able to log into that machine from the other side of town, so  
+all is well now.
+
+as for down/upload speeds, there's nothing much i can do about it.  
+300kbps upload is not too bad&#8230; (remember surfing on a 33k modem?!)
+
+regards.
+
+alexandre
+::<i> 17&quot; 1.5ghz powerbook / 1.5gb / <A HREF="../../../mailman/listinfo/x4u.html">100gb at 7200</A> / X.4.8 ::
+</I>
+
+
+On 28 oct. 06, at 10:55, David Ledger wrote:
+
+&gt;<i> At 23:54 -0700 26/10/06, <A HREF="../../../mailman/listinfo/x4u.html">x4u-request at listserver.themacintoshguy.com</A>  
+</I>&gt;<i> wrote:
+</I>&gt;&gt;<i> From: alexandre &lt;<A HREF="../../../mailman/listinfo/x4u.html">mac.k at a2k.ch</A>&gt;
+</I>&gt;&gt;<i> i was aware of the password and username thing being sent out in the
+</I>&gt;&gt;<i> clear. the data that has to be downloaded from our server is not
+</I>&gt;&gt;<i> highly sensitve stuff.
+</I>&gt;<i>
+</I>&gt;<i> If a bad guy gets a username and password and any other access  
+</I>&gt;<i> method is turned on, they can access your machine. If only ftp is  
+</I>&gt;<i> enabled they can still use your machine to store their kiddie porn.
+</I>&gt;<i>
+</I>&gt;&gt;<i> this will be a temporary solution for the next 2-3 weeks. what are my
+</I>&gt;&gt;<i> options for the long term in order to set up an secure(r) ftp server?
+</I>&gt;<i>
+</I>&gt;<i> Don't use ftp unless you have to, use sftp or scp, then set up a  
+</I>&gt;<i> new user as in my earlier reply. You have to learn a little about  
+</I>&gt;<i> the ssh setup, keys etc.
+</I>&gt;<i>
+</I>&gt;<i> On other Unix systems I would be using xinetd if I had to use ftp.  
+</I>&gt;<i> Years ago, to enable ftp you started an ftp server at boot time, to  
+</I>&gt;<i> enable telnet you started a telnet server at boot time, ... . As  
+</I>&gt;<i> the number of services started at boot time increased we started  
+</I>&gt;<i> using inetd, which listened on all specified ports and started a  
+</I>&gt;<i> one-time only service of the appropriate type for each request  
+</I>&gt;<i> received. xinetd extends this to increase security. For each  
+</I>&gt;<i> service it can allow connections only from specified IP addresses  
+</I>&gt;<i> or ranges for example. The config file format under Tiger is  
+</I>&gt;<i> different to the one I am used to and as services are started  
+</I>&gt;<i> differently on OS X to other Unixes I don't know how easy it is to  
+</I>&gt;<i> use or what you have to do to make it effective. I'll get round to  
+</I>&gt;<i> understanding the OS X way when it's been the same for two versions  
+</I>&gt;<i> on the trot.
+</I>&gt;<i>
+</I>&gt;&gt;<i> btw, the people downloading files from my ftp server are dependent on
+</I>&gt;&gt;<i> my UPloading speed, right?
+</I>&gt;<i>
+</I>&gt;<i> Yes.
+</I>
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="015281.html">[X4U] setting up an ftp server with tiger
+</A></li>
+	<LI>Next message: <A HREF="015282.html">[X4U] fellow luddites?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15293">[ date ]</a>
+              <a href="thread.html#15293">[ thread ]</a>
+              <a href="subject.html#15293">[ subject ]</a>
+              <a href="author.html#15293">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

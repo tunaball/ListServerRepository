@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Quit Terminal on exit
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Quit%20Terminal%20on%20exit&In-Reply-To=list-11357052%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000467.html">
+   <LINK REL="Next"  HREF="000469.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Quit Terminal on exit</H1>
+    <B>James Bucanek</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Quit%20Terminal%20on%20exit&In-Reply-To=list-11357052%40mail.ninewire.com"
+       TITLE="[X-Unix] Quit Terminal on exit">subscriber at gloaming.com
+       </A><BR>
+    <I>Fri Mar 12 15:23:57 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000467.html">[X-Unix] Command-Line printing features
+</A></li>
+        <LI>Next message: <A HREF="000469.html">[X-Unix] Quit Terminal on exit
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#468">[ date ]</a>
+              <a href="thread.html#468">[ thread ]</a>
+              <a href="subject.html#468">[ subject ]</a>
+              <a href="author.html#468">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Marley Graham wrote on Friday, March 12, 2004:
+
+&gt;<i>On Mar 12, 2004, at 11:12 AM, James Bucanek wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> No, as it would be a very hazardous option (having a window option 
+</I>&gt;&gt;<i> that closes *all* windows).  Note that your solution will have the 
+</I>&gt;&gt;<i> same problem, so be warned.
+</I>&gt;<i>
+</I>&gt;<i>No, actually, my program works just fine; on exit it closes the window, 
+</I>&gt;<i>but leaves Terminal running.
+</I>
+You are making the assumption that the user is only using your, single, Terminal window.  While this might be a valid assumption for your situation, it is still hazerdous in general.
+
+&gt;<i>The users generally have only one reason to run Terminal - to log onto 
+</I>&gt;<i>the main application on our server. I originally set up a template for 
+</I>&gt;<i>users by sending the ssh login command to the server. At that point, I 
+</I>&gt;<i>issued a Save As command to create the template file, which I then 
+</I>&gt;<i>modify with TextEdit for the individual users as noted, and put in the 
+</I>&gt;<i>user's Document folder. Then I copy the file to the Dock on the user's 
+</I>&gt;<i>machine. Most users will just click on that icon to launch the program, 
+</I>&gt;<i>and not even be aware that they are running Terminal. When they log out 
+</I>&gt;<i>of the main program, the window closes and, as far as they are 
+</I>&gt;<i>concerned, they have quit the program.
+</I>&gt;<i>
+</I>&gt;<i>So, an embedded command that caused Terminal to quit when the window 
+</I>&gt;<i>closed would, in this case, be a good thing.
+</I>
+A good thing for you.  A bad thing to add to Terminal for general consumption.
+
+&gt;&gt;<i> However, I've used the following trick on .command files that I have 
+</I>&gt;&gt;<i> set to execute on login.  I didn't want the Terminal application left 
+</I>&gt;&gt;<i> running after every login.  I wanted my script to run, and Terminal to 
+</I>&gt;&gt;<i> quit.  My script looks something like this:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     cd ~/bin
+</I>&gt;&gt;<i>     &lt;do some setup, start a few deamons, etc.&gt;
+</I>&gt;&gt;<i>     osascript -e 'tell application &quot;Terminal&quot; to quit' &amp;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Note that the '&amp;' is important, or it causes a fatal embrace.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>Yes, I realize I could write an osascript to quit Terminal; but in the 
+</I>&gt;<i>scenario above, how would it know when to run? That's why I was looking 
+</I>&gt;<i>for a way to embed a &quot;quit Terminal&quot; string in the property list.
+</I>
+Marley Graham wrote on Friday, March 12, 2004:
+&gt;<i>
+</I>&gt;<i>           &lt;key&gt;ExecutionString&lt;/key&gt;
+</I>&gt;<i>           &lt;string&gt;ssh -l &lt;user&gt; &lt;server&gt;; exit&lt;/string&gt;
+</I>
+Ah, maybe somewhere in between the 'ssh -l ...' and the 'exit'?
+
+______________________________________________________
+James Bucanek       &lt;mailto:<A HREF="../../../mailman/listinfo/x-unix.html">privatereply at gloaming.com</A>&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000467.html">[X-Unix] Command-Line printing features
+</A></li>
+	<LI>Next message: <A HREF="000469.html">[X-Unix] Quit Terminal on exit
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#468">[ date ]</a>
+              <a href="thread.html#468">[ thread ]</a>
+              <a href="subject.html#468">[ subject ]</a>
+              <a href="author.html#468">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

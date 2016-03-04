@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Making my public folder availble
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Making%20my%20public%20folder%20availble&In-Reply-To=alpine.DEB.2.00.0812230950170.25332%40maranatha.local">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="022378.html">
+   <LINK REL="Next"  HREF="022379.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Making my public folder availble</H1>
+    <B>Daly Jessup</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Making%20my%20public%20folder%20availble&In-Reply-To=alpine.DEB.2.00.0812230950170.25332%40maranatha.local"
+       TITLE="[X4U] Making my public folder availble">jessup at san.rr.com
+       </A><BR>
+    <I>Sun Dec 28 07:56:05 PST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="022378.html">[X4U] Making my public folder availble
+</A></li>
+        <LI>Next message: <A HREF="022379.html">[X4U] MERRY CHRISTMAS TO ALL!!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#22383">[ date ]</a>
+              <a href="thread.html#22383">[ thread ]</a>
+              <a href="subject.html#22383">[ subject ]</a>
+              <a href="author.html#22383">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Cheryl wrote:
+
+&gt;<i>I have a program I want to allow a couple of friends to get from my 
+</I>&gt;<i>computer. I have several questions about this.
+</I>&gt;<i>
+</I>&gt;<i>1. Since I am using an airport extreme with a wireless network, I 
+</I>&gt;<i>assume I have to set up port forwarding. Is this correct?
+</I>
+Yes.
+
+&gt;<i>2. I did set up a port forwarding scheme that works. However, I have 
+</I>&gt;<i>a question about port numbers. Is the public port number one you 
+</I>&gt;<i>make up and is the private port number one dependent on the protocol 
+</I>&gt;<i>being used? If so, how do I determine what to use for the private 
+</I>&gt;<i>port number? I know from my linux experience that 22 is the usual 
+</I>&gt;<i>port for ssh but I don't know anything about port numbers with the 
+</I>&gt;<i>Mac other than this.
+</I>
+I don't know about making up a port number of your own, but if you 
+want to, I think you would &quot;make up&quot; the one on your own computer, 
+because almost certainly, anyone using an ftp client to reach your 
+computer would be sending their request on port 21. Here is a list of 
+common ports:
+&lt;<A HREF="http://www2.opendoor.com/doorstop/ports.html">http://www2.opendoor.com/doorstop/ports.html</A>&gt;
+
+I think if you were going to set up your computer as an ftp server, 
+you would just forward traffic on port 21 from outside to port 21 on 
+your computer.
+
+&gt;<i>Also, the instructions I read indicated that when I set up the port 
+</I>&gt;<i>mapping in Airport Utility I'd choose a service but I don't see any 
+</I>&gt;<i>opportunity to do this. I do have file sharing on in system 
+</I>&gt;<i>preferences &gt; sharing.
+</I>
+You would set up your computer to be an ftp server, at least in OS X 
+10.4 (I don't know about Leopard) in System Prefs/Sharing, then under 
+the Services tab, put a checkmark next to &quot;FTP Access&quot;. Your visitors 
+would need to know your user name and password.
+
+You would set up port forwarding in the Airport Utility. Open up the 
+utility, and select your Airport Extreme on the left. Click the 
+&quot;Manual Setup button.  Wait while it reads your Airport Extreme 
+configuration. Click the Advanced button at the top of the new 
+window.  In the Advanced pane, click the Port Mapping tab. Then click 
+the little &quot;Plus mark&quot; (+) at the bottom of the list of allowed 
+services. In the window that opens, notice the menu labeled 
+&quot;Service:&quot; at the top. Choose the FTP Access service. It will be set 
+up for forwarding port 21 Public to port 21 Private.  Enter  your 
+computer's private IP address.
+
+You can find  the private IP address in the Network System Pref Pane 
+by having it &quot;Show&quot; your Airport setup, then looking in the TCP/IP 
+tab.  It is given next to &quot;IP Address&quot;.
+
+&gt;<i>3. I could put the programs I want to share in my Public folder. 
+</I>&gt;<i>However, I have discontinued .mac/mobileme so I'm assuming that I 
+</I>&gt;<i>can no longer have people access my public folder by finder &gt; go &gt; 
+</I>&gt;<i>idisk &gt; other user's public folder. Am I correct in this assumption 
+</I>&gt;<i>and if so can this be done by goto server or is that still only for 
+</I>&gt;<i>peopole within the network?
+</I>
+You have to subscribe to MobileMe to have the iDisk.
+
+&gt;<i>6. I also thought of allowing ftp downloads though I realize 
+</I>&gt;<i>information isn't encrypted. If I went this route, how would I 
+</I>&gt;<i>control what folders people are allowed to access? Is this taken 
+</I>&gt;<i>care of in the sharing options or do I have to do more than this?
+</I>
+It seems to me, though I have never tried it, that you could create a 
+separate account on your computer for this purpose. Enable &quot;Fast User 
+Switching&quot; in the Network Pref Pane so you could have both your 
+account and the new &quot;guest&quot; account active at the same time. My guess 
+is that if you put your files into the Shared folder in Hard 
+Drive/Users/ then gave your visitors the login name and password for 
+the new account, then they could FTP to your computer and give the 
+username and password for the guest account, and then they could 
+retrieve the files from the Shared folder, without knowing your own 
+username and password, and without being able to see your private 
+documents. Of course, they would still be able to see everything in 
+the Hard Drive/Applications/ folder, though.
+
+&gt;<i>5. Miscelaneous: Any other information on safely having people copy 
+</I>&gt;<i>or download from my computer--but obviously only what i want copied 
+</I>&gt;<i>or downloaded!!!--would be appreciated.
+</I>
+One way I have done this in the past, using my own domain, is to set 
+up a sub account at the domain admin page and let people ftp to the 
+sub account, where I would  put files for them to download.
+
+Or you could use a  program like FileChute or Pando to just email the 
+big files to them.  Or here's one of quite a number of internet 
+services for sharing files:  &lt;<A HREF="http://www.box.net/">http://www.box.net/</A>&gt;
+
+If you decide to create a new account on your computer and give its 
+login information to others, I'd be interested in hearing if it works 
+for you.
+
+Daly
+----------------------
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="022378.html">[X4U] Making my public folder availble
+</A></li>
+	<LI>Next message: <A HREF="022379.html">[X4U] MERRY CHRISTMAS TO ALL!!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#22383">[ date ]</a>
+              <a href="thread.html#22383">[ thread ]</a>
+              <a href="subject.html#22383">[ subject ]</a>
+              <a href="author.html#22383">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

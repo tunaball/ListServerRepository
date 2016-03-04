@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] screencapture doesn't capture 2nd monitor
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20screencapture%20doesn%27t%20capture%202nd%20monitor&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="002853.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] screencapture doesn't capture 2nd monitor</H1>
+    <B>TjL</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20screencapture%20doesn%27t%20capture%202nd%20monitor&In-Reply-To="
+       TITLE="[X-Unix] screencapture doesn't capture 2nd monitor">luomat at gmail.com
+       </A><BR>
+    <I>Mon Aug  6 11:12:03 PDT 2007</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="002853.html">[X-Unix] screencapture doesn't capture 2nd monitor
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2852">[ date ]</a>
+              <a href="thread.html#2852">[ thread ]</a>
+              <a href="subject.html#2852">[ subject ]</a>
+              <a href="author.html#2852">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+What I am trying to accomplish:
+
+	Take full-screen screenshots at a timed interval (using cron)
+
+It's working, partly.  The screenshots are taken at a timed interval.
+
+Except that it is only capturing ONE of my two monitors (I have a  
+Macbook + external)
+
+Looking at the man page (excerpt below) makes it sound like the  
+default should be to capture both monitors unless you use the -m flag
+
+NAME
+      screencapture -- capture and manipulate clipboard contents
+
+SYNOPSIS
+      screencapture [-SWcimswx] file
+
+DESCRIPTION
+      The screencapture utility is not very well documented to date.   
+A list of
+      options follows.
+
+...
+      -i      Capture screen interactively, by selection or window.   
+The con-
+              trol key will cause the screen shot to go to the  
+clipboard.  The
+              space key will toggle between mouse selection and  
+window selec-
+              tion modes.  The escape key will cancel the interactive  
+screen
+              shot.
+
+      -m      Only capture the main monitor, undefined if -i is set.
+
+So there's no way to tell it &quot;Capture both monitors&quot; because it seems  
+to be setup to do that by default.
+
+Except that it doesn't work for me.
+
+Anyone have any other ideas?
+
+TjL
+
+
+ps - I wrote a little shell script here that I am calling via cron
+
+<A HREF="http://tj.tntluoma.com/files/take-full-screenshots.sh">http://tj.tntluoma.com/files/take-full-screenshots.sh</A>
+
+which lets me easily toggle what format the screenshots are in and  
+saves them all in a specific place
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="002853.html">[X-Unix] screencapture doesn't capture 2nd monitor
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2852">[ date ]</a>
+              <a href="thread.html#2852">[ thread ]</a>
+              <a href="subject.html#2852">[ subject ]</a>
+              <a href="author.html#2852">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

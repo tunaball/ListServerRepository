@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Mac printing through a Win 2003 Server
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Mac%20printing%20through%20a%20Win%202003%20Server&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="014176.html">
+   <LINK REL="Next"  HREF="014179.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Mac printing through a Win 2003 Server</H1>
+    <B>Nick Scalise</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Mac%20printing%20through%20a%20Win%202003%20Server&In-Reply-To="
+       TITLE="[X4U] Mac printing through a Win 2003 Server">nickscalise at cox.net
+       </A><BR>
+    <I>Fri Jul 21 12:34:02 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="014176.html">[X4U] Out of office
+</A></li>
+        <LI>Next message: <A HREF="014179.html">[X4U] problems with USB hub and OSX
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14178">[ date ]</a>
+              <a href="thread.html#14178">[ thread ]</a>
+              <a href="subject.html#14178">[ subject ]</a>
+              <a href="author.html#14178">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+---- Richard Gilmore &lt;<A HREF="../../../mailman/listinfo/x4u.html">rgilmor at uwo.ca</A>&gt; wrote: 
+
+&gt;<i> We&#185;ve just got several new printer multi function copiers Toshiba eStudio
+</I>&gt;<i> 451c which copy, fax, etc...and most importantly scan documents and
+</I>&gt;<i> instantly make PDFs and send them directly to a Windows 2003 share via SMB
+</I>&gt;<i> or directly to our Macs. This is good but printing from our Macs to these
+</I>&gt;<i> machines is sounding like it&#185;s going to be a total nightmare.
+</I>&gt;<i> 
+</I>&gt;<i> First off here at the university we&#185;re very very paranoid and security
+</I>&gt;<i> conscious. So the printers are being moved to an internal private IP network
+</I>&gt;<i> through a Windows 2003 server. What I&#185;ve been told is the printers will be
+</I>&gt;<i> on that network and access to the rest of the world will be done through a
+</I>&gt;<i> second non-private IP network. What I&#185;ve been told is this is accomplished
+</I>&gt;<i> on the Windows side by the machine having two different IP addresses at the
+</I>&gt;<i> same time. So the computer has one foot in one network and one foot in the
+</I>&gt;<i> other. I&#185;m also told this concept came out of the UNIX community and was
+</I>&gt;<i> ported over to the Windows world.  This is the first I&#185;ve heard of this. Now
+</I>&gt;<i> for our Macs to be able to print and access the outside world simultaneously
+</I>&gt;<i> we need to pull off this same trick. Does anybody know anything about this
+</I>&gt;<i> and how this would be done on a Mac? Would this have to be done through the
+</I>&gt;<i> command line or is there a GUI or??? I am clueless any info at all would be
+</I>&gt;<i> a helpful place to start.
+</I>
+Usually you would use a second ethernet port, then you can connect to the other network, no problem.
+
+I'm sure that is how their Windows Servers and Copier Printers are setup, yet it somewhat astonishing that they would require clients to have two NIC's. That is what DMZ's, Firewalls and routers are for.
+
+&gt;<i> Second is accessing the printers through a Windows 2003 print server. I&#185;ve
+</I>&gt;<i> been to the Apple site and it says this is possible but for whatever reason
+</I>&gt;<i> nothing is showing up in the Printer Setup Utility in the Windows Print
+</I>&gt;<i> Server tab. The dual IP thing is still not setup so this is &#179;normal&#178; Windows
+</I>&gt;<i> printing. Bonjour does not work with this printer even though it is supposed
+</I>&gt;<i> to. In the long run Bonjour will be disabled anyway as an option for us for
+</I>&gt;<i> security and policy reasons. Does anybody have any experience printing in a
+</I>&gt;<i> mixed environment like this? This is extremely frustrating. Also does
+</I>&gt;<i> anybody know in general what a print server does and why we need one? I&#185;m
+</I>&gt;<i> trying to wrap my head around what the print server does and how it does it?
+</I>
+Generally when you create a printer you just give it the SMB address of the printer connected to your server.
+
+<A HREF="smb://yourserver/yourprinter">smb://yourserver/yourprinter</A>
+
+Sometimes you can also just bypass the server and print directly to the printer by IP.
+
+&gt;<i> I&#185;m on a Intel iMac updated to 10.4.7 I&#185;ve installed the Toshiba drivers and
+</I>&gt;<i> software. The Toshiba website is dreadfully lacking in info and the Mac guy
+</I>&gt;<i> for Toshiba is in Toronto and not readily available, the people that we&#185;re
+</I>&gt;<i> leasing the copiers from have not returned our emails or calls.  The Mac
+</I>&gt;<i> guru that I usually go to, to ask such questions is on vacation for two
+</I>&gt;<i> weeks starting today. Suffice to say this totally sucks and to my mind is
+</I>&gt;<i> unacceptable business practice, but I digress, this leaves me as the sole
+</I>&gt;<i> person at this time in charge of figuring out and making the printers work.
+</I>&gt;<i> 
+</I>&gt;<i> Any help at all would be helpful in navigating a way through this quagmire
+</I>
+--
+Nick Scalise
+<A HREF="../../../mailman/listinfo/x4u.html">nickscalise at cox.net</A>
+
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="014176.html">[X4U] Out of office
+</A></li>
+	<LI>Next message: <A HREF="014179.html">[X4U] problems with USB hub and OSX
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14178">[ date ]</a>
+              <a href="thread.html#14178">[ thread ]</a>
+              <a href="subject.html#14178">[ subject ]</a>
+              <a href="author.html#14178">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

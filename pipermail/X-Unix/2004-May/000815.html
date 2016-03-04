@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Application 'launch-cache'...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Application%20%27launch-cache%27...&In-Reply-To=list-12889590%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000814.html">
+   <LINK REL="Next"  HREF="000816.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Application 'launch-cache'...</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Application%20%27launch-cache%27...&In-Reply-To=list-12889590%40mail.ninewire.com"
+       TITLE="[X-Unix] Application 'launch-cache'...">magill at mcgillsociety.org
+       </A><BR>
+    <I>Fri May 21 08:20:10 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000814.html">PowerMac G5 mailinglist webpage up
+</A></li>
+        <LI>Next message: <A HREF="000816.html">shell alias in bash
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#815">[ date ]</a>
+              <a href="thread.html#815">[ thread ]</a>
+              <a href="subject.html#815">[ subject ]</a>
+              <a href="author.html#815">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 19 May, 2004, at 20:26, luke wrote:
+&gt;<i> i am still quite confused as to how this xgrid thing is supposed to 
+</I>&gt;<i> work if the agent is 99% powerless - permissions-wise...
+</I>
+There are two answers here. One if Xgrid is being run on a collection 
+of unused &quot;office machines&quot; at night; and the other if Xgrid is being 
+run on a dedicated group of machines.
+
+For the group of office machines, think of SETI at home. Basically the 
+machines (users) being used are willing to give up CPU cycles for the 
+project, but not control of the machine. Consequently, there is very 
+little which the agent is permitted to do. This is also for security 
+issues. If the agent were cracked or hacked, then so is their machine.
+
+In a dedicated cluster, you can make Xgrid run anyway you want to. You 
+can turn off all permissions checking, run everybody as root, etc. (A 
+dedicated cluster is one which is in a locked room and NOT connected to 
+the Internet.)
+
+Something like Xgrid is not assumed to be an &quot;out-of-the-box,&quot; 
+&quot;the-user-is-really-stupid&quot; kind of solution. There is an underlying 
+assumption that you can &quot;play dumb&quot; and it will work as advertised when 
+it installs &quot;out-of-the-box&quot; -- if you insist. But the parallel 
+assumption is that anybody who is attempting to use this kind of 
+software possesses &quot;above average knowledge&quot; about their systems and 
+can make necessary modifications to allow &quot;what they want to happen.&quot;
+
+One thing which you could do if this is a dedicated cluster -- for any 
+NON-boot device, you can do a &quot;get info&quot; on the volume and check the 
+&quot;ignore permissions for this volume&quot; box under permissions. However, 
+this is not a good idea in general. It is a major security issue.
+
+As for the remotely launched application accessing something in 
+/private/var/root -- that doesn't sound good period! Unless the 
+application is actually running as root, there is NEVER a reason for it 
+to access anything in root's home directory. This is true even on a 
+stand-alone system. There is, or should not be, ANYTHING in 
+/private/var/root that any user on the system would ever need to 
+access.  Is the application installed correctly? If it is installed 
+that way by the agent, that may be an actual bug.
+
+Again, I don't know Xgrid itself, but one assumes that the agent is 
+simply running as a daemon, and it's up to you to configure whatever it 
+is that the daemon is going to do. Should it run as &quot;nobody? An 
+interesting question. I suspect that it should not. &quot;Nobody&quot; is 
+intended as a way to prevent undefined things from defaulting to 
+something defined. Most all &quot;inter-system&quot; communications programs 
+define a special userid for themselves -- like CUPS, Mail or Apache. So 
+this sounds like a configuration isssue.
+
+One assumes that by now there is an Xgrid mailing list or discussion 
+group someplace. (Apple has a mailing list, but no forum.) For what 
+it's worth -- if you search for xgrid in the apple/support discussions, 
+there are a couple of comments that software must be written 
+specifically to use Xgrid. I have no idea what that means.
+
+Also, keep in mind, Xgrid is still only an SDK - Software Developers 
+Kit. Nominally, that means &quot;This does what we expect it to do, but it 
+probably won't do what you expect it to do!&quot;
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000814.html">PowerMac G5 mailinglist webpage up
+</A></li>
+	<LI>Next message: <A HREF="000816.html">shell alias in bash
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#815">[ date ]</a>
+              <a href="thread.html#815">[ thread ]</a>
+              <a href="subject.html#815">[ subject ]</a>
+              <a href="author.html#815">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

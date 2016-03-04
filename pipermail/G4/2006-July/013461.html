@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] OpenFirmware can't open bootdevice anymore
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20OpenFirmware%20can%27t%20open%20bootdevice%20anymore&In-Reply-To=44A91CA3.8050807%40tonarchiv.ch">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="013460.html">
+   <LINK REL="Next"  HREF="013463.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] OpenFirmware can't open bootdevice anymore</H1>
+    <B>Wayne Clodfelter</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20OpenFirmware%20can%27t%20open%20bootdevice%20anymore&In-Reply-To=44A91CA3.8050807%40tonarchiv.ch"
+       TITLE="[G4] OpenFirmware can't open bootdevice anymore">wayne at troutnc.com
+       </A><BR>
+    <I>Mon Jul  3 10:43:52 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="013460.html">[G4] OpenFirmware can't open bootdevice anymore
+</A></li>
+        <LI>Next message: <A HREF="013463.html">[G4] OpenFirmware can't open bootdevice anymore
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13461">[ date ]</a>
+              <a href="thread.html#13461">[ thread ]</a>
+              <a href="subject.html#13461">[ subject ]</a>
+              <a href="author.html#13461">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I feel your pain. I still find boot-up problems to be the fly in the  
+ointment that is Macintosh. When it works, it's great. When it  
+doesn't, it's truly a bear finding something that works.
+
+Things I usually try:
+
+Zap the PRAM several (5 to 7) times with Command-Option-P-R at startup.
+
+Boot into open firmware with Command-Option-O-F
+type at the prompt: reset-nvram &lt;return&gt;
+reset-all &lt;return&gt;
+
+Start up in safe mode:
+ From shut-down, power up and at startup tone, press shift key and  
+hold until &quot;safe bootappears.
+After the system is fully up, restart normally.
+
+Start up in single user mode:
+Power up and at tone, press and hold Command-S until you see white  
+text...
+At command line, type:
+fsck -y &lt;return&gt; you may have to precede this command with /sbin/
+reboot &lt;return&gt;
+
+
+If you have another X or 9 boot partition, try using Command-Option- 
+Shift-Delete to bypass the default boot partition. Appending a number  
+(3 or 5 or whatever) sometimes helps to select a specific boot drive.
+
+The last time I had a boot problem, I even had to swap in an ATA  
+drive with a boot partition, because my Quicksilver would not find a  
+backup boot partition on a secondary SATA drive.
+Why, I don't know.
+
+HTH. Good luck!
+
+
+On Jul 3, 2006, at 9:33 AM, Till Wimmer wrote:
+
+&gt;<i> Hello
+</I>&gt;<i>
+</I>&gt;<i> Yesterday I booted into Os9 and did some work there (Protools) -  
+</I>&gt;<i> everything worked fine. Then I changed the startup disk back to Os  
+</I>&gt;<i> 10.3.9 using the control panel.
+</I>&gt;<i> But after rebooting only the &quot;no system found&quot; icon came up. Next i  
+</I>&gt;<i> rebooted holding down the option key, but there was no system  
+</I>&gt;<i> folder displayed for selection.
+</I>&gt;<i>
+</I>&gt;<i> Of course i resetted PRAM, pressed the PMU button... still the &quot;no  
+</I>&gt;<i> system found&quot; icon!
+</I>&gt;<i>
+</I>&gt;<i> Then i put my PPC linux disk in it and.. IT WORKED!  Putting back  
+</I>&gt;<i> my OsX / Os 9 disk - no booting.
+</I>&gt;<i>
+</I>&gt;<i> OpenFirmware says:
+</I>&gt;<i> 0 &gt; boot hd:,\\:tbxi  can't OPEN: hd:,\\:tbxi
+</I>&gt;<i> ok
+</I>&gt;<i> 0 &gt;
+</I>&gt;<i> It tried this with ide0, ide1, hd, ultra0, ultra1...
+</I>&gt;<i>
+</I>&gt;<i> My next step was to put the OsX/Os9 system disk in an other mac and  
+</I>&gt;<i> run Disk Utility on it. It reported no problem.
+</I>&gt;<i>
+</I>&gt;<i> Now i'm at my wit's end.
+</I>&gt;<i>
+</I>&gt;<i> Is there a tool to check every partition on a disk i.e. all the  
+</I>&gt;<i> relevant things for booting? Maybe i deleted some driver on the the  
+</I>&gt;<i> disk?
+</I>&gt;<i>
+</I>&gt;<i> It's a G4 Digital Audio with OsX 10.3.9 and Os 9.2.2
+</I>&gt;<i>
+</I>&gt;<i> Any help would be much appreciated!
+</I>&gt;<i>
+</I>&gt;<i> Till
+</I>&gt;<i>
+</I>&gt;<i> -- 
+</I>&gt;<i> ********************************************************
+</I>&gt;<i> *        &quot;Deutschland vor!&quot; - Die WM Gegenhymne        *
+</I>&gt;<i> *  <A HREF="http://www.zittrige-haende.com/download/antiwm.mp3">http://www.zittrige-haende.com/download/antiwm.mp3</A>  *
+</I>&gt;<i> ********************************************************
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> G4 mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">G4 at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">http://listserver.themacintoshguy.com/mailman/listinfo/g4</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>
+Regards,
+
+Wayne Clodfelter
+<A HREF="../../../mailman/listinfo/g4.html">wayne at troutnc.com</A>
+
+
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="013460.html">[G4] OpenFirmware can't open bootdevice anymore
+</A></li>
+	<LI>Next message: <A HREF="013463.html">[G4] OpenFirmware can't open bootdevice anymore
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13461">[ date ]</a>
+              <a href="thread.html#13461">[ thread ]</a>
+              <a href="subject.html#13461">[ subject ]</a>
+              <a href="author.html#13461">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

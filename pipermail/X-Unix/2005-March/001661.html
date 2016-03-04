@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Help batch renaming files with two &quot;extentions&quot;
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Help%20batch%20renaming%20files%20with%20two%20%22extentions%22&In-Reply-To=BE678314.15FA%25haines.d%40comcast.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001660.html">
+   <LINK REL="Next"  HREF="001662.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Help batch renaming files with two &quot;extentions&quot;</H1>
+    <B>Jeff Winchester</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Help%20batch%20renaming%20files%20with%20two%20%22extentions%22&In-Reply-To=BE678314.15FA%25haines.d%40comcast.net"
+       TITLE="[X-Unix] Help batch renaming files with two &quot;extentions&quot;">jeffw at tampabay.rr.com
+       </A><BR>
+    <I>Wed Mar 23 19:40:21 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001660.html">[X-Unix] Help batch renaming files with two &quot;extentions&quot;
+</A></li>
+        <LI>Next message: <A HREF="001662.html">[X-Unix] Re: Help batch renaming files with two &quot;extentions&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1661">[ date ]</a>
+              <a href="thread.html#1661">[ thread ]</a>
+              <a href="subject.html#1661">[ subject ]</a>
+              <a href="author.html#1661">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Mar 23, 2005, at 8:33 PM, David Haines wrote:
+
+&gt;<i> I'm faced with a large number of files named:
+</I>&gt;<i> filename.w01.tif
+</I>&gt;<i>
+</I>&gt;<i> and need to be able to strip all of them of :   .tif
+</I>&gt;<i>
+</I>&gt;<i> This is certainly beyond my limited-but-slowly-growing shell-scripting
+</I>&gt;<i> abilities.
+</I>&gt;<i>
+</I>&gt;<i> If you suggest something perl-based, the machine in question is running
+</I>&gt;<i> 10.3.8, for what that will be worth. Some flavor of Perl v5.8.x
+</I>
+Since you mentioned Perl, I cooked up a quick-and-dirty Perl script to 
+accomplish your task. I'm sure it could be improved in a number of 
+ways, mainly because it's been about 6 years since I've used Perl 
+daily, but here it is. At any rate, Larry Wall probably isn't 
+monitoring this group. ;)
+
+Basically, put this into a file, set permissions so it's executable, 
+then call it, passing in the extension you want to strip off. So if I 
+called it strip_extension, I might do
+
+     strip_extension tif
+
+and it would remove the trailing &quot;.tif&quot; from each file matching that 
+criteria. It works out of the current directory (wherever you are when 
+you execute it), so I'd suggest putting it in your path someplace or 
+putting the script in the same location as your files to be renamed. I 
+have ~/bin in my path, so that's where I put mine.
+
+
+-----
+#!/usr/bin/perl
+
+use strict;
+
+my $ext;
+my $file;
+my $oldfile;
+my @files;
+
+if(@ARGV) {
+     $ext = $ARGV[0];
+
+     @files = &lt;*.$ext&gt;;
+     foreach $file (@files) {
+         $oldfile = $file;
+         $file =~ s/(.*)\.$ext/\1/;
+         rename $oldfile, $file;
+     }
+}
+else {
+     die &quot;ERROR: No extension provided\n&quot;;
+}
+-----
+
+Good luck!
+
+
+-- 
+Jeff Winchester
+<A HREF="../../../mailman/listinfo/x-unix.html">jeffw at tampabay.rr.com</A>
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001660.html">[X-Unix] Help batch renaming files with two &quot;extentions&quot;
+</A></li>
+	<LI>Next message: <A HREF="001662.html">[X-Unix] Re: Help batch renaming files with two &quot;extentions&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1661">[ date ]</a>
+              <a href="thread.html#1661">[ thread ]</a>
+              <a href="subject.html#1661">[ subject ]</a>
+              <a href="author.html#1661">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

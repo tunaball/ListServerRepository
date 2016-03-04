@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] UFS volume full?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20UFS%20volume%20full%3F&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001202.html">
+   <LINK REL="Next"  HREF="001203.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] UFS volume full?</H1>
+    <B>Kevin Stevens</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20UFS%20volume%20full%3F&In-Reply-To="
+       TITLE="[X-Unix] UFS volume full?">groups at pursued-with.net
+       </A><BR>
+    <I>Wed Oct 13 21:15:29 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001202.html">[X-Unix] .profile v/s .bashrc
+</A></li>
+        <LI>Next message: <A HREF="001203.html">[X-Unix] UFS volume full?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1201">[ date ]</a>
+              <a href="thread.html#1201">[ thread ]</a>
+              <a href="subject.html#1201">[ subject ]</a>
+              <a href="author.html#1201">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I have a 20GB UFS partition on my G5, which is used exclusively for a 
+news spool (using leafnode).  Typically, this runs about 10-15% full, 
+with maybe 50 directories containing thousands of files.  However, 
+intermittently, the volume will show as being full - df reports 100% 
+usage (space, not inodes), and write attempts to the volume fail with 
+disk full messages.
+
+When I realize this, I go into the mail spool directory and start doing 
+du -sh summaries on each of the dozen news subdirectories, to see where 
+all the space has gone.  Inevitably, I'll get about halfway through 
+this process, with the directories reporting normal usage; when the 
+volume will revert to normal status.  Note that I'm not deleting any 
+files during this process, just touching them with du.
+
+Any thoughts?  I was thinking inodes or sparse files somehow, but 
+nothing really fits the symptoms.  If I hit a file limit in a 
+directory, would that report the whole volume as full?
+
+KeS
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001202.html">[X-Unix] .profile v/s .bashrc
+</A></li>
+	<LI>Next message: <A HREF="001203.html">[X-Unix] UFS volume full?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1201">[ date ]</a>
+              <a href="thread.html#1201">[ thread ]</a>
+              <a href="subject.html#1201">[ subject ]</a>
+              <a href="author.html#1201">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [P1] Networking, step by step
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20Networking%2C%20step%20by%20step&In-Reply-To=dc.496409d.2d750145%40aol.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="009079.html">
+   <LINK REL="Next"  HREF="009082.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[P1] Networking, step by step</H1>
+    <B>J.C. Webber III</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20Networking%2C%20step%20by%20step&In-Reply-To=dc.496409d.2d750145%40aol.com"
+       TITLE="[P1] Networking, step by step">jcw at kingoblio.com
+       </A><BR>
+    <I>Mon Mar  1 20:24:50 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="009079.html">[P1] Accessing FTP servers within MacOS X
+</A></li>
+        <LI>Next message: <A HREF="009082.html">[P1] Networking, step by step
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9080">[ date ]</a>
+              <a href="thread.html#9080">[ thread ]</a>
+              <a href="subject.html#9080">[ subject ]</a>
+              <a href="author.html#9080">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="../../../mailman/listinfo/ibook.html">JMteacher at aol.com</A> wrote:
+&gt;<i> Yes, I'm sure you're right.  Have tried everything except for the
+</I>&gt;<i> last.  Don't know where to find terminal window.  I'm able to connect
+</I>&gt;<i> wirelessly to web with iBook which is the most important thing to me
+</I>&gt;<i> so I can just switch the usb cable.  I have panther on both machines. 
+</I>&gt;<i> I really appreciate all of your suggestions.  Thank you so much.
+</I>
+
+The terminal app is located in your Utilities folder.  It's for
+unix command line stuff.  If you don't know how to use it, it's
+probably better that you leave it alone.  It's pretty low-level
+stuff down there, ones and zeros and whatnot.  8^)
+
+But if you're willing to be adventurous, follow along:
+
+Applications/Utilities/Terminal (double click on Terminal)
+
+A new window pops up with a prompt that looks something like:
+flicka:~jcw $		(flicka is my machine's name and my login is jcw)
+
+The prompt is waiting for you to type in some command.  Try this one:
+/sbin/ping -c2 192.168.1.2	(from the machine who's address is 
+				  192.168.1.3)
+
+or
+
+/sbin/ping -c2 192.168.1.3	(from the machine who's address is
+				  192.168.1.2)
+
+You are asking one machine to say 'hello' to the other machine.
+It's a way of testing network connectivity between the two machines.
+Without network connectivity, there's no hope of sharing a printer.
+
+The 'ping' command is kind of like what a submarine does to see what's
+out there.  The '-c2' option says, 'say hello twice' (count=2).
+
+The response you get should look something like this:
+
+<A HREF="../../../mailman/listinfo/ibook.html">jcw at flicka</A>:~ #56&gt; /sbin/ping -c2 192.168.1.134
+PING 192.168.1.134 (192.168.1.134): 56 data bytes
+64 bytes from 192.168.1.134: icmp_seq=0 ttl=64 time=14.664 ms
+64 bytes from 192.168.1.134: icmp_seq=1 ttl=64 time=0.897 ms
+
+--- 192.168.1.134 ping statistics ---
+2 packets transmitted, 2 packets received, 0% packet loss
+round-trip min/avg/max = 0.897/7.78/14.664 ms
+
+
+If there is no answer, it will look like this (and it will take a while
+to finish):
+
+<A HREF="../../../mailman/listinfo/ibook.html">jcw at flicka</A>:~ #57&gt; /sbin/ping -c2 192.168.2.24  (there's no such address on my net)
+PING 192.168.2.24 (192.168.2.24): 56 data bytes
+
+--- 192.168.2.24 ping statistics ---
+2 packets transmitted, 0 packets received, 100% packet loss
+
+
+
+Wasn't that fun 8^).
+
+Let me know how your tests go.
+
+Later....
+-- 
+J.C. Webber III       
+Technical Lead, Unix System Administrator
+<A HREF="../../../mailman/listinfo/ibook.html">jcw at kingoblio.com</A>       www.kingoblio.com
+Please, if you use Windows, do not add my address to your Address Book.
+I do not wish to be spammed or have my email address hijacked by a virus
+and used for fraudulent purposes.  Thank you.
+If you use a Mac, never mind.  Mac's don't get viruses.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="009079.html">[P1] Accessing FTP servers within MacOS X
+</A></li>
+	<LI>Next message: <A HREF="009082.html">[P1] Networking, step by step
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9080">[ date ]</a>
+              <a href="thread.html#9080">[ thread ]</a>
+              <a href="subject.html#9080">[ subject ]</a>
+              <a href="author.html#9080">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

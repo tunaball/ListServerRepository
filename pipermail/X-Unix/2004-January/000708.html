@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] script question (cron - adobefnt*.lst)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20script%20question%20%28cron%20-%20adobefnt%2A.lst%29&In-Reply-To=list-10162298%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000697.html">
+   <LINK REL="Next"  HREF="000719.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] script question (cron - adobefnt*.lst)</H1>
+    <B>Juan Manuel Palacios</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20script%20question%20%28cron%20-%20adobefnt%2A.lst%29&In-Reply-To=list-10162298%40mail.ninewire.com"
+       TITLE="[X-Unix] script question (cron - adobefnt*.lst)">jmpalaciosp at eml.cc
+       </A><BR>
+    <I>Thu Jan  8 13:20:41 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000697.html">[X-Unix] Altering .bashrc in bash to add to $PATH
+</A></li>
+        <LI>Next message: <A HREF="000719.html">[X-Unix] Altering .bashrc in bash to add to $PATH
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#708">[ date ]</a>
+              <a href="thread.html#708">[ thread ]</a>
+              <a href="subject.html#708">[ subject ]</a>
+              <a href="author.html#708">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+	Hi Don. I can't say much about cron, but in both cases of your find 
+string the only thing you're doing is &quot;escaping&quot; the &quot;;&quot; so that the 
+executing shell does not interpret it. I'd think both options are just 
+alright for cron, since it just spawns a shell to run the specified 
+commands. Which shell... that is open to customization. About not going 
+into other volumes with find, what you're looking for is the -x flag:
+
+find -x / -name &quot;AdobeFnt*.lst&quot; -exec rm -f {} \;
+
+	Read about it in the man page for a more complete explanation than 
+what I can reproduce here. Finally, I'd double quote the searched 
+string with wild card just to be safe..., call me paranoid!
+
+	Hope that helps. Regards,...
+
+
+		Juan
+
+
+On Jan 8, 2004, at 4:58 PM, Don Montalvo wrote:
+
+&gt;<i> i've been trying to create a cron script that will search the entire 
+</I>&gt;<i> boot volume for all instances of &quot;AdobeFnt*.lst&quot; and delete those 
+</I>&gt;<i> files. here are two scripts (slightly different syntax) that seem to 
+</I>&gt;<i> do the trick but i wanted to run it by you guys (my gurus...my 
+</I>&gt;<i> gods...my...um...well, you get the idea &lt;g&gt;)...
+</I>&gt;<i>
+</I>&gt;<i> these two seem to do the same thing:
+</I>&gt;<i>
+</I>&gt;<i> 	find / -name 'AdobeFnt*.lst' -exec rm -f {} \;
+</I>&gt;<i>
+</I>&gt;<i> 		(and)
+</I>&gt;<i>
+</I>&gt;<i> 	find / -name &quot;AdobeFnt*.lst&quot; -exec rm -f {} ';'
+</I>&gt;<i>
+</I>&gt;<i> first question: which script is best for using as cron job?
+</I>&gt;<i>
+</I>&gt;<i> second question: users will keep volumes mounted...is there a way to 
+</I>&gt;<i> keep the script from searching anything that's not a local disk?
+</I>&gt;<i>
+</I>&gt;<i> ====here's the terminal display====
+</I>&gt;<i>
+</I>&gt;<i> [montalvdpb:~] root # find / -name &quot;AdobeFnt*.lst&quot; -exec rm -f {} ';'
+</I>&gt;<i> find: /Volumes/SHARE/.Trashes: Permission denied
+</I>&gt;<i> find: /Volumes/SHARE/dropboxes: Permission denied
+</I>&gt;<i> find: /Volumes/SHARE/Temporary Items/0: Permission denied
+</I>&gt;<i> find: /Volumes/SHARE/Temporary Items/501: Permission denied
+</I>&gt;<i> find: /Volumes/SHARE/Temporary Items/502: Permission denied
+</I>&gt;<i> [montalvdpb:~] root #
+</I>&gt;<i>
+</I>&gt;<i> ===================================
+</I>&gt;<i>
+</I>&gt;<i> thanks!
+</I>&gt;<i> don
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000697.html">[X-Unix] Altering .bashrc in bash to add to $PATH
+</A></li>
+	<LI>Next message: <A HREF="000719.html">[X-Unix] Altering .bashrc in bash to add to $PATH
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#708">[ date ]</a>
+              <a href="thread.html#708">[ thread ]</a>
+              <a href="subject.html#708">[ subject ]</a>
+              <a href="author.html#708">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

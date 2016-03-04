@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Memory Question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Memory%20Question&In-Reply-To=list-11811320%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000636.html">
+   <LINK REL="Next"  HREF="000638.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Memory Question</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Memory%20Question&In-Reply-To=list-11811320%40mail.ninewire.com"
+       TITLE="[X-Unix] Memory Question">magill at mcgillsociety.org
+       </A><BR>
+    <I>Tue Mar 30 20:34:32 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000636.html">[X-Unix] Who's In Charge of What Disks Are Mounted?
+</A></li>
+        <LI>Next message: <A HREF="000638.html">[X-Unix] Memory Question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#637">[ date ]</a>
+              <a href="thread.html#637">[ thread ]</a>
+              <a href="subject.html#637">[ subject ]</a>
+              <a href="author.html#637">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 30 Mar, 2004, at 19:26, Frank Flynn wrote:
+&gt;<i> I have a 500Mhz Dual G4 with 768Mb of Ram.
+</I>&gt;<i>
+</I>&gt;<i> Today I launched iTunes and got a message &quot;iTunes could not read your 
+</I>&gt;<i> Music
+</I>&gt;<i> Library because there is not enough free memory&quot;.
+</I>&gt;<i>
+</I>&gt;<i> So I launched &quot;Activity Monitor&quot; and saw that most of my Memory was
+</I>&gt;<i> &quot;inactive&quot; and that I had very little &quot;free&quot;.  Rebooting fixed 
+</I>&gt;<i> everything
+</I>&gt;<i> (maybe logging out and back in or just quitting some stuff would have 
+</I>&gt;<i> too).
+</I>&gt;<i>
+</I>&gt;<i> But here's my question:  What do these things mean - &quot;Wired&quot; (isn't 
+</I>&gt;<i> all of
+</I>&gt;<i> it??),  &quot;Active&quot;, &quot;Inactive&quot;, &quot;Used&quot; and &quot;Free&quot; (well the last two make
+</I>&gt;<i> sense).
+</I>
+man vm_stat
+should give you a &quot;geek&quot; explanation of what the terms mean.
+
+The terms all relate to the paging system.
+
+&gt;<i> And how did so much of my memory become inactive?
+</I>
+&quot;Inactive&quot; is not a bad thing in and of itself.
+Some &quot;process&quot; has used (is using) memory and failed to release it.
+This could be for any number of reasons.
+Possibly a &quot;memory leak.&quot;
+Possibly simply the fact that you have a bunch of applications launched 
+which are using memory. (I suspect this to be the case from your 
+comment.)
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000 - [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000636.html">[X-Unix] Who's In Charge of What Disks Are Mounted?
+</A></li>
+	<LI>Next message: <A HREF="000638.html">[X-Unix] Memory Question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#637">[ date ]</a>
+              <a href="thread.html#637">[ thread ]</a>
+              <a href="subject.html#637">[ subject ]</a>
+              <a href="author.html#637">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

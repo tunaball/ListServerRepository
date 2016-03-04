@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Quicksilver/Panther Won't Auto Sleep
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Quicksilver/Panther%20Won%27t%20Auto%20Sleep&In-Reply-To=44DF64D8-6281-11D9-A0C4-000393B3ED5A%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="008632.html">
+   <LINK REL="Next"  HREF="008635.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Quicksilver/Panther Won't Auto Sleep</H1>
+    <B>Jim Pacyga</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Quicksilver/Panther%20Won%27t%20Auto%20Sleep&In-Reply-To=44DF64D8-6281-11D9-A0C4-000393B3ED5A%40mac.com"
+       TITLE="[G4] Quicksilver/Panther Won't Auto Sleep">jim.pacyga at earthlink.net
+       </A><BR>
+    <I>Tue Jan 11 13:26:47 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="008632.html">[G4] Quicksilver/Panther Won't Auto Sleep
+</A></li>
+        <LI>Next message: <A HREF="008635.html">[G4] VST Dual Media Reader stopped working
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8634">[ date ]</a>
+              <a href="thread.html#8634">[ thread ]</a>
+              <a href="subject.html#8634">[ subject ]</a>
+              <a href="author.html#8634">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Try trashing this file.
+
+/Library/Preferences/SystemConfiguration/com.apple.PowerManagement.plist
+
+The system prefs plist doesn't have anything to do with the energy 
+saver...that is just the prefs for the program that manages the pref 
+panes (not the actual prefs themselves).
+
+jim
+
+
+On 9 Jan 2005, at 12:58, Mel Krewall wrote:
+
+&gt;<i> Safe Mode doesn't load third-party kernel extensions, so I would 
+</I>&gt;<i> suggest moving any kernel extensions that you are suspicious of out of 
+</I>&gt;<i> the folder [hard drive name]/System/Library/Extensions, reboot, and 
+</I>&gt;<i> try running without them and seeing if it solves the problem. Then you 
+</I>&gt;<i> can add them back one at a time until you find the one causing the 
+</I>&gt;<i> problem. Of course you will be without whatever service the kernel 
+</I>&gt;<i> extensions provide while you are doing this.
+</I>&gt;<i> HTH,
+</I>&gt;<i> Mel
+</I>&gt;<i>
+</I>&gt;<i> &quot;It's good sportsmanship to not pick up lost golf balls while they are 
+</I>&gt;<i> still rolling.&quot;
+</I>&gt;<i>  ~ Mark Twain
+</I>&gt;<i>
+</I>&gt;<i> On Jan 9, 2005, at 1:24 AM, Jim Thornton wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Hi, All -- please pardon the long post; I've tried to be complete.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I have a 2001 Quicksilver 733 that I've run OS X on since I got it; 
+</I>&gt;&gt;<i> with
+</I>&gt;&gt;<i> some versions of 10.2.x and 10.3.x my Mac suddenly stops automatically
+</I>&gt;&gt;<i> sleeping. Energy Saver settings are fine; can't relate the problem to
+</I>&gt;&gt;<i> changing hardware or software, either.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> For a couple of years I've used an IOgear USB 2.0 PCI card that works 
+</I>&gt;&gt;<i> with
+</I>&gt;&gt;<i> some devices, but with others causes the Mac to freeze when sleeping; 
+</I>&gt;&gt;<i> I
+</I>&gt;&gt;<i> removed this PCI card the other day (have no other PCI cards). 
+</I>&gt;&gt;<i> Lately, it
+</I>&gt;&gt;<i> seemed that the two powered USB 1.0 hubs attached to the CPU USB 
+</I>&gt;&gt;<i> ports were
+</I>&gt;&gt;<i> flaky; I removed both and have only the keyboard and mouse attached 
+</I>&gt;&gt;<i> to the
+</I>&gt;&gt;<i> built-in USB ports.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Each time I have the &quot;won't auto sleep&quot; problem, I go thru the Repair
+</I>&gt;&gt;<i> Permissions, DiskWarrior, MacJanitor, reset PRAM, et al fixes; 
+</I>&gt;&gt;<i> sometimes
+</I>&gt;&gt;<i> this will take care of it and other times it won't.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The current problem started a couple of months ago for no apparent 
+</I>&gt;&gt;<i> reason; I
+</I>&gt;&gt;<i> had been on 10.3.5 and it started about the time I upgraded to 
+</I>&gt;&gt;<i> 10.3.6, if I
+</I>&gt;&gt;<i> recall correctly. I've repeatedly tried all the above fixes to no 
+</I>&gt;&gt;<i> avail. I
+</I>&gt;&gt;<i> recently upgraded to 10.3.7, but that did nothing. I have two 
+</I>&gt;&gt;<i> different Test
+</I>&gt;&gt;<i> User log-in's that I tried, but it still won't auto sleep.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Tonight, I trashed the com.apple.systempreferences.plist file in the
+</I>&gt;&gt;<i> user/library/preferences folder. (Actually, I also trashed the
+</I>&gt;&gt;<i> com.apple.systempreferences.00039363681a.plist file in the
+</I>&gt;&gt;<i> user/library/preferences/ByHost folder because I spotted that one 
+</I>&gt;&gt;<i> first.)
+</I>&gt;&gt;<i> This had no effect.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Two days ago, I booted into Safe Mode (using the Shift Key at 
+</I>&gt;&gt;<i> startup) --
+</I>&gt;&gt;<i> the Mac automatically slept as it should!!! This fact has got to be a 
+</I>&gt;&gt;<i> clue,
+</I>&gt;&gt;<i> but I don't know how to use it to proceed further -- any ideas would 
+</I>&gt;&gt;<i> be
+</I>&gt;&gt;<i> greatly appreciated.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Jim Thornton
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> G4 mailing list
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">G4 at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">http://listserver.themacintoshguy.com/mailman/listinfo/g4</A>
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> G4 mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">G4 at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">http://listserver.themacintoshguy.com/mailman/listinfo/g4</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="008632.html">[G4] Quicksilver/Panther Won't Auto Sleep
+</A></li>
+	<LI>Next message: <A HREF="008635.html">[G4] VST Dual Media Reader stopped working
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8634">[ date ]</a>
+              <a href="thread.html#8634">[ thread ]</a>
+              <a href="subject.html#8634">[ subject ]</a>
+              <a href="author.html#8634">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

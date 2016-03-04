@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] copy 101 question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20copy%20101%20question&In-Reply-To=list-13757150%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000872.html">
+   <LINK REL="Next"  HREF="000875.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] copy 101 question</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20copy%20101%20question&In-Reply-To=list-13757150%40mail.ninewire.com"
+       TITLE="[X-Unix] copy 101 question">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Sun Jun  6 10:45:37 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000872.html">sync Address Book and PostgreSQL?
+</A></li>
+        <LI>Next message: <A HREF="000875.html">clearing DNS cache
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#873">[ date ]</a>
+              <a href="thread.html#873">[ thread ]</a>
+              <a href="subject.html#873">[ subject ]</a>
+              <a href="author.html#873">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>From: Stroller &lt;<A HREF="../../../mailman/listinfo/x-unix.html">MacMonster at myrealbox.com</A>&gt;
+</I>&gt;<i>On Jun 5, 2004, at 11:14 pm, James Bucanek wrote:
+</I>&gt;&gt;<i>  Scott Warren wrote on Saturday, June 5, 2004:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>  I am wanting to back up just .doc files onto my firewire drive.  What
+</I>&gt;&gt;&gt;<i>  is the Mac/Unix version of
+</I>&gt;&gt;&gt;<i>    xcopy *.doc E:\backup -r
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>  I have tried  cp -R *.doc \volumes\myfirewire    and this only copies
+</I>&gt;&gt;&gt;<i>  whats in the current directory and does not recurs the tree.
+</I>&gt;&gt;<i>  ...
+</I>&gt;&gt;<i>  In UNIX, the Swiss Army knife of directory recursion is the Find tool.
+</I>&gt;&gt;<i>   Heres one way to use the find tool in combination with the tar (Tape
+</I>&gt;&gt;<i>  ARchive) tool to transfer a sparse set of hierarchically organized
+</I>&gt;&gt;<i>  files from one directory tree to another:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>      cd ~
+</I>&gt;&gt;<i>      find Documents -type f -name '*.doc' -print0 | tar -cf -
+</I>&gt;&gt;<i>  --files-from - --null | tar -xvf - -C /Volumes/firewire
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  In English, I used the find tool to search my entire Documents folder
+</I>&gt;&gt;<i>  for regular files (this excludes any directories or symbolic links)
+</I>&gt;&gt;<i>  who's name matches the patter '*.doc'.  I piped this list to the tar
+</I>&gt;&gt;<i>  tool and told it to create an archive (c) outputting the results to
+</I>&gt;&gt;<i>  stdout (-f -).  Instead of listing the files to archive on the
+</I>&gt;&gt;<i>  command, I told it to read the list of files from stdin (which will be
+</I>&gt;&gt;<i>  the output of the find tool).  Finally, I piped the resulting archive
+</I>&gt;&gt;<i>  directly into a second invocation of tar that extracts (-x) the
+</I>&gt;&gt;<i>  archive read from stdin (-f -) into a specific directory (-C
+</I>&gt;&gt;<i>  /Volumes/firewire).  The -v option just outputs the names of the files
+</I>&gt;&gt;<i>  as they are processed so we can watch the fun.
+</I>&gt;<i>
+</I>&gt;<i>I believe that you have tarred the files &amp; then untarred them again in
+</I>&gt;<i>order to preserve the directory-tree structure of the files, so that if
+</I>&gt;<i>the user has ~/foo/some.doc and ~/foo/bar/some.doc then both files will
+</I>&gt;<i>be copied to the destination drive and appropriate subdirectories made.
+</I>&gt;<i>I don't know if this is the default behaviour of xcopy, but believe
+</I>&gt;<i>it's worth commenting on, because otherwise I'd regard this line as
+</I>&gt;<i>more intuitive:
+</I>&gt;<i>      find Documents -name '*.doc' -exec cp \{\} /Volumes/firewire ;
+</I>&gt;<i>
+</I>&gt;<i>I can't see any shorter way than yours to preserve the directories when
+</I>&gt;<i>copying found files, however. It seems to me a little inelegant to have
+</I>&gt;<i>to use `tar` twice in this way - I would have expected a single command
+</I>&gt;<i>to be available to do the the same thing, or a suitable flag to `cp`,
+</I>&gt;<i>but I can't find either.
+</I>
+The tar cf - | (cd otherdir; tar xvf -) method of copying file 
+hierarchies is well established.  It does use three processes, but 
+one is the shell for the ( ... ) and the other two are both tar. 
+All are in memory so the text (the invariant part) of the program 
+will be re-used.  The GNU-tar (?) variant we get with OSX allows the 
+( cd ... ) to be skipped.
+
+At least one version of cp does take a -R flag for recursive copying, 
+but, because it's not universal, I never use it.
+
+If the purpose is backup, the hierarchy really does need to be 
+maintained.  Have a look at 'pax' (man pax).  Pax is tar, ustar, and 
+several version of cpio all rolled into one.  It takes a list of 
+files to copy/archive on stdin like cpio does, or on the command line 
+like tar.  Pax is also supported on commercial Unix systems other 
+than OSX.
+
+David
+
+
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+Chair of HPUX SysAdmin SIG of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x-unix.html">dledger at ivdcs.co.uk</A> (also <A HREF="../../../mailman/listinfo/x-unix.html">dledger at ivdcs.demon.co.uk</A>)
+www.ivdcs.co.uk
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000872.html">sync Address Book and PostgreSQL?
+</A></li>
+	<LI>Next message: <A HREF="000875.html">clearing DNS cache
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#873">[ date ]</a>
+              <a href="thread.html#873">[ thread ]</a>
+              <a href="subject.html#873">[ subject ]</a>
+              <a href="author.html#873">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

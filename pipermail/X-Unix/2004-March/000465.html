@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Quit Terminal on exit
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Quit%20Terminal%20on%20exit&In-Reply-To=list-11355736%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000463.html">
+   <LINK REL="Next"  HREF="000466.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Quit Terminal on exit</H1>
+    <B>Marley Graham</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Quit%20Terminal%20on%20exit&In-Reply-To=list-11355736%40mail.ninewire.com"
+       TITLE="[X-Unix] Quit Terminal on exit">mgraham at aquaflo.com
+       </A><BR>
+    <I>Fri Mar 12 12:22:41 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000463.html">[X-Unix] Quit Terminal on exit
+</A></li>
+        <LI>Next message: <A HREF="000466.html">Command-Line printing features
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#465">[ date ]</a>
+              <a href="thread.html#465">[ thread ]</a>
+              <a href="subject.html#465">[ subject ]</a>
+              <a href="author.html#465">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Mar 12, 2004, at 11:12 AM, James Bucanek wrote:
+
+&gt;<i> No, as it would be a very hazardous option (having a window option 
+</I>&gt;<i> that closes *all* windows).  Note that your solution will have the 
+</I>&gt;<i> same problem, so be warned.
+</I>
+No, actually, my program works just fine; on exit it closes the window, 
+but leaves Terminal running.
+
+The users generally have only one reason to run Terminal - to log onto 
+the main application on our server. I originally set up a template for 
+users by sending the ssh login command to the server. At that point, I 
+issued a Save As command to create the template file, which I then 
+modify with TextEdit for the individual users as noted, and put in the 
+user's Document folder. Then I copy the file to the Dock on the user's 
+machine. Most users will just click on that icon to launch the program, 
+and not even be aware that they are running Terminal. When they log out 
+of the main program, the window closes and, as far as they are 
+concerned, they have quit the program.
+
+So, an embedded command that caused Terminal to quit when the window 
+closed would, in this case, be a good thing.
+
+&gt;<i> However, I've used the following trick on .command files that I have 
+</I>&gt;<i> set to execute on login.  I didn't want the Terminal application left 
+</I>&gt;<i> running after every login.  I wanted my script to run, and Terminal to 
+</I>&gt;<i> quit.  My script looks something like this:
+</I>&gt;<i>
+</I>&gt;<i>     cd ~/bin
+</I>&gt;<i>     &lt;do some setup, start a few deamons, etc.&gt;
+</I>&gt;<i>     osascript -e 'tell application &quot;Terminal&quot; to quit' &amp;
+</I>&gt;<i>
+</I>&gt;<i> Note that the '&amp;' is important, or it causes a fatal embrace.
+</I>
+
+Yes, I realize I could write an osascript to quit Terminal; but in the 
+scenario above, how would it know when to run? That's why I was looking 
+for a way to embed a &quot;quit Terminal&quot; string in the property list.
+
+Marley Graham
+Aqua-Flo Supply
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000463.html">[X-Unix] Quit Terminal on exit
+</A></li>
+	<LI>Next message: <A HREF="000466.html">Command-Line printing features
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#465">[ date ]</a>
+              <a href="thread.html#465">[ thread ]</a>
+              <a href="subject.html#465">[ subject ]</a>
+              <a href="author.html#465">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Hiding apps from the command line
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11727717%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000522.html">
+   <LINK REL="Next"  HREF="000524.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Hiding apps from the command line</H1>
+    <B>Kirk McElhearn</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11727717%40mail.ninewire.com"
+       TITLE="[X-Unix] Hiding apps from the command line">kirklists at wanadoo.fr
+       </A><BR>
+    <I>Fri Mar 26 05:49:29 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000522.html">[X-Unix] Hiding apps from the command line
+</A></li>
+        <LI>Next message: <A HREF="000524.html">[X-Unix] Hiding apps from the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#523">[ date ]</a>
+              <a href="thread.html#523">[ thread ]</a>
+              <a href="subject.html#523">[ subject ]</a>
+              <a href="author.html#523">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 3/26/04 2:37 PM, &quot;Eugene Lee&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">list-themacintoshguy at fsck.net</A>&gt; wrote:
+
+&gt;<i> 
+</I>&gt;<i> Well, from a Unix perspective, I'd rather see the options prefixed with
+</I>&gt;<i> traditional hyphens.  Also, there's the issue of whether hiding Finder
+</I>&gt;<i> as well is desired or not.  For me, I envisioned it to work like so:
+</I>&gt;<i> 
+</I>&gt;<i> $ hide -o appname
+</I>&gt;<i> $ hide -o -f appname
+</I>&gt;<i> $ hide -a
+</I>&gt;<i> $ hide -a -f
+</I>&gt;<i> $ hide -f
+</I>&gt;<i> $ hide appname
+</I>
+It's true that adding hyphens is more traditional; it just seemed like an
+extra keystroke. But you're right.
+&gt;<i> 
+</I>&gt;<i> Another problem altogether is the fact that the logic is backwards
+</I>&gt;<i> between the &quot;hide -o appname&quot; and the normal &quot;hide appname&quot;.  In the
+</I>&gt;<i> normal latter case, the logic is simple: hide the app named &quot;appname&quot;.
+</I>&gt;<i> However, in the former case, the logic is reversed: hide all other apps
+</I>&gt;<i> *excluding* the app named &quot;appname&quot;.  A part of me wants to fix this by
+</I>&gt;<i> introducing another command option (-x) to represent this logic, which
+</I>&gt;<i> changes the former case to &quot;hide -o -x appname&quot;.  However, there's a
+</I>&gt;<i> part of me that thinks this is overkill and is complicating an otherwise
+</I>&gt;<i> simple shell script.
+</I>
+IMO, it's best to have only single options - otherwise you might tend to
+think you could combine them, which you can't. If the script has to parse
+multiple options it'll get way more complex.
+
+But I'll agree with the -x option - that's better than -o.
+
+So I have this:
+
+# hide [appname]   - hides specified app
+# hide -x [appname] - hides all other apps
+# hide -a           - hides all apps but Finder
+# hide -f           - hides Finder
+# hide -v [appname] - brings specified app to the front, whether it is
+hidden or visible already
+# hide -t           - shows all apps
+&gt;<i> 
+</I>&gt;<i> Thoughts?  What do other Unix folks think?
+</I>&gt;<i> 
+</I>&gt;<i> BTW, Kirk, contact me off-list if you're interested in a more complex,
+</I>&gt;<i> fully-featured version for inclusion into the book.
+</I>
+Will do.
+ 
+ 
+Kirk
+ 
+        My latest book: How to Do Everything with Mac OS X Panther
+                  <A HREF="http://www.mcelhearn.com/htde.html">http://www.mcelhearn.com/htde.html</A>
+ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+ . . . . . . .  <A HREF="../../../mailman/listinfo/x-unix.html">kirk at mcelhearn.com</A> | <A HREF="http://www.mcelhearn.com">http://www.mcelhearn.com</A>  . . . . . .
+ . .  Kirk McElhearn | Chemin de la Lauze | 05600 Guillestre | France  . .
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000522.html">[X-Unix] Hiding apps from the command line
+</A></li>
+	<LI>Next message: <A HREF="000524.html">[X-Unix] Hiding apps from the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#523">[ date ]</a>
+              <a href="thread.html#523">[ thread ]</a>
+              <a href="subject.html#523">[ subject ]</a>
+              <a href="author.html#523">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

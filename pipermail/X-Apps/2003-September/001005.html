@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Apps] How does the safari cache work?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-apps%40listserver.themacintoshguy.com?Subject=%5BX-Apps%5D%20How%20does%20the%20safari%20cache%20work%3F&In-Reply-To=list-8265458%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001004.html">
+   <LINK REL="Next"  HREF="001006.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Apps] How does the safari cache work?</H1>
+    <B>db</B> 
+    <A HREF="mailto:x-apps%40listserver.themacintoshguy.com?Subject=%5BX-Apps%5D%20How%20does%20the%20safari%20cache%20work%3F&In-Reply-To=list-8265458%40mail.ninewire.com"
+       TITLE="[X-Apps] How does the safari cache work?">lists at drunkenbatman.com
+       </A><BR>
+    <I>Sun Sep  7 20:58:53 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001004.html">xcode
+</A></li>
+        <LI>Next message: <A HREF="001006.html">How does the safari cache work?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1005">[ date ]</a>
+              <a href="thread.html#1005">[ thread ]</a>
+              <a href="subject.html#1005">[ subject ]</a>
+              <a href="author.html#1005">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Fri, 5 Sep 2003 16:42:37 +0700, Robert Nicholson wrote:
+&gt;<i> Why does safari need to contact the web site if it's contents are 
+</I>&gt;<i> already in the cache?
+</I>
+Because it wants to see if what it has stored has changed before it 
+displays the view. Safari's caching mechanism is a little different and 
+not suited for &quot;offline&quot; viewing as such, but rather a 
+forwards/backwards cache. It does have large advantages, tho.
+
+IE, turn on the debugging menu and you'll be able to view the DOM tree 
+of the page you're looking at, as well as the render tree, view tree, 
+etc. Once the HTML &amp; such as been downloaded it has to be &quot;rendered&quot;. 
+IE, table cells have to be positioned, etc. This is a hierarchal format 
+(head, body, etc). If you're using something based on the gecko engine, 
+once all that stuff is rendered (the longest part of the process 
+usually if you're on broadband) it is held in memory until the view 
+changes, such as clicking a link or closing a window, at which point 
+it's flushed and has to be re-rendered if you go back to it.
+
+Which is why hitting backwards &amp; forwards is so much faster using 
+Safari versus some of the others... when you click back, it checks to 
+see if the page has changed... hasn't? Good, just use the old DOM tree. 
+Check to see if the images requested are in cache, etc, etc.
+
+&gt;<i> I should be able to visit sites from my &quot;history&quot; and I should not be 
+</I>&gt;<i> online to see their contents.
+</I>
+Well, yeah in a perfect world. And really, it wouldn't be that hard (in 
+the grand scheme of things) to add that capability... but I wouldn't 
+hold my breath on it getting in. Sorta like mail- there are lots of 
+things you _should_ be able to do, but for one reason or another it 
+isn't going to happen. I'd file a feature request with Apple.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001004.html">xcode
+</A></li>
+	<LI>Next message: <A HREF="001006.html">How does the safari cache work?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1005">[ date ]</a>
+              <a href="thread.html#1005">[ thread ]</a>
+              <a href="subject.html#1005">[ subject ]</a>
+              <a href="author.html#1005">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-apps.html">More information about the X-Apps
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

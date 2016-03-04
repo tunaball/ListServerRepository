@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> command-option-shift-delete
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:duolist%40listserver.themacintoshguy.com?Subject=command-option-shift-delete&In-Reply-To=list-4444003%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000785.html">
+   <LINK REL="Next"  HREF="000787.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>command-option-shift-delete</H1>
+    <B>Marc Sira</B> 
+    <A HREF="mailto:duolist%40listserver.themacintoshguy.com?Subject=command-option-shift-delete&In-Reply-To=list-4444003%40mail.ninewire.com"
+       TITLE="command-option-shift-delete">toh at victoria.tc.ca
+       </A><BR>
+    <I>Tue Jan 14 13:50:58 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000785.html">[Duo2400] Apple's responsibility to 2400's?
+</A></li>
+        <LI>Next message: <A HREF="000787.html">[Duo2400] Safari
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#786">[ date ]</a>
+              <a href="thread.html#786">[ thread ]</a>
+              <a href="subject.html#786">[ subject ]</a>
+              <a href="author.html#786">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;&gt;<i> Does this mean that restarting and then holding down
+</I>&gt;&gt;<i> Cmd-Opt-Shift-Delete
+</I>&gt;&gt;<i> will not result in starting from one of the HFS+ partitions?
+</I>
+&gt;<i> Yes, that's exactly what that key combination does, forces a Mac to look for
+</I>&gt;<i> a volume other than the internal boot drive to start up from. This has even
+</I>&gt;<i> worked for me when trying to start up from a CD, on those rare occasions
+</I>&gt;<i> that holding down the &quot;C&quot; key fails to work.
+</I>
+You can use c-o-s-d (aka &quot;DOCS&quot;) or the C key to boot from a different device,
+but not a different partition on the same device. For the long version of
+that, read on...
+
+Note the distinction between &quot;drive&quot; and &quot;volume&quot;. A drive (aka &quot;disk&quot;) is a
+physical device, while a volume is the filesystem contents of a logical
+partition (on some physical device). The four-finger startup combo tells the
+boot firmware to skip the internal drive and sequentially try other devices
+(really this means it won't look for a driver on the internal disk, which
+in some cases in the past could cause the internal partitions to disappear
+even once you'd booted an external drive). Clearly this means any partitions
+on that device will get skipped. The 'C' key originally meant &quot;go straight to
+SCSI ID 3&quot;, which was the default place to find a CD drive. Nowadays it likely
+means &quot;boot the master device on the secondary ATA controller&quot;, which is again
+usually a CD.
+
+As for boot order, I *think* it's in ascending SCSI ID order (but it might
+be descending, there's a lot of SCSI controller trivia mixed up in my head
+from the past twenty years ;). Originally the &quot;internal drive&quot; to skip meant
+SCSI device 0 - now it probably means the primary ATA controller.
+
+In troubleshooting disk problems, it's often useful to keep an idea of
+layering in your head (as with so many other computing issues, especially
+networking). So here we have:
+
+host	controllers (SCSI, ATA, Firewire, USB) that talk to multiple targets
+storage	devices and their media (entire hard disks, CDs, removables)
+device	drivers that allow the OS to use the physical device
+disk	partitions that create virtual smaller devices
+various	filesystems (sets of directories and files, all within one partition)
+OS	software stored in the filesystem.
+
+The Startup control panel or DOCS key combo lets you choose a device before
+any drivers are even loaded (without a driver the device can't actually be
+read, which means we don't even know what partitions exist yet). Once loaded
+from that device, the device driver will look in the partition table to find
+out which partition to boot, or perhaps read yet another key combo for a user
+choice - as with the FWB HDT driver (command-option-shift-e-N, where N is a
+partition number) or the option key on New World Macs. On newer Macs the
+Startup control panel mingles these two concepts, allowing you to choose both
+a device and a default partition (your choice is written to the partition
+table).
+
+In the boot process, the layers become available in order. That means it
+doesn't matter what kind of filesystem a partition contains as long as the
+driver can figure out how to boot it - HFS, HFS+, UFS, whatever. Of course,
+the OS software stored in the filesystem needs to be able to work with that
+type, or the boot won't get very far. But that's a whole other story. ;)
+
+You don't normally have to go very low on that impromptu chart unless you're
+erasing or repartitioning a disk. Normal operations, installing software
+(even the OS) and the like are all at the highest layer. Disk First Aid or
+Norton Utilities mostly work with filesystems (they use &quot;directory damage&quot;
+as a synonym for &quot;filesystem corruption&quot;), occasionally fixing partition
+table problems. The other stuff is generally hardware hacking. ;)
+
+-- 
+Marc Sira		|	<A HREF="../../../mailman/listinfo/duolist.html">toh at victoria.tc.ca</A>
+If you can't play with words, what good are they?
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000785.html">[Duo2400] Apple's responsibility to 2400's?
+</A></li>
+	<LI>Next message: <A HREF="000787.html">[Duo2400] Safari
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#786">[ date ]</a>
+              <a href="thread.html#786">[ thread ]</a>
+              <a href="subject.html#786">[ subject ]</a>
+              <a href="author.html#786">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/duolist.html">More information about the DuoList
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

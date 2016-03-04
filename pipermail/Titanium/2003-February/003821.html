@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] ot: how to configure airport base station for FTP with
+	NAT+PAT (port map) for ports 20-21 (FTP) with AAU?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20ot%3A%20how%20to%20configure%20airport%20base%20station%20for%20FTP%20with%0A%09NAT%2BPAT%20%28port%20map%29%20for%20ports%2020-21%20%28FTP%29%20with%20AAU%3F&In-Reply-To=list-5091726%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003820.html">
+   <LINK REL="Next"  HREF="003822.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] ot: how to configure airport base station for FTP with
+	NAT+PAT (port map) for ports 20-21 (FTP) with AAU?</H1>
+    <B>Jerry Krinock</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20ot%3A%20how%20to%20configure%20airport%20base%20station%20for%20FTP%20with%0A%09NAT%2BPAT%20%28port%20map%29%20for%20ports%2020-21%20%28FTP%29%20with%20AAU%3F&In-Reply-To=list-5091726%40mail.ninewire.com"
+       TITLE="[Ti] ot: how to configure airport base station for FTP with
+	NAT+PAT (port map) for ports 20-21 (FTP) with AAU?">dearjerry at mindspring.com
+       </A><BR>
+    <I>Mon Feb 24 12:36:55 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003820.html">[Ti] Titanium Only?
+</A></li>
+        <LI>Next message: <A HREF="003822.html">MS owns a piece of Apple
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3821">[ date ]</a>
+              <a href="thread.html#3821">[ thread ]</a>
+              <a href="subject.html#3821">[ subject ]</a>
+              <a href="author.html#3821">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Everything in this thread looks correct  but I don't see any mention of the
+syntax Warwick is using to try to remotely log in or ftp.  If you are trying
+to append the port to the IP address using a comma or backslash as
+recommended by Unix books, I have found that this does not work.
+
+We have two Macs behind an Apple Airport Base Station.  On one of them, I
+have mapped private port 22 to public port 1022.  The following opens a
+secure shell with this Mac from a remote location:
+
+ssh -p1022 <A HREF="../../../mailman/listinfo/titanium.html">jk at 68.164.28.144</A>
+
+and the following opens an sftp session (Yes, this is better than ftp):
+
+sftp -oPort=1022 <A HREF="../../../mailman/listinfo/titanium.html">jk at 68.164.28.144</A>
+
+It works for me.  Replace jk with your login name and 68.164.28.144 with
+your IP address.  It should work for you.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003820.html">[Ti] Titanium Only?
+</A></li>
+	<LI>Next message: <A HREF="003822.html">MS owns a piece of Apple
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3821">[ date ]</a>
+              <a href="thread.html#3821">[ thread ]</a>
+              <a href="subject.html#3821">[ subject ]</a>
+              <a href="author.html#3821">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

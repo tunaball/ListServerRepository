@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] What's in an MP3's resource fork..?     [Was: Re: [X4U] ._annoying_files on SMB shares - can I remove them..?]
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20What%27s%20in%20an%20MP3%27s%20resource%20fork..%3F%20%20%20%20%20%5BWas%3A%20Re%3A%20%5BX4U%5D%20._annoying_files%20on%20SMB%20shares%20-%20can%20I%20remove%20them..%3F%5D&In-Reply-To=list-12261825%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000729.html">
+   <LINK REL="Next"  HREF="000732.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] What's in an MP3's resource fork..?     [Was: Re: [X4U] ._annoying_files on SMB shares - can I remove them..?]</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20What%27s%20in%20an%20MP3%27s%20resource%20fork..%3F%20%20%20%20%20%5BWas%3A%20Re%3A%20%5BX4U%5D%20._annoying_files%20on%20SMB%20shares%20-%20can%20I%20remove%20them..%3F%5D&In-Reply-To=list-12261825%40mail.ninewire.com"
+       TITLE="[X-Unix] What's in an MP3's resource fork..?     [Was: Re: [X4U] ._annoying_files on SMB shares - can I remove them..?]">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Thu Apr 22 02:16:04 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000729.html">[X-Unix] What's in an MP3's resource fork..?     [Was: Re: [X4U] ._annoying_files on SMB shares - can I remove them..?]
+</A></li>
+        <LI>Next message: <A HREF="000732.html">[X-Unix] What's in an MP3's resource fork..?     [Was: Re: [X4U] ._annoying_files on SMB shares - can I remove them..?]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#731">[ date ]</a>
+              <a href="thread.html#731">[ thread ]</a>
+              <a href="subject.html#731">[ subject ]</a>
+              <a href="author.html#731">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Apr 21, 2004, at 1:15 am, James Bucanek wrote:
+
+&gt;<i> Stroller wrote on Tuesday, April 20, 2004:
+</I>&gt;&gt;<i> I wish to remove all non-essential &quot;dot-files&quot; left by Macs on Samba
+</I>&gt;&gt;<i> shares, as they're extremely irritating when viewed from Windows 
+</I>&gt;&gt;<i> boxes.
+</I>&gt;<i>
+</I>&gt;<i> The .xxx file type extensions are extremely irritating too.  But we 
+</I>&gt;<i> Mac users have learned to live with them.  ;)
+</I>
+Ah! I think we'll have to agree to disagree on this one. It's perhaps 
+illustrative of my background, but I find .xxx file extensions natural 
+&amp; intuitive.
+
+&gt;<i> Resource forks (when properly formatted) contains structured data.  A 
+</I>&gt;<i> structure that is defined a manipulated by the Macintosh operating 
+</I>&gt;<i> system.  As such, arbitrary small data objects (let's call them 
+</I>&gt;<i> &quot;blobs&quot;) can be stored in the resource fork of the file, and later 
+</I>&gt;<i> retrieved by type and ID.  Since there are, essentially, a unlimited 
+</I>&gt;<i> number of types and IDs, all manner of blobs can be organized in the 
+</I>&gt;<i> resource fork of a file without any format or name-space collisions; 
+</I>&gt;<i> Either with the file's data or any other blobs.
+</I>&gt;<i>
+</I>&gt;<i> For instance, many web and FTP clients used to add a small resource to 
+</I>&gt;<i> a file to indicating the URL the file was originally downloaded from.  
+</I>&gt;<i> Other programs would batch process files and add a high-quality 
+</I>&gt;<i> thumbnail as a resource.  User comments, custom icons, bookmarks, 
+</I>&gt;<i> preferences, printer settings, processing hints, color profiles, links 
+</I>&gt;<i> to media managers, and many other useful bits of information can all 
+</I>&gt;<i> be safely stored in a resource fork.  This does not, in any way, 
+</I>&gt;<i> impact or interfere with the format of the data fork.  The two coexist 
+</I>&gt;<i> happy side-by-side.
+</I>&gt;<i>
+</I>&gt;<i> Resource forks, like so many aspects of the original Macintosh design, 
+</I>&gt;<i> were strokes of pure genius...
+</I>
+Perhaps so. But, as you say, most filesystems don't understand them. I 
+can see the value in having a repository of &quot;miscellaneous and useful 
+`stuff'&quot; to be associated with a file, as long as application 
+developers don't insist in putting *essential* stuff in there. I think 
+this thread has given me a better appreciation of resource forks; I 
+read some time ago about Hans Reiser's filesystem, and I now realise 
+that resource forks are very similar to something that he wishes (or is 
+trying) to implement.
+
+However, in a largely single-fork world it should, I believe, be safe 
+to assume that the resource fork can be lost without damage.
+
+Stroller.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000729.html">[X-Unix] What's in an MP3's resource fork..?     [Was: Re: [X4U] ._annoying_files on SMB shares - can I remove them..?]
+</A></li>
+	<LI>Next message: <A HREF="000732.html">[X-Unix] What's in an MP3's resource fork..?     [Was: Re: [X4U] ._annoying_files on SMB shares - can I remove them..?]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#731">[ date ]</a>
+              <a href="thread.html#731">[ thread ]</a>
+              <a href="subject.html#731">[ subject ]</a>
+              <a href="author.html#731">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

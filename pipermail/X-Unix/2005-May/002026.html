@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to monitor inbound/outbound network traffic?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20monitor%20inbound/outbound%20network%20traffic%3F&In-Reply-To=667F2F97-3B3A-4592-AF93-F9F4288BADBC%40inductionconcepts.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002025.html">
+   <LINK REL="Next"  HREF="002022.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to monitor inbound/outbound network traffic?</H1>
+    <B>Christoph Hammann</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20monitor%20inbound/outbound%20network%20traffic%3F&In-Reply-To=667F2F97-3B3A-4592-AF93-F9F4288BADBC%40inductionconcepts.com"
+       TITLE="[X-Unix] How to monitor inbound/outbound network traffic?">chammann at mac.com
+       </A><BR>
+    <I>Fri May 20 21:33:59 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002025.html">[X-Unix] How to monitor inbound/outbound network traffic?
+</A></li>
+        <LI>Next message: <A HREF="002022.html">[X-Unix] setenv missing!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2026">[ date ]</a>
+              <a href="thread.html#2026">[ thread ]</a>
+              <a href="subject.html#2026">[ subject ]</a>
+              <a href="author.html#2026">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>am 21.05.2005 6:11 Uhr schrieb Rad Craig unter <A HREF="../../../mailman/listinfo/x-unix.html">rad at inductionconcepts.com</A>:
+
+&gt;<i> Ok, running tcpdump, I snipped the following from the terminal screen:
+</I>&gt;<i> 
+</I>&gt;<i> 23:00:53.151272 IP 10.10.1.101.27005 &gt;
+</I>&gt;<i> unknown33.1.157.204.defenderhosting.com.27015: UDP, length: 29
+</I>&gt;<i> 23:00:53.189091 IP unknown33.1.157.204.defenderhosting.com.27015 &gt;
+</I>&gt;<i> 10.10.1.101.27005: UDP, length: 60
+</I>&gt;<i> 
+</I>&gt;<i> Now, what does that mean?  What kind of activity does that look
+</I>&gt;<i> like?  
+</I>
+Well, watch and learn, grasshopper ;-)
+
+First step (in Terminal):
+
+wintermute:~ chammann$ whois 33.1.157.204
+
+OrgName:    DoD Network Information Center
+OrgID:      DNIC
+Address:    7990 Science Applications Ct
+Address:    M/S CV 50
+City:       Vienna
+StateProv:  VA
+PostalCode: 22183-7000
+Country:    US
+
+NetRange:   33.0.0.0 - 33.255.255.255
+CIDR:       33.0.0.0/8
+NetName:    DCMC-1
+NetHandle:  NET-33-0-0-0-1
+Parent:
+NetType:    Direct Allocation
+NameServer: AAA-VIENNA.NIPR.MIL
+NameServer: AAA-KELLY.NIPR.MIL
+NameServer: AAA-VAIHINGEN.NIPR.MIL
+NameServer: AAA-WHEELER.NIPR.MIL
+Comment:    DOD Network Information Center
+Comment:    7990 Science Applications Court
+Comment:    Vienna, VA 22183-7000 US
+RegDate:
+Updated:    2001-10-12
+
+TechHandle: ZD41-ARIN
+TechName:   DOD Network Information Center
+TechPhone:  +1-800-365-3642
+TechEmail:  <A HREF="../../../mailman/listinfo/x-unix.html">HOSTMASTER at nic.mil</A>
+
+OrgTechHandle: MIL-HSTMST-ARIN
+OrgTechName:   Network DoD
+OrgTechPhone:  +1-703-676-1051
+OrgTechEmail:  <A HREF="../../../mailman/listinfo/x-unix.html">HOSTMASTER at nic.mil</A>
+
+# ARIN WHOIS database, last updated 2005-05-20 19:10
+# Enter ? for additional hints on searching ARIN's WHOIS database.
+
+Second step ( from <A HREF="http://www.iana.org/assignments/port-numbers">http://www.iana.org/assignments/port-numbers</A> ):
+
+flex-lm        27000-27009 FLEX LM (1-10)
+#               Daniel Birns &lt;<A HREF="../../../mailman/listinfo/x-unix.html">daniel at globes.com</A>&gt;
+#               27010-27344 Unassigned
+
+Third step (from 
+<A HREF="http://www.mathworks.com/support/tech-notes/1300/1303.html#what_is_FLEXlm">http://www.mathworks.com/support/tech-notes/1300/1303.html#what_is_FLEXlm</A>
+via Google):
+
+Section 1: What Is FLEXlm? Who Makes FLEXlm?
+FLEXlm is the most popular license management tool on the market today. It
+allows software to &quot;float&quot; on a network and not be tied to one particular
+machine. This involves a server-client relationship that requires a client
+machine to first successfully check out a license from the server in order
+for an application to be used on that client machine. The criteria for
+checking out a license can vary according to how the license management is
+configured.
+
+Macrovision Corporation makes FLEXlm. For more detailed information about
+FLEXlm, visit the Macrovision Corporation Web site.
+
+Section 2: How Does FLEXlm Work?
+There are four main components to FLEXlm:
+
+License manager daemon (lmgrd) - makes initial contact with client
+application (e.g., MATLAB) and starts and restarts vendor daemons
+Vendor daemon (MLM) - keeps track of the number of licenses checked out and
+who has each license by accessing memory and granting or denying license
+checkouts
+License file (license.dat) - contains licensing data within a text file. It
+is created by the software vendor (e.g., The MathWorks) and edited during
+installation
+Application program (e.g., MATLAB) - communicates with the vendor daemon to
+request a license for check out
+
+Conclusion (AKA wild guess):
+
+You have a MATLAB version &quot;on loan&quot; from the Department of Defense in
+Vienna, VA that phones home. Or their license server is malconfigured.
+
+Funny what you can find out with the right tools.
+
+Christoph
+
+
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002025.html">[X-Unix] How to monitor inbound/outbound network traffic?
+</A></li>
+	<LI>Next message: <A HREF="002022.html">[X-Unix] setenv missing!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2026">[ date ]</a>
+              <a href="thread.html#2026">[ thread ]</a>
+              <a href="subject.html#2026">[ subject ]</a>
+              <a href="author.html#2026">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

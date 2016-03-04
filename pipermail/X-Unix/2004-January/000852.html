@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] .bash_profile
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20.bash_profile&In-Reply-To=list-10171811%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000841.html">
+   <LINK REL="Next"  HREF="000863.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] .bash_profile</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20.bash_profile&In-Reply-To=list-10171811%40mail.ninewire.com"
+       TITLE="[X-Unix] .bash_profile">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Fri Jan  9 04:27:44 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000841.html">[X-Unix] .bash_profile
+</A></li>
+        <LI>Next message: <A HREF="000863.html">[X-Unix] .bash_profile
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#852">[ date ]</a>
+              <a href="thread.html#852">[ thread ]</a>
+              <a href="subject.html#852">[ subject ]</a>
+              <a href="author.html#852">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jan 9, 2004, at 9:50 am, Simon Forster wrote:
+
+&gt;<i> Just out of curiosity, what sort of changes are people making to their 
+</I>&gt;<i> shell environment by changing .bash_profile? Really I'm just after 
+</I>&gt;<i> hints and tips which could make my command line experience easier.
+</I>
+My Gentoo Linux box comes with this in the default /etc/profile (which 
+I think is sourced by Bash on that system); it gives users a pretty 
+coloured command prompt:
+
+   if [ `/usr/bin/whoami` = 'root' ]
+   then
+         # Do not set PS1 for dumb terminals
+         if [ &quot;$TERM&quot; != 'dumb'  ] &amp;&amp; [ -n &quot;$BASH&quot; ]
+         then
+                 export PS1='\[\033[01;31m\]\h \[\033[01;34m\]\W \$ 
+\[\033[00m\]'
+         fi
+         export PATH=&quot;/bin:/sbin:/usr/bin:/usr/sbin:${ROOTPATH}&quot;
+   else
+         # Do not set PS1 for dumb terminals
+         if [ &quot;$TERM&quot; != 'dumb'  ] &amp;&amp; [ -n &quot;$BASH&quot; ]
+         then
+                 export PS1='\[\033[01;32m\]\u@\h \[\033[01;34m\]\W \$ 
+\[\033[00m\]'
+         fi
+         export PATH=&quot;/bin:/usr/bin:${PATH}&quot;
+   fi
+
+I like to change the colours on different systems, so I can see 
+immediately which box I'm shelled into. My  prompt on my Mac is much 
+simpler (and stored in .bashrc):
+$ cat .bashrc
+PS1=&quot;\! \w \$
+
+This gives me just the history number &amp; the current working directory. 
+I think my first Unix box, an SGI Indigo was set up like this out of 
+the box; I really like having the history number shown as it allows me 
+more easily to do history-expansions such as &quot;!!:0 !-3:1 !403:$&quot;.
+
+Hope this is of interest,
+
+Stroller.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000841.html">[X-Unix] .bash_profile
+</A></li>
+	<LI>Next message: <A HREF="000863.html">[X-Unix] .bash_profile
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#852">[ date ]</a>
+              <a href="thread.html#852">[ thread ]</a>
+              <a href="subject.html#852">[ subject ]</a>
+              <a href="author.html#852">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

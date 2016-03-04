@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Wildcard * in Pathnames
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Wildcard%20%2A%20in%20Pathnames&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001959.html">
+   <LINK REL="Next"  HREF="001942.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Wildcard * in Pathnames</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Wildcard%20%2A%20in%20Pathnames&In-Reply-To="
+       TITLE="[X-Unix] Wildcard * in Pathnames">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Thu May 12 22:16:08 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001959.html">[X-Unix] Tiger X11.app and xforwarding in ssh
+</A></li>
+        <LI>Next message: <A HREF="001942.html">[X-Unix] Wildcard * in Pathnames
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1940">[ date ]</a>
+              <a href="thread.html#1940">[ thread ]</a>
+              <a href="subject.html#1940">[ subject ]</a>
+              <a href="author.html#1940">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>From: Jerry Krinock &lt;<A HREF="../../../mailman/listinfo/x-unix.html">jerry at ieee.org</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>In the arguments of various commands, for example &quot;find&quot; and &quot;rm&quot;, I would
+</I>&gt;<i>often like to match any path containing a given word with a wildcard
+</I>&gt;<i>expression like:
+</I>&gt;<i>
+</I>&gt;<i>     *Fruit*
+</I>&gt;<i>
+</I>&gt;<i>And I expect this to match _any_ pathname containing &quot;Fruit&quot;, including:
+</I>&gt;<i>
+</I>&gt;<i>     ~/Fruit/Apple/Seeds
+</I>&gt;<i>     /Applications/Fruit/Lemon.app
+</I>&gt;<i>     /Volumes/MyHD/Fruit
+</I>&gt;<i>
+</I>&gt;<i>but it never works.  The problem seems to be that the path separator
+</I>&gt;<i>character &quot;/&quot; is beyond the scope of the wildcard &quot;*&quot;.  I can get the
+</I>&gt;<i>desired result if I search a set of wildcard expressions, such as:
+</I>&gt;<i>
+</I>&gt;<i>     /*/Fruit/*
+</I>&gt;<i>     /*/*Fruit/*
+</I>&gt;<i>     /Fruit/*/*/*/
+</I>&gt;<i>     etc.
+</I>&gt;<i>     etc.
+</I>&gt;<i>     etc.
+</I>&gt;<i>
+</I>&gt;<i>Does anyone know a more elegant solution than this kludge?
+</I>&gt;<i>
+</I>&gt;<i>Thank you,
+</I>&gt;<i>
+</I>&gt;<i>Jerry Krinock
+</I>
+Your expectations need adjusting.
+
+First thing to realise is that 'find' or 'rm' never sees the '*'. 
+The moment you hit return, the shell analyses the command line you've 
+just given it.  Where it sees a word with wildcards, unless quoting 
+indicates otherwise, it replaces it with words that match the pattern 
+as pathnames from where you are.  If there is no match, the 
+wildcarded word is unchanged.
+
+This means that *Fruit* will be replaced by a list of all names in 
+the current directory that contain 'Fruit' (except any that start 
+with a '.'). If nothing does match it is left as *Fruit*.
+
+/*/Fruit/* will be replaced with all the names in any directory 
+called Fruit that lives in any directory directly under /.
+
+/*/*Fruit/* will be replaced with all the names in any directory 
+whose name ends in Fruit (but does not start with a '.') that lives 
+in any directory directly under /. If nothing does match it is left 
+as is.
+
+etc.
+
+All this, and a lot more checking for possible replacements, takes 
+place before the shell executes the (now) first word on the line as a 
+command and passes it the rest of the line as arguments.
+
+If you want the command to reliably see a '*', '?' or '[...]' 
+sequence they must be quoted or escaped as in
+find / -name '.*Fruit.*'
+Without the quotes, entered with the current directory being one 
+containing files
+theFruit theWholeFruit nothingButTheFruit
+the above would actually execute the command
+find / -name theFruit theWholeFruit nothingButTheFruit
+which is unlikely to give the expected results.
+
+
+This is what gives working through a shell such flexibility, but you 
+do need to understand how it works to do all but the simplest things 
+reliably.
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+Chair of HPUX SysAdmin SIG of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x-unix.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001959.html">[X-Unix] Tiger X11.app and xforwarding in ssh
+</A></li>
+	<LI>Next message: <A HREF="001942.html">[X-Unix] Wildcard * in Pathnames
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1940">[ date ]</a>
+              <a href="thread.html#1940">[ thread ]</a>
+              <a href="subject.html#1940">[ subject ]</a>
+              <a href="author.html#1940">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Login Hooks running items on login a little bit too
+	quickly
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Login%20Hooks%20running%20items%20on%20login%20a%20little%20bit%20too%0A%09quickly&In-Reply-To=552851B8-6317-11D9-AB88-000D9335B6B6%40n9yty.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001472.html">
+   <LINK REL="Next"  HREF="001476.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Login Hooks running items on login a little bit too
+	quickly</H1>
+    <B>Juan Manuel Palacios</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Login%20Hooks%20running%20items%20on%20login%20a%20little%20bit%20too%0A%09quickly&In-Reply-To=552851B8-6317-11D9-AB88-000D9335B6B6%40n9yty.com"
+       TITLE="[X-Unix] Login Hooks running items on login a little bit too
+	quickly">jmpalaciosp at eml.cc
+       </A><BR>
+    <I>Mon Jan 10 08:15:04 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001472.html">[X-Unix] Login Hooks running items on login a little bit too
+	quickly
+</A></li>
+        <LI>Next message: <A HREF="001476.html">[X-Unix] Login Hooks II - thanks guys. One more issue
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1475">[ date ]</a>
+              <a href="thread.html#1475">[ thread ]</a>
+              <a href="subject.html#1475">[ subject ]</a>
+              <a href="author.html#1475">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jan 10, 2005, at 10:53 AM, Steven Palm wrote:
+
+&gt;<i>
+</I>&gt;<i> On Jan 10, 2005, at 8:36 AM, Our PAl Al wrote:
+</I>&gt;&gt;<i> Don't quite fully understand it &#160;but I think I can still use it.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  Why do you have the [] around the F in Finder? When I use that line, 
+</I>&gt;&gt;<i> it doesn't work. &#160;ps -ax | grep Finder &#160;(without the [] ) works fine.
+</I>&gt;<i>
+</I>&gt;<i>  Strange, it should... It does work here as well.  The [] denote a 
+</I>&gt;<i> &quot;set&quot; of characters, but in this case there is only one so there's no 
+</I>&gt;<i> reason to use it.  I suspect it may have been [Ff]inder at some point, 
+</I>&gt;<i> matching upper or lower case F in front of inder.  But I'd probably 
+</I>&gt;<i> just use grep -i finder in that case, and let it find any combination 
+</I>&gt;<i> of upper and lower case. But you always have to be careful to only 
+</I>&gt;<i> match what you REALLY want so something else doesn't trip you up.
+</I>&gt;<i>
+</I>
+	The purpose of the [ ] around the first letter of Finder is precisely 
+to limit the range of matching options of the regular expression. Take 
+a look:
+
+$[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: dports](194/0,1)-&gt; ps -ax | grep Finder
+   412  ??  S      1:00.50 
+/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder 
+-psn_0_786433
+  6105 std  S+     0:00.00 grep Finder
+
+	Here the range is open, and all instances of &quot;Finder&quot; are matched, 
+including the search itself. With the [ ] around the F the story is 
+different:
+
+$[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: dports](195/0,1)-&gt; ps -ax | grep [F]inder
+   412  ??  S      1:00.50 
+/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder 
+-psn_0_786433
+
+	Only what we're looking for is matched. To get this behavior without 
+the [ ] we'd need another, inverse, matching pattern to eliminate 
+&quot;grep&quot; from the search results:
+
+$[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: dports](196/0,1)-&gt; ps -ax | grep Finder | grep -v grep
+   412  ??  S      1:00.50 
+/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder 
+-psn_0_786433
+
+	Now, as to the effect of these differences on the result of $? I think 
+you're safe whether you decide to use [F]inder or Finder, in both cases 
+$? == 0 is returned, which is what you need for your script. But in any 
+case it's usually a good practice to design search patterns that will 
+return exactly what you're looking for, unless you're explicitly trying 
+to write a wide as possible pattern to get as many matches as possible. 
+But that is not the current case.
+
+	Hope that makes it a bit clearer. Regards,...
+
+
+		Juan
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001472.html">[X-Unix] Login Hooks running items on login a little bit too
+	quickly
+</A></li>
+	<LI>Next message: <A HREF="001476.html">[X-Unix] Login Hooks II - thanks guys. One more issue
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1475">[ date ]</a>
+              <a href="thread.html#1475">[ thread ]</a>
+              <a href="subject.html#1475">[ subject ]</a>
+              <a href="author.html#1475">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

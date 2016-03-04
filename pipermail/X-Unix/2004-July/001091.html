@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Building Spiff
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Building%20Spiff&In-Reply-To=list-14720288%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001090.html">
+   <LINK REL="Next"  HREF="001092.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Building Spiff</H1>
+    <B>SeaSoft Systems</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Building%20Spiff&In-Reply-To=list-14720288%40mail.ninewire.com"
+       TITLE="Building Spiff">seasoft at west.net
+       </A><BR>
+    <I>Thu Jul 15 08:54:08 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001090.html">OSX and linux partitions on the same HD - again
+</A></li>
+        <LI>Next message: <A HREF="001092.html">[X-Unix] Changing the default shell
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1091">[ date ]</a>
+              <a href="thread.html#1091">[ thread ]</a>
+              <a href="subject.html#1091">[ subject ]</a>
+              <a href="author.html#1091">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I am trying to get a nifty &quot;diff&quot;-type utility to run under 10.2.8 
+using the bash shell.
+
+(As a point of general interest, this utility is similar to diff, 
+except it compares numerical tokens found in each line of the 
+compared files and will not report a &quot;difference&quot; if all the tokens 
+in the line match to within a specified floating point tolerance; 
+very slick for comparing the output of large numerical tables that 
+differ only in numerically inconsequential ways, like the difference 
+between [.001 and 0.001] or between [1.0001 and 1.0].)
+
+I am almost there:
+
+1. Tracked down the source package from the Darwin Open Systems site, 
+unzipped and untarred. (It isn't available on fink)
+
+2. Made what appear to be reasonable MAKEFILE adjustments (more below)
+
+3. Made minor tweaks to correct for a couple of compile/link keyword 
+conflict problems that developed.
+
+4. Finally got &quot;make&quot; to run to completion and produce a spiff 
+executable that actually seems to work, sort of.
+
+The problem:
+
+After executing spiff (and getting quite reasonably formatted spiff 
+output in the terminal window), the terminal attributes of my shell 
+window are hosed (Examples: (1) I can't see what I am typing to the 
+CLI; (2) the output stream to shell commands forgets the meaning of 
+&quot;carriage return&quot;, producing staggered output like the following 
+response in to &quot;ls&quot; (note the post-command bash prompt $ does not 
+even end up in the leftmost window position.)
+
+============================================================================ 
+$ COPYRIGHT        comment.h        float.h          miller.o 
+parse.o          tol.c
+                           Makefile         comment.o        float.o 
+misc.c           spiff            tol.h
+.
+.
+similar stuff snipped out here
+.
+.
+                                                           command.c 
+exact.h          token.c
+     command.o        flagdefs.h       miller.c         parse.c          token.h
+ 
+comment.c        float.c          miller.h         parse.h 
+token.o
+                                                    $
+============================================================================
+The terminal-relevant configuration portions of the MAKEFILE are 
+pretty simple, but I have tried all four terminal alternatives (item 
+(2) of the makefile configuration below) and the two that produce 
+spiff executables (2a and 2c) both have the barfing terminal 
+syndrome. I can work-around the problem with a terminal reset after 
+each spiff invocation, but this is kind of inelegant.
+
+I am admittedly way over my head here, and very happy to have gotten 
+this far, but does anyone have any suggestions for fixing this final 
+cosmetic glitch? In particular, how do I find out whether I am &quot;using 
+terminfo&quot; or &quot;using termcap&quot; or whatever?
+
+Thanks for any guidance,
+
+Richard
+
+============================================================================
+Makefile configuration section
+============================================================================
+#
+#	choose one from each of 1) 2) and 3) below
+#
+
+#
+#	1) SELECTION OF OPERATING SYSTEM VARIETY
+#		choose a) b) or c)
+#
+# a) for BSD derivitives, enable the following line
+OSFLAG=
+
+# b) for XENIX systems, enable the following line
+#OSFLAG=-DXENIX
+
+# b) for other A.T.&amp;T. UNIX derivitives, enable the following line
+#OSFLAG=-DATT
+
+#
+# 	2) SELECTION OF TERMINAL CONTROL LIBRARY
+#		choose either of a) b) or c)
+#
+# a) if you use termcap, enable the following lines
+#TFLAG=-DM_TERMCAP
+#TLIB=termcap
+
+# b) if you are using terminfo on a XENIX machine, enable the following lines
+#TFLAG=-DM_TERMINFO
+#TLIB=tinfo
+
+# c) if you use terminfo on any other type of machine,
+#    enable the following lines
+TFLAG=-DM_TERMINFO
+TLIB=curses
+
+# d) NONE OF THE ABOVE
+#CTFLAG=
+#TLIB=m	# just a link to mathlib; quick hack to avoid fixing Makefile
+
+#
+#	3) SELECTION OF WINDOW MANAGER AVAILABILITY
+#
+# if you have the Bellcore's MGR window manager, enable the following lines
+#VISFLAG=-DMGR
+#VISLIB=/usr/public/pkg/mgr/lib/libmgr.a
+#MGRINCDIR=-I/usr/public/pkg/mgr/include
+#MGRINCS=$(MGRINC)/dump.h $(MGRINC)/term.h $(MGRINC)/restart.h 
+$(MGRINC)/window.h
+
+#
+#	END OF LOCAL CONFIGRATION INFORMATION, the rest of this
+#	file may be modified only at great risk
+#		-- caveat hackor
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001090.html">OSX and linux partitions on the same HD - again
+</A></li>
+	<LI>Next message: <A HREF="001092.html">[X-Unix] Changing the default shell
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1091">[ date ]</a>
+              <a href="thread.html#1091">[ thread ]</a>
+              <a href="subject.html#1091">[ subject ]</a>
+              <a href="author.html#1091">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

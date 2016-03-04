@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Changing the default shell
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Changing%20the%20default%20shell&In-Reply-To=list-14696541%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001081.html">
+   <LINK REL="Next"  HREF="001083.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Changing the default shell</H1>
+    <B>Bert Knabe</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Changing%20the%20default%20shell&In-Reply-To=list-14696541%40mail.ninewire.com"
+       TITLE="[X-Unix] Changing the default shell">bert.knabe at lubbockonline.com
+       </A><BR>
+    <I>Tue Jul 13 22:35:57 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001081.html">[X-Unix] Changing the default shell
+</A></li>
+        <LI>Next message: <A HREF="001083.html">[X-Unix] Changing the default shell
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1082">[ date ]</a>
+              <a href="thread.html#1082">[ thread ]</a>
+              <a href="subject.html#1082">[ subject ]</a>
+              <a href="author.html#1082">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jul 14, 2004, at 12:15 AM, James Bucanek wrote:
+
+*snip*
+
+&gt;&gt;<i> I've changed the default shell to bash, which is good. But I thought
+</I>&gt;&gt;<i> that doing that instead of using the 'temporary' method of having
+</I>&gt;&gt;<i> execute a command (in this case /bin/bash/) using the Terminal
+</I>&gt;&gt;<i> Preferences would have bash showing the path to your location in the
+</I>&gt;&gt;<i> hierarchy the way tcsh does. How would I tell it to do that?
+</I>&gt;<i>
+</I>&gt;<i> It should do it by default, unless your bash configuration has been 
+</I>&gt;<i> altered.
+</I>&gt;<i>
+</I>&gt;<i> Here's the default bashrc file that's installed in Panther:
+</I>&gt;<i>
+</I>&gt;<i>     james% cat /etc/bashrc
+</I>&gt;<i>     # System-wide .bashrc file for interactive bash(1) shells.
+</I>&gt;<i>     PS1='\h:\w \u\$ '
+</I>&gt;<i>     # Make bash check it's window size after a process completes
+</I>&gt;<i>     shopt -s checkwinsize
+</I>&gt;<i>
+</I>&gt;<i> This should set PS1 (which is the main shell prompt) to '\h:\w \u\$ '. 
+</I>&gt;<i>  That should display the following prompt
+</I>&gt;<i>
+</I>&gt;<i>     &lt;machine_name&gt;:&lt;pwd&gt; &lt;whoami&gt;$
+</I>&gt;<i>
+</I>&gt;<i> If PS1 isn't that string, then something else is changing it (or you 
+</I>&gt;<i> don't have read access to /etc/bashrc).
+</I>
+Thanks. I'll check that out tomorrow (it's quittin' time).
+
+Bert Knabe
+Computer Technician
+Lubbock Avalanche Journal
+(806) 766-2158
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001081.html">[X-Unix] Changing the default shell
+</A></li>
+	<LI>Next message: <A HREF="001083.html">[X-Unix] Changing the default shell
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1082">[ date ]</a>
+              <a href="thread.html#1082">[ thread ]</a>
+              <a href="subject.html#1082">[ subject ]</a>
+              <a href="author.html#1082">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

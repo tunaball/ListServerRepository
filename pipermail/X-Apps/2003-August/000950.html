@@ -1,0 +1,279 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Apps] Problem: Apple Talk &amp; Asante Router
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-apps%40listserver.themacintoshguy.com?Subject=%5BX-Apps%5D%20Problem%3A%20Apple%20Talk%20%26%20Asante%20Router&In-Reply-To=list-7928298%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000949.html">
+   <LINK REL="Next"  HREF="000951.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Apps] Problem: Apple Talk &amp; Asante Router</H1>
+    <B>Scott</B> 
+    <A HREF="mailto:x-apps%40listserver.themacintoshguy.com?Subject=%5BX-Apps%5D%20Problem%3A%20Apple%20Talk%20%26%20Asante%20Router&In-Reply-To=list-7928298%40mail.ninewire.com"
+       TITLE="[X-Apps] Problem: Apple Talk &amp; Asante Router">scott-xlists at scotist.com
+       </A><BR>
+    <I>Fri Aug  8 21:45:21 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000949.html">Another Lost Application
+</A></li>
+        <LI>Next message: <A HREF="000951.html">[X-Apps] Problem: Apple Talk &amp; Asante Router
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#950">[ date ]</a>
+              <a href="thread.html#950">[ thread ]</a>
+              <a href="subject.html#950">[ subject ]</a>
+              <a href="author.html#950">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Albert,
+You said you have &quot;File Sharing set to FTP&quot;. This is not quite correct.  
+Each of the choices listed in System Preferences --&gt;Sharing is a  
+separate service. Filesharing is not FTP, and FTP is not filesharing.
+
+You need to turn on &quot;Personal File Sharing&quot;. You probably don't need  
+FTP turned on, unless you plan to use an ftp client to transfer files  
+back and forth. This would mean learning another application.
+
+1. Turn on personal filesharing on the G4 (the one from which you want  
+to copy files). While you are in the Sharing pane of system  
+preferences, check the computer name. Is it &quot;Albert's computer&quot;? If so,  
+change it to something that identifies the G4 as such, or by location,  
+etc. &quot;G4&quot;, &quot;Office Mac&quot;, &quot;Speedy&quot;, etc. On the G3, change the computer  
+name to &quot;G3&quot;, &quot;Kitchen Mac&quot;, &quot;The Old Beast&quot;, or some such easy to  
+recognize name.
+
+2. On the G3, if the Connect to server dialog is open and still doesn't  
+see the G3, close it and reopen it. You should then see the G4 listed.  
+Doubleclick on it.
+
+3. Enter BOTH the username and the password of your account on the G4.  
+If you are sitting at the G3, and trying to connect to the G4, you  
+would want to enter the G4's username and password. If you do this  
+correctly, and the username you used is an admin user, you'll be  
+offered both the entire hard drive or your user folder. pick one, not  
+both.
+
+In addition to the computer-naming scheme I outlined above, there is  
+one more thing you can do to make things easier. Use the SAME username  
+on both machines. When the dialog box comes up asking for username and  
+password, it autofills the username. Unfortunately, it can only guess,  
+and it auto-enters your username on the machine at which you are  
+sitting. So, as an example, if you are sitting at the G3, trying to  
+connect to the G4, it will fill in your G3 account's username. Not  
+recognizing this is the cause of roughly 95% of the filesharing  
+&quot;authentication errors&quot; or &quot;bad password&quot; call I get.
+
+
+So to summarize:
+Your 1 mistake was to turn on FTP instead of filesharing. Make sure you  
+turn on Personal Filesharing, not FTP.
+
+The next 2 things to watch for:
+
+Make sure both machines have easy-to-recognize names.
+Use the correct username and password for the machine to which you are  
+trying to connect.
+
+In the &quot;Just won't work&quot; category:
+The &quot;Network&quot; icon in the finder will do absolutely nothing for you at  
+this time. It will only show items on a &quot;netinfo&quot; network, which you  
+generally only find in business or school networks.
+In the &quot;Hallelujah&quot; category:
+This will be changed in Panther (10.3). The Network icon will function  
+just as you expected it to. It will show available network volumes  
+(filesharing via appletalk , smb, or rendezvous). The connect to server  
+dialog will only be necessary for connecting to shares which don't  
+advertise themselves on your local network.
+
+Wow. Awfully long-winded answer for a &quot;checked the wrong box, almost  
+there&quot; message.
+--  
+Scott
+
+For others on the list:
+Yes, Finder and Terminal both do FTP. Finder is one-way, Terminal  
+requires one to learn how to use ftp on the command line. Neither is an  
+optimal solution for this case.
+
+
+On Friday, August 8, 2003, at 7:43AM, Wayne Clodfelter wrote:
+
+&gt;<i> Albert,
+</I>&gt;<i> I will look for others to answer your question so that I may learn  
+</I>&gt;<i> something, myself, but in the meantime, I will tell you that I have a  
+</I>&gt;<i> similar setup as yours; 2 beige G3s ethernetted via a FR1004C.
+</I>&gt;<i> I simply set up file sharing and gave administrative access to each  
+</I>&gt;<i> computer to the other one. Now, the HD for each computer mounts on the  
+</I>&gt;<i> other desktop at startup. You can limit access to specific folders  
+</I>&gt;<i> and/or files via permissions.
+</I>&gt;<i> Transferring files is as simple as navigating to the HD (or connected  
+</I>&gt;<i> drives) of the other computer and dragging and dropping whatever you  
+</I>&gt;<i> want to transfer.
+</I>&gt;<i>
+</I>&gt;<i> On Friday, August 8, 2003, at 10:03  AM, Albert D'Amanda wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Hello All
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I am trying to connect two macs ,( Backup)  B&amp;W &amp; a ( Primary) G4,  
+</I>&gt;&gt;<i> Jag 10.2.6 via Appletalk.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I am using an Asante Router FR1004 via Ethernet Ports.
+</I>&gt;&gt;<i> (BTW. The asante works great connecting two macs and a PC into a  
+</I>&gt;&gt;<i> single comcast.net line-IP address )
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I want  to transfer files from my Main G4 over to the G3 Mac.
+</I>&gt;&gt;<i> At both boxes,  in Network ,Apple Talk is turned ON
+</I>&gt;&gt;<i> At both boxes File Sharing is set to FTP
+</I>&gt;&gt;<i> Have setup ownership &amp; permissions on each of the  Macs bootup drives
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The problem is that at each of the macs, opening up the bootup  
+</I>&gt;&gt;<i> drives, clicking on Networks and then on Servers, only the mac I am  
+</I>&gt;&gt;<i> using is listed. ??
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I would expect that both macs would be listed if the Apple Talk  
+</I>&gt;&gt;<i> Network is active
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I assume this is telling me that I do NOT have an Apple Talk  network  
+</I>&gt;&gt;<i> connection between the two Macs?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> When I go to Finder -GO -Connect to Server , it asks for an IP  
+</I>&gt;&gt;<i> address only. No indication of any panel that says Apple Talk.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> So my questions are
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 1.Will  Apple Talk  work with a ethernet Router ?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 2. If so what am I doing wrong ?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 2. Can anyone direct me to a tutorial on configuring Apple Talk  
+</I>&gt;&gt;<i> Network using Jag?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Both Help and Apple Care via Sherlock are not helpful
+</I>&gt;&gt;<i> The book on OS X I am using does not display the panels that I am  
+</I>&gt;&gt;<i> seeing with Jag!
+</I>&gt;&gt;<i> BTW. Back in the &quot;old days&quot;, OS9, I used Apple Talk between two macs  
+</I>&gt;&gt;<i> w/o any problems-very simple in those days
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Albert
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> ----------
+</I>&gt;&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-apps.html">X-Apps-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;<i> To switch to the DIGEST mode, E-mail to  
+</I>&gt;&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-apps.html">X-Apps-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;<i> Need help from a real person? Try.   
+</I>&gt;&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-apps.html">X-Apps-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> ----------
+</I>&gt;&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your  
+</I>&gt;&gt;<i> Mac ISP Serious Mac Internet Solutions From NineWire!    
+</I>&gt;&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older  
+</I>&gt;&gt;<i> Mac! Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>   Support   | Support this list by clicking here before you buy!
+</I>&gt;&gt;<i>  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;<i> Regards,
+</I>&gt;<i>
+</I>&gt;<i> Wayne
+</I>&gt;<i>
+</I>&gt;<i> Wayne Clodfelter         &lt;<A HREF="../../../mailman/listinfo/x-apps.html">wayne at troutnc.com</A>&gt;
+</I>&gt;<i> &quot;Well, if you wanta talk fishin', I guess that'll be OK&quot; ...Lynyrd  
+</I>&gt;<i> Skynyrd in &#8220;Ask me no Questions&#8220;
+</I>&gt;<i> Visit our web page, TROUT, NC on the web, at <A HREF="http://www.troutnc.com">http://www.troutnc.com</A>
+</I>&gt;<i> ======================================================================= 
+</I>&gt;<i> ===
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-apps.html">X-Apps-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-apps.html">X-Apps-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.   
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-apps.html">X-Apps-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your  
+</I>&gt;<i> Mac ISP
+</I>&gt;<i> Serious Mac Internet Solutions From NineWire!    
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older  
+</I>&gt;<i> Mac!
+</I>&gt;<i> Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>   Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000949.html">Another Lost Application
+</A></li>
+	<LI>Next message: <A HREF="000951.html">[X-Apps] Problem: Apple Talk &amp; Asante Router
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#950">[ date ]</a>
+              <a href="thread.html#950">[ thread ]</a>
+              <a href="subject.html#950">[ subject ]</a>
+              <a href="author.html#950">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-apps.html">More information about the X-Apps
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

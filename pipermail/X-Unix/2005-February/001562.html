@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Unlinking a file... illegal characters?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Unlinking%20a%20file...%20illegal%20characters%3F&In-Reply-To=775a7167ce0d5cb91a0cfa8fb3f33d95%40myrealbox.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001560.html">
+   <LINK REL="Next"  HREF="001565.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Unlinking a file... illegal characters?</H1>
+    <B>Brian Medley</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Unlinking%20a%20file...%20illegal%20characters%3F&In-Reply-To=775a7167ce0d5cb91a0cfa8fb3f33d95%40myrealbox.com"
+       TITLE="[X-Unix] Unlinking a file... illegal characters?">bpm-list-osx-unix at 4321.tv
+       </A><BR>
+    <I>Thu Feb 24 20:13:00 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001560.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+        <LI>Next message: <A HREF="001565.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1562">[ date ]</a>
+              <a href="thread.html#1562">[ thread ]</a>
+              <a href="subject.html#1562">[ subject ]</a>
+              <a href="author.html#1562">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Fri, Feb 25, 2005 at 12:14:17AM +0000, Stroller wrote:
+
+&gt;<i> I have a file that I don't seem to be able to remove from the trash.  
+</I>&gt;<i> Emptying the trash simply doesn't work - nothing happens, you still see  
+</I>&gt;<i> paper in the basket - and I seem to be unable to remove it from the  
+</I>&gt;<i> command line, as shown:
+</I>&gt;<i> 
+</I>&gt;<i>   $ rm -rf /Volumes/CLEARLIGHT/.Trashes/
+</I>&gt;<i>  rm:  
+</I>&gt;<i> /Volumes/CLEARLIGHT/.Trashes//501/legoland/ 
+</I>&gt;<i> e??y??y??y??vk??????..??????: File name too long
+</I>
+You might try:
+
+$ ls -lFa -i
+total 0
+3571782 -rw-r--r--    1 bpm      bpm             0 Feb 24 22:08 real_long_file
+$ find . -inum 3571782
+./real_long_file
+$ find . -inum 3571782 -print0 | xargs -0 
+./real_long_file
+$ find . -inum 3571782 -print0 | xargs -0 rm -f
+$ ls -lFa
+total 0
+$ 
+
+If the rm doesn't work, then maybe
+
+    $ find . -inum 3571782 -print0 | xargs -0 -i mv \{\} short
+
+will.
+
+-- 
+~`^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-., \|/  (___)  \|/ _,.-=~'`^`
+                                      @~./'O o`\.~@
+      &quot;Knowledge is Power&quot;           /__( \___/ )__\  *PPPFFBT!*
+         -- Francis Bacon               `\__`U_/'
+ _.-=~'``'~=-._.-=~'``'~=-._.-=~'`^`'~= &lt;____|'  ^^`'~=-.,__,.-=
+~'^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-.,__,.-==--^'~=-.,__,.-=~'`^`
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001560.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+	<LI>Next message: <A HREF="001565.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1562">[ date ]</a>
+              <a href="thread.html#1562">[ thread ]</a>
+              <a href="subject.html#1562">[ subject ]</a>
+              <a href="author.html#1562">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

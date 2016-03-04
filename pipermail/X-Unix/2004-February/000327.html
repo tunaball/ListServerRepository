@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Changing ssh daemon listening port
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Changing%20ssh%20daemon%20listening%20port&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000326.html">
+   <LINK REL="Next"  HREF="000328.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Changing ssh daemon listening port</H1>
+    <B>Our Pal Al</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Changing%20ssh%20daemon%20listening%20port&In-Reply-To="
+       TITLE="Changing ssh daemon listening port">opa at avalon.rockefeller.edu
+       </A><BR>
+    <I>Thu Feb 19 08:39:26 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000326.html">[X-Unix] Weird tcsh vs bash behavior
+</A></li>
+        <LI>Next message: <A HREF="000328.html">[X-Unix] Weird tcsh vs bash behavior
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#327">[ date ]</a>
+              <a href="thread.html#327">[ thread ]</a>
+              <a href="subject.html#327">[ subject ]</a>
+              <a href="author.html#327">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I did this on a linux box (which of course I don't have access to right now
+for comparison) but can't seem to do this on my Mac.
+
+I wan&#185;t ssh to listen on port 23 as well as 22. I changed /etc/sshd_config
+in the following manner:
+
+Port 22
+Port 23                  &lt;added this line. The others I just uncommented&gt;
+Protocol 2,1
+ListenAddress 0.0.0.0
+ListenAddress ::
+
+
+And toggled remote login in System Preferences, but an 'ssh -p 23' from
+another machine can't get me into my mac. It's not the firewall, I allowed
+23.  Normal ssh on 22 is unaffected.
+
+I'm almost certain that's all I did on my linux box to get it to listen on
+23. What am I overlooking on OS X?
+
+- opa
+
+
+-- 
+\\\\\\\\\\\\\\\\\\\\\\\////////////////////////
+If Builders avoid having a 13th floor, why aren't
+Publishers afraid to have a Chapter 11?
+
+<A HREF="http://home.nyc.rr.com/attilan/wonderfal/">http://home.nyc.rr.com/attilan/wonderfal/</A>   &lt;--    NEW location!
+\\\\\\\\\\\\\\\\\\\\\\\////////////////////////
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000326.html">[X-Unix] Weird tcsh vs bash behavior
+</A></li>
+	<LI>Next message: <A HREF="000328.html">[X-Unix] Weird tcsh vs bash behavior
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#327">[ date ]</a>
+              <a href="thread.html#327">[ thread ]</a>
+              <a href="subject.html#327">[ subject ]</a>
+              <a href="author.html#327">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Firewire problem
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Firewire%20problem&In-Reply-To=164AB34C7BEA7C88D3F0955C%40loki.cynic.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010943.html">
+   <LINK REL="Next"  HREF="010945.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Firewire problem</H1>
+    <B>Sims David</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Firewire%20problem&In-Reply-To=164AB34C7BEA7C88D3F0955C%40loki.cynic.org"
+       TITLE="[G4] Firewire problem">dmsims at mindspring.com
+       </A><BR>
+    <I>Sun Aug 28 14:32:43 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010943.html">[G4] Firewire problem
+</A></li>
+        <LI>Next message: <A HREF="010945.html">[G4] please help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10944">[ date ]</a>
+              <a href="thread.html#10944">[ thread ]</a>
+              <a href="subject.html#10944">[ subject ]</a>
+              <a href="author.html#10944">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello Perry,
+
+Thank you very much.  Now I understand what is going on.
+
+The drive was showing up on B's desktop, and I connected A to B via  
+the network panel in finder, and mounted the firewire drive drive  
+like it was hooked to B.  Worked fine.
+
+Thanks again,
+David
+
+
+On Aug 28, 2005, at 12:09 PM, Perry The Cynic wrote:
+
+&gt;<i> Here's what's going on: A and B are connected via FireWire. *You*  
+</I>&gt;<i> think you're just doing this for networking, but the computers  
+</I>&gt;<i> don't know that. They combine their FireWire buses into one &quot;super- 
+</I>&gt;<i> bus&quot;, which now contains A+B+the drive. (That's how FireWire  
+</I>&gt;<i> works.) This means that, technically speaking, the drive is  
+</I>&gt;<i> attached to *both* A and B, and whichever finds the drive first  
+</I>&gt;<i> treats it as a local drive. Normally that's A (it's closer), but if  
+</I>&gt;<i> you turn off A for wee bit, the drive will detach from A, and then  
+</I>&gt;<i> B may find it before A gets back up.
+</I>&gt;<i>
+</I>&gt;<i> Funnily, *if* B has gotten hold of the drive, then A could actually  
+</I>&gt;<i> mount it (as a network drive) from B. The situation is really  
+</I>&gt;<i> *that* symmetric. That's FireWire for you...
+</I>&gt;<i>
+</I>&gt;<i> (As another demonstration, plug an iSight into B and start iChat on  
+</I>&gt;<i> A. It'll see the iSight as locally attached, and will happily use  
+</I>&gt;<i> it if B isn't. All one big happy family of devices.)
+</I>&gt;<i>
+</I>&gt;<i> As to a solution - I don't know a &quot;fool proof&quot; one. Mac OS X likes  
+</I>&gt;<i> to treat FireWire external drives as if they belong to a logged-in  
+</I>&gt;<i> user, which means it often unmounts them when you log out. You  
+</I>&gt;<i> should be safe if you disconnect the A-B &quot;network&quot; cable before  
+</I>&gt;<i> rebooting A, and plug it back in when A has &quot;taken&quot; the drive  
+</I>&gt;<i> again. (That may be after logging in, if you have auto-login  
+</I>&gt;<i> disabled.)
+</I>&gt;<i>
+</I>&gt;<i> Cheers
+</I>&gt;<i>  -- perry
+</I>&gt;<i>
+</I>&gt;<i> --On August 27, 2005 10:34:59 PM -0700 Sims David  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/g4.html">dmsims at mindspring.com</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i> Hello,
+</I>&gt;&gt;<i> I have two G4 gigabits networked via firewire.  Computer A has an
+</I>&gt;&gt;<i> external firewire drive wired to it, that is used by both  
+</I>&gt;&gt;<i> computers  for
+</I>&gt;&gt;<i> backups. Computer B accesses the drive by connecting to A and   
+</I>&gt;&gt;<i> mounting
+</I>&gt;&gt;<i> it.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Here is the problem....
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Often times, the external drive disappears from computer A's  
+</I>&gt;&gt;<i> desktop.  It
+</I>&gt;&gt;<i> does not show in the drive utility, but it does show up in system
+</I>&gt;&gt;<i> profiler. Even when it is not accessible from computer A, computer  
+</I>&gt;&gt;<i> B  can
+</I>&gt;&gt;<i> mount it and use it.  If the firewire cord is unplugged and   
+</I>&gt;&gt;<i> plugged back
+</I>&gt;&gt;<i> in, the drive appears on computer A's desktop.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Is there a way to get the drive accessible, without unplugging/re-
+</I>&gt;&gt;<i> plugging the firewire cord?
+</I>&gt;&gt;<i> Thanks,
+</I>&gt;&gt;<i> David
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> G4 mailing list
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">G4 at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">http://listserver.themacintoshguy.com/mailman/listinfo/g4</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;&gt;<i> stuff:
+</I>&gt;&gt;<i>          <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ---------------------------------------------------------------------- 
+</I>&gt;<i> -----
+</I>&gt;<i> Perry The Cynic                                              
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">perry at cynic.org</A>
+</I>&gt;<i> To a blind optimist, an optimistic realist must seem like an  
+</I>&gt;<i> Accursed Cynic.
+</I>&gt;<i> ---------------------------------------------------------------------- 
+</I>&gt;<i> -----
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> G4 mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">G4 at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">http://listserver.themacintoshguy.com/mailman/listinfo/g4</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010943.html">[G4] Firewire problem
+</A></li>
+	<LI>Next message: <A HREF="010945.html">[G4] please help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10944">[ date ]</a>
+              <a href="thread.html#10944">[ thread ]</a>
+              <a href="subject.html#10944">[ subject ]</a>
+              <a href="author.html#10944">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Newcomer to G4 - query on hard disks
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Newcomer%20to%20G4%20-%20query%20on%20hard%20disks&In-Reply-To=39419AD6-77F9-4C4B-9408-CDC7942F10CC%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011966.html">
+   <LINK REL="Next"  HREF="011968.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Newcomer to G4 - query on hard disks</H1>
+    <B>Ronald Steinke</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Newcomer%20to%20G4%20-%20query%20on%20hard%20disks&In-Reply-To=39419AD6-77F9-4C4B-9408-CDC7942F10CC%40mac.com"
+       TITLE="[G4] Newcomer to G4 - query on hard disks">ronsteinke at mac.com
+       </A><BR>
+    <I>Fri Dec 23 12:04:35 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011966.html">[G4] Newcomer to G4 - query on hard disks
+</A></li>
+        <LI>Next message: <A HREF="011968.html">[G4] Newcomer to G4 - query on hard disks
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11963">[ date ]</a>
+              <a href="thread.html#11963">[ thread ]</a>
+              <a href="subject.html#11963">[ subject ]</a>
+              <a href="author.html#11963">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Dec 23, 2005, at 8:54 AM, Ian Piper wrote:
+
+I have just purchased a dual 450 MHz G4 (I think it is called a Gigabit 
+Ethernet model). I have a question about hard disk expansion and would 
+appreciate any advice you could offer.
+
+The machine has a 30 GB disk, located in drive bay 3. From the manual 
+it seems that I can put two disks in this bay, and I can see the extra 
+IDE and power cables to allow this. However, the manual also says that 
+the G4 supports up to 3 internal drives. I can't see any IDE (or other 
+for that matter) connectors in the other two drive bays, so how do I 
+fit a third drive? Is it possible to put an internal hard drive in the 
+bay where the zip drive would normally go (there is a second IDE bus 
+with the DVD-ROM drive on it and a spare IDE connector)? If it were 
+possible presumably I would have to set the DVD jumpers to slave and 
+the disk's jumpers to master. I have a Mac Cube and I am pretty sure 
+that it has one IDE bus, holding the disk and DVD-ROM, so on the face 
+of it it should be possible.&#160;Has anyone done anything like this?&#160;
+
+Brief background - I would like to use the existing drive as a boot 
+disk and add two RAID (mirrored) 120 GB disks to use the computer as a 
+file server for my network.
+
+Ian,
+
+I have done extensive additions to my G4 Gbit model and have found the 
+following information to be very helpful to install additional drives.
+
+In the original configuration, you should have one drive located 
+closest to the rear panel of the chassis. That is the bay that is 
+nearest to the IDE ribbon coming from the motherboard. If you have the 
+multiple hard drive mounting sled (it is a two level bracket shaped 
+like a squared-off letter U with holes in the bottom and sides for 
+screws to hold two hard drives). You should also have an IDE ribbon 
+that has three connectors attached, one to go into the motherboard and 
+the other two to go into the hard drives. The marked wire of the ribbon 
+should go nearest the power socket of the drive ALWAYS!
+
+The other two bays have flat mounting sleds and will allow you to 
+install additional drives up to a total of four if you have the double 
+drive sled already mounted with two drives. You will need to add a PCI 
+ATA IDE controller card to provide the needed IDE bus connections for 
+the third and fourth drives. Sonnet company makes a variety of models 
+and you should get the best one you can afford with two bus sockets and 
+the ribbons for the drives.
+
+You will need to get a Y-splitter to give you the needed power 
+connection plugs for all the drives. Your machine already has one power 
+connection with two plugs on it which should be used with the double 
+drive sled and a second power connection which only has one plug. That 
+is where you will use the Y-splitter for the added power connections.
+
+One problem that I encountered is the amount of power available from 
+the power supply. When I put in my fourth drive, I found that it 
+occasionally would not mount at startup. If I did a keyboard restart, 
+the drive would appear and I could continue working. However, this 
+caused me to worry about keeping the drive mounted while working, so I 
+removed the two 40Gb drives I had and replaced them with a single 120Gb 
+unit. I now have three drives installed in the chassis: one 80Gb (main 
+drive), one 60Gb (for file backups), and one 120Gb (for games).
+
+I do not recommend removing the Zip drive. I have made too much use of 
+mine for transferring files to and from my office and home. I have no 
+experience with RAID assemblies, so have no comment to make on that.
+
+My final configuration is:
+
+G4 Gbit Ethernet model
+1GHz upgraded processor from Sonnet
+1.5Gb RAM
+Pioneer DVR-110 DL-DVD/RW
+250Mb Zip
+120Gb Western Digital hard drive in bay 1 (bottom of bracket as Master)
+80Gb Western Digital hard drive in bay 1 (top of bracket as Slave)
+60GB Maxtor hard drive in bay 2 (center bracket as Master)
+All drives have OS-10.4.2 currently so I can boot from each as needed 
+or desired.
+
+I hope this gives you a better understanding of the expansion 
+capabilities of your Mac.
+
+Have a safe holiday season.
+</PRE>
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011966.html">[G4] Newcomer to G4 - query on hard disks
+</A></li>
+	<LI>Next message: <A HREF="011968.html">[G4] Newcomer to G4 - query on hard disks
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11963">[ date ]</a>
+              <a href="thread.html#11963">[ thread ]</a>
+              <a href="subject.html#11963">[ subject ]</a>
+              <a href="author.html#11963">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

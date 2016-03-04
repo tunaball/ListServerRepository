@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Terminal Syntax for Writing to /private/etc/authorization
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Terminal%20Syntax%20for%20Writing%20to%20/private/etc/authorization&In-Reply-To=p0623090dc15447df31e4%40%5B192.168.1.69%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002756.html">
+   <LINK REL="Next"  HREF="002758.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Terminal Syntax for Writing to /private/etc/authorization</H1>
+    <B>Michael Wheeler</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Terminal%20Syntax%20for%20Writing%20to%20/private/etc/authorization&In-Reply-To=p0623090dc15447df31e4%40%5B192.168.1.69%5D"
+       TITLE="[X-Unix] Terminal Syntax for Writing to /private/etc/authorization">MWheeler at tntech.edu
+       </A><BR>
+    <I>Thu Oct 12 12:56:16 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002756.html">[X-Unix] Terminal Syntax for Writing to /private/etc/authorization
+</A></li>
+        <LI>Next message: <A HREF="002758.html">[X-Unix] Terminal Syntax for Writing to /private/etc/authorization
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2757">[ date ]</a>
+              <a href="thread.html#2757">[ thread ]</a>
+              <a href="subject.html#2757">[ subject ]</a>
+              <a href="author.html#2757">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I think that's because it doesn't have .plist on the end of the
+filename. You could try creating a symbolic link to it that ends with
+.plist as that worked when I just tried it on my machine.
+
+Michael W. Wheeler, OpenVMS, Windows, Solaris and Macintosh
+Systems Support, Tennessee Technological University
+
+
+-----Original Message-----
+From: <A HREF="../../../mailman/listinfo/x-unix.html">x-unix-bounces at listserver.themacintoshguy.com</A>
+[mailto:<A HREF="../../../mailman/listinfo/x-unix.html">x-unix-bounces at listserver.themacintoshguy.com</A>] On Behalf Of Rick
+Gordon
+Sent: Thursday, October 12, 2006 2:40 PM
+To: A place to discuss Mac OS X from the perspective of the command
+line.
+Subject: [X-Unix] Terminal Syntax for Writing to
+/private/etc/authorization
+
+This really breaks down into two questions:
+
+1) Even trying to read the file (which is in XML plist format) doesn't
+seem to work with the following syntax:
+
+	sudo defaults read /private/etc/authorization
+
+I get a &quot;Domain /private/etc/authorization does not exist&quot; error.
+
+
+2) Assuming I could get around that, how does the defaults command deal
+with nested entries in a plist file? For instance, I'm looking for a
+quick and convenient way (other than opening authorization in the
+Property List Editor via Pseudo) to toggle the entry &quot;rights &gt;
+system.privilege.admin  &gt; group&quot; from admin to wheel, or vice versa.
+
+Can someone straighten me out here? Thanks in advance.
+-- 
+ 
+___________________________________________________
+
+RICK GORDON
+EMERALD VALLEY GRAPHICS AND CONSULTING
+___________________________________________________
+
+WWW:   <A HREF="http://www.shelterpub.com">http://www.shelterpub.com</A>
+_______________________________________________
+X-Unix mailing list
+<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+
+Listmom is trying to clean out his closets! Vintage Mac and random
+stuff:
+         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002756.html">[X-Unix] Terminal Syntax for Writing to /private/etc/authorization
+</A></li>
+	<LI>Next message: <A HREF="002758.html">[X-Unix] Terminal Syntax for Writing to /private/etc/authorization
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2757">[ date ]</a>
+              <a href="thread.html#2757">[ thread ]</a>
+              <a href="subject.html#2757">[ subject ]</a>
+              <a href="author.html#2757">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

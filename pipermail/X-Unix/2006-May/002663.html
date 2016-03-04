@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] text file parsing?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20text%20file%20parsing%3F&In-Reply-To=7FCDBC939F90FF48BF910CA2BB90D4820EAEB48E%40ibfftpspe1n006.de.ad.drkw.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002662.html">
+   <LINK REL="Next"  HREF="002664.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] text file parsing?</H1>
+    <B>Ben Gold</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20text%20file%20parsing%3F&In-Reply-To=7FCDBC939F90FF48BF910CA2BB90D4820EAEB48E%40ibfftpspe1n006.de.ad.drkw.net"
+       TITLE="[X-Unix] text file parsing?">bgold at acedsl.com
+       </A><BR>
+    <I>Wed May  3 09:34:02 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002662.html">[X-Unix] text file parsing?
+</A></li>
+        <LI>Next message: <A HREF="002664.html">[X-Unix] text file parsing?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2663">[ date ]</a>
+              <a href="thread.html#2663">[ thread ]</a>
+              <a href="subject.html#2663">[ subject ]</a>
+              <a href="author.html#2663">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bj&#246;rn, Robert,
+
+Thanks... almost there.
+
+The strings command got rid of the binary garbage and effectively  
+deleted the first line.  I'm still left with a bunch of ASCII garbage  
+at the end of the file.
+Using sed, I did the following:
+
+		sed '/Pattern/, $d' OldFile &gt; NewFile
+
+Which almost works perfectly!  The only problem is that sed omits the  
+Pattern along with the lines that follow it.  I want it to omit only  
+everything after Pattern, so the resulting file ends with Pattern.
+
+I've done about 15 minutes of looking on a website but cannot get  
+any  syntax to work.
+
+Thanks in advance for anymore help,
+
+Ben
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002662.html">[X-Unix] text file parsing?
+</A></li>
+	<LI>Next message: <A HREF="002664.html">[X-Unix] text file parsing?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2663">[ date ]</a>
+              <a href="thread.html#2663">[ thread ]</a>
+              <a href="subject.html#2663">[ subject ]</a>
+              <a href="author.html#2663">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

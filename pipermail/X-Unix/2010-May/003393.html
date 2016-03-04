@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Hardware RAID Setup
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20Hardware%20RAID%20Setup&In-Reply-To=%3C9541EE8D-387F-4716-A6F7-FB40A94FB592%40stellar.eclipse.co.uk%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003389.html">
+   <LINK REL="Next"  HREF="003391.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X-Unix] Hardware RAID Setup</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20Hardware%20RAID%20Setup&In-Reply-To=%3C9541EE8D-387F-4716-A6F7-FB40A94FB592%40stellar.eclipse.co.uk%3E"
+       TITLE="[X-Unix] Hardware RAID Setup">stroller at stellar.eclipse.co.uk
+       </A><BR>
+    <I>Wed May 12 13:03:21 PDT 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003389.html">[X-Unix] Hardware RAID Setup
+</A></li>
+        <LI>Next message: <A HREF="003391.html">[X-Unix] Hardware RAID Setup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3393">[ date ]</a>
+              <a href="thread.html#3393">[ thread ]</a>
+              <a href="subject.html#3393">[ subject ]</a>
+              <a href="author.html#3393">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 12 May 2010, at 20:06, Martin McCormick wrote:
+
+&gt;<i> Eric F Crist writes:
+</I>&gt;&gt;<i> Funny question, have you formatted the new raid device?
+</I>&gt;<i>
+</I>&gt;<i> 	No and I bet that is the problem. Since one drive
+</I>&gt;<i> originally had the OS on it, I was hoping that the raid card
+</I>&gt;<i> would mirror that bootable disk to the other disk sort of like
+</I>&gt;<i> dd will do if you do something like
+</I>&gt;<i>
+</I>&gt;<i> dd if=/dev/dev0 if=/dev/dev1
+</I>&gt;<i>
+</I>&gt;<i> For all I know, it mirrored the blank disk to the bootable disk.:-(
+</I>&gt;<i>
+</I>&gt;<i> 	This is the first time I have ever set up a raid 1
+</I>&gt;<i> controller so there are great knowledge gaps in my head.
+</I>
+Like I say, never used RAID on Macs, but a little bit on Linux now  
+(with at least 3 different controllers).
+
+When you initialise the array it will wipe out any data on the disks.  
+The long wait you mentioned was the drives zeroing out. After the  
+initialisation is completed, the two drives of a RAID1 array will  
+always (in normal use) contain identical copies of data (subject to  
+the completion of writes on each).
+
+The initialisation will (surely) NOT mirror existing data to an array  
+during creation, although some RAID controllers / userspace utilities  
+offer a &quot;migrate&quot; command.
+
+What you could do, for instance, if you have a working installation of  
+MacOS on drive A, is to build an array Z from drives B &amp; C. Then dd  
+from A to Z. I have undertaken some variations of this under Linux;  
+depending upon the complexity of what you're undertaking it can be  
+either very easy and straightforward or time-consuming and somewhat  
+harrowing.
+
+You will likely only be able to use the drives when connected to the  
+controller - i.e. you cannot remove one drive and read it on a  
+different computer, unless that machine has the same RAID controller.  
+If one drive fails you will be prompted to replace the drive - you  
+should be able to work with only the single drive in the meantime.  
+After you replace the failed drive the array will be rebuilt (copied,  
+effectively) onto the new disk, and again you should be able to use  
+the system during this rebuild process (disk operations will be  
+slowed, as your use of the disk is effectively &quot;shared&quot; with the  
+rebuild).
+
+Stroller.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003389.html">[X-Unix] Hardware RAID Setup
+</A></li>
+	<LI>Next message: <A HREF="003391.html">[X-Unix] Hardware RAID Setup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3393">[ date ]</a>
+              <a href="thread.html#3393">[ thread ]</a>
+              <a href="subject.html#3393">[ subject ]</a>
+              <a href="author.html#3393">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

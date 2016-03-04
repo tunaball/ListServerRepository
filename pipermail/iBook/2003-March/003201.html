@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [P1] OS X Help Please
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20OS%20X%20Help%20Please&In-Reply-To=list-5356874%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003200.html">
+   <LINK REL="Next"  HREF="003202.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[P1] OS X Help Please</H1>
+    <B>leigh</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20OS%20X%20Help%20Please&In-Reply-To=list-5356874%40mail.ninewire.com"
+       TITLE="[P1] OS X Help Please">lbdesigns at earthlink.net
+       </A><BR>
+    <I>Tue Mar 18 18:47:27 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003200.html">[P1] OS X Help Please
+</A></li>
+        <LI>Next message: <A HREF="003202.html">[P1] OS X Help Please
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3201">[ date ]</a>
+              <a href="thread.html#3201">[ thread ]</a>
+              <a href="subject.html#3201">[ subject ]</a>
+              <a href="author.html#3201">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Tuesday, March 18, 2003, at 05:27  PM, Luke Hinman wrote:
+
+&gt;<i> o.k. i guess what i am saying is that i can boot it into 9. then go to
+</I>&gt;<i> prefs, startup disk... then i see the 9.1 on my firefly hard drive. 
+</I>&gt;<i> and then
+</I>&gt;<i> the internal drive (x and 9.1(?) are available) i thought it was 
+</I>&gt;<i> supposed to
+</I>&gt;<i> be 9.2... anyway i select the x build and click restart... the gray x 
+</I>&gt;<i> apple
+</I>&gt;<i> comes on and the dots go round and round, then blue screen, then the 
+</I>&gt;<i> boot
+</I>&gt;<i> screen showing that it is loading some stuff (it is not taking as long 
+</I>&gt;<i> as it
+</I>&gt;<i> should during this stage)... then to the blue screen of death (no more
+</I>&gt;<i> flashing of the desktop picture). i guess os 9 mac first aid can't 
+</I>&gt;<i> repair
+</I>&gt;<i> permissions if i boot of the firefly and try fixing the internal x 
+</I>&gt;<i> build?
+</I>&gt;<i> thanks.
+</I>&gt;<i>
+</I>
+Which version of Mac OS X is it? If you have Jaguar, I would recommend 
+an archive install. Mac OS 9 knows nothing of Mac OS X permissions, and 
+is exactly why you can do things like boot into Mac OS 9 and delete the 
+/mach_kernel file.
+
+Try this ... boot into Mac OS X, holding Command-S for single-user 
+boot. After running fsck, carefully type the following:
+
+/sbin/mount -uw /
+
+then press return. Note the space between the w and the /
+
+Then, type:
+
+rm /Users/UserName/Library/Preferences/com.apple.loginwindow.plist   
+&lt;press return&gt;
+rm /Users/UserName/Library/Preferences/com.apple.finder.plist   &lt;press 
+return&gt;
+rm /Users/UserName/Library/Preferences/loginwindow.plist   &lt;press 
+return&gt;
+
+Where &quot;UserName&quot; is obviously your user name. ;o)
+
+(NOTE: you don't have to type the entire thing -- you can press tab to 
+complete after typing a few characters. Be careful -- make sure that it 
+completes to the intended file)
+
+then, for good measure, type:
+
+rm /Library/Preferences/com.apple.loginwindow.plist  &lt;press return&gt;
+rm /Library/Preferences/com.apple.windowserver.plist  &lt;press return&gt;
+
+then type exit.
+
+I am curious -- since I have not really followed this whole story, what 
+happened to get it into this state? 
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003200.html">[P1] OS X Help Please
+</A></li>
+	<LI>Next message: <A HREF="003202.html">[P1] OS X Help Please
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3201">[ date ]</a>
+              <a href="thread.html#3201">[ thread ]</a>
+              <a href="subject.html#3201">[ subject ]</a>
+              <a href="author.html#3201">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

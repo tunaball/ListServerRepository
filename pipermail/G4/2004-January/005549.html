@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Ethernet/router problems
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Ethernet/router%20problems&In-Reply-To=list-10405250%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005548.html">
+   <LINK REL="Next"  HREF="005550.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Ethernet/router problems</H1>
+    <B>Joseph B. Gurman</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Ethernet/router%20problems&In-Reply-To=list-10405250%40mail.ninewire.com"
+       TITLE="[G4] Ethernet/router problems">gurman at gsfc.nasa.gov
+       </A><BR>
+    <I>Fri Jan 23 05:10:01 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005548.html">Pioneer 107 DVD burner
+</A></li>
+        <LI>Next message: <A HREF="005550.html">[G4] Help! Dead built in ethernet on G4 450DP?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5549">[ date ]</a>
+              <a href="thread.html#5549">[ thread ]</a>
+              <a href="subject.html#5549">[ subject ]</a>
+              <a href="author.html#5549">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>     Bill in Lakewood WA wrote:
+
+&gt;<i>I recently got, and am trying to get fully functional, a Sawtooth AGP
+</I>&gt;<i>G4.  So far most has gone well but I'm at an impasse now in trying to
+</I>&gt;<i>get an Asant&#233; FriendlyNET 4 port router up and running.
+</I>&gt;<i>
+</I>&gt;<i>Apparently the problem is the G4's connection with the router as what
+</I>&gt;<i>ever port I put the cable connection from my machine into, it does not
+</I>&gt;<i>lightup/is not recognized by the router.  Profiler shows the built-in
+</I>&gt;<i>ethernet link as &quot;down&quot; and the router as &quot;not available&quot;.  I switched
+</I>&gt;<i>ethernet cables around to test them and the results were the same.  I
+</I>&gt;<i>also have switched ethernet ports with the other computer on the system
+</I>&gt;<i>and the other computer shows up well no matter where it is put, but mine
+</I>&gt;<i>doesn't show at all.
+</I>&gt;<i>
+</I>&gt;<i>Bottom line, my computer ethernet that works well when plugged into the
+</I>&gt;<i>modem doesn't work when plugged into the router.  There might be other
+</I>&gt;<i>signs of problems also but I won't know until this problem is solved -
+</I>&gt;<i>the signs being that when using the modem only, the modem normally shows
+</I>&gt;<i>it's running at the 100M speed but when the router is connected to it,
+</I>&gt;<i>only the modem's 10M speed light is lit.
+</I>&gt;<i>
+</I>&gt;<i>In all my reading so far, nothing like this has been addressed. Any help
+</I>&gt;<i>would be appreciated.
+</I>
+     Well, there are several things you don't say. 
+I believe the FriendlyNET router to which you;re 
+referring is  an FR1004 (no wireless) or FR1004AL 
+(adds wireless). If it's different, I don't know 
+if my guesses are applicable.
+
+     You also don't say what &quot;the other computer 
+on the system&quot; (by which I assume you mean 
+another machine on your local area network) is. 
+Is it another Mac? A PC? (It's OK, folks on the 
+list will be understanding, many of us use or are 
+forced to use them, too, and your proximity to 
+Redmond can be considered a mitigating factor 
+when we get to the sentencing phase....) The 
+other machine is relevant, because its TCP/IP 
+settings are obviously of interest.
+
+     Likewise, you don't say if your cable modem 
+requires a fixed IP address. If so, and your G4's 
+TCP/IP settings are still set to that IP address, 
+while the router is serving DHCP, you're out of 
+luck. You've probably checked all these things, 
+but we can't tell from your post.
+
+     Finally, you don't say what OS you're 
+running, so it's difficult to suggest some
+
+     In any case, some guesses/suggestions:
+
+1. if it's an FR1004, is the firmware up to date? 
+(probably only affects a security issue, but you 
+never know)
+If you do update the firmware, make certain the 
+cable modem is not connected to it when you 
+perform the update.
+
+2. my dim recollection is that there was an issue 
+with some vendors' hubs/switches (and the Asant&#233; 
+routers are routers plus hubs) use of the 
+spanning tree algorithm that affected their 
+ability to autonegotiate (full or half duplex) a 
+connections with first generation Apple 10/100 
+interfaces --- but I thought that was a Blue &amp; 
+White G3 problem, not Sawtooth. In any case, the 
+problem was soluble for older switches on a 
+port-by-port basis, but the FR1004 shouldn't have 
+that problem --- but I don't know what issues 
+that firmware update on Asant&#233;'s support site 
+addresses. If this is the problem, it's on your 
+G4's side: the router is expecting full-duplex, 
+but your Ethernet port may be defaulting to 
+half-duplex if autonegotiation fails. Under OS X 
+10.2, you can force the interface to be 
+full-duplex with some Terminal (shell) commands; 
+see:
+
+	<A HREF="http://www.macosxhints.com/article.php?story=20020902082941913">http://www.macosxhints.com/article.php?story=20020902082941913</A> .
+
+I _believe_ the same shell commands will work in 10.3, but YMMV.
+
+3. the FR1004 and FR1004AL allow hardware MAC 
+address control; I doubt it's been set out of the 
+box, but if you've had &quot;the other system on it&quot; 
+with MAC address control, and your G4's MAC 
+address hasn't been entered into the router's 
+access control list through the router's Web 
+interface, you're SOL
+
+4. Asant&#233;'s home routers (and most everybody 
+else's now) support MAC address cloning. If your 
+cable company only provides service to a known 
+MAC address (presumably the one of the machine 
+connected during installation), and your router 
+is configured to mimic that address (otherwise, 
+&quot;the other machine&quot; wouldn't be able to see the 
+Internet), there may be some conflict with your 
+machine, whose MAC address you've cloned --- 
+though I doubt it, as that's the whole point of 
+the feature.
+
+     Finally, for good advice rather than idle 
+speculation, Asant&#233;'s moderated support forums 
+are really helpful:
+
+	<A HREF="http://www.asante.com/forums/">http://www.asante.com/forums/</A>
+
+(Scroll down to &quot;Internet Access Routers&quot; and 
+&quot;FriendlyNET FR1000 Series&quot; is the first forum.)
+
+     Good luck,
+
+						Joe Gurman
+-- 
+&quot;I love deadlines. I love the whooshing sound they make as they go by.&quot;
+ 
+- Douglas Adams, 1952 - 2001
+
+Joseph B. Gurman, NASA Goddard Space Flight Center, Solar Physics
+Branch, Greenbelt MD 20771 USA
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005548.html">Pioneer 107 DVD burner
+</A></li>
+	<LI>Next message: <A HREF="005550.html">[G4] Help! Dead built in ethernet on G4 450DP?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5549">[ date ]</a>
+              <a href="thread.html#5549">[ thread ]</a>
+              <a href="subject.html#5549">[ subject ]</a>
+              <a href="author.html#5549">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

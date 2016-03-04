@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] question about 'find'
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20question%20about%20%27find%27&In-Reply-To=20051130082254.A21BA5C6DDF%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002495.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] question about 'find'</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20question%20about%20%27find%27&In-Reply-To=20051130082254.A21BA5C6DDF%40listserver.themacintoshguy.com"
+       TITLE="[X-Unix] question about 'find'">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Wed Nov 30 16:23:41 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002495.html">[X-Unix] Processor/process Context Switching
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2496">[ date ]</a>
+              <a href="thread.html#2496">[ thread ]</a>
+              <a href="subject.html#2496">[ subject ]</a>
+              <a href="author.html#2496">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>From: &quot;Stewart C. Russell&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">scruss at scruss.com</A>&gt;
+</I>&gt;<i>Eugene wrote:
+</I>&gt;&gt;<i>  Sending the list of filenames to xargs(1) is always nice,
+</I>&gt;&gt;<i>  especially because it is much more efficient and speedier.
+</I>&gt;<i>
+</I>&gt;<i>You do have to be careful with xargs if you're processing a *lot* of
+</I>&gt;<i>arguments. BSD xargs has a default argument limit of 5000 (hidden in the
+</I>&gt;<i>'-n' para of the manual), so if you're calling xargs through sort (say),
+</I>&gt;<i>the results may not be what you expect.
+</I>&gt;<i>
+</I>&gt;<i>I think (but could be wrong) that the limit for GNU xargs might be
+</I>&gt;<i>different, so cross-platform scripters should be wary. I was going to
+</I>&gt;<i>give an example, but OS X doesn't include seq(1), to my dismay.
+</I>
+That's not what it means.
+
+As a pedantic sidenote, the arguments to xargs are what you type as 
+arguments. The stream of data (pathnames if fed by find) are not 
+arguments.
+
+There is a maximum command line length. If a shell wildcard expansion 
+would blow this limit it tells you with 'too many args' or similar. 
+It's this limit that stops you writing
+     file $(find /)
+or similar.
+xargs avoids this by taking the data it receives on stdin and running 
+the sub-command with as many data items as arguments as it thinks it 
+can handle. When one invocation of the sub-command has finished, it 
+invokes another with the next batch of data as arguments, and so on 
+until the data stream is finished. On OS X, xargs thinks all commands 
+can cope with 5000 arguments unless you specify otherwise with '-n 
+&lt;number&gt;'.
+
+At one time in Bsd, there was a real 1024 char command line buffer 
+limit and xargs built up each invocation of the sub-command with 
+sufficient arguments to make as near a possible 1024 chars total 
+without overflowing. What we have now is similar, but solving a 
+technically slightly different problem.
+
+&gt;&gt;<i>  However, unlike other flavors, OS X filenames tend to contain
+</I>&gt;&gt;<i>  whitespace characters that break traditional Unix tools  ...
+</I>&gt;<i>
+</I>&gt;<i>And many others, such as brackets/braces. I assume (hope!) that '/' is
+</I>&gt;<i>no longer legal, for it was the scourge of the Solaris-based CAP/AUFS admin.
+</I>&gt;<i>
+</I>&gt;<i>What's list wisdom on methods of dealing with special characters?
+</I>
+Conventional Unix wisdom is 'If you put spaces or other special 
+characters in a file name you will get what you deserve' (ie, chaos). 
+Unfortunately we can't take that approach.
+
+I define a shell function which I call fnf (FileName Fix):
+     fnf() { sed &quot;s/\([      '\&quot;]\)/\\\\\1/g&quot;; }
+which, if fed pathnames one per line on stdin, squirts out the same 
+but with spaces, tabs, single and double quotes backslash quoted. I 
+then just use this when I need to. (The whitespace after the '[' is 
+&lt;space&gt;&lt;tab&gt;). When I find I need '$', '\' or any of the others I'll 
+work out how to quote them in the function and add them.
+
+&gt;<i>  I find
+</I>&gt;<i>'while' to be a somewhat useful construct, as in:
+</I>&gt;<i>&lt;command&gt; | while read file
+</I>&gt;<i>do
+</I>&gt;<i>   # do something based on $file
+</I>&gt;<i>done
+</I>
+If you mean piping the stream into a while loop and invoking the 
+sub-command once for each item, that's even less efficient than 
+'-exec'.  xargs is the rough equivalent of
+     i=0
+     &lt;command&gt; | while read file; do
+         files=&quot;$files $file&quot;
+         i=$((i + 1))
+         [ $i -lt 5000 ] &amp;&amp; continue
+         sub-command $files
+         files=&quot;&quot;
+         i=0
+     done
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+Chair of HPUX SysAdmin SIG of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x-unix.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002495.html">[X-Unix] Processor/process Context Switching
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2496">[ date ]</a>
+              <a href="thread.html#2496">[ thread ]</a>
+              <a href="subject.html#2496">[ subject ]</a>
+              <a href="author.html#2496">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

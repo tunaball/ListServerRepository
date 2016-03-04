@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Strange Files , .DS_Store, ._c.zip  Etc...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Strange%20Files%20%2C%20.DS_Store%2C%20._c.zip%20%20Etc...&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001827.html">
+   <LINK REL="Next"  HREF="001830.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Strange Files , .DS_Store, ._c.zip  Etc...</H1>
+    <B>Long, Jason</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Strange%20Files%20%2C%20.DS_Store%2C%20._c.zip%20%20Etc...&In-Reply-To="
+       TITLE="[X-Unix] Strange Files , .DS_Store, ._c.zip  Etc...">longj at insanityabounds.com
+       </A><BR>
+    <I>Thu Apr 21 11:15:20 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001827.html">[X-Unix] Strange Files , .DS_Store, ._c.zip  Etc...
+</A></li>
+        <LI>Next message: <A HREF="001830.html">[X-Unix] E-mail server
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1828">[ date ]</a>
+              <a href="thread.html#1828">[ thread ]</a>
+              <a href="subject.html#1828">[ subject ]</a>
+              <a href="author.html#1828">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks!!! Now it looks better with the hidden files actually hidden! 
+
+Jason Long
+ 
+----------------------------------------------------------------
+To be is to do.
+                       -- I. Kant
+To do is to be.
+                       -- A. Sartre
+Yabba-Dabba-Doo!
+                       -- F. Flintstone
+
+
+-----Original Message-----
+From: <A HREF="../../../mailman/listinfo/x-unix.html">x-unix-bounces at listserver.themacintoshguy.com</A>
+[mailto:<A HREF="../../../mailman/listinfo/x-unix.html">x-unix-bounces at listserver.themacintoshguy.com</A>] On Behalf Of Alex
+Sent: Thursday, April 21, 2005 1:10 PM
+To: A place to discuss Mac OS X from the perspective of the command
+line.
+Subject: Re: [X-Unix] Strange Files , .DS_Store, ._c.zip Etc...
+
+
+On Apr 21, 2005, at 8:43 AM, Long, Jason wrote:
+
+&gt;<i> Everytime I SSH Into my Mac from work, I see all of these .DS_Store
+</I>&gt;<i> files which I have no idea what they're for
+</I>
+Hidden (invisible) files in which Finder keeps folder metadata (icon  
+position, etc.)
+
+&gt;<i> I have a file that is like this  C.zip  and in the ssh window
+</I>&gt;<i> there's also a file like this ._c.zip what's up with that?
+</I>
+Macintosh files have a &quot;forked&quot; structure, i.e., data in a Mac file can
+
+be stored in two different forks, the data fork and the resource fork.  
+You could visualise it as two files which share the same name. This  
+structure is supported by the Mac file system, HFS+ (which, in fact,  
+has the rudiments of support for an arbitrary number of forks).  
+However, most other file systems do not support such a structure. When  
+presented with a Mac file, a file system such as UFS or NTFS will  
+simply accept the data fork and discard the resource fork. To get  
+around this problem, Apple has created the Apple Double mechanism for  
+interfacing with FSs without fork support. Apple Double splits a forked
+
+Mac file into two files, putting the data fork into a file with the  
+original name, and the resource fork into another file with the same  
+name prefixed by &quot;._&quot;.
+
+So what you see is the side-effect of accessing an HFS+ volume through  
+AppleDouble from a file system which doesn't support forks. If you find
+
+that confusing, turn off the display of hidden and system files in  
+WinSCP (ctrl-alt-H)
+
+&gt;<i> Is it safe to delete these files
+</I>
+For files residing on non-HFS volumes, such as FAT32 or NTFS under  
+Windows, yes. For files residing on an HFS+ volume (Mac), it depends.  
+Many documents have no resource fork (or 0 length resource fork). Some  
+documents contain in the resource fork non-essential data, such as the  
+state of text documents or previews of JPEG images. Deleting this stuff
+
+won't make much of a difference. However, some applications and other  
+resources store crucial data in the resource fork. (For instance, the  
+vector data of Mac TrueType fonts is stored in the sfnt resource in the
+
+resource fork.) Deleting the ._ file in this case will destroy the  
+original.
+
+So the safe answer is: You may delete the ._ files which have been  
+copied over on the Windows disks -- unless you ever plan to copy them  
+back to a Mac disk. You shouldn't delete the ._ files on any Mac volume
+
+accessed under another operating system.
+
+For more information on data/resource forks, read the respective  
+chapters in Inside Mac: Toolbox Essentials, and Inside Mac: More  
+Toolbox.
+
+&lt;<A HREF="http://developer.apple.com/documentation/mac/Toolbox/Toolbox">http://developer.apple.com/documentation/mac/Toolbox/Toolbox</A> 
+-17.html#HEADING17-0&gt;
+&lt;<A HREF="http://developer.apple.com/documentation/mac/MoreToolbox/MoreToolbox">http://developer.apple.com/documentation/mac/MoreToolbox/MoreToolbox</A> 
+-11.html#HEADING11-0&gt;
+
+For more information on HFS+, read Apple Tech Note 1150
+
+&lt;<A HREF="http://developer.apple.com/technotes/tn/tn1150.html">http://developer.apple.com/technotes/tn/tn1150.html</A>&gt;
+
+
+&lt;0x0192&gt;
+
+_______________________________________________
+X-Unix mailing list
+<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+
+Listmom is trying to clean out his closets! Vintage Mac and random
+stuff:
+         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001827.html">[X-Unix] Strange Files , .DS_Store, ._c.zip  Etc...
+</A></li>
+	<LI>Next message: <A HREF="001830.html">[X-Unix] E-mail server
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1828">[ date ]</a>
+              <a href="thread.html#1828">[ thread ]</a>
+              <a href="subject.html#1828">[ subject ]</a>
+              <a href="author.html#1828">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

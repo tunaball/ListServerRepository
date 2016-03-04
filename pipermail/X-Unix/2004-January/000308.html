@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Postfix howto
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Postfix%20howto&In-Reply-To=list-10075261%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000297.html">
+   <LINK REL="Next"  HREF="000319.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Postfix howto</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Postfix%20howto&In-Reply-To=list-10075261%40mail.ninewire.com"
+       TITLE="[X-Unix] Postfix howto">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Mon Jan  5 09:35:37 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000297.html">[X-Unix] Postfix howto
+</A></li>
+        <LI>Next message: <A HREF="000319.html">[X-Unix] Postfix howto
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#308">[ date ]</a>
+              <a href="thread.html#308">[ thread ]</a>
+              <a href="subject.html#308">[ subject ]</a>
+              <a href="author.html#308">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jan 5, 2004, at 2:11 pm, Kuestner, Bjoern wrote:
+&gt;<i>
+</I>&gt;<i> I will look into procmail. It sounds helpful from what you describe 
+</I>&gt;<i> and the
+</I>&gt;<i> FAQ:
+</I>&gt;<i> <A HREF="http://www.iki.fi/era/procmail/mini-faq.html">http://www.iki.fi/era/procmail/mini-faq.html</A>
+</I>
+I also like maildrop, which performs the same function. 
+&lt;<A HREF="http://www.flounder.net/~mrsam/maildrop/">http://www.flounder.net/~mrsam/maildrop/</A>&gt;
+I find the syntax very easy to use. My .mailfilter file looks like this:
+
+   logfile &quot;$HOME/maildrop.log&quot;
+   MAILDIR=&quot;$HOME/.Maildir&quot;
+
+   ## VARIOUS MAILING LISTS
+   ##
+   #...
+   if ( /^List-Id: &lt;X-Unix.lists.themacintoshguy.com&gt;/ )
+   {
+     log &quot;-------------------------------------------------- Unix For OS 
+X List &quot;
+     to &quot;${MAILDIR}/.Geek.Apple.Lists.Unix For OS X&quot;
+   }
+
+   # If not to a mailing list then test for Bogosity
+   #
+
+   # Call Bogofilter with the following options:
+   #   -e - embed with MTA - exit with code 0 even if the mail is not 
+spam
+   #   -p - passthrough - take on STDIN, pass to STDOUT, add X-Bogosity 
+header
+   #   -f - select Fisher spam calculation method (default).
+   #   -v - set debug verbosity level.
+   #
+   xfilter &quot;bogofilter -e -p -f&quot;
+     # NB: the following options are mentioned in the Bogofilter 
+documentation,
+     #     but we consider the undesirable:
+     #     -u - classify message as spam or non-spam and register 
+accordingly.
+     #     -l - write messages to syslog.
+
+   # if spam, file this into the &quot;spam-bogofilter&quot; folder and exit
+   # processing
+   if (/^X-Bogosity: (Spam|Yes)/)
+   to &quot;${MAILDIR}/.Junk.Possible&quot;
+   #...
+
+   # DEFAULT MAILDIR - DELIVER EVERYTHING ELSE HERE
+   #
+   log &quot;---------------------------------------------------------------- 
+INBOX&quot;
+   to &quot;${MAILDIR}&quot;
+
+Hope you find this useful,
+
+Stroller.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000297.html">[X-Unix] Postfix howto
+</A></li>
+	<LI>Next message: <A HREF="000319.html">[X-Unix] Postfix howto
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#308">[ date ]</a>
+              <a href="thread.html#308">[ thread ]</a>
+              <a href="subject.html#308">[ subject ]</a>
+              <a href="author.html#308">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

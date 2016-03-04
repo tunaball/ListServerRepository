@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> A Tale of Woe and Recovery
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=A%20Tale%20of%20Woe%20and%20Recovery&In-Reply-To=list-5105113%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000877.html">
+   <LINK REL="Next"  HREF="000879.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>A Tale of Woe and Recovery</H1>
+    <B>Charles Martin</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=A%20Tale%20of%20Woe%20and%20Recovery&In-Reply-To=list-5105113%40mail.ninewire.com"
+       TITLE="A Tale of Woe and Recovery">chasm at mac.com
+       </A><BR>
+    <I>Wed Feb 26 00:15:53 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000877.html">[X Newbies] Where did my Classic go??
+</A></li>
+        <LI>Next message: <A HREF="000879.html">[X Newbies] Where did my Classic go??
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#878">[ date ]</a>
+              <a href="thread.html#878">[ thread ]</a>
+              <a href="subject.html#878">[ subject ]</a>
+              <a href="author.html#878">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hey folks, I hope you won't mind me sharing my afternoon adventures on 
+a couple of these lists. Today, for only the second time in my history 
+with OS X (three years already?!), I accidentally trashed my machine. A 
+few hours later, I was back. Read on if you want to know why. Hopefully 
+it will help others.
+
+The system in question here is an iMac G3 700 happily running 10.2.4. I 
+was doing a little video processing on this thing (I have other 
+machines, some better suited for the task, but I love this little 
+thing!). Specifically, I was taking videos I had downloaded off the net 
+(music videos -- get your mind out of the gutter! :) and converting 
+them to MPEG-1 to use in a compilation VCD I was going to make.
+
+One particularly exotic DiVX-based AVI file stubbornly refused to 
+submit to the charms of any of my usual bag of tricks. I went to 
+versiontracker.com and tried various searches for tools I didn't 
+already have and came up with one: ConvertToQt 1.1b.
+
+I ran it and it looked like was processing my AVI file. And looked ... 
+and looked. After ten minutes (the original AVI had a running time of 
+about 1 minute), I force-quit the app.
+
+**HERE IS WHERE I MADE MY BIG MISTAKE:**
+
+What I did *not* notice at the time I force-quit the app was that it 
+had eaten EVERY BIT of my available hard drive space (almost 13 gig!) 
+in trying to convert the AVI file. What I *should* have done after 
+force-quitting a conversion app (any conversion-type app, they all 
+require temp files) is hunt for the invisible &quot;temp&quot; file that was 
+created.
+
+Instead of being all smart like that, I didn't notice it and carried on 
+working on other stuff. I quickly noticed that when I tried to 
+download, I got an error. ITunes couldn't encode any songs at all -- 
+some kind of &quot;disk full&quot; message?? WTF?? Then I noticed I couldn't save 
+ANYTHING AT ALL. Oh boy. Don't panic.
+
+So I restarted the machine. Oh dear. It booted, but now not only were 
+my Finder prefs completely messed up (my Dock was TOTALLY different!), 
+I finally noticed I had only 186MB of free drive space. That's not 
+enough to safely run OS X.
+
+I rebooted from a OS 9.2 custom CD I had made with DiskWarrior on it. 
+It found a very corrupted directory and fixed it over the course of 
+about an hour. Whew!
+
+But I was not out of the woods yet. My user prefs were still hosed, and 
+I still had something eating up all my free HD space. If I tried to run 
+any system-based service from my HD (like Find File for example) it 
+would cause the Finder to quit. Bad.
+
+I banged my head for quite a while trying to figure out how to find and 
+delete a giant invisible temp file without using any applications. 
+Finally I decided to see if the &quot;View&quot; settings in the Finder could be 
+changed. Oh good, they could. I changed them to show all folder sizes. 
+Oh yeah, that lead me right to the problem area. My user folder, my 
+video projects folder. Well duh. Still couldn't actually see the 
+offending file, though.
+
+I trashed the folder the video project had been in (I had a backup from 
+before I had started this so I wasn't losing anything important). 
+Voila! 13 gigs of HD space magically reappeared!
+
+I rebooted and ran fsck and &quot;repair permissions.&quot; Minor stuff to fix on 
+both. Okay, I'm up and running again, but what about my totally hosed 
+Finder and Apple system prefs?
+
+Brainstorm! I had recently backed up these exact files (along with the 
+rest of my user prefs) using a simple Applescript called (cunningly) 
+&quot;Back up user prefs 2.3.5.&quot; I located the CD I had burned with those 
+files on it, but instead of doing a full restore (since the backup was 
+about two weeks old), I opted to manually replace the affected 
+com.apple.&lt;service or app name&gt;.plist files by hand. I replaced 
+com.apple.finder.plist and about half a dozen others (such as 
+com.apple.internetconfig.plist, com.apple.dock.plist etc), rebooted and 
+... WOW! Right back to where I started.
+
+No system reinstall required. Whew!!
+
+So, what have we learned today?
+
+1. Beta software can sometimes bite you in the butt. It was really my 
+fault that things got as bad as they did, but ConvertToQt is off my 
+list of tools for good. Any app that can write temp files into other 
+files' space has no place on my Mac.
+
+2. Keep regular backups of your personal projects!! Can't repeat that 
+often enough.
+
+3. Back up your user prefs too. Saves a lot of time and may prevent a 
+system reinstall.
+
+4. DON'T PANIC. I would have lost a LOT more data if I had panicked.
+
+Glad to be back,
+Chas
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000877.html">[X Newbies] Where did my Classic go??
+</A></li>
+	<LI>Next message: <A HREF="000879.html">[X Newbies] Where did my Classic go??
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#878">[ date ]</a>
+              <a href="thread.html#878">[ thread ]</a>
+              <a href="subject.html#878">[ subject ]</a>
+              <a href="author.html#878">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

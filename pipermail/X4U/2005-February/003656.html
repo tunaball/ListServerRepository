@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] OSX Server Permissions help
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20OSX%20Server%20Permissions%20help&In-Reply-To=718c97c51283baec70d7390970e601c0%40myrealbox.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003616.html">
+   <LINK REL="Next"  HREF="003618.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] OSX Server Permissions help</H1>
+    <B>Brett Conlon</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20OSX%20Server%20Permissions%20help&In-Reply-To=718c97c51283baec70d7390970e601c0%40myrealbox.com"
+       TITLE="[X4U] OSX Server Permissions help">brett_conlon at sonymusic.com.au
+       </A><BR>
+    <I>Sun Feb 27 18:16:40 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003616.html">[X4U] OSX Server Permissions help
+</A></li>
+        <LI>Next message: <A HREF="003618.html">[X4U] Firefox 1.0.1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3656">[ date ]</a>
+              <a href="thread.html#3656">[ thread ]</a>
+              <a href="subject.html#3656">[ subject ]</a>
+              <a href="author.html#3656">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hiya,
+
+Thanks for the response.
+
+Under OS9 I had set the Base Arts folder to:
+
+Owner: BASE ARTS (group) with read/write
+Group: CREATIVE with read only
+Others: None
+
+However under OSX Server I'm unable to save the BASEARTS group in 
+Workgroup Manager as the owner because it says it doesn't recognise the 
+user - I guess coz it's a Group not a User! This makes sense as in the 
+Finder I don't have the base arts group to select from in the Owner 
+pull-down menu either.
+
+This is why I suggested in my email below that I was setting group to BASE 
+ARTS with read/write and Others to read only.
+
+How do other achieve this task?
+
+I'm reading some of the links you gave also, thanks.
+
+Cheers,
+
+Crwxolds
+
+
+
+
+Stroller &lt;<A HREF="../../../mailman/listinfo/x4u.html">MacMonster at myrealbox.com</A>&gt;
+
+Don't worry - it sounds like you are going about things in pretty much 
+the right way.
+And if you do find you can't get the permissions you want from the GUI, 
+it's easy enough to fix things from the terminal.
+
+The thing that I notice from your posting is that you're setting the 
+permissions so that the group is BASE ARTS - to give CREATIVE read 
+permissions you also have to give that to everyone. If you were to make 
+BASE ARTS the owner, you could give CREATIVE group read permissions &amp; 
+no permissions to anyone else.
+
+A quick Google for &quot;Unix file permissions&quot; might be in order here 
+&lt;<A HREF="http://tinyurl.com/6ffzd">http://tinyurl.com/6ffzd</A>&gt;.
+Note that &quot;execute permission on a directory means you can list the 
+files in that directory&quot; &lt;<A HREF="http://tinyurl.com/5b2sl">http://tinyurl.com/5b2sl</A>&gt; - owner/group/other 
+needs execute permissions on directories that they need to read from, 
+even if you don't want them to be able to execute the contents.
+
+Stroller.
+
+
+
+On Feb 25, 2005, at 6:52 am, Brett Conlon wrote:
+
+&gt;<i> Further to the note below, I have just discovered that if the owner of 
+</I>&gt;<i> the
+</I>&gt;<i> volume is set to Administrator (my login account name)rather than 
+</I>&gt;<i> &quot;root&quot;
+</I>&gt;<i> (whic is the default) and I save it then I'm able to press the &quot;Copy&quot;
+</I>&gt;<i> button to apply to enclosed items.
+</I>&gt;<i>
+</I>&gt;<i> However, I still don't know if I'm going about this the right way.... 
+</I>&gt;<i> &lt;8-}
+</I>&gt;<i>
+</I>&gt;&gt;<i> For example, I have a &#8220;Base Arts&#8221; folder (that houses all our 
+</I>&gt;&gt;<i> templates)
+</I>&gt;&gt;<i> and the group CREATIVE has read only permissions but the BASE ARTS 
+</I>&gt;&gt;<i> EDITORS
+</I>&gt;&gt;<i> group needs read/write access.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> When I&#8217;m inside Workgroup Manager do I set the group to BASE ARTS 
+</I>&gt;&gt;<i> EDITORS
+</I>&gt;&gt;<i> with read/write permissions then leave Others to Read Only or is 
+</I>&gt;&gt;<i> there a
+</I>&gt;&gt;<i> more appropriate way?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Also, if I was to set this parent folder called &#8220;Base Arts&#8221; to Group: 
+</I>&gt;&gt;<i> BASE
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> ...
+</I>&gt;&gt;<i> I&#8217;m concerned I&#8217;m gunna mess it up doing it this way but I have to be 
+</I>&gt;&gt;<i> able
+</I>&gt;&gt;<i> to change privileges to enclosed items otherwise the editors are not 
+</I>&gt;&gt;<i> going
+</I>&gt;&gt;<i> to have read/write access to the folders they need, right?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Further to this I just discovered that our partition called &#8220;DESIGN 
+</I>&gt;&gt;<i> FILE
+</I>&gt;&gt;<i> SHARING&#8221; (where we do all of our shared work) is set to Group: 
+</I>&gt;&gt;<i> CREATIVE,
+</I>&gt;&gt;<i> read/write (as it was set in Workgroup Manager) but all the sub 
+</I>&gt;&gt;<i> folders
+</I>&gt;&gt;<i> are group: unknown , Read Only. There are hundreds of files/folders in
+</I>&gt;&gt;<i> this volume that I need to be able to change all together to the right
+</I>&gt;&gt;<i> setting.
+</I>
+
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003616.html">[X4U] OSX Server Permissions help
+</A></li>
+	<LI>Next message: <A HREF="003618.html">[X4U] Firefox 1.0.1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3656">[ date ]</a>
+              <a href="thread.html#3656">[ thread ]</a>
+              <a href="subject.html#3656">[ subject ]</a>
+              <a href="author.html#3656">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

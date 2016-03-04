@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Spotlight Usage
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BG4%5D%20Spotlight%20Usage&In-Reply-To=%3C262AB617-C787-4C69-AEC5-034A7E9D7A08%40pacbell.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="019320.html">
+   <LINK REL="Next"  HREF="019322.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[G4] Spotlight Usage</H1>
+    <B>B G</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BG4%5D%20Spotlight%20Usage&In-Reply-To=%3C262AB617-C787-4C69-AEC5-034A7E9D7A08%40pacbell.net%3E"
+       TITLE="[G4] Spotlight Usage">briang113 at pacbell.net
+       </A><BR>
+    <I>Sun Mar 14 20:11:55 PDT 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="019320.html">[G4] Spotlight Usage
+</A></li>
+        <LI>Next message: <A HREF="019322.html">[G4] Spotlight Usage
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19321">[ date ]</a>
+              <a href="thread.html#19321">[ thread ]</a>
+              <a href="subject.html#19321">[ subject ]</a>
+              <a href="author.html#19321">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Here is a brief synopsis of spotlight.
+
+
+Spotlight will begin indexing any volume as soon as it is mounted,  
+with certain exceptions: CDs, DVDs, and network-attached or shared  
+volumes are not indexed when mounted. Volume means either a hard drive  
+with a single partition, or a specific partition on a hard drive with  
+multiple partitions.
+
+You can under Tiger stop an indexing from happening but you may end up  
+with some anomalous data. this has been corrected under leopard
+
+
+1. Let indexing begin on the volume.
+
+2. Open Terminal, located in the Macintosh HD &gt; Applications &gt;  
+Utilities folder.
+
+3. At the Terminal prompt, type the following command, exactly as  
+written:
+	
+		sudo mdutil -i off /path_to_volume
+where /path_to_volume is the path of the volume being indexed.
+
+4. Press Return.
+
+5. If prompted for a Password, type your Admin password, then press  
+Return.
+You will receive the response:
+
+	&#8226;/path_to_volume/: Indexing disabled for volume.
+under Tiger or
+
+	 /path_to_volume: Indexing disabled.
+under Leopard.
+
+Spotlight will immediately cease to index the specified volume.
+
+6. If you are using Leopard, skip to step 9.
+          Otherwise, erase the partial index created by Spotlight  
+under Tiger. At the Terminal
+
+           prompt, type the following command, exactly as written:
+
+	             sudo mdutil -E /path_to_volume
+     where /path_to_volume is the path of the volume being indexed. [1]
+
+7. Press Return.
+
+8. If prompted for a Password, type your Admin password, then press  
+Return.
+          You will receive the response:
+
+	        /path_to_volume/: Volume index removed.
+
+
+9.  At the Terminal prompt, type exit then press Return.
+
+10. Quit (Command-Q) Terminal.
+
+If you use the volume frequently just leave it mounted all the time
+
+
+
+On Mar 14, 2010, at 5:36 PM, Harry Freeman wrote:
+
+&gt;<i> Greetings All
+</I>&gt;<i>
+</I>&gt;<i> I'm wondering if someone can give me a clue?
+</I>&gt;<i> Every time that I index one of my external USB drives, the next time  
+</I>&gt;<i> that I load that disk onto the desktop
+</I>&gt;<i> Spotlight doesn't seam to remember any of the items which were  
+</I>&gt;<i> indexed.
+</I>&gt;<i> I'm indexing a 750Gb external USB drive, when I'm done the contents  
+</I>&gt;<i> will be available,
+</I>&gt;<i> however if I eject the drive then remount a few days later, it knows  
+</I>&gt;<i> nothing of the contents.
+</I>&gt;<i>
+</I>&gt;<i> Am I doing something that I shouldn't or do I have to keep it  
+</I>&gt;<i> mounted forever?
+</I>&gt;<i>
+</I>&gt;<i> Cheers
+</I>&gt;<i>
+</I>&gt;<i> Harry
+</I>&gt;<i> San Jose, CA
+</I>&gt;<i> ---------------------------------------------------- 
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> G4 mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">G4 at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">http://listserver.themacintoshguy.com/mailman/listinfo/g4</A>
+</I>
+</PRE>
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="019320.html">[G4] Spotlight Usage
+</A></li>
+	<LI>Next message: <A HREF="019322.html">[G4] Spotlight Usage
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19321">[ date ]</a>
+              <a href="thread.html#19321">[ thread ]</a>
+              <a href="subject.html#19321">[ subject ]</a>
+              <a href="author.html#19321">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

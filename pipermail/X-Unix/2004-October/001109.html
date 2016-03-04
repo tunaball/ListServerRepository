@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] An interesting Journal problem and fix
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20An%20interesting%20Journal%20problem%20and%20fix&In-Reply-To=4164E065.2010701%40underwares.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001108.html">
+   <LINK REL="Next"  HREF="001110.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] An interesting Journal problem and fix</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20An%20interesting%20Journal%20problem%20and%20fix&In-Reply-To=4164E065.2010701%40underwares.org"
+       TITLE="[X-Unix] An interesting Journal problem and fix">magill at mcgillsociety.org
+       </A><BR>
+    <I>Thu Oct  7 11:26:25 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001108.html">[X-Unix] Networking when booting OS X in text mode
+</A></li>
+        <LI>Next message: <A HREF="001110.html">[X-Unix] Hello list...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1109">[ date ]</a>
+              <a href="thread.html#1109">[ thread ]</a>
+              <a href="subject.html#1109">[ subject ]</a>
+              <a href="author.html#1109">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>While doing some testing, I recently had a disk partition develop a 
+problem with the Journal file.
+
+During startup, automountd would not mount the drive, generating a 
+typical &quot;informative&quot; message during startup:
+
+diskarbitrationd[90]: unable to mount /dev/disk1s12 (status code 
+0x00000001).
+
+Disk Utility could see the disk and repair it with no problems. 
+(Indicating that the data and HFS+ structures on the disk were fine.)
+
+However if I would then try to mount it with Disk Utility, the mount 
+would fail and I would get:
+
+kernel: jnl: replay_journal: from: 2300416 to: 2608640 (joffset 
+0xc0a0c4000)
+kernel: jnl: replay_journal: bad block list header @ 0x237e00 (checksum 
+0x0 != 0xfffff7eb)
+kernel: jnl: journal_open: Error replaying the journal!
+kernel: hfs: early jnl init: failed to open/create the journal (retval 
+0).
+
+Booting from the Drive 10 (v1.1.2) CD, and letting it &quot;do its thing,&quot; 
+fixed the Journal file and allowed the partition to again be mounted. 
+(Drive 10 doesn't report very much information about what it found and 
+fixed other than the generic &quot;found and fixed&quot; report.)
+
+Notes:
+Disk Warrior 3.0 could not do anything with the partition as it relies 
+on the OS to do the mount.
+
+Since Drive 10 fixed the problem, I didn't get a chance to see if 
+TechTool Pro 4 would also fix it, but since both are MicroMat products, 
+one assumes that it would also.
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001108.html">[X-Unix] Networking when booting OS X in text mode
+</A></li>
+	<LI>Next message: <A HREF="001110.html">[X-Unix] Hello list...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1109">[ date ]</a>
+              <a href="thread.html#1109">[ thread ]</a>
+              <a href="subject.html#1109">[ subject ]</a>
+              <a href="author.html#1109">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

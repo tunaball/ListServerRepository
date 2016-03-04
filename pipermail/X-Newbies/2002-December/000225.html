@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Newbies] Can't save to etc directory
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20Can%27t%20save%20to%20etc%20directory&In-Reply-To=list-4022186%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000226.html">
+   <LINK REL="Next"  HREF="000227.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Newbies] Can't save to etc directory</H1>
+    <B>Eugene Lee</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20Can%27t%20save%20to%20etc%20directory&In-Reply-To=list-4022186%40mail.ninewire.com"
+       TITLE="[X Newbies] Can't save to etc directory">list-themacintoshguy at fsck.net
+       </A><BR>
+    <I>Mon Dec  9 03:01:09 PST 2002</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000226.html">Problem with printer
+</A></li>
+        <LI>Next message: <A HREF="000227.html">How to delete files with Terminal
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#225">[ date ]</a>
+              <a href="thread.html#225">[ thread ]</a>
+              <a href="subject.html#225">[ subject ]</a>
+              <a href="author.html#225">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Wed, Dec 18, 2002 at 09:20:48PM +0200, Cybersmith wrote:
+:<i> 
+</I>:<i> I really am a newbie running 10.2.2, and I need some assistance with both
+</I>:<i> the terminal and Apache. I am attempting to configure my httpd.conf file on
+</I>:<i> Apache but the system will not allow me to save any file in the /etc/
+</I>:<i> directory. I am able to save a copy of the file elsewhere on my drive.
+</I>:<i> I presume that the reason I cannot save to the etc directory is that the
+</I>:<i> user under which I have logged in does not have write privileges for that
+</I>:<i> directory.
+</I>:<i> I only have two users both of which are admin users, and neither of them
+</I>:<i> will allow me to make changes to this file.
+</I>:<i> What can I do to solve this situation?
+</I>
+Files in the /etc directory can only be modified by the admin user
+called &quot;root&quot;.  To edit those files, you must run an editor as &quot;root&quot;.
+The quick solution is &quot;sudo&quot;.
+
+	cd /etc
+	sudo pico -w httpd.conf
+
+
+-- 
+Eugene Lee
+<A HREF="../../../mailman/listinfo/x-newbies.html">eugene at fsck.net</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000226.html">Problem with printer
+</A></li>
+	<LI>Next message: <A HREF="000227.html">How to delete files with Terminal
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#225">[ date ]</a>
+              <a href="thread.html#225">[ thread ]</a>
+              <a href="subject.html#225">[ subject ]</a>
+              <a href="author.html#225">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

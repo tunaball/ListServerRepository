@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] removing fink
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20removing%20fink&In-Reply-To=C53874E6-E412-4DFA-8D5A-0F3D1374B4B6%40eclimb.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002599.html">
+   <LINK REL="Next"  HREF="002602.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] removing fink</H1>
+    <B>Alexandre Gauthier</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20removing%20fink&In-Reply-To=C53874E6-E412-4DFA-8D5A-0F3D1374B4B6%40eclimb.net"
+       TITLE="[X-Unix] removing fink">supernaut at underwares.org
+       </A><BR>
+    <I>Thu Mar 16 19:19:22 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002599.html">[X-Unix] removing fink
+</A></li>
+        <LI>Next message: <A HREF="002602.html">[X-Unix] removing fink
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2600">[ date ]</a>
+              <a href="thread.html#2600">[ thread ]</a>
+              <a href="subject.html#2600">[ subject ]</a>
+              <a href="author.html#2600">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I really wish people should stop using --recursive --force in order to
+remove files =/
+It's error prone... what if you mistype 'rm -rf ./.profile' as './.
+profile' or './ .profile'?
+
+Craig Hoffman wrote:
+&gt;<i> Thanks everybody. That worked great.
+</I>&gt;<i> - Craig
+</I>&gt;<i> On Mar 16, 2006, at 7:07 PM, Philip J Robar wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Mar 16, 2006, at 5:14 PM, Eric F Crist wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> As soon as you open your terminal window, type:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> % rm -rf ./.profile
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Note, all those periods need to be there.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> There's no need for the &quot;-r&quot;, which causes rm(1) to recurse down a
+</I>&gt;&gt;<i> directory structure.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> You shouldn't need the &quot;-f&quot; as Craig should own the file.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The &quot;./&quot; isn't needed as &quot;.profile&quot; is a perfectly legal and
+</I>&gt;&gt;<i> unambiguous relative path name.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> More to the point wiping out the whole .profile file is gross over
+</I>&gt;&gt;<i> kill, as there may be a bunch of non-fink related stuff in it. Craig
+</I>&gt;&gt;<i> should be able to just remove the line that sets the SHELL
+</I>&gt;&gt;<i> environment variable. I'm pretty sure that the fink documentation
+</I>&gt;&gt;<i> covers what changes it or you make to your UNIX start up files.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Phil
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> X-Unix mailing list
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random
+</I>&gt;&gt;<i> stuff:
+</I>&gt;&gt;<i> <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random stuff:
+</I>&gt;<i> <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+
+-- 
+Alexandre Gauthier
+<A HREF="../../../mailman/listinfo/x-unix.html">supernaut at underwares.org</A>
+
+underwares.org
+Obscure IT knowledge Open Database
+
+The human brain operates at only 10% of its capacity. The rest is overhead for
+the operating system. 
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002599.html">[X-Unix] removing fink
+</A></li>
+	<LI>Next message: <A HREF="002602.html">[X-Unix] removing fink
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2600">[ date ]</a>
+              <a href="thread.html#2600">[ thread ]</a>
+              <a href="subject.html#2600">[ subject ]</a>
+              <a href="author.html#2600">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Copying to multiple directories
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Copying%20to%20multiple%20directories&In-Reply-To=list-11332949%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000450.html">
+   <LINK REL="Next"  HREF="000452.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Copying to multiple directories</H1>
+    <B>Philippe Casgrain</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Copying%20to%20multiple%20directories&In-Reply-To=list-11332949%40mail.ninewire.com"
+       TITLE="Copying to multiple directories">casgrain at magellan.umontreal.ca
+       </A><BR>
+    <I>Thu Mar 11 08:15:04 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000450.html">[X-Unix] Copying to multiple directories
+</A></li>
+        <LI>Next message: <A HREF="000452.html">[X-Unix] Copying to multiple directories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#451">[ date ]</a>
+              <a href="thread.html#451">[ thread ]</a>
+              <a href="subject.html#451">[ subject ]</a>
+              <a href="author.html#451">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+&quot;Kuestner, Bjoern&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">Bjoern.Kuestner at drkw.com</A>&gt; a &#233;crit :
+
+&gt;<i> Uh, ah, I don't exactly understand how Brian's solution works (it is a
+</I>&gt;<i> solution, Brian, right?), and I hesitate to run any command that I 
+</I>&gt;<i> don't
+</I>&gt;<i> understand &quot;just to find out&quot;. (c:
+</I>&gt;<i>
+</I>&gt;<i> (It's this &quot;echo&quot; that confuses me ... I would have expected something 
+</I>&gt;<i> like
+</I>&gt;<i> &quot;exec&quot; or ` `? And then there are no ' ' or &quot; &quot; afterwards for what is
+</I>&gt;<i> handed to &quot;echo&quot;?)
+</I>
+Here is Brian's command (quite clever, IMHO):
+
+	ls -d /Users/*/Library | xargs -I % echo cp fileA %
+
+This command lists all Library folders for all users (that's the first 
+part in front of the vertical pipe &quot;|&quot; character) and then sends that 
+list to xargs, which massages it to add the string &quot;cp fileA &quot; to each 
+line. Everything is then written to stdout using echo.
+
+You can run this command as-is from any terminal window, it should 
+simply produce a list of your Library folders prepended with &quot;cp fileA 
+&quot;. Which doesn't do anything; you would have to copy-paste each line 
+and execute it from the command line.
+
+If you want these commands to do anything useful, simply pipe the list 
+of commands into sh:
+
+	ls -d /Users/*/Library | xargs -I % echo cp fileA % | sh
+
+Philippe 
+
+
+This e-mail message is intended only for the named recipient(s) above and may contain information that is confidential, proprietary, privileged, and /or exempt from 
+disclosure under applicable law. If you have received this message in error, or are not he named recipient(s), please immediately notify the sender and delete this e-mail 
+message.
+ 
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000450.html">[X-Unix] Copying to multiple directories
+</A></li>
+	<LI>Next message: <A HREF="000452.html">[X-Unix] Copying to multiple directories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#451">[ date ]</a>
+              <a href="thread.html#451">[ thread ]</a>
+              <a href="subject.html#451">[ subject ]</a>
+              <a href="author.html#451">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: Repair permissions on volume with no OS?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Repair%20permissions%20on%20volume%20with%20no%20OS%3F&In-Reply-To=20050405225635.GA17287%40panix.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001706.html">
+   <LINK REL="Next"  HREF="001712.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: Repair permissions on volume with no OS?</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Repair%20permissions%20on%20volume%20with%20no%20OS%3F&In-Reply-To=20050405225635.GA17287%40panix.com"
+       TITLE="[X-Unix] Re: Repair permissions on volume with no OS?">ecrist at secure-computing.net
+       </A><BR>
+    <I>Tue Apr  5 17:45:42 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001706.html">[X-Unix] Re: Repair permissions on volume with no OS?
+</A></li>
+        <LI>Next message: <A HREF="001712.html">[X-Unix] Re: Repair permissions on volume with no OS?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1707">[ date ]</a>
+              <a href="thread.html#1707">[ thread ]</a>
+              <a href="subject.html#1707">[ subject ]</a>
+              <a href="author.html#1707">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Apr 5, 2005, at 5:56 PM, Albert Lunde wrote:
+
+&gt;&gt;<i> If you're not worried about the permissions being strict, a possible
+</I>&gt;&gt;<i> solution would be to try the following command, substituting the
+</I>&gt;&gt;<i> correct volume for what I have here:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> # sudo chmod -R 0777 /Volumes/all-my-files
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> This will set rwxrwxrwx (Read, Write, and Execute permissions on ALL
+</I>&gt;&gt;<i> files of that volume, recusively).
+</I>&gt;<i>
+</I>&gt;<i> That's a pretty big sledgehammer.  I'd be really, really, careful
+</I>&gt;<i> about trying that.
+</I>&gt;<i>
+</I>&gt;<i> It would tend to break Unix-derived software like sendmail,
+</I>&gt;<i> procmail, and Openssh sshd, which is security-minded and
+</I>&gt;<i> (properly) cares about some files being world- or group-writable.
+</I>
+If you read an earlier post, this is in regards to a data drive, not a 
+drive with all that sensitive information on it.  He's also using the 
+&quot;ignore permissions&quot; option, which essentially makes everything 0777, 
+or at the least 0111.
+
+_______________________________________________________
+Eric F Crist                  &quot;I am so smart, S.M.R.T!&quot;
+Secure Computing Networks              -Homer J Simpson
+
+</PRE>
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001706.html">[X-Unix] Re: Repair permissions on volume with no OS?
+</A></li>
+	<LI>Next message: <A HREF="001712.html">[X-Unix] Re: Repair permissions on volume with no OS?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1707">[ date ]</a>
+              <a href="thread.html#1707">[ thread ]</a>
+              <a href="subject.html#1707">[ subject ]</a>
+              <a href="author.html#1707">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

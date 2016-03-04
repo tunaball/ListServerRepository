@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] IP Aliasing + DNS gives freaky hostname.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20IP%20Aliasing%20%2B%20DNS%20gives%20freaky%20hostname.&In-Reply-To=418A1969.8080608%40ntlworld.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001283.html">
+   <LINK REL="Next"  HREF="001285.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] IP Aliasing + DNS gives freaky hostname.</H1>
+    <B>Thomas Juntunen</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20IP%20Aliasing%20%2B%20DNS%20gives%20freaky%20hostname.&In-Reply-To=418A1969.8080608%40ntlworld.com"
+       TITLE="[X-Unix] IP Aliasing + DNS gives freaky hostname.">juntunen at crc-inc.com
+       </A><BR>
+    <I>Thu Nov  4 05:15:55 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001283.html">[X-Unix] IP Aliasing + DNS gives freaky hostname.
+</A></li>
+        <LI>Next message: <A HREF="001285.html">[X-Unix] FIXED, Re: IP Aliasing + DNS gives freaky hostname.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1284">[ date ]</a>
+              <a href="thread.html#1284">[ thread ]</a>
+              <a href="subject.html#1284">[ subject ]</a>
+              <a href="author.html#1284">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 11/04/2004 06:58, &quot;Adrian Simmons&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">adrinux at ntlworld.com</A>&gt; wrote:
+
+&gt;<i> The problem I'm having is that once I have IP aliasing set up and
+</I>&gt;<i> several hosts defined in /var/named for an aliased IP my hostname
+</I>&gt;<i> becomes a list of all the hosts I've defined! Literally about six in a row.
+</I>
+You aren't doing anything wrong, that's the way DNS works. Since all those
+names resolve to the same IP address, how is the resolver to know which one
+is desired at any particular time? It can't, so it returns them all in
+alphabetical order. This usually doesn't hurt anything, but some client
+software only uses the first name returned and ignores the others, which may
+be a problem.
+
+&gt;<i> ; Hosts
+</I>&gt;<i> perlucida.dev.                        IN A     192.168.0.20
+</I>&gt;<i> contemplationspace.perlucida.dev.     IN A     192.168.0.20
+</I>&gt;<i> opprints.perlucida.dev.               IN A     192.168.0.20
+</I>&gt;<i> perlucida.perlucida.dev.              IN A     192.168.0.20
+</I>&gt;<i> watchwords.perlucida.dev.             IN A     192.168.0.20
+</I>&gt;<i> woodfordgolf.perlucida.dev.           IN A     192.168.0.20
+</I>&gt;<i> xstalbio.perlucida.dev.               IN A     192.168.0.20
+</I>
+Perhaps you should make all the subdomains aliases (CNAME records) of the
+actual domain. I don't think CNAMEs get listed the way A records do, but I'm
+not sure about that.
+
+HTH,
+Thomas Juntunen
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001283.html">[X-Unix] IP Aliasing + DNS gives freaky hostname.
+</A></li>
+	<LI>Next message: <A HREF="001285.html">[X-Unix] FIXED, Re: IP Aliasing + DNS gives freaky hostname.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1284">[ date ]</a>
+              <a href="thread.html#1284">[ thread ]</a>
+              <a href="subject.html#1284">[ subject ]</a>
+              <a href="author.html#1284">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

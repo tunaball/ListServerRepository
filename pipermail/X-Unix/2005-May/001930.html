@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Wildcard * in Pathnames 
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Wildcard%20%2A%20in%20Pathnames%20&In-Reply-To=BEA816C1.E3DC%25jerry%40ieee.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001929.html">
+   <LINK REL="Next"  HREF="001931.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Wildcard * in Pathnames </H1>
+    <B>Philip J Robar</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Wildcard%20%2A%20in%20Pathnames%20&In-Reply-To=BEA816C1.E3DC%25jerry%40ieee.org"
+       TITLE="[X-Unix] Wildcard * in Pathnames ">philip.robar at gmail.com
+       </A><BR>
+    <I>Wed May 11 22:38:18 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001929.html">[X-Unix] Wildcard * in Pathnames 
+</A></li>
+        <LI>Next message: <A HREF="001931.html">[X-Unix] Wildcard * in Pathnames 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1930">[ date ]</a>
+              <a href="thread.html#1930">[ thread ]</a>
+              <a href="subject.html#1930">[ subject ]</a>
+              <a href="author.html#1930">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On May 11, 2005, at 8:08 PM, Jerry Krinock wrote:
+
+&gt;<i> In the arguments of various commands, for example &quot;find&quot; and &quot;rm&quot;,  
+</I>&gt;<i> I would
+</I>&gt;<i> often like to match any path containing a given word with a wildcard
+</I>&gt;<i> expression like:
+</I>&gt;<i>
+</I>&gt;<i>     *Fruit*
+</I>&gt;<i>
+</I>&gt;<i> And I expect this to match _any_ pathname containing &quot;Fruit&quot;,  
+</I>&gt;<i> including:
+</I>&gt;<i>
+</I>&gt;<i>     ~/Fruit/Apple/Seeds
+</I>&gt;<i>     /Applications/Fruit/Lemon.app
+</I>&gt;<i>     /Volumes/MyHD/Fruit
+</I>&gt;<i>
+</I>&gt;<i> but it never works.  The problem seems to be that the path separator
+</I>&gt;<i> character &quot;/&quot; is beyond the scope of the wildcard &quot;*&quot;.  I can get the
+</I>&gt;<i> desired result if I search a set of wildcard expressions, such as:
+</I>&gt;<i>
+</I>&gt;<i>     /*/Fruit/*
+</I>&gt;<i>     /*/*Fruit/*
+</I>&gt;<i>     /Fruit/*/*/*/
+</I>&gt;<i>     etc.
+</I>&gt;<i>     etc.
+</I>&gt;<i>     etc.
+</I>
+     find [pathname ...] -name '*Fruit*'
+
+or
+
+     find [pathname ...] -name '*Fruit*' -exec rm {} \;
+
+
+The single quotes around the search term prevent the asterisk meta  
+characters from being expanded by the shell before the command is  
+executed. Other options (-xdev, -type) can be used to limit the  
+search to local drives and the type of files that will match the  
+pattern.
+
+&quot;{}&quot;    is the current matching pathname which gets passed to the  
+command to be run by exec.
+
+&quot;\;&quot;    the backslash keeps the semicolon from being interpreted by  
+the shell. The semicolon closes -exec and
+         its arguments.
+
+The internet is littered with 'find' tutorials.
+
+
+Phil
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001929.html">[X-Unix] Wildcard * in Pathnames 
+</A></li>
+	<LI>Next message: <A HREF="001931.html">[X-Unix] Wildcard * in Pathnames 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1930">[ date ]</a>
+              <a href="thread.html#1930">[ thread ]</a>
+              <a href="subject.html#1930">[ subject ]</a>
+              <a href="author.html#1930">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

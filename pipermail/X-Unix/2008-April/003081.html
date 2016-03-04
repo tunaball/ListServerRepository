@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How make launchd stop trying to launch nonexistent program?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20make%20launchd%20stop%20trying%20to%20launch%20nonexistent%20program%3F&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003080.html">
+   <LINK REL="Next"  HREF="003082.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How make launchd stop trying to launch nonexistent program?</H1>
+    <B>Jerry Krinock</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20make%20launchd%20stop%20trying%20to%20launch%20nonexistent%20program%3F&In-Reply-To="
+       TITLE="[X-Unix] How make launchd stop trying to launch nonexistent program?">jerry at ieee.org
+       </A><BR>
+    <I>Wed Apr 16 19:57:19 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003080.html">[X-Unix] How to get working directory in a perl script?
+</A></li>
+        <LI>Next message: <A HREF="003082.html">[X-Unix] How make launchd stop trying to launch nonexistent
+	program?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3081">[ date ]</a>
+              <a href="thread.html#3081">[ thread ]</a>
+              <a href="subject.html#3081">[ subject ]</a>
+              <a href="author.html#3081">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>To make a long story short, I've got my launchd trying to launch a  
+program that does not exist.  I get this in Console.app every 10  
+seconds:
+
+08/04/16 18:18:08 com.apple.launchd[1]  
+(com.example.BetterAuthorizationSample[1146]) posix_spawnp(&quot;/Library/ 
+PrivilegedHelperTools/com.example.BetterAuthorizationSample&quot;, ...): No  
+such file or directory
+08/04/16 18:18:08 com.apple.launchd[1]  
+(com.example.BetterAuthorizationSample[1146]) Exited with exit code: 1
+08/04/16 18:18:08 com.apple.launchd[1]  
+(com.example.BetterAuthorizationSample) Throttling respawn: Will start  
+in 10 seconds
+
+I want to stop this.  Killing the program which requested the launch  
+does not help; apparently launchd is doing this repeatedly under its  
+own power.  I commanded launchctl to 'list', and found what looked  
+like the offending process label which was  
+&quot;0x112e20.BetterAuthorizat&quot;.  That's a rather strange label but it is  
+correct, because if I mis-spell it in a command to launchctl, I get  
+&quot;No such process&quot;, but if I spell it exactly like that, it &quot;takes&quot; it.
+
+This command:
+
+     launchctl stop 0x112e20.BetterAuthorizat
+
+had no effect.  This command:
+
+     launchctl remove 0x112e20.BetterAuthorizat
+
+removed it from 'launchctl list' output, but did not stop the  
+attempted launch every 10 seconds.  I don't see any other ideas in man  
+launchctl.  Log-out/in does not stop it.  Only a restart will stop the  
+repeated attempted launching.
+
+Restarts were for Mac OS 9, though.  Does anyone know the smart way to  
+stop this?
+
+Thanks,
+
+Jerry
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003080.html">[X-Unix] How to get working directory in a perl script?
+</A></li>
+	<LI>Next message: <A HREF="003082.html">[X-Unix] How make launchd stop trying to launch nonexistent
+	program?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3081">[ date ]</a>
+              <a href="thread.html#3081">[ thread ]</a>
+              <a href="subject.html#3081">[ subject ]</a>
+              <a href="author.html#3081">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

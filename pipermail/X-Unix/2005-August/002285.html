@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] script: setting directory ownership to the name of that
+ directory ?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20script%3A%20setting%20directory%20ownership%20to%20the%20name%20of%20that%0A%20directory%20%3F&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="002286.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] script: setting directory ownership to the name of that
+ directory ?</H1>
+    <B>macosxforme</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20script%3A%20setting%20directory%20ownership%20to%20the%20name%20of%20that%0A%20directory%20%3F&In-Reply-To="
+       TITLE="[X-Unix] script: setting directory ownership to the name of that
+ directory ?">macosxforme at gmail.com
+       </A><BR>
+    <I>Sun Aug 14 05:17:08 PDT 2005</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="002286.html">[X-Unix] script: setting directory ownership to the name of that
+	directory ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2285">[ date ]</a>
+              <a href="thread.html#2285">[ thread ]</a>
+              <a href="subject.html#2285">[ subject ]</a>
+              <a href="author.html#2285">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I am certain that this is easy for most of you, and probably rather basic...
+
+I have a base folder/directory, and within it, will be a long list (800 or
+so) of directories.
+
+Each directory will bear the name of a user. So, the user will already exist
+on the system (OS X Server, not client)
+
+What I need to do, is read the listing of those folders, and set the owner
+of each directory to be the name of the directory itself - ie:
+chown admin-name:$dirname $dirname   ... ?
+
+I've been fumbling with this for a couple days...
+
+I can do
+ls -l | awk '{print $9}'
+
+(or, could use: basename )
+but how do I store that value, and then use the stored value for chown...  ?
+
+grumble... 
+
+getting the name of each directory and for each directory setting owner (ie:
+chown admin:directoryname directoryname
+and then doing the same on the next directory, etc.
+
+such that
+
+drw-rw-r--    2 admin  usera     68 Aug 13 22:24 usera
+drw-rw-r--    2 admin  userb     68 Aug 13 18:04 userb
+
+
+Any and all input welcome and appreciated, TIA
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="002286.html">[X-Unix] script: setting directory ownership to the name of that
+	directory ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2285">[ date ]</a>
+              <a href="thread.html#2285">[ thread ]</a>
+              <a href="subject.html#2285">[ subject ]</a>
+              <a href="author.html#2285">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Multiple daily run output emails
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Multiple%20daily%20run%20output%20emails&In-Reply-To=7097bd8c0604101300x4d33c37bt3b3a6acb346e62fc%40mail.gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002635.html">
+   <LINK REL="Next"  HREF="002637.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Multiple daily run output emails</H1>
+    <B>Charles Howse</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Multiple%20daily%20run%20output%20emails&In-Reply-To=7097bd8c0604101300x4d33c37bt3b3a6acb346e62fc%40mail.gmail.com"
+       TITLE="[X-Unix] Multiple daily run output emails">chowse at charter.net
+       </A><BR>
+    <I>Mon Apr 10 21:07:02 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002635.html">[X-Unix] Multiple daily run output emails
+</A></li>
+        <LI>Next message: <A HREF="002637.html">[X-Unix] OT: Luray, TN
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2636">[ date ]</a>
+              <a href="thread.html#2636">[ thread ]</a>
+              <a href="subject.html#2636">[ subject ]</a>
+              <a href="author.html#2636">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Apr 10, 2006, at 3:00 PM, Wing Wong wrote:
+
+&gt;<i> On 4/10/06, Charles Howse &lt;<A HREF="../../../mailman/listinfo/x-unix.html">chowse at charter.net</A>&gt; wrote:
+</I>&gt;&gt;<i> Hi,
+</I>&gt;&gt;<i> I configured /etc/defaults/periodic.conf to email the outputs of the
+</I>&gt;&gt;<i> periodic stuff to me.
+</I>&gt;&gt;<i> The only changes I made were to add my user name to the daily_output
+</I>&gt;&gt;<i> variables.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Sometimes, but not always, I get 2 daily run outputs!
+</I>&gt;&gt;<i> I keep msgs for a month only, and on 4/6, 4/7, and today, I got 2  
+</I>&gt;&gt;<i> msgs.
+</I>&gt;<i>
+</I>&gt;<i> What configuration lines/entries are you putting in periodic.conf?
+</I>
+[<A HREF="../../../mailman/listinfo/x-unix.html">charles at larry</A>:~]$ cat /etc/defaults/periodic.conf
+#!/bin/sh
+#
+# This is defaults/periodic.conf - a file full of useful variables that
+# you can set to change the default behaviour of periodic jobs on your
+# system.  You should not edit this file!  Put any overrides into one  
+of the
+# $periodic_conf_files instead and you will be able to update these  
+defaults
+# later without spamming your local configuration information.
+#
+# The $periodic_conf_files files should only contain values which  
+override
+# values set in this file.  This eases the upgrade path when defaults
+# are changed and new features are added.
+#
+# $FreeBSD: src/etc/defaults/periodic.conf,v 1.7.2.8 2001/07/28  
+11:44:22 brian Exp $
+#
+
+# What files override these defaults ?
+periodic_conf_files=&quot;/etc/periodic.conf /etc/periodic.conf.local&quot;
+
+# periodic script dirs
+local_periodic=&quot;/usr/local/etc/periodic&quot;
+
+
+# Daily options
+
+# These options are used by periodic(8) itself to determine what to do
+# with the output of the sub-programs that are run, and where to send
+# that output.
+#
+daily_output=charles                    # user or /file
+daily_show_success=&quot;YES&quot;                                # scripts  
+returning 0
+daily_show_info=&quot;YES&quot;                                   # scripts  
+returning 1
+daily_show_badconfig=&quot;NO&quot;                               # scripts  
+returning 2
+
+
+# Weekly options
+
+# These options are used by periodic(8) itself to determine what to do
+# with the output of the sub-programs that are run, and where to send
+# that output.
+#
+weekly_output=charles                   # user or /file
+weekly_show_success=&quot;YES&quot;                               # scripts  
+returning 0
+weekly_show_info=&quot;YES&quot;                                  # scripts  
+returning 1
+weekly_show_badconfig=&quot;NO&quot;                              # scripts  
+returning 2
+
+
+# Monthly options
+
+# These options are used by periodic(8) itself to determine what to do
+# with the output of the sub-programs that are run, and where to send
+# that output.
+#
+monthly_output=charles                  # user or /file
+monthly_show_success=&quot;YES&quot;                              # scripts  
+returning 0
+monthly_show_info=&quot;YES&quot;                                 # scripts  
+returning 1
+monthly_show_badconfig=&quot;NO&quot;                             # scripts  
+returning 2
+
+# 100.clean-logs
+daily_clean_logs_enable=&quot;YES&quot;                           # Delete  
+stuff daily
+daily_clean_logs_dirs=&quot;/Library/Logs/CrashReporter&quot;     # Delete  
+under here
+daily_clean_logs_days=&quot;60&quot;                              # If not  
+accessed for
+daily_clean_logs_ignore=&quot;&quot;                              # Don't  
+delete these
+daily_clean_logs_verbose=&quot;NO&quot;                           # Mention  
+files deleted
+
+
+# Define source_periodic_confs, the mechanism used by /etc/periodic/*/*
+# scripts to source defaults/periodic.conf overrides safely.
+
+if [ -z &quot;${source_periodic_confs_defined}&quot; ]; then
+         source_periodic_confs_defined=yes
+         source_periodic_confs () {
+                 local i sourced_files
+
+                 for i in ${periodic_conf_files}; do
+                         case ${sourced_files} in
+                         *:$i:*)
+                                 ;;
+                         *)
+                                 sourced_files=&quot;${sourced_files}:$i:&quot;
+                                 [ -r $i ] &amp;&amp; . $i
+                                 ;;
+                         esac
+                 done
+         }
+fi
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002635.html">[X-Unix] Multiple daily run output emails
+</A></li>
+	<LI>Next message: <A HREF="002637.html">[X-Unix] OT: Luray, TN
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2636">[ date ]</a>
+              <a href="thread.html#2636">[ thread ]</a>
+              <a href="subject.html#2636">[ subject ]</a>
+              <a href="author.html#2636">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

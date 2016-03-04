@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [CUBE] How do I set up Local Network password?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20How%20do%20I%20set%20up%20Local%20Network%20password%3F&In-Reply-To=01E1C551-7AC3-11D8-AE9F-003065718F58%40sympatico.ca">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="007360.html">
+   <LINK REL="Next"  HREF="007362.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[CUBE] How do I set up Local Network password?</H1>
+    <B>J.C. Webber III</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20How%20do%20I%20set%20up%20Local%20Network%20password%3F&In-Reply-To=01E1C551-7AC3-11D8-AE9F-003065718F58%40sympatico.ca"
+       TITLE="[CUBE] How do I set up Local Network password?">jcw at kingoblio.com
+       </A><BR>
+    <I>Sat Mar 20 19:04:23 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="007360.html">[CUBE] [CUBE]OT: Why does Mac Mail Suck Now?...
+</A></li>
+        <LI>Next message: <A HREF="007362.html">[CUBE] CPU Temp: How hot is too hot?...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7361">[ date ]</a>
+              <a href="thread.html#7361">[ thread ]</a>
+              <a href="subject.html#7361">[ subject ]</a>
+              <a href="author.html#7361">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Snow White wrote:
+&gt;<i> On Saturday, March 20, 2004, at 11:40 AM, J.C. Webber III wrote:
+</I>&gt;<i> &gt; filling in your full name in the Name:  box.  If this does not EXACTLY
+</I>&gt;<i> &gt; match the full name on the destination machine it will not work.  I
+</I>&gt;<i> &gt; found that I had an extra space between my first and last names on one
+</I>&gt;<i> &gt; of my machines and every attempt to login always failed on the first
+</I>&gt;<i> &gt; attempt until I replaced the full name with my 'short' name.
+</I>
+&gt;<i> I will try playing with the name to see if that is the problem.  So, if 
+</I>&gt;<i> I understand this my password is my admin login password (for the whole 
+</I>&gt;<i> machine).
+</I>
+There is no distinction between your normal password and your 'admin
+login password'.  You are either classified as an administrator,
+allowed to do administrative tasks with your normal login (but
+required to re-certify your identity by providing *your* password when
+requesting the system to perform an administrative task), or you're
+not.  There is no seperate admin password.  And you have the option to
+grant admin privileges to any additional accounts you create on your
+machine (for your boy friend, mother, roommate, whatever) or not.
+
+There is a real admin account (referred to as the root account), but it
+is typically disabled by default by Apple.  It can be enabled if
+desired, but rarely if ever required.  And definitely not required to
+perform such tasks as remotely accessing Shares.
+
+As an experiment I just tried remotely mounting my Cube's filesystems
+onto my Powerbook using my housekeeper's non-administrative-enabled
+account (I happen to know her password since she hasn't changed it
+from the one I gave her initially when I created her account).  She
+only has an account on the Cube, not on the powerbook.  'She' was only
+offered the opportunity to mount her own files or my dropbox (a place
+to put files you want to share).  No opportunity to mount the complete
+system disk was offered to 'her'.  You should be able to deduce from
+this description that I'm 'pretending' to be her.  As far as the Cube
+is concerned, since I know her password, I am her.  As far as the PB
+is concerned *I'm* asking for this remote filesystem to be mounted. 
+As far as the Cube is concerned *she* is doing the asking.
+
+Confusing, isn't it.  I'm doing my best to try and clarify things
+here, but I fear I may be mudding up the waters.
+
+
+&gt;<i> If I am at the computer named GIMLEY with login password of DWARF
+</I>&gt;<i> and my server upstairs is CURIOUS GEORGE with login password of BIG 
+</I>&gt;<i> YELLOW HAT
+</I>
+Why would you use two different password for yourself to access your
+own machines?
+
+&gt;<i> I can get access to Curious George from Gimley with the password DWARF  
+</I>&gt;<i> - is that correct?  Or do I need to use the pass BIG YELLOW HAT?
+</I>
+In your case, no, you'd have to use BIG YELLOW HAT.  But more important
+than that, what are you using as the login name (in the Name: box)?
+Are your login names the same on both boxes?  If so (and that's logical)
+why wouldn't you use the same password?  The machine doesn't have a
+password, your account does.
+
+&gt;<i> Is there a place on the server computer that allows me to specify a new 
+</I>&gt;<i> password for networking
+</I>&gt;<i> ie. Computer - Gimley - pasword - SHORTY to access this computer via 
+</I>&gt;<i> network. (instead of DWARF)
+</I>
+The password is tied directly to the account on the the local box.  In
+your senerio, there is no 'networking' password (I'm qualifying that
+comment because in senerios where all machines rely on a centrally
+managed Netinfo server, there is such a concept as a 'network'
+password, but it's still tied to the user's account, not the machine).  
+
+There's something askew in your view of things here and I can't quite
+put my finger on it.
+
+&gt;<i> &gt;
+</I>&gt;<i> &gt; Point being, you want to fill in that Name: field with the login
+</I>&gt;<i> &gt; name of the account on the remote machine.  Either the full name
+</I>&gt;<i> &gt; or the 'short' name.  Then enter the password you use on that remote
+</I>&gt;<i> &gt; machine to login as if you where sitting down in front of it.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Next you will see a dialog box offering you the opportunity to mount
+</I>&gt;<i> &gt; up on your local machine one of the available filesystems on the
+</I>&gt;<i> &gt; remote machine.  This can be an iPod, an iDisk, your home directory,
+</I>&gt;<i> &gt; or even the remote machine's entire hard disk (you probably will be
+</I>&gt;<i> &gt; required to have an administrator's account on the remote machine to
+</I>&gt;<i> &gt; mount up the whole disk (I would think, but I'm not sure because I
+</I>&gt;<i> &gt; *am* the administrator on all my machines).
+</I>
+&gt;<i> In OS 9 you could specify what disks or folders would be shared with 
+</I>&gt;<i> whom via the GET INFO on each file/folder/disk.  Is there any such 
+</I>&gt;<i> control in OS X or is it only Guest access or ALL access via proper 
+</I>&gt;<i> pass login?
+</I>
+It's close to that, but not exactly.  Accounts that have been granted
+administrative privileges get access to what you refer to as ALL, but
+regular accounts only get access to their own home directory and the
+Dropboxs of all other accounts.  Guests only get access to the Dropboxes.
+
+But, this access to ALL for administrative enabled accounts is not
+entirely unrestricted.  I can mount up my remote machine's entire hard
+disk and cd (change directory) over to another user's homedir, but,
+assuming standard, normal permission settings on the folders in those
+homedirs, I can only see the files in their Public/Dropbox and Sites
+folders.  Even though my account is a privileged Administrator's
+account.  What I can see that regular accounts can not is the
+Application folder, System folder, Library folder, etc, of the
+remotely mounted system.
+
+&gt;<i> &gt;
+</I>&gt;<i> &gt; If, on the other hand, you select 'Guest' then you will only be able
+</I>&gt;<i> &gt; to see the Public Folders.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Does that help?
+</I>
+&gt;<i> Maybe but a little time will tell.  Thanks alot
+</I>
+Welcome...
+-- 
+J.C. Webber III
+Technical Lead, Unix System Administrator
+<A HREF="../../../mailman/listinfo/cube.html">jcw at kingoblio.com</A>       www.kingoblio.com
+Please, if you use Windows, do not add my address to your Address Book.
+I do not wish to be spammed or have my email address hijacked by a virus
+and used for fraudulent purposes.  Thank you.
+If you use a Mac, never mind.  Mac's don't get viruses.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="007360.html">[CUBE] [CUBE]OT: Why does Mac Mail Suck Now?...
+</A></li>
+	<LI>Next message: <A HREF="007362.html">[CUBE] CPU Temp: How hot is too hot?...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7361">[ date ]</a>
+              <a href="thread.html#7361">[ thread ]</a>
+              <a href="subject.html#7361">[ subject ]</a>
+              <a href="author.html#7361">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

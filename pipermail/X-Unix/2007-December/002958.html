@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Pokey LAN transfers
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Pokey%20LAN%20transfers&In-Reply-To=949F57DA-4CFC-4D96-B332-99637C3D598D%40cox.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002957.html">
+   <LINK REL="Next"  HREF="002959.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Pokey LAN transfers</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Pokey%20LAN%20transfers&In-Reply-To=949F57DA-4CFC-4D96-B332-99637C3D598D%40cox.net"
+       TITLE="[X-Unix] Pokey LAN transfers">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Thu Dec 27 06:17:20 PST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002957.html">[X-Unix] Pokey LAN transfers
+</A></li>
+        <LI>Next message: <A HREF="002959.html">[X-Unix] Pokey LAN transfers
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2958">[ date ]</a>
+              <a href="thread.html#2958">[ thread ]</a>
+              <a href="subject.html#2958">[ subject ]</a>
+              <a href="author.html#2958">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>On Dec 26, 2007, at 3:54 PM, Richard Hartman wrote:
+</I>&gt;&gt;<i>  I'm looking for guidance on how best to copy large data sets 
+</I>&gt;&gt;<i>between macs on a network (Finder, terminal cp, other?).
+</I>&gt;&gt;<i>  The setup: Copying from mac #1 (a 2006 iMac running 10.4.11 with 
+</I>&gt;&gt;<i>built-in 100bps ethernet) to mac #2 (a recent PBPro running 10.5.1 
+</I>&gt;&gt;<i>with built-in Gigabit ethernet). Macs connected by a Gigabit 
+</I>&gt;&gt;<i>netgear switch.
+</I>&gt;&gt;<i>  I had hoped to get sustained transfers between these two macs of 
+</I>&gt;&gt;<i>50-70 mbps (throttled by the rate-limiting 100 mbps iMac 
+</I>&gt;&gt;<i>capability).
+</I>&gt;&gt;<i>  However, copying a single 2 GByte file, by mounting the (Tiger) 
+</I>&gt;&gt;<i>imac on the (Leopard) MBPro desktop and using terminal &quot;cp&quot; command 
+</I>&gt;&gt;<i>from the MBPro terminal, results in a sustained transfer rate of 
+</I>&gt;&gt;<i>only about 2.5 mB/sec (25 mbps).
+</I>&gt;&gt;<i>  So, the questions:
+</I>&gt;&gt;<i>  - Is this rather low transfer rate normal for my setup?
+</I>&gt;&gt;<i>  - Might I improve it using other tools?
+</I>
+If Resource forks are not a problem, you'll get fastest throughput 
+with standard command line FTP. It's no bells/whistles but makes best 
+use of the network.
+
+At 17:53 -0600 26/12/07, Nick Scalise wrote:
+&gt;<i>Do you have your network cards locked in at their rated speeds? It 
+</I>&gt;<i>could be that they are not negotiating with the Gig switch properly.
+</I>&gt;<i>For the 100Mbps Mac, locked at '100MB/Full duplex' and the Gigabit 
+</I>&gt;<i>Mac locked at '1G/Full?'
+</I>
+That would mean that the switch has to either buffer up a full MTU 
+length coming in at 100Mbps and then squirt it out at 1Gbps for 
+packets going one way, or buffer a buffer up packets coming in at 
+1Gbps and clock the bits out at 100Mbps. If the switch is very quick 
+doing this it will work well, but for domestic switches it may well 
+add extra delay. Much better to set both to 100Mbps and let the 
+switch just pass it all through.
+
+The MTU (Maximum Transmission Unit) must be the same on both 
+computers. Unless you've changed it it will be the normal default of 
+1500 for wired connections. If you want to check it, see
+&lt;<A HREF="http://docs.info.apple.com/article.html?artnum=303192">http://docs.info.apple.com/article.html?artnum=303192</A>&gt;
+It is the maximum packet size, and, if different, the packets will 
+have to be buffered up and split into packets of the other size at 
+some point, probably in the switch if it's also a router.
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+HP-UX specialist of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x-unix.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002957.html">[X-Unix] Pokey LAN transfers
+</A></li>
+	<LI>Next message: <A HREF="002959.html">[X-Unix] Pokey LAN transfers
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2958">[ date ]</a>
+              <a href="thread.html#2958">[ thread ]</a>
+              <a href="subject.html#2958">[ subject ]</a>
+              <a href="author.html#2958">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

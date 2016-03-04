@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Backup and Restore of Symbolic Links
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Backup%20and%20Restore%20of%20Symbolic%20Links&In-Reply-To=C19C6957.2AB45%25jerry%40ieee.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002780.html">
+   <LINK REL="Next"  HREF="002782.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Backup and Restore of Symbolic Links</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Backup%20and%20Restore%20of%20Symbolic%20Links&In-Reply-To=C19C6957.2AB45%25jerry%40ieee.org"
+       TITLE="[X-Unix] Backup and Restore of Symbolic Links">macmonster at myrealbox.com
+       </A><BR>
+    <I>Thu Dec  7 23:05:28 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002780.html">[X-Unix] Backup and Restore of Symbolic Links
+</A></li>
+        <LI>Next message: <A HREF="002782.html">[X-Unix] Backup and Restore of Symbolic Links
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2781">[ date ]</a>
+              <a href="thread.html#2781">[ thread ]</a>
+              <a href="subject.html#2781">[ subject ]</a>
+              <a href="author.html#2781">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 6 Dec 2006, at 20:34, Jerry Krinock wrote:
+&gt;<i>
+</I>&gt;<i> ...Here's something I figured out yesterday.
+</I>&gt;<i>
+</I>&gt;<i> Say you have a file A.txt and a symbolic link (symlink) ALink which  
+</I>&gt;<i> links to
+</I>&gt;<i> it, at the root level of your boot drive.  The data in Alink is the  
+</I>&gt;<i> string
+</I>&gt;<i> &quot;/A.txt&quot;.
+</I>
+&quot;The data in&quot; is, if you'll excuse me saying, a poor choice of words  
+for the path described by the symlink. From a program or user's point  
+of view the data in Alink is whatever you see when you `cat Alink` or  
+double-click on the symlink.
+
+&gt;<i> ...  Say that you
+</I>&gt;<i> cp both A.txt and ALink to a mounted Firedrive named FW.  Now  
+</I>&gt;<i> doubleclick on
+</I>&gt;<i> the copy of Alink on FW.  Because the data in Alink is the string &quot;/ 
+</I>&gt;<i> A.txt&quot;,
+</I>&gt;<i> you will open /A.txt on your boot drive, NOT on FW.
+</I>
+This is why one can describe symlinks by relative path.
+
+Compare:
+
+   $ ls -l bar*
+   lrwxr-xr-x   1 stroller  stroller   7 Dec  8 07:02 bar -&gt; foo.txt
+   lrwxr-xr-x   1 stroller  stroller   9 Dec  8 07:03 bar2 -&gt; ./foo.txt
+   lrwxr-xr-x   1 stroller  stroller  23 Dec  8 07:03 bar3 -&gt; /Users/ 
+stroller/foo.txt
+   $ pwd
+   /Users/stroller
+   $
+
+HTH,
+
+Stroller.
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002780.html">[X-Unix] Backup and Restore of Symbolic Links
+</A></li>
+	<LI>Next message: <A HREF="002782.html">[X-Unix] Backup and Restore of Symbolic Links
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2781">[ date ]</a>
+              <a href="thread.html#2781">[ thread ]</a>
+              <a href="subject.html#2781">[ subject ]</a>
+              <a href="author.html#2781">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

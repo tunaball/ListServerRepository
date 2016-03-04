@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Disk Utility Problem...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Disk%20Utility%20Problem...&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010547.html">
+   <LINK REL="Next"  HREF="010552.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Disk Utility Problem...</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Disk%20Utility%20Problem...&In-Reply-To="
+       TITLE="[X4U] Disk Utility Problem...">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Sun Dec  4 11:22:15 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010547.html">[X4U] Getting spotlight to index where it usually doesn't
+</A></li>
+        <LI>Next message: <A HREF="010552.html">[X4U] Re: X4U Digest, Vol 16, Issue 8
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10551">[ date ]</a>
+              <a href="thread.html#10551">[ thread ]</a>
+              <a href="subject.html#10551">[ subject ]</a>
+              <a href="author.html#10551">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>From: revDAVE &lt;<A HREF="../../../mailman/listinfo/x4u.html">coolcat at hosting4days.com</A>&gt;
+</I>&gt;<i>  I have 2 systems on separate partitions
+</I>&gt;<i>-  partition 1 = 10.4.3
+</I>&gt;<i>-  partition 2 =  Panther 10.3.9
+</I>&gt;<i>  I want to keep this set up like this for now.
+</I>&gt;<i>-  from  Tiger - using partition 1 - I am unable to click the button =
+</I>&gt;<i>repair disk for partition 2
+</I>&gt;<i>  error = &quot; repairing disk failed with the error - could not unmount disk&quot;
+</I>&gt;<i>  I have a feeling that somehow there must be some alias related links that
+</I>&gt;<i>are somehow active between the two partitions ( read below...)
+</I>&gt;<i>-  I know that I can boot up with the installer disk - and run repair disk
+</I>&gt;<i>from there -  But I would like to fix this error somehow...
+</I>&gt;<i>
+</I>&gt;<i>* Question: How can I fix this error? ( an absolute last resort would be to
+</I>&gt;<i>reinstall a clean copy ... Only if all else fails...)
+</I>&gt;<i>
+</I>&gt;<i>* history information: originally - I had Panther 10.3.9 on partition one
+</I>&gt;<i>and did a carbon copy cloner to partition 2 ( As a backup). Then - I
+</I>&gt;<i>upgraded partition one to the latest tiger 10.4.3
+</I>
+That'll be the key.
+
+CCC makes a duplicate. Aliases are links to disc objects using a disc 
+object ID which is unique. A copied alias still points to the 
+original object unlike a Unix link, which points to a file on the 
+same partition, or a Unix symbolic link, which points to a pathname. 
+Any object loaded via an alias will be the copy on the original 
+partition and so lock the disc mount.
+
+To avoid needing a re-install you would have to find all the aliases 
+that point to the original partition and replace them with aliases to 
+the equivalent object on the new partition. I havn't noticed a way of 
+doing that, but there probably is one.
+
+David
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+Chair of HPUX SysAdmin SIG of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x4u.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010547.html">[X4U] Getting spotlight to index where it usually doesn't
+</A></li>
+	<LI>Next message: <A HREF="010552.html">[X4U] Re: X4U Digest, Vol 16, Issue 8
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10551">[ date ]</a>
+              <a href="thread.html#10551">[ thread ]</a>
+              <a href="subject.html#10551">[ subject ]</a>
+              <a href="author.html#10551">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

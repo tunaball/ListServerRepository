@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Re: HD questions about G4 Digital Audio (with complete answer)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Re%3A%20HD%20questions%20about%20G4%20Digital%20Audio%20%28with%20complete%20answer%29&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="013257.html">
+   <LINK REL="Next"  HREF="013261.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Re: HD questions about G4 Digital Audio (with complete answer)</H1>
+    <B>Ken Presley</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Re%3A%20HD%20questions%20about%20G4%20Digital%20Audio%20%28with%20complete%20answer%29&In-Reply-To="
+       TITLE="[G4] Re: HD questions about G4 Digital Audio (with complete answer)">kapresle at bellsouth.net
+       </A><BR>
+    <I>Mon Jun  5 19:55:03 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="013257.html">[G4] Re: G4] optical drive failure
+</A></li>
+        <LI>Next message: <A HREF="013261.html">[G4] Pioneer 111D
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13258">[ date ]</a>
+              <a href="thread.html#13258">[ thread ]</a>
+              <a href="subject.html#13258">[ subject ]</a>
+              <a href="author.html#13258">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Roxylee wrote:
+
+Hi!
+
+I need a bigger HD for my G4 digital audio AGP. I read somewhere that
+this machine would only recognize up to 128 G. My question is, should I
+just stick with getting one this size, or is there a simple workaround
+if I bought a bigger size? Also, does anyone have one for sale? Thanks,
+
+Roxylee
+
+
+Paul Moortgat probably had the best answer by suggesting you use an
+external firewire case (make sure it is a rather recent model circa 2004
+or so, many earlier firewire cases also suffer from the 128GB limit).
+
+The main reason I have responded is that although this subject has been
+covered many times on many lists I am not sure I have ever seen a
+complete answer as this subject is actually very tricky on G4's and
+especially Digital Audio and earlier models.
+
+I do indeed have a G4 Digital Audio model and recently faced this exact
+subject. Although I am relatively technically competent, I noticed that
+there was a LOT of conflicting information from people more technical
+than me who were sure they knew the answer.
+
+Well, after a LOT of research and some good info articles from OWC and
+Intech and others, I know quite a bit about the 128GB limit. Even
+reading Apple's own technical knowledge-base will still often give you
+the wrong impression on this subject. So my research (and testing)
+uncovered the following:
+
+(1) Stock G4 Digital Audio (and earlier models) will NOT properly
+support an INTERNAL IDE HD greater than 128GB no matter what version of
+OSX you use or no matter WHERE and HOW the drive is formatted. Even
+though many people think differently, since the boot rom of this model
+does not support the famous 48-bit (LBA) addressing you are essentially
+out of beer (and neither does the internal IDE controller). Although OSX
+adds in this support for many models it explicitly EXCLUDES models that
+do not have the necessary 48-bit support in their boot rom. Notice I
+said properly. You might fudge something and make it partially work (and
+likely lose some data and corrupt a drive partition in the process).
+
+(2) You can of course buy an additional ATA PCI controller card for
+about $65-$70 that supports 48-bit addressing and hook your large
+(&gt;128GB) drive to it. This works fine. (Also SATA cards with SATA-to-ATA
+adapters would probably work).
+
+(3) You can use Intech SpeedTools software add-on ATA Hi-Cap OSX kernel
+extension to add support for larger than 128GB drives, but it does have
+some partitioning and booting limitations (you can use the whole large
+drive but see their website for specifics).
+
+(4) You can certainly use a late-model (circa 2004) external firewire
+case that has the necessary 48-bit support to incorporate greater than
+128GB drives. As I (and Paul) mentioned above, this is probably the best
+solution.
+
+(5) And just to add further fuel to the fire, don't forget that not only
+does the G4 Digital audio support TWO daisy-chained 128GB IDE internal
+drives, you can also add a THIRD 128GB drive on to the SLOWER CD/DVD IDE
+controller (the necessary power and IDE connectors ARE there but this
+sometimes requires a bit of drive cage trimming with tin-snips!). I have
+three drives in my G4 Digital Audio via this method.
+
+(6) Oh, and has been mentioned many times, G4 MDD (mirror-drive-door)
+models and above (not quite sure about Quicksilver models, someone else
+can answer for them) support the 48-bit addressing necessary for
+greater-than 128GB drives in their stock configuration, so you can
+forget (!!) this email for those models!
+
+I am SURE that there are other assorted odds-and-ends that can be added
+to this subject but this covers the major sub-topics for greater than
+128GB support.
+
+Happy computing to all with our old dinosaur G4s!
+
+- Ken Presley
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="013257.html">[G4] Re: G4] optical drive failure
+</A></li>
+	<LI>Next message: <A HREF="013261.html">[G4] Pioneer 111D
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13258">[ date ]</a>
+              <a href="thread.html#13258">[ thread ]</a>
+              <a href="subject.html#13258">[ subject ]</a>
+              <a href="author.html#13258">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

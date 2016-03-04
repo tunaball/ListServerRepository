@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] curl install problem
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20curl%20install%20problem&In-Reply-To=r02010400-1028-BB7AFFB0369F11D9BEF2003065BC4A42%40%5B10.0.0.1%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001303.html">
+   <LINK REL="Next"  HREF="001305.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] curl install problem</H1>
+    <B>Juan Manuel Palacios</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20curl%20install%20problem&In-Reply-To=r02010400-1028-BB7AFFB0369F11D9BEF2003065BC4A42%40%5B10.0.0.1%5D"
+       TITLE="[X-Unix] curl install problem">jmpalaciosp at eml.cc
+       </A><BR>
+    <I>Sun Nov 14 17:52:37 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001303.html">[X-Unix] curl install problem
+</A></li>
+        <LI>Next message: <A HREF="001305.html">[X-Unix] curl install problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1304">[ date ]</a>
+              <a href="thread.html#1304">[ thread ]</a>
+              <a href="subject.html#1304">[ subject ]</a>
+              <a href="author.html#1304">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+	Hello Phill,
+
+On Nov 14, 2004, at 8:46 PM, Phil Dobbin wrote:
+
+&gt;<i> I'm trying to update curl from Jag's 7.7.2 to 7.10.7 in order to 
+</I>&gt;<i> install WWW::Curl but I'm puzzled by the make install errors I'm 
+</I>&gt;<i> getting:
+</I>
+	DarwinPorts currently offers curl 7.12.2, but I'm not too sure how it 
+compiles on Jaguar (apparently there are very few DP users with 
+Jaguar). You can ask in the dp mailing list, have a look at 
+<A HREF="http://darwinports.opendarwin.org">http://darwinports.opendarwin.org</A> for more info. However,...
+
+&gt;<i>
+</I>&gt;<i> ========================================
+</I>&gt;<i>
+</I>
+	---snip---
+
+&gt;<i> /bin/sh ../../mkinstalldirs /usr/bin/man/man3
+</I>&gt;<i> mkdir /usr/bin/man
+</I>&gt;<i> mkdir: /usr/bin/man: File exists
+</I>&gt;<i> mkdir /usr/bin/man/man3
+</I>&gt;<i> mkdir: /usr/bin/man/man3: Not a directory
+</I>&gt;<i> make[6]: *** [install-man3] Error 1
+</I>&gt;<i> make[5]: *** [install-am] Error 2
+</I>&gt;<i> make[4]: *** [install-recursive] Error 1
+</I>&gt;<i> make[3]: *** [install-data-hook] Error 2
+</I>&gt;<i> make[2]: *** [install-data-am] Error 2
+</I>&gt;<i> make[1]: *** [install-am] Error 2
+</I>&gt;<i> make: *** [install-recursive] Error 1
+</I>&gt;<i>
+</I>&gt;<i> =========================================
+</I>
+	This is a *really* weird choice for a man directory, even more if you 
+consider this is a &quot;third party&quot; installation. That dir should be 
+either /usr/local/man or /usr/local/share/man, unless you specified 
+something else in the &quot;configure&quot; script
+
+&gt;<i>
+</I>&gt;<i> It seems to be trying to make a directory called man3 which I can't 
+</I>&gt;<i> quite figure out.
+</I>
+	Curl has a lot of man pages which belong in the 3rd section of the 
+online manual, which is why it needs that dir. Though why the creation 
+of the man3 dir is failing, however weird the path might be, escapes 
+me, I'd have to look at the installation section of the Makefile to 
+figure it out, but that is not something currently under my reach.
+
+&gt;<i>
+</I>&gt;<i> Any advice appreciated.
+</I>
+	Have a look at DarwinPorts!
+
+&gt;<i>
+</I>&gt;<i> Regards,
+</I>&gt;<i>
+</I>&gt;<i>     Phil (please cc me if possible: I'm on digest).
+</I>&gt;<i>
+</I>
+	Regards,...
+
+
+		Juan
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001303.html">[X-Unix] curl install problem
+</A></li>
+	<LI>Next message: <A HREF="001305.html">[X-Unix] curl install problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1304">[ date ]</a>
+              <a href="thread.html#1304">[ thread ]</a>
+              <a href="subject.html#1304">[ subject ]</a>
+              <a href="author.html#1304">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

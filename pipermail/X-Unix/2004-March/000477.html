@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Question about grep
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Question%20about%20grep&In-Reply-To=list-11427166%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000476.html">
+   <LINK REL="Next"  HREF="000478.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Question about grep</H1>
+    <B>Brian Medley</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Question%20about%20grep&In-Reply-To=list-11427166%40mail.ninewire.com"
+       TITLE="[X-Unix] Question about grep">bpm-list-osx-unix at 4321.tv
+       </A><BR>
+    <I>Tue Mar 16 18:09:31 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000476.html">[X-Unix] Question about grep
+</A></li>
+        <LI>Next message: <A HREF="000478.html">[X-Unix] Question about grep
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#477">[ date ]</a>
+              <a href="thread.html#477">[ thread ]</a>
+              <a href="subject.html#477">[ subject ]</a>
+              <a href="author.html#477">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Tue, Mar 16, 2004 at 07:02:59PM -0500, Our Pal Al wrote:
+
+&gt;<i> So in a file with lots of lines like this -
+</I>&gt;<i> 
+</I>&gt;<i> 3/15/2004    5:58 PM    Drogo-OS X (21.177)    Macintosh HD    -24001
+</I>&gt;<i> user canceled    0:34:00    129.85.21.177
+</I>&gt;<i> 
+</I>&gt;<i> How can I formulate grep to grab on the mm/dd/yyyy field and pull out &quot;any
+</I>&gt;<i> lines where the date is no older than 7 days ago&quot;?
+</I>
+I made a stab at doing this in perl.  It includes the filtering
+of lines with Successful in them.  To understand what is going on
+requires a bit of perl knowledge that I won't go over now, but if
+you have specific questions, feel free to ask.
+
+$ cat date_grabber.txt
+2/3/2004    5:58 PM    Drogo-OS X (21.177)
+3/1/2004    5:58 PM    Drogo-OS X (21.177)
+3/11/2004    5:58 PM    Drogo-OS X (21.177) Successful
+3/12/2004    5:58 PM    Drogo-OS X (21.177)
+3/13/2004    5:58 PM    Drogo-OS X (21.177)
+3/14/2004    5:58 PM    Drogo-OS X (21.177)
+3/15/2004    5:58 PM    Drogo-OS X (21.177) Successful
+3/16/2004    5:58 PM    Drogo-OS X (21.177)
+$ ./date_grabber.pl &lt; date_grabber.txt 
+3/12/2004    5:58 PM    Drogo-OS X (21.177)
+3/13/2004    5:58 PM    Drogo-OS X (21.177)
+3/14/2004    5:58 PM    Drogo-OS X (21.177)
+3/16/2004    5:58 PM    Drogo-OS X (21.177)
+$ cat date_grabber.pl
+#! /usr/bin/perl
+
+use strict;
+use warnings;
+
+use POSIX qw(strftime);
+
+my $time = time;
+my %allowed_dates;
+
+# setup our allowed date range.
+foreach (0 .. 7) {
+    my $date = &amp;strftime(&quot;%m/%d/%Y&quot;, localtime $time);
+    $allowed_dates{$date} = 1;
+    $time -= 86_400;
+}
+
+while (&lt;STDIN&gt;) {
+    # should be the same as grep -v Successful
+    next if /Successful/;
+
+    # try and parse out a date.  quit processing if none is found.
+    unless ($_ =~ m#(\d+)/(\d+)/(\d+)#) {
+        die &quot;Invalid line found: $_&quot;;
+    }
+
+    # make the day and month &quot;right-justified&quot; with zeros
+    my $date = sprintf(&quot;%02d/%02d/%4d&quot;, $1, $2, $3);
+
+    # skip lines that don't match our criteria from above
+    next unless $allowed_dates{$date};
+
+    print;
+}
+$
+
+-- 
+~`^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-., \|/  (___)  \|/ _,.-=~'`^`
+                                      @~./'O o`\.~@
+      &quot;Knowledge is Power&quot;           /__( \___/ )__\  *PPPFFBT!*
+         -- Francis Bacon               `\__`U_/'
+ _.-=~'``'~=-._.-=~'``'~=-._.-=~'`^`'~= &lt;____|'  ^^`'~=-.,__,.-=
+~'^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-.,__,.-==--^'~=-.,__,.-=~'`^`
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000476.html">[X-Unix] Question about grep
+</A></li>
+	<LI>Next message: <A HREF="000478.html">[X-Unix] Question about grep
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#477">[ date ]</a>
+              <a href="thread.html#477">[ thread ]</a>
+              <a href="subject.html#477">[ subject ]</a>
+              <a href="author.html#477">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

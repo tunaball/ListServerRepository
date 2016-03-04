@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Re: X4U Digest, Vol 15, Issue 23
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Re%3A%20X4U%20Digest%2C%20Vol%2015%2C%20Issue%2023&In-Reply-To=20051117214444.8F3495A5B6F%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010066.html">
+   <LINK REL="Next"  HREF="010111.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Re: X4U Digest, Vol 15, Issue 23</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Re%3A%20X4U%20Digest%2C%20Vol%2015%2C%20Issue%2023&In-Reply-To=20051117214444.8F3495A5B6F%40listserver.themacintoshguy.com"
+       TITLE="[X4U] Re: X4U Digest, Vol 15, Issue 23">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Sun Nov 20 07:28:42 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010066.html">[X4U] Help-need guidance choosing video card for Aperture
+</A></li>
+        <LI>Next message: <A HREF="010111.html">[X4U] Re: X4U Digest, Vol 15, Issue 23
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10067">[ date ]</a>
+              <a href="thread.html#10067">[ thread ]</a>
+              <a href="subject.html#10067">[ subject ]</a>
+              <a href="author.html#10067">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>From: Richard Gilmore &lt;<A HREF="../../../mailman/listinfo/x4u.html">rgilmor at uwo.ca</A>&gt;
+</I>&gt;<i>Subject: Re: [X4U] Macintosh security (How to protect files and
+</I>&gt;<i>	Applications	for stolen computers)
+</I>&gt;<i>To: &quot;A place to discuss Mac OS X for the casual user.&quot;
+</I>&gt;<i>	&lt;<A HREF="../../../mailman/listinfo/x4u.html">x4u at listserver.themacintoshguy.com</A>&gt;
+</I>&gt;<i>Message-ID: &lt;BFA11999.39C4%<A HREF="../../../mailman/listinfo/x4u.html">rgilmor at uwo.ca</A>&gt;
+</I>&gt;<i>Content-Type: text/plain; charset=US-ASCII
+</I>&gt;<i>
+</I>&gt;<i>I saw a Discovery Channel show by a mathematician which was all about
+</I>&gt;<i>encryption and I think it said if the encryption uses a public and private
+</I>&gt;<i>key it's essentially unbreakable because the key number is so large that it
+</I>&gt;<i>would require hundreds of years of computing power to factor them? Such as
+</I>&gt;<i>RSA?
+</I>&gt;<i>
+</I>&gt;<i>Richard
+</I>
+Sort of ...
+
+It's not public/private as such that is very secure, it is the length 
+of keys as with any scheme. To decrypt an encrypted document a key 
+has to applied to the encrypted file with an algorithm. One way of 
+breaking it is to discover the key, the other is to try all possible 
+keys - the brute force attack. The larger the key the longer it takes 
+to try all all the possibilities. Each extra bit doubles the time.
+
+The main weaknesses of single key encryption is that the key has to 
+be known to both sender and recipient. It has to be either 
+transported from one to the other or be determinable by both parties 
+from shared information. Both of these are risky.
+
+With public/private there are two keys. A file encrypted with one can 
+only be decrypted with the other (and not the key it was encrypted 
+with). One key is kept secret by the owner (the private key), the 
+public key is made publicly available. Anyone wanting to send a 
+secret message to the key owner uses that person's public key to send 
+it and the owner can then decrypt it. The potential weakness of 
+public/private keys is that if anyone ever discoverers a way to 
+generate the private key from the public one, it will be dead.
+
+In practice public/private key systems do not encrypt the message 
+with the public key, but they use a truly random key (or as truly 
+random as the computer system doing the work can manage). This key is 
+encrypted with the public key and included with the message. On 
+receipt, the private key is used to retrieve the main key. This way 
+less CPU time is spent doing maths. As the main key is random it 
+cannot be predicted or guessed. A brute force attack is the only way 
+to discover the message without the key. Bruce Schneier, in 'Secrets 
+and Lies' estimates that  a 128 bit key 'will be secure for a 
+millennium' as 90 billion billion key per second cracking system 
+would still take a thousand million years to try all keys.
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+Chair of HPUX SysAdmin SIG of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x4u.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010066.html">[X4U] Help-need guidance choosing video card for Aperture
+</A></li>
+	<LI>Next message: <A HREF="010111.html">[X4U] Re: X4U Digest, Vol 15, Issue 23
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10067">[ date ]</a>
+              <a href="thread.html#10067">[ thread ]</a>
+              <a href="subject.html#10067">[ subject ]</a>
+              <a href="author.html#10067">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

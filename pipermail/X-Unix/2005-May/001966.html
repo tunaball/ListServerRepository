@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] exe files
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20exe%20files&In-Reply-To=20050515043624.GA18289%40sage.che.pitt.edu">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001963.html">
+   <LINK REL="Next"  HREF="001967.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] exe files</H1>
+    <B>Richard Nagle</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20exe%20files&In-Reply-To=20050515043624.GA18289%40sage.che.pitt.edu"
+       TITLE="[X-Unix] exe files">cms01 at tampabay.rr.com
+       </A><BR>
+    <I>Sun May 15 10:25:10 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001963.html">[X-Unix] exe files
+</A></li>
+        <LI>Next message: <A HREF="001967.html">[X-Unix] exe files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1966">[ date ]</a>
+              <a href="thread.html#1966">[ thread ]</a>
+              <a href="subject.html#1966">[ subject ]</a>
+              <a href="author.html#1966">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi John,
+
+Well for some reason,
+after doing this, still when I double click on this,
+all I get is which application would you like to open this with?
+
+What I want to do, is to have a double clickable script,
+that I can add to my dock, and just click once a day
+to run the spamreport script(file).
+
+Yes, this would have to be run threw the terminal window...
+
+Thanks -
+Richard
+
+
+John Harrold, <A HREF="../../../mailman/listinfo/x-unix.html">jmh17 at pitt.edu</A>, Sunday, May 15, 2005
+
+
+&gt;|<i> 
+</I>&gt;|<i> Instead of typing this in:
+</I>&gt;|<i> cat Library/Logs/mailfilter.log | grep &quot;Deleted&quot; | sed 
+</I>&gt;<i>&quot;s/.*Deleted.*\[Applied
+</I>&gt;|<i> filter: '//g&quot; | sed &quot;s/' to '.*//g&quot; | sort | uniq -c | grep -v &quot;   1&quot; 
+</I>&gt;|<i> sort -r
+</I>&gt;|<i> 
+</I>&gt;|<i> Want to make a execuitable file,
+</I>&gt;|<i> so that I can just double click and it would open terminal window
+</I>&gt;|<i> and run the line command.
+</I>&gt;|<i> 
+</I>&gt;|<i> I want to call the file, spamreport
+</I>&gt;<i>
+</I>&gt;<i>Put the command in a file. You might want to add sleep at the end so you
+</I>&gt;<i>can see the output:
+</I>&gt;<i>
+</I>&gt;<i>&lt;spamreport&gt;
+</I>&gt;<i> cat Library/Logs/mailfilter.log | grep &quot;Deleted&quot; | sed 
+</I>&gt;<i>&quot;s/.*Deleted.*\[Applied filter: '//g&quot; | sed &quot;s/' to '.*//g&quot; | sort | 
+</I>&gt;<i>uniq -c | grep -v &quot;   1&quot; | sort -r
+</I>&gt;<i> sleep 3
+</I>&gt;<i>&lt;/spamreport&gt;
+</I>&gt;<i>
+</I>&gt;<i>Then make the file executable by typing:
+</I>&gt;<i>
+</I>&gt;<i>chmod 755 spamreport
+</I>&gt;<i>
+</I></PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001963.html">[X-Unix] exe files
+</A></li>
+	<LI>Next message: <A HREF="001967.html">[X-Unix] exe files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1966">[ date ]</a>
+              <a href="thread.html#1966">[ thread ]</a>
+              <a href="subject.html#1966">[ subject ]</a>
+              <a href="author.html#1966">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Owner/Group changes depending on login?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Owner/Group%20changes%20depending%20on%20login%3F&In-Reply-To=C16AC406.4B2AF%25jellis%40dhnet.us">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002763.html">
+   <LINK REL="Next"  HREF="002766.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Owner/Group changes depending on login?</H1>
+    <B>James Bucanek</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Owner/Group%20changes%20depending%20on%20login%3F&In-Reply-To=C16AC406.4B2AF%25jellis%40dhnet.us"
+       TITLE="[X-Unix] Owner/Group changes depending on login?">subscriber at gloaming.com
+       </A><BR>
+    <I>Sun Oct 29 21:27:33 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002763.html">[X-Unix] Owner/Group changes depending on login?
+</A></li>
+        <LI>Next message: <A HREF="002766.html">[X-Unix] Owner/Group changes depending on login?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2764">[ date ]</a>
+              <a href="thread.html#2764">[ thread ]</a>
+              <a href="subject.html#2764">[ subject ]</a>
+              <a href="author.html#2764">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Jeffrey Ellis wrote on Sunday, October 29, 2006:
+&gt;<i>So my first question
+</I>&gt;<i>is, is there some flag which is visible at the command line which would show
+</I>&gt;<i>this, and if so, what command would I use?
+</I>
+diskutil info /Volumes/Vol
+
+    ...
+    Owners: Ensabled/Disabled
+    ...
+
+&gt;<i>But more &#8212; and stranger to me &#8212; is that when I&#8217;m sudo&#8217;d, the same volumes
+</I>&gt;<i>suddenly give &#8220;unknown&#8221; as their Owner/Group?? And this is even for volumes
+</I>&gt;<i>where Ignore Ownership is not checked.
+</I>
+I know of a bug in the OS where the UID of files on external volumes is different if you read the catalog information as a regular user vs. root. I suspect that it applies to files written with an earlier version of the OS as attempts to reproduce the problem have failed on my system.
+
+-- 
+James Bucanek
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002763.html">[X-Unix] Owner/Group changes depending on login?
+</A></li>
+	<LI>Next message: <A HREF="002766.html">[X-Unix] Owner/Group changes depending on login?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2764">[ date ]</a>
+              <a href="thread.html#2764">[ thread ]</a>
+              <a href="subject.html#2764">[ subject ]</a>
+              <a href="author.html#2764">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

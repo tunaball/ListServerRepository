@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Zombies
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Zombies&In-Reply-To=list-14019635%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000967.html">
+   <LINK REL="Next"  HREF="000969.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Zombies</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Zombies&In-Reply-To=list-14019635%40mail.ninewire.com"
+       TITLE="[X-Unix] Zombies">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Sat Jun 19 23:40:00 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000967.html">[X-Unix] BOMArchive Helper ?
+</A></li>
+        <LI>Next message: <A HREF="000969.html">[X-Unix] Zombies
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#968">[ date ]</a>
+              <a href="thread.html#968">[ thread ]</a>
+              <a href="subject.html#968">[ subject ]</a>
+              <a href="author.html#968">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>From: &quot;Cloyce D. Spradling&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">cloyce+xunix at headgear.org</A>&gt;
+</I>&gt;<i>Subject: Re: [X-Unix] Zombies
+</I>&gt;<i>Message-ID: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">20040616210022.GX320 at monkey.headgear.org</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>On Wed, Jun 16, 2004 at 03:20:40PM -0500, Gretchen Hayman wrote:
+</I>&gt;:<i> On Jun 14, 2004, at 18:40, James Bucanek wrote:
+</I>&gt;:<i> &gt; I don't have any handy way of making a zombie process to test this,
+</I>&gt;:<i> Ah, now there's a helpful little script someone could write!  :)
+</I>&gt;<i>
+</I>&gt;<i>Handy-dandy zombie factory (use at your own risk):
+</I>&gt;<i>
+</I>&gt;<i>----CUT----OW----CUT----OW----CUT----
+</I>&gt;<i>#include &lt;sys/types.h&gt;
+</I>&gt;<i>#include &lt;unistd.h&gt;
+</I>&gt;<i>
+</I>&gt;<i>#define ZOMBIES 2
+</I>&gt;<i>int main() {
+</I>&gt;<i>   int i;
+</I>&gt;<i>
+</I>&gt;<i>   for(i = 0; i &lt; ZOMBIES; i++) {
+</I>&gt;<i>     if (fork() == 0) {
+</I>&gt;<i>       /* child */
+</I>&gt;<i>       exit(0);
+</I>&gt;<i>     }
+</I>&gt;<i>   }
+</I>&gt;<i>   /* if you just exit here, init will reap the zombies */
+</I>&gt;<i>   sleep(10000);
+</I>&gt;<i>}
+</I>&gt;<i>----CUT----OW----CUT----OW----CUT----
+</I>
+ From what I remember from many years ago, what *should* happen is 
+that when each child exits, it sends a death_of_child signal to the 
+parent.  Here the parent exits without checking, but the 'exit' 
+routine *should* check for signals and perform the 'wait' on each 
+child.  'exit' is not a simple 'program-ends-here', but  a drop-back 
+to the outer code that each program is wrapped in to make it part of 
+a process.  Also 'init' should check for signals from every orphan it 
+inherits, so a zombie with a parent of init *should* be impossible.
+
+I havn't tried it, but Cloyce says the above produces zombies.  That 
+indicates a deficiency in OSX/Darwin as compared to other Unix 
+systems; certainly when compared to Bsd4.1 when I learned this stuff.
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+Chair of HPUX SysAdmin SIG of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x-unix.html">dledger at ivdcs.co.uk</A> (also <A HREF="../../../mailman/listinfo/x-unix.html">dledger at ivdcs.demon.co.uk</A>)
+www.ivdcs.co.uk
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000967.html">[X-Unix] BOMArchive Helper ?
+</A></li>
+	<LI>Next message: <A HREF="000969.html">[X-Unix] Zombies
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#968">[ date ]</a>
+              <a href="thread.html#968">[ thread ]</a>
+              <a href="subject.html#968">[ subject ]</a>
+              <a href="author.html#968">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

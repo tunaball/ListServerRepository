@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Can one convert OS 9 comments to OS X comments?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Can%20one%20convert%20OS%209%20comments%20to%20OS%20X%20comments%3F&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010561.html">
+   <LINK REL="Next"  HREF="010577.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Can one convert OS 9 comments to OS X comments?</H1>
+    <B>Aaron</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Can%20one%20convert%20OS%209%20comments%20to%20OS%20X%20comments%3F&In-Reply-To="
+       TITLE="[X4U] Can one convert OS 9 comments to OS X comments?">macuser at aarons.fastmail.fm
+       </A><BR>
+    <I>Mon Dec  5 17:44:21 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010561.html">[X4U] Can one convert OS 9 comments to OS X comments?
+</A></li>
+        <LI>Next message: <A HREF="010577.html">[X4U] Can one convert OS 9 comments to OS X comments?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10568">[ date ]</a>
+              <a href="thread.html#10568">[ thread ]</a>
+              <a href="subject.html#10568">[ subject ]</a>
+              <a href="author.html#10568">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>From: &quot;Kuestner, Bjoern&quot; &lt;<A HREF="../../../mailman/listinfo/x4u.html">Bjoern.Kuestner at drkw.com</A>&gt;
+</I>&gt;<i>Date: Mon, 5 Dec 2005 15:12:46 +0100
+</I>&gt;<i>
+</I>&gt;<i>I think comments are stored the same way in the old Mac OS and OS X. File comments are part of the HFS filesystem functionality, not the OS itself.
+</I>
+Classic Mac OS stores comments in an invisible file called Desktop DB at the top level of each volume's directory. See below for more on this.
+
+I don't know yet where OS X stores comments. I do know that a file can have a Classic-mode comment and an OS X-mode comment that are different. The former show up in File Buddy 6.x in Classic mode and the latter in the OS X finder or in File Buddy 7.x in native mode. (Those happen to be the versions I've been using.)
+
+&gt;<i>Note that even Tiger's so-called &quot;HFS-aware&quot; command-line tools (cp, mv, ...) will (from what I have read, never checked myself) remove the comment from a file. Not good, especially since these comments have gained new importance with Spotlight. Under Tiger cp, mv, ... will preserve the resource fork, which is a major step forward, but comments are not stored in the resource fork of a file nor in the data fork but in HFSs various catalog and directory thingies.
+</I>
+Again, see below.
+
+&gt;<i>Generally it is now as it was before: The Finder comment field is just as practical as it is an unreliable place to store information.
+</I>
+I'd like to know more about how they're stored and handled in OS X versions before agreeing about their unreliability, but my experience with handling them in classic mode (see below) doesn't make me hopeful. I also want to check out what happens to them when one creates a disk image or burns a CD/DVD including commented files. I'm pretty sure comments were lost when you did this in Classic Mac OS.
+
+Classic comments are lost when you do almost anything to the files in OS X except rename them or move them within the same volume. Also, when you perform those latter operations with File Buddy in Classic, the Desktop DB file is not modified. (It is modified when you, for example, add or change a comment!) This indicates to me that the Desktop DB maintains Classic comments for a file according to some file identifier other than its name or pathname, and that OS X also doesn't change that identifier when it renames the file or moves it within the same volume.
+
+You can move and copy files using File Buddy in Classic mode -- as you can with the Finder in Classic Mac OS -- without losing Classic-mode comments. However, even renaming a file using File Buddy in Classic mode loses OS X comments!
+
+I'm not aware, BTW, of any way of accessing the Classic Finder except by booting into OS 9.2.2 or earlier (on a machine that allows it). Is it possible to access the Finder in Classic Mode?
+
+&gt;<i>Too bad, because it really is so handy. Apple is definitely dropping the ball on a good thing.
+</I>
+That's for sure!
+
+&gt;<i>Bjorn
+</I>
+My original post:
+&gt;<i>Date: Mon, 5 Dec 2005 05:24:10 -0800
+</I>&gt;<i>To: <A HREF="../../../mailman/listinfo/x4u.html">x4u at listserver.themacintoshguy.com</A>
+</I>&gt;<i>From: Aaron &lt;<A HREF="../../../mailman/listinfo/x4u.html">macuser at aarons.fastmail.fm</A>&gt;
+</I>&gt;<i>Subject: Can one convert OS 9 comments to OS X comments?
+</I>&gt;<i>
+</I>&gt;<i>Is there a utility or script of some sort to convert Classic comments to OS X comments?
+</I>&gt;<i>
+</I>&gt;<i>How, BTW, are OS X comments stored?
+</I>&gt;<i>
+</I>&gt;<i>If it matters, I'm referring to OS X Panther and later.
+</I>&gt;<i>
+</I>&gt;<i> - Aaron
+</I></PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010561.html">[X4U] Can one convert OS 9 comments to OS X comments?
+</A></li>
+	<LI>Next message: <A HREF="010577.html">[X4U] Can one convert OS 9 comments to OS X comments?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10568">[ date ]</a>
+              <a href="thread.html#10568">[ thread ]</a>
+              <a href="subject.html#10568">[ subject ]</a>
+              <a href="author.html#10568">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Sudo as Another User
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Sudo%20as%20Another%20User&In-Reply-To=list-11055091%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000382.html">
+   <LINK REL="Next"  HREF="000384.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Sudo as Another User</H1>
+    <B>Brian Medley</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Sudo%20as%20Another%20User&In-Reply-To=list-11055091%40mail.ninewire.com"
+       TITLE="[X-Unix] Sudo as Another User">bpm-list-osx-unix at 4321.tv
+       </A><BR>
+    <I>Wed Feb 25 11:24:36 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000382.html">[X-Unix] Bash alias help
+</A></li>
+        <LI>Next message: <A HREF="000384.html">[X-Unix] Sudo as Another User
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#383">[ date ]</a>
+              <a href="thread.html#383">[ thread ]</a>
+              <a href="subject.html#383">[ subject ]</a>
+              <a href="author.html#383">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Wed, Feb 25, 2004 at 11:06:58AM -0500, Alex wrote:
+
+&gt;<i> On Wednesday, Feb 25, 2004, at 10:27 Canada/Eastern, Kevin Stevens 
+</I>&gt;<i> wrote:
+</I>&gt;<i> 
+</I>&gt;<i> &gt;[...] the non-admin user needs to be
+</I>&gt;<i> &gt;a member of the &quot;admin&quot; group in order to be able to sudo. [...]
+</I>&gt;<i> 
+</I>&gt;<i> So, if I understand you correctly, a non-admin user can't run sudo at 
+</I>&gt;<i> all, not even as another user. Right?
+</I>
+By default I believe that's correct; however, with some editing that can
+be changed os that a non-admin user can run sudo.  The reason is because
+of /etc/sudoers.  This file defines who has the ability to run sudo,
+that is to say, who has the priviledge of executing the code stored in
+/usr/bin/sudo.  You see, sudo always executes as the logged in user, but
+it has the capability of executing other code as different users.  The
+-u command to sudo specifies that any programs sudo runs will run as
+that user, not that sudo will be executed as that user.
+
+Does that makes sense?
+
+Admins in OS X have the ability to run sudo because they are members of
+group admin and the following line is in /etc/sudoers:
+
+%admin  ALL=(ALL) ALL
+
+The % sign specifies a particular group and the ALL=(ALL) ALL is sudo
+nomenclature for specifiying access rights.
+
+If you want to give access to sudo to a user w/o making them an admin,
+then you may do so with either of the following two lines: 
+
+user  ALL=(ALL) ALL
+user  ALL=NOPASSWD:ALL
+
+The first gives a specific user the same priviledges as admins, and the
+second has the priviledges w/o requiring an initial password (very handy
+for shell scripts).
+
+The recommeneded way to edit /etc/sudoers is with /usr/sbin/visudo.  I
+believe it honors the EDITOR env var, so most any editor can be used to
+edit this file.
+
+-- 
+~'`^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^`'~=-., \|/  (___)  \|/ _,.-=~'`^`
+                                               @~./'O o`\.~@
+               &quot;Knowledge is Power&quot;           /__( \___/ )__\  *PPPFFBT!*
+                  -- Francis Bacon               `\__`U_/'
+ _,.-=~'`^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^`'~= &lt;____|'  ^^`'~=-.,__,.-=
+~`'^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^`'~=-.,__,.-==--^'~=-.,__,.-=~'`^`
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000382.html">[X-Unix] Bash alias help
+</A></li>
+	<LI>Next message: <A HREF="000384.html">[X-Unix] Sudo as Another User
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#383">[ date ]</a>
+              <a href="thread.html#383">[ thread ]</a>
+              <a href="subject.html#383">[ subject ]</a>
+              <a href="author.html#383">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

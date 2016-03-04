@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Orig G3 desktop and OS X
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Orig%20G3%20desktop%20and%20OS%20X&In-Reply-To=p06110407bd9dc31254d8%40%5B10.0.1.2%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001237.html">
+   <LINK REL="Next"  HREF="001238.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Orig G3 desktop and OS X</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Orig%20G3%20desktop%20and%20OS%20X&In-Reply-To=p06110407bd9dc31254d8%40%5B10.0.1.2%5D"
+       TITLE="[X-Unix] Orig G3 desktop and OS X">magill at mcgillsociety.org
+       </A><BR>
+    <I>Mon Oct 25 06:49:45 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001237.html">[X-Unix] Orig G3 desktop and OS X
+</A></li>
+        <LI>Next message: <A HREF="001238.html">[X-Unix] Re: Orig G3 desktop and OS X
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1251">[ date ]</a>
+              <a href="thread.html#1251">[ thread ]</a>
+              <a href="subject.html#1251">[ subject ]</a>
+              <a href="author.html#1251">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 21 Oct, 2004, at 15:51, R Waechter wrote:
+&gt;<i> According to the official word, my original (beige) G3 desktop
+</I>&gt;<i> &quot;will not run OS X&quot;.  This is because it does not have either
+</I>&gt;<i> firewire or usb on the motherboard.
+</I>&gt;<i>
+</I>&gt;<i> Has anyone used any third-party software that would allow
+</I>&gt;<i> OS X to be run on this machine? And if so, has it 'worked'
+</I>&gt;<i> (and was it reasonable in the speed department?)
+</I>&gt;<i>
+</I>&gt;<i> I want to turn this into my fileserver and for that I don't
+</I>&gt;<i> need the graphical bit so much, but I really really do need
+</I>&gt;<i> access to a real command line.
+</I>
+There are several different &quot;original&quot; Beige G3 machines.
+
+I happen to have a Rev A motherboard, tower which has its own quirks.
+
+It has an upgraded 333 mhz CPU, Adaptec SCSI card and RACO FireWire/USB 
+card.
+(And boots off DEC (aka Compaq) StorageWorks disk drives.)
+
+It's presently running 10.2.8 with no problems ... other than being 
+pathologically slow.
+(I use it as a webserver when the SCSI card doesn't hang on me.
+I have an Adaptec SCSI card which gives me problems, but that is a 
+separate issue; I've just been too lazy to replace it with a reliable 
+card.)
+
+I also have a 9600 running 10.something via XPostFacto. (That's REALLY 
+slow!!!)
+
+             <A HREF="http://www.opendarwin.org/projects/XPostFacto/">http://www.opendarwin.org/projects/XPostFacto/</A>
+
+XPostFacto will also allow you to load 10.3 on a Beige G3.
+
+Follow the links from the above site to the the OWC site and read about 
+the known problems -- like the AV personality cards not working on the 
+Beige G3, etc.
+
+In the end, it's not that you can't run OS X on these older machines, 
+it's just that at some point it's really not worth the aggravation.
+
+Network file servers are inherently slow when compared to local disk 
+access on a good day.
+
+A 300 mhz machine works pretty well as a Webserver because the overall 
+I/O load is light. However, as a file server, even with the Ultra-SCSi 
+drives I have, the I/O capabilities are simply slower than those my 
+newer machines, and it shows. That coupled with the fact that it has 
+only a 10 meg ethernet interface, means that your file transfer rates 
+are potentially, painfully slow ... especially if you are running on a 
+corporate net where there is other traffic.
+
+I find performance &quot;acceptable&quot; for &quot;small&quot; files being accessed by my 
+800 mhz G4, but for large file transfers, I wind up using my FireWire 
+drive (aka iPod) so I don't have sit around waiting for them to 
+transfer.
+
+One last comment -- don't expect Tiger to run on these old machines, at 
+all. There is evidently an &quot;endian&quot; issue between the G4's emulation 
+and the G5 which will potentially effect quite a bit of software. Not 
+the core Darwin stuff but the GUI level apps.
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001237.html">[X-Unix] Orig G3 desktop and OS X
+</A></li>
+	<LI>Next message: <A HREF="001238.html">[X-Unix] Re: Orig G3 desktop and OS X
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1251">[ date ]</a>
+              <a href="thread.html#1251">[ thread ]</a>
+              <a href="subject.html#1251">[ subject ]</a>
+              <a href="author.html#1251">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

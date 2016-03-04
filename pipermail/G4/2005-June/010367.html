@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Join Two HFS Volumes?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Join%20Two%20HFS%20Volumes%3F&In-Reply-To=6C91353A-E1A2-4C96-A20E-2F47F1C1F288%40comcast.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010362.html">
+   <LINK REL="Next"  HREF="010368.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Join Two HFS Volumes?</H1>
+    <B>Alex</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Join%20Two%20HFS%20Volumes%3F&In-Reply-To=6C91353A-E1A2-4C96-A20E-2F47F1C1F288%40comcast.net"
+       TITLE="[G4] Join Two HFS Volumes?">lists at lexial.ca
+       </A><BR>
+    <I>Wed Jun 29 06:55:28 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010362.html">[G4] Join Two HFS Volumes?
+</A></li>
+        <LI>Next message: <A HREF="010368.html">[G4] Join Two HFS Volumes?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10367">[ date ]</a>
+              <a href="thread.html#10367">[ thread ]</a>
+              <a href="subject.html#10367">[ subject ]</a>
+              <a href="author.html#10367">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jun 28, 2005, at 19:30, Carlos wrote:
+
+&gt;<i> what I _want_ is to be able to mount a single network volume from the 
+</I>&gt;<i> host, and &quot;see&quot; the data contained on the other drives without 
+</I>&gt;<i> mounting them separately.
+</I>&gt;<i>
+</I>&gt;<i> I want to administer this at the server end if possible, so that 
+</I>&gt;<i> nothing ever changes on the host side, regardless of how many times I 
+</I>&gt;<i> add, remove, or change the drives on the server.
+</I>
+Ah. That's not the same thing, actually.
+
+We've been talking about mounting a (local) HFS filesystem at a 
+different mountpoint. Would that achieve what you want? I don't know, 
+and I can't test it now, but why don't you test it? Unmount a local 
+volume, then, following the example I gave you, use the mount_hfs 
+command to mount it to a different node (e.g., /Users/Shared). Then go 
+to a client, connect to the server, and see if you can access it the 
+way you want it. I suspect it won't work, but I could very well be 
+wrong.
+
+Whether it works or not, I see it as a very poor way of implementing 
+what you want. First, because, IMHO, it's bad resource management. 
+Second, because Mac OS X offers a much more elegant way of achieving it 
+-- the NetInfo database. Basically, you need to bind each client to the 
+server's NetInfo db, and set up automount in the parent NetInfo db. 
+Then, when you change drives on the server, all you need to do is alter 
+the automount settings in the server NetInfo db. You should find 
+details in the Mac OS X Server setup guide.
+
+&lt;0x0192&gt;
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010362.html">[G4] Join Two HFS Volumes?
+</A></li>
+	<LI>Next message: <A HREF="010368.html">[G4] Join Two HFS Volumes?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10367">[ date ]</a>
+              <a href="thread.html#10367">[ thread ]</a>
+              <a href="subject.html#10367">[ subject ]</a>
+              <a href="author.html#10367">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

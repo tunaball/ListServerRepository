@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] old port for ssh
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20old%20port%20for%20ssh&In-Reply-To=141516AA-2018-43ED-B6B2-FA253F827145%40lvnv.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003105.html">
+   <LINK REL="Next"  HREF="003110.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] old port for ssh</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20old%20port%20for%20ssh&In-Reply-To=141516AA-2018-43ED-B6B2-FA253F827145%40lvnv.com"
+       TITLE="[X-Unix] old port for ssh">macmonster at myrealbox.com
+       </A><BR>
+    <I>Thu May  8 08:29:30 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003105.html">[X-Unix] old port for ssh
+</A></li>
+        <LI>Next message: <A HREF="003110.html">[X-Unix] old port for ssh
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3109">[ date ]</a>
+              <a href="thread.html#3109">[ thread ]</a>
+              <a href="subject.html#3109">[ subject ]</a>
+              <a href="author.html#3109">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 8 May 2008, at 03:38, M K wrote:
+&gt;<i> ...
+</I>&gt;&gt;<i> The ssh command has the option to specify what version is used when
+</I>&gt;&gt;<i> connecting to a remote host.  I believe it's ssh -p &lt;port&gt; -&lt;version&gt;
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">username at host</A>, replace &lt;version&gt; with 1 or 2.  I think if you put a 1
+</I>&gt;&gt;<i> there, things will work just fine.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> No luck... I tried it just to be sure.
+</I>&gt;<i> it has to be SSH v2
+</I>&gt;<i>
+</I>&gt;<i> this is the error I get by the way...
+</I>&gt;<i> channel 0: open failed: resource shortage: Channel open failed
+</I>&gt;<i>
+</I>&gt;<i> and like I said, it only happens in openSSH 4.6 and later...
+</I>&gt;<i>
+</I>&gt;<i> I'm sure it's bug in their SSH Daemon...so I need to get an old  
+</I>&gt;<i> port of OpenSSH
+</I>
+It might just be that the client on your machine is trying to enforce  
+security standards which weren't available when the older server was  
+written. It may not be the version you have to change, but something  
+else - look, for example, at the variety of -o options in `man ssh`.
+
+You might find that `ssh -v hostname` (or `ssh -v -v hostname` or  
+`ssh -v -v -v hostname`) gives more information about the problem and  
+enables you to find a workaround (using the current client).
+
+Stroller.
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003105.html">[X-Unix] old port for ssh
+</A></li>
+	<LI>Next message: <A HREF="003110.html">[X-Unix] old port for ssh
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3109">[ date ]</a>
+              <a href="thread.html#3109">[ thread ]</a>
+              <a href="subject.html#3109">[ subject ]</a>
+              <a href="author.html#3109">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

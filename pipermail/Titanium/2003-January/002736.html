@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> more on CheckPlugins
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=more%20on%20CheckPlugins&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002735.html">
+   <LINK REL="Next"  HREF="002737.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>more on CheckPlugins</H1>
+    <B>Trevor J. Hutley</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=more%20on%20CheckPlugins&In-Reply-To="
+       TITLE="more on CheckPlugins">hutley at geneva-link.ch
+       </A><BR>
+    <I>Mon Jan 27 09:30:00 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002735.html">[Ti] Why do URL's die when wrapped?
+</A></li>
+        <LI>Next message: <A HREF="002737.html">[Ti] Shh! Delivery Date 17&quot; Different from AppleStore
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2736">[ date ]</a>
+              <a href="thread.html#2736">[ thread ]</a>
+              <a href="subject.html#2736">[ subject ]</a>
+              <a href="author.html#2736">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+I again started my Ti-500, to see if the same crash occurred. Which it did:
+
+	Date/Time:  2003-01-27 16:54:51 +0100
+	OS Version: 10.2.3 (Build 6G30)
+	Host:       localhost
+
+	Command:    CheckPlugins
+	PID:        242
+
+	Exception:  EXC_BAD_ACCESS (0x0001)
+	Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x00000003
+
+When I look at the Console Log, I see this:
+
+
+Mac OS X Version 10.2.3 (Build 6G30)
+Jan 27 17:54:13 localhost crashdump: Crash report written to: 
+/Library/Logs/CrashReporter/CheckPlugins.crash.log
+
+2003-01-27 17:54:23.282 SystemUIServer[433]
+     MenuCracker
+     (c)2002 &lt;<A HREF="../../../mailman/listinfo/titanium.html">James_007_bond at mac.com</A>&gt;
+     MenuCracker is now loaded. Ready to accept new menus. Ignore the 
+failure message that follow.
+2003-01-27 17:54:23.684 SystemUIServer[433] failed to load Menu 
+Extra: NSBundle 
+&lt;/Users/tjh/Library/PreferencePanes/ASM.prefPane/Contents/Resources/MenuCracker.menu&gt; 
+(loaded)
+2003-01-27 17:54:23.685 SystemUIServer[433] Normally DeVercruesseASM 
+would not have been loaded as a Menu Extra.
+2003-01-27 17:54:23.757 SystemUIServer[433] Normally 
+DeVercruesseASMSeparator would not have been loaded as a Menu Extra.
+Jan 27 17:54:25 localhost WindowServer[180]: CGXDisableUpdate: 
+Updates disabled by connection 0x47f7 for over 1.000000 seconds
+
+2003-01-27 17:55:28.871 pbs[408] CFLog (0):
+	CFPropertyListCreateFromXMLData(): plist parse failed; the 
+data is not proper UTF-8. The file name for this data could be:
+	&lt;plist resource in resource fork&gt; of bundle: 
+/Applications/Utilities/ATI Utilities/ATI Monitor
+	The parser will retry as in 10.1, but the problem should be 
+corrected in the plist.
+Jan 27 17:57:05 localhost WindowServer[180]: CGXDisableUpdate: 
+Updates disabled by connection 0x490b for over 1.000000 seconds
+
+
+Does any of this mean anything to anyone ?
+
+Am I right in looking at the unsanity.com utilitiy (haxie) ASM as the 
+source/cause of this?
+This has beeen installed since May 2002, so I do not know why today 
+it is a problem.....!
+
+regards,  Trevor
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002735.html">[Ti] Why do URL's die when wrapped?
+</A></li>
+	<LI>Next message: <A HREF="002737.html">[Ti] Shh! Delivery Date 17&quot; Different from AppleStore
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2736">[ date ]</a>
+              <a href="thread.html#2736">[ thread ]</a>
+              <a href="subject.html#2736">[ subject ]</a>
+              <a href="author.html#2736">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

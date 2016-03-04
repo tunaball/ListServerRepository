@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Changing a file's open-with program at the command	line.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20Changing%20a%20file%27s%20open-with%20program%20at%20the%20command%0A%09line.&In-Reply-To=%3C3AC006AD-5312-42DE-BB76-71167FE7477D%40ieee.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003362.html">
+   <LINK REL="Next"  HREF="003364.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X-Unix] Changing a file's open-with program at the command	line.</H1>
+    <B>Jerry Krinock</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20Changing%20a%20file%27s%20open-with%20program%20at%20the%20command%0A%09line.&In-Reply-To=%3C3AC006AD-5312-42DE-BB76-71167FE7477D%40ieee.org%3E"
+       TITLE="[X-Unix] Changing a file's open-with program at the command	line.">jerry at ieee.org
+       </A><BR>
+    <I>Wed Feb 10 19:34:53 PST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003362.html">[X-Unix] Changing a file's open-with program at the command line.
+</A></li>
+        <LI>Next message: <A HREF="003364.html">[X-Unix] Changing a file's open-with program at the command	line.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3363">[ date ]</a>
+              <a href="thread.html#3363">[ thread ]</a>
+              <a href="subject.html#3363">[ subject ]</a>
+              <a href="author.html#3363">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>You need to get into the Launch Services database.  There is a LaunchServices framework which is accessible by a C API, but in this post someone says they can access it from the command line:
+
+<A HREF="http://www.tuaw.com/2009/06/11/terminal-tips-rebuild-your-launch-services-database-to-clean-up/">http://www.tuaw.com/2009/06/11/terminal-tips-rebuild-your-launch-services-database-to-clean-up/</A>
+
+BUT, there is no man page for lsregister.  So, I don't know.  Maybe the executable in this framework also has a secret command-line interface??
+
+You can certainly do it by writing a C program.  Although Launch Services is not a very nice API, here's the documentation:
+
+<A HREF="http://developer.apple.com/mac/library/DOCUMENTATION/Carbon/Conceptual/LaunchServicesConcepts/LSCIntro/LSCIntro.html#/apple_ref/doc/uid/TP30000999-CH201-TP1">http://developer.apple.com/mac/library/DOCUMENTATION/Carbon/Conceptual/LaunchServicesConcepts/LSCIntro/LSCIntro.html#//apple_ref/doc/uid/TP30000999-CH201-TP1</A>
+
+Specifically, in &quot;Launch Services Tasks&quot;, see &quot;Registering an Application&quot;.
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003362.html">[X-Unix] Changing a file's open-with program at the command line.
+</A></li>
+	<LI>Next message: <A HREF="003364.html">[X-Unix] Changing a file's open-with program at the command	line.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3363">[ date ]</a>
+              <a href="thread.html#3363">[ thread ]</a>
+              <a href="subject.html#3363">[ subject ]</a>
+              <a href="author.html#3363">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

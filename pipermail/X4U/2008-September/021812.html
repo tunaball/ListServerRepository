@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Can Apple's Mail pick up GMail?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Can%20Apple%27s%20Mail%20pick%20up%20GMail%3F&In-Reply-To=C507C39F.165AA8%25XPressoBean%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="021810.html">
+   <LINK REL="Next"  HREF="021814.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Can Apple's Mail pick up GMail?</H1>
+    <B>Doug McNutt</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Can%20Apple%27s%20Mail%20pick%20up%20GMail%3F&In-Reply-To=C507C39F.165AA8%25XPressoBean%40mac.com"
+       TITLE="[X4U] Can Apple's Mail pick up GMail?">douglist at macnauchtan.com
+       </A><BR>
+    <I>Tue Sep 30 10:58:55 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="021810.html">[X4U] Can Apple's Mail pick up GMail?
+</A></li>
+        <LI>Next message: <A HREF="021814.html">[X4U] Can Apple's Mail pick up GMail?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#21812">[ date ]</a>
+              <a href="thread.html#21812">[ thread ]</a>
+              <a href="subject.html#21812">[ subject ]</a>
+              <a href="author.html#21812">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 11:53 -0500 9/30/08, Linda wrote:
+&gt;<i>I read a bunch of the IMAP vs POP sites before I asked my question. Now I'm
+</I>&gt;<i>asking the *benefits* of IMAP. I know what it is, but I can't tell from all
+</I>&gt;<i>of these pages what the benefits are. For example, if I want to access an
+</I>&gt;<i>email from one year ago, with IMAP I have to leave it on the server, right?
+</I>&gt;<i>The server will fill up eventually. I just don't see the benefits of IMAP
+</I>&gt;<i>over POP, given how they both work, and was hoping someone could explain the
+</I>&gt;<i>benefits of IMAP.
+</I>
+&lt;personal opinion&gt;
+
+The POP mailbox concept came about during a time when disk (and tape) space was a serious problem. The wasted space after ends of messages and ends of the hardware disk block was intolerable. Also, the file system management did not really like thousands of separate files that it would have to index in a one-message-per-file scenario. Concatenating messages in MBX files was the answer.
+
+Those limits are gone now and new hardware gives IMAP a chance to work.
+
+But IMAP clients still choose to obfuscate the filenames of the stored messages. If you use a command line or Finder-like file browser to look at the message files you have to open each one to get at the subject and sender headers. The database that holds the information you need is considered proprietary. That makes it a real PITA to come up with simple scripts that can move o backup individual messages. It's easier to open the MBX file with a text editor - even sed or perl -  and do what you want to do. A file system improvement to allow descriptive naming would help.
+
+So I prefer a POP mail client. But Eudora is passing to the heaven of software without much in the way of a replacement. I'm looking at Claws-mail which stores messages in separate files but also allows for conversion to and from mailbox files. I can use the secure file copy tool - scp -  to copy an entire POP3 mailbox from my mail server for processing here by Claws. That's neither POP nor IMAP but it sure is easy to do.
+
+IMAP is very useful to folks who travel or otherwise have to make connections to their mail server from divers computers. You can check your mail with a browser interface on someone else's machine and not have to worry about being sure its saved on the server. I find I can use web-based Squirrel Mail with a browser and my normal POP3 service handles it somehow. I think it's a feature of the qmail server software that allows for messages to be rewritten temporarily so that a mailbox file is effectively converted to a folder containing the messages as separate files.  When I get home my POP3 client gets all of the messages and cleans out the mailbox but things I have read elsewhere using IMAP will still be there if I have saved them into an IMAP folder. Because only the ones I have explicitly saved survive emptying by POP3, the storage on the server is not significant even over years.
+
+A problem with IMAP is attached files. POP clients usually extract the MIME-encoded files and decode them for storage in the local file system. IMAP clients have a problem with that and often keep the encoded attachment within the message. That makes it difficult to keep the message and discard the enclosure which you may have received before.
+
+&lt;/personal opinion&gt;
+
+
+-- 
+
+--&gt; From the U S of A, the only socialist country that refuses to admit it. &lt;--
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="021810.html">[X4U] Can Apple's Mail pick up GMail?
+</A></li>
+	<LI>Next message: <A HREF="021814.html">[X4U] Can Apple's Mail pick up GMail?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#21812">[ date ]</a>
+              <a href="thread.html#21812">[ thread ]</a>
+              <a href="subject.html#21812">[ subject ]</a>
+              <a href="author.html#21812">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

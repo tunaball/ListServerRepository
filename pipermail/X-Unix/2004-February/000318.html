@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Quoting in bash aliases
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Quoting%20in%20bash%20aliases&In-Reply-To=list-10941474%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000317.html">
+   <LINK REL="Next"  HREF="000320.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Quoting in bash aliases</H1>
+    <B>Eugene Lee</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Quoting%20in%20bash%20aliases&In-Reply-To=list-10941474%40mail.ninewire.com"
+       TITLE="[X-Unix] Quoting in bash aliases">list-themacintoshguy at fsck.net
+       </A><BR>
+    <I>Thu Feb 19 04:47:35 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000317.html">Quoting in bash aliases
+</A></li>
+        <LI>Next message: <A HREF="000320.html">[X-Unix] Quoting in bash aliases
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#318">[ date ]</a>
+              <a href="thread.html#318">[ thread ]</a>
+              <a href="subject.html#318">[ subject ]</a>
+              <a href="author.html#318">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Thu, Feb 19, 2004 at 01:28:32PM +0100, Kirk McElhearn wrote:
+:<i> 
+</I>:<i> The following command replaces Mac line breaks with Unix line breaks:
+</I>:<i> 
+</I>:<i> perl -pi -e 's/\r\n?/\n/g'
+</I>:<i> 
+</I>:<i> I'd like to make an alias in bash, something like:
+</I>:<i> 
+</I>:<i> alias rplc='perl -pi -e 's/\r\n?/\n/g''
+</I>:<i> 
+</I>:<i> But the above doesn't work. I assume it has something to do with quoting.
+</I>:<i> I've tried double-quotes, escaping the quotes in the perl string and more.
+</I>:<i> 
+</I>:<i> Can anyone tell me how this needs to be quoted to work correctly?
+</I>
+This worked for me at the command line:
+
+	$ alias rplc=&quot;perl -pi -e 's/\r\n?/\n/g'&quot;
+
+Once the alias was created, this is how /bin/bash stored it:
+
+	$ alias
+	alias rplc='perl -pi -e '\''s/\r\n?/\n/g'\'''
+
+However, you can use the rules of quoting to create an alias that is
+easier to type and easier to read:
+
+	$ alias rplc='perl -pi -e &quot;s/\r\n?/\n/g&quot;'
+
+
+-- 
+Eugene Lee
+<A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000317.html">Quoting in bash aliases
+</A></li>
+	<LI>Next message: <A HREF="000320.html">[X-Unix] Quoting in bash aliases
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#318">[ date ]</a>
+              <a href="thread.html#318">[ thread ]</a>
+              <a href="subject.html#318">[ subject ]</a>
+              <a href="author.html#318">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Time Warp Hits System Logs
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Time%20Warp%20Hits%20System%20Logs&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="003074.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Time Warp Hits System Logs</H1>
+    <B>Richard Hartman</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Time%20Warp%20Hits%20System%20Logs&In-Reply-To="
+       TITLE="[X-Unix] Time Warp Hits System Logs">seasoft at west.net
+       </A><BR>
+    <I>Tue Apr  1 16:37:24 PDT 2008</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="003074.html">[X-Unix] Time Warp Hits System Logs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3073">[ date ]</a>
+              <a href="thread.html#3073">[ thread ]</a>
+              <a href="subject.html#3073">[ subject ]</a>
+              <a href="author.html#3073">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Cross-post apologies: I meant to send this to the x-unix list but sent  
+it to the x4u list by mistake... My bad.
+-------------------------------
+Whilst playing around with Time Machine backups to a mounted AFP  
+volume earlier today, evidently there was some kind of system error  
+that was not reported or evident via the GUI but was recorded in the  
+system &amp; console logs, as I just discovered some 5.5 hours after they  
+happened; nothing really remarkable about that, BUT...
+
+The thing is that All the console and system logs quit getting updates  
+at that instant. I just noticed this while I was looking at the system  
+log out of boredom. I was unable to do anything that would generate a  
+log update (for example, I initiated a Time Machine backup which  
+normally always reports progress to system; nothing). I rebooted the  
+system and the log entries began to update normally. Here is the  
+system log portion spanning the &quot;missing&quot; 5+ hours:
+
+==================
+.
+.
+lots of logged errors, like...
+Apr  1 10:38:34 iMac20 kernel[0]: disk6s2: 0x14 (UNDEFINED).
+Apr  1 10:38:33 iMac20 fseventsd[38]: failed to unlink old log file / 
+Volumes/Backup of iMac20/.fseventsd/00000000200749a5 (Input/output  
+error)
+Apr  1 10:38:34 iMac20 kernel[0]:
+Apr  1 10:38:33 iMac20 fseventsd[38]: failed to unlink old log file / 
+Volumes/Backup of iMac20/.fseventsd/0000000020076c6b (Input/output  
+error)
+Apr  1 10:38:34 iMac20 kernel[0]:
+Apr  1 10:38:33 iMac20 fseventsd[38]: failed to unlink old log file / 
+Volumes/Backup of iMac20/.fseventsd/0000000020079a9c (Input/output  
+error)
+Apr  1 10:38:34 iMac20 kernel[0]: [FSLogMsgOrder Last]
+Apr  1 10:38:33 iMac20 fseventsd[38]: failed to unlink old log file / 
+Volumes/Backup of iMac20/.fseventsd/000000002007bcea (Input/output  
+error)
+Apr  1 10:38:34 iMac20 kernel[0]: disk6s2: 0x14 (UNDEFINED).
+Apr  1 10:38:33 iMac20 fseventsd[38]: failed to unlink old log file / 
+Volumes/Backup of iMac20/.fseventsd/000000002007eb80 (Input/output  
+error)
+Apr  1 10:38:34 iMac20 kernel[0]:
+Apr  1 10:38:33 iMac20 fseventsd[38]: failed to unlink old log file / 
+Volumes/Backup of iMac20/.fseventsd/0000000020080fc9 (Input/output  
+error)
+Apr  1 10:38:34 iMac20 kernel[0]: der First]
+Apr  1 10:38:33 iMac20 fseventsd[38]: failed to unlink old log file / 
+Volumes/Backup of iMac20/.fseventsd/0000000020084845 (Input/output  
+error)
+Apr  1 16:05:27 localhost kernel[0]: npvhash=4095
+Apr  1 16:05:26 localhost com.apple.launchctl.System[2]: launchctl:  
+Please convert the following to launchd: /etc/mach_init.d/chum.plist
+Apr  1 16:05:26 localhost com.apple.launchctl.System[2]: launchctl:  
+Please convert the following to launchd: /etc/mach_init.d/ 
+dashboardadvisoryd.plist
+Apr  1 16:05:26 localhost com.apple.launchctl.System[2]: launchctl:  
+Please convert the following to launchd: /etc/mach_init.d/ 
+pilotfish.plist
+Apr  1 16:05:26 localhost com.apple.launchd[1]  
+(com.apple.distccdConfigd): Unknown key: SHAuthorizationRight
+Apr  1 16:05:26 localhost com.apple.launchd[1] (org.apache.httpd):  
+Unknown key: SHAuthorizationRight
+Apr  1 16:05:26 localhost com.apple.launchd[1] (org.cups.cupsd):  
+Unknown key: SHAuthorizationRight
+Apr  1 16:05:26 localhost com.apple.launchd[1] (org.ntp.ntpd): Unknown  
+key: SHAuthorizationRight
+Apr  1 16:05:26 localhost DirectoryService[11]: Launched version 5.2  
+(v514.4)
+.
+.
+lots more normal startup system log items
+==================
+
+During that 5.5 hour time warp, lots of stuff went on; I was listening  
+to itunes music, surfing with safari, receiving &amp; sending mail, normal  
+time machine backups, etc., etc.
+
+How in blazes can the logs go completely silent for so long with no  
+observable operational consequences? Has anyone here seen such  
+behavior? Should I be concerned? I am really, really confounded by this.
+
+Note: This is NOT an April Fool's joke (unless somebody at Apple  
+programmed this log silence to mess with terminal noobs).
+
+Richard
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="003074.html">[X-Unix] Time Warp Hits System Logs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3073">[ date ]</a>
+              <a href="thread.html#3073">[ thread ]</a>
+              <a href="subject.html#3073">[ subject ]</a>
+              <a href="author.html#3073">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

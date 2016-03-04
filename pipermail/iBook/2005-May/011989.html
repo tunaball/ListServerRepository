@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [iBook] Kernel panics
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BiBook%5D%20Kernel%20panics&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011988.html">
+   <LINK REL="Next"  HREF="011992.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[iBook] Kernel panics</H1>
+    <B>Angus Wallace</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BiBook%5D%20Kernel%20panics&In-Reply-To="
+       TITLE="[iBook] Kernel panics">angus.wallace at flinders.edu.au
+       </A><BR>
+    <I>Thu May  5 20:13:31 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011988.html">[iBook] Firefox on Tiger
+</A></li>
+        <LI>Next message: <A HREF="011992.html">[iBook] Re:Kernel Panics
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11989">[ date ]</a>
+              <a href="thread.html#11989">[ thread ]</a>
+              <a href="subject.html#11989">[ subject ]</a>
+              <a href="author.html#11989">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dear all,
+
+I have an external USB2 3.5&quot; HD casing that's causing me some grief.
+It's by mapower (<A HREF="http://www.mapower.com/">http://www.mapower.com/</A>), and uses the genesys  
+chipset (I think).
+I have a 160gb, ATA133 Seagate HD in it (that I installed myself).
+I've installed the most recent version of their driver (2.30).
+But it's a bit unstable (it doesn't always mount/unmount correctly,  
+and behaves a little erratically) and sometimes causes kernel panics  
+(about once /week).
+My Computer is a G4 ibook 12&quot; 800, running Tiger, although these  
+problems existed with Panther too.
+
+I have a *slight* suspicion that it could be the HD itself that  
+causing problems - is there anything here to suggest this?
+
+Here's a sample of panic.log that I think is relevant:
+
+----------------8&lt;-----------------
+
+panic(cpu 0): zalloc
+Latest stack backtrace for cpu 0:
+       Backtrace:
+          0x000835F8 0x00083ADC 0x0001EDA4 0x00039038 0x000241A0  
+0x00247870 0x007F94B4 0x006A7108
+          0x006AA3C4 0x006A954C 0x006A5F4C 0x006A5B1C 0x006AE37C  
+0x006B5070 0x006AE37C 0x006B16EC
+          0x006B0528 0x000D7894 0x001DECC4 0x000B87A0 0x000B95E0  
+0x000B92E0 0x001DD564 0x000CE304
+          0x00222A00 0x0022289C 0x002463E4 0x00094160 0x00000000
+       Kernel loadable modules in backtrace (with dependencies):
+          com.apple.iokit.IOSCSIBlockCommandsDevice(1.3.8)@0x7f8000
+             dependency: com.apple.iokit.IOStorageFamily(1.3.4)@0x6a0000
+             dependency: com.apple.iokit.IOSCSIArchitectureModelFamily 
+(1.3.8)@0x3b4000
+          com.apple.iokit.IOStorageFamily(1.3.4)@0x6a0000
+Proceeding back via exception chain:
+    Exception state (sv=0x228A7280)
+       PC=0x9002A4CC; MSR=0x0000D030; DAR=0x1979D004;  
+DSISR=0x40000000; LR=0x902A17F4; R1=0xF060B6F0; XCP=0x00000030 (0xC00  
+- System call)
+
+Kernel version:
+Darwin Kernel Version 7.8.0:
+Wed Dec 22 14:26:17 PST 2004; root:xnu/xnu-517.11.1.obj~1/RELEASE_PPC
+
+----------------8&lt;-----------------
+
+Does anyone have any suggestions? Anyone successfully using this  
+device? Any recommendations?
+
+Thanks in advance,
+-Gus
+</PRE>
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011988.html">[iBook] Firefox on Tiger
+</A></li>
+	<LI>Next message: <A HREF="011992.html">[iBook] Re:Kernel Panics
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11989">[ date ]</a>
+              <a href="thread.html#11989">[ thread ]</a>
+              <a href="subject.html#11989">[ subject ]</a>
+              <a href="author.html#11989">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

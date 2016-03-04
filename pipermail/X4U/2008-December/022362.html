@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Re: Duplicating?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Re%3A%20Duplicating%3F&In-Reply-To=77A3863A-B0BF-4555-8080-F9E1D3EB29D3%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="022359.html">
+   <LINK REL="Next"  HREF="022366.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Re: Duplicating?</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Re%3A%20Duplicating%3F&In-Reply-To=77A3863A-B0BF-4555-8080-F9E1D3EB29D3%40mac.com"
+       TITLE="[X4U] Re: Duplicating?">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Fri Dec 19 03:06:28 PST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="022359.html">[X4U] Re: Duplicating?
+</A></li>
+        <LI>Next message: <A HREF="022366.html">[X4U] Re: Duplicating?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#22362">[ date ]</a>
+              <a href="thread.html#22362">[ thread ]</a>
+              <a href="subject.html#22362">[ subject ]</a>
+              <a href="author.html#22362">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 00:35 -0500 19/12/08, Jon wrote:
+John-
+
+I don't regard $69 for an empty box as particularly cheap. And, while
+Firewire 400 may be, in practice, faster than USB2 (though I'd like to
+see a citation that shows this), I wonder if the difference would be sig-
+nificant for most of us.
+
+I don't have a reference for this, but knowing how it works shows 
+that it must be.
+
+An extract from an earlier post of mine on this topic:
+&lt;extract&gt;
+FW is always better than USB. Whatever rate the bits come/go down the 
+wire, with FW the interface dumps/collects the data directly 
+into/from system memory; with USB the CPU has to stop what it's 
+doing, save state, copy the next byte (or 2 or 4 or 8 ... 4k bytes) 
+from/to the interface to/from system memory, restore state, and 
+continue what it was doing each time a byte (2, 4, 8, ..., 4k) 
+arrives/can be sent. Don't know what the number is, or if it's fixed 
+or variable. I've never written a USB driver.
+&lt;/extract&gt;
+
+Firewire uses DMA (Direct Memory Access), which means that the 
+interface hardware itself gets the data into/out of memory at memory 
+bus speed. It either uses memory cycles that the main CPU isn't 
+using, or tells the main CPU to hold back till it's finished that 
+chunk. The main CPU can just carry on after a brief idle, but without 
+a context switch. The fact that transfer is complete can be sent with 
+a lower priority interrupt that gets handled when convenient.
+
+The only way Apple can get away with using Time Machine to a USB 
+drive is because the later machines have more than one core, and so 
+one core can do a lot of USB stuff leaving the user unaware. 
+Dedicating one core to USB would still be slower than FW because the 
+data transfer into/out of memory is still done by a program running 
+on that core. That program has to read each instruction from memory 
+(or possibly a cache), execute it, read the next ...  The shortest 
+program would be (for a disc read and after initialisation):
+   read 4 bytes from the interface (for a 32 bit system, 8 bytes for a 
+64 bit system)
+   write those bytes into memory
+   reduce the count of bytes to do by 4 (or 8)
+   test if there's still some left to do and back to the top if there are
+The memory address to write to would probably be auto incremented 
+else there would be another step in the list.
+There's no way that that can compete with a DMA transfer.
+
+I understand your feelings wrt the price for a box, but it's not 
+actually empty. And you get a $20 power brick, and personally I 
+wouldn't use a non-powered external drive except with a laptop that 
+travels, with that drive, on a fairly frequent basis.
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+HP-UX specialist of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x4u.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="022359.html">[X4U] Re: Duplicating?
+</A></li>
+	<LI>Next message: <A HREF="022366.html">[X4U] Re: Duplicating?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#22362">[ date ]</a>
+              <a href="thread.html#22362">[ thread ]</a>
+              <a href="subject.html#22362">[ subject ]</a>
+              <a href="author.html#22362">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

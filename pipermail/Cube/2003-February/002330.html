@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [CUBE] PL 1.2 Shipping!
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20PL%201.2%20Shipping%21&In-Reply-To=list-4779154%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002329.html">
+   <LINK REL="Next"  HREF="002331.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[CUBE] PL 1.2 Shipping!</H1>
+    <B>Laurie A Duncan</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20PL%201.2%20Shipping%21&In-Reply-To=list-4779154%40mail.ninewire.com"
+       TITLE="[CUBE] PL 1.2 Shipping!">laurie at cubeowner.com
+       </A><BR>
+    <I>Thu Feb  6 21:32:35 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002329.html">[CUBE] PL 1.2 Shipping!
+</A></li>
+        <LI>Next message: <A HREF="002331.html">[CUBE] PL 1.2 Shipping!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2330">[ date ]</a>
+              <a href="thread.html#2330">[ thread ]</a>
+              <a href="subject.html#2330">[ subject ]</a>
+              <a href="author.html#2330">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 2/7/03 12:13 AM, <A HREF="../../../mailman/listinfo/cube.html">arturo at ethicist.net</A> typeth:
+ 
+&gt;<i> Here's what you need to do.  Put the following into a file named cpu.sh:
+</I>&gt;<i> 
+</I>&gt;<i> #! /bin/sh
+</I>&gt;<i> i=0
+</I>&gt;<i> j=0
+</I>&gt;<i> while [ $i -lt 100 ]
+</I>&gt;<i> do
+</I>&gt;<i>        i=`expr $i + 1`
+</I>&gt;<i>        echo $i
+</I>&gt;<i>        done |
+</I>&gt;<i>    while read k ; do j=$j$k; done;
+</I>&gt;<i> 
+</I>&gt;<i> After putting the above in cpu.sh do a
+</I>&gt;<i> chmod 777 cpu.sh
+</I>&gt;<i> then do
+</I>&gt;<i> time ./cpu.sh
+</I>&gt;<i> 
+</I>&gt;<i> You'll see some statistics like so:
+</I>&gt;<i> 
+</I>&gt;<i> % time ./cpu.sh
+</I>&gt;<i> 0.150u 1.100s 0:01.47 85.0%     0+0k 0+0io 0pf+0w
+</I>&gt;<i> 
+</I>&gt;<i> The first # is user cpu seconds consumed (0.150u) then
+</I>&gt;<i> the second # is system cpu seconds consumed (1.100s) then
+</I>&gt;<i> the third number is elapsed time (0:01.47)  in minutes:seconds
+</I>&gt;<i> the fourth number is percentage of total available CPU time consumed
+</I>&gt;<i> (85%)
+</I>&gt;<i> 
+</I>&gt;<i> Alternatively you can use the other &quot;time&quot; command and get somewhat
+</I>&gt;<i> simplified output:
+</I>&gt;<i> 
+</I>&gt;<i> /usr/bin/time ./cpu.sh
+</I>&gt;<i>        1.31 real         0.21 user         1.04 sys
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> If you would (or need :-) the test to take longer just modify the
+</I>&gt;<i> 
+</I>&gt;<i> while [ $i -lt 100 ]
+</I>&gt;<i> 
+</I>&gt;<i> to something like
+</I>&gt;<i> 
+</I>&gt;<i> while [ $i -lt 1000 ]
+</I>&gt;<i> 
+</I>&gt;<i> At 1000 I get on my 450MHz Cube
+</I>&gt;<i> /usr/bin/time ./cpu.sh
+</I>&gt;<i>       13.80 real         2.18 user        10.20 sys
+</I>&gt;<i> 
+</I>&gt;<i> Thirteen seconds to count to 1000 :-)
+</I>
+Here's what I get on my dual 800 (using 100 as written above):
+
+
+[Cube:~] laurie% time ./cpu.sh
+
+0.120u 0.940s 0:00.88 120.4%    0+0k 0+0io 0pf+0w
+
+
+[Cube:~] laurie% /usr/bin/time ./cpu.sh
+
+        0.88 real         0.14 user         0.85 sys
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002329.html">[CUBE] PL 1.2 Shipping!
+</A></li>
+	<LI>Next message: <A HREF="002331.html">[CUBE] PL 1.2 Shipping!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2330">[ date ]</a>
+              <a href="thread.html#2330">[ thread ]</a>
+              <a href="subject.html#2330">[ subject ]</a>
+              <a href="author.html#2330">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

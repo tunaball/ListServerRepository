@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] rsync &amp; ssh [DRIFT]
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20rsync%20%26%20ssh%20%5BDRIFT%5D&In-Reply-To=list-14595993%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001053.html">
+   <LINK REL="Next"  HREF="001054.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] rsync &amp; ssh [DRIFT]</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20rsync%20%26%20ssh%20%5BDRIFT%5D&In-Reply-To=list-14595993%40mail.ninewire.com"
+       TITLE="[X-Unix] rsync &amp; ssh [DRIFT]">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Fri Jul  9 04:44:27 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001053.html">[X-Unix] Welcome to Darwin! You have new mail.
+</A></li>
+        <LI>Next message: <A HREF="001054.html">[X-Unix] Welcome to Darwin! You have new mail.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1056">[ date ]</a>
+              <a href="thread.html#1056">[ thread ]</a>
+              <a href="subject.html#1056">[ subject ]</a>
+              <a href="author.html#1056">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>From: Stroller &lt;<A HREF="../../../mailman/listinfo/x-unix.html">MacMonster at myrealbox.com</A>&gt;
+</I>&gt;<i>Subject: Re: [X-Unix] rsync &amp; ssh
+</I>&gt;<i>Date: Thu, 8 Jul 2004 00:07:21 +0100
+</I>&gt;<i>
+</I>&gt;<i>On Jul 7, 2004, at 12:07 pm, David Ledger wrote:
+</I>&gt;&gt;&gt;<i>  From: Stroller &lt;<A HREF="../../../mailman/listinfo/x-unix.html">MacMonster at myrealbox.com</A>&gt;
+</I>&gt;&gt;&gt;<i>  Unix is *horribly* obscure &amp; complex, and for no good reason other
+</I>&gt;&gt;&gt;<i>  than
+</I>&gt;&gt;&gt;<i>  compatibility with legacy systems.
+</I>&gt;&gt;<i>  Not sure what you mean here.  I can't think of any legacy systems it's
+</I>&gt;&gt;<i>  particularly compatible with.
+</I>&gt;<i>
+</I>&gt;<i>Well, what I mean is basically that Unix stays horribly obscure &amp;
+</I>&gt;<i>complicated in in order to remain compatible with Unix.
+</I>
+So really you're complaining that Unix still exists, and hasn't been 
+replaced with a new OS with similar internals and different CLI 
+utilities.
+
+&gt;<i>`ls -l foo` means &quot;show full details of the file foo&quot;
+</I>&gt;<i>`ls -l -R` means &quot;show full details of all the files in the directory &amp;
+</I>&gt;<i>all directories below it&quot;
+</I>&gt;<i>
+</I>&gt;<i>`grep foo bar` means &quot;look for foo in the file bar&quot;
+</I>&gt;<i>`grep -R bar` means &quot;look (recursively?) for bar on standard input&quot;
+</I>
+Yes, but recursive is redundant for stdin.  The '-' indicates a flag, 
+and would be just as valid in the first version provided 'bar' were a 
+directory.  I don't see a problem here.  You have to think about how 
+a utility writer is going to get the info it needs from you.  'ls' 
+and 'grep' both work on multiple files/directories.  The only place 
+on a command line you can put a variable length list without adding 
+other markers is at the end.  Optional flags and flags with arguments 
+come at the beginning.  The presence of the '-' means the utility 
+code can distinguish between flags and main arguments.  From the 
+'grep' manpage:
+	grep [options] PATTERN [FILE...]
+	grep [options] [-e PATTERN | -f FILE] [FILE...]
+There is only one word allowed for 'PATTERN'.  As the code scans its 
+args list left to right, once it's seen a 'PATTERN' word, the rest 
+specify files to operate on (or stdin if none).  This is exactly the 
+same as for 'ls' except that 'ls' only needs flags and filenames 
+(directories being a type of file), nothing like 'PATTERN'.
+
+&gt;<i>So to show full details of the file &quot;-R&quot; we use `ls -l -- -R`
+</I>&gt;<i>But to look for the expression &quot;-R&quot; in the file bar we use `grep -e -R
+</I>&gt;<i>bar`
+</I>
+Under the old versions of Unix (the ones you were complaining we have 
+to be compatible with :-) ), '--' meant nothing, or possibly a flag 
+called '-'.  The first time I met '--' was under Linux.  It's not 
+normally used in mainstream Unix AFAIK, certainly not HP-UX.  Doing 
+an 'ls -l' on a file called '-R' was only a problem if you were 
+stupid enough to create a file called '-R'.  Users knew not to do 
+that or live with the consequences.  If you had to, you'd do 'ls -l x 
+-R' and ignore the line complaining that 'x' was not found.  'x' is 
+one less keystroke than '--'.
+
+&gt;<i>`tar` requires the -f flag to indicate that the following argument is
+</I>&gt;<i>the name of a file on which to operate, whereas the file to operate on
+</I>&gt;<i>is always the last argument to the `gzip` command.
+</I>
+You're seeing it backwards.  'tar' is just the same as the above. 
+The files it operates on are those after the flags (or keys as real 
+tar call them - a block of chars specifying what to do is _required_, 
+and so no '-' is needed to introduce them).  If the key includes c, 
+a, r, u ... those files listed at the end of the line are put 
+together in an archive.  If the key includes x (or t), files with the 
+names specified at the end of the line are extracted (or metadata 
+listed) from an archive, the default being &quot;all&quot;.  The '-f 
+&lt;filename&gt;' is optional, the default being the first tape device. 
+The items to operate on (archive) must be supplied.
+
+This is confused on OSX because OSX 'tar' is actually 'gnutar', which 
+is not Unix (GNU = Gnu's Not Unix), so the problem comes from not 
+sticking with the old :-).
+
+&gt;<i>Unix would be less
+</I>&gt;<i>horribly complicated, quicker to learn for beginners &amp; handier for
+</I>&gt;<i>experienced users alike, if flags were standardised and some of these
+</I>&gt;<i>anomalies revised, however some overnight &quot;standardisation&quot; would break
+</I>&gt;<i>every shell-script on the planet.
+</I>
+There are only 26 * 2 letters to use as flags and at least ten times 
+that many options to specify with them.  Some sites use both new and 
+ten year old boxes with current and ten year old OS revisions 
+together, running common scripts on both.  Y2K reduced this, but 
+we'll have HP-UX 10.20 (unsupported for a year now) from the mid 90s 
+still running in 2010 because of discontinued s/w products.
+
+
+and
+
+At 5:58 am -0700 8/7/2004, Stroller &lt;<A HREF="../../../mailman/listinfo/x-unix.html">MacMonster at myrealbox.com</A>&gt;:
+&gt;<i>I would regard there to be something inherently legacy about a
+</I>&gt;<i>command-line for which many of the principal tools are still called
+</I>&gt;<i>according to the whims of the authors who conceived them twenty or
+</I>&gt;<i>thirty years ago.
+</I>
+The only computer thing I've seen that uses meaningful names was 
+COBOL.  The naming of 'grep', 'awk', 'tar' may seem odd to newcomers, 
+but what would you call them so that new users would know what they 
+do from the name?
+
+
+and
+
+At 5:58 am -0700 8/7/2004, Brian Medley &lt;<A HREF="../../../mailman/listinfo/x-unix.html">bpm-list-osx-unix at 4321.tv</A>&gt;:
+&gt;<i>It would not have to break every shell script.  For example, the
+</I>&gt;<i>behavior of some versions Solaris depends on your path.
+</I>
+The behavior of _all_ versions of Unix depends on your PATH.
+
+
+David
+
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+Chair of HPUX SysAdmin SIG of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x-unix.html">dledger at ivdcs.co.uk</A> (also <A HREF="../../../mailman/listinfo/x-unix.html">dledger at ivdcs.demon.co.uk</A>)
+www.ivdcs.co.uk
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001053.html">[X-Unix] Welcome to Darwin! You have new mail.
+</A></li>
+	<LI>Next message: <A HREF="001054.html">[X-Unix] Welcome to Darwin! You have new mail.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1056">[ date ]</a>
+              <a href="thread.html#1056">[ thread ]</a>
+              <a href="subject.html#1056">[ subject ]</a>
+              <a href="author.html#1056">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

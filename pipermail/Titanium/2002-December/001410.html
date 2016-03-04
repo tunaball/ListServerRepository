@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Protecting your Data [was: TiBook 1GHz/SuperDrive US Mac OS ROM file?]
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Protecting%20your%20Data%20%5Bwas%3A%20TiBook%201GHz/SuperDrive%20US%20Mac%20OS%20ROM%20file%3F%5D&In-Reply-To=list-4238392%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001409.html">
+   <LINK REL="Next"  HREF="001411.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Protecting your Data [was: TiBook 1GHz/SuperDrive US Mac OS ROM file?]</H1>
+    <B>Robert Nicholson</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Protecting%20your%20Data%20%5Bwas%3A%20TiBook%201GHz/SuperDrive%20US%20Mac%20OS%20ROM%20file%3F%5D&In-Reply-To=list-4238392%40mail.ninewire.com"
+       TITLE="[Ti] Protecting your Data [was: TiBook 1GHz/SuperDrive US Mac OS ROM file?]">robert at elastica.com
+       </A><BR>
+    <I>Tue Dec 31 02:07:14 PST 2002</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001409.html">[Ti] Protecting your Data
+</A></li>
+        <LI>Next message: <A HREF="001411.html">[Ti] FW: TiBook 1GHz/SuperDrive US Mac OS ROM file?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1410">[ date ]</a>
+              <a href="thread.html#1410">[ thread ]</a>
+              <a href="subject.html#1410">[ subject ]</a>
+              <a href="author.html#1410">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>What prevents me from
+
+booting from an external OS X disk that I have root access on, copying  
+over the user files from this disk and &quot;recreating&quot; that user on the  
+other machine? Now I have the password to that users account as I've  
+created it. The only difference is that I've replaced the Users home  
+directory. As the password is stored in the Users keychain and I assume  
+keychains allow themselves to be copied around like any other file and  
+then logging in as that user and gaining access to this encrypted image?
+
+On Monday, December 30, 2002, at 10:40  PM, Neil Cadsawan wrote:
+
+&gt;<i> This was posted on Slashdot the other day and I thought that some  
+</I>&gt;<i> people here might find it interesting:
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://apple.slashdot.org/article.pl?sid=02/12/29/">http://apple.slashdot.org/article.pl?sid=02/12/29/</A> 
+</I>&gt;<i> 1353252&amp;mode=thread&amp;tid=179
+</I>&gt;<i>
+</I>&gt;<i> This is actually something that is covered in the new Mac OS X  
+</I>&gt;<i> Administration and Integration sysadmin technical training course from  
+</I>&gt;<i> Apple that will be going live in January. As the author of that  
+</I>&gt;<i> section of the course, let me give you a bare bones outline here.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>    1. Log in as the user whose files you want to secure.
+</I>&gt;<i>    2. Create an encrypted disk image using Disk Copy at the top level  
+</I>&gt;<i> of the user's home directory. When it asks for the disk image  
+</I>&gt;<i> password, be sure that the &quot;remember password&quot; option is checked --  
+</I>&gt;<i> this saves the disk image's password on the user's default keychain.
+</I>&gt;<i>    3. Use ditto to copy over the following directories from the user's  
+</I>&gt;<i> home folder onto the encrypted disk image:
+</I>&gt;<i>       ~/Desktop
+</I>&gt;<i>       ~/Documents
+</I>&gt;<i>       ~/Library/Mail
+</I>&gt;<i>       ~/Application Support/Addresses
+</I>&gt;<i>       ~/.ssh These are the important ones; you can copy over other  
+</I>&gt;<i> items as well, but definitely don't do the entire ~/Library folder,  
+</I>&gt;<i> and don't do the ~/Library/Keychains or ~/Library/Preferences folders.
+</I>&gt;<i>    4. Set the disk image to automount on login by dragging it into the  
+</I>&gt;<i> Login Items preferences pane.
+</I>&gt;<i>    5. Use mv to shift the directories aside (e.g. mv ~/Documents  
+</I>&gt;<i> ~/Documents.save) and set up symlinks onto the disk image (e.g. ln -s  
+</I>&gt;<i> /Volumes/Secure/Documents ~/Documents).
+</I>&gt;<i>    6. Log out and log back in again. The disk image will be  
+</I>&gt;<i> automounted at login, using the password stored on the default  
+</I>&gt;<i> keychain which also unlocks on login. Everything should just work! :-D
+</I>&gt;<i>    7. Now for the housekeeping: delete the .save directories you  
+</I>&gt;<i> created earlier, and be sure to turn off automatic login in the  
+</I>&gt;<i> Accounts preferences pane.
+</I>&gt;<i>
+</I>&gt;<i> Why do it this way instead of the way that Joshua Gitlin wrote up?  
+</I>&gt;<i> First, you don't need admin access to a machine to make it work. You  
+</I>&gt;<i> may not have admin access on a company machine, or as a sysadmin you  
+</I>&gt;<i> may not want to give admin access to most of your users.
+</I>&gt;<i> Second, using Joshua's method, once the disk image is mounted it's  
+</I>&gt;<i> open to anyone who has admin access on that machine, whether or not  
+</I>&gt;<i> you are logged in at the console. By using an automounted image with  
+</I>&gt;<i> the password stored on the keychain everything is secure until you  
+</I>&gt;<i> actually log in, and everything is secured once you log out.
+</I>&gt;<i> Third, this way is a lot more convenient. If you make security too  
+</I>&gt;<i> inconvenient, users will circumvent it. Instead of two logins, you  
+</I>&gt;<i> only have to do one. Techincally unsophisticated users (secretaries,  
+</I>&gt;<i> lawyers, vice-presidents, etc.) don't need to do anything different.
+</I>&gt;<i>
+</I>&gt;<i> &lt;BLATANT PLUG&gt;
+</I>&gt;<i> Go to Apple Training [apple.com] and sign up for a course or two.  
+</I>&gt;<i> They're well worth the money and help me keep my job. :-D
+</I>&gt;<i> &lt;/BLATANT PLUG&gt;
+</I>&gt;<i>
+</I>&gt;<i> --Paul
+</I>&gt;<i> psuh at apple dot com
+</I>&gt;<i> Curriculum Developer
+</I>&gt;<i> Techincal Training and Certification
+</I>&gt;<i> Apple Computer
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> -Neil
+</I>&gt;<i>
+</I>&gt;<i> -------
+</I>&gt;<i> <A HREF="http://rainer3.com">http://rainer3.com</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Titanium email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/Titanium.html">http://www.themacintoshguy.com/lists/Titanium.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/titanium.html">Titanium-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/titanium.html">Titanium-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.   
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/titanium.html">Titanium-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your  
+</I>&gt;<i> Mac ISPSerious Mac Internet Solutions From NineWire!    
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> RoadTools $30 PodiumPad available at Apple retail stores, $20  
+</I>&gt;<i> TravelerCoolPad at Staples. Both in white for iBooks at  
+</I>&gt;<i> &lt;<A HREF="http://roadtools.com">http://roadtools.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>  Cyberian   | Support this list when you buy at Outpost.com!
+</I>&gt;<i>  Outpost    |         <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001409.html">[Ti] Protecting your Data
+</A></li>
+	<LI>Next message: <A HREF="001411.html">[Ti] FW: TiBook 1GHz/SuperDrive US Mac OS ROM file?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1410">[ date ]</a>
+              <a href="thread.html#1410">[ thread ]</a>
+              <a href="subject.html#1410">[ subject ]</a>
+              <a href="author.html#1410">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

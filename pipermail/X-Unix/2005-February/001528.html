@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: HD Mounting Trouble
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20HD%20Mounting%20Trouble&In-Reply-To=20050210232943.51B232F4580%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001532.html">
+   <LINK REL="Next"  HREF="001533.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: HD Mounting Trouble</H1>
+    <B>Peter Dyballa</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20HD%20Mounting%20Trouble&In-Reply-To=20050210232943.51B232F4580%40listserver.themacintoshguy.com"
+       TITLE="[X-Unix] Re: HD Mounting Trouble">Peter_Dyballa at Web.DE
+       </A><BR>
+    <I>Fri Feb 11 02:05:35 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001532.html">[X-Unix] Installing Darwin from Aluminum PowerBook G4
+</A></li>
+        <LI>Next message: <A HREF="001533.html">[X-Unix] My ip address
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1528">[ date ]</a>
+              <a href="thread.html#1528">[ thread ]</a>
+              <a href="subject.html#1528">[ subject ]</a>
+              <a href="author.html#1528">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Working with Mac OS 9 I had these minutes of file system check too a 
+few times, usually when I had to reboot because an application was 
+running wild or the Mac became not functioning. Mac OS 9 leaves some 
+info on the disk that on next mount operation things have to be cleaned 
+up.
+
+Presuming that something similiar happens in Mac OS X too I'd recommend 
+to eject the USB disk's volumes before rebooting. Maybe the many USB 
+devices are not arbitrated correctly so that the Mac OS X file system 
+caches are not always completely written to disk. What I can observe 
+with my external FireWire disk is that some ten seconds have to pass 
+until the first of its volumes gets ejected.
+
+One things might bring a cure: activate journaling. It won't work with 
+Mac OS 9, which has no idea of journaling, so the volumes would be like 
+normal HFS+ volumes. Only in Mac OS X every change of a file or any of 
+its attributes would be journalled and could be re-played in case some 
+failure happened. Rebooting for example. And the re-play of a journal 
+is much faster than the usual repair that happens otherwise.
+
+--
+Greetings
+
+   Pete
+
+&quot;Computers are good at following instructions,
+but not at reading your mind.&quot;
+D. E. Knuth, The TeXbook, Addison-Wesley 1984, 1986, 1996, p. 9
+
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001532.html">[X-Unix] Installing Darwin from Aluminum PowerBook G4
+</A></li>
+	<LI>Next message: <A HREF="001533.html">[X-Unix] My ip address
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1528">[ date ]</a>
+              <a href="thread.html#1528">[ thread ]</a>
+              <a href="subject.html#1528">[ subject ]</a>
+              <a href="author.html#1528">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] How to monitor inbound/outbound network traffic?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20How%20to%20monitor%20inbound/outbound%20network%20traffic%3F&In-Reply-To=095C53D8-629B-4465-B66E-8E3478253514%40sedl.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="006219.html">
+   <LINK REL="Next"  HREF="006220.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] How to monitor inbound/outbound network traffic?</H1>
+    <B>Brett Conlon</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20How%20to%20monitor%20inbound/outbound%20network%20traffic%3F&In-Reply-To=095C53D8-629B-4465-B66E-8E3478253514%40sedl.org"
+       TITLE="[X4U] How to monitor inbound/outbound network traffic?">brett_conlon at sonymusic.com.au
+       </A><BR>
+    <I>Sun May 22 18:45:24 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="006219.html">[X4U] How to monitor inbound/outbound network traffic?
+</A></li>
+        <LI>Next message: <A HREF="006220.html">[X4U] How to monitor inbound/outbound network traffic?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6251">[ date ]</a>
+              <a href="thread.html#6251">[ thread ]</a>
+              <a href="subject.html#6251">[ subject ]</a>
+              <a href="author.html#6251">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Rad,
+
+If you go to the Activity Monitor in the Utilities folder you might be 
+able to see what processes are running hot when you're not doing anything.
+
+Try cancelling processes until the network activity (light) drops off. 
+Pick on apps that use the network first. If you eventually cancel 
+something you shouldn't have a restart will get you back to square-1.
+
+Coj
+
+
+
+Gretchen Hayman &lt;<A HREF="../../../mailman/listinfo/x4u.html">gretchen at sedl.org</A>&gt;
+
+
+On May 20, 2005, at 09:16, Rad Craig wrote:
+
+&gt;<i> Right now, I'm watching the light (xfer) on my network card and 
+</I>&gt;<i> it's lit up almost solid, like I was downloading/uploading 
+</I>&gt;<i> something, something (data) is going in or out.  I want to know 
+</I>&gt;<i> what it is?  Which application is sending it and what its sending. 
+</I>&gt;<i> I don't have anything running right now that should be constantly 
+</I>&gt;<i> transferring data like this.  Its as if someone is sucking data off 
+</I>&gt;<i> of my computer.  Is there a program/app/utility/script that will 
+</I>&gt;<i> allow me to find out what is going on?
+</I>
+You can pop open the Network Utility (/Applications/Utilities/Network 
+Utility) and use the Netstat portion (or just use the netstat command 
+in Terminal).  That will tell you what computers you are currently 
+connected to and what ports they are connected to.  Once you find the 
+port, you can look it up (in /etc/services or at a ports database on- 
+line) and see what application/protocol is being used.
+
+To really see some of the traffic, I'd use tcpdump.  However, it's 
+not terribly &quot;user-friendly&quot; if you are used to GUI-based apps.
+
+Do you have your OS X firewall turned on, to prevent unwanted traffic?
+
+--
+gretchen
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="006219.html">[X4U] How to monitor inbound/outbound network traffic?
+</A></li>
+	<LI>Next message: <A HREF="006220.html">[X4U] How to monitor inbound/outbound network traffic?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6251">[ date ]</a>
+              <a href="thread.html#6251">[ thread ]</a>
+              <a href="subject.html#6251">[ subject ]</a>
+              <a href="author.html#6251">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

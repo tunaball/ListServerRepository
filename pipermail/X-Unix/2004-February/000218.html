@@ -1,0 +1,274 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] ethereal for MacOSX
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20ethereal%20for%20MacOSX&In-Reply-To=list-10604344%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000217.html">
+   <LINK REL="Next"  HREF="000221.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] ethereal for MacOSX</H1>
+    <B>Juan Manuel Palacios</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20ethereal%20for%20MacOSX&In-Reply-To=list-10604344%40mail.ninewire.com"
+       TITLE="[X-Unix] ethereal for MacOSX">jmpalaciosp at eml.cc
+       </A><BR>
+    <I>Mon Feb  2 22:36:30 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000217.html">nevermind, figured it out ;) (re: simple commandline one-shot emailer)
+</A></li>
+        <LI>Next message: <A HREF="000221.html">[X-Unix] nevermind, figured it out ;) (re: simple commandline
+	one-shot emailer)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#218">[ date ]</a>
+              <a href="thread.html#218">[ thread ]</a>
+              <a href="subject.html#218">[ subject ]</a>
+              <a href="author.html#218">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+	Hello again Ken. Since you tell me you're not acquainted with cvs (CVS 
+= Concurrent Versioning System) or related developer tools, I guess a 
+small explanation is in order then..., but please note I'm no expert 
+myself! DarwinPorts is, in overall, just a bunch of directories and 
+plain text files you download to your computer, of which the main two 
+are the base/ dir and dports/. The first one contains the sources for 
+the port tools which you have to install to use this package manager, 
+that is, the port(1) command, portall(1), portindex(1) and others I 
+might be forgetting. The dports/ dir could live either locally or 
+consulted via the net at the remote repository, but more often than not 
+the former option is what's used. Inside dports/ you have a bunch of 
+other dirs (categories) which ultimately contain nothing more but a 
+&quot;Portfile&quot; for each ported software title, listing what needs to be 
+done (in the TCL scripting language) to get the software installed on 
+your computer. So, for instance, if you issue 'port install ethereal', 
+the port tool reads the ethereal Portfile and thus figures out how to 
+fetch the sources, how to configure and compile them and install the 
+binaries. Get it? In short, no binaries or fat source tarballs reside 
+on your computer when you install DarwinPorts, currently everything is 
+compiled from source... but the sweet part is that port(1) does all 
+that for you with just one call!
+
+	Well, the bunch of dirs that make up DarwinPorts has to be fetched 
+through the cvs(1) command. As per the instructions layed out at the 
+main site, cd into your directory of choice and issue the following 
+command sequence:
+
+cvs -d :pserver:<A HREF="../../../mailman/listinfo/x-unix.html">anonymous at anoncvs.opendarwin.org</A>:/Volumes/src/cvs/od 
+login
+
+(just hit enter after this line at the password prompt)
+
+cvs -d :pserver:<A HREF="../../../mailman/listinfo/x-unix.html">anonymous at anoncvs.opendarwin.org</A>:/Volumes/src/cvs/od co 
+-P darwinports
+
+	This will create a folder called darwinports/ and download everything 
+into it. After that's done just cd into darwinports/base/ and issue the 
+next command sequence:
+
+./configure &amp;&amp; make
+sudo make install
+make distclean
+
+	That will give you the standard port tools with which you can start 
+installing UNIX software. Currently there are 955 titles available, and 
+growing every day! To get an up to date listing of all of them just cd 
+into dports/
+
+cd ../dports/
+portindex
+
+	When that's done your local software index is ready for queries. You 
+can now search for ethereal:
+
+$[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: Historia](512/0,0)-&gt; port search ethereal
+ethereal        net/ethereal    0.10.0a         Graphical network 
+analyzer and capture tool
+
+$[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: Historia](513/0,0)-&gt; port deps ethereal
+ethereal has library dependencies on:
+         glib2
+         gtk2
+
+$[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: Historia](514/0,0)-&gt; port variants ethereal
+no-x11
+
+	That last line tells you what options the particular port offers apart 
+from the standard build. So if you want to use tethereal but couldn't 
+care less about ethereal you'd issue 'sudo port install ethereal 
++no-x11'. And woot! With that one liner all the needed dependencies and 
+sources are downloaded, configured, compiled and installed for you! As 
+I said, maybe getting DarwinPorts at first and keeping it up to date 
+could become a nuisance for the non command line lovers, but the ease 
+of use pays back for everything.
+
+	About keeping the DarwinPorts tree up to date, I'll postpone that for 
+when you join the <A HREF="../../../mailman/listinfo/x-unix.html">darwinports at opendarwin.org</A> mailing list, I feel 
+there's already too much information here :-) Also, you can find the 
+main guide at the site and inside darwinports/ there's a README that 
+you might want to read, it'll give you a first notion of how things 
+work. Of course, appropriate man pages are also in place.
+
+	Well, I hope this has helped clear things out. I strongly encourage 
+you to give DarwinPorts a try, it's really worth it! Hope to see you at 
+the darwinports@ list...
+
+
+		Juan
+
+
+On Feb 2, 2004, at 1:13 PM, Ken Rossman wrote:
+
+&gt;<i> On Monday, February 2, 2004, at 11:39 AM, Juan Manuel Palacios wrote:
+</I>&gt;&gt;<i> Hi Ken! Well, it just so happens that Fink's alternative, DarwinPorts,
+</I>&gt;&gt;<i> also offers ethereal for Mac OS X.
+</I>&gt;<i>
+</I>&gt;<i> Thanks, Juan, for first of all mentioning a &quot;fink alternative&quot;, which 
+</I>&gt;<i> I had
+</I>&gt;<i> not previously been aware of.  I will look into DarwinPorts.
+</I>&gt;<i>
+</I>&gt;&gt;<i> In any case, as far as I can see, ethereal compiles from source 
+</I>&gt;&gt;<i> cleanly
+</I>&gt;&gt;<i> on Mac OS X, without the need of any patch (I've done this with the 
+</I>&gt;&gt;<i> 0.9.14
+</I>&gt;&gt;<i> release).
+</I>&gt;<i>
+</I>&gt;<i> I tried that, but found it was asking for glib (and who knows what 
+</I>&gt;<i> other ones
+</I>&gt;<i> I haven't yet found out about that are missing).  The more things I 
+</I>&gt;<i> have
+</I>&gt;<i> to pile on my OSX systems that didn't already come with it, the more 
+</I>&gt;<i> nervous
+</I>&gt;<i> I get about breaking something else in the future.  Hmmm...
+</I>&gt;<i>
+</I>&gt;&gt;<i> But if you can't be bothered to do that I'd advise you to surf over to
+</I>&gt;&gt;<i> <A HREF="http://darwinports.opendarwin.org">http://darwinports.opendarwin.org</A> and join the project.
+</I>&gt;<i>
+</I>&gt;<i> The idea case would be &quot;I can't be bothered with compiling source, and 
+</I>&gt;<i> would
+</I>&gt;<i> rather just run prebuilt binaries&quot;, and sometime that's the case.  I'd 
+</I>&gt;<i> like
+</I>&gt;<i> to be able to go either way, though.
+</I>&gt;<i>
+</I>&gt;&gt;<i> It might be a bit of a nuisance at first because you have to fetch it
+</I>&gt;&gt;<i> over CVS...
+</I>&gt;<i>
+</I>&gt;<i> Don't even know what this is, sorry... :)
+</I>&gt;<i>
+</I>&gt;&gt;<i> ...but once everything is in place it pays for itself.  I'm an active
+</I>&gt;&gt;<i> DarwinPorts user and &quot;contributor wannabe&quot; and am well satisfied with
+</I>&gt;&gt;<i> what it offers.
+</I>&gt;<i>
+</I>&gt;<i> I, too, think of myself as a &quot;contributor wannabe&quot;, though I have done
+</I>&gt;<i> little to enhance my status with regard to that title.  I'd love to 
+</I>&gt;<i> see a
+</I>&gt;<i> lot more X-based apps ported to native Darwin format, as I feel 
+</I>&gt;<i> X-Windows
+</I>&gt;<i> apps were good for a certain time, but they are outliving their 
+</I>&gt;<i> usefulness
+</I>&gt;<i> in today's world.  Too topheavy, too ugly, too prone to unnecessary 
+</I>&gt;<i> failures.
+</I>&gt;<i>
+</I>&gt;&gt;<i> With just one command I can have ethereal, nmap, dsniff and around 900
+</I>&gt;&gt;<i> other software titles fetched, configured, compiled and installed.
+</I>&gt;<i>
+</I>&gt;<i> Excellent.  I'll definitely check it out.
+</I>&gt;<i>
+</I>&gt;&gt;<i> Regarding ethereal specifically, I've been known among DarwinPorts 
+</I>&gt;&gt;<i> developers
+</I>&gt;&gt;<i> to be quite whimsical about it, hehe! (mainly because I dislike 
+</I>&gt;&gt;<i> tcpdump).
+</I>&gt;<i>
+</I>&gt;<i> (I'm with you there)
+</I>&gt;<i>
+</I>&gt;&gt;<i> Upon my constant requests a no-X11 build variant was included to the 
+</I>&gt;&gt;<i> port
+</I>&gt;&gt;<i> (meaning that only tethereal, the command line utility, and not 
+</I>&gt;&gt;<i> ethereal,
+</I>&gt;&gt;<i> the GUI, gets built).
+</I>&gt;<i>
+</I>&gt;<i> I would add to that request a request to split out the packet capture
+</I>&gt;<i> facility of ethereal (or any other net snooper for that matter) into a
+</I>&gt;<i> separate, command-line utility, so one could script packet captures,
+</I>&gt;<i> for later analysis by a more GUI-oriented too.  Perhaps this also 
+</I>&gt;<i> already
+</I>&gt;<i> exists (for OSX and others?)
+</I>&gt;<i>
+</I>&gt;&gt;<i> The release version was also upped to 0.9.16 and then to 0.10.0a,
+</I>&gt;&gt;<i> but unfortunately that last one is severely broken.
+</I>&gt;<i>
+</I>&gt;<i> Maybe that's part of my problem then.  I tried finking down the very
+</I>&gt;<i> latest version of ethereal, which I believe was 0.10.0a.  I should back
+</I>&gt;<i> up, I guess, to an earlier version (0.9.something, I guess).
+</I>&gt;<i>
+</I>&gt;<i> Thanks for all the great info!
+</I>&gt;<i>
+</I>&gt;<i> KR
+</I>&gt;<i>
+</I>&gt;<i> Ken Rossman
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">rossman at columbia.edu</A>
+</I>&gt;<i> G3 iBook/600MHz/640MB/10.2.8
+</I>&gt;<i> G4 tower/400MHz/512MB/10.2.8
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000217.html">nevermind, figured it out ;) (re: simple commandline one-shot emailer)
+</A></li>
+	<LI>Next message: <A HREF="000221.html">[X-Unix] nevermind, figured it out ;) (re: simple commandline
+	one-shot emailer)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#218">[ date ]</a>
+              <a href="thread.html#218">[ thread ]</a>
+              <a href="subject.html#218">[ subject ]</a>
+              <a href="author.html#218">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

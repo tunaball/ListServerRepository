@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MacDV] Re: Disk fragmentation
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20Disk%20fragmentation&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004328.html">
+   <LINK REL="Next"  HREF="004330.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MacDV] Re: Disk fragmentation</H1>
+    <B>YangZone at aol.com</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20Disk%20fragmentation&In-Reply-To="
+       TITLE="[MacDV] Re: Disk fragmentation">YangZone at aol.com
+       </A><BR>
+    <I>Fri Apr 18 15:50:00 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004328.html">Disk fragmentation
+</A></li>
+        <LI>Next message: <A HREF="004330.html">[MacDV] Re: SIGS Off-Topic, read to bottom where I inquire about Radius Telecast Manuals and Diagrams.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4329">[ date ]</a>
+              <a href="thread.html#4329">[ thread ]</a>
+              <a href="subject.html#4329">[ subject ]</a>
+              <a href="author.html#4329">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Since there have been several references to PlusOptimizer I thought I'd throw in this report. Using PlusOptimizer was, for me, a defrag reality check. (Nortons Speed Disk &quot;was&quot;, as you described, a  simple and understandable program that appeared to do the job.)
+
+While it is likely that Alsoft's software is superior to Symantec's I was uaware of &quot;anchored&quot; files and that they might be a problem when using PlusOptimizer or any other optimizer for that matter.
+
+Anyway, I emailed the optimizaton report to Alsoft as requested (in the report) and here is the reply: (Apparently the disk was optimized.):
+
+Thank you for sending us the PlusOptimizer log and enabling us to keep
+ our anchored files list current.
+ 
+ The message 'the directory is anchored as it is always in use' basically
+ means the directory is fragmented.
+ 
+ PlusOptimizer cannot defragment open files. &#160;Since the directory is
+ always open PlusOptimizer will not be able to defragment the directory. 
+ A fragmented directory does not represent an error and the disk will
+ function without a problem even with a fragmented directory. &#160;The files
+ and free space on your disk were defragmented by PlusOptimizer but the
+ directory was not.
+ 
+ The directory of a disk grows in 4mb increments. &#160;When a disk is
+ initialized it is given 4mb for the directory and an additional
+ (contiguous) 4mb for the directory to expand. &#160;Once the directory expands
+ beyond the contiguously allocated 4mb + 4mb = 8mb, the directory
+ fragments. &#160;Even reinitializing a disk that has a fragmented directory
+ will not help, the directory will be fragmented even after reinitializing
+ and restoring from backup.
+ 
+ There are two ways a directory fragments. &#160;Above I explained the
+ fragmentation of directory extents. &#160;The second is fragmentation within
+ the extents themselves. &#160;The fragmentation of the directory data within
+ the extents is repaired when DiskWarrior builds a new optimized directory.
+ 
+ You will not notice a performance loss with a fragmented directory and
+ your machine will function without a problem. &#160;PlusOptimizer tells you
+ that the directory is fragmented only because it did not move it, it
+ reports all files not moved.
+ 
+ The file &quot;Remote Desktop Log&quot; is unknown.
+ 
+ The file &quot;Icon &quot; is unknown. (probably a Microsoft file)
+ 
+ The file &quot;SAInitFile&quot; is unknown. 
+ 
+ The file &quot;TMPpn5vl6m5gl.htm&quot; can be unanchored.
+ 
+ Files that are listed as unanchored can be moved safely. Unanchoring can
+ be accomplished by using the Unanchor choice in the File menu of
+ PlusOptimizer.
+ 
+ In order to unanchor a file PlusOptimizer has to write this data to disk
+ so that the next time it runs it can read the information and remember
+ that this file is unanchored. PlusOptimizer normally does this by
+ creating a preference file in the current system folder. If you are
+ starting from a CD that contains PlusOptimizer or a Mac OS CD then the CD
+ of course is not rewritable so it cannot create the preference file
+ there. So currently you cannot be started from a CD and unanchor files. 
+ 
+ If you do not know the location of the file you can search for the file
+ using Sherlock. &#160;You can use Sherlock to find invisible files (there is
+ an invisible option in Sherlock). &#160;Once the file you want to unanchor has
+ been located you can launch PlusOptimizer from your hard disk, while
+ started under OS 9.x (copy it over from the CD), go to File in the menu
+ bar and select Unanchor. &#160;Navigate to the location of the file and then
+ select the Unanchor option. After the file has been unanchored you can
+ then boot from your DiskWarrior CD or other CD and run PlusOptimizer.
+ 
+ Files that are listed as unknown are not in our database. We do not know
+  what programs are associated with these particular types and creators.
+ Try to determine what applications created them by doing a search on your
+ machine for those creators. &#160;Send this information to us and we will find
+ out from the publishers if unanchoring these files is ok.
+ 
+ Files that are listed as &quot;needs to stay anchored&quot; should not be moved. Do
+ not unanchor them. The program they belong to will not function correctly
+ if the files are moved.
+ 
+ --
+ Mike Rogers
+ Alsoft Tech Support
+ www.Alsoft.com
+ 
+In a message dated 4/18/2003 4:45:38 PM Eastern Standard Time, Dorothy Hennings &lt;<A HREF="../../../mailman/listinfo/macdv.html">hennings at verizon.net</A>&gt; writes:
+
+&gt;<i>I don't know what most of this stuff below means but did the disk get 
+</I>&gt;<i>optimized? Is there some way PlusOptimizer shows this? Norton used to 
+</I>&gt;<i>show the optimization as all the little frags represented by color rods 
+</I>&gt;<i>were put back together.
+</I>&gt;<i>
+</I>&gt;<i>On Friday, April 18, 2003, at 02:34 PM, <A HREF="../../../mailman/listinfo/macdv.html">YangZone at aol.com</A> wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> I recently used the latest version PlusOptimizer 1.3 that came with 
+</I>&gt;&gt;<i> the OS 9 disk on a PB 800 1GB 60GB OS X 10.2.5 After attempting to 
+</I>&gt;&gt;<i> Optimize the TiBook's hard drive from the DiskWarror 2.1.1 CD's OS 9.2 
+</I>&gt;&gt;<i> system (and after a 6 hour, slow moving progress bar!) this is the 
+</I>&gt;&gt;<i> Optimization report:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The directory is anchored because it is always in use. The directory 
+</I>&gt;&gt;<i> is always in use and cannot be moved. Normally it is not necessary to 
+</I>&gt;&gt;<i> move the directory but the directory on this disk is fragmented.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The file &quot;Remote Desktop Log&quot; with creator &quot;mcpx&quot; and type &quot;LogF&quot; is 
+</I>&gt;&gt;<i> anchored because it is invisible and its creator and type are unknown 
+</I>&gt;&gt;<i> to PlusOptimizer.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The file &quot;Icon&quot; with creator &quot;MSIE&quot; and type &quot;icon&quot; is anchored 
+</I>&gt;&gt;<i> because it is invisible and its creator and type are unknown to 
+</I>&gt;&gt;<i> PlusOptimizer.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The file &quot;SAInitFile&quot; with creator &quot;APmk&quot; and type &quot;PICN&quot; is anchored 
+</I>&gt;&gt;<i> because it is invisible and its creator and type are unknown to 
+</I>&gt;&gt;<i> PlusOptimizer.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The file &quot;TMPpn5vl6m5gl.htm&quot; with creator &quot;DmWr&quot; and type &quot;TEXT&quot; is 
+</I>&gt;&gt;<i> anchored because it is invisible and its creator and type are unknown 
+</I>&gt;&gt;<i> to PlusOptimizer.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 5 anchored file(s) found.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Anchored files are files which cannot be moved by PlusOptimizer. When 
+</I>&gt;&gt;<i> a disk with anchored files is optimized, there is a possibility that 
+</I>&gt;&gt;<i> other files or the free space will be fragmented around the anchored 
+</I>&gt;&gt;<i> files.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> When a file is reported as anchored because it is invisible and its 
+</I>&gt;&gt;<i> creator and type are unknown, the file is being anchored for safety 
+</I>&gt;&gt;<i> purposes but may not need to be anchored. The file and all other files 
+</I>&gt;&gt;<i> with its creator and type can be unanchored by choosing Unanchor from 
+</I>&gt;&gt;<i> the File menu.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Future releases of PlusOptimizer will correctly classify unknown 
+</I>&gt;&gt;<i> invisible files. To help us classify these files, print this log and 
+</I>&gt;&gt;<i> mail it to Alsoft Tech. Support, P.O. Box 927, Spring, TX 77383 or 
+</I>&gt;&gt;<i> e-mail it to <A HREF="../../../mailman/listinfo/macdv.html">Tech.Support at Alsoft.com.</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004328.html">Disk fragmentation
+</A></li>
+	<LI>Next message: <A HREF="004330.html">[MacDV] Re: SIGS Off-Topic, read to bottom where I inquire about Radius Telecast Manuals and Diagrams.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4329">[ date ]</a>
+              <a href="thread.html#4329">[ thread ]</a>
+              <a href="subject.html#4329">[ subject ]</a>
+              <a href="author.html#4329">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

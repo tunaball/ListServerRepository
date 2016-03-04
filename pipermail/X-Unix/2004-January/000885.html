@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Colored ls &amp; man pages in Panther
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Colored%20ls%20%26%20man%20pages%20in%20Panther&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000774.html">
+   <LINK REL="Next"  HREF="000996.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Colored ls &amp; man pages in Panther</H1>
+    <B>Juan Manuel Palacios</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Colored%20ls%20%26%20man%20pages%20in%20Panther&In-Reply-To="
+       TITLE="Colored ls &amp; man pages in Panther">jmpalaciosp at eml.cc
+       </A><BR>
+    <I>Sat Jan  3 11:27:39 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000774.html">[X-Unix] Remove last ten lines of files
+</A></li>
+        <LI>Next message: <A HREF="000996.html">Postfix howto
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#885">[ date ]</a>
+              <a href="thread.html#885">[ thread ]</a>
+              <a href="subject.html#885">[ subject ]</a>
+              <a href="author.html#885">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+	Hello everybody. Here I start my new year on this list with two geeky 
+questions seeking to improve my terminal experience in Panther. Back in 
+my Jaguar days there were a couple of things which I used to enjoy 
+immensely, which unfortunately are now gone in Panther :-(
+
+	The first one is related to the reading of man pages. Over time I 
+developed a fancy &quot;less&quot; footer, which when used as $PAGER would tell 
+me exactly *what* man page I was reading (as in, where in the 
+filesystem it was located), how long it was and where inside it I was 
+currently located. To achieve this I used the following lines in my 
+~/.profile:
+
+# Less propmt:
+LESS=--prompt=&quot;%f (%pb\%, %lmth line, %L lines)$&quot;
+export LESS
+
+# Alias to improve the $PAGER
+alias less='/usr/bin/less -wis'
+
+	The only problem is that all this relies on man(1) writing the page to 
+the cat tree, which it did back then and even does now. The difference 
+is that back in Jaguar the page was written to the corresponding cat 
+directory in *plain text*, which less(1) could handle well when called 
+as $PAGER. Now, unfortunately, in Panther man(1) *compresses* the pages 
+with gzip(1) before writing them to the cat tree, which completely 
+destroys my setup. I have looked low and behold but I am still to find 
+any leads as to where and how I could modify this behavior, them man(1) 
+man page makes no mention about it. Anybody have any clues for me on 
+this issue? It's proved extremely annoying so far!
+
+	And last but not least, I've been bugged by the colored ls(1) behavior 
+in Panther as well. Again, back in my Jaguar days I enjoyed the 
+configuration flexibility of GNU's Fileutils, through which you could 
+specify color codings for specific file extensions. Since Panther I've 
+learned to love the much improved included ls(1), so I've tried to 
+stick to it rather than resorting back to Fileutils. However, with 
+Panther's ls(1) I don't seem to be able to specify color codings for 
+specific file extensions, or at least the man page does not explain how 
+to. Changing colors for directories, executables, FIFOs and others is 
+easy, but there's no mention anywhere about how to specify a color for 
+a file with, say, a .tgz (compressed archive) extension, or a plain 
+text with a .tex (LaTeX) extension. Anyone know how to do this with 
+Panther's ls(1)?
+
+	Well, that should be about it. Thank you all in advance for your time 
+and help over such trivial matters. Happy New Year!
+
+
+		Juan
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000774.html">[X-Unix] Remove last ten lines of files
+</A></li>
+	<LI>Next message: <A HREF="000996.html">Postfix howto
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#885">[ date ]</a>
+              <a href="thread.html#885">[ thread ]</a>
+              <a href="subject.html#885">[ subject ]</a>
+              <a href="author.html#885">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

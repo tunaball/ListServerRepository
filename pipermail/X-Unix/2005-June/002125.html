@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Ethereal - must run sudo?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Ethereal%20-%20must%20run%20sudo%3F&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002142.html">
+   <LINK REL="Next"  HREF="002131.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Ethereal - must run sudo?</H1>
+    <B>Jeff Winchester</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Ethereal%20-%20must%20run%20sudo%3F&In-Reply-To="
+       TITLE="[X-Unix] Ethereal - must run sudo?">jeffw at tampabay.rr.com
+       </A><BR>
+    <I>Sat Jun  4 10:33:26 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002142.html">[X-Unix] Address book and Mail.app
+</A></li>
+        <LI>Next message: <A HREF="002131.html">[X-Unix] App launched by my crontab runs as root if Login Window!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2125">[ date ]</a>
+              <a href="thread.html#2125">[ thread ]</a>
+              <a href="subject.html#2125">[ subject ]</a>
+              <a href="author.html#2125">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I've recently installed Ethereal to run under X for network TCP  
+dumps. I've noticed, though, that I have to run it with sudo (sudo / 
+sw/bin/ethereal) in order to have permissions to /dev/en0 and /dev/ 
+en1 for the trace.
+
+Short of doling this, is there simpler (and safer!) way?
+
+I notice the following on /dev/bfp0 (which seems to be en0):
+
+     crw-------   1 root  wheel   23,   0 Jun  4 08:27 /dev/bpf0
+
+Only root and wheel. My daily user isn't a member of wheel. Any  
+thoughts? I hesitate to add my user to wheel, because I really want  
+to keep with the &quot;minimal rights&quot; idea. I guess I could give  
+permissions to &quot;others&quot; (i.e., chmod u+??), but I'm not sure. Ideas?
+
+Thanks!
+
+
+-- 
+Jeff Winchester
+<A HREF="../../../mailman/listinfo/x-unix.html">jeffw at tampabay.rr.com</A>
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002142.html">[X-Unix] Address book and Mail.app
+</A></li>
+	<LI>Next message: <A HREF="002131.html">[X-Unix] App launched by my crontab runs as root if Login Window!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2125">[ date ]</a>
+              <a href="thread.html#2125">[ thread ]</a>
+              <a href="subject.html#2125">[ subject ]</a>
+              <a href="author.html#2125">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

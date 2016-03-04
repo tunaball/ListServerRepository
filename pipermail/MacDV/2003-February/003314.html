@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Solution to Problems finding iTune and iPhoto libraries from within iApps, iPhoto Library Management
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=Solution%20to%20Problems%20finding%20iTune%20and%20iPhoto%20libraries%20from%20within%20iApps%2C%20iPhoto%20Library%20Management&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003313.html">
+   <LINK REL="Next"  HREF="003315.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Solution to Problems finding iTune and iPhoto libraries from within iApps, iPhoto Library Management</H1>
+    <B>Andrew T. Lynch</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=Solution%20to%20Problems%20finding%20iTune%20and%20iPhoto%20libraries%20from%20within%20iApps%2C%20iPhoto%20Library%20Management&In-Reply-To="
+       TITLE="Solution to Problems finding iTune and iPhoto libraries from within iApps, iPhoto Library Management">atlynch at mac.com
+       </A><BR>
+    <I>Thu Feb 27 09:51:51 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003313.html">Bad Experience with Formac - Be Warned!
+</A></li>
+        <LI>Next message: <A HREF="003315.html">[MacDV] Re: The deal with FreePlay
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3314">[ date ]</a>
+              <a href="thread.html#3314">[ thread ]</a>
+              <a href="subject.html#3314">[ subject ]</a>
+              <a href="author.html#3314">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Folks,
+    I have been following a couple of threads about problems finding the 
+iTunes library from iPhoto, and finding iTunes and iPhoto Libraries 
+from iMovie3 and iDVD3.  I believe that I have simplified and condensed 
+the assorted posted solutions.
+
+There is a plist (preferences file) named com.apple.iApps.plist.  This 
+appears to be where iPhoto finds the location of the iTunes library, 
+and iDVD and iMovie find the location of the iTunes and iPhoto 
+libraries.  This file may or may not exist, and it may or may not 
+contain correct information.
+
+The simplest solution I have found to create a correct 
+com.apple.iApps.plist is as follows
+
+1) If they are running, quit iMovie, iDVD, iPhoto and iTunes
+2) Start iTunes
+3) exit iTunes
+  - at this point, you should have a correct &quot;iTunesRecentDatabases&quot; 
+entry in com.apple.iTunes.plist
+4) Start iPhoto
+5) click on Slideshow
+(at this point you should be able to see your itunes library) if not, 
+remove com.apple.iApps.plist from your home-&gt;Library-&gt;Preferences 
+folder and start over at step 1.
+6) click on &quot;save settings&quot;
+  - At this point you should also have a correct &quot;iPhotoRecentDatabases&quot; 
+entry in com.apple.iTunes.plist
+
+I have also been using iPhoto Library Manager and iPhoto Librarian.  
+These two applications allow you to have more than one iPhoto Library.  
+At the current time, neither of these applications modifies 
+com.apple.iApps.plist.  This means that if you follow the process 
+above, then change your current library with one of these two 
+applications, then launch iMovie or iDVD, they will still be 
+referencing your previous iPhoto Library.  You can get around this by 
+following steps 4 through 6 above, each time you change your iPhoto 
+library.
+
+   Another note on these two tools: The advantage of iPhoto Library 
+Manager is that it keeps a local copy of the com.apple.iPhoto.plist in 
+each library.  This means that each library can have its own copy of 
+preferences, keywords, etc.  Changes to preferences for one library do 
+not affect the others.  The advantage of iPhoto Librarian is that it 
+modifies the main copy of com.apple.iPhoto.plist and does not make 
+copies of it.  This means that all iPhoto Libraries share the same set 
+of preferences, and changes made to preferences, keywords, etc in one 
+library affect all of the others.
+
+Another note for the brave: you can edit these plists manually in your 
+favorite text editor, or with /Developers/Applications/Property List 
+Editor.
+
+
+Cheers,
+     Drew
+
+
+
+- Andrew T. Lynch
+- Chief Zymurgist/Manager US Technical Services
+- Verisity Design Inc.
+- (650)934-6875
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003313.html">Bad Experience with Formac - Be Warned!
+</A></li>
+	<LI>Next message: <A HREF="003315.html">[MacDV] Re: The deal with FreePlay
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3314">[ date ]</a>
+              <a href="thread.html#3314">[ thread ]</a>
+              <a href="subject.html#3314">[ subject ]</a>
+              <a href="author.html#3314">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

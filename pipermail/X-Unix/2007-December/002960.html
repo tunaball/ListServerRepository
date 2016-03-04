@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: Pokey LAN transfers (Resolved)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Pokey%20LAN%20transfers%20%28Resolved%29&In-Reply-To=20071227193042.220A12D848B%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002959.html">
+   <LINK REL="Next"  HREF="002962.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: Pokey LAN transfers (Resolved)</H1>
+    <B>Richard Hartman</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Pokey%20LAN%20transfers%20%28Resolved%29&In-Reply-To=20071227193042.220A12D848B%40listserver.themacintoshguy.com"
+       TITLE="[X-Unix] Re: Pokey LAN transfers (Resolved)">seasoft at west.net
+       </A><BR>
+    <I>Thu Dec 27 11:49:14 PST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002959.html">[X-Unix] Pokey LAN transfers
+</A></li>
+        <LI>Next message: <A HREF="002962.html">[X-Unix] Re: Pokey LAN transfers (Resolved)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2960">[ date ]</a>
+              <a href="thread.html#2960">[ thread ]</a>
+              <a href="subject.html#2960">[ subject ]</a>
+              <a href="author.html#2960">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks to Wing Wong, Nick Scalise, David Ledger and Brian Medley for  
+their thoughtful responses. For some reason, Wing Wong's detailed  
+response didn't make it to the list and is reproduced (far) below.
+
+Here is a summary of what I learned:
+
+The overhead on my setup of mounting a volume on the desktop (via  
+AFP) is evidently enormous:
+
+- Mounting a LAN volume on the local desktop and then using cp on a  
+large (2GB) file using a terminal window (copying from mounted LAN  
+volume to internal disk drive)  produced transfer rates of only about  
+25 megabits/sec.
+
+- Unmounting the LAN volume and instead using scp or rsync (and the  
+IP address of the source mac) produced the expected transfer rate of  
+100 megabits/sec, which was the speed limit expected by the slowest  
+network element in the loop (the 100 mbps nic on one of the macs).
+
+Regards,
+
+Rich
+
+&gt;<i> On Dec 26, 2007 1:54 PM, Richard Hartman &lt; <A HREF="../../../mailman/listinfo/x-unix.html">seasoft at west.net</A>&gt; wrote:
+</I>&gt;<i> I'm looking for guidance on how best to copy large data sets between
+</I>&gt;<i> macs on a network (Finder, terminal cp, other?).
+</I>&gt;<i>
+</I>&gt;<i> The setup: Copying from mac #1 (a 2006 iMac running 10.4.11 with
+</I>&gt;<i> built-in 100bps ethernet) to mac #2 (a recent PBPro running 10.5.1
+</I>&gt;<i> with built-in Gigabit ethernet). Macs connected by a Gigabit netgear
+</I>&gt;<i> switch.
+</I>&gt;<i>
+</I>&gt;<i> I had hoped to get sustained transfers between these two macs of
+</I>&gt;<i> 50-70 mbps (throttled by the rate-limiting 100 mbps iMac capability).
+</I>&gt;<i>
+</I>&gt;<i> However, copying a single 2 GByte file, by mounting the (Tiger) imac
+</I>&gt;<i> on the (Leopard) MBPro desktop and using terminal &quot;cp&quot; command from
+</I>&gt;<i> the MBPro terminal, results in a sustained transfer rate of only
+</I>&gt;<i> about 2.5 mB/sec (25 mbps).
+</I>&gt;<i>
+</I>
+On Dec 26, 2007, at 4:19 PM, Wing Wong wrote:
+
+&gt;<i> Several factors will limit your transfer speeds...
+</I>&gt;<i>
+</I>&gt;<i> Based on what you are describing:
+</I>&gt;<i>
+</I>&gt;<i> imac(100mbps nic) &lt;==&gt; NetGear Gigabit SW &lt;==&gt; PBPro(1gbps nic)
+</I>&gt;<i>
+</I>&gt;<i> You are hard limited to 100mbps FD, if you are lucky.
+</I>&gt;<i>
+</I>&gt;<i> The switch will downgrade the port the imac is connected to, to  
+</I>&gt;<i> 100mbps FD. The port that the PB is connected to will be detected  
+</I>&gt;<i> at 1gbps FD.
+</I>&gt;<i>
+</I>&gt;<i> When you try to communicate with the imac, your jumbo frames (6000  
+</I>&gt;<i> bytes or so, vs the 1500 bytes for a normal 100mbps packet), won't  
+</I>&gt;<i> work, so you will also get downgraded to the 1500 byte packet size.  
+</I>&gt;<i> Hooray! Since this autodetection needs to be done after the fact,  
+</I>&gt;<i> you will suffer a performance penalty for mixing and matching  
+</I>&gt;<i> 100mbps and 1gbps gear. For normal web surfing, this isn't an  
+</I>&gt;<i> issue, since your performance loss over broadband is so much worse  
+</I>&gt;<i> than the performance loss due to the retransmit/conversion.
+</I>&gt;<i>
+</I>&gt;<i> The situation CAN be helped if you connect the two together  
+</I>&gt;<i> directly. They will autodetect at 100mbps FD on both ports and  
+</I>&gt;<i> communicate natively.
+</I>&gt;<i>
+</I>&gt;<i> So... question: How have you mounted the two systems? If you are  
+</I>&gt;<i> mounting via AFP/SMB, then you are now also suffering protocol  
+</I>&gt;<i> overhead for the filesystem mounting methodology. It's something  
+</I>&gt;<i> like 10%-20%.
+</I>&gt;<i>
+</I>&gt;<i> Basically... your loss looks something like this. Bearing in mind,  
+</I>&gt;<i> this is an eyeball figure from the last time I encountered a  
+</I>&gt;<i> problem like this:
+</I>&gt;<i>
+</I>&gt;<i> Typical Packet overhead = ~1-5% (best) , ~5-10% (worse), 15%+  
+</I>&gt;<i> (something wrong...)
+</I>&gt;<i>
+</I>&gt;<i> Typical SMB/AFP/NFS/etc mounted filesystem overhead = ~5-10%  
+</I>&gt;<i> (normal) , ~10-15% (tons of small files and atime/mtime records) ,  
+</I>&gt;<i> ~15%+ (something wrong...)
+</I>&gt;<i>
+</I>&gt;<i> So... yeah, given the setup you are describing... losing up to the  
+</I>&gt;<i> 30%-40% mark is definitely possible. This loss doesn't factor in  
+</I>&gt;<i> the loss due to the local filesystem, memory/cache(since you are  
+</I>&gt;<i> using a networked filesystem, there is heavy memory buffering), and  
+</I>&gt;<i> issues related to hard disk transfer speeds.
+</I>&gt;<i>
+</I>&gt;<i> If you want the fastest possible transfer of storage between  
+</I>&gt;<i> boxes... or rather, how I normally xfer files quickly between boxes:
+</I>&gt;<i>
+</I>&gt;<i> 1) setup ssh keys between the two boxes
+</I>&gt;<i> 2) use rsync to copy files between systems, scp, or equivelent.
+</I>&gt;<i>
+</I>&gt;<i> rsync has the added benefit of being able to maintain sync between  
+</I>&gt;<i> two machines for a variety of folders.
+</I>&gt;<i>
+</I>&gt;<i> If you MUST mount a filesystem, and if you can stand to go without  
+</I>&gt;<i> certain bits being updated, you can mount a remote filesystem as  
+</I>&gt;<i> either read-only, or with noatime, nomtime, so that each read isn't  
+</I>&gt;<i> prefixed/postfixed with a write to the source machine to update  
+</I>&gt;<i> it's &quot;last accessed&quot; time bits.
+</I>&gt;<i>
+</I>&gt;<i> The other option would be to attach a USB2.0 Gigabit network  
+</I>&gt;<i> adapter to the imac, or use FW networking between the Macs. The  
+</I>&gt;<i> adventurous might want to give FW based networking a try, since  
+</I>&gt;<i> it's natively supported on the Mac platforms. While the top speed  
+</I>&gt;<i> is 400mbps and 800mbps, depending on the cards, you might be able  
+</I>&gt;<i> to get some serious performance boost since the processing is done  
+</I>&gt;<i> by the firewire chipsets and not by the CPU, thus allowing things  
+</I>&gt;<i> like DMA.
+</I>&gt;<i>
+</I>&gt;<i> Good luck!
+</I>&gt;<i>
+</I></PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002959.html">[X-Unix] Pokey LAN transfers
+</A></li>
+	<LI>Next message: <A HREF="002962.html">[X-Unix] Re: Pokey LAN transfers (Resolved)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2960">[ date ]</a>
+              <a href="thread.html#2960">[ thread ]</a>
+              <a href="subject.html#2960">[ subject ]</a>
+              <a href="author.html#2960">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

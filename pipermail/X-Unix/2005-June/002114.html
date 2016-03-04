@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] App launched by my crontab runs as root if Login Window!
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20App%20launched%20by%20my%20crontab%20runs%20as%20root%20if%20Login%20Window%21&In-Reply-To=20050603123358.GA9232%40sage.che.pitt.edu">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002111.html">
+   <LINK REL="Next"  HREF="002129.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] App launched by my crontab runs as root if Login Window!</H1>
+    <B>Alexandre Gauthier</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20App%20launched%20by%20my%20crontab%20runs%20as%20root%20if%20Login%20Window%21&In-Reply-To=20050603123358.GA9232%40sage.che.pitt.edu"
+       TITLE="[X-Unix] App launched by my crontab runs as root if Login Window!">supernaut at underwares.org
+       </A><BR>
+    <I>Fri Jun  3 08:10:11 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002111.html">[X-Unix] App launched by my crontab runs as root if Login Window!
+</A></li>
+        <LI>Next message: <A HREF="002129.html">[X-Unix] App launched by my crontab runs as root if Login Window!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2114">[ date ]</a>
+              <a href="thread.html#2114">[ thread ]</a>
+              <a href="subject.html#2114">[ subject ]</a>
+              <a href="author.html#2114">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>John Harrold wrote:
+
+&gt;<i>Sometime in June Jerry Krinock assaulted the keyboard and produced:
+</I>&gt;<i>
+</I>&gt;|<i> When the time comes, you will see iCal (or, I believe, any other app)
+</I>&gt;|<i> show its GUI ***BEHIND THE LOGIN WINDOW***.  It has a menu, and if you
+</I>&gt;|<i> don't mind working around the login window, you can actually use the
+</I>&gt;|<i> application, without logging in.  Now go to save a file and you can see
+</I>&gt;|<i> from your directory access that you are RUNNING AS &quot;root&quot;!
+</I>&gt;<i>
+</I>&gt;<i>I must admit this is a little strange. On most unix systems running X11,
+</I>&gt;<i>this would either fail because the user doesn't control the display.
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>
+This is indeed interesting... I can imagine the security implications of 
+this &quot;feature&quot;.
+I have not tried to reproduce it, though -- I wonder how the OS X gui 
+server handles different user connections as compared to X11.
+Then again, it might not even work the same way at all. Could someone 
+more educated in the matter possibly enlighten us?
+
+Alot of things are dependant of a user being logged on apparently -- 
+such as network profiles. Wireless will not be active until you at least 
+login once, from what I gathered last year...
+
+&gt;|<i> I don't think I even have the &quot;root&quot; user enabled on my powerbook.
+</I>&gt;<i>
+</I>&gt;<i>I'm not sure what you mean by enabled. I don't think you can disable the
+</I>&gt;<i>'root' user on a unix machine and have it work. Every time you run sudo it
+</I>&gt;<i>executes commands as root. This would not be possible if the 'root' user
+</I>&gt;<i>was disabled.
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>
+I think by disabled he means the user is not &quot;active&quot; per se in NetInfo, 
+and does not have a password set.
+The root user is &quot;enabled&quot; in the unix sense though, you just can't 
+login with it for it has no password...
+(This can of course be changed by using something like, sudo passwd 
+root, however I do believe something has to be done in netinfo for you 
+to be able to login with it, and access the &gt;console &quot;framebuffer-esque&quot; 
+local TTY.)
+
+&gt;|<i> Besides the interesting security implications, I would like to fix this
+</I>&gt;|<i> because I have written an application which can be so (as above) cronn'ed to
+</I>&gt;|<i> launch and do some work while a user is out to lunch, but it the user has
+</I>&gt;|<i> displayed his login window, as smart users do when they go out to lunch, it
+</I>&gt;|<i> does not run properly since it runs as root - it can't find any of the
+</I>&gt;|<i> user's files.
+</I>&gt;<i>
+</I>&gt;<i>A little googling 'gui cron login window site:apple.com' and it seems
+</I>&gt;<i>someone else has had this problem:
+</I>&gt;<i>
+</I>&gt;<i><A HREF="http://lists.apple.com/archives/darwin-userlevel/2003/Dec/msg00007.html">http://lists.apple.com/archives/darwin-userlevel/2003/Dec/msg00007.html</A>
+</I>&gt;<i>
+</I>&gt;<i>But they don't seem to have a solution either ;(.
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>
+At least we know they are somehow aware of it. I googled a bit, but no 
+dice other than the aforementionned article.
+
+-- 
+Alexandre Gauthier
+<A HREF="../../../mailman/listinfo/x-unix.html">supernaut at underwares.org</A>
+
+underwares.org
+Obscure IT knowledge Open Database
+
+The human brain operates at only 10% of its capacity. The rest is overhead for the operating system.
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002111.html">[X-Unix] App launched by my crontab runs as root if Login Window!
+</A></li>
+	<LI>Next message: <A HREF="002129.html">[X-Unix] App launched by my crontab runs as root if Login Window!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2114">[ date ]</a>
+              <a href="thread.html#2114">[ thread ]</a>
+              <a href="subject.html#2114">[ subject ]</a>
+              <a href="author.html#2114">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

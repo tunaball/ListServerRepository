@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How does one find a string in a binary file, etc.?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20does%20one%20find%20a%20string%20in%20a%20binary%20file%2C%20etc.%3F&In-Reply-To=20080902125759.724F0AC17%40heartbeat1.messagingengine.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003182.html">
+   <LINK REL="Next"  HREF="003172.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How does one find a string in a binary file, etc.?</H1>
+    <B>Kevin Stevens</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20does%20one%20find%20a%20string%20in%20a%20binary%20file%2C%20etc.%3F&In-Reply-To=20080902125759.724F0AC17%40heartbeat1.messagingengine.com"
+       TITLE="[X-Unix] How does one find a string in a binary file, etc.?">groups at pursued-with.net
+       </A><BR>
+    <I>Tue Sep  2 09:58:50 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003182.html">[X-Unix] How does one find a string in a binary
+ file, etc.?
+</A></li>
+        <LI>Next message: <A HREF="003172.html">[X-Unix] Re: How does one find a string in a binary file, etc.?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3167">[ date ]</a>
+              <a href="thread.html#3167">[ thread ]</a>
+              <a href="subject.html#3167">[ subject ]</a>
+              <a href="author.html#3167">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+&gt;<i> I still remember enough csh/tcsh programming to write a script to at least
+</I>&gt;<i> separate out those of the larger files that contain one or more of the
+</I>&gt;<i> files I'm trying to recover, so as to speed up the process that I've tried
+</I>&gt;<i> already using HexEdit. That is, I could do that if I could find a command
+</I>&gt;<i> that tests a binary file for the presence of a string. It seems that such
+</I>&gt;<i> a command would surely exist, but I haven't been able to find one. (If the
+</I>&gt;<i> larger files I need to test consisted of text lines, it would probably be
+</I>&gt;<i> trivial using awk or sed.)
+</I>&gt;<i>
+</I>&gt;<i> Also, If I can figure out how to sequentially convert each 4-KB block from
+</I>&gt;<i> a large file into a separate file that can be tested (and either saved or
+</I>&gt;<i> discarded), it would make the whole process even easier.
+</I>&gt;<i>
+</I>&gt;<i> Equivalently, I would go through the large file and test at each 4-KB
+</I>&gt;<i> boundary for the presence of the desired string and, if it was found, I
+</I>&gt;<i> would copy the 4-KB chunk beginning at that point to a new file.
+</I>&gt;<i>
+</I>&gt;<i> So, the commands I'm looking for would each do one or more of the
+</I>&gt;<i> following:
+</I>&gt;<i>
+</I>&gt;<i> 1) Search a binary file for the presence of a string in the file.
+</I>&gt;<i>
+</I>&gt;<i> 2) Compare a string to the portion of a binary file beginning at a
+</I>&gt;<i> specific byte offset. (I can figure out how to compare a string to the
+</I>&gt;<i> beginning of a file!)
+</I>&gt;<i>
+</I>&gt;<i> 3) Extract a portion of a large file beginning at a specific offset and of
+</I>&gt;<i> a specific length. A special case would be to extract and process
+</I>&gt;<i> fixed-sized chunks sequentially.
+</I>&gt;<i>
+</I>&gt;<i> This isn't rocket science and, as I indicated above, once upon a time I
+</I>&gt;<i> probably could have written a C program to accomplish the task in the time
+</I>&gt;<i> it's taken me to write this message.  But even then, I'd still want to
+</I>&gt;<i> know if the tools I'm referring to are out there.
+</I>&gt;<i>
+</I>&gt;<i>  - Aaron
+</I>
+grep
+strings
+split
+
+KeS
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003182.html">[X-Unix] How does one find a string in a binary
+ file, etc.?
+</A></li>
+	<LI>Next message: <A HREF="003172.html">[X-Unix] Re: How does one find a string in a binary file, etc.?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3167">[ date ]</a>
+              <a href="thread.html#3167">[ thread ]</a>
+              <a href="subject.html#3167">[ subject ]</a>
+              <a href="author.html#3167">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

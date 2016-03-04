@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Special permissions
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Special%20permissions&In-Reply-To=0DE2E9A0-538E-11D9-8EE6-003065BF12BC%40verizon.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="008435.html">
+   <LINK REL="Next"  HREF="008447.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Special permissions</H1>
+    <B>perry at cynic.org</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Special%20permissions&In-Reply-To=0DE2E9A0-538E-11D9-8EE6-003065BF12BC%40verizon.net"
+       TITLE="[G4] Special permissions">perry at cynic.org
+       </A><BR>
+    <I>Tue Dec 21 12:46:09 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="008435.html">[G4] Special permissions
+</A></li>
+        <LI>Next message: <A HREF="008447.html">[G4] Special permissions
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8436">[ date ]</a>
+              <a href="thread.html#8436">[ thread ]</a>
+              <a href="subject.html#8436">[ subject ]</a>
+              <a href="author.html#8436">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Tue, Dec 21, 2004 at 03:22:36PM -0500, Kevin Willis wrote:
+&gt;<i> Every time I repair permissions on my Gigabit G4, I get this message... 
+</I>&gt;<i> &quot;We are using special permissions for the file or directory 
+</I>&gt;<i> ./system/library/filesystems/cd9660.util the new permissions are 
+</I>&gt;<i> 33261&quot;.  What does that mean? And, would that have anything to do with 
+</I>&gt;<i> me having problems ejecting cd's or dvd's from time to time?  BTW, I am 
+</I>&gt;<i> using a Pioneer DVR 106D DVD-RW.
+</I>
+I don't know what problem it thinks it has. Permission 33261 is 0100755
+(octal - don't ask), which simply says it's a normal file writable by root,
+and readable and executable by anyone. There doesn't seem to be anything
+particularly special about it. You may want to open Terminal and do a
+  ls -l /System/Library/Filesystems/cd9660.fs/cd9660.util
+It should be saying &quot;-rwxr-xr-x&quot; (that's what the permission-fixer wants
+to set it to).
+
+Yes, if the permissions on cd9660.util are broken, you may not be able to
+manipulate disks in optical drives.
+
+[Note the path difference - it's really .../filesystems/cd9660.fs/cd9660.util. 
+I'm assuming that's a typo on your part. If it's not, there's something
+messed up in the permission-fixer.]
+
+Cheers
+  -- perry
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="008435.html">[G4] Special permissions
+</A></li>
+	<LI>Next message: <A HREF="008447.html">[G4] Special permissions
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8436">[ date ]</a>
+              <a href="thread.html#8436">[ thread ]</a>
+              <a href="subject.html#8436">[ subject ]</a>
+              <a href="author.html#8436">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+</body></html>

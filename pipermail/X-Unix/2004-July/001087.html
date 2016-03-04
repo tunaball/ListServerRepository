@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Changing the default shell
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Changing%20the%20default%20shell&In-Reply-To=list-14696788%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001086.html">
+   <LINK REL="Next"  HREF="001088.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Changing the default shell</H1>
+    <B>Joe Block</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Changing%20the%20default%20shell&In-Reply-To=list-14696788%40mail.ninewire.com"
+       TITLE="[X-Unix] Changing the default shell">jpb at ApesSeekingKnowledge.net
+       </A><BR>
+    <I>Wed Jul 14 11:42:03 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001086.html">[X-Unix] Changing the default shell
+</A></li>
+        <LI>Next message: <A HREF="001088.html">[X-Unix] Changing the default shell
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1087">[ date ]</a>
+              <a href="thread.html#1087">[ thread ]</a>
+              <a href="subject.html#1087">[ subject ]</a>
+              <a href="author.html#1087">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+
+On Jul 14, 2004, at 1:35 AM, Bert Knabe wrote:
+
+&gt;<i>
+</I>&gt;<i> On Jul 14, 2004, at 12:15 AM, James Bucanek wrote:
+</I>&gt;<i>
+</I>&gt;<i> *snip*
+</I>&gt;<i>
+</I>&gt;&gt;&gt;<i> I've changed the default shell to bash, which is good. But I thought
+</I>&gt;&gt;&gt;<i> that doing that instead of using the 'temporary' method of having
+</I>&gt;&gt;&gt;<i> execute a command (in this case /bin/bash/) using the Terminal
+</I>&gt;&gt;&gt;<i> Preferences would have bash showing the path to your location in the
+</I>&gt;&gt;&gt;<i> hierarchy the way tcsh does. How would I tell it to do that?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> It should do it by default, unless your bash configuration has been 
+</I>&gt;&gt;<i> altered.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Here's the default bashrc file that's installed in Panther:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     james% cat /etc/bashrc
+</I>&gt;&gt;<i>     # System-wide .bashrc file for interactive bash(1) shells.
+</I>&gt;&gt;<i>     PS1='\h:\w \u\$ '
+</I>&gt;&gt;<i>     # Make bash check it's window size after a process completes
+</I>&gt;&gt;<i>     shopt -s checkwinsize
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> This should set PS1 (which is the main shell prompt) to '\h:\w \u\$ 
+</I>&gt;&gt;<i> '.  That should display the following prompt
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     &lt;machine_name&gt;:&lt;pwd&gt; &lt;whoami&gt;$
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> If PS1 isn't that string, then something else is changing it (or you 
+</I>&gt;&gt;<i> don't have read access to /etc/bashrc).
+</I>
+Add this to ~/.bashrc or ~/.bash_profile
+
+- -- cut --
+PS1='[\u@\h:\w]\$ '
+
+# the \[ and \] surrounding the prompt tell bash to count the escaped 
+characters
+# properly
+export TITLEBAR='\[\033]0;\u@\h:\w \007\]'
+
+# Terminal sets TERM_PROGRAM so we can tell it apart from regular VT100
+case &quot;$TERM_PROGRAM&quot; in
+         &quot;Apple_Terminal&quot;)PS1=&quot;$TITLEBAR$PS1&quot;
+esac
+
+# xterm windows set TERM
+case &quot;$TERM&quot; in
+         
+&quot;xterm&quot;|&quot;vt100&quot;|&quot;color-xterm&quot;|&quot;xterm-color&quot;)PS1=&quot;$TITLEBAR$PSRAW&quot;
+esac
+
+export PS1
+- -- cut --
+
+This will set your environment so that your username, what host the 
+window is connected to, and the current directory are shown in the 
+title bar of the Terminal window, in addition to at the command prompt. 
+If you run X Window, xterms &amp; color xterms will also show the 
+information in the title bar.
+
+jpb
+- -- 
+Joe Block &lt;<A HREF="../../../mailman/listinfo/x-unix.html">jpb at ApesSeekingKnowledge.net</A>&gt;
+
+Human beings will generally exercise power when they can get it, and 
+they will exercise it most undoubtedly in popular governments under 
+pretense of public safety.
+  - Daniel Webster
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (Darwin)
+
+iD8DBQFA9X58yEXo8W2M9hsRAr0IAJ9pNtp1Leea0RrMgynAoG51m+AkmACgsBkD
+dj+yO+Npvx5/yKfOaxHv8Jc=
+=d0mf
+-----END PGP SIGNATURE-----
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001086.html">[X-Unix] Changing the default shell
+</A></li>
+	<LI>Next message: <A HREF="001088.html">[X-Unix] Changing the default shell
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1087">[ date ]</a>
+              <a href="thread.html#1087">[ thread ]</a>
+              <a href="subject.html#1087">[ subject ]</a>
+              <a href="author.html#1087">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

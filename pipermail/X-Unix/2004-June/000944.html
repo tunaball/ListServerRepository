@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Remote force logout and lockout of user
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Remote%20force%20logout%20and%20lockout%20of%20user&In-Reply-To=list-13990870%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000943.html">
+   <LINK REL="Next"  HREF="000945.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Remote force logout and lockout of user</H1>
+    <B>James Bucanek</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Remote%20force%20logout%20and%20lockout%20of%20user&In-Reply-To=list-13990870%40mail.ninewire.com"
+       TITLE="[X-Unix] Remote force logout and lockout of user">subscriber at gloaming.com
+       </A><BR>
+    <I>Tue Jun 15 22:00:19 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000943.html">[X-Unix] Remote force logout and lockout of user
+</A></li>
+        <LI>Next message: <A HREF="000945.html">[X-Unix] Remote force logout and lockout of user
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#944">[ date ]</a>
+              <a href="thread.html#944">[ thread ]</a>
+              <a href="subject.html#944">[ subject ]</a>
+              <a href="author.html#944">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dennis Fazio wrote on Tuesday, June 15, 2004:
+
+&gt;<i>--On Sunday, June 13, 2004 04:53 PM -0700 James Bucanek 
+</I>&gt;<i>&lt;<A HREF="../../../mailman/listinfo/x-unix.html">subscriber at gloaming.com</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Personally, I'd just take the gloves off.  Change the password, then
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     sudo reboot
+</I>&gt;<i>
+</I>&gt;<i>Yes, I think the easiest is:
+</I>&gt;<i>
+</I>&gt;<i>ssh remote-host
+</I>&gt;<i>sudo passwd &lt;otheruser&gt;   to change password
+</I>&gt;<i>sudo shutdown -h now      to log them out and shut down
+</I>&gt;<i>
+</I>&gt;<i>That works fine. The problem is, if I then want to re-enable their login, I 
+</I>&gt;<i>cannot get back into the machine unless somebody logs in first. That is, 
+</I>&gt;<i>after the machine is booted back up and the multi-user login screen is 
+</I>&gt;<i>visible, I cannot even ping the machine until one of the users logs in first. 
+</I>&gt;<i>Is that the way it is supposed to behave.
+</I>
+That should definitely not be the case.  If it were, I'd be up the creek without a paddle every time I restarted my OS X Server.  No, by the time the system is to the point where it displayed the login screen, the network and all system services should be up and running.
+
+The only thing I notice, is that you used 'shutdown -h now' rather than 'reboot' or even 'shutdown -r'.  'shutdown -h' is equivalent to 'halt', which will shutdown (not restart) the remote computer.
+
+If the computer is off, it definitely won't response to a ping.  ;)
+
+______________________________________________________
+James Bucanek       &lt;mailto:<A HREF="../../../mailman/listinfo/x-unix.html">privatereply at gloaming.com</A>&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000943.html">[X-Unix] Remote force logout and lockout of user
+</A></li>
+	<LI>Next message: <A HREF="000945.html">[X-Unix] Remote force logout and lockout of user
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#944">[ date ]</a>
+              <a href="thread.html#944">[ thread ]</a>
+              <a href="subject.html#944">[ subject ]</a>
+              <a href="author.html#944">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

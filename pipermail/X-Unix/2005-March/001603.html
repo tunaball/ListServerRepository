@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] need help with a command
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20need%20help%20with%20a%20command&In-Reply-To=9044E24AC98C513FB3AB49C3%40halo.luxnet.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001602.html">
+   <LINK REL="Next"  HREF="001604.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] need help with a command</H1>
+    <B>Albert Lunde</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20need%20help%20with%20a%20command&In-Reply-To=9044E24AC98C513FB3AB49C3%40halo.luxnet.org"
+       TITLE="[X-Unix] need help with a command">atlunde at panix.com
+       </A><BR>
+    <I>Tue Mar  1 16:44:54 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001602.html">[X-Unix] need help with a command
+</A></li>
+        <LI>Next message: <A HREF="001604.html">[X-Unix] need help with a command
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1603">[ date ]</a>
+              <a href="thread.html#1603">[ thread ]</a>
+              <a href="subject.html#1603">[ subject ]</a>
+              <a href="author.html#1603">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Tue, Mar 01, 2005 at 12:43:45PM -1000, Scott J. Kramer wrote:
+&gt;<i> Assuming that's really a directory starting with a tilde '~' character
+</I>&gt;<i> and not user ARCHIVE's home directory, something like:
+</I>&gt;<i> 
+</I>&gt;<i>  find PATH -not \( -type d -a -name '~Archive' \) -exec chmod MODE {} \;
+</I>&gt;<i> 
+</I>
+Wouldn't it be safer to write
+  -exec foo bar {} \;
+as
+  -exec foo bar &quot;{}&quot; \;
+
+I'm not sure that will deal with arbitrary characters but it ought
+to at least deal with spaces in pathnames.
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001602.html">[X-Unix] need help with a command
+</A></li>
+	<LI>Next message: <A HREF="001604.html">[X-Unix] need help with a command
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1603">[ date ]</a>
+              <a href="thread.html#1603">[ thread ]</a>
+              <a href="subject.html#1603">[ subject ]</a>
+              <a href="author.html#1603">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

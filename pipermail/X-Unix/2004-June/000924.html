@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Remote force logout and lockout of user
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Remote%20force%20logout%20and%20lockout%20of%20user&In-Reply-To=list-13941201%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000923.html">
+   <LINK REL="Next"  HREF="000925.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Remote force logout and lockout of user</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Remote%20force%20logout%20and%20lockout%20of%20user&In-Reply-To=list-13941201%40mail.ninewire.com"
+       TITLE="[X-Unix] Remote force logout and lockout of user">magill at mcgillsociety.org
+       </A><BR>
+    <I>Mon Jun 14 09:14:09 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000923.html">[X-Unix] &quot;Bad CPU type&quot;
+</A></li>
+        <LI>Next message: <A HREF="000925.html">[X-Unix] &quot;Bad CPU type&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#924">[ date ]</a>
+              <a href="thread.html#924">[ thread ]</a>
+              <a href="subject.html#924">[ subject ]</a>
+              <a href="author.html#924">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 13 Jun, 2004, at 19:53, James Bucanek wrote:
+&gt;<i> Dennis Fazio wrote on Sunday, June 13, 2004:
+</I>&gt;&gt;<i> What is the best way to force logout a particular user
+</I>&gt;&gt;<i> &lt;uncooperative_teenager&gt; on a remote system (of which I have  
+</I>&gt;&gt;<i> administrator
+</I>&gt;&gt;<i> rights) and temporarily prevent additional logins?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I've come up with:
+</I>&gt;&gt;<i> ssh to remote system and login to my admin account
+</I>&gt;&gt;<i> use &quot;passwd uncooperative_teenager&quot; and change their password
+</I>&gt;&gt;<i> use ps -aux to see all processes
+</I>&gt;&gt;<i> kill process ID of their
+</I>&gt;&gt;<i> /System/Library/CoreServices/loginwindow.app/Contents/MacOS/ 
+</I>&gt;&gt;<i> loginwindow
+</I>&gt;&gt;<i> process.
+</I>&gt;<i>
+</I>&gt;<i> Doesn't work on mine.  Sure, it logs the user out, but loginwindow  
+</I>&gt;<i> just restarts and logs 'em right back in again.
+</I>&gt;<i>
+</I>&gt;<i> I also tried 'killall -u baduser' with similar results.
+</I>
+This sounds like the machine is a single user machine which is setup to
+Automatically Login as User baduser&quot;.
+
+That setting bypasses all checks for passwords so modifying the  
+password will have no effect.
+
+The command line passwd command will change the password in netinfo.
+
+Killing the loginwindow process should kill all child processes except  
+any which have been &quot;nohup&quot;ed.
+
+However, if the account is set to automatically login the user, they  
+will simply be given a new desktop.
+
+Off hand, I do not know where that particular value is stored or its  
+actual name -- in a plist or in netinfo. It is set in  
+&quot;preferences/accounts/login options.
+
+Personally, I don't believe in automatic logins. I much prefer to  
+prompt for Userid and Password. It forces the user to at least &quot;think&quot;  
+about the concept of security, if only for one small fraction of a  
+second.
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000923.html">[X-Unix] &quot;Bad CPU type&quot;
+</A></li>
+	<LI>Next message: <A HREF="000925.html">[X-Unix] &quot;Bad CPU type&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#924">[ date ]</a>
+              <a href="thread.html#924">[ thread ]</a>
+              <a href="subject.html#924">[ subject ]</a>
+              <a href="author.html#924">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

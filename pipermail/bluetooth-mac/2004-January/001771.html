@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [BTM] BT access to LAN directly from Mac/BT Modem
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:bluetooth-mac%40listserver.themacintoshguy.com?Subject=%5BBTM%5D%20BT%20access%20to%20LAN%20directly%20from%20Mac/BT%20Modem&In-Reply-To=list-10060533%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001770.html">
+   <LINK REL="Next"  HREF="001772.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[BTM] BT access to LAN directly from Mac/BT Modem</H1>
+    <B>Gary Mark</B> 
+    <A HREF="mailto:bluetooth-mac%40listserver.themacintoshguy.com?Subject=%5BBTM%5D%20BT%20access%20to%20LAN%20directly%20from%20Mac/BT%20Modem&In-Reply-To=list-10060533%40mail.ninewire.com"
+       TITLE="[BTM] BT access to LAN directly from Mac/BT Modem">gmark at cogeco.ca
+       </A><BR>
+    <I>Sun Jan  4 13:12:25 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001770.html">BT access to LAN directly from Mac/BT Modem
+</A></li>
+        <LI>Next message: <A HREF="001772.html">SE HBH-65 Headset
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1771">[ date ]</a>
+              <a href="thread.html#1771">[ thread ]</a>
+              <a href="subject.html#1771">[ subject ]</a>
+              <a href="author.html#1771">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks to Martim Weinstein for this info:
+
+&gt;<i> First my configuration: Powerbook G4 500 Mhz, OS 10.2.6, generic USB
+</I>&gt;<i> BT module (brandless), Tungsten T and a heavy dose of patience. The
+</I>&gt;<i> Tibook is receiving net from an airport station connected to another
+</I>&gt;<i> mac which is sharing it's connection. So basically I'm sharing through
+</I>&gt;<i> BT a already shared connection... oh, one more thing: my Firewall is
+</I>&gt;<i> off. There is something about opening ports 8827 and 8775 in order to
+</I>&gt;<i> work with WebPro (Tungsten browser) but since I don't use my firewall
+</I>&gt;<i> I didn't test it.
+</I>&gt;<i>
+</I>&gt;<i> None of this stuff is of my authoring, I got most of it out of
+</I>&gt;<i> Macosxhints.com and used some common sense and troubleshooting. Some
+</I>&gt;<i> of the stuff I did, I don't understand too deeply (like the script!),
+</I>&gt;<i> so I'm just describing what works for me.
+</I>&gt;<i>
+</I>&gt;<i> Link on the article I used (most of the stuff is from the comments
+</I>&gt;<i> section):
+</I>&gt;<i>
+</I>&gt;<i> &lt;<A HREF="http://www.macosxhints.com/article.php?story=20021103062212288">http://www.macosxhints.com/article.php?story=20021103062212288</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> Configuring the Mac:
+</I>&gt;<i>
+</I>&gt;<i> 1- activate another port in network preferences that allows you to
+</I>&gt;<i> share your main connection. To make a port your main connection port
+</I>&gt;<i> just drag it to the top. Even if you don't use it, you'll need it open
+</I>&gt;<i> otherwise the script below might not work. No configuration needed of
+</I>&gt;<i> this port.
+</I>&gt;<i>
+</I>&gt;<i> 2- Share that connection activating it in Sharing in the system
+</I>&gt;<i> preferences. No need to configure anything.
+</I>&gt;<i>
+</I>&gt;<i> 3- Paste the following script into script editor. Keep it as a script
+</I>&gt;<i> at first so you can make alterations as necessary.
+</I>&gt;<i>
+</I>&gt;<i> set runresult to &quot;&quot;
+</I>&gt;<i>  tell me to activate
+</I>&gt;<i>  display dialog &quot;Turn Bluetooth Internet Sharing ON?&quot; buttons
+</I>&gt;<i> {&quot;Cancel&quot;, &quot;Yes&quot;} default button 2
+</I>&gt;<i>  set userchoice to button returned of result
+</I>&gt;<i>  if userchoice = &quot;Yes&quot; then
+</I>&gt;<i>          with timeout of 20 seconds
+</I>&gt;<i>                  try
+</I>&gt;<i>                          do shell script &quot;sudo
+</I>&gt;<i> /usr/libexec/InternetSharing&quot; with administrator privileges
+</I>&gt;<i>                          set runresult to &quot;Statement 1 done&quot; &amp; return
+</I>&gt;<i>                  on error errormsj
+</I>&gt;<i>                          display dialog errormsj as string
+</I>&gt;<i>                          set runresult to runresult &amp; &quot;Statement one
+</I>&gt;<i> failed&quot; * errormsj &amp; return
+</I>&gt;<i>                  end try
+</I>&gt;<i>                  try
+</I>&gt;<i>                          do shell script &quot;sudo /usr/sbin/pppd
+</I>&gt;<i> /dev/tty.Bluetooth-PDA-Sync 115200 noauth local passive proxyarp
+</I>&gt;<i> asyncmap 0 silent persist :10.1.1.201 &amp;&quot;
+</I>&gt;<i>                          set runresult to &quot;Internet Sharing ON&quot; &amp;
+</I>&gt;<i> return
+</I>&gt;<i>                  on error errormsj
+</I>&gt;<i>                          display dialog errormsj as string
+</I>&gt;<i>                          set runresult to runresult &amp; &quot;Statement 2
+</I>&gt;<i> failed&quot; * errormsj &amp; return
+</I>&gt;<i>                  end try
+</I>&gt;<i>          end timeout
+</I>&gt;<i>          tell me to activate
+</I>&gt;<i>          display dialog (runresult as string) buttons {&quot;OK&quot;} default
+</I>&gt;<i> button 1
+</I>&gt;<i>  end if
+</I>&gt;<i>
+</I>&gt;<i> For my LAN I changed the ip on  &quot;proxyarp asyncmap 0 silent persist
+</I>&gt;<i> :10.1.1.201 &amp;&quot; to 192.168.0.5 since it's the ip range I use. Not sure
+</I>&gt;<i> if it made a difference, but again, I'm only describing what I have
+</I>&gt;<i> since what I have is working.
+</I>&gt;<i>
+</I>&gt;<i> 4- Run the script. Once it works you can save it as an application and
+</I>&gt;<i> even include it in the login items...
+</I>&gt;<i>
+</I>&gt;<i> Configuring the Tungsten (This is just copy, paste from macosxhints):
+</I>&gt;<i>
+</I>&gt;<i> 1- Launch the Prefs application on your Palm Powered handheld.
+</I>&gt;<i> 2- Select the Connection panel.
+</I>&gt;<i> 3- Touch the New... button.
+</I>&gt;<i> 4- Give the new connection a descriptive name such as Bluetooth to
+</I>&gt;<i> Macintosh.
+</I>&gt;<i> 5- Set Connect to to PC.
+</I>&gt;<i> 6- Set Via to Bluetooth.
+</I>&gt;<i> 7- Touch the box labeled Tap to Find and select your Macintosh.
+</I>&gt;<i> 8- Touch Details....
+</I>&gt;<i> 9- Set Speed to 115,200 bps.
+</I>&gt;<i> 10- Set Flow Ctl to Automatic.
+</I>&gt;<i> 11- Touch OK twice to return to the Connection panel.
+</I>&gt;<i> 12- Select the Network panel.
+</I>&gt;<i> 13- Choose the UUNet service. Rename it something descriptive, such as
+</I>&gt;<i> Bluetooth to Macintosh.
+</I>&gt;<i> 14- Set Connection to the connection you just created previously in
+</I>&gt;<i> this section.
+</I>&gt;<i> 15- Leave the User Name and Password entries blank.
+</I>&gt;<i> 16- Touch Details... and ensure that Conection type is set to PPP and
+</I>&gt;<i> IP Address is checked. Uncheck Query DNS and enter the addresses of
+</I>&gt;<i> local Primary and Secondary DNS servers for your network. THIS IS VERY
+</I>&gt;<i> IMPORTANT!
+</I>&gt;<i> 17- Set the Idle timeout to however long you'd like the connection to
+</I>&gt;<i> remain active before timing out. (I set mine to never)
+</I>&gt;<i> 18- Touch Script... and make sure that the only entry in the script is
+</I>&gt;<i> End.
+</I>&gt;<i> 19- Touch OK twice.
+</I>&gt;<i>
+</I>&gt;<i> Testing the connection and troubleshooting:
+</I>&gt;<i>
+</I>&gt;<i> 1- Simply go to WebPro and see if it loads any page... no?
+</I>&gt;<i>
+</I>&gt;<i> 2- Is BT activated on the Tungsten? Did you press connect in the
+</I>&gt;<i> Connection panel? Yes, should be you answer to both. If youre getting
+</I>&gt;<i> &quot;serial&quot; errors it is probably one of these. It was for me. On my
+</I>&gt;<i> palm, everytime I switch it off, I have to activate BT and press
+</I>&gt;<i> connect again.
+</I>&gt;<i>
+</I>&gt;<i> 3- You can also try substituting the IP address for webpro.palm.com
+</I>&gt;<i> (63.97.179.33) in Web Pro's (menu) Options &gt; Preferences &gt; Advanced.
+</I>&gt;<i> That eliminates the potential DNS problems with the host address,
+</I>&gt;<i> anyway.
+</I>&gt;<i>
+</I>&gt;<i> 4- You can figure out whether your connection is working by using ping
+</I>&gt;<i> from within your Palm.  Go to Prefs &gt; Network &gt; (your Service name) &gt;
+</I>&gt;<i> (menu) Options &gt; View Log WITHYOUR CONNECTION ACTIVE.  Scroll to the
+</I>&gt;<i> bottom of the log and you can test ping there.  Grafitti in &quot;ping
+</I>&gt;<i> 63.97.179.33&quot; return (downward left slash, not the Done button), and
+</I>&gt;<i> if your connection is talking to the outside world, it should have one
+</I>&gt;<i> line that says &quot;Pinging 63.97.179.33 with 32 bytes of data:&quot; and then
+</I>&gt;<i> it should return &quot;Reply from 63.97.179.33: bytes=32 time=110ms
+</I>&gt;<i> TTL=125&quot;.  If it times out, then you are not talking to the webpro
+</I>&gt;<i> site at the very least.  If it works,  I would ping a non-IP address
+</I>&gt;<i> like apple.com to test your DNS lookup.  If it works there, then both
+</I>&gt;<i> the connection and your DNS servers are working.  Beware that I got
+</I>&gt;<i> errors from some sites I pinged, including macosxhints.com, probably
+</I>&gt;<i> because they set up their ping services strange.
+</I>
+On Saturday, January 3, 2004, at 10:26  PM, Alpine Adventures wrote:
+
+&gt;<i> 1. I am using a Palm T3 with a Mac running OS X 10.2.8. I would like to
+</I>&gt;<i> access my Ethernet LAN on the Palm directly (without a separate network
+</I>&gt;<i> access point) from my Mac via BT. Is this possible? I am mostly 
+</I>&gt;<i> interested
+</I>&gt;<i> in access to the LAN=B9s broadband connection. The BT connection from 
+</I>&gt;<i> Palm to
+</I>&gt;<i> Mac works fine for HotSync and file transfer but I have not found a 
+</I>&gt;<i> way to
+</I>&gt;<i> access the LAN. Even with BT speed limitations it would seem like a 
+</I>&gt;<i> useful
+</I>&gt;<i> tool. Has anyone found a way to do this?
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001770.html">BT access to LAN directly from Mac/BT Modem
+</A></li>
+	<LI>Next message: <A HREF="001772.html">SE HBH-65 Headset
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1771">[ date ]</a>
+              <a href="thread.html#1771">[ thread ]</a>
+              <a href="subject.html#1771">[ subject ]</a>
+              <a href="author.html#1771">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/bluetooth-mac.html">More information about the Bluetooth-mac
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

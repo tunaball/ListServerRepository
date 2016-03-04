@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Re: Leopard Issues - Some Responses
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Re%3A%20Leopard%20Issues%20-%20Some%20Responses&In-Reply-To=430C6A04-AF4F-4088-A52A-9C16618652CE%40myrealbox.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="019309.html">
+   <LINK REL="Next"  HREF="019318.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Re: Leopard Issues - Some Responses</H1>
+    <B>John Douglass - User</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Re%3A%20Leopard%20Issues%20-%20Some%20Responses&In-Reply-To=430C6A04-AF4F-4088-A52A-9C16618652CE%40myrealbox.com"
+       TITLE="[X4U] Re: Leopard Issues - Some Responses">douglass at cs.clemson.edu
+       </A><BR>
+    <I>Tue Dec  4 15:19:36 PST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="019309.html">[X4U] Re: Leopard Issues - Some Responses
+</A></li>
+        <LI>Next message: <A HREF="019318.html">[X4U] Re: Leopard Issues - Some Responses
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19310">[ date ]</a>
+              <a href="thread.html#19310">[ thread ]</a>
+              <a href="subject.html#19310">[ subject ]</a>
+              <a href="author.html#19310">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Dec 4, 2007, at 3:13 PM, Stroller wrote:
+&gt;<i>
+</I>&gt;<i> Yes, but YOU'RE not reporting the domain guessing problem (if I'm  
+</I>&gt;<i> reading your message of 3 December 2007 20:07:50 GMT correctly then  
+</I>&gt;<i> you explicitly state the opposite).
+</I>
+Agreed.  However, my domain guessing is working, but my DNS lookup  
+using `host jr` does not, which of course was the point I was trying  
+to make:  DNS client lookups and domain guessing are completely  
+different beasts.  (See previous reference to Mozilla's explanation).
+
+&gt;<i> My request for the results of `host jr` was for Jon Warms, although  
+</I>&gt;<i> Mr Forster's reply (4 December 2007 20:05:36 GMT) appears to prove  
+</I>&gt;<i> me wrong. I'd like to see it performed from within Verizon's network  
+</I>&gt;<i> to be sure.
+</I>
+
+Actually, I think Mr. Forster's reply proves you RIGHT, Verizon's DNS  
+server should be returning NXDOMAIN but instead returns NOERROR.    As  
+a friend of mine says, we might be in &quot;violent agreement.&quot;
+
+A simple way to see what happens is to open the terminal and issue  
+&quot;sudo tcpdump -n port 53&quot; from the command line.  Then type in the  
+&quot;jr&quot; into the URL box and see what happens.
+
+What you should see is something like:
+
+15:56:25.460883 IP 192.168.2.2.49857 &gt; nameserver.domain: 46418+ A?  
+jr.search1.
+15:56:25.461500 IP nameserver.domain &gt; 192.168.2.2.49857: 46418  
+NXDomain* 0/1/0
+15:56:25.461839 IP 192.168.2.2.49858 &gt; nameserver.domain: 49011+ A?  
+jr.search2.
+15:56:25.462453 IP nameserver.domain &gt; 192.168.2.2: 49011 NXDomain*  
+0/1/0
+15:56:25.603464 IP 192.168.2.2.49862 &gt; nameserver.domain: 7689+ A? www.jr.com 
+.
+15:56:25.796455 IP nameserver.domain &gt; 192.168.2.2.49862: 7689 1/5/3 A  
+4.71.184.155
+
+(names changed to protect the innocent).
+
+Do the same thing under `host` and you will not get the final line,  
+because the domain guessing is browser related not DNS client related.
+
+Anyway, the results show my request first tacking on the first search  
+domain listed in my DNS settings, then the second, and then finally  
+doing domain guessing by sending &quot;www.jr.com&quot;.   I postulate, based  
+upon Mr Forster's reply,  that the NXDOMAIN above won't be there,  
+instead the people experiencing problems will see NOERROR.  Thus you  
+will not see the domain guessing portion.  I don't think this problem  
+is caused by Leopard.  I can concede the possibility there might have  
+been changes in the client resolver library code that would change the  
+default behavior from Tiger to Leopard regarding the handling of a  
+NOERROR return.  Either way the correct DNS server response (NXDOMAIN)  
+would allow Leopard to behave as expected, because after all &quot;jr&quot; (in  
+my case jr.searchdomain) doesn't exist, and the DNS should return an  
+error.
+
+-- John
+
+
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="019309.html">[X4U] Re: Leopard Issues - Some Responses
+</A></li>
+	<LI>Next message: <A HREF="019318.html">[X4U] Re: Leopard Issues - Some Responses
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19310">[ date ]</a>
+              <a href="thread.html#19310">[ thread ]</a>
+              <a href="subject.html#19310">[ subject ]</a>
+              <a href="author.html#19310">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

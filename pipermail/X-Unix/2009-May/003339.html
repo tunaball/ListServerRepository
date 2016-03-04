@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Renaming files with spaces
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Renaming%20files%20with%20spaces&In-Reply-To=452D75D0-0E99-4AD9-8C40-54D7CC0375E4%40charter.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003338.html">
+   <LINK REL="Next"  HREF="003330.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Renaming files with spaces</H1>
+    <B>Juan Manuel Palacios</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Renaming%20files%20with%20spaces&In-Reply-To=452D75D0-0E99-4AD9-8C40-54D7CC0375E4%40charter.net"
+       TITLE="[X-Unix] Renaming files with spaces">jmpalaciosp at eml.cc
+       </A><BR>
+    <I>Mon May 25 09:20:32 PDT 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003338.html">[X-Unix] Renaming files with spaces
+</A></li>
+        <LI>Next message: <A HREF="003330.html">[X-Unix] Locations of Entourage User Data?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3339">[ date ]</a>
+              <a href="thread.html#3339">[ thread ]</a>
+              <a href="subject.html#3339">[ subject ]</a>
+              <a href="author.html#3339">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On May 14, 2009, at 9:56 AM, Charles Howse wrote:
+
+&gt;<i> Hi,
+</I>&gt;<i> I need to batch rename all files with extension .PDF to  
+</I>&gt;<i> extension .pdf.
+</I>&gt;<i> They may or may not have spaces in the filenames.
+</I>&gt;<i>
+</I>&gt;<i> The following works ONLY if there are no spaces in the filename:
+</I>&gt;<i>
+</I>&gt;<i> for f in *.PDF; do
+</I>&gt;<i> 	base=`basename $f .PDF`
+</I>&gt;<i> 	mv $f $base.pdf
+</I>&gt;<i> done
+</I>&gt;<i>
+</I>&gt;<i> Can anyone provide a tip to something that will work regardless of  
+</I>&gt;<i> whether there are spaces in the filenames or not?
+</I>
+
+	I would try double-quoting both the $f and the $base.pdf args in the  
+mv command, i.e.:
+
+mv &quot;$f&quot; &quot;$base.pdf&quot;
+
+	In any case, you can always do a &quot;set -x&quot; just before the loop to see  
+what each line in every iteration is producing.
+
+	Let me know if it works, hope it helps!
+
+
+-jmpp
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003338.html">[X-Unix] Renaming files with spaces
+</A></li>
+	<LI>Next message: <A HREF="003330.html">[X-Unix] Locations of Entourage User Data?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3339">[ date ]</a>
+              <a href="thread.html#3339">[ thread ]</a>
+              <a href="subject.html#3339">[ subject ]</a>
+              <a href="author.html#3339">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

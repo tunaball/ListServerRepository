@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Simple commandline mail client
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Simple%20commandline%20mail%20client&In-Reply-To=list-10616818%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000226.html">
+   <LINK REL="Next"  HREF="000228.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Simple commandline mail client</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Simple%20commandline%20mail%20client&In-Reply-To=list-10616818%40mail.ninewire.com"
+       TITLE="[X-Unix] Simple commandline mail client">magill at mcgillsociety.org
+       </A><BR>
+    <I>Tue Feb  3 10:03:34 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000226.html">[X-Unix] Simple commandline mail client
+</A></li>
+        <LI>Next message: <A HREF="000228.html">[X-Unix] nevermind, figured it out ;) (re: simple commandline one-shot emailer)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#227">[ date ]</a>
+              <a href="thread.html#227">[ thread ]</a>
+              <a href="subject.html#227">[ subject ]</a>
+              <a href="author.html#227">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 03 Feb, 2004, at 00:17, Peter Marreck wrote:
+
+&gt;<i> Here's my situation- I merely want to be able to enter some SMTP  
+</I>&gt;<i> settings (server, login, etc.) in a config file (or as additional  
+</I>&gt;<i> parameters on a commandline) so I can do something like &quot;mail  
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">me at me.com</A> 'this is the subject' 'this is the body'&quot; so I can include  
+</I>&gt;<i> it in a script. I don't want to have to mess with installing or  
+</I>&gt;<i> configuring mail SERVERS such as Postfix etc., and I don't want  
+</I>&gt;<i> something that will automatically break with the next OS upgrade. I  
+</I>&gt;<i> also don't necessarily want to applescript mail.app. Does anyone know  
+</I>&gt;<i> of such a CL app?
+</I>
+As was mentioned, the tool is called sendmail it is intended for use in  
+a script.
+
+Here's a typical generic usage... (I use it for emailing log files.)
+
+Postfix has a link to sendmail and follows the same usages, so the  
+script below
+works with both a complete sendmail installation or a postfix  
+installation.
+It's written in ksh, and is extremely portable.
+
+Modify the variables...
+      MAIL_ADDR=&quot;<A HREF="../../../mailman/listinfo/x-unix.html">xxx at xxx.xxx</A>&quot;
+      HOST2=&quot;xxx.xxx.xxx.xxx&quot;
+      param=xxx
+
+The script constructs the outgoing message from a header (MAIL_TXT) and  
+body
+(MAIL_TMP1 and REPORT).
+The body can be anything, it is simply appended (cat &gt;&gt;) to the header.
+
+It leaves behind a file $REPORT which contains what it sent.
+Note: lines in the original script are longer than 80 chars, some might  
+fold...
+This line in the script:
+# ---------------------------------------------------------------------*
+is 72 characters long.
+
+------------------&lt;cut here&gt;------------------
+#!/bin/zsh
+emulate ksh
+#
+# ------------------------------------- define the mailer to be used
+export MAILER=&quot;/usr/sbin/sendmail -t&quot;
+#                                       where to mail output reports
+export MAIL_ADDR=&quot;<A HREF="../../../mailman/listinfo/x-unix.html">xxx at xxx.xxx</A>&quot;
+#                                       where it originated
+export HOST2=&quot;xxx.xxx.xxx.xxx&quot;
+#                                       report name
+export param=xxx
+# -------------------------------------
+#
+export REPORT=$param
+export LOGFILE=$param
+# ------------------------------------- some scratch files
+export TMP_DIR=/tmp
+
+export TMP1=$TMP_DIR/mailit.tmp1.$$
+export TMP2=$TMP_DIR/mailit.tmp2.$$
+export TMP3=$TMP_DIR/mailit.tmp3.$$
+
+export MAIL_TXT=$TMP_DIR/mailit.$$.0
+export MAIL_TMP1=$TMP_DIR/mailit.$$.1
+export MAIL_TMP2=$TMP_DIR/mailit.$$.2
+
+export RPTDIR=/var/log
+
+export REPORT=$RPTDIR/outgoing.$REPORT.$ISODATE
+# ---------------------------------------------------------------------*
+# -------------------------------------  prime the mail file
+         print &quot;To: $MAIL_ADDR&quot;                                           
+ &gt;  $MAIL_TXT
+         print &quot;From: The-Log-Meister&quot;                                    
+ &gt;&gt; $MAIL_TXT
+         print &quot;Subject: xx                                      &quot;        
+ &gt;&gt; $MAIL_TXT
+         print &quot;-------&quot;                                                  
+ &gt;&gt; $MAIL_TXT
+         print &quot; &quot;                                                        
+ &gt;&gt; $MAIL_TXT
+# ---------------------------------------------------------------------*
+#               Define the basic message environment
+# -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  *
+print &quot;         Periodic report: $LOGFILE.  From $HOST2&quot;                 
+                  &gt; $MAIL_TMP1
+print &quot;         Date: `date`              $progname&quot;                     
+                 &gt;&gt; $MAIL_TMP1
+print &quot;  
+======================================================================== 
+= &quot;     &gt;&gt; $MAIL_TMP1
+print &quot; &quot;                                                                
+                 &gt;&gt; $MAIL_TMP1
+
+# ---------------------------------------------------------------------*
+#       Prepare the outgoing message
+# -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  *
+if [ -f $MAIL_TMP1 ]; then
+         cat $MAIL_TMP1 &gt;&gt; $MAIL_TXT
+         cat $REPORT    &gt;&gt; $MAIL_TXT
+fi
+print &quot; End of periodic report: $LOGFILE.&quot;                               
+                 &gt;&gt; $MAIL_TXT
+print &quot; &quot;                                                                
+                 &gt;&gt; $MAIL_TXT
+
+#                       use ED to edit the subject into the message
+#                       [replace the line containing &quot;Subject:&quot;]
+#
+ed - $MAIL_TXT &gt;/dev/null &lt;&lt;%
+/Subject:/
+.c
+Subject: Cron: Periodic report: $LOGFILE.  From: $HOST2
+.
+w
+q
+%
+set -vx
+# -------------------------------------
+#                       done adding subject, save report then send it
+$CP  $MAIL_TXT $REPORT
+#                       done adding subject, send it
+$MAILER &lt; $MAIL_TXT
+#                       erase the input files
+ls -als $REPORT
+
+ls -als  $TMP1 $TMP2 $TMP3 $MAIL_TMP1 $MAIL_TMP2 $MAIL_TXT
+
+$RM -f   $TMP1 $TMP2 $TMP3 $MAIL_TMP1 $MAIL_TMP2 $MAIL_TXT
+# ---------------------------------------------------------------------*
+#
+------------------&lt;cut here&gt;------------------
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000 - [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000226.html">[X-Unix] Simple commandline mail client
+</A></li>
+	<LI>Next message: <A HREF="000228.html">[X-Unix] nevermind, figured it out ;) (re: simple commandline one-shot emailer)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#227">[ date ]</a>
+              <a href="thread.html#227">[ thread ]</a>
+              <a href="subject.html#227">[ subject ]</a>
+              <a href="author.html#227">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

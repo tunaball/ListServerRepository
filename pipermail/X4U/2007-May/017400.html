@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] What is NAT and what does it mean to me?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20What%20is%20NAT%20and%20what%20does%20it%20mean%20to%20me%3F&In-Reply-To=20070511072510.979BBCFFA52%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="017395.html">
+   <LINK REL="Next"  HREF="017402.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] What is NAT and what does it mean to me?</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20What%20is%20NAT%20and%20what%20does%20it%20mean%20to%20me%3F&In-Reply-To=20070511072510.979BBCFFA52%40listserver.themacintoshguy.com"
+       TITLE="[X4U] What is NAT and what does it mean to me?">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Fri May 11 02:30:28 PDT 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="017395.html">[X4U] OS X and Flash Drive
+</A></li>
+        <LI>Next message: <A HREF="017402.html">[X4U] What is NAT and what does it mean to me?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17400">[ date ]</a>
+              <a href="thread.html#17400">[ thread ]</a>
+              <a href="subject.html#17400">[ subject ]</a>
+              <a href="author.html#17400">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+At 00:25 -0700 11/5/07, <A HREF="../../../mailman/listinfo/x4u.html">x4u-request at listserver.themacintoshguy.com</A> wrote:
+&gt;<i>From: Tim Collier &lt;<A HREF="../../../mailman/listinfo/x4u.html">timjcollier at mac.com</A>&gt;
+</I>&gt;<i>Subject says it all.  I installed BellSouth DSL and connected the
+</I>&gt;<i>wired modem to my 802.11n Airport Extreme.  It kept giving me one
+</I>&gt;<i>error that said Double NAT.  I called BellSouth and they told me that
+</I>&gt;<i>NAT was not enabled on the modem and I didn't turn it on as an option
+</I>&gt;<i>on the Airport (as I really don't understand what it is) but after I
+</I>&gt;<i>applied the settings, it came up as an error.  It gave me the option
+</I>&gt;<i>to ignore it and I checked that, I then updated the Airport again and
+</I>&gt;<i>now everything is fine.  The light on the front is GREEN....that's
+</I>&gt;<i>GOOD.  But still, what is NAT and what does it mean to me?
+</I>
+If it's just a modem it won't do NAT. (Although with the people who 
+name products knowing so little about technology these days, anything 
+is possible :-) ). Anything that does NAT must have different IP 
+ranges on each side and so qualify as a router or even a gateway. If 
+that and the Airport are all the network kit you have then I can't 
+see how you can have anything that could cause any error that could 
+be described as 'Double NAT'. What item told you of the error?
+
+
+&gt;<i>From: Robert Ameeti &lt;<A HREF="../../../mailman/listinfo/x4u.html">robert at ameeti.net</A>&gt;
+</I>&gt;<i>Double NAT would be where the ISP's router was doing NAT and
+</I>&gt;<i>providing a 'network' of addresses and then one of the devices (your
+</I>&gt;<i>AirPort) hooked up to one of its ports was also doing NAT. It is not
+</I>&gt;<i>impossible to deal with but should be avoided when possible.
+</I>
+It's fairly straightforwards to deal with. You just have to think 
+about what is going on. The main problem is actually connecting to 
+the components while you're setting it up. I have worked at a site 
+where we had to investigate an odd network problem. As part of the 
+investigation someone noted that packets were getting NATed six 
+times. It was a large complex network.
+
+
+&gt;<i>From: Eugene &lt;<A HREF="../../../mailman/listinfo/x4u.html">list-themacintoshguy at fsck.net</A>&gt;
+</I>&gt;<i>	client A (e.g. Mac) &lt;-&gt; NAT B (e.g. Airport) &lt;-&gt; NAT C (e.g. 
+</I>&gt;<i>modem) &lt;-&gt; Internet
+</I>&gt;<i>	client A &lt;-&gt; NAT B &lt;-&gt; Internet &lt;-&gt; NAT C &lt;-&gt; client D
+</I>
+Strictly, the Internet is irrelevant, but as Eugene points out, a NAT 
+function is one to many and so can be either way round. The complex 
+network I mention above will have had Internet connection on one of 
+the arms, but it was not significant. Sometimes it is necessary to 
+abandon the popular use scenario, its ideas and product 
+'documentation', in order to fully understand and discover the source 
+of a problem.
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+Chair of HPUX SysAdmin SIG of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x4u.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="017395.html">[X4U] OS X and Flash Drive
+</A></li>
+	<LI>Next message: <A HREF="017402.html">[X4U] What is NAT and what does it mean to me?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17400">[ date ]</a>
+              <a href="thread.html#17400">[ thread ]</a>
+              <a href="subject.html#17400">[ subject ]</a>
+              <a href="author.html#17400">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

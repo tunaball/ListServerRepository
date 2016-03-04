@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Cube speakers/amp
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=Cube%20speakers/amp&In-Reply-To=list-15774271%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="008269.html">
+   <LINK REL="Next"  HREF="008271.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Cube speakers/amp</H1>
+    <B>Steffen Barabasch</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=Cube%20speakers/amp&In-Reply-To=list-15774271%40mail.ninewire.com"
+       TITLE="Cube speakers/amp">sb-cubelist at eggandspam.de
+       </A><BR>
+    <I>Fri Aug  6 23:05:50 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="008269.html">[CUBE] [CUBE]
+</A></li>
+        <LI>Next message: <A HREF="008271.html">[CUBE] Cube speakers/amp
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8270">[ date ]</a>
+              <a href="thread.html#8270">[ thread ]</a>
+              <a href="subject.html#8270">[ subject ]</a>
+              <a href="author.html#8270">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Guys, stop the speculation and do your homework. Really. This 
+guessing doesn't help anyone.
+
+Here are the facts:
+
+Every (standard) USB port is specced to deliver 500 mA of power.
+
+Low power devices like mouse/keyboard etc. can share this power 
+supply by using an unpowered hub. Usually this hub takes it share for 
+its own needs, so if you've got an unpowered 4-port hub that claims 
+100mA itself, you can use 4 100 mA devices with that hub, resulting 
+in a rated power use of 500mA total.
+
+The Cube amp is a high power device, rated 500mA. So you can only use 
+it plugged directly into a computer or on a powered hub.
+
+But now make your calculations, 5V x 0.5A, that's a measly 2.5 Watts 
+input, resulting in a max. audio wattage of max 1.5W. That's not 
+quite much, and since Steve Jobs is a bit deaf Apple engineers 
+decided to &quot;expand&quot; the USB specs on the Cube a good bit.
+
+If plugged in into the Cube, the amp gets switched into &quot;booster 
+mode&quot; and draws a LOT more power than the actual USB specs allow. 
+That's why the Cube speakers are a lot louder if plugged directly 
+into the Cube.
+
+That doesn't mean that the speakers won't work on a powered hub, it 
+just won't be as loud since it uses just the rated 500mA max. to 
+behave like a nice citizen in USB land.
+
+The amp will not work on a unpowered hub, since the rated 500 mA plus 
+whatever the unpowered hub claims is more than the max 500 mA.
+
+If it DOES work (=the computer doesn't complain about too much power 
+usage) then you've got one of those weird critters like I did. I've 
+got an *unpowered* hub that claims (to the computer) to be a 
+*powered* hub. That means, you could use 4 500 mA devices plus the 
+hub drawing all their power (thats more than 2A in the worst case!) 
+from one 500 mA port. Even with the Cubes &quot;high-power-ports&quot; this 
+could be very dangerous. Be careful if you stumble across an 
+unpowered hub that behaves like that!
+
+And if you still don't believe me, I made actual measurements on some 
+of my USB devices to see how much power they draw in real life:
+
+
+Low power devices (rated from 50 to 100 mA):
+
+Apple Pro Keyboard (not using the built-in hub)
+15 mA
+
+LeadData Kartenleser (not using the built-in hub)
+60 mA
+
+Keyspan TwinSerial
+70 mA
+
+iMate + Apple Extended KB plugged in (LEDs on KB dark)
+30 mA
+
+unpowered Hub + Logitech Mouse + Logitech Trackball + PowerMate (total)
+120 mA
+
+This shows that the ratings here are really conservative. The last 
+combination is rated to a total of 314 mA, actual use is far less 
+than half as high.
+
+
+Now some high-power devices, rated 500 mA:
+
+Roland UA-30
+320 mA
+
+Cube USB-Amp plugged into Cube port
+800 mA
+
+The Roland USB audio interface is once again well below the rated 
+value, the Cube amp on the other hand is far over the actual USB 
+specs, if allowed (=plugged into Cube). If the Cube amp would have to 
+be rated, and if you'd use the same conservative rating as on the 
+other devices, this would have to be called a 1500 mA 
+ultra-high-power device...
+
+BTW, to get the rated power usage, don't use the System Profiler, it 
+doesn't have a clue. Use USB Prober (part of the Developer 
+Tools/Xcode) instead.
+
+Steffen
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="008269.html">[CUBE] [CUBE]
+</A></li>
+	<LI>Next message: <A HREF="008271.html">[CUBE] Cube speakers/amp
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8270">[ date ]</a>
+              <a href="thread.html#8270">[ thread ]</a>
+              <a href="subject.html#8270">[ subject ]</a>
+              <a href="author.html#8270">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Unlinking a file... illegal characters?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Unlinking%20a%20file...%20illegal%20characters%3F&In-Reply-To=3582a97500b3a3aaa1bc997109def1e6%40myrealbox.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001565.html">
+   <LINK REL="Next"  HREF="001573.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Unlinking a file... illegal characters?</H1>
+    <B>Brian Medley</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Unlinking%20a%20file...%20illegal%20characters%3F&In-Reply-To=3582a97500b3a3aaa1bc997109def1e6%40myrealbox.com"
+       TITLE="[X-Unix] Unlinking a file... illegal characters?">bpm-list-osx-unix at 4321.tv
+       </A><BR>
+    <I>Fri Feb 25 08:06:52 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001565.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+        <LI>Next message: <A HREF="001573.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1572">[ date ]</a>
+              <a href="thread.html#1572">[ thread ]</a>
+              <a href="subject.html#1572">[ subject ]</a>
+              <a href="author.html#1572">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Fri, Feb 25, 2005 at 09:37:58AM +0000, Stroller wrote:
+
+&gt;<i> Thank you - this is exactly what I had in mind, except that I couldn't 
+</I>&gt;<i> see the -1 option in `man ls`.
+</I>&gt;<i> 
+</I>&gt;<i> Unfortunately:
+</I>&gt;<i> 
+</I>&gt;<i>   $ ls legoland/
+</I>&gt;<i>   e??y??y??y??vk??????..??????
+</I>&gt;<i>   339 /Volumes/CLEARLIGHT/foo $ ls -lFa -i legoland/
+</I>&gt;<i>   ls: e??y??y??y??vk??????..??????: File name too long
+</I>&gt;<i>   total 128
+</I>&gt;<i>   731381 drwxrwxrwx  1 stroller  admin  32768 22 Nov 03:27 ./
+</I>&gt;<i>   772975 drwxrwxrwx  1 stroller  admin  32768 25 Feb 01:53 ../
+</I>&gt;<i>   $
+</I>&gt;<i> 
+</I>&gt;<i> Can you suggest any other way to find the inode number?
+</I>
+Might try this:
+
+#! /usr/bin/perl
+
+use strict;
+use warnings;
+
+MAIN:
+{
+    opendir(DIR, &quot;.&quot;) or die &quot;error: opendir: $!\n&quot;;
+    my @files = readdir(DIR);
+    close(DIR);
+
+    foreach my $f (@files) {
+        my $inode = (stat($f))[1];
+
+        print &quot;$f: $inode\n&quot;;
+    }
+
+    exit 0;
+}
+
+Might also try unlinking in perl / python / c.  Also, and this is
+just a guess, but are you sure the file system checks out ok?
+
+-- 
+~`^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-., \|/  (___)  \|/ _,.-=~'`^`
+                                      @~./'O o`\.~@
+      &quot;Knowledge is Power&quot;           /__( \___/ )__\  *PPPFFBT!*
+         -- Francis Bacon               `\__`U_/'
+ _.-=~'``'~=-._.-=~'``'~=-._.-=~'`^`'~= &lt;____|'  ^^`'~=-.,__,.-=
+~'^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-.,__,.-==--^'~=-.,__,.-=~'`^`
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001565.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+	<LI>Next message: <A HREF="001573.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1572">[ date ]</a>
+              <a href="thread.html#1572">[ thread ]</a>
+              <a href="subject.html#1572">[ subject ]</a>
+              <a href="author.html#1572">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

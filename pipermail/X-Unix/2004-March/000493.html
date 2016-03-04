@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Shared hosting with apache and php, security concerns
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Shared%20hosting%20with%20apache%20and%20php%2C%20security%20concerns&In-Reply-To=list-11453817%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000492.html">
+   <LINK REL="Next"  HREF="000494.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Shared hosting with apache and php, security concerns</H1>
+    <B>Eugene Lee</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Shared%20hosting%20with%20apache%20and%20php%2C%20security%20concerns&In-Reply-To=list-11453817%40mail.ninewire.com"
+       TITLE="[X-Unix] Shared hosting with apache and php, security concerns">list-themacintoshguy at fsck.net
+       </A><BR>
+    <I>Thu Mar 18 01:33:23 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000492.html">Shared hosting with apache and php, security concerns
+</A></li>
+        <LI>Next message: <A HREF="000494.html">[X-Unix] Shared hosting with apache and php, security concerns
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#493">[ date ]</a>
+              <a href="thread.html#493">[ thread ]</a>
+              <a href="subject.html#493">[ subject ]</a>
+              <a href="author.html#493">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Wed, Mar 17, 2004 at 10:26:55PM -0800, Scott Haneda wrote:
+:<i> 
+</I>:<i> Currently I am hosting a few sites on a OS X Client box, running apache and
+</I>:<i> php, I will not be moving to apache 2 anytime soon.  From what I can gather,
+</I>:<i> any file that needs to be served on the web needs to be world readable for
+</I>:<i> apache to be able to send the page out to the visitor.
+</I>
+Incorrect.  Files (and directories) to be served by Apache need to be
+readable by the Apache process.  For example, if you configure Apache to
+run as user &quot;www&quot; and group &quot;www&quot;, then served content must be readable
+by either the user &quot;www&quot; or anyone within the group &quot;www&quot;.
+
+In a shared web server, a typical method is to make all users' web
+directories group-readable by Apache, but also disallow all world privs.
+Doing this keeps users from accessing each other's web content.
+
+:<i> World readable files
+</I>:<i> are of course, readable by anyone.  This is fine in the case of html files,
+</I>:<i> but when you get to server parsed files, such as those in php, there can be
+</I>:<i> sensitive data in them.
+</I>
+Depends.  See below.
+
+:<i> I guess the first thing is I need to hope that php does not ever die, if it
+</I>:<i> were, raw code would be sent out to the browser, and in that raw code could
+</I>:<i> be for example, connection data to a database.  I can also instruct users to
+</I>:<i> secure the include files elsewhere, so they will not see those sensitive
+</I>:<i> files in the event php were to fail.
+</I>
+Actually, the only way for PHP to die is for the mod_php to crash in an
+unexpected way or for Apache to crash.  Either way, the chances of the
+PHP source code getting revealed is almost impossible (if the latter, it
+*is* impossible).
+
+:<i> The trouble I am having is I am able to read outside the current directly
+</I>:<i> and traverse the entire files system with php using its abilities to read
+</I>:<i> files.  I can not read files that apache does not have permission to read,
+</I>:<i> but those that it does, I can.  For example, if I were to create a php file
+</I>:<i> reading tool and tell it to go up one directory from my directory that holds
+</I>:<i> all my web files, I would be in my root folder, up one more, and I would see
+</I>:<i> a list of directories that were named the domain names of many other sites I
+</I>:<i> am serving, if I were to jump into one of those sites and look around, I
+</I>:<i> could locate say, some file called conf.incl.php and in that I would see
+</I>:<i> some connection data to a database, from there, I could delete data from the
+</I>:<i> database.
+</I>
+If you set the User/Group properly as described above, then Apache will
+not have access to these parent directories.
+
+:<i> How do you prevent this?  I am sure since there are so many
+</I>:<i> cheapPHPhosting.com type sites out there, this is either a problem they all
+</I>:<i> have, or one they have figured out how to fix.
+</I>
+You can also try setting the PHP variable &quot;open_basedir&quot; on a per-vhost
+basis.  A more secure solution is to set up a proper chroot'ed world per
+user, but that's a bit of a pain.
+
+:<i> What tradeoffs in inconvenience will I have to live with to offer shared
+</I>:<i> hosting in a secure way?
+</I>
+This is a PHP issue, not an OS X issue.  You might try looking at the
+official PHP docs in the security section, especially the user notes.
+
+	<A HREF="http://www.php.net/manual/en/security.index.php">http://www.php.net/manual/en/security.index.php</A>
+
+
+-- 
+Eugene Lee
+<A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000492.html">Shared hosting with apache and php, security concerns
+</A></li>
+	<LI>Next message: <A HREF="000494.html">[X-Unix] Shared hosting with apache and php, security concerns
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#493">[ date ]</a>
+              <a href="thread.html#493">[ thread ]</a>
+              <a href="subject.html#493">[ subject ]</a>
+              <a href="author.html#493">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Question about grep
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Question%20about%20grep&In-Reply-To=list-11427166%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000477.html">
+   <LINK REL="Next"  HREF="000479.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Question about grep</H1>
+    <B>Brent Baisley</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Question%20about%20grep&In-Reply-To=list-11427166%40mail.ninewire.com"
+       TITLE="[X-Unix] Question about grep">brent at landover.com
+       </A><BR>
+    <I>Wed Mar 17 05:32:59 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000477.html">[X-Unix] Question about grep
+</A></li>
+        <LI>Next message: <A HREF="000479.html">[X-Unix] Question about grep
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#478">[ date ]</a>
+              <a href="thread.html#478">[ thread ]</a>
+              <a href="subject.html#478">[ subject ]</a>
+              <a href="author.html#478">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>My first question is why would you want to keep years worth of backup 
+logs?
+
+Grep doesn't know about data types, so you really can't easily use grep 
+to determine a date range. What you could do is just grep the end of 
+the log since Retrospect writes to the end of the log. Something like:
+tail -500 logfile | grep -v Successful
+
+That will only process the last 500 lines of the file.
+
+Long term you should set Retrospect to keep the log file small. If you 
+need to keep a history, cycle out the log like most Unix logs are done. 
+Your own computer does this everyday with various other logs. Import 
+the log into Filemaker or MySQL to keep a long history and easy 
+searching.
+
+On Mar 16, 2004, at 7:02 PM, Our Pal Al wrote:
+
+&gt;<i> So in a file with lots of lines like this -
+</I>&gt;<i>
+</I>&gt;<i> 3/15/2004    5:58 PM    Drogo-OS X (21.177)    Macintosh HD    -24001
+</I>&gt;<i> user canceled    0:34:00    129.85.21.177
+</I>&gt;<i>
+</I>&gt;<i> How can I formulate grep to grab on the mm/dd/yyyy field and pull out 
+</I>&gt;<i> &quot;any
+</I>&gt;<i> lines where the date is no older than 7 days ago&quot;?
+</I>&gt;<i>
+</I>-- 
+Brent Baisley
+Systems Architect
+Landover Associates, Inc.
+Search &amp; Advisory Services for Advanced Technology Environments
+p: 212.759.6400/800.759.0577
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000477.html">[X-Unix] Question about grep
+</A></li>
+	<LI>Next message: <A HREF="000479.html">[X-Unix] Question about grep
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#478">[ date ]</a>
+              <a href="thread.html#478">[ thread ]</a>
+              <a href="subject.html#478">[ subject ]</a>
+              <a href="author.html#478">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

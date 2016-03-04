@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Cheapest &quot;server&quot; set up?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Cheapest%20%22server%22%20set%20up%3F&In-Reply-To=a0621020dbeebd2c0d206%40%5B192.168.254.105%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="007343.html">
+   <LINK REL="Next"  HREF="007347.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Cheapest &quot;server&quot; set up?</H1>
+    <B>Neil Laubenthal</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Cheapest%20%22server%22%20set%20up%3F&In-Reply-To=a0621020dbeebd2c0d206%40%5B192.168.254.105%5D"
+       TITLE="[X4U] Cheapest &quot;server&quot; set up?">neil at laubenthal.net
+       </A><BR>
+    <I>Sat Jul  2 06:53:44 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="007343.html">[X4U] Cheapest &quot;server&quot; set up?
+</A></li>
+        <LI>Next message: <A HREF="007347.html">[X4U] Cheapest &quot;server&quot; set up?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7345">[ date ]</a>
+              <a href="thread.html#7345">[ thread ]</a>
+              <a href="subject.html#7345">[ subject ]</a>
+              <a href="author.html#7345">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 00:23 -0500  on 7/2/05, Anne-Marie Concepcion wrote:
+
+
+&gt;<i>In my little home network of 3 powerbooks and one PC desktop, with 
+</I>&gt;<i>at most 2 users on the network at any one time, I need to add a 
+</I>&gt;<i>&quot;server.&quot; I put it in quotes because I'm not sure I really need OS X 
+</I>&gt;<i>Server software ($500) nor a dedicated Mac to run it (at least $500 
+</I>&gt;<i>for a Mac mini).
+</I>&gt;<i>
+</I>&gt;<i>But if I do, I do. Thought I'd see if anyone here has jury-rigged 
+</I>&gt;<i>anything successfully, or can suggest a solution that either a) lets 
+</I>&gt;<i>me install the server software on one of the underused Mac laptops; 
+</I>&gt;<i>or b) lets me use a Mac mini or underused Mac laptop as a server, no 
+</I>&gt;<i>server software required.
+</I>
+You definitely don't need OS X 'Server' for this . . . regular 
+Panther or Tiger will do fine.
+
+What you want to do is pick one machine . . .you can use either one 
+of the laptops that's on all the time or you can pick up a used 
+G4/AGP for a couple hundred . . .they're pretty cheap these days and 
+make very nice fileservers for up to say 10 clients.
+
+You'll also need a copy of the free Sharepoints since standard 
+fileshareing doesn't let you easily share anything other than the 
+whole disk.
+
+I do this at home . . .it works nicely for sharing with 2 other 
+desktop Macs and 3 laptops as well as a PC.
+
+1. After installing OS X on the 'server' install Sharepoints. I 
+created a directory at the root of the hard disk and named it Lurch 
+(you know, the butler who serves things). Used Sharepoints to share 
+it out. Created a separate user account on the server named 
+'fileshare' and gave fileshare full permissions to Lurch. Make sure 
+you enable Windows sharing as well in Sharepoints.
+
+2. On each of the other machines I set up an applescript with only a 
+couple of lines in it:
+
+Pause 3
+Tell Application &quot;Finder&quot;
+mount volume &quot;<A HREF="afp://user:password@location/share&quot;">afp://user:password@location/share&quot;</A>
+end tell
+
+For this . . . I mount it via IP so it's user:<A HREF="../../../mailman/listinfo/x4u.html">password at ip</A>/Lurch . . . 
+I have set up a static IP on my fileserver for this reason. You can 
+also use the Bonjour method which would be 
+user:<A HREF="../../../mailman/listinfo/x4u.html">password at G4Neil.local</A>/Lurch in my case. On the PC you need to 
+mount it via IP unless you install Bonjour for Windows.
+
+This script is compiled as a stand alone application and set to run 
+at login on each machine that needs to connect to the fileserver. 
+When the laptops go to sleep the volume remains mounted and is 
+immediately available at the next login.
+
+I've got a supposedly better script for this purpose that I was given 
+. . .haven't tried it yet but I am sure the above one works . . .the 
+person that gave me the new one says it works too but I haven't 
+checked. Here's the other script.
+
+On run
+	DoMount(&quot;<A HREF="afp://user:password@location/Share/&quot;">afp://user:password@location/Share/&quot;</A>)
+	--doMount(&quot;<A HREF="smb://server1/localsite&quot;">smb://server1/localsite&quot;</A>)
+	--others as required.
+
+end run
+on doMount(myURL)
+	try
+	mount volume myurl
+	on error
+	 --snicker privately
+	end try
+end doMount
+
+This seems to do basically the same thing as the script I'm using . . 
+.and also includes the syntax for mounting a Windows share should you 
+decide to use the Windows box as the server. It also includes code 
+for mounting more than one . . .although my simpler script could also 
+be modified that way.
+
+I personally wouldn't use a laptop for this purpose . . .I would use 
+either a Mini or a used G4 for the purpose. I have several backup 
+routines for the fileserver in place . . .a combination of PSyncX 
+which does a daily Finder readable backup to both another internal 
+and and external drive as well as running Retrospect to backup to the 
+external FW drive . . these are burned to DVD when they get up to 
+4.5GB and the backup recycled in Retrospect. I also use it to backup 
+/Users on my laptops every other day via the Retrospect Client 
+software.
+
+
+
+-- 
+===================================================================
+Neil
+There are only three kinds of stress . . .  your basic nuclear 
+stress, cooking stress, and A$$hole stress. All of the three are 
+related . . . the key is Jello.
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="007343.html">[X4U] Cheapest &quot;server&quot; set up?
+</A></li>
+	<LI>Next message: <A HREF="007347.html">[X4U] Cheapest &quot;server&quot; set up?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7345">[ date ]</a>
+              <a href="thread.html#7345">[ thread ]</a>
+              <a href="subject.html#7345">[ subject ]</a>
+              <a href="author.html#7345">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

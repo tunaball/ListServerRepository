@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Copying to multiple directories
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Copying%20to%20multiple%20directories&In-Reply-To=list-11333619%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000451.html">
+   <LINK REL="Next"  HREF="000454.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Copying to multiple directories</H1>
+    <B>Cloyce D. Spradling</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Copying%20to%20multiple%20directories&In-Reply-To=list-11333619%40mail.ninewire.com"
+       TITLE="[X-Unix] Copying to multiple directories">cloyce+xunix at headgear.org
+       </A><BR>
+    <I>Thu Mar 11 08:47:18 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000451.html">Copying to multiple directories
+</A></li>
+        <LI>Next message: <A HREF="000454.html">[X-Unix] Copying to multiple directories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#452">[ date ]</a>
+              <a href="thread.html#452">[ thread ]</a>
+              <a href="subject.html#452">[ subject ]</a>
+              <a href="author.html#452">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Thu, Mar 11, 2004 at 03:21:05PM +0000, Stroller wrote:
+
+:<i> What Brian is doing in his posting is DEMONSTRATING the use of the pipe 
+</I>:<i> (&quot;|&quot;) and the `xargs` command (see `man xargs`), suggesting that you 
+</I>:<i> run this, change &quot;fileA&quot; to the name of the file you actually want to 
+</I>:<i> copy, and check that it will do what you require. Then run the command 
+</I>:<i> again, but WITHOUT the `echo` (use the up-arrow key to bring up the 
+</I>:<i> previous line for editing) to actually perform the copying you require.
+</I>
+I do this sort of thing (using xargs) a lot.  Removing the echo works, but
+depending on where it is in the line it can be a real PITA.  There are
+several shortcuts that you can use to make this process painless.
+
+For removing the echo, you can use some a nifty command-line substitution.
+This was originally a csh feature, but every other shell on OSX supports
+it.  Simply type
+
+  ^echo^
+
+which says &quot;replace the echo in the previous command with nothing&quot;.
+
+Another thing I'll do is just leave the command alone and pipe its output
+to sh.  That is:
+
+  ls -d /Users/*/Library | xargs -I % echo cp fileA % | sh
+
+That is quick and easy and not too much typing.  If you want to watch it
+happen, just add a '-x':
+
+  ls -d /Users/*/Library | xargs -I % echo cp fileA % | sh -x
+
+--
+Cloyce
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000451.html">Copying to multiple directories
+</A></li>
+	<LI>Next message: <A HREF="000454.html">[X-Unix] Copying to multiple directories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#452">[ date ]</a>
+              <a href="thread.html#452">[ thread ]</a>
+              <a href="subject.html#452">[ subject ]</a>
+              <a href="author.html#452">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

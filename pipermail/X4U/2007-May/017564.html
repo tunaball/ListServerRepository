@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Secure Empty Trash &amp; Paranoia
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Secure%20Empty%20Trash%20%26%20Paranoia&In-Reply-To=75983D97-0112-1000-C342-4D898B5261EC-Webmail-10012%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="017509.html">
+   <LINK REL="Next"  HREF="017510.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Secure Empty Trash &amp; Paranoia</H1>
+    <B>Jeff Porten</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Secure%20Empty%20Trash%20%26%20Paranoia&In-Reply-To=75983D97-0112-1000-C342-4D898B5261EC-Webmail-10012%40mac.com"
+       TITLE="[X4U] Secure Empty Trash &amp; Paranoia">civitan at jeffporten.com
+       </A><BR>
+    <I>Tue May 29 18:22:31 PDT 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="017509.html">[X4U] Secure Empty Trash &amp; Paranoia
+</A></li>
+        <LI>Next message: <A HREF="017510.html">[X4U] Re: printing in Mail without attachments
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17564">[ date ]</a>
+              <a href="thread.html#17564">[ thread ]</a>
+              <a href="subject.html#17564">[ subject ]</a>
+              <a href="author.html#17564">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On May 20, 2007, at 5:34 PM, Jon Warms wrote:
+
+&gt;<i> Here's the first question: Does File&gt;Save delete the old file in a  
+</I>&gt;<i> secure way, or does it just delete the old file, then reuse part or  
+</I>&gt;<i> all or none of that space as Finder sees fit, which could leave  
+</I>&gt;<i> some or all of the old file deleted insecurely?
+</I>
+The latter.  Your files essentially exist in two segments: the series  
+of blocks on your hard drive where it is stored, and a directory  
+pointer that says that &quot;file XYZ is in blocks NNN through NNN&quot;.  Many  
+file operations don't touch the blocks themselves, just the pointer  
+-- so when you insecurely trash a file, the blocks still hold the  
+data, but there's no longer a way of getting there.
+
+When you save a file over an existing file, you're doing two things:  
+storing your data to a series of blocks, and changing the pointer to  
+the new series.  This *might* overwrite the old data -- and it might  
+not.  In general, the application just tells the disk system, &quot;Save  
+this -- I don't care how&quot;, and the disk system says, &quot;Hmmm, what's  
+the best way of doing this?&quot;  Leftover blocks will eventually be  
+overwritten by other disk activity, but that could be any time  
+between dinnertime and the heat death of the universe.
+
+Making your job even more fun, Microsoft software is even more fun  
+for these purposes, since it creates new files to manage fast saves  
+and temporary data storage.  Also, some very intelligent people have  
+come up with methods of recovering data that's been overwritten a few  
+times.
+
+What I tell my clients who are concerned about this: most of these  
+data recovery methods require physical access to the hard drive for  
+lengthy periods of time.  Therefore, you only need to take extreme  
+measures with data that needs to stay secure if the computer is  
+stolen.  99 times out of 100, you're safe if you store these  
+documents to an encrypted disk image -- it's possible that some data  
+might be stored in the clear elsewhere, but it's unlikely.
+
+Best,
+Jeff
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="017509.html">[X4U] Secure Empty Trash &amp; Paranoia
+</A></li>
+	<LI>Next message: <A HREF="017510.html">[X4U] Re: printing in Mail without attachments
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17564">[ date ]</a>
+              <a href="thread.html#17564">[ thread ]</a>
+              <a href="subject.html#17564">[ subject ]</a>
+              <a href="author.html#17564">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

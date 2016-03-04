@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Remote Desktop Question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Remote%20Desktop%20Question&In-Reply-To=6658A5EC-934E-11D9-85A3-00306596D28C%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="008959.html">
+   <LINK REL="Next"  HREF="008951.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Remote Desktop Question</H1>
+    <B>David DelMonte</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Remote%20Desktop%20Question&In-Reply-To=6658A5EC-934E-11D9-85A3-00306596D28C%40mac.com"
+       TITLE="[G4] Remote Desktop Question">ddelmonte at mac.com
+       </A><BR>
+    <I>Sun Mar 13 15:19:15 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="008959.html">[G4] Remote Desktop Question
+</A></li>
+        <LI>Next message: <A HREF="008951.html">[G4] How to Ditch the AOL IM icon 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8960">[ date ]</a>
+              <a href="thread.html#8960">[ thread ]</a>
+              <a href="subject.html#8960">[ subject ]</a>
+              <a href="author.html#8960">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Daniel, Chris, thanks for your replies. I think I'm missing some 
+details here.
+
+I've been tearing hair out most of the day over this.
+
+Can you please enlighten me some more.
+
+Tell me exactly what to set up on the server computer (which menus and 
+selections), and the same for the client side.
+
+THANKS!!!
+
+David
+
+ps. I have taken out an account at noip.com but that wont be active for 
+a while.
+
+
+On Mar 12, 2005, at 6:28 PM, Daniel Brieck Jr. wrote:
+
+&gt;<i> It all depends on how the clients  router / firewall connects to the 
+</I>&gt;<i> internet?
+</I>&gt;<i>
+</I>&gt;<i> 1 First you have to find out what port Remote Desktop uses?
+</I>&gt;<i>
+</I>&gt;<i> For example VNC uses port 5900....
+</I>&gt;<i>
+</I>&gt;<i> 2. You have to configure port routing on the clients  firewall.
+</I>&gt;<i>
+</I>&gt;<i> Focus on the client side........
+</I>&gt;<i>
+</I>&gt;<i> So the clients DHCP address is for example 128.190.1.255, that means 
+</I>&gt;<i> nothing to you on a remote and separate network.
+</I>&gt;<i>
+</I>&gt;<i> But what you want to do is route traffic on port 5900 to that IP 
+</I>&gt;<i> address on the clients local network( route port 5900 to this IP 
+</I>&gt;<i> 128.190.1.255)
+</I>&gt;<i>
+</I>&gt;<i> This will require configuration of the router to do this...
+</I>&gt;<i>
+</I>&gt;<i> 3. So what you have to do is find out what IP address  the router has? 
+</I>&gt;<i> On the client computer go to a site like <A HREF="http://www.whatismyip.com/">http://www.whatismyip.com/</A>   
+</I>&gt;<i> get the remote computers IP address that it is connecting to the 
+</I>&gt;<i> internet with. Say it is 32.104.25.255
+</I>&gt;<i>
+</I>&gt;<i> That IP may be dynamic DHCP as well from the ISP. It will change and 
+</I>&gt;<i> you will have to find out what it is over time? But it should stay the 
+</I>&gt;<i> same for enough time to do / try what you want to do.
+</I>&gt;<i>
+</I>&gt;<i> ---more permanent solution for connecting to the client system---
+</I>&gt;<i> {{{Look up Dynamic DNS  in Google for more information this... This 
+</I>&gt;<i> will basically allow you to give your computer a name like apple.com 
+</I>&gt;<i> and it is free....
+</I>&gt;<i> Quick Read ME about  DNS <A HREF="http://www.technopagan.org/dynamic/">http://www.technopagan.org/dynamic/</A>
+</I>&gt;<i> }}}
+</I>&gt;<i>
+</I>&gt;<i> 4.   on the client end you should give the computer you want to access 
+</I>&gt;<i> a static DHCP address, say you make it the old stand by 
+</I>&gt;<i> 128.190.1.255....
+</I>&gt;<i>
+</I>&gt;<i> 5. on the server computer you type the IP of the router something like 
+</I>&gt;<i>  32.104.25.255:5900 and that should allow you to connect to the remote 
+</I>&gt;<i> computer as if it were local.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> let me know if this is of any help...
+</I>&gt;<i> Dan Brieck Jr.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Mar 12, 2005, at 9:35 AM, David DelMonte wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Does anyone know if it's possible to use remote desktop (2.x) over 
+</I>&gt;&gt;<i> the internet - connecting two computers that are on different lans 
+</I>&gt;&gt;<i> and that use DHCP to get IP addresses?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> If so, can you please give me detailed instructions on how to set up 
+</I>&gt;&gt;<i> both clients and the server.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> THANK YOU!!
+</I>&gt;&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="008959.html">[G4] Remote Desktop Question
+</A></li>
+	<LI>Next message: <A HREF="008951.html">[G4] How to Ditch the AOL IM icon 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8960">[ date ]</a>
+              <a href="thread.html#8960">[ thread ]</a>
+              <a href="subject.html#8960">[ subject ]</a>
+              <a href="author.html#8960">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

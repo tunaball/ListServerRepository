@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Defragmentation, was Cause of kernel panics
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Defragmentation%2C%20was%20Cause%20of%20kernel%20panics&In-Reply-To=20050316122643.D96D433E8C8%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003999.html">
+   <LINK REL="Next"  HREF="004001.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Defragmentation, was Cause of kernel panics</H1>
+    <B>Jon Warms</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Defragmentation%2C%20was%20Cause%20of%20kernel%20panics&In-Reply-To=20050316122643.D96D433E8C8%40listserver.themacintoshguy.com"
+       TITLE="[X4U] Defragmentation, was Cause of kernel panics">jwarms at mac.com
+       </A><BR>
+    <I>Wed Mar 16 11:38:13 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003999.html">[X4U] cause of kernel panics?
+</A></li>
+        <LI>Next message: <A HREF="004001.html">[X4U] Re: Defragmentation, was Cause of kernel panics
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4000">[ date ]</a>
+              <a href="thread.html#4000">[ thread ]</a>
+              <a href="subject.html#4000">[ subject ]</a>
+              <a href="author.html#4000">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Mar 15, 2005, Randy B.Singer &lt;<A HREF="../../../mailman/listinfo/x4u.html">randy at macattorney.com</A>&gt; wrote:
+
+&gt;<i> <A HREF="http://www.macattorney.com/ts.html">http://www.macattorney.com/ts.html</A>
+</I>&gt;<i> Item #5 and Note #2
+</I>&gt;<i>
+</I>&gt;<i> I need to update Note #2 with some new defragmentation software for OS 
+</I>&gt;<i> X
+</I>&gt;<i> that has become available. The  most promising of these is:
+</I>
+I recommend a review of Apple's comments on Disk Optimization:
+
+<A HREF="http://docs.info.apple.com/article.html?artnum=25668">http://docs.info.apple.com/article.html?artnum=25668</A>
+
+which I read to say that defrag utilities are generally not needed 
+because
+Panther performs automatic defragmentation:
+
+&gt;<i> 	&#9642; 	 Fragmentation was often caused by continually appending data to
+</I>&gt;<i> existing files, especially with resource forks. With faster hard 
+</I>&gt;<i> drives and better
+</I>&gt;<i> caching, as well as the new application packaging format, many 
+</I>&gt;<i> applications
+</I>&gt;<i> simply rewrite the entire file each time. Mac OS X 10.3 Panther can 
+</I>&gt;<i> also
+</I>&gt;<i> automatically defragment such slow-growing files. This process is 
+</I>&gt;<i> sometimes
+</I>&gt;<i> known as &quot;Hot-File-Adaptive-Clustering.&quot;
+</I>
+If you create or edit very large files and your drives are almost full, 
+the article
+notes that your drives may be fragmented, and that a third party 
+utility may
+be helpful, and provides a link to a list of tools.
+
+But in the general case, fragmentation may not be a problem, and
+defragmenting some files may decrease performance:
+
+&gt;<i> Mac OS X systems use hundreds of thousands of small files, many of 
+</I>&gt;<i> which are
+</I>&gt;<i> rarely accessed. Optimizing them can be a major effort for very little 
+</I>&gt;<i> practical gain.
+</I>&gt;<i> There is also a chance that one of the files placed in the &quot;hot band&quot; 
+</I>&gt;<i> for rapid reads
+</I>&gt;<i> during system startup might be moved during defragmentation, which 
+</I>&gt;<i> would
+</I>&gt;<i> decrease performance.
+</I>
+I guess that most users think of defragmentation for performance issues 
+which I
+think article 25668 addresses, or because they perceive hard drive 
+problems.
+If you have a file system or drive problem (that can't be fixed by a 
+bigger drive or
+adding a drive), first consider the condition of the drive. Hard drives 
+included in
+recent Macs are compatible with the S.M.A.R.T. index number, which is 
+displayed
+by running Disk Utility. The S.M.A.R.T. index number summarizes
+the condition of the hard drive.
+
+ From <A HREF="http://docs.info.apple.com/article.html?artnum=152059:">http://docs.info.apple.com/article.html?artnum=152059:</A>
+
+&gt;<i> If you see &quot;About to Fail&quot; in red letters, back up your disk 
+</I>&gt;<i> immediately and have the
+</I>&gt;<i> disk replaced. It will fail.
+</I>
+(Nothing ambiguous about &quot;It will fail.&quot;)
+
+If you choose to defragment, consider Apple's advice (from article 
+25668):
+
+&gt;<i> If you think you might need to defragment
+</I>&gt;<i>
+</I>&gt;<i> Try restarting first. It might help, and it's easy to do.
+</I>&gt;<i>
+</I>&gt;<i> If your disks are almost full, and you often modify or create large 
+</I>&gt;<i> files (such as editing
+</I>&gt;<i> video, but see the Tip below if you use iMovie and Mac OS X 10.3), 
+</I>&gt;<i> there's a chance
+</I>&gt;<i> the disks could be fragmented. In this case, you might benefit from 
+</I>&gt;<i> defragmentation,
+</I>&gt;<i> which can be performed with some third-party disk utilities.
+</I>&gt;<i>
+</I>&gt;<i> Another option is to back up your important files, erase the hard 
+</I>&gt;<i> disk, then reinstall
+</I>&gt;<i> Mac OS X and your backed up files.
+</I>
+Finally, a warning and a tip:
+
+Before using any defragmentation program, verify the integrity of
+the drive and back up any important files. The process involves copying 
+and deleting
+most of the files on the drive, so any problems can result in data 
+loss. (From
+<A HREF="http://www.macworld.com/2005/01/features/preventmacdisasters/index2.php">http://www.macworld.com/2005/01/features/preventmacdisasters/index2.php</A>)
+
+ From article 25668:  If you use iMovie with Mac OS X 10.3 Panther, and 
+FileVault is
+enabled, performance issues can occur if your project is located in 
+your encrypted
+home folder (including the desktop). See iMovie: Using FileVault Can 
+Affect
+Performance.
+
+
+Jon
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003999.html">[X4U] cause of kernel panics?
+</A></li>
+	<LI>Next message: <A HREF="004001.html">[X4U] Re: Defragmentation, was Cause of kernel panics
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4000">[ date ]</a>
+              <a href="thread.html#4000">[ thread ]</a>
+              <a href="subject.html#4000">[ subject ]</a>
+              <a href="author.html#4000">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

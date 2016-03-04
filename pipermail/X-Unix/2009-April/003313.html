@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] compiling &quot;universal&quot; commandline utilities?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20compiling%20%22universal%22%20commandline%20utilities%3F&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003310.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] compiling &quot;universal&quot; commandline utilities?</H1>
+    <B>TjL</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20compiling%20%22universal%22%20commandline%20utilities%3F&In-Reply-To="
+       TITLE="[X-Unix] compiling &quot;universal&quot; commandline utilities?">luomat at gmail.com
+       </A><BR>
+    <I>Thu Apr 30 08:12:26 PDT 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003310.html">[X-Unix] General Scripting Question
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3313">[ date ]</a>
+              <a href="thread.html#3313">[ thread ]</a>
+              <a href="subject.html#3313">[ subject ]</a>
+              <a href="author.html#3313">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I'm using my Powerbook again, which means that I'm realizing that a
+lot of my utilities that I've compiled were compiled on my iMac.
+
+I'd like to compile them as both PowerPC and Intel but I'm not sure
+how to do that.
+
+Someone on the Zsh list suggested this:
+
+make CFLAGS='-arch i386 -arch ppc -arch ppc64' LDFLAGS='${CFLAGS}'
+
+but when I tried to compile Gnu Sed it failed:
+
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I../lib -I../intl -I.. -I../lib
+-I../intl   -arch i386 -arch ppc -arch ppc64 -MT getopt1.o -MD -MP -MF
+&quot;.deps/getopt1.Tpo&quot; -c -o getopt1.o getopt1.c; \
+        then mv -f &quot;.deps/getopt1.Tpo&quot; &quot;.deps/getopt1.Po&quot;; else rm -f
+&quot;.deps/getopt1.Tpo&quot;; exit 1; fi
+gcc-4.0: -E, -S, -save-temps and -M options are not allowed with
+multiple -arch flags
+make[2]: *** [getopt1.o] Error 1
+make[1]: *** [all-recursive] Error 1
+make: *** [all] Error 2
+[1]    75357 exit 2     make CFLAGS='-arch i386 -arch ppc -arch ppc64'
+LDFLAGS='${CFLAGS}'
+%
+-
+
+So I'm wondering: is there a way to do this?
+
+Google was no help.
+
+TjL
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003310.html">[X-Unix] General Scripting Question
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3313">[ date ]</a>
+              <a href="thread.html#3313">[ thread ]</a>
+              <a href="subject.html#3313">[ subject ]</a>
+              <a href="author.html#3313">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

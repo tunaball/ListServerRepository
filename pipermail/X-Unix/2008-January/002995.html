@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] rsync help
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20rsync%20help&In-Reply-To=C49F1587-2C0F-458D-B1EC-03C2F1D94DB2%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002994.html">
+   <LINK REL="Next"  HREF="003007.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] rsync help</H1>
+    <B>Craig Hoffman</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20rsync%20help&In-Reply-To=C49F1587-2C0F-458D-B1EC-03C2F1D94DB2%40secure-computing.net"
+       TITLE="[X-Unix] rsync help">choffman at eclimb.net
+       </A><BR>
+    <I>Thu Jan 24 09:29:43 PST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002994.html">[X-Unix] rsync help
+</A></li>
+        <LI>Next message: <A HREF="003007.html">[X-Unix] Calling Applescript alarm from script
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2995">[ date ]</a>
+              <a href="thread.html#2995">[ thread ]</a>
+              <a href="subject.html#2995">[ subject ]</a>
+              <a href="author.html#2995">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks - I'll give this a try and report back.
+_______________________
+Craig Hoffman
+iChat / AIM: m0untaind0g
+_______________________
+
+
+
+
+On Jan 24, 2008, at 10:03 AM, Eric F Crist wrote:
+
+&gt;<i> On Jan 24, 2008, at 10:06 AM, Craig Hoffman wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Hi There,
+</I>&gt;&gt;<i> I'm trying to backup my music directory to a network drive.  The  
+</I>&gt;&gt;<i> music directory is quite large (176.81GB).   My plan is write a  
+</I>&gt;&gt;<i> AppleScript and schedule it in iCal.  I've done this before and it  
+</I>&gt;&gt;<i> works well.  I've been experimenting with rsync and I can't seem to  
+</I>&gt;&gt;<i> get it work correctly.  It brings over the directories but none of  
+</I>&gt;&gt;<i> the files.  I also receive this error message: failed: Operation  
+</I>&gt;&gt;<i> not supported (45)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Sample:
+</I>&gt;&gt;<i> rsync -xrlptgoEv --ignore-existing /Volumes/Twilight/Music/ / 
+</I>&gt;&gt;<i> Volumes/teakettle/Music
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Any help would be great.  I'm open to other ideas too.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Thanks,
+</I>&gt;&gt;<i> Craig
+</I>&gt;<i>
+</I>&gt;<i> Craig,
+</I>&gt;<i>
+</I>&gt;<i> I do something similar for my entire home directories on the laptops  
+</I>&gt;<i> in our house.  I actually use cron to schedule the backups, which  
+</I>&gt;<i> occur every hour (when the laptop isn't sleeping).
+</I>&gt;<i>
+</I>&gt;<i> My rsync script does a bunch of extra logging stuff I'll leave out  
+</I>&gt;<i> here, but this should point you in the right direction:
+</I>&gt;<i> rsync -av --delete ~/ --exclude=&quot;Caches&quot; --exclude=&quot;*.cdr&quot; -- 
+</I>&gt;<i> exclude=&quot;*.iso&quot; --exclude=&quot;.Trash&quot; --exclude=&quot;.Spotlight-V100&quot; -- 
+</I>&gt;<i> exclude=&quot;.Trashes&quot; &lt;hostname&gt;:&lt;destination_dir&gt;
+</I>&gt;<i>
+</I>&gt;<i> The above script makes an *exact* copy of what's in my home  
+</I>&gt;<i> directory, and doesn't transfer the few big files I may have,  
+</I>&gt;<i> including .cdr and .iso images.  I'm also excluding the .Trash  
+</I>&gt;<i> and .Trashes directorys (why transfer my garbage?)   
+</I>&gt;<i> Caches, .Spotlight-V100 are also ignored, as this data can be easily  
+</I>&gt;<i> regenerated upon a restore.  The av options being passed are really  
+</I>&gt;<i> all you should need.
+</I>&gt;<i>
+</I>&gt;<i> All that being said, I would sum up your script with:
+</I>&gt;<i>
+</I>&gt;<i> rsync -av /Volumes/Twilight/Music/ /Volumes/teakettle/Music
+</I>&gt;<i>
+</I>&gt;<i> If you, or anyone, want to see my entire script and the cron entry,  
+</I>&gt;<i> I'd be willing to share.
+</I>&gt;<i> -----
+</I>&gt;<i> Eric F Crist
+</I>&gt;<i> Secure Computing Networks
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002994.html">[X-Unix] rsync help
+</A></li>
+	<LI>Next message: <A HREF="003007.html">[X-Unix] Calling Applescript alarm from script
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2995">[ date ]</a>
+              <a href="thread.html#2995">[ thread ]</a>
+              <a href="subject.html#2995">[ subject ]</a>
+              <a href="author.html#2995">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

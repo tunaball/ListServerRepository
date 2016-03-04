@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> a new kind of crash
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=a%20new%20kind%20of%20crash&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003345.html">
+   <LINK REL="Next"  HREF="003346.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>a new kind of crash</H1>
+    <B>David Crump</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=a%20new%20kind%20of%20crash&In-Reply-To="
+       TITLE="a new kind of crash">davecrump at mac.com
+       </A><BR>
+    <I>Sun Mar 23 23:10:10 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003345.html">a new kind of crash
+</A></li>
+        <LI>Next message: <A HREF="003346.html">a new kind of crash
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3347">[ date ]</a>
+              <a href="thread.html#3347">[ thread ]</a>
+              <a href="subject.html#3347">[ subject ]</a>
+              <a href="author.html#3347">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&lt;snip&gt;
+Does the box which shows up have a large semi transparent circular
+power switch behind the writing? And is the dialog in numerous
+languages? If so that is 10.2 new kernel panic dialog box. No longer
+should you receive a bunch of drop down script from the top of your
+screen. Also, upon reboot if you open &quot;HD/Library/Logs/panic.log&quot;  it
+will tell you the reason for the kernel panic (all be it in cryptic
+computer script) but it's a start. I had the same problem with my 17&quot;
+iMac and it turned out to be the RAM I had installed.
+&lt;/snip&gt;
+
+That is the exact box that I am getting.  I guess this means it is a 
+kernel panic.  I only used to get those drop down scripts maybe once 
+every 3 or 4 weeks at most.  Now this is becoming a daily thing with 
+10.2.4
+Does anyone know how to decipher a panic.log?
+
+Here's the info if it is useful for anything:
+
+Unresolved kernel trap(cpu 0): 0x200 - Machine check DAR=0x10f6adf4 
+PC=0x00041cbc
+Latest crash info for cpu 0:
+    Exception state (sv=0x11087C80)
+       PC=0x00041CBC; MSR=0x00049030; DAR=0x10F6ADF4; DSISR=0x42000000; 
+LR=0x00041CA0; R1=0x0A783A70; XCP=0x00000008 (0x200 - Machine check)
+       Backtrace:
+          0x00041CA0 0x0002CD88 0x0025EB4C 0x0025ECF4 0x0025CF28 
+0x0025AA98 0x00257430 0x11996474
+          0x0024468C 0x0007CA0C 0x0002A28C 0x00024C00 0x00024FFC 
+0x00092318 0x203C3838
+       Kernel loadable modules in backtrace (with dependencies):
+          com.apple.driver.ApplePMU(1.7.8)@0x1198c000
+Proceeding back via exception chain:
+    Exception state (sv=0x11087C80)
+       previously dumped as &quot;Latest&quot; state. skipping...
+    Exception state (sv=0x111A9500)
+       PC=0x90073C48; MSR=0x0000D030; DAR=0xE06A9000; DSISR=0x42000000; 
+LR=0x90005F90; R1=0xF0080070; XCP=0x00000030 (0xC00 - System call)
+
+Kernel version:
+Darwin Kernel Version 6.4:
+Wed Jan 29 18:50:42 PST 2003; root:xnu/xnu-344.26.obj~1/RELEASE_PPC
+
+
+panic(cpu 0): 0x200 - Machine check
+Latest stack backtrace for cpu 0:
+       Backtrace:
+          0x00084FAC 0x000853DC 0x00027FA8 0x0008EE68 0x00091F78
+Proceeding back via exception chain:
+    Exception state (sv=0x11087C80)
+       PC=0x00041CBC; MSR=0x00049030; DAR=0x10F6ADF4; DSISR=0x42000000; 
+LR=0x00041CA0; R1=0x0A783A70; XCP=0x00000008 (0x200 - Machine check)
+       Backtrace:
+          0x00041CA0 0x0002CD88 0x0025EB4C 0x0025ECF4 0x0025CF28 
+0x0025AA98 0x00257430 0x11996474
+          0x0024468C 0x0007CA0C 0x0002A28C 0x00024C00 0x00024FFC 
+0x00092318 0x203C3838
+       Kernel loadable modules in backtrace (with dependencies):
+          com.apple.driver.ApplePMU(1.7.8)@0x1198c000
+    Exception state (sv=0x111A9500)
+       PC=0x90073C48; MSR=0x0000D030; DAR=0xE06A9000; DSISR=0x42000000; 
+LR=0x90005F90; R1=0xF0080070; XCP=0x00000030 (0xC00 - System call)
+
+Kernel version:
+Darwin Kernel Version 6.4:
+Wed Jan 29 18:50:42 PST 2003; root:xnu/xnu-344.26.obj~1/RELEASE_PPC
+
+Dave.
+
+David Crump
+==================================
+You can reach me at:
+	email:  <A HREF="../../../mailman/listinfo/ibook.html">davecrump at mac.com</A>
+	www:  <A HREF="http://homepage.mac.com/davecrump/">http://homepage.mac.com/davecrump/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003345.html">a new kind of crash
+</A></li>
+	<LI>Next message: <A HREF="003346.html">a new kind of crash
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3347">[ date ]</a>
+              <a href="thread.html#3347">[ thread ]</a>
+              <a href="subject.html#3347">[ subject ]</a>
+              <a href="author.html#3347">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

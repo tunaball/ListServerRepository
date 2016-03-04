@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Newbies] Re: file locks-can't save files
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20Re%3A%20file%20locks-can%27t%20save%20files&In-Reply-To=BAYC1-PASMTP01A58C0B6DE213BC0FC970D2040%40cez.ice">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005189.html">
+   <LINK REL="Next"  HREF="005192.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Newbies] Re: file locks-can't save files</H1>
+    <B>Chris Morland</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20Re%3A%20file%20locks-can%27t%20save%20files&In-Reply-To=BAYC1-PASMTP01A58C0B6DE213BC0FC970D2040%40cez.ice"
+       TITLE="[X-Newbies] Re: file locks-can't save files">cmorland at cra.lacity.org
+       </A><BR>
+    <I>Tue May 31 11:03:42 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005189.html">[X-Newbies] Re: file locks-can't save files
+</A></li>
+        <LI>Next message: <A HREF="005192.html">[X-Newbies] Re: file locks-can't save files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5191">[ date ]</a>
+              <a href="thread.html#5191">[ thread ]</a>
+              <a href="subject.html#5191">[ subject ]</a>
+              <a href="author.html#5191">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On May 31, 2005, at 10:05 AM, Alex wrote:
+
+&gt;<i>
+</I>&gt;<i> On May 31, 2005, at 11:24, Chris Morland wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> [15058edwardm:~] morland% ls -ol
+</I>&gt;<i>
+</I>&gt;<i> Chris, read again my instructions. You type ls -ol&lt;blank space&gt;, 
+</I>&gt;<i> drag-and-drop the problem file, then press &lt;Return&gt;. You do _not_ 
+</I>&gt;<i> press &lt;Return&gt; after typing ls -ol.
+</I>&gt;<i> Last login: Tue May 31 08:16:51 on ttyp1
+</I>&gt;<i> Welcome to Darwin!
+</I>&gt;<i> [15058edwardm:~] morland% ls -ol/Volumes/Macintosh\ HD\ 
+</I>&gt;<i> 2/\302\267Images/project\ area\ photos/hollywood/housing/ariange.psd
+</I>&gt;<i> ls: illegal option -- /
+</I>&gt;<i> usage: ls [-ABCFGHLPRSTWZabcdfghiklnoqrstuvx1] [file ...]
+</I>&gt;<i> [15058edwardm:~] morland%
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i> [...]
+</I>&gt;&gt;<i> drwxr-xr-x  35 morland  staff    -   1190 31 May 07:36 Documents
+</I>&gt;&gt;<i> [...]
+</I>&gt;<i>
+</I>&gt;<i> Your Home directory permissions are borked (I suspect you applied 
+</I>&gt;<i> BatChmod).
+</I>
+didn't run BatChmod
+
+&gt;<i> Those are incorrect permissions. In Terminal, do
+</I>&gt;<i>
+</I>&gt;<i> $ ls -l /System/Library/User\ Template/English.lproj
+</I>&gt;<i> [15058edwardm:~] morland% $ ls -l /System/Library/User\ 
+</I>&gt;<i> Template/English.lproj
+</I>&gt;<i> tcsh: $: Command not found.
+</I>&gt;<i> [15058edwardm:~] morland%
+</I>
+&gt;<i> to see what they should be on default items.
+</I>&gt;<i>
+</I>&gt;&gt;<i> [15058edwardm:~] morland% /Volumes/Macintosh\ HD\ 
+</I>&gt;&gt;<i> 2/\302\267Images/project\ area\ photos/hollywood/housing/ariange.psd
+</I>&gt;<i>
+</I>&gt;<i> It looks like the name of the folder is &quot;Images&quot; preceded by the 
+</I>&gt;<i> character middle dot (\302\267 is octal for C2 B7, which is UTF-8 for 
+</I>&gt;<i> Unicode &lt;0x00B7&gt;). While not forbidden, it's not a good idea to use 
+</I>&gt;<i> non-ASCII characters in names of files and especially not folders. 
+</I>&gt;<i> They are a PITA to type in Terminal or handle in scripts, network 
+</I>&gt;<i> transfers, etc. Some applications even choke on them, so try to avoid 
+</I>&gt;<i> them whenever possible.
+</I>will do
+
+&gt;<i>
+</I>&gt;<i> If this is one of the problem files, than it should teach us how 
+</I>&gt;<i> unwise it is to make assumptions. Everything posted in this thread so 
+</I>&gt;<i> far assumed the problem files resided on your boot volume, if not in 
+</I>&gt;<i> your home folder. No wonder nothing worked. Do a Get Info on the 
+</I>&gt;<i> volume, and check &quot;Ignore ownership on this volume&quot;. See if that 
+</I>&gt;<i> solves your problem.
+</I>&gt;<i>
+</I>i'm working on 3 drives here and 3 at home plus external back up drives 
+and a portable.  Both computers are affected.
+
+&gt;<i> _______________________________________________
+</I>&gt;<i> X-Newbies mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-newbies.html">X-Newbies at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-newbies.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-newbies</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random 
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005189.html">[X-Newbies] Re: file locks-can't save files
+</A></li>
+	<LI>Next message: <A HREF="005192.html">[X-Newbies] Re: file locks-can't save files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5191">[ date ]</a>
+              <a href="thread.html#5191">[ thread ]</a>
+              <a href="subject.html#5191">[ subject ]</a>
+              <a href="author.html#5191">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

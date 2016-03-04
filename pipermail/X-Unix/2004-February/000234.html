@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Port Forwarding ssh using -R option 
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Port%20Forwarding%20ssh%20using%20-R%20option%20&In-Reply-To=list-10675433%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000233.html">
+   <LINK REL="Next"  HREF="000235.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Port Forwarding ssh using -R option </H1>
+    <B>Daniel Morrison</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Port%20Forwarding%20ssh%20using%20-R%20option%20&In-Reply-To=list-10675433%40mail.ninewire.com"
+       TITLE="[X-Unix] Port Forwarding ssh using -R option ">dmorriso at eagle7.org
+       </A><BR>
+    <I>Thu Feb  5 15:56:19 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000233.html">Port Forwarding ssh using -R option 
+</A></li>
+        <LI>Next message: <A HREF="000235.html">[X-Unix] Port Forwarding ssh using -R option 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#234">[ date ]</a>
+              <a href="thread.html#234">[ thread ]</a>
+              <a href="subject.html#234">[ subject ]</a>
+              <a href="author.html#234">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>The -R is to forward from a port on one machine to another machine.  But
+it won't work unless you can SSH to your router from your Mac.
+
+So, if I had my Mac, a Linux gateway, and an outside client machine, it 
+might go something like this:
+
+1) I ssh from my Mac to the gateway, telling it to redirect any connection 
+to port 1025 on gateway to port 22 on the mac.
+
+2) I keep this connection open, as the port forwarding tunnels through 
+this secure connection.
+
+3) When, from the client machine (or any other machine), I ssh to port 
+1025 on gateway, it is forwarded to port 22 on the Mac and I connect.  
+Note that I could do the same thing with http and port 80, etc.
+
+&gt;<i>From the man page:
+</I>
+        Specifies that the given port on the remote (server) host is to
+        be forwarded to the given host and port on the local side.  This
+        works by allocating a socket to listen to port on the remote
+        side, and whenever a connection is made to this port, the connec&#173;
+        tion is forwarded over the secure channel, and a connection is
+        made to host port hostport from the local machine.  Port forward&#173;
+        ings can also be specified in the configuration file.  Privileged
+        ports can be forwarded only when logging in as root on the remote
+        machine.
+
+So, unless you can SSH to the router, this won't work.  However, ussually 
+broadband routers have a setting that allows forwarding of a port at the 
+router to a port on an internal machine.  So you should be able to forward 
+router port 22 to Mac port 22 using that, if your router supports it.
+
+Good Luck, 
+Dan
+
+On Thu, 5 Feb 2004, Our Pal Al wrote:
+
+&gt;<i> At least I think the -R option is what I want.
+</I>&gt;<i> 
+</I>&gt;<i> I've already got my home Mac listening to ssh on 22 as normal but moved it
+</I>&gt;<i> behind a wireless router last night (doing ddns so I can still always reach
+</I>&gt;<i> it from outside) and want to be able to ssh into my mac and my Xandros linux
+</I>&gt;<i> box at will. I want to map port 22 on the router to the linux box and then
+</I>&gt;<i> change the mac to listen to another port and I'll append that port # when I
+</I>&gt;<i> ssh to it. 
+</I>&gt;<i> 
+</I>&gt;<i> Or maybe I'll do it the other way around once I figure out how to get ssh to
+</I>&gt;<i> listen on another port. Once I've got the right syntax down I should be able
+</I>&gt;<i> to change either but I can't get -R to work. Or is this even really the
+</I>&gt;<i> option I want? How can I get ssh to listen on another port? Right now I hop
+</I>&gt;<i> from the mac to the linux box but I'd like to eliminate a second step in
+</I>&gt;<i> getting to either.
+</I>&gt;<i> 
+</I>&gt;<i> - opa
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i> 
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> 
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your Mac ISP 
+</I>&gt;<i> Serious Mac Internet Solutions From NineWire!   <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i> 
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older Mac! 
+</I>&gt;<i> Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i> 
+</I>&gt;<i>    Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>   this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;<i> 
+</I>&gt;<i> OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s - <A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>
+-- 
+Dan Morrison                                             <A HREF="http://www.eagle7.org">http://www.eagle7.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">dmorriso at eagle7.org</A>                                               AIM: EaglVII
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000233.html">Port Forwarding ssh using -R option 
+</A></li>
+	<LI>Next message: <A HREF="000235.html">[X-Unix] Port Forwarding ssh using -R option 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#234">[ date ]</a>
+              <a href="thread.html#234">[ thread ]</a>
+              <a href="subject.html#234">[ subject ]</a>
+              <a href="author.html#234">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

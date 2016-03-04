@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Re: SMART failure and Merry Holidays
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Re%3A%20SMART%20failure%20and%20Merry%20Holidays&In-Reply-To=0441C621-55CA-11D9-9145-003065DA3E6C%40comcast.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002314.html">
+   <LINK REL="Next"  HREF="002315.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Re: SMART failure and Merry Holidays</H1>
+    <B>Andy Fragen</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Re%3A%20SMART%20failure%20and%20Merry%20Holidays&In-Reply-To=0441C621-55CA-11D9-9145-003065DA3E6C%40comcast.net"
+       TITLE="[X4U] Re: SMART failure and Merry Holidays">lists at thefragens.com
+       </A><BR>
+    <I>Fri Dec 24 17:56:43 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002314.html">[X4U] SMART failure and Merry Holidays
+</A></li>
+        <LI>Next message: <A HREF="002315.html">[X4U] Re: SMART failure and Merry Holidays
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2307">[ date ]</a>
+              <a href="thread.html#2307">[ thread ]</a>
+              <a href="subject.html#2307">[ subject ]</a>
+              <a href="author.html#2307">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>*This message was transferred with a trial version of CommuniGate(tm) Pro*
+&lt;applescript&gt;
+set disklist to do shell script &quot;/usr/sbin/diskutil list | grep /dev/&quot;
+set EachDisk to words in disklist
+repeat with CurrentDisk in EachDisk
+	if CurrentDisk as text is not equal to &quot;dev&quot; then
+		try
+			set status to do shell script &quot;/usr/sbin/diskutil info &quot; &amp; CurrentDisk
+&amp; &quot; | grep SMART&quot;
+			if not (status contains &quot;Verified&quot; or status contains &quot;Not Supported&quot;) then
+				display dialog &quot;A hardware problem has been detected on your hard
+drive:&quot; &amp; return &amp; return &amp; status
+			end if
+		on error errStr
+			--Don't Worry about disks that don't have info about SMART Status
+			--display dialog errStr
+		end try
+	end if
+end repeat
+&lt;/applescript&gt;
+
+-- 
+Andy Fragen
+
+On Fri, Dec 24, 2004, Crandon David said:
+
+&gt;<i>Hello Everyone,
+</I>&gt;<i>
+</I>&gt;<i>Merry Holidays to all.
+</I>&gt;<i>
+</I>&gt;<i>Can anyone tell me if the SMART hard disk monitoring that's built into 
+</I>&gt;<i>Panther is supposed to notify me automatically if it detects a problem 
+</I>&gt;<i>with the drive? Is there a preference pane for it somewhere?
+</I>&gt;<i>
+</I>&gt;<i>Thanks,
+</I>&gt;<i>
+</I>&gt;<i>David Crandon
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002314.html">[X4U] SMART failure and Merry Holidays
+</A></li>
+	<LI>Next message: <A HREF="002315.html">[X4U] Re: SMART failure and Merry Holidays
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2307">[ date ]</a>
+              <a href="thread.html#2307">[ thread ]</a>
+              <a href="subject.html#2307">[ subject ]</a>
+              <a href="author.html#2307">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

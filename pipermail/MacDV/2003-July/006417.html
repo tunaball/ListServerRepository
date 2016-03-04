@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MacDV] Re: Downloading Protected Files
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20Downloading%20Protected%20Files&In-Reply-To=list-6755711%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="006416.html">
+   <LINK REL="Next"  HREF="006418.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MacDV] Re: Downloading Protected Files</H1>
+    <B>Filipp Lepalaan</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20Downloading%20Protected%20Files&In-Reply-To=list-6755711%40mail.ninewire.com"
+       TITLE="[MacDV] Re: Downloading Protected Files">filipp at mac.ee
+       </A><BR>
+    <I>Wed Jul  2 05:04:42 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="006416.html">[MacDV] Re: Analog capture card?
+</A></li>
+        <LI>Next message: <A HREF="006418.html">[MacDV] Which 3ccd camera?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6417">[ date ]</a>
+              <a href="thread.html#6417">[ thread ]</a>
+              <a href="subject.html#6417">[ subject ]</a>
+              <a href="author.html#6417">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This might seem alittle hard core, but:
+Unless the file is being streamed (ie a Keynote)
+a method that always works in OS X is:
+1) View source of the page that has the movie
+2) search for &quot;.mov&quot;
+3) Select the URL
+4) Open Terminal
+5) &quot;cd Desktop&quot; (or wherever you want the file)
+6) Type &quot;curl -O &lt;cmd&gt; -V
+7) Wait for it to download.
+8) Open in Quicktime Player.
+
+But let's make this more interesting. Say you want *all* of the .mov
+and .gif files with the word &quot;Steve&quot; somewhere in the filename, but
+not the .mpeg's off of a certain site:
+1) Install wget (either with fink or from
+<A HREF="http://macosx.forked.net">http://macosx.forked.net</A>)
+2) Fire up Terminal
+3) &quot;cd Desktop&quot; (or wherever you want the files to appear, a new directory
+will be created and the files will be placed neatly in the same hierarchy as
+on the page)
+3) Type &quot;/sw/bin/wget -r -H -l5 --no-parent -A.gif,mov,*steve*&quot; -R.mpeg
+<A HREF="http://host/dir/">http://host/dir/</A> &quot;
+
+Further info: <A HREF="http://www.gnu.org/manual/wget/html_mono/wget.html">http://www.gnu.org/manual/wget/html_mono/wget.html</A>
+
+
+Hopefully this was helpful / interesting.
+
+cheers,
+filipp
+
+
+On 6/22/03 4:51 PM, &quot;ShirleyK&quot; &lt;<A HREF="../../../mailman/listinfo/macdv.html">ShirleyKat at cox.net</A>&gt; wrote:
+
+&gt;<i> This came up in our user group and someone mentioned using Save As in
+</I>&gt;<i> Internet Explorer. I didn't get that to work, but have had success with
+</I>&gt;<i> right-clicking the movie link and choosing Download Link to Disk. I
+</I>&gt;<i> don't know if the movies were supposed to be protected, but the little
+</I>&gt;<i> triangle was not there. I was saving tutorials from dvgarage. Since the
+</I>&gt;<i> page is titled Tech TV Download Files, I assume they meant for you to
+</I>&gt;<i> download them. I just didn't know how without that little menu in
+</I>&gt;<i> QuickTime Pro.
+</I>&gt;<i> 
+</I>&gt;<i> <A HREF="http://www.dvgarage.com/garage/break/techtv/techtv.php">http://www.dvgarage.com/garage/break/techtv/techtv.php</A>
+</I>&gt;<i> 
+</I>&gt;<i> Shirley
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> On Friday, June 20, 2003, at 02:41  PM, William Hofius wrote:
+</I>&gt;<i> 
+</I>&gt;&gt;<i> First, you want to configure QuickTime to save downloaded movies in a
+</I>&gt;&gt;<i> cache file.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> Second, you want to use Netscape, Mozilla, Pheonix, or Camino to view
+</I>&gt;&gt;<i> the movie.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> Third, download &quot;PathFinder&quot; (sorry, I don't have a link) and use this
+</I>&gt;&gt;<i> to navigate your way to the profiles folder for the application. You
+</I>&gt;&gt;<i> should find your QuickTime movie there.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ----------
+</I>&gt;<i> &lt;<A HREF="../../../../www.themacintoshguy.com/lists/MacDV.html">http://www.themacintoshguy.com/lists/MacDV.html</A>&gt;.
+</I>&gt;<i> Send a message to &lt;<A HREF="../../../mailman/listinfo/macdv.html">MacDV-DIGEST at themacintoshguy.com</A>&gt; to switch to the digest
+</I>&gt;<i> version.
+</I>&gt;<i> 
+</I>&gt;<i> XRouter | Share your DSL or cable modem between multiple computers!
+</I>&gt;<i> Dr. Bott | Now $139.99      &lt;<A HREF="http://www.drbott.com/prod/xrouter.html">http://www.drbott.com/prod/xrouter.html</A>&gt;
+</I>&gt;<i> 
+</I>&gt;<i>  Cyberian   | Support this list when you buy at Outpost.com!
+</I>&gt;<i>  Outpost    |         <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+</I>&gt;<i> 
+</I>&gt;<i> MacResQ Specials: LaCie SCSI CDR From $99! PowerBook 3400/200 Only $879!
+</I>&gt;<i> Norton AntiVirus 6 Only $19! We Stock PARTS! &lt;<A HREF="http://www.macresq.com">http://www.macresq.com</A>&gt;
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="006416.html">[MacDV] Re: Analog capture card?
+</A></li>
+	<LI>Next message: <A HREF="006418.html">[MacDV] Which 3ccd camera?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6417">[ date ]</a>
+              <a href="thread.html#6417">[ thread ]</a>
+              <a href="subject.html#6417">[ subject ]</a>
+              <a href="author.html#6417">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

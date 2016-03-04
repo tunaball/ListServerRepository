@@ -1,0 +1,263 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Connecting from my Mac to my Virtual PC Windows XP
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Connecting%20from%20my%20Mac%20to%20my%20Virtual%20PC%20Windows%20XP&In-Reply-To=list-10336213%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005453.html">
+   <LINK REL="Next"  HREF="005455.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Connecting from my Mac to my Virtual PC Windows XP</H1>
+    <B>Daniel Brieck</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Connecting%20from%20my%20Mac%20to%20my%20Virtual%20PC%20Windows%20XP&In-Reply-To=list-10336213%40mail.ninewire.com"
+       TITLE="[G4] Connecting from my Mac to my Virtual PC Windows XP">djbrieck at mac.com
+       </A><BR>
+    <I>Mon Jan 19 12:48:13 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005453.html">[G4] G4 newbie, migration Qs
+</A></li>
+        <LI>Next message: <A HREF="005455.html">[G4] Connecting from my Mac to my Virtual PC Windows XP
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5454">[ date ]</a>
+              <a href="thread.html#5454">[ thread ]</a>
+              <a href="subject.html#5454">[ subject ]</a>
+              <a href="author.html#5454">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Billy,
+
+You should be able to browse for it in the Finders &quot;Network Browser&quot; 
+but don;t do it because it is more trouble than it is worth use the GO 
+way it is much better.....
+
+If it does not show up try going to the finder and using the Go (pull 
+down menu) -&gt; connect to server and type <A HREF="smb://and">smb://and</A> the IP address of 
+the the VPC windows machine. It seems the way that the default settings 
+are set for VPC this will not work. As a matter of fact with my Virtual 
+PC set up configured to Shared Networking I can not even connect to my 
+Mac using File Sharing, gives a permissions error on windows; however I 
+can connect to another windows machine on my network with out a 
+problem. So since the mac and vpc are sort of generically sharing one 
+IP address the machines can't see each other completely (?)....
+
+So what to do:
+
+1. Shut Down Window XP
+2. Go to the VPC List and select /click once on the  Windows Xp Click 
+on the settings Button. Then under current setting go to network. I bet 
+it is set on Shared Networking Change it to Virtual Switch. Note that 
+Virtual Switch requires a separate IP address for the VPC windows. So 
+if your home set-up  has a router with Dynamic DHCP your all set. If 
+you just have one IP address Ex Dial-up or something else here is what 
+you may have to do.
+
+[Skip if you have a Router]
+(note sure if this works but in theory it should, because if you have a 
+mac and a PC physically networked with a hub it works for file sharing, 
+So the VPC would Connect internally thinking it is on the network then 
+getting an IP from the macs IP sharing )(I am not a network expert so 
+mabey someone else could confirm this)
+Turn on IP sharing on the mac Go to System prefs then Sharing then 
+Internet TAB, then make your selection there (built in ethernet) and 
+then Click start sharing.  Note this may cause problems according to 
+your set up (For example if there is already a DHCP network there or if 
+you try to share a connection directly back into the [ethernet 
+connected cable / DSL modem not sure about this but i don't think your 
+isp would like that].... If you have nothing plugged into the ethernet 
+port then you certainly will have no problem with IPs conflicting..
+
+4. Start windows, then get your new IP address it will be different 
+from the last one you entered in Go&gt; connect to. Then it should 
+work......
+
+Dan Brieck Jr.
+
+On Jan 19, 2004, at 10:18 AM, Billy Bacon wrote:
+
+&gt;<i> Thank you for the reply.
+</I>&gt;<i>
+</I>&gt;<i> I'm running Mac OS X 10.3.2 (Panther). The SMB workgroup is 
+</I>&gt;<i> 'WORKGROUP' (the
+</I>&gt;<i> default and the pc is on that same group. I have enabled file sharing 
+</I>&gt;<i> on the
+</I>&gt;<i> windows pc.
+</I>&gt;<i>
+</I>&gt;<i> Now how should I be able to browse my windows pc c: drive from my Mac?
+</I>&gt;<i> Should it come up in the Finder window? Or do I need to connect to it a
+</I>&gt;<i> different way?
+</I>&gt;<i>
+</I>&gt;<i> Thanks for your help?
+</I>&gt;<i>
+</I>&gt;<i> - Billy -
+</I>&gt;<i>
+</I>&gt;<i> On 1/18/04 7:43 PM, &quot;Daniel Brieck&quot; &lt;<A HREF="../../../mailman/listinfo/g4.html">djbrieck at mac.com</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Billy,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 1. What mac os X are you running?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 2. What workgroup does the pc think it os on ( This matters before mac
+</I>&gt;&gt;<i> os X.3 panther, if it is a different workgroup it will not necessarily
+</I>&gt;&gt;<i> show up)?     For mac os X.2
+</I>&gt;&gt;<i> <A HREF="http://docs.info.apple.com/article.html?artnum=107137">http://docs.info.apple.com/article.html?artnum=107137</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 3. Did you enable file sharing on the windows PC ? You should see a
+</I>&gt;&gt;<i> hand by the C: drive if you are sharing it. If not right click on
+</I>&gt;&gt;<i> sharing
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 4. Also you may want to try playing with Network Settings on the VPC
+</I>&gt;&gt;<i> List (Ex. Virtual Switch)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Jan 18, 2004, at 8:32 PM, Billy Bacon wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> What I need to do is be able to open up a Finder window on my 
+</I>&gt;&gt;&gt;<i> powerbook
+</I>&gt;&gt;&gt;<i> (Panther) and browse over to my Window XP OS while Virtual PC is
+</I>&gt;&gt;&gt;<i> running (I
+</I>&gt;&gt;&gt;<i> want to browse the C drive on my Windows OS). Right now I can be
+</I>&gt;&gt;&gt;<i> working in
+</I>&gt;&gt;&gt;<i> Virtual PC WinXP and open Microsoft Explorer and I have a shared 
+</I>&gt;&gt;&gt;<i> drive
+</I>&gt;&gt;&gt;<i> (Z:)
+</I>&gt;&gt;&gt;<i> that I've mapped. So I can browse files that reside on my Mac while 
+</I>&gt;&gt;&gt;<i> I'm
+</I>&gt;&gt;&gt;<i> working in my Windows world.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I need to be able to do the reverse while working in my Mac OS X
+</I>&gt;&gt;&gt;<i> environment.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Is this possible? Right now my Mac *cannot* see my Windows XP
+</I>&gt;&gt;&gt;<i> environment.
+</I>&gt;&gt;&gt;<i> But my Windows XP environment *can* see my Mac environment.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> And yes, my Virtual PC application is running on the same machine (so
+</I>&gt;&gt;&gt;<i> maybe
+</I>&gt;&gt;&gt;<i> in my last e-mail, 'connect' was probably a bad word to use).
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Can this be done?
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Thanks for your help.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> - Billy -
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> On 1/18/04 1:23 PM, &quot;Mel Krewall&quot; &lt;<A HREF="../../../mailman/listinfo/g4.html">mkrewall at mac.com</A>&gt; wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Billy,
+</I>&gt;&gt;&gt;&gt;<i> What do you mean when you say &quot;connect&quot;? If the VPC is on the same
+</I>&gt;&gt;&gt;&gt;<i> machine that you want to connect to, you can install VPC Extras and
+</I>&gt;&gt;&gt;&gt;<i> share your Mac hard drive with the VPC instance. You can manipulate
+</I>&gt;&gt;&gt;&gt;<i> the
+</I>&gt;&gt;&gt;&gt;<i> same files in Windows as you could in the Finder. The Go menu only
+</I>&gt;&gt;&gt;&gt;<i> works from a network perspective and VPC default is shared 
+</I>&gt;&gt;&gt;&gt;<i> networking,
+</I>&gt;&gt;&gt;&gt;<i> meaning that the Windows instance and the Mac use the same network
+</I>&gt;&gt;&gt;&gt;<i> connection, therefore they wouldn't understand connecting to one
+</I>&gt;&gt;&gt;&gt;<i> another. Sharing the disk between Windows and Mac is probably the 
+</I>&gt;&gt;&gt;&gt;<i> way
+</I>&gt;&gt;&gt;&gt;<i> you want to go.
+</I>&gt;&gt;&gt;&gt;<i> Mel
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> &quot;It's good sportsmanship to not pick up lost golf balls while they 
+</I>&gt;&gt;&gt;&gt;<i> are
+</I>&gt;&gt;&gt;&gt;<i> still rolling.&quot;
+</I>&gt;&gt;&gt;&gt;<i> ~ Mark Twain
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> On Jan 18, 2004, at 7:33 AM, Billy Bacon wrote:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> Hi,
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> I'm hoping someone can point me in the right direction. Here's my
+</I>&gt;&gt;&gt;&gt;&gt;<i> problem.
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> I'm trying to connect from my Mac to my Window XP installation 
+</I>&gt;&gt;&gt;&gt;&gt;<i> which
+</I>&gt;&gt;&gt;&gt;&gt;<i> runs on
+</I>&gt;&gt;&gt;&gt;&gt;<i> my Virtual PC application. I can connect the other way (VP WinXP to
+</I>&gt;&gt;&gt;&gt;&gt;<i> my
+</I>&gt;&gt;&gt;&gt;&gt;<i> Mac)
+</I>&gt;&gt;&gt;&gt;&gt;<i> with no problems. I can't seem to figure out what naming 
+</I>&gt;&gt;&gt;&gt;&gt;<i> convention I
+</I>&gt;&gt;&gt;&gt;&gt;<i> need
+</I>&gt;&gt;&gt;&gt;&gt;<i> to use to connect my Mac to Windows. From the Finder 'Go' menu at 
+</I>&gt;&gt;&gt;&gt;&gt;<i> the
+</I>&gt;&gt;&gt;&gt;&gt;<i> top of
+</I>&gt;&gt;&gt;&gt;&gt;<i> the screen I click &quot;Connect To Server&quot;. But I've tried various
+</I>&gt;&gt;&gt;&gt;&gt;<i> combinations
+</I>&gt;&gt;&gt;&gt;&gt;<i> of a computer name for my Virtual PC WinXP and nothing has working.
+</I>&gt;&gt;&gt;&gt;&gt;<i> My
+</I>&gt;&gt;&gt;&gt;&gt;<i> computers name (WinXP on Virtual PC) is 'VPXP'. Typing this in the
+</I>&gt;&gt;&gt;&gt;&gt;<i> 'connect
+</I>&gt;&gt;&gt;&gt;&gt;<i> to server' textbox doesn't work either.
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> Any suggestions are greatly appreciated.
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> Thank you
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> - Billy -
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005453.html">[G4] G4 newbie, migration Qs
+</A></li>
+	<LI>Next message: <A HREF="005455.html">[G4] Connecting from my Mac to my Virtual PC Windows XP
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5454">[ date ]</a>
+              <a href="thread.html#5454">[ thread ]</a>
+              <a href="subject.html#5454">[ subject ]</a>
+              <a href="author.html#5454">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

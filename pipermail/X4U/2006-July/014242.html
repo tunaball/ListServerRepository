@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Finder hell!
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Finder%20hell%21&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="014248.html">
+   <LINK REL="Next"  HREF="014244.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Finder hell!</H1>
+    <B>John Daschbach</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Finder%20hell%21&In-Reply-To="
+       TITLE="[X4U] Finder hell!">jldasch at mac.com
+       </A><BR>
+    <I>Sun Jul 30 21:36:29 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="014248.html">[X4U] System Log Question 
+</A></li>
+        <LI>Next message: <A HREF="014244.html">[X4U] Finder hell!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14242">[ date ]</a>
+              <a href="thread.html#14242">[ thread ]</a>
+              <a href="subject.html#14242">[ subject ]</a>
+              <a href="author.html#14242">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>A couple of recent experiences have refreshed my appreciation that  
+the Finder is still a poorly integrated single thread program.  The  
+problems seem to stem from situations that should be common to many  
+Mac users.  The solutions have been painful (reset button on machines  
+that still have it, pull the plug on an iMac G5) and make it clear  
+that Apple has somehow failed to bring the Finder to the world of  
+solid Unix programming.
+
+My problems originate with the same underlying issue, something that  
+should be handled by any reasonable program, and absolutely must be  
+handled by the Finder.
+
+At work, running the latest 10.3 on a dual G4, I started to have  
+hangs in many file dialog windows &quot;Save File As&quot;.  The spinning  
+beachball would appear, and remain in force for periods of many  
+hours.  The program which requested the file dialog would only offer  
+the option of &quot;Force Quit&quot; in the dock, but dozens of Force Quits did  
+nothing.  Turn to the terminal and try a standard &quot;kill -9 pid&quot; many  
+times.  No immediate effect.  With some programs (Kaleidagraph) the  
+program did eventually die after 5-15 minutes, with others (Finder,  
+Safari, Entourage) I didn't see a kill over 30+ min.  Once this  
+problem happens, most running programs generate spinning beachballs  
+after being brought to the foreground.  Basically most every open  
+program hangs!  A key in finding the problem was that an 'ls' in a  
+terminal window with a dead link would hang forever.
+
+The solution was related to the fact that our AFS servers changed IP  
+addresses.  Any directory with a symlink to an AFS file system would  
+hang the whole system once the AFS link was no longer valid.   
+Apparently OS X has no time out on scanning a directory, so when it  
+hits a dead link it waits forever for it to return a list of files.
+
+What is surprising, and scary, is that you can't recover the system  
+running as root issuing &quot;kill -9&quot;.   In contrast to any Unix system I  
+have run on OS X seems to be able to ignore kill signals.  Between 5  
+and 10 times I had this happen until I diagnosed the problem, and  
+each time (after 10-30 min of waiting) the only solution was a hard  
+reset.
+
+Unfortunately the same thing happened to me this today at home, when  
+the computer hosting an afp mount went to sleep.  The network  
+connected client computer (iMac G5) with the afp file system mounted  
+exhibited the same fatal behavior, which for the iMac requires  
+pulling the plug to recover.
+
+Thus, it appear that there is a system call for scanning a directory  
+that blocks kill signals and never returns if a link is dead.   
+Blocking kills is something that should only be used in extreme  
+circumstances, like across a fork.
+
+Since this happens with both afs and afp mounts, and seems to be  
+related to a standard system call for returning a list of files, it  
+must be in the OS X core.  Such behavior is unacceptable.  I have to  
+hope it will fixed at some point so that a dead file system link does  
+not require power cycling a computer.
+
+-John
+
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="014248.html">[X4U] System Log Question 
+</A></li>
+	<LI>Next message: <A HREF="014244.html">[X4U] Finder hell!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14242">[ date ]</a>
+              <a href="thread.html#14242">[ thread ]</a>
+              <a href="subject.html#14242">[ subject ]</a>
+              <a href="author.html#14242">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

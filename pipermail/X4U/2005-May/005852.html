@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Need Applescript help for Mail
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Need%20Applescript%20help%20for%20Mail&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005885.html">
+   <LINK REL="Next"  HREF="005857.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Need Applescript help for Mail</H1>
+    <B>John McGibney</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Need%20Applescript%20help%20for%20Mail&In-Reply-To="
+       TITLE="[X4U] Need Applescript help for Mail">ensignjd at optonline.net
+       </A><BR>
+    <I>Wed May 11 15:25:05 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005885.html">[X4U] Tiger... why...
+</A></li>
+        <LI>Next message: <A HREF="005857.html">[X4U] Need Applescript help for Mail
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5852">[ date ]</a>
+              <a href="thread.html#5852">[ thread ]</a>
+              <a href="subject.html#5852">[ subject ]</a>
+              <a href="author.html#5852">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+I'm trying to setup an applescript for Mail so that it will delete
+messages based on these 2 conditions.
+
+condition one
+1. mailbox folder is &quot;Temp Save&quot;
+2. subject contains the word digest
+3. and the date sent is one or more days old
+
+condition two
+1. mailbox folder is &quot;Temp Save&quot;
+2. delete all messages older than 5 days
+
+
+Here's the script i wrote. but i can't get the line with subject to
+work.
+
+-=-=
+
+tell application &quot;Mail&quot;
+      set localMailboxes to &quot;Temp Save&quot;
+      if message subject contains &quot;Digest&quot; then
+          if date sent is not today then
+              delete message
+          end if
+      else
+          if date sent is greater than 5 then
+              delete message
+          end if
+      end if
+end tell
+
+-=-=-=
+
+here's the error message:
+
+tell application &quot;Mail&quot;
+      get subject
+          &quot;Mail got an error: Can't make subject into type reference.&quot;
+
+
+any applescript gurus out there?
+
+John
+
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005885.html">[X4U] Tiger... why...
+</A></li>
+	<LI>Next message: <A HREF="005857.html">[X4U] Need Applescript help for Mail
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5852">[ date ]</a>
+              <a href="thread.html#5852">[ thread ]</a>
+              <a href="subject.html#5852">[ subject ]</a>
+              <a href="author.html#5852">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

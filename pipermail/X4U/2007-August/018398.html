@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Software to reveal passwords
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Software%20to%20reveal%20passwords&In-Reply-To=EA2EF012-B5B8-4E7B-9287-8F9FA869ED38%40bresnan.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="018406.html">
+   <LINK REL="Next"  HREF="018399.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Software to reveal passwords</H1>
+    <B>Lars Bertelsen</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Software%20to%20reveal%20passwords&In-Reply-To=EA2EF012-B5B8-4E7B-9287-8F9FA869ED38%40bresnan.net"
+       TITLE="[X4U] Software to reveal passwords">lbe at mac.com
+       </A><BR>
+    <I>Sun Aug 19 03:25:39 PDT 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="018406.html">[X4U] Software to reveal passwords
+</A></li>
+        <LI>Next message: <A HREF="018399.html">[X4U] Software to reveal passwords
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#18398">[ date ]</a>
+              <a href="thread.html#18398">[ thread ]</a>
+              <a href="subject.html#18398">[ subject ]</a>
+              <a href="author.html#18398">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>I am hoping someone can help me find software 
+</I>&gt;<i>that will allow me to reveal passwords. We often 
+</I>&gt;<i>have teachers who have forgotten their passwords 
+</I>&gt;<i>over the summer and it would be nice if we could 
+</I>&gt;<i>retrieve that information for them, especially 
+</I>&gt;<i>for their connection to the server.
+</I>&gt;<i>
+</I>&gt;<i>  I found lots of software for Windows machines, 
+</I>&gt;<i>but none for the Mac. For Windows, you drag the 
+</I>&gt;<i>cursor over the asterisks and the password is 
+</I>&gt;<i>revealed.
+</I>&gt;<i>
+</I>&gt;<i>Thanks for your help!
+</I>&gt;<i>
+</I>&gt;<i>Darlene Hess
+</I>&gt;<i><A HREF="../../../mailman/listinfo/x4u.html">d_hess at bresnan.net</A>
+</I>&gt;<i>_______________________________________________
+</I>
+As someone else noticed, Unix (and therfore Mac 
+OS X)does not store the password as such but only 
+stores the value that comes of sending the 
+password through a one way hash algorithm.
+Many confuse this with an encrypted password, but 
+there is an important difference. WHen a password 
+is encrypted, it is possible to decrypt it and 
+restore the original password if you know how.
+Hopefully, without knowing the password in the 
+first place, it will be very HARD to do so, but 
+it can be done. This is because there is a 
+one-to-one relationship between the password and 
+the ncrypted password; two different passwords 
+will ALWAYS result in two different encrypted 
+values.
+
+With a hash algorithm, this is not the case. 
+Several different passwords might result in the 
+same hash value, and therefore it is inherrently 
+impossible to &quot;decrypt&quot; the hash value and get 
+the original input. So, as was said before, what 
+you do is to compare the hash value of what the 
+user enters as his password to the hash value of 
+what was originally entered. Yes, in theory you 
+might neter the wrong password and still gain 
+entry, but the likelyjood is very, very small.
+Probably not much greater that the chance of 
+accidently hitting on the right password in an 
+encrypted setup.
+
+Now why woould you want to make it impossible 
+fopr the server owner to recreate the password 
+for a user? It seems like a stupid idea because
+a) It is a nice service to the user to be able to 
+restore his original password in stead of giving 
+him a new one
+and
+b) The serv er owner has access to everything 
+anyway, so why keep the passwords from him?
+The answer is simple: We all tend to use the same 
+password for many different things. This means 
+that if you as the server owner have access to 
+the passwords your users chose for access to the 
+file server, then chances are that you  also know 
+the passwords they use for their mail accounts, 
+their home banking and a host of other private 
+data that should be none of your bussiness! ;-)
+
+That's why it is bad security to allow the IT 
+department to read peoples' passwords, and that's 
+why many systems use hashed passwords in stead of 
+encrypted passwords. I repeat: It is NOT a  good 
+thing that you can find such utilities for 
+Windows, it is really, really bad security!
+
+So hopefully you will not be able to find 
+anything that easy&#237;ly lets you restore a password 
+from a MAc OS X server!
+
+Returning the utility that can read the password 
+behind the asterisks in  a log in dialog, that's 
+a different story. It would depend on how the 
+application stores the password! In the simplest 
+solutions, you just use a special font which 
+shows the same symbol for all ASCII values. 
+Simply replacu&#237;ng the font with something else 
+may be enough to revale the password. In some 
+cases youcan even copy the text and paste it into 
+a text editor and gain access to it that way 
+)although that's fairly rare these days, thank 
+god!).
+The point is that this is NOT related to the way 
+the password is stored on the server but to the 
+way the password is stored an presented in the 
+application.
+
+If the programmer has done hi work poorly, then 
+you may be able to create a utility that can 
+restore this kind of password. Wheteher that is 
+the case for any Mac OS X applications I don't 
+know, but I wouldn't hope so.
+
+Lars Bertelsen
+
+
+
+-- 
+
+</PRE>
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="018406.html">[X4U] Software to reveal passwords
+</A></li>
+	<LI>Next message: <A HREF="018399.html">[X4U] Software to reveal passwords
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#18398">[ date ]</a>
+              <a href="thread.html#18398">[ thread ]</a>
+              <a href="subject.html#18398">[ subject ]</a>
+              <a href="author.html#18398">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

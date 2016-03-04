@@ -1,0 +1,31 @@
+<tt>
+You&nbsp;need&nbsp;to&nbsp;escape&nbsp;or&nbsp;quote&nbsp;the&nbsp;entries:&lt;br&gt;&lt;br&gt;for&nbsp;f&nbsp;in&nbsp;*.PDF&lt;br&gt;do&lt;br&gt;   &nbsp;base=`basename&nbsp;&amp;quot;${f}&nbsp;.PDF`&lt;br&gt;   &nbsp;mv&nbsp;&amp;quot;${f}&amp;quot;&nbsp;&amp;quot;${base}.pdf&amp;quot;&lt;br&gt;done&lt;br&gt;&lt;br&gt;That&nbsp;works&nbsp;fine&nbsp;for&nbsp;me.&lt;br&gt;&lt;br&gt;Wing.&lt;br&gt;&lt;br&gt;&lt;div&nbsp;class=&quot;gmail_quote&quot;&gt;<br>
+On&nbsp;Thu,&nbsp;May&nbsp;14,&nbsp;2009&nbsp;at&nbsp;7:26&nbsp;AM,&nbsp;Charles&nbsp;Howse&nbsp;&lt;span&nbsp;dir=&quot;ltr&quot;&gt;&amp;lt;&lt;a&nbsp;href=&quot;mailto:chowse@charter.net&quot;&gt;chowse@charter.net&lt;/a&gt;&amp;gt;&lt;/span&gt;&nbsp;wrote:&lt;br&gt;&lt;blockquote&nbsp;class=&quot;gmail_quote&quot;&nbsp;style=&quot;border-left:&nbsp;1px&nbsp;solid&nbsp;rgb(204,&nbsp;204,&nbsp;204);&nbsp;margin:&nbsp;0pt&nbsp;0pt&nbsp;0pt&nbsp;0.8ex;&nbsp;padding-left:&nbsp;1ex;&quot;&gt;<br>
+Hi,&lt;br&gt;<br>
+I&nbsp;need&nbsp;to&nbsp;batch&nbsp;rename&nbsp;all&nbsp;files&nbsp;with&nbsp;extension&nbsp;.PDF&nbsp;to&nbsp;extension&nbsp;.pdf.&lt;br&gt;<br>
+They&nbsp;may&nbsp;or&nbsp;may&nbsp;not&nbsp;have&nbsp;spaces&nbsp;in&nbsp;the&nbsp;filenames.&lt;br&gt;<br>
+&lt;br&gt;<br>
+The&nbsp;following&nbsp;works&nbsp;ONLY&nbsp;if&nbsp;there&nbsp;are&nbsp;no&nbsp;spaces&nbsp;in&nbsp;the&nbsp;filename:&lt;br&gt;<br>
+&lt;br&gt;<br>
+for&nbsp;f&nbsp;in&nbsp;*.PDF;&nbsp;do&lt;br&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; base=`basename&nbsp;$f&nbsp;.PDF`&lt;br&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; mv&nbsp;$f&nbsp;$base.pdf&lt;br&gt;<br>
+done&lt;br&gt;<br>
+&lt;br&gt;<br>
+Can&nbsp;anyone&nbsp;provide&nbsp;a&nbsp;tip&nbsp;to&nbsp;something&nbsp;that&nbsp;will&nbsp;work&nbsp;regardless&nbsp;of&nbsp;whether&nbsp;there&nbsp;are&nbsp;spaces&nbsp;in&nbsp;the&nbsp;filenames&nbsp;or&nbsp;not?&lt;br&gt;<br>
+&lt;br&gt;<br>
+&lt;br&gt;<br>
+--&lt;br&gt;<br>
+Thanks,&lt;br&gt;<br>
+Charles&lt;br&gt;<br>
+&lt;br&gt;<br>
+Signs&nbsp;you&amp;#39;re&nbsp;getting&nbsp;old...&lt;br&gt;<br>
+A&nbsp;$4.00&nbsp;bottle&nbsp;of&nbsp;wine&nbsp;is&nbsp;no&nbsp;longer&nbsp;&amp;quot;pretty&nbsp;good&nbsp;stuff&amp;quot;.&lt;br&gt;<br>
+&lt;br&gt;<br>
+_______________________________________________&lt;br&gt;<br>
+X-Unix&nbsp;mailing&nbsp;list&lt;br&gt;<br>
+&lt;a&nbsp;href=&quot;mailto:X-Unix@listserver.themacintoshguy.com&quot;&nbsp;target=&quot;_blank&quot;&gt;X-Unix@listserver.themacintoshguy.com&lt;/a&gt;&lt;br&gt;<br>
+&lt;a&nbsp;href=&quot;http://listserver.themacintoshguy.com/mailman/listinfo/x-unix&quot;&nbsp;target=&quot;_blank&quot;&gt;http://listserver.themacintoshguy.com/mailman/listinfo/x-unix&lt;/a&gt;&lt;br&gt;<br>
+&lt;/blockquote&gt;&lt;/div&gt;&lt;br&gt;&lt;br&nbsp;clear=&quot;all&quot;&gt;&lt;br&gt;--&nbsp;&lt;br&gt;Wing&nbsp;Wong&lt;br&gt;&lt;a&nbsp;href=&quot;mailto:wingedpower@gmail.com&quot;&gt;wingedpower@gmail.com&lt;/a&gt;&lt;br&gt;&lt;a&nbsp;href=&quot;http://www.wingedpower.com/&quot;&gt;http://www.wingedpower.com/&lt;/a&gt;&lt;br&gt;<br>
+
+</tt>

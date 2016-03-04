@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Making a Wintel box pretend to be a Mac...?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Making%20a%20Wintel%20box%20pretend%20to%20be%20a%20Mac...%3F&In-Reply-To=list-14674600%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000354.html">
+   <LINK REL="Next"  HREF="000356.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Making a Wintel box pretend to be a Mac...?</H1>
+    <B>Ryan Duff</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Making%20a%20Wintel%20box%20pretend%20to%20be%20a%20Mac...%3F&In-Reply-To=list-14674600%40mail.ninewire.com"
+       TITLE="[X4U] Making a Wintel box pretend to be a Mac...?">ryan at duff-duff.net
+       </A><BR>
+    <I>Mon Jul 12 18:04:45 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000354.html">Making a Wintel box pretend to be a Mac...?
+</A></li>
+        <LI>Next message: <A HREF="000356.html">[X4U] Locked Out!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#355">[ date ]</a>
+              <a href="thread.html#355">[ thread ]</a>
+              <a href="subject.html#355">[ subject ]</a>
+              <a href="author.html#355">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Found on annoyances.org
+<A HREF="http://www.annoyances.org/exec/forum/win2000/1018043899">http://www.annoyances.org/exec/forum/win2000/1018043899</A>
+
+[quote]
+
+The following works in XP, should work in win2k as well:
+
+----------------------------------------------------------
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout];
+&quot;Scancode
+Map&quot;=hex:00,00,00,00,00,00,00,00,05,00,00,00,1D,00,38,00,38,00,1D,00,1D,E0,3
+8,E0,38,E0,1D,E0,00,00,00,00
+----------------------------------------------------------
+
+Copy this to a text file and save it as &quot;swapkeys.reg&quot;. 
+Doubleclick to open it and confirm that you want to 
+insert the contents in your registry. 
+Reboot, and your Ctrl and Alt keys will be swapped.
+
+The idea is to create a &quot;Scancode Map&quot; key in 
+&quot;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout&quot;. 
+This should contain a series of hex codes on which keys to exchange 
+(boy, do I ever miss the key remap program in the Win95 kernel toys. 
+Or even Xmodmap under Unix!).
+
+Details of how this works can be found at
+
+<A HREF="http://www.pcworld.com/howto/article/0,aid,65157,pg,3,00.asp">http://www.pcworld.com/howto/article/0,aid,65157,pg,3,00.asp</A>
+
+and
+
+<A HREF="http://www.microsoft.com/hwdev/tech/input/w2kscan-map.asp">http://www.microsoft.com/hwdev/tech/input/w2kscan-map.asp</A>
+
+The above article notes the shortcomings of this method: 
+it applies to all users and all keyboards and requires rebooting. 
+I'd appreciate information on a more elegant freeware or shareware solution.
+
+A caveat with regard to the above registry hack: it swaps Ctrl and Alt, 
+but the distinction between right and left Ctrl and Alt is lost 
+(specifically, the lefthand Ctrl and Alt are recognized as 
+the righthand Crlt and Alt). 
+Usually no problem except perhaps for some games. 
+Suggestions are of course welcome. 
+
+Hope this helps,
+John Hendrickx
+(formerly Mad Mackx)
+
+[/quote]
+
+Good luck and always remember to back up your registry before working on it.
+Ryan Duff
+
+
+
+
+-----Original Message-----
+From: Mac OS X for Users [mailto:<A HREF="../../../mailman/listinfo/x4u.html">x4u at lists.themacintoshguy.com</A>] On Behalf Of
+Sheldon Brown
+Sent: Monday, July 12, 2004 8:51 PM
+To: Mac OS X for Users
+Subject: [X4U] Making a Wintel box pretend to be a Mac...?
+
+I've been cursed with a second computer on my desk, a Wintel box.
+
+The most aggravating thing about going back and forth betwixt it and my
+Powerbook is that the position of the &quot;Control&quot; and &quot;Alt&quot; keys is reversed.
+
+Is there some not too intense way to re-map the keyboard on the Wintel
+machine (Windows 2000) to make the &quot;Control&quot; and &quot;Alt&quot; keys change places so
+they match my Mac?
+
+Sheldon &quot;Kicking And Screaming&quot; Brown
+Newtonville, Massachusetts
++-----------------------------------------------------------+
+|<i>  Sometimes the only thing more dangerous than a question  |
+</I>|<i>  is an answer.      --Ferengi Rule of Acquisition  #208   |
+</I>+-----------------------------------------------------------+
+--
+  Harris Cyclery, West Newton, Massachusetts
+     Phone 617-244-9772  FAX 617-244-1041
+          <A HREF="http://harriscyclery.com">http://harriscyclery.com</A>
+     Hard-to-find parts shipped Worldwide
+          <A HREF="http://captainbike.com">http://captainbike.com</A>
+  Useful articles about bicycles and cycling
+          <A HREF="http://sheldonbrown.com">http://sheldonbrown.com</A>
+
+----------
+Check out the Mac OS X for Users email list FAQ
+<A HREF="../../../../www.themacintoshguy.com/lists/X4U.html">http://www.themacintoshguy.com/lists/X4U.html</A>
+
+To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x4u.html">x4u-off at lists.themacintoshguy.com</A>&gt;
+To switch to the DIGEST mode, E-mail to
+&lt;<A HREF="../../../mailman/listinfo/x4u.html">x4u-digest at lists.themacintoshguy.com</A>&gt;
+Need help from a real person? Try.  &lt;<A HREF="../../../mailman/listinfo/x4u.html">x4u-request at lists.themacintoshguy.com</A>&gt;
+
+----------
+$14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your Mac ISP
+
+Serious Mac Internet Solutions From NineWire!   <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+
+TiCase   | Checkout the coolest way to carry your TiBook! 
+Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/ticase.html">http://www.drbott.com/prod/ticase.html</A>&gt;
+
+  Cyberian   | Support this list when you buy at Outpost.com!
+  Outpost    |         <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+
+OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s -
+<A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000354.html">Making a Wintel box pretend to be a Mac...?
+</A></li>
+	<LI>Next message: <A HREF="000356.html">[X4U] Locked Out!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#355">[ date ]</a>
+              <a href="thread.html#355">[ thread ]</a>
+              <a href="subject.html#355">[ subject ]</a>
+              <a href="author.html#355">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

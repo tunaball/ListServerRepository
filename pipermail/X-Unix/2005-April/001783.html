@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Capturing traffic on built-in ethernet interface question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Capturing%20traffic%20on%20built-in%20ethernet%20interface%20question&In-Reply-To=41d3884db32f9d5f6ff4cdea990a2285%40direcway.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001782.html">
+   <LINK REL="Next"  HREF="001784.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Capturing traffic on built-in ethernet interface question</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Capturing%20traffic%20on%20built-in%20ethernet%20interface%20question&In-Reply-To=41d3884db32f9d5f6ff4cdea990a2285%40direcway.com"
+       TITLE="[X-Unix] Capturing traffic on built-in ethernet interface question">ecrist at secure-computing.net
+       </A><BR>
+    <I>Fri Apr 15 06:25:14 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001782.html">[X-Unix] Capturing traffic on built-in ethernet interface question
+</A></li>
+        <LI>Next message: <A HREF="001784.html">[X-Unix] Capturing traffic on built-in ethernet interface question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1783">[ date ]</a>
+              <a href="thread.html#1783">[ thread ]</a>
+              <a href="subject.html#1783">[ subject ]</a>
+              <a href="author.html#1783">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Russell,
+
+There are many applications that I've compiled directly from source.  
+Ethereal is one of them.  Make sure you have Apple's Developer ToolKit 
+installed, and the X11 implementation that Apple is distributing on its 
+website (I find it works best for my purposes).  Go get the ethereal 
+tarball and build it.  Everything *should* work OK after that.
+
+HTH
+
+Eric
+
+On Apr 15, 2005, at 5:35 AM, Russell McGaha wrote:
+
+&gt;<i> Eric;
+</I>&gt;<i> 	That was my first thought too; unfortunately neither Fink's nor 
+</I>&gt;<i> DarwinPorts' versions will compile on by 10.3.8 system.
+</I>&gt;<i>
+</I>&gt;<i> Russell
+</I>&gt;<i>
+</I>&gt;<i> On Apr 14, 2005, at 9:43 PM, Eric F Crist wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> On Apr 14, 2005, at 5:27 AM, Russell McGaha wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Can anyone point me to a tutorial on what I need to be able to, and 
+</I>&gt;&gt;&gt;<i> how to, capture traffic on the wired interface?  A link to info on 
+</I>&gt;&gt;&gt;<i> how to read the info once I get it; would also be welcome.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> TIA
+</I>&gt;&gt;&gt;<i> Russell
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I would look at the ethereal package information.  This is a software 
+</I>&gt;&gt;<i> package that will pull data from the interface and help you view it.
+</I>&gt;&gt;<i> _______________________________________________________
+</I>&gt;&gt;<i> Eric F Crist                  &quot;I am so smart, S.M.R.T!&quot;
+</I>&gt;&gt;<i> Secure Computing Networks              -Homer J Simpson
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> X-Unix mailing list
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random 
+</I>&gt;&gt;<i> stuff:
+</I>&gt;&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random 
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+_______________________________________________________
+Eric F Crist                  &quot;I am so smart, S.M.R.T!&quot;
+Secure Computing Networks              -Homer J Simpson
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001782.html">[X-Unix] Capturing traffic on built-in ethernet interface question
+</A></li>
+	<LI>Next message: <A HREF="001784.html">[X-Unix] Capturing traffic on built-in ethernet interface question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1783">[ date ]</a>
+              <a href="thread.html#1783">[ thread ]</a>
+              <a href="subject.html#1783">[ subject ]</a>
+              <a href="author.html#1783">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

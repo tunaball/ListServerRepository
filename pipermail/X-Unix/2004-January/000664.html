@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] awk
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20awk&In-Reply-To=list-10153697%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000630.html">
+   <LINK REL="Next"  HREF="000675.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] awk</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20awk&In-Reply-To=list-10153697%40mail.ninewire.com"
+       TITLE="[X-Unix] awk">magill at mcgillsociety.org
+       </A><BR>
+    <I>Thu Jan  8 12:49:14 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000630.html">*BSD on x86 question
+</A></li>
+        <LI>Next message: <A HREF="000675.html">script question (cron - adobefnt*.lst)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#664">[ date ]</a>
+              <a href="thread.html#664">[ thread ]</a>
+              <a href="subject.html#664">[ subject ]</a>
+              <a href="author.html#664">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 08 Jan, 2004, at 04:33, Stroller wrote:
+
+&gt;<i> On Jan 8, 2004, at 7:37 am, Eugene Lee wrote:
+</I>&gt;&gt;<i> On Wed, Jan 07, 2004 at 08:46:38PM +0000, Stroller wrote:
+</I>&gt;&gt;<i> : On Jan 7, 2004, at 5:41 pm, Eugene Lee wrote:
+</I>&gt;&gt;<i> : &gt;:
+</I>&gt;&gt;<i> : &gt;: There are annoying differences between &quot;standard Unix&quot; versions 
+</I>&gt;&gt;<i> of the
+</I>&gt;&gt;<i> : &gt;: utilities and their GNU counterparts. Usually they Unix versions 
+</I>&gt;&gt;<i> are
+</I>&gt;&gt;<i> : &gt;: compatible with the GNU versions, but the GNU versions are not
+</I>&gt;&gt;<i> : &gt;: compatible with the Unix versions.   ... Just as scripts written 
+</I>&gt;&gt;<i> for
+</I>&gt;&gt;<i> : &gt;: /bin/sh will work in /bin/ksh or /bin/bash ... scripts written 
+</I>&gt;&gt;<i> for
+</I>&gt;&gt;<i> : &gt;: either ksh or zsh will not run in sh.
+</I>&gt;&gt;<i> : &gt;
+</I>&gt;&gt;<i> : &gt;Too bad /bin/bash is the same as /bin/sh.  :-)
+</I>&gt;&gt;<i> :
+</I>&gt;&gt;<i> : Excuse me if I missed the joke, but from `man bash`:
+</I>&gt;&gt;<i> :
+</I>&gt;&gt;<i> : DESCRIPTION
+</I>&gt;&gt;<i> :        Bash  is  an  sh-compatible  command language interpreter 
+</I>&gt;&gt;<i> that executes
+</I>&gt;&gt;<i> :        commands read from the standard input or from a file.  Bash 
+</I>&gt;&gt;<i> also incor-
+</I>&gt;&gt;<i> :        porates useful features from the Korn and C shells (ksh and 
+</I>&gt;&gt;<i> csh).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Well, bash also has useful features from ksh and csh, that means that
+</I>&gt;&gt;<i> these features are not available in old sh.  Therefore, any bash 
+</I>&gt;&gt;<i> script
+</I>&gt;&gt;<i> that uses any of these new features is not guaranteed to work on a
+</I>&gt;&gt;<i> machine that has the original sh and not bash.  This is just another
+</I>&gt;&gt;<i> example of a GNU version of a tool (i.e. bash) is not compatible with
+</I>&gt;&gt;<i> the Unix version (i.e. sh).
+</I>&gt;<i>
+</I>&gt;<i> I think you missed the part I quoted in which I said:
+</I>&gt;<i>
+</I>&gt;<i> INVOCATION
+</I>&gt;<i> ...
+</I>&gt;<i>        If  bash  is  invoked  with  the name sh, it tries to mimic the 
+</I>&gt;<i> startup
+</I>&gt;<i>        behavior of historical versions of sh as  closely  as  
+</I>&gt;<i> possible,  while
+</I>&gt;<i>        conforming  to the POSIX standard as well.
+</I>&gt;<i>
+</I>&gt;<i> So if one is writing a script which one wishes to be cross-platform, 
+</I>&gt;<i> one simply writes it with the header &quot;#!/bin/sh&quot; and any of Bash's 
+</I>&gt;<i> advanced features will be ignored; one will only be able to use sh 
+</I>&gt;<i> syntax in that script.
+</I>
+I do not believe that is true.  I believe that bash will always honor 
+its own syntax. (But since I don't use bash, I've never tested it.)
+
+The INVOCATION paragraph you refer to simply describes which startup 
+files are read - ~/.profile and /etc/profile only, not what syntax is 
+observed.
+
+       &quot;Since a shell invoked as sh does not attempt to read and execute
+         commands from any other startup files, the --rcfile option has 
+no effect.&quot;
+
+Other than that...
+
+A) OS X does NOT have a separate /bin/sh -- it is a link to /bin/bash. 
+(The same as csh is a link to tcsh.)
+
+B) If you write a script which begins #!/bin/sh it is an &quot;sh&quot; script, 
+not a bash or ksh script. You should not be able to use any &quot;advanced&quot; 
+syntax  in bash with the &quot;#!/bin/sh&quot; invocation, but I've never tested 
+it to see if it is true.
+
+C) if you want &quot;#!/bin/ksh&quot; compatibility, you have to use zsh feature 
+-- &quot;emulate ksh.&quot;
+
+D) Bash Bugs: &quot;There are some subtle differences between bash and 
+traditional versions
+                              of sh, mostly because of the POSIX 
+specification.&quot;
+     [Note: ksh is the POSIX shell, and historically at least, ksh 
+scripts did not run under
+                 bash without modifications.]
+
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000 - [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000630.html">*BSD on x86 question
+</A></li>
+	<LI>Next message: <A HREF="000675.html">script question (cron - adobefnt*.lst)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#664">[ date ]</a>
+              <a href="thread.html#664">[ thread ]</a>
+              <a href="subject.html#664">[ subject ]</a>
+              <a href="author.html#664">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

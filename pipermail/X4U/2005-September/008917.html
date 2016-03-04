@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Graphical folder comparison
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Graphical%20folder%20comparison&In-Reply-To=F01A35E466339341BE3135A8ED9814EA014295%40samson.skillsearch.co.uk">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="008918.html">
+   <LINK REL="Next"  HREF="008902.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Graphical folder comparison</H1>
+    <B>Brian Lalor</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Graphical%20folder%20comparison&In-Reply-To=F01A35E466339341BE3135A8ED9814EA014295%40samson.skillsearch.co.uk"
+       TITLE="[X4U] Graphical folder comparison">blalor at bravo5.org
+       </A><BR>
+    <I>Mon Sep 26 18:54:55 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="008918.html">[X4U] Graphical folder comparison
+</A></li>
+        <LI>Next message: <A HREF="008902.html">[X4U] how to change the flag of input sources?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8917">[ date ]</a>
+              <a href="thread.html#8917">[ thread ]</a>
+              <a href="subject.html#8917">[ subject ]</a>
+              <a href="author.html#8917">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sep 26, 2005, at 2:29 PM, Oliver Marshall wrote:
+
+&gt;<i> Can anyone recommend a graphical folder comparison tool that will  
+</I>&gt;<i> show me what files are in one folder structure that arent in anotehr ?
+</I>
+Graphical, not that I know of, but I *can* do it via the shell.  Use  
+find, sort and diff to list all of the files in each directory and  
+then compare them.
+
+For example, list the contents of each file to a different file:
+     (cd /path/to/dir1 &amp;&amp; find . -type f -print) | sort &gt; listing1.txt
+     (cd /path/to/dir2 &amp;&amp; find . -type f -print) | sort &gt; listing2.txt
+
+Now, compare the two files, using diff:
+     diff -ub listing1.txt listing2.txt
+
+In the following example, 2.txt, 3.txt and 4.txt exist in both  
+directories, but 1.txt is only in the first directory, and 5.txt is  
+only in the second:
+     --- listing1.txt        2005-09-26 20:52:28.000000000 -0500
+     +++ listing2.txt        2005-09-26 20:52:30.000000000 -0500
+     @@ -1,4 +1,4 @@
+     -./1.txt
+      ./2.txt
+      ./3.txt
+      ./4.txt
+     +./5.txt
+
+Look for lines that begin with a &quot;-&quot; for files that are in the first  
+directory but not the 2nd, and lines with a &quot;+&quot; at the beginning for  
+files that are in the 2nd but not the first.
+
+This only compares the directories based on file *name*, not *content*.
+
+&gt;<i> &lt;winmail.dat&gt;
+</I>
+Olly, Olly, Olly.  You're posting to a Mac list from a Windows  
+machine?  *And* allowing it to attach winmail.dat?  How tacky. ;-)
+
+-- 
+     __   ____
+    / /  / __/ Brian Lalor
+   / _ \/__ \  <A HREF="../../../mailman/listinfo/x4u.html">blalor at bravo5.org</A>
+  /_.__/____/  <A HREF="http://bravo5.org/">http://bravo5.org/</A>
+
+
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="008918.html">[X4U] Graphical folder comparison
+</A></li>
+	<LI>Next message: <A HREF="008902.html">[X4U] how to change the flag of input sources?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8917">[ date ]</a>
+              <a href="thread.html#8917">[ thread ]</a>
+              <a href="subject.html#8917">[ subject ]</a>
+              <a href="author.html#8917">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

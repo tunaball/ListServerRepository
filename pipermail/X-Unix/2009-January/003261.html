@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] re: quotas - My math stinks!  SOLVED!
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20re%3A%20quotas%20-%20My%20math%20stinks%21%20%20SOLVED%21&In-Reply-To=8019F9E5-975C-40EE-A99E-E48174E9BAD3%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003260.html">
+   <LINK REL="Next"  HREF="003262.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] re: quotas - My math stinks!  SOLVED!</H1>
+    <B>Charles Howse</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20re%3A%20quotas%20-%20My%20math%20stinks%21%20%20SOLVED%21&In-Reply-To=8019F9E5-975C-40EE-A99E-E48174E9BAD3%40secure-computing.net"
+       TITLE="[X-Unix] re: quotas - My math stinks!  SOLVED!">chowse at charter.net
+       </A><BR>
+    <I>Sun Jan 11 08:20:42 PST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003260.html">[X-Unix] re: quotas - My math stinks!
+</A></li>
+        <LI>Next message: <A HREF="003262.html">[X-Unix] re: quotas - My math stinks!  SOLVED!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3261">[ date ]</a>
+              <a href="thread.html#3261">[ thread ]</a>
+              <a href="subject.html#3261">[ subject ]</a>
+              <a href="author.html#3261">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I'd like to give a BIG, PUBLIC &quot;THANK YOU&quot; to Eric Crist for helping  
+tremendously in the solution to this.
+
+To recap briefly...
+My daughter was using my account on the Mac for her browsing,  
+downloading, etc.
+I decided she should use her own danged account and stop trashing my  
+'neat' account.
+I changed some things to force her to log into her own account  
+whenever she sat down.
+Then, as root, I moved all her files to her home directory.
+Those files were owned by me, since they were created using my account.
+Thus the huge difference between du and repquota, because du reports  
+files owned by any user under the specified directory, ex. du -dk1 / 
+Users/randi showed all my files and what few she had at that time,  
+while repquota reported files owned by a specific user no matter what  
+the path.
+I chowned my files to her, and things got better (closer to the  
+difference between du and repquota) right away.
+
+The current difference between du and repquota is only about 32G, with  
+repquota being the larger of the two, as it should.
+After doing: find / -user randi -exec ls -lah {} ;
+the suspect files are in /var, /tmp, and /Library.
+They exist because of normal OS X behavior...creating caches, logs,  
+temp files and the like.
+
+So basically, my assumption that we were confused by the difference in  
+the way du and repqouta work was correct.  I should have only used  
+repqouta to see how much disk space she is using.
+
+FYI: I've given her a soft quota limit of 10G, and a hard limit of  
+10.2G, with 7 days grace period.  She's currently at about 2.3G.
+
+Thanks to everyone for contributing to the thinking process!
+
+--
+Later,
+Charles
+<A HREF="http://bubbabbq.homeunix.net">http://bubbabbq.homeunix.net</A>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003260.html">[X-Unix] re: quotas - My math stinks!
+</A></li>
+	<LI>Next message: <A HREF="003262.html">[X-Unix] re: quotas - My math stinks!  SOLVED!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3261">[ date ]</a>
+              <a href="thread.html#3261">[ thread ]</a>
+              <a href="subject.html#3261">[ subject ]</a>
+              <a href="author.html#3261">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

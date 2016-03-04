@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [P1] Networking, step by step
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20Networking%2C%20step%20by%20step&In-Reply-To=7C3B5826.4ABC894F.0236804B%40aol.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="009049.html">
+   <LINK REL="Next"  HREF="009050.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[P1] Networking, step by step</H1>
+    <B>J.C. Webber III</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20Networking%2C%20step%20by%20step&In-Reply-To=7C3B5826.4ABC894F.0236804B%40aol.com"
+       TITLE="[P1] Networking, step by step">jcw at kingoblio.com
+       </A><BR>
+    <I>Sun Feb 29 12:44:46 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="009049.html">[P1] Networking, step by step
+</A></li>
+        <LI>Next message: <A HREF="009050.html">[P1] Newbie question:  iBook upgrades?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9066">[ date ]</a>
+              <a href="thread.html#9066">[ thread ]</a>
+              <a href="subject.html#9066">[ subject ]</a>
+              <a href="author.html#9066">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="../../../mailman/listinfo/ibook.html">JMteacher at aol.com</A> wrote:
+&gt;<i> I've been following this discussion, hoping that my problem will be
+</I>&gt;<i> addresses.  I tried to access the site mentioned but got the message
+</I>&gt;<i> url not found.  Is there another site anyone can recommend?  I have
+</I>&gt;<i> attached my flat panel iMac with an ethernet cable to a Motorola
+</I>&gt;<i> WR450G router (both wired &amp; wireless) &amp; my ibook accesses the net
+</I>&gt;<i> wirelessly throught the router.  Do I need to attach the ibook with an
+</I>&gt;<i> eth.  cable to share a printer?  I can't seem to be able to do it. 
+</I>&gt;<i> TIA
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>
+Two things to look for.  First, make sure the iMac is setup to share the
+printer (assuming the printer is attached to the iMac).  Check System
+Preferences-&gt;Sharing and make sure Printer Sharing is checked under the
+Services tab.
+
+Next, make sure both systems are on the same subnet.  I don't think
+sharing works unless they are.  Presuming you are using a subnet mask of
+255.255.255.0 (configurable in your router's DHCP service) and one of
+your machines is on the 192.168.1 net, then the other can not be on the
+192.168.3 net (or the 10.0.1 net, for that matter).  You will either
+need to put them both on the same net, or widen your netmask to
+255.255.252.0 so that both machines to appear on the same net (for the
+192.168 example, not the 10.0 example).
+
+With printer sharing turned on and both machines on the same net,
+the printer should just show up in the printers list now.
+
+I think you can get around this issue (machines not on the same net) if
+you use IP printing, but that's another story for another day...
+
+-- 
+J.C. Webber III       
+Technical Lead, Unix System Administrator
+<A HREF="../../../mailman/listinfo/ibook.html">jcw at kingoblio.com</A>       www.kingoblio.com
+Please, if you use Windows, do not add my address to your Address Book.
+I do not wish to be spammed or have my email address hijacked by a virus
+and used for fraudulent purposes.  Thank you.
+If you use a Mac, never mind.  Mac's don't get viruses.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="009049.html">[P1] Networking, step by step
+</A></li>
+	<LI>Next message: <A HREF="009050.html">[P1] Newbie question:  iBook upgrades?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9066">[ date ]</a>
+              <a href="thread.html#9066">[ thread ]</a>
+              <a href="subject.html#9066">[ subject ]</a>
+              <a href="author.html#9066">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to set up initial xterm defaults (or what do you use as a xterm on the Mac)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20set%20up%20initial%20xterm%20defaults%20%28or%20what%20do%20you%20use%20as%20a%20xterm%20on%20the%20Mac%29&In-Reply-To=list-12542735%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000760.html">
+   <LINK REL="Next"  HREF="000762.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to set up initial xterm defaults (or what do you use as a xterm on the Mac)</H1>
+    <B>Eugene Lee</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20set%20up%20initial%20xterm%20defaults%20%28or%20what%20do%20you%20use%20as%20a%20xterm%20on%20the%20Mac%29&In-Reply-To=list-12542735%40mail.ninewire.com"
+       TITLE="[X-Unix] How to set up initial xterm defaults (or what do you use as a xterm on the Mac)">list-themacintoshguy at fsck.net
+       </A><BR>
+    <I>Tue May  4 00:22:07 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000760.html">[X-Unix] How to set up initial xterm defaults (or what do you use as a xterm on the Mac)
+</A></li>
+        <LI>Next message: <A HREF="000762.html">[X-Unix] deleting files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#761">[ date ]</a>
+              <a href="thread.html#761">[ thread ]</a>
+              <a href="subject.html#761">[ subject ]</a>
+              <a href="author.html#761">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Mon, May 03, 2004 at 08:17:59PM -0400, Juan Manuel Palacios wrote:
+:<i> 
+</I>:<i> 	Hey Eugene, thanks for the tip! Needless to say, it worked like a 
+</I>:<i> charm. Now, I find my Terminal.app experience to be the best and 
+</I>:<i> therefore I wish to mimic it whenever the use of xterm is inevitable, 
+</I>:<i> and the only things left, I think, are the background and font colors. 
+</I>
+This stuff is in the xterm man page:
+
+	xterm -bg color1 -fg color2
+
+:<i> In Terminal.app I have both of these set to black and green, 
+</I>:<i> respectively, like in the old days... ;-) Is there any way I can preset 
+</I>:<i> them in the /etc/X11/xinit/xinitrc config file?
+</I>
+Those settings are not exactly set in your ~/.xinitrc file (BTW, you
+shouldn't touch the system xinitrc file as a general rule).  The normal
+way is via your xterm resources stored in your ~/.Xresources file that
+is read by xrdb within your ~/.xinitrc file.  For example, let's say you
+like a blue background and white text.  You can either do it per-xterm:
+
+	xterm -bg blue -fg white
+
+or make it a &quot;global&quot; setting for all of your xterms by adding these
+lines to your ~/.Xresources file and restart X11.app(*):
+
+	XTerm*VT100*background:		blue
+	XTerm*VT100*foreground:		white
+
+(*) Technically, there are other ways besides restarting X11.app, but
+I'll let other people volunteer their explanations.  :-)
+
+:<i> I think I might want to 
+</I>:<i> use different colors for clarity's sake, but knowing how to set them in 
+</I>:<i> the first place is a major plus. Now, I know I spoke about the xterm 
+</I>:<i> man page and that you pointed me to the X one, but pleeeaassseee.... 
+</I>:<i> they're long! Can I be indulged here with a new tip, pretty please??
+</I>
+The man page does get a bit long in the tooth.  One alternative is to
+use a OS X app that not only formats the man page in a nice GUI window
+but also presents other useful features like searches.
+
+
+-- 
+Eugene Lee
+<A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000760.html">[X-Unix] How to set up initial xterm defaults (or what do you use as a xterm on the Mac)
+</A></li>
+	<LI>Next message: <A HREF="000762.html">[X-Unix] deleting files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#761">[ date ]</a>
+              <a href="thread.html#761">[ thread ]</a>
+              <a href="subject.html#761">[ subject ]</a>
+              <a href="author.html#761">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

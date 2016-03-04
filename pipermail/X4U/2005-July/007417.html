@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Applescript to remove spare drive
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Applescript%20to%20remove%20spare%20drive&In-Reply-To=BEF2C787.274A7%25billwhite%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="007413.html">
+   <LINK REL="Next"  HREF="007427.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Applescript to remove spare drive</H1>
+    <B>Scott</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Applescript%20to%20remove%20spare%20drive&In-Reply-To=BEF2C787.274A7%25billwhite%40mac.com"
+       TITLE="[X4U] Applescript to remove spare drive">scott-xlists at scotist.com
+       </A><BR>
+    <I>Thu Jul  7 15:52:32 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="007413.html">[X4U] Applescript to remove spare drive
+</A></li>
+        <LI>Next message: <A HREF="007427.html">[X4U] Applescript to remove spare drive
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7417">[ date ]</a>
+              <a href="thread.html#7417">[ thread ]</a>
+              <a href="subject.html#7417">[ subject ]</a>
+              <a href="author.html#7417">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jul 7, 2005, at 8:50 AM, Bill White wrote:
+
+&gt;<i> On 7/7/05 11:36 AM, Simon Forster &lt;<A HREF="../../../mailman/listinfo/x4u.html">simon-lists at ldml.com</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;&gt;<i> try
+</I>&gt;&gt;&gt;<i>     tell application &quot;Finder&quot; to eject &quot;Spare&quot;
+</I>&gt;&gt;&gt;<i> end try
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The second one should be:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> tell application &quot;Finder&quot; to eject disk &quot;Spare&quot;
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Actually, both &quot;eject&quot; or &quot;eject disk&quot; work fine, as long as the  
+</I>&gt;<i> disk is
+</I>&gt;<i> mounted. Both of these work fine for me running 10.4.1.
+</I>&gt;<i>
+</I>&gt;<i> -- Bill
+</I>
+Throw in an on error clause.  Then maybe it will tell you what the  
+problem is.
+
+
+tell application &quot;Finder&quot;
+     try
+         eject disk &quot;spare&quot;
+     on error errText
+         display alert errText
+     end try
+end tell
+
+If it says &quot;finder can't get disk 'spare'&quot;, try adding a short delay   
+before the eject disk clause. &quot;delay n&quot; will pause for n seconds.
+
+-- 
+Scott
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="007413.html">[X4U] Applescript to remove spare drive
+</A></li>
+	<LI>Next message: <A HREF="007427.html">[X4U] Applescript to remove spare drive
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7417">[ date ]</a>
+              <a href="thread.html#7417">[ thread ]</a>
+              <a href="subject.html#7417">[ subject ]</a>
+              <a href="author.html#7417">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Widget Defaults
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX4U%5D%20Widget%20Defaults&In-Reply-To=%3CBANLkTim%2BY-b_14wzh3CoWHd42WL%2B6C_vig%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="025550.html">
+   <LINK REL="Next"  HREF="025551.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X4U] Widget Defaults</H1>
+    <B>John Erdman</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX4U%5D%20Widget%20Defaults&In-Reply-To=%3CBANLkTim%2BY-b_14wzh3CoWHd42WL%2B6C_vig%40mail.gmail.com%3E"
+       TITLE="[X4U] Widget Defaults">jperdman at gmail.com
+       </A><BR>
+    <I>Tue May 31 10:14:04 PDT 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="025550.html">[X4U] Widget Defaults
+</A></li>
+        <LI>Next message: <A HREF="025551.html">[X4U] Connecting iPhone to a digital projector
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#25552">[ date ]</a>
+              <a href="thread.html#25552">[ thread ]</a>
+              <a href="subject.html#25552">[ subject ]</a>
+              <a href="author.html#25552">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>That helped a bunch.
+
+I didn't know about the killall Dock command. And the key to making it
+work was making a copy of the system version of Stickies widget and
+pasting a copy of it in my own library.  ie  ~/Library/Widgets.  That
+took care of the permissions problems I was having.
+
+These instructions worked fine in Snow Leopard. I'm guessing that
+they'l work fine in 10,5 too.
+
+To change the default font in Stickies to one of the stock fonts
+included in the widget do this.
+
+Make a copy of the Stickies widget in your own library.
+Change the name of the Stickies package to something meaningful to you.
+Open with right click Show Package contents&quot;
+Open the Stickies.js file with yr text editor. ( used free Text Wrangler)
+Look for the section labeled Preferences
+
+Change the line
+var kDefaultFont  = &quot;MarkerFelt-Thin&quot;;
+
+to
+var kDefaultFont  = &quot;Helvetica&quot;;
+(or what ever font you want. Choose from the list on the Sticky info button. )
+Or install one using the method in Slydude's earlier posting.
+
+The Save the modified file.
+
+Then run the killall Dock command from Terminal Double click on yr
+customised Stickies package to start it .
+
+Et voil&#224;.  The new notes now have a new default font.
+
+Thaks for your help Slydude!
+
+On Tue, May 31, 2011 at 9:28 AM, John Erdman &lt;<A HREF="../../../mailman/listinfo/x4u.html">jperdman at gmail.com</A>&gt; wrote:
+&gt;<i> This looks like it's just what I was looking for. In my ignorance of
+</I>&gt;<i> JS I missed some of the line changes. I'll try this out and report
+</I>&gt;<i> back. Won't get to it till later Tuesday, however.
+</I>&gt;<i>
+</I>&gt;<i> Don't know how I missed this link, but thanks a lot for yr help.
+</I>&gt;<i> John
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Mon, May 30, 2011 at 3:51 PM, Sylvester Roque
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x4u.html">slysdigests at suddenlink.net</A>&gt; wrote:
+</I>&gt;&gt;<i> John I found this link but have not tried the procedure myself. It involves editing some of the HTML and JavaScript in the widget. &#160;Doesn't appear to be too com,plicated though.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> <A HREF="http://hints.macworld.com/article.php?story=20110422084416112">http://hints.macworld.com/article.php?story=20110422084416112</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Slydude
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On May 30, 2011, at 2:00 PM, <A HREF="../../../mailman/listinfo/x4u.html">x4u-request at listserver.themacintoshguy.com</A> wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Today's Topics:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> &#160; 1. Widget Defaults (John Erdman)
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> ----------------------------------------------------------------------
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Message: 1
+</I>&gt;&gt;&gt;<i> Date: Sun, 29 May 2011 23:31:55 -0400
+</I>&gt;&gt;&gt;<i> From: John Erdman &lt;<A HREF="../../../mailman/listinfo/x4u.html">jperdman at gmail.com</A>&gt;
+</I>&gt;&gt;&gt;<i> To: <A HREF="../../../mailman/listinfo/x4u.html">X4U at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;&gt;<i> Subject: [X4U] Widget Defaults
+</I>&gt;&gt;&gt;<i> Message-ID: &lt;<A HREF="../../../mailman/listinfo/x4u.html">618181D6-62EA-4A19-8477-43E91EF457CD at gmail.com</A>&gt;
+</I>&gt;&gt;&gt;<i> Content-Type: text/plain; charset=us-ascii
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Can anyone point me to some instructions to set the default font i OSX Widgets. &#160;The Stickies app. &#160;I found some instructions for 10.4 sickies but they do not work for Snow Leopard. &#160;I found the .js file that defines the default font in the Widgets library but I've not been able to save any changes to the file even after changing my permissions for the file and containing folders.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Also not sure if permissions is what O need to change when trying to change the content of the Stickies widget package. Anyone know how ti change the Stickies default fonts?
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Thanks
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> John
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> ------------------------------
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;&gt;<i> X4U mailing list
+</I>&gt;&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">X4U at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">http://listserver.themacintoshguy.com/mailman/listinfo/x4u</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Seven Cent Deals - Great legacy stuff Great Legacy Price
+</I>&gt;&gt;&gt;<i> <A HREF="http://www.drbott.com/prod/db.lasso?cat=Seven+Cent+Deal">http://www.drbott.com/prod/db.lasso?cat=Seven+Cent+Deal</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> End of X4U Digest, Vol 79, Issue 11
+</I>&gt;&gt;&gt;<i> ***********************************
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> X4U mailing list
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">X4U at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">http://listserver.themacintoshguy.com/mailman/listinfo/x4u</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Seven Cent Deals - Great legacy stuff Great Legacy Price
+</I>&gt;&gt;<i> <A HREF="http://www.drbott.com/prod/db.lasso?cat=Seven+Cent+Deal">http://www.drbott.com/prod/db.lasso?cat=Seven+Cent+Deal</A>
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I></PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="025550.html">[X4U] Widget Defaults
+</A></li>
+	<LI>Next message: <A HREF="025551.html">[X4U] Connecting iPhone to a digital projector
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#25552">[ date ]</a>
+              <a href="thread.html#25552">[ thread ]</a>
+              <a href="subject.html#25552">[ subject ]</a>
+              <a href="author.html#25552">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

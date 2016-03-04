@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: Root Exploit via sudo
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Root%20Exploit%20via%20sudo&In-Reply-To=7FCDBC939F90FF48BF910CA2BB90D482023AF181%40ibfftpspe1n006.de.ad.drkw.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001737.html">
+   <LINK REL="Next"  HREF="001746.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: Root Exploit via sudo</H1>
+    <B>Timothy Luoma</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Root%20Exploit%20via%20sudo&In-Reply-To=7FCDBC939F90FF48BF910CA2BB90D482023AF181%40ibfftpspe1n006.de.ad.drkw.net"
+       TITLE="[X-Unix] Re: Root Exploit via sudo">lists at tntluoma.com
+       </A><BR>
+    <I>Tue Apr 12 13:53:56 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001737.html">[X-Unix] Re: Root Exploit via sudo
+</A></li>
+        <LI>Next message: <A HREF="001746.html">[X-Unix] Re: Root Exploit via sudo
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1741">[ date ]</a>
+              <a href="thread.html#1741">[ thread ]</a>
+              <a href="subject.html#1741">[ subject ]</a>
+              <a href="author.html#1741">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Apr 12, 2005, at 8:58 AM, Kuestner, Bjoern wrote:
+
+&gt;&gt;<i> if you simply change the place where sudo logs to,
+</I>&gt;&gt;<i> the security hazard is removed without added inconvenience.
+</I>&gt;<i>
+</I>&gt;<i> I think you have to not only change the place but also
+</I>&gt;<i> a) secure that a script cannot easily read from a config file the new
+</I>&gt;<i> location
+</I>&gt;<i> b) better, secure the permission for the new log file.
+</I>
+If you read the official note at
+<A HREF="http://www.securityfocus.com/archive/1/395107/2005-04-03/2005-04-09/0">http://www.securityfocus.com/archive/1/395107/2005-04-03/2005-04-09/0</A>
+
+it will recommend to change the logging to /var/log/secure.log which is 
+owned by root and chmod 600 by default
+
+&gt;<i> Even then I'm not sure if that is secure enough for the paranoid (does 
+</I>&gt;<i> not include me). But as the devil's advocate I could imagine a script 
+</I>&gt;<i> that tries to run a sudo command every four minutes. I don't think 
+</I>&gt;<i> you're blocked in any way if you fail with a sudo attempt. So sooner 
+</I>&gt;<i> or later an attempt will succeed because the user happened to use sudo 
+</I>&gt;<i> 2 minutes before that.
+</I>
+True, however if someone can login to an account with admin privileges 
+then you already have security problems.
+
+&gt;<i> I guess the only secure way for OS X and other Unixish systems is to 
+</I>&gt;<i> remove the grace period after a sudo command.
+</I>
+The tty restriction:
+
+Defaults:ALL  tty_tickets
+
+is a good one.
+
+I'm concerned that removing the grace period entirely would lead people 
+to choose weaker passwords, which is a much bigger security threat.
+
+TjL
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001737.html">[X-Unix] Re: Root Exploit via sudo
+</A></li>
+	<LI>Next message: <A HREF="001746.html">[X-Unix] Re: Root Exploit via sudo
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1741">[ date ]</a>
+              <a href="thread.html#1741">[ thread ]</a>
+              <a href="subject.html#1741">[ subject ]</a>
+              <a href="author.html#1741">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

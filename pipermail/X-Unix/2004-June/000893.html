@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] syslogd problems
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20syslogd%20problems&In-Reply-To=list-13803125%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000891.html">
+   <LINK REL="Next"  HREF="000894.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] syslogd problems</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20syslogd%20problems&In-Reply-To=list-13803125%40mail.ninewire.com"
+       TITLE="[X-Unix] syslogd problems">magill at mcgillsociety.org
+       </A><BR>
+    <I>Wed Jun  9 08:48:12 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000891.html">[X-Unix] sync Address Book and PostgreSQL?
+</A></li>
+        <LI>Next message: <A HREF="000894.html">[X-Unix] Question about the latest security updates
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#893">[ date ]</a>
+              <a href="thread.html#893">[ thread ]</a>
+              <a href="subject.html#893">[ subject ]</a>
+              <a href="author.html#893">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 08 Jun, 2004, at 13:17, Kevin Stevens wrote:
+&gt;<i> Or I could just pull them from my FreeBSD box.  ;)  Didn't realize they
+</I>&gt;<i> were the same.  Does that mean that I should be able to cross-reference
+</I>&gt;<i> userland executable issues in general, or just expect the same
+</I>&gt;<i> functionality?  FreeBSD 4.x or 5.x?
+</I>&gt;<i>
+</I>&gt;<i> ... (checking)
+</I>&gt;<i> Well, I already see one potential problem.  -u per the BSD man page
+</I>&gt;<i> enables unique priority logging, while per the OS X man page it sets 
+</I>&gt;<i> UDP
+</I>&gt;<i> mode!  No wonder I was having trouble getting it to work!
+</I>&gt;<i> grr...
+</I>
+It depends.
+Apple does not simply implement ALL of FreeBSD. Nor is it &quot;current.&quot; I 
+believe Darwin is now &quot;based&quot; on 4.5, but I'd have to go through the 
+Darwin website and read up.
+
+&gt;<i> Maybe.  But by &quot;unresponsive&quot; I mean that the mouse will move around 
+</I>&gt;<i> the
+</I>&gt;<i> screen, but won't activate/bring forward different running windows 
+</I>&gt;<i> (though
+</I>&gt;<i> the window contents, for example 'top', keep refreshing).  That doesn't
+</I>&gt;<i> seem very disk-ish.  How would I check, some incantation of vmstat or
+</I>&gt;<i> iostat?
+</I>
+Sounds more like a memory subsystem issue.
+
+I don't have enough experience with the memory management scheme used 
+in Darwin, and I've never read an &quot;academic&quot; analysis of it, or 
+comparison with other schemes, so this is speculation based on 
+experience with other virtual memory management schemes and their 
+problems. Virtual memory is not as much a &quot;done deal&quot; as it seems to 
+be. It means different things to different people, and it is 
+implemented differently, as well as with different assumptions by 
+virtually every OS.
+
+ From comments I've read and some empirical information, it appears that 
+Darwin attempts to keep &quot;maximum stuff for a program in physical 
+memory&quot; if at all possible. Possibly with minimal garbage collection.
+
+One problem which memory management schemes exhibit is that they 
+perform differently, frequently significantly, when only one program is 
+running compared to when multiple programs are contesting for 
+resources. &quot;One program&quot; really means -- N-programs, all of which fit 
+into physical memory. These characteristics are also influenced by the 
+design and construction of the individual programs involved. 
+Frequently, the &quot;expectations&quot; that the user has about how a program 
+works is quite different from those of the original programmer.
+
+That is to say, if there is only one program running, and it has a 
+large data space (like syslogd would after a time running) it could 
+completely fill all of physical memory and all of swap, even though 
+much or most of the space is occupied by data which will not be 
+referenced again... typical of a logging situation. This means that for 
+a new program to launch, the memory subsystem first has to do 
+significant garbage collection and cleanup.
+
+One &quot;user expectation&quot; about syslogd is that it is a very limited 
+program in its resource demands. However, since it is written to be a 
+&quot;dynamic&quot; program, which will not suddenly fail because the volume of 
+data for its buffers exceeds what the programmer decided was &quot;a 
+reasonable amount,&quot; that is undoubtedly an &quot;unreasonable&quot; assumption.
+
+I suspect that the only thing which will tell you what is happening is 
+something like the old unix Profiler application, which requirers that 
+the hooks be compiled in.  If Darwin implemented System Accounting, it 
+might be possible to find out fairly painlessly what any given 
+application was actually doing and how it was interacting with the 
+operating system. The problem is that such things generate sufficient 
+overhead that they are eliminated from virtually all modern operating 
+system implementations to enhance performance. (Not to mention the fact 
+that their usage is more than slightly arcane.) Consequently one has to 
+find and install them and hope that they actually do integrate 
+correctly.
+
+In the end, suspect you will discover that you are not seeing a bug, 
+but rather &quot;unexpected, but correct&quot; behavior.
+
+One clue would be ... if you play with the system in its sluggish 
+state, does its performance improve over time? ... where time is a 
+parameter defined in the same sense that the timers in SMTP are 
+defined. (Which are NOT as short as most people assume them to be.)
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000891.html">[X-Unix] sync Address Book and PostgreSQL?
+</A></li>
+	<LI>Next message: <A HREF="000894.html">[X-Unix] Question about the latest security updates
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#893">[ date ]</a>
+              <a href="thread.html#893">[ thread ]</a>
+              <a href="subject.html#893">[ subject ]</a>
+              <a href="author.html#893">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Panther network functionality
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Panther%20network%20functionality&In-Reply-To=list-9404011%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011412.html">
+   <LINK REL="Next"  HREF="011414.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Panther network functionality</H1>
+    <B>Chris Olson</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Panther%20network%20functionality&In-Reply-To=list-9404011%40mail.ninewire.com"
+       TITLE="[Ti] Panther network functionality">chris at astcomm.net
+       </A><BR>
+    <I>Fri Nov 21 20:42:00 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011412.html">[Ti] Panther network functionality
+</A></li>
+        <LI>Next message: <A HREF="011414.html">[Ti] Panther network functionality
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11413">[ date ]</a>
+              <a href="thread.html#11413">[ thread ]</a>
+              <a href="subject.html#11413">[ subject ]</a>
+              <a href="author.html#11413">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Nov 21, 2003, at 10:25 PM, Barry Lyden wrote:
+
+&gt;<i> I would think that you could also use AppleScript to mount a series of 
+</I>&gt;<i> drives and set the script to run automatically at login time. Does 
+</I>&gt;<i> anyone have experience doing this?
+</I>
+I do lots of things with AppleScript, but you don't need AppleScript to 
+do this.
+
+Once you have a share mounted, you can simply drag it to the Dock, or 
+to the &quot;startup items&quot; section in the System Prefs under your account 
+information.  It will then let you either single click it to mount from 
+the Dock, or auto-mount on login.
+
+If you're more technically inclined and like to fiddle with things:
+Open your Script Editor (found in /Applications/Apple Script/) and cut 
+and past the following into it:
+
+tell application &quot;Finder&quot;
+	mount volume &quot;<A HREF="smb://username:password@192.168.1.1/share">smb://username:password@192.168.1.1/share</A> name&quot;
+end tell
+
+replacing username, password, ip address, and share name specific for 
+what you use. Save this script as an application in the menu (File -&gt; 
+Save As -&gt;) and in the dialog select 'Application' for file format, and 
+enter the desired name of your scripted application.  Double clicking 
+the icon for this script will mount the server. or if you want it to be 
+automatic, add the script to your System Preferences - &gt; Accounts -&gt; 
+Startup Items tab. You can add as many mount lines for different 
+servers in that script as you want. When you log on it will 
+automatically mount your network servers/shares in Finder. If one is 
+not available when you log on the Script will display an error and halt 
+execution, so I recommend making a separate script for each server or 
+share you want to auto-mount.
+--
+Chris
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011412.html">[Ti] Panther network functionality
+</A></li>
+	<LI>Next message: <A HREF="011414.html">[Ti] Panther network functionality
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11413">[ date ]</a>
+              <a href="thread.html#11413">[ thread ]</a>
+              <a href="subject.html#11413">[ subject ]</a>
+              <a href="author.html#11413">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Finding duplicates
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Finding%20duplicates&In-Reply-To=list-14406100%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000992.html">
+   <LINK REL="Next"  HREF="000994.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Finding duplicates</H1>
+    <B>Philip J Robar</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Finding%20duplicates&In-Reply-To=list-14406100%40mail.ninewire.com"
+       TITLE="[X-Unix] Finding duplicates">philip.robar at myrealbox.com
+       </A><BR>
+    <I>Mon Jun 28 14:01:13 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000992.html">[X-Unix] Using SYSLOG
+</A></li>
+        <LI>Next message: <A HREF="000994.html">[X-Unix] Using SYSLOG
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#993">[ date ]</a>
+              <a href="thread.html#993">[ thread ]</a>
+              <a href="subject.html#993">[ subject ]</a>
+              <a href="author.html#993">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jun 28, 2004, at 9:44 AM, peter boardman wrote:
+
+&gt;<i> Is there a clever way to find files that are identical to each other?
+</I>&gt;<i> (I know that diff can compare two files, I&#8217;m wondering how to find
+</I>&gt;<i> them...)
+</I>
+You could do this with ksh, awk, Perl, etc. Something like this comes 
+to mind:
+
+for all files below this point
+	filesChecksum = checksum file				# check sum almost always uniquely 
+identifies a file
+	files{fileName} = filesChecksum			# Save a file's checksum with its 
+name as the index
+	increment checksums{filesChecksum}		# count how many times we've seen 
+this checksum
+
+for every checksum in checksums
+	if checksums{checksum} &gt; 1				# Found duplicate files - more then one 
+file had the same checksum
+		for every file in files					# Look for them in the array of files
+			if files{file} equals checksum		# Found one of the duplicates
+				print  &quot;duplicates:&quot; file checksum
+
+
+I found several OS X programs on Version Tracker and MacUpDate that do 
+what you want.
+
+
+Phil
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000992.html">[X-Unix] Using SYSLOG
+</A></li>
+	<LI>Next message: <A HREF="000994.html">[X-Unix] Using SYSLOG
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#993">[ date ]</a>
+              <a href="thread.html#993">[ thread ]</a>
+              <a href="subject.html#993">[ subject ]</a>
+              <a href="author.html#993">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MacDV] Re:  Converting 4:3 to 16:9
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20%20Converting%204%3A3%20to%2016%3A9&In-Reply-To=47286ab135133989a8d1f57dec57eb97%40squareblue.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="013867.html">
+   <LINK REL="Next"  HREF="013869.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MacDV] Re:  Converting 4:3 to 16:9</H1>
+    <B>sb</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20%20Converting%204%3A3%20to%2016%3A9&In-Reply-To=47286ab135133989a8d1f57dec57eb97%40squareblue.com"
+       TITLE="[MacDV] Re:  Converting 4:3 to 16:9">videovideo at mac.com
+       </A><BR>
+    <I>Mon Oct 10 12:35:45 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="013867.html">[MacDV] Re:  Converting 4:3 to 16:9
+</A></li>
+        <LI>Next message: <A HREF="013869.html">[MacDV] Re:  Converting 4:3 to 16:9
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13868">[ date ]</a>
+              <a href="thread.html#13868">[ thread ]</a>
+              <a href="subject.html#13868">[ subject ]</a>
+              <a href="author.html#13868">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Perhaps we mean the same thing.
+
+When you start with a DVNTSC image, 480 lines, each pixel across is on one
+line or field. The size of the pixel is a fixed value.
+When you scale the image up, (or zoom in) the number of lines or fields
+stays the same. Your one original pixel has to be interpolated into 2 or
+more pixels, so as the keep one pixel per line.
+
+It's the same when you scale down. You still have the same number of lines
+or fields. And, each field or line has only 1 pixel of the same fixed value.
+
+Try this to illustrate:
+
+Look at a frame of video that has motion in FCP's canvas, in Image +
+Wireframe. Set it to view at 100%, where you can see the scan lines on the
+motion.
+Scale up the image using either the Motion tab, or just grabbing a corner
+and pulling out. 
+Your scan lines don't change. More pixels have been extrapolated, but you
+still have the same number of lines.
+
+The amount of jaggies or other artifacting relates to the algorithm used to
+create or extrapolate the additional pixels. Better software does a better
+job. Scaling up by 33% should be acceptable in FCP, 200% would most likely
+look bad.
+
+ regards,
+
+ sb
+
+On 10/10/05 8:29 AM, &quot;Mark M.Florida&quot; &lt;<A HREF="../../../mailman/listinfo/macdv.html">markf at squareblue.com</A>&gt; wrote:
+
+&gt;<i> On Oct 6, 2005, at 6:11 PM, sb wrote:
+</I>&gt;<i> 
+</I>&gt;&gt;<i> Interlacing doesn't scale, the pixels do. The line size doesn't change.
+</I>&gt;<i> 
+</I>&gt;<i> Hold on just a sec.  How do you think a frame of digital video is
+</I>&gt;<i> interlaced?  Each row of pixels is a different field.  Example:
+</I>&gt;<i> 
+</I>&gt;<i> Here's your interlaced video signal at 100% scale (1 is field 1, 2 is
+</I>&gt;<i> field 2):
+</I>&gt;<i> 
+</I>&gt;<i> 11111111111111111111111111111
+</I>&gt;<i> 22222222222222222222222222222
+</I>&gt;<i> 11111111111111111111111111111
+</I>&gt;<i> 22222222222222222222222222222
+</I>&gt;<i> 11111111111111111111111111111
+</I>&gt;<i> 22222222222222222222222222222
+</I>&gt;<i> 11111111111111111111111111111
+</I>&gt;<i> 22222222222222222222222222222
+</I>&gt;<i> 
+</I>&gt;<i> If you blow that up 200%, the video will look like this in the same
+</I>&gt;<i> viewable area:
+</I>&gt;<i> 
+</I>&gt;<i> 11111111111111111111111111111
+</I>&gt;<i> 11111111111111111111111111111
+</I>&gt;<i> 22222222222222222222222222222
+</I>&gt;<i> 22222222222222222222222222222
+</I>&gt;<i> 11111111111111111111111111111
+</I>&gt;<i> 11111111111111111111111111111
+</I>&gt;<i> 22222222222222222222222222222
+</I>&gt;<i> 22222222222222222222222222222
+</I>&gt;<i> 
+</I>&gt;<i> So, that's how the interlacing scales.  Interlacing isn't magic -- it's
+</I>&gt;<i> just pixels, so if you scale the pixels, the interlacing is scaled as
+</I>&gt;<i> well, and you will see the lines prominently, especially in areas of
+</I>&gt;<i> motion.
+</I>
+No, this would happen in PS, but not video.
+ 
+&gt;<i> On the other hand, if you *de-interlace* the fields first and THEN
+</I>&gt;<i> scale it, it might look better, but de-interlacing involves duplication
+</I>&gt;<i> or interpolation of the interlaced lines of pixels, so it's not going
+</I>&gt;<i> to look perfect.
+</I>&gt;<i> 
+</I>&gt;<i> On the other other hand, if you shoot progressive-scan video, there is
+</I>&gt;<i> no interlacing and the scaling will look much cleaner.
+</I>&gt;<i> 
+</I>&gt;<i> Way more than 2 cents.
+</I>&gt;<i> 
+</I>&gt;<i> - Mark
+</I>
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="013867.html">[MacDV] Re:  Converting 4:3 to 16:9
+</A></li>
+	<LI>Next message: <A HREF="013869.html">[MacDV] Re:  Converting 4:3 to 16:9
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13868">[ date ]</a>
+              <a href="thread.html#13868">[ thread ]</a>
+              <a href="subject.html#13868">[ subject ]</a>
+              <a href="author.html#13868">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

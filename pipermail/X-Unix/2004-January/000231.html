@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] missing man pages
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20missing%20man%20pages&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000286.html">
+   <LINK REL="Next"  HREF="000242.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] missing man pages</H1>
+    <B>torhildr</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20missing%20man%20pages&In-Reply-To="
+       TITLE="[X-Unix] missing man pages">torhildr at mac.com
+       </A><BR>
+    <I>Mon Jan  5 03:46:43 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000286.html">[X-Unix] missing man pages
+</A></li>
+        <LI>Next message: <A HREF="000242.html">[X-Unix] Postfix howto
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#231">[ date ]</a>
+              <a href="thread.html#231">[ thread ]</a>
+              <a href="subject.html#231">[ subject ]</a>
+              <a href="author.html#231">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Jan 5, 2004, at 11:21 AM, Xavier Noria wrote:
+&gt;<i>
+</I>&gt;<i> I see in Terminal.app that MANPATH is empty and manpath(1) returns
+</I>&gt;<i>
+</I>&gt;<i>     /usr/local/man:/usr/share/man
+</I>&gt;<i>
+</I>&gt;<i> Nevertheless, there were some days where I could have messed that up, 
+</I>&gt;<i> because following the instructions in the installation of Qt I set 
+</I>&gt;<i> MANPATH to $QT_MANPATH:$MANPATH, which since MANPATH is empty gave 
+</I>&gt;<i> just the Qt directory (in those days man didn't work right, of 
+</I>&gt;<i> course). I have no idea, do you think some man pages could be deleted 
+</I>&gt;<i> because of that?
+</I>
+Do you have the file:
+/usr/share/man/man3/strerror.3
+?
+
+Your manpath seems to be correct, so I don't think that's the problem.
+You might be simply missing some files.
+Check the following:
+[Tor:share/man/man3] tor% pwd
+/usr/share/man/man3
+[Tor:share/man/man3] tor% ls | wc -l
+     2542
+
+That's from a base install.
+
+Tor
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000286.html">[X-Unix] missing man pages
+</A></li>
+	<LI>Next message: <A HREF="000242.html">[X-Unix] Postfix howto
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#231">[ date ]</a>
+              <a href="thread.html#231">[ thread ]</a>
+              <a href="subject.html#231">[ subject ]</a>
+              <a href="author.html#231">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

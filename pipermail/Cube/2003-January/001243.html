@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [CUBE] Why Sleep (Was PL Upgrade)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20Why%20Sleep%20%28Was%20PL%20Upgrade%29&In-Reply-To=list-4489862%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001242.html">
+   <LINK REL="Next"  HREF="001244.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[CUBE] Why Sleep (Was PL Upgrade)</H1>
+    <B>Tom Davidson</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20Why%20Sleep%20%28Was%20PL%20Upgrade%29&In-Reply-To=list-4489862%40mail.ninewire.com"
+       TITLE="[CUBE] Why Sleep (Was PL Upgrade)">TomD_ALG at robotgroup.org
+       </A><BR>
+    <I>Fri Jan 17 06:38:30 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001242.html">[CUBE] GeForce2 Upgrade and QuartzExtreme problems
+</A></li>
+        <LI>Next message: <A HREF="001244.html">[Cube] ATI Radeon 7500 install
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1243">[ date ]</a>
+              <a href="thread.html#1243">[ thread ]</a>
+              <a href="subject.html#1243">[ subject ]</a>
+              <a href="author.html#1243">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Sleep in a laptop is much easier than a desktop because in a laptop,
+you have control of what hardware is there. The only variables are
+the PCMCIA cards. Even the, sometimes they dont properly power up.
+I've got one laptop that always sleeps and wakes OK, but the 802.11
+card almost never works when it wakes.
+
+Deep sleep is tough to do properly if you dont account for the state
+of every piece of silicon in the computer. There can be interactions between
+videocards, hard drives, USB devices, CD-ROM drives, Airport Cards
+that cause a lockup or improper restart. Even different sub-revisions of 
+these
+may have restart problems. The software has to completely store the state
+of every device in the system on disk before powering down, miss one bit
+and you dont get to power up again properly. Something like a video card
+has dozens of internal registers and up to 64MB of RAM alone. Your hard
+disk has a 2MB or more buffer that has to be flushed to disk or saved, every
+manufacturer has a slightly different command set. Even the processor has
+internal registers that can not be directly read by software, processor 
+revision
+specific instruction sequences have to be executed to completely set the CPU
+to a known state before shutdown and after restore. There are also several
+revisions of the Cube Motherboard, each probably has it's own unique set of
+things that must be done to properly shut down and restore.
+
+The CPU card is one of the least complicated things in the cube, there 
+are only
+3 or 6 chips on it that store any state, the CPU and 2 cache chips. But 
+it's not the
+original CPU revision that the Cube was built with, it's a 7455 not a 
+7400/7410
+But, if  the system software makes some 7400 assumption, it's going to make
+a change in how the system is vs how it should be shut down, all it 
+takes is 1 bit
+in some register somewhere to get the wrong value and you don't reboot.
+
+I do embedded systems design and have an appreication for how utterly 
+complex
+a current computer like the Cube is. There must be at least 10 different 
+microprocessors
+in a Cube system, each with it's own local software running and having 
+volitile storage
+and internal registers.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001242.html">[CUBE] GeForce2 Upgrade and QuartzExtreme problems
+</A></li>
+	<LI>Next message: <A HREF="001244.html">[Cube] ATI Radeon 7500 install
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1243">[ date ]</a>
+              <a href="thread.html#1243">[ thread ]</a>
+              <a href="subject.html#1243">[ subject ]</a>
+              <a href="author.html#1243">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

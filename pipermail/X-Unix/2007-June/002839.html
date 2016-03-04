@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] finding duplicate files
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20finding%20duplicate%20files&In-Reply-To=96C478D7-6F56-4F87-B82D-C1330A9FCCA1%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002838.html">
+   <LINK REL="Next"  HREF="002840.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] finding duplicate files</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20finding%20duplicate%20files&In-Reply-To=96C478D7-6F56-4F87-B82D-C1330A9FCCA1%40secure-computing.net"
+       TITLE="[X-Unix] finding duplicate files">ecrist at secure-computing.net
+       </A><BR>
+    <I>Wed Jun 20 11:54:07 PDT 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002838.html">[X-Unix] finding duplicate files
+</A></li>
+        <LI>Next message: <A HREF="002840.html">[X-Unix] finding duplicate files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2839">[ date ]</a>
+              <a href="thread.html#2839">[ thread ]</a>
+              <a href="subject.html#2839">[ subject ]</a>
+              <a href="author.html#2839">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jun 20, 2007, at 1:47 PMJun 20, 2007, Eric F Crist wrote:
+
+&gt;<i> In case you wanted to know,  you could gzip anything that's not  
+</I>&gt;<i> already gzipped by doing a similar command:
+</I>&gt;<i>
+</I>&gt;<i> perl -e 'foreach $file ( `find . | grep -v .gz` ) { chomp ( $file =  
+</I>&gt;<i> $file ) ; if ( -ne &quot;$file.gz&quot; ) { print &quot;gzipping file: $file; gzip  
+</I>&gt;<i> $file; } }'
+</I>&gt;<i>
+</I>
+Sorry to reply to myself, but I'm wrong!  the line should be:
+
+perl -e 'foreach $file ( `find . | grep -v .gz` ) { chomp ( $file =  
+$file ) ; if ( !-e &quot;$file.gz&quot; ) { print &quot;gzipping file: $file; gzip  
+$file; } }'
+
+-----
+Eric F Crist
+Secure Computing Networks
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002838.html">[X-Unix] finding duplicate files
+</A></li>
+	<LI>Next message: <A HREF="002840.html">[X-Unix] finding duplicate files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2839">[ date ]</a>
+              <a href="thread.html#2839">[ thread ]</a>
+              <a href="subject.html#2839">[ subject ]</a>
+              <a href="author.html#2839">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

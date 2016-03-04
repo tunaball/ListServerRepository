@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] missing man pages
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20missing%20man%20pages&In-Reply-To=list-10068508%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000186.html">
+   <LINK REL="Next"  HREF="000208.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] missing man pages</H1>
+    <B>Juan Manuel Palacios</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20missing%20man%20pages&In-Reply-To=list-10068508%40mail.ninewire.com"
+       TITLE="[X-Unix] missing man pages">jmpalaciosp at eml.cc
+       </A><BR>
+    <I>Sun Jan  4 20:24:09 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000186.html">[X-Unix] missing man pages
+</A></li>
+        <LI>Next message: <A HREF="000208.html">[X-Unix] Postfix howto
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#197">[ date ]</a>
+              <a href="thread.html#197">[ thread ]</a>
+              <a href="subject.html#197">[ subject ]</a>
+              <a href="author.html#197">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+	Just for the sake of confirmation, I'm running latest Panther  
+(10.3.2), updated from Jaguar through &quot;Archive &amp; Install&quot;, and I do  
+have the 'perror' man page:
+
+$[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: dports](215/0,0)-&gt; find /usr/share/man -name  
+&quot;*perror*&quot;
+/usr/share/man/man3/ldap_perror.3
+/usr/share/man/man3/longjmperror.3
+/usr/share/man/man3/perror.3
+/usr/share/man/man3/snmp_perror.3
+/usr/share/man/man3/snmp_sess_perror.3
+$[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: dports](216/0,0)-&gt;
+
+	You should note that I have the developer tools installed, so that's  
+something which you might want to check on (honestly it's what I really  
+think you should check). Also you could check your manpath: how are you  
+setting it, through the environment variable $MANPATH or through the  
+command manpath(1)? In any case make sure /usr/share/man is in your  
+path. And lastly, the exact same errors you get by running 'makewhatis'  
+occur here as well, so it's not something particular to your  
+environment; however I have not investigated to find out what's causing  
+them.
+
+	Hope that helps. Regards,...
+
+
+		Juan
+
+
+On Jan 4, 2004, at 8:52 PM, Xavier Noria wrote:
+
+&gt;<i> No luck. It complained about some missing files (output attached  
+</I>&gt;<i> below) and after running it man perror does not work, and whatis  
+</I>&gt;<i> perror keeps on reporting perror(3).
+</I>&gt;<i>
+</I>&gt;<i> There is no man page for strerror either, though curiously strerror_r  
+</I>&gt;<i> is there:
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">fxn at conway</A>:~% locate strerror
+</I>&gt;<i> /System/Library/Perl/5.8.1/darwin-thread-multi-2level/auto/POSIX/ 
+</I>&gt;<i> strerror.al
+</I>&gt;<i> /usr/local/lib/perl5/5.8.2/darwin-thread-multi-2level/auto/POSIX/ 
+</I>&gt;<i> strerror.al
+</I>&gt;<i> /usr/share/man/man3/strerror_r.3
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">fxn at conway</A>:~%
+</I>&gt;<i>
+</I>&gt;<i> I am a bit lost, I don't know why this is incomplete, and how to fix  
+</I>&gt;<i> it.
+</I>&gt;<i>
+</I>&gt;<i> -- fxn
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">fxn at conway</A>:~% sudo /usr/libexec/makewhatis
+</I>&gt;<i> Password:
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/HMAC.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/HMAC_cleanup.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/HMAC_Final.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/HMAC_Init.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/HMAC_Update.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/MD2.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/MD2_Final.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/MD2_Init.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/MD2_Update.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/MD4.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/MD4_Final.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/MD4_Init.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/MD4_Update.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/MD5.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/MD5_Final.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/MD5_Init.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/MD5_Update.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/MDC2.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/MDC2_Final.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/MDC2_Init.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/MDC2_Update.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/PEM.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/RC4.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/RC4_set_key.3ssl
+</I>&gt;<i> Cannot find file: /usr/share/man/man3/SSL.3ssl
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.   
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your  
+</I>&gt;<i> Mac ISPSerious Mac Internet Solutions From NineWire!    
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older  
+</I>&gt;<i> Mac!Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>   Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;<i>
+</I>&gt;<i> OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s -  
+</I>&gt;<i> <A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000186.html">[X-Unix] missing man pages
+</A></li>
+	<LI>Next message: <A HREF="000208.html">[X-Unix] Postfix howto
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#197">[ date ]</a>
+              <a href="thread.html#197">[ thread ]</a>
+              <a href="subject.html#197">[ subject ]</a>
+              <a href="author.html#197">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

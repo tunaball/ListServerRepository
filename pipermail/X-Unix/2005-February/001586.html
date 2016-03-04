@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: Re: Unlinking a file... illegal characters?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Re%3A%20Unlinking%20a%20file...%20illegal%20characters%3F&In-Reply-To=02f308544bdfdaf423c9ed2e1a894179%40Web.DE">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001583.html">
+   <LINK REL="Next"  HREF="001589.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: Re: Unlinking a file... illegal characters?</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Re%3A%20Unlinking%20a%20file...%20illegal%20characters%3F&In-Reply-To=02f308544bdfdaf423c9ed2e1a894179%40Web.DE"
+       TITLE="[X-Unix] Re: Re: Unlinking a file... illegal characters?">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Sat Feb 26 15:09:51 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001583.html">[X-Unix] Re: Re: Unlinking a file... illegal characters?
+</A></li>
+        <LI>Next message: <A HREF="001589.html">[X-Unix] Re: Re: Unlinking a file... illegal characters?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1586">[ date ]</a>
+              <a href="thread.html#1586">[ thread ]</a>
+              <a href="subject.html#1586">[ subject ]</a>
+              <a href="author.html#1586">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Feb 26, 2005, at 5:24 pm, Peter Dyballa wrote:
+&gt;<i> Am 26.02.2005 um 16:30 schrieb 
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">x-unix-request at listserver.themacintoshguy.com</A>:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Unfortunately so. I've tried a few variations upon this already:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    $ find /Volumes/CLEARLIGHT/foo/legoland -type f -ls
+</I>&gt;&gt;<i>    find: 
+</I>&gt;&gt;<i> /Volumes/CLEARLIGHT/foo/legoland/e&#204;&#8226;y&#204;&#8730;y&#204;&#8730;y&#204;&#8730;vk&#226;&#8710;&#8226;&#226;&#8710;&#8226;..&#226;&#8710;&#8226;&#226;&#8710;&#8226;:
+</I>&gt;&gt;<i> File name too long
+</I>&gt;&gt;<i>    $ find /Volumes/CLEARLIGHT/foo/legoland -type f -print0
+</I>&gt;&gt;<i>    find: 
+</I>&gt;&gt;<i> /Volumes/CLEARLIGHT/foo/legoland/e&#204;&#8226;y&#204;&#8730;y&#204;&#8730;y&#204;&#8730;vk&#226;&#8710;&#8226;&#226;&#8710;&#8226;..&#226;&#8710;&#8226;&#226;&#8710;&#8226;:
+</I>&gt;&gt;<i> File name too long
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> So. I don't get far enough to identify the inode number using `find`.
+</I>&gt;<i>
+</I>&gt;<i> So let's try a recursive listing with ls set up to print names in 
+</I>&gt;<i> &quot;binary&quot;:
+</I>&gt;<i>
+</I>&gt;<i> ls -ARfib /Volumes/CLEARLIGHT/foo/legoland
+</I>
+:<i>(
+</I>
+   $ ls -ARfib /Volumes/CLEARLIGHT/foo/legoland
+   ls: e&#204;&#128;y&#204;&#136;y&#204;&#136;y&#204;&#136;vk&#226;&#144;&#128;&#226;&#144;&#128;..&#226;&#144;&#128;&#226;&#144;&#128;: File name too long
+   $
+
+&gt;<i> -w instead of -b could be desastrous, but -q could be helpful.
+</I>
+$ ls -ARfiw /Volumes/CLEARLIGHT/foo/legoland
+ls: e&#204;&#128;y&#204;&#136;y&#204;&#136;y&#204;&#136;vk&#226;&#144;&#128;&#226;&#144;&#128;..&#226;&#144;&#128;&#226;&#144;&#128;: File name too long
+$ ls -ARfiq /Volumes/CLEARLIGHT/foo/legoland
+ls: e&#204;&#128;y&#204;&#136;y&#204;&#136;y&#204;&#136;vk&#226;&#144;&#128;&#226;&#144;&#128;..&#226;&#144;&#128;&#226;&#144;&#128;: File name too long
+
+&gt;<i> This switch should make ls print all non-7 bit characters as ? -- the 
+</I>&gt;<i> default in Terminal, although you've set it to UTF-8! Apple's too big 
+</I>&gt;<i> meanwhile that one hand does not know what the other is doing ...
+</I>
+Actually, it often _will_ display as question-marks, but othertimes as 
+accented characters.
+
+   $ ls /Volumes/CLEARLIGHT/foo/legoland
+   e??y??y??y??vk??????..??????
+
+I can't help wondering if this might be related to the fact that I'm 
+using iTerm, rather than terminal.app. I also have this strange idea 
+that in some of the emails I've received back from the list the 
+displayed characters have changed some - presumably this is another 
+encoding issue (I use Mail.app).
+
+&gt;<i> ls usually prints the inode number in the first column. I hope that ls 
+</I>&gt;<i> does this first and then finds: that damned file name can't be 
+</I>&gt;<i> printed!
+</I>
+Nope, sorry. But keep watching this space...
+
+Stroller.
+
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001583.html">[X-Unix] Re: Re: Unlinking a file... illegal characters?
+</A></li>
+	<LI>Next message: <A HREF="001589.html">[X-Unix] Re: Re: Unlinking a file... illegal characters?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1586">[ date ]</a>
+              <a href="thread.html#1586">[ thread ]</a>
+              <a href="subject.html#1586">[ subject ]</a>
+              <a href="author.html#1586">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

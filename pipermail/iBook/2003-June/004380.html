@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [P1] To Partition or...!  Virtual Memory
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20To%20Partition%20or...%21%20%20Virtual%20Memory&In-Reply-To=list-6434840%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004379.html">
+   <LINK REL="Next"  HREF="004381.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[P1] To Partition or...!  Virtual Memory</H1>
+    <B>Tom R. no spam</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20To%20Partition%20or...%21%20%20Virtual%20Memory&In-Reply-To=list-6434840%40mail.ninewire.com"
+       TITLE="[P1] To Partition or...!  Virtual Memory">tr5374 at csc.albany.edu
+       </A><BR>
+    <I>Sun Jun  1 09:57:59 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004379.html">[P1] To Partition or...!  Virtual Memory
+</A></li>
+        <LI>Next message: <A HREF="004381.html">[P1] To Partition or...!  Virtual Memory
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4380">[ date ]</a>
+              <a href="thread.html#4380">[ thread ]</a>
+              <a href="subject.html#4380">[ subject ]</a>
+              <a href="author.html#4380">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>To &quot;see&quot; VM:
+Process Viewer has a Statistics tab at the bottom (v. 1.0, with
+OS 10.1.4 is what I have).  I don't know how the value is
+calculated, I have to guess it must be predictive since I don't
+think I'm using VM at all right now (640MB RAM and few apps
+running).
+
+In Terminal, run the command &quot;top&quot; (ctrl-C to stop it).  In the
+stuff at the top of the display, the last part is re use of VM.
+Mine shows &quot;VM: 1.13G + 41.4M   10040(0) pageins, 34(0) pageouts&quot;.
+
+No pageouts means I'm not using virtual memory at all, I believe
+(that is, I'm pretty sure, but who knows how Apple has implemented
+top), since VM use is having your RAM fully used and needing to
+bring something new into RAM, so the computer takes something
+in RAM (eg something that hasn't been used much lately is one
+rule (but optimal page swap algorithms are a topic of research,
+and of Comp Sci &quot;Operating Systems&quot; course homework, which is
+where I learned this stuff)) and &quot;swaps&quot; it out to disk, keeping
+the something on record as in readily available memory but since
+it's no longer in real RAM it is said to be in &quot;virtual memory&quot;
+meaning virtual RAM.  The size unit of this swapping is a &quot;page&quot;,
+and no pageouts means I haven't had to swap any pages out of memory
+in order to bring anything else in, ie no use of VM.
+
+I'm guessing the VM entry means there is a total of 1.13 GB HD
+space potentially available to use as VM (ie, this value agrees
+with GetInfo about available disk space on this partition), and
+there is always a default allocation of a minimum amount of disk
+space done at bootup and that amount is as I recall 41MB.  (This
+VM value is for me not using my separate swap partition at this
+time, when I just ran top before I wrote this email.)
+
+Pageins can be quite high without any pageouts, eg run a lot of
+different programs sequentially so any one is done before the next
+needs any memory so there's likely no competition for RAM.
+
+On Sun, 1 Jun 2003, Joost van de Griek wrote:
+ . . .
+&gt;<i> On 2003-06-01 15:17, don hinkle wrote:
+</I>&gt;<i>
+</I>&gt;<i> &gt; Jack, are you saying that OS X has virtual memory turned *ON* by default?
+</I>&gt;<i>
+</I>&gt;<i> Yes. OS X == UNIX, and UNIX has VM always on.
+</I>&gt;<i>
+</I>&gt;<i> &gt; Is there a way to see it on my computer, whether on or off?
+</I>&gt;<i>
+</I>&gt;<i> What do you mean by &quot;see it&quot;? If you have very little RAM, open a buynch of
+</I>&gt;<i> apps and watch your computer slow to a crawl, at the same time churning your
+</I>&gt;<i> hard drive to pulp. That's VM at work.
+</I> . . .
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004379.html">[P1] To Partition or...!  Virtual Memory
+</A></li>
+	<LI>Next message: <A HREF="004381.html">[P1] To Partition or...!  Virtual Memory
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4380">[ date ]</a>
+              <a href="thread.html#4380">[ thread ]</a>
+              <a href="subject.html#4380">[ subject ]</a>
+              <a href="author.html#4380">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

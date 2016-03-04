@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Disk Formatting
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Disk%20Formatting&In-Reply-To=list-10930091%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000315.html">
+   <LINK REL="Next"  HREF="000317.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Disk Formatting</H1>
+    <B>Barry Lyden</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Disk%20Formatting&In-Reply-To=list-10930091%40mail.ninewire.com"
+       TITLE="[X-Unix] Disk Formatting">blyden at mac.com
+       </A><BR>
+    <I>Wed Feb 18 16:31:46 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000315.html">[X-Unix] Disk Formatting
+</A></li>
+        <LI>Next message: <A HREF="000317.html">Quoting in bash aliases
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#316">[ date ]</a>
+              <a href="thread.html#316">[ thread ]</a>
+              <a href="subject.html#316">[ subject ]</a>
+              <a href="author.html#316">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>It has been my experience that many new after-market drives include 
+such tools. Even if this is an original equipment drive, if you can 
+identify the drive by manufacturer and model number, you may be able to 
+get a tool directly from the drive maker's support web. If you plan to 
+do this to many different types of drives, however, then this may be 
+impractical. Anyway, it's just a thought.
+
+
+On Feb 18, 2004, at 3:42 PM, Alex wrote:
+
+&gt;<i>
+</I>&gt;&gt;&gt;<i> I want to format a hard disk, scan the surface for bad blocks, and 
+</I>&gt;&gt;&gt;<i> map
+</I>&gt;&gt;&gt;<i> out the bad blocks, if any. Is there a CLI tool for this job?
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Tuesday, Feb 17, 2004, at 22:47 Canada/Eastern, Alexandre Gauthier 
+</I>&gt;<i> wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> This is a shot in the dark, but you may want to research fsck_hfs 
+</I>&gt;&gt;<i> (fsck)
+</I>&gt;<i>
+</I>&gt;<i> On Wednesday, Feb 18, 2004, at 01:18 Canada/Eastern, Juan Manuel 
+</I>&gt;<i> Palacios wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> There's always pdisk(1) to manipulate Apple partition maps, but I 
+</I>&gt;&gt;<i> don't know if it'll get you what you want with respect to the surace 
+</I>&gt;&gt;<i> scanning, pretty sure it'll let you reformat the hard disk and create 
+</I>&gt;&gt;<i> a custom setup.
+</I>&gt;<i>
+</I>&gt;<i> On Wednesday, Feb 18, 2004, at 10:44 Canada/Eastern, Brent Baisley 
+</I>&gt;<i> wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Try looking into diskutil and hfs.util
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Thanks for the replies. However, the above-mentioned utilities are 
+</I>&gt;<i> concerned with high-level manipulation. I'm looking for something that 
+</I>&gt;<i> does low-level formatting, e.g., format, which, however, AFAICT is not 
+</I>&gt;<i> included with Darwin.
+</I>&gt;<i>
+</I>&gt;<i> f
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;<i> Mac ISP Serious Mac Internet Solutions From NineWire!   
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older 
+</I>&gt;<i> Mac! Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>   Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;<i>
+</I>&gt;<i> OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s - 
+</I>&gt;<i> <A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>&gt;<i>
+</I>Barry
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000315.html">[X-Unix] Disk Formatting
+</A></li>
+	<LI>Next message: <A HREF="000317.html">Quoting in bash aliases
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#316">[ date ]</a>
+              <a href="thread.html#316">[ thread ]</a>
+              <a href="subject.html#316">[ subject ]</a>
+              <a href="author.html#316">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

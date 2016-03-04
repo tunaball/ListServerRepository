@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Remove last ten lines of files
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Remove%20last%20ten%20lines%20of%20files&In-Reply-To=list-10169917%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000786.html">
+   <LINK REL="Next"  HREF="000808.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Remove last ten lines of files</H1>
+    <B>Xavier Noria</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Remove%20last%20ten%20lines%20of%20files&In-Reply-To=list-10169917%40mail.ninewire.com"
+       TITLE="[X-Unix] Remove last ten lines of files">fxn at hashref.com
+       </A><BR>
+    <I>Fri Jan  9 00:37:35 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000786.html">[X-Unix] Remove last ten lines of files
+</A></li>
+        <LI>Next message: <A HREF="000808.html">[X-Unix] Altering .bashrc in bash to add to $PATH
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#797">[ date ]</a>
+              <a href="thread.html#797">[ thread ]</a>
+              <a href="subject.html#797">[ subject ]</a>
+              <a href="author.html#797">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Jan 9, 2004, at 6:45 AM, David Ledger wrote:
+
+&gt;&gt;<i> From: Eugene Lee &lt;<A HREF="../../../mailman/listinfo/x-unix.html">list-themacintoshguy at fsck.net</A>&gt;
+</I>&gt;&gt;<i> On Wed, Jan 07, 2004 at 08:48:30AM +0100, Kuestner, Bjoern wrote:
+</I>&gt;&gt;<i> :
+</I>&gt;&gt;<i> : &gt; echo '1,$-10p;q' | tr &quot;;&quot; &quot;\n&quot; | ed YOURFILE
+</I>&gt;&gt;<i> :
+</I>&gt;&gt;<i> : The mystery deepens. (c:
+</I>&gt;&gt;<i> :
+</I>&gt;&gt;<i> : I kinda feel like my wife right now when she looks at my screen and
+</I>&gt;&gt;<i> : thinks I am doing total magic.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Or shorten the command to:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 	echo $'1,$-10p\nq' | ed YOURFILE
+</I>&gt;<i>
+</I>&gt;<i> Unfortunately, this is shell dependent.  Some shells put out backslash 
+</I>&gt;<i> n for single quoted '\n'.  Works in Apple's bash and ksh built for 
+</I>&gt;<i> OSX.  ksh doesn't need the leading '$'.
+</I>
+What's the leading $ for?
+
+BTW, this is a portable Perl one-liner that does not depend on trailing 
+newlines, and does not slurp the file (it has at most ten lines in 
+memory). I expect it to be slower though:
+
+     $ perl -ne 'push @x, $_; print shift @x if @x &gt; 10'
+
+-- fxn
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000786.html">[X-Unix] Remove last ten lines of files
+</A></li>
+	<LI>Next message: <A HREF="000808.html">[X-Unix] Altering .bashrc in bash to add to $PATH
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#797">[ date ]</a>
+              <a href="thread.html#797">[ thread ]</a>
+              <a href="subject.html#797">[ subject ]</a>
+              <a href="author.html#797">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

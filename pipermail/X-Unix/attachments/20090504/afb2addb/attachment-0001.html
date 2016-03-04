@@ -1,0 +1,32 @@
+<tt>
+Hmm...&nbsp;instead&nbsp;of&nbsp;ls,&nbsp;have&nbsp;you&nbsp;considered&nbsp;using&nbsp;&amp;#39;find&amp;#39;?&lt;br&gt;&lt;br&gt;To&nbsp;get&nbsp;a&nbsp;similar&nbsp;output&nbsp;to&nbsp;what&nbsp;you&nbsp;have(ls&nbsp;-l&nbsp;information):&lt;br&gt;&lt;br&gt;find&nbsp;.&nbsp;-ls&nbsp;|&nbsp;grep&nbsp;&amp;quot;Bookmarks.plist&amp;quot;&lt;br&gt;&lt;br&gt;To&nbsp;just&nbsp;get&nbsp;the&nbsp;files,&nbsp;without&nbsp;the&nbsp;&amp;quot;ls&nbsp;-l&nbsp;&amp;quot;&nbsp;info:&lt;br&gt;<br>
+&lt;br&gt;find&nbsp;.&nbsp;|&nbsp;grep&nbsp;&amp;quot;Bookmarks.plist&amp;quot;&lt;br&gt;&lt;br&gt;If&nbsp;you&nbsp;want&nbsp;to&nbsp;get&nbsp;the&nbsp;full&nbsp;path:&lt;br&gt;&lt;br&gt;find&nbsp;`pwd`&nbsp;-ls&nbsp;|&nbsp;grep&nbsp;&amp;quot;Bookmarks.plist&amp;quot;&lt;br&gt;&lt;br&gt;or&lt;br&gt;&lt;br&gt;find&nbsp;`pwd`&nbsp;|&nbsp;grep&nbsp;&amp;quot;Bookmarks.plist&amp;quot;&lt;br&gt;&lt;br&gt;&lt;br&gt;Wing.&lt;br&gt;<br>
+&lt;br&gt;&lt;div&nbsp;class=&quot;gmail_quote&quot;&gt;On&nbsp;Sun,&nbsp;May&nbsp;3,&nbsp;2009&nbsp;at&nbsp;10:02&nbsp;PM,&nbsp;Rick&nbsp;Gordon&nbsp;&lt;span&nbsp;dir=&quot;ltr&quot;&gt;&amp;lt;&lt;a&nbsp;href=&quot;mailto:lists@rickgordon.com&quot;&gt;lists@rickgordon.com&lt;/a&gt;&amp;gt;&lt;/span&gt;&nbsp;wrote:&lt;br&gt;&lt;blockquote&nbsp;class=&quot;gmail_quote&quot;&nbsp;style=&quot;border-left:&nbsp;1px&nbsp;solid&nbsp;rgb(204,&nbsp;204,&nbsp;204);&nbsp;margin:&nbsp;0pt&nbsp;0pt&nbsp;0pt&nbsp;0.8ex;&nbsp;padding-left:&nbsp;1ex;&quot;&gt;<br>
+How&nbsp;would&nbsp;I&nbsp;do&nbsp;a&nbsp;recursive&nbsp;search&nbsp;that&nbsp;will&nbsp; provide&nbsp;a&nbsp;path&nbsp;to&nbsp;the&nbsp;parent&nbsp;folder&nbsp;of&nbsp;a&nbsp;searched-for&nbsp;file?&lt;br&gt;<br>
+&lt;br&gt;<br>
+For&nbsp;instance,&nbsp;this&nbsp;command&nbsp;will&nbsp;find&nbsp;the&nbsp;file&nbsp;in&nbsp;a&nbsp;recursive&nbsp;search,&nbsp;but&nbsp;it&nbsp;provides&nbsp;no&nbsp;information&nbsp;on&nbsp;the&nbsp;path&nbsp;to&nbsp;that&nbsp;file:&lt;br&gt;<br>
+&lt;br&gt;<br>
+(starting&nbsp;from&nbsp;a&nbsp;suitable&nbsp;starting&nbsp;place)&lt;br&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; ls&nbsp;-Rl&nbsp;|&nbsp;grep&nbsp;&amp;quot;Bookmarks.plist&amp;quot;&lt;br&gt;<br>
+&lt;br&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; -rw-rw-rw-&nbsp;1&nbsp;mobile&nbsp;mobile&nbsp;100934&nbsp;May&nbsp; 3&nbsp;20:37&nbsp;Bookmarks.plist&lt;br&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; -rw-rw-rw-&nbsp;1&nbsp;mobile&nbsp;mobile&nbsp; &nbsp; 143&nbsp;Apr&nbsp;30&nbsp;22:12&nbsp;Bookmarks.plist.anchor.plist&lt;br&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; -rw-rw-rw-&nbsp;1&nbsp;root&nbsp; &nbsp;mobile&nbsp;203551&nbsp;Apr&nbsp; 9&nbsp;09:00&nbsp;Bookmarks.plist.bup&lt;br&gt;<br>
+&lt;br&gt;<br>
+&lt;br&gt;<br>
+...&nbsp;will&nbsp;find&nbsp;all&nbsp;instances&nbsp;of&nbsp;files&nbsp;with&nbsp;Bookmarks.plist&nbsp;in&nbsp;the&nbsp;name,&nbsp;but&nbsp;does&nbsp;not&nbsp;provide&nbsp;any&nbsp;paths&nbsp;to&nbsp;the&nbsp;found&nbsp;files.&nbsp;How&nbsp;can&nbsp;I&nbsp;get&nbsp;the&nbsp;path?&lt;br&gt;<br>
+--&lt;br&gt;<br>
+___________________________________________________&lt;br&gt;<br>
+&lt;br&gt;<br>
+RICK&nbsp;GORDON&lt;br&gt;<br>
+EMERALD&nbsp;VALLEY&nbsp;GRAPHICS&nbsp;AND&nbsp;CONSULTING&lt;br&gt;<br>
+___________________________________________________&lt;br&gt;<br>
+&lt;br&gt;<br>
+WWW:&nbsp; &nbsp;&lt;a&nbsp;href=&quot;http://www.shelterpub.com&quot;&nbsp;target=&quot;_blank&quot;&gt;http://www.shelterpub.com&lt;/a&gt;&lt;br&gt;<br>
+_______________________________________________&lt;br&gt;<br>
+X-Unix&nbsp;mailing&nbsp;list&lt;br&gt;<br>
+&lt;a&nbsp;href=&quot;mailto:X-Unix@listserver.themacintoshguy.com&quot;&gt;X-Unix@listserver.themacintoshguy.com&lt;/a&gt;&lt;br&gt;<br>
+&lt;a&nbsp;href=&quot;http://listserver.themacintoshguy.com/mailman/listinfo/x-unix&quot;&nbsp;target=&quot;_blank&quot;&gt;http://listserver.themacintoshguy.com/mailman/listinfo/x-unix&lt;/a&gt;&lt;br&gt;<br>
+&lt;/blockquote&gt;&lt;/div&gt;&lt;br&gt;&lt;br&nbsp;clear=&quot;all&quot;&gt;&lt;br&gt;--&nbsp;&lt;br&gt;Wing&nbsp;Wong&lt;br&gt;&lt;a&nbsp;href=&quot;mailto:wingedpower@gmail.com&quot;&gt;wingedpower@gmail.com&lt;/a&gt;&lt;br&gt;&lt;a&nbsp;href=&quot;http://www.wingedpower.com/&quot;&gt;http://www.wingedpower.com/&lt;/a&gt;&lt;br&gt;<br>
+
+</tt>

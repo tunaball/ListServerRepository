@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Call for bash prompts
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Call%20for%20bash%20prompts&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000335.html">
+   <LINK REL="Next"  HREF="000337.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Call for bash prompts</H1>
+    <B>Joe Block</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Call%20for%20bash%20prompts&In-Reply-To="
+       TITLE="[X-Unix] Call for bash prompts">jpb at ApesSeekingKnowledge.net
+       </A><BR>
+    <I>Fri Feb 20 19:27:59 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000335.html">Backdoor method to add users
+</A></li>
+        <LI>Next message: <A HREF="000337.html">[X-Unix] Call for bash prompts
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#336">[ date ]</a>
+              <a href="thread.html#336">[ thread ]</a>
+              <a href="subject.html#336">[ subject ]</a>
+              <a href="author.html#336">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+On Feb 20, 2004, at 9:29 AM, Kirk McElhearn wrote:
+
+&gt;<i> I'm helping Rob Griffiths update his Mac OS X Hints book for Panther, 
+</I>&gt;<i> and
+</I>&gt;<i> one of the hints is about customizing the shell prompt. Naturally, the
+</I>&gt;<i> Jaguar edition uses tcsh, so I'm updating this for bash. (We've made 
+</I>&gt;<i> the
+</I>&gt;<i> decision to assume that users are working with bash.)
+</I>&gt;<i>
+</I>&gt;<i> I'm looking for a long, cool, complex, multi-line prompt to use as an
+</I>&gt;<i> example. Anyone have one they want to contribute? The &quot;winning&quot; prompt 
+</I>&gt;<i> will
+</I>&gt;<i> have the contributor's name in the book.
+</I>
+Well, do you count updating the Terminal.app / X11 xterm window title 
+bar in addition to the prompt as making it multiline and complicated?
+
+# here is the relevant portion of my .bash_profile
+export PS1='[\u@\h:\w]\$ '
+export TITLEBAR='\[\033]0;\u@\h:\w \007\]'
+# Terminal sets TERM_PROGRAM so we can tell it apart from regular VT100
+case &quot;$TERM_PROGRAM&quot; in
+         &quot;Apple_Terminal&quot;)PS1=&quot;$TITLEBAR$PS1&quot;
+esac
+case &quot;$TERM&quot; in
+         
+&quot;xterm&quot;|&quot;vt100&quot;|&quot;color-xterm&quot;|&quot;xterm-color&quot;)PS1=&quot;$TITLEBAR$PSRAW&quot;
+esac
+
+This sets the prompt (and the Terminal window's title bar) to
+
+[<A HREF="../../../mailman/listinfo/x-unix.html">username at hostname</A>:/path/to/cwd]$
+
+to prevent awkward errors like rebooting the wrong server from the 
+command line, or deleting the live configuration files when you think 
+you're working on the . If you don't want the full path, just the 
+current directory name, replace \w with \W.  Replacing \h with \H will 
+put the Rendezvous name in the prompt on Panther.
+
+Fiddling the title bar is also convenient because it allows you to use 
+Terminal's Dock menu to jump straight to the window you want rather 
+than guessing, which is important to me because I typically have 6-12 
+windows open.
+
+jpb
+- -- 
+Joe Block &lt;<A HREF="../../../mailman/listinfo/x-unix.html">jpb at ApesSeekingKnowledge.net</A>&gt;
+
+The goal of Computer Science is to build something that will last at 
+least until we've finished building it.
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (Darwin)
+
+iD4DBQFANtBAyEXo8W2M9hsRAgSGAJio3GKrt+ZpvlqjIdtSMTMS9KVzAKDFLk+2
+Ht15kXrQywgW4/1RpYe1Bg==
+=4O5X
+-----END PGP SIGNATURE-----
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000335.html">Backdoor method to add users
+</A></li>
+	<LI>Next message: <A HREF="000337.html">[X-Unix] Call for bash prompts
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#336">[ date ]</a>
+              <a href="thread.html#336">[ thread ]</a>
+              <a href="subject.html#336">[ subject ]</a>
+              <a href="author.html#336">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

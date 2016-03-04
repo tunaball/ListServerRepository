@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: Korn shell?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Korn%20shell%3F&In-Reply-To=7FCDBC939F90FF48BF910CA2BB90D482023AF189%40ibfftpspe1n006.de.ad.drkw.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001747.html">
+   <LINK REL="Next"  HREF="001753.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: Korn shell?</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Korn%20shell%3F&In-Reply-To=7FCDBC939F90FF48BF910CA2BB90D482023AF189%40ibfftpspe1n006.de.ad.drkw.net"
+       TITLE="[X-Unix] Re: Korn shell?">magill at mcgillsociety.org
+       </A><BR>
+    <I>Wed Apr 13 10:49:28 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001747.html">[X-Unix] Re: Korn shell?
+</A></li>
+        <LI>Next message: <A HREF="001753.html">[X-Unix] Re: Korn shell?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1752">[ date ]</a>
+              <a href="thread.html#1752">[ thread ]</a>
+              <a href="subject.html#1752">[ subject ]</a>
+              <a href="author.html#1752">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 13 Apr, 2005, at 03:07, Kuestner, Bjoern wrote:
+&gt;&gt;<i> Would anyone care to provide a quick rundown of the pros &amp; cons of
+</I>&gt;&gt;<i> Korn vs. bash?
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://docs.rinet.ru:8080/UNIXs/ch13.htm">http://docs.rinet.ru:8080/UNIXs/ch13.htm</A>
+</I>&gt;<i>
+</I>&gt;<i> If you come from a long time Unix background you'll probably prefer 
+</I>&gt;<i> ksh,
+</I>&gt;<i> because it's the default for many &quot;true&quot; Unix systems.
+</I>
+&quot;sh&quot; is the original shell -- found in the original ATT Unix and later 
+&quot;enhanced&quot; in System V it was good for scripting use, but not so good 
+for interactive use. (Later also called &quot;shv&quot; or the System V shell.)
+
+&quot;csh&quot; was developed by Berkeley along with BSD to be a good interactive 
+shell, but not so good for scripting.
+
+In the commercial world the POSIX committee combined &quot;the best&quot; (some 
+say the worst) of both sh and csh and adopted the Korn Shell - &quot;ksh&quot; as 
+the POSIX standard shell.
+
+MIT (I think it was) was responsible for hybridizing csh and sh into 
+what became the dominant interactive shell in the Unix world, tcsh... 
+but it still had scripting issues.
+
+The along came Linux and we &quot;The Bourne again Shell,&quot; &quot;bash.&quot; Bash was 
+created to bypass all the various patent and copyright issues 
+surrounding the existing shells, and to, hopefully, fix the 
+deficiencies in them.
+
+Somewhere about that same time &quot;zsh&quot; was also developed -- zsh provides 
+&quot;complete&quot; sh, shv, and ksh operating modes for scripting, and, if I 
+remember correctly, &quot;complete&quot; compatibility with &quot;csh.&quot; But at its 
+heart, it is most like &quot;ksh.&quot;
+
+In 10.0, Apple provided &quot;sh&quot; functionality by linking sh to zsh... 
+which meant that ksh was available through the same mechanism. 
+(/bin/ksh was a link to /bin/zsh.) In 10.1 or 10.2, I forget which, 
+Apple dropped that link.
+
+&gt;<i> If you deal more with Linux you'd probably prefer bash where it is the
+</I>&gt;<i> default.
+</I>&gt;<i>
+</I>&gt;<i> But both are available on either platform. In fact, I have installed 
+</I>&gt;<i> ksh on
+</I>&gt;<i> my Panther system. ksh for Panther is a free download.
+</I>
+Or you can create it by linking to zsh: &quot; ln -s /bin/zsh /bin/ksh &quot;
+
+&gt;<i> I prefer the ksh scripting syntax over that of bash. On the other side 
+</I>&gt;<i> bash
+</I>&gt;<i> seems to have many shortcuts that could be useful under special
+</I>&gt;<i> circumstances.
+</I>&gt;<i>
+</I>&gt;<i> I don't think that Apple will make ksh the default. With so much 
+</I>&gt;<i> hoopla over
+</I>&gt;<i> Linux and bash dominating the Linux shell world I don't see why they 
+</I>&gt;<i> should
+</I>&gt;<i> change. And Apple would probably really irritate some sysadmins if they
+</I>&gt;<i> changed the default shell again.
+</I>
+This is an especially true statement, maybe ... the reason that tcsh 
+was dropped in favor of bash is that the prime engineering advocate for 
+tcsh left Apple ... and all of the &quot;new hires&quot; had Linux backgrounds, 
+not Unix.
+
+However, it appears that the implementation of &quot;ksh&quot; is strictly a 
+marketing function:
+     &quot;Run scripts written for Sun Solaris more easily via AT&amp;T&#8217;s ksh.&quot;
+
+That is to say, Xserve is eating Sun's lunch (as well that of other 
+Enterprise Unix vendors!) and &quot;ksh&quot; just makes it that much easier to 
+pitch migration to Enterprise Computing staffs who are Unix based and 
+still believe in &quot;Open Standards.&quot;
+
+As for the differences between ksh and bash -- Dartmouth has one 
+comparrision ...
+<A HREF="http://www.dartmouth.edu/~rc/classes/ksh/ksh-vs-sh.html">http://www.dartmouth.edu/~rc/classes/ksh/ksh-vs-sh.html</A>
+
+In the end, it basically comes down to the simple question -- do you 
+use &quot;print&quot; or &quot;echo?&quot;
+
+Or which shell did you learn first?
+
+While the differences between csh or tcsh and ksh or bash are notable 
+and frequently significant, the differences between ksh and bash are 
+nowhere near as significant.
+
+Personally, I've always used ksh because it is a &quot;standard shell&quot; which 
+runs on every contemporary commercial Unix platform I've needed to use. 
+I can therefore port my environment from one platform to another with 
+very minimal effort and wind up with a user environment on the various 
+proprietary versions of Unix(tm) that is both identical, and structured 
+the way I want it. It makes cross-platform System Administration much 
+much easier.
+
+
+T.T.F.N.
+William H. Magill
+# Beige G3 [Rev A motherboard - 300 MHz 768 Meg] OS X 10.2.8
+# Flat-panel iMac (2.1) [800MHz - Super Drive - 768 Meg] OS X 10.3.8
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg] Tru64 5.1a
+# XP1000  [Alpha 21264-3 (EV6) - 256 meg] FreeBSD 5.3
+# XP1000  [Alpha 21264-A (EV 6.7) - 384 meg] FreeBSD 5.3
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001747.html">[X-Unix] Re: Korn shell?
+</A></li>
+	<LI>Next message: <A HREF="001753.html">[X-Unix] Re: Korn shell?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1752">[ date ]</a>
+              <a href="thread.html#1752">[ thread ]</a>
+              <a href="subject.html#1752">[ subject ]</a>
+              <a href="author.html#1752">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

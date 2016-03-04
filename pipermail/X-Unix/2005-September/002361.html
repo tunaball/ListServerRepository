@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Compiler Errors continue (for sqlite 3.2.x)...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Compiler%20Errors%20continue%20%28for%20sqlite%203.2.x%29...&In-Reply-To=r02010500-1039-9B23153E1D0311DABA1C000A2794A200%40%5B192.168.0.4%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002360.html">
+   <LINK REL="Next"  HREF="002359.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Compiler Errors continue (for sqlite 3.2.x)...</H1>
+    <B>macosxforme</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Compiler%20Errors%20continue%20%28for%20sqlite%203.2.x%29...&In-Reply-To=r02010500-1039-9B23153E1D0311DABA1C000A2794A200%40%5B192.168.0.4%5D"
+       TITLE="[X-Unix] Compiler Errors continue (for sqlite 3.2.x)...">macosxforme at gmail.com
+       </A><BR>
+    <I>Sun Sep  4 05:18:18 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002360.html">[X-Unix] Compiler Errors continue...
+</A></li>
+        <LI>Next message: <A HREF="002359.html">[X-Unix] script generating iCal events?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2361">[ date ]</a>
+              <a href="thread.html#2361">[ thread ]</a>
+              <a href="subject.html#2361">[ subject ]</a>
+              <a href="author.html#2361">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Well, FWIW...
+
+
+I'm running 10.4.2 with Xcode 2.0, but..
+
+I just downloaded sqlite-3.2.5 source tarball.
+Made sure I ran 
+ sudo gcc_select 3.3
+
+&gt;<i>From there, configure and make went without a hitch. I didn't add any
+</I>options/flags.
+
+ cd sqlite-3.2.5
+ mkdir bld; cd bld
+ ../configure
+ make
+
+Without errors, only the following warning:
+
+../src/printf.c:154: warning: use of `long double' type; its size may change
+in a future release
+../src/printf.c:154: warning: (Long double usage is reported only once for
+each file.
+../src/printf.c:154: warning: To disable this warning, use
+-Wno-long-double.)
+
+ which showed up once more for /src/util.c:598  (warning:   , etc.)
+
+ 
+
+
+On 9/4/05 1:20 AM, &quot;Richard Nagle&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">cms01 at tampabay.rr.com</A>&gt; wrote:
+
+&gt;<i> Well, after wiping out my system, and re-installing Mac OS X 10.3.9
+</I>&gt;<i> and xcode 1.5, I still get the same compiler errors:
+</I>&gt;<i> 
+</I>&gt;<i> PATH: /sbin
+</I>&gt;<i> PATH: /usr/bin
+</I>&gt;<i> PATH: /usr/sbin
+</I>&gt;<i> &#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;&#157;configure:1607:
+</I>&gt;<i> checking build system type
+</I>&gt;<i> configure:1625: result: powerpc-apple-darwin7.9.0
+</I>&gt;<i> configure:1633: checking host system type
+</I>&gt;<i> configure:1647: result: powerpc-apple-darwin7.9.0
+</I>&gt;<i> configure:1701: checking for gcc
+</I>&gt;<i> configure:1717: found /usr/bin/gcc
+</I>&gt;<i> configure:1727: result: gcc
+</I>&gt;<i> configure:1971: checking for C compiler version
+</I>&gt;<i> configure:1974: gcc --version &lt;/dev/null &gt;&amp;5
+</I>&gt;<i> gcc (GCC) 3.3 20030304 (Apple Computer, Inc. build 1666)
+</I>&gt;<i> Copyright (C) 2002 Free Software Foundation, Inc.
+</I>&gt;<i> This is free software; see the source for copying conditions.  There is
+</I>&gt;<i> NO
+</I>&gt;<i> warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR
+</I>&gt;<i> PURPOSE.
+</I>&gt;<i> 
+</I>&gt;<i> configure:1977: $? = 0
+</I>&gt;<i> configure:1979: gcc -v &lt;/dev/null &gt;&amp;5
+</I>&gt;<i> Reading specs from /usr/libexec/gcc/darwin/ppc/3.3/specs
+</I>&gt;<i> Thread model: posix
+</I>&gt;<i> gcc version 3.3 20030304 (Apple Computer, Inc. build 1666)
+</I>&gt;<i> configure:1982: $? = 0
+</I>&gt;<i> configure:1984: gcc -V &lt;/dev/null &gt;&amp;5
+</I>&gt;<i> gcc: `-V' option must have argument
+</I>&gt;<i> configure:1987: $? = 1
+</I>&gt;<i> configure:2010: checking for C compiler default output file name
+</I>&gt;<i> configure:2013: gcc    conftest.c  &gt;&amp;5
+</I>&gt;<i> conftest.c:1: error: stray '\377' in program
+</I>&gt;<i> conftest.c:1: error: stray '\377' in program
+</I>&gt;<i> conftest.c:1: error: stray '\377' in program
+</I>&gt;<i> --snipit&gt;&gt;
+</I>&gt;<i> 
+</I>&gt;<i> Should I try 3.1 version of gcc, or 2.9x version,
+</I>&gt;<i> to see if those give problems...
+</I>&gt;<i> 
+</I>&gt;<i> Regards-
+</I>&gt;<i> Richard
+</I>&gt;<i> 
+</I>&gt;<i> Oh, was trying to compile sqlite 3.2x
+</I>&gt;<i> 
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i> 
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random stuff:
+</I>&gt;<i>          <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002360.html">[X-Unix] Compiler Errors continue...
+</A></li>
+	<LI>Next message: <A HREF="002359.html">[X-Unix] script generating iCal events?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2361">[ date ]</a>
+              <a href="thread.html#2361">[ thread ]</a>
+              <a href="subject.html#2361">[ subject ]</a>
+              <a href="author.html#2361">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

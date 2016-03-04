@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Lingon - launchd - syntax help
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Lingon%20-%20launchd%20-%20syntax%20help&In-Reply-To=DE51E80E-3385-4862-BD37-DB7E8BFE92C1%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003274.html">
+   <LINK REL="Next"  HREF="003276.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Lingon - launchd - syntax help</H1>
+    <B>Dean Suhr</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Lingon%20-%20launchd%20-%20syntax%20help&In-Reply-To=DE51E80E-3385-4862-BD37-DB7E8BFE92C1%40secure-computing.net"
+       TITLE="[X-Unix] Lingon - launchd - syntax help">deansuhr at deansuhr.us
+       </A><BR>
+    <I>Tue Jan 27 12:30:38 PST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003274.html">[X-Unix] Lingon - launchd - syntax help
+</A></li>
+        <LI>Next message: <A HREF="003276.html">[X-Unix] Lingon - launchd - syntax help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3275">[ date ]</a>
+              <a href="thread.html#3275">[ thread ]</a>
+              <a href="subject.html#3275">[ subject ]</a>
+              <a href="author.html#3275">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 1/27/09 12:04 PM, &quot;Eric F Crist&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">ecrist at secure-computing.net</A>&gt; wrote:
+
+&gt;<i> On Jan 27, 2009, at 1:21 PM, Dean Suhr wrote:
+</I>&gt;<i> 
+</I>&gt;&gt;<i> Greetings all,
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> I&#185;m making my first dive into launchd. I want to schedule a script
+</I>&gt;&gt;<i> and am using Lingon &lt;<A HREF="http://tuppis.com/lingon/">http://tuppis.com/lingon/</A>&gt; to help me a bit.
+</I>&gt;&gt;<i> The script has permissions of 777 for debug purposes.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> The terminal command that works is:
+</I>&gt;&gt;&gt;<i> . /somedirectory/poll-blogs-script.sh  (with a space between the
+</I>&gt;&gt;&gt;<i> period and the first slash)
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;<i> That command in Lingon/launchd gives me a &#179;posix_spawnp(&#179;.&#178;, ...):
+</I>&gt;&gt;<i> Permission denied&#178; error
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> I am suspecting this is a basic syntax issue ... Can you help?
+</I>&gt;<i> 
+</I>&gt;<i> Different subject, but have a look here:
+</I>&gt;<i> 
+</I>&gt;<i> <A HREF="http://www.secure-computing.net/wiki/index.php/Leopard_Static_Routes">http://www.secure-computing.net/wiki/index.php/Leopard_Static_Routes</A>
+</I>&gt;<i> ---
+</I>&gt;<i> Eric Crist
+</I>&gt;<i> 
+</I>Thanks Eric ... But I am still stumped.  What I noticed from the example you
+gave was ...
+1) The shell script filename had no period or extension.  I made that change
+to no avail.
+2) I changed the first line of my script from #!/bin/shell to #!/bin/sh (I
+told you I was new at this!)
+2) The example shell script was is /System/Library/StartupItems and was
+called by its &quot;unpathed&quot; name without a path. My script is in its own
+folder, somefolder, at the root level with 755 permissions.  As a result I
+called the shell script by /somefolder/scriptname using the same syntax as
+the plist (no leading period).
+
+I still get the same permissions error as described above.
+
+Dean
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003274.html">[X-Unix] Lingon - launchd - syntax help
+</A></li>
+	<LI>Next message: <A HREF="003276.html">[X-Unix] Lingon - launchd - syntax help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3275">[ date ]</a>
+              <a href="thread.html#3275">[ thread ]</a>
+              <a href="subject.html#3275">[ subject ]</a>
+              <a href="author.html#3275">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

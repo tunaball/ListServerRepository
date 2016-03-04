@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] rsync/ssh help
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20rsync/ssh%20help&In-Reply-To=500A08FC-5B2B-4EEB-9ACB-264AD815FC58%40aquaflo.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002615.html">
+   <LINK REL="Next"  HREF="002617.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] rsync/ssh help</H1>
+    <B>Russell McGaha</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20rsync/ssh%20help&In-Reply-To=500A08FC-5B2B-4EEB-9ACB-264AD815FC58%40aquaflo.com"
+       TITLE="[X-Unix] rsync/ssh help">RussellMcGaha at direcway.com
+       </A><BR>
+    <I>Thu Mar 23 13:52:44 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002615.html">[X-Unix] rsync/ssh help
+</A></li>
+        <LI>Next message: <A HREF="002617.html">[X-Unix] rsync/ssh help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2616">[ date ]</a>
+              <a href="thread.html#2616">[ thread ]</a>
+              <a href="subject.html#2616">[ subject ]</a>
+              <a href="author.html#2616">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Marlry;
+	THANKS, for the reply.  Tried your suggestion, but it didn't work.   
+The remote still asks me for my password.  Don't know if it makes a  
+difference; but it's a 10.4.5 Mac going to a 10.3.9 Mac.
+	Any further suggestion; anyone??
+
+Russell
+
+P.S.  Just so happens, while I'm here at work the two machines are  
+side by side.  My work machine has an external IP that I'm trying to  
+connect thru.
+
+On Mar 23, 2006, at 3:17 PM, mgraham wrote:
+
+&gt;<i> On your machine, if you have not already done so, open Terminal and  
+</I>&gt;<i> type:
+</I>&gt;<i>
+</I>&gt;<i> 	ssh-keygen -t rsa
+</I>&gt;<i> 		Hit &quot;Return&quot; to accept the defaults at each line
+</I>&gt;<i> 	cd ~/.ssh
+</I>&gt;<i> 	cat id_rsa.pub (to see your ID)
+</I>&gt;<i> 	scp id_rsa.pub &lt;username&gt;@&lt;remotemachinename&gt;:myid	(call it  
+</I>&gt;<i> whatever you want)
+</I>&gt;<i> 		This assumes that remotemachinename is in your /etc/hosts file
+</I>&gt;<i>
+</I>&gt;<i> SSH to the remote machine and cd to the user folder. Type
+</I>&gt;<i> 	ls -l
+</I>&gt;<i>
+</I>&gt;<i> Check to see that the myid file is there.
+</I>&gt;<i> Check to see if there is a .ssh directory; if not, mkdir .ssh
+</I>&gt;<i> Copy the public key:
+</I>&gt;<i>
+</I>&gt;<i> 	cat myid &gt;&gt; .ssh/authorized_keys
+</I>&gt;<i>
+</I>&gt;<i> That's it; you can log in without a password.
+</I>&gt;<i>
+</I>&gt;<i> Marley Graham
+</I>&gt;<i> Aqua-Flo Supply
+</I>&gt;<i>
+</I>&gt;<i> On Mar 23, 2006, at 12:42 PM, Russell McGaha wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Folks;
+</I>&gt;&gt;<i> 	I need a little help; I think I knew this at one time, but can't  
+</I>&gt;&gt;<i> remember.  How can I set up ssh so that the remote machine dose  
+</I>&gt;&gt;<i> NOT prompt me for my password??
+</I>&gt;&gt;<i> 	I'm trying to set up a script to use rsync between two remote  
+</I>&gt;&gt;<i> Mac.s, to sync a couple of folders.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Russell
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> X-Unix mailing list
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;&gt;<i> stuff:
+</I>&gt;&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002615.html">[X-Unix] rsync/ssh help
+</A></li>
+	<LI>Next message: <A HREF="002617.html">[X-Unix] rsync/ssh help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2616">[ date ]</a>
+              <a href="thread.html#2616">[ thread ]</a>
+              <a href="subject.html#2616">[ subject ]</a>
+              <a href="author.html#2616">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

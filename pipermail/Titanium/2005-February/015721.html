@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] My Mac is going slower
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20My%20Mac%20is%20going%20slower&In-Reply-To=307f4bebb653ab92c0088718da42974d%40comcast.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="015719.html">
+   <LINK REL="Next"  HREF="015725.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] My Mac is going slower</H1>
+    <B>John McGibney</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20My%20Mac%20is%20going%20slower&In-Reply-To=307f4bebb653ab92c0088718da42974d%40comcast.net"
+       TITLE="[Ti] My Mac is going slower">ensignjd at optonline.net
+       </A><BR>
+    <I>Fri Feb  4 08:57:24 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="015719.html">[Ti] My Mac is going slower
+</A></li>
+        <LI>Next message: <A HREF="015725.html">[Ti] My Mac is going slower
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15721">[ date ]</a>
+              <a href="thread.html#15721">[ thread ]</a>
+              <a href="subject.html#15721">[ subject ]</a>
+              <a href="author.html#15721">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> My Quicksilver, 933 mz, 768 Ram and OS 10.3.7 has become maddenly slow.
+</I>&gt;<i> Boot up to desktop takes minutes and fetching mail through my cable
+</I>&gt;<i> modem is agonizing.  Everything seems to be slower since 10.3.7, even
+</I>&gt;<i> launching applications.
+</I>&gt;<i> 
+</I>&gt;<i> I've run fsck, disk repair, cocktail and disk warrior and found nothing
+</I>&gt;<i> errant.  I've reset the cable modem and air port extreme.  Nothing
+</I>&gt;<i> seems to help  Any suggestions?
+</I>&gt;<i> 
+</I>
+A) Try reinstalling 10.3.7 from the combo updater.
+
+B) There were a few files to delete to speed things up as per the macfixit
+site. These files sped up startup considerably.
+
+Here is the data for an applescript to remove the files:
+
+ property systemList : {&#172;
+ &quot;com.apple.ATS.System.fcache&quot;, &#172;
+ &quot;com.apple.ATSServer.FODB_System&quot;, &#172;
+ &quot;fontTablesAnnex&quot;}
+ property localList : {&#172;
+ &quot;501:Classic.fcache&quot;, &#172;
+ &quot;501:Local.fcache&quot;, &#172;
+ &quot;User.fcache&quot;, &#172;
+ &quot;Classic.fodb&quot;, &#172;
+ &quot;Local.fodb&quot;, &#172;
+ &quot;User.fodb&quot;, &#172;
+ &quot;FondResourceCache&quot;}
+ tell application &quot;Finder&quot;
+ set versionFinder to version as text
+ end tell
+ if versionFinder starts with &quot;10.3&quot; then
+ set localCaches to ((path to &quot;cusr&quot;) as text) &amp;
+&quot;Library:Caches:com.apple.ATS:&quot;
+ set systemCaches to ((path to &quot;boot&quot;) as text) &amp; &quot;System:Library:Caches:&quot;
+ tell application &quot;Finder&quot;
+ repeat with name in localList
+ try
+ delete file (localCaches &amp; name)
+ end try
+ end repeat
+ repeat with name in systemList
+ try
+ delete file (systemCaches &amp; name)
+ end try
+ end repeat
+ end tell
+ end if
+
+--------
+
+Hope this helps.
+
+John
+
+-- 
+ One OS to rule them all, One OS to find them.
+ One OS to bring them all and in anti-competitive practices bind them.
+ In the land of M$ where the Shadow lies.
+
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="015719.html">[Ti] My Mac is going slower
+</A></li>
+	<LI>Next message: <A HREF="015725.html">[Ti] My Mac is going slower
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15721">[ date ]</a>
+              <a href="thread.html#15721">[ thread ]</a>
+              <a href="subject.html#15721">[ subject ]</a>
+              <a href="author.html#15721">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

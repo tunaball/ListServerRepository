@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] sudo -s behavior changed in 10.5?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20sudo%20-s%20behavior%20changed%20in%2010.5%3F&In-Reply-To=543305D4-4A30-45EA-B2CB-C103041106E9%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003039.html">
+   <LINK REL="Next"  HREF="003041.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] sudo -s behavior changed in 10.5?</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20sudo%20-s%20behavior%20changed%20in%2010.5%3F&In-Reply-To=543305D4-4A30-45EA-B2CB-C103041106E9%40secure-computing.net"
+       TITLE="[X-Unix] sudo -s behavior changed in 10.5?">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Fri Feb 22 00:47:47 PST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003039.html">[X-Unix] sudo -s behavior changed in 10.5?
+</A></li>
+        <LI>Next message: <A HREF="003041.html">[X-Unix] February 75% OFF
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3040">[ date ]</a>
+              <a href="thread.html#3040">[ thread ]</a>
+              <a href="subject.html#3040">[ subject ]</a>
+              <a href="author.html#3040">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 18:31 -0600 21/2/08, Eric F Crist wrote:
+&gt;<i>Hrm, I don't understand why you've got to go to all that work.  I 
+</I>&gt;<i>get my _entire_ environment with my method.  It may have something 
+</I>&gt;<i>to do with my using my favorite shell as my login shell.  Any system 
+</I>&gt;<i>I've tried it on, I get my full environment.  If you omit the -, 
+</I>&gt;<i>you'll avoid overwriting your current environment variables, if I 
+</I>&gt;<i>remember correctly.
+</I>&gt;<i>
+</I>&gt;<i>I have a custom .vimrc, .cshrc and my config in ~/.ssh, all are 
+</I>&gt;<i>correctly sourced when I sudo csh as I previously indicated.
+</I>
+I suspect my environment is more complex than yours then. I doubt the 
+choice of shell makes any difference. I'm surprised .vimrc is 
+relevant.
+
+The point of my method is that you _get_ root's environment, and with 
+suitable code at the end of root's .profile you can make your own 
+additions. Where I'm in charge of a box, I make root's .profile 
+source a file (I call it .userprofile) in the home directory of the 
+user that called sudo (from $SUDO_USER). I make that file a hard link 
+to my .profile which already has sections that get skipped if root. 
+Where I'm not in charge of the box, I add a file in root's HOME that 
+does the same when '.' sourced. The other admins have always been 
+happy with that and some have used it.
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+HP-UX specialist of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x-unix.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003039.html">[X-Unix] sudo -s behavior changed in 10.5?
+</A></li>
+	<LI>Next message: <A HREF="003041.html">[X-Unix] February 75% OFF
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3040">[ date ]</a>
+              <a href="thread.html#3040">[ thread ]</a>
+              <a href="subject.html#3040">[ subject ]</a>
+              <a href="author.html#3040">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

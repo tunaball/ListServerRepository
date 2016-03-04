@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Can you get the path from an inode?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Can%20you%20get%20the%20path%20from%20an%20inode%3F&In-Reply-To=7097bd8c0605020958o116f1853y6497a49f0123a6ae%40mail.gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002658.html">
+   <LINK REL="Next"  HREF="002660.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Can you get the path from an inode?</H1>
+    <B>Doug McNutt</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Can%20you%20get%20the%20path%20from%20an%20inode%3F&In-Reply-To=7097bd8c0605020958o116f1853y6497a49f0123a6ae%40mail.gmail.com"
+       TITLE="[X-Unix] Can you get the path from an inode?">douglist at macnauchtan.com
+       </A><BR>
+    <I>Tue May  2 10:33:22 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002658.html">[X-Unix] Can you get the path from an inode?
+</A></li>
+        <LI>Next message: <A HREF="002660.html">[X-Unix] text file parsing?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2659">[ date ]</a>
+              <a href="thread.html#2659">[ thread ]</a>
+              <a href="subject.html#2659">[ subject ]</a>
+              <a href="author.html#2659">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Just a thought:
+
+HFS+ does have a unique identifier for each file. &quot;FileID&quot; in the header files, I think. It is used for such things as Macintosh aliases which remember a file even if you change its name or move it into a different directory. The FileID at 32 bits is never reused (well, in principle it isn't).
+
+With access to the HFS+ file structures as modified to support an inode number it might be possible to recover a FileID from an inode. Given the FileID the alias manager should be able to identify a file by name and path. It would be a learning experience and it's quite possible that the structures required are proprietary to Apple.
+
+With the complex adjustment of HFS+ just to allow for hard links it's probably pretty complicated.
+-- 
+
+Applescript syntax is like English spelling:
+Roughly, but not thoroughly, thought through.
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002658.html">[X-Unix] Can you get the path from an inode?
+</A></li>
+	<LI>Next message: <A HREF="002660.html">[X-Unix] text file parsing?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2659">[ date ]</a>
+              <a href="thread.html#2659">[ thread ]</a>
+              <a href="subject.html#2659">[ subject ]</a>
+              <a href="author.html#2659">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

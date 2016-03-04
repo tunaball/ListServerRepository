@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Restart Airport Base-Station
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Restart%20Airport%20Base-Station&In-Reply-To=list-15919992%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000113.html">
+   <LINK REL="Next"  HREF="000115.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Restart Airport Base-Station</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Restart%20Airport%20Base-Station&In-Reply-To=list-15919992%40mail.ninewire.com"
+       TITLE="[X-Unix] Restart Airport Base-Station">magill at mcgillsociety.org
+       </A><BR>
+    <I>Fri Aug 13 07:28:55 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000113.html">Restart Airport Base-Station
+</A></li>
+        <LI>Next message: <A HREF="000115.html">[X-Unix] Restart Airport Base-Station
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#114">[ date ]</a>
+              <a href="thread.html#114">[ thread ]</a>
+              <a href="subject.html#114">[ subject ]</a>
+              <a href="author.html#114">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 13 Aug, 2004, at 07:13, peter boardman wrote:
+&gt;<i> Is there a UNIX command to resart an Airport Extreme Base Station? 
+</I>&gt;<i> There&#8217;s no AppleScript support that I can
+</I>&gt;<i> see, and I keep having to restart the base station to get an internet 
+</I>&gt;<i> connection back.
+</I>
+None that I am aware of ... I've taken to leaving AMU running all the 
+time lately. The problem is most annoying.
+
+However, there IS a problem with the AEBS and loosing Internet 
+connections.  I have an outstanding case which has finally been 
+forwarded to Engineering about the problem.
+
+There are two conditions which exist, apparently from the most recent 
+AEBS update. But since before that I was using a Graphite with no 
+problems, it's hard to tell. It might be a problem which has always 
+existed with the AEBS, i.e. a feature not a bug, like the fact that the 
+AEBS has a 10db  output signal level than the Graphite.  (Measured with 
+the two units side by side.)
+
+1- The AEBS looses, apparently, Internet connectivity, on a periodic 
+basic. Where the period appears to be between 12 and 36 hours.
+
+In reality, it appears to be loosing DNS capabilities, ARP information 
+or something similar, NOT the ability to pass packets between 802.11 
+and the WAN port.
+
+In my configuration, I have a DSL modem connected to a 3Com hub which 
+has an Alpha and a Beige G3 Mac connected to it along with the AEBS. 
+There are then 3 systems which connect to the AEBS via 802.11.
+
+Since I have static IP addresses for the Alpha and the G3 Mac, they 
+never have any problems, and never loose connectivity, completely 
+exonerating the DSL connection as such. I used to have a static IP 
+address for my old Graphite, but when I upgraded recently to the AEBS, 
+my ISP switched me from a REAL static IP address, to a DHCP-mapped 
+&quot;static&quot; IP address. Consequently the AEBS is using DHCP instead of 
+manual configuration. [This implies completely different code paths 
+active within the AEBS as compared to the Graphite.]
+
+I have the AEBS configured to log (via syslog) to the ethernet 
+connected G3 Mac. It is also configured to set time via a 
+geographically close Stratum 1 timeserver.  The AEBS never looses the 
+ability to talk to the Syslog host, and I assume, because I have an 
+appropriate /etc/host table entry, I can connect from my wirelessly 
+connected iMac to that syslog host 90+% of the time.  It's easy to tell 
+that the AEBS has lost the ability to talk to the Internet because it 
+will start logging  the fact that it can't reach the timeserver to the 
+syslog host. [I have verified that I am apparently NOT loosing syslog 
+entries by comparing the contents of syslog with the SNMP retrieved 
+logfile on the AEBS -- via Apple's AMU.
+
+The DHCP lease is configured for 7 days by my ISP (DCAnet) and they 
+show nothing exciting in their logs concerning the connection to the 
+AEBS. The Alpha and the G3 never loose connectivity.
+
+2- The second thing which the AEBS does is to &quot;timeout&quot; wireless 
+sessions. There IS an &quot;inactivity timer&quot; (of unknown duration) in the 
+AEBS software. These timeouts are logged by the AEBS...
+&quot;dissassociated with station &lt;MACaddr&gt; (inactivity)&quot; followed one tenth 
+of a second later by an entry &quot;reassociated with station &lt;MACaddr&gt;&quot;
+
+This behavior is particularly nasty if one happens to use ssh, and goes 
+off to do something else for a bit (like look up stuff on the web)... 
+The inactivity timeout causes the established 802.11/ssh session to 
+simply die. (Not unexpected behavior on the part of ssh.) One nasty 
+aspect of the problem is that the ssh session on the destination host 
+does not &quot;go away,&quot; but hangs around until it is cleared off the host. 
+In the absence of a &quot;keep-alive&quot; query FROM the host, the connection 
+simply sits there waiting for input from the client. Again expected 
+behavior from ssh.
+
+
+For what it is worth, I assume that one can restart the AEBS via SNMP, 
+however, I have not yet discovered the &quot;trick.&quot;
+
+Note that net-snmp is included in 10.3 and can be used to query the 
+AEBS directly from the command line.
+
+ From the wireless side:
+
+snmpbulkwalk -Os -v2c -c &lt;AEBS password&gt; 10.0.1.1 system
+                                                   if
+etc.
+The AEBS mib itself:
+
+snmpwalk -On -v2c -c &lt;AEBS password&gt; 10.0.1.1 1.3.6.1.4.1.63.501.3
+              -Os
+also compare with:
+snmpbulkwalk
+
+<A HREF="http://docs.info.apple.com/article.html?artnum=120227">http://docs.info.apple.com/article.html?artnum=120227</A>
+(Note that the Graphite uses the Orinco card and a different MIB.)
+
+If anyone has any additional SNMP information please let me know.
+
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000113.html">Restart Airport Base-Station
+</A></li>
+	<LI>Next message: <A HREF="000115.html">[X-Unix] Restart Airport Base-Station
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#114">[ date ]</a>
+              <a href="thread.html#114">[ thread ]</a>
+              <a href="subject.html#114">[ subject ]</a>
+              <a href="author.html#114">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

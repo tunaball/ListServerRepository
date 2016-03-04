@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Standard Protocol Equivalent for Terminal &quot;open&quot;
+	Command??
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Standard%20Protocol%20Equivalent%20for%20Terminal%20%22open%22%0A%09Command%3F%3F&In-Reply-To=p06230921c351623ea771%40%5B192.168.1.69%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002886.html">
+   <LINK REL="Next"  HREF="002891.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Standard Protocol Equivalent for Terminal &quot;open&quot;
+	Command??</H1>
+    <B>Dave Higgins</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Standard%20Protocol%20Equivalent%20for%20Terminal%20%22open%22%0A%09Command%3F%3F&In-Reply-To=p06230921c351623ea771%40%5B192.168.1.69%5D"
+       TITLE="[X-Unix] Standard Protocol Equivalent for Terminal &quot;open&quot;
+	Command??">dhiggins at mchsi.com
+       </A><BR>
+    <I>Fri Nov  2 23:46:25 PDT 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002886.html">[X-Unix] Standard Protocol Equivalent for Terminal
+	&quot;open&quot; Command??
+</A></li>
+        <LI>Next message: <A HREF="002891.html">[X-Unix] Standard Protocol Equivalent for Terminal
+	&quot;open&quot; Command??
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2887">[ date ]</a>
+              <a href="thread.html#2887">[ thread ]</a>
+              <a href="subject.html#2887">[ subject ]</a>
+              <a href="author.html#2887">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> Is there any standard (or easily distributable) protocol  
+</I>&gt;<i> (syntactically like http, file, ftp, etc.) that can be prefixed to a  
+</I>&gt;<i> POSIX path that can duplicate a Terminal &quot;open&quot; command? So that  
+</I>&gt;<i> (assuming that the protocol was &quot;open&quot;):
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="open:///Library/Application%20Support">open:///Library/Application%20Support</A> would open the global  
+</I>&gt;<i> Application Support folder in the Finder, or
+</I>&gt;<i> <A HREF="open:///Applications/Utilities/Disk%20Utility.app">open:///Applications/Utilities/Disk%20Utility.app</A> would launch the  
+</I>&gt;<i> Disk Utility application, or
+</I>&gt;<i> <A HREF="reveal:///Applications/Utilities/Disk%20Utility.app">reveal:///Applications/Utilities/Disk%20Utility.app</A> would reveal the  
+</I>&gt;<i> Disk Utility application in the Finder?
+</I>&gt;<i>
+</I>&gt;<i> Some thing like that would be a boon for technical support emails  
+</I>&gt;<i> requiring an unsophisticated user to easily access a file or folder,  
+</I>&gt;<i> without having to laboriously explain the file path.
+</I>
+I agree that this would be helpful, but I doubt you're going to see  
+that much control over a machine by URL, mainly because of security  
+concerns. Used correctly and responsibly it could be quite powerful.  
+Used maliciously it could raise some serious concerns. At least an  
+&quot;<A HREF="open://&quot;">open://&quot;</A> type call... Now, this &quot;reveal&quot;, on the other hand, would be  
+safe. But, alas, I have no idea how to do such a thing.
+
+&gt;<i> &lt;<A HREF="applescript://com.apple.scripteditor?action=new&amp;script=%2D%2DPUT%20MY%20SCRIPT%20HERE%2C%20USING%20ESCAPES%20AS">applescript://com.apple.scripteditor?action=new&amp;script=%2D%2DPUT%20MY%20SCRIPT%20HERE%2C%20USING%20ESCAPES%20AS</A> REQUIRED%0A--BUT THEY MAY NOT ALL BE NECESSARY. 
+</I>&gt;<i> &gt;
+</I>
+That's pretty cool... Didn't know you could do that...
+
+After doing a little Google searching, I came across an interesting  
+free tool... It'll take an AS from the front window of Script Editor  
+and create that type of URL (placing it in your clipboard), or even  
+make a whole HTML page. You can find it at &lt;<A HREF="http://www.jonn8.com/html/Convert_Script_to_MC.html">http://www.jonn8.com/html/Convert_Script_to_MC.html</A> 
+ &gt;.
+
+The whole HTML pages came up with a couple minor flaws for me with  
+quick tests, but it can create a good start.
+
+Not &quot;exactly&quot; what you were looking for in the original post, but I  
+suppose you could have a link like this open a script in Script  
+Editor, then have them just click the &quot;Run&quot; button. Your AS inside it  
+could do the opening of the window in Finder, or launch applications,  
+or whatever. As much as I hate AppleScript (I'm more of a SuperCard  
+user), you can do quite a bit with it if you're willing to endure it.
+
+Any idea where we can get a whole list of protocols handled this way  
+(known ones are http, https, file, ftp, and now applescript)?
+
+Dave.
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002886.html">[X-Unix] Standard Protocol Equivalent for Terminal
+	&quot;open&quot; Command??
+</A></li>
+	<LI>Next message: <A HREF="002891.html">[X-Unix] Standard Protocol Equivalent for Terminal
+	&quot;open&quot; Command??
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2887">[ date ]</a>
+              <a href="thread.html#2887">[ thread ]</a>
+              <a href="subject.html#2887">[ subject ]</a>
+              <a href="author.html#2887">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

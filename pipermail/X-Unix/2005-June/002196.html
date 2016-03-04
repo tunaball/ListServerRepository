@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Cron problem - Again
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Cron%20problem%20-%20Again&In-Reply-To=E8A98678-A962-488D-8F42-84358B70D482%40aquaflo.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002194.html">
+   <LINK REL="Next"  HREF="002197.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Cron problem - Again</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Cron%20problem%20-%20Again&In-Reply-To=E8A98678-A962-488D-8F42-84358B70D482%40aquaflo.com"
+       TITLE="[X-Unix] Cron problem - Again">ecrist at secure-computing.net
+       </A><BR>
+    <I>Thu Jun 23 15:56:23 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002194.html">[X-Unix] Cron problem - Again
+</A></li>
+        <LI>Next message: <A HREF="002197.html">[X-Unix] Cron problem - Again
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2196">[ date ]</a>
+              <a href="thread.html#2196">[ thread ]</a>
+              <a href="subject.html#2196">[ subject ]</a>
+              <a href="author.html#2196">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Marley,
+
+CRON, itself, runs as root but a process in a user's crontab entry  
+will run as that user.  If you must have this work, put these  
+programs in root's crontab file.
+
+HTH
+
+On Jun 23, 2005, at 4:54 PM, Marley Graham wrote:
+
+&gt;<i> This is the error that shows up in system.log:
+</I>&gt;<i>
+</I>&gt;<i> Jun 23 14:00:00 &lt;user&gt;s-Computer CRON[2011]: (isadmin) CMD (/ 
+</I>&gt;<i> screenpicsadmin)
+</I>&gt;<i> Jun 23 14:00:01 &lt;user&gt;s-Computer /usr/sbin/screencapture:  
+</I>&gt;<i> kCGErrorRangeCheck : Window Server communications from outside of  
+</I>&gt;<i> session allowed for root and console user only
+</I>&gt;<i>
+</I>&gt;<i> (I substituted &lt;user&gt; for the actual user's name).
+</I>&gt;<i>
+</I>&gt;<i> I thought that CRON ran as root; why would it have a problem in  
+</I>&gt;<i> this instance?
+</I>&gt;<i>
+</I>&gt;<i> Marley Graham
+</I>&gt;<i> Aqua-Flo Supply
+</I>&gt;<i> ==============
+</I>&gt;<i>
+</I>&gt;<i> On Jun 23, 2005, at 2:18 PM, Eric F Crist wrote:
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i> Have you checked your log files?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Jun 23, 2005, at 1:00 PM, Marley Graham wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I have my screencapture program running under cron on my machine.  
+</I>&gt;&gt;&gt;<i> So I figured I would do the same on some client machines for  
+</I>&gt;&gt;&gt;<i> which I have set up an admin account. But it doesn't work on the  
+</I>&gt;&gt;&gt;<i> client machines. Here is what I have:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> On my machine:
+</I>&gt;&gt;&gt;<i> $ crontab -l
+</I>&gt;&gt;&gt;<i> 0,30 7-16 * * 1-6 /users/marleygraham/screenpict
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Where screenpict is the script:
+</I>&gt;&gt;&gt;<i> #!/bin/bash
+</I>&gt;&gt;&gt;<i> /usr/sbin/screencapture mg$(/users/marleygraham/exacttime)
+</I>&gt;&gt;&gt;<i> exit
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> And exacttime is the script:
+</I>&gt;&gt;&gt;<i> #!/bin/bash
+</I>&gt;&gt;&gt;<i> /bin/date +%r &gt; tempdate
+</I>&gt;&gt;&gt;<i> awk '{print $1}' tempdate
+</I>&gt;&gt;&gt;<i> rm tempdate
+</I>&gt;&gt;&gt;<i> exit
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> On the client machine, I have set up an admin user isadmin. I  
+</I>&gt;&gt;&gt;<i> logged onto the client over ssh and set up the cron job using  
+</I>&gt;&gt;&gt;<i> crontab -e. Then I copied the scripts to the  client using ARD  
+</I>&gt;&gt;&gt;<i> copy, changed the owner to isadmin, and edited to change the  
+</I>&gt;&gt;&gt;<i> username. So on the client I have:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> n$ crontab -l
+</I>&gt;&gt;&gt;<i> 0,30 7-16 * * 1-6 /screenpicsa
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Where screenpicsa is:
+</I>&gt;&gt;&gt;<i> #!/bin/bash
+</I>&gt;&gt;&gt;<i> /usr/sbin/screencapture /isscreen$(/exacttime)
+</I>&gt;&gt;&gt;<i> exit
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> And exacttime is:
+</I>&gt;&gt;&gt;<i> #!/bin/bash
+</I>&gt;&gt;&gt;<i> /bin/date +%r &gt; tempdate
+</I>&gt;&gt;&gt;<i> awk '{print $1}' tempdate
+</I>&gt;&gt;&gt;<i> rm tempdate
+</I>&gt;&gt;&gt;<i> exit
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> The files look like:
+</I>&gt;&gt;&gt;<i> -rwxr-xr-x    1 isadmin  isadmin       82 22 Jun 16:40 exacttime
+</I>&gt;&gt;&gt;<i> -rwxr-xr-x    1 isadmin  isadmin       67 23 Jun 08:21 screenpicsa
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I am not getting any files generated by cron. Any ideas why?
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Marley Graham
+</I>&gt;&gt;&gt;<i> Aqua-Flo Supply
+</I>&gt;&gt;&gt;<i> ==============
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;&gt;<i> X-Unix mailing list
+</I>&gt;&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and  
+</I>&gt;&gt;&gt;<i> random stuff:
+</I>&gt;&gt;&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________________
+</I>&gt;&gt;<i> Eric F Crist                  &quot;I am so smart, S.M.R.T!&quot;
+</I>&gt;&gt;<i> Secure Computing Networks              -Homer J Simpson
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> X-Unix mailing list
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;&gt;<i> stuff:
+</I>&gt;&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+
+_______________________________________________________
+Eric F Crist                  &quot;I am so smart, S.M.R.T!&quot;
+Secure Computing Networks              -Homer J Simpson
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002194.html">[X-Unix] Cron problem - Again
+</A></li>
+	<LI>Next message: <A HREF="002197.html">[X-Unix] Cron problem - Again
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2196">[ date ]</a>
+              <a href="thread.html#2196">[ thread ]</a>
+              <a href="subject.html#2196">[ subject ]</a>
+              <a href="author.html#2196">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

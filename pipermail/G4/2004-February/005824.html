@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] OS X SMP
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20OS%20X%20SMP&In-Reply-To=list-10724550%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005823.html">
+   <LINK REL="Next"  HREF="005825.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] OS X SMP</H1>
+    <B>Alex</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20OS%20X%20SMP&In-Reply-To=list-10724550%40mail.ninewire.com"
+       TITLE="[G4] OS X SMP">alist at sprint.ca
+       </A><BR>
+    <I>Mon Feb  9 09:48:46 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005823.html">[G4] tv on a G4
+</A></li>
+        <LI>Next message: <A HREF="005825.html">[G4] OS X SMP
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5824">[ date ]</a>
+              <a href="thread.html#5824">[ thread ]</a>
+              <a href="subject.html#5824">[ subject ]</a>
+              <a href="author.html#5824">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Sunday, Feb 8, 2004, at 12:04 Canada/Eastern, sr ferenczy wrote:
+
+&gt;&gt;<i> Does the VT cluster run Mac OS X -- and is it really relevant to our 
+</I>&gt;&gt;<i> issue?
+</I>
+&gt;<i> yes it does, and yes, i believe it is highly relevant. it is the 
+</I>&gt;<i> largest working example of SMP we have on the macintosh, and i believe 
+</I>&gt;<i> it shows how well the OS handles SMP.
+</I>
+Even if it were, and even if it did, how is that relevant to the 
+question of whether M-Audio Dual Box Pre-amp can run or not on a DP 
+450MHz Mac? If you see the relevance, I don't, so perhaps it's best to 
+agree to disagree.
+
+As to SMP, perhaps we are talking at cross-purposes.
+
+Symmetric Multiprocessing occurs when all processors can access, and 
+are equally close to, all RAM locations. For technical reasons, SMPs do 
+not scale well over 16 processors, and significant increases in 
+apparent processing power are not expected for average users beyond 4 
+processors. Had the System X (I believe that's the &quot;official&quot; name of 
+the Virginia Tech supercomputer) been &quot;the largest working example of 
+SMP&quot; it would certainly have been a major theoretical breakthrough -- 
+let alone a massive invalidation of Amdahl's law.
+
+The ways to get around SMP limitations are the NUMA architecture and 
+cluster computing. The latter is a group of interconnected computers 
+(nodes) working together. The node itself may be SMP or not, but the 
+whole cluster isn't -- it can't be. The operating system running the 
+node is not the same thing as the software which implements the 
+cluster. The crucial element is the parallel communication libraries.
+
+Clustering is not new. For instance, Beowulf clusters (Linux- or 
+FreeBSD-based networked PCs) have been in use for some time. The major 
+problem has been the fact that TCP/IP was not designed to support this 
+type of task, and the high latency of 100Mbit/s Ethernet.
+
+So now we come to System X. It is not SMP, and it is not a theoretical 
+novelty -- it uses a well-established clustering model. If my 
+understanding is correct, the nodes (which are SMP, and which are Mac 
+OS X-run, because it is based on FreeBSD) are connected by InfiniBand 
+and clustering is achieved by MPI-based libraries. What is truly 
+remarkable about System X is that a cluster of such size could be made 
+to work on off-the-shelf consumer-level components for a budget that 
+amounts to peanuts when talking supercomputing -- and Dr Varadarajan's 
+Deja Vu software, which does the essential fault tolerance job.
+
+But this is not really my cup of tea, and perhaps my understanding is 
+wrong. If so, I should be grateful if it were corrected.
+
+f
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005823.html">[G4] tv on a G4
+</A></li>
+	<LI>Next message: <A HREF="005825.html">[G4] OS X SMP
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5824">[ date ]</a>
+              <a href="thread.html#5824">[ thread ]</a>
+              <a href="subject.html#5824">[ subject ]</a>
+              <a href="author.html#5824">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

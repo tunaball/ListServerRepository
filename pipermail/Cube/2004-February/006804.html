@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [CUBE] Permissions and OSX
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20Permissions%20and%20OSX&In-Reply-To=list-10653806%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="006803.html">
+   <LINK REL="Next"  HREF="006805.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[CUBE] Permissions and OSX</H1>
+    <B>Gnarlodious</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20Permissions%20and%20OSX&In-Reply-To=list-10653806%40mail.ninewire.com"
+       TITLE="[CUBE] Permissions and OSX">gnarlodious at earthlink.net
+       </A><BR>
+    <I>Wed Feb  4 15:34:59 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="006803.html">[CUBE] Permissions and OSX
+</A></li>
+        <LI>Next message: <A HREF="006805.html">Memory question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6804">[ date ]</a>
+              <a href="thread.html#6804">[ thread ]</a>
+              <a href="subject.html#6804">[ subject ]</a>
+              <a href="author.html#6804">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Holy Hogwarts! Is that THE Keith Rowland?
+You are a celebrity! This is great.
+
+Rod, you don't mention if you are copying files to a userfolder or the boot
+folder. Keith suggests the files are in ~homefolder. If so, use Terminal.
+The GUI utility in Info for permissions is real spotty and usually fails at
+low level folders.
+
+It depends on what OS you are using, but in Terminal, I would say:
+
+chown -R  userName:admin &#171;drop folder&#187;
+
+This sets owner of all files and folders on all levels (-R is Recursive) to
+&quot;userName&quot; and group to &quot;admin&quot;. This is fast and effective, but will also
+apply these permissions to Public folder which might be a special case.
+
+Maybe you can give us more details. If you need to automate the process I
+can whip up an Applescript for the task.
+
+To see who owns what type:
+ls -lR  &#171;drop folder&#187;
+
+You should see a long list of all files in all folders recursively showing
+owner and group. I believe in 10.3 a daemon sets all copied files to current
+user but you don't mention what OS you are running.
+
+-- Gnarlie
+<A HREF="http://www.Gnarlodious.com/Cogent/Cogent.html">http://www.Gnarlodious.com/Cogent/Cogent.html</A>
+
+
+Entity Keith Rowland spoke thus:
+
+&gt;<i> You will have to log in as ROOT user first. You'll need to enable root
+</I>&gt;<i> access, that is done with the utility &quot;NetInfo Manager&quot; in the
+</I>&gt;<i> Applications Utilities folder. Once launched go to menu Security and
+</I>&gt;<i> then select Enable Root User. Set the password, don't forget it. Then
+</I>&gt;<i> logout and back in as user root by clicking the OTHER user and enter
+</I>&gt;<i> user name &quot;root&quot; and the password you selected.
+</I>&gt;<i> 
+</I>&gt;<i> Using Finder drill down to your real User Home folder.
+</I>&gt;<i> Click once on whatever directory you need to change ownership of.
+</I>&gt;<i> Perform a &quot;Get Into&quot; on the directory you want to change
+</I>&gt;<i> Click down the Ownership and Permissions Tab.
+</I>&gt;<i> Click down the Details.
+</I>&gt;<i> Unlock the Owner if needed and change the user.
+</I>&gt;<i> Click the Apply to Enclosed Items button.
+</I>&gt;<i> 
+</I>&gt;<i> Log out and back in as normal user.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> On Feb 4, 2004, at 3:28 PM, Eagle wrote:
+</I>&gt;<i> 
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> find /full/path/to/copied/files -user foo -print -exec chown bar {}
+</I>&gt;&gt;&gt;<i> \;
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;<i> 
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="006803.html">[CUBE] Permissions and OSX
+</A></li>
+	<LI>Next message: <A HREF="006805.html">Memory question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6804">[ date ]</a>
+              <a href="thread.html#6804">[ thread ]</a>
+              <a href="subject.html#6804">[ subject ]</a>
+              <a href="author.html#6804">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

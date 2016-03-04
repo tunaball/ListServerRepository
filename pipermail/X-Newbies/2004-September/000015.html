@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Newbies] How to reduce Modem speed
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20How%20to%20reduce%20Modem%20speed&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000018.html">
+   <LINK REL="Next"  HREF="000023.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Newbies] How to reduce Modem speed</H1>
+    <B>Randy B.Singer</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20How%20to%20reduce%20Modem%20speed&In-Reply-To="
+       TITLE="[X-Newbies] How to reduce Modem speed">randy at macattorney.com
+       </A><BR>
+    <I>Sat Sep 18 11:06:14 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000018.html">[X-Newbies] How to reduce Modem speed
+</A></li>
+        <LI>Next message: <A HREF="000023.html">Thank you very much Re: [X-Newbies] How to reduce Modem speed
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15">[ date ]</a>
+              <a href="thread.html#15">[ thread ]</a>
+              <a href="subject.html#15">[ subject ]</a>
+              <a href="author.html#15">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="../../../mailman/listinfo/x-newbies.html">deetya at cbn.net.id</A> said:
+
+&gt;<i>I asked my ISP, and the very first thing they said was to reduce the speed
+</I>&gt;<i>of the modem.
+</I>&gt;<i>
+</I>&gt;<i>Now, how do I do that? There's no modem speed dialog panel around, right?
+</I>&gt;<i>So how do I reduce the modem? Change the modem type in the Internet
+</I>&gt;<i>Connect Preferences Modem Tab?
+</I>
+
+You can try selecting a different modem script among those provided with 
+OS X, one for a V.34/28.8 modem (28,800 bps) should do, but such a script 
+may not be entirely satisfactory for your modem in other ways, as it was 
+not intended for your particular modem.
+
+The best way to force your modem to connect at some lower maximum speed 
+is to open the modem script for your modem (the modem script exists as a 
+separate file on your hard drive, do a Find for the folder Modem Scripts) 
+ in a text editor like TextEdit, find the modem initialization string in 
+that script,
+
+The modem initialization string will look something like:
+write &quot;AT&amp;F1E0W2S95=45S0=0&amp;D3S7=60\13&quot;
+
+...add the command to limit the maximum connection speed, save the script 
+file, then use a utility to change the type and creator of the file back 
+to what it had been before you saved it with TextEdit.
+
+To do this you will need the Hayes (i.e. &quot;AT&quot;) command set, including the 
+list of extended commands, for your particular modem.  You can find that 
+here:
+
+<A HREF="http://docs.info.apple.com/article.html?artnum=50055">http://docs.info.apple.com/article.html?artnum=50055</A>
+
+You will need to figure out which modem script you are using.  Make a 
+copy of it to modify (so that you can fall back to the original if it is 
+ruined.)
+
+You will need a utility that sets type and creator codes.
+Drop Typer is a good free choice:
+<A HREF="http://www.tabberer.com/sandyknoll/more/droptyper/droptyper.html">http://www.tabberer.com/sandyknoll/more/droptyper/droptyper.html</A>
+
+I hope this helps.
+
+
+
+Randy B. Singer
+Co-Author of: The Macintosh Bible (4th, 5th and 6th editions)
+
+Routine OS X Maintenance and Generic Troubleshooting
+<A HREF="http://www.macattorney.com/ts.html">http://www.macattorney.com/ts.html</A> 
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000018.html">[X-Newbies] How to reduce Modem speed
+</A></li>
+	<LI>Next message: <A HREF="000023.html">Thank you very much Re: [X-Newbies] How to reduce Modem speed
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15">[ date ]</a>
+              <a href="thread.html#15">[ thread ]</a>
+              <a href="subject.html#15">[ subject ]</a>
+              <a href="author.html#15">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

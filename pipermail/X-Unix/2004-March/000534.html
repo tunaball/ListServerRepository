@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Hiding apps from the command line
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11729112%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000533.html">
+   <LINK REL="Next"  HREF="000535.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Hiding apps from the command line</H1>
+    <B>Kirk McElhearn</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11729112%40mail.ninewire.com"
+       TITLE="[X-Unix] Hiding apps from the command line">kirklists at wanadoo.fr
+       </A><BR>
+    <I>Fri Mar 26 07:19:31 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000533.html">[X-Unix] Hiding apps from the command line
+</A></li>
+        <LI>Next message: <A HREF="000535.html">Setting variables for hide script
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#534">[ date ]</a>
+              <a href="thread.html#534">[ thread ]</a>
+              <a href="subject.html#534">[ subject ]</a>
+              <a href="author.html#534">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 3/26/04 4:08 PM, &quot;Simon Forster&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">simon-lists at ldml.com</A>&gt; wrote:
+
+&gt;<i> The error seems to get thrown if the second command line arg is not
+</I>&gt;<i> given - whether it's needed or not.
+</I>
+I still get it, even if I add another argument.
+&gt;<i> 
+</I>&gt;<i> FWIW, my take on the script:
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ---------START----------
+</I>&gt;<i> 
+</I>&gt;<i> #!/bin/sh
+</I>&gt;<i> # This script lets you hide a specified application, the Finder, all
+</I>&gt;<i> # applications but the Finder, or all applications other than a
+</I>&gt;<i> specified
+</I>&gt;<i> # application.
+</I>&gt;<i> # Syntax is as follows:
+</I>&gt;<i> #
+</I>&gt;<i> # hide -o [appname] - hides all other apps
+</I>&gt;<i> # hide -a           - hides all apps but Finder
+</I>&gt;<i> # hide -f           - hides Finder
+</I>&gt;<i> # hide -v [appname] - shows specified app
+</I>&gt;<i> # hide -t           - toggles shown apps
+</I>
+Nice idea!
+
+&gt;<i> # hide -x           - shows terminal
+</I>
+Why? Since you're typing this from Terminal, it shouldn't matter.
+
+As it was before, this is the behavior:
+
+hides all apps but specified app; if no app is specified, Terminal remains
+visible
+
+&gt;<i> # hide [appname]       - hides specified app
+</I>&gt;<i> #
+</I>&gt;<i> # For applications whose names contain spaces, they must be quoted,
+</I>&gt;<i> # ie, hide &quot;microsoft word&quot;.  This command is case-insensitive.
+</I>&gt;<i> 
+</I>&gt;<i> osascript &lt;&lt;END
+</I>&gt;<i> tell application &quot;Finder&quot;
+</I>&gt;<i> 
+</I>&gt;<i> if &quot;$1&quot; begins with &quot;-&quot; then
+</I>&gt;<i> if &quot;$1&quot; contains &quot;o&quot; then set visible of every process whose visible
+</I>&gt;<i> is true and name is not &quot;$2&quot; to false
+</I>
+I wonder if the &quot;begins with&quot; and &quot;contains&quot; is any better/faster than
+simply &quot;is -o&quot; etc.?
+
+&gt;<i> if &quot;$1&quot; contains &quot;a&quot; then set visible of every process whose visible
+</I>&gt;<i> is true and name is not &quot;Finder&quot; and name is not &quot;$2&quot; to false
+</I>&gt;<i> if &quot;$1&quot; contains &quot;f&quot; then set visible of process &quot;Finder&quot; to false
+</I>&gt;<i> if &quot;$1&quot; contains &quot;v&quot; then tell me to tell application &quot;$2&quot; to
+</I>&gt;<i> activate
+</I>&gt;<i> if &quot;$1&quot; contains &quot;t&quot; then
+</I>&gt;<i> set theVisible to name of every process whose visible is true
+</I>&gt;<i> repeat with theProcess in every process
+</I>&gt;<i> if theVisible contains name of theProcess then
+</I>&gt;<i> set visible of contents of theProcess to false
+</I>&gt;<i> else
+</I>&gt;<i> set visible of contents of theProcess to true
+</I>&gt;<i> end if
+</I>&gt;<i> end repeat
+</I>&gt;<i> end if
+</I>&gt;<i> if &quot;$1&quot; contains &quot;x&quot; then tell application &quot;Terminal&quot; to activate
+</I>&gt;<i> else if exists application process &quot;$1&quot; then
+</I>&gt;<i> set visible of application process &quot;$1&quot; to false
+</I>
+This part's not working for me...
+
+&gt;<i> end if
+</I>&gt;<i> 
+</I>&gt;<i> end tell
+</I>&gt;<i> END
+</I>&gt;<i> 
+</I>&gt;<i> -----------END----------
+</I>
+ 
+ 
+Kirk
+ 
+        My latest book: How to Do Everything with Mac OS X Panther
+                  <A HREF="http://www.mcelhearn.com/htde.html">http://www.mcelhearn.com/htde.html</A>
+ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+ . . . . . . .  <A HREF="../../../mailman/listinfo/x-unix.html">kirk at mcelhearn.com</A> | <A HREF="http://www.mcelhearn.com">http://www.mcelhearn.com</A>  . . . . . .
+ . .  Kirk McElhearn | Chemin de la Lauze | 05600 Guillestre | France  . .
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000533.html">[X-Unix] Hiding apps from the command line
+</A></li>
+	<LI>Next message: <A HREF="000535.html">Setting variables for hide script
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#534">[ date ]</a>
+              <a href="thread.html#534">[ thread ]</a>
+              <a href="subject.html#534">[ subject ]</a>
+              <a href="author.html#534">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

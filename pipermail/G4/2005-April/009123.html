@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] G4 DA shuts down, console gives PMU clue
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20G4%20DA%20shuts%20down%2C%20console%20gives%20PMU%20clue&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="009122.html">
+   <LINK REL="Next"  HREF="009124.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] G4 DA shuts down, console gives PMU clue</H1>
+    <B>MnVikes</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20G4%20DA%20shuts%20down%2C%20console%20gives%20PMU%20clue&In-Reply-To="
+       TITLE="[G4] G4 DA shuts down, console gives PMU clue">mnvikes at verizon.net
+       </A><BR>
+    <I>Sat Apr  9 17:13:44 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="009122.html">[G4] flat screen monitors for G4s
+</A></li>
+        <LI>Next message: <A HREF="009124.html">[G4] Re: Tip of the Day: Reset Loud Startup Chime
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9123">[ date ]</a>
+              <a href="thread.html#9123">[ thread ]</a>
+              <a href="subject.html#9123">[ subject ]</a>
+              <a href="author.html#9123">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I purchased (via Ebay) a used G4/466 DA a few weeks ago. I've noticed that
+when the computer has been running several hours (mostly when its
+unattended) it will shut itself down. At first I was racking my brain to
+remember whether I shut it down and forgot, but I've come to the realization
+that its not MY malfunction! :)
+
+I've checked the system console logs and after the shut down the system log
+looks something like the following:
+
+Apr  9 06:51:27 Mitch mDNSResponder[146]: mDNSResponder Sleeping at 18277187
+Dec 31 19:00:02 localhost syslogd: restart
+Dec 31 19:00:02 localhost syslogd: kernel boot file is /mach_kernel
+Dec 31 19:00:02 localhost kernel: standard timeslicing quantum is 10000 us
+Dec 31 19:00:02 localhost kernel: vm_page_bootstrap: 45400 free pages
+Dec 31 19:00:02 localhost kernel: mig_table_max_displ = 68
+Dec 31 19:00:02 localhost kernel: IOKit Component Version 7.8:
+Dec 31 19:00:02 localhost kernel: Wed Dec 22 14:23:55 PST 2004;
+root(rcbuilder):RELEASE_PPC/iokit/RELEASE
+Dec 31 19:00:02 localhost kernel: 69 prelinked modules
+Dec 31 19:00:02 localhost kernel: Copyright (c) 1982, 1986, 1989, 1991, 1993
+Dec 31 19:00:02 localhost kernel: The Regents of the University of
+California. All rights reserved.
+Dec 31 19:00:03 localhost kernel:
+Dec 31 19:00:03 localhost kernel: using 491 buffer headers and 491 cluster
+IO buffer headers
+Dec 31 19:00:03 localhost kernel: Adaptec warning: Resetting SCSI bus.
+Dec 31 19:00:03 localhost kernel: ApplePMU::PMU FORCED SHUTDOWN, CAUSE =
+-122
+Dec 31 19:00:03 localhost kernel: ApplePMU::CLOCK RESET!  PMU WAS PROBABLY
+RESET SOMEHOW!!
+Dec 31 19:00:03 localhost kernel: Security auditing service present
+Dec 31 19:00:03 localhost kernel: BSM auditing present
+Dec 31 19:00:03 localhost kernel: From path:
+&quot;/<A HREF="../../../mailman/listinfo/g4.html">pci at f2000000</A>/<A HREF="../../../mailman/listinfo/g4.html">mac-io at 17</A>/<A HREF="../../../mailman/listinfo/g4.html">ata-4 at 1f000</A>/@0:10,\mach_kernel&quot;, Waiting on &lt;dict
+ID=&quot;0&quot;&gt;&lt;key&gt;IOPathMatch&lt;/key&gt;&lt;string
+ID=&quot;1&quot;&gt;IODeviceTree:/<A HREF="../../../mailman/listinfo/g4.html">pci at f2000000</A>/<A HREF="../../../mailman/listinfo/g4.html">mac-io at 17</A>/<A HREF="../../../mailman/listinfo/g4.html">ata-4 at 1f000</A>/@0:10&lt;/string&gt;&lt;/dict
+&gt;<i>
+</I>Dec 31 19:00:03 localhost kernel: FWOHCI Error trying to clear PHY ports.
+Dec 31 19:00:03 localhost kernel: Got boot device =
+IOService:/MacRISC2PE/<A HREF="../../../mailman/listinfo/g4.html">pci at f2000000</A>/AppleMacRiscPCI/<A HREF="../../../mailman/listinfo/g4.html">mac-io at 17</A>/AppleKeyLargo/a
+<A HREF="../../../mailman/listinfo/g4.html">ta-4 at 1f000</A>/KeyLargoATA/<A HREF="../../../mailman/listinfo/g4.html">ATADeviceNub at 0</A>/IOATABlockStorageDriver/IOATABlockStor
+ageDevice/IOBlockStorageDriver/WDC WD800JB-00JJA0
+Media/IOApplePartitionScheme/<A HREF="../../../mailman/listinfo/g4.html">Apple_HFS_Untitled_2 at 10</A>
+Dec 31 19:00:03 localhost kernel: BSD root: disk0s10, major 14, minor 10
+Dec 31 19:00:03 localhost kernel: jnl: replay_journal: from: 4976640 to:
+7681536 (joffset 0x82b000)
+Dec 31 19:00:03 localhost kernel: FWOHCI Error trying to clear PHY ports.
+Dec 31 19:00:03 localhost kernel: Local FireWire GUID = 0x3065ff:0xfeed1a76
+Dec 31 19:00:03 localhost kernel: WARNING: preposterous time in Real Time
+Clock -- CHECK AND RESET THE DATE!
+Dec 31 19:00:03 localhost kernel: Jettisoning kernel linker.
+Dec 31 19:00:03 localhost kextd[88]: registering service
+&quot;com.apple.KernelExtensionServer&quot;
+Dec 31 19:00:04 localhost kernel: Resetting IOCatalogue.
+Dec 31 19:00:10 localhost kernel: Matching service count = 0
+Dec 31 19:00:10 localhost kernel: AppleRS232Serial:        0        0
+AppleRS232Serial::start - returning false early, Connector or machine
+incorrect
+Dec 31 19:00:10 localhost kernel: ROM ndrv for ATY,Rage128Pd is too old
+(0xb6246498)
+Dec 31 19:00:10 localhost kernel: AirPortFirmware: start Sta f/w download
+Dec 31 19:00:10 localhost kernel: obtaining ID
+Dec 31 19:00:10 localhost kernel: from Registry
+Dec 31 19:00:10 localhost kernel: ATIRage128: using AGP
+
+
+As you might have noticed, the system clock gets reset to a &quot;preposterous&quot;
+time and date when the system reboots, and the log indicates that the PMU
+caused a forced shutdown. I've hit the PMU reset button (not this time, even
+though the log indicates that I did!), and I've checked the battery's
+voltage (OK). The only other home remedy I can think of is a surge
+protector, but Consolidated Edison of New York has NEVER caused any of my
+other machines such harm, so I'm doubting they are the cause.
+I'm asking if anyone has any further information or can estimate the cost of
+the repair and how to obtain it. This is very frustrating and I really don't
+relish bringing the issue up to the Ebay seller (it was a Money Order
+transaction so I'm possibly SOL anyway).
+
+
+</PRE>
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="009122.html">[G4] flat screen monitors for G4s
+</A></li>
+	<LI>Next message: <A HREF="009124.html">[G4] Re: Tip of the Day: Reset Loud Startup Chime
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9123">[ date ]</a>
+              <a href="thread.html#9123">[ thread ]</a>
+              <a href="subject.html#9123">[ subject ]</a>
+              <a href="author.html#9123">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] path for terminal.app and x11
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20path%20for%20terminal.app%20and%20x11&In-Reply-To=21e7f01ca1b7e17a3efaad7583a69e02%40famaco.com.my">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001954.html">
+   <LINK REL="Next"  HREF="001970.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] path for terminal.app and x11</H1>
+    <B>John Harrold</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20path%20for%20terminal.app%20and%20x11&In-Reply-To=21e7f01ca1b7e17a3efaad7583a69e02%40famaco.com.my"
+       TITLE="[X-Unix] path for terminal.app and x11">jmh17 at pitt.edu
+       </A><BR>
+    <I>Sat May 14 07:43:23 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001954.html">[X-Unix] path for terminal.app and x11
+</A></li>
+        <LI>Next message: <A HREF="001970.html">[X-Unix] path for terminal.app and x11
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1955">[ date ]</a>
+              <a href="thread.html#1955">[ thread ]</a>
+              <a href="subject.html#1955">[ subject ]</a>
+              <a href="author.html#1955">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Sometime in May sham khalil assaulted the keyboard and produced:
+
+|<i> i have edited .profile file to include /opt/local/ in the $PATH
+</I>|<i> PATH=&quot; /bin:/sbin:/usr/bin:/usr/sbin:/opt/local/bin:/opt/local/sbin&quot;
+</I>|<i> 
+</I>|<i> but on X11  $PATH doesn't have /opt/local
+</I>|<i> PATH=&quot;/usr/bin:/bin:/usr/sbin:/sbin:/Users/shamkhalil:/usr/X11R6/bin&quot;
+</I>
+I believe you mean the path for 'xterm' as opposed to 'terminal.app'. When
+X11.app starts an 'xterm' is what is started. This isn't the same as the
+terminal.app which is in /Applications/Utilities (by default). For
+'terminal.app', I've modified the file ~/.bash_profile to set environment
+variables like PATH. For some reason appl chose to make it such that xterm,
+or more precisely x11.app, doens't respect such conventions. For a verbose
+explination of why this is so check out the following:
+
+<A HREF="http://www.opendarwin.org/pipermail/darwinports/2004-May/021066.html">http://www.opendarwin.org/pipermail/darwinports/2004-May/021066.html</A>
+
+To make xterm read my .files all I had to do was edit the file
+/etc/X11/xinit/xinitrc and look for the line:
+
+xterm &amp; 
+
+and change it to
+
+xterm -ls &amp;
+
+I hope this helps.
+
+-- 
+---------------------------------------------------------- 
+                            | /&quot;\                         
+ john harrold               | \ / ASCII ribbon campaign   
+ jmh at member.fsf.org      |  X  against HTML mail       
+ the most useful idiot      | / \                         
+----------------------------------------------------------
+ What difference does it make to the dead, the orphans, 
+ and the homeless, whether the mad destruction is brought 
+ under the name of totalitarianism or the holy name of 
+ liberty and democracy?
+ --Gandhi
+----------------------------------------------------------
+  gpg --keyserver pgp.mit.edu --recv-key B23241CB
+----------------------------------------------------------
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: Digital signature
+Url : <A HREF="../attachments/20050514/8a5fa874/attachment.bin">http://listserver.themacintoshguy.com/pipermail/x-unix/attachments/20050514/8a5fa874/attachment.bin</A>
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001954.html">[X-Unix] path for terminal.app and x11
+</A></li>
+	<LI>Next message: <A HREF="001970.html">[X-Unix] path for terminal.app and x11
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1955">[ date ]</a>
+              <a href="thread.html#1955">[ thread ]</a>
+              <a href="subject.html#1955">[ subject ]</a>
+              <a href="author.html#1955">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

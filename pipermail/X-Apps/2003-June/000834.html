@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> adding Content-Type header by defaults plist
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-apps%40listserver.themacintoshguy.com?Subject=adding%20Content-Type%20header%20by%20defaults%20plist&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000833.html">
+   <LINK REL="Next"  HREF="000835.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>adding Content-Type header by defaults plist</H1>
+    <B>Darin Duphorne</B> 
+    <A HREF="mailto:x-apps%40listserver.themacintoshguy.com?Subject=adding%20Content-Type%20header%20by%20defaults%20plist&In-Reply-To="
+       TITLE="adding Content-Type header by defaults plist">darind at houston.rr.com
+       </A><BR>
+    <I>Sun Jun 29 07:23:23 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000833.html">Mail.app 
+</A></li>
+        <LI>Next message: <A HREF="000835.html">sftp and Browsers
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#834">[ date ]</a>
+              <a href="thread.html#834">[ thread ]</a>
+              <a href="subject.html#834">[ subject ]</a>
+              <a href="author.html#834">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>To try and trick Mail.app into letting me create a html newsletter, I 
+added &quot;MIME-Version: 1.0&quot; and &quot;Content-Type: 
+multipart/mixed;boundary=unique-boundary-1&quot; headers in the defaults 
+plist, and then used --unique-boundary-1 as my boundary separator in 
+the body of the email.  I think this would have worked, but Mail.app 
+superceded my default headers with its own (replacing the boundary with 
+an unpredictable random string, so I can't use it in the body to 
+separate the parts).
+
+I then realized that the default mime type in Mail.app was rich text, 
+so I tried making the message plain text before sending it.  It still 
+changed the Content-Type, but simply used text/plain this time, and 
+still replaced the boundary tag.
+
+GRRRRRRRRRRRRRRR.................
+
+Does anyone have any suggestions, or is this just flat not possible in 
+Mail.app? I have a perl script that will format the content, but don't 
+want to send it with sendmail -- I want to use Mail.app.
+
+Cricket????
+
+==========================
+
+Here's my sample email body:
+
+This is the preamble area of a multipart message.
+
+Mail readers that understand multipart format
+
+should ignore this preamble.
+
+If you are reading this text, you might want to
+
+consider changing to a mail reader that understands
+
+how to properly display multipart messages.
+
+--unique-boundary-1
+
+...Some text appears here...
+
+[Note that the preceding blank line means
+
+no header fields were given and this is text,
+
+with charset US ASCII.  It could have been
+
+done with explicit typing as in the next part.]
+
+--unique-boundary-1
+
+Content-type: text/plain; charset=US-ASCII
+
+This could have been part of the previous part,
+
+but illustrates explicit versus implicit
+
+typing of body parts.
+
+--unique-boundary-1
+
+Content-Type: multipart/parallel;
+
+boundary=unique-boundary-2
+
+--unique-boundary-2
+
+Content-Type: audio/basic
+
+Content-Transfer-Encoding: base64
+
+... base64-encoded 8000 Hz single-channel
+
+mu-law-format audio data goes here....
+
+--unique-boundary-2
+
+Content-Type: image/gif
+
+Content-Transfer-Encoding: base64
+
+... base64-encoded image data goes here....
+
+--unique-boundary-2--
+
+--unique-boundary-1
+
+Content-type: text/richtext
+
+This is &lt;bold&gt;&lt;italic&gt;richtext.&lt;/italic&gt;&lt;/bold&gt;
+
+&lt;smaller&gt;as defined in RFC 1341&lt;/smaller&gt;
+
+&lt;nl&gt;&lt;nl&gt;Isn't it
+
+&lt;bigger&gt;&lt;bigger&gt;cool?&lt;/bigger&gt;&lt;/bigger&gt;
+
+--unique-boundary-1
+
+Content-Type: message/rfc822
+
+From: (mailbox in US-ASCII)
+
+To: (address in US-ASCII)
+
+Subject: (subject in US-ASCII)
+
+Content-Type: Text/plain; charset=ISO-8859-1
+
+Content-Transfer-Encoding: Quoted-printable
+
+... Additional text in ISO-8859-1 goes here ...
+
+--unique-boundary-1-- 
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000833.html">Mail.app 
+</A></li>
+	<LI>Next message: <A HREF="000835.html">sftp and Browsers
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#834">[ date ]</a>
+              <a href="thread.html#834">[ thread ]</a>
+              <a href="subject.html#834">[ subject ]</a>
+              <a href="author.html#834">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-apps.html">More information about the X-Apps
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

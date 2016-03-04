@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] BASH problem?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20BASH%20problem%3F&In-Reply-To=4F26D200-4CF9-11D9-9397-000A27E399B0%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001393.html">
+   <LINK REL="Next"  HREF="001395.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] BASH problem?</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20BASH%20problem%3F&In-Reply-To=4F26D200-4CF9-11D9-9397-000A27E399B0%40mac.com"
+       TITLE="[X-Unix] BASH problem?">magill at mcgillsociety.org
+       </A><BR>
+    <I>Mon Dec 13 11:31:28 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001393.html">[X-Unix] BASH problem?
+</A></li>
+        <LI>Next message: <A HREF="001395.html">[X-Unix] unsubscribe
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1394">[ date ]</a>
+              <a href="thread.html#1394">[ thread ]</a>
+              <a href="subject.html#1394">[ subject ]</a>
+              <a href="author.html#1394">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 13 Dec, 2004, at 06:22, Russell McGaha wrote:
+
+&gt;<i> Actually yes and no; I am relatively new to command line programming.  
+</I>&gt;<i> After I chmoded the file it ran [is running] just fine as a cron job, 
+</I>&gt;<i> and before I changed my shell to bash, was running just fine as a 
+</I>&gt;<i> sourced file .
+</I>
+That is correct behavior.  That is the way in which &quot;shell programming&quot; 
+works.
+
+A couple of Unix concepts (quite generalized, go read a Unix text for 
+more explicit explanations):
+
+EVERY file is nothing but a string of characters. It is read starting 
+at the first byte, that read progresses to the end-of-file. The &quot;thing&quot; 
+reading the file can be a &quot;program&quot; or an &quot;interpreter,&quot; typically 
+called a &quot;shell&quot; -- tcsh, bash, zsh, ksh and sh all being valid 
+&quot;shells.&quot; Perl is another common interpreter, as are  Tcl/tk and Java.
+
+ANY text file can be &quot;sourced&quot; by any interpreter -- The interpreter 
+reads the file and if that file contains valid commands for that shell 
+they will be &quot;executed,&quot; that is to say, &quot;interpreted&quot; by the shell. If 
+they are not &quot;commands&quot; which that interpreter understands, the 
+interpreter will generate errors.
+
+If your default shell was tcsh and you &quot;sourced&quot; a file containing tcsh 
+commands it would work as expected. However, when you changed your 
+shell to bash, and sourced that same file, bash found no valid 
+commands... just as you experienced.
+
+&quot;Rational&quot; programmers always put a shebang line as the first line of 
+any shell script -- in that way they remind themselves WHICH shell it 
+was written for, AND, more importantly, it allows that script to be 
+&quot;executed&quot; as a &quot;stand-alone&quot; program.
+
+When a file is sourced, the &quot;shebang&quot; line -- the first line of the 
+file (&quot;#!/bin/tcsh&quot;, &quot;#!/bin/bash&quot;, &quot;#!/bin/zsh&quot;) is simply ignored.  
+It is treated as a comment because of the leading &quot;#&quot; by the shell's 
+interpreter.
+
+For a &quot;file&quot; to become an executable program (i.e. something with the 
+execute bits set), the first line  of the file is examined by they 
+system call, &quot;exec.&quot; Exec determines just what it is being asked to 
+look at, and therefore what it should do with it. A compiled binary 
+file is no different than a shell script file -- they are both merely 
+strings of bits and bytes. However, the beginning of the file contains 
+information which tells exec exactly what format the file is in... 
+compiled binary or text.
+If it is a text file, the first line of the file is examined to 
+determine what interpreter to invoke.
+If there is no shebang line present to invoke an interpreter you will 
+get lots of funny errors when you try to exec that love letter you 
+wrote. But with the shebang line present, an interpreter is invoked to 
+read and interpret the remaining data in the file.
+
+There is lots of other &quot;magic&quot; taking place, (&quot;man magic&quot; for one 
+example) including games played with the filename extension -- .sh, 
+.tcsh, .bash, .pl, .jar, etc. -- which simply makes life &quot;easier&quot; for 
+the end user.
+
+&quot;Flexability&quot; is a key point in Unix and enunciated in Perl -- There is 
+more than one correct way to do things!  Just as the tuber which grows 
+underground can correctly be called a Russet, Idaho or Potato, except 
+in very specific situations, the difference does not matter.
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001393.html">[X-Unix] BASH problem?
+</A></li>
+	<LI>Next message: <A HREF="001395.html">[X-Unix] unsubscribe
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1394">[ date ]</a>
+              <a href="thread.html#1394">[ thread ]</a>
+              <a href="subject.html#1394">[ subject ]</a>
+              <a href="author.html#1394">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

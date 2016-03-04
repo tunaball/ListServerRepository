@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Copying Large Amounts of data via USB/FW (was Re: [X-Unix]
+	Re: Pokey 	LAN transfers (Resolved))
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Copying%20Large%20Amounts%20of%20data%20via%20USB/FW%20%28was%20Re%3A%20%5BX-Unix%5D%0A%09Re%3A%20Pokey%20%09LAN%20transfers%20%28Resolved%29%29&In-Reply-To=d2ecb10b0712271912r602055btd1138e41530bbd7%40mail.gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002961.html">
+   <LINK REL="Next"  HREF="002967.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Copying Large Amounts of data via USB/FW (was Re: [X-Unix]
+	Re: Pokey 	LAN transfers (Resolved))</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Copying%20Large%20Amounts%20of%20data%20via%20USB/FW%20%28was%20Re%3A%20%5BX-Unix%5D%0A%09Re%3A%20Pokey%20%09LAN%20transfers%20%28Resolved%29%29&In-Reply-To=d2ecb10b0712271912r602055btd1138e41530bbd7%40mail.gmail.com"
+       TITLE="Copying Large Amounts of data via USB/FW (was Re: [X-Unix]
+	Re: Pokey 	LAN transfers (Resolved))">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Fri Dec 28 01:39:52 PST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002961.html">Copying Large Amounts of data via USB/FW (was Re: [X-Unix] Re: Pokey
+	LAN transfers (Resolved))
+</A></li>
+        <LI>Next message: <A HREF="002967.html">Copying Large Amounts of data via USB/FW (was Re: [X-Unix] Re:
+	Pokey LAN transfers (Resolved))
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2964">[ date ]</a>
+              <a href="thread.html#2964">[ thread ]</a>
+              <a href="subject.html#2964">[ subject ]</a>
+              <a href="author.html#2964">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 22:12 -0500 27/12/07, TjL wrote:
+&gt;<i>I have a large amount of data (GBs and GBs) spread across several
+</I>&gt;<i>external HDs, some USB2, some Firewire 400.
+</I>&gt;<i>I am trying to consolidate them and organize them so that similar data
+</I>&gt;<i>is on the same drives, i.e. TV shows on one, movies on another, short
+</I>&gt;<i>home movies from our digital camera on another, etc.
+</I>&gt;<i>These range from a folder with dozens and dozens (if not hundreds) of
+</I>&gt;<i>smaller files (under 200mb) to folders with a bunch of DVD rips (4-8GB
+</I>&gt;<i>but a few files).
+</I>&gt;<i>All of the drives are HFS+ Journaled, attached to a 2.8Ghz iMac
+</I>&gt;<i>running Leopard either by USB (powered hubs) or daily chained Firewire
+</I>&gt;<i>drives.
+</I>&gt;<i>
+</I>&gt;<i>I've pretty much given up on using Finder because it gives such
+</I>&gt;<i>useless error messages, and am using 'mv -iv' in Terminal.
+</I>&gt;<i>
+</I>&gt;<i>Is there a better/faster way to do this?
+</I>
+mv between volumes does:
+            rm -f destination_path &amp;&amp; \
+            cp -pRP source_file destination &amp;&amp; \
+            rm -rf source_file
+(from the man page).
+
+cp is the fastest you're going to get, as it knows each file size 
+before each new file creation, and so can avoid the time consuming 
+task of getting many smaller extents allocated. It will be quickest 
+if there is lots of contiguous free space on the destination.
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+HP-UX specialist of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x-unix.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002961.html">Copying Large Amounts of data via USB/FW (was Re: [X-Unix] Re: Pokey
+	LAN transfers (Resolved))
+</A></li>
+	<LI>Next message: <A HREF="002967.html">Copying Large Amounts of data via USB/FW (was Re: [X-Unix] Re:
+	Pokey LAN transfers (Resolved))
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2964">[ date ]</a>
+              <a href="thread.html#2964">[ thread ]</a>
+              <a href="subject.html#2964">[ subject ]</a>
+              <a href="author.html#2964">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

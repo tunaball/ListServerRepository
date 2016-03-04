@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] SED help
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20SED%20help&In-Reply-To=6483612E-51C6-4EB9-B1D0-77597282B8DA%40canfieldtack.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002431.html">
+   <LINK REL="Next"  HREF="002433.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] SED help</H1>
+    <B>Charles Howse</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20SED%20help&In-Reply-To=6483612E-51C6-4EB9-B1D0-77597282B8DA%40canfieldtack.com"
+       TITLE="[X-Unix] SED help">chowse at charter.net
+       </A><BR>
+    <I>Thu Nov  3 08:38:44 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002431.html">[X-Unix] SED help
+</A></li>
+        <LI>Next message: <A HREF="002433.html">[X-Unix] SED help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2432">[ date ]</a>
+              <a href="thread.html#2432">[ thread ]</a>
+              <a href="subject.html#2432">[ subject ]</a>
+              <a href="author.html#2432">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> I'm a rank beginner with command line editing.
+</I>&gt;<i> 
+</I>&gt;<i> The shell is tcsh.
+</I>&gt;<i> 
+</I>&gt;<i> I have a series of about 100 directories each with a &quot;mailto&quot; file
+</I>&gt;<i> containing a list of email addresses. I wish to add the same address
+</I>&gt;<i> to the end of each of the &quot;mailto&quot; files.
+</I>&gt;<i> 
+</I>&gt;<i> I've used &quot;foreach&quot; and &quot;sed&quot; to do replacements, but adding a new
+</I>&gt;<i> line has defeated me so far.
+</I>&gt;<i> 
+</I>&gt;<i> For replacements, I've had success with:
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;&gt;<i> server 10# foreach file ( `find . -name mailto` )
+</I>&gt;&gt;<i> foreach? cat $file |sed 's/something/else/g' &gt; $file.tmp
+</I>&gt;&gt;<i> foreach? mv $file.tmp $file
+</I>&gt;&gt;<i> foreach? end
+</I>&gt;&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Thinking that a &quot;\n&quot; would insert as a new line, I tried to replace
+</I>&gt;<i> the last line of the mailto file with:
+</I>&gt;<i> foreach? cat $file |sed
+</I>&gt;<i> 's/'<A HREF="../../../mailman/listinfo/x-unix.html">user1 at company.com</A>'/'<A HREF="../../../mailman/listinfo/x-unix.html">user1 at company.com</A>'\n'<A HREF="../../../mailman/listinfo/x-unix.html">user2 at company.com</A>'/g' &gt;
+</I>&gt;<i> $file.tmp
+</I>&gt;<i> 
+</I>&gt;<i> This ran the two addresses together with an &quot;n&quot; in the middle.
+</I>&gt;<i> 
+</I>&gt;<i> Any suggestions would be greatly appreciated.
+</I>
+If you have /bin/bash, and if *all* you want to do is add &quot;<A HREF="../../../mailman/listinfo/x-unix.html">me at privacy.net</A>&quot;
+to the end of each of your mailto files, why not try this?
+
+for file in `find . -name mailto` ;
+    do echo &quot;<A HREF="../../../mailman/listinfo/x-unix.html">me at privacy.net</A>&quot; &gt;&gt; $file
+done
+
+You'll have to add the appropriate command to go through all your 100
+directories, but try it on one of them, and maybe I can help with the
+complete script.  BTW, I use bash, but it might work in tcsh.
+You can even get this to prompt you for the email address when it runs, or
+enter the address as a parameter.
+I'm available to help if you want to try it.
+See The Advanced Bash Scripting Guide: <A HREF="http://www.tldp.org/LDP/abs/html/">http://www.tldp.org/LDP/abs/html/</A>
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002431.html">[X-Unix] SED help
+</A></li>
+	<LI>Next message: <A HREF="002433.html">[X-Unix] SED help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2432">[ date ]</a>
+              <a href="thread.html#2432">[ thread ]</a>
+              <a href="subject.html#2432">[ subject ]</a>
+              <a href="author.html#2432">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

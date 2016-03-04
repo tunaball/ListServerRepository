@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MacDV] Can't render/encode my iDVD project - Can't burn	project
+	to DVD (SOLVED)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Can%27t%20render/encode%20my%20iDVD%20project%20-%20Can%27t%20burn%09project%0A%09to%20DVD%20%28SOLVED%29&In-Reply-To=19329E17-287F-11D9-B78D-000393D141B6%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011532.html">
+   <LINK REL="Next"  HREF="011536.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MacDV] Can't render/encode my iDVD project - Can't burn	project
+	to DVD (SOLVED)</H1>
+    <B>Robert L. Vaessen</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Can%27t%20render/encode%20my%20iDVD%20project%20-%20Can%27t%20burn%09project%0A%09to%20DVD%20%28SOLVED%29&In-Reply-To=19329E17-287F-11D9-B78D-000393D141B6%40mac.com"
+       TITLE="[MacDV] Can't render/encode my iDVD project - Can't burn	project
+	to DVD (SOLVED)">rvaessen at mac.com
+       </A><BR>
+    <I>Wed Oct 27 23:22:13 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011532.html">[MacDV] Can't render/encode my iDVD project - Can't burn	project
+	to DVD
+</A></li>
+        <LI>Next message: <A HREF="011536.html">[MacDV] Can't render/encode my iDVD project - Can't burnprojectto
+	DVD (SOLVED)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11535">[ date ]</a>
+              <a href="thread.html#11535">[ thread ]</a>
+              <a href="subject.html#11535">[ subject ]</a>
+              <a href="author.html#11535">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Oct 27, 2004, at 19:17, Gerhard Kuhn wrote:
+
+&gt;<i> On Oct 27, 2004, at 8:03 PM, Robert L. Vaessen wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Gerhard -
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I've left it for 20 hours at one time (with power management/screen 
+</I>&gt;&gt;<i> savers off). About 30% of the time it crashes, when it crashes, it 
+</I>&gt;&gt;<i> usually crashes within 30 minutes or so. If it doesn't crash, it 
+</I>&gt;&gt;<i> experiences what I call a &quot;freewheel&quot; symptom. I was recently able to 
+</I>&gt;&gt;<i> complete a burn (of the iDVD tutorial), but the quality was so bad it 
+</I>&gt;&gt;<i> was unusable. The burn that completed took about 5 minutes to 
+</I>&gt;&gt;<i> complete stages 1 - 3, and another 5 minutes to complete stage 4. 
+</I>&gt;&gt;<i> That project had a menu, a transition, motion graphics, some music, 
+</I>&gt;&gt;<i> and 5 seconds worth of video.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I'm begining to think that the codec used by iDVD for video/audio 
+</I>&gt;&gt;<i> rendering and encoding is not compatible with my processor. ffmpegx 
+</I>&gt;&gt;<i> uses two different codec's. I've been trying both, with limited 
+</I>&gt;&gt;<i> success.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I'm still tinkering with ffmpegx. I have suceeded in producing a 
+</I>&gt;&gt;<i> VIDEO_TS folder with the components required for a DVD burn. 
+</I>&gt;&gt;<i> Unfortunately, there's no aduio yet. I'm going to try to produce the 
+</I>&gt;&gt;<i> audio and video separately, and then mux them together using one of 
+</I>&gt;&gt;<i> ffmpegx's post processing capabilities.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> - Robert
+</I>&gt;<i>
+</I>&gt;<i> Did you view the DVD on your computer or on TV.  Generally they look 
+</I>&gt;<i> much better on a TV.
+</I>&gt;<i> The Audio_TS folder should be empty as the audio is part of the mpeg2 
+</I>&gt;<i> file.
+</I>&gt;<i>
+</I>&gt;<i> Gerhard
+</I>
+Gerhard -
+
+I viewed the DVD on the TV. It looked absolutely horrible. The AUDIO_TS 
+folder was empty.
+
+Good news. Working with ffmpegX (version 0.0.9p) I have been able to 
+author/encode my iMovie project to valid DVD data folders (VIDEO_TS and 
+AUDIO_TS). I previewed the data on my G5, and the .VOB file contained 
+multiplexed video and audio.
+
+I used DragonBurn to burn the data to DVD. I now have an autoplay 
+version of my iMovie file. I used iMovie to edit the movie, output it 
+as .DV and used that as my input to ffmpegX.
+
+ffmepgX settings were:
+
+File settings:
+Open: ninjamovie_imovieedit.dv
+Save as: ninjamovie_imovieedit.dv
+(info:  dvvideo, 720x480, 29.97 fps, 25000 kb/s. AUDIO:  pcm_s16le, 
+48000 Hz, stereo, 1536 kb/s)
+
+Video settings:
+Video codec: MPEG2[.MPG](mpeg2enc) - encode video checked
+Bitrate calculator:
+Video bit rate: 3742 kbit/s
+36 min keep in: 1 CDs of DVD 4GB 3997MB
+Video parameters:
+Video size: 720 x 480
+Autosize: DVD
+Framerate: NTSC (29.97)
+Title 1
+
+Audio parameters:
+Audio codec: .MP2 encode - encode audio checked
+Audio bitrate: 128 kbit/s
+Sampling: 48000 hz
+Channels: Stereo
+Mode: CBR
+Audio track: 0
+Audio gain: +0
+
+Filters:
+Subtitles: not used
+Image filters: denoise checked - 100 luminance, 100 saturation, 125 
+sharpness
+Crop: not used
+
+Options:
+mpeg2enc options: Bicubic and Decode with Quicktime checked
+Profile: DVD
+Q Matrix: Standard
+Interlace: Not interlaced
+Thread: Dual CPU
+VBV size: 460 kb
+Sync: 0 ms
+Q Min: 7
+
+Tools:
+Post-processing: Author as DVD (VIDEO_TS) checked
+Open Terminal window and Keep elementary streams checked
+Video Tools: Mux as... DVD
+
+
+In the end, it is my opinion, through observation, trial and error and 
+deduction, that the codec used by iDVD 4.0.1 in order to encode digital 
+video/audio is incompatible with my 1.8Ghz DP G5. I can only speculate 
+as to why it has worked for some and not others. I was able to find a 
+solution to my problems, and in the end that is all that really 
+matters. iDVD encoding/rendering is the only thing that I have really 
+had a problem with on my G5. After reading literally thousands of 
+similar posts (in Apple's iDVD forum), it is apparent that there is 
+some sort of compilation/compatibility issue with iDVD's codec. Maybe 
+Apple will address the problem at some point. Until then, I'll use 
+ffmpegX and DragonBurn to author and burn iMovie projects to DVD.
+
+The video looks better on the DVD than it did on the VHS. Thanks for 
+all the help.
+
+- Robert
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011532.html">[MacDV] Can't render/encode my iDVD project - Can't burn	project
+	to DVD
+</A></li>
+	<LI>Next message: <A HREF="011536.html">[MacDV] Can't render/encode my iDVD project - Can't burnprojectto
+	DVD (SOLVED)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11535">[ date ]</a>
+              <a href="thread.html#11535">[ thread ]</a>
+              <a href="subject.html#11535">[ subject ]</a>
+              <a href="author.html#11535">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

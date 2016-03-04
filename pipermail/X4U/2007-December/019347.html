@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Leopard Issues
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Leopard%20Issues&In-Reply-To=593E244B-2F86-4689-B642-ED39BDFF31B9%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="019349.html">
+   <LINK REL="Next"  HREF="019329.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Leopard Issues</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Leopard%20Issues&In-Reply-To=593E244B-2F86-4689-B642-ED39BDFF31B9%40mac.com"
+       TITLE="[X4U] Leopard Issues">macmonster at myrealbox.com
+       </A><BR>
+    <I>Thu Dec  6 13:14:23 PST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="019349.html">[X4U] Leopard Issues
+</A></li>
+        <LI>Next message: <A HREF="019329.html">[X4U] Re: Re: Leopard Issues - Some Responses (Stroller)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19347">[ date ]</a>
+              <a href="thread.html#19347">[ thread ]</a>
+              <a href="subject.html#19347">[ subject ]</a>
+              <a href="author.html#19347">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 5 Dec 2007, at 15:39, Jon Warms wrote:
+&gt;<i> ...
+</I>&gt;<i> Thanks for the DNS explanation. Earlier, you suggested changing the
+</I>&gt;<i> DNS in my computer. I did that on both computers. The 10.4.11 machine
+</I>&gt;<i> added the &quot;.com&quot; (and the www). On the MacBook, there was a
+</I>&gt;<i> delay of several seconds, and then the Verizon search page came up.
+</I>&gt;<i> I assume it tried the changed DNS, which failed, and then tried the
+</I>&gt;<i> DNS in the router, which didn't fail, but routed the address to
+</I>&gt;<i> Verizon.
+</I>&gt;<i> So domain guessing never got applied.
+</I>
+If you changed the DNS properly the Verizon search page would never
+come up - the whole reason changing the DNS is suggested is so that
+you never use Verizon's DNS servers.
+
+If you want to investigate this issue properly then you should add
+the OpenDNS servers in System Preferences &amp; _remove all others_ - I'm
+assuming that it's this last step you missed.
+
+I have to admit that my own network settings bear little similarity
+to those of the majority of home users, so I guess it's possible that
+if your IP is set by DHCP then the DNS addy supplied by the DHCP
+server _adds_ search servers rather than being ignored. You might
+wish - for the duration of this test -  to set all IP address
+parameters by hand, just write down the IP addy &amp; subnet mask that
+are obtained when set to automatic, change to &quot;manually&quot; and then
+renter them. But it is important that you use only the OpenDNS
+severs, and not Verizon's own.
+
+Alternatively, you may be able to keep your Macs network settings as
+automagical &amp; configure the DNS at your router. It is important that
+you use only the OpenDNS severs, and that Verizon's ones are never
+queried.
+
+You say that &quot;the MacBook, there was a delay of several seconds, and
+then the Verizon search page came up. [you] assume it tried the
+changed DNS, which failed, and then tried the DNS in the router&quot;. In
+this sense &quot;failed&quot; means &quot;the server worked OK, but it said it
+didn't have a result for this address&quot;. The nature of DNS is to check
+the next DNS server &amp; see if it can do any better - only the
+authoritative server for a domain can say &quot;no, this address
+*definitely* doesn't exist&quot;, and since the domain &quot;jr&quot; doesn't exist
+you never get to query an authoritative DNS server for that domain. I
+think that if the MacBook had returned just the results of the
+alternative DNS &amp; never queried the Verizon DNS at all then it would
+have tried guessing &quot;www.jr.com&quot;. You persist in blaming the problem
+on Apple, but where do you think your computer is getting the address
+of the VERIZON search page? Maybe Apple have a deal with Verizon by
+which they program that address into 10.5 and get a kickback from the
+advertising - the already do this with Safari's search box - but if
+that was the case users of other ISPs would see Verizon's search
+results, too.
+
+In order to truly get to the bottom of this you need to remove
+Verizon completely from the equation - that doesn't mean &quot;try your
+MacBook at an internet cafe&quot;, but you can if it's easier. Just
+removing ALL references to Verizon's DNS should be adequate.
+
+Stroller.
+&quot;I'm never wrong, damnit&quot;
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="019349.html">[X4U] Leopard Issues
+</A></li>
+	<LI>Next message: <A HREF="019329.html">[X4U] Re: Re: Leopard Issues - Some Responses (Stroller)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19347">[ date ]</a>
+              <a href="thread.html#19347">[ thread ]</a>
+              <a href="subject.html#19347">[ subject ]</a>
+              <a href="author.html#19347">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

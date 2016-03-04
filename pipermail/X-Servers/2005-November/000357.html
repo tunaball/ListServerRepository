@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Servers] Xserve &amp; RAID...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX-Servers%5D%20Xserve%20%26%20RAID...&In-Reply-To=5F734E6C-D697-43D1-BA2D-A173DD42D36A%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000356.html">
+   <LINK REL="Next"  HREF="000358.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Servers] Xserve &amp; RAID...</H1>
+    <B>Brent Baisley</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX-Servers%5D%20Xserve%20%26%20RAID...&In-Reply-To=5F734E6C-D697-43D1-BA2D-A173DD42D36A%40mac.com"
+       TITLE="[X-Servers] Xserve &amp; RAID...">brent at landover.com
+       </A><BR>
+    <I>Fri Nov  4 09:38:17 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000356.html">[X-Servers] Xserve &amp; RAID...
+</A></li>
+        <LI>Next message: <A HREF="000358.html">[X-Servers] Xserve &amp; RAID...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#357">[ date ]</a>
+              <a href="thread.html#357">[ thread ]</a>
+              <a href="subject.html#357">[ subject ]</a>
+              <a href="author.html#357">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Actually SoftRAID (the product) can be used on a boot drive now. I  
+actually just bought the latest copy after using it all the time  
+under OS9. The OS X built in software RAID has severe limitations in  
+rebuilding boot drives. I recently had a mirrored boot drive fail on  
+an XServe. I got a new drive, popped it in and went to rebuild the  
+mirror. That's when I found out the Apple's software RAID won't  
+rebuild a mirrored drive for a boot volume, you need to boot off of  
+something else. I also found out that you really need to use the  
+command line to try to rebuild drives if you want to really know  
+what's going on and get feedback on errors. Not a big deal, but  
+something to know. I found it very annoying that I had to schedule  
+downtime to rebuild the mirror.
+
+SoftRAID, on the other hand, can rebuild mirrored boot drives and it  
+will report errors it notices during normal operation. It's a bit  
+more robust than Apple's built-in software RAID.
+
+
+On Nov 4, 2005, at 5:47 AM, Dave Walker wrote:
+
+&gt;<i> Hi Matthew
+</I>&gt;<i>
+</I>&gt;<i> The short answer is yes and no - you can do RAID 1 without the  
+</I>&gt;<i> card, and with built in software, but it is a bit slow
+</I>&gt;<i> RAID 5 you will need the hardware card - (recommended - I use it  
+</I>&gt;<i> and it is very quick). SoftRAID would work OK for a set of external  
+</I>&gt;<i> drives, but I don't think you can use it as a bootable drive, hence  
+</I>&gt;<i> no use for Xserve on its own
+</I>&gt;<i>
+</I>&gt;<i> Hope this helps
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Dave
+</I>&gt;<i>
+</I>&gt;<i> On 4 Nov 2005, at 07:50, Matthew Barr wrote:
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i> We're looking into getting our first Xserve, and I want to make  
+</I>&gt;&gt;<i> sure to have RAID 1 or 5  for the drives, but wasn't sure if the  
+</I>&gt;&gt;<i> normal Xserve can be configured in OS X Server to use the  the  
+</I>&gt;&gt;<i> drive bays as RAID 1 or 5 without the hardware RAID card.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Any one know?  Oddly enough, we've never had OS X Server  around,  
+</I>&gt;&gt;<i> just a lot of clients, and linux servers... I'm looking forward to  
+</I>&gt;&gt;<i> having one, but without it here and now.. it's tough to know.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Matthew
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Matthew Barr
+</I>&gt;&gt;<i> Managing Partner
+</I>&gt;&gt;<i> Datalyte Consulting, LLC
+</I>&gt;&gt;<i> mailto:<A HREF="../../../mailman/listinfo/x-servers.html">mbarr at datalyte.com</A>
+</I>&gt;&gt;<i> cell: (646) 765-6878
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> X-Servers mailing list
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-servers.html">X-Servers at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-servers.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-servers</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;&gt;<i> stuff:
+</I>&gt;&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Servers mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-servers.html">X-Servers at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-servers.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-servers</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+-- 
+Brent Baisley
+Systems Architect
+Landover Associates, Inc.
+Search &amp; Advisory Services for Advanced Technology Environments
+p: 212.759.6400/800.759.0577
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000356.html">[X-Servers] Xserve &amp; RAID...
+</A></li>
+	<LI>Next message: <A HREF="000358.html">[X-Servers] Xserve &amp; RAID...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#357">[ date ]</a>
+              <a href="thread.html#357">[ thread ]</a>
+              <a href="subject.html#357">[ subject ]</a>
+              <a href="author.html#357">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

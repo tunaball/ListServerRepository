@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] using rsync to automatically backup home directories
+	(was RE: rsync help)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20using%20rsync%20to%20automatically%20backup%20home%20directories%0A%09%28was%20RE%3A%20rsync%20help%29&In-Reply-To=2BC19BE5-F3E1-4FAF-9669-27459A8A03BC%40west.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003005.html">
+   <LINK REL="Next"  HREF="003011.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] using rsync to automatically backup home directories
+	(was RE: rsync help)</H1>
+    <B>Craig Hoffman</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20using%20rsync%20to%20automatically%20backup%20home%20directories%0A%09%28was%20RE%3A%20rsync%20help%29&In-Reply-To=2BC19BE5-F3E1-4FAF-9669-27459A8A03BC%40west.net"
+       TITLE="[X-Unix] using rsync to automatically backup home directories
+	(was RE: rsync help)">choffman at eclimb.net
+       </A><BR>
+    <I>Thu Jan 24 19:45:45 PST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003005.html">[X-Unix] using rsync to automatically backup home directories
+	(was RE: rsync help)
+</A></li>
+        <LI>Next message: <A HREF="003011.html">[X-Unix] using rsync to automatically backup home directories
+	(was RE: rsync help)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3006">[ date ]</a>
+              <a href="thread.html#3006">[ thread ]</a>
+              <a href="subject.html#3006">[ subject ]</a>
+              <a href="author.html#3006">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Follow up -- Well, I could not figure out why rsync was producing  
+invisible / hidden files when being transfered from an internal drive  
+(other than OS drive) to a network drive.  I even tried downloading  
+arRsync, a GUI rsync app.  Even with that, it was producing invisible  
+files.  I have a feeling Time Machine is some how interfering with the  
+network transfer.  The work around solution was to download Deja Vu, a  
+backup app.  It allows me to backup to a network drive, set a schedule  
+and so forth.   This will work for the mean time...
+_______________________
+Craig Hoffman
+iChat / AIM: m0untaind0g
+_______________________
+
+
+
+
+On Jan 24, 2008, at 2:43 PM, Richard Hartman wrote:
+
+&gt;<i>
+</I>&gt;<i> On Jan 24, 2008, at 1:06 PM, Craig Hoffman wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Nope its not the Finder.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Does it matter that the files (music) are stored on a separate  
+</I>&gt;&gt;<i> volume / drive (Twilight)?
+</I>&gt;<i>
+</I>&gt;<i> Not as far as I know. Are the volumes just attached disks (i.e.,  
+</I>&gt;<i> firewire or usb) or are they volumes mounted from networked  
+</I>&gt;<i> computers running a different OS or file system? If so, there might  
+</I>&gt;<i> be some rsync issues in that regard.
+</I>&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Jan 24, 2008, at 1:20 PM, Richard Hartman wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> On Jan 24, 2008, at 11:56 AM, Craig Hoffman wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> Which OS?
+</I>&gt;&gt;&gt;&gt;<i> Leopard 5.1
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> What's still strange, I tried using rsync to move a few image  
+</I>&gt;&gt;&gt;&gt;<i> (jpg) using the E flag and it worked.  I was able to view the  
+</I>&gt;&gt;&gt;&gt;<i> files in the Finder.
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> rsync -avE /Volumes/Twilight/Music/ /Volumes/teakettle/Music
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Then I tried it on some mp3's / music files using the same flags  
+</I>&gt;&gt;&gt;&gt;<i> and the files became invisible again.  What's up with that?
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> You're not getting trapped by finder sluggishness are you? This  
+</I>&gt;&gt;&gt;<i> happens to me often when doing file transfers in terminal.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> To test, just restart the finder to see if the files magically  
+</I>&gt;&gt;&gt;<i> &quot;appear&quot;.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003005.html">[X-Unix] using rsync to automatically backup home directories
+	(was RE: rsync help)
+</A></li>
+	<LI>Next message: <A HREF="003011.html">[X-Unix] using rsync to automatically backup home directories
+	(was RE: rsync help)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3006">[ date ]</a>
+              <a href="thread.html#3006">[ thread ]</a>
+              <a href="subject.html#3006">[ subject ]</a>
+              <a href="author.html#3006">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

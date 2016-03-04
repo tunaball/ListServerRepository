@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Can you get the path from an inode?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Can%20you%20get%20the%20path%20from%20an%20inode%3F&In-Reply-To=C076C101.1FE9F%25jerry%40ieee.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002647.html">
+   <LINK REL="Next"  HREF="002649.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Can you get the path from an inode?</H1>
+    <B>Craig A. Finseth</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Can%20you%20get%20the%20path%20from%20an%20inode%3F&In-Reply-To=C076C101.1FE9F%25jerry%40ieee.org"
+       TITLE="[X-Unix] Can you get the path from an inode?">fin at finseth.com
+       </A><BR>
+    <I>Fri Apr 28 06:07:04 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002647.html">[X-Unix] Can you get the path from an inode?
+</A></li>
+        <LI>Next message: <A HREF="002649.html">[X-Unix] Can you get the path from an inode?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2648">[ date ]</a>
+              <a href="thread.html#2648">[ thread ]</a>
+              <a href="subject.html#2648">[ subject ]</a>
+              <a href="author.html#2648">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>	...
+   I have an application which tells me only the inode number of a file it is
+   having problems with.  Is there any way to get the path and filename from
+   the inode number?
+	...
+
+You can get _a_ path (there may be many), but it is work.
+
+- Start at the root of the volume.
+- Loop through all entries in the directory
+	- See if you found your inode.
+	- If it's a directory, recurse on it
+
+Note that the same inode may appear in multiple directories (assuming
+that its the inode of a file rather than directory).
+
+Also, with soft links, there may be many ways of entering any given
+path.
+
+Craig
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002647.html">[X-Unix] Can you get the path from an inode?
+</A></li>
+	<LI>Next message: <A HREF="002649.html">[X-Unix] Can you get the path from an inode?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2648">[ date ]</a>
+              <a href="thread.html#2648">[ thread ]</a>
+              <a href="subject.html#2648">[ subject ]</a>
+              <a href="author.html#2648">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

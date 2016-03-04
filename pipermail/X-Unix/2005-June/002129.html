@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] App launched by my crontab runs as root if Login Window!
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20App%20launched%20by%20my%20crontab%20runs%20as%20root%20if%20Login%20Window%21&In-Reply-To=42A072D3.7050906%40underwares.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002114.html">
+   <LINK REL="Next"  HREF="002130.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] App launched by my crontab runs as root if Login Window!</H1>
+    <B>Jerry Krinock</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20App%20launched%20by%20my%20crontab%20runs%20as%20root%20if%20Login%20Window%21&In-Reply-To=42A072D3.7050906%40underwares.org"
+       TITLE="[X-Unix] App launched by my crontab runs as root if Login Window!">jerry at ieee.org
+       </A><BR>
+    <I>Sat Jun  4 21:50:42 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002114.html">[X-Unix] App launched by my crontab runs as root if Login Window!
+</A></li>
+        <LI>Next message: <A HREF="002130.html">[X-Unix] App launched by my crontab runs as root if Login Window!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2129">[ date ]</a>
+              <a href="thread.html#2129">[ thread ]</a>
+              <a href="subject.html#2129">[ subject ]</a>
+              <a href="author.html#2129">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>on 05/06/03 08:10, Alexandre Gauthier at <A HREF="../../../mailman/listinfo/x-unix.html">supernaut at underwares.org</A> wrote:
+
+&gt;<i> I think by disabled he means [root] is not [enabled] &quot;active&quot; per se in
+</I>&gt;<i> NetInfo,  and does not have a password set.
+</I>&gt;<i> The root user is &quot;enabled&quot; in the unix sense though, you just can't
+</I>&gt;<i> login with it for it has no password...
+</I>
+Yes, that's what I mean...I have not done the NetInfo thing.
+
+I did some more googling and found an in-depth discussion of the security
+aspects of this thing back in March 2005 on MacInTouch.  For those
+interested, here it is:
+
+<A HREF="http://www.macintouch.com/security-finder.html">http://www.macintouch.com/security-finder.html</A>
+
+But for me, the security breach is a symptom and not the cause that I am
+interested in.
+
+I did some more experiments and found that if I put in my crontab this
+command (#1):
+
+/Applications/MyApp.app/Contents/MacOS/MyApp
+
+it still launches behind the Login Window (in Tiger, not Panther), but now
+the user is the &quot;expected&quot; user, i.e., me, i.e., the user whose crontab the
+command is in.  I can detect this situation (currentUser notEquals
+consoleUser) and deal with it by running my app facelessly.
+
+But if, as I said in my original post, I put in my crontab this command
+(#2):
+
+/usr/bin/open &quot;/Applications/MyApp.app&quot;
+
+it launches in the login window, but the user is root.  Arghhhh!!
+
+Here is my explanation.  From &quot;man open&quot;, I see that &quot;open&quot; is an invention
+of NextStep.  Further,
+
+&quot;The open command opens a file (or a directory or URL), just as if you had
+double-clicked the file's icon.&quot;
+
+But they don't say who &quot;you&quot; is.  My theory is that &quot;you&quot; is not the owner
+of the parent process, but whoever is currently at the console, because
+that's the only person who can &quot;doubleclick&quot; on anything.  But, when the
+Login Window is showing, root is at the console.  BANG!!
+
+Jerry
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002114.html">[X-Unix] App launched by my crontab runs as root if Login Window!
+</A></li>
+	<LI>Next message: <A HREF="002130.html">[X-Unix] App launched by my crontab runs as root if Login Window!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2129">[ date ]</a>
+              <a href="thread.html#2129">[ thread ]</a>
+              <a href="subject.html#2129">[ subject ]</a>
+              <a href="author.html#2129">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

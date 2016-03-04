@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Software Update Crashing
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Software%20Update%20Crashing&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011415.html">
+   <LINK REL="Next"  HREF="011409.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Software Update Crashing</H1>
+    <B>Richard M. Kriss</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Software%20Update%20Crashing&In-Reply-To="
+       TITLE="[G4] Software Update Crashing">rmkriss at sbcglobal.net
+       </A><BR>
+    <I>Tue Nov  1 04:37:37 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011415.html">[G4] Software Update Crashing
+</A></li>
+        <LI>Next message: <A HREF="011409.html">[G4] Software Update Crashing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11404">[ date ]</a>
+              <a href="thread.html#11404">[ thread ]</a>
+              <a href="subject.html#11404">[ subject ]</a>
+              <a href="author.html#11404">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>My OS 10.4.2 Software Update has been crashing big time while checking
+for new updates.  Anyone else having this problem?
+
+Note below that Thread 3 Crashed
+
+Dick
+
+Date/Time:      2005-11-01 05:07:42.983 -0600
+OS Version:     10.4.2 (Build 8C46)
+Report Version: 3
+
+Command: Software Update
+Path:    /System/Library/CoreServices/Software
+Update.app/Contents/MacOS/Software Update
+Parent:  WindowServer [65]
+
+Version:        2.0 (2.0)
+Build Version:  54
+Project Name:   SoftwareUpdate
+Source Version: 1260000
+
+PID:    241
+Thread: 3
+
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x00000006
+
+Thread 0:
+0   libSystem.B.dylib                  0x9000a738 mach_msg_trap + 8
+1   libSystem.B.dylib                  0x9000a67c mach_msg + 60
+2   com.apple.CoreFoundation           0x9074b338 __CFRunLoopRun + 832
+3   com.apple.CoreFoundation           0x9074ac3c CFRunLoopRunSpecific + 268
+4   com.apple.HIToolbox                0x93129ac0 RunCurrentEventLoopInMode
++ 264
+5   com.apple.HIToolbox                0x93129154 ReceiveNextEventCommon +
+380
+6   com.apple.HIToolbox                0x93128fc0
+BlockUntilNextEventMatchingListInMode + 96
+7   com.apple.AppKit                   0x93623e44 _DPSNextEvent + 384
+8   com.apple.AppKit                   0x93623b08 -[NSApplication
+nextEventMatchingMask:untilDate:inMode:dequeue:] + 116
+9   com.apple.AppKit                   0x9362006c -[NSApplication run] + 472
+10  com.apple.AppKit                   0x937108bc NSApplicationMain + 452
+11  com.apple.SoftwareUpdate           0x00002b8c 0x1000 + 7052
+12  com.apple.SoftwareUpdate           0x00002a2c 0x1000 + 6700
+
+Thread 1:
+0   libSystem.B.dylib                  0x9004ca38 syscall_thread_switch + 8
+1   com.apple.Foundation               0x9289b330 +[NSThread
+sleepUntilDate:] + 152
+2   com.apple.AppKit                   0x936c0b00 -[NSUIHeartBeat
+_heartBeatThread:] + 1100
+3   com.apple.Foundation               0x92882f34 forkThreadForFunction +
+108
+4   libSystem.B.dylib                  0x9002c3b4 _pthread_body + 96
+
+Thread 2:
+0   libSystem.B.dylib                  0x9000a738 mach_msg_trap + 8
+1   libSystem.B.dylib                  0x9000a67c mach_msg + 60
+2   com.apple.CoreFoundation           0x9074b338 __CFRunLoopRun + 832
+3   com.apple.CoreFoundation           0x9074ac3c CFRunLoopRunSpecific + 268
+4   com.apple.Foundation               0x928ab520 +[NSURLCache
+_diskCacheSyncLoop:] + 152
+5   com.apple.Foundation               0x92882f34 forkThreadForFunction +
+108
+6   libSystem.B.dylib                  0x9002c3b4 _pthread_body + 96
+
+Thread 3 Crashed:
+0   com.apple.CoreFoundation           0x9072f2f0 CFGetAllocator + 24
+1   com.apple.CoreFoundation           0x90733dd8
+CFURLGetFileSystemRepresentation + 36
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011415.html">[G4] Software Update Crashing
+</A></li>
+	<LI>Next message: <A HREF="011409.html">[G4] Software Update Crashing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11404">[ date ]</a>
+              <a href="thread.html#11404">[ thread ]</a>
+              <a href="subject.html#11404">[ subject ]</a>
+              <a href="author.html#11404">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

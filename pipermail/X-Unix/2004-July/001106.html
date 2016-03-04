@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Panther &quot;Archive&quot; from command-line?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Panther%20%22Archive%22%20from%20command-line%3F&In-Reply-To=list-14752879%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001105.html">
+   <LINK REL="Next"  HREF="000056.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Panther &quot;Archive&quot; from command-line?</H1>
+    <B>Scott J. Kramer</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Panther%20%22Archive%22%20from%20command-line%3F&In-Reply-To=list-14752879%40mail.ninewire.com"
+       TITLE="[X-Unix] Panther &quot;Archive&quot; from command-line?">x-unix at sjk.us
+       </A><BR>
+    <I>Fri Jul 16 12:06:57 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001105.html">[X-Unix] Panther &quot;Archive&quot; from command-line?
+</A></li>
+        <LI>Next message: <A HREF="000056.html">[X-Unix] Panther &quot;Archive&quot; from command-line?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1106">[ date ]</a>
+              <a href="thread.html#1106">[ thread ]</a>
+              <a href="subject.html#1106">[ subject ]</a>
+              <a href="author.html#1106">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>--On Friday, July 16, 2004 13:51 -0400 Stephen Jonke &lt;<A HREF="../../../mailman/listinfo/x-unix.html">sjj_public at mac.com</A>&gt; 
+wrote:
+
+&gt;<i> What, if any, is the command to use at the command line to &quot;archive&quot; a
+</I>&gt;<i> file in the Panther sense, that is, preserving resource forks? zip
+</I>&gt;<i> doesn't seem to do it. &quot;archive&quot; doesn't exist.
+</I>
+ditto can be useful (and reliable) for HFS+ file archiving and cloning
+in certain situations.
+
+Create CPIO archive:
+
+    % ditto -c --rsrc src src.cpio
+
+Create PKZip archive:
+
+    % ditto -c -k --rsrc src src.zip
+
+Extract CPIO archive:
+
+    % ditto -x --rsrc src.cpio dir
+
+Extract PKZip archive:
+
+    % ditto -x -k --rsrc src.zip dir
+
+Check the man page for more details and other options.  Probably smart
+to run a few tests to get familiar with the syntax if you've never used
+it before.  Still seems a bit peculiar to me compared with traditional
+Unix commands.
+
+-sjk
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001105.html">[X-Unix] Panther &quot;Archive&quot; from command-line?
+</A></li>
+	<LI>Next message: <A HREF="000056.html">[X-Unix] Panther &quot;Archive&quot; from command-line?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1106">[ date ]</a>
+              <a href="thread.html#1106">[ thread ]</a>
+              <a href="subject.html#1106">[ subject ]</a>
+              <a href="author.html#1106">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

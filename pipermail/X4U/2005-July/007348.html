@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Cheapest &quot;server&quot; set up?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Cheapest%20%22server%22%20set%20up%3F&In-Reply-To=a06210212beec80e1faa3%40%5B192.168.254.105%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="007347.html">
+   <LINK REL="Next"  HREF="007346.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Cheapest &quot;server&quot; set up?</H1>
+    <B>Neil Laubenthal</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Cheapest%20%22server%22%20set%20up%3F&In-Reply-To=a06210212beec80e1faa3%40%5B192.168.254.105%5D"
+       TITLE="[X4U] Cheapest &quot;server&quot; set up?">neil at laubenthal.net
+       </A><BR>
+    <I>Sat Jul  2 11:07:35 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="007347.html">[X4U] Cheapest &quot;server&quot; set up?
+</A></li>
+        <LI>Next message: <A HREF="007346.html">[X4U] cnn video not working with the mac?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7348">[ date ]</a>
+              <a href="thread.html#7348">[ thread ]</a>
+              <a href="subject.html#7348">[ subject ]</a>
+              <a href="author.html#7348">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 12:53 -0500  on 7/2/05, Anne-Marie Concepcion wrote:
+&gt;<i>
+</I>&gt;<i>Wow, Neil, thanks, this gives me hope ...
+</I>&gt;<i>
+</I>&gt;<i>when you say &quot;gave fileshare full permissions to Lurch,&quot; what do you 
+</I>&gt;<i>mean exactly. Is this a Sharepoints setup thing or is it a Finder 
+</I>&gt;<i>thing ... and if it's a finder thing, do you mean that, logged on as 
+</I>&gt;<i>&quot;fileshare,&quot; you selected the Lurch folder at the root directory, 
+</I>&gt;<i>opened Get Info, and set the user, group and Others all to Read and 
+</I>&gt;<i>Write? Which &quot;group&quot; was it, if that makes a diff?
+</I>
+
+I made a user named Fileshare on the fileserver l. . .using the 
+Accounts prefpane. Then I went into Sharepoints on the Groups tab and 
+created a group named LurchUsers  . . .then put the Fileshare account 
+in this group.
+
+Next, go to the Normal Shares on the Sharepoints tab and create the 
+share. I selected a sharename of Lurch, set the path to /Lurch, set 
+owner to neill (the main admin account on the fileserver), Group to 
+LurchUsers, and gave Owner, Group, and Everyone R/W privs.
+
+Now when you mount the server volume from another machine using a 
+username of Fileshare to login you get Lurch mounted on the desktop 
+with full R/W privs. You then put all the files you want to share 
+inside Lurch and anybody can connect to Lurch and 
+read/write/add/edit/whatever files.
+
+Nothing goes in Fileshare's home folder . . .you could have set it up 
+this way but I didn't.
+
+&gt;&gt;<i>For this . . . I mount it via IP so it's user:<A HREF="../../../mailman/listinfo/x4u.html">password at ip</A>/Lurch . . 
+</I>&gt;&gt;<i>. I have set up a static IP on my fileserver for this reason.
+</I>&gt;<i>
+</I>&gt;<i>The user and password would be the remote Mac's username/password 
+</I>&gt;<i>for their own home folder, or would it be the one for user 
+</I>&gt;<i>&quot;fileshare&quot; on the server? I'm assuming the latter but just checking.
+</I>
+The one for Fileshare . . .you're connecting to the fileserver so you 
+have to use a valid username for the fileserver.
+
+&gt;<i>I think I can get a static IP on the &quot;server&quot; because we're using a 
+</I>&gt;<i>switch/hub with NAT. So it'd be something like 192.168.254.105. (the 
+</I>&gt;<i>other macs are all the same except for .102, .103, etc.) Does that 
+</I>&gt;<i>sound right?
+</I>
+Right . . .The switch/router will assign an IP to each machine. 
+Normally this changes from time to time . . .but you can either 
+choose a static IP not in the DHCP range that the router is handing 
+out and put it in the fileserver . . . or you can use what's called 
+MAC address filtering on the router. In this case . . .you go into 
+it's settings and tell it to assign IP's via DHCP but to reserve a 
+particualar IP for MAC address whatever for the fileserver. You can 
+get the MAC address from the Network prefpane under Ethernet tab . . 
+. it's called Ethernet ID.
+
+&gt;&gt;<i>I personally wouldn't use a laptop for this purpose . . .I would 
+</I>&gt;&gt;<i>use either a Mini or a used G4 for the purpose.
+</I>&gt;<i>
+</I>&gt;<i>Any reason in particular? Deskspace is at a premium so I don't want 
+</I>&gt;<i>a tower and monitor or anything for this thing. Would probably go 
+</I>&gt;<i>with a mini, but after small used LCD monitor and keyboard/mouse, 
+</I>&gt;<i>it'd cost the same as a used G4 powerbook or ibook.
+</I>
+No real reason I guess . . .just that using a laptop as a server 
+seems wrong somehow. It's not really . . .if you set the laptop to 
+never sleep and never spin down the hard drive it will work fine for 
+light to medium loads (say less than 4 or so users and no 100+ MB 
+files). Just make sure you've got an adequate backup scheme in place 
+for whatever you do use as the fileserver.
+
+-- 
+===================================================================
+Neil
+There are only three kinds of stress . . .  your basic nuclear 
+stress, cooking stress, and A$$hole stress. All of the three are 
+related . . . the key is Jello.
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="007347.html">[X4U] Cheapest &quot;server&quot; set up?
+</A></li>
+	<LI>Next message: <A HREF="007346.html">[X4U] cnn video not working with the mac?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7348">[ date ]</a>
+              <a href="thread.html#7348">[ thread ]</a>
+              <a href="subject.html#7348">[ subject ]</a>
+              <a href="author.html#7348">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

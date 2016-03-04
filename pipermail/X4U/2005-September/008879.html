@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Re: help w/ cups printing
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Re%3A%20help%20w/%20cups%20printing&In-Reply-To=C0E7312B-0339-46D9-AC80-FECD1DEF0C40%40gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="008874.html">
+   <LINK REL="Next"  HREF="008873.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Re: help w/ cups printing</H1>
+    <B>Hector Luna</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Re%3A%20help%20w/%20cups%20printing&In-Reply-To=C0E7312B-0339-46D9-AC80-FECD1DEF0C40%40gmail.com"
+       TITLE="[X4U] Re: help w/ cups printing">polonius19 at gmail.com
+       </A><BR>
+    <I>Sun Sep 25 09:00:17 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="008874.html">[X4U] help w/ cups printing
+</A></li>
+        <LI>Next message: <A HREF="008873.html">[X4U] i need help w/ cups printing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8879">[ date ]</a>
+              <a href="thread.html#8879">[ thread ]</a>
+              <a href="subject.html#8879">[ subject ]</a>
+              <a href="author.html#8879">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I solved the problem myself. This is what I did in case anyone else
+runs into a similar problem.
+
+I found the hspc reference in the printcap file. I cross referenced my
+B&amp;W tower and the printers defined on it had the loopback address in
+that field. I changed it back to the loopback my home printer on my
+iBook, then I was ready to restart printing services. I'd found a menu
+entry in the printer utility labeled &quot;Reset Printing System.&quot; I
+figured it would restart the printing services. It turns out that it
+wipes out all printers and defaults back to Tiger defaults. Which was
+OK in a sense, but I still think I could have solved my issue w/o
+having to wipe out all the printers...
+
+On 9/24/05, Hector Luna &lt;<A HREF="../../../mailman/listinfo/x4u.html">polonius19 at gmail.com</A>&gt; wrote:
+&gt;<i> I needed to add a printer to my iBook (10.4.2, 1.3 GHz, 1.25GB). The
+</I>&gt;<i> printer was connected to my XP computer at work. It is an HP 4100 dtn
+</I>&gt;<i> that is currently bereft of its internal jet direct card. I have it
+</I>&gt;<i> connected locally to my XP computer via the parallel port. There are
+</I>&gt;<i> other network printers in the building, but this was the only duplex
+</I>&gt;<i> one and I needed to add it.
+</I>&gt;<i>
+</I>&gt;<i> I found a hint on macosxhints.com, but for the life of me can't find
+</I>&gt;<i> the actual doc at the moment. It worked, and I was able to print my
+</I>&gt;<i> docs that day. It involved turning on printer sharing, aliasing cupsd
+</I>&gt;<i> (i think) in the Terminal window and using the CUPS gui interface
+</I>&gt;<i> through my browser. I defined a printer, used the FQDN for my XP
+</I>&gt;<i> machine in the URI and a few minutes later I was printing.
+</I>&gt;<i>
+</I>&gt;<i> The problem now is that all of my printers are hosed and I can't use
+</I>&gt;<i> any of them. They might work once I get back on my corporate LAN, the
+</I>&gt;<i> ones in the building at any rate. All told I have about a dozen
+</I>&gt;<i> installed for use at work, home and school. When I look at the
+</I>&gt;<i> printer utility window I see the host defined for all the printers. I
+</I>&gt;<i> don't remember ever seeing the host defined in that window before. I
+</I>&gt;<i> cross referenced my B&amp;W tower (10.3.9, 500MHz, 1GB) and my wife's
+</I>&gt;<i> iBook (10.4.2, 700MHz, 648MB) and neither of those have anything in
+</I>&gt;<i> the host field in the printer utility window. The problem, as near as
+</I>&gt;<i> I can tell is the host name:  hspc157449.px.snds.com. I know what the
+</I>&gt;<i> domain suffix is, that's the domain suffix for my corporate LAN. I
+</I>&gt;<i> don't know what the hspc157449 name is exactly, but I think it has
+</I>&gt;<i> something to do with our DNS server, a Lucent QIP server. When I
+</I>&gt;<i> configure addresses in the QIP tool I often see something similar
+</I>&gt;<i> before a host name is defined for an address. I know that it is not
+</I>&gt;<i> the name of my XP machine, that's AB868703, and not the Samba name
+</I>&gt;<i> for my iBook, that's Loki.
+</I>&gt;<i>
+</I>&gt;<i> I&quot;ve looked in cupsd.conf, client.conf and printers.conf and
+</I>&gt;<i> hostconfig and can't find any traces of the hspc host name. I've
+</I>&gt;<i> deleted and readded my home printer, connected to an external jet
+</I>&gt;<i> direct print server, but the song, err, host remained the same. I've
+</I>&gt;<i> looked at the help files for the print setup utility and it would
+</I>&gt;<i> only say that the host field &quot;displays the name of the computer
+</I>&gt;<i> that's &quot;hosting&quot; or sharing the printer.&quot;
+</I>&gt;<i>
+</I>&gt;<i> I'm at wits end. Does anyone have any suggestions. At this point I am
+</I>&gt;<i> perfectly happy wiping out all of the defined printers and re-adding
+</I>&gt;<i> them as need arises. Any help would be appreciated.
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> Polonius19
+</I>&gt;<i> Chief Malcontent &amp; Misanthrope
+</I>&gt;<i> Urban Pacification League
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+
+--
+Someday, when the historians study how someone as accomplished as Al
+Gore was effectively marginalized by a party without a conscience and
+kept press, they're going to be amazed that any of us had opposable
+thumbs.
+- Charles Pierce
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="008874.html">[X4U] help w/ cups printing
+</A></li>
+	<LI>Next message: <A HREF="008873.html">[X4U] i need help w/ cups printing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8879">[ date ]</a>
+              <a href="thread.html#8879">[ thread ]</a>
+              <a href="subject.html#8879">[ subject ]</a>
+              <a href="author.html#8879">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

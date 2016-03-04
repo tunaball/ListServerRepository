@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Mac OS X 10.4 NFS client + automounter configuration/setup
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Mac%20OS%20X%2010.4%20NFS%20client%20%2B%20automounter%20configuration/setup&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="002878.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Mac OS X 10.4 NFS client + automounter configuration/setup</H1>
+    <B>Jerry Kemp</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Mac%20OS%20X%2010.4%20NFS%20client%20%2B%20automounter%20configuration/setup&In-Reply-To="
+       TITLE="[X-Unix] Mac OS X 10.4 NFS client + automounter configuration/setup">apple.mail.list at oryx.cc
+       </A><BR>
+    <I>Wed Oct 17 11:00:28 PDT 2007</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="002878.html">[X-Unix] Mac OS X 10.4 NFS client + automounter
+	configuration/setup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2877">[ date ]</a>
+              <a href="thread.html#2877">[ thread ]</a>
+              <a href="subject.html#2877">[ subject ]</a>
+              <a href="author.html#2877">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I am preparing to configure a number of OS X NFS + automounter clients
+to Sun Solaris servers.
+
+It's been a while since I needed to do this, primarily around the 10.1
+to 10.2 time period.  I have been doing some RTFM'ing, and most of the
+online documentation I have come across is from the same time period.  I
+also had the following email (below) in my archives.
+
+I am curious if anyone else on the list is doing similar things, and if
+things have changed much from the 10.1/10.2 time period.  I know last
+time I spent a lot of time with Netinfo/niutil .
+
+TIA for any comments,
+
+Jerry
+
+
+
+
+-------- Original Message --------
+Subject: [X-Unix] NFS mounted directory and iTunes weirdness
+Date: Sun, 12 May 2002 23:54:43 -0400
+From: Morgan Reed &lt;<A HREF="../../../mailman/listinfo/x-unix.html">morganew at mac.com</A>&gt;
+Reply-To: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at lists.themacintoshguy.com</A>&gt; (Mac OS X Unix)
+To: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at lists.themacintoshguy.com</A>&gt; (Mac OS X Unix)
+
+Hi,
+
+I am mounting NFS directories via the command line using:
+
+mount_nfs -P 192.168.1.77:/mnt/hdb1 /Volumes/mp3s
+
+Which works just fine (I have made an ln in my home directory so it mounts
+on the desktop)
+
+The odd part happens when iTunes plays songs; about 20% of the time, iTunes
+will play a song, and then when I look at the desktop, I see a new mounted
+disk icon with the label &quot;192.168.1.77&quot;  If I go to another song, another
+icon shows on the desktop labeled &quot;192.168.1.77-1&quot; and so on.  I have not
+been really scientific about what steps make this happen, but it does occur.
+Any ideas why?
+
+Also,  I can find NO good info on NFS, the Apple manual is horrible for me,
+it may be good if you are setting up zones and everything using NetInfo, but
+for the user connecting to other boxes that don't use it, I find it very
+obscure and hard to follow, this brings me to problem # 2 with iTunes:
+
+If I own a file on an NFS volume, I can edit its tag in iTunes, however, if
+I am a member of the file's group, I cannot edit the tag, even if group has
+read and write permissions.
+
+This is tied into NetInfo b/c I have used NetInfo to make my OSX user part
+of the group on my Linux box. It works perfectly for editing, saving and
+even deleting files as found by the finder, just iTunes seems to get werid
+if my UID is wrong.
+
+FInally, I have not been successful with using NFSManager to automount my
+NFS volumes; I still do it by hand.  Thankfully, I don't re-boot very often,
+so I don't really mind.
+
+Frankly, for most unix-y tasks, I have found the GUI tools to be difficult,
+especially those tied to NetInfo.  Maybe I am just a moron.  If someone out
+there is a NetInfo wizard, I bet there are other morons would could use a
+hand.  If it isn't already done, I would love to ask a bunch of NetInfo
+questions, get the answers and type up an FAQ for others, I just need a
+source of information.
+
+Morgan Reed
+
+
+----------
+Check out the Mac OS X email list FAQ
+<A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+
+To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-off at lists.themacintoshguy.com</A>&gt;
+To switch to the DIGEST mode, E-mail to
+&lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-digest at lists.themacintoshguy.com</A>&gt;
+Need help from a real person? Try.
+&lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-request at lists.themacintoshguy.com</A>&gt;
+
+----------
+$14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your Mac
+ISP
+Serious Mac Internet Solutions  NineWire Digital Solutions  <A HREF="http://9wire.com">http://9wire.com</A>
+
+DVIator   | Run Dual ADC displays on your G4 or just one on an older Mac!
+Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+
+    Support   | Support this list by clicking here before you buy!
+   this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+
+OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s -
+<A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="002878.html">[X-Unix] Mac OS X 10.4 NFS client + automounter
+	configuration/setup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2877">[ date ]</a>
+              <a href="thread.html#2877">[ thread ]</a>
+              <a href="subject.html#2877">[ subject ]</a>
+              <a href="author.html#2877">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MacDV] iMovie HD 5.0.2 bugs and fixes
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20iMovie%20HD%205.0.2%20bugs%20and%20fixes&In-Reply-To=20050416173418.74B3E385D7E%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="012594.html">
+   <LINK REL="Next"  HREF="012599.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MacDV] iMovie HD 5.0.2 bugs and fixes</H1>
+    <B>Matti Haveri</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20iMovie%20HD%205.0.2%20bugs%20and%20fixes&In-Reply-To=20050416173418.74B3E385D7E%40listserver.themacintoshguy.com"
+       TITLE="[MacDV] iMovie HD 5.0.2 bugs and fixes">matti.haveri at sjoki.uta.fi
+       </A><BR>
+    <I>Sun Apr 17 04:38:44 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="012594.html">Fwd: [MacDV] Shotgun mike?
+</A></li>
+        <LI>Next message: <A HREF="012599.html">[MacDV] iMovie HD 5.0.2 bugs and fixes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12597">[ date ]</a>
+              <a href="thread.html#12597">[ thread ]</a>
+              <a href="subject.html#12597">[ subject ]</a>
+              <a href="author.html#12597">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I had high hopes for iMovie 5.0.2 update but it was a big 
+disappointment after three months of waiting. Luckily there are 
+plenty of workarounds so the lively discussions in the forums can 
+continue :|
+
+- In iMovie HD 5.0.2 added titles distort interlacing lines in the 
+underlying PAL video. This is clearly visible in moving scenes. To 
+see the bug launch iMovie HD and add a Title before adding a 
+Transition or an Effect: interlacing is distorted in the underlying 
+video. After this also the Transitions and Effects distort 
+interlacing until iMovie HD is re-launched.
+
+The bug was fixed in iMovie HD 5.0.2 for NTSC but in PAL the bug persists!
+
+- Some analog to DV converters don't work in iMovie HD 5.0.2 like 
+they do in iMovie 4.0.1.
+
+1. For example, my Sony TRV320 can convert analog video to DV in 
+passthrough mode in iMovie 4.0.1, but not in iMovie HD 5.0.2. 
+Reportedly also neither Sony DVMC-DA1 converter and Panasonic NV EX3 
+work in iMovie HD 5.0.2 like they do in iMovie 4.0.1.
+
+iMovie HD 5.0.2 update seems to have disabled the workaround which 
+worked in v5.0.1: Put a tape in the camcorder and press the 
+camcorder's PLAY-button to play the tape in VTR mode (usually the 
+tape must be OUT when doing analog-DV conversion!), then in iMovie 
+hit the Import-button (so iMovie starts to import from the tape), 
+then press the camcorder's STOP-button. iMovie should then continue 
+importing from the analog source as usual.
+
+2. It is also not possible to record live DV (i.e. the camcorder in 
+Rec mode with no tape in the camcorder, so that what goes in the 
+camcorder's lens, imports in real-time to iMovie) from a camcorder 
+(Sony TRV320, for example) to iMovie HD 5.0.1 because iMovie 
+complains &quot;Camera No Tape&quot;. In iMovie 4.0.1 and BTV Pro this works OK 
+with no tape in the camcorder.
+
+- iMovie HD 5.0.2's Reversed and Fast-motion Effects deinterlace 
+video when iMovie 4 correctly preserves interlacing by changing field 
+dominance or by just skipping frames.
+
+With iMovie 4 the movements are smooth because interlacing is 
+preserved. With iMovie HD 5.0.2 the motion is jerky (especially in 
+reversed) when watched on an interlaced TV.
+
+Workarounds for the reversed clips: #1 Use iMovie 4 for reversed 
+effects if the video is interlaced. #2 Another option is to add the 
+Reversed Effect, then export the clip as Full Quality .dv. Then 
+change the field dominance with JES Deinterlacer (check &quot;Top line in 
+earlier field&quot; and Export as DV stream) and import the converted .dv 
+back to iMovie HD.
+
+Workarounds for the fast-motion clips: #1 Add the Fast-motion Effect, 
+then export the clip as Full Quality .dv and import it back. #2 
+Another option is to ignore iMovie's rendering prompt when sending 
+the project to tape or iDVD, but then you need to be sure that there 
+are no Slow-motion or Reversed Effects that NEED rendering (iMovie 
+renders jaggy still images so you WANT to ignore the prompt to render 
+them).
+
+Jan E: Could JES Deinterlacer have a setting to render reversed .dv 
+with reversed field dominance? Obviously iMovie HD continues to have 
+trouble in this. What about fast-motion rendering:
+
+I'm not sure whether the fast-motion video should be deinterlaced or 
+not. I did a quick test and with 2x fast-motion the interlaced output 
+was smoother but with faster paces there wasn't much difference. 
+Anyone?
+
+- Like iMovie 4, iMovie HD renders jaggy still images when exporting 
+to iDVD or tape!
+
+- In iMovie HD 5.0.2 exporting via the expert settings as a DV stream 
+or .avi deinterlaces video and loses timecode
+
+- Some iMovie HD 5.0.2 QuickTime export presets export different 
+resolutions than they claim to
+
+Email 160x120 exports as 160x110 instead, Web 240x180 as 240x170, Web 
+Streaming 240x180 as 240x170, and CD-ROM 320x240 as 320x230.
+
+[continues in the next message]
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="012594.html">Fwd: [MacDV] Shotgun mike?
+</A></li>
+	<LI>Next message: <A HREF="012599.html">[MacDV] iMovie HD 5.0.2 bugs and fixes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12597">[ date ]</a>
+              <a href="thread.html#12597">[ thread ]</a>
+              <a href="subject.html#12597">[ subject ]</a>
+              <a href="author.html#12597">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

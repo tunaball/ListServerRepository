@@ -1,0 +1,36 @@
+<tt>
+&nbsp;#&nbsp;outputs&nbsp;1&nbsp;if&nbsp;command&nbsp;is&nbsp;found,&nbsp;0&nbsp;otherwise.&lt;br&gt;running=`ps&nbsp;axco&nbsp;command&nbsp;|&nbsp;grep&nbsp;-c&nbsp;$appName`&lt;br&gt;&lt;br&gt;if&nbsp;$running&nbsp;;&nbsp;then&lt;br&gt;   &nbsp;echo&nbsp;$appName&nbsp;found&lt;br&gt;else&lt;br&gt;   &nbsp;echo&nbsp;$appname&nbsp;not&nbsp;found&lt;br&gt;fi&lt;br&gt;&lt;br&gt;&lt;div&nbsp;class=&quot;gmail_quote&quot;&gt;<br>
+On&nbsp;Fri,&nbsp;Mar&nbsp;27,&nbsp;2009&nbsp;at&nbsp;9:42&nbsp;AM,&nbsp;Jerry&nbsp;Krinock&nbsp;&lt;span&nbsp;dir=&quot;ltr&quot;&gt;&amp;lt;&lt;a&nbsp;href=&quot;mailto:jerry@ieee.org&quot;&gt;jerry@ieee.org&lt;/a&gt;&amp;gt;&lt;/span&gt;&nbsp;wrote:&lt;br&gt;&lt;blockquote&nbsp;class=&quot;gmail_quote&quot;&nbsp;style=&quot;border-left:&nbsp;1px&nbsp;solid&nbsp;rgb(204,&nbsp;204,&nbsp;204);&nbsp;margin:&nbsp;0pt&nbsp;0pt&nbsp;0pt&nbsp;0.8ex;&nbsp;padding-left:&nbsp;1ex;&quot;&gt;<br>
+&lt;div&nbsp;class=&quot;im&quot;&gt;&lt;br&gt;<br>
+On&nbsp;2009&nbsp;Mar&nbsp;27,&nbsp;at&nbsp;05:01,&nbsp;Eric&nbsp;F&nbsp;Crist&nbsp;wrote:&lt;br&gt;<br>
+&lt;br&gt;<br>
+&lt;blockquote&nbsp;class=&quot;gmail_quote&quot;&nbsp;style=&quot;border-left:&nbsp;1px&nbsp;solid&nbsp;rgb(204,&nbsp;204,&nbsp;204);&nbsp;margin:&nbsp;0pt&nbsp;0pt&nbsp;0pt&nbsp;0.8ex;&nbsp;padding-left:&nbsp;1ex;&quot;&gt;<br>
+Sometimes,&nbsp;you&nbsp;need&nbsp;to&nbsp;add&nbsp;a&nbsp;few&nbsp;w&amp;#39;s&nbsp;to&nbsp;the&nbsp;command&nbsp;to&nbsp;parse&nbsp;it&nbsp;properly:&lt;br&gt;<br>
+&lt;/blockquote&gt;<br>
+&lt;br&gt;&lt;/div&gt;<br>
+Yes,&nbsp;it&nbsp;took&nbsp;me&nbsp;about&nbsp;5&nbsp;years&nbsp;of&nbsp;using&nbsp;bash&nbsp;to&nbsp;learn&nbsp;why&nbsp;ps&nbsp;didn&amp;#39;t&nbsp;always&nbsp;work.&lt;br&gt;<br>
+&lt;br&gt;<br>
+Anyhow,&nbsp;thanks&nbsp;Christoph.&nbsp; I&nbsp;was&nbsp;hoping&nbsp;there&nbsp;might&nbsp;be&nbsp;something&nbsp;that&nbsp;would&nbsp;identify&nbsp;an&nbsp;app&nbsp;from&nbsp;Launch&nbsp;Services&nbsp;database,&nbsp;but&nbsp; then&nbsp;I&nbsp;figured&nbsp;that&nbsp;since&nbsp;I&amp;#39;m&nbsp;mainly&nbsp;concerned&nbsp;with&nbsp;false&nbsp;alarms&nbsp;and&nbsp;can&nbsp;tolerate&nbsp;misses,&nbsp;I&nbsp;could&nbsp;use&nbsp;ps&nbsp;and&nbsp;grep...&lt;br&gt;<br>
+<br>
+&lt;br&gt;<br>
+#&nbsp;Assume&nbsp;that&nbsp;$appName&nbsp;is&nbsp;both&nbsp;the&nbsp;package&nbsp;name&nbsp;and&nbsp;the&nbsp;executable&lt;br&gt;<br>
+#&nbsp;name&nbsp;of&nbsp;the&nbsp;desired&nbsp;app.&nbsp; Warning:&nbsp;Either&nbsp;or&nbsp;both&nbsp;of&nbsp;these&lt;br&gt;<br>
+#&nbsp;assumptions&nbsp;can&nbsp;be&nbsp;wrong.&lt;br&gt;<br>
+appsRunning=`ps&nbsp;-alxww&nbsp;|&nbsp;grep&nbsp;-c&nbsp;&amp;quot;$appName.app/Contents/MacOS/$appName&amp;quot;`&lt;br&gt;<br>
+#&nbsp;If&nbsp;$appName&nbsp;is&nbsp;running,&nbsp;results&nbsp;count&nbsp;will&nbsp;be&nbsp;2,&nbsp;the&nbsp;second&lt;br&gt;<br>
+#&nbsp;one&nbsp;being&nbsp;the&nbsp;grep&nbsp;process&nbsp;itself.&nbsp; Subtract&nbsp;that&nbsp;one.&lt;br&gt;<br>
+let&nbsp;&amp;quot;appsRunning&nbsp;-=&nbsp;1&amp;quot;&lt;br&gt;<br>
+if&nbsp;(($appsRunning&nbsp;&amp;gt;&nbsp;0))&lt;br&gt;<br>
+then&lt;br&gt;<br>
+echo&nbsp;&amp;quot;$appName&nbsp;is&nbsp;running&amp;quot;&lt;br&gt;<br>
+else&lt;br&gt;<br>
+echo&nbsp;&amp;quot;$appName&nbsp;is&nbsp;not&nbsp;running&amp;quot;&lt;br&gt;<br>
+fi&lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&nbsp;class=&quot;h5&quot;&gt;&lt;br&gt;<br>
+&lt;br&gt;<br>
+_______________________________________________&lt;br&gt;<br>
+X-Unix&nbsp;mailing&nbsp;list&lt;br&gt;<br>
+&lt;a&nbsp;href=&quot;mailto:X-Unix@listserver.themacintoshguy.com&quot;&nbsp;target=&quot;_blank&quot;&gt;X-Unix@listserver.themacintoshguy.com&lt;/a&gt;&lt;br&gt;<br>
+&lt;a&nbsp;href=&quot;http://listserver.themacintoshguy.com/mailman/listinfo/x-unix&quot;&nbsp;target=&quot;_blank&quot;&gt;http://listserver.themacintoshguy.com/mailman/listinfo/x-unix&lt;/a&gt;&lt;br&gt;<br>
+&lt;/div&gt;&lt;/div&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;br&gt;<br>
+
+</tt>

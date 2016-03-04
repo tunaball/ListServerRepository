@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [CUBE] Panther Behavior
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20Panther%20Behavior&In-Reply-To=list-10461345%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="006657.html">
+   <LINK REL="Next"  HREF="006659.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[CUBE] Panther Behavior</H1>
+    <B>Steve Goldstein</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20Panther%20Behavior&In-Reply-To=list-10461345%40mail.ninewire.com"
+       TITLE="[CUBE] Panther Behavior">sng at cox.net
+       </A><BR>
+    <I>Mon Jan 26 06:57:08 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="006657.html">Panther Behavior
+</A></li>
+        <LI>Next message: <A HREF="006659.html">GeForce3 dying - options?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6658">[ date ]</a>
+              <a href="thread.html#6658">[ thread ]</a>
+              <a href="subject.html#6658">[ subject ]</a>
+              <a href="author.html#6658">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 8:47 AM -0600 1/26/04, Rod Clifford wrote:
+&gt;<i>Did &quot;fsck -y&quot; in single use mode &amp; was returned with with the 
+</I>&gt;<i>statement &quot;fsck -f force&quot;
+</I>
+Was this last one as written on your screen, or was it simply either 
+&quot;fsck -fy&quot; or &quot;fsck -f&quot;?  The &quot;f&quot; means to force the file system 
+check.  Your HDs are now journaled*, and fixing with fsck presumably 
+wipes out the journaling.
+
+&gt;<i>Is this typical performance? Jag loaded much faster (it seems).   Rod
+</I>
+Yes!
+
+
+I copied this down from another member on one of these lists for my 
+own reference, but I failed to copy his/her name.  I hope the author 
+will forgive my sending the explanation along for you:
+
+JOURNALING
+
+One minor annoyance with journaling is that once a drive has been 
+journaled, the &quot;fsck -y&quot; command you enter in Single User mode to run 
+diagnostics will not work.  You'll have to use the &quot;fsck -f&quot; command 
+to force checking the drive, but theoretically, one of the reasons 
+for journaling is to reduce the need to run the fsck diagnostics. 
+So, it's pretty much a wash at that point.
+...
+If you installed Panther, it will automatically journal the boot 
+drive.  If you're on a machine with multiple hard drives (like a G4 
+or G5 tower), open Disk Utility, select the volume you wish to 
+journal, and click on the &quot;Enable Journaling&quot; button.  Your drive 
+will be journaled, no need to erase the drive.
+...
+If you wish to disable journaling (let's say, for someone who works 
+with iMovie, Final Cut Pro, or another disk-intensive application), 
+select the journaled drive in Disk Utility, go to the File menu and 
+choose &quot;Disable Journaling.&quot;
+
+Personally, I have all my drives journaled.  I don't run any 
+disk-intensive apps, and the advantages of journaling (quicker boot 
+times, data security) outweigh its disadvantages.  However, bear in 
+mind that journaling &quot;is not&quot; a substitute for regular backups, it's 
+just an added safety net against unforeseen circumstances that may 
+cause data loss (power outages and component failures).
+
+So, with a 3 pronged strategy of a journaled drive, regular backups 
+(to protect against data loss), and an Uninterruptible Power Supply 
+(to give you time to safely shut down your machine in the event of an 
+outage), you should be pretty much protected against any situation. 
+It's not a guarantee, but it's pretty close to it.
+
+&quot;Journaling&quot; is a feature that helps protect the file system against 
+power outages or hardware component failures, reducing the need for 
+repairs.  Journaling was first introduced in Mac OS X Server 10.2.2, 
+then to the non-server OS in Mac OS X 10.3 Panther.  This document 
+explains some of the benefits of using this feature and how it works.
+
+Journaling for the Mac OS Extended (HFS Plus) file system enhances 
+computer availability and fault resilience, which is especially 
+noteworthy for servers.  Journaling protects the integrity of the 
+file system on Xserve and other computers using Mac OS X Server in 
+the event of an unplanned shutdown or power failure.  It also helps 
+to maximize the uptime of servers and connected storage devices by 
+expediting repairs to the affected volumes when the system restarts.
+...
+When you enable journaling on a disk, a continuous record of changes 
+to files on the disk is maintained in the journal.  If your computer 
+stops because of a power failure or some other issue, the journal is 
+used to restore the disk to a known-good state when the server 
+restarts.
+...
+Journaled file system is part of a set of incremental enhancements to 
+the Mac OS Extended file system, and it is backward compatible with 
+the Mac OS Extended file system.  Users can read, write, and access 
+journaled Mac OS Extended volumes on computers that do not have a 
+journaling feature.
+
+Most disk utilities designed to work with the Mac OS Extended file 
+system can also be used when journaling is turned on. You should 
+check with your disk utility vendor before using earlier disk 
+utilities with a journaled file system.
+...
+If your server contains high-bandwidth usage data files, such as 
+large video, graphics, or audio files, you may want to weigh the 
+benefits of using journaling against the performance needed to access 
+your data.  In most cases, the impact of journaling upon data access 
+performance are unnoticeable to users, but its implementation may not 
+be practical for servers where data access demands outweigh its 
+benefits.
+
+You can turn journaling on and off for disks on the server you are 
+logged into by using Disk Utility or command line tools, with or 
+without erasing the volume.  For instructions, see technical document 
+107248: &quot; Mac OS X Server 10.2: How to Enable/Disable Journaling or 
+Repair a Journaled Volume &quot;.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="006657.html">Panther Behavior
+</A></li>
+	<LI>Next message: <A HREF="006659.html">GeForce3 dying - options?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6658">[ date ]</a>
+              <a href="thread.html#6658">[ thread ]</a>
+              <a href="subject.html#6658">[ subject ]</a>
+              <a href="author.html#6658">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

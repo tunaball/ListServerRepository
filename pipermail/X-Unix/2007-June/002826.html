@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] ssh sudo password in clear text
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20ssh%20sudo%20password%20in%20clear%20text&In-Reply-To=BFFCC8B3-1C17-4593-854D-B58A1BA2906D%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002825.html">
+   <LINK REL="Next"  HREF="002827.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] ssh sudo password in clear text</H1>
+    <B>Paul Hess</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20ssh%20sudo%20password%20in%20clear%20text&In-Reply-To=BFFCC8B3-1C17-4593-854D-B58A1BA2906D%40secure-computing.net"
+       TITLE="[X-Unix] ssh sudo password in clear text">hess at yacht.com
+       </A><BR>
+    <I>Sun Jun 10 13:01:20 PDT 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002825.html">[X-Unix] ssh sudo password in clear text
+</A></li>
+        <LI>Next message: <A HREF="002827.html">[X-Unix] ssh sudo password in clear text
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2826">[ date ]</a>
+              <a href="thread.html#2826">[ thread ]</a>
+              <a href="subject.html#2826">[ subject ]</a>
+              <a href="author.html#2826">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Eric,
+
+I don't have exclusive access to that machine, but I suppose if I  
+make the sa-learn.sh script only editable by the super-user I should  
+be pretty safe. (otherwise someone could edit it to do whatever they  
+want with no pw required!).
+
+Instead of making no PW required, is there some way I can supply the  
+password within the command line on my calling machine?   I have  
+control over that one so I don't really mind embedding the password  
+into the script.
+
+Thanks for the tips!
+
+                          - Paul
+
+On Jun 10, 2007, at 3:41 PM, Eric F Crist wrote:
+
+&gt;<i> On Jun 10, 2007, at 2:12 PMJun 10, 2007, Paul Hess wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Hi all,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I have a command in my bin directory as follows:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    ssh someserver.com sudo mailstuff/sa-learn.sh
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> When it executes the remote sudo command, it prompts me for a  
+</I>&gt;&gt;<i> password which, when I type it, appears on my screen in cleartext  
+</I>&gt;&gt;<i> rather than hidden.  I am using the standard OS/X terminal.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Is there some way I can avoid having that password appear in  
+</I>&gt;&gt;<i> cleartext?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> TIA!
+</I>&gt;<i>
+</I>&gt;<i> Paul,
+</I>&gt;<i>
+</I>&gt;<i> If you're the owner of that box, I would recommend making that  
+</I>&gt;<i> password non-required through your sudo configuration.  An couple  
+</I>&gt;<i> entries such as follows would work nicely for you:
+</I>&gt;<i>
+</I>&gt;<i> username	ALL = NOPASSWD: /full/path/to/script/mailstuff/sa-learn.sh
+</I>&gt;<i> username	ALL = (ALL) ALL
+</I>&gt;<i>
+</I>&gt;<i> (*There are ways to make this all on one line, but I write it this  
+</I>&gt;<i> way for readability.  See man sudoers(5) for more examples)
+</I>&gt;<i>
+</I>&gt;<i> The first entry allows the command, and only that command, to be  
+</I>&gt;<i> executed with sudo, without a password.  A great feature if you're  
+</I>&gt;<i> automating anything that requires sudo access (some questionable  
+</I>&gt;<i> web site packages require this (oreon, www.oreon-project.org, for  
+</I>&gt;<i> one).
+</I>&gt;<i>
+</I>&gt;<i> The second command allows your user to execute all other commands  
+</I>&gt;<i> via sudo, requiring a password.
+</I>&gt;<i> The full path above is required for any security conscious  
+</I>&gt;<i> administrator, otherwise, if I got access to username's account, I  
+</I>&gt;<i> could create any arbitrary mailstuff directory with an sa-learn.sh  
+</I>&gt;<i> script within and execute any command I wanted as root, without  
+</I>&gt;<i> having to know your password.
+</I>&gt;<i>
+</I>&gt;<i> My recommendation would be to use /etc/crontab or AT to perform the  
+</I>&gt;<i> above task, automatically, at your predetermined intervals.
+</I>&gt;<i>
+</I>&gt;<i> HTH.  If there's any questions you've got, let me know, I can  
+</I>&gt;<i> possibly help you out.
+</I>&gt;<i>
+</I>&gt;<i> -----
+</I>&gt;<i> Eric F Crist
+</I>&gt;<i> Secure Computing Networks
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+</PRE>
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002825.html">[X-Unix] ssh sudo password in clear text
+</A></li>
+	<LI>Next message: <A HREF="002827.html">[X-Unix] ssh sudo password in clear text
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2826">[ date ]</a>
+              <a href="thread.html#2826">[ thread ]</a>
+              <a href="subject.html#2826">[ subject ]</a>
+              <a href="author.html#2826">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

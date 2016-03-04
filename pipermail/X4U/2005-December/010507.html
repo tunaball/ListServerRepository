@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] 3 network questions
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%203%20network%20questions&In-Reply-To=BFB4FD49.16A2%25cfreeman%40liberty.edu">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010500.html">
+   <LINK REL="Next"  HREF="010509.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] 3 network questions</H1>
+    <B>Bem Ajani Jones-Bey</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%203%20network%20questions&In-Reply-To=BFB4FD49.16A2%25cfreeman%40liberty.edu"
+       TITLE="[X4U] 3 network questions">ajani at pyen.com
+       </A><BR>
+    <I>Thu Dec  1 20:15:16 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010500.html">[X4U] 3 network questions
+</A></li>
+        <LI>Next message: <A HREF="010509.html">[X4U] 3 network questions
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10507">[ date ]</a>
+              <a href="thread.html#10507">[ thread ]</a>
+              <a href="subject.html#10507">[ subject ]</a>
+              <a href="author.html#10507">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Dec 1, 2005, at 16:19, Colt Freeman wrote:
+
+&gt;<i> They are not full domains like a .com or a .edu it's an internal to my
+</I>&gt;<i> campus computer, one is the entire address, ie on Windows I go to  
+</I>&gt;<i> start run
+</I>&gt;<i> and type \\one to access it's files. On Mac I need to enter the ip  
+</I>&gt;<i> address
+</I>&gt;<i> in connect to server.
+</I>
+Windows has its own way of resolving network names that it uses in  
+addition to dns. It's called WINS. WINS can work with central  
+servers, like with DNS, or it can work via broadcast queries on the  
+local lan. You can do these lookups on your mac from the command line  
+using a tool from samba called nmblookup. By default, it attempts a  
+broadcast query, so you can try 'nmblookup one' and see if you can  
+get the ip address. If that doesn't work, you can run 'ipconfig' on a  
+windows machine, and see if it's getting WINS servers set via DHCP.  
+If it is, you can try looking these up in the WINS server with  
+nmblookup. The command would be something like 'nmblookup -U  
+ipaddress -R one'. Of course, you can read more about nmblookup with  
+'man nmblookup'.
+
+I do realize that the above does not solve your problem, however, it  
+does allow you to look up the ip addresses so that you can connect to  
+the windows services if you don't have a windows machine.
+
+If you want to be able to look up the windows names with your apps,  
+you need to somehow get Samba into the name resolution order for your  
+Mac. Sadly, while I've done this in the past on Linux, I've never  
+seen anything about getting it to work on Mac OS X. (Admittedly, I  
+haven't done that much looking) I think you'd have to do something  
+funky in NetInfo Manager, but that's about as much as I know.
+
+&gt;<i>
+</I>&gt;&gt;&gt;<i> Question 3, How do I access my own computer from another one on
+</I>&gt;&gt;&gt;<i> campus,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Again what do you mean by access? Are you asking what name should you
+</I>&gt;&gt;<i> use?
+</I>&gt;<i>
+</I>&gt;<i> Access to my internal files, I have one user on my system  
+</I>&gt;<i> specifically to
+</I>&gt;<i> access its data from the rest of the campus, but for some reason I  
+</I>&gt;<i> can't
+</I>&gt;<i> access it from outside my dorm, while windows boxes can be access  
+</I>&gt;<i> through
+</I>&gt;<i> remote pc from anywhere on campus.
+</I>
+Have you turned on windows file sharing in the sharing preference  
+pane? If so, you should be able to connect to your machine and log  
+into that account from a windows machine.
+
+&gt;<i>
+</I>&gt;&gt;&gt;<i> for some reason when I go into sharing in system prefs click
+</I>&gt;&gt;&gt;<i> personal file
+</I>&gt;&gt;&gt;<i> sharing it tells me that I can access my computer at afp://
+</I>&gt;&gt;&gt;<i> jamielaptop/ My
+</I>&gt;&gt;&gt;<i> computer name is Ideal, no where is jamielaptop entered in my
+</I>&gt;&gt;&gt;<i> computer. So
+</I>&gt;&gt;&gt;<i> I'm assuming that I'm getting an IP from some other students
+</I>&gt;&gt;&gt;<i> computer, What
+</I>&gt;&gt;&gt;<i> am I doing wrong? Is there a way to easily get to my computer from
+</I>&gt;&gt;&gt;<i> windows
+</I>&gt;&gt;&gt;<i> AND mac boxes from around the campus?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> So it says &quot;Ideal&quot; in the Computer Name field of the Sharing
+</I>&gt;&gt;<i> preferences panel? What is the contents of the Network Configuration
+</I>&gt;&gt;<i> section of /etc/hostconfig? What does &quot;hostname&quot; typed in a terminal
+</I>&gt;&gt;<i> say?
+</I>&gt;<i>
+</I>&gt;<i> Hostname is now crvp, which is another computer that I resolve to  
+</I>&gt;<i> sometimes,
+</I>&gt;<i> I did a reboot for another reason and when I came back I no longer am
+</I>&gt;<i> hostnamed jamielaptop I'm now crvp.
+</I>
+By default, the hostname on Mac OS X gets set by the dhcp server (or  
+if not that, it grabs it from the reverse DNS for your ip address). I  
+found this rather annoying, as it breaks some unix apps that don't  
+expect your hostname to spontaneously change. If you want to fix  
+this, you can edit /etc/hostconfig, and change the line that says  
+HOSTNAME=-AUTOMATIC- to HOSTNAME=Ideal (or whatever you want your  
+hostname to be). It says that the file is maintained by the system  
+control panels, but I've never had it change it back to -AUTOMATIC-.
+
+Hope this helps.
+</PRE>
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010500.html">[X4U] 3 network questions
+</A></li>
+	<LI>Next message: <A HREF="010509.html">[X4U] 3 network questions
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10507">[ date ]</a>
+              <a href="thread.html#10507">[ thread ]</a>
+              <a href="subject.html#10507">[ subject ]</a>
+              <a href="author.html#10507">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

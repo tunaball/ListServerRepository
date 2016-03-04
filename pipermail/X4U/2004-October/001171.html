@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Overzealous Stuffing
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Overzealous%20Stuffing&In-Reply-To=p05100303bd973c94e9b5%40%5B192.168.1.14%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001170.html">
+   <LINK REL="Next"  HREF="001162.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Overzealous Stuffing</H1>
+    <B>Norman Cohen</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Overzealous%20Stuffing&In-Reply-To=p05100303bd973c94e9b5%40%5B192.168.1.14%5D"
+       TITLE="[X4U] Overzealous Stuffing">nacohen at mac.com
+       </A><BR>
+    <I>Sat Oct 16 18:58:41 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001170.html">[X4U] Overzealous Stuffing
+</A></li>
+        <LI>Next message: <A HREF="001162.html">[X4U] Overzealous Stuffing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1171">[ date ]</a>
+              <a href="thread.html#1171">[ thread ]</a>
+              <a href="subject.html#1171">[ subject ]</a>
+              <a href="author.html#1171">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Glad to help. Archive via rename is helpful when you have a file or 
+directory that you want to stuff or zip. You just append .sit, sitx or 
+.zip to the end of the file name and the file gets compressed. Some 
+people find this handy. Personally, I use the contextual menu option, 
+or one of the droplets.
+
+At the command line, Stuffit Deluxe 8.x has two tools available that 
+are installed in /usr/local/bin, stuff and unstuff. In addition, 
+Stuffit Deluxe is scriptable to some extent. I do believe that the 
+archive via rename is a hack that affects the finder only.
+
+Here's the options for stuff at the command line:
+
+[<A HREF="../../../mailman/listinfo/x4u.html">nacohen at AlumG4</A>:/usr/local/bin]$ stuff
+
+Usage: stuff [-option [value]] [--option[=value]] (files... | 
+directories...)
+
+Note: Some formats do not support all the options below.  In those 
+cases,
+the options will be ignored.
+
+-f  --format=formatname           Archive format to create, ie: sit5, 
+zip, etc.
+-F  --formats                     Shows supported archive formats.
+-l  --level=n                     Set the compression level [0-16].
+-m  --compression_method=n        Set the compression method [0-6].
+                                   (0=none, 1=LZ-Huffman, 
+2=LZ-arithmetic,
+                                    3=Blocksort, 4=PPM, 5=Automatic, 
+6=Blend)
+-n  --name=file                   Name of the archive to create.
+-p  --password=password           Assign a password to the archive.
+-q  --quiet                       Suppress status messages.
+-v  --version                     Shows version information.
+-P  --pause                       Waits for keyboard stroke at the end
+                                   processing.
+-s  --segment                     Segment the output file
+                                   (Use -S to specify a non-default 
+size.)
+-S  --size=size                   Sets the segment size for segmented 
+archives.
+-t  --seatype=seatype             Create self-extracting archive.
+                                   (seatype=classic or win).
+-c  --convert                     Convert an archive to a different 
+format
+                                   (specified by -f or --format).
+-o  --overwrite                   Overwrite existing files.
+-e  --encryption_method=method    Encryption method [0-4].
+                                   (0=none, 1=RC4, 2=DES, 3=BlowFish, 
+4=AES)
+-k  --keysize=size                Encryption keysize. [0-512] bits
+-L  --encoding_level=level        Encoding level [0-5].
+                                   (0=none, 1=base64, 2=base85, 
+3=base222)
+-x  --extents=extents             Number of extents [10-25].
+-r  --redunancy_level=level       Redunancy level [1-64].
+                                   (Redunancy is turned off by default)
+-D  --delete                      Delete originals.
+-O  --optimize=on|off             Optimize (on or off).
+-i  --inputfile=filename          Get filelist from an input file.  
+Input file
+                                   should contain a list of files to 
+stuff.
+-h  --help                        Shows this usage display.
+
+
+and here's the options for unstuff:
+
+[<A HREF="../../../mailman/listinfo/x4u.html">nacohen at AlumG4</A>:/usr/local/bin]$ unstuff
+
+Usage: unstuff [-option [value]] [--option[=value]] (archives...)
+
+Note: Some formats do not support all the options below.  In those 
+cases,
+the options will be ignored.
+
+-d  --destination=directory       Sets the destination directory for 
+expanded
+                                   files.
+-F  --formats                     Shows supported archive formats.
+-p  --password=password           Designate the password to expand a
+                                   passworded archive.
+-q  --quiet                       Suppress status messages.
+-s  --scan                        Display a list of files/folders in an 
+archive.
+-v  --version                     Shows version information.
+-P  --pause                       Waits for keyboard stroke at the end
+                                   processing.
+-e  --enclose=(yes | no | smart)  Surround the output with an enclosing
+                                   folder (yes or no or smart). Default 
+= smart
+-o  --overwrite                   When expanding, replace existing 
+files.
+-c  --continue=(yes | no)         Continue to expand if possible. 
+Default = yes
+-D  --delete                      Delete originals.
+-h  --help                        Shows this usage display.
+
+Norman Cohen
+<A HREF="../../../mailman/listinfo/x4u.html">nacohen at mac.com</A>
+
+&quot;We seem to believe it is possible to ward off death by following rules 
+of good grooming.&quot;
+Don Delillo
+
+On Oct 16, 2004, at 2:09 PM, Doug McNutt wrote:
+
+&gt;<i> You fixed it. Much appreciated. But who would ever want to do that, 
+</I>&gt;<i> especially as a default?
+</I>&gt;<i>
+</I>&gt;<i> And renaming via the command line does not show the effect so it's 
+</I>&gt;<i> some kind of trapping supported by Finder. I wonder if it's 
+</I>&gt;<i> scriptable?
+</I>&gt;<i>
+</I>
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001170.html">[X4U] Overzealous Stuffing
+</A></li>
+	<LI>Next message: <A HREF="001162.html">[X4U] Overzealous Stuffing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1171">[ date ]</a>
+              <a href="thread.html#1171">[ thread ]</a>
+              <a href="subject.html#1171">[ subject ]</a>
+              <a href="author.html#1171">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

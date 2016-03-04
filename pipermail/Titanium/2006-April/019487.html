@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Will Apple drop its OS?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Will%20Apple%20drop%20its%20OS%3F&In-Reply-To=23A5E534-589C-4949-928C-4DDC2B96546E%40austin-home.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="019486.html">
+   <LINK REL="Next"  HREF="019488.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Will Apple drop its OS?</H1>
+    <B>Chris Olson</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Will%20Apple%20drop%20its%20OS%3F&In-Reply-To=23A5E534-589C-4949-928C-4DDC2B96546E%40austin-home.com"
+       TITLE="[Ti] Will Apple drop its OS?">chris.olson at astcomm.net
+       </A><BR>
+    <I>Thu Apr  6 21:11:06 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="019486.html">[Ti] Will Apple drop its OS?
+</A></li>
+        <LI>Next message: <A HREF="019488.html">[Ti] Will Apple drop its OS?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19487">[ date ]</a>
+              <a href="thread.html#19487">[ thread ]</a>
+              <a href="subject.html#19487">[ subject ]</a>
+              <a href="author.html#19487">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Apr 6, 2006, at 10:12 PM, Glenn L. Austin wrote:
+
+&gt;<i> It's strange that you say that, since Mach was designed to run on  
+</I>&gt;<i> CISC hardware
+</I>
+XNU, the Mac OS X kernel, is a hybrid.  Mac OS X has its early roots  
+in NeXT on Motorola 68K, Sun SPARC, and HP PA-RISC processors.  NeXT  
+and Sun Microsystems developed OpenStep, the API spec on which NeXT's  
+version of Mach is based.
+
+The PowerPC instruction set consists of 32-bit fixed-width opcodes.   
+Each opcode is exactly four bytes long and can only be executed by  
+the processor if the opcode is word-aligned in memory.
+
+The PowerPC is a 64-bit design with a 32-bit subset.  The PowerPC has  
+thirty-two 32-bit general-purpose registers (r0-r31) and 64-bit  
+general-purpose registers that still use 32-bit opcodes, thirty-two  
+64-bit floating-point registers (f0-f31), a link register (lr), a  
+count register (ctr), and a handful of other registers for tracking  
+things like branch conditions, integer overflows, and various machine  
+state flags.
+
+Unlike IA32, PowerPC does not have a call or jmp instruction.   
+Execution flow is controlled by one of the many branch instructions.
+
+Take a good look at your Darwin source code.  XNU is RISC from the  
+ground up.  Unfortunately, Apple has locked up the kernel source code  
+to Darwin x86 since Darwin 8.4 so you can no longer &quot;roll your own&quot;.   
+It became apparent that the only reason Apple ever released it in the  
+first place was to get some free R&amp;D from the open source community.   
+The moral to that story is if you're an open source developer, never  
+trust anything from a proprietary vendor.  They take but they don't  
+give back.
+-- 
+Chris
+
+-------------------------
+PGP Key:  <A HREF="http://astcomm.net/~chris/PGP_Public_Key/">http://astcomm.net/~chris/PGP_Public_Key/</A>
+-------------------------
+
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="019486.html">[Ti] Will Apple drop its OS?
+</A></li>
+	<LI>Next message: <A HREF="019488.html">[Ti] Will Apple drop its OS?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19487">[ date ]</a>
+              <a href="thread.html#19487">[ thread ]</a>
+              <a href="subject.html#19487">[ subject ]</a>
+              <a href="author.html#19487">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] [OT] TCP ACK...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20%5BOT%5D%20TCP%20ACK...&In-Reply-To=D22FDC2E-0024-4660-9BF0-2167A3F45399%40myrealbox.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002559.html">
+   <LINK REL="Next"  HREF="002561.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] [OT] TCP ACK...</H1>
+    <B>Simon Forster</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20%5BOT%5D%20TCP%20ACK...&In-Reply-To=D22FDC2E-0024-4660-9BF0-2167A3F45399%40myrealbox.com"
+       TITLE="[X-Unix] [OT] TCP ACK...">simon-lists at ldml.com
+       </A><BR>
+    <I>Fri Feb  3 02:57:30 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002559.html">[X-Unix] [OT] TCP ACK...
+</A></li>
+        <LI>Next message: <A HREF="002561.html">[X-Unix] Backup script help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2560">[ date ]</a>
+              <a href="thread.html#2560">[ thread ]</a>
+              <a href="subject.html#2560">[ subject ]</a>
+              <a href="author.html#2560">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 2 Feb 2006, at 21:58, Stroller wrote:
+
+&gt;&gt;<i> A bit more detail for those interested: We're accepting (on  
+</I>&gt;&gt;<i> machine B) an HTTP file upload from a telco (sent by machine A) -  
+</I>&gt;&gt;<i> unfortunately, frequently the uploaded data is truncated  
+</I>&gt;&gt;<i> (particularly large files during busy times). I've looked at  
+</I>&gt;&gt;<i> output from tcpdump, and  can quite clearly see the data coming in  
+</I>&gt;&gt;<i> from machine A and ACKs going out fro machine B after every couple  
+</I>&gt;&gt;<i> of datagrams (terminology?). On the interrupted feeds, you'll see  
+</I>&gt;&gt;<i> an ACK go out... and then nothing. After 5 minutes, our server  
+</I>&gt;&gt;<i> sends a finish every one minute, after which a reset will be  
+</I>&gt;&gt;<i> returned (sometimes after a few finishes have been sent).
+</I>&gt;<i>
+</I>&gt;<i> I would take the stance that this is pretty damning evidence that  
+</I>&gt;<i> the other party's machine isn't doing it's job, although to be  
+</I>&gt;<i> honest I'd feel happier if I were seeing it by packet-sniffing on a  
+</I>&gt;<i> second machine (I bridged two network interfaces on a second  
+</I>&gt;<i> machine and ran ethereal, I think, maybe snort, when I wanted to do  
+</I>&gt;<i> this). There's surely no way to prove (with the equipment available  
+</I>&gt;<i> to you) that the ACK packets are leaving your network past the ADSL  
+</I>&gt;<i> router, but a reasonable log of what you're seeing should be  
+</I>&gt;<i> sufficient to pass the onus onto the other party to prove that  
+</I>&gt;<i> their machine isn't misbehaving.
+</I>
+Stroller
+
+How goes it?
+
+I've had the client's network guys check the firewall and they're  
+seeing the TCP acknowledgement packet from us going out. At the  
+moment we're playing a game of &quot;who blinks first&quot; with the telco  
+guys, and I think they've blinked by escalating this on to the  
+application development guys. Now I want to know why. I think it's  
+'cause their server should initiate the next TCP event - because they  
+haven't received an acknowledgement from our server. However, I'd  
+like to know for sure. It's called lining up your ducks just in case ;-)
+
+And beer sounds very good. Sunday or Monday for a swift pint,  
+Wednesday for a more leisurely sup of ale.
+
+ATB
+
+Simon Forster
+_______________________________________________________
+  LDML Ltd, 62 Pall Mall, London, SW1Y 5HZ, UK
+  Tel: +44 (0)845 257 6086   Fax: +44 (0)70 9230 5247
+_______________________________________________________
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002559.html">[X-Unix] [OT] TCP ACK...
+</A></li>
+	<LI>Next message: <A HREF="002561.html">[X-Unix] Backup script help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2560">[ date ]</a>
+              <a href="thread.html#2560">[ thread ]</a>
+              <a href="subject.html#2560">[ subject ]</a>
+              <a href="author.html#2560">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

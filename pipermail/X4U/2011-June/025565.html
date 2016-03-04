@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Deleting part of file names
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX4U%5D%20Deleting%20part%20of%20file%20names&In-Reply-To=%3Cp06240838ca13b09b870e%40%5B192.168.0.17%5D%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="025563.html">
+   <LINK REL="Next"  HREF="025561.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X4U] Deleting part of file names</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX4U%5D%20Deleting%20part%20of%20file%20names&In-Reply-To=%3Cp06240838ca13b09b870e%40%5B192.168.0.17%5D%3E"
+       TITLE="[X4U] Deleting part of file names">david.ledger at ivdcs.co.uk
+       </A><BR>
+    <I>Tue Jun  7 04:03:47 PDT 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="025563.html">[X4U] Deleting part of file names
+</A></li>
+        <LI>Next message: <A HREF="025561.html">[X4U] delete identical characters in file name
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#25565">[ date ]</a>
+              <a href="thread.html#25565">[ thread ]</a>
+              <a href="subject.html#25565">[ subject ]</a>
+              <a href="author.html#25565">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 00:20 -0500 7/6/11, Eugene wrote:
+&gt;<i>On Mon, Jun 06, 2011 at 09:55:54AM CDT, Jim Moldenauer &lt;<A HREF="../../../mailman/listinfo/x4u.html">m1sc at wi.rr.com</A>&gt; wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  How do you delete the first 10 words of the file names? I have over
+</I>&gt;&gt;<i>  200 files with the same first 10 letters. The rest of the names are
+</I>&gt;&gt;<i>  alphabetical but the first 10 letters are redundant.
+</I>&gt;&gt;<i>  Command F (find) won't do it. I read up on AutoScript but that looks
+</I>&gt;&gt;<i>  like it do it if it was folders. I could not see where I could do it
+</I>&gt;&gt;<i>  with file names. It probably would if I could understand it. It
+</I>&gt;&gt;<i>  doesn't speak about file names in particular. This is strange because
+</I>&gt;&gt;<i>  I can't find out how to eliminate them. Any help would be appreciated.
+</I>&gt;<i>
+</I>&gt;<i>At a shell command line:
+</I>&gt;<i>
+</I>&gt;<i>shell&gt; cd &lt;directory-containing-the-redundantly-named-files&gt;
+</I>&gt;<i>
+</I>&gt;<i>shell&gt; for a in *; do b=`echo &quot;$a&quot; | sed 's/^abcde12345//'`; mv &quot;$a&quot; 
+</I>&gt;<i>&quot;$b&quot;; done
+</I>&gt;<i>
+</I>&gt;<i>where &quot;abcde12345&quot; are your &quot;first 10 letters&quot;.
+</I>
+Or just
+
+for a in *; do
+	b=&quot;${a#??????????}&quot;
+	[ &quot;${a%$b}&quot; != &quot;abcde12345&quot;  ] &amp;&amp; continue
+	mv &quot;$a&quot; &quot;$b&quot;
+done
+
+where there are 10 x '?'s in each case, and abc&#138; is as above. It 
+doesn't need to exec sed every time round the loop.
+If all the files in the folder have names starting with abcde12345 
+then the line ending with 'continue' can be omitted. Also in that 
+case the entire loop content can be reduced to
+
+mv &quot;$a&quot;  &quot;${a#??????????}&quot;
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+HP-UX specialist of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x4u.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="025563.html">[X4U] Deleting part of file names
+</A></li>
+	<LI>Next message: <A HREF="025561.html">[X4U] delete identical characters in file name
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#25565">[ date ]</a>
+              <a href="thread.html#25565">[ thread ]</a>
+              <a href="subject.html#25565">[ subject ]</a>
+              <a href="author.html#25565">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

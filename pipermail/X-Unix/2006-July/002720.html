@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to determine which network component is failing
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20determine%20which%20network%20component%20is%20failing&In-Reply-To=44244751-4F3B-4FF3-985B-C5F07A78D927%40myrealbox.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002716.html">
+   <LINK REL="Next"  HREF="002697.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to determine which network component is failing</H1>
+    <B>Charles Howse</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20determine%20which%20network%20component%20is%20failing&In-Reply-To=44244751-4F3B-4FF3-985B-C5F07A78D927%40myrealbox.com"
+       TITLE="[X-Unix] How to determine which network component is failing">chowse at charter.net
+       </A><BR>
+    <I>Wed Jul 26 16:49:22 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002716.html">[X-Unix] How to determine which network component is failing
+</A></li>
+        <LI>Next message: <A HREF="002697.html">[X-Unix] Running fsck on a target disk
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2720">[ date ]</a>
+              <a href="thread.html#2720">[ thread ]</a>
+              <a href="subject.html#2720">[ subject ]</a>
+              <a href="author.html#2720">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jul 25, 2006, at 11:20 PM, Stroller wrote:
+
+&gt;<i> This grepping for &quot;offline&quot; seems a little contrived, if you'll  
+</I>&gt;<i> excuse me mentioning it.
+</I>&gt;<i>
+</I>&gt;<i> You set an exit staus with your script, so why not trust others to  
+</I>&gt;<i> do so, too?
+</I>
+How does this grab ya?  Works as expected, except the values returned  
+are retained by the shell until I quit Terminal and restart it.  Was- 
+up-wid-dat?
+
+#!/bin/bash
+
+until [ &quot;$choice&quot; = &quot;q&quot; ]
+do
+
+echo
+echo
+echo &quot;Choose an action&quot;
+echo &quot;---------------------------------------------&quot;
+echo &quot;a. Ping 3 Internet hosts.&quot;
+echo &quot;b. Get Internet IP address from router.&quot;
+echo &quot;c. Release and Renew DHCP address.&quot;
+echo &quot;d. Get Signal Levels from Cable Modem.&quot;
+echo &quot;e. Reboot the Cable Modem.&quot;
+echo &quot;q. Quit.&quot;
+echo &quot;---------------------------------------------&quot;
+echo -n &quot;Your choice?:&quot;
+read choice
+case &quot;$choice&quot; in
+&quot;A&quot; | &quot;a&quot; )
+ping -c 3 google.com &gt; /dev/null
+if [ $? -le 2 ] ; then
+	echo Google appears to be online
+else
+	echo Google appears to be offline
+fi
+
+ping -c 3 freebsd.org &gt; /dev/null
+if [ $? -le 2 ] ; then
+	echo FreeBSD appears to be online
+else
+	echo FreeBSD appears to be offline
+fi
+
+ping -c 3 Yahoo.com &gt; /dev/null
+if [ $? -le 2 ] ; then
+	echo Yahoo appears to be online
+else
+	echo Yahoo appears to be offline
+fi
+;;
+&quot;B&quot; | &quot;b&quot; )
+	curl -u admin:password <A HREF="http://192.168.254.254/Status_Router.htm">http://192.168.254.254/Status_Router.htm</A> 2&gt; / 
+dev/null | grep -o '[[:digit:]]\{1,3\}[\.][[:digit:]]\{1,3\}[\.] 
+[[:digit:]]\{1,3\}[\.][[:digit:]]\{1,3\}' | head -1
+;;
+&quot;C&quot; | &quot;c&quot; )
+	curl -u admin:password &quot;<A HREF="http://192.168.254.254/Gozila.cgi?dhcpAction=0">http://192.168.254.254/Gozila.cgi?dhcpAction=0&quot;</A>
+	sleep 5
+	curl -u admin:password &quot;<A HREF="http://192.168.254.254/Gozila.cgi?dhcpAction=1">http://192.168.254.254/Gozila.cgi?dhcpAction=1&quot;</A>
+;;
+&quot;D&quot; | &quot;d&quot; )
+	curl -s <A HREF="http://192.168.100.1/signaldata.html">http://192.168.100.1/signaldata.html</A> | grep dB | tr -d \&lt;TD 
+\&gt; | tr -d /
+;;
+&quot;E&quot; | &quot;e&quot; )
+	curl -d &quot;BUTTON_INPUT=Restart%20Cable%20Modem&quot; 192.168.100.1/ 
+configdata.html
+;;
+	&quot;Q&quot; | &quot;q&quot; )
+	exit 0
+;;
+esac
+done
+exit 0
+
+
+--
+How I make Great Barbecue -
+<A HREF="http://bubbabbq.homeunix.net/bbq.html">http://bubbabbq.homeunix.net/bbq.html</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002716.html">[X-Unix] How to determine which network component is failing
+</A></li>
+	<LI>Next message: <A HREF="002697.html">[X-Unix] Running fsck on a target disk
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2720">[ date ]</a>
+              <a href="thread.html#2720">[ thread ]</a>
+              <a href="subject.html#2720">[ subject ]</a>
+              <a href="author.html#2720">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

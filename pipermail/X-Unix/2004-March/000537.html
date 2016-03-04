@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Hiding apps from the command line
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11729991%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000536.html">
+   <LINK REL="Next"  HREF="000538.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Hiding apps from the command line</H1>
+    <B>Kirk McElhearn</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11729991%40mail.ninewire.com"
+       TITLE="[X-Unix] Hiding apps from the command line">kirklists at wanadoo.fr
+       </A><BR>
+    <I>Fri Mar 26 08:12:15 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000536.html">[X-Unix] Hiding apps from the command line
+</A></li>
+        <LI>Next message: <A HREF="000538.html">[X-Unix] Hiding apps from the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#537">[ date ]</a>
+              <a href="thread.html#537">[ thread ]</a>
+              <a href="subject.html#537">[ subject ]</a>
+              <a href="author.html#537">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 3/26/04 5:05 PM, &quot;Simon Forster&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">simon-lists at ldml.com</A>&gt; wrote:
+
+&gt;&gt;&gt;<i> The error seems to get thrown if the second command line arg is not
+</I>&gt;&gt;&gt;<i> given - whether it's needed or not.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> I still get it, even if I add another argument.
+</I>&gt;<i> 
+</I>&gt;<i> What error? &quot;syntax error: No user interaction allowed. (-1713)&quot;?
+</I>
+Yes. It doesn't break the script, but it is inelegant.
+&gt;<i> 
+</I>&gt;&gt;&gt;<i> # hide -x           - shows terminal
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> Why? Since you're typing this from Terminal, it shouldn't matter.
+</I>&gt;<i> 
+</I>&gt;<i> If I'm in the terminal and want to hide all apps except Mail but still
+</I>&gt;<i> keep terminal showing, hide -ox Mail does this for me. Though it'd
+</I>&gt;<i> probably be better to just allow you to specify multiple arguments for
+</I>&gt;<i> the -o command.
+</I>&gt;<i> 
+</I>&gt;<i> I'd decided to change the script so the commands were additive -
+</I>&gt;<i> although most of them are mutually exclusive so it was a waste of time
+</I>&gt;<i> - until I added the -x switch.
+</I>
+Right, that's a point.
+&gt;<i> 
+</I>&gt;&gt;<i> I wonder if the &quot;begins with&quot; and &quot;contains&quot; is any better/faster than
+</I>&gt;&gt;<i> simply &quot;is -o&quot; etc.?
+</I>&gt;<i> 
+</I>&gt;<i> Additive switches.
+</I>&gt;<i> 
+</I>&gt;&gt;&gt;<i> if &quot;$1&quot; contains &quot;x&quot; then tell application &quot;Terminal&quot; to activate
+</I>&gt;&gt;&gt;<i> else if exists application process &quot;$1&quot; then
+</I>&gt;&gt;&gt;<i> set visible of application process &quot;$1&quot; to false
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> This part's not working for me...
+</I>&gt;<i> 
+</I>&gt;<i> Hmm. Once again I need to supply 2 arguments. hide Mail Mail for
+</I>&gt;<i> example works (for me).
+</I>
+So how can we get it to work if two args are not supplied? That's a waste...
+It has something to do with the tell Finder bit.
+
+ 
+Kirk
+ 
+        My latest book: How to Do Everything with Mac OS X Panther
+                  <A HREF="http://www.mcelhearn.com/htde.html">http://www.mcelhearn.com/htde.html</A>
+ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+ . . . . . . .  <A HREF="../../../mailman/listinfo/x-unix.html">kirk at mcelhearn.com</A> | <A HREF="http://www.mcelhearn.com">http://www.mcelhearn.com</A>  . . . . . .
+ . .  Kirk McElhearn | Chemin de la Lauze | 05600 Guillestre | France  . .
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000536.html">[X-Unix] Hiding apps from the command line
+</A></li>
+	<LI>Next message: <A HREF="000538.html">[X-Unix] Hiding apps from the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#537">[ date ]</a>
+              <a href="thread.html#537">[ thread ]</a>
+              <a href="subject.html#537">[ subject ]</a>
+              <a href="author.html#537">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

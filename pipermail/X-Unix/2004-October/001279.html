@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] bash problem: `expr index $somestring somepattern` fails
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20bash%20problem%3A%20%60expr%20index%20%24somestring%20somepattern%60%20fails&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001274.html">
+   <LINK REL="Next"  HREF="001280.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] bash problem: `expr index $somestring somepattern` fails</H1>
+    <B>Steffen Lund Hokland</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20bash%20problem%3A%20%60expr%20index%20%24somestring%20somepattern%60%20fails&In-Reply-To="
+       TITLE="[X-Unix] bash problem: `expr index $somestring somepattern` fails">hokland at mr.au.dk
+       </A><BR>
+    <I>Sat Oct 30 00:48:28 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001274.html">[X-Unix] Intel marketing: &quot;Clock speed doesn't matter anymore&quot;
+</A></li>
+        <LI>Next message: <A HREF="001280.html">[X-Unix] bash problem: `expr index $somestring somepattern` fails
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1279">[ date ]</a>
+              <a href="thread.html#1279">[ thread ]</a>
+              <a href="subject.html#1279">[ subject ]</a>
+              <a href="author.html#1279">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+I'm writing a bash script and needed something along the lines of:
+
+`expr index $somestring somepattern`
+
+for parsing a text string. This is described in:
+'Advanced Bash-Scripting Guide: An in-depth exploration of the art of 
+shell scripting' version 2.7.7. However when running the command above 
+i get an error:
+
+expr: syntax error
+
+Apparently this happens whenever using 'expr' with 'index', 'length', 
+'match' and 'substring' this occurs. I've tried running the example 
+script 12.9 (the file is called ex45.sh in my download), and get this 
+error message whenever `expr index/length/match/substring ......` 
+occurs.
+
+Does anybody know what's wrong. I know that there are far better ways 
+of parsing a text string (awk, perl...), but it just bugs me....
+
+Thanks in advance,
+Steffen
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001274.html">[X-Unix] Intel marketing: &quot;Clock speed doesn't matter anymore&quot;
+</A></li>
+	<LI>Next message: <A HREF="001280.html">[X-Unix] bash problem: `expr index $somestring somepattern` fails
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1279">[ date ]</a>
+              <a href="thread.html#1279">[ thread ]</a>
+              <a href="subject.html#1279">[ subject ]</a>
+              <a href="author.html#1279">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

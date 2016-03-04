@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Lengthy Startup Time
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Lengthy%20Startup%20Time&In-Reply-To=a66b78505d25f832a56ec4725f7a34eb%40cae.wisc.edu">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="016149.html">
+   <LINK REL="Next"  HREF="016151.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Lengthy Startup Time</H1>
+    <B>Chris Olson</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Lengthy%20Startup%20Time&In-Reply-To=a66b78505d25f832a56ec4725f7a34eb%40cae.wisc.edu"
+       TITLE="[Ti] Lengthy Startup Time">chris.olson at astcomm.net
+       </A><BR>
+    <I>Wed Mar 16 11:06:16 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="016149.html">[Ti] Lengthy Startup Time
+</A></li>
+        <LI>Next message: <A HREF="016151.html">[Ti] Comparison between 800Mhz and 1.67Ghz PowerBook
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#16150">[ date ]</a>
+              <a href="thread.html#16150">[ thread ]</a>
+              <a href="subject.html#16150">[ subject ]</a>
+              <a href="author.html#16150">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Mar 16, 2005, at 12:05 PM, Kynan Shook wrote:
+
+&gt;<i> That's not necessarily true - although it's possible that it's looking 
+</I>&gt;<i> for something on the network (and I've seen this happen), it's also 
+</I>&gt;<i> possible that it's beachballing because it can't read part of the disk 
+</I>&gt;<i> (and I've seen this happen too, quite a bit).  In fact, I would 
+</I>&gt;<i> consider this to be more likely.
+</I>
+I wouldn't consider that likely.  The data required to launch Finder is 
+not contiguous on the disk, and a few bad blocks won't cause Finder not 
+to launch.  If there's some bad blocks, those blocks get marked bad and 
+the file system drivers move on and don't use them anymore.  If you ssh 
+into the machine when Finder is trying to start you'll find Finder is 
+already loaded into memory and hung, while lookupd is thrashing the 
+living daylights out of your disk, querying NetInfo and your 
+configuration stores.  Been there and fixed too many of 'em already.
+
+I suggest perhaps referring to Apple's KB article on the subject:
+<A HREF="http://docs.info.apple.com/article.html?artnum=300852">http://docs.info.apple.com/article.html?artnum=300852</A>
+
+What Apple is failing to tell there is that they screwed up host 
+lookups and the lookup daemon (lookupd - normally handled by &quot;named&quot; on 
+other Unix systems) in 10.3.7.  10.3.8 is supposed to fix it, but it 
+doesn't if you've ended up with a corrupted Finder cache or modified 
+the hosts or NetInfo database to fix the issue in 10.3.7.  Removing 
+networking capability so the machine halts host lookups is the way to 
+verify it.  If lookupd cached the fact that a network volume can't be 
+reached, even when it can, Finder will hang during start for 120 
+seconds on each AFP or SMB lookup, waiting for it to time out.
+
+If you suspect a disk problem, and realize that S.M.A.R.T. monitoring 
+isn't perfect, boot the machine to single user and run fsck on the disk 
+in interactive mode.  The Unix command line tool will tell you way more 
+useful information about the status of your disk than the GUI will.
+--
+Chris
+
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="016149.html">[Ti] Lengthy Startup Time
+</A></li>
+	<LI>Next message: <A HREF="016151.html">[Ti] Comparison between 800Mhz and 1.67Ghz PowerBook
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#16150">[ date ]</a>
+              <a href="thread.html#16150">[ thread ]</a>
+              <a href="subject.html#16150">[ subject ]</a>
+              <a href="author.html#16150">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

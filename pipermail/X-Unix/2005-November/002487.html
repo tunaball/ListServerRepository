@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] question about 'find'
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20question%20about%20%27find%27&In-Reply-To=BFAE8313.2B7E%25chowse%40charter.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002493.html">
+   <LINK REL="Next"  HREF="002488.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] question about 'find'</H1>
+    <B>James Bucanek</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20question%20about%20%27find%27&In-Reply-To=BFAE8313.2B7E%25chowse%40charter.net"
+       TITLE="[X-Unix] question about 'find'">subscriber at gloaming.com
+       </A><BR>
+    <I>Sat Nov 26 22:06:07 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002493.html">[X-Unix] question about 'find'
+</A></li>
+        <LI>Next message: <A HREF="002488.html">[X-Unix] question about 'find'
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2487">[ date ]</a>
+              <a href="thread.html#2487">[ thread ]</a>
+              <a href="subject.html#2487">[ subject ]</a>
+              <a href="author.html#2487">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Charles Howse wrote on Saturday, November 26, 2005:
+
+&gt;<i>$ find ~/bin -name \*.sh -maxdepth 1 -perm 0644 -exec chmod 744 {} \;
+</I>&gt;<i>
+</I>&gt;<i>This works as expected (I found the '\;' part on a web site), but I'm not
+</I>&gt;<i>sure why I have to use the '\' as the next-to-last character.
+</I>&gt;<i>Can't find anything about it in 'man find'.
+</I>&gt;<i>Can anyone enlighten me?
+</I>
+The semicolon syntax is clearly documented in each argument that takes a variable number of arguments:
+
+     -exec utility [argument ...];
+             ...  Optional arguments may be passed to the utility.
+             The expression must be terminated by a semicolon (``;'').
+             ...
+     
+     ...
+
+     -execdir utility [argument ...];
+
+     -ok utility [argument ...];
+
+     -okdir utility [argument ...];
+
+     ...
+
+The fact that you have to escape a semicolon on the command line is an issue with the shell you are using, not find. Although that fact is still noted in find's man page:
+
+  BUGS
+     The special characters used by find are also special characters to many
+     shell programs.  In particular, the characters ``*'', ``['', ``]'',
+     ``?'', ``('', ``)'', ``!'', ``\'' and ``;'' may have to be escaped from
+     the shell.
+
+&gt;<i>If I missed it in 'man find', please point me to the correct section.  :-)
+</I>
+Man pages are sometimes hard to read, but after this many years the core ones are pretty complete, having been picked over by a thousand software engineers.
+
+-- 
+James Bucanek
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002493.html">[X-Unix] question about 'find'
+</A></li>
+	<LI>Next message: <A HREF="002488.html">[X-Unix] question about 'find'
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2487">[ date ]</a>
+              <a href="thread.html#2487">[ thread ]</a>
+              <a href="subject.html#2487">[ subject ]</a>
+              <a href="author.html#2487">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

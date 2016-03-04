@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] slightly OT: which apps dual-processor aware?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20slightly%20OT%3A%20which%20apps%20dual-processor%20aware%3F&In-Reply-To=dd378c4d5c5d10ec72794bac37314d3a%40astcomm.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="016330.html">
+   <LINK REL="Next"  HREF="016343.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] slightly OT: which apps dual-processor aware?</H1>
+    <B>Ronald Woodland</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20slightly%20OT%3A%20which%20apps%20dual-processor%20aware%3F&In-Reply-To=dd378c4d5c5d10ec72794bac37314d3a%40astcomm.net"
+       TITLE="[Ti] slightly OT: which apps dual-processor aware?">woodland at infowest.com
+       </A><BR>
+    <I>Wed Apr 13 07:55:23 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="016330.html">[Ti] slightly OT: which apps dual-processor aware?
+</A></li>
+        <LI>Next message: <A HREF="016343.html">[Ti] slightly OT: which apps dual-processor aware?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#16335">[ date ]</a>
+              <a href="thread.html#16335">[ thread ]</a>
+              <a href="subject.html#16335">[ subject ]</a>
+              <a href="author.html#16335">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Now that was an education.  The scary part is that I almost really 
+understood what you were taking about.  I do a lot of 3D 
+modeling/rendering, as well as video editing.  I have seen the load hit 
+100% on BOTH CPUs during rendering.  That's when I notice the mouse 
+clicks into other apps or to check my e-mail aren't as responsive -- 
+yet it still works while the rendering proceeds in the background.  But 
+no worries, I'd rather it get the rendering done, so I typically leave 
+the machine alone in those times of high demand.  Man, I love my Mac!
+
+Ron Woodland
+
+
+
+On Apr 12, 2005, at 11:22 PM, Chris Olson wrote:
+
+On Apr 12, 2005, at 9:35 PM, Ronald Woodland wrote:
+
+&gt;<i> I have yet to see one of the CPUs idle while the other one is working. 
+</I>&gt;<i>  The numbers move around and often bounce back and forth as the 
+</I>&gt;<i> workload is distributed.  Dual processors working in beautiful 
+</I>&gt;<i> cooperation with the robustly stable and fluid Mac OS -- it gives me 
+</I>&gt;<i> goosebumps just thinking about it.
+</I>
+The Mach kernel does the thread scheduling for the cpu(s).  Mach does a 
+very good job at SMP - it was designed for it.  Both Carbon and Cocoa 
+applications can be multithreaded but Carbon will use Multiprocessing 
+Services (as in Mac OS 9).  Cocoa uses the NSThread class with 
+NSThread's detachNewThreadSelector:toTarget:withObject
+
+Some applications like Safari will throttle the threads if one requires 
+the other to be at a certain point before continuing by using condition 
+locks (NSConditionLock).  But if an app uses a lot of condition locks 
+or passes many objects and messages between threads, application 
+performance can suffer.  Safari, by design, does not benefit from dual 
+processors.  Neither does Mail, Sherlock, iCal, Finder, and most other 
+every day applications and utilities.  Only cpu-intensive tasks and 
+applications really take full advantage of it.  Because of OS X's 
+pre-emptive multithreading capability, along with the Mach kernel's 
+capability to schedule and switch threads many times per second on one 
+cpu, you just don't notice the difference until the total system load 
+on one cpu reaches 100% cpu time.
+--
+
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="016330.html">[Ti] slightly OT: which apps dual-processor aware?
+</A></li>
+	<LI>Next message: <A HREF="016343.html">[Ti] slightly OT: which apps dual-processor aware?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#16335">[ date ]</a>
+              <a href="thread.html#16335">[ thread ]</a>
+              <a href="subject.html#16335">[ subject ]</a>
+              <a href="author.html#16335">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] App launched by my crontab runs as root if Login Window!
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20App%20launched%20by%20my%20crontab%20runs%20as%20root%20if%20Login%20Window%21&In-Reply-To=f05210600beca57233390%40%5B192.168.1.100%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002158.html">
+   <LINK REL="Next"  HREF="002161.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] App launched by my crontab runs as root if Login Window!</H1>
+    <B>Brian Medley</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20App%20launched%20by%20my%20crontab%20runs%20as%20root%20if%20Login%20Window%21&In-Reply-To=f05210600beca57233390%40%5B192.168.1.100%5D"
+       TITLE="[X-Unix] App launched by my crontab runs as root if Login Window!">bpm-list-osx-unix at 4321.tv
+       </A><BR>
+    <I>Mon Jun  6 21:50:08 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002158.html">[X-Unix] App launched by my crontab runs as root if Login Window!
+</A></li>
+        <LI>Next message: <A HREF="002161.html">[X-Unix] Apple dumping IBM, moving to Intel
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2159">[ date ]</a>
+              <a href="thread.html#2159">[ thread ]</a>
+              <a href="subject.html#2159">[ subject ]</a>
+              <a href="author.html#2159">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Mon, Jun 06, 2005 at 12:51:13PM -0700, John Baltutis wrote:
+
+&gt;<i> &gt;&gt; If a root account is enabled, and I log in as root, I can go anywhere
+</I>&gt;<i> &gt;&gt; on the computer into 'my' 'root' 'home', into other accounts, etc).
+</I>&gt;<i> &gt;&gt; But with no root enabled, there are 'walls'...sudo, or no sudo.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt; If I'm not mistaken, root disable, or not, you can still sudo su - and
+</I>&gt;<i> &gt; go wherever you want to.
+</I>&gt;<i> 
+</I>&gt;<i> You're mistaken. When you launch Terminal, it normally starts up in your
+</I>&gt;<i> home directory. Now, if you enter this command:
+</I>&gt;<i> 
+</I>&gt;<i> $sudo cd /private/var/root
+</I>
+Will you please explain to me how:
+
+    a) sudo can run a shell builtin
+    b) the fork'ed/exec'ed process can change the
+       working directory of the parent process
+
+What I'm saying is that there is _no_ &quot;cd&quot; command.  The unix
+process design dictates that it must be a shell builtin.
+
+&gt;<i> enter your admin password, you're not taken there.
+</I>&gt;<i> 
+</I>&gt;<i> If you enter:
+</I>&gt;<i> 
+</I>&gt;<i> sudo open /private/var/root/
+</I>&gt;<i> 
+</I>&gt;<i> then, the Terminal pops up a dialog box with this admonition:
+</I>&gt;<i> 
+</I>&gt;<i> &quot;The folder &quot;root&quot; could not be opened because you do not have sufficient
+</I>&gt;<i> access privileges.&quot;
+</I>&gt;<i> 
+</I>&gt;<i> The only way to execute those commands successfully is to enable the root
+</I>&gt;<i> user via the NetInfo Manager.app.
+</I>
+Yes, what you say above is true, less one thing: the _Finder_ is
+what is being brought up, not Terminal.  Given what another
+poster in this same thread said, the &quot;open&quot; command will launch
+the program using the logged in console user, not the user that
+it is run at.  Therefore, the Finder will try to open
+/private/var/root as the console user (which is most likely not
+root).
+
+However, if you do want to open up /private/var/root using the
+Finder, I believe this should do it:
+
+    $ sudo /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder \
+        /private/var/root
+
+-- 
+~`^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-., \|/  (___)  \|/ _,.-=~'`^`
+                                      @~./'O o`\.~@
+      &quot;Knowledge is Power&quot;           /__( \___/ )__\  *PPPFFBT!*
+         -- Francis Bacon               `\__`U_/'
+ _.-=~'``'~=-._.-=~'``'~=-._.-=~'`^`'~= &lt;____|'  ^^`'~=-.,__,.-=
+~'^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-.,__,.-==--^'~=-.,__,.-=~'`^`
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002158.html">[X-Unix] App launched by my crontab runs as root if Login Window!
+</A></li>
+	<LI>Next message: <A HREF="002161.html">[X-Unix] Apple dumping IBM, moving to Intel
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2159">[ date ]</a>
+              <a href="thread.html#2159">[ thread ]</a>
+              <a href="subject.html#2159">[ subject ]</a>
+              <a href="author.html#2159">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

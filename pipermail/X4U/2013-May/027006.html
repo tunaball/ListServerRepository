@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Back-up
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX4U%5D%20Back-up&In-Reply-To=%3C19523BA0-DD5B-41DF-BF89-26D7C5700285%40laubenthal.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="027004.html">
+   <LINK REL="Next"  HREF="027007.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X4U] Back-up</H1>
+    <B>Neil Laubenthal</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX4U%5D%20Back-up&In-Reply-To=%3C19523BA0-DD5B-41DF-BF89-26D7C5700285%40laubenthal.net%3E"
+       TITLE="[X4U] Back-up">neil at laubenthal.net
+       </A><BR>
+    <I>Thu May 23 18:55:01 PDT 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="027004.html">[X4U] Back-up
+</A></li>
+        <LI>Next message: <A HREF="027007.html">[X4U] Back-up
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#27006">[ date ]</a>
+              <a href="thread.html#27006">[ thread ]</a>
+              <a href="subject.html#27006">[ subject ]</a>
+              <a href="author.html#27006">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Ah, putting the data on the second SSD (or a separate spinning drive) makes sense; although if it was me I would probably keep the data on the main OS drive unless there started to be space issues. Depending on what kind of data you're talking about, the relatively expensive SSD storage might be wasted on storing data&#8230;data access (although faster on the SSD) might not be a consideration in overall speed of execution.
+
+Databases and stuff that stays mostly disk resident while being swapped in and out as needed would probably see some benefit from being on the SSD; images that were being worked on in Photoshop say would likely not see much benefit as the image file is memory resident while being worked on.
+
+All that being said; having OS/Apps on one SSD and data on the other is certainly a viable solution; along with having a spinning backup drive for each and using the large spinning drive as Time Machine; in that case I would remove the two spinning backup drives from being Time Machined and only backup the SSDs.
+
+As to what to do the cloning with; as noted the two main options are SuperDuper and CarbonCopyCloner. Both work just fine; and the relative merits have probably already been discussed here&#8230;but as you missed those discussions&#8230;here's a brief discussion of the main differences as I see them.
+
+SuperDuper is really only targeted at cloning entire drives&#8230;while it is possible to just clone a folder on a drive setting this up is difficult, non-intuitive, and really easy to mess up. The author has essentially no interest in making folder cloning a part of his app&#8230;I know because I asked him about adding some better folder cloning options. SuperDuper also offers no versioning of anything; it just clones the drive and any file that changed on the source gets copied to the destination.
+
+CarbonCopyCloner on the other hand; clones entire drives just as well as SD does&#8230;but in addition it is trivial to setup a clone of a folder on the SSD to a folder on the backup (this will become clearer when you get to the recommendations below). CCC also supports versioning; it will keep old version of a file instead of overwriting them; so you would be able to go back to 3 weeks ago and get that version if you needed it. Time Machine also has versioning
+
+Both SD and CCC provide scheduling capabilities that work the same. CCC will happily backup to a network drive&#8230;folders get backed up to folders and drives get backed up to a disk image file.
+
+Assuming you were keeping the SSDs for OS/Apps and Data as you discuss; with backups of each and a separate Time Machine drive; this is how I would personally set it up.
+
+For the OS/App SSD; set up a CCC scheduled job with a weekly periodicity to clone the entire drive to it's backup drive
+
+For the Data SSD; set up a daily folder clone of the data folder only to the second drive with versioning so as to be able to restore last week's version if necessary.
+
+I would then setup the large drive as Time Machine and backup both the OS/Apps and Data SSDs; but I personally would eliminate the System Files from the Time Machine backup as they're really not necessary and eliminating them will greatly decrease the Time Machine storage requirements and hence the amount of time before backups get deleted.
+
+You probably also need an offsite backup of just the data on the Data SSD; my personally recommendation is JungleDisk and Amazon's S3 or RackSpace's servers as the destination as this is the most flexible combination. Other options are CrashPlan or Carbonite; but I personally don't like either of those as they're much like SuperDuper in philosophy and are designed to backup all data for relatively unsophisticated users&#8230;this means they're not as flexible to do what you want when you want it. JungleDisk is almost infinitely configurable and you can set up hourly and/or daily and/or weekly jobs to get your files securely stored offsite. JungleDisk also follows Steve Gibson's (of the  Security Not podcast fame) principle of TNO (trust no one) in that all data is encrypted before leaving your control. CrashPlan and Carbonite (at least the last time I looked at them) provide decent but not bulletproof security.
+
+On May 23, 2013, at 7:42 AM, Roy v.d. Westhuizen &lt;<A HREF="../../../mailman/listinfo/x4u.html">roy at ion.co.za</A>&gt; wrote:
+
+&gt;<i> separate the work data from the OS and application.&#8230;Equally back-up each of them to a separate external drive, with the third external being used as a Time Machine backup.
+</I>
+
+
+-----------------------------------------------
+There are only three kinds of stress; your basic nuclear stress, cooking stress, and A$$hole stress. The key to their relationship is Jello.
+
+neil
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="027004.html">[X4U] Back-up
+</A></li>
+	<LI>Next message: <A HREF="027007.html">[X4U] Back-up
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#27006">[ date ]</a>
+              <a href="thread.html#27006">[ thread ]</a>
+              <a href="subject.html#27006">[ subject ]</a>
+              <a href="author.html#27006">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

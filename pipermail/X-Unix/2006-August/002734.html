@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Bash scripting Question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Bash%20scripting%20Question&In-Reply-To=B3B52CA9-D76F-4125-90F0-2121E1691EC6%40hughes.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002733.html">
+   <LINK REL="Next"  HREF="002736.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Bash scripting Question</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Bash%20scripting%20Question&In-Reply-To=B3B52CA9-D76F-4125-90F0-2121E1691EC6%40hughes.net"
+       TITLE="[X-Unix] Bash scripting Question">ecrist at secure-computing.net
+       </A><BR>
+    <I>Tue Aug 22 20:17:27 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002733.html">[X-Unix] Bash scripting Question
+</A></li>
+        <LI>Next message: <A HREF="002736.html">[X-Unix] Bash scripting Question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2734">[ date ]</a>
+              <a href="thread.html#2734">[ thread ]</a>
+              <a href="subject.html#2734">[ subject ]</a>
+              <a href="author.html#2734">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Russell,
+
+I would ask first if there is a different exit code for someone being  
+connected and nobody being connected.  You can check this by running  
+fmsadmin and checking the exit code immediately afterward.  First,  
+run fmsadmin with someone connected to the flash server.  After it  
+executes, type &quot;echo $?&quot; at the command line (minus the quotes).  You  
+should get a number and your command line again.  Write this code  
+down and execute fmsadmin again, this time with everyone  
+disconnected.  After it executes, type &quot;echo $?&quot; again, without the  
+quotes.  You may get the same number, but lets hope it's different.
+
+Now, IF and only IF you have two different exit codes, something like  
+the following should work for you:
+
+#!/bin/sh
+#End script after 210 seconds or exit code of 0.
+
+## Initialize the variables. ##
+starttime=$(date +%s)
+
+# Set this variable to the number of seconds you want the program
+# to run before timing out.
+endtime=210
+exitnow=0
+runtime=0
+calctime=0
+exitcode=99
+
+## Time to do the dirty work. ##
+
+while [ &quot;$exitnow&quot; -ne &quot;1&quot; ]; do
+         if [ &quot;$runtime&quot; -lt &quot;$endtime&quot; ]; then
+                 if [ &quot;$exitcode&quot; -ne &quot;0&quot; ]; then
+                         fmsadmin status Clients
+                         exitcode=$?
+                         echo &quot;Running for $runtime seconds.&quot;
+                 else
+                          exitnow=1
+                 fi
+         else
+                 exitnow=1
+         fi
+         calctime=$(date +%s)
+         runtime=$(( $calctime - $starttime))
+done
+echo &quot;Exited at `date`.&quot;
+
+
+Any questions, let me know.
+
+Eric Crist
+
+
+On Aug 22, 2006, at 11:11 AM, Russell McGaha wrote:
+
+&gt;<i> Folks;
+</I>&gt;<i> 	I've got a situation where I running a script and need to wait  
+</I>&gt;<i> till the output of a command is null:
+</I>&gt;<i>
+</I>&gt;<i> ex.
+</I>&gt;<i> 	NotNull = true
+</I>&gt;<i> 	While NotNull
+</I>&gt;<i> do
+</I>&gt;<i> 	fmsadmin status Clients   #[returns a list of connected clients;  
+</I>&gt;<i> I'd like to got thru
+</I>&gt;<i> 							  this loop until either the output of the command is null or
+</I>&gt;<i> 							  About 2-5 minutes have gone by]#
+</I>&gt;<i> done
+</I>&gt;<i>
+</I>&gt;<i> Can anyone give ANY pointers or examples on how to do this?
+</I>&gt;<i>
+</I>&gt;<i> Russell
+</I>&gt;<i>
+</I>&gt;<i> PS. I'm on the digests so PLEASE cc me directly
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>
+-----
+Eric F Crist
+Secure Computing Networks
+
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002733.html">[X-Unix] Bash scripting Question
+</A></li>
+	<LI>Next message: <A HREF="002736.html">[X-Unix] Bash scripting Question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2734">[ date ]</a>
+              <a href="thread.html#2734">[ thread ]</a>
+              <a href="subject.html#2734">[ subject ]</a>
+              <a href="author.html#2734">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

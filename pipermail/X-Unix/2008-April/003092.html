@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How make launchd stop trying to launch nonexistent
+	program?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20make%20launchd%20stop%20trying%20to%20launch%20nonexistent%0A%09program%3F&In-Reply-To=FF003E9C-4700-4B43-887C-9D4774151B1E%40ieee.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003091.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How make launchd stop trying to launch nonexistent
+	program?</H1>
+    <B>James Bucanek</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20make%20launchd%20stop%20trying%20to%20launch%20nonexistent%0A%09program%3F&In-Reply-To=FF003E9C-4700-4B43-887C-9D4774151B1E%40ieee.org"
+       TITLE="[X-Unix] How make launchd stop trying to launch nonexistent
+	program?">subscriber at gloaming.com
+       </A><BR>
+    <I>Sat Apr 19 08:50:03 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003091.html">[X-Unix] How make launchd stop trying to launch nonexistent
+	program?
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3092">[ date ]</a>
+              <a href="thread.html#3092">[ thread ]</a>
+              <a href="subject.html#3092">[ subject ]</a>
+              <a href="author.html#3092">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Jerry Krinock &lt;mailto:<A HREF="../../../mailman/listinfo/x-unix.html">jerry at ieee.org</A>&gt; wrote (Friday, April 18, 
+2008 11:00 PM -0700):
+
+&gt;<i>On 2008 Apr, 17, at 8:29, James Bucanek wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i>For the record, the correct way of removing a .plist is use 
+</I>&gt;&gt;<i>'launchctl unload &lt;path/to/.plist&gt;'.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>If you still have the .plist you can probably stop the job 
+</I>&gt;&gt;<i>using 'launchctl remove &lt;joblabel&gt;' (look in the .plist file 
+</I>&gt;&gt;<i>to find the &lt;label&gt; property). If you don't, just restart the system.
+</I>&gt;<i>
+</I>&gt;<i>I know I tried subcommands 'remove' and 'stop' yesterday, and neither work.  I tried 'unload' today with the -w option and it worked.
+</I>
+Another complicating issue are the various bootstrap namespaces 
+and sessions. When you issue a remove or stop command, you have 
+to target the correct instance of launchd (per-user or root), 
+and in some situations you must specify the correct session type 
+using the -S &lt;sessiontype&gt; option. For example, attempting to 
+stop a job using 'sudo launchctl stop jobtitle' will have not 
+effect if the job is a per-user agent, because you sent the 
+command to the root launchd daemon.
+
+You can use the list command to explore what jobs are running in 
+a particular instance of launchd.
+
+-- 
+James Bucanek
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003091.html">[X-Unix] How make launchd stop trying to launch nonexistent
+	program?
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3092">[ date ]</a>
+              <a href="thread.html#3092">[ thread ]</a>
+              <a href="subject.html#3092">[ subject ]</a>
+              <a href="author.html#3092">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

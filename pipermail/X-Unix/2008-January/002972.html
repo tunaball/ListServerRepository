@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Sending Commands to Apple External USB Modem
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Sending%20Commands%20to%20Apple%20External%20USB%20Modem&In-Reply-To=p0623090ac3a79cd3a21f%40%5B67.150.247.197%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002971.html">
+   <LINK REL="Next"  HREF="002973.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Sending Commands to Apple External USB Modem</H1>
+    <B>Kevin Stevens</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Sending%20Commands%20to%20Apple%20External%20USB%20Modem&In-Reply-To=p0623090ac3a79cd3a21f%40%5B67.150.247.197%5D"
+       TITLE="[X-Unix] Sending Commands to Apple External USB Modem">groups at pursued-with.net
+       </A><BR>
+    <I>Mon Jan  7 03:58:32 PST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002971.html">[X-Unix] Sending Commands to Apple External USB Modem
+</A></li>
+        <LI>Next message: <A HREF="002973.html">[X-Unix] Sending Commands to Apple External USB Modem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2972">[ date ]</a>
+              <a href="thread.html#2972">[ thread ]</a>
+              <a href="subject.html#2972">[ subject ]</a>
+              <a href="author.html#2972">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jan 7, 2008, at 01:22, Rick Gordon wrote:
+
+&gt;<i> Can someone point me in the direction of how to send raw commands to  
+</I>&gt;<i> an Apple External USB Modem (v. 92)?
+</I>&gt;<i>
+</I>&gt;<i> Mainly, I would like to be able to tell the modem to go on hold  
+</I>&gt;<i> indefinitely.
+</I>&gt;<i>
+</I>&gt;<i> Information on &lt;<A HREF="https://modemsite.com/56k/v92c.asp">https://modemsite.com/56k/v92c.asp</A>&gt; lists the  
+</I>&gt;<i> following command sequence:
+</I>&gt;<i>
+</I>&gt;<i> 	To make an outgoing call while holding your Internet connection:
+</I>&gt;<i>
+</I>&gt;<i> 	AT+PMHR - response will be value from above chart - server starts  
+</I>&gt;<i> timer
+</I>&gt;<i>
+</I>&gt;<i> 	AT+PMHF - your modem does a hook flash; gives you dial-tone on  
+</I>&gt;<i> extension phone plugged into modem; You can place your call. When  
+</I>&gt;<i> finished and you hang up, the line will RING.
+</I>&gt;<i>
+</I>&gt;<i> But I'm not sure how to send commands to the modem. (Back in Classic  
+</I>&gt;<i> days, with a serial modem, I would have used an application such as  
+</I>&gt;<i> HyperTerminal or DataComet, but I've lost touch with how to  
+</I>&gt;<i> communicate with an external USB modem under OS X.)
+</I>
+Don't know specifically about the Apple modem, but I'll wager it sets  
+itself up as a /dev/serial.something device, as the USB&lt;&gt;serial  
+converters do.  Once you find the device, you can use minicom or ZTerm  
+or similar to connect to it just as you describe - they have a place  
+in the config to identify the device.
+
+I *really* wish someone would do a Cocoa terminal like iTerm that  
+knows how to talk to serial devices.  ZTerm is very dated (like 10.1  
+dated), and all the alternatives I know of are enterprise class $100+  
+apps with fancy terminal emulations.  I just need to talk to routers,  
+etc. on a semi-regular basis.
+
+KeS
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002971.html">[X-Unix] Sending Commands to Apple External USB Modem
+</A></li>
+	<LI>Next message: <A HREF="002973.html">[X-Unix] Sending Commands to Apple External USB Modem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2972">[ date ]</a>
+              <a href="thread.html#2972">[ thread ]</a>
+              <a href="subject.html#2972">[ subject ]</a>
+              <a href="author.html#2972">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

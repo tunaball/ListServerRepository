@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Open ports on Linksys Router
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Open%20ports%20on%20Linksys%20Router&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="006112.html">
+   <LINK REL="Next"  HREF="006114.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Open ports on Linksys Router</H1>
+    <B>listz</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Open%20ports%20on%20Linksys%20Router&In-Reply-To="
+       TITLE="[G4] Open ports on Linksys Router">listz at xs4all.nl
+       </A><BR>
+    <I>Sun Mar  7 11:46:59 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="006112.html">os x audio recorder w/an agc control like coaster?
+</A></li>
+        <LI>Next message: <A HREF="006114.html">[G4] How do I get rid of extra outgoing mail servers
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6113">[ date ]</a>
+              <a href="thread.html#6113">[ thread ]</a>
+              <a href="subject.html#6113">[ subject ]</a>
+              <a href="author.html#6113">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+
+----- Original Message -----
+From: &quot;k s d&quot; &lt;<A HREF="../../../mailman/listinfo/g4.html">ksd003 at hotmail.com</A>&gt;
+To: &quot;Power Macintosh G4 List&quot; &lt;<A HREF="../../../mailman/listinfo/g4.html">G4 at lists.themacintoshguy.com</A>&gt;
+Sent: Sunday, March 07, 2004 04:07:28 PM
+Subject: [G4] Open ports on Linksys Router
+
+&gt;<i> Hi all. I want to open some ports on my Linksys Wireless-G router.
+</I>&gt;<i> Below is a snipit from the Linksys help regarding port forwarding:
+</I>&gt;<i>
+</I>&gt;<i>    When users send this type of request to your network via the Internet,
+</I>&gt;<i> the Router will forward those
+</I>&gt;<i>    requests to the appropriate PC. Any PC whose port is being forwarded
+</I>must
+&gt;<i> have its DHCP client
+</I>&gt;<i>    function disabled and must have a new static IP address assigned to it
+</I>&gt;<i> because its IP address may
+</I>&gt;<i>    change when using the DHCP function.
+</I>&gt;<i>
+</I>&gt;<i> I do have my network settings set to &quot;Configure: Using DHCP&quot;. After
+</I>reading
+&gt;<i> above, I see that I probably have it set wrong. If I configure manually,
+</I>&gt;<i> what is enatailed with assigning a custom IP address with my G4? I also
+</I>have
+&gt;<i> a PC running XP wirelessly from the router. What do I need to do there? I
+</I>&gt;<i> know these may may seem like broad questions, but I'm not even sure what
+</I>to
+&gt;<i> ask - Sorry, I really don't know much about this stuff. If the info I need
+</I>&gt;<i> is something I could figure out by reading a couple of links, they would
+</I>be
+&gt;<i> welcomed also.
+</I>&gt;<i>
+</I>&gt;<i> TIA,
+</I>&gt;<i> Kevin
+</I>
+
+Hi Kevin,
+
+Yes if you want to do port forwarding, your Mac and PC must have DHCP
+disabled otherwise if your IP changes (f.e if you re-connect at a later
+time) the router can't find the IP address.
+
+Best thing you can do is to assign IP numbers manually, to do this in OS X:
+Open System Preferences/Network and show Built-in Ethernet if your G4 is
+hard wired, otherwise select Airport.
+Now change Configure IPv4 at the top to Manually, fill in by IP-address
+192.168.1.2, subnetmask 255.255.255.0 and for router and DNS-server
+192.168.1.1 (this is from Linksys itself saying that your router has the IP
+192.168.1.1, see URL below), click apply, and you're done on the Mac. To
+check if the router uses indeed 192.168.1.1 look at the settings before you
+change it from DHCP to manually.
+
+I have no experience with setting up a wireless PC, but I guess it's almost
+the same as setting up a hard wired PC:
+Open Start menu, on the right colum right click on Network Locations to ask
+it's properties (or do it from the desktop), it'll open a new window showing
+your network connection which is probably your wireless connection, right
+click on that connection to ask it's properties, now click on the Internet
+protocol (TCP/IP) and click Properties, now change the option to &quot;Use the
+following IP address&quot;, fill in 192.168.1.3 for IP-address, subnet mask
+255.255.255.0, gateway 192.168.1.1, enable &quot;Use following DNS-server
+addresses&quot;, use 192.168.1.1. Then click OK, and OK.
+
+Now you're done setting up your Mac and PC with manual IP-adresses:
+Mac 192.168.1.2
+PC 192.168.1.3
+
+Now if you want to do a port forward for an app the Mac uses you have to
+forward that port to 192.168.1.2, for the PC 192.168.1.3
+
+See the explanation for port forwarding for the Linksys WRT54G here:
+&lt;<A HREF="http://www.linksys.com/support/top10faqs/wrt54g/Port%20forwarding%20or%20op">http://www.linksys.com/support/top10faqs/wrt54g/Port%20forwarding%20or%20op</A>
+ening%20ports%20on%20the%20WRT54G.asp&gt;
+
+HTH,
+Marc
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="006112.html">os x audio recorder w/an agc control like coaster?
+</A></li>
+	<LI>Next message: <A HREF="006114.html">[G4] How do I get rid of extra outgoing mail servers
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6113">[ date ]</a>
+              <a href="thread.html#6113">[ thread ]</a>
+              <a href="subject.html#6113">[ subject ]</a>
+              <a href="author.html#6113">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

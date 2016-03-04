@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Finder Question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Finder%20Question&In-Reply-To=20081121054216.D99864E5241F%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="022175.html">
+   <LINK REL="Next"  HREF="022194.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Finder Question</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Finder%20Question&In-Reply-To=20081121054216.D99864E5241F%40listserver.themacintoshguy.com"
+       TITLE="[X4U] Finder Question">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Fri Nov 21 01:24:10 PST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="022175.html">[X4U] Application Folder - Permissions for unknown user
+</A></li>
+        <LI>Next message: <A HREF="022194.html">[X4U] Finder Question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#22176">[ date ]</a>
+              <a href="thread.html#22176">[ thread ]</a>
+              <a href="subject.html#22176">[ subject ]</a>
+              <a href="author.html#22176">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>From: Ed Gould &lt;<A HREF="../../../mailman/listinfo/x4u.html">edgould1948 at comcast.net</A>&gt;
+</I>&gt;<i>I started this question out with an explanation of what I had done
+</I>&gt;<i>accidentally and (I thought) what I was trying to accomplish and that
+</I>&gt;<i>was find the files I had inadvertently moved into a folder that
+</I>&gt;<i>contains over 100+ folders. I needed to essentially find all the
+</I>&gt;<i>files I had dragged and dropped accidentally into that folder. It
+</I>&gt;<i>looks to me like when the drop happened the finder (or who ever is
+</I>&gt;<i>doing the dropping) scattered the files into at least 50 different
+</I>&gt;<i>folders. I was trying to find the files so I could move them into the
+</I>&gt;<i>correct folder (I try to be organized). Instead of opening up each of
+</I>&gt;<i>the 100 folders I was attempting to cut the number down to a
+</I>&gt;<i>reasonable number. I know that 50 is less than 100 and in some cases
+</I>&gt;<i>the folders contain 10K of files so not only did I have to wait 30-60
+</I>&gt;<i>seconds for each folder to open I had to max down to the bottom as
+</I>&gt;<i>the files all stated with &quot;Z&quot;.
+</I>
+In Terminal, go to the folder that is the parent of the 100 folders and do
+ls */Z*
+and it will give you the information you want.
+
+To recover, make a new folder (called zeds if you're not already 
+using that) either in the Finder or by
+mkdir zeds
+
+then move the files
+mv */Z* zeds
+and, as 'zeds' is a folder, all will be moved in there. Do all the 
+above while in the parent of the 100 folders.
+
+In the above 'mv' command, the shell expands the wildcard list to 
+what the 'ls' showed you, so the 'mv' program sees (reduced to a 3 
+file problem)
+mv FolderA/Zabc FolderB/Zdef FolderC/Zghi zeds
+The only gotcha with 'mv' is that if the last argument is a file and 
+not a folder it would move FolderA/Zabc to that last name (replacing 
+any original file), then move FolderB/Zdef to it, and finally 
+FolderC/Zghi. You would then have lost FolderA/Zabc FolderB/Zdef and 
+have  FolderC/Zghi renamed. So be sure 'zeds' is a folder.
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+HP-UX specialist of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x4u.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="022175.html">[X4U] Application Folder - Permissions for unknown user
+</A></li>
+	<LI>Next message: <A HREF="022194.html">[X4U] Finder Question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#22176">[ date ]</a>
+              <a href="thread.html#22176">[ thread ]</a>
+              <a href="subject.html#22176">[ subject ]</a>
+              <a href="author.html#22176">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

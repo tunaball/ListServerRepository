@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [iBook] iPhoto albums and aliases
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BiBook%5D%20iPhoto%20albums%20and%20aliases&In-Reply-To=07EDC92B-EBD2-42F6-B9CA-DD53C12F6BC7%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="013172.html">
+   <LINK REL="Next"  HREF="013175.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[iBook] iPhoto albums and aliases</H1>
+    <B>Angus Wallace</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BiBook%5D%20iPhoto%20albums%20and%20aliases&In-Reply-To=07EDC92B-EBD2-42F6-B9CA-DD53C12F6BC7%40mac.com"
+       TITLE="[iBook] iPhoto albums and aliases">angus.wallace at flinders.edu.au
+       </A><BR>
+    <I>Tue Feb 14 14:20:58 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="013172.html">[iBook] RAM
+</A></li>
+        <LI>Next message: <A HREF="013175.html">[iBook] Turn off printer setup utility
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13173">[ date ]</a>
+              <a href="thread.html#13173">[ thread ]</a>
+              <a href="subject.html#13173">[ subject ]</a>
+              <a href="author.html#13173">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Hey all,
+
+I have another funny question..
+
+iPhoto 4 had a nice function. It made a folder called 'Albums' inside the
+'iPhoto Library' folder. In this Albums folder is a folder for every album in
+one's iPhoto library - these contain aliases (symbolic links) to the actual
+files in the library. This is really convenient if you want to use more than
+one photo management program to access your photos.
+
+Unfortunately, iPhoto 5 no longer does this. I've had a quick go at writing an
+Applescript to do so - it doesn't quite work (but I've included it below, just
+in case it's of use to anyone). It takes *bloody ages* to execute..
+
+Has anyone else in the list encountered this? Does iPhoto 6 make these folders?
+Does anyone know of another way to do this?
+
+Any help/suggestions appreciated..
+
+Cheers,
+-Angus
+
+---------------- 8&lt; ----------------------
+
+set destination_folder to &quot;MUSIC:photos:Albums:&quot;  --this is the folder
+containing the library
+set photo_loc to {}
+set corr_album to {}
+set AlbumNames to {}
+
+tell application &quot;iPhoto&quot;
+	
+	set theAlbums to (name of every album)
+	
+	repeat with i from 4 to the (count of theAlbums)
+		set thisAlbum to item i in theAlbums as string
+		set the end of AlbumNames to thisAlbum
+		--		display dialog thisAlbum
+		set thePhotos to (photos of album thisAlbum)
+		repeat with thisPhoto in thePhotos
+			set the end of photo_loc to image path of thisPhoto
+			--			display dialog image path of thisPhoto as string
+			set the end of corr_album to thisAlbum
+		end repeat
+	end repeat
+	--display dialog (count of photo_loc) as string
+	--	display dialog AlbumNames as string
+	--display dialog (count of AlbumNames) as string
+end tell
+
+tell application &quot;Finder&quot;
+	repeat with j from 1 to the count of AlbumNames
+		if not (exists folder (item j of AlbumNames as string) of folder
+destination_folder) then
+			make new folder at folder destination_folder with properties {name:(item j of
+AlbumNames as string)}
+		end if
+	end repeat
+	
+	--	display dialog (count of photo_loc) as string
+	
+	repeat with i from 1 to the count of photo_loc
+		--display dialog {destination_folder &amp; (item i of AlbumNames as string) &amp;
+&quot;:&quot;}
+		--display dialog (item i of photo_loc)
+		make new alias file at folder {destination_folder &amp; (item i of AlbumNames as
+string) &amp; &quot;:&quot;} to (item i of photo_loc) with replacing
+		display dialog (item i of photo_loc)
+	end repeat
+end tell
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="013172.html">[iBook] RAM
+</A></li>
+	<LI>Next message: <A HREF="013175.html">[iBook] Turn off printer setup utility
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13173">[ date ]</a>
+              <a href="thread.html#13173">[ thread ]</a>
+              <a href="subject.html#13173">[ subject ]</a>
+              <a href="author.html#13173">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

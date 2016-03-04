@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> CPU Stability Testers-summary
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=CPU%20Stability%20Testers-summary&In-Reply-To=list-5252190%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001709.html">
+   <LINK REL="Next"  HREF="001711.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>CPU Stability Testers-summary</H1>
+    <B>Gene Huh</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=CPU%20Stability%20Testers-summary&In-Reply-To=list-5252190%40mail.ninewire.com"
+       TITLE="CPU Stability Testers-summary">gshuh at earthlink.net
+       </A><BR>
+    <I>Sun Mar  9 20:20:49 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001709.html">[G4] Old Monitor with Sawtooth
+</A></li>
+        <LI>Next message: <A HREF="001711.html">Mac at the Front
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1710">[ date ]</a>
+              <a href="thread.html#1710">[ thread ]</a>
+              <a href="subject.html#1710">[ subject ]</a>
+              <a href="author.html#1710">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Many thanks to those who replied to my query for CPU Stability 
+testers.  What follows is a summary of what I found from answers here 
+(thanks, sandor!) and elsewhere on the web.
+
+I had originally posted the question because I had overclocked a 
+275MHz G3 to 300MHz and wanted to be sure that there were no cryptic 
+errors as a result of overclocking.  There seem to be a fair number 
+of freeware offerings on the Wintel side, but few free apps for the 
+Mac.  Since the MicroMat offerings (TechTool Deluxe and TechTool Pro) 
+are not freeware, I have not considered them here.
+
+For example, the Windows freeware program 'prime95' calculates large 
+primes.  It has a 'torture test' mode that is very sensitive to CPU 
+stability (one little error and it registers a fatal error and 
+quits).  Very useful for measuring overclocking stability, as you 
+might imagine.  Even the prime95 author acknowledges the utility of 
+this program for CPU stability.
+
+The closest Mac equivalents to prime95 appears to be GLucas or Mlucas.
+
+&lt;<A HREF="http://glucas.sourceforge.net/">http://glucas.sourceforge.net/</A>&gt;
+&lt;<A HREF="http://gravity.psu.edu/~khanna/hpc.html">http://gravity.psu.edu/~khanna/hpc.html</A>&gt;
+&lt;<A HREF="http://www.mersenne.org/freesoft.htm">http://www.mersenne.org/freesoft.htm</A>&gt;
+
+Of these two, Glucas was the easiest to run (almost configuration free).
+
+After downloading the OS X version, the built-in test can be invoked 
+by entering the following command in Terminal (after you're in the 
+Glucas subdirectory):
+
+./Glucas -s all
+
+This runs all 31 Glucas selftests.  Multiple instances of this 
+program can be run in multiple Terminal windows, effectively 
+constituting an extended selfttest.  Alternatively, you can run a 
+shell script containing several repeats of the above command.   I did 
+not find a OS9 equivalent to this program.
+
+Another good test of the integer units on the CPU is the rc5-72 
+client (available on www.distributed.net; thanks, sandor ferenczy):
+
+The OS X version (called 'dnetc') is a command-line application that 
+you can run via the Terminal application.
+
+&lt;<A HREF="http://distributed.net/download/clients.html">http://distributed.net/download/clients.html</A>&gt;
+
+In Mac OS 9, the client has a test mode built-in (invoked by command-T).
+
+In Mac OS X, the built-in test can be invoked by typing
+
+./dnetc -test
+
+while in Terminal.  Make sure you're in the dnetc-containing 
+subdirectory first.   You can do a extended test by running multiple 
+instances (as for Glucas above).
+
+Although the above is a good test of the integer execution units, I'm 
+not sure that it makes use of (and thus tests) the floating point 
+units on the CPU (like Glucas does).
+
+I do not know whether either of the above programs test Altivec components.
+
+Best Regards,
+Gene
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001709.html">[G4] Old Monitor with Sawtooth
+</A></li>
+	<LI>Next message: <A HREF="001711.html">Mac at the Front
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1710">[ date ]</a>
+              <a href="thread.html#1710">[ thread ]</a>
+              <a href="subject.html#1710">[ subject ]</a>
+              <a href="author.html#1710">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+</body></html>

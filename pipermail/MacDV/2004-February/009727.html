@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Streaming/transferring large files via Internet in OS X.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=Streaming/transferring%20large%20files%20via%20Internet%20in%20OS%20X.&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="009726.html">
+   <LINK REL="Next"  HREF="009728.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Streaming/transferring large files via Internet in OS X.</H1>
+    <B>YangZone at aol.com</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=Streaming/transferring%20large%20files%20via%20Internet%20in%20OS%20X.&In-Reply-To="
+       TITLE="Streaming/transferring large files via Internet in OS X.">YangZone at aol.com
+       </A><BR>
+    <I>Wed Feb 11 17:08:39 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="009726.html">[MacDV] Re: AIFF Quicktime Pro conversion question
+</A></li>
+        <LI>Next message: <A HREF="009728.html">Missing iDVD Menu Themes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9727">[ date ]</a>
+              <a href="thread.html#9727">[ thread ]</a>
+              <a href="subject.html#9727">[ subject ]</a>
+              <a href="author.html#9727">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Recently I wanted to make some of my &quot;little&quot; movies available to view and download using the internet. I do not have a web site so I decided to use the built-in Apache Server in OS X, (using a simple index.html page with links to my movie files) on my TiBook 800, 10.3.2 with DSL connection behind a router.)
+
+The result is that I can send a link to anyone and they can click on it and it streams or they can Option-click and it downloads... all free.
+
+For me, as a non-expert, it took about 12 hours over a week to get this thing sorted out. So I decided to write it all down so I can remember how to do it again if needed. 
+
+Since I have it written down, here it is, warts 'n all, in case anyone else is faced with the hurdles of hangin behind a DSL router. The following descripton is probably not extremely clear but it might help, at least as a reference, especially if you really want to try this. &#160;(Apologies to digesters who have to scroll past all this.)
+
+So you want to host your own site on the built-in Apache Server in OS X?
+
+You go to the Sharing Preference Pane and turn on Personal Web Sharing and this gets you started. There are instructions to help you change the given web page into your own web page or you can go ahead and set up your own full-blown web site.
+
+But if you, like me, have a typical set-up, that is, a DSL connection with Dynamic DNS (that is a changing public IP address) and a router, then this Personal Web Sharing is only good on yours and the other machines on this network/ethernet/LAN but not the internet.
+
+So to find a way around this I went a-Googling and was presented with reams of complicated information but no real help to solve the problem without actually doing a course in Network Programming. Anyway, little by little, I squeezed the following information out of Google and some support forums and am happy to be able to put it all in one article here.
+
+To get your Apache site visible on the internet there are some hoops to jump through and you will need admin privileges on both your computer and your router.
+
+Step one: The changing public IP address that is sent by your DSL provider needs to be monitored and continually associated with a web address which needs to be administered by a go-between on the INTERNET (WAN - wide area network). 
+Step two: The router, in turn, needs to pass on the connection via the Ethernet/INTRANET/LAN (local area network) to your private IP address (the address that the router assigns to your machine.)
+
+Filling in some settings on the router software and using always-on software to tell the go-between of changes to the public IP address takes care of the latter step. [The router software is typically accessed by typing the address 192.168.0.1 (or given router address) into your browser.]
+
+To take care of the first step you can use dynDNS.org as the go-between (between any person using a browser to access your site (server) and your network).
+
+Go to dynDNS.org and register a Host Name (x.something.something where x is a word of your choosing) from their offerings. You can go free or get yourdomain.com plus other services for a fee. To get started I chose one of their free domain names. This process gets your (changing) public IP address associated with your new Host Name - say you choose: jones.ath.cx. &#160;
+
+Your router software may have a Dynamic DNS module built in - if not, download a third party app such as DNSUpdate so that it will run all the time and every 15 minutes or so it will update DynDNS.org of the ever changing (dynamic) public IP address that your provider is sending to your router. Whichever software you use it will enable you to enter the Username, password and Host Name that you registered at dynDNS.org. (That way, when someone clicks on your link or enters your web address on a browser, dynDNS.org will forward the request to your router's new public IP address.) Check Use Wildcards so that if someone enters www. before your address, that will work too. 
+
+You will also need to go to the Port Forwarding feature in your router software and choose HTTP in the Service field and enter Start Port: 80 and End Port: 80 and the private IP address that the router has assigned to your machine.
+[You may want to go to your Network pane and set up your ethernet connection Manually so that the router does not send out a different private IP address if you move around the network (with, say, a Powerbook with airport card should you return to your wired or usual wireless location and find the Private IP address may have changed... this IP will need to be Fixed so that Port Forwarding can do its work correctly.]
+
+Now your site jones.ath.cx will be visible on the internet. But not behind the router (not on your Local Area Network) - not on your own browser! That is: assuming the router does not support Loopback Connections, which it probably does not (writing as of Feb 2004). To view your site on your own browser and on the browsers on other machines behind the router you will need to use the private IP address that the router assigned to your machine... or... 
+
+(To get around this, read this article: <A HREF="http://www.dyndns.org/support/kb/loopbackconnections.html">http://www.dyndns.org/support/kb/loopbackconnections.html</A>) or:
+
+You can get your browser to recognize your site address by adding some info to your Hosts file in HD/private/etc/ 
+
+The way I did this was to Command-F and Search (selecting the fields: Visibility and Invisible Items) my hard drive for Hosts and when it shows double click the folder Etc that contains it. You'll need to temporarily change the permissions for Hosts so that you, the user, can edit the file.
+
+Open hosts by dragging it on to the TextEdit icon. 
+
+Add these 3 lines to (below) what's there already:
+
+ &#160; &#160; &#160; &#160;192.168.0.1 &#160; &#160; router.jones.ath.cx 
+ &#160; &#160; &#160; &#160;192.168.0.2 &#160; &#160; jones.ath.cx 
+ &#160; &#160; &#160; &#160;192.168.0.3 &#160; &#160; hal.jones.ath.cx 
+
+There is a range of IP addresses selected in the router software - probably 192.168.0.1 to .20 so enter hal.jones.ath.cx etc for each of these.
+
+(When you go to save the file, you may get the message &quot;cannot change host as the file is in use&quot;. If this happens, shut down anything that might be using the file like Web Sharing, Network etc.)
+
+Each machine on the network will need it's hosts file changed in this way if you want each to be able to see jones.ath.cx. I changed the hosts file only &#160;on my machine and I use the private IP address as a link for the other machines behind the router. &#160;And, of course, I use the equivalent of jones.ath.cx for anyone outside the network (on the internet).
+
+&#169;PJ
+
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB &#160; END &#160; BBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="009726.html">[MacDV] Re: AIFF Quicktime Pro conversion question
+</A></li>
+	<LI>Next message: <A HREF="009728.html">Missing iDVD Menu Themes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9727">[ date ]</a>
+              <a href="thread.html#9727">[ thread ]</a>
+              <a href="subject.html#9727">[ subject ]</a>
+              <a href="author.html#9727">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

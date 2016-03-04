@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MacDV] Can't render/encode my iDVD project - Can't burn	project
+	to DVD
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Can%27t%20render/encode%20my%20iDVD%20project%20-%20Can%27t%20burn%09project%0A%09to%20DVD&In-Reply-To=85D0924A-281C-11D9-839A-0003937E4B50%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011526.html">
+   <LINK REL="Next"  HREF="011530.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MacDV] Can't render/encode my iDVD project - Can't burn	project
+	to DVD</H1>
+    <B>Robert L. Vaessen</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Can%27t%20render/encode%20my%20iDVD%20project%20-%20Can%27t%20burn%09project%0A%09to%20DVD&In-Reply-To=85D0924A-281C-11D9-839A-0003937E4B50%40mac.com"
+       TITLE="[MacDV] Can't render/encode my iDVD project - Can't burn	project
+	to DVD">rvaessen at mac.com
+       </A><BR>
+    <I>Wed Oct 27 10:12:24 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011526.html">[MacDV] Can't render/encode my iDVD project - Can't burn	project
+	to DVD
+</A></li>
+        <LI>Next message: <A HREF="011530.html">[MacDV] Can't render/encode my iDVD project - Can't burn	project
+	to DVD
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11529">[ date ]</a>
+              <a href="thread.html#11529">[ thread ]</a>
+              <a href="subject.html#11529">[ subject ]</a>
+              <a href="author.html#11529">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Oct 27, 2004, at 07:31, Michael Winter wrote:
+
+&gt;<i> On Oct 26, 2004, at 7:17 PM, Robert L. Vaessen wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Will toast do authoring, encoding of DVD project? Or, is it only for 
+</I>&gt;&gt;<i> burning data that is ready for disc?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> What is the input to Toast?
+</I>&gt;<i>
+</I>&gt;<i> Toast will do the encoding for you. So you can drag just about 
+</I>&gt;<i> anything you can view (dv, mpg, avi -but not asf, wmv) into Toast and 
+</I>&gt;<i> it will do the encoding for you. You just select wether you want DVD, 
+</I>&gt;<i> VCD, SVD.... For basic &quot;i just want to get this on disk&quot; type stuff it 
+</I>&gt;<i> works fine. The problem is you're pretty much stuck with the way Toast 
+</I>&gt;<i> does buttons and their background image (I've read there's a hack to 
+</I>&gt;<i> change the background image). IOW no way to customize the interface. 
+</I>&gt;<i> Toast will also do slide shows and combinations of slide shows and 
+</I>&gt;<i> video with the same limitations -little control over the interface.
+</I>&gt;<i>
+</I>&gt;<i> I know there are all kinds of tools available to create different 
+</I>&gt;<i> parts of the project and just use Toast to burn the finished VIDEO_TS 
+</I>&gt;<i> folder, but I haven't messed with them.
+</I>
+Mike -
+
+I tried to burn the Tutorial again. It didn't work. The attempt to burn 
+failed at stage 2. The burn icon began freewheeling after about 10 
+minutes, I let it run for about 10 more minutes, then I tried to cancel 
+with no effect. There was no disk activity, the CPU usage had dropped 
+considerably, the burn icon was spinning at a rather constant rate, and 
+there was no audible disk activity. I had to force quit the 
+application. Cancel and Quit had no effect.
+
+I tried to burn edit, author, encode and burn some unrelated video. I 
+captured some video using my iSight camera and QuickTime Broadcast. I 
+imported the QuickTime-4 encoded video into iMovie, added a still 
+image, a title, a transition and three chapter markers. I exported that 
+test video to iDVD (pressed the 'Create iDVD project' button). Once in 
+iDVD I quit iMovie, added some music and transitions to the iDVD menu. 
+When I tried to burn the project, my computer locked up completely in 
+stage 2. I had to power cycle it in order to get it working again.
+
+I tried to encode and burn the tutorial .mov file using ffmpegx. Using 
+ffmpegx is a rather complex process. ffmpegx is a scary beast. After 
+numerous failed attempts (from not knowing/understanding how to use 
+ffmpegx), I've actually had some success. ffmpegx uses two different 
+programs/processes in order to complete the video encoding process. One 
+process/program is ffmpeg (I'm not exactly sure what codec it's using), 
+the other process/program is mpeg2enc. Whenever I use the ffmpeg 
+program/process to encode the video, the process fails at the authoring 
+stage (muxing audio and video files together and putting them into a 
+VIDEO_TS folder). When I use the mpeg2enc program/process, I achieve 
+partial success. I'm able to create a valid DVD folder, containing 
+VIDEO_TS and AUDIO_TS folders. Unfortunately, the .VOB file 
+(Multiplexed video/audio) does not contain any audio.
+
+ffmpegx looks promising. I've successfully create a DVD folder. The 
+folder contains the components (VIDEO_TS and AUDIO_TS) that go onto a 
+DVD. Hopefully, I can tweak ffmpegx until I get video and audio. Then I 
+can use the finder to burn the data to a DVD.
+
+Unfortunately, I haven't been able to find a trial version of Toast. 
+I'd hate to buy an $100 program, only to find that it won't encode and 
+burn my video projects.
+
+This problem is really vexing me. It's the only software application 
+I'm having a problem with.
+
+- Robert
+
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011526.html">[MacDV] Can't render/encode my iDVD project - Can't burn	project
+	to DVD
+</A></li>
+	<LI>Next message: <A HREF="011530.html">[MacDV] Can't render/encode my iDVD project - Can't burn	project
+	to DVD
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11529">[ date ]</a>
+              <a href="thread.html#11529">[ thread ]</a>
+              <a href="subject.html#11529">[ subject ]</a>
+              <a href="author.html#11529">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

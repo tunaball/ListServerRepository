@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> xinetd starting mystery FTP
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=xinetd%20starting%20mystery%20FTP&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000276.html">
+   <LINK REL="Next"  HREF="000278.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>xinetd starting mystery FTP</H1>
+    <B>Steve St-Laurent</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=xinetd%20starting%20mystery%20FTP&In-Reply-To="
+       TITLE="xinetd starting mystery FTP">st-laur at telus.net
+       </A><BR>
+    <I>Sat May 29 18:12:50 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000276.html">[X Servers] xinetd starting mystery FTP
+</A></li>
+        <LI>Next message: <A HREF="000278.html">[X Servers] xinetd starting mystery FTP
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#277">[ date ]</a>
+              <a href="thread.html#277">[ thread ]</a>
+              <a href="subject.html#277">[ subject ]</a>
+              <a href="author.html#277">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>	From: 	  <A HREF="../../../mailman/listinfo/x-servers.html">st-laur at telus.net</A>
+	Subject: 	Re: X-Servers Digest #300
+	Date: 	May 29, 2004 6:11:20 PM PDT
+	To: 	  <A HREF="../../../mailman/listinfo/x-servers.html">X-Servers at lists.themacintoshguy.com</A>
+
+
+To my question about xinetd starting mystery FTP:
+
+I'm showing these messages in my OS X Server 10.3 system log:
+
+May 28 16:43:50 HoleComm xinetd[403]: START: ftp pid=18327
+from=24.80.152.26
+May 28 17:12:48 HoleComm xinetd[403]: START: ftp pid=18664
+from=80.170.195.165
+
+Has the security been hacked? I don't see any activity showing up in
+the FTP log.
+
+Eugene Lee replied:
+
+&gt;<i> If you have an FTP server enabled, the above logs are typical and show
+</I>&gt;<i> that other people are trying to connect via FTP.  Check your FTP logs 
+</I>&gt;<i> or
+</I>&gt;<i> your system logs for messages like:
+</I>&gt;<i>
+</I>&gt;<i> 	May 28 16:43:50 ftp ftpd[18327]: ANONYMOUS FTP LOGIN FROM 24.80.152.26
+</I>&gt;<i> 	May 28 17:12:48 ftp ftpd[18664]: ANONYMOUS FTP LOGIN FROM 
+</I>&gt;<i> 80.170.195.165
+</I>&gt;<i>
+</I>&gt;<i> Better yet, if you don't need FTP, turn it off and switch to SFTP which
+</I>&gt;<i> is part of SSH.
+</I>
+Well, I need FTP for some clients but the server is configured with NO 
+anonymous logins. I had thought this was a reasonable safety measure. 
+No? And the logs show no FTP activity that I don't know about. So START 
+doesn't mean connect, just attempt to connect? Thanks.
+
+-------------
+Steve St-Laurent  |  &lt;<A HREF="../../../mailman/listinfo/x-servers.html">st-laur at telus.net</A>&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000276.html">[X Servers] xinetd starting mystery FTP
+</A></li>
+	<LI>Next message: <A HREF="000278.html">[X Servers] xinetd starting mystery FTP
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#277">[ date ]</a>
+              <a href="thread.html#277">[ thread ]</a>
+              <a href="subject.html#277">[ subject ]</a>
+              <a href="author.html#277">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

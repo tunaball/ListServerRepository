@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] App launched by my crontab runs as root if Login Window!
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20App%20launched%20by%20my%20crontab%20runs%20as%20root%20if%20Login%20Window%21&In-Reply-To=p06200700bec9e3d07d02%40192.168.102.100">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002151.html">
+   <LINK REL="Next"  HREF="002168.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] App launched by my crontab runs as root if Login Window!</H1>
+    <B>Brian Medley</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20App%20launched%20by%20my%20crontab%20runs%20as%20root%20if%20Login%20Window%21&In-Reply-To=p06200700bec9e3d07d02%40192.168.102.100"
+       TITLE="[X-Unix] App launched by my crontab runs as root if Login Window!">bpm-list-osx-unix at 4321.tv
+       </A><BR>
+    <I>Mon Jun  6 21:59:49 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002151.html">[X-Unix] App launched by my crontab runs as root if Login Window!
+</A></li>
+        <LI>Next message: <A HREF="002168.html">[X-Unix] App launched by my crontab runs as root if Login Window!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2160">[ date ]</a>
+              <a href="thread.html#2160">[ thread ]</a>
+              <a href="subject.html#2160">[ subject ]</a>
+              <a href="author.html#2160">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Mon, Jun 06, 2005 at 07:33:40AM -0400, ~flipper wrote:
+
+&gt;<i> &gt; &gt; So, with 'root' disabled. (a misnomer, since root is not enabled in
+</I>&gt;<i> &gt;&gt; the first place, having no password, no shell default, no console
+</I>&gt;<i> &gt;&gt; access, etc)...
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; try using sudo to cd your way into /private/var/root
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; let me know how you do.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;cd is a shell builtin.  sudo has no way to run this as any user.
+</I>&gt;<i> 
+</I>&gt;<i> What's up? Sarcasm detector wasn't working, eh? My point was that 
+</I>&gt;<i> with root disabled (in it's standard-shipped Unix default), the 
+</I>&gt;<i> presence of 'sudo' is NOT de facto evidence of a root account having 
+</I>&gt;<i> been enabled (at any time), as was alluded to in the OP. It's merely 
+</I>&gt;<i> an escalation to admin (or a sort of 'super' admin status), in that 
+</I>&gt;<i> there are still operations that sudo won't allow.
+</I>
+I have been described as dense, so perhaps that is why I didn't
+detect your sarcasm.  I still don't see any sarcasm, even after
+being told it is there.
+
+That said, I do agree with you that the presence of sudo does
+not, in any way, prove that root is (or has ever been) enabled.
+
+However, I think using the &quot;cd&quot; command as an exmple of this is
+in poor form.  The main reason for this is that there is no &quot;cd&quot;
+command.
+
+&gt;<i> If a root account is enabled, and I log in as root, I can go anywhere 
+</I>&gt;<i> on the computer into 'my' 'root' 'home', into other accounts, etc). 
+</I>&gt;<i> But with no root enabled, there are 'walls'...sudo, or no sudo.
+</I>
+That said, pls show me one thing that a regular user cannot do
+with sudo.  I do not believe the the open command is an example
+of this, because it has been shown that it does not respect the
+user it was run at; it seems to be the user currently logged into
+the console.
+
+Another way to say that is &quot;open&quot; does not allow GUI programs to
+be executed as an arbitrary user.  Even root cannot &quot;open&quot; a
+Finder (or anything else) as a different user.
+
+Given all that, if you really do want a root Finder, then I think
+this will do it:
+
+    $ sudo /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+
+-- 
+~`^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-., \|/  (___)  \|/ _,.-=~'`^`
+                                      @~./'O o`\.~@
+      &quot;Knowledge is Power&quot;           /__( \___/ )__\  *PPPFFBT!*
+         -- Francis Bacon               `\__`U_/'
+ _.-=~'``'~=-._.-=~'``'~=-._.-=~'`^`'~= &lt;____|'  ^^`'~=-.,__,.-=
+~'^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-.,__,.-==--^'~=-.,__,.-=~'`^`
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002151.html">[X-Unix] App launched by my crontab runs as root if Login Window!
+</A></li>
+	<LI>Next message: <A HREF="002168.html">[X-Unix] App launched by my crontab runs as root if Login Window!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2160">[ date ]</a>
+              <a href="thread.html#2160">[ thread ]</a>
+              <a href="subject.html#2160">[ subject ]</a>
+              <a href="author.html#2160">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] OT - Secure Web Page Validation Problem
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20OT%20-%20Secure%20Web%20Page%20Validation%20Problem&In-Reply-To=C8FFE34D-F54B-41D5-A4E8-AACF40CCEC4D%40hurontel.on.ca">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010815.html">
+   <LINK REL="Next"  HREF="010818.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] OT - Secure Web Page Validation Problem</H1>
+    <B>Eugene</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20OT%20-%20Secure%20Web%20Page%20Validation%20Problem&In-Reply-To=C8FFE34D-F54B-41D5-A4E8-AACF40CCEC4D%40hurontel.on.ca"
+       TITLE="[X4U] OT - Secure Web Page Validation Problem">list-themacintoshguy at fsck.net
+       </A><BR>
+    <I>Sun Dec 18 13:42:32 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010815.html">[X4U] OT - Secure Web Page Validation Problem
+</A></li>
+        <LI>Next message: <A HREF="010818.html">[X4U] OT - Secure Web Page Validation Problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10816">[ date ]</a>
+              <a href="thread.html#10816">[ thread ]</a>
+              <a href="subject.html#10816">[ subject ]</a>
+              <a href="author.html#10816">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sat, Dec 17, 2005 at 10:17:05PM CST, Milton van der Veen &lt;<A HREF="../../../mailman/listinfo/x4u.html">miltonlist at hurontel.on.ca</A>&gt; wrote:
+:<i> 
+</I>:<i> I look after a web site for Sleeping Children Around the World. We  
+</I>:<i> use PayPal for credit card donations and had to set up a sequence of  
+</I>:<i> secure pages on our web site to handle that. We use our ISPs secure  
+</I>:<i> server to save money.
+</I>:<i> 
+</I>:<i> But I keep getting people using Firefox browser who tell me they're  
+</I>:<i> getting the HTML code in their browser instead of the rendered page.
+</I>:<i> &lt;<A HREF="https://host.zerowebhosting.com/scaw/secure/index.shtml">https://host.zerowebhosting.com/scaw/secure/index.shtml</A>&gt;
+</I>:<i>
+</I>[...]
+:<i>
+</I>:<i> I've checked with my ISP and they assure me that their server is set  
+</I>:<i> up correctly. They also tell me that the page is coded correctly. But  
+</I>:<i> I still get regular complaints ... especially now as the giving  
+</I>:<i> season is here.
+</I>
+Your ISP is run by morons.  Their web server is set up incorrectly.
+When a browser goes to your URL, it gets the following response headers:
+
+&gt;<i> Date: Sun, 18 Dec 2005 21:29:45 GMT
+</I>&gt;<i> Server: Apache/1.3.33 (Unix)
+</I>&gt;<i> PHP/4.3.10 Rewrit/1.1a mod_ssl/2.8.22 OpenSSL/0.9.7e
+</I>&gt;<i> Last-Modified: Sun, 18 Dec 2005 06:23:54 GMT
+</I>&gt;<i> Etag: &quot;21b013-3e8a-43a5007a&quot;
+</I>&gt;<i> Accept-Ranges: bytes
+</I>&gt;<i> Content-Length: 16010
+</I>&gt;<i> Content-Type: text/plain
+</I>&gt;<i>
+</I>&gt;<i> 200 OK
+</I>
+The &quot;Content-Type&quot; header is set to &quot;text/plain&quot;.  This means that the
+web server is telling your web browser that the following page is a
+plain text page.  If it was set up correctly, it would report an HTML
+page with a Content-Type of &quot;text/html&quot;.
+
+So why is Firefox having problems?  It's not.  It's operating in a
+strict mode that tightly adheres to web standards.  Other browsers may
+be more fault-tolerant.  They accept the Content-Type as plain text, but
+upon receiving the page they inspect the page contents.  If the deep
+inspection reveals that the page is actually an HTML document, browsers
+internally mark the Content-Type as &quot;text/html&quot; and process it as an
+HTML document instead of a plain text page.
+
+
+-- 
+Eugene
+<A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010815.html">[X4U] OT - Secure Web Page Validation Problem
+</A></li>
+	<LI>Next message: <A HREF="010818.html">[X4U] OT - Secure Web Page Validation Problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10816">[ date ]</a>
+              <a href="thread.html#10816">[ thread ]</a>
+              <a href="subject.html#10816">[ subject ]</a>
+              <a href="author.html#10816">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

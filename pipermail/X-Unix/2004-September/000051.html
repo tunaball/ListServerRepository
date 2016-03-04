@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] 10.3 FTP - Anon Read Only Access
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%2010.3%20FTP%20-%20Anon%20Read%20Only%20Access&In-Reply-To=59788308-0E7F-11D9-B2A4-000393768D2C%40mcgillsociety.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000050.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] 10.3 FTP - Anon Read Only Access</H1>
+    <B>Albert Lunde</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%2010.3%20FTP%20-%20Anon%20Read%20Only%20Access&In-Reply-To=59788308-0E7F-11D9-B2A4-000393768D2C%40mcgillsociety.org"
+       TITLE="[X-Unix] 10.3 FTP - Anon Read Only Access">atlunde at panix.com
+       </A><BR>
+    <I>Fri Sep 24 21:23:46 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000050.html">[X-Unix] 10.3 FTP - Anon Read Only Access
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#51">[ date ]</a>
+              <a href="thread.html#51">[ thread ]</a>
+              <a href="subject.html#51">[ subject ]</a>
+              <a href="author.html#51">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Fri, Sep 24, 2004 at 07:13:30PM -0400, William H. Magill wrote:
+&gt;<i> On 23 Sep, 2004, at 15:28, Steve Savery wrote:
+</I>&gt;<i> &gt;I've been trying to configure the FTP service on Panther Server (all 
+</I>&gt;<i> &gt;the latest updates). However, while I can allow anonymous access, the 
+</I>&gt;<i> &gt;user is not able to upload files. I've tried creating a symbolic link 
+</I>&gt;<i> &gt;to a shared area with Everyone read/write access, but this still 
+</I>&gt;<i> &gt;doesn't work.
+</I>[...]
+&gt;<i> The basic philosophy with FTP servers these days is that they are very 
+</I>&gt;<i> dangerous and therefore their &quot;base&quot; must be contained and users 
+</I>&gt;<i> severely restrained. Any link out of the &quot;controlled&quot; area is a large 
+</I>&gt;<i> potential security hole.
+</I>
+And any FTP site allowing anonymous uploads will rapidly become
+a distribution site for dubious stuff from unwanted third parties
+unless measures are taken.
+
+One approach is to write a batch job that renames and moves uploaded 
+files outside the FTP directory tree, and run it frequently with cron.
+(Perl could do this.)
+
+I don't know the Panther FTP server, but anonymous FTP is commonly
+done within a &quot;chroot&quot; restricting access to a given directory
+tree. That would explain symlinks failing.
+
+The idea of a &quot;drop box&quot; is really an Apple thing, not well
+supported by Unix permissions. I think the closest one might come would 
+be to put a other-writable directory with an obscure name within 
+an enclosing directory with execute but not read permissions.
+
+(Another thing about FTP is that it was designed before firewalls
+and Network Address translation became common and is hard to adjust
+for either one.)
+
+Yet another mutant idea would be to write a web CGI using a form
+set up for &quot;file upload&quot;. (This is possible with CGI.pm but you 
+might need to check the options used to install it to see if
+file upload is allowed.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000050.html">[X-Unix] 10.3 FTP - Anon Read Only Access
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#51">[ date ]</a>
+              <a href="thread.html#51">[ thread ]</a>
+              <a href="subject.html#51">[ subject ]</a>
+              <a href="author.html#51">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

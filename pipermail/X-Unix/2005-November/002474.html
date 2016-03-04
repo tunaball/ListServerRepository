@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Loop structure syntax question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Loop%20structure%20syntax%20question&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002473.html">
+   <LINK REL="Next"  HREF="002475.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Loop structure syntax question</H1>
+    <B>Mac Daddy</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Loop%20structure%20syntax%20question&In-Reply-To="
+       TITLE="[X-Unix] Loop structure syntax question">macdaddee at gmail.com
+       </A><BR>
+    <I>Wed Nov 23 13:07:32 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002473.html">[X-Unix] Re: zsh / spotlight / application completion
+</A></li>
+        <LI>Next message: <A HREF="002475.html">[X-Unix] Loop structure syntax question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2474">[ date ]</a>
+              <a href="thread.html#2474">[ thread ]</a>
+              <a href="subject.html#2474">[ subject ]</a>
+              <a href="author.html#2474">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I have a script running on several macs, a small part of which fails.
+
+---------------------------------- snippet
+f# Add Admin users first.
+
+foreach login ( `cat ./logins_Y.txt` )
+dscl . merge /groups/cq users &quot;$login&quot;@&lt;mydomain.com&gt;
+end
+
+# Add normal Users next
+
+foreach login ( `cat ./logins_A.txt` )
+dscl . merge /groups/cq users &quot;$login&quot;@&lt;mydomain.com&gt;
+end
+--------------------------  end snippet
+
+This reads two text files on disk and then adds each name read into a  
+special group in the Netinfo db.
+It's part of a larger script, and the larger script fails somewhere  
+in the second loop reading &quot;logins_A.txt&quot;, leaving the group only  
+partially filled with usernames. VERY BAD, as the group is used for  
+authentication on the machine.
+
+This thing is, this script NEVER fails when run by hand! Only when  
+run in cron.
+I have the script set to run in  #!/bin/csh because this 'foreach'  
+loop structure above fails if I run it under /bin/sh or /bin/bash and  
+the code was given to me by someone else who uses csh on Solaris.
+
+I think it's /bin/csh that's the problem, since when invoked by hand,  
+I'm using /bin/bash, which in turn is invoking this script that runs  
+under /bin/csh. There's no problem then.  It's the only thing I can  
+think of. I even have a SECOND script in the cron set to run under #!/ 
+bin/sh which checks to see if the first one fails, notifies me if it  
+does, then re-runs the first script as an attempt to correct the  
+situation before I can check. This check script works every single  
+time, further making me think /bin/csh by itself is the problem.
+
+ANYWAY, I'd gladly have the script run under /bin/sh or /bin/bash IF  
+I just knew the proper syntax for the 'foreach' structure under one  
+of the other shells, but I can't figure it out and haven't found it yet.
+
+Can somebody help me out with the proper syntax for one of the other  
+shells please?
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002473.html">[X-Unix] Re: zsh / spotlight / application completion
+</A></li>
+	<LI>Next message: <A HREF="002475.html">[X-Unix] Loop structure syntax question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2474">[ date ]</a>
+              <a href="thread.html#2474">[ thread ]</a>
+              <a href="subject.html#2474">[ subject ]</a>
+              <a href="author.html#2474">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

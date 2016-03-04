@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Simple Open code for Applescript
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Simple%20Open%20code%20for%20Applescript&In-Reply-To=OF1A6D7C9D.982345F6-ONCA257093.00184535-CA257093.0019C78B%40au.music.sony.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="009156.html">
+   <LINK REL="Next"  HREF="009163.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Simple Open code for Applescript</H1>
+    <B>Bill White</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Simple%20Open%20code%20for%20Applescript&In-Reply-To=OF1A6D7C9D.982345F6-ONCA257093.00184535-CA257093.0019C78B%40au.music.sony.com"
+       TITLE="[X4U] Simple Open code for Applescript">billwhite at mac.com
+       </A><BR>
+    <I>Fri Oct  7 01:27:34 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="009156.html">[X4U] Simple Open code for Applescript
+</A></li>
+        <LI>Next message: <A HREF="009163.html">[X4U] Re: Photos in iPod Nano
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9157">[ date ]</a>
+              <a href="thread.html#9157">[ thread ]</a>
+              <a href="subject.html#9157">[ subject ]</a>
+              <a href="author.html#9157">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 10/7/05 12:41 AM, Brett Conlon/HU/Music-AU/SONY
+&lt;<A HREF="../../../mailman/listinfo/x4u.html">brett.conlon at SonyDADC.com</A>&gt; wrote:
+
+&gt;<i> Any AppleScript boffins out there?
+</I>
+Yep!  :-)
+
+&gt;<i> I'm writing a basic AppleScript droplet for a Photoshop CS action. The
+</I>&gt;<i> operator will drop a file on the droplet, Photoshop will open the file and run
+</I>&gt;<i> the action.... and maybe I'll have it do a few things before or after the
+</I>&gt;<i> action too.
+</I>&gt;<i> 
+</I>&gt;<i> Everything is set up OK but I need the basic code for the &quot;Open&quot; part.
+</I>&gt;<i> Sometimes the file may be a PSD or it may be a PDF
+</I>
+The way to do this is to have the Finder open the file using Photoshop's
+file ID, which isn't exactly intuitive!
+
+Here's the open handler you'd use for the droplet:
+
+on open theseFiles
+    
+    repeat with aFile in theseFiles
+        
+        tell application &quot;Finder&quot; to open aFile using application file id
+&quot;8BIM&quot; -- this should be on one line
+        
+        tell application &quot;Adobe Photoshop CS&quot;
+            
+            -- do your Photoshop stuff in here
+            
+        end tell
+        
+    end repeat
+    
+end open
+
+You could also tack on a run handler so that if the user double-clicks the
+droplet it will ask for a file to process, and to simplify things spin the
+Photoshop part into its own handler....something like this:
+
+on run
+    
+    set aFile to choose file with prompt &quot;Choose a file to process&quot;
+    
+    doPhotoshopStuff(aFile)
+    
+end run
+
+on open theseFiles
+    
+    repeat with aFile in theseFiles
+        
+        doPhotoshopStuff(aFile)
+        
+    end repeat
+    
+end open
+
+on doPhotoshopStuff(thisFile)
+    
+    tell application &quot;Finder&quot; to open thisFile using application file id
+&quot;8BIM&quot;  -- this should be on one line
+    
+    tell application &quot;Adobe Photoshop CS&quot;
+        
+        -- do your Photoshop stuff in here
+        
+    end tell
+    
+end doPhotoshopStuff
+
+HTH,
+
+-- Bill 
+
+
+</PRE>
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="009156.html">[X4U] Simple Open code for Applescript
+</A></li>
+	<LI>Next message: <A HREF="009163.html">[X4U] Re: Photos in iPod Nano
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9157">[ date ]</a>
+              <a href="thread.html#9157">[ thread ]</a>
+              <a href="subject.html#9157">[ subject ]</a>
+              <a href="author.html#9157">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

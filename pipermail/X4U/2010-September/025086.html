@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] problem copying external HD to external HD
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX4U%5D%20problem%20copying%20external%20HD%20to%20external%20HD&In-Reply-To=%3Cp06240814c8bbc1573508%40%5B192.168.0.18%5D%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="025085.html">
+   <LINK REL="Next"  HREF="025087.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X4U] problem copying external HD to external HD</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX4U%5D%20problem%20copying%20external%20HD%20to%20external%20HD&In-Reply-To=%3Cp06240814c8bbc1573508%40%5B192.168.0.18%5D%3E"
+       TITLE="[X4U] problem copying external HD to external HD">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Sun Sep 19 07:25:41 PDT 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="025085.html">[X4U] problem copying external HD to external HD
+</A></li>
+        <LI>Next message: <A HREF="025087.html">[X4U] Android you say?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#25086">[ date ]</a>
+              <a href="thread.html#25086">[ thread ]</a>
+              <a href="subject.html#25086">[ subject ]</a>
+              <a href="author.html#25086">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 17:22 -0400 18/9/10, Doug Metzler wrote:
+Thanks David
+I'm doing a finder drag. &#160;I'll try a terminal command next, didn't 
+think of that.
+Would that be cp -r &#160;for a directory/folder? &#160;Is there any other to try?
+The data does incrementally appear on the WD drive until the point that the
+internal drive is full. &#160;Then I get&#160;a message that the internal drive is nearly
+full followed a little later by a message&#160;that the operation can't be completed
+because the startup drive is full. &#160;I agree that&#160;&quot;Copying data directly from
+one external drive to another should have no effect on the&#160;internal drive
+other than maybe some swap space for the copying process if you're
+short on memory.&quot; which is why I'm confused. &#160;It does look like there is some
+virtual memory swapping going on with the internal drive usage 
+varying a little bit
+up and down (less then 1G) when other things are going on. &#160;I can usually copy
+over smaller folders, up to about 5G with no problem, and up to about 20G with
+little problem. &#160;But much larger than that it goes crazy. &#160;Last night 
+it filled the
+entire 236G free space on the internal in the process of just trying 
+to copy less
+than 80G.
+
+Doug
+
+I generally don't use Finder drag for a large collection of files. 
+Last year I did something similar to you and copied a tree of photos 
+and iMovie projects onto a WD NAS drive with Finder drag. It seemed 
+to save quite a bit of space, so I checked before deleting the 
+originals. Lucky I did. Maybe 5% of the files hadn't been copied. I 
+then copied the missing stuff in smaller chunks. Over several days of 
+doing the next bit when I had a chance I did get it all copied. I 
+also made a copy onto a 2TB USB drive so I could safely remove the 
+originals. I've never  felt totally comfortable with Finder drag 
+copy. What's it really doing when it's 'Preparing to copy'? Your 
+problem may indicate that it copies to local disc first.
+
+cp -R (rather than -r, there's a comment in the man page) at 10.5 and 
+above should do a recursive copy including resource forks. Early 10.x 
+didn't copy resource forks, and I think needed an option flag to do 
+it in intermediate versions. Not sure where the breakpoints are.
+
+Traditional mainstream Unix cp didn't used to have a -R option, so 
+the usual way to copy a tree was
+cd sourcefolder; tar cf - . | (cd destfolder; tar xvf -)
+which won't copy resource forks either, but jpg photos don't have 
+resource forks. Useful if you're only copying files without resource 
+forks. The v in xvf means verbose - it lists the files as they are 
+deposited. Omit if you don't want that, but it too can be useful.
+
+rsync is also worth checking out. It looks complicated, but most of 
+the complexity is to do with the case where the source or destination 
+is on another machine.
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+HP-UX specialist of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x4u.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="025085.html">[X4U] problem copying external HD to external HD
+</A></li>
+	<LI>Next message: <A HREF="025087.html">[X4U] Android you say?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#25086">[ date ]</a>
+              <a href="thread.html#25086">[ thread ]</a>
+              <a href="subject.html#25086">[ subject ]</a>
+              <a href="author.html#25086">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

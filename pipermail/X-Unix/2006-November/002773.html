@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Tcbug] Re: [X-Unix] Re: [PB] Compiling on MacOS X (source was
+	written for winblow...) [moved from PB]
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BTcbug%5D%20Re%3A%20%5BX-Unix%5D%20Re%3A%20%5BPB%5D%20Compiling%20on%20MacOS%20X%20%28source%20was%0A%09written%20for%20winblow...%29%20%5Bmoved%20from%20PB%5D&In-Reply-To=93FF4451-6B3D-4ACF-845F-E1A7B54B8943%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002772.html">
+   <LINK REL="Next"  HREF="002774.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Tcbug] Re: [X-Unix] Re: [PB] Compiling on MacOS X (source was
+	written for winblow...) [moved from PB]</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BTcbug%5D%20Re%3A%20%5BX-Unix%5D%20Re%3A%20%5BPB%5D%20Compiling%20on%20MacOS%20X%20%28source%20was%0A%09written%20for%20winblow...%29%20%5Bmoved%20from%20PB%5D&In-Reply-To=93FF4451-6B3D-4ACF-845F-E1A7B54B8943%40secure-computing.net"
+       TITLE="[Tcbug] Re: [X-Unix] Re: [PB] Compiling on MacOS X (source was
+	written for winblow...) [moved from PB]">ecrist at secure-computing.net
+       </A><BR>
+    <I>Sun Nov 26 16:34:02 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002772.html">[Tcbug] Re: [X-Unix] Re: [PB] Compiling on MacOS X (source was
+	written for winblow...) [moved from PB]
+</A></li>
+        <LI>Next message: <A HREF="002774.html">[Tcbug] Re: [X-Unix] Re: [PB] Compiling on MacOS X (source was
+	written for winblow...) [moved from PB]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2773">[ date ]</a>
+              <a href="thread.html#2773">[ thread ]</a>
+              <a href="subject.html#2773">[ subject ]</a>
+              <a href="author.html#2773">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Nov 26, 2006, at 4:44 PM, Eric F Crist wrote:
+
+&gt;<i> On Nov 26, 2006, at 1:43 PM, Josh Paetzel wrote:
+</I>&gt;<i>
+</I>&gt;<i> [snip]
+</I>&gt;<i>
+</I>&gt;&gt;&gt;<i> So that some of you may see what I'm dealing with, you can download
+</I>&gt;&gt;&gt;<i> the source I'm working with at the following location:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> <A HREF="http://www.secure-computing.net/~ecrist/gts-core-src.tar">http://www.secure-computing.net/~ecrist/gts-core-src.tar</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> All the mysql*.h files you see were put there by me to try and get
+</I>&gt;&gt;&gt;<i> this damn thing to compile.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Thanks for all the help.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> -----
+</I>&gt;&gt;&gt;<i> Eric F Crist
+</I>&gt;&gt;&gt;<i> Secure Computing Networks
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Well.....here's what I did to make it go.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> --- GBMuploader.c.old   Sun Nov 26 13:37:44 2006
+</I>&gt;&gt;<i> +++ GBMuploader.c       Sun Nov 26 13:38:35 2006
+</I>&gt;&gt;<i> @@ -10,7 +10,9 @@
+</I>&gt;&gt;<i>  #include &lt;stdio.h&gt;
+</I>&gt;&gt;<i>  #include &lt;string.h&gt;
+</I>&gt;&gt;<i>  #include &lt;stdlib.h&gt;
+</I>&gt;&gt;<i> -#include &quot;mysql.h&quot;
+</I>&gt;&gt;<i> +#include &lt;my_global.h&gt;
+</I>&gt;&gt;<i> +#include &lt;my_sys.h&gt;
+</I>&gt;&gt;<i> +#include &lt;mysql.h&gt;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  //banker structure
+</I>&gt;&gt;<i>  struct banker {
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> and then....
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> # gcc -o
+</I>&gt;&gt;<i> test -L/usr/local/lib/mysql -lmysqlclient -lz -lcrypt -lm -I/usr/ 
+</I>&gt;&gt;<i> local/include/mysql
+</I>&gt;&gt;<i> *.c
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> mysql_config --cflags and mysql_config --libs are handy little tools
+</I>&gt;&gt;<i> for determining what sorts of goo you need to compile stuff that
+</I>&gt;&gt;<i> includes mysql stuffs.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> -- 
+</I>&gt;&gt;<i> Thanks,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Josh Paetzel
+</I>&gt;<i>
+</I>&gt;<i> Is this going to work on Mac OS X?
+</I>&gt;<i>
+</I>&gt;<i> -----
+</I>&gt;<i> Eric F Crist
+</I>&gt;<i> Secure Computing Networks
+</I>
+Here's what I did on Mac OS X:
+
+1) copied the entirety of mysql's include directory to my build  
+directory on my local machine.  Then, I typed the following and got  
+the posted results:
+
+Swordfish:/Applications/World of Warcraft/Interface/AddOns/GTS_Core/ 
+apps/src ecrist$ gcc -o test -L/sw/lib/mysql -lmysqlclient -lz - 
+lcrypt -lm -I/Applications/World\ of\ Warcraft/Interface/AddOns/ 
+GTS_Core/apps/src *.c
+/usr/bin/ld: can't locate file for: -lmysqlclient
+collect2: ld returned 1 exit status
+Swordfish:/Applications/World of Warcraft/Interface/AddOns/GTS_Core/ 
+apps/src ecrist$
+
+I think we're making headway.
+
+
+-----
+Eric F Crist
+Secure Computing Networks
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002772.html">[Tcbug] Re: [X-Unix] Re: [PB] Compiling on MacOS X (source was
+	written for winblow...) [moved from PB]
+</A></li>
+	<LI>Next message: <A HREF="002774.html">[Tcbug] Re: [X-Unix] Re: [PB] Compiling on MacOS X (source was
+	written for winblow...) [moved from PB]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2773">[ date ]</a>
+              <a href="thread.html#2773">[ thread ]</a>
+              <a href="subject.html#2773">[ subject ]</a>
+              <a href="author.html#2773">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

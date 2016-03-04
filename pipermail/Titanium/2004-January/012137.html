@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] sysctl hw.cpufrequency - PROBLEM
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20sysctl%20hw.cpufrequency%20-%20PROBLEM&In-Reply-To=list-10305694%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="012136.html">
+   <LINK REL="Next"  HREF="012138.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] sysctl hw.cpufrequency - PROBLEM</H1>
+    <B>Kynan Shook</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20sysctl%20hw.cpufrequency%20-%20PROBLEM&In-Reply-To=list-10305694%40mail.ninewire.com"
+       TITLE="[Ti] sysctl hw.cpufrequency - PROBLEM">kynan at cs.wisc.edu
+       </A><BR>
+    <I>Sat Jan 17 09:52:08 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="012136.html">[Ti] How do you do a PMU reset??
+</A></li>
+        <LI>Next message: <A HREF="012138.html">canon scanner 9900f and os x.3
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12137">[ date ]</a>
+              <a href="thread.html#12137">[ thread ]</a>
+              <a href="subject.html#12137">[ subject ]</a>
+              <a href="author.html#12137">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+
+<A HREF="../../../mailman/listinfo/titanium.html">etyrnal at ameritech.net</A> writes:
+&gt;<i> I've heard some people CLAIM that this command does not report the
+</I>&gt;<i> correct speed...
+</I>&gt;<i> This makes no sense...  I would estimate that if the command did, in
+</I>&gt;<i> fact, report incorrectly that it would doone of the following odd
+</I>&gt;<i> behaviours:
+</I>&gt;<i> 1.) ALWAYS report one wrong speed - regardless of any changes.
+</I>&gt;<i> 2.) Report a VERY wrong speed - eg: 0MHz or 439.7256497537 MHz or some
+</I>&gt;<i> other 'broken' sounding number.
+</I>
+These are certainly possible ways for something to break, but, what if  
+bus slewing is on?  The CPU and bus speeds are changing continuously,  
+and I can tell you for sure that sysctl does NOT properly update.  In  
+fact, sysctl doesn't immediately show the proper speed on either my 12&quot;  
+or my 17&quot; PowerBooks when I switch to reduced CPU speed; if I  
+restarted, I'd likely see the correct speed, I imagine, but I don't  
+feel like rebooting.  The best way to check the speed you're running at  
+is to run Skidmarks GT (part of the Apple Developer Tools) and see how  
+your computer compares to the base (PowerMac G4 1.0 GHz = 100), but  
+even moreso, to compare results against yourself, as comparing with  
+other computers is likely to produce inconsistent results sometimes.
+
+Anyway, running Skidmarks GT, I get about 67 on each test when at  
+reduced processor speed, and about 100 when at full (my 1 GHz 17&quot; drops  
+to 667).  I'd recommend checking out this app, since sysctl does NOT  
+always report the correct speed.  Surveying various online forums, most  
+people who tested with Skidmarks or some other reputable benchmark tool  
+found that sysctl was incorrect on their machines, though there are  
+certainly some cases where sysctl is reporting correctly.
+
+&gt;<i> NOW - all of this is ESPECIALLY strange to me as it was my
+</I>&gt;<i> understanding that the 867MHz models do NOT do Processor Speed Changes
+</I>&gt;<i> at all...  it was my understanding that the main method of on-battery
+</I>&gt;<i> power-savings was achieved via disabling the L2 and or L3 cache
+</I>&gt;<i> memory...  and possibly by the user disabling unnecessary ports eg:
+</I>&gt;<i> modem, airport, enet, irda, etc...
+</I>
+Actually, yours does change speed; both the 1 GHz and 867 MHz Ti models  
+drop to 667 MHz.  Other PowerBooks have similar changes.  Additionally,  
+the L3 cache is disabled.  Obviously, you should check Energy Saver (be  
+sure to check BOTH power adapter and battery settings) and make sure  
+it's at the desired setting.  If it is (and you've checked out  
+Skidmarks), I have a whole bunch of things for you to try, coming up  
+soon.  However, other causes of running at reduced speed are running  
+with no battery installed, running with a low battery charge, running  
+off of airline power or any other similar power-limited power adapter  
+(eg, not the power adapter your computer shipped with), possibly during  
+system startup, if the computer is too hot, and some other causes,  
+depending on your model.
+
+Anyway, here are the things I would recommend trying.  It will take  
+longer, but I'd recommend trying them one at a time to see if you can  
+identify which one fixes the problem.  Be sure to check with Skidmarks  
+each  time you try as well, since sysctl does NOT always report the  
+correct value.  It might be worth adjusting the CPU speed in Energy  
+Saver, switch to Skidmarks, check your performance, change the CPU  
+speed again, and test in Skidmarks again, see what sort of a difference  
+you get.  In most cases, your difference should be at least 10 or 20  
+points, if your CPU is running at a different speed.  If your computer  
+supports it, don't use Automatic for the testing; this will  
+automatically adjust between high and low speeds depending on the  
+processor usage, and you will not get correct results.
+
+First, check the Options pane in Energy Saver.  Be sure to check both  
+the power adapter and the battery settings.  You'll need to click Show  
+Details if you haven't already to be able to adjust the CPU speed.  I'd  
+recommend rebooting to check, even though the processor speed change  
+will be immediate (you might want to test in Skidmarks both before and  
+after rebooting).
+
+Next, delete the file  
+/Library/Preferences/SystemConfiguration/ 
+com.apple.powermanagement.plist, reboot, adjust your Energy Saver  
+settings, reboot again.
+
+Reset PRAM; reboot, and hold Command-Option-p-r until you hear at least  
+3 boot chimes.
+
+Reset the Power Management Unit: see  
+<A HREF="http://docs.info.apple.com/article.html?artnum=14449">http://docs.info.apple.com/article.html?artnum=14449</A> for instructions;  
+for most PowerBooks and iBooks, you shut down and either press the  
+reset button, or press Shift-control-option-power.  Your date should be  
+reset when you do this.  If not, you didn't do it correctly.
+
+Reset Open Firmware.  Reboot, holding Command-Option-o-f.  You will be  
+brought to a white command-line screen.  Type reset-nvram, press  
+return, type reset-all, press return.  Your computer will turn off from  
+this.
+
+If you still are running at reduced speed, I'd recommend trying to boot  
+from a different boot disk, preferably an archive and install, or  
+better yet, erase and install.  Check your speed there.  If you really  
+feel like getting dirty, try it with a few different versions of the  
+OS, make sure that it's not a bug that snuck in somewhere.
+
+If you still have problems after all that, it's possible that you have  
+a hardware problem.  I'd suspect either the PMU/battery board or the  
+logic board, depending on the model.  But it's by no means certain.   
+Yours is a fairly unusual problem.
+
+Anyway, just in case I haven't hammered it in enough yet, do NOT trust  
+sysctl.  It is often incorrect (though not always).
+HTH,
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="012136.html">[Ti] How do you do a PMU reset??
+</A></li>
+	<LI>Next message: <A HREF="012138.html">canon scanner 9900f and os x.3
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12137">[ date ]</a>
+              <a href="thread.html#12137">[ thread ]</a>
+              <a href="subject.html#12137">[ subject ]</a>
+              <a href="author.html#12137">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

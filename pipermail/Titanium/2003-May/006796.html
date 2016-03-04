@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Kernal Panics
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Kernal%20Panics&In-Reply-To=list-6043187%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="006795.html">
+   <LINK REL="Next"  HREF="006797.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Kernal Panics</H1>
+    <B>Paul N. Reid</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Kernal%20Panics&In-Reply-To=list-6043187%40mail.ninewire.com"
+       TITLE="[Ti] Kernal Panics">pnreid at cox.net
+       </A><BR>
+    <I>Tue May  6 18:06:18 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="006795.html">[Ti] 10.2.6 Update Available
+</A></li>
+        <LI>Next message: <A HREF="006797.html">[Ti] Low Battery Warning
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6796">[ date ]</a>
+              <a href="thread.html#6796">[ thread ]</a>
+              <a href="subject.html#6796">[ subject ]</a>
+              <a href="author.html#6796">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 05/06/2003 13:53, &quot;Flanders, Camron Brent&quot; &lt;<A HREF="../../../mailman/listinfo/titanium.html">benhogan at ku.edu</A>&gt; wrote:
+
+&gt;<i> I have a friend that has experienced a few kernal panics in the past
+</I>&gt;<i> week or so that have the words &quot;corrupt stack&quot; in the first line of the
+</I>&gt;<i> panic.  Anyone know what this is all about? and any ways to stop it, it
+</I>&gt;<i> happens almost once per day.
+</I>&gt;<i> 
+</I>&gt;<i> camron
+</I>
+Hey Camron, 
+
+The 'Stack' and 'Heap' refer to the way the ram is utilized by the hardware,
+and is similar to the they way most utilities 'optimize' your hard drives -
+the information that rarely gets changed and contains the instruction sets
+for how the machine is to work (the System, applications, and so on) is
+stored on one &quot;side&quot; or &quot;end&quot; (for lack of a better word) of the disc. While
+the other information that is often changed and represents all of the work
+you have created (documents, graphics, and so on) is written to the opposite
+&quot;side&quot; or &quot;end&quot; of the disk.  This way their is a gap between the two, such
+that the changeable information has a lot of room to grow and change,
+without threatening to overwrite the important information.
+
+Often when their is a problem with the stack and heap, you never know it
+because it doesn't tell you, but rather shows up as a symptom, like a finder
+crash or system freeze up. You would merely get out of the symptom the
+safest way possible, and restart the machine, thus purging the content of
+the ram and reloading the stack and heap anew upon restart.
+
+If you are getting the kernal panic during the start-up phase, then their
+may be a problem with the ram chip itself, or possibly some major corruption
+in the system software is being loaded from the HD to the RAM that gets
+wonky before the system can finish loading. In this the case, then the first
+thing I  would do would be to restart  the machine, Reset the Parameter RAM,
+and let it start-up under single-user (option-'S') or verbose mode and
+follow the syntax instructions provided there to run 'fsck'.  If that does
+not change anything, I would next run a directory utility (the only that I
+can recommend at this point would be DiskWarrior) to evaluate the directory,
+verify and replace it if errors are found.
+
+The next two steps should only be taken after the first two have been
+unproductive, and are slightly more likely to be helpful if the kernal panic
+happens only after the system has been completely loaded in  and you (or
+your friend) have begun your work for the session.  Believe it or not, I
+would suggest going to the hardware first if the machine in question has
+more than one RAM chip, both or all of the chips are large enough to run OS
+X on their own, you have the confidence, experience, and appropriate
+antistatic safeguards and you have easy access to said chips (which may not
+be the case if the machine is a PowerBook),  what you would do if all these
+conditions are met, would be to pull al but one chip, and test them one at a
+time - swapping chips - and try to determine if you can identify if you get
+the Panic only when a particular RAM Module is used.
+
+If even one of the above criteria are not met, or if you still have kernal
+panics regardless of the chips being used, then back all of your  data up,
+reformat the hard drive choosing the 'zero all data' option and reinstall OS
+X and each of the applications *from their original CD's.  If the kernal
+panics were only occurring when a particular app, open that app, create a
+new document or project and beat the heck out of it.  If it was occurring
+regardless of what you were working in do a little bit of everything. *DO
+NOT*, however, attempt to move back or work on your real projects until you
+are pretty sure the problem is gone.
+
+After all of that, and especially if you were unable to test the RAM
+yourself, It is probably time to take it someone with more training or
+experience (if you trust them) or to a professional AASP Certified
+technician.  You definitely want to exhaust all of your software options
+before taking it to a professional - especially if it is under warranty
+
+If any of this is unclear or you have any additional questions, please feel
+free to contact me off-list if it feels more comfortable. otherwise, I will
+keep my eyes open for additional posts/questions (hopefully with good news!)
+
+ShrinkMan
+------------------------------------------------------
+Paul N. Reid, M.S.
+AASP Certified Systems Technician
+Point of No Return Productions
+<A HREF="../../../mailman/listinfo/titanium.html">pnreid at cox.net</A>
+
+&quot;Every cloud has a silver lining, except for the mushroom shaped ones, which
+have a lining of iridium &amp; strontium-90.&quot;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="006795.html">[Ti] 10.2.6 Update Available
+</A></li>
+	<LI>Next message: <A HREF="006797.html">[Ti] Low Battery Warning
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6796">[ date ]</a>
+              <a href="thread.html#6796">[ thread ]</a>
+              <a href="subject.html#6796">[ subject ]</a>
+              <a href="author.html#6796">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

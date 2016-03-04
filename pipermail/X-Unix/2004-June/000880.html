@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> syslogd problems
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=syslogd%20problems&In-Reply-To=list-12586209%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000879.html">
+   <LINK REL="Next"  HREF="000882.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>syslogd problems</H1>
+    <B>Kevin Stevens</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=syslogd%20problems&In-Reply-To=list-12586209%40mail.ninewire.com"
+       TITLE="syslogd problems">groups at pursued-with.net
+       </A><BR>
+    <I>Mon Jun  7 19:01:55 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000879.html">[X-Unix] Question about the latest security updates
+</A></li>
+        <LI>Next message: <A HREF="000882.html">[X-Unix] Question about the latest security updates
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#880">[ date ]</a>
+              <a href="thread.html#880">[ thread ]</a>
+              <a href="subject.html#880">[ subject ]</a>
+              <a href="author.html#880">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Ok, I'm tired of this.  Can anyone help me with the OS X syslogd 
+program and syslogd.conf?  Please start with where the hell I can find 
+accurate documentation:
+
+&gt;<i> fffinch:~ kes$ which syslogd
+</I>&gt;<i> /usr/sbin/syslogd
+</I>&gt;<i>
+</I>&gt;<i> fffinch:~ kes$ syslogd -?
+</I>&gt;<i> usage: syslogd [-46Acdknosuv] [-a allowed_peer]
+</I>&gt;<i>                [-b bind address] [-f config_file]
+</I>&gt;<i>                [-l log_socket] [-m mark_interval]
+</I>&gt;<i>                [-P pid_file] [-p log_socket]
+</I>&gt;<i>
+</I>&gt;<i> fffinch:~ kes$ ps -aux | grep syslog
+</I>&gt;<i> root       78   0.0  0.0    18092    236  ??  Ss    7:12PM   0:07.29 
+</I>&gt;<i> /usr/sbin/syslogd -s -m 0
+</I>
+The man page syslogd(8) references only the following subset of options:
+
+&gt;<i>      -d      Enable debugging to the standard output, and do not 
+</I>&gt;<i> disassociate
+</I>&gt;<i>              from the controlling terminal.
+</I>&gt;<i>
+</I>&gt;<i>      -f      Specify the pathname of an alternate configuration file; 
+</I>&gt;<i> the
+</I>&gt;<i>              default is /etc/syslog.conf.
+</I>&gt;<i>
+</I>&gt;<i>      -m      Select the number of minutes between ``mark'' messages; 
+</I>&gt;<i> the
+</I>&gt;<i>              default is 20 minutes.
+</I>&gt;<i>
+</I>&gt;<i>      -u      Select the historical ``insecure'' mode, in which syslogd 
+</I>&gt;<i> will
+</I>&gt;<i>              accept input from the UDP port.  Some software wants 
+</I>&gt;<i> this, but
+</I>&gt;<i>              you can be subjected to a variety of attacks over the 
+</I>&gt;<i> network,
+</I>&gt;<i>              including attackers remotely filling logs.
+</I>&gt;<i>
+</I>&gt;<i>      -p      Specify the pathname of an alternate log socket; the 
+</I>&gt;<i> default is
+</I>&gt;<i>              /dev/log.
+</I>
+I want to log syslog entries from a different device to my G5 (10.3.4). 
+  I can eventually get syslog info to be accepted and logged by killing 
+syslogd and restarting it with the -u option.  However, in both my and 
+a friend's experience, doing so will cause the machine to become 
+totally unresponsive to mouse, keyboard, or remote access within 24-48 
+hours.  Leaving a 'top' session running doesn't show any obvious 
+problems with memory, processes, or CPU when this happens.
+
+A separate issue is that I don't see an obvious way to restart syslogd 
+with different options without hacking around in the system rc script, 
+which I'm loathe to do for best practice reasons.
+
+Any assistance appreciated!
+
+KeS
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000879.html">[X-Unix] Question about the latest security updates
+</A></li>
+	<LI>Next message: <A HREF="000882.html">[X-Unix] Question about the latest security updates
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#880">[ date ]</a>
+              <a href="thread.html#880">[ thread ]</a>
+              <a href="subject.html#880">[ subject ]</a>
+              <a href="author.html#880">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

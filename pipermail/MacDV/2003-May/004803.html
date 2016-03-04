@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MacDV] Re: Quicktime problem
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20Quicktime%20problem&In-Reply-To=list-6066320%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004802.html">
+   <LINK REL="Next"  HREF="004804.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MacDV] Re: Quicktime problem</H1>
+    <B>Mark M. Florida</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20Quicktime%20problem&In-Reply-To=list-6066320%40mail.ninewire.com"
+       TITLE="[MacDV] Re: Quicktime problem">markflo at mac.com
+       </A><BR>
+    <I>Wed May  7 21:26:45 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004802.html">[MacDV] Re: Quicktime problem
+</A></li>
+        <LI>Next message: <A HREF="004804.html">[MacDV] Re: Quicktime problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4803">[ date ]</a>
+              <a href="thread.html#4803">[ thread ]</a>
+              <a href="subject.html#4803">[ subject ]</a>
+              <a href="author.html#4803">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Looking at your page code, there's one missing attribute in the EMBED tag
+that may do the trick:  type=&quot;video/quicktime&quot;  add that and see if that
+does it.
+
+On 5/7/03 11:08 PM, &quot;Robert Schoenburg&quot; &lt;<A HREF="../../../mailman/listinfo/macdv.html">rschoenburg at schoenburg.com</A>&gt; wrote:
+
+&gt;<i> Mark,
+</I>&gt;<i> 
+</I>&gt;<i> I uploaded a movie and a web page. The web page references the movie. Here
+</I>&gt;<i> is the link.
+</I>&gt;<i> 
+</I>&gt;<i> <A HREF="http://www.schoenburg.com/test.asp">http://www.schoenburg.com/test.asp</A>
+</I>&gt;<i> 
+</I>&gt;<i> The movie plays in Netscape and in Safari but not in Explorer.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;&gt;<i> On 5/7/03 7:16 PM, &quot;Robert Schoenburg&quot; &lt;<A HREF="../../../mailman/listinfo/macdv.html">rschoenburg at schoenburg.com</A>&gt; wrote:
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> I will try again. Thanks Mark. I did try something like that with no luck.
+</I>&gt;&gt;&gt;<i> Interesting that Netscape and Safari open it with no problem.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> Do you mean Netscape and Safari open the movie if you drag it into a browser
+</I>&gt;&gt;<i> window when the movie is on your hard drive?  That should work fine, since
+</I>&gt;&gt;<i> your computer knows what kind of file it is and is able to call on the
+</I>&gt;&gt;<i> QuickTime plugin to handle it.  But a web server has to know a file-type
+</I>&gt;&gt;<i> (MIME) mapping for a &quot;.mov&quot; file (video/quicktime), and if it's not
+</I>&gt;&gt;<i> programmed in the server, it will spit back the generic binary format
+</I>&gt;&gt;<i> &quot;application/octet-stream&quot;, which can cause problems in some situations (as
+</I>&gt;&gt;<i> you've seen for yourself).
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> Hope that helps some more.  ;-)
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> - Mark
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> That usually has to do with MIME type mappings on the web server.  Usually
+</I>&gt;&gt;&gt;&gt;<i> if you ask the hosting provider to add a MIME type for you it shouldn't be
+</I>&gt;&gt;&gt;&gt;<i> a
+</I>&gt;&gt;&gt;&gt;<i> problem.  You should also be able to add the MIME information if you embed
+</I>&gt;&gt;&gt;&gt;<i> the QuickTime movie in it's own HTML page, rather than linking to it
+</I>&gt;&gt;&gt;&gt;<i> directly.
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> Here's a sample embed tag you can use as a reference:
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> &lt;embed width=&quot;320&quot; height=&quot;256&quot;
+</I>&gt;&gt;&gt;&gt;<i> pluginspage=&quot;<A HREF="http://www.apple.com/quicktime/download/">http://www.apple.com/quicktime/download/&quot;</A>
+</I>&gt;&gt;&gt;&gt;<i> src=&quot;path/to/quicktime.mov&quot; type=&quot;video/quicktime&quot; controller=&quot;true&quot;
+</I>&gt;&gt;&gt;&gt;<i> autoplay=&quot;true&quot;&gt;
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> Note:  if you have the &quot;controller&quot; attribute set to &quot;true&quot; then you need
+</I>&gt;&gt;&gt;&gt;<i> to
+</I>&gt;&gt;&gt;&gt;<i> add 16 pixels to the height of the movie to make room for the controller
+</I>&gt;&gt;&gt;&gt;<i> without causing the movie to lose proportion.
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> There's more info on embedding QuickTime movies on web pages on Apple's
+</I>&gt;&gt;&gt;&gt;<i> site.
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> Hope that helps.
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> - Mark
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> On 5/7/03 10:06 AM, &quot;Robert Schoenburg&quot; &lt;<A HREF="../../../mailman/listinfo/macdv.html">rschoenburg at schoenburg.com</A>&gt; wrote:
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> I uploaded a QT movie and a web page. The page has a link to the movie.
+</I>&gt;&gt;&gt;&gt;&gt;<i> When
+</I>&gt;&gt;&gt;&gt;&gt;<i> the page loads, the following message is displayed:
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> The Plug-in for application/octet-stream is not installed
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> Anyone have a clue as to what this is?
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> ----------
+</I>&gt;&gt;&gt;&gt;&gt;<i> &lt;<A HREF="../../../../www.themacintoshguy.com/lists/MacDV.html">http://www.themacintoshguy.com/lists/MacDV.html</A>&gt;.
+</I>&gt;&gt;&gt;&gt;&gt;<i> Send a message to &lt;<A HREF="../../../mailman/listinfo/macdv.html">MacDV-DIGEST at themacintoshguy.com</A>&gt; to switch to the
+</I>&gt;&gt;&gt;&gt;&gt;<i> digest
+</I>&gt;&gt;&gt;&gt;&gt;<i> version.
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> XRouter | Share your DSL or cable modem between multiple computers!
+</I>&gt;&gt;&gt;&gt;&gt;<i> Dr. Bott | Now $139.99      &lt;<A HREF="http://www.drbott.com/prod/xrouter.html">http://www.drbott.com/prod/xrouter.html</A>&gt;
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i>  Cyberian   | Support this list when you buy at Outpost.com!
+</I>&gt;&gt;&gt;&gt;&gt;<i>  Outpost    |         <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> MacResQ Specials: LaCie SCSI CDR From $99! PowerBook 3400/200 Only $879!
+</I>&gt;&gt;&gt;&gt;&gt;<i> Norton AntiVirus 6 Only $19! We Stock PARTS! &lt;<A HREF="http://www.macresq.com">http://www.macresq.com</A>&gt;
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> ----------
+</I>&gt;&gt;&gt;&gt;<i> &lt;<A HREF="../../../../www.themacintoshguy.com/lists/MacDV.html">http://www.themacintoshguy.com/lists/MacDV.html</A>&gt;.
+</I>&gt;&gt;&gt;&gt;<i> Send a message to &lt;<A HREF="../../../mailman/listinfo/macdv.html">MacDV-DIGEST at themacintoshguy.com</A>&gt; to switch to the
+</I>&gt;&gt;&gt;&gt;<i> digest
+</I>&gt;&gt;&gt;&gt;<i> version.
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> XRouter | Share your DSL or cable modem between multiple computers!
+</I>&gt;&gt;&gt;&gt;<i> Dr. Bott | Now $139.99      &lt;<A HREF="http://www.drbott.com/prod/xrouter.html">http://www.drbott.com/prod/xrouter.html</A>&gt;
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i>  Cyberian   | Support this list when you buy at Outpost.com!
+</I>&gt;&gt;&gt;&gt;<i>  Outpost    |         <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> MacResQ Specials: LaCie SCSI CDR From $99! PowerBook 3400/200 Only $879!
+</I>&gt;&gt;&gt;&gt;<i> Norton AntiVirus 6 Only $19! We Stock PARTS! &lt;<A HREF="http://www.macresq.com">http://www.macresq.com</A>&gt;
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> ----------
+</I>&gt;&gt;&gt;<i> &lt;<A HREF="../../../../www.themacintoshguy.com/lists/MacDV.html">http://www.themacintoshguy.com/lists/MacDV.html</A>&gt;.
+</I>&gt;&gt;&gt;<i> Send a message to &lt;<A HREF="../../../mailman/listinfo/macdv.html">MacDV-DIGEST at themacintoshguy.com</A>&gt; to switch to the digest
+</I>&gt;&gt;&gt;<i> version.
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> XRouter | Share your DSL or cable modem between multiple computers!
+</I>&gt;&gt;&gt;<i> Dr. Bott | Now $139.99      &lt;<A HREF="http://www.drbott.com/prod/xrouter.html">http://www.drbott.com/prod/xrouter.html</A>&gt;
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i>  Cyberian   | Support this list when you buy at Outpost.com!
+</I>&gt;&gt;&gt;<i>  Outpost    |         <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> MacResQ Specials: LaCie SCSI CDR From $99! PowerBook 3400/200 Only $879!
+</I>&gt;&gt;&gt;<i> Norton AntiVirus 6 Only $19! We Stock PARTS! &lt;<A HREF="http://www.macresq.com">http://www.macresq.com</A>&gt;
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> ----------
+</I>&gt;&gt;<i> &lt;<A HREF="../../../../www.themacintoshguy.com/lists/MacDV.html">http://www.themacintoshguy.com/lists/MacDV.html</A>&gt;.
+</I>&gt;&gt;<i> Send a message to &lt;<A HREF="../../../mailman/listinfo/macdv.html">MacDV-DIGEST at themacintoshguy.com</A>&gt; to switch to the digest
+</I>&gt;&gt;<i> version.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> XRouter | Share your DSL or cable modem between multiple computers!
+</I>&gt;&gt;<i> Dr. Bott | Now $139.99      &lt;<A HREF="http://www.drbott.com/prod/xrouter.html">http://www.drbott.com/prod/xrouter.html</A>&gt;
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i>  Cyberian   | Support this list when you buy at Outpost.com!
+</I>&gt;&gt;<i>  Outpost    |         <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> MacResQ Specials: LaCie SCSI CDR From $99! PowerBook 3400/200 Only $879!
+</I>&gt;&gt;<i> Norton AntiVirus 6 Only $19! We Stock PARTS! &lt;<A HREF="http://www.macresq.com">http://www.macresq.com</A>&gt;
+</I>&gt;&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ----------
+</I>&gt;<i> &lt;<A HREF="../../../../www.themacintoshguy.com/lists/MacDV.html">http://www.themacintoshguy.com/lists/MacDV.html</A>&gt;.
+</I>&gt;<i> Send a message to &lt;<A HREF="../../../mailman/listinfo/macdv.html">MacDV-DIGEST at themacintoshguy.com</A>&gt; to switch to the digest
+</I>&gt;<i> version.
+</I>&gt;<i> 
+</I>&gt;<i> XRouter | Share your DSL or cable modem between multiple computers!
+</I>&gt;<i> Dr. Bott | Now $139.99      &lt;<A HREF="http://www.drbott.com/prod/xrouter.html">http://www.drbott.com/prod/xrouter.html</A>&gt;
+</I>&gt;<i> 
+</I>&gt;<i>  Cyberian   | Support this list when you buy at Outpost.com!
+</I>&gt;<i>  Outpost    |         <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+</I>&gt;<i> 
+</I>&gt;<i> MacResQ Specials: LaCie SCSI CDR From $99! PowerBook 3400/200 Only $879!
+</I>&gt;<i> Norton AntiVirus 6 Only $19! We Stock PARTS! &lt;<A HREF="http://www.macresq.com">http://www.macresq.com</A>&gt;
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004802.html">[MacDV] Re: Quicktime problem
+</A></li>
+	<LI>Next message: <A HREF="004804.html">[MacDV] Re: Quicktime problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4803">[ date ]</a>
+              <a href="thread.html#4803">[ thread ]</a>
+              <a href="subject.html#4803">[ subject ]</a>
+              <a href="author.html#4803">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

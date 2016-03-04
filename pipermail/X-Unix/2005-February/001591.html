@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: Unlinking a file... illegal characters?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Unlinking%20a%20file...%20illegal%20characters%3F&In-Reply-To=ee229cae2f46aa6785859b9cd486c11f%40tntluoma.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001590.html">
+   <LINK REL="Next"  HREF="001592.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: Unlinking a file... illegal characters?</H1>
+    <B>James Bucanek</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Unlinking%20a%20file...%20illegal%20characters%3F&In-Reply-To=ee229cae2f46aa6785859b9cd486c11f%40tntluoma.com"
+       TITLE="[X-Unix] Re: Unlinking a file... illegal characters?">subscriber at gloaming.com
+       </A><BR>
+    <I>Sun Feb 27 07:14:24 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001590.html">[X-Unix] Re: Unlinking a file... illegal characters?
+</A></li>
+        <LI>Next message: <A HREF="001592.html">[X-Unix] Re: Unlinking a file... illegal characters?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1591">[ date ]</a>
+              <a href="thread.html#1591">[ thread ]</a>
+              <a href="subject.html#1591">[ subject ]</a>
+              <a href="author.html#1591">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I've been watching everyone thrash around on this for a bit, and have a couple of suggestions:
+
+(1) Is the original poster sure that the volume isn't damaaged?  I'd start up in single user mode and run fsck before continuing.
+
+(2) I suspect that the problem is Unicode.  Most C/Perl/whatever programs are going to be using the C interfaces to the BSD file services.  There are some subtle complications between that layer, which works with UNIX paths as C strings, and the Carbon layer, which uses Unicode, where the HFS filesystem is actually implemented.  For instance, there are Unicode character sequences which can't be preserved through translation, not even using UTF-8.  That is to say, OriginalUnicode-&gt;UTF-8-&gt;Unicode != OriginalUnicode.
+
+If that assumption is true, there are no UNIX level tools that are going to let you delete this file.  Heck, there probably aren't any UNIX level tools that can even tell you what its exact name is.  Note that this is not the first time this has happened.  I filed a bug against OS 10.1 where a StuffIt archive was unpacked on OS X creating two files named (I kid you not) &quot;.&quot; and &quot;..&quot;.  These were impossible to delete in OS X.
+
+What you need is a Carbon application to delete this file.  My suggestion would be to reverse the process.  You've got an archive that created this filename -- use StuffIt or something to delete it.  Select the enclosing folder and tell StuffIt to create an archive and delete the original.  My guess is that StuffIt will use the Carbon APIs, get the Unicode version of the filename (or, more likely, its FSRef), and delete it with no muss or fuss.
+
+-- 
+James Bucanek &lt;mailto:<A HREF="../../../mailman/listinfo/x-unix.html">privatereply at gloaming.com</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001590.html">[X-Unix] Re: Unlinking a file... illegal characters?
+</A></li>
+	<LI>Next message: <A HREF="001592.html">[X-Unix] Re: Unlinking a file... illegal characters?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1591">[ date ]</a>
+              <a href="thread.html#1591">[ thread ]</a>
+              <a href="subject.html#1591">[ subject ]</a>
+              <a href="author.html#1591">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

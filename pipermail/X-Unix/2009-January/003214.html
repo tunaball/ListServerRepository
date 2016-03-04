@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] [ANN] unmac
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20%5BANN%5D%20unmac&In-Reply-To=DE7550EC-0D5E-463D-9CF9-4669659BCE58%40myrealbox.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003213.html">
+   <LINK REL="Next"  HREF="003215.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] [ANN] unmac</H1>
+    <B>Xavier Noria</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20%5BANN%5D%20unmac&In-Reply-To=DE7550EC-0D5E-463D-9CF9-4669659BCE58%40myrealbox.com"
+       TITLE="[X-Unix] [ANN] unmac">fxn at hashref.com
+       </A><BR>
+    <I>Wed Jan  7 13:33:43 PST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003213.html">[X-Unix] [ANN] unmac
+</A></li>
+        <LI>Next message: <A HREF="003215.html">[X-Unix] [ANN] unmac
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3214">[ date ]</a>
+              <a href="thread.html#3214">[ thread ]</a>
+              <a href="subject.html#3214">[ subject ]</a>
+              <a href="author.html#3214">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Wed, Jan 7, 2009 at 9:57 PM, Stroller &lt;<A HREF="../../../mailman/listinfo/x-unix.html">macmonster at myrealbox.com</A>&gt; wrote:
+&gt;&gt;&gt;<i>          if [[ `$FILE -b &quot;$1&quot;` = &quot;empty&quot; &amp;&amp; ${BASSNAME:0:4} = &quot;Icon&quot; ]]
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> What are those? Do you have any example?
+</I>&gt;<i>
+</I>&gt;<i> It was a long time ago I wrote this - it looks to me like they're icon files
+</I>&gt;<i> distributed by iconfactory.com, and perhaps I mistook them for a general
+</I>&gt;<i> case?
+</I>&gt;<i>
+</I>&gt;<i> I have, for instance:
+</I>&gt;<i>
+</I>&gt;<i> ...
+</I>&gt;<i> SomeFolder/Icons/Clipper System/._Icon
+</I>&gt;<i> SomeFolder/Icons/Clipper System/Icon
+</I>&gt;<i> SomeFolder/Icons/Clipper System/The Icons
+</I>&gt;<i> SomeFolder/Icons/Clipper System/The Icons/CD
+</I>&gt;<i> SomeFolder/Icons/Clipper System/The Icons/Go
+</I>&gt;<i> SomeFolder/Icons/Clipper System/The Icons/DVD
+</I>&gt;<i> SomeFolder/Icons/Clipper System/The Icons/USB
+</I>&gt;<i> SomeFolder/Icons/Clipper System/The Icons/Smart Media
+</I>&gt;<i> SomeFolder/Icons/Clipper System/The Icons/._Removable HD
+</I>&gt;<i> SomeFolder/Icons/Clipper System/The Icons/._CD
+</I>&gt;<i> SomeFolder/Icons/Clipper System/The Icons/._Go
+</I>&gt;<i> SomeFolder/Icons/Clipper System/The Icons/CD-R
+</I>&gt;<i> SomeFolder/Icons/Clipper System/The Icons/Burn
+</I>&gt;<i> SomeFolder/Icons/Clipper System/The Icons/Find
+</I>&gt;<i> ...
+</I>&gt;<i> SomeFolder/Icons/Clipper System/The Icons/._Movies Folder
+</I>&gt;<i> SomeFolder/Icons/Clipper System/The Icons/._Icon
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> They in fact have a weird b0rk character on the end of the filename, which
+</I>&gt;<i> doesn't show up in the above output from locate:
+</I>&gt;<i>
+</I>&gt;<i> ~ $ file /home/ftp/space/IMPORTANT\ -\ Silva\`s\
+</I>&gt;<i> Backup/Desktop/Icons/Clipper\ System/Icon^M
+</I>&gt;<i> : emptytp/space/IMPORTANT - Silva`s Backup/Desktop/Icons/Clipper System/Icon
+</I>&gt;<i> ~ $ ls /home/ftp/space/IMPORTANT\ -\ Silva\`s\ Backup/Desktop/Icons/Clipper\
+</I>&gt;<i> System/Icon^M
+</I>&gt;<i> /home/ftp/space/IMPORTANT - Silva`s Backup/Desktop/Icons/Clipper
+</I>&gt;<i> System/Icon?
+</I>&gt;<i> ~ $
+</I>&gt;<i>
+</I>&gt;<i> This reminds me how much I fucking hate resource forks.
+</I>
+Interesting. I googled a bit motivated by your message and got
+something similar but too much informative:
+
+   <A HREF="http://ask.metafilter.com/21601/How-to-copy-from-HFS-to-FAT32">http://ask.metafilter.com/21601/How-to-copy-from-HFS-to-FAT32</A>
+
+I couldn't reproduce them though. I tried changing the icon of a
+concrete file, and copying it to a memory stick, but it didn't work.
+
+What a pity I'd like to understand them for unmac.
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003213.html">[X-Unix] [ANN] unmac
+</A></li>
+	<LI>Next message: <A HREF="003215.html">[X-Unix] [ANN] unmac
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3214">[ date ]</a>
+              <a href="thread.html#3214">[ thread ]</a>
+              <a href="subject.html#3214">[ subject ]</a>
+              <a href="author.html#3214">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

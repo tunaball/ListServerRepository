@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Utility &quot;ln&quot; makes a copy instead of hard link?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Utility%20%22ln%22%20makes%20a%20copy%20instead%20of%20hard%20link%3F&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002623.html">
+   <LINK REL="Next"  HREF="002625.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Utility &quot;ln&quot; makes a copy instead of hard link?</H1>
+    <B>Jerry Krinock</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Utility%20%22ln%22%20makes%20a%20copy%20instead%20of%20hard%20link%3F&In-Reply-To="
+       TITLE="[X-Unix] Utility &quot;ln&quot; makes a copy instead of hard link?">jerry at ieee.org
+       </A><BR>
+    <I>Fri Apr  7 10:16:30 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002623.html">[X-Unix] seq in fink
+</A></li>
+        <LI>Next message: <A HREF="002625.html">[X-Unix] Utility &quot;ln&quot; makes a copy instead of hard link?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2624">[ date ]</a>
+              <a href="thread.html#2624">[ thread ]</a>
+              <a href="subject.html#2624">[ subject ]</a>
+              <a href="author.html#2624">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>EXPERIMENT:
+
+1.  Create a text file named &quot;1.txt&quot; containing the text &quot;Dog&quot;.
+2.  Create a &quot;hard link&quot; by the command:
+        ln 1.txt
+    Expected result: Should create a &quot;hard link&quot; file
+    Actual result: Error message:
+        ln: ./1.txt: File exists
+3.  Retry to make a &quot;hard link&quot; by the command:
+        ln 1.txt 2.txt
+    Result: Now there are two files, 1.txt and 2.txt.
+4.  Open 1.txt and change contents to &quot;Cat&quot;.
+5.  Save.
+6.  Open &quot;2.txt&quot; and read it.
+7.  Expected result: &quot;Cat&quot;.
+8.  Actual result: &quot;Dog&quot;
+
+Also, the calculated size of a directory containing a file and such a hard
+link is twice the size of the one file by itself.
+
+To summarize, ln seems to be making a copy instead of what is described as a
+&quot;hard link&quot;.  From the &quot;man&quot; manual of ln:
+
+&quot;The ln utility creates a new directory entry (linked file) which has the
+same modes as the original file. It is useful for maintaining multiple
+copies of a file in many places at once without using up storage for the
+``copies''; instead, a link ``points'' to the original copy....By default,
+ln makes hard links. A hard link to a file is indistinguishable from the
+original directory entry; any changes to a file are effectively independent
+of the name used to reference the file.&quot;
+
+Is this a bug, or can I not understand English today?
+
+Jerry Krinock
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002623.html">[X-Unix] seq in fink
+</A></li>
+	<LI>Next message: <A HREF="002625.html">[X-Unix] Utility &quot;ln&quot; makes a copy instead of hard link?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2624">[ date ]</a>
+              <a href="thread.html#2624">[ thread ]</a>
+              <a href="subject.html#2624">[ subject ]</a>
+              <a href="author.html#2624">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

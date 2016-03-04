@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Servers] KDC will not run - &quot;Unable to bind to Parent&quot;
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX-Servers%5D%20KDC%20will%20not%20run%20-%20%22Unable%20to%20bind%20to%20Parent%22&In-Reply-To=20040922190008.5AA89D5FB2%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000004.html">
+   <LINK REL="Next"  HREF="000007.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Servers] KDC will not run - &quot;Unable to bind to Parent&quot;</H1>
+    <B>Tim David</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX-Servers%5D%20KDC%20will%20not%20run%20-%20%22Unable%20to%20bind%20to%20Parent%22&In-Reply-To=20040922190008.5AA89D5FB2%40listserver.themacintoshguy.com"
+       TITLE="[X-Servers] KDC will not run - &quot;Unable to bind to Parent&quot;">timdavid at mail.ucf.edu
+       </A><BR>
+    <I>Wed Sep 22 12:29:39 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000004.html">[X-Servers] KDC will not run - &quot;Unable to bind to Parent&quot; error?
+</A></li>
+        <LI>Next message: <A HREF="000007.html">[X-Servers] KDC will not run - &quot;Unable to bind to Parent&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5">[ date ]</a>
+              <a href="thread.html#5">[ thread ]</a>
+              <a href="subject.html#5">[ subject ]</a>
+              <a href="author.html#5">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>The KDC requires DNS to have both forward and reverse lookups setup  
+correctly, did you set up a reverse record?
+Here's the bad news, once that KDC fails to start, about the only way  
+to fix it is to reinstall OSX Server. Actually, I have not seen a way  
+to fix this yet without reinstalling the server operating system. I've  
+called several people at Apple and received the same answer.
+
+Tim
+
+
+Tim David
+Senior Systems Administrator
+University of Central Florida
+College of Education
+<A HREF="../../../mailman/listinfo/x-servers.html">TimDavid at mail.ucf.edu</A>
+(407) 823-1783
+
+
+
+On Sep 22, 2004, at 3:00 PM,  
+<A HREF="../../../mailman/listinfo/x-servers.html">x-servers-request at listserver.themacintoshguy.com</A> wrote:
+
+&gt;<i> Send X-Servers mailing list submissions to
+</I>&gt;<i> 	<A HREF="../../../mailman/listinfo/x-servers.html">x-servers at listserver.themacintoshguy.com</A>
+</I>&gt;<i>
+</I>&gt;<i> To subscribe or unsubscribe via the World Wide Web, visit
+</I>&gt;<i> 	<A HREF="../../../mailman/listinfo/x-servers.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-servers</A>
+</I>&gt;<i> or, via email, send a message with subject or body 'help' to
+</I>&gt;<i> 	<A HREF="../../../mailman/listinfo/x-servers.html">x-servers-request at listserver.themacintoshguy.com</A>
+</I>&gt;<i>
+</I>&gt;<i> You can reach the person managing the list at
+</I>&gt;<i> 	<A HREF="../../../mailman/listinfo/x-servers.html">x-servers-owner at listserver.themacintoshguy.com</A>
+</I>&gt;<i>
+</I>&gt;<i> When replying, please edit your Subject line so it is more specific
+</I>&gt;<i> than &quot;Re: Contents of X-Servers digest...&quot;
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Today's Topics:
+</I>&gt;<i>
+</I>&gt;<i>    1. KDC will not run - &quot;Unable to bind to Parent&quot; error? (Frank  
+</I>&gt;<i> Flynn)
+</I>&gt;<i>    2. Re: KDC will not run - &quot;Unable to bind to Parent&quot; error?
+</I>&gt;<i>       (Rich Trouton)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------------------------------------------------------------------
+</I>&gt;<i>
+</I>&gt;<i> Message: 1
+</I>&gt;<i> Date: Wed, 22 Sep 2004 09:29:19 -0700
+</I>&gt;<i> From: Frank Flynn &lt;<A HREF="../../../mailman/listinfo/x-servers.html">frank at declan.com</A>&gt;
+</I>&gt;<i> Subject: [X-Servers] KDC will not run - &quot;Unable to bind to Parent&quot;
+</I>&gt;<i> 	error?
+</I>&gt;<i> To: <A HREF="../../../mailman/listinfo/x-servers.html">x-servers at listserver.themacintoshguy.com</A>
+</I>&gt;<i> Message-ID: &lt;<A HREF="../../../mailman/listinfo/x-servers.html">8DB10EEC-0CB4-11D9-B868-000A95BE103C at declan.com</A>&gt;
+</I>&gt;<i> Content-Type: text/plain; charset=US-ASCII; format=flowed
+</I>&gt;<i>
+</I>&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> I have an xServer and i want to have it authenticate users on other
+</I>&gt;<i> Macs in the office.
+</I>&gt;<i>
+</I>&gt;<i> The server is up and working, users can login to it.  But the clients
+</I>&gt;<i> cannot authenticate through this server - a quick look in the &quot;Open
+</I>&gt;<i> Directory&quot; shows the KDC is &quot;stopped&quot;.  Looking in the logs shows this
+</I>&gt;<i> &quot;Unable to bind to parent&quot; error everytime the server starts up.
+</I>&gt;<i>
+</I>&gt;<i> I think I have DNS set up properly - it can ping itself and the rest of
+</I>&gt;<i> the internet (by name) is there a better way to test?
+</I>&gt;<i>
+</I>&gt;<i> Does anyone know what this is?  Or does anyone know of a step by step
+</I>&gt;<i> guide to walk me through setting up authentication?
+</I>&gt;<i>
+</I>&gt;<i> Frank
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ------------------------------
+</I>&gt;<i>
+</I>&gt;<i> Message: 2
+</I>&gt;<i> Date: Wed, 22 Sep 2004 12:47:44 -0400
+</I>&gt;<i> From: Rich Trouton &lt;<A HREF="../../../mailman/listinfo/x-servers.html">flounder at mac.com</A>&gt;
+</I>&gt;<i> Subject: Re: [X-Servers] KDC will not run - &quot;Unable to bind to Parent&quot;
+</I>&gt;<i> 	error?
+</I>&gt;<i> To: &quot;A place to discuss Mac OS X Server and server software on Mac OS
+</I>&gt;<i> 	X.&quot;	&lt;<A HREF="../../../mailman/listinfo/x-servers.html">x-servers at listserver.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Message-ID: &lt;<A HREF="../../../mailman/listinfo/x-servers.html">206A27C9-0CB7-11D9-8838-000A95AFB27C at mac.com</A>&gt;
+</I>&gt;<i> Content-Type: text/plain; charset=&quot;windows-1252&quot;
+</I>&gt;<i>
+</I>&gt;<i> Do you have your server set up as an Open Directory master, or as a
+</I>&gt;<i> standalone server?
+</I>&gt;<i>
+</I>&gt;<i> 	Rich
+</I>&gt;<i>
+</I>&gt;<i> On Sep 22, 2004, at 12:29 PM, Frank Flynn wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Hi,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I have an xServer and i want to have it authenticate users on other
+</I>&gt;&gt;<i> Macs in the office.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The server is up and working, users can login to it.  But the clients
+</I>&gt;&gt;<i> cannot authenticate through this server - a quick look in the &quot;Open
+</I>&gt;&gt;<i> Directory&quot; shows the KDC is &quot;stopped&quot;.  Looking in the logs shows this
+</I>&gt;&gt;<i> &quot;Unable to bind to parent&quot; error everytime the server starts up.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I think I have DNS set up properly - it can ping itself and the rest
+</I>&gt;&gt;<i> of the internet (by name) is there a better way to test?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Does anyone know what this is?  Or does anyone know of a step by step
+</I>&gt;&gt;<i> guide to walk me through setting up authentication?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Frank
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> X-Servers mailing list
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-servers.html">X-Servers at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-servers.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-servers</A>
+</I>&gt;&gt;<i>
+</I>&gt;<i> ---
+</I>&gt;<i>
+</I>&gt;<i> Rich Trouton (Contractor)
+</I>&gt;<i> LAN Support
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-servers.html">rtrouton at mail.nih.gov</A>
+</I>&gt;<i> -----------------------------------------------------------
+</I>&gt;<i> National Human Genome Research Institute
+</I>&gt;<i> National Institutes of Health &#151; Bethesda, MD
+</I>&gt;<i>
+</I>&gt;<i> Office number:
+</I>&gt;<i> (240) 476-3652
+</I>&gt;<i>
+</I>&gt;<i> NHGRI LAN Support number:
+</I>&gt;<i> (301) 402-7408
+</I>&gt;<i>
+</I>&gt;<i> The best way to get in touch with me is through email.
+</I>&gt;<i>
+</I>&gt;<i> -------------- next part --------------
+</I>&gt;<i> A non-text attachment was scrubbed...
+</I>&gt;<i> Name: smime.p7s
+</I>&gt;<i> Type: application/pkcs7-signature
+</I>&gt;<i> Size: 2361 bytes
+</I>&gt;<i> Desc: not available
+</I>&gt;<i> Url :  
+</I>&gt;<i> <A HREF="../attachments/index.html">http://listserver.themacintoshguy.com/pipermail/x-servers/attachments/</A> 
+</I>&gt;<i> 20040922/5314e62e/smime-0001.bin
+</I>&gt;<i>
+</I>&gt;<i> ------------------------------
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Servers mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-servers.html">X-Servers at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-servers.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-servers</A>
+</I>&gt;<i>
+</I>&gt;<i> End of X-Servers Digest, Vol 1, Issue 3
+</I>&gt;<i> ***************************************
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000004.html">[X-Servers] KDC will not run - &quot;Unable to bind to Parent&quot; error?
+</A></li>
+	<LI>Next message: <A HREF="000007.html">[X-Servers] KDC will not run - &quot;Unable to bind to Parent&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5">[ date ]</a>
+              <a href="thread.html#5">[ thread ]</a>
+              <a href="subject.html#5">[ subject ]</a>
+              <a href="author.html#5">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

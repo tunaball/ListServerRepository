@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Cron problem solved
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Cron%20problem%20solved&In-Reply-To=20050625041840.8634946657E%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002234.html">
+   <LINK REL="Next"  HREF="002236.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Cron problem solved</H1>
+    <B>Robert Frank</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Cron%20problem%20solved&In-Reply-To=20050625041840.8634946657E%40listserver.themacintoshguy.com"
+       TITLE="[X-Unix] Cron problem solved">robert.frank at unibas.ch
+       </A><BR>
+    <I>Mon Jun 27 00:49:38 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002234.html">[X-Unix] mv files in BASH
+</A></li>
+        <LI>Next message: <A HREF="002236.html">[X-Unix] Cron problem solved
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2235">[ date ]</a>
+              <a href="thread.html#2235">[ thread ]</a>
+              <a href="subject.html#2235">[ subject ]</a>
+              <a href="author.html#2235">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>The $(...) actually starts a sub shell, then returns the result. In  
+the below fragment, you can simply write:
+
+for screen in mg*
+do
+   ...
+done
+
+provided you are in the directory with the screen shots when the  
+script starts, and file globbing is not turned off. There is no need  
+to run a subshell in order to get a list of files. The list is  
+automatically composed by simply using 'mg*'.
+
+And: you could of course immediately promote the files to pdf in the  
+capture script:
+
+cd /path/to/dir/with/screen/shots
+now=`/bin/date &quot;+%H%M%S&quot;` # note the two backtics!
+  /usr/sbin/screencapture mg$now
+/path/to/ps2pdf mg$now            # substitute the /path/to
+/bin/rm mg$now
+
+
+The next step is, of course, to archive these shots from time to time  
+(e.g. once a month), then to get rid of them when no longer used  
+(e.g. after one year).
+
+Robert
+
+On 25 Jun 2005, at 6:18, x-unix- 
+<A HREF="../../../mailman/listinfo/x-unix.html">request at listserver.themacintoshguy.com</A> wrote:
+
+&gt;<i> At the end of the day, I use ps2pdf to convert the files to pdf, so I
+</I>&gt;<i> can view them as a series of screen shots in iMovie. I created the
+</I>&gt;<i> following script which I run to do the conversion and remove the
+</I>&gt;<i> original files:
+</I>&gt;<i>
+</I>&gt;<i> #!/bin/sh        #psconvert
+</I>&gt;<i>
+</I>&gt;<i> for screen in $(ls mg*)
+</I>&gt;<i> do
+</I>&gt;<i>          ps2pdf $screen
+</I>&gt;<i> done
+</I>&gt;<i> rm mg*[1-9]
+</I>&gt;<i> exit
+</I>&gt;<i>
+</I>&gt;<i> which leaves a series of files like:
+</I>&gt;<i>          mg103000.pdf
+</I>&gt;<i>
+</I>&gt;<i> So, thanks again for all of the suggestions. I hope the results will
+</I>&gt;<i> be useful to someone.
+</I>&gt;<i>
+</I>
+Departement Informatik   FGB   tel   +41 (0)61 267 14 66
+Universit&#228;t Basel                          fax. +41 (0)61 267 14 61
+Robert Frank
+Klingelbergstrasse 50                 <A HREF="../../../mailman/listinfo/x-unix.html">Robert.Frank at unibas.ch</A>
+CH-4056 Basel
+Switzerland                                   http:// 
+www.informatik.unibas.ch/personen/frank_r.html
+
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002234.html">[X-Unix] mv files in BASH
+</A></li>
+	<LI>Next message: <A HREF="002236.html">[X-Unix] Cron problem solved
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2235">[ date ]</a>
+              <a href="thread.html#2235">[ thread ]</a>
+              <a href="subject.html#2235">[ subject ]</a>
+              <a href="author.html#2235">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

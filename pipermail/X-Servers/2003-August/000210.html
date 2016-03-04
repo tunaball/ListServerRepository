@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Servers] mod_rewrite question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20mod_rewrite%20question&In-Reply-To=list-8013512%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000209.html">
+   <LINK REL="Next"  HREF="000211.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Servers] mod_rewrite question</H1>
+    <B>Eugene Lee</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20mod_rewrite%20question&In-Reply-To=list-8013512%40mail.ninewire.com"
+       TITLE="[X Servers] mod_rewrite question">list-themacintoshguy at fsck.net
+       </A><BR>
+    <I>Sat Aug 16 02:17:24 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000209.html">[X Servers] mod_rewrite question
+</A></li>
+        <LI>Next message: <A HREF="000211.html">[X Servers] mod_rewrite question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#210">[ date ]</a>
+              <a href="thread.html#210">[ thread ]</a>
+              <a href="subject.html#210">[ subject ]</a>
+              <a href="author.html#210">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Fri, Aug 15, 2003 at 11:04:44AM -0400, John May wrote:
+:<i> 
+</I>:<i> To all you mod_rewrite gurus:
+</I>:<i> 
+</I>:<i> I'm using a mod_rewrite rule as follows:
+</I>:<i> 
+</I>:<i> RewriteRule ^(.*)HostedStore.LassoApp(.*) 
+</I>:<i> $1HostedStore_20030529.LassoApp$2 [R,NE]
+</I>:<i> 
+</I>:<i> to replace &quot;HostedStore.LassoApp&quot; with 
+</I>:<i> &quot;HostedStore_20030529.LassoApp&quot; in a URL, while preserving search 
+</I>:<i> arguments.
+</I>:<i> 
+</I>:<i> Right now, I'm using the [R] modifier to force a redirect, to get 
+</I>:<i> Lasso to process the new URL instead of the old one.  Does anyone 
+</I>:<i> know, however, if there's a way to get mod_rewrite to have Lasso 
+</I>:<i> process the new version of the URL WITHOUT having to do a redirect?
+</I>
+Don't include the '[R]' flags.  Rewritten URLs just get injected into
+the Apache server.
+
+
+-- 
+Eugene Lee
+<A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000209.html">[X Servers] mod_rewrite question
+</A></li>
+	<LI>Next message: <A HREF="000211.html">[X Servers] mod_rewrite question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#210">[ date ]</a>
+              <a href="thread.html#210">[ thread ]</a>
+              <a href="subject.html#210">[ subject ]</a>
+              <a href="author.html#210">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

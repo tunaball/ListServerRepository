@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] ssh sudo password in clear text
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20ssh%20sudo%20password%20in%20clear%20text&In-Reply-To=565F6790-8D93-43B8-B637-41663730E79E%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002831.html">
+   <LINK REL="Next"  HREF="002832.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] ssh sudo password in clear text</H1>
+    <B>Paul Hess</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20ssh%20sudo%20password%20in%20clear%20text&In-Reply-To=565F6790-8D93-43B8-B637-41663730E79E%40secure-computing.net"
+       TITLE="[X-Unix] ssh sudo password in clear text">hess at yacht.com
+       </A><BR>
+    <I>Wed Jun 20 02:01:11 PDT 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002831.html">[X-Unix] ssh sudo password in clear text
+</A></li>
+        <LI>Next message: <A HREF="002832.html">[X-Unix] ssh sudo password in clear text
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2833">[ date ]</a>
+              <a href="thread.html#2833">[ thread ]</a>
+              <a href="subject.html#2833">[ subject ]</a>
+              <a href="author.html#2833">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Sorry for the delay in replying, but this works like a charm.  Thanks!!!
+
+On Jun 10, 2007, at 4:45 PM, Eric F Crist wrote:
+
+&gt;<i> On Jun 10, 2007, at 3:01 PMJun 10, 2007, Paul Hess wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Jun 10, 2007, at 3:41 PM, Eric F Crist wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> On Jun 10, 2007, at 2:12 PMJun 10, 2007, Paul Hess wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Hi all,
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> I have a command in my bin directory as follows:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>    ssh someserver.com sudo mailstuff/sa-learn.sh
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> When it executes the remote sudo command, it prompts me for a  
+</I>&gt;&gt;&gt;&gt;<i> password which, when I type it, appears on my screen in  
+</I>&gt;&gt;&gt;&gt;<i> cleartext rather than hidden.  I am using the standard OS/X  
+</I>&gt;&gt;&gt;&gt;<i> terminal.
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Is there some way I can avoid having that password appear in  
+</I>&gt;&gt;&gt;&gt;<i> cleartext?
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> TIA!
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Paul,
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> If you're the owner of that box, I would recommend making that  
+</I>&gt;&gt;&gt;<i> password non-required through your sudo configuration.  An couple  
+</I>&gt;&gt;&gt;<i> entries such as follows would work nicely for you:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> username	ALL = NOPASSWD: /full/path/to/script/mailstuff/sa-learn.sh
+</I>&gt;&gt;&gt;<i> username	ALL = (ALL) ALL
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> (*There are ways to make this all on one line, but I write it  
+</I>&gt;&gt;&gt;<i> this way for readability.  See man sudoers(5) for more examples)
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> The first entry allows the command, and only that command, to be  
+</I>&gt;&gt;&gt;<i> executed with sudo, without a password.  A great feature if  
+</I>&gt;&gt;&gt;<i> you're automating anything that requires sudo access (some  
+</I>&gt;&gt;&gt;<i> questionable web site packages require this (oreon, www.oreon- 
+</I>&gt;&gt;&gt;<i> project.org, for one).
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> The second command allows your user to execute all other commands  
+</I>&gt;&gt;&gt;<i> via sudo, requiring a password.
+</I>&gt;&gt;&gt;<i> The full path above is required for any security conscious  
+</I>&gt;&gt;&gt;<i> administrator, otherwise, if I got access to username's account,  
+</I>&gt;&gt;&gt;<i> I could create any arbitrary mailstuff directory with an sa- 
+</I>&gt;&gt;&gt;<i> learn.sh script within and execute any command I wanted as root,  
+</I>&gt;&gt;&gt;<i> without having to know your password.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> My recommendation would be to use /etc/crontab or AT to perform  
+</I>&gt;&gt;&gt;<i> the above task, automatically, at your predetermined intervals.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> HTH.  If there's any questions you've got, let me know, I can  
+</I>&gt;&gt;&gt;<i> possibly help you out.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> -----
+</I>&gt;&gt;&gt;<i> Eric F Crist
+</I>&gt;&gt;&gt;<i> Secure Computing Networks
+</I>&gt;<i>
+</I>&gt;&gt;<i> Hi Eric,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I don't have exclusive access to that machine, but I suppose if I  
+</I>&gt;&gt;<i> make the sa-learn.sh script only editable by the super-user I  
+</I>&gt;&gt;<i> should be pretty safe. (otherwise someone could edit it to do  
+</I>&gt;&gt;<i> whatever they want with no pw required!).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Instead of making no PW required, is there some way I can supply  
+</I>&gt;&gt;<i> the password within the command line on my calling machine?   I  
+</I>&gt;&gt;<i> have control over that one so I don't really mind embedding the  
+</I>&gt;&gt;<i> password into the script.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Thanks for the tips!
+</I>&gt;<i>
+</I>&gt;<i> Paul,
+</I>&gt;<i>
+</I>&gt;<i> The NOPASSWD entry listed in my previous email will ONLY allow  
+</I>&gt;<i> username to execute that command without a password, not just any  
+</I>&gt;<i> user on the system, if that makes you feel better.  If, however,  
+</I>&gt;<i> you still want to execute the command while supplying the password  
+</I>&gt;<i> yourself, a command such as this should work:
+</I>&gt;<i>
+</I>&gt;<i> echo &quot;password&quot; | ssh someserver.com sudo mailstuff/sa-learn.sh
+</I>&gt;<i>
+</I>&gt;<i> HTH
+</I>&gt;<i>
+</I>&gt;<i> -----
+</I>&gt;<i> Eric F Crist
+</I>&gt;<i> Secure Computing Networks
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+</PRE>
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002831.html">[X-Unix] ssh sudo password in clear text
+</A></li>
+	<LI>Next message: <A HREF="002832.html">[X-Unix] ssh sudo password in clear text
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2833">[ date ]</a>
+              <a href="thread.html#2833">[ thread ]</a>
+              <a href="subject.html#2833">[ subject ]</a>
+              <a href="author.html#2833">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] problems setting up Windows Sharing
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20problems%20setting%20up%20Windows%20Sharing&In-Reply-To=BDD5E859.E6F%25rgilmor%40uwo.ca">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001932.html">
+   <LINK REL="Next"  HREF="001936.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] problems setting up Windows Sharing</H1>
+    <B>Dominic Ibarra</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20problems%20setting%20up%20Windows%20Sharing&In-Reply-To=BDD5E859.E6F%25rgilmor%40uwo.ca"
+       TITLE="[X4U] problems setting up Windows Sharing">dibarra at mindspring.com
+       </A><BR>
+    <I>Fri Dec  3 07:21:32 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001932.html">[X4U] problems setting up Windows Sharing
+</A></li>
+        <LI>Next message: <A HREF="001936.html">[X4U] problems setting up Windows Sharing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1933">[ date ]</a>
+              <a href="thread.html#1933">[ thread ]</a>
+              <a href="subject.html#1933">[ subject ]</a>
+              <a href="author.html#1933">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I would agree with Richard that you will have more success sharing a 
+Windows directory and mounting that on your mac. You can then use a 
+simple SMB protocol to mount the share.
+
+I do use Windows sharing on occasion and it actually works OK. The 
+major problem being the same problem with OSX as a whole, that you 
+cannot choose the directory to share like you can in the evil world of 
+windows. A Windows Share on your Mac will share out your entire Home 
+directory. Browsing does not always work, but the path is \\&lt;Mac name 
+or IP&gt;\&lt;user short name&gt;. So a sample would be \\Mac5\chucky or 
+\\192.168.0.121\chucky. IP is probably the best way to go, but make 
+sure to use your User's short name.
+
+I hope this helps.
+
+dominic
+
+
+On Dec 3, 2004, at 8:54 AM, Richard Gilmore wrote:
+
+&gt;<i> You're likely to have more success accessing the PC from the Mac than 
+</I>&gt;<i> the
+</I>&gt;<i> other way around,  I think &quot;Windows Sharing&quot; just means being able to 
+</I>&gt;<i> access
+</I>&gt;<i> a Windows volume from the Mac. I work in a mixed PC/Mac environment 
+</I>&gt;<i> and I've
+</I>&gt;<i> not seen it work the other way around, but having said that I'll have 
+</I>&gt;<i> to
+</I>&gt;<i> give it a try. You'll need the IP number of the PC to access it from 
+</I>&gt;<i> OSX
+</I>&gt;<i> from under the GO menu in the form: <A HREF="smb://(insert">smb://(insert</A> IP address)
+</I>&gt;<i>
+</I>&gt;<i> AFP: Apple File Protocol is what we use to access a Mac from another 
+</I>&gt;<i> Mac the
+</I>&gt;<i> address looks like: <A HREF="afp://(IP">afp://(IP</A> number) I don't think PCs understand this
+</I>&gt;<i> protocol at all but I'll have to check to make sure. Check the Apple 
+</I>&gt;<i> website
+</I>&gt;<i> for more detail.
+</I>&gt;<i>
+</I>&gt;<i> Is the file sharing setup properly on the PC? This needs to be correct 
+</I>&gt;<i> for
+</I>&gt;<i> the Mac to access it. Is there a server on the system? If so setting 
+</I>&gt;<i> up  a
+</I>&gt;<i> shared volume there might be the easiest way for both parties to share
+</I>&gt;<i> files.
+</I>&gt;<i>
+</I>&gt;<i> Richard
+</I>&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I can't get Windows Sharing working properly (first time I try).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The checkbox for &quot;Windows Sharing&quot; in Sharing is checked, and there's 
+</I>&gt;&gt;<i> a
+</I>&gt;&gt;<i> Public folder in the Home of user foo. There's a label when you select
+</I>&gt;&gt;<i> Windows Sharing that says that the computer will be accessible to
+</I>&gt;&gt;<i> Windows users as \\computer.name\foo. The firewall is off in all the
+</I>&gt;&gt;<i> services.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Nevertheless, when we try that address from the XP of a coworker
+</I>&gt;&gt;<i> (computers connected through the company's LAN) an authentication
+</I>&gt;&gt;<i> dialog shows up and I can't even log in with the very user foo. Is the
+</I>&gt;&gt;<i> expected usage not to have an authentication dialog at all?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Searching the web I founded screenshots of Jaguar with a checkbox
+</I>&gt;&gt;<i> &quot;Allow this user to log in from Windows&quot; in the user profile panel, 
+</I>&gt;&gt;<i> but
+</I>&gt;&gt;<i> I can't find it in Panther.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Anyone got it working? Any hint?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> -- fxn
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X4U mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">X4U at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">http://listserver.themacintoshguy.com/mailman/listinfo/x4u</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001932.html">[X4U] problems setting up Windows Sharing
+</A></li>
+	<LI>Next message: <A HREF="001936.html">[X4U] problems setting up Windows Sharing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1933">[ date ]</a>
+              <a href="thread.html#1933">[ thread ]</a>
+              <a href="subject.html#1933">[ subject ]</a>
+              <a href="author.html#1933">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

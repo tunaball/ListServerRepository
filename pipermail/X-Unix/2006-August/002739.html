@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Bash scripting Question - (off-list), slightly OT
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Bash%20scripting%20Question%20-%20%28off-list%29%2C%20slightly%20OT&In-Reply-To=4498D549-39F1-4E3C-BC5F-7D90D4D548FD%40gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002738.html">
+   <LINK REL="Next"  HREF="002740.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Bash scripting Question - (off-list), slightly OT</H1>
+    <B>Russell McGaha</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Bash%20scripting%20Question%20-%20%28off-list%29%2C%20slightly%20OT&In-Reply-To=4498D549-39F1-4E3C-BC5F-7D90D4D548FD%40gmail.com"
+       TITLE="[X-Unix] Bash scripting Question - (off-list), slightly OT">RussellMcGaha at hughes.net
+       </A><BR>
+    <I>Thu Aug 24 03:06:56 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002738.html">[X-Unix] Bash scripting Question
+</A></li>
+        <LI>Next message: <A HREF="002740.html">[X-Unix] find duplicates on server...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2739">[ date ]</a>
+              <a href="thread.html#2739">[ thread ]</a>
+              <a href="subject.html#2739">[ subject ]</a>
+              <a href="author.html#2739">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>David;
+	No, not really.  Because the DB is graphics heavy, it is a REAL PAIN  
+to use over a remote connection; so I : close the DB's, sync my local  
+copy, make changes, then sync those changes back to the server.
+
+Russell
+
+On Aug 23, 2006, at 9:01 PM, David Haines wrote:
+
+&gt;&gt;<i> Replying to David, Lasse, Stroller, and others;
+</I>&gt;&gt;<i> 	Guys [and/or Gals], THANKS for the tips and assistance.  With  
+</I>&gt;&gt;<i> your help, I've got a working version; which I'll paste at the  
+</I>&gt;&gt;<i> bottom of this message. Some of you had some questions which I'll  
+</I>&gt;&gt;<i> try to answer:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 	'fmsadmin list clients' does return an empty string if no clients  
+</I>&gt;&gt;<i> are connected
+</I>&gt;&gt;<i> 		Yes this is part of FileMaker Server 7
+</I>&gt;&gt;<i> 	'fmsadmin' does not SEEM to return proper exit codes
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The following code may be copied/used:
+</I>&gt;&gt;<i> 	if in it's entirety; if proper attribution is given
+</I>&gt;&gt;<i> 	if partially/modified: freely
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Explanation:
+</I>&gt;&gt;<i> 	It sends a message to all connected clients that it's going to  
+</I>&gt;&gt;<i> shut the server down, then waits for either; all clients to  
+</I>&gt;&gt;<i> disconnect or 3 minutes, giving an additional warning at 2  
+</I>&gt;&gt;<i> minutes, and then CLOSES all databases.
+</I>&gt;&gt;<i> 	A companion script re-opens the databases after I've finished  
+</I>&gt;&gt;<i> updating the databases via rsync from a remote location.
+</I>&gt;<i>
+</I>&gt;<i> &lt;snip&gt;
+</I>&gt;<i>
+</I>&gt;<i> Thanks for sharing :)
+</I>&gt;<i>
+</I>&gt;<i> Now getting off-topic for the OS X-Unix mailing list, but I have to  
+</I>&gt;<i> ask: is this to safely backup FM dbs ? Close them before backing  
+</I>&gt;<i> up ? FM 7 does have built-in backups that can be scheduled. Since  
+</I>&gt;<i> it handles (in theory) potential r/w/locking contention(s), you  
+</I>&gt;<i> could then take the backups it makes and rsync them or what-have-you.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002738.html">[X-Unix] Bash scripting Question
+</A></li>
+	<LI>Next message: <A HREF="002740.html">[X-Unix] find duplicates on server...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2739">[ date ]</a>
+              <a href="thread.html#2739">[ thread ]</a>
+              <a href="subject.html#2739">[ subject ]</a>
+              <a href="author.html#2739">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] NFS share?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20NFS%20share%3F&In-Reply-To=192ACB0A-50B1-11D9-9023-000A95E71AA0%40optusnet.com.au">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001402.html">
+   <LINK REL="Next"  HREF="001404.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] NFS share?</H1>
+    <B>Alexandre Gauthier</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20NFS%20share%3F&In-Reply-To=192ACB0A-50B1-11D9-9023-000A95E71AA0%40optusnet.com.au"
+       TITLE="[X-Unix] NFS share?">supernaut at underwares.org
+       </A><BR>
+    <I>Fri Dec 17 22:38:25 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001402.html">[X-Unix] NFS share?
+</A></li>
+        <LI>Next message: <A HREF="001404.html">[X-Unix] Beginners questions on Unix Mail
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1403">[ date ]</a>
+              <a href="thread.html#1403">[ thread ]</a>
+              <a href="subject.html#1403">[ subject ]</a>
+              <a href="author.html#1403">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>John Davis wrote:
+
+&gt;<i> Hi there everyone,
+</I>&gt;<i>                             I am attempting to create an NFS share 
+</I>&gt;<i> directory on my ibook  in the  /Users/Shared/ location , I named this 
+</I>&gt;<i> directory fc3 as I have placed some ISO images there 
+</I>
+Hello John! Sounds good, so you want to export /Users/Shared/fc3?
+
+&gt;<i> so I can install Fedora Core 3 onto my imac from the ibook.
+</I>
+Uh... wait, let me read this again. There is a PPC version of Fedora 
+Core? I tought it was x86 only... If not, well, do enlighten me :)
+
+&gt;<i> I can't find much info anywhere as to what I have to do to configure 
+</I>&gt;<i> the NFS server. I added an exports file ( /Users/Shared/fc3 ro 
+</I>&gt;<i> mapall=nobody 192.254.129.117 ) to the &quot;/etc&quot;  directory and was 
+</I>&gt;<i> wondering exactly what it is I have to add to this file? 
+</I>
+Try putting this in /etc/exports
+
+/Users/Shared/fc3   10.0.0.1(ro,sync,other_options)
+
+Replace 10.0.0.1 by the ip of the client. and other_options by other 
+options you might have. The syntax of the exports file is quite simple:
+
+/path/to/export   host(options)
+
+Host can be either an ip, a hostname or a subnet. (for instance 
+192.168.0.0/24 or 10.0.0.0/8)
+You can make use of wildcards. (i.e. workstation-*.network.company.com
+
+As for option, they are a list separated by comas which will define the 
+options for that particular host or subnet. For instance 
+172.16.64.0.1(ro,sync,no_root_squash)
+
+Would give read only access (as opposed to &quot;rw&quot;, read write), sync'ed 
+(as opposed to &quot;async&quot; asynchronous) and it would allow uid 0 (root) 
+permissions to be inherited accross the share. (Don't do that unless you 
+know what you're doing.) for 172.16.64.1. NFS effectively maps UIDs 
+accross machine. So if you have a user john with uid 650 on machine A 
+and Paul with uid 650 on machine B they're going to be the very same 
+person as far as the OS is concerned. If you have John (uid 600) and 
+John (uid 610), they will be different persons accross NFS shares. This 
+behaviour is disabled for root (uid 0) by default -- no root squash 
+prevents this. Looking at the man page would give more info. But I see 
+up there that you seem to specify mapall=nobody. I don't recall ever 
+using that directive, but the proper way to achieve this, i think, would 
+be by using the &quot;squash_all&quot; option -- which will bind everyone to an 
+anonymous gid and uid, which can be defined by &quot;anonuid&quot; and &quot;anongid&quot;.
+
+Once you're done editing the file, you can issue the command
+
+#exportfs -a
+
+To apply the changes to the running NFS server.
+
+&gt;<i> I have connected to the ibook from the imac via eth0  after booting 
+</I>&gt;<i> from the &quot;boot.iso&quot; disk and I get the the message &quot;This directory 
+</I>&gt;<i> cannot be mounted by the NFS server&quot;.
+</I>
+
+How do you boot the &quot;boot.iso&quot; disk?
+
+&gt;<i>
+</I>&gt;<i>                           Obviously I am leaving something out and as 
+</I>&gt;<i> I am but a novice at this am finding it a bit of a challenge!
+</I>
+Well, is that NFS share under another nfs share? There is a recursion 
+check in NFS that will prevent data from being displayed so people 
+cannot go around your restrictions. It is possible to disable that 
+restriction (no_subtree_checking or something like that, I don't have an 
+NFS man page handy). Would you mind giving more details on the procedure? :)
+
+-- 
+Alexandre Gauthier
+<A HREF="../../../mailman/listinfo/x-unix.html">supernaut at underwares.org</A>
+
+underwares.org
+Obscure IT knowledge Open Database
+
+The human brain operates at only 10% of its capacity. The rest is overhead for the operating system.
+
+</PRE>
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001402.html">[X-Unix] NFS share?
+</A></li>
+	<LI>Next message: <A HREF="001404.html">[X-Unix] Beginners questions on Unix Mail
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1403">[ date ]</a>
+              <a href="thread.html#1403">[ thread ]</a>
+              <a href="subject.html#1403">[ subject ]</a>
+              <a href="author.html#1403">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

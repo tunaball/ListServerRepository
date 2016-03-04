@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] PubSubAgent
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20PubSubAgent&In-Reply-To=2F5D5F36-5F49-4F6C-9A20-94C871D0C634%40consultant.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="020654.html">
+   <LINK REL="Next"  HREF="020657.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] PubSubAgent</H1>
+    <B>Kim Gammelg&#229;rd</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20PubSubAgent&In-Reply-To=2F5D5F36-5F49-4F6C-9A20-94C871D0C634%40consultant.com"
+       TITLE="[Ti] PubSubAgent">kgani at mac.com
+       </A><BR>
+    <I>Mon Dec 24 07:03:55 PST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="020654.html">[Ti] PubSubAgent
+</A></li>
+        <LI>Next message: <A HREF="020657.html">[Ti] PubSubAgent
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20655">[ date ]</a>
+              <a href="thread.html#20655">[ thread ]</a>
+              <a href="subject.html#20655">[ subject ]</a>
+              <a href="author.html#20655">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Okay, I think it makes a bit more sense now :-) This will only be a  
+guess, though, so it may not help you all the way.
+
+The PubSubAgent is an application that checks RSS and Atom feeds  
+regularly. (open the Terminal and type &quot;man pubsub&quot; without the  
+quotes). I will almost bet that it is Safari or Mail that is trying to  
+update one of your feeds, but it could be any application that is  
+using the pubsub-utility.
+
+The reason why it is giving the error message is probably due to a  
+feed that think that it needs authentication using an X509Anchor in  
+the Keychain. I would probably open the Keychain application and run a  
+check and repair on your keychains twice (there has been reports that  
+the second time is necessary for some actions to happen). If that  
+doesn't bring anything, I would have a look at the X509Anchors in the  
+keychain to see if they all have valid dates, and after a backup of  
+the keychain, deleting the ones that are expired.
+
+If this doesn't bring you anywhere, I would go through your feeds and  
+try to isolate the culprit, backing up your bookmarks first.
+
+I hope that at least one of these two things will help. I could be a  
+lot more specific in the actual actions, so do let us know if I am too  
+superficial in my description of what I would do.
+
+Best,
+
+Kim
+
+
+
+Den 24/12/2007 kl. 15.03 skrev Dr. Trevor J. Hutley:
+
+&gt;&gt;<i> What messages are you getting
+</I>&gt;<i>
+</I>&gt;<i> One message says &quot;PubSubAgent wants to use the TJH keychain ....  
+</I>&gt;<i> enter password&quot; and the other says &quot; PubSubAgent wants to use the  
+</I>&gt;<i> confidential information stored in idisk.mac.com in your keychain,  
+</I>&gt;<i> do you want to allow access to this item&quot;?  If if I check Always  
+</I>&gt;<i> Allow, it will ask me next time..... (bug within a bug?)
+</I>&gt;<i>
+</I>&gt;<i> These messages appear a few times per hour, even during movies or  
+</I>&gt;<i> anything........
+</I>&gt;<i>
+</I>&gt;&gt;<i> and what does it say in the Console.log/system.log
+</I>&gt;<i>
+</I>&gt;<i> Interesting stuff in this Log, ... but the lines specific related to  
+</I>&gt;<i> the SubPubAgent I have appended to this email.
+</I>&gt;<i> They seem to contain a warning about obsolete anchors... ??!!  I  
+</I>&gt;<i> have no idea what this is referring to.
+</I>&gt;<i>
+</I>&gt;&gt;<i> I have not seen anything on my couple of Leopard systems, so it  
+</I>&gt;&gt;<i> could be a widget, a menu item, a preference pane, a wrong  
+</I>&gt;&gt;<i> permission, a corrupted pref-file, an application error etc.
+</I>&gt;<i>
+</I>&gt;<i> Any clue from what I wrote above or the Log entries below?
+</I>&gt;<i>
+</I>&gt;<i> Trevor
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Dec 24 01:43:59 Trevors-PowerBook-G4-15 /System/Library/Frameworks/ 
+</I>&gt;<i> PubSub.framework/Versions/A/Resources/PubSubAgent.app/Contents/MacOS/ 
+</I>&gt;<i> PubSubAgent[559]: Warning: accessing obsolete X509Anchors.
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="020654.html">[Ti] PubSubAgent
+</A></li>
+	<LI>Next message: <A HREF="020657.html">[Ti] PubSubAgent
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20655">[ date ]</a>
+              <a href="thread.html#20655">[ thread ]</a>
+              <a href="subject.html#20655">[ subject ]</a>
+              <a href="author.html#20655">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

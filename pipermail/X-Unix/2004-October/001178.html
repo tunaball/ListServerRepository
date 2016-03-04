@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Grep and backreferences with BBEdit
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Grep%20and%20backreferences%20with%20BBEdit&In-Reply-To=5234264.1097604745923.JavaMail.nickscalise%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001177.html">
+   <LINK REL="Next"  HREF="001179.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Grep and backreferences with BBEdit</H1>
+    <B>Brian Medley</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Grep%20and%20backreferences%20with%20BBEdit&In-Reply-To=5234264.1097604745923.JavaMail.nickscalise%40mac.com"
+       TITLE="[X-Unix] Grep and backreferences with BBEdit">bpm-list-osx-unix at 4321.tv
+       </A><BR>
+    <I>Tue Oct 12 11:31:36 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001177.html">[X-Unix] Grep and backreferences with BBEdit
+</A></li>
+        <LI>Next message: <A HREF="001179.html">[X-Unix] Grep and backreferences with BBEdit
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1178">[ date ]</a>
+              <a href="thread.html#1178">[ thread ]</a>
+              <a href="subject.html#1178">[ subject ]</a>
+              <a href="author.html#1178">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Tue, Oct 12, 2004 at 01:12:25PM -0500, Nick Scalise wrote:
+
+&gt;<i> I do not have a strictly unix question. I am very weak at grep
+</I>&gt;<i> and could use some rudimentary help.
+</I>&gt;<i> 
+</I>&gt;<i> In BBEdit 6.5, I am wanting to do a search and replace for all
+</I>&gt;<i> occurances of &lt;a href=&quot;name.jpg&quot;&gt;, where 'name' is the
+</I>&gt;<i> variable. I want to add a images/ to the beginning of the
+</I>&gt;<i> 'name' variable.
+</I>&gt;<i> 
+</I>&gt;<i> So, I think I have the first part figured out, I find &lt;a
+</I>&gt;<i> href=&quot;[a-zA-Z0-9+]+.jpg&quot;&gt; using grep in BBEdit's find dialog,
+</I>&gt;<i> this seems to produce the desired result. Please let me know if
+</I>&gt;<i> there is a better way.
+</I>&gt;<i> 
+</I>&gt;<i> Where I am lost is the backreference part. What is the pattern
+</I>&gt;<i> I would add in the replace dialog that would add 'images/'  so
+</I>&gt;<i> that the original &lt;a href='name.jpg'&gt; would end up &lt;a
+</I>&gt;<i> href=&quot;images/name.jpg&quot;&gt;
+</I>
+Even though you didn't mention it, I would use perl:
+
+    $ cat test.html
+    &lt;a href=&quot;name.jpg&quot;&gt;
+    &lt;h1&gt;blah&lt;/h1&gt;
+    &lt;a href=&quot;name2.jpg&quot;&gt;
+    name2.jpg
+    &lt;a href=&quot;blue.jpg&quot;&gt;
+    $ perl -p -i.bak -e 's#&lt;a href=&quot;([\w\.]+)&quot;&gt;#&lt;a href=&quot;images/$1&quot;&gt;#' test.html
+    $ cat test.html
+    &lt;a href=&quot;images/name.jpg&quot;&gt;
+    &lt;h1&gt;blah&lt;/h1&gt;
+    &lt;a href=&quot;images/name2.jpg&quot;&gt;
+    name2.jpg
+    &lt;a href=&quot;images/blue.jpg&quot;&gt;
+    $ cat test.html.bak 
+    &lt;a href=&quot;name.jpg&quot;&gt;
+    &lt;h1&gt;blah&lt;/h1&gt;
+    &lt;a href=&quot;name2.jpg&quot;&gt;
+    name2.jpg
+    &lt;a href=&quot;blue.jpg&quot;&gt;
+    $
+
+'perldoc perlrun' for more details
+
+-- 
+~`^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-., \|/  (___)  \|/ _,.-=~'`^`
+                                      @~./'O o`\.~@
+      &quot;Knowledge is Power&quot;           /__( \___/ )__\  *PPPFFBT!*
+         -- Francis Bacon               `\__`U_/'
+ _.-=~'``'~=-._.-=~'``'~=-._.-=~'`^`'~= &lt;____|'  ^^`'~=-.,__,.-=
+~'^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-.,__,.-==--^'~=-.,__,.-=~'`^`
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001177.html">[X-Unix] Grep and backreferences with BBEdit
+</A></li>
+	<LI>Next message: <A HREF="001179.html">[X-Unix] Grep and backreferences with BBEdit
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1178">[ date ]</a>
+              <a href="thread.html#1178">[ thread ]</a>
+              <a href="subject.html#1178">[ subject ]</a>
+              <a href="author.html#1178">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

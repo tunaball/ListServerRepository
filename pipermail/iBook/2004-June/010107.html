@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [P1] cp 101 question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20cp%20101%20question&In-Reply-To=list-13744823%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010106.html">
+   <LINK REL="Next"  HREF="010108.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[P1] cp 101 question</H1>
+    <B>Mike Wallinga</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20cp%20101%20question&In-Reply-To=list-13744823%40mail.ninewire.com"
+       TITLE="[P1] cp 101 question">mwallinga at mailup.net
+       </A><BR>
+    <I>Sat Jun  5 18:24:14 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010106.html">trashing invisible files
+</A></li>
+        <LI>Next message: <A HREF="010108.html">[P1] Looking for Brand New G3 900 14&quot; iBook
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10107">[ date ]</a>
+              <a href="thread.html#10107">[ thread ]</a>
+              <a href="subject.html#10107">[ subject ]</a>
+              <a href="author.html#10107">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Scott,
+
+As far as I can tell, the cp -R command will only recursively copy
+subdirectories if your source argument is a directory itself.  In other
+words, using *.doc as your source argument is what is causing the
+problem.  But, if you only want the Word documents, you need to use that
+pattern to match results somehow.
+
+I'm no UNIX guru, so there might be a better way to do this.  But, if my
+solution is any indication, your question certainly doesn't qualify as
+&quot;cp 101&quot; caliber!  :-)  Here it is:
+
+find . -name &quot;*.doc&quot; -exec cp {} /volumes/myfirewire  \;
+
+The command assumes you're in the directory where you want to start your
+search (that's what the period means).  When you find a file whose name
+ends in .doc, the find command will execute the cp command, replace the
+{} with the path and filename of the file it just found, and copy it to
+/volumes/myfirewire.  The \; needs to be there to tell the -exec part
+where the command to execute ends.
+
+I did a simple test on my computer and this worked for me, but like I
+said, I don't pretend to be a UNIX guru, so I may have missed something. 
+Anyway, I hope this helps, or at least gets you on the right track to
+accomplishing your goal!
+
+- Mike W.
+
+
+
+On Sat, 5 Jun 2004 16:27:33 -0500, &quot;Scott Warren&quot; &lt;<A HREF="../../../mailman/listinfo/ibook.html">sw at shelton.org</A>&gt; said:
+&gt;<i> I am wanting to back up just .doc files in all of their various 
+</I>&gt;<i> directories onto my firewire drive.  What is the Mac/Unix version of
+</I>&gt;<i> 	xcopy *.doc E:\backup -r
+</I>&gt;<i> 
+</I>&gt;<i> I have tried  cp -R *.doc \volumes\myfirewire    and this only copies 
+</I>&gt;<i> whats in the current directory and does not recurs the tree.
+</I>&gt;<i> 
+</I>&gt;<i> Tips??
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010106.html">trashing invisible files
+</A></li>
+	<LI>Next message: <A HREF="010108.html">[P1] Looking for Brand New G3 900 14&quot; iBook
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10107">[ date ]</a>
+              <a href="thread.html#10107">[ thread ]</a>
+              <a href="subject.html#10107">[ subject ]</a>
+              <a href="author.html#10107">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

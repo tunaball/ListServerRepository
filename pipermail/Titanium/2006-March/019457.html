@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] powerbook crashing [panic.log]
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20powerbook%20crashing%20%5Bpanic.log%5D&In-Reply-To=208DA393-EBAC-4109-9005-1AF96F089C4F%40cae.wisc.edu">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="019451.html">
+   <LINK REL="Next"  HREF="019453.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] powerbook crashing [panic.log]</H1>
+    <B>Dr Trevor J. Hutley</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20powerbook%20crashing%20%5Bpanic.log%5D&In-Reply-To=208DA393-EBAC-4109-9005-1AF96F089C4F%40cae.wisc.edu"
+       TITLE="[Ti] powerbook crashing [panic.log]">TrevorHutley at consultant.com
+       </A><BR>
+    <I>Thu Mar 23 06:41:25 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="019451.html">[Ti] powerbook crashing [panic.log]
+</A></li>
+        <LI>Next message: <A HREF="019453.html">[Ti] iPhoto problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19457">[ date ]</a>
+              <a href="thread.html#19457">[ thread ]</a>
+              <a href="subject.html#19457">[ subject ]</a>
+              <a href="author.html#19457">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 23 Mar 2006, at 03:03, Kynan Shook wrote:
+
+&gt;<i> Well, in theory, they should all get logged, but I have seen them  
+</I>&gt;<i> get missed myself, and I'm not always sure why.
+</I>&gt;<i>
+</I>&gt;<i> In 10.2, when they changed from the behavior of dumping ugly text  
+</I>&gt;<i> all over your screen to putting up a multi-lingual message, they  
+</I>&gt;<i> redirected the text to the PRAM.  Then, the next time you reboot,  
+</I>&gt;<i> the OS sees that there is a panic log in the PRAM, and writes it to  
+</I>&gt;<i> disk.  It's done this way because writing to the PRAM is a more  
+</I>&gt;<i> basic access; once the kernel has panicked, there is no guarantee  
+</I>&gt;<i> that the OS is in a state where it would be possible to write to  
+</I>&gt;<i> the disk.
+</I>
+THANK YOU for this very clear explanation - unknown to me - about the  
+mechanism of saving a panic log.
+&gt;<i>
+</I>&gt;<i> There are two reasons why a panic won't be logged.  The first is if  
+</I>&gt;<i> you have turned on remote debugging in Open Firmware - this is used  
+</I>&gt;<i> by people who write kernel code.  Once the kernel panics, they can  
+</I>&gt;<i> use a second computer to tap into memory and the kernel and see  
+</I>&gt;<i> what went wrong.  You would almost certainly know if you had turned  
+</I>&gt;<i> this on.  If you think you might've turned it on, type &quot;nvram boot- 
+</I>&gt;<i> args&quot; on the command line; if it prints out just &quot;boot-args&quot;, it's  
+</I>&gt;<i> off.
+</I>
+Just did that, and it is off.....
+&gt;<i>
+</I>&gt;<i> The other time it won't save the panic log is if you reset PRAM.
+</I>
+almost never do that
+
+&gt;<i> One could do this inadvertently by using the button on the back of  
+</I>&gt;<i> certain TiBooks, under the keyboard of others, or by pressing a  
+</I>&gt;<i> certain key combo.  To properly reboot a panicked Mac, you should  
+</I>&gt;<i> either press Command-Control-Power or hold down the power button  
+</I>&gt;<i> for several seconds.
+</I>
+that is what I do
+
+&gt;<i> Also, I believe the information is only saved for 1 reboot, so if  
+</I>&gt;<i> you boot into Single User Mode
+</I>
+I think that is the explanation.  After a kernel panic, I typically  
+boot in to single user mode and run fsck or applejack, in case the  
+panic has damaged something.
+
+Your very careful thinking and systematic analysis has explained why  
+I have few panics logged, and I have understood quite a few new  
+things about MacOS.
+Thank you very much.
+
+regards,  Trevor
+  
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="019451.html">[Ti] powerbook crashing [panic.log]
+</A></li>
+	<LI>Next message: <A HREF="019453.html">[Ti] iPhoto problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19457">[ date ]</a>
+              <a href="thread.html#19457">[ thread ]</a>
+              <a href="subject.html#19457">[ subject ]</a>
+              <a href="author.html#19457">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

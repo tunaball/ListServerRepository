@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Servers] XServe RAID 1 (mirroring)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20XServe%20RAID%201%20%28mirroring%29&In-Reply-To=list-7010257%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000185.html">
+   <LINK REL="Next"  HREF="000186.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Servers] XServe RAID 1 (mirroring)</H1>
+    <B>Peter Clarke</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20XServe%20RAID%201%20%28mirroring%29&In-Reply-To=list-7010257%40mail.ninewire.com"
+       TITLE="[X Servers] XServe RAID 1 (mirroring)">P.J.Clarke at westminster.ac.uk
+       </A><BR>
+    <I>Tue Jul  1 09:05:46 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000185.html">[X Servers] XServe RAID 1 (mirroring)
+</A></li>
+        <LI>Next message: <A HREF="000186.html">[X Servers] XServe RAID 1 (mirroring)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#184">[ date ]</a>
+              <a href="thread.html#184">[ thread ]</a>
+              <a href="subject.html#184">[ subject ]</a>
+              <a href="author.html#184">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>Peter Clarke wrote on Tuesday, July 1, 2003:
+</I>&gt;&gt;<i>Here is an interesting scenario:
+</I>&gt;&gt;<i>    You want to replace the faulty disk and re-raid.
+</I>&gt;&gt;<i>    The server has to be taken off-line,
+</I>&gt;&gt;<i>    The replacement disk fitted.
+</I>&gt;<i>
+</I>&gt;<i>This actually surprises me.  I thought all of the drives in the 
+</I>&gt;<i>XServe were hot-swappable?
+</I>
+	They are.
+
+&gt;<i>  As such, I would have assumed that one could hot-swap out a bad 
+</I>&gt;<i>drive and let it re-mirror automatically.
+</I>
+You may be right - I did say I didn't have one
+
+But it does not re-raid automatically - it has to be done manually.
+- at least that's as far as I have been able to find out.
+
+- This is an example of where Apple don't provide enough information
+- I would like to see the 'exact procedure' fully documented in their
+technical notes - but it's not, it's hardly even mentioned.
+
+Instead they offer telephone support to tell you how to do it
+- provided that you have taken out a maintenance contract with them
+- (which is perhaps a good idea anyway)
+
+Really though, such a procedure should be clearly written down in the 
+full technical documentation.
+
+- Perhaps someone (who actually has an XServer and has done this) can
+correct me on this - but I think the process I outlined (not fully)
+is what's needed. (I didn't say you need to run 'disk utility' to 
+re-raid the disks.)
+
+Personally I wouldn't be happy buying an XServe without knowing 
+exactly how to fix it - to my mind Apple not documenting this in the 
+tech docs, is not good.
+- I even asked this question at a seminar, and got the speal about 
+taking out a maintenance contract then it would be OK.
+
+A disk failure is the most likely cause of failure, being able to 
+recover from this is essential. - It's bound to happen at some point, 
+might take several years but eventually it will happen.
+By the way the 'SMART' drives usually give you some warning about 
+drive problems prior to a major failure.
+
+
+&gt;<i>  &gt;   The server booted from ANOTHER disk
+</I>&gt;&gt;<i>    (either firewire or CD)  (During the re-raiding process)
+</I>&gt;&gt;<i>    - You can't run off the second disk 'during re-raiding'
+</I>&gt;<i>
+</I>&gt;<i>OK, that is somewhat nettlesome.  I suppose I could have a third 
+</I>&gt;<i>drive as an emergency boot volume.
+</I>
+	- that's what I was suggesting, keeping it synced using psync.
+	- and a cron script, to backup 'changed' files.
+
+	That way you can reboot from that drive, and re-raid the others.
+
+
+&gt;<i>  This XServe will be at a co-lo facility, so traipsing in with an 
+</I>&gt;<i>external drive to plug in is not that convenient.  (Admittedly, if I 
+</I>&gt;<i>have a drive die I'll be visiting the co-lo anyway -- so maybe 
+</I>&gt;<i>that's not a valid concern.)
+</I>&gt;<i>
+</I>&gt;<i>But three drives would, I think, be overkill for this server.  I 
+</I>&gt;<i>don't need 99.99% uptime.  99% would be more than adequate.
+</I>
+Two's probably good enough then.
+- But at least it's nice to know what your options are.
+
+By the way: '99% uptime' actually means 3 whole days per year off-line...
+
+&gt;<i>Thanks for the feedback.  I'm thinking now more along the lines of 
+</I>&gt;<i>two drives with separate, bootable, volumes.  I could install 
+</I>&gt;<i>Retrospect on both and have the main volume backup to the secondary 
+</I>&gt;<i>drive every 6 hours or so (create two partitions on the second 
+</I>&gt;<i>drive, one OS and one backup volume).  A failure of the primary 
+</I>&gt;<i>drive would only require a reboot from the secondary drive and a 
+</I>&gt;<i>restore.  It might even be possible to accomplish that remotely if 
+</I>&gt;<i>it's not a hardware failure.
+</I>
+Where the raid option helps though, is that if a drive fails
+- the system keeps running
+- you can then fix it when it suits you. (more or less).
+
+With the method you mention - when it fails, it goes off line until 
+someone fixes it.  Although in this case, the 'minimum fix' would be 
+to simply reboot the system - it would find the second drive then, 
+and boot from that.
+
+Hopefully then someone would tell you they had to do this, or you 
+check regularly to see how it is.  (The Xserve has tools to do this.)
+
+Using raided disks keeps things working, without having to reboot, so 
+you get to pick when to do the fix.
+
+-- 
+Peter Clarke, Harrow Campus Computing Services,  Technical Support. (Projects)
+Ext 4685; Room L1.07; Learning Resource Centre.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000185.html">[X Servers] XServe RAID 1 (mirroring)
+</A></li>
+	<LI>Next message: <A HREF="000186.html">[X Servers] XServe RAID 1 (mirroring)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#184">[ date ]</a>
+              <a href="thread.html#184">[ thread ]</a>
+              <a href="subject.html#184">[ subject ]</a>
+              <a href="author.html#184">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

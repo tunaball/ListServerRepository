@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Port Forwarding ssh using -R option 
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Port%20Forwarding%20ssh%20using%20-R%20option%20&In-Reply-To=list-10675433%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000234.html">
+   <LINK REL="Next"  HREF="000236.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Port Forwarding ssh using -R option </H1>
+    <B>Bill Vinson</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Port%20Forwarding%20ssh%20using%20-R%20option%20&In-Reply-To=list-10675433%40mail.ninewire.com"
+       TITLE="[X-Unix] Port Forwarding ssh using -R option ">mailing_lists at vinsonweb.com
+       </A><BR>
+    <I>Thu Feb  5 15:58:13 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000234.html">[X-Unix] Port Forwarding ssh using -R option 
+</A></li>
+        <LI>Next message: <A HREF="000236.html">[X-Unix] Port Forwarding ssh using -R option 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#235">[ date ]</a>
+              <a href="thread.html#235">[ thread ]</a>
+              <a href="subject.html#235">[ subject ]</a>
+              <a href="author.html#235">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>If your router will handle it, port forward another port to 22 on the 
+mac.  This works like the following:
+
+Router (PUBLIC_IP 22) -&gt; Xandros Linux (PRIVATE_IP 22)
+Router (PUBLIC_IP 1022) -&gt; Mac (PRIVATE_IP 22)
+
+So you still hit fakedns.dyndns.org just with different port numbers.  
+However, this all depends on the router supporting port forwarding.
+
+For ssh, -L is what you want.  For example,
+
+ssh -L $ANY_PORT:$PRIVATE_IP:22 $PUBLIC_IP
+
+Then open a new terminal and ssh -p $ANY_PORT <A HREF="../../../mailman/listinfo/x-unix.html">username at localhost</A>
+
+This can become much more sophisticated, but this is just an example.
+
+Bill
+
+On Feb 5, 2004, at 6:19 PM, Our Pal Al wrote:
+
+&gt;<i> At least I think the -R option is what I want.
+</I>&gt;<i>
+</I>&gt;<i> I've already got my home Mac listening to ssh on 22 as normal but 
+</I>&gt;<i> moved it
+</I>&gt;<i> behind a wireless router last night (doing ddns so I can still always 
+</I>&gt;<i> reach
+</I>&gt;<i> it from outside) and want to be able to ssh into my mac and my Xandros 
+</I>&gt;<i> linux
+</I>&gt;<i> box at will. I want to map port 22 on the router to the linux box and 
+</I>&gt;<i> then
+</I>&gt;<i> change the mac to listen to another port and I'll append that port # 
+</I>&gt;<i> when I
+</I>&gt;<i> ssh to it.
+</I>&gt;<i>
+</I>&gt;<i> Or maybe I'll do it the other way around once I figure out how to get 
+</I>&gt;<i> ssh to
+</I>&gt;<i> listen on another port. Once I've got the right syntax down I should 
+</I>&gt;<i> be able
+</I>&gt;<i> to change either but I can't get -R to work. Or is this even really the
+</I>&gt;<i> option I want? How can I get ssh to listen on another port? Right now 
+</I>&gt;<i> I hop
+</I>&gt;<i> from the mac to the linux box but I'd like to eliminate a second step 
+</I>&gt;<i> in
+</I>&gt;<i> getting to either.
+</I>&gt;<i>
+</I>&gt;<i> - opa
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000234.html">[X-Unix] Port Forwarding ssh using -R option 
+</A></li>
+	<LI>Next message: <A HREF="000236.html">[X-Unix] Port Forwarding ssh using -R option 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#235">[ date ]</a>
+              <a href="thread.html#235">[ thread ]</a>
+              <a href="subject.html#235">[ subject ]</a>
+              <a href="author.html#235">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

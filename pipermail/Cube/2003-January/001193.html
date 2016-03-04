@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [CUBE] modem issue
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20modem%20issue&In-Reply-To=list-4478289%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001191.html">
+   <LINK REL="Next"  HREF="001188.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[CUBE] modem issue</H1>
+    <B>mike</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20modem%20issue&In-Reply-To=list-4478289%40mail.ninewire.com"
+       TITLE="[CUBE] modem issue">mfoverbo at int287.k12.mn.us
+       </A><BR>
+    <I>Thu Jan 16 10:44:37 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001191.html">[CUBE] osx stuck on login
+</A></li>
+        <LI>Next message: <A HREF="001188.html">[CUBE] osx stuck on login
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1193">[ date ]</a>
+              <a href="thread.html#1193">[ thread ]</a>
+              <a href="subject.html#1193">[ subject ]</a>
+              <a href="author.html#1193">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+make sure one of the is loaded in the kernel (kext stands for kernel 
+extension, they live in /System/Library/Extensions/)
+
+# sudo kextstat | grep -i modem
+
+if nothing crops up, you could try to see if kextload complains about 
+them (I'm using InternalModemSupport, because that's what my laptop 
+reports).  I would run the 'sync' command first, in case you have a 
+vicious kernel panic / hang.
+
+# sudo kextload -n InternalModemSupport.kext
+
+if it doesn't complain, just load it up:
+
+# sudo kextload InternalModemSupport.kext
+
+you can update prebinding by running this from terminal.app (maybe a 
+backup is in order first -- don't blame me :-):
+
+# sudo update_prebinding -root / -force
+
+you could also try something to make sure the /dev entries for it are 
+there: on my machine, modem device entries seem to be /dev/cu.modem and 
+/dev/tty.modem.
+
+Make sure they're accessible to you by running these commands:
+
+# sudo chmod 666 /dev/tty.modem
+# sudo chmod 666 /dev/cu.modem
+
+best of luck - here be dragons.
+
+mike
+
+On Thursday, January 16, 2003, at 12:09 PM, Brenda Mitchell wrote:
+
+&gt;<i> Have a weird issue with a cube modem. Client has been using AOL 
+</I>&gt;<i> dial-up on OS X for several months with no problem (other than she 
+</I>&gt;<i> uses AOL and won't have DSL for another month or so.) Suddenly stopped 
+</I>&gt;<i> being able to access AOL from OS X side (heaven forbid we had the 
+</I>&gt;<i> exact error messages), but no problem with Classic AOL.  We have the 
+</I>&gt;<i> cube in my office now and upgraded it to Jaguar, etc. The X side does 
+</I>&gt;<i> not recognize the modem.
+</I>&gt;<i>
+</I>&gt;<i> Apple Modem 2.0 does not see the modem.
+</I>&gt;<i> Reinstalled AOL for OS X (new one for Jaguar). Message now says 
+</I>&gt;<i> &quot;unable to detect carrier&quot;.
+</I>&gt;<i> Did fsck -y, MacJanitor, Norton, reset PRAM, rebuilt desktop, now on 
+</I>&gt;<i> verge of chicken sacrifice....(that's a joke folks - no flames, 
+</I>&gt;<i> please).
+</I>&gt;<i>
+</I>&gt;<i> Any thoughts or ideas would be appreciated.
+</I>&gt;<i>
+</I>&gt;<i> Brenda Mitchell
+</I>&gt;<i> DataBanque Consulting, Inc.
+</I>&gt;<i> Miami, FL
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Cube email list FAQ
+</I>&gt;<i> <A HREF="http://www.themacintoshguy.com/lists/Cube.html">http://www.themacintoshguy.com/lists/Cube.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;<i> Mac ISP Serious Mac Internet Solutions From NineWire!   
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> T3Hub  |  3 Port USB Hub weighs less than an ounce!
+</I>&gt;<i> Dr. Bott|   &lt;<A HREF="http://www.drbott.com/prod/T3Hub.html">http://www.drbott.com/prod/T3Hub.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>   Cyberian   | Support this list when you buy at Outpost.com!
+</I>&gt;<i>   Outpost    | <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+</I>&gt;<i>
+</I>&gt;<i> ADC Extension | Extend the built in cable of your flat panel by 10 ft.
+</I>&gt;<i>  Dr. Bott    |    &lt;<A HREF="http://www.drbott.com/prod/ADCExtension.html">http://www.drbott.com/prod/ADCExtension.html</A>&gt;
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001191.html">[CUBE] osx stuck on login
+</A></li>
+	<LI>Next message: <A HREF="001188.html">[CUBE] osx stuck on login
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1193">[ date ]</a>
+              <a href="thread.html#1193">[ thread ]</a>
+              <a href="subject.html#1193">[ subject ]</a>
+              <a href="author.html#1193">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

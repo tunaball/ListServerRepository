@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Copying Large Amounts of data via USB/FW (was Re: [X-Unix] Re:
+	Pokey LAN transfers (Resolved))
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Copying%20Large%20Amounts%20of%20data%20via%20USB/FW%20%28was%20Re%3A%20%5BX-Unix%5D%20Re%3A%0A%09Pokey%20LAN%20transfers%20%28Resolved%29%29&In-Reply-To=a06240801c39a73b1a4f5%40%5B192.168.0.7%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002964.html">
+   <LINK REL="Next"  HREF="002965.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Copying Large Amounts of data via USB/FW (was Re: [X-Unix] Re:
+	Pokey LAN transfers (Resolved))</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Copying%20Large%20Amounts%20of%20data%20via%20USB/FW%20%28was%20Re%3A%20%5BX-Unix%5D%20Re%3A%0A%09Pokey%20LAN%20transfers%20%28Resolved%29%29&In-Reply-To=a06240801c39a73b1a4f5%40%5B192.168.0.7%5D"
+       TITLE="Copying Large Amounts of data via USB/FW (was Re: [X-Unix] Re:
+	Pokey LAN transfers (Resolved))">ecrist at secure-computing.net
+       </A><BR>
+    <I>Fri Dec 28 06:23:01 PST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002964.html">Copying Large Amounts of data via USB/FW (was Re: [X-Unix]
+	Re: Pokey 	LAN transfers (Resolved))
+</A></li>
+        <LI>Next message: <A HREF="002965.html">Copying Large Amounts of data via USB/FW (was Re: [X-Unix] Re:
+	Pokey LAN transfers (Resolved))
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2967">[ date ]</a>
+              <a href="thread.html#2967">[ thread ]</a>
+              <a href="subject.html#2967">[ subject ]</a>
+              <a href="author.html#2967">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Dec 28, 2007, at 3:39 AM, David Ledger wrote:
+
+&gt;<i> At 22:12 -0500 27/12/07, TjL wrote:
+</I>&gt;&gt;<i> I have a large amount of data (GBs and GBs) spread across several
+</I>&gt;&gt;<i> external HDs, some USB2, some Firewire 400.
+</I>&gt;&gt;<i> I am trying to consolidate them and organize them so that similar  
+</I>&gt;&gt;<i> data
+</I>&gt;&gt;<i> is on the same drives, i.e. TV shows on one, movies on another, short
+</I>&gt;&gt;<i> home movies from our digital camera on another, etc.
+</I>&gt;&gt;<i> These range from a folder with dozens and dozens (if not hundreds) of
+</I>&gt;&gt;<i> smaller files (under 200mb) to folders with a bunch of DVD rips  
+</I>&gt;&gt;<i> (4-8GB
+</I>&gt;&gt;<i> but a few files).
+</I>&gt;&gt;<i> All of the drives are HFS+ Journaled, attached to a 2.8Ghz iMac
+</I>&gt;&gt;<i> running Leopard either by USB (powered hubs) or daily chained  
+</I>&gt;&gt;<i> Firewire
+</I>&gt;&gt;<i> drives.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I've pretty much given up on using Finder because it gives such
+</I>&gt;&gt;<i> useless error messages, and am using 'mv -iv' in Terminal.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Is there a better/faster way to do this?
+</I>&gt;<i>
+</I>&gt;<i> mv between volumes does:
+</I>&gt;<i>           rm -f destination_path &amp;&amp; \
+</I>&gt;<i>           cp -pRP source_file destination &amp;&amp; \
+</I>&gt;<i>           rm -rf source_file
+</I>&gt;<i> (from the man page).
+</I>&gt;<i>
+</I>&gt;<i> cp is the fastest you're going to get, as it knows each file size  
+</I>&gt;<i> before each new file creation, and so can avoid the time consuming  
+</I>&gt;<i> task of getting many smaller extents allocated. It will be quickest  
+</I>&gt;<i> if there is lots of contiguous free space on the destination.
+</I>&gt;<i>
+</I>&gt;<i> David
+</I>
+Please note that this is definately NOT the way to do this for same- 
+partition moves, mv is the fastest, as it only changes the pointers  
+and no data is actually moved on the hard drive.
+
+-----
+Eric F Crist
+Secure Computing Networks
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002964.html">Copying Large Amounts of data via USB/FW (was Re: [X-Unix]
+	Re: Pokey 	LAN transfers (Resolved))
+</A></li>
+	<LI>Next message: <A HREF="002965.html">Copying Large Amounts of data via USB/FW (was Re: [X-Unix] Re:
+	Pokey LAN transfers (Resolved))
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2967">[ date ]</a>
+              <a href="thread.html#2967">[ thread ]</a>
+              <a href="subject.html#2967">[ subject ]</a>
+              <a href="author.html#2967">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] MTUs in Panther
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20MTUs%20in%20Panther&In-Reply-To=20041109075759.4A3661860A7%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001305.html">
+   <LINK REL="Next"  HREF="001307.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] MTUs in Panther</H1>
+    <B>David Gilden</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20MTUs%20in%20Panther&In-Reply-To=20041109075759.4A3661860A7%40listserver.themacintoshguy.com"
+       TITLE="[X-Unix] MTUs in Panther">dowda at coraconnection.com
+       </A><BR>
+    <I>Sun Nov 21 11:45:42 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001305.html">[X-Unix] curl install problem
+</A></li>
+        <LI>Next message: <A HREF="001307.html">[X-Unix] MTUs in Panther
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1306">[ date ]</a>
+              <a href="thread.html#1306">[ thread ]</a>
+              <a href="subject.html#1306">[ subject ]</a>
+              <a href="author.html#1306">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Greetings, 
+
+Just got Fiber Optics Internet via Verizon,  Problem is the PCs on the network get
+a data rate of up to 15 MegaBit, but the Mac is stuck at 4.5 Megabits.
+
+Running Panther -- here....  All switches are 100/10 BaseT
+
+A Verzion tech sent me the following link....
+and the link to the Apple KB article, however it is for OSX 10.2   
+
+Does anyone have anyone suggestions on in improving the Data Rate for the Mac (G4 1Ghz...)
+
+
+Thanks,
+
+Dave Gilden
+
+(kora musician / audiophile / webmaster @ www.coraconnection.com  / Ft. Worth, TX, USA)
+
+
+&lt;<A HREF="http://www.broadbandreports.com/faq/7136">http://www.broadbandreports.com/faq/7136</A>&gt;
+
+Q: How do I tweak in OS X? (#7136)&lt;&gt; A: First of all, if you've run the Tweak
+Tester it likely advised you to turn on 'selective ACKs;' unfortunately
+selective ACKs are not supported by OS X.
+
+A brief note on MTU values: the default MTU under OS X is 1500, and this will
+work fine for most users. Some ISP/router combinations require a user to change
+the MTU to a different value, usually 1450. In these cases the change to the MTU
+isn't made to improve performance; it ensures functionality. Usually, if not
+always, the DSLR Tweak Tester will report the MTU of an OS X machine as 1488 -
+this is a misreading on the part of the Tweak Tester caused by OS X having
+timestamps enabled (see below).
+
+To change timestamps to off, and eliminate the '1488' (i.e. the erroneous MTU of
+1488 reported by the Broadband Reports Tweak Tester), this value:
+&quot;net.inet.tcp.rfc1323&quot; should be set to zero.
+
+To restore timestamps, the value should be set to 1 (note: this the system
+default.)
+
+There is now a GUI utility called
+RMAC&lt;<A HREF="http://homepage.mac.com/johanneson/.cv/johanneson/Public/Tweaker.tgz-link.tgz">http://homepage.mac.com/johanneson/.cv/johanneson/Public/Tweaker.tgz-link.tgz</A>&gt; 
+
+article&lt;<A HREF="http://docs.info.apple.com/article.html?artnum=107474">http://docs.info.apple.com/article.html?artnum=107474</A>&gt;, except the
+process is automatic - RMAC does all the work....... 
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001305.html">[X-Unix] curl install problem
+</A></li>
+	<LI>Next message: <A HREF="001307.html">[X-Unix] MTUs in Panther
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1306">[ date ]</a>
+              <a href="thread.html#1306">[ thread ]</a>
+              <a href="subject.html#1306">[ subject ]</a>
+              <a href="author.html#1306">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

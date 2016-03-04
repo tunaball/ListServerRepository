@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Weird tcsh vs bash behavior
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Weird%20tcsh%20vs%20bash%20behavior&In-Reply-To=list-10943004%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000324.html">
+   <LINK REL="Next"  HREF="000326.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Weird tcsh vs bash behavior</H1>
+    <B>James Bucanek</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Weird%20tcsh%20vs%20bash%20behavior&In-Reply-To=list-10943004%40mail.ninewire.com"
+       TITLE="[X-Unix] Weird tcsh vs bash behavior">subscriber at gloaming.com
+       </A><BR>
+    <I>Thu Feb 19 07:57:24 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000324.html">[X-Unix] Weird tcsh vs bash behavior
+</A></li>
+        <LI>Next message: <A HREF="000326.html">[X-Unix] Weird tcsh vs bash behavior
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#325">[ date ]</a>
+              <a href="thread.html#325">[ thread ]</a>
+              <a href="subject.html#325">[ subject ]</a>
+              <a href="author.html#325">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Kirk McElhearn wrote on Thursday, February 19, 2004:
+
+&gt;<i>When using tcsh, you can do the following:
+</I>&gt;<i>
+</I>&gt;<i>% ls -al */rsrc 
+</I>&gt;<i>
+</I>&gt;<i>When in a directory, to find if there are any resource forks. The result
+</I>&gt;<i>looks like this:
+</I>&gt;<i>
+</I>&gt;<i>-rw-rw-r--  1 root  admin      11644 26 Nov 20:44 Classic Support UI/rsrc
+</I>&gt;<i>-rw-rw-r--  1 root  admin      14477 26 Nov 20:44 Classic Support/rsrc
+</I>&gt;<i>-rw-r--r--  1 root  unknown        0  4 Feb 16:05 Classic Update
+</I>&gt;<i>Log.txt/rsrc
+</I>&gt;<i>-rw-rw-r--  1 root  admin     789387 26 Nov 20:44 Classic/rsrc
+</I>&gt;<i>-rw-rw-rw-  1 kirk  unknown        0  8 Feb  2003 Clipboard/rsrc
+</I>&gt;<i>
+</I>&gt;<i>But running the same command while in bash doesn't work - is there something
+</I>&gt;<i>I'm missing? Does bash not see the /rsrc files? Or is it something to do
+</I>&gt;<i>with the way it globs?
+</I>
+It's not the way the shells glob.  It's probably the way in which they try to resolve the resulting paths.
+
+The magic '/rsrc' isn't really a file -- at least it doesn't have a traditional entry in the UNIX directory structure.  It's a &quot;synthetic&quot; file who's parent &quot;directory&quot; is the file that contains the resource data.  Note that you can also use the synthetic naming convention '&lt;filename&gt;/..namedfork/rsrc'.
+
+So, let's take the example &quot;*/rsrc&quot;.  If the shell reads the current directory and matches all the entries it can find against '*' (both files and directories), then systematically tests each possible &lt;filename&gt;/rsrc using stat(), or some similar call, then it will find all of the synthetic */rsrc files in the directory.
+
+However, if a shell tries to be &quot;smart&quot; it might first exam the type of each entry that matches the '*'.  As it examines each match, it's going to see that they are all files, so it could safely eliminate it as a potential match because files aren't directories, and therefor can't contain children.
+
+I suspect that tcsh is blindly trying each &lt;filename&gt;/rsrc to see if it exists, and bash is looking at &lt;filename&gt;, sees that it's a file, and skips it.
+
+______________________________________________________
+James Bucanek       &lt;mailto:<A HREF="../../../mailman/listinfo/x-unix.html">privatereply at gloaming.com</A>&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000324.html">[X-Unix] Weird tcsh vs bash behavior
+</A></li>
+	<LI>Next message: <A HREF="000326.html">[X-Unix] Weird tcsh vs bash behavior
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#325">[ date ]</a>
+              <a href="thread.html#325">[ thread ]</a>
+              <a href="subject.html#325">[ subject ]</a>
+              <a href="author.html#325">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

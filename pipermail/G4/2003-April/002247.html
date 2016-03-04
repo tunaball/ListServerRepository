@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Clean Install clean up
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Clean%20Install%20clean%20up&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002246.html">
+   <LINK REL="Next"  HREF="002248.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Clean Install clean up</H1>
+    <B>Steve O'Neill</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Clean%20Install%20clean%20up&In-Reply-To="
+       TITLE="[G4] Clean Install clean up">steveo at omsoft.com
+       </A><BR>
+    <I>Tue Apr 22 08:48:57 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002246.html">[G4] Acrobat/Illustrator conflict
+</A></li>
+        <LI>Next message: <A HREF="002248.html">[G4] Jaguar - many apps fail to start - unexpected quit -
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2247">[ date ]</a>
+              <a href="thread.html#2247">[ thread ]</a>
+              <a href="subject.html#2247">[ subject ]</a>
+              <a href="author.html#2247">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Yes, this is a &quot;permission issue&quot;.  Root is the SuperUser, who can do anything, 
+even things Administrators can't.  OSX normally does not enable login as root, 
+but you may need to do that to delete the folder in X, unless you can open &quot;Get 
+info&quot; on the folder, choose ownership and permissions, change its ownership to 
+yours, then delete it.  I don't know if you can because I don't have such a 
+folder at the moment, it depends on if you have permission as admin to take 
+ownership (I think you can).
+
+Anyway, if you do enable root, be careful; with unlimited power comes unlimited 
+responsibility :-).  To login as root, open a terminal window and type &quot;su&quot; and 
+it will ask you for a password.  To log out (back to your regular login), type 
+&quot;exit&quot;.
+
+You can chdir (change directory) to the directory that contains the one you want 
+to delete, then login as root and use the &quot;chown&quot; (change owner) to what ever 
+you want.  Use &quot;man chown&quot; (show me the &quot;manual&quot; for the &quot;chown&quot; command) for 
+more info.  Use &quot;man su&quot; for more info on logging in as the superuser (whose 
+name is root).
+
+All file names and commands in unix are case-sensitive: &quot;CHOWN&quot; for example, 
+will not work, nor will &quot;chdir /Bin&quot; (should be &quot;/bin&quot;).
+
+You don't need to be root to do most of the above, either.  If you get an error 
+message on something that should work (permission denied) login as root and 
+you'll be able to.  Remember that this permission thing is a *very_good_idea*; 
+if you don't have permission, OSX is protecting itself and other users from you.
+
+Or, as you say, you can bypass protection altogether and delete it from OS9. 
+That's what I'd do.  Not classic, but a booted OS9.  That's what I used to move 
+those pesky &quot;mach*&quot; files the first time I made my Mac unbootable :-).
+
+Goldberg, Franck (x2187) wrote:
+&gt;<i> In 10.2, I could drag to the trash and delete the old system 9 folder but
+</I>&gt;<i> not the old X folder.  Error message &quot;owned by root&quot;. Should I try from 9,
+</I>&gt;<i> leave it alone or figure out who's root?  Thanks for your answers, I'm
+</I>&gt;<i> trying to understand how X works in the background.  Is this a 'permission
+</I>&gt;<i> issue'?
+</I>&gt;<i> Franck 
+</I>&gt;<i> 
+</I>&gt;&gt;<i>Can I safely trashed them two?
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Yes.
+</I>&gt;<i> 
+</I>&gt;<i> Paul
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002246.html">[G4] Acrobat/Illustrator conflict
+</A></li>
+	<LI>Next message: <A HREF="002248.html">[G4] Jaguar - many apps fail to start - unexpected quit -
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2247">[ date ]</a>
+              <a href="thread.html#2247">[ thread ]</a>
+              <a href="subject.html#2247">[ subject ]</a>
+              <a href="author.html#2247">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

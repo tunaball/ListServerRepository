@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [P1] Unexplained Log Out
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20Unexplained%20Log%20Out&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="008220.html">
+   <LINK REL="Next"  HREF="008222.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[P1] Unexplained Log Out</H1>
+    <B>Gary D. Adams</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20Unexplained%20Log%20Out&In-Reply-To="
+       TITLE="[P1] Unexplained Log Out">gdadams1 at cox.net
+       </A><BR>
+    <I>Sun Jan  4 12:38:04 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="008220.html">[P1] iBook G3, iBook G4, PowerBook G4
+</A></li>
+        <LI>Next message: <A HREF="008222.html">iBook Clamshell Ethernet Problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8221">[ date ]</a>
+              <a href="thread.html#8221">[ thread ]</a>
+              <a href="subject.html#8221">[ subject ]</a>
+              <a href="author.html#8221">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Allen: Thanks, we'll give it a try later today. He was up all night, 
+backing stuff up to an 80gb hd I bought him for Christmas; so it will be 
+a while before he's awake.
+
+Gary
+
+Allan Hise wrote:
+
+&gt;<i>If he's the only user, you may have to deal with the command line to get
+</I>&gt;<i>this to work. If he has remote login turned on, ssh to the machine from
+</I>&gt;<i>your clamshell. Otherwise, boot into single user mode.
+</I>&gt;<i>
+</I>&gt;<i>I suggest creating a new user, using the niload command.
+</I>&gt;<i>First, use pico to create a file:
+</I>&gt;<i>
+</I>&gt;<i>	pico new_user_file
+</I>&gt;<i>
+</I>&gt;<i>This starts pico with an empty document. TYpe in:
+</I>&gt;<i>
+</I>&gt;<i>test:*:701:20::0:0:Test Account:/Users/test:/bin/tcsh
+</I>&gt;<i>
+</I>&gt;<i>Make sure there is a return at the end. Type ctrl-x to finish up. You will
+</I>&gt;<i>get a prompt asking if you want to save. Of course you do!
+</I>&gt;<i>The next step  will set up a new user with the &quot;short name&quot; test.
+</I>&gt;<i>
+</I>&gt;<i>	cat new_user_file | sudo niload passwd .
+</I>&gt;<i>
+</I>&gt;<i>The &quot;sudo&quot; part is not needed if you are in single-user mode. You will be
+</I>&gt;<i>asked to type in your password before the command can complete.
+</I>&gt;<i>
+</I>&gt;<i>Next, give the test user a password so you can log in with it.
+</I>&gt;<i>
+</I>&gt;<i>	sudo passwd test
+</I>&gt;<i>
+</I>&gt;<i>Again, sudo isn't needed in single user mode. If you waited more than 5
+</I>&gt;<i>minutes between this command and the last, you will need to type yout
+</I>&gt;<i>admin password again. Otherwise, just follow the directions.
+</I>&gt;<i>
+</I>&gt;<i>Finally, you need a home directory.
+</I>&gt;<i>
+</I>&gt;<i>	sudo mkdir /Users/test
+</I>&gt;<i>
+</I>&gt;<i>Same sudo warnings as before.
+</I>&gt;<i>
+</I>&gt;<i>Reboot the machine. There should be a &quot;Test Account&quot; login now.
+</I>&gt;<i>
+</I>&gt;<i>If you can log in there, you know that it is just something in your normal
+</I>&gt;<i>account causing problems. If you can't log in, then there is something
+</I>&gt;<i>more serious.
+</I>&gt;<i>
+</I>&gt;<i>Allan
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>On Sat, 3 Jan 2004, Gary Adams wrote:
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;&gt;<i>My son has a dual USB iBook, running 10.2.6 or 10.2.8--not sure. He
+</I>&gt;&gt;<i>just had a strange problem. The machine froze. After restarting, he
+</I>&gt;&gt;<i>logged in (he's the only user listed) and after his screen icons and
+</I>&gt;&gt;<i>dock showed up, the machine logged him out. This happened several
+</I>&gt;&gt;<i>times. We reset the power manager. Same thing. Then we booted in Safe
+</I>&gt;&gt;<i>Mode. Same thing. Then we ran fsck-y and it said the disk was fine.
+</I>&gt;&gt;<i>Same thing on reboot. Then we booted from my clamshell and I deleted
+</I>&gt;&gt;<i>the .plist file for log in. Same thing.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Any clues as to what's going on? This is bizarre.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Gary
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>----------
+</I>&gt;&gt;<i>iBookList, a listserv for users and fans of Apple's iBook.
+</I>&gt;&gt;<i>FAQ at &lt;<A HREF="../../../../www.themacintoshguy.com/lists/iBookListFAQ.shtml">http://www.themacintoshguy.com/lists/iBookListFAQ.shtml</A>&gt;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/ibook.html">ibook-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;<i>To switch to the DIGEST mode, E-mail to &lt;<A HREF="../../../mailman/listinfo/ibook.html">ibook-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;<i>Need help from a real person? Try.  &lt;<A HREF="../../../mailman/listinfo/ibook.html">ibook-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;<i>----------
+</I>&gt;&gt;<i>Small Dog Electronics    <A HREF="http://www.smalldog.com">http://www.smalldog.com</A>   | Enter To Win A |
+</I>&gt;&gt;<i>  --  Canon Digital Camcorders start at $799       |  Free iBook!   |
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>iBookPlanet.com |  Visit iBookPlanet.com for the hottest
+</I>&gt;&gt;<i>                |  iBook News, Features, Reviews &amp; More.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>   RoadTools $30 PodiumPad available at Apple retail stores, $20 Traveler
+</I>&gt;&gt;<i>  CoolPad at Staples. Both in white for iBooks at &lt;<A HREF="http://roadtools.com">http://roadtools.com</A>&gt;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>MacResQ Specials: LaCie SCSI CDR From $99! PowerBook 3400/200 Only $879!
+</I>&gt;&gt;<i>Norton AntiVirus 6 Only $19! We Stock PARTS! &lt;<A HREF="http://www.macresq.com">http://www.macresq.com</A>&gt;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>----------
+</I>&gt;<i>iBookList, a listserv for users and fans of Apple's iBook.
+</I>&gt;<i>FAQ at &lt;<A HREF="../../../../www.themacintoshguy.com/lists/iBookListFAQ.shtml">http://www.themacintoshguy.com/lists/iBookListFAQ.shtml</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/ibook.html">ibook-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>To switch to the DIGEST mode, E-mail to &lt;<A HREF="../../../mailman/listinfo/ibook.html">ibook-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>Need help from a real person? Try.  &lt;<A HREF="../../../mailman/listinfo/ibook.html">ibook-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>----------
+</I>&gt;<i>Small Dog Electronics    <A HREF="http://www.smalldog.com">http://www.smalldog.com</A>   | Enter To Win A |
+</I>&gt;<i>  --  Canon Digital Camcorders start at $799       |  Free iBook!   |
+</I>&gt;<i>
+</I>&gt;<i>iBookPlanet.com |  Visit iBookPlanet.com for the hottest
+</I>&gt;<i>                |  iBook News, Features, Reviews &amp; More.
+</I>&gt;<i>
+</I>&gt;<i>   RoadTools $30 PodiumPad available at Apple retail stores, $20 Traveler 
+</I>&gt;<i>  CoolPad at Staples. Both in white for iBooks at &lt;<A HREF="http://roadtools.com">http://roadtools.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>MacResQ Specials: LaCie SCSI CDR From $99! PowerBook 3400/200 Only $879! 
+</I>&gt;<i>Norton AntiVirus 6 Only $19! We Stock PARTS! &lt;<A HREF="http://www.macresq.com">http://www.macresq.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="008220.html">[P1] iBook G3, iBook G4, PowerBook G4
+</A></li>
+	<LI>Next message: <A HREF="008222.html">iBook Clamshell Ethernet Problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8221">[ date ]</a>
+              <a href="thread.html#8221">[ thread ]</a>
+              <a href="subject.html#8221">[ subject ]</a>
+              <a href="author.html#8221">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Rsync, mysqldump and cron-job help needed - part1
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Rsync%2C%20mysqldump%20and%20cron-job%20help%20needed%20-%20part1&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002351.html">
+   <LINK REL="Next"  HREF="002354.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Rsync, mysqldump and cron-job help needed - part1</H1>
+    <B>Rad Craig</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Rsync%2C%20mysqldump%20and%20cron-job%20help%20needed%20-%20part1&In-Reply-To="
+       TITLE="[X-Unix] Rsync, mysqldump and cron-job help needed - part1">rad at inductionconcepts.com
+       </A><BR>
+    <I>Tue Aug 30 23:16:57 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002351.html">[X-Unix] Mac suddenly can't connect to Samba server
+</A></li>
+        <LI>Next message: <A HREF="002354.html">[X-Unix] Rsync, mysqldump and cron job help needed - part2
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2353">[ date ]</a>
+              <a href="thread.html#2353">[ thread ]</a>
+              <a href="subject.html#2353">[ subject ]</a>
+              <a href="author.html#2353">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>OK, I need help on several items.  Sorry I'm n00b and you have my  
+humble apologies for the eleventy-billion questions I'm about to  
+ask.  I have a bunch of questions and have tried to provide as much  
+info as possible.  I have the overall idea, just need some help  
+filling in the blanks and putting it all together into a working  
+solution.  Unfortunately (or fortunately depending on how you look at  
+it), rsync is very flexible and somewhat complex (to me), so there  
+are many flags/options that I'm trying to learn or find out if I need  
+them.  Again, I apologize for so many questions, your help will be  
+greatly appreciated.  I have had to break this message into multiple  
+parts to get it posted.
+
+I have a webhost where our website, forums, picture gallery and mail  
+server (POP/SMTP/IMAP) are housed.  I make a full backup every week,  
+and keep 6 weeks worth.  After the backup has been created, I have  
+just FTP'd the archive to a machine at my shop where I keep the other  
+archives.  A few months ago, our data exceeded 2GB, so I can no  
+longer FTP the backup.  I have been SFTPing the archives, but while  
+that archive is on our server, until its fully transferred to the  
+shop machine, then deleted, we are very close to, or exceeding our  
+disk quota and it always makes our email server act funny because of  
+this.  I have over 1GB worth of IMAP email in my account alone.  So  
+I'm looking for a solution.
+
+The webhost runs Linux.  MySQL is 4.1.13-standard, Bash is 2.05b,  
+rsync is v2.6.2.  My shop machine is running OSX.4.2 and also bash.   
+I just now ssh'd into my webhost to see what version of rsync they  
+were running and I typed rsync and hit enter, at the bottom, after it  
+scrolled the help information, it has an error:  rsync error: syntax  
+or usage error (code 1) at main.c(991)
+
+Is that just because I typed rsync and hit enter with no parms or is  
+there some other problem I need to address first?
+
+My backup philosophy is to have a full, complete, backup of data and  
+databases with the ability to roll it back several weeks, in case of  
+a virus infection, so that if needed, I could roll it back to before  
+the server was infected.  This is what I'm trying to accomplish with  
+all of this, safety/redundancy.
+
+The recommendations I have gotten so far is to use scp or rsync.  I  
+believe with scp I'd still have to do it like I have been, making the  
+archive, then copying it across, and deleting it afterwards, so its  
+still taking up space until its fully copied, so I guess rsync will  
+be the best solution.  If there is a better/easier solution, I'm all  
+ears.
+
+The problem is that I know VERY little about Unix, so I'm having  
+trouble putting it all together for mysql dumps, cron jobs and rsync  
+commands.  I'm very comfortable with computers (More with MS, getting  
+better with OSX), just haven't done much UNIX stuff yet...but I'm  
+working on it.  While I'm thinking about it, is there a good OSX Unix- 
+type book out there, where I can learn about the Unix side of OSX and  
+scripting?
+
+I've numbered the main questions I need help or direction with below.
+
+I have ssh turned on at my webhost server as well as on my box at the  
+shop that I'm downloading everything onto.  I'm not really sure about  
+how this will all work together.  I've read the man pages, but still  
+am unsure about a few things.  I believe I need to setup a cron job  
+to make mysql dump(s), then another cron job to start rsync to backup  
+most of my directory structure, then a last cron job to delete the  
+mysql dumps.
+
+1.) What is the command to get mysql to dump properly so that I can  
+restore it if needed and have it all work correctly.  I know that  
+some types of dumps or backups don't restore correctly.  I just  
+looked in the help file for my forums, and it had a little blurb on  
+doing this via ssh.  The command they recommended was:
+mysqldump --opt -uUSERNAME -p DATABASENAME &gt; /path/to/dump.sql
+
+Where USERNAME is my username used to access the database,  
+DATABASENAME (there are 5 different db's I need to back up) is self  
+explanitory, then the path where I want the file placed and its name.
+
+2.) I have some other databases in there that will also need to be  
+backed up, besides our forums, one is a picture gallery, one is for a  
+shopping cart that I don't have fully setup yet, etc.  So I guess I'd  
+just do multiple mysqldump commands?
+
+3.) How can I change the filename to be dynamic, like to include the  
+date and database name?  Are there some variables I can use in the  
+filename?  I want to name it for whatever database it is, and have  
+the date included in the filename.  I'd like something like:
+     db-dump_%dbname%_%date%.sql.
+
+4.) If you could, give me an example of the mysqldump command with  
+the info I've provided, I think I've listed all the information you  
+would need.  I think I'm close with that, I just want some confirmation.
+
+:::<i> continued in next email :::
+</I></PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002351.html">[X-Unix] Mac suddenly can't connect to Samba server
+</A></li>
+	<LI>Next message: <A HREF="002354.html">[X-Unix] Rsync, mysqldump and cron job help needed - part2
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2353">[ date ]</a>
+              <a href="thread.html#2353">[ thread ]</a>
+              <a href="subject.html#2353">[ subject ]</a>
+              <a href="author.html#2353">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

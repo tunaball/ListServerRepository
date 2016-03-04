@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to REALLY kill Finder.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20REALLY%20kill%20Finder.&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003126.html">
+   <LINK REL="Next"  HREF="003129.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to REALLY kill Finder.</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20REALLY%20kill%20Finder.&In-Reply-To="
+       TITLE="[X-Unix] How to REALLY kill Finder.">macmonster at myrealbox.com
+       </A><BR>
+    <I>Fri May 23 12:49:39 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003126.html">[X-Unix] Re: Shell Script: How get parent path to invoke a sister
+	tool?
+</A></li>
+        <LI>Next message: <A HREF="003129.html">[X-Unix] How to REALLY kill Finder.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3128">[ date ]</a>
+              <a href="thread.html#3128">[ thread ]</a>
+              <a href="subject.html#3128">[ subject ]</a>
+              <a href="author.html#3128">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi there,
+
+I posted this question to <A HREF="http://discussions.apple.com">http://discussions.apple.com</A> before  
+realising that you guys will probably have some better answers. So  
+please excuse me in the (unlikely) event you read this twice.
+
+Last night I was converting a bunch of video files in Quicktime and  
+copying them to a samba server on the LAN (so I could play them on my  
+Linux-based media machine) when the Finder stopped responding and I  
+got the spinning beachball of death.
+
+The beachball appeared when I clicked on one of the files in Finder  
+and it tried to generate a preview in column-view. The media files  
+were fairly big ones (1 gig) and .mkv format (which seem particularly  
+processor-intensive to decode) and I'm pretty sure the file in  
+question was on the Samba server.
+
+So all in all everything seemed to be against the Finder creating  
+this preview and I figured it was going to take a long time to do so,  
+so I'd just force-relaunch the Finder and go back and open the folder  
+in a different view in order to copy it wherever it needed to be.
+
+After doing so, though, Finder fails to restart - I've got no icons  
+on my desktop and I can't navigate to a folder of files to click on  
+the one I want to view.
+
+Often in the past when I've experienced this, typing `open /path/to/ 
+folder` in terminal has had the effect of forcing Finder to restart,  
+however on this occasion I get this error message:
+&quot;2008-05-23 18:11:07.383 open7567 LSOpenFromURLSpec() returned -600  
+for application (null) urls <A HREF="file://localhost/Applications/.&quot;">file://localhost/Applications/.&quot;</A>
+
+If I look for the process using `ps` I see the process name in brackets:
+   $ ps -wwwwwx | grep Finder
+   5958 ?? E 0:00.00 (Finder)
+   $
+I presume the brackets indicate that Finder is behaving badly, but  
+`man ps` doesn't seem to explain exactly what they mean. Apparently  
+the &quot;E&quot; in the above line indicates that the process is trying to exit.
+
+Anyway, I can't get any further using `kill -9 5958` or anything else  
+I've tried so far.
+
+The Finder icon is still showing in the Dock and if I right-click on  
+it I see &quot;Application not responding&quot; (greyed out), &quot;Hide&quot; and  
+&quot;Relaunch&quot;. Choosing &quot;Relaunch&quot; has no effect. Finder does not seem  
+to appear in Activity Monitor (showing &quot;All Processes&quot;) . If I open  
+the &quot;Force Quit Applications&quot; dialogue again the Finder is still  
+shown and highlighting it changes the button from &quot;Force Quit&quot; to  
+&quot;Relaunch&quot;, but clicking that has no effect (except that Finder  
+disappears from the lit of programs; it reappears if I close the  
+&quot;Force Quit&quot; window and reopen it from the Apple menu).
+
+Obviously I could sort this by rebooting my computer, but I really  
+don't want to do that right now. Can anyone suggest a way of properly  
+killing this process so that Finder can restart? (a way that doesn't  
+kill off all my active windows, that is!)
+
+Many thanks in advance for any suggestions,
+
+Stroller. 
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003126.html">[X-Unix] Re: Shell Script: How get parent path to invoke a sister
+	tool?
+</A></li>
+	<LI>Next message: <A HREF="003129.html">[X-Unix] How to REALLY kill Finder.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3128">[ date ]</a>
+              <a href="thread.html#3128">[ thread ]</a>
+              <a href="subject.html#3128">[ subject ]</a>
+              <a href="author.html#3128">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

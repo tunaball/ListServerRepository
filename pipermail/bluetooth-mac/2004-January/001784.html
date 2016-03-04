@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Nokia 6600 and iSync
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:bluetooth-mac%40listserver.themacintoshguy.com?Subject=Nokia%206600%20and%20iSync&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001783.html">
+   <LINK REL="Next"  HREF="001785.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Nokia 6600 and iSync</H1>
+    <B>Martim Weinstein</B> 
+    <A HREF="mailto:bluetooth-mac%40listserver.themacintoshguy.com?Subject=Nokia%206600%20and%20iSync&In-Reply-To="
+       TITLE="Nokia 6600 and iSync">emdub at mac.com
+       </A><BR>
+    <I>Fri Jan 16 07:29:10 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001783.html">[BTM] P900 and Mac OS X
+</A></li>
+        <LI>Next message: <A HREF="001785.html">Syncing a new Bluetooth Phone
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1784">[ date ]</a>
+              <a href="thread.html#1784">[ thread ]</a>
+              <a href="subject.html#1784">[ subject ]</a>
+              <a href="author.html#1784">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Might interest someone... copy pasted from:
+
+&lt;<A HREF="http://www.allaboutsymbian.com/forum/showthread.php?">http://www.allaboutsymbian.com/forum/showthread.php?</A> 
+s=8164a6e8dec97b266fd99a2d113aa996&amp;threadid=17551&amp;perpage=15&amp;highlight=p 
+roblem%20apple%20isync%20with%206600%20solved&amp;pagenumber=1&gt;
+
+Problem Apple iSync with 6600 solved
+
+1. Open Folder  
+System/Library/SyncServices/SymbianConduit.bundle/Contents/Resources/
+
+2. Change the name of the file 3650AgendaMappings to 6600AgendaMappings
+
+3. Change the name of the file 3650mappings to 6600mappings
+
+4. Change the name of the file 3650.tiff to 6600.tiff
+
+5. Edit in the file SupportedDevicesInfo the 3650 part to:
+
+&lt;key&gt;6600&lt;/key&gt;
+&lt;dict&gt;
+&lt;key&gt;ATI3Response&lt;/key&gt;
+&lt;string&gt;Nokia 6600&lt;/string&gt;
+&lt;key&gt;AgendaDatabasePath&lt;/key&gt;
+&lt;string&gt;c:\system\data\calendar&lt;/string&gt;
+&lt;key&gt;AgendaMappingsPath&lt;/key&gt;
+&lt;string&gt;6600AgendaMappings&lt;/string&gt;
+&lt;key&gt;ClassId&lt;/key&gt;
+&lt;string&gt;5243396&lt;/string&gt;
+&lt;key&gt;MappingsPath&lt;/key&gt;
+&lt;string&gt;6600mappings&lt;/string&gt;
+&lt;key&gt;iSyncIniPath&lt;/key&gt;
+&lt;string&gt;c:\system\iSync.ini&lt;/string&gt;
+&lt;/dict&gt;
+
+6. Edit the file SymbianConduit_phones.plist:
+
+&lt;dict&gt;
+&lt;key&gt;Nokia--separator--Nokia 3600&lt;/key&gt;
+&lt;string&gt;symbiantool&lt;/string&gt;
+&lt;key&gt;Nokia--separator--Nokia 6600&lt;/key&gt;
+&lt;string&gt;symbiantool&lt;/string&gt;
+&lt;key&gt;Nokia--separator--Nokia 7650&lt;/key&gt;
+&lt;string&gt;symbiantool&lt;/string&gt;
+&lt;key&gt;Nokia--separator--Nokia N-Gage&lt;/key&gt;
+&lt;string&gt;symbiantool&lt;/string&gt;
+&lt;key&gt;SONY ERICSSON--separator--7130501-BVP800 &lt;/key&gt;
+&lt;string&gt;symbiantool&lt;/string&gt;
+&lt;key&gt;SONY ERICSSON--separator--1021011-BVP810 &lt;/key&gt;
+&lt;string&gt;symbiantool&lt;/string&gt;
+&lt;/dict&gt;
+
+7. Have fun with your Mac and your 6600 !!!
+
+-mw
+
+Do not walk behind me for I may not lead. Do not walk ahead of
+me for I may not follow. Do not walk beside me either; just leave me the
+hell alone. 
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001783.html">[BTM] P900 and Mac OS X
+</A></li>
+	<LI>Next message: <A HREF="001785.html">Syncing a new Bluetooth Phone
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1784">[ date ]</a>
+              <a href="thread.html#1784">[ thread ]</a>
+              <a href="subject.html#1784">[ subject ]</a>
+              <a href="author.html#1784">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/bluetooth-mac.html">More information about the Bluetooth-mac
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

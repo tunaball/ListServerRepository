@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] dyndns to track your hardware (re: re: CL emailing)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20dyndns%20to%20track%20your%20hardware%20%28re%3A%20re%3A%20CL%20emailing%29&In-Reply-To=list-10708030%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000238.html">
+   <LINK REL="Next"  HREF="000240.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] dyndns to track your hardware (re: re: CL emailing)</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20dyndns%20to%20track%20your%20hardware%20%28re%3A%20re%3A%20CL%20emailing%29&In-Reply-To=list-10708030%40mail.ninewire.com"
+       TITLE="[X-Unix] dyndns to track your hardware (re: re: CL emailing)">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Sun Feb  8 02:42:11 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000238.html">[X-Unix] dyndns to track your hardware (re: re: CL emailing)
+</A></li>
+        <LI>Next message: <A HREF="000240.html">CURL to track your hardware (looks like the best solution)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#239">[ date ]</a>
+              <a href="thread.html#239">[ thread ]</a>
+              <a href="subject.html#239">[ subject ]</a>
+              <a href="author.html#239">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Feb 7, 2004, at 5:05 pm, Peter Marreck wrote:
+&gt;<i>
+</I>&gt;<i> ...I have an intranet IP and it won't help me if some tool on my 
+</I>&gt;<i> laptop which updates dyndns causes petespowerbook.dyndns.org to point 
+</I>&gt;<i> to 192.168.whatever... (Unless the tools that auto-update your dyndns 
+</I>&gt;<i> information somehow use the internet-facing IP from the router? Last 
+</I>&gt;<i> time I checked, they don't.)
+</I>
+Well, I haven't been paying attention too closely here, but it seems to 
+me that it doesn't matter whether the laptop actually knows it's own IP 
+when it sends you the email, because that information will be contained 
+in the email headers (logged by the outgoing SMTP mailserver) when you 
+receive it.
+
+A couple of additional points: many SMTP servers block relay service 
+for senders which are not logged on to one of their own IPs, to prevent 
+spammers abusing their service, so you cannot hardwire your application 
+with  the name of an SMTP server. Fortunately, Postfix, which comes 
+with a default install of Panther, seems to connect directly to the 
+SMTP server at the recipient's domain. Try `cat somefile.txt | sendmail 
+<A HREF="../../../mailman/listinfo/x-unix.html">you at some.address.com</A>` and examine the headers.
+
+You also need this application to run at startup, even if the laptop is 
+not logged in as a user. You need to look in the /etc/rc scripts, I 
+think, to do this. Of course, having it automatically log in as user 
+Bob as startup will encourage any thieves to use it - if they are 
+unable to log in the may not plug it into the network until they have 
+reinstalled the o/s.
+
+Hope you find this relevant,
+
+Stroller.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000238.html">[X-Unix] dyndns to track your hardware (re: re: CL emailing)
+</A></li>
+	<LI>Next message: <A HREF="000240.html">CURL to track your hardware (looks like the best solution)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#239">[ date ]</a>
+              <a href="thread.html#239">[ thread ]</a>
+              <a href="subject.html#239">[ subject ]</a>
+              <a href="author.html#239">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

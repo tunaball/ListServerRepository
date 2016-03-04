@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] ipcalc for OS X?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20ipcalc%20for%20OS%20X%3F&In-Reply-To=list-14750065%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000065.html">
+   <LINK REL="Next"  HREF="000068.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] ipcalc for OS X?</H1>
+    <B>Jakob Peterh&#228;nsel</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20ipcalc%20for%20OS%20X%3F&In-Reply-To=list-14750065%40mail.ninewire.com"
+       TITLE="[X-Unix] ipcalc for OS X?">jakob at hjemme.dk
+       </A><BR>
+    <I>Mon Jul 19 11:52:30 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000065.html">[X-Unix] IRC, lynx, newsgroups, RPM install, etc.
+</A></li>
+        <LI>Next message: <A HREF="000068.html">hfs+ with fedora2 on i386
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#67">[ date ]</a>
+              <a href="thread.html#67">[ thread ]</a>
+              <a href="subject.html#67">[ subject ]</a>
+              <a href="author.html#67">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+I'm using the CLI version of WhatMask:
+
+whatmask v1.2, Copyright (C) 2001-2003 Joe Laffey 
+&lt;<A HREF="../../../mailman/listinfo/x-unix.html">joe at laffeycomputer.com</A>&gt;
+This binary compiled on 12/10/03 at 16:07:24
+Visit: <A HREF="http://www.laffeycomputer.com/software.html">http://www.laffeycomputer.com/software.html</A> for updates.
+whatmask comes with ABSOLUTELY NO WARRANTY; for details see the COPYING 
+file
+that accompained this distribution. This is free software, and you are 
+welcome
+to redistribute it under the terms of GNU PUBLIC LICENSE.
+
+whatmask may be used two ways:
+
+Given a mask:          whatmask &lt;CIDR bits&gt;
+                - or -  whatmask &lt;subnet mask&gt;
+                - or -  whatmask &lt;hex subnet mask&gt;
+                - or -  whatmask &lt;wildcard bit mask&gt;
+  NOTE: whatmask will autodetect the input and show you all four.
+
+Given an ip/mask:      whatmask &lt;IP address&gt;/&lt;netmask&gt;
+        &lt;netmask&gt; may be one of the following:
+                        CIDR notation (e.g. &quot;24&quot;)
+                        Netmask notation (e.g. &quot;255.255.255.0&quot;)
+                        Hex Netmask notation (e.g. &quot;0xffffff00&quot;)
+                        Wildcard bits notation (e.g. &quot;0.0.0.255&quot;)
+  NOTE: whatmask will autodetect the netmask format.
+
+Exsample outputs:
+
+jp% whatmask 24
+
+---------------------------------------------
+        TCP/IP SUBNET MASK EQUIVALENTS
+---------------------------------------------
+CIDR = .....................: /24
+Netmask = ..................: 255.255.255.0
+Netmask (hex) = ............: 0xffffff00
+Wildcard Bits = ............: 0.0.0.255
+Usable IP Addresses = ......: 254
+
+
+jp% whatmask 10.0.0.34/29
+
+------------------------------------------------
+            TCP/IP NETWORK INFORMATION
+------------------------------------------------
+IP Entered = ..................: 10.0.0.34
+CIDR = ........................: /29
+Netmask = .....................: 255.255.255.248
+Netmask (hex) = ...............: 0xfffffff8
+Wildcard Bits = ...............: 0.0.0.7
+------------------------------------------------
+Network Address = .............: 10.0.0.32
+Broadcast Address = ...........: 10.0.0.39
+Usable IP Addresses = .........: 6
+First Usable IP Address = .....: 10.0.0.33
+Last Usable IP Address = ......: 10.0.0.38
+
+
+Hope it helps,
+
+
+____________________________________________
+Jakob Peterh&#228;nsel
+Network Consultant
+Tel: +45 7022 1014
+Fax: +45 7022 1013
+Mob: +45&#160;22 68 49 61
+<A HREF="../../../mailman/listinfo/x-unix.html">jp at netpoint.com</A>
+www.NetPoint.com
+
+
+On 16. jul 2004, at 17:12, Gretchen Hayman wrote:
+
+&gt;<i> Howdy,
+</I>&gt;<i>
+</I>&gt;<i> Does anyone know of any equivalent programs to ipcalc for Mac OS X?  
+</I>&gt;<i> Fink doesn't have ipcalc listed (or such that I can find it) and my 
+</I>&gt;<i> googling hasn't turned up a nice CLI replacement for OS X, so I 
+</I>&gt;<i> thought I would ask the crowd for recommendations.  (CLI much 
+</I>&gt;<i> preferred over GUI apps, btw.)  I have ipcalc available on my linux 
+</I>&gt;<i> systems and there are some web-based tools, but I'd like something for 
+</I>&gt;<i> OS X that I can use if I don't have access to my linux boxen or WWW 
+</I>&gt;<i> access.  Of course, what I really want to hear is that &quot;it's in there&quot; 
+</I>&gt;<i> in OS X, just named stupidly so that's hard to find.  ^_^
+</I>&gt;<i>
+</I>&gt;<i> Many thanks for any suggestions.
+</I>&gt;<i>
+</I>&gt;<i> gretchen
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;<i> Mac ISP Serious Mac Internet Solutions From NineWire!   
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older 
+</I>&gt;<i> Mac! Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>   Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;<i>
+</I>&gt;<i> OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s - 
+</I>&gt;<i> <A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000065.html">[X-Unix] IRC, lynx, newsgroups, RPM install, etc.
+</A></li>
+	<LI>Next message: <A HREF="000068.html">hfs+ with fedora2 on i386
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#67">[ date ]</a>
+              <a href="thread.html#67">[ thread ]</a>
+              <a href="subject.html#67">[ subject ]</a>
+              <a href="author.html#67">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

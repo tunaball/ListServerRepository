@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Remote control options
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Remote%20control%20options&In-Reply-To=C1D1314A.35C0C%25explorerguy%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="016323.html">
+   <LINK REL="Next"  HREF="016335.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Remote control options</H1>
+    <B>Neil Laubenthal</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Remote%20control%20options&In-Reply-To=C1D1314A.35C0C%25explorerguy%40mac.com"
+       TITLE="[X4U] Remote control options">neil at laubenthal.net
+       </A><BR>
+    <I>Mon Jan 15 13:21:53 PST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="016323.html">[X4U] Remote control options
+</A></li>
+        <LI>Next message: <A HREF="016335.html">[X4U] Remote control options
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#16334">[ date ]</a>
+              <a href="thread.html#16334">[ thread ]</a>
+              <a href="subject.html#16334">[ subject ]</a>
+              <a href="author.html#16334">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>VNC. There are servers and clients for just about every operating  
+system known to man.
+
+The only drawback is that it is not encrypted like Timbuktu  
+is . . .there is one version that includes SSL encryption but it's  
+not free. It's from RealVNC . . .they have both free unencrypted and  
+pay encrypted versions.
+
+If you're comfortable with establishing SSH tunnels on your own with  
+terminal . . .then you can do it for free. Run a VNC server on the  
+iMac at home, set your home firewall to port forward SSH traffic to  
+this machine. Set up an encrypted tunnel on your laptop/work machine  
+so that some random local port gets forwarded to the right port on  
+the iMac at home . . .then simply VNC to the correct port on the  
+local machine.
+
+Chicken of the VNC is the most popular Mac client.
+
+The terminal command to issue on your laptop/work machine/whatever is  
+similar to:
+
+ssh -L 5901:127.0.0.1:5900 IP_at_your_house
+
+where IP_at_your_house is the WAN IP you get from your cable/dsl/FIOS/ 
+whatever provider.
+
+If you have a static IP then you're golden . . .if you do not have a  
+static IP then you can use DynDNS.org to manage the DNS entries for a  
+domain you setup and the DynDNS client built into most current  
+firewalls or the one you can get for MacOS X to update DynDNS's DNS  
+servers. In that case you would replace the IP above with the domain  
+name.
+
+Set up the home iMac to listen for VNC connections. Under Tiger you  
+can make sure that Apple Remote Desktop Client is installed . . .then  
+enable it in Sharing pref pane and set the access privs so that VNC  
+clients can connect. The problem with this is that I never figured  
+out how to make it work encrypted . . .so ended up using a freeware  
+VNC server (OSXVNC) instead.
+
+Finally, ensure that your firewall port forwards the right port to  
+your iMac.
+
+Then . . .
+
+1. establish the tunnel from your laptop/work Mac.
+2. VNC to the local port on the laptop/work Mac.
+3. The local port gets port forwarded to your firewall via SSH, then  
+forwarded to the waiting iMac VNC server and voila, you're in.
+
+You can also do this from a WIndows machine . . .or a Solaris machine  
+or whatever.
+
+I found a site on the web that included a QT movie about how to do  
+this from a Windows box and automate  
+everything . . .howto.diveintomark.org. While this movie is Windows  
+specific . . .he's a Mac guy and it includes how to make it work from  
+a Mac as well.
+
+I ended up making a .term document that issues the right command to  
+establish the tunnel . . .a simple double click and it is  
+setup . . .then VNC to local port and it works.
+
+
+On Jan 15, 2007, at 13:25, KJS wrote:
+
+&gt;<i>
+</I>&gt;<i> Hi, all.
+</I>&gt;<i>
+</I>&gt;<i> I have a need to access and control an iMac at home (to  
+</I>&gt;<i> occasionally restart
+</I>&gt;<i> an errant application). I'm evaluating Timbuktu Pro, and it does  
+</I>&gt;<i> what I
+</I>&gt;<i> want, albeit slowly. It's a bit pricey for my simple need, though.  
+</I>&gt;<i> Are there
+</I>&gt;<i> other options - shareware, open source, etc.?
+</I>&gt;<i>
+</I>&gt;<i> Thanks,
+</I>&gt;<i> Jerry
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X4U mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">X4U at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">http://listserver.themacintoshguy.com/mailman/listinfo/x4u</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>          <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="016323.html">[X4U] Remote control options
+</A></li>
+	<LI>Next message: <A HREF="016335.html">[X4U] Remote control options
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#16334">[ date ]</a>
+              <a href="thread.html#16334">[ thread ]</a>
+              <a href="subject.html#16334">[ subject ]</a>
+              <a href="author.html#16334">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

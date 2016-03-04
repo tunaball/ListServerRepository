@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Dialing into Windows Server
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Dialing%20into%20Windows%20Server&In-Reply-To=BF6084EA.2E00%25rgilmor%40uwo.ca">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="008962.html">
+   <LINK REL="Next"  HREF="008928.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Dialing into Windows Server</H1>
+    <B>DZ-Jay</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Dialing%20into%20Windows%20Server&In-Reply-To=BF6084EA.2E00%25rgilmor%40uwo.ca"
+       TITLE="[X4U] Dialing into Windows Server">dz at caribe.net
+       </A><BR>
+    <I>Wed Sep 28 16:59:11 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="008962.html">[X4U] Dialing into Windows Server
+</A></li>
+        <LI>Next message: <A HREF="008928.html">[X4U] External FireWire Booting Problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8964">[ date ]</a>
+              <a href="thread.html#8964">[ thread ]</a>
+              <a href="subject.html#8964">[ subject ]</a>
+              <a href="author.html#8964">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>First, its a Windows 2000 dial-up server, not 2003.  Second, I am not 
+connecting through the Internet -- I am dialing up to a Windows 2000 
+machine, i.e. a Windows 2000 machine will pick up the phone and 
+establish a PPP connection with me.  Once I authenticate with that 
+machine, I will be able to access the network, at least that's the 
+theory, as it works with PCs.
+
+Because of this, I am not looking to connect to a particular share.  I 
+need to access the *network* itself so that I can ssh into some 
+servers, ftp others, etc., all of them inside my work internal network 
+-- no Internet there.
+
+I thought there might be some network driver or some sort of client 
+from Microsoft to allow for Macs to dial into a Windows network.  But 
+if there isn't, then its OK, I guess I'll have to try with a PC.
+
+	dZ.
+
+On Sep 28, 2005, at 17:35, Richard Gilmore wrote:
+
+&gt;<i> I'm not sure you'll be able access the whole network from a Mac in 
+</I>&gt;<i> that way.
+</I>&gt;<i> The PCs use a Primary Domain controller to make all the machines on 
+</I>&gt;<i> their
+</I>&gt;<i> network act and look the same way and a Mac just can't access that. 
+</I>&gt;<i> The most
+</I>&gt;<i> you'll be able to do is access the servers, which should be all you 
+</I>&gt;<i> would
+</I>&gt;<i> need. What other network services are you interested in?
+</I>&gt;<i>
+</I>&gt;<i> Panther understands Windows 2000 but not Windows 2003 server. From 
+</I>&gt;<i> within
+</I>&gt;<i> the network you would just use the GO menu connect to server and enter 
+</I>&gt;<i> the
+</I>&gt;<i> path to the server. I'm not how that would work accessing it through 
+</I>&gt;<i> the
+</I>&gt;<i> internet though. I still think it would involve FTP.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On 28/9/05 5:08 AM, &quot;DZ-Jay&quot; &lt;<A HREF="../../../mailman/listinfo/x4u.html">dz at caribe.net</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> On Sep 27, 2005, at 10:52, Richard Gilmore wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> What kind of Windows server are they using? (2003 is difficult to 
+</I>&gt;&gt;&gt;<i> work
+</I>&gt;&gt;&gt;<i> with)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I believe its Windows 2000.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Can you connect to the share from a Mac plugged into the network at
+</I>&gt;&gt;&gt;<i> work?
+</I>&gt;&gt;&gt;<i> (Requires a laptop or dragging you machine to work to test)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Haven't checked.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Can you FTP to the share from home?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Well, the thing is that I am trying to gain access to the LAN itself 
+</I>&gt;&gt;<i> by
+</I>&gt;&gt;<i> dial-up -- its not to access a particular share, but to be able to use
+</I>&gt;&gt;<i> all our Network resources (since our various servers are behind a
+</I>&gt;&gt;<i> firewall that can only be accessed from the inside.)  Windows machines
+</I>&gt;&gt;<i> can dial-up very easily -- the only difference is that in Windows you
+</I>&gt;&gt;<i> have that &quot;Log-on to network&quot; check-box which automatically logs you
+</I>&gt;&gt;<i> into the domain, while in my Mac network configs there is no such
+</I>&gt;&gt;<i> thing.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> dZ.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> X4U mailing list
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">X4U at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">http://listserver.themacintoshguy.com/mailman/listinfo/x4u</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random 
+</I>&gt;&gt;<i> stuff:
+</I>&gt;&gt;<i>          <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X4U mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">X4U at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">http://listserver.themacintoshguy.com/mailman/listinfo/x4u</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random 
+</I>&gt;<i> stuff:
+</I>&gt;<i>          <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="008962.html">[X4U] Dialing into Windows Server
+</A></li>
+	<LI>Next message: <A HREF="008928.html">[X4U] External FireWire Booting Problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8964">[ date ]</a>
+              <a href="thread.html#8964">[ thread ]</a>
+              <a href="subject.html#8964">[ subject ]</a>
+              <a href="author.html#8964">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

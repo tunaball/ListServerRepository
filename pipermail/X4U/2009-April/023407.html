@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] IP address on local network
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20IP%20address%20on%20local%20network&In-Reply-To=p06240801c6193e9d5ee8%40%5B10.0.1.151%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="023406.html">
+   <LINK REL="Next"  HREF="023408.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] IP address on local network</H1>
+    <B>Neil Laubenthal</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20IP%20address%20on%20local%20network&In-Reply-To=p06240801c6193e9d5ee8%40%5B10.0.1.151%5D"
+       TITLE="[X4U] IP address on local network">neil at laubenthal.net
+       </A><BR>
+    <I>Sun Apr 26 17:19:48 PDT 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="023406.html">[X4U] IP address on local network
+</A></li>
+        <LI>Next message: <A HREF="023408.html">[X4U] IP address on local network
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#23407">[ date ]</a>
+              <a href="thread.html#23407">[ thread ]</a>
+              <a href="subject.html#23407">[ subject ]</a>
+              <a href="author.html#23407">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Sure . . . here's a brief description of the difference.
+
+You get a single public IP fro your ISP and it is assigned to your  
+router. The router does something called Network Address Translation  
+(NAT) to allow multiple computers at your house to simultaneously  
+access the internet.
+
+Each computer inside your house needs an IP address  
+obviously . . .they're usually assigned in the 192.168.x.x or  
+10.0.x.x. ranges as these IPs are not directly routable on the internet.
+
+If you use DHCP (Dynamic Host Configuration Protocol) then your router  
+hands out IPs in a specified range, along with the router's address  
+and DNS server addresses as supplied by your ISP. These IPs have a  
+lease time until they expire so that they can be reused. They can be  
+assigned completely dynamically which means one particular computer  
+may have a different IP today than it did yesterday. This is fine if  
+all you want to do is get to the internet . . .but if you want to  
+connect from say your laptop to your desktop then you need to know the  
+desktop IP.
+
+If you assign a static IP to each computer then it stays the same and  
+you can easily connect to other computers in your house. However,  
+static IPs are a little harder to manage.
+
+One way to get the advantages of both dynamic and static is to use  
+DHCP but set address reservations. On your router . . . you enter the  
+MAC address (Media Access Control, not the same thing as a Mac) of  
+each computer and tell the router to dynamically assign IPs but to  
+always assign 192.168.1.5 to mac address xyz . . .that way your  
+desktop always has the same IP assigned.
+
+I personally use static IP addresses for all my computers at  
+home . . . but keep a DHCP scope setup but inactive as well for when I  
+have visitors, that way they don't have to do any fiddling  
+around . . .I just enable the scope while they're here and they can  
+connect.
+
+
+On Apr 25, 2009, at 6:28 PM, Daly Jessup wrote:
+
+&gt;&gt;<i> Thanks for the information.  I thought DHCP had some security  
+</I>&gt;&gt;<i> advantage.  But, if it's mostly just an easy way to give out IP  
+</I>&gt;&gt;<i> addresses, I'll have to try this hybrid method.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Apr 24, 2009, at 8:23 PM, Daly Jessup wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Static IPs allow us to set up access to our home network from  
+</I>&gt;&gt;&gt;<i> remote computers, with ports forwarded to local IP addresses that  
+</I>&gt;&gt;&gt;<i> will not be changing now and then.  But when a visitor comes to  
+</I>&gt;&gt;&gt;<i> our home and tries to connect to our local network, they will be  
+</I>&gt;&gt;&gt;<i> able to get an IP address by DHCP without my having to know their  
+</I>&gt;&gt;&gt;<i> MAC address.
+</I>&gt;<i>
+</I>&gt;<i> To tell the truth, I'm not very savvy with these things, and don't  
+</I>&gt;<i> understand what the difference would be between having Network Pref  
+</I>&gt;<i> Pane use DHCP with manual IP assignment, or having the router  
+</I>&gt;<i> reserve IP addresses by MAC address.
+</I>&gt;<i>
+</I>&gt;<i> Either way, it seems your computer gets a &quot;permanent&quot; internal IP  
+</I>&gt;<i> address.
+</I>&gt;<i>
+</I>&gt;<i> Can some more geeky person explain the difference? (Or is the  
+</I>&gt;<i> question so ignorant as to make it unanswerable short of a book?)
+</I>&gt;<i>
+</I>&gt;<i> Daly
+</I>&gt;<i> ----------------------
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X4U mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">X4U at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">http://listserver.themacintoshguy.com/mailman/listinfo/x4u</A>
+</I>&gt;<i>
+</I>&gt;<i> Seven Cent Deals - Great legacy stuff Great Legacy Price <A HREF="http://www.drbott.com/prod/db.lasso?cat=Seven+Cent+Deal">http://www.drbott.com/prod/db.lasso?cat=Seven+Cent+Deal</A>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="023406.html">[X4U] IP address on local network
+</A></li>
+	<LI>Next message: <A HREF="023408.html">[X4U] IP address on local network
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#23407">[ date ]</a>
+              <a href="thread.html#23407">[ thread ]</a>
+              <a href="subject.html#23407">[ subject ]</a>
+              <a href="author.html#23407">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

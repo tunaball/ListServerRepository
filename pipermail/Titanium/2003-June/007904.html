@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> &quot;making my Ti-500 DVD drive region-free&quot;
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%22making%20my%20Ti-500%20DVD%20drive%20region-free%22&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="007903.html">
+   <LINK REL="Next"  HREF="007905.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>&quot;making my Ti-500 DVD drive region-free&quot;</H1>
+    <B>Trevor J. Hutley</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%22making%20my%20Ti-500%20DVD%20drive%20region-free%22&In-Reply-To="
+       TITLE="&quot;making my Ti-500 DVD drive region-free&quot;">hutley at geneva-link.ch
+       </A><BR>
+    <I>Wed Jun  4 07:03:18 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="007903.html">[OT] AIFC Support dropped..?
+</A></li>
+        <LI>Next message: <A HREF="007905.html">[Ti] sleep mode
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7904">[ date ]</a>
+              <a href="thread.html#7904">[ thread ]</a>
+              <a href="subject.html#7904">[ subject ]</a>
+              <a href="author.html#7904">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Since every few weeks on this List, the question of &quot;how to make my 
+DVD region free&quot; comes up again, I thought that I would just re-post 
+my (FEB 2002) step-by-step action to make the DVD drive on my Ti-500 
+in to a region-free one.  I hope it is a helpful guide to anyone who 
+plans a similar action.
+
+--_________________________________________________________________________
+
+THIS NOTE DESCRIBES THE STEPS TO MAKE MY DVD DRIVE REGION FREE (RPC-1)
+
+Version 2 [26-FEB-02]
+
+
+I have a Ti-500 with a DVD-drive from Matsushita, model SR-8187 (look 
+in Apple System Profiler, under Devices &amp; Volumes).
+
+My DVD-drive was an RPC2 drive, set at Region 2 [Europe].
+
+Since I have DVD from the USA [Region 1] and Hong Kong [Region 3], I
+wanted to make my DVD drive region-free.
+
+I thought that I would summarize the process, for those who are interested.
+
+	THIS IS ALL AT YOUR OWN RISK.
+	I AM NOT RECOMMENDING NOR PROPOSING ANYTHING.
+	I AM JUST DESCRIBING WHAT I DID AND THE RESULTS.
+	READ ALL THE INFO THAT COMES WITH THE UTILITIES BEFORE YOU START
+
+ESPECIALLY MAKE SURE NOT TO INTERRUPT THE APPLE OR HACK FIRMWARE
+UPDATE PROCESSES.
+
+
+This URL (Mac DVD Resource) is the place from which to find all the
+utilities and hacks, either hosted there or linked:
+
+	&lt;<A HREF="http://www.WormInTheApple.gr/macdvd/">http://www.WormInTheApple.gr/macdvd/</A>&gt;
+
+
+THE STEPS TO MAKE MY DVD DRIVE REGION FREE (RPC-1)
+
+
+PRIOR to this process, you must have already played a DVD in your drive.
+You cannot run this process on a brand new unused drive.
+
+1. run DVDInfo 2.0.3 (by xvi) and you will see a result like this:
+
+		Model:    MATSHITA DVD-ROM SR-8187
+  &#160;&#160;		Firmware: HA15
+  &#160;&#160;&#160;&#160;&#160;	RPC-2:    Region locked (Phase II)
+
+2. run  the APPLE &quot;PowerBook G4 DVD-ROM Update&quot; 1.0
+
+&lt;<A HREF="http://www.versiontracker.com/redir.fcgi/kind=1&db=mac&id=11021/_PB_G4_DVDROM_Update.smi.bin">http://www.versiontracker.com/redir.fcgi/kind=1&amp;db=mac&amp;id=11021/_PB_G4_DVDROM_Update.smi.bin</A>&gt;
+
+This updates the HA15 to an HA18 firmware.
+
+Apple System Profiler should show that the DVD drive is now HA18.
+
+3. RESTART
+
+4. run the Matsushita SR-8187 XA18 updater,
+    which then updates (hacks) the firmware to XA18
+
+5, restart
+
+6. run DVDInfo 2.0.3, which then shows:
+
+        Vendor: MATSHITA
+         Model: DVD-ROM SR-8187
+      Firmware: XA18
+    RPC Status: RPC-1 (region-free)
+
+The DVD drive is now region-free.
+
+What this means is that it will (should) read DVD from any region.
+All mine are OK.
+
+If you put in a DVD from another region, you will be prompted for a
+region change.
+
+You can manage the number of region changes with the utility REGION
+1.0.9 (also by xvi).
+
+Note that Region ONLY works on RPC-1 drives, so you need to go
+through steps 1 - 6 above to get to that type of drive.
+
+I hope that this overview is helpful.
+
+I have appreciated all the input from Fred Clarke on this subject,
+who tells me that he has made about 50 DVD drives region free.  I am
+a relative beginner, as this is only my second one !
+
+regards, Trevor
+
+_________________________________________________________________________
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="007903.html">[OT] AIFC Support dropped..?
+</A></li>
+	<LI>Next message: <A HREF="007905.html">[Ti] sleep mode
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7904">[ date ]</a>
+              <a href="thread.html#7904">[ thread ]</a>
+              <a href="subject.html#7904">[ subject ]</a>
+              <a href="author.html#7904">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

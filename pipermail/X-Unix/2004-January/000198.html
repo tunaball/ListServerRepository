@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Postfix troubles
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Postfix%20troubles&In-Reply-To=list-10506094%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000196.html">
+   <LINK REL="Next"  HREF="000199.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Postfix troubles</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Postfix%20troubles&In-Reply-To=list-10506094%40mail.ninewire.com"
+       TITLE="[X-Unix] Postfix troubles">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Wed Jan 28 12:45:58 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000196.html">[X-Unix] Postfix troubles
+</A></li>
+        <LI>Next message: <A HREF="000199.html">Syslogd on panther
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#198">[ date ]</a>
+              <a href="thread.html#198">[ thread ]</a>
+              <a href="subject.html#198">[ subject ]</a>
+              <a href="author.html#198">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jan 28, 2004, at 4:40 pm, Michael Grant wrote:
+
+&gt;<i> #inet_interfaces = $myhostname
+</I>&gt;<i> inet_interfaces = $myhostname, localhost
+</I>&gt;<i> ...
+</I>&gt;<i> PS. Stroller, do you think this should be sufficient to keep spammers 
+</I>&gt;<i> from using my machine as an open relay?
+</I>
+I was really concerned when I read your original posting that you said 
+you were opening port 25 in your firewall. I only use my Mac as my 
+workstation, and firewall at my router, so I'm not used to thinking in 
+terms of OS X security. I presume that you have some other method of 
+protecting that port from the outside world - you're probably on a 
+NATted LAN, or something..?
+
+If you have no other machines using this as a mail-server - IE if 
+Postifx is running for the benefit of this machine only - then I might 
+try setting:
+   inet_interfaces = localhost
+Or:
+   inet_interfaces = 127.0.0.1
+
+If you can still send mail from the local machine, then this would be 
+perfect - since 127.0.0.1 is bound to the &quot;loopback&quot; address, no other 
+machine should be able to send.
+
+Stroller.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000196.html">[X-Unix] Postfix troubles
+</A></li>
+	<LI>Next message: <A HREF="000199.html">Syslogd on panther
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#198">[ date ]</a>
+              <a href="thread.html#198">[ thread ]</a>
+              <a href="subject.html#198">[ subject ]</a>
+              <a href="author.html#198">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

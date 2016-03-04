@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] En/Decrypt Mismatch: Command-Line openssl vs. Perl's
+	Crypt::OpenSSL::RSA
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20En/Decrypt%20Mismatch%3A%20Command-Line%20openssl%20vs.%20Perl%27s%0A%09Crypt%3A%3AOpenSSL%3A%3ARSA&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003160.html">
+   <LINK REL="Next"  HREF="003162.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] En/Decrypt Mismatch: Command-Line openssl vs. Perl's
+	Crypt::OpenSSL::RSA</H1>
+    <B>Jerry Krinock</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20En/Decrypt%20Mismatch%3A%20Command-Line%20openssl%20vs.%20Perl%27s%0A%09Crypt%3A%3AOpenSSL%3A%3ARSA&In-Reply-To="
+       TITLE="[X-Unix] En/Decrypt Mismatch: Command-Line openssl vs. Perl's
+	Crypt::OpenSSL::RSA">jerry at ieee.org
+       </A><BR>
+    <I>Tue Aug 19 01:04:14 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003160.html">[X-Unix] Poke...
+</A></li>
+        <LI>Next message: <A HREF="003162.html">[X-Unix] En/Decrypt Mismatch: Command-Line openssl vs. Perl's
+	Crypt::OpenSSL::RSA
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3161">[ date ]</a>
+              <a href="thread.html#3161">[ thread ]</a>
+              <a href="subject.html#3161">[ subject ]</a>
+              <a href="author.html#3161">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I cannot get RSA-encrypted messages which I generate using Perl's  
+Crypt::OpenSSL::RSA to decrypt using the openssl command-line tool.
+
+Attempting to cut the problem in half, I then did another experiment   
+to see if these two tools would would generate the same signature.   
+They don't.  So I conclude that the problem is in the ENcrypting.  I  
+gave both encryptors (Crypt::OpenSSL::RSA and openssl command) the...
+
+   Same message
+   Same private key
+   Same padding (PKCS1)
+   Same digest (SHA1)
+   Both running on same Macintosh, presumably using the same
+      OpenSSL version 0.9.7l library in Mac OS X 10.5.4.
+
+Here are my commands/code and results, starting with the command-line:
+
+###############################################################
+# Create a private key
+Jerrys-Mac-Mini: jk$ openssl genrsa -out Test248.private.pem
+Generating RSA private key, 512 bit long modulus
+.........++++++++++++
+.............++++++++++++
+e is 65537 (0x10001)
+
+# Create signature of message &quot;Bonehead&quot; using the key in file
+# Test248.private.pem, SHA1 digest and PKCS padding [1]:
+
+Jerrys-Mac-Mini: jk$ echo -n &quot;Bonehead&quot; \
+|<i> openssl dgst -sha1 -binary\
+</I>|<i> openssl rsautl -pkcs -sign -inkey Test248.private.pem -hexdump
+</I>0000 - 8a c6 56 19 97 f5 e7 16-20 30 f2 2f 0e af 7c 28
+0010 - df 9d cd 5a 0e b0 11 c1-cc bb f2 3b 03 87 f0 96
+0020 - 0d ce b4 55 dc 69 81 bc-30 40 75 9d 74 b8 b7 bd
+0030 - 3b 15 a0 5d c2 db ab 9a-8d d3 f2 4b 77 e1 e9 a1
+##############################################################
+
+Now I try to create the same signature using a perl script:
+
+##############################################################
+#!/usr/local/bin/perl -w
+
+use strict ;
+use warnings ;
+
+use Crypt::OpenSSL::Random ;
+use Crypt::OpenSSL::RSA ;
+
+# Read in the key file just created
+my $private_key_string = &quot;&quot; ;
+my $key_path = &quot;/Users/jk/Documents/SheepSystems/Keys/
+Test248.private.pem&quot; ;
+open (KEY_FILE, $key_path) ;
+    while (my $line = &lt;KEY_FILE&gt;) {
+        $private_key_string .= $line ;
+    }
+close(KEY_FILE);
+
+print &quot;Read key from file:\n$private_key_string\n&quot; ;
+
+my $rsa_priv = Crypt::OpenSSL::RSA-
+
+
+ &gt;new_private_key($private_key_string);
+
+# Use same message, padding and digest as in the command-line test
+my $msg = &quot;Bonehead&quot; ;
+$rsa_priv-&gt;use_pkcs1_padding();
+$rsa_priv-&gt;use_sha1_hash() ;
+my $signature = $rsa_priv-&gt;sign($msg);
+my $showHexSig = showHex($signature) ;
+print &quot;signature of 'Bonehead':\n$showHexSig\n&quot; ;
+
+# sub showHex is shown at the bottom of this message
+##############################################################
+
+Running the above script, I get this:
+
+##############################################################
+Read key from file:
+-----BEGIN RSA PRIVATE KEY-----
+MIIBOgIBAAJBALE2d5DpKbYxfIqv+6jYnW6DDvDyJFCdQt+s432GQsy8+ymL9DOR
+mPcRQfk1jas1pqtsy+GGUlYd4R1kxbBZb4UCAwEAAQJANqtw83ma7qQRoc9sucgp
+uUAhSd/JqDz7tnllrQHQdcyLMRSCBxvZ/i72YVixRRTHb1GVZ79iJWBmzh8ATLvj
+uQIhAOuYWu6Vkve+zQ4Cd5EGWpytY/Or/6ZXvQf3L9ELIB07AiEAwI+miVT8t22w
+Ge1IX+Q3L7lK2uBm97Pkwix9Wf7K2j8CIFUrQtQ1ZmgBpgeGhMr8zQ0O8a9JYqYz
+2bZjefnMV9O5AiEAqSrKLKYcKm1To0NhLNUKYoPPLkCsVPqWgruhGDoOLfMCIE1E
+kpJF13Dtq3KQOsaCoXbL4vo350vkBUrSovu45/6p
+-----END RSA PRIVATE KEY-----
+
+signature of 'Bonehead':
+64 bytes:
+78 b3 43 22 4b 4b 86 7f 47 25 00 f1 62 a2 66 70
+e6 7e 82 f2 7a b6 cf ff ab dd f1 8a ff 0d cf a1
+b5 3d 60 dc ac 9f 6f 0c 83 b9 51 c9 ac fa 7d 15
+0b cc 97 cf 99 e5 6b ee 41 f0 d1 35 a1 a0 c1 09
+##############################################################
+
+As you can see the two signatures are both 64 bytes long but do not  
+match.
+
+What might I be missing?
+
+Thanks very much,
+
+Jerry Krinock
+
+[1] The reason I used PKCS padding (-pkcs) is because if I change it   
+to -oaep in the command-line test, I get an error message:
+RSA operation error
+   error:04066076:rsa routines:RSA_EAY_PRIVATE_ENCRYPT:unknown padding
+type:rsa_eay.c:360:
+which does not make sense because my version is:
+
+Jerrys-Mac-Mini:Keys jk$ openssl
+OpenSSL&gt; version
+OpenSSL 0.9.7l 28 Sep 2006
+
+and &quot;RSA_padding_add_PKCS1_OAEP() and RSA_padding_check_PKCS1_OAEP()  
+were added in OpenSSL 0.9.2b&quot; according to documentation:
+<A HREF="http://openssl.org/docs/crypto/RSA_padding_add_PKCS1_type_1.html#">http://openssl.org/docs/crypto/RSA_padding_add_PKCS1_type_1.html#</A>
+
+[2]
+sub showHex {
+    my $data = shift ;
+    use bytes ;
+    my $len = length($data) ;
+    my $i ;
+    my $show = &quot;&quot; ;
+    for ($i=0; $i&lt;$len; $i++) {
+        my $value = ord(substr($data, $i, 1)) ;
+        $show .= &quot; &quot; ;
+        $show .= sprintf(&quot;%02x&quot;, $value) ;
+        if ((($i+1) % 16) == 0) {
+            $show .= &quot;\n&quot; ;
+        }
+    }
+
+    return &quot;$len bytes:\n$show&quot; ; 
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003160.html">[X-Unix] Poke...
+</A></li>
+	<LI>Next message: <A HREF="003162.html">[X-Unix] En/Decrypt Mismatch: Command-Line openssl vs. Perl's
+	Crypt::OpenSSL::RSA
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3161">[ date ]</a>
+              <a href="thread.html#3161">[ thread ]</a>
+              <a href="subject.html#3161">[ subject ]</a>
+              <a href="author.html#3161">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

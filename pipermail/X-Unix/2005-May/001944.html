@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Tiger X11.app and xforwarding in ssh
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Tiger%20X11.app%20and%20xforwarding%20in%20ssh&In-Reply-To=20050513101647.GA21253%40sage.che.pitt.edu">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001941.html">
+   <LINK REL="Next"  HREF="001943.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Tiger X11.app and xforwarding in ssh</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Tiger%20X11.app%20and%20xforwarding%20in%20ssh&In-Reply-To=20050513101647.GA21253%40sage.che.pitt.edu"
+       TITLE="[X-Unix] Tiger X11.app and xforwarding in ssh">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Fri May 13 09:06:55 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001941.html">[X-Unix] Tiger X11.app and xforwarding in ssh
+</A></li>
+        <LI>Next message: <A HREF="001943.html">[X-Unix] Tiger X11.app and xforwarding in ssh
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1944">[ date ]</a>
+              <a href="thread.html#1944">[ thread ]</a>
+              <a href="subject.html#1944">[ subject ]</a>
+              <a href="author.html#1944">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On May 13, 2005, at 11:16 am, John Harrold wrote:
+&gt;<i> Sometime in May Stroller assaulted the keyboard and produced:
+</I>&gt;<i> |
+</I>&gt;<i> | On May 12, 2005, at 11:29 pm, John Harrold wrote:
+</I>&gt;<i> |
+</I>&gt;<i> | &gt;I upgraded to Tiger recently and when I try to ssh to my linux box 
+</I>&gt;<i> using
+</I>&gt;<i> | &gt;either -Y or -X I cannot start any graphical applications. This 
+</I>&gt;<i> worked
+</I>&gt;<i> | &gt;before in 10.3.9. I can start x11 applications locally, so X11.app 
+</I>&gt;<i> is
+</I>&gt;<i> | &gt;running and working for the local machine. Can anyone offer any 
+</I>&gt;<i> hints on
+</I>&gt;<i> | &gt;how to get this working?
+</I>&gt;<i> |
+</I>&gt;<i> | I think X11 &gt; Prferences &gt; Security &gt; Allow connections from network
+</I>&gt;<i> | clients should do it.
+</I>&gt;<i>
+</I>&gt;<i> In my X11 Preferences I only have two options: Input and Output
+</I>&gt;<i> ...
+</I>
+Hi John,
+
+I haven't installed Tiger yet on my desktop machine, and it was that 
+from which I replied to you. I looks like they've done away with the 
+security preferences tab in X11 on Tiger, which I have on my laptop; 
+`ssh -X mylinuxbox` works perfectly from that machine, so I don't know 
+what to advise you.
+
+Perhaps you could post the command-line output of your ssh session?
+For instance, when trying this on my Tiger laptop:
+
+    370 ~ $ ssh -X compaq
+    The authenticity of host 'compaq' can't be established.
+    RSA key fingerprint is
+    Are you sure you want to continue connecting (yes/no)? yes
+    Warning: Permanently added 'compaq' (RSA) to the list of known hosts.
+    Password:
+    Last login: Fri May 13 16:45:10 2005 from funf
+    <A HREF="../../../mailman/listinfo/x-unix.html">stroller at compaq</A> stroller $ firefox
+    /opt/firefox/mozilla-xremote-client: Error: Failed to find a running 
+server.
+    No running windows found
+    Xlib:  extension &quot;RENDER&quot; missing on display &quot;localhost:11.0&quot;.
+    Xlib:  extension &quot;RENDER&quot; missing on display &quot;localhost:11.0&quot;.
+
+The Firefox opens perfectly in an X session on my Mac. I think your 
+output might be relevant to your problem?
+
+Stroller.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001941.html">[X-Unix] Tiger X11.app and xforwarding in ssh
+</A></li>
+	<LI>Next message: <A HREF="001943.html">[X-Unix] Tiger X11.app and xforwarding in ssh
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1944">[ date ]</a>
+              <a href="thread.html#1944">[ thread ]</a>
+              <a href="subject.html#1944">[ subject ]</a>
+              <a href="author.html#1944">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

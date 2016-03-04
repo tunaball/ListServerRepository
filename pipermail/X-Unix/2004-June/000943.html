@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Remote force logout and lockout of user
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Remote%20force%20logout%20and%20lockout%20of%20user&In-Reply-To=list-13941201%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000940.html">
+   <LINK REL="Next"  HREF="000944.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Remote force logout and lockout of user</H1>
+    <B>Dennis Fazio</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Remote%20force%20logout%20and%20lockout%20of%20user&In-Reply-To=list-13941201%40mail.ninewire.com"
+       TITLE="[X-Unix] Remote force logout and lockout of user">dfz at mac.com
+       </A><BR>
+    <I>Tue Jun 15 21:28:32 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000940.html">cups problems
+</A></li>
+        <LI>Next message: <A HREF="000944.html">[X-Unix] Remote force logout and lockout of user
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#943">[ date ]</a>
+              <a href="thread.html#943">[ thread ]</a>
+              <a href="subject.html#943">[ subject ]</a>
+              <a href="author.html#943">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>--On Sunday, June 13, 2004 04:53 PM -0700 James Bucanek 
+&lt;<A HREF="../../../mailman/listinfo/x-unix.html">subscriber at gloaming.com</A>&gt; wrote:
+
+&gt;<i> Personally, I'd just take the gloves off.  Change the password, then
+</I>&gt;<i>
+</I>&gt;<i>     sudo reboot
+</I>
+Yes, I think the easiest is:
+
+ssh remote-host
+sudo passwd &lt;otheruser&gt;   to change password
+sudo shutdown -h now      to log them out and shut down
+
+That works fine. The problem is, if I then want to re-enable their login, I 
+cannot get back into the machine unless somebody logs in first. That is, 
+after the machine is booted back up and the multi-user login screen is 
+visible, I cannot even ping the machine until one of the users logs in first. 
+Is that the way it is supposed to behave.
+
+-- 
+Dennis Fazio
+<A HREF="../../../mailman/listinfo/x-unix.html">dfz at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000940.html">cups problems
+</A></li>
+	<LI>Next message: <A HREF="000944.html">[X-Unix] Remote force logout and lockout of user
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#943">[ date ]</a>
+              <a href="thread.html#943">[ thread ]</a>
+              <a href="subject.html#943">[ subject ]</a>
+              <a href="author.html#943">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Finder FUBARs another 'move'
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Finder%20FUBARs%20another%20%27move%27&In-Reply-To=1517569126-1197164513-cardhu_decombobulator_blackberry.rim.net-28669109-%40bxe016.bisx.prod.on.blackberry">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002912.html">
+   <LINK REL="Next"  HREF="002916.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Finder FUBARs another 'move'</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Finder%20FUBARs%20another%20%27move%27&In-Reply-To=1517569126-1197164513-cardhu_decombobulator_blackberry.rim.net-28669109-%40bxe016.bisx.prod.on.blackberry"
+       TITLE="[X-Unix] Finder FUBARs another 'move'">ecrist at secure-computing.net
+       </A><BR>
+    <I>Sat Dec  8 21:01:40 PST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002912.html">[X-Unix] Finder FUBARs another 'move'
+</A></li>
+        <LI>Next message: <A HREF="002916.html">[X-Unix] Finder FUBARs another 'move'
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2913">[ date ]</a>
+              <a href="thread.html#2913">[ thread ]</a>
+              <a href="subject.html#2913">[ subject ]</a>
+              <a href="author.html#2913">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>OK, so the correct options are -av, so the correct command would be  
+the following:
+
+rsync -av &lt;curr_dir&gt; &lt;new_dir&gt; &amp;&amp; rm -r &lt;curr_dir&gt;
+
+HTH
+
+
+Eric
+
+
+
+On Dec 8, 2007, at 7:40 PM, Eric F Crist wrote:
+
+&gt;<i> Rsync -v &lt;source&gt; &lt;destination&gt; &amp;&amp; rm -r &lt;source&gt;
+</I>&gt;<i>
+</I>&gt;<i> Check my work on the rsync options, I can't verify from the  
+</I>&gt;<i> restaurant. ;)
+</I>&gt;<i> ---
+</I>&gt;<i> Eric F Crist
+</I>&gt;<i> Secure Computing Networks
+</I>&gt;<i>
+</I>&gt;<i> -----Original Message-----
+</I>&gt;<i> From: TjL &lt;<A HREF="../../../mailman/listinfo/x-unix.html">luomat at gmail.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> Date: Sat, 8 Dec 2007 18:40:56
+</I>&gt;<i> To:<A HREF="../../../mailman/listinfo/x-unix.html">fin at finseth.com</A>,&quot;A place to discuss Mac OS X from the perspective  
+</I>&gt;<i> of the command line.&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">x-unix at listserver.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Subject: Re: [X-Unix] Finder FUBARs another 'move'
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Dec 8, 2007 5:17 PM, Craig A. Finseth &lt;<A HREF="../../../mailman/listinfo/x-unix.html">fin at finseth.com</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;&gt;&gt;<i> From your description:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>        cp -R &lt;source&gt; &lt;target&gt;
+</I>&gt;<i>
+</I>&gt;<i> That won't remove the files from the source.  I could do
+</I>&gt;<i>
+</I>&gt;<i>       cp -R  &lt;source&gt; &lt;target&gt; &amp;&amp; rm -rf &lt;source&gt;
+</I>&gt;<i>
+</I>&gt;<i> but that will fail because some of the files already exist, so the rm
+</I>&gt;<i> part of the command will not execute.  So I could just run rm -rf
+</I>&gt;<i> &lt;source&gt; but that seems rather dangerous to me.
+</I>&gt;<i>
+</I>&gt;<i> I've got a script that I've been working on.  I've attached it here
+</I>&gt;<i> (not sure if the list allows attachments, guess I'll find out).
+</I>&gt;<i>
+</I>&gt;<i> Comments welcome.
+</I>&gt;<i>
+</I>&gt;<i> TjL
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>
+-----
+Eric F Crist
+Secure Computing Networks
+
+
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002912.html">[X-Unix] Finder FUBARs another 'move'
+</A></li>
+	<LI>Next message: <A HREF="002916.html">[X-Unix] Finder FUBARs another 'move'
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2913">[ date ]</a>
+              <a href="thread.html#2913">[ thread ]</a>
+              <a href="subject.html#2913">[ subject ]</a>
+              <a href="author.html#2913">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

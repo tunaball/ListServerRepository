@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How make launchd stop trying to launch nonexistent
+	program?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20make%20launchd%20stop%20trying%20to%20launch%20nonexistent%0A%09program%3F&In-Reply-To=9B4A79AD-BE3D-4BFC-84BC-0ECF9D1BD79B%40ieee.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003083.html">
+   <LINK REL="Next"  HREF="003086.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How make launchd stop trying to launch nonexistent
+	program?</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20make%20launchd%20stop%20trying%20to%20launch%20nonexistent%0A%09program%3F&In-Reply-To=9B4A79AD-BE3D-4BFC-84BC-0ECF9D1BD79B%40ieee.org"
+       TITLE="[X-Unix] How make launchd stop trying to launch nonexistent
+	program?">ecrist at secure-computing.net
+       </A><BR>
+    <I>Thu Apr 17 05:19:40 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003083.html">[X-Unix] How make launchd stop trying to launch nonexistent
+	program?
+</A></li>
+        <LI>Next message: <A HREF="003086.html">[X-Unix] How make launchd stop trying to launch nonexistent
+	program?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3084">[ date ]</a>
+              <a href="thread.html#3084">[ thread ]</a>
+              <a href="subject.html#3084">[ subject ]</a>
+              <a href="author.html#3084">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>According to man launchd, a separate launchd process is started for  
+each application started and controlled by launchd.  As such, I get  
+the following output:
+
+<A HREF="../../../mailman/listinfo/x-unix.html">ecrist at swordfish</A>:~-&gt; ps auxwww |grep launch
+ecrist     110   0.0  0.2   391468   3728   ??  S     6:56PM    
+0:00.16 /System/Library/CoreServices/AirPort Base Station Agent.app/ 
+Contents/MacOS/AirPort Base Station Agent -launchd
+ecrist     106   0.0  0.0   599792    652   ??  Ss    6:56PM    
+0:01.05 /sbin/launchd
+_mdnsresponder    20   0.0  0.1    77312   1264   ??  Ss    6:56PM    
+0:00.50 /usr/sbin/mDNSResponder -launchd
+ecrist    1690   0.0  0.0   599780    400 s000  R+    7:13AM   0:00.00  
+grep launch
+root         1   0.0  0.0   600816    560   ??  Ss    6:56PM    
+0:01.30 /sbin/launchd
+
+Do you see your process when you run a ps auxwww?  You can see above  
+that there is a launchd proccess (pid 106) and another process,  
+AirPort Base Station (pid 110).  Both are owned by my user, and since  
+they're pretty close to the same pid, I'd make the assumption they're  
+related.  Look for this type of output on your system and see if you  
+can't kill the launchd process responsible.
+
+The funny thing about launchd is that Apple actually recommends  
+*against* using it, and instead asks you to use whatever programs own  
+daemon instead.  From the launchd man page:
+
+Where possible, it is preferable for jobs to launch on demand based on  
+criteria specified in their respective configuration files.
+
+HTH
+
+Eric
+
+On Apr 16, 2008, at 11:12 PM, Jerry Krinock wrote:
+
+&gt;<i>
+</I>&gt;<i> On 2008 Apr, 16, at 20:12, Eric F Crist wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Sighup the launchd process maybe.
+</I>&gt;<i>
+</I>&gt;<i> I typed into Terminal &quot;kill -1 1&quot; since HUP is signal 1 and  
+</I>&gt;<i> launchd's pid=1.  Did not help.
+</I>&gt;<i>
+</I>&gt;&gt;<i> If that doesn't help, restart the daemon entirely.
+</I>&gt;<i>
+</I>&gt;<i> Not sure what you mean by that, but I tried &quot;kill -9 1&quot;.  Also did  
+</I>&gt;<i> not help.  I think maybe launchd ignored the signal since after  
+</I>&gt;<i> doing this it was still running and still had the same pid=1.
+</I>&gt;<i>
+</I>&gt;&gt;<i> I'll look more into it if you don't have a solution by tomorrow  
+</I>&gt;&gt;<i> morning.
+</I>&gt;<i>
+</I>&gt;<i> Didn't find anything yet.  I'm going to bed soon myself.
+</I>&gt;<i>
+</I>&gt;<i> Thanks Eric,
+</I>&gt;<i>
+</I>&gt;<i> Jerry
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>
+-----
+Eric F Crist
+Secure Computing Networks
+
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003083.html">[X-Unix] How make launchd stop trying to launch nonexistent
+	program?
+</A></li>
+	<LI>Next message: <A HREF="003086.html">[X-Unix] How make launchd stop trying to launch nonexistent
+	program?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3084">[ date ]</a>
+              <a href="thread.html#3084">[ thread ]</a>
+              <a href="subject.html#3084">[ subject ]</a>
+              <a href="author.html#3084">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

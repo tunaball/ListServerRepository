@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Zombies
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Zombies&In-Reply-To=list-14087825%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000968.html">
+   <LINK REL="Next"  HREF="000970.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Zombies</H1>
+    <B>Cloyce D. Spradling</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Zombies&In-Reply-To=list-14087825%40mail.ninewire.com"
+       TITLE="[X-Unix] Zombies">cloyce+xunix at headgear.org
+       </A><BR>
+    <I>Sun Jun 20 07:55:22 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000968.html">[X-Unix] Zombies
+</A></li>
+        <LI>Next message: <A HREF="000970.html">Record Audio from Terminal
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#969">[ date ]</a>
+              <a href="thread.html#969">[ thread ]</a>
+              <a href="subject.html#969">[ subject ]</a>
+              <a href="author.html#969">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sun, Jun 20, 2004 at 07:40:00AM +0100, David Ledger wrote:
+:<i> From what I remember from many years ago, what *should* happen is 
+</I>:<i> that when each child exits, it sends a death_of_child signal to the 
+</I>:<i> parent.
+</I>
+This is true.
+
+:<i> Here the parent exits without checking, but the 'exit' 
+</I>:<i> routine *should* check for signals and perform the 'wait' on each 
+</I>:<i> child.
+</I>
+It does.  In the code I posted, the parent just goes to sleep after spawning
+the children.  The zombies only persist as long as the parent is around;
+otherwise, even if exit() didn't take care of them, init would inherit them
+and reap them.
+
+So I guess that you might consider that the code I posted produces &quot;Zombies
+Light(tm)&quot;.
+
+It's certainly true that if you change the sleep to an exit that there'll be
+nothing to look at.
+
+:<i> I havn't tried it, but Cloyce says the above produces zombies.  That 
+</I>:<i> indicates a deficiency in OSX/Darwin as compared to other Unix 
+</I>:<i> systems; certainly when compared to Bsd4.1 when I learned this stuff.
+</I>
+Nah... OSX is okay. :)
+--
+Cloyce
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000968.html">[X-Unix] Zombies
+</A></li>
+	<LI>Next message: <A HREF="000970.html">Record Audio from Terminal
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#969">[ date ]</a>
+              <a href="thread.html#969">[ thread ]</a>
+              <a href="subject.html#969">[ subject ]</a>
+              <a href="author.html#969">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

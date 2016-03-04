@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix]from tcsh to bash
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5Dfrom%20tcsh%20to%20bash&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002004.html">
+   <LINK REL="Next"  HREF="002007.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix]from tcsh to bash</H1>
+    <B>Dan Frakes</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5Dfrom%20tcsh%20to%20bash&In-Reply-To="
+       TITLE="[X-Unix]from tcsh to bash">lists at frakes.org
+       </A><BR>
+    <I>Thu May 19 16:58:43 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002004.html">[X-Unix]from tcsh to bash
+</A></li>
+        <LI>Next message: <A HREF="002007.html">[X-Unix]from tcsh to bash
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2006">[ date ]</a>
+              <a href="thread.html#2006">[ thread ]</a>
+              <a href="subject.html#2006">[ subject ]</a>
+              <a href="author.html#2006">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>~flipper &lt;<A HREF="../../../mailman/listinfo/x-unix.html">lord.flipper at gmail.com</A>&gt; wrote:
+&gt;&gt;&gt;<i>even the Spotlight can't 'find' your /usr/bin directory.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>You can easily tell Spotlight to include /usr/bin in searches if you prefer
+</I>&gt;&gt;<i>such a configuration. But more importantly, why would the average user (not
+</I>&gt;&gt;<i>a power user, but an average user) *want* the contents of /user/bin -- or
+</I>&gt;&gt;<i>any other folder containing Unix executables or OS files -- to be included
+</I>&gt;&gt;<i>in Spotlight searches? There are over 700 files in /usr/bin alone, few of
+</I>&gt;&gt;<i>which most Mac users will ever care about and most of which contain a good
+</I>&gt;&gt;<i>number of basic words that would likely get picked up by Spotlight searches.
+</I>&gt;&gt;<i>For example, if Spotlight were to include /usr/bin by default, a user who
+</I>&gt;&gt;<i>searches for &quot;copyright&quot; would end up with literally hundreds of unwanted
+</I>&gt;&gt;<i>matches, making the results list pretty unmanageable.
+</I>&gt;<i>
+</I>&gt;<i> All right, you're on, so let's assume nobody wants to learn anything,
+</I>&gt;<i> and let's say I used /usr/bin as an example, but I'd really like to
+</I>&gt;<i> track down all my java .jar stuff, and try to cobble together a new
+</I>&gt;<i> xml parser without having redundant bs all over the underbelly of the
+</I>&gt;<i> Mac, ok?
+</I>&gt;<i>
+</I>&gt;<i> So, what's the trivial method of adding the subsytem to Spotlight?
+</I>
+There are a couple ways. If you want to include a folder such as /usr/bin in
+a &quot;Finder window&quot; search (i.e., what has replaced the Find dialog in Tiger),
+you just use the &quot;Others&quot; button and add the desired directory (e.g.,
+/usr/bin) to the list of places to search.
+
+If what you really want to do is add /usr/bin to the menu bar Spotlight
+search:
+
+mdimport -f /usr/bin
+
+That forces Spotlight to index the given directory.
+
+
+Or, for more options, see this page at MacOSXHints:
+
+&lt;<A HREF="http://www.macosxhints.com/article.php?story=2005050222125145">http://www.macosxhints.com/article.php?story=2005050222125145</A>&gt;
+
+
+&gt;<i> Just kidding I can find anything on here in nanoseconds with Xfile,
+</I>&gt;<i> so big deal, but why the 'conspiracy' to keep the real system out of
+</I>&gt;<i> sight?
+</I>
+I don't think there's any &quot;conspiracy&quot; -- I think Apple is just making the
+default Spotlight search useful for the average user. Most users don't care
+about the &quot;real system,&quot; its support files, or the contents of those files.
+I do, and you do, but on the whole, how many Mac users do? For example, my
+mother-in-law has no use for shell scripts and Unix executables, so a
+Spotlight search that showed her every match for &quot;path&quot; anywhere on a
+Unix-based system, when all she really wanted was to find the email my
+cousin sent her about a great running path in the local park, would be a
+disaster ;-)
+
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002004.html">[X-Unix]from tcsh to bash
+</A></li>
+	<LI>Next message: <A HREF="002007.html">[X-Unix]from tcsh to bash
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2006">[ date ]</a>
+              <a href="thread.html#2006">[ thread ]</a>
+              <a href="subject.html#2006">[ subject ]</a>
+              <a href="author.html#2006">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

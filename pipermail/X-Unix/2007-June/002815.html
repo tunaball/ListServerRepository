@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] find's -quit
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20find%27s%20-quit&In-Reply-To=EF44C814-6116-49BC-9B91-858D9E66B790%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002814.html">
+   <LINK REL="Next"  HREF="002816.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] find's -quit</H1>
+    <B>Scott Forbes</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20find%27s%20-quit&In-Reply-To=EF44C814-6116-49BC-9B91-858D9E66B790%40mac.com"
+       TITLE="[X-Unix] find's -quit">sforbes42 at earthlink.net
+       </A><BR>
+    <I>Sun Jun  3 07:21:07 PDT 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002814.html">[X-Unix] find's -quit
+</A></li>
+        <LI>Next message: <A HREF="002816.html">[X-Unix] find's -quit
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2815">[ date ]</a>
+              <a href="thread.html#2815">[ thread ]</a>
+              <a href="subject.html#2815">[ subject ]</a>
+              <a href="author.html#2815">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jun 3, 2007, at 12:30 AM, Filipp Lepalaan wrote:
+
+&gt;<i> Hi gang,
+</I>&gt;<i>
+</I>&gt;<i> Just a quick question that kinda stumped me. How do you limit  
+</I>&gt;<i> find's search results to just the first result?
+</I>&gt;<i> GNU find has -quit (<A HREF="http://unixhelp.ed.ac.uk/CGI/man-cgi?find">http://unixhelp.ed.ac.uk/CGI/man-cgi?find</A>) but  
+</I>&gt;<i> I can't seem to find any equivalent on OS X.
+</I>&gt;<i>
+</I>&gt;<i> This is for performance reasons so head is not an option.
+</I>
+I don't see that option either, but if stuck you could get findutils  
+from DarwinPorts and use gfind:
+
+-&gt; sudo port install findutils
+...
+-&gt; cd /opt/local/bin
+-&gt; gfind -name 'g*' -print -quit
+./qawk
+-&gt;
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002814.html">[X-Unix] find's -quit
+</A></li>
+	<LI>Next message: <A HREF="002816.html">[X-Unix] find's -quit
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2815">[ date ]</a>
+              <a href="thread.html#2815">[ thread ]</a>
+              <a href="subject.html#2815">[ subject ]</a>
+              <a href="author.html#2815">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

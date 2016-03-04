@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Firewire Port Frying External Hard Disks
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Firewire%20Port%20Frying%20External%20Hard%20Disks&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="019873.html">
+   <LINK REL="Next"  HREF="019875.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Firewire Port Frying External Hard Disks</H1>
+    <B>Jerry Krinock</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Firewire%20Port%20Frying%20External%20Hard%20Disks&In-Reply-To="
+       TITLE="[Ti] Firewire Port Frying External Hard Disks">jerry at ieee.org
+       </A><BR>
+    <I>Sat Jun 17 15:25:10 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="019873.html">[Ti] Ti Airport Problems
+</A></li>
+        <LI>Next message: <A HREF="019875.html">[Ti] Sprint Broadband on an Al Powerbook
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19874">[ date ]</a>
+              <a href="thread.html#19874">[ thread ]</a>
+              <a href="subject.html#19874">[ subject ]</a>
+              <a href="author.html#19874">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>After burning up several external Firewire hard disk enclosures in the last
+couple months, I've finally found a possible pattern: I believe it happens
+whenever I connect one of them to our old 867 MHz Ti Powerbook G4.  Upon
+connecting an external drive to this old Powerbook, I hear a snapping sound
+inside of the external drive case, smell some faint smoke, and when I take
+the drive case apart I often see that the case of the Firewire interface IC
+has a crack or a hole it it, and this seems to be the source of the smell.
+
+It happens using either a 4-pin cable (signals only) or 6-pin cable (signals
++ 30VDC unregulated power).  It happens whether or not I provide external
+power to the external firewire drive.
+
+According to the official IEEE 1394 pinout, pins 1 and 2 are supposed to be
+one differential signal pair, and pins 3 and 4 are another differential
+signal pair.  The outer shell is ground.
+
+When I measure the DC voltage presented by the suspect Powerbook, pins 1 and
+2 are both at +3.3 VDC while pins 3 and 4 show no voltage source.  On a good
+Powerbook, pins 1 and 2 are at +2.3 VDC instead of +3.3 VDC.
+
+So, possibly the firewire driver inside the powerbook is shorted to +3.3V
+and is frying whatever I connect to it.  But most chips can handle at least
+0.5V more than their VCC, which looks like it's probably +3.3V for Firewire.
+Also, the powerbook does not seem to mind if short one of these +3.3V
+sources to ground.  If I use a resistor of 10-100 ohms, it initially shows a
+source resistance of 100 ohms or so, but then after a few seconds the
+voltage reduces to 0 as though a capacitor is discharing.  So, it's not like
+a direct short to a powerful supply, and I'm surprised that I'd be frying
+external devices so consistently, unless there is an initial current
+transient which I cannot see using my Radio Shack DVM.
+
+Anyone with any knowledge or experience in these matters is encouraged to
+add to this story!
+
+Jerry Krinock 
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="019873.html">[Ti] Ti Airport Problems
+</A></li>
+	<LI>Next message: <A HREF="019875.html">[Ti] Sprint Broadband on an Al Powerbook
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19874">[ date ]</a>
+              <a href="thread.html#19874">[ thread ]</a>
+              <a href="subject.html#19874">[ subject ]</a>
+              <a href="author.html#19874">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

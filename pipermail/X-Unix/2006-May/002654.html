@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Can you get the path from an inode?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Can%20you%20get%20the%20path%20from%20an%20inode%3F&In-Reply-To=20060429231230.GC6972%40Dark-Age.linksys">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="002655.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Can you get the path from an inode?</H1>
+    <B>Wing Wong</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Can%20you%20get%20the%20path%20from%20an%20inode%3F&In-Reply-To=20060429231230.GC6972%40Dark-Age.linksys"
+       TITLE="[X-Unix] Can you get the path from an inode?">wingedpower at gmail.com
+       </A><BR>
+    <I>Mon May  1 10:24:02 PDT 2006</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="002655.html">[X-Unix] Can you get the path from an inode?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2654">[ date ]</a>
+              <a href="thread.html#2654">[ thread ]</a>
+              <a href="subject.html#2654">[ subject ]</a>
+              <a href="author.html#2654">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 4/29/06, Eugene &lt;<A HREF="../../../mailman/listinfo/x-unix.html">list-themacintoshguy at fsck.net</A>&gt; wrote:
+
+&gt;<i> Blah, anyone can do a brute-force search.  But I wonder if there
+</I>&gt;<i> is a simple function call where you input an inode and a device,
+</I>&gt;<i> and get a path.
+</I>&gt;<i> Eugene
+</I>&gt;<i> <A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+</I>
+[mild humour]
+
+Well, you _could_ create a device driver or hook that intercepts all
+filesystem accesses and creates an alternate lookup table, per device,
+which would allow you to do an inode-&gt;path/file lookup.
+
+Then, once this was implemented, you could create a set of utilities
+that perform the following functions:
+
+- (re)sync inode tables (for pre-inode-db filesystems)
+- reverse lookup
+- inode table enable/disable
+- lookup inode information
+- perform function(chmod/chown/etc) against inode instead of path/file
+
+Don't know whether this would count as &quot;brute force&quot; ^_- but one would
+imagine that the brute force approach would be easier than writing in
+the function into the system.
+
+[/mild humour]
+
+Seriously, though, unless you are performance tuning something or
+performing recovery/maintenance on a filesystem, the need for reverse
+inode lookup doesn't seem to be a pressing matter. (I'm sure it IS a
+pressing matter to the individuals who need it at any particular
+moment, though.)
+
+If inode=&gt;path/file is important, just crontab a nightly job that
+updates a flatfile or a database with all of the inode=&gt;path/file
+entries. Write a bunch of wrapper scripts which will be able to
+perform queries against the flatfile or db(perl/python/etc+db api) and
+have it perform the tasks you need. I'm thinking in terms of the
+locatedb/locate tool on some Unix(s). It's run nightly/whenever and
+when you need to find a file, you do a &quot;locate &lt;filename&gt;&quot;. Simple and
+straightforward.
+
+While it is a &quot;brute force&quot; approach, it is fairly straightforward.
+The only issue would be the &quot;per device&quot; restriction. If you performed
+a find against &quot;/&quot;, you would get duplicate inodes if you have more
+than one device mounted. Of course, you could just have your scripts
+code around that. :) Note that duplicate inode numbers would rule out
+a hash(ing) database.
+
+Wing
+--
+Wing Wong
+<A HREF="../../../mailman/listinfo/x-unix.html">wingedpower at gmail.com</A>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="002655.html">[X-Unix] Can you get the path from an inode?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2654">[ date ]</a>
+              <a href="thread.html#2654">[ thread ]</a>
+              <a href="subject.html#2654">[ subject ]</a>
+              <a href="author.html#2654">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

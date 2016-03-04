@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Newbies] Can't save to etc directory
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20Can%27t%20save%20to%20etc%20directory&In-Reply-To=list-4022186%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000255.html">
+   <LINK REL="Next"  HREF="000257.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Newbies] Can't save to etc directory</H1>
+    <B>Scott</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20Can%27t%20save%20to%20etc%20directory&In-Reply-To=list-4022186%40mail.ninewire.com"
+       TITLE="[X Newbies] Can't save to etc directory">j-scotty at attbi.com
+       </A><BR>
+    <I>Mon Dec  9 22:30:53 PST 2002</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000255.html">Lots of Dock bouncing, slow launches
+</A></li>
+        <LI>Next message: <A HREF="000257.html">[X Newbies] Removing Apps?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#256">[ date ]</a>
+              <a href="thread.html#256">[ thread ]</a>
+              <a href="subject.html#256">[ subject ]</a>
+              <a href="author.html#256">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Wednesday, December 18, 2002, at 11:20 AM, Cybersmith wrote:
+
+&gt;<i> Hi Folks,
+</I>&gt;<i> I really am a newbie running 10.2.2, and I need some assistance with 
+</I>&gt;<i> both
+</I>&gt;<i> the terminal and Apache. I am attempting to configure my httpd.conf 
+</I>&gt;<i> file on
+</I>&gt;<i> Apache but the system will not allow me to save any file in the /etc/
+</I>&gt;<i> directory. I am able to save a copy of the file elsewhere on my drive.
+</I>&gt;<i> I presume that the reason I cannot save to the etc directory is that 
+</I>&gt;<i> the
+</I>&gt;<i> user under which I have logged in does not have write privileges for 
+</I>&gt;<i> that
+</I>&gt;<i> directory.
+</I>&gt;<i> I only have two users both of which are admin users, and neither of 
+</I>&gt;<i> them
+</I>&gt;<i> will allow me to make changes to this file.
+</I>&gt;<i> What can I do to solve this situation?
+</I>&gt;<i>
+</I>&gt;<i> Many thanks,
+</I>&gt;<i> Gary English
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+Gary,
+I assume since you mention terminal that you are using either vi, pico, 
+or emacs to edit httpd.conf.
+Only root can edit this file. Root is disabled by default, but you can 
+get around this on a single command basis by using &quot;sudo&quot;.
+
+sudo   vi   /etc/httpd.conf
+
+Replace &quot;vi&quot; with your editor of choice. This will ask you to enter 
+your admin user passwd, then run 'vi' as root. You'll then be able to 
+save the file.
+
+In general, you can preface with sudo any command which you normally 
+don't have permissions to run.
+
+Be careful w/ sudo, as you can do just about anything you want to. If 
+you insert a space or make the wrong typo in a sudo command, you can 
+also do just about anything you didn't want to do. (I learned this the 
+hard way, after many years of command-line experience, by putting in an 
+extra space and wiping out the entire contents of /etc. I knew better, 
+but was careless. )
+
+If you need to run multiple commands, all as root, you can use sudo to 
+become root, without having to enable root:
+sudo su -
+will allow you to become root, in the current terminal window, until 
+you close the window, or type 'exit'.
+This is more dangerous, because it is easy to forget you are root. Yes, 
+I've learned this one the hard way too. That's why I use sudo one 
+command at a time now.
+
+
+-- 
+Scott
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000255.html">Lots of Dock bouncing, slow launches
+</A></li>
+	<LI>Next message: <A HREF="000257.html">[X Newbies] Removing Apps?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#256">[ date ]</a>
+              <a href="thread.html#256">[ thread ]</a>
+              <a href="subject.html#256">[ subject ]</a>
+              <a href="author.html#256">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

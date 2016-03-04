@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] HD with both OSX- and linux-readable partitions
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20HD%20with%20both%20OSX-%20and%20linux-readable%20partitions&In-Reply-To=list-14563643%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001037.html">
+   <LINK REL="Next"  HREF="001039.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] HD with both OSX- and linux-readable partitions</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20HD%20with%20both%20OSX-%20and%20linux-readable%20partitions&In-Reply-To=list-14563643%40mail.ninewire.com"
+       TITLE="[X-Unix] HD with both OSX- and linux-readable partitions">magill at mcgillsociety.org
+       </A><BR>
+    <I>Tue Jul  6 17:59:26 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001037.html">HD with both OSX- and linux-readable partitions
+</A></li>
+        <LI>Next message: <A HREF="001039.html">[X-Unix] HD with both OSX- and linux-readable partitions
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1038">[ date ]</a>
+              <a href="thread.html#1038">[ thread ]</a>
+              <a href="subject.html#1038">[ subject ]</a>
+              <a href="author.html#1038">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 06 Jul, 2004, at 17:49, Warren Pollans wrote:
+&gt;<i> I'd like to put an old 40 GB HD into an external usb/firewire 
+</I>&gt;<i> enclosure for use by both OSX and Linux.
+</I>&gt;<i>
+</I>&gt;<i> Lots of questions.
+</I>&gt;<i>
+</I>&gt;<i> Is this possible?  Create two 20 GB partitions (1 hfs+, 1 ext3)? It's 
+</I>&gt;<i> not necessary that the files created by one OS be accessible to the 
+</I>&gt;<i> other OS.
+</I>&gt;<i>
+</I>&gt;<i> Is there one fdisk that can create both types of partitions?  Or will 
+</I>&gt;<i> I have to make one from OSX and one from linux?  If so, will the 
+</I>&gt;<i> partitions of one OS be recognized by the other?
+</I>&gt;<i>
+</I>&gt;<i> Is the order in which they're made or the order in which they appear 
+</I>&gt;<i> on the HD important?
+</I>&gt;<i>
+</I>&gt;<i> I could just do it and experiment, but I thought I'd ask first.
+</I>
+Hmmm -- never tried this combination.
+
+However, with Tru64 Unix (Alpha) and Linux (Suse and supposedly 
+RedHat), the trick was to format the disk using Tru64 Unix's tools as 
+it created disk labels which Linux could read (BSD style labels), but 
+Linux did not create BSD style labels which Tru64 Unix could read. [In 
+this environment one could flip back and forth - booting either 
+partition. And, Tru64 could read and mount the Linux disk with no 
+problems as well as vice-versa.] I have an XP1000 which is &quot;dual 
+booted&quot; between Tru64 and Susie.
+
+sooooo ... extrapolating that since Darwin is FreeBSD, one would guess 
+that by using the disk formatting tools from Darwin, it might be 
+possible to write labels which Linux can read.
+
+The order issue is actually the only important thing -- the bootstrap 
+information is where the two label formats differ significantly. ... 
+BSD actually being the less flexible since it represents the older, 
+&quot;backwards compatible&quot; format.
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001037.html">HD with both OSX- and linux-readable partitions
+</A></li>
+	<LI>Next message: <A HREF="001039.html">[X-Unix] HD with both OSX- and linux-readable partitions
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1038">[ date ]</a>
+              <a href="thread.html#1038">[ thread ]</a>
+              <a href="subject.html#1038">[ subject ]</a>
+              <a href="author.html#1038">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

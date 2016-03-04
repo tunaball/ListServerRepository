@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Hiding apps from the command line
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11726950%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000521.html">
+   <LINK REL="Next"  HREF="000523.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Hiding apps from the command line</H1>
+    <B>Eugene Lee</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11726950%40mail.ninewire.com"
+       TITLE="[X-Unix] Hiding apps from the command line">list-themacintoshguy at fsck.net
+       </A><BR>
+    <I>Fri Mar 26 05:37:50 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000521.html">[X-Unix] Hiding apps from the command line
+</A></li>
+        <LI>Next message: <A HREF="000523.html">[X-Unix] Hiding apps from the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#522">[ date ]</a>
+              <a href="thread.html#522">[ thread ]</a>
+              <a href="subject.html#522">[ subject ]</a>
+              <a href="author.html#522">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Fri, Mar 26, 2004 at 01:43:48PM +0100, Kirk McElhearn wrote:
+:<i> 
+</I>:<i> On 3/26/04 1:15 PM, &quot;Eugene Lee&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">list-themacintoshguy at fsck.net</A>&gt; wrote:
+</I>:<i> &gt;
+</I>:<i> &gt; The options might be like:
+</I>:<i> &gt; 
+</I>:<i> &gt; -o    Hide all applications other than &quot;appname&quot;.
+</I>:<i> &gt; -a    Hide all applications.
+</I>:<i> &gt; -f    Hide the Finder.
+</I>:<i> &gt; 
+</I>:<i> &gt; where -o and -a by default do *not* hide the Finder.
+</I>:<i> 
+</I>:<i> Waddya know... I didn't think I'd be able to figure this out, but it seems
+</I>:<i> to work.
+</I>:<i> 
+</I>:<i> Save as &quot;hide&quot;. 
+</I>:<i> 
+</I>:<i> Syntax:
+</I>:<i> 
+</I>:<i> hide o [appname] - hides all other apps
+</I>:<i> hide a - hides all apps but Finder
+</I>:<i> hide f - hides Finder
+</I>:<i> hide [appname] - hides specified app
+</I>
+Well, from a Unix perspective, I'd rather see the options prefixed with
+traditional hyphens.  Also, there's the issue of whether hiding Finder
+as well is desired or not.  For me, I envisioned it to work like so:
+
+	$ hide -o appname
+	$ hide -o -f appname
+	$ hide -a
+	$ hide -a -f
+	$ hide -f
+	$ hide appname
+
+Another problem altogether is the fact that the logic is backwards
+between the &quot;hide -o appname&quot; and the normal &quot;hide appname&quot;.  In the
+normal latter case, the logic is simple: hide the app named &quot;appname&quot;.
+However, in the former case, the logic is reversed: hide all other apps
+*excluding* the app named &quot;appname&quot;.  A part of me wants to fix this by
+introducing another command option (-x) to represent this logic, which
+changes the former case to &quot;hide -o -x appname&quot;.  However, there's a
+part of me that thinks this is overkill and is complicating an otherwise
+simple shell script.
+
+Thoughts?  What do other Unix folks think?
+
+BTW, Kirk, contact me off-list if you're interested in a more complex,
+fully-featured version for inclusion into the book.
+
+
+-- 
+Eugene Lee
+<A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000521.html">[X-Unix] Hiding apps from the command line
+</A></li>
+	<LI>Next message: <A HREF="000523.html">[X-Unix] Hiding apps from the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#522">[ date ]</a>
+              <a href="thread.html#522">[ thread ]</a>
+              <a href="subject.html#522">[ subject ]</a>
+              <a href="author.html#522">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

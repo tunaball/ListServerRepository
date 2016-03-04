@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Cron problem?  [maybe]
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Cron%20problem%3F%20%20%5Bmaybe%5D&In-Reply-To=52EED9B8-86A7-493B-B6FB-3BA9A22F8F64%40direcway.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002460.html">
+   <LINK REL="Next"  HREF="002463.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Cron problem?  [maybe]</H1>
+    <B>..lj</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Cron%20problem%3F%20%20%5Bmaybe%5D&In-Reply-To=52EED9B8-86A7-493B-B6FB-3BA9A22F8F64%40direcway.com"
+       TITLE="[X-Unix] Cron problem?  [maybe]">darwin at ljsworld.com
+       </A><BR>
+    <I>Thu Nov 10 19:05:30 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002460.html">[X-Unix] Cron problem?  [maybe]
+</A></li>
+        <LI>Next message: <A HREF="002463.html">[X-Unix] Cron problem?  [maybe]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2461">[ date ]</a>
+              <a href="thread.html#2461">[ thread ]</a>
+              <a href="subject.html#2461">[ subject ]</a>
+              <a href="author.html#2461">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Nov 10, 2005, at 17:48, Russell McGaha wrote:
+
+&gt;<i> Folks;
+</I>&gt;<i> 	I've a bit of a problem; I have an automated script to open a  
+</I>&gt;<i> Filemaker Document that doesn't always fire of correctly.  The bash  
+</I>&gt;<i> script is supposed to open the document, at 1825 via cron, only  
+</I>&gt;<i> sometimes it launches the application without opening the document.  
+</I>&gt;<i> Here is the script;
+</I>&gt;<i>
+</I>&gt;<i> #!/bin/bash
+</I>&gt;<i>
+</I>&gt;<i> FileMaker=&quot;&quot;;
+</I>&gt;<i> let loop=0;
+</I>&gt;<i> echo &quot;Start&quot;
+</I>&gt;<i> open /AutoCloseDown;
+</I>&gt;<i>
+</I>&gt;<i> while [[ &quot;$Filemaker&quot; = &quot;&quot; &amp;&amp; ((loop -lt 2)) ]]; do
+</I>&gt;<i>
+</I>&gt;<i> open /AutoCloseDown;
+</I>&gt;<i> Filemaker=$(top -l1 | grep &quot;FileMaker&quot;);
+</I>&gt;<i>
+</I>&gt;<i> echo &quot;Filemaker= &quot;$Filemaker
+</I>&gt;<i>
+</I>&gt;<i> let loop++
+</I>&gt;<i> echo $loop
+</I>&gt;<i> sleep 5
+</I>&gt;<i> done
+</I>&gt;<i>
+</I>&gt;<i> echo &quot;stopping&quot;
+</I>&gt;<i> exit 0
+</I>&gt;<i>
+</I>&gt;<i> As you see I try to open the doc twice [to make sure it launches],  
+</I>&gt;<i> I thought at first the Filemaker was not launching, but the script  
+</I>&gt;<i> now makes sure it does, and the app is open but the Doc doesn't  
+</I>&gt;<i> open.  I've also tried this with an Applescript with similar  
+</I>&gt;<i> erratic results.  Has anyone out there had any troubles like  
+</I>&gt;<i> this??  And more important, have any idea how to make sure this doc  
+</I>&gt;<i> opens consistently???
+</I>&gt;<i>
+</I>&gt;<i> Russell
+</I>
+Any chance you have an issue with a password in FMPro.  It can  
+sometime hang up with a dialog box. Other thought. Have considered  
+using Apple Script with the bash osascript command?
+..lj
+  
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002460.html">[X-Unix] Cron problem?  [maybe]
+</A></li>
+	<LI>Next message: <A HREF="002463.html">[X-Unix] Cron problem?  [maybe]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2461">[ date ]</a>
+              <a href="thread.html#2461">[ thread ]</a>
+              <a href="subject.html#2461">[ subject ]</a>
+              <a href="author.html#2461">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

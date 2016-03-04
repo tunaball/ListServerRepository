@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Shared hosting with apache and php, security concerns
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Shared%20hosting%20with%20apache%20and%20php%2C%20security%20concerns&In-Reply-To=list-11453817%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000494.html">
+   <LINK REL="Next"  HREF="000496.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Shared hosting with apache and php, security concerns</H1>
+    <B>Albert Lunde</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Shared%20hosting%20with%20apache%20and%20php%2C%20security%20concerns&In-Reply-To=list-11453817%40mail.ninewire.com"
+       TITLE="[X-Unix] Shared hosting with apache and php, security concerns">atlunde at panix.com
+       </A><BR>
+    <I>Thu Mar 18 05:25:43 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000494.html">[X-Unix] Shared hosting with apache and php, security concerns
+</A></li>
+        <LI>Next message: <A HREF="000496.html">[X-Unix] Shared hosting with apache and php, security concerns
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#495">[ date ]</a>
+              <a href="thread.html#495">[ thread ]</a>
+              <a href="subject.html#495">[ subject ]</a>
+              <a href="author.html#495">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I don't think the problem of allowing shared hosting of PHP users
+is as much of a solved problem as you wish it were. PHP
+has been so much about making things &quot;easy&quot; to do that
+security has been underdeveloped.
+
+I think allowing users of an Apache server to serve up
+perl or PHP code that hasn't been independently security-
+audited within an inch of its life, by very paranoid people,
+is a big risk.
+
+chroot and suexec are semi-independent options, you might
+consider both, as well as making the global php and apache
+security settings as paranoid as you can.
+
+You can (in theory) chroot the entire directory containing
+the Apache server while starting up Apache, then use suexec
+to provide some isolation between users' scripts.
+
+OpenBSD, which is designed for security, has been chroot-ing
+httpd for some time now, so you may find more articles there.
+
+FreeBSD, has a facility called &quot;jail&quot; which is a stronger
+&quot;chroot&quot;. But I don't think OSX has inherited it, despite
+the fact that most of the Darwin environment above the
+kernel derives from FreeBSD.
+
+The general idea of chroot is the same across Unix/Linux
+flavors. What is OS-specific and sometimes program-specific is
+the recipe of libraries, files, and device nodes needed
+inside a chroot directory to make software work in a
+useful way.
+
+There are ways a program can break out of or abuse a chroot
+environment, some of those are OS-specific too.
+
+As others have pointed out, the various files apache scripts
+read don't need to be, strictly speaking, world-readable, just 
+readable by the process that uses them.
+
+I don't think it is a great idea to make them owned by the process
+running the script. I prefer that scripts themselves be unwritable.
+But with traditional Unix user/group/other permissions
+you run out of degrees of freedom pretty fast. Suexec is one
+security scheme that tries to live within that model.
+
+On Solaris, Linux, and FeeBSD there are filesystem ACLs that give
+more options, but I'm not sure if that can be made to apply
+to OSX.
+
+Some suggestions for further reading:
+<A HREF="http://perl.apache.org/docs/offsite/other.html">http://perl.apache.org/docs/offsite/other.html</A>
+<A HREF="http://www.bpfh.net/simes/computing/chroot-break.html">http://www.bpfh.net/simes/computing/chroot-break.html</A>
+<A HREF="http://www.openbsd.org/faq/faq10.html#httpdchroot">http://www.openbsd.org/faq/faq10.html#httpdchroot</A>
+
+google various combinations of apache,php,perl and chroot.
+
+(A lot that applies to perl transfers to PHP too.)
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000494.html">[X-Unix] Shared hosting with apache and php, security concerns
+</A></li>
+	<LI>Next message: <A HREF="000496.html">[X-Unix] Shared hosting with apache and php, security concerns
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#495">[ date ]</a>
+              <a href="thread.html#495">[ thread ]</a>
+              <a href="subject.html#495">[ subject ]</a>
+              <a href="author.html#495">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

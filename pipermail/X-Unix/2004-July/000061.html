@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] IRC, lynx, newsgroups, RPM install, etc.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20IRC%2C%20lynx%2C%20newsgroups%2C%20RPM%20install%2C%20etc.&In-Reply-To=list-14768174%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000060.html">
+   <LINK REL="Next"  HREF="000062.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] IRC, lynx, newsgroups, RPM install, etc.</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20IRC%2C%20lynx%2C%20newsgroups%2C%20RPM%20install%2C%20etc.&In-Reply-To=list-14768174%40mail.ninewire.com"
+       TITLE="[X-Unix] IRC, lynx, newsgroups, RPM install, etc.">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Sat Jul 17 09:37:18 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000060.html">IRC, lynx, newsgroups, RPM install, etc.
+</A></li>
+        <LI>Next message: <A HREF="000062.html">[X-Unix] IRC, lynx, newsgroups, RPM install, etc.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#61">[ date ]</a>
+              <a href="thread.html#61">[ thread ]</a>
+              <a href="subject.html#61">[ subject ]</a>
+              <a href="author.html#61">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jul 17, 2004, at 4:32 pm, Alexandre Quessy wrote:
+&gt;<i>
+</I>&gt;<i> I have fun reading your mails. It helps me to get used to *NIX on my 
+</I>&gt;<i> Mac. Apple is fortunately now the largest UNIX-based OS distributor&#160;! 
+</I>&gt;<i> Great&#160;!
+</I>&gt;<i>
+</I>&gt;<i> I actually have many questions for you, guys:
+</I>&gt;<i>
+</I>&gt;<i> ======&gt;
+</I>&gt;<i> 1. IRC
+</I>&gt;<i> I'd like to use a Terminal-based IRC client.
+</I>
+Erm... why..?!?
+
+For me, the joy of the Mac is that it combines the usability of a 
+fantastic GUI to the power of the Unix command line (when I need it). , 
+although KDE has come along well in the last couple of years, for my 
+money OS X is the only low-maintenance Unix with a really usable UI. 
+For tasks like answering emails &amp; chatting, where I might want to open 
+a URL in a web-browser it's much better to use a GUI client &amp; click on 
+the link than to have to copy &amp; paste from the terminal.
+
+&gt;<i> I downloaded ircii 2.8.2 on <A HREF="http://www.irchelp.org/irchelp/ircii/">http://www.irchelp.org/irchelp/ircii/</A> 
+</I>&gt;<i> which seems THE command to use. Now I need to install this package. I 
+</I>&gt;<i> think it's with RPM, right&#160;? There is no such entry in MAN RPM, at 
+</I>&gt;<i> least in TCSH. What about in BASH&#160;? Now, how can I install my IRC 
+</I>&gt;<i> client&#160;? Is there one that is already installed. OS X seems to come 
+</I>&gt;<i> with very little UNIX commands installed. (about a thousand...)
+</I>
+Hmmmn... RPM stands for Redhat Package manager, and is most commonly 
+used on Linux systems. RPM files can contain program source code, but 
+most commonly contain binaries, suitable for a certain architecture / 
+platform (most commonly x86 &amp; Linux). I don't know if there is a port 
+of RPM (the _manager_ part) for OS X - it certainly wouldn't be the 
+most common way to install stuff on OS X.
+
+On the page you give the link to ircii 2.8.2 seems to point to this 
+file &lt;<A HREF="http://www.irchelp.org/irchelp/ircii/ircii-2.8.2.tar.gz">http://www.irchelp.org/irchelp/ircii/ircii-2.8.2.tar.gz</A>&gt;, which 
+is the source for ircii. If you unpack this, `cd` to that folder &amp; type 
+`configure &amp;&amp; Make &amp;&amp; cd source &amp;&amp; irc` you will have a running, but 
+apparently very primitive, IRC client. (Hint: `server irc.efnet.net`)
+
+Also mentioned on that page is &lt;<A HREF="http://www.irssi.org/">http://www.irssi.org/</A>&gt; &amp; the sources on 
+their download page should work the same way. There is a link to a 
+binary for OS X, but only the GUI port 
+&lt;<A HREF="http://gizmolabs.org/~andrew/andrewweb/project.php?pid=2&tab=1">http://gizmolabs.org/~andrew/andrewweb/project.php?pid=2&amp;tab=1</A>&gt;.
+
+Personally, I use BitchX on the rare occasions I wish to use IRC at the 
+terminal. I run it on my Linux box &amp; access it via SSH - useful if I'm 
+on a Windows network on which the sysadmins do not approve of chat 
+applications. Try the &quot;MacOS&quot; binaries at 
+&lt;<A HREF="http://www.bitchx.org/download.php">http://www.bitchx.org/download.php</A>&gt; - the G4 .sit file worked for me - 
+under Panther I could just double-click on it, but if you wish to be 
+more &quot;Unix-like&quot; I'm sure you can type `/path/to/BitchX` at the 
+terminal.
+
+Finally, take a look at Colloquy 
+&lt;<A HREF="http://colloquy.info/downloads/nightly.zip">http://colloquy.info/downloads/nightly.zip</A>&gt;. It's GUI &amp; it's still in 
+development, but it's the nicest IRC client I've used in a loooong 
+time. See the testimonials &amp; screenshots at &lt;<A HREF="http://colloquy.info/">http://colloquy.info/</A>&gt;
+
+
+&gt;<i> 2. USR/ETC/.CONFIG&#160;or so&#160;?
+</I>&gt;<i> I'd like to make the command lynx automagically make my 
+</I>&gt;<i> usr/bin/local/lynk works all the time. I forgot the file to edit with 
+</I>&gt;<i> VI (or Pico). Where is it and what should I write into it&#160;?
+</I>
+I'm not sure what you mean. Maybe these links explain what you're 
+asking..?
+&lt;<A HREF="http://www.itworld.com/AppDev/1455/swol-0915-unix101/">http://www.itworld.com/AppDev/1455/swol-0915-unix101/</A>&gt;
+&lt;://helpdesk.ua.edu/unix/tipsheet/tipv1n12.html&gt;
+
+&gt;<i> 3. NEWSGROUPS
+</I>&gt;<i> Any idea for a Terminal-based newgroups reader&#160;?
+</I>
+Yuck!
+
+Stroller.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000060.html">IRC, lynx, newsgroups, RPM install, etc.
+</A></li>
+	<LI>Next message: <A HREF="000062.html">[X-Unix] IRC, lynx, newsgroups, RPM install, etc.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#61">[ date ]</a>
+              <a href="thread.html#61">[ thread ]</a>
+              <a href="subject.html#61">[ subject ]</a>
+              <a href="author.html#61">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

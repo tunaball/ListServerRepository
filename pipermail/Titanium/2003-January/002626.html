@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Why do URL's die when wrapped?  The final word? (long)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Why%20do%20URL%27s%20die%20when%20wrapped%3F%20%20The%20final%20word%3F%20%28long%29&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002624.html">
+   <LINK REL="Next"  HREF="002627.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Why do URL's die when wrapped?  The final word? (long)</H1>
+    <B>Dennis Fazio</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Why%20do%20URL%27s%20die%20when%20wrapped%3F%20%20The%20final%20word%3F%20%28long%29&In-Reply-To="
+       TITLE="[Ti] Why do URL's die when wrapped?  The final word? (long)">dfz at mac.com
+       </A><BR>
+    <I>Fri Jan 24 19:14:43 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002624.html">[Ti] Battery Life?
+</A></li>
+        <LI>Next message: <A HREF="002627.html">[Ti] Battery Life?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2626">[ date ]</a>
+              <a href="thread.html#2626">[ thread ]</a>
+              <a href="subject.html#2626">[ subject ]</a>
+              <a href="author.html#2626">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi, everyone. Not to reopen a long off-topic thread again, but the issue of 
+line wrapping in email and the effect on text and URLs has been bothring me 
+for a while. So when this thread appeared, I had to go and research what 
+was going on. I thought what I learned, though not exhaustive, might be 
+helpful to others in understanding this issue better as we post and fetch 
+long-line messages and URLs on this list using varying mail programs.
+
+
+&quot;Almost everything you wanted to know about mail programs and line 
+wrapping.&quot;
+
+What I found was that it was recognized a while ago that different mail 
+programs and text processors wrapped lines (i.e. put carriage returns &lt;CR&gt; 
+or linefeeds &lt;LF&gt; or both in each line) at differing points and that the 
+varying mailers and text editors displayed them differently depending upon 
+expected wrap line length. This often caused a display mess when the 
+sending wrap window was larger than the receiving wrap window.
+
+So, an RFC was written and adopted to set some standards to help with this 
+situation
+(RFC 2646 to be exact at &lt;<A HREF="http://www.ietf.org/rfc/rfc2646.txt">http://www.ietf.org/rfc/rfc2646.txt</A>&gt;)
+
+What that did was to create a new MIME parameter called format=flowed for 
+the text/plain MIME type.
+
+If you look at the header for this message, you will see the following 
+lines:
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+It says that the message is in plain text, not formatted or HTML. The 
+message part is MIME type text/plain. It uses US-ASCII character set and 
+the format is flowed (as opposed to fixed).  If the format was &quot;fixed,&quot; the 
+receiving mailer would display the text exactly as formatted by the sending 
+user with linebreaks as typed. If the sending user typed the text in long 
+paragraphs without a CR, the sending mailer would then insert linebreaks at 
+or before the column specified in the mailer preferences file (usually 
+76-80 chars), breaking the lines automatically at word boundaries.
+
+All mailers should have a parameter to specifiy wrap columm. Some, like 
+Eudora, have the ability to turn that off. The only limitation is that line 
+lengths be less than the SMTP recommended maximum of 1000 characters to 
+avoid transmission problems unless all SMTP relay hosts in the path can 
+handle SMTP Service Extensions and can pass longer length lines.
+
+In &quot;flowed&quot; format, the sending mailer also inserts line breaks at or 
+before the usual specified column (doing so just after the word boundary 
+space character).  When the receiving mailer sees the &quot;format=flowed&quot; MIME 
+parameter, it then processes any &lt;SP&gt; &lt;CR&gt; &lt;LF&gt; triple it sees, removing 
+the &lt;CRLF&gt; and displaying the text in whatever window width is available as 
+flowed text.
+
+So, depending upon the sender's mailer and the receiver's mailer and how 
+they each are configured, the lines and line breaks may or may not be 
+displayed at the receiving end exactly as sent.
+
+When we deal with URLs, which don't have any word breaks (spaces) within 
+them to allow flowed text to work, other problems may ensue. I believe the 
+recommended (not mandated) practice in RFC 2646 is to send the long line 
+unbroken, even if longer than the specified wrap length. However, I think 
+many mailers may not do this. So, when the URL is received, it spans 2 or 
+more lines and has linebreaks inserted. Therefore, it is only &quot;clickable&quot; 
+up to the first linebreak since the text parser only scans along until it 
+sees any non-legal URL character like a space or linebreak and assumes 
+that's the end of the URL.
+
+But, there is a standard for delimiting URLs, namely the &quot;&lt;&quot; and &quot;&gt;&quot; 
+characters. So, my assumption is that if a long URL is enclosed within the 
+delimiters, the parser will travel along, ignoring any line breaks (and 
+perhaps spaces and any other non-legal character) until it sees the other 
+delimiter and displays the entire multi-line string as &quot;clickable.&quot;
+
+So, to sum up, if you have a modern mailer that can handle flowed text, 
+then one of several things can occur if you get a very long URL:
+
+1. It is sent without line breaks, in which case you should be able to 
+click on the delimited OR non-delimited form.
+2. It is sent with line breaks, in which case you should be able to click 
+on the delimited version, but you probably won't be able to do so on the 
+non-delimited version.
+
+If your mailer cannot handle flowed text, and you get URL with line breaks 
+in it, then it's possible you won't be able to click on either the 
+delimited or non-delimited form successfully.
+
+So, the moral is:  delimited your URLs with &quot;&lt;&quot; and &quot;&gt;&quot; especially if they 
+are more than 30 or 40 characters that could be forced to span a line 
+somewhere down the road.
+
+FYI, this message is being sent as format=flowed with a 76 character line. 
+If your mailer wraps the paragraphs to the display window, no matter the 
+width, then your mailer can handle flowed text fine. If all the lines are 
+wrapped at column 76, then your mailer cannot do flowed text.
+
+My mailer currently puts line breaks at column 76 in long URLs. Your mailer 
+may or may not parse the following non-delimited or delimited long URL 
+successfully. On the third URL, I manually inserted a space between the 
+&quot;North&quot; and &quot;Star&quot; so you can also verify your mailer's ability to ignore 
+embedded spaces.
+
+<A HREF="http://www.state.mn.us/cgi-bin/portal/mn/jsp/hybrid.do?ct=1598660472&home=1">http://www.state.mn.us/cgi-bin/portal/mn/jsp/hybrid.do?ct=1598660472&amp;home=1</A>
+598660472&amp;id=-8492&amp;agency=NorthStar
+
+&lt;<A HREF="http://www.state.mn.us/cgi-bin/portal/mn/jsp/hybrid.do?ct=1598660472&home=">http://www.state.mn.us/cgi-bin/portal/mn/jsp/hybrid.do?ct=1598660472&amp;home=</A>
+1598660472&amp;id=-8492&amp;agency=NorthStar&gt;
+
+&lt;<A HREF="http://www.state.mn.us/cgi-bin/portal/mn/jsp/hybrid.do?ct=1598660472&home=">http://www.state.mn.us/cgi-bin/portal/mn/jsp/hybrid.do?ct=1598660472&amp;home=</A>
+1598660472&amp;id=-8492&amp;agency=North Star&gt;
+
+Hope this helps some.
+
+
+Now, back to TiBooks and Albooks, etc.
+I saw an obscure rumor somewhere that Apple is working on a 3rd generation 
+metal powerbook made of Berkelium 248. It's supposed to have special 
+aesthetic properties, like glowing in the dark and running a version of 
+Berekely Unix orders of magnitude faster than any other machine. Also, the 
+half-life of the metal is such that they will disintegrate fairly quickly, 
+assuring more rapid turnover.
+
+--
+Dennis Fazio
+<A HREF="../../../mailman/listinfo/titanium.html">dfz at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002624.html">[Ti] Battery Life?
+</A></li>
+	<LI>Next message: <A HREF="002627.html">[Ti] Battery Life?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2626">[ date ]</a>
+              <a href="thread.html#2626">[ thread ]</a>
+              <a href="subject.html#2626">[ subject ]</a>
+              <a href="author.html#2626">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

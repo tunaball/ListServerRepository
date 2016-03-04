@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Quit Terminal on exit
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Quit%20Terminal%20on%20exit&In-Reply-To=list-11360823%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000469.html">
+   <LINK REL="Next"  HREF="000471.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Quit Terminal on exit</H1>
+    <B>Rob Griffiths</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Quit%20Terminal%20on%20exit&In-Reply-To=list-11360823%40mail.ninewire.com"
+       TITLE="[X-Unix] Quit Terminal on exit">robg at macosxhints.com
+       </A><BR>
+    <I>Fri Mar 12 17:25:52 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000469.html">[X-Unix] Quit Terminal on exit
+</A></li>
+        <LI>Next message: <A HREF="000471.html">[X-Unix] Quit Terminal on exit
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#470">[ date ]</a>
+              <a href="thread.html#470">[ thread ]</a>
+              <a href="subject.html#470">[ subject ]</a>
+              <a href="author.html#470">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Mar 12, 2004, at 4:24 PM, Marley Graham wrote:
+
+&gt;<i> solution would, obviously close all Terminal windows as a result of 
+</I>&gt;<i> quitting Terminal. I recognize the potential hazard, but for the users 
+</I>&gt;<i> I have in mind, there is no valid reason for them to have other 
+</I>&gt;<i> Terminal windows open.
+</I>
+OK, here's a theoretical solution along with a *really* ugly 
+AppleScript (I am NOT an AppleScript coder in any manner!).
+
+1) Set up the Terminal to launch a shell script via the Prefs
+2) In that shell script, the first line launches an AppleScript
+3) The second line runs the ssh; exit command you already have.
+
+My bad version of the AppleScript looks like this:
+
+repeat
+   try
+     tell application &quot;Terminal&quot;
+       tell window 1
+         get name
+       end tell
+     end tell
+   on error error_message
+     tell application &quot;Terminal&quot;
+       activate
+       quit
+     end tell
+     exit repeat
+   end try
+end repeat
+
+This script basically gets a meaningless property from the Terminal -- 
+the name of the window. It does so repeatedly until the window is 
+closed, at which point it errors out and activates the error loop. In 
+the error loop, Terminal is quit and the repeat loop exits, ending the 
+script.
+
+Things that I know are *really* wrong with this:
+  - I think it should be possible to only poll every &quot;X&quot; seconds to see 
+if a window is open. Right now, this thing is probably very CPU 
+intensive.
+  - It might even be possible to just check &quot;Is there a terminal window 
+open?&quot; instead of my getting of a name variable
+  - Right now, I get an error (connection invalid) when I try this as an 
+app from the Finder, but it does quit the Terminal when you close the 
+last open window.
+  - Did I mention I'm not an AppleScripter? :)
+
+In any event, a much neater version of the above, if executed as an 
+application before the ssh command, should (might?) quit the Terminal 
+when the window closes ... maybe :).
+
+-rob.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000469.html">[X-Unix] Quit Terminal on exit
+</A></li>
+	<LI>Next message: <A HREF="000471.html">[X-Unix] Quit Terminal on exit
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#470">[ date ]</a>
+              <a href="thread.html#470">[ thread ]</a>
+              <a href="subject.html#470">[ subject ]</a>
+              <a href="author.html#470">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

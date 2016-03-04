@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Postfix howto
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Postfix%20howto&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000353.html">
+   <LINK REL="Next"  HREF="000375.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Postfix howto</H1>
+    <B>Kuestner, Bjoern</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Postfix%20howto&In-Reply-To="
+       TITLE="[X-Unix] Postfix howto">Bjoern.Kuestner at drkw.com
+       </A><BR>
+    <I>Tue Jan  6 00:23:50 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000353.html">[X-Unix] missing man pages (fixed)
+</A></li>
+        <LI>Next message: <A HREF="000375.html">[X-Unix] Postfix howto
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#364">[ date ]</a>
+              <a href="thread.html#364">[ thread ]</a>
+              <a href="subject.html#364">[ subject ]</a>
+              <a href="author.html#364">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+&gt;&gt;<i> Mail comes in --&gt; processing magic --&gt;  Processed mail goes out.
+</I>&gt;<i> 
+</I>&gt;<i> What do you want to happen w/ the magic?
+</I>
+The &quot;magic&quot; should cut off the last ten lines using the script which Kino
+recently provided (or a variant of it depending on the exact setup). Now
+Victor Eijkhout and Xavier Noria have provided additional solutions in awk
+and perl respectively. (Thanks!)
+
+Background (and now I hope this doesn't sound all too silly): 
+- My outgoing mails are automatically appended by the mail server with a
+long sig. 
+- On the OS X list however a signature must be no longer than four lines.
+- The signature is beyond my control.
+- One of the OS X list dads, who appreciates my posts there, has his own
+little postfix server running 24/7. But he's not a pro admin either. 
+- He offered to supply the resources for the following scenario that 
+  1) I would send my mails to his server, 
+  2) they would be trimmed of the signature and then 
+  3) forwarded to the list ... 
+if I figure out how can this be done! 
+
+Which is beyond anything in the server world I have done so far. 
+
+But since this is a nice project with a clear target I hope to get this
+running by doing my share of reading on the web and the help of this list.
+
+My current understanding (and I haven't yet worked up on mailproc and
+maildrop as suggested by Michael Schiller and Stroller respectively) is that
+something like the following needs to be part of /etc/master.cf
+
+smtp inet n - n - - smtpd -o content_filter=cutlast10.sh: 
+
+filter unix - n n - - pipe 
+flags=Rq user=filter argv=/home/filter/cutlast10.sh -f
+$<A HREF="../../../mailman/listinfo/x-unix.html">bjoern.kuestner at drkw.com</A> -- $<A HREF="../../../mailman/listinfo/x-unix.html">osx at osxlist.com</A>  
+
+Where cutlast10.sh is the script that does the job and should take input
+from standardout?
+
+I got this far after learning that &quot;Content filtering&quot; is probably the
+feature in Postfix which does the job:
+The feature to use in Postfix seems &quot;Content filtering&quot;:
+<A HREF="http://www.irbs.net/internet/postfix/0206/0483.html">http://www.irbs.net/internet/postfix/0206/0483.html</A>
+<A HREF="http://www.irbs.net/internet/postfix/0206/0490.html">http://www.irbs.net/internet/postfix/0206/0490.html</A>
+
+and then trying to make sense of this example
+<A HREF="http://archives.neohapsis.com/archives/postfix/2001-10/1762.html">http://archives.neohapsis.com/archives/postfix/2001-10/1762.html</A>
+<A HREF="http://archives.neohapsis.com/archives/postfix/2002-05/0272.html">http://archives.neohapsis.com/archives/postfix/2002-05/0272.html</A>
+
+Uh, ah, I really feel like drifting out in space ... boldly going where no
+Bjorn has gone before.
+
+Any help is appreciated. I try my best to live up to my part and to the
+reading.
+
+Thanks for everybody's help.
+
+Bjorn
+
+
+============================================================
+
+
+
+--------------------------------------------------------------------------------
+The information contained herein is confidential and is intended solely for the
+addressee. Access by any other party is unauthorised without the express
+written permission of the sender. If you are not the intended recipient, please
+contact the sender either via the company switchboard on +44 (0)20 7623 8000, or
+via e-mail return. If you have received this e-mail in error or wish to read our
+e-mail disclaimer statement and monitoring policy, please refer to 
+<A HREF="http://www.drkw.com/disc/email/">http://www.drkw.com/disc/email/</A> or contact the sender.
+--------------------------------------------------------------------------------
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000353.html">[X-Unix] missing man pages (fixed)
+</A></li>
+	<LI>Next message: <A HREF="000375.html">[X-Unix] Postfix howto
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#364">[ date ]</a>
+              <a href="thread.html#364">[ thread ]</a>
+              <a href="subject.html#364">[ subject ]</a>
+              <a href="author.html#364">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

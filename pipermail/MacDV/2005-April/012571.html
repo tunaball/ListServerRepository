@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MacDV] Re: iMovie HD bugs
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20iMovie%20HD%20bugs&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="012570.html">
+   <LINK REL="Next"  HREF="012572.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MacDV] Re: iMovie HD bugs</H1>
+    <B>Matti Haveri</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20iMovie%20HD%20bugs&In-Reply-To="
+       TITLE="[MacDV] Re: iMovie HD bugs">matti.haveri at sjoki.uta.fi
+       </A><BR>
+    <I>Mon Apr 11 06:29:46 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="012570.html">[MacDV] My first graduation ceremony
+</A></li>
+        <LI>Next message: <A HREF="012572.html">[MacDV] Re: iMovie HD bugs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12571">[ date ]</a>
+              <a href="thread.html#12571">[ thread ]</a>
+              <a href="subject.html#12571">[ subject ]</a>
+              <a href="author.html#12571">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Jan E. Schotsman:
+
+&gt;<i>  Sounds like a lot of deinterlace-related bugs in iMovie 5.
+</I>
+Yes. Jan, you are the expert in interlacing. Do you have any idea 
+what is behind these iMovie interlacing bugs? Are they scaling bugs 
+in QuickTime or in the Timeline Movie.mov??
+
+JES Deinterlacer can be used as a workaround for the Slow-motion and 
+Reversed Effects bug (see below #2).
+
+There are at least five interlacing-related bugs:
+
+1. The worst bug is the interlacing distortion when adding titles or 
+effects because the workarounds are so bad. The bug is clearly 
+visible in moving scenes.
+
+The error can be seen in both fields in NTSC. In PAL there seems to 
+be something wrong with every 8th even field, and the distortion can 
+be best seen by deinterlacing off the odd fields. Here are images 
+illustrating the problem in NTSC and PAL (188 and 290 KB, View at 
+100% size to best see the distortion in interlacing lines after 
+iMovie HD titles are added). BTW, the NTSC sample is a clip from the 
+old iMovie Tutorial.
+
+&lt;<A HREF="http://www.sjoki.uta.fi/~shmhav/iMovie_HD_title_distortion_NTSC.jpg">http://www.sjoki.uta.fi/~shmhav/iMovie_HD_title_distortion_NTSC.jpg</A>&gt;
+&lt;<A HREF="http://www.sjoki.uta.fi/~shmhav/iMovie_HD_title_distortion.jpg">http://www.sjoki.uta.fi/~shmhav/iMovie_HD_title_distortion.jpg</A>&gt;
+
+Notice how before adding a title the interlacing lines are correctly 
+and evenly distributed, just how they should be. After adding titles, 
+the interlacing pattern is distorted and this can be seen as 
+artifacts also when viewed on a TV.
+
+Workarounds: a) dont use titles, b) use titles only on footage with 
+no motion, c) or revert to iMovie 4.0.1!
+
+The titles and effects bug smells like a QT scaling bug with the 
+reference Timeline Movie.mov:
+
+I noticed that I get EXACTLY the same distortion in the interlacing 
+pattern if I save the iMovie_project/Cache/Timeline Movie.mov as .dv 
+via QT Player with the &quot;High Quality Enabled&quot; playback setting ON 
+(and the other playback settings unchecked). (It is odd that the QT 
+Player's playback quality setting affects the exported video quality, 
+i.e. whether fields blending is used etc). I then noticed that the 
+PAL Timeline Movie.mov is automatically stretched as 784x576 for 
+viewing (when iMovie's &quot;Show Full Video Resolution&quot; is ON). If I 
+resize the QT Player window to 720x576, THEN the exported .dv's 
+interlacing is OK. The same applies to NTSC: the NTSC Timeline 
+Movie.mov is stretched as 720x528 for &quot;Full Video Resolution&quot; viewing 
+-- resizing to 720x480 fixes the interlacing in the exported .dv).
+
+2. When iMovie HD slows down a clip (0.5-0.2x), it doesn't anymore 
+deinterlace it like iMovie 4 did. This can be seen as flicker when 
+watched on an interlaced TV. The error can be best seen in 0.2x 
+slow-motion.
+
+When iMovie HD reverses a clip, it doesn't anymore change its field 
+dominance like iMovie 4 did. This can be seen as flicker when watched 
+on an interlaced TV.
+
+Workarounds: You get smoother slow-motion with 3rd party applications 
+so slow-motion clips don't need iMovie's rendering. JES Deinterlacer 
+can also change the field dominance in reversed clips.
+
+[continues in the next message]
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="012570.html">[MacDV] My first graduation ceremony
+</A></li>
+	<LI>Next message: <A HREF="012572.html">[MacDV] Re: iMovie HD bugs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12571">[ date ]</a>
+              <a href="thread.html#12571">[ thread ]</a>
+              <a href="subject.html#12571">[ subject ]</a>
+              <a href="author.html#12571">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Setting up an SFTP server?  Or possibly an SSH option?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Setting%20up%20an%20SFTP%20server%3F%20%20Or%20possibly%20an%20SSH%20option%3F&In-Reply-To=1125378059.11809.13.camel%40skhera">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002339.html">
+   <LINK REL="Next"  HREF="002341.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Setting up an SFTP server?  Or possibly an SSH option?</H1>
+    <B>Rad Craig</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Setting%20up%20an%20SFTP%20server%3F%20%20Or%20possibly%20an%20SSH%20option%3F&In-Reply-To=1125378059.11809.13.camel%40skhera"
+       TITLE="[X-Unix] Setting up an SFTP server?  Or possibly an SSH option?">rad at inductionconcepts.com
+       </A><BR>
+    <I>Mon Aug 29 22:02:55 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002339.html">[X-Unix] Setting up an SFTP server?  Or possibly an SSH option?
+</A></li>
+        <LI>Next message: <A HREF="002341.html">[X-Unix] Setting up an SFTP server?  Or possibly an SSH option?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2340">[ date ]</a>
+              <a href="thread.html#2340">[ thread ]</a>
+              <a href="subject.html#2340">[ subject ]</a>
+              <a href="author.html#2340">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Aug 30, 2005, at 12:00 AM, Sharninder wrote:
+
+&gt;<i> On Mon, 2005-08-29 at 23:10 -0500, Rad Craig wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> I am trying to setup an SFTP server to download copies of our website
+</I>&gt;&gt;<i> backups.  We make a full backup once a week, just over 2GB right now.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> My webhost builds the backup archive and will send it to a remote  
+</I>&gt;&gt;<i> FTP/
+</I>&gt;&gt;<i> SFTP server.  I need to do this because when I make a backup, it
+</I>&gt;&gt;<i> nearly pushes me over our quota on the website and makes my mail
+</I>&gt;&gt;<i> server act up.  I have to use SFTP because of the 2GB limit of FTP.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I would also be open to using SSH and some form of secure copy.  I
+</I>&gt;&gt;<i> know very little about UNIX, so I'm looking for some help.  It
+</I>&gt;&gt;<i> doesn't have to be completely automated, but that would be very nice,
+</I>&gt;&gt;<i> to write a script.  I have SSH access to my web host.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> I'm not sure if I understand your problem correctly, but you can  
+</I>&gt;<i> set up
+</I>&gt;<i> a cron job on your webhost to scp the backup file (I'm assuming  
+</I>&gt;<i> that its
+</I>&gt;<i> just a tar.gz file) to your OSX box:
+</I>&gt;<i>
+</I>&gt;<i> man crontab;crontab -e
+</I>
+Yes, its a tar.gz file.  I'm just looking for a solution to get the  
+backup file from my webhost to my local OSX machine, just for  
+safety.  I keep 6 weeks worth.  I don't really care if its via SCP or  
+SFTP, I just want something that works.  SCP would probably be  
+better.  Wouldn't it copy it as the archive is created, so that it  
+doesn't have to build the entire 2GB archive before it starts to copy?
+
+I'll lookup the crontab stuff.
+
+&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> And use a variant of the below command to tranfer the files to your  
+</I>&gt;<i> OSX
+</I>&gt;<i> box:
+</I>&gt;<i>
+</I>&gt;<i> scp backup.tar.gz <A HREF="../../../mailman/listinfo/x-unix.html">user at osxbox</A>:/backups
+</I>
+I think I understand that.
+
+scp is the command, backup.tar.gz is the backup file, then <A HREF="../../../mailman/listinfo/x-unix.html">user at host</A>  
+(my local machine)/local directory.
+
+&gt;<i>
+</I>&gt;<i> You'll have to keep ssh running on your OSX box, though. You can  
+</I>&gt;<i> find it
+</I>&gt;<i> under system preferences-&gt;sharing
+</I>
+Or I could turn it off and on depending on when I copy this backup  
+file.  It would be nice to setup a cron job on my OSX box to turn  
+that off and on so that I don't have to leave it running all the time.
+
+Thanks for the input.
+
+
+Rad...
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002339.html">[X-Unix] Setting up an SFTP server?  Or possibly an SSH option?
+</A></li>
+	<LI>Next message: <A HREF="002341.html">[X-Unix] Setting up an SFTP server?  Or possibly an SSH option?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2340">[ date ]</a>
+              <a href="thread.html#2340">[ thread ]</a>
+              <a href="subject.html#2340">[ subject ]</a>
+              <a href="author.html#2340">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

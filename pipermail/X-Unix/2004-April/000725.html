@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Set PYTHONPATH
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Set%20PYTHONPATH&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000724.html">
+   <LINK REL="Next"  HREF="000726.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Set PYTHONPATH</H1>
+    <B>Simon Forster</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Set%20PYTHONPATH&In-Reply-To="
+       TITLE="Set PYTHONPATH">simon-lists at ldml.com
+       </A><BR>
+    <I>Wed Apr 21 00:46:20 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000724.html">guest FTP
+</A></li>
+        <LI>Next message: <A HREF="000726.html">[X-Unix] Set PYTHONPATH
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#725">[ date ]</a>
+              <a href="thread.html#725">[ thread ]</a>
+              <a href="subject.html#725">[ subject ]</a>
+              <a href="author.html#725">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Complete neophyte question(s) here but...
+
+I've written a very simple Python module which I want to call via 
+AppleScript from within FileMaker Pro.
+
+Problem: I need to load my module so that I can call the Python 
+function with the appropriate arguments. To put this in some form of 
+context. From the command line:
+
+python
+ &gt;&gt;&gt; sys.path.append('/Users/simonforster/Development/Python/Lib')
+ &gt;&gt;&gt; import regex_domain3
+ &gt;&gt;&gt; regex_domain3.GetDomain('www.look4generics.com/storvas .htm')
+'www.look4generics.com'
+
+Now, in theory I can write an AppleScript which'll mimic this approach. 
+i.e. Set the python path, import the module, do the do. But this seems 
+incredibly wasteful. (Bear in mind that the AppleScript call is 
+stateless. i.e. each time I run it it'll be analogous to starting a 
+completely new shell).
+
+So, how do I set python's path for my user? And, FWIW, if I &quot;echo 
+$PYTHONPATH&quot; in the Terminal, I get a blank line. My research suggests 
+that this is a valid environment variable though. Don't understand.
+
+Can anyone help me here?
+
+TIA
+
+Simon Forster
+_____________________________________________________
+  LDML Ltd, 62 Pall Mall, London, SW1Y 5HZ, UK
+  Tel: +44 (0)70 9230 5244   Fax: +44 (0)70 9230 5247
+_____________________________________________________
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000724.html">guest FTP
+</A></li>
+	<LI>Next message: <A HREF="000726.html">[X-Unix] Set PYTHONPATH
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#725">[ date ]</a>
+              <a href="thread.html#725">[ thread ]</a>
+              <a href="subject.html#725">[ subject ]</a>
+              <a href="author.html#725">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

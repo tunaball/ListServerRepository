@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Servers] XServe RAID 1 (mirroring)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20XServe%20RAID%201%20%28mirroring%29&In-Reply-To=list-6982117%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000180.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Servers] XServe RAID 1 (mirroring)</H1>
+    <B>Peter Clarke</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20XServe%20RAID%201%20%28mirroring%29&In-Reply-To=list-6982117%40mail.ninewire.com"
+       TITLE="[X Servers] XServe RAID 1 (mirroring)">P.J.Clarke at westminster.ac.uk
+       </A><BR>
+    <I>Tue Jul  1 02:34:30 PDT 2003</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000180.html">[X Servers] XServe RAID 1 (mirroring)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#179">[ date ]</a>
+              <a href="thread.html#179">[ thread ]</a>
+              <a href="subject.html#179">[ subject ]</a>
+              <a href="author.html#179">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>Greetings,
+</I>&gt;<i>
+</I>&gt;<i>I'm considering getting an XServe that would be installed at a 
+</I>&gt;<i>co-location facility.
+</I>&gt;<i>
+</I>&gt;<i>Since I don't have (easy/quick) physical access to the machine, I'm 
+</I>&gt;<i>considering getting a two drive XServe and setting up RAID 1 
+</I>&gt;<i>(mirroring) for data redundancy.
+</I>&gt;<i>
+</I>&gt;<i>(a) Is this supported by the RAID software bundled in OS X Server? 
+</I>&gt;<i>Or do I need third-party drivers?
+</I>
+	Both Raid 0 and Raid 1 are supported.
+	Raid 1 is what you want in this case.
+
+
+&gt;<i>(b) Will this automatically handle a drive failure and fail-over to 
+</I>&gt;<i>the working drive until a replacement is installed?  Will the RAID 
+</I>&gt;<i>software automatically mirror a replacement drive from the working 
+</I>&gt;<i>drive?
+</I>
+	Yes, if one drive fails, the other mirrored drive will continue
+	to provide a service.
+
+
+&gt;<i>(c) Can the XServe boot from a RAID 1 drive?
+</I>
+	Yes.  Earlier G4's could not do this, but the XServe can.
+
+Extra Notes:
+
+	I haven't got an XServe! - but we were thinking about buying one
+	and so I looked into all this.
+
+	- But it was decided to use our new Novell servers instead.
+
+IMPORTANT:
+
+	Say that you set it up with raid 1 (two disks).
+	Then a disk fails
+	- The service continues from the other disk.
+	(but now without redundancy...)
+
+Here is an interesting scenario:
+	You want to replace the faulty disk and re-raid.
+	The server has to be taken off-line,
+	The replacement disk fitted.
+
+	The server booted from ANOTHER disk
+	(either firewire or CD)  (During the re-raiding process)
+	- You can't run off the second disk 'during re-raiding'
+
+	The new disk formatted, re-raided
+	- that sync process could take some time - up to two hours
+
+	Then the server is usable again.  (not usable while re-raiding).
+
+	An alternative to this, for greater 'uptime'
+	is to add another disk 3rd disk, also with a system on,
+	synchronized with 'psync' say at midnight say.
+
+	then if you need to re-raid, you could boot from this third disk, and
+	still provide a service while the raid is being rebuilt
+	Then, resync back to the raid, then reboot from the raid and 
+continue as
+	before.
+
+	Because this is all built in, it's more convenient
+	And it could (I think) all be done from off site
+	- with the exception of fitting the new drive of course.
+
+As you know, the Xserve supports four disks, so other combinations 
+are also possible.  But greater redundancy come at greater cost.
+- So you have to decide what is important to you,
+saving &#163; (or $) or reducing downtime.
+
+I was considering using an XServe, and an XRAID.
+
+But instead we will use a Novell server and a SAN system.
+- Except that we haven't got it working with Macs yet...
+
+
+
+&gt;<i>Finally, has anyone had any problems with drives on an XServe?  Am I 
+</I>&gt;<i>just being paranoid?  Could I get away with just one drive, a good 
+</I>&gt;<i>backup strategy, and saying my prayers every night?
+</I>&gt;<i>
+</I>
+-- 
+Peter Clarke, Harrow Campus Computing Services,  Technical Support. (Projects)
+Ext 4685; Room L1.07; Learning Resource Centre.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000180.html">[X Servers] XServe RAID 1 (mirroring)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#179">[ date ]</a>
+              <a href="thread.html#179">[ thread ]</a>
+              <a href="subject.html#179">[ subject ]</a>
+              <a href="author.html#179">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

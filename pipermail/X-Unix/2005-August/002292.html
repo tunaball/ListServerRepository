@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Expression/script edit series of txt files in separate
+	subdirectories
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Expression/script%20edit%20series%20of%20txt%20files%20in%20separate%0A%09subdirectories&In-Reply-To=D7FC43CC-269D-47D2-B129-4E709D535CCA%40canfieldtack.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002291.html">
+   <LINK REL="Next"  HREF="002287.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Expression/script edit series of txt files in separate
+	subdirectories</H1>
+    <B>Cloyce D. Spradling</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Expression/script%20edit%20series%20of%20txt%20files%20in%20separate%0A%09subdirectories&In-Reply-To=D7FC43CC-269D-47D2-B129-4E709D535CCA%40canfieldtack.com"
+       TITLE="[X-Unix] Expression/script edit series of txt files in separate
+	subdirectories">cloyce+xunix at headgear.org
+       </A><BR>
+    <I>Tue Aug 16 14:22:52 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002291.html">[X-Unix] Script monitoring
+</A></li>
+        <LI>Next message: <A HREF="002287.html">[X-Unix] script: setting directory ownership to the name of that
+	directory ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2292">[ date ]</a>
+              <a href="thread.html#2292">[ thread ]</a>
+              <a href="subject.html#2292">[ subject ]</a>
+              <a href="author.html#2292">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Tue, Aug 16, 2005 at 03:59:37PM -0400, Andrew Kappy wrote:
+
+:<i> I've been trying to construct expressions (or shell scripts) that  
+</I>:<i> would go through all of the mailto files and change:
+</I>:<i> 1) find all cases of &quot;x&quot; and change to &quot;y&quot;
+</I>:<i> 2) add a line with &quot;x&quot; to all
+</I>:<i> 3) remove &quot;x&quot; from all files
+</I>
+Assuming that you don't have paths with spaces in them, some variation of
+the below will cover that:
+
+  find . -name mailto -print | xargs perl -pi -e 's/YYYY/ZZZZ/g;'
+
+That'd handle #1.  #2 can also easily be accomplished without the aid of
+perl, but even with perl it's not too hard:
+
+  find . -name mailto -print | xargs perl -pi -e 'END { print &quot;YYYY\n&quot;; }'
+
+Change the &quot;END&quot; to &quot;BEGIN&quot; to put the new line at the front of the file.
+
+#3 is also easiest with Perl, though this form may not be the most intuitive:
+
+  find . -name mailto -print | xargs perl -pi -e 'next if /YYYY/;'
+
+Some explanation is probably in order.  For perl (this is all in perlrun,
+BTW; type 'perldoc perlrun'), the '-p' says to loop over the input lines,
+and to print them by default.  The '-i' says to do an in-place edit of files
+given on the command line, and '-e' indicates that the following argument is
+the text of a script and not the filename of a file containing a script.
+
+The 'find' finds all of your files named 'mailto' and prints their paths,
+and xargs takes as many as possible and tacks them onto the end of its
+arguments (which in this case is &quot;perl ...&quot;).
+
+You can also string all of the above into one command; just combine the text
+of the perl scripts, as in:
+
+
+  find . -name mailto -print | xargs perl -pi -e 'next if /WWWW/; s/YYYY/ZZZZ/g; END { print &quot;TTTTT\n&quot;; }'
+
+If it starts to get too complicated, it's probably best to put the perl script
+into a file and just use perl to run it:
+
+  find . -name mailto -print | xargs perl -pi fix_mailto
+
+(assuming you've called it fix_mailto, of course)
+
+--
+Cloyce
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002291.html">[X-Unix] Script monitoring
+</A></li>
+	<LI>Next message: <A HREF="002287.html">[X-Unix] script: setting directory ownership to the name of that
+	directory ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2292">[ date ]</a>
+              <a href="thread.html#2292">[ thread ]</a>
+              <a href="subject.html#2292">[ subject ]</a>
+              <a href="author.html#2292">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

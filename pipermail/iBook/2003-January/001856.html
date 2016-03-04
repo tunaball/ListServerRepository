@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [P1] Fix_prebinding is crashing on start
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20Fix_prebinding%20is%20crashing%20on%20start&In-Reply-To=list-4595401%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001855.html">
+   <LINK REL="Next"  HREF="001857.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[P1] Fix_prebinding is crashing on start</H1>
+    <B>Meg St. Clair</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20Fix_prebinding%20is%20crashing%20on%20start&In-Reply-To=list-4595401%40mail.ninewire.com"
+       TITLE="[P1] Fix_prebinding is crashing on start">megsaint at earthlink.net
+       </A><BR>
+    <I>Sat Jan 25 18:16:33 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001855.html">[P1] Fix_prebinding is crashing on start
+</A></li>
+        <LI>Next message: <A HREF="001857.html">Permissions weirdness
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1856">[ date ]</a>
+              <a href="thread.html#1856">[ thread ]</a>
+              <a href="subject.html#1856">[ subject ]</a>
+              <a href="author.html#1856">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 1/25/03 8:46 PM, &quot;Richard McKay&quot; &lt;<A HREF="../../../mailman/listinfo/ibook.html">richard.mckay1 at virgin.net</A>&gt; wrote:
+
+&gt;<i> 
+</I>&gt;<i> Meg,
+</I>&gt;<i> 
+</I>&gt;<i> When you say that you're not sure that you understand the result, do you
+</I>&gt;<i> mean that you do not understand what this did and why it works or...the
+</I>&gt;<i> actual messages that terminal spit out after doing the update prebinding?
+</I>&gt;<i> 
+</I>&gt;<i> If it is the first case...then maybe it will help to think of it this way
+</I>&gt;<i> (someone correct me if I am wrong please);
+</I>&gt;<i> 
+</I>&gt;<i> When you are working in an office and you want to post a letter then you
+</I>&gt;<i> need to know where the envelopes and stamps are, when you want to dial a
+</I>&gt;<i> number of a supplier or customer you need to know where the telephone book
+</I>&gt;<i> is or where the information is stored...this is similar to the Mac Operating
+</I>&gt;<i> System because in order for it to be able to run the applications it needs
+</I>&gt;<i> to know where the required information to do so is located. In a perfect
+</I>&gt;<i> world the information (telephone book, envelopes) is always there where you
+</I>&gt;<i> left it in the office and also where the Operating System left it the last
+</I>&gt;<i> time it looked...in the real world sometimes things are not where we thought
+</I>&gt;<i> we left them (in which case we usually clean up and organise things again)
+</I>&gt;<i> and during some installations or crashes the computer loses track of where
+</I>&gt;<i> it left its information last...it then runs around in a panic trying to find
+</I>&gt;<i> the information until some nice caring person (you) runs the update
+</I>&gt;<i> prebinding to tell the computer look around, remember and re-record/correct
+</I>&gt;<i> where you have put all the information you need to run smoothly again...
+</I>&gt;<i> 
+</I>&gt;<i> If it is rather the second case and you are not sure/concerned about the
+</I>&gt;<i> messages that the terminal gave you...ignore my drivel above and post what
+</I>&gt;<i> messages it put out and we will see if someone can help with
+</I>&gt;<i> interpretation...
+</I>
+
+It was the second, though the explanation is not unappreciated. I plan on
+keeping it around.
+
+This is what happens:
+
+Last login: Sat Jan 25 02:40:25 on ttyp1
+Welcome to Darwin!
+[Meg-St-Clairs-iBook:~] meg% cd /
+[Meg-St-Clairs-iBook:/] meg% sudo update_prebinding -root
+Password:
+2003-01-25 21:13:17.453 update_prebinding[747] Start of update_prebinding
+usage: update_prebinding {-debug} {-verbose} {-force} {-root &lt;dir&gt;}
+               (-pkgs (&lt;pkg&gt; &lt;instroot&gt;)* ) | (-files file1 file2 ...)
+  Calls redo_prebinding on executables and libraries in dependency order
+  -verbose: display additional status and warning messages
+  -force: prebind even if the file is otherwise up-to-date
+  -debug: don't actually try to redo the prebinding for any files
+  -pkgs: specifies package/install root pairs of changed files that require
+         prebinding to be redone.
+  -root: specifies the directory to be searched for dependent libraries
+         If neither -pkgs or -file is specified, all libraries and
+executables in -root are prebound.
+[Meg-St-Clairs-iBook:/] meg%
+
+It almost looks as if it's telling me *about* the command. Did it do
+anything?
+
+I haven't rebooted as I've been doing some other stuff.
+
+Meg
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001855.html">[P1] Fix_prebinding is crashing on start
+</A></li>
+	<LI>Next message: <A HREF="001857.html">Permissions weirdness
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1856">[ date ]</a>
+              <a href="thread.html#1856">[ thread ]</a>
+              <a href="subject.html#1856">[ subject ]</a>
+              <a href="author.html#1856">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

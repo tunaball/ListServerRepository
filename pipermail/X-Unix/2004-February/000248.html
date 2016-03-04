@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Stupid Mac OS X question (?)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Stupid%20Mac%20OS%20X%20question%20%28%3F%29&In-Reply-To=list-10774116%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000247.html">
+   <LINK REL="Next"  HREF="000249.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Stupid Mac OS X question (?)</H1>
+    <B>Albert Lunde</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Stupid%20Mac%20OS%20X%20question%20%28%3F%29&In-Reply-To=list-10774116%40mail.ninewire.com"
+       TITLE="[X-Unix] Stupid Mac OS X question (?)">atlunde at panix.com
+       </A><BR>
+    <I>Tue Feb 10 22:12:35 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000247.html">[X-Unix] Stupid Mac OS X question (?)
+</A></li>
+        <LI>Next message: <A HREF="000249.html">[X-Unix] Stupid Mac OS X question (?)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#248">[ date ]</a>
+              <a href="thread.html#248">[ thread ]</a>
+              <a href="subject.html#248">[ subject ]</a>
+              <a href="author.html#248">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 10:32 PM -0500 2/10/04, Stephen Jonke wrote:
+&gt;<i>Or maybe just a stupid idea. Is there anything wrong with doing this:
+</I>&gt;<i>
+</I>&gt;<i>    sudo chmod -R go-rwx ~/*
+</I>&gt;<i>
+</I>&gt;<i>I.e. I want to block out access of others to everything in my home
+</I>&gt;<i>folder, but will doing this break anything in the system? Are there
+</I>&gt;<i>files that must be readable by group and/or other?
+</I>
+I wouldn't do it if I were you. I can't cite a specific example other
+than public_html (as someone else noted) that needs access, but it's
+irrevesible unless you've kept careful track of permissions, and it's
+over-kill.
+
+You can get the same protective effect, with less risk, by typing:
+
+ls -ld $HOME
+chmod 700 $HOME
+
+This changes just the home directory, not its children, but it still
+denies group and other access, and is easier to reverse, if you note
+the output of the ls command.
+
+You don't need to use sudo, you own your home directory.
+
+(Using a wildcard (&quot;*&quot;) together with -R would also be somewhat redundant.)
+
+If you were running Apache httpd with public_html user directories,
+and wanted similar protection, I'd use mode 711 on the home
+directory, mode 700 on its other immediate children (not recursive),
+and mode 755 on public_html. Mode 711 is also what I'd try next if
+something breaks.
+
+(The implications of mode 711 is that other userids can open files if
+they use the exact path, but they can't list files. This is
+consistent with more or less permissive permissions on specific
+subdirectories,)
+
+Don't do anything like this on a special account whose $HOME is &quot;/&quot;.
+-- 
+     Albert Lunde  <A HREF="../../../mailman/listinfo/x-unix.html">Albert-Lunde at northwestern.edu</A>
+                   <A HREF="../../../mailman/listinfo/x-unix.html">atlunde at panix.com</A>  (new address for personal mail)
+                   <A HREF="../../../mailman/listinfo/x-unix.html">Albert-Lunde at nwu.edu</A> (old address)
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000247.html">[X-Unix] Stupid Mac OS X question (?)
+</A></li>
+	<LI>Next message: <A HREF="000249.html">[X-Unix] Stupid Mac OS X question (?)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#248">[ date ]</a>
+              <a href="thread.html#248">[ thread ]</a>
+              <a href="subject.html#248">[ subject ]</a>
+              <a href="author.html#248">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

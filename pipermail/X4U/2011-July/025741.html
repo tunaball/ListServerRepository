@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] problem with printing
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX4U%5D%20problem%20with%20printing&In-Reply-To=%3C06B5BD8C-FEE9-40FD-B410-F5B9CB5BAAB4%40laubenthal.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="025740.html">
+   <LINK REL="Next"  HREF="025742.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X4U] problem with printing</H1>
+    <B>Neil Laubenthal</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX4U%5D%20problem%20with%20printing&In-Reply-To=%3C06B5BD8C-FEE9-40FD-B410-F5B9CB5BAAB4%40laubenthal.net%3E"
+       TITLE="[X4U] problem with printing">neil at laubenthal.net
+       </A><BR>
+    <I>Thu Jul 28 09:50:40 PDT 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="025740.html">[X4U] problem with printing
+</A></li>
+        <LI>Next message: <A HREF="025742.html">[X4U] problem with printing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#25741">[ date ]</a>
+              <a href="thread.html#25741">[ thread ]</a>
+              <a href="subject.html#25741">[ subject ]</a>
+              <a href="author.html#25741">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Yeah . . .there's no way they could provide you a static address to your printer. They provide as you know a single IP to the outside of your router . . normally it's assigned by DHCP but you could buy a static one if you really wanted to. That would only be on the outside of your router though. All of your computers are on the inside of the router on non-internet routable IP spas . . .192.168.x.x or 10.0.0.x; and the router does network address translation (NAT) to get the traffic to the outside. Whoever told you you needed to buy a static IP for the printer is pretty much lying to you to get you to give them more money.
+
+Your printer is currently hooked up directly to the network . . .if you have another Mac in the house that's always on you could attach the printer directly to it via USB and then share the printer connection in Lion (or Snow or Leopard or Tiger or any other version of  Mac OS X).
+
+As I said . . .if you just log into your Actiontec this is easy. If you never set a password on it then the default password is on a sticker on the router (at least it was on my Actiontec that came from Verizon). so you can <A HREF="http://whatever">http://whatever</A> the gateway IP is and you'll get the login page . . .you may have to contact the ISP to find out the default password if it's not on the sticker.
+
+Once you're logged into the Actiontec . . .go to the DHCP configuration page and figure out which IP is your printer . . .the details of that DHCP lease will tell you the MAC address of the printer. This will be a 16 character hex string. Once you know this . . .go to the Reservations section of the DHCP config page and tell the DHCP server to always give IP 10 (or whatever the printer currently has) to the MAC address of the printer . . .that way when the printer asks for an IP it will always get 10 (or 15 or 11 or whatever you assigned).
+
+I had an HP 2100 as well . . .and am almost sure I figured out a way to assign it a static IP that I then excluded from the router's DHCP range . . .it had a fuser issue and it was cheaper to buy the Brother than fix the HP. The Brother does duplex, is 1200 dpi, and has wireless, Bonjour, ethernet, and USB connectivity.
+
+
+On Jul 28, 2011, at 11:31 AM, Allan Rube wrote:
+
+&gt;<i> Thanks. My provider said I would have to buy a static ip address before they could assign it to my printer. They want $114 a month. I will either lern to live with my problem - print a configuration page each time I want to use the printer to find its ip, then add a printer with that ip, and finally print - or buy a Bonjour b/w laser printer.
+</I>&gt;<i> 
+</I>
+
+-----------------------------------------------
+There are only three kinds of stress; your basic nuclear stress, cooking stress, and A$$hole stress. The key to their relationship is Jello.
+
+neil
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="025740.html">[X4U] problem with printing
+</A></li>
+	<LI>Next message: <A HREF="025742.html">[X4U] problem with printing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#25741">[ date ]</a>
+              <a href="thread.html#25741">[ thread ]</a>
+              <a href="subject.html#25741">[ subject ]</a>
+              <a href="author.html#25741">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

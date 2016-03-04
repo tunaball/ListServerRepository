@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Shell Script: How get parent path to invoke a sister
+	tool?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Shell%20Script%3A%20How%20get%20parent%20path%20to%20invoke%20a%20sister%0A%09tool%3F&In-Reply-To=28C84F38-931A-46AE-92EA-059DDA947E24%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003119.html">
+   <LINK REL="Next"  HREF="003121.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Shell Script: How get parent path to invoke a sister
+	tool?</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Shell%20Script%3A%20How%20get%20parent%20path%20to%20invoke%20a%20sister%0A%09tool%3F&In-Reply-To=28C84F38-931A-46AE-92EA-059DDA947E24%40secure-computing.net"
+       TITLE="[X-Unix] Shell Script: How get parent path to invoke a sister
+	tool?">ecrist at secure-computing.net
+       </A><BR>
+    <I>Fri May 23 07:37:18 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003119.html">[X-Unix] Shell Script: How get parent path to invoke a sister
+	tool?
+</A></li>
+        <LI>Next message: <A HREF="003121.html">[X-Unix] Shell Script: How get parent path to invoke a sister
+	tool?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3120">[ date ]</a>
+              <a href="thread.html#3120">[ thread ]</a>
+              <a href="subject.html#3120">[ subject ]</a>
+              <a href="author.html#3120">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On May 23, 2008, at 9:28 AM, Eric F Crist wrote:
+
+&gt;<i> On May 23, 2008, at 9:21 AM, Jerry Krinock wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> I want to ship someone a directory containing two files: a shell  
+</I>&gt;&gt;<i> script and a tool.  Within the shell script, I'd like to invoke the  
+</I>&gt;&gt;<i> tool.  And I want it idiot-proofed to work regardless of where the  
+</I>&gt;&gt;<i> user drops my directory.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> So, I need the path to the tool within the script.  It seems like a  
+</I>&gt;&gt;<i> bash shell script should have an environment variable available  
+</I>&gt;&gt;<i> giving the path to it's own parent directory, but I don't see any  
+</I>&gt;&gt;<i> such thing in printenv output.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> How can I do this?
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Jerry,
+</I>&gt;<i>
+</I>&gt;<i> Simply require that the tool which is called be within the same  
+</I>&gt;<i> directory as the script.  From there, you can figure out you current  
+</I>&gt;<i> working directory, or simply call the tool with ./tool_name.
+</I>&gt;<i>
+</I>&gt;<i> Hope this helps.
+</I>
+Sorry for the self-reply, but there's another method, building off  
+what I stated above.  You may, if the user calls your utility from  
+another directory, need to know that directory information.  $0 is a  
+special variable containing the name of the script itself, feeding  
+this to the command dirname will get you a valid path to the script.
+
+#!/bin/sh
+echo &quot;I live in `dirname $0`&quot;
+
+Simply put this in test.sh within your home directory, and do the  
+following to see:
+
+cd /
+sh ~/test.sh
+
+Hope this clarifies a bit.
+
+-----
+Eric F Crist
+Secure Computing Networks
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003119.html">[X-Unix] Shell Script: How get parent path to invoke a sister
+	tool?
+</A></li>
+	<LI>Next message: <A HREF="003121.html">[X-Unix] Shell Script: How get parent path to invoke a sister
+	tool?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3120">[ date ]</a>
+              <a href="thread.html#3120">[ thread ]</a>
+              <a href="subject.html#3120">[ subject ]</a>
+              <a href="author.html#3120">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

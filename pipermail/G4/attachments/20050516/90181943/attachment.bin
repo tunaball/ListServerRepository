@@ -1,0 +1,55 @@
+Yes.  Chances are your linksys router is set to be a DHCP server
+(meaning it assigns addresses to your machines).  You can keep this
+set up most likely as the linksys will not likely change any of those
+IPs without some change in your network (e.g., new machines being
+added, etc) and even then chances are you will still get the same
+address.
+
+
+To set up an FTP server, you will need to configure the linksys
+router's "port forwarding".  Essentially it means you will tell it
+that port 21 needs to be sent to your G4's IP.  (You can get your IP
+on the G4 by opening the the System Preferences->Network panel).  It
+will likely be something like 192.168.x.y or similar.
+
+
+Once you set linksys to port forward port 21 to your G4 IP, then you
+will need to check the Sharing Preferences panel and enable the FTP
+check box on the services page (this will also open port 21 on your
+firewall).  To test if you have successfully forwarded your machine,
+you can get your external IP address using any number of tools
+(http://dslreports/whois) and then you can go your mac, open a
+terminal window (or your PC using "cmd" for that matter) and type:
+
+
+<bold>ftp <<the external ip address that WHOIS told you is yours></bold>
+
+
+once you hit enter, you should get to a you should get some response
+back asking for a login/password similar to this:
+
+
+Connected to localhost.
+
+220 localhost FTP server (tnftpd 20040810) ready.
+
+Name (localhost:pacyga): 
+
+
+I suggest you download <bold>PureFTPd Manager 1.4.4</bold> from a site
+like http://versiontracker.com.  This tool helps configure some of the
+hidden bits and will let you configure things like hidden FTP user
+accounts and anonymous FTP (not that you would want to do that
+necessarily).
+
+
+I have used it and it works fine.
+
+
+Jim
+
+On May 16, 2005, at 6:55 AM, Charles Cox wrote:
+
+<excerpt>
+
+</excerpt>

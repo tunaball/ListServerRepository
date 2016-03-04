@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] script question (cron - adobefnt*.lst)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20script%20question%20%28cron%20-%20adobefnt%2A.lst%29&In-Reply-To=list-10174247%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000919.html">
+   <LINK REL="Next"  HREF="000941.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] script question (cron - adobefnt*.lst)</H1>
+    <B>Don Montalvo</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20script%20question%20%28cron%20-%20adobefnt%2A.lst%29&In-Reply-To=list-10174247%40mail.ninewire.com"
+       TITLE="[X-Unix] script question (cron - adobefnt*.lst)">dmjgraphics at nyc.rr.com
+       </A><BR>
+    <I>Fri Jan  9 09:45:31 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000919.html">[X-Unix] .bash_profile
+</A></li>
+        <LI>Next message: <A HREF="000941.html">[X-Unix] script question (cron - adobefnt*.lst)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#930">[ date ]</a>
+              <a href="thread.html#930">[ thread ]</a>
+              <a href="subject.html#930">[ subject ]</a>
+              <a href="author.html#930">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>how's this for a cron job (i removed all double quotes and kept the 
+backslash near the end...mixed the two original examples):
+
+	find / -name 'AdobeFnt*.lst&quot; -exec rm -f {} \;
+
+wow...never knew the decision to use single or double quotes had such 
+a huge impact on shell scripts!
+
+:<i>)
+</I>don
+
+eugene lee wrote:
+
+&gt;<i>On Thu, Jan 08, 2004 at 03:58:20PM -0500, Don Montalvo wrote:
+</I>&gt;<i>
+</I>&gt;:<i> these two seem to do the same thing:
+</I>&gt;:<i>
+</I>&gt;:<i>	find / -name 'AdobeFnt*.lst' -exec rm -f {} \;
+</I>&gt;:<i>
+</I>&gt;:<i>		(and)
+</I>&gt;:<i>
+</I>&gt;:<i>	find / -name &quot;AdobeFnt*.lst&quot; -exec rm -f {} ';'
+</I>&gt;:<i>
+</I>&gt;:<i> first question: which script is best for using as cron job?
+</I>&gt;<i>
+</I>&gt;<i>After the shell is done with variable expansion, both of these forms:
+</I>&gt;<i>
+</I>&gt;<i>	find / -name 'AdobeFnt*.lst'
+</I>&gt;<i>	find / -name &quot;AdobeFnt*.lst&quot;
+</I>&gt;<i>
+</I>&gt;<i>come out to the same thing.  However, the single-quoted string allows
+</I>&gt;<i>less escape characters than the double-quoted string.  The former may be
+</I>&gt;<i>better if you are trying to list files that contain unusual characters
+</I>&gt;<i>like the dollar sign ('$').
+</I>&gt;<i>
+</I>&gt;<i>--
+</I>&gt;<i>Eugene Lee
+</I>&gt;<i><A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+</I>
+Robar J Philip &lt;<A HREF="../../../mailman/listinfo/x-unix.html">philip.robar at myrealbox.com</A>&gt; wrote:
+
+&gt;<i>On Jan 8, 2004, at 1:20 PM, Juan Manuel Palacios wrote:
+</I>&gt;<i>
+</I>&gt;<i>  &gt; find -x / -name &quot;AdobeFnt*.lst&quot; -exec rm -f {} \;
+</I>&gt;<i>  &gt;
+</I>&gt;<i>  &gt; Read about it in the man page for a more complete explanation than
+</I>&gt;<i>  &gt; what I can reproduce here. Finally, I'd double quote the searched
+</I>&gt;<i>  &gt; string with wild card just to be safe..., call me paranoid!
+</I>&gt;<i>
+</I>&gt;<i>Actually double quotes are less &quot;safe&quot;. Double quotes allow for
+</I>&gt;<i>variable interpolation before the string gets to find-which you don't
+</I>&gt;<i>want. Use single quotes to preserve the wild cards in the search
+</I>&gt;<i>string.
+</I>&gt;<i>
+</I>&gt;<i>Phil
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000919.html">[X-Unix] .bash_profile
+</A></li>
+	<LI>Next message: <A HREF="000941.html">[X-Unix] script question (cron - adobefnt*.lst)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#930">[ date ]</a>
+              <a href="thread.html#930">[ thread ]</a>
+              <a href="subject.html#930">[ subject ]</a>
+              <a href="author.html#930">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Recursive one-line chmod
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Recursive%20one-line%20chmod&In-Reply-To=C1F8871B-18EA-4F72-837A-8CDE035B7ED3%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002369.html">
+   <LINK REL="Next"  HREF="002371.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Recursive one-line chmod</H1>
+    <B>Alexandre Gauthier</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Recursive%20one-line%20chmod&In-Reply-To=C1F8871B-18EA-4F72-837A-8CDE035B7ED3%40mac.com"
+       TITLE="[X-Unix] Recursive one-line chmod">supernaut at underwares.org
+       </A><BR>
+    <I>Wed Sep 21 11:08:12 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002369.html">[X-Unix] Recursive one-line chmod
+</A></li>
+        <LI>Next message: <A HREF="002371.html">[X-Unix] Recursive one-line chmod
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2370">[ date ]</a>
+              <a href="thread.html#2370">[ thread ]</a>
+              <a href="subject.html#2370">[ subject ]</a>
+              <a href="author.html#2370">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Phillip Burk &lt;<A HREF="../../../mailman/listinfo/x-unix.html">philburk at mac.com</A>&gt; a &#195;&#169;crit&#194; :
+
+&gt;<i> Alright, I'm trying to use ARD to issue a one-line command that will  
+</I>&gt;<i> step through all the directories in /Users and assign recursive  
+</I>&gt;<i> proper ownership.  I don't care if it errors on the Shared folder, I  
+</I>&gt;<i> have a login hook to blast that to 777.  I have no clue as to the  
+</I>&gt;<i> proper syntax of the thing although if I were using a script to do  
+</I>&gt;<i> this I imagine it would use a foreach command to parse the usernames  
+</I>&gt;<i> from the individual directories themselves and then assign ownership  
+</I>&gt;<i> based on that username.
+</I>
+Can't you push a bash script?
+
+If you can, well, do this...
+################################
+
+
+#!/bin/bash
+
+for i in `find /home/* -type d -maxdepth 0 | awk -F &quot;/&quot; '{ print $3; }` ; do
+	if [ $i = &quot;Shared&quot; ] ; then
+		echo &quot;Shared folder. Skipping...&quot;
+	else
+		echo &quot;Setting owner of $i to its relevant user...
+		# This is probably not netinfo friendly.
+		chown -R $i:admin /Users/$i
+	fi
+done
+
+
+########################
+
+Do take note that I wrote this in 3 minutes, did not test it and
+probably used flawed logic, but this does what your example did.
+Vaguely.
+
+Its probably not the best way to do this, and doesn't even takes in
+account netinfo. I have no clue if chown should be changed for something
+more relevant -- but if you can do bash, this should get you started,
+just change the command.
+
+DO NOT LAUGH AT MY POOR BASH SKILLS :'(
+
+
+&gt;<i>
+</I>&gt;<i> Kinda like this:
+</I>&gt;<i>
+</I>&gt;<i> Foreach directory in /Users
+</I>&gt;<i>     assign name to $username
+</I>&gt;<i>     if $username==&quot;Shared&quot; then next
+</I>&gt;<i>     endif
+</I>&gt;<i>     chown -R $username:admin /Users/$username
+</I>&gt;<i>
+</I>&gt;<i> or something like that.  I'm not a programmer, heck, I'm not even a  
+</I>&gt;<i> shell-scripter.  I just need a little push with the syntax.  If I  
+</I>&gt;<i> have to push and run a script remotely to do this I'll do that.
+</I>&gt;<i>
+</I>&gt;<i> Thanks.
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>
+
+
+--------------------------------------------------------------
+Underwares.org -- Free Obscure IT knowledge Open Database.
+Search fo knowledge: <A HREF="http://www.underwares.org/zcgi/contents">http://www.underwares.org/zcgi/contents</A>
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002369.html">[X-Unix] Recursive one-line chmod
+</A></li>
+	<LI>Next message: <A HREF="002371.html">[X-Unix] Recursive one-line chmod
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2370">[ date ]</a>
+              <a href="thread.html#2370">[ thread ]</a>
+              <a href="subject.html#2370">[ subject ]</a>
+              <a href="author.html#2370">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

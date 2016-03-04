@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: Install gd-2.0.33 on tiger PPC 10.4.8
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Install%20gd-2.0.33%20on%20tiger%20PPC%2010.4.8&In-Reply-To=20061030044816.E7191357D24%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002766.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: Install gd-2.0.33 on tiger PPC 10.4.8</H1>
+    <B>Peter Dyballa</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Install%20gd-2.0.33%20on%20tiger%20PPC%2010.4.8&In-Reply-To=20061030044816.E7191357D24%40listserver.themacintoshguy.com"
+       TITLE="[X-Unix] Re: Install gd-2.0.33 on tiger PPC 10.4.8">Peter_Dyballa at Web.DE
+       </A><BR>
+    <I>Mon Oct 30 04:38:06 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002766.html">[X-Unix] Owner/Group changes depending on login?
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2765">[ date ]</a>
+              <a href="thread.html#2765">[ thread ]</a>
+              <a href="subject.html#2765">[ subject ]</a>
+              <a href="author.html#2765">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Am 30.10.2006 um 05:48 schrieb x-unix- 
+<A HREF="../../../mailman/listinfo/x-unix.html">request at listserver.themacintoshguy.com</A>:
+
+&gt;<i> gcc -DHAVE_CONFIG_H -I. -I. -I. -I/usr/local/include/freetype2
+</I>&gt;<i> -I/usr/local/include -g -O2 -MT gdft.lo -MD -MP -MF .deps/gdft.Tpo -c
+</I>&gt;<i> gdft.c  -fno-common -DPIC -o .libs/gdft.lo
+</I>&gt;<i> gdft.c:1366:35: error: fontconfig/fontconfig.h: No such file or  
+</I>&gt;<i> directory
+</I>&gt;<i> [...]
+</I>&gt;<i> gcc -fPIC -I. -I/usr/include/freetype2 -I/usr/local/include/freetype2
+</I>&gt;<i> -I/usr/include/X11 -I/usr/X11R6/include/X11 -I/usr/local/include -g
+</I>&gt;<i> -DHAVE_LIBPNG -DHAVE_LIBZ -DHAVE_LIBJPEG -DHAVE_LIBFREETYPE
+</I>&gt;<i> -DHAVE_LIBXPM -DHAVE_LIBX11   -c -o gdft.o gdft.c
+</I>&gt;<i> In file included from gdft.c:113:
+</I>&gt;<i> /usr/local/include/freetype2/freetype/freetype.h:20:2: error: #error
+</I>&gt;<i> &quot;`ft2build.h' hasn't been included yet!&quot;
+</I>
+Try to run './configure --help' to see some project specific options!
+
+What you need to do is to add search paths for fontconfig header  
+files (-I/usr/local/fontconfig &#8211; although it's really not obvious  
+from the first error, have you just forgotten to install  
+libfontconfig?) and you need *two* components for freetype: /usr/ 
+local/include/freetype2 *and* /usr/local/include, because in /usr/ 
+local/include you'll find ft2build.h.
+
+So, if you think invoking './configure --help' isn't worth every time  
+you should at least pass to configure a reasonable set of CPPFLAGS.
+
+BTW, -I/usr/include/X11 and -I/usr/X11R6/include/X11 are both  
+nonsense. X11 header files are included as X11/&lt;some relative path or  
+file name&gt;.
+
+--
+Greetings
+
+   Pete
+
+   Basic, n.:
+A programming language.  Related to certain social diseases in
+that those who have it will not admit it in polite company.
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002766.html">[X-Unix] Owner/Group changes depending on login?
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2765">[ date ]</a>
+              <a href="thread.html#2765">[ thread ]</a>
+              <a href="subject.html#2765">[ subject ]</a>
+              <a href="author.html#2765">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

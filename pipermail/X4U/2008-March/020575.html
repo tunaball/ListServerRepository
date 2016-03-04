@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Very weird disk corruption - pleas for help!
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Very%20weird%20disk%20corruption%20-%20pleas%20for%20help%21&In-Reply-To=C40F2EDD.15028%25jamesrob%40sonic.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="020603.html">
+   <LINK REL="Next"  HREF="020574.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Very weird disk corruption - pleas for help!</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Very%20weird%20disk%20corruption%20-%20pleas%20for%20help%21&In-Reply-To=C40F2EDD.15028%25jamesrob%40sonic.net"
+       TITLE="[X4U] Very weird disk corruption - pleas for help!">macmonster at myrealbox.com
+       </A><BR>
+    <I>Wed Mar 26 09:28:14 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="020603.html">[X4U] Very weird disk corruption - pleas for help!
+</A></li>
+        <LI>Next message: <A HREF="020574.html">[X4U] Very weird disk corruption - pleas for help!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20575">[ date ]</a>
+              <a href="thread.html#20575">[ thread ]</a>
+              <a href="subject.html#20575">[ subject ]</a>
+              <a href="author.html#20575">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 26 Mar 2008, at 05:36, Jim Robertson wrote:
+&gt;<i> ...
+</I>&gt;<i> Any ideas what I should try next?
+</I>
+This has got to depend on whether you need any data that's on the drive.
+
+If so, then I would try booting the laptop in firewire target mode &amp;  
+trying to see if you can see the partitions from another machine.
+
+If not, then why haven't you tried the original MacBook Pro system  
+disk? I don't know whether I can start the computer from it, either,  
+but it's got to be worth a try.
+
+It seems to me there are two possibilities:
+- you've got disk corruption that is confusing the MacOS boot-manager.
+- you've got an unrelated hardware problem - maybe the motherboard is  
+hosed. Maybe this caused your initial booting problems, or maybe it's  
+just completely unrelated. This might seem unlikely, but it does happen.
+
+If you had a 2.5&quot; SATA hard-drive lying around it would be easy to  
+prove or disprove the latter scenario. If you can install MacOS on a  
+brand new hard-drive using this machine then you know the problem is  
+corruption on the original drive, but if you can't install MacOS on a  
+new drive then it'd appear to be some other hardware problem. If it  
+DOES turn out to be the latter case then you'll be glad you've  
+diagnosed this early, as doing so would save you a lot of time.
+
+The former case - disk corruption that is confusing the MacOS boot- 
+manager - is in principle easy to solve, assuming you don't care  
+about your data. All you need to do is to erase the partition table &amp;  
+job's a good 'un. Having said that, &quot;easy&quot; depends upon the tools  
+available to you. I would pull the laptop's hard-drive (mind you,  
+this is easier on my plastic MacBook than it is on a MacBookPro),  
+plug it into some other machine and use `dd if=/dev/zero of=/dev/ 
+$drive` - the operation can be cancelled within seconds with Ctrl-C  
+because the partition table is zapped in moments, and when the drive  
+is replaced in the machine it will be recognised as unformatted and  
+without partitions.
+
+If you're able to to be apathetic about the data on the drive then  
+another way to remove the partition-table would be to boot with a  
+Linux CD. I would imagine Ubuntu might well support Intel Macs these  
+days and as long as you're able to boot to that (I would doubt that  
+it would be bothered about existing partitions the  way one of  
+Apple's CDs might be) then you can do the dd thing I described above.  
+I assume your DiskWarrior disk doesn't have any tools for erasing the  
+drive.
+
+I hope I've been helpful - if you need the data of the laptop (I  
+wouldn't, because I don't keep anything important on my laptop) then  
+I wish you'd've told us &amp; saved me typing out these suggestions.
+
+Finally, PLEASE DO NOT CROSS-POST TO MULTIPLE MAC MAILING LISTS. This  
+is not usenet!! When you post a question to a mailing-list you're  
+asking readers to help you. But when you cross-post, readers do not  
+have the benefit of seeing all the other replies (those made to the  
+other list), so they could be wasting their time repeating  
+suggestions that have already been made (or made &amp; dismissed) on the  
+other list. In future, please choose only ONE mailing list to post  
+to, and only follow-up to the other (with a summary of what's been  
+done, tried &amp; suggested already) if you don't get your problem solved  
+within a few days.
+
+Stroller.
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="020603.html">[X4U] Very weird disk corruption - pleas for help!
+</A></li>
+	<LI>Next message: <A HREF="020574.html">[X4U] Very weird disk corruption - pleas for help!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20575">[ date ]</a>
+              <a href="thread.html#20575">[ thread ]</a>
+              <a href="subject.html#20575">[ subject ]</a>
+              <a href="author.html#20575">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

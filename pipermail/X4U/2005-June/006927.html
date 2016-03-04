@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Safari - not remembering visited links
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Safari%20-%20not%20remembering%20visited%20links&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="006938.html">
+   <LINK REL="Next"  HREF="006929.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Safari - not remembering visited links</H1>
+    <B>John Baltutis</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Safari%20-%20not%20remembering%20visited%20links&In-Reply-To="
+       TITLE="[X4U] Safari - not remembering visited links">baltwo at san.rr.com
+       </A><BR>
+    <I>Fri Jun 10 12:45:47 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="006938.html">[X4U] Safari - not remembering visited links
+</A></li>
+        <LI>Next message: <A HREF="006929.html">[X4U] Safari - not remembering visited links
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6927">[ date ]</a>
+              <a href="thread.html#6927">[ thread ]</a>
+              <a href="subject.html#6927">[ subject ]</a>
+              <a href="author.html#6927">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 06/10/05, &quot;<A HREF="../../../mailman/listinfo/x4u.html">coolcat at hostalive.com</A>&quot; &lt;<A HREF="../../../mailman/listinfo/x4u.html">coolcat at hostalive.com</A>&gt; wrote:
+&gt;<i>
+</I>&gt;<i> Currently, Safari is not remembering visited links past a day or 2...
+</I>&gt;<i>
+</I>&gt;<i> - is there some way to control this so they last for 30 days or so?
+</I>&gt;<i> - What file are they stored in? ( May be the permissions are not set
+</I>&gt;<i> correctly for that file...?)
+</I>
+BTW, I just checked the
+/System/Library/Frameworks/WebKit.framework/Versions/A/Headers/WebHistoryItem.h
+file (Tiger-I don't run Panther anymore, so I don't know if it's applicable
+there) and see that it discusses a HistoryAgeInDaysLimit which one can use
+to set the maximum number of days to be read from stored history. [See
+&lt;<A HREF="http://developer.apple.com/documentation/Cocoa/Reference/WebKit/ObjC_classic/Classes/WebHistoryItem.html#/apple_ref/doc/uid/20001898">http://developer.apple.com/documentation/Cocoa/Reference/WebKit/ObjC_classic/Classes/WebHistoryItem.html#//apple_ref/doc/uid/20001898</A>&gt;
+for details.]
+
+Based on my earlier post, you do this in terminal to add the age in days
+limit (not currently in the Safari plist) and set it to 30 days:
+
+defaults write com.apple.safari WebKitHistoryAgeInDaysLimit 30
+
+AFAIK, if you change the WebKitHistoryItemLimit and add then
+WebKitHistoryAgeInDaysLimit, then which ever limit you hit first determines
+what you'll see in Safari's history.
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="006938.html">[X4U] Safari - not remembering visited links
+</A></li>
+	<LI>Next message: <A HREF="006929.html">[X4U] Safari - not remembering visited links
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6927">[ date ]</a>
+              <a href="thread.html#6927">[ thread ]</a>
+              <a href="subject.html#6927">[ subject ]</a>
+              <a href="author.html#6927">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

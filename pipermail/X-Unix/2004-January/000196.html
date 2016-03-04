@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Postfix troubles
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Postfix%20troubles&In-Reply-To=list-10506094%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000195.html">
+   <LINK REL="Next"  HREF="000198.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Postfix troubles</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Postfix%20troubles&In-Reply-To=list-10506094%40mail.ninewire.com"
+       TITLE="[X-Unix] Postfix troubles">magill at mcgillsociety.org
+       </A><BR>
+    <I>Wed Jan 28 10:46:43 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000195.html">[X-Unix] Postfix troubles
+</A></li>
+        <LI>Next message: <A HREF="000198.html">[X-Unix] Postfix troubles
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#196">[ date ]</a>
+              <a href="thread.html#196">[ thread ]</a>
+              <a href="subject.html#196">[ subject ]</a>
+              <a href="author.html#196">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 28 Jan, 2004, at 11:40, Michael Grant wrote:
+
+&gt;<i> On Jan 28, 2004, at 10:12 AM, Juan Manuel Palacios wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> 	Hi Michael. The message came through, which means you have a working 
+</I>&gt;&gt;<i> local stmp server. I had one with sendmail back in my jaguar days but 
+</I>&gt;&gt;<i> since Apple spoiled my cake with Postfix in Panther I haven't had the 
+</I>&gt;&gt;<i> time to dig into the proper documentation to set it up again. You 
+</I>&gt;&gt;<i> think you could please, if you have the time of course, give me a 
+</I>&gt;&gt;<i> quick run down of the needed parameters to set up an smtp server like 
+</I>&gt;&gt;<i> yours? On list or off list, whatever you prefer. Hey, you could even 
+</I>&gt;&gt;<i> send me your config file with abstracted values for your protection 
+</I>&gt;&gt;<i> if you like, without any other explanation, that'll do!
+</I>&gt;<i>
+</I>&gt;<i> I think the stuff on Mike B.'s link should do the trick.
+</I>&gt;<i> What I did differently (besides the actual hostname and domain of 
+</I>&gt;<i> course) was, in /etc/postfix/main.cf:
+</I>&gt;<i>
+</I>&gt;<i> Keep line 105 commented but un-comment line 107 instead, like this:
+</I>&gt;<i> #inet_interfaces = all
+</I>&gt;<i> #inet_interfaces = $myhostname
+</I>&gt;<i> inet_interfaces = $myhostname, localhost
+</I>&gt;<i>
+</I>&gt;<i> Keep line 239 commented but un-comment line 240 instead, like this:
+</I>&gt;<i> #mynetworks_style = subnet
+</I>&gt;<i> mynetworks_style = host
+</I>&gt;<i>
+</I>&gt;<i> Keep line 253 commented (see notes in config file).
+</I>&gt;<i>
+</I>&gt;<i> Also, instead of rebooting as the hint says, it's enough (since the 
+</I>&gt;<i> actual postfix process was already running) to enter the following in 
+</I>&gt;<i> the Terminal: sudo /usr/sbin/postfix reload
+</I>
+Don't miss the last comment at MacOSX hints...
+
+The last 10 lines or so of the main.cf file contain Apple OVERRIDES for 
+configuration lines above.... You need to comment them out for the 
+previous lines to have meaning.
+
+# THE FOLLOWING DEFAULTS ARE SET BY APPLE
+#
+# bind to localhost only
+#
+inet_interfaces = localhost
+
+# turn off relaying for local subnet
+#
+mynetworks_style = host
+
+# mydomain_fallback: optional domain to use if mydomain is not set and
+# myhostname is not fully qualified.  It is ignored if neither are true.
+#
+mydomain_fallback = localhost
+
+
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000 - [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000195.html">[X-Unix] Postfix troubles
+</A></li>
+	<LI>Next message: <A HREF="000198.html">[X-Unix] Postfix troubles
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#196">[ date ]</a>
+              <a href="thread.html#196">[ thread ]</a>
+              <a href="subject.html#196">[ subject ]</a>
+              <a href="author.html#196">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

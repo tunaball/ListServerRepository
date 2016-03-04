@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] How to SSH and report a system sample?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20How%20to%20SSH%20and%20report%20a%20system%20sample%3F&In-Reply-To=41C1996F-FEFC-483D-B444-E7436B5FAF94%40cox.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="013211.html">
+   <LINK REL="Next"  HREF="013213.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] How to SSH and report a system sample?</H1>
+    <B>Nick Scalise</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20How%20to%20SSH%20and%20report%20a%20system%20sample%3F&In-Reply-To=41C1996F-FEFC-483D-B444-E7436B5FAF94%40cox.net"
+       TITLE="[X4U] How to SSH and report a system sample?">nickscalise at cox.net
+       </A><BR>
+    <I>Sat Apr 22 08:27:25 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="013211.html">[X4U] How to SSH and report a system sample?
+</A></li>
+        <LI>Next message: <A HREF="013213.html">[X4U] How to SSH and report a system sample?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13212">[ date ]</a>
+              <a href="thread.html#13212">[ thread ]</a>
+              <a href="subject.html#13212">[ subject ]</a>
+              <a href="author.html#13212">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Apr 22, 2006, at 10:20 AM, Nick Scalise wrote:
+
+&gt;<i> On Apr 22, 2006, at 10:13 AM, Michael Elliott wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> I know that there are some great Terminal jockeys out there, but  
+</I>&gt;&gt;<i> I'm definitely a GUI kind of guy.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I reported a bug to Apple via <A HREF="http://bugreport.apple.com">http://bugreport.apple.com</A>  and  
+</I>&gt;&gt;<i> they've asked for more information.  Since this is an intermittent  
+</I>&gt;&gt;<i> freeze (one app will go Beachball, then multiple others eventually  
+</I>&gt;&gt;<i> follow, and I'm unable to log out or select menu items), they've  
+</I>&gt;&gt;<i> asked me if I'm
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  &quot;able to SSH into the machine that is hung and capture a sample  
+</I>&gt;&gt;<i> of the system while it's in the hung state&quot;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I can SSH into my iMac via
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> SSH imac.local     and run top, etc.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> But then I have no idea how to &quot;capture a sample of the system&quot;.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Can someone give a neophyte some succinct instructions on how to  
+</I>&gt;&gt;<i> do this?
+</I>&gt;<i>
+</I>&gt;<i> One way would be to just send the output of Top to a file.
+</I>&gt;<i>
+</I>&gt;<i> In terminal, type:
+</I>&gt;<i>
+</I>&gt;<i> top &gt;&gt;top.txt
+</I>&gt;<i>
+</I>&gt;<i> After a few seconds you can hit command . and stop the output. The  
+</I>&gt;<i> top.txt file will be in whatever directory your terminal app opens  
+</I>&gt;<i> in. For me, that is at the root of my users directory.
+</I>&gt;<i>
+</I>&gt;<i> Anything app that outputs to screen can be output to a file using  
+</I>&gt;<i> the &gt;&gt;
+</I>
+I just realized that if you SSH in, your 'location' will be on that  
+box and so the file will not write to the box you were SSH'ing from.  
+But that should be OK. While SSH'ed in, output the file, then reboot  
+the box from your SSH session by typing:
+
+sudo shutdown -r NOW
+
+Then when the box comes back up, you will still have that text file  
+saved off.
+
+--
+Nick Scalise
+<A HREF="../../../mailman/listinfo/x4u.html">nickscalise at cox.net</A>
+
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="013211.html">[X4U] How to SSH and report a system sample?
+</A></li>
+	<LI>Next message: <A HREF="013213.html">[X4U] How to SSH and report a system sample?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13212">[ date ]</a>
+              <a href="thread.html#13212">[ thread ]</a>
+              <a href="subject.html#13212">[ subject ]</a>
+              <a href="author.html#13212">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Reasons for &quot;Windows-only&quot; web surveys? 
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Reasons%20for%20%22Windows-only%22%20web%20surveys%3F%20&In-Reply-To=C1845B45.E816%25jamesrob%40sonic.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="015549.html">
+   <LINK REL="Next"  HREF="015547.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Reasons for &quot;Windows-only&quot; web surveys? </H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Reasons%20for%20%22Windows-only%22%20web%20surveys%3F%20&In-Reply-To=C1845B45.E816%25jamesrob%40sonic.net"
+       TITLE="[X4U] Reasons for &quot;Windows-only&quot; web surveys? ">macmonster at myrealbox.com
+       </A><BR>
+    <I>Sun Nov 19 09:10:08 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="015549.html">[X4U] Reasons for &quot;Windows-only&quot; web surveys?
+</A></li>
+        <LI>Next message: <A HREF="015547.html">[X4U] Parallels vs. Windows
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15568">[ date ]</a>
+              <a href="thread.html#15568">[ thread ]</a>
+              <a href="subject.html#15568">[ subject ]</a>
+              <a href="author.html#15568">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 18 Nov 2006, at 14:40, Jim Robertson wrote:
+&gt;<i> ...
+</I>&gt;<i> My question is this: are there things a web developer can design  
+</I>&gt;<i> easily
+</I>&gt;<i> using ActiveX that cannot be accomplished just as easily (or at  
+</I>&gt;<i> similar
+</I>&gt;<i> cost) with cross-platform tools?
+</I>
+The stuff I've seen usefully using ActiveX are really full Windows  
+apps that happen to run in a browser window.
+
+For instance a customer of mine bought quite a decent server last  
+year, a dual-Xeon Dell with hot-swappable PSUs &amp; SCSI RAID; it  
+features a &quot;DRAC&quot; board (Dell Remote Access Card?) which was a &#163;100  
+option and which has it's own network port. The DRAC allows one to  
+log in like VNC and view the server's &quot;screen&quot; (we never use a  
+physical screen) even during the boot-up process (one can change BIOS  
+settings when viewing the &quot;screen&quot; over the network) and one can also  
+mount an optical drive from the viewing machine and access it on the  
+server. Using these tools one can reconfigure the RAID array, format  
+the disks and install an operating system over the network.
+
+Dell have chosen to use ActiveX for at least some of the tools - I  
+think other components are Java-based, but in fact Java only  
+highlights the strengths of ActiveX in this situation. I think that  
+the main viewer is Java based &amp; RedHat Linux is supported, but it has  
+to be a particular version of Java (1.4.2??) and certainly I have  
+never been able to view the screen from Safari. I think the tool for  
+network-mounting drives is ActiveX.
+
+ActiveX is also used by the suite for remote workers shipped on  
+Microsoft's Windows 2003 Server. With these tools an employee can  
+open a web-browser at home, connect to the company's server, log on  
+using their work username &amp; password and use a &quot;Remote Outlook&quot; that  
+is almost identical Outlook running on a local machine. The interface  
+allows dragging &amp; dropping, right-clicking &amp; all that stuff. If the  
+company deploys other Windows-based apps that they wish employees to  
+be able to use then a terminal services (VNC-alike) session can be  
+opened within the browser, so the employee effectively gets FULL  
+access to his work desktop using only a web-browser. This is very  
+compelling, as it's single-password, relatively easy to configure and  
+can be restricted to an https:// connection; the employee has no  
+software to install at home - remember running setup.exe is too  
+complicated for many users - and so the IT department has no software  
+to maintain off-site.
+
+So I would say that ActiveX isn't for web-developers. It's really for  
+Windows developers who want to add in remote features to their app  
+for free. A web-developer, as I perceive one, writes programs that  
+are specifically intended to be accessed from a web-browser - that is  
+one of the main features of the program, and Perl or PHP might be a  
+suitable language for writing a program of this type.
+
+I tend to see ActiveX as an alternative to Java for writing full- 
+featured applications; in this context ActiveX is just a feature of  
+dot-Net, Microsoft's current version of the Visual Basic programming  
+language. Substantially, you can write an office suite in either  
+(Office vs Open Office) and run the program fully remotely from web- 
+browser. My instinct would be to say that dot-Net / ActiveX would  
+probably be easier to write &amp; deploy than Java, but by the time  
+you're getting to the stage that ActiveX is really useful then your  
+project is of a size where many considerations come into play;  
+ActiveX is nice because it has a very Windows-native interface, it's  
+not cross-platform and that may be a disadvantage; there must be  
+aspects of it and of Java of which I am unaware &amp; which are quite  
+relevant if you're deploying a number of staff for a number of months.
+
+Certainly, however, ActiveX is unnecessary for filling out a survey  
+form - best guess is that there's some survey-making tool out there,  
+written in dot-Net by idiots who have taken full advantage of all the  
+ActiveX shortcuts, that makes it very easy to compile &amp; analyse sets  
+of survey questions. I'd guess that purchasers of this software are  
+guilty of wooly thinking when they buy it, and don't consider that 5%  
+of respondents will be unable to complete the test.
+
+Stroller.
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="015549.html">[X4U] Reasons for &quot;Windows-only&quot; web surveys?
+</A></li>
+	<LI>Next message: <A HREF="015547.html">[X4U] Parallels vs. Windows
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15568">[ date ]</a>
+              <a href="thread.html#15568">[ thread ]</a>
+              <a href="subject.html#15568">[ subject ]</a>
+              <a href="author.html#15568">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

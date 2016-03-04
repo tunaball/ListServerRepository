@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Weird Screen Behavior...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Weird%20Screen%20Behavior...&In-Reply-To=list-5219423%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004159.html">
+   <LINK REL="Next"  HREF="004161.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Weird Screen Behavior...</H1>
+    <B>b</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Weird%20Screen%20Behavior...&In-Reply-To=list-5219423%40mail.ninewire.com"
+       TITLE="[Ti] Weird Screen Behavior...">galahad9 at earthlink.net
+       </A><BR>
+    <I>Wed Mar  5 23:44:36 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004159.html">[Ti] OT - Open Office
+</A></li>
+        <LI>Next message: <A HREF="004161.html">[Ti] Weird Screen Behavior...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4160">[ date ]</a>
+              <a href="thread.html#4160">[ thread ]</a>
+              <a href="subject.html#4160">[ subject ]</a>
+              <a href="author.html#4160">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>According to John Pariseau:
+
+&gt;<i>I'm wondering why you have the ATI Monitor in Login Items.
+</I>
+&gt;<i>I have no clue.  I double clicked on one of the icons - bad choice - 
+</I>&gt;<i>it installed a bunch of files. My impressions was that I had already 
+</I>&gt;<i>done this when I downloaded the installer.  I also clicked on the 
+</I>&gt;<i>program icons to see what they did. Normally I figure out what 
+</I>&gt;<i>something is before double clicking on it.
+</I>
+That's funny, I did the exact same thing after reading your original 
+post...clicked on ATI Part 2 and shazam,here came 156 dinky files, oh 
+well, now I'm wondering if i had the entire original install,or the 
+ATI Installer is too 'dumb' to know it's over-writing itself, 
+whatever .. it still works  :=)
+&gt;<i>
+</I>&gt;&gt;<i>2- Run the Disk Utility on the drive, from a separate partition, or 
+</I>&gt;&gt;<i>the Install disk, if you have only one partition.
+</I>&gt;<i>
+</I>&gt;<i>Ok, but what should I do? I ran fix permissions yesterday (for an 
+</I>&gt;<i>unrelated problem).
+</I>
+Oops, forgot to mention to run the &quot;Repair Disk&quot; in Disk Utility, 
+don't waste time running verify, just run repair disk, and skip the 
+Permissions unless you install additional software.
+
+&gt;&gt;<i>4- Optimize your drive, after making adequate space on it. Use 
+</I>&gt;&gt;<i>Norton Speed Disk, or DiskWarrior Plus Optimizer, if you have the 
+</I>&gt;&gt;<i>DW CD.
+</I>&gt;<i>
+</I>&gt;<i>I have neither. Is their any good reason to do this?
+</I>
+Look at it this way: A month ago  ran Speed disk, from Norton, on my 
+20 GB OSX partition, and even though my Finder said, accurately, that 
+i had over 5 Gigabytes of 'free' drive space, when I first cranked up 
+Speed disk it went through the partition and said I indeed had that 
+much space, but that my LARGEST chunk of free space was 48MB.
+
+I've seen far worse. The OS, whenever presented with new data to 
+write to the drive, usually lets the drive lay it down in the largest 
+blocks of unoccupied, contiguous memory allocation blocks, so, If I 
+save some big Photoshop files and a few mp3s and text, all of a 
+sudden my largest free block is way less than 48MB, and the next big 
+write will be spread out in countless places all over the drive. Add 
+to that the deleted files, which leave these little 'gaps' of 
+allocation blocks, and it means that things are messy. And then, all 
+it takes is a program to crash before writing its updated 
+file//address locations to the drive's main Directory, or a flaky 
+utility writing in the 'no-write' zone that the directory actually 
+is... and what we have is a real mess.
+
+An app makes a 'call' for a file, the OS looks up the 'name' in the 
+Directory, and if the info in the directory differs from the actual 
+location, things slow down, and slow more, and finally grind to a 
+snail's pace when writing to an external drive, rebooting, etc. It 
+just gets worse and worse, and meanwhile we're scratching our heads 
+wondering what's the matter with this app, that drive, the 'new' 
+update, etc, etc. The Directory fragments, and the files it keeps 
+track of, by default, are written in an increasingly fragmented 
+manner. Can you imagine Phooshop trying to do even a simple 'filter' 
+process on a file that is in countless places, and having to, at the 
+same time write the new file to even more locations in memory?  And 
+the CPU and the Radeon card have to draw the changes in real time? 
+messy.
+
+Before my last de-frag routine my external Firewire drive was being 
+written to at .3 to .5 MB per second... that's atrocious. After the 
+defragging, it was back to 75 - 100 MB in 10 or 12 seconds, 
+approximately, and that is a heckuva difference. Reboots sped up a 
+bit also.
+
+&gt;<i>I have had next to no problems with my PB, although I do want to 
+</I>&gt;<i>(eventually) offload everything and erase and fresh install my 
+</I>&gt;<i>system, as I am running an &quot;Archive and Install&quot; of Jaguar. With all 
+</I>&gt;<i>the SW I have to put back on my machine, this is not a very fun 
+</I>&gt;<i>thing to do.
+</I>
+I hear you on that. You say you're running on an &quot;archive &amp; Install&quot;, 
+what, now? Do you still have your Previous Folder? If your apps are 
+all running properly, ditch the Previous System.
+
+If I had a nice big external drive [mine are all right to the brink 
+of the &quot;20%&quot; figure] I'd be happy to take a day off and start over. 
+:<i>=)  You could partition the big external drive and dump all your 
+</I>apps and &quot;Home&quot; Folder into a small partition, wipe the internal 
+drive, run the OSX Installer that you have,and then do the 10.2.4 
+Combo update, and afterwards keep your Internal drive for the OS, 
+Photoshop, and a few other things, and leave most of your other apps 
+on the external. That way your internal drive would have lots of 
+space for the Virtual memory from OS 9, and the Swap memry space for 
+OSX [which the OS will 'take' anyway, and plenty of clean space for a 
+'scratch' disk for P-Shop. matter of fact, setting up a little 3 - 5 
+gigabyte partition on the internal, and selecting it as the primary 
+'scratch' disk for P-Shop would be ideal.
+&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>Thanks!
+</I>cheers,
+~flipper
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004159.html">[Ti] OT - Open Office
+</A></li>
+	<LI>Next message: <A HREF="004161.html">[Ti] Weird Screen Behavior...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4160">[ date ]</a>
+              <a href="thread.html#4160">[ thread ]</a>
+              <a href="subject.html#4160">[ subject ]</a>
+              <a href="author.html#4160">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Remote force logout and lockout of user
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Remote%20force%20logout%20and%20lockout%20of%20user&In-Reply-To=list-13977804%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000937.html">
+   <LINK REL="Next"  HREF="000939.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Remote force logout and lockout of user</H1>
+    <B>James Bucanek</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Remote%20force%20logout%20and%20lockout%20of%20user&In-Reply-To=list-13977804%40mail.ninewire.com"
+       TITLE="[X-Unix] Remote force logout and lockout of user">subscriber at gloaming.com
+       </A><BR>
+    <I>Tue Jun 15 09:34:28 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000937.html">[X-Unix] Remote force logout and lockout of user
+</A></li>
+        <LI>Next message: <A HREF="000939.html">[X-Unix] Remote force logout and lockout of user
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#938">[ date ]</a>
+              <a href="thread.html#938">[ thread ]</a>
+              <a href="subject.html#938">[ subject ]</a>
+              <a href="author.html#938">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Alexandre Gauthier wrote on Tuesday, June 15, 2004:
+&gt;<i>
+</I>&gt;<i>On 15/06/04 00:45, &quot;luke&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">etyrnal at ameritech.net</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> On Monday, June 14, 2004, at 08:24  AM, Craig A. Finseth wrote:
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i>    sure would be cool to find out that there is a unix-way to set a
+</I>&gt;&gt;&gt;<i>    enable/disable account bit for a user...
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> There is.  Change their login shell to /dev/null and change their
+</I>&gt;&gt;&gt;<i> _encyrpted_ password text in /etc/shadow to something like &quot;***no
+</I>&gt;&gt;&gt;<i> login***&quot; (or any other text that can _not_ be output by the crypt(2)
+</I>&gt;&gt;&gt;<i> call).
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> These changes keep someone from logging in, but won't affect current
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> how does that work for re-enabling?
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> their password is  now gone.
+</I>&gt;&gt;<i> 
+</I>&gt;<i>
+</I>&gt;<i>Hence why the exclamation mark trick.
+</I>
+Set the passwd property back to '********'.  The account is now reenabled with their old password.
+
+&gt;<i>However, the passwd and shadow files are not used under OS X, it relies upon
+</I>&gt;<i>netinfo.
+</I>
+Shawdow files are most definately used in OS X (at least 10.3). See the 'authentication_authority' and 'generateduid' properies.  Any account created in 10.3, or one that has had their password changed since upgrading to 10.3, will have their password stored in a shadow file not the nidb.
+
+______________________________________________________
+James Bucanek       &lt;mailto:<A HREF="../../../mailman/listinfo/x-unix.html">privatereply at gloaming.com</A>&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000937.html">[X-Unix] Remote force logout and lockout of user
+</A></li>
+	<LI>Next message: <A HREF="000939.html">[X-Unix] Remote force logout and lockout of user
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#938">[ date ]</a>
+              <a href="thread.html#938">[ thread ]</a>
+              <a href="subject.html#938">[ subject ]</a>
+              <a href="author.html#938">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

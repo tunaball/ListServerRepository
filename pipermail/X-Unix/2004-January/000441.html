@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Remove last ten lines of files
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Remove%20last%20ten%20lines%20of%20files&In-Reply-To=list-10035539%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000330.html">
+   <LINK REL="Next"  HREF="000552.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Remove last ten lines of files</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Remove%20last%20ten%20lines%20of%20files&In-Reply-To=list-10035539%40mail.ninewire.com"
+       TITLE="[X-Unix] Remove last ten lines of files">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Fri Jan  2 04:35:35 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000330.html">[X-Unix] Remove last ten lines of files
+</A></li>
+        <LI>Next message: <A HREF="000552.html">[X-Unix] Remove last ten lines of files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#441">[ date ]</a>
+              <a href="thread.html#441">[ thread ]</a>
+              <a href="subject.html#441">[ subject ]</a>
+              <a href="author.html#441">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jan 2, 2004, at 11:04 am, Kuestner, Bjoern wrote:
+
+&gt;<i> does anybody have a simple solution to remove the last ten lines of 
+</I>&gt;<i> files
+</I>&gt;<i> (of variable length).
+</I>&gt;<i>
+</I>&gt;<i> An alternative solution would be to remove anything from a file that 
+</I>&gt;<i> follows
+</I>&gt;<i> a signal pattern like &quot;CutHere&quot;.
+</I>&gt;<i> ...
+</I>&gt;<i> Next I considered what I know about sed and grep.
+</I>&gt;<i> Again nothing for the task.
+</I>&gt;<i> ...Eventually this script or command should be placed into a postfix
+</I>&gt;<i> configuration to treat specific mail signatures.
+</I>
+I'm pretty sure this can be done using `sed`, but my research his 
+morning indicates it's tricky. Because `sed` is a stream-editor, it 
+doesn't normally know ahead of time where the end-of-file is. For this 
+reason you have, I think, to use the placeholder function.
+
+My Linux box seems to have a better `info sed` than my Mac (Panther); 
+it gives the following examples, apparently for emulating the `tail` 
+command:
+      #!/usr/bin/sed -nf
+      1! {; H; g; }
+      1,10 !s/[^\n]*\n//
+      $p
+      h
+
+The full page is available here 
+&lt;<A HREF="http://www.delorie.com/gnu/docs/sed/sed_26.html">http://www.delorie.com/gnu/docs/sed/sed_26.html</A>&gt; - you may find the 
+2nd example useful, also.
+
+My question is: do you REALLY want to do this..? If the emails you're 
+transforming are, say, from a mailing list for personal use, then all 
+well &amp; good, however if the signatures you're removing are from 
+corporate emails, then their removal may be questionable. Should the 
+emails ever be used in a legal framework then they may be dismissed 
+because they have been manipulated, even if it is not your intent to 
+edit their main content.
+
+Stroller.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000330.html">[X-Unix] Remove last ten lines of files
+</A></li>
+	<LI>Next message: <A HREF="000552.html">[X-Unix] Remove last ten lines of files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#441">[ date ]</a>
+              <a href="thread.html#441">[ thread ]</a>
+              <a href="subject.html#441">[ subject ]</a>
+              <a href="author.html#441">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

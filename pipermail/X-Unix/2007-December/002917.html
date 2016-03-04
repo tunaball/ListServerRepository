@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] 10.5 cli -what's up with 'more'?   [a}
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%2010.5%20cli%20-what%27s%20up%20with%20%27more%27%3F%20%20%20%5Ba%7D&In-Reply-To=C68A2F98-2610-4CEF-842F-BB454B665F31%40myrealbox.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002914.html">
+   <LINK REL="Next"  HREF="002915.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] 10.5 cli -what's up with 'more'?   [a}</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%2010.5%20cli%20-what%27s%20up%20with%20%27more%27%3F%20%20%20%5Ba%7D&In-Reply-To=C68A2F98-2610-4CEF-842F-BB454B665F31%40myrealbox.com"
+       TITLE="[X-Unix] 10.5 cli -what's up with 'more'?   [a}">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Sun Dec  9 09:36:16 PST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002914.html">[X-Unix] 10.5 cli -what's up with 'more'?   [a}
+</A></li>
+        <LI>Next message: <A HREF="002915.html">[X-Unix] 10.5 cli -what's up with 'more'?    [b]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2917">[ date ]</a>
+              <a href="thread.html#2917">[ thread ]</a>
+              <a href="subject.html#2917">[ subject ]</a>
+              <a href="author.html#2917">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 07:56 +0000 9/12/07, Stroller wrote:
+&gt;<i>I've had the mailbounce from this (7kb, limit of 5kb) for a few days 
+</I>&gt;<i>- sorry I haven't gotten round to resending it before.
+</I>
+And I've been lighting the village pantomime.
+
+&gt;<i>On 1 Dec 2007, at 18:25, David Ledger wrote:
+</I>&gt;&gt;<i>  At 22:37 +0000 30/11/07, Stroller wrote:
+</I>&gt;&gt;&gt;<i>  On 30 Nov 2007, at 06:32, David Ledger wrote:
+</I>&gt;&gt;&gt;&gt;<i>   That's the way some of the Linux distributions are going - at 
+</I>&gt;&gt;&gt;&gt;<i>least, the HP RedHat one is. It's the thing I most dislike about 
+</I>&gt;&gt;&gt;&gt;<i>Linux. Lots of people making trivial changes to make it the way 
+</I>&gt;&gt;&gt;&gt;<i>*they* think it should be. Under HP RedHat, 'ls' sorts the '.' 
+</I>&gt;&gt;&gt;&gt;<i>files amongst the others. Why?
+</I>&gt;&gt;&gt;<i>  Are you sure this isn't configured in the distro's default 
+</I>&gt;&gt;&gt;<i>.bash_profile or .bashrc? (or /etc/profile?)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  Does the same when using /bin/ls, so it's not an inherited alias 
+</I>&gt;&gt;<i>or function. I work under ksh with my own aliases pointing back at 
+</I>&gt;&gt;<i>/bin/ls anyway.
+</I>&gt;<i>
+</I>&gt;<i>I don't quite know how to respond to this, because I don't quite 
+</I>&gt;<i>understand the symptoms. If you'd like to explain this `ls` sorting 
+</I>&gt;<i>a bit better - or give an example of the output? - I'd love to get 
+</I>&gt;<i>to the bottom of this &amp; prove that it's a bug (whether the fault of 
+</I>&gt;<i>yourself, your distro or GNU, it doesn't matter to me), rather than 
+</I>&gt;<i>a feature.
+</I>
+It sorts '.' files as if the '.' were not present - so '.profile' 
+sorts into the 'p's rather than between .kshrc and .ssh; which 
+themselves are among the 'k's and the 's's.
+
+&gt;<i>Note:
+</I>&gt;<i>      (1) If you use a non-POSIX locale (e.g., by setting `LC_ALL' to
+</I>&gt;<i>   `en_US'), then `ls' may produce output that is sorted differently than
+</I>&gt;<i>   you're accustomed to.  In that case, set the `LC_ALL' environment
+</I>&gt;<i>   variable to `C'.
+</I>&gt;<i>   [from `info ls`]
+</I>
+Hadn't thought of locale. It will be the default, which is usually 'C'.
+
+&gt;&gt;&gt;<i>  The GNU versions of the &quot;standard utilities&quot; are different from 
+</I>&gt;&gt;&gt;<i>those in Posix, System V or the BSDs, but I personally think these 
+</I>&gt;&gt;&gt;<i>changes are often (much needed) improvements upon the originals 
+</I>&gt;&gt;&gt;<i>and are generally for the best. IMO Bash &amp; the GNU utilis are what 
+</I>&gt;&gt;&gt;<i>a modern Unix shouldbe aiming for - it's certainly my expectation 
+</I>&gt;&gt;&gt;<i>in terms of ease-of-use.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  I've yet to find a change that I would class as a much needed 
+</I>&gt;&gt;<i>improvement other than 'tar's new unwillingness to archive from '/'.
+</I>&gt;<i>Ok, I don't know about your tar problem (it appears to work fine here)
+</I>
+As I say, that is one improvement. Under 'real' tar, 'tar cf bin.tar 
+/bin' would put a tar archive of /bin to file bin.tar; and later 'tar 
+xf bin.tar' would only restore to /bin. no way to unarchive to 
+/tmp/bin or anywhere else. This often caught people out. The GNU tar 
+removes the leading '/' on archiving so that unarchiving creates a 
+'bin' directory in the current directory which can be anywhere.
+
+&gt;<i>Looking just at `ls` [1] I can immediately imagine occasions when 
+</I>&gt;<i>the '-A&quot;, &quot;-b&quot;, &quot;-m&quot; and &quot;-i&quot; GNU options could be useful. I admit I 
+</I>&gt;<i>can't think of &quot;much needed&quot; improvements off the top of my head, 
+</I>&gt;<i>but I bet I could find some if I spent enough time looking. I just 
+</I>&gt;<i>don't think a language should stay static just because &quot;this is the 
+</I>&gt;<i>way we've always done things&quot;.
+</I>
+-A -b and -i are standard back, I think, to Version 6. Changes should 
+always be able to be turned off.
+
+&gt;<i>I believe that there few GNU additions that break cross-platform 
+</I>&gt;<i>scripts - all GNU utilities that I'm aware of accept POSIX options 
+</I>&gt;<i>and it's clearly the intention that they behave correctly when POSIX 
+</I>&gt;<i>options are provided.
+</I>
+Unfortunately POSIX compliance has nothing to do with this sort of 
+thing. Some version of VMS is POSIX compliant and nothing like Unix 
+at the keyboard.
+
+&gt;<i>The --givetheoptionalongnamesopeopleknowwhatitsdoes flags are no 
+</I>&gt;<i>specified for exactly that reason.
+</I>&gt;<i>Hardly anyone continues to use that format once they're familiar 
+</I>&gt;<i>with a command - one will naturally use the &quot;-v&quot; form - but if you 
+</I>&gt;<i>use a command infrequently then the long version may be more 
+</I>&gt;<i>memorable (not less, as you assert).
+</I>
+Far from all commands have simple flags that correspond to the full 
+ones. The long ones are far from memorable, bearing in mind that they 
+don't work if you make a minor error. As for emailing, I'm not sure 
+where politeness comes in. If 'ls -xyz' is the command then 'ls -xyz' 
+is the command. You can always add xmeans ... , y means ... . The 
+short form is also less likely to get wrapped.
+
+&gt;<i>If you're using Linux at the enterprise level then doesn't that 
+</I>&gt;<i>prove it's ready?   ;)
+</I>
+No. It causes so many problems. What use is a system which, on losing 
+connection to storage on the SAN for a few milliseconds (which can 
+happen at busy times), decides to change the mount to read-only - the 
+only fix being a reboot. Luckily for the users load sharing covers 
+the tracks when these errant servers are rebooted, but the service 
+does stall for some when it happens.
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+HP-UX specialist of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x-unix.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002914.html">[X-Unix] 10.5 cli -what's up with 'more'?   [a}
+</A></li>
+	<LI>Next message: <A HREF="002915.html">[X-Unix] 10.5 cli -what's up with 'more'?    [b]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2917">[ date ]</a>
+              <a href="thread.html#2917">[ thread ]</a>
+              <a href="subject.html#2917">[ subject ]</a>
+              <a href="author.html#2917">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

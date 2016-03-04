@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Newbies] Corrupted User Prefs
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20Corrupted%20User%20Prefs&In-Reply-To=BED8E13E.1245%25tjoh7019%40bigpond.net.au">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005276.html">
+   <LINK REL="Next"  HREF="005279.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Newbies] Corrupted User Prefs</H1>
+    <B>Alex</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20Corrupted%20User%20Prefs&In-Reply-To=BED8E13E.1245%25tjoh7019%40bigpond.net.au"
+       TITLE="[X-Newbies] Corrupted User Prefs">lists at lexial.ca
+       </A><BR>
+    <I>Fri Jun 17 09:56:54 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005276.html">[X-Newbies] Corrupted User Prefs
+</A></li>
+        <LI>Next message: <A HREF="005279.html">[X-Newbies] Corrupted User Prefs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5277">[ date ]</a>
+              <a href="thread.html#5277">[ thread ]</a>
+              <a href="subject.html#5277">[ subject ]</a>
+              <a href="author.html#5277">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jun 17, 2005, at 06:21, Tony Johansen wrote:
+
+&gt;<i> Whatever the problem it may be affecting other new things. Tonight I 
+</I>&gt;<i> tried
+</I>&gt;<i> to install Corel KnockOut2. Several times in a row, each time I 
+</I>&gt;<i> clicked the
+</I>&gt;<i> install icon the CD ejected.
+</I>
+First, try not to make assumptions. You don't know that the two issues 
+are related.
+Second, try not to complicate things any further. This account has a 
+problem; the problem may be trivial, or it may be serious; but, 
+whatever the problem, installing yet another application does nothing 
+to help. Fix the problem first, back up, then start installing other 
+stuff.
+
+Now, let's take it methodically.
+
+(1) Startup Items. Obviously, you have plenty of stuff there. So reboot 
+or log out and log in with startup items disabled, then try again. See
+
+&lt;<A HREF="http://docs.info.apple.com/article.html?artnum=151952">http://docs.info.apple.com/article.html?artnum=151952</A>&gt;
+&lt;<A HREF="http://docs.info.apple.com/article.html?artnum=106756">http://docs.info.apple.com/article.html?artnum=106756</A>&gt;
+
+(2) Permissions.
+
+&gt;<i> I checked every item in tonyjohansen/Library/preferences and they all 
+</I>&gt;<i> have
+</I>&gt;<i> read+write.
+</I>
+Permissions are not so difficult to understand. Think of it like this 
+-- your Mac is an office building, with many offices (folders or 
+directories) containing lots of file cabinets (files). Permissions are 
+a sort of lock system -- they are used to control which user can open 
+which office and which file cabinet. Applications function as a user's 
+agent -- they have the same keys (permissions) as the user who launched 
+them. So what could be the problem here? Your agent (Toonwhatever) is 
+given a job to do. To do the job, it needs to set up its own file 
+cabinet in a room (Preferences) in your office. So it goes there, and 
+discovers that somebody has changed the lock, and he can't get into the 
+room. At this point, a well-behaved agent will send you a message, 
+&quot;Couldn't get into the office, so I gave up and went to have a beer.&quot; 
+Toon is a bit more neurotic, so it has a nervous breakdown -- it 
+crashes.
+
+So, assuming that this is the problem, what do you need to do? You need 
+to make sure you've got the right keys to the rooms in your office, 
+but, instead, you made sure you had the right keys to every cabinet in 
+a certain room. Toon doesn't need to access those cabinets -- it needs 
+to access the room. So you need to check the permissions for ~/Library, 
+for ~/Library/Preferences, and for any other folder where Toon may wish 
+to install files.
+
+(3) Fonts.
+
+&gt;<i> There are 2 folders for fonts in tonyjohansen/Library  one called 
+</I>&gt;<i> fonts the
+</I>&gt;<i> other called fonts collection. In both cases I dragged all the 
+</I>&gt;<i> contents to a
+</I>&gt;<i> temporary folder on the desktop and then tried to launch ToonBoomStudio
+</I>&gt;<i> Express. In each case the program crashed as before.
+</I>
+The FontsCollection folder is not an issue. The other one is, and 
+you've covered it. There is just one other thing. Mac OS X makes 
+extensive use of caches, and especially font caches. Removing fonts 
+from the Fonts folder may not have removed the problem, if the 
+corruption is in your user font cache. The font caches can be cleared 
+with FontFinagler, but maybe it's best to use a tool such as Onyx to 
+clear all user caches.
+
+So here's what I'd do. (a) Check permissions (I don't think that's the 
+issue, but -- hey, I've been wrong plenty of times). (b) Move fonts as 
+before. (c) Use Onyx to clear user caches. (d) Reboot and log in with 
+startup items disabled. Try Toon again.
+
+&lt;0x0192&gt;
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005276.html">[X-Newbies] Corrupted User Prefs
+</A></li>
+	<LI>Next message: <A HREF="005279.html">[X-Newbies] Corrupted User Prefs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5277">[ date ]</a>
+              <a href="thread.html#5277">[ thread ]</a>
+              <a href="subject.html#5277">[ subject ]</a>
+              <a href="author.html#5277">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

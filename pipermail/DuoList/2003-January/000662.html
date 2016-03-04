@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Duo2400] Re: 8.6 and 10
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:duolist%40listserver.themacintoshguy.com?Subject=%5BDuo2400%5D%20Re%3A%208.6%20and%2010&In-Reply-To=list-4358258%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000659.html">
+   <LINK REL="Next"  HREF="000664.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Duo2400] Re: 8.6 and 10</H1>
+    <B>Jake Luck</B> 
+    <A HREF="mailto:duolist%40listserver.themacintoshguy.com?Subject=%5BDuo2400%5D%20Re%3A%208.6%20and%2010&In-Reply-To=list-4358258%40mail.ninewire.com"
+       TITLE="[Duo2400] Re: 8.6 and 10">comet at 10k.org
+       </A><BR>
+    <I>Thu Jan  9 09:57:55 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000659.html">[Duo2400] Spare HD? (was: Start-up problems II)
+</A></li>
+        <LI>Next message: <A HREF="000664.html">best Firewire card
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#662">[ date ]</a>
+              <a href="thread.html#662">[ thread ]</a>
+              <a href="subject.html#662">[ subject ]</a>
+              <a href="author.html#662">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Ivan, thank you for the detailed explanation. Out of frustration last
+night, I installed 9.1 on the same partition where 10 will reside. So far
+everything appears to be humming.
+
+BTW, did we ever figure out why is the 10.2 install process so fragile?
+My experience has been that only 1 out of every 5-6 reboots to gets one to
+the install screen, the remaining time it hangs at &quot;Preparing for
+installation&quot;.
+
+jake
+
+
+&gt;<i> From: Ivan Drucker &lt;<A HREF="../../../mailman/listinfo/duolist.html">ivanxqz at yahoo.com</A>&gt;
+</I>&gt;<i> Subject: [Duo2400] Re: 8.6 and 10
+</I>&gt;<i>
+</I>&gt;<i> Nope, but I do switch back and forth between X and 8.6. Here's how:
+</I>&gt;<i>
+</I>&gt;<i> First, make sure you've got individual partitions for X, 9.1, and 8.6.
+</I>&gt;<i>
+</I>&gt;<i> First, the basic 9 and X setup:
+</I>&gt;<i>
+</I>&gt;<i> Install with 9.1 and get everything running.
+</I>&gt;<i>
+</I>&gt;<i> Set Open Firmware auto-boot? to false, either with XPF (one oef the menu
+</I>&gt;<i> items) or manually in Open Firmware (hold down cmd-opt-OF after chime, at
+</I>&gt;<i> OF prompt type &quot;setenv auto-boot? false&quot;).
+</I>&gt;<i> When Open Firmware comes up at startup, I type &quot;bye&quot; to go to OS 9 or
+</I>&gt;<i> &quot;boot&quot; to go to OS X.
+</I>&gt;<i>
+</I>&gt;<i> Once I've got all that working, I can then go to 9 and use the Startup
+</I>&gt;<i> Disk control panel *from Mac OS 8.6*, which is the old-school one that we
+</I>&gt;<i> all used from the System 6 days. I can then choose 8.6. When I restart,
+</I>&gt;<i> and OF comes up, if I type &quot;bye&quot; it will go to 8.6 instead of 9.1. &quot;boot&quot;
+</I>&gt;<i> still goes to OS X. If you want to switch back to 9.1, use the same
+</I>&gt;<i> control panel.
+</I>&gt;<i>
+</I>&gt;<i> If you don't want OF coming up every time you turn on the machine, you
+</I>&gt;<i> could set auto-boot? to true (manually or via XPF running in 9) and it
+</I>&gt;<i> will boot into X by default, but if you want to go to 8.6 you can hold
+</I>&gt;<i> down cmd-opt-OF during startup. Don't select the 8.6 System Folder in the
+</I>&gt;<i> X Startup Disk control panel because it'll mess up Open Firmware and
+</I>&gt;<i> you'll be unable to run XPF to fix it without booting into 9.1 first.
+</I>&gt;<i>
+</I>&gt;<i> (explanation follows, optional reading)
+</I>&gt;<i>
+</I>&gt;<i> I think what is going on -- I am not an expert -- is that when you type
+</I>&gt;<i> &quot;bye,&quot; the Mac just ignores Open Firmware and boots from the same ROM
+</I>&gt;<i> instructions that have been in every Mac until the iMac, which look in
+</I>&gt;<i> PRAM to see which volume to boot from. The PRAM is set by the Startup
+</I>&gt;<i> Disk control panel.
+</I>&gt;<i>
+</I>&gt;<i> XPF programs Open Firmware to support booting X, and these instructions
+</I>&gt;<i> are followed when you type &quot;boot&quot;. The 9.1 Startup Disk (and the X
+</I>&gt;<i> Startup Disk) control panel also messes with Open Firmware, since it
+</I>&gt;<i> itself is designed to support booting X on newer systems, so if you use
+</I>&gt;<i> it to switch to 8.6, you'll make X unbootable. However, the 8.6 Startup
+</I>&gt;<i> Disk control panel only changes PRAM and leaves Open Firmware alone. Thus
+</I>&gt;<i> when you type &quot;bye&quot; and it begins to boot from the ROM, it just starts
+</I>&gt;<i> from 8.6. The X startup instructions that are executed when you type
+</I>&gt;<i> &quot;bye&quot; still work fine.
+</I>&gt;<i>
+</I>&gt;<i> If auto-boot? is set to true, the PowerBook automatically executes a
+</I>&gt;<i> &quot;boot&quot; instruction. If X is installed, it boots (LinuxPPC uses the same
+</I>&gt;<i> technique). For most users who don't have an alternate OS, it does the
+</I>&gt;<i> exact same thing as &quot;bye&quot;.
+</I>&gt;<i>
+</I>&gt;<i> Hope this helps,
+</I>&gt;<i> Ivan.
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000659.html">[Duo2400] Spare HD? (was: Start-up problems II)
+</A></li>
+	<LI>Next message: <A HREF="000664.html">best Firewire card
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#662">[ date ]</a>
+              <a href="thread.html#662">[ thread ]</a>
+              <a href="subject.html#662">[ subject ]</a>
+              <a href="author.html#662">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/duolist.html">More information about the DuoList
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: Pokey LAN transfers (Resolved + a followup)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Pokey%20LAN%20transfers%20%28Resolved%20%2B%20a%20followup%29&In-Reply-To=1921A7AE-10FA-4062-AAEC-0DD08680667C%40west.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002969.html">
+   <LINK REL="Next"  HREF="002971.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: Pokey LAN transfers (Resolved + a followup)</H1>
+    <B>Wing Wong</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Pokey%20LAN%20transfers%20%28Resolved%20%2B%20a%20followup%29&In-Reply-To=1921A7AE-10FA-4062-AAEC-0DD08680667C%40west.net"
+       TITLE="[X-Unix] Re: Pokey LAN transfers (Resolved + a followup)">wingedpower at gmail.com
+       </A><BR>
+    <I>Wed Jan  2 23:15:20 PST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002969.html">[X-Unix] Re: Pokey LAN transfers (Resolved + a followup)
+</A></li>
+        <LI>Next message: <A HREF="002971.html">[X-Unix] Sending Commands to Apple External USB Modem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2970">[ date ]</a>
+              <a href="thread.html#2970">[ thread ]</a>
+              <a href="subject.html#2970">[ subject ]</a>
+              <a href="author.html#2970">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hardly a &quot;duh&quot; moment at all. Good catch!
+
+Wing
+
+On 1/2/08, Richard Hartman &lt;<A HREF="../../../mailman/listinfo/x-unix.html">seasoft at west.net</A>&gt; wrote:
+&gt;<i> For those of you with interest in this goat rope, there has been a
+</I>&gt;<i> development that isn't surprising in hindsight; in fact most of you
+</I>&gt;<i> will simply think &quot;well, duh!&quot; But, for any other noobs struggling to
+</I>&gt;<i> make sense of it all, consider this:
+</I>&gt;<i>
+</I>&gt;<i> I was having sporadic &amp; bizarre trouble with DVD burns on my &quot;system
+</I>&gt;<i> #2&quot; MacBookPro (see below; running Leopard) and after much
+</I>&gt;<i> troubleshooting, tracked the problem down to some errant system &amp;
+</I>&gt;<i> plist files.
+</I>&gt;<i>
+</I>&gt;<i> The MBPro Leopard had been a clean install, not an upgrade, but it
+</I>&gt;<i> got a &quot;migration assist&quot; from my existing Tiger system. On the
+</I>&gt;<i> suspicion that the migration might have caused other issues, I erased
+</I>&gt;<i> &amp; re-installed &amp; updated Leopard on the MBPro, AND installed every
+</I>&gt;<i> necessary piece of software from scratch (i.e., NO migration).
+</I>&gt;<i>
+</I>&gt;<i> Lo and behold, finder copies of the kind that formerly went at 25
+</I>&gt;<i> megabits per second are now shooting across at full speed (100 mbps).
+</I>&gt;<i>
+</I>&gt;<i> So, although there was no indication in my console or system logs
+</I>&gt;<i> that anything was awry before the reinstall, in fact that pesky
+</I>&gt;<i> migration assistant evidently produced some sort of havoc. The Finder
+</I>&gt;<i> now copies as fast as rsync.
+</I>&gt;<i>
+</I>&gt;<i> Moral, for me: Never, ever use migration assistant for major system
+</I>&gt;<i> upgrades; it oughta be a law...
+</I>&gt;<i>
+</I>&gt;<i> Richard
+</I>&gt;<i>
+</I>&gt;<i> On Dec 27, 2007, at 11:49 AM, Richard Hartman wrote:
+</I>&gt;<i>
+</I>&gt;<i> &gt; Thanks to Wing Wong, Nick Scalise, David Ledger and Brian Medley
+</I>&gt;<i> &gt; for their thoughtful responses. For some reason, Wing Wong's
+</I>&gt;<i> &gt; detailed response didn't make it to the list and is reproduced
+</I>&gt;<i> &gt; (far) below.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Here is a summary of what I learned:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; The overhead on my setup of mounting a volume on the desktop (via
+</I>&gt;<i> &gt; AFP) is evidently enormous:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; - Mounting a LAN volume on the local desktop and then using cp on a
+</I>&gt;<i> &gt; large (2GB) file using a terminal window (copying from mounted LAN
+</I>&gt;<i> &gt; volume to internal disk drive)  produced transfer rates of only
+</I>&gt;<i> &gt; about 25 megabits/sec.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; - Unmounting the LAN volume and instead using scp or rsync (and the
+</I>&gt;<i> &gt; IP address of the source mac) produced the expected transfer rate
+</I>&gt;<i> &gt; of 100 megabits/sec, which was the speed limit expected by the
+</I>&gt;<i> &gt; slowest network element in the loop (the 100 mbps nic on one of the
+</I>&gt;<i> &gt; macs).
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Regards,
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Rich
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt; On Dec 26, 2007 1:54 PM, Richard Hartman &lt; <A HREF="../../../mailman/listinfo/x-unix.html">seasoft at west.net</A>&gt; wrote:
+</I>&gt;<i> &gt;&gt; I'm looking for guidance on how best to copy large data sets between
+</I>&gt;<i> &gt;&gt; macs on a network (Finder, terminal cp, other?).
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; The setup: Copying from mac #1 (a 2006 iMac running 10.4.11 with
+</I>&gt;<i> &gt;&gt; built-in 100bps ethernet) to mac #2 (a recent PBPro running 10.5.1
+</I>&gt;<i> &gt;&gt; with built-in Gigabit ethernet). Macs connected by a Gigabit netgear
+</I>&gt;<i> &gt;&gt; switch.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; I had hoped to get sustained transfers between these two macs of
+</I>&gt;<i> &gt;&gt; 50-70 mbps (throttled by the rate-limiting 100 mbps iMac capability).
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; However, copying a single 2 GByte file, by mounting the (Tiger) imac
+</I>&gt;<i> &gt;&gt; on the (Leopard) MBPro desktop and using terminal &quot;cp&quot; command from
+</I>&gt;<i> &gt;&gt; the MBPro terminal, results in a sustained transfer rate of only
+</I>&gt;<i> &gt;&gt; about 2.5 mB/sec (25 mbps).
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>
+
+-- 
+Wing Wong
+<A HREF="../../../mailman/listinfo/x-unix.html">wingedpower at gmail.com</A>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002969.html">[X-Unix] Re: Pokey LAN transfers (Resolved + a followup)
+</A></li>
+	<LI>Next message: <A HREF="002971.html">[X-Unix] Sending Commands to Apple External USB Modem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2970">[ date ]</a>
+              <a href="thread.html#2970">[ thread ]</a>
+              <a href="subject.html#2970">[ subject ]</a>
+              <a href="author.html#2970">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

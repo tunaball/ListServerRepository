@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Bash scripting Question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Bash%20scripting%20Question&In-Reply-To=AE196753-67AD-4C6B-9DDC-E1A86BF846D3%40euro.apple.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002731.html">
+   <LINK REL="Next"  HREF="002732.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Bash scripting Question</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Bash%20scripting%20Question&In-Reply-To=AE196753-67AD-4C6B-9DDC-E1A86BF846D3%40euro.apple.com"
+       TITLE="[X-Unix] Bash scripting Question">macmonster at myrealbox.com
+       </A><BR>
+    <I>Tue Aug 22 20:44:15 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002731.html">[X-Unix] Bash scripting Question
+</A></li>
+        <LI>Next message: <A HREF="002732.html">[X-Unix] Bash scripting Question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2735">[ date ]</a>
+              <a href="thread.html#2735">[ thread ]</a>
+              <a href="subject.html#2735">[ subject ]</a>
+              <a href="author.html#2735">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi there,
+
+This doesn't really help with the stated desire to &quot;go thru this loop  
+until [either] the output of the command is null&quot;, although (if x is  
+high enough) it might be used to comply with the &quot;about 2-5 minutes  
+have gone by&quot; part.
+
+I would do something like this:
+
+
+   #!/bin/bash
+
+   # user can change this variable
+   timeout=300 # in seconds
+
+   # initialise stuff
+   test=&quot;initialised&quot;
+   start=`date +%s`
+
+   let &quot;end = $start + $timeout&quot;
+
+   until  [[ &quot;$test&quot; = &quot;&quot; || `date +%s` -ge &quot;$end&quot; ]] ;
+   do
+       test=`fmsadmin status Clients`
+   done
+
+   exit 0
+
+This does, however, depend upon `fmsadmin status Clients` returning  
+an empty string to stdout when no clients are connected, tho'. Since  
+I can't find a manpage online for `fmsadmin` I don't know whether it  
+does so or not.
+
+Stroller.
+
+
+
+On 22 Aug 2006, at 21:51, Lasse wrote:
+&gt;<i> ...
+</I>&gt;<i> while variable x is not equal to zero, do whatever need doing,  
+</I>&gt;<i> increment/decrement variable x, done
+</I>&gt;<i>
+</I>&gt;<i> Or is it something else you're looking for?
+</I>&gt;<i>
+</I>&gt;<i> oh, and make sure to put a line in your while statement for  
+</I>&gt;<i> updating variable x,
+</I>&gt;<i> one normal  way would be like
+</I>&gt;<i>
+</I>&gt;&gt;<i> while	[ $x -ne 0 ]; do
+</I>&gt;&gt;<i> 			 fmsadmin status Clients
+</I>&gt;&gt;<i> 				let &quot;x = $x + 1&quot;
+</I>&gt;&gt;<i> 		done
+</I>&gt;<i>
+</I>&gt;<i> ...
+</I>&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> 	fmsadmin status Clients   #[returns a list of connected  
+</I>&gt;&gt;&gt;&gt;<i> clients; I'd like to got thru
+</I>&gt;&gt;&gt;&gt;<i> 							  this loop until either the output of the command is  
+</I>&gt;&gt;&gt;&gt;<i> null or
+</I>&gt;&gt;&gt;&gt;<i> 							  About 2-5 minutes have gone by]#
+</I>
+
+		
+___________________________________________________________ 
+Try the all-new Yahoo! Mail. &quot;The New Version is radically easier to use&quot; &#150; The Wall Street Journal 
+<A HREF="http://uk.docs.yahoo.com/nowyoucan.html">http://uk.docs.yahoo.com/nowyoucan.html</A>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002731.html">[X-Unix] Bash scripting Question
+</A></li>
+	<LI>Next message: <A HREF="002732.html">[X-Unix] Bash scripting Question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2735">[ date ]</a>
+              <a href="thread.html#2735">[ thread ]</a>
+              <a href="subject.html#2735">[ subject ]</a>
+              <a href="author.html#2735">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

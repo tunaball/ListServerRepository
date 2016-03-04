@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Servers] Mail Setup question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20Mail%20Setup%20question&In-Reply-To=list-5117373%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000088.html">
+   <LINK REL="Next"  HREF="000090.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Servers] Mail Setup question</H1>
+    <B>Sytse Kuijk</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20Mail%20Setup%20question&In-Reply-To=list-5117373%40mail.ninewire.com"
+       TITLE="[X Servers] Mail Setup question">sytse at pobox.com
+       </A><BR>
+    <I>Wed Feb 26 01:41:47 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000088.html">Mail Setup question
+</A></li>
+        <LI>Next message: <A HREF="000090.html">[X Servers] Mail Setup question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#89">[ date ]</a>
+              <a href="thread.html#89">[ thread ]</a>
+              <a href="subject.html#89">[ subject ]</a>
+              <a href="author.html#89">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Pedro,
+
+Up at night hu?
+
+ From what you tell, you seem to be missing a disk with the 
+administrator tools. These tools contain all you need, although there 
+are some little things that might be a problem.
+In you server installation, there must be a manual also, that 
+explains the full set up for all services. As you are using 10.2.4, 
+the manual is very complete and most things should be relatively easy.
+
+Having said all that, there still can be some small issues.
+For outgoing mail, you can try to let the system send its mail 
+wherever it is addressed to, but that has a chance of not working. It 
+is possible that your ISP is blocking all SMTP traffic except for 
+that to its own SMTP server. This is a fairly common way to block 
+spam, as it can be traced more easily to the sender. In that case you 
+need to set up your server such that it sends all non-local mail to 
+your ISPs SMTP server (e.g. smtp.yourisp.com). Most anyone should be 
+able to get around this hurdle fairly easily, as it is a local 
+configuration issue.
+For incoming mail, SMTP access is even more often blocked, this time 
+to protect the ISP customers from spam, that is not filtered by the 
+ISP. In that case you will not get mail until you get your ISP to 
+open port 25 (SMTP) for connections to your IP address. They will 
+generally not do this for a dynamic address, as that is too complex. 
+They also like to charge you for the additional cost of fixed IP 
+address, with SMTP accessibility.
+You also need to make sure that yoou have set up an MX record in your 
+DNS setup. To do that, see details in books like &quot;DNS and Bind&quot; by 
+Albitz and Lu from O'Reilly.
+
+And use the nights to sleep and social activities, not to work on 
+freekin' computers...
+
+sytse
+
+At 03:55 -0500 26-02-2003, Pedro P Guimaraes wrote:
+&gt;<i>Hi guys,
+</I>&gt;<i>
+</I>&gt;<i>     I have OX Server 10.2.4 running on a G4 400mhz tower,  the AGP version,
+</I>&gt;<i>My question is, is there some where that can give me clear instructions on
+</I>&gt;<i>how to set up the mail server to receive and send mail to the out side
+</I>&gt;<i>world?  I look on google and apples page, the Server Manual was great for
+</I>&gt;<i>helping me set up the mail system, and I have it running being able to send
+</I>&gt;<i>messages inside the network, but I cant break to the outside.  I have a
+</I>&gt;<i>Domain name, that I would like to use, and it forwards my wed to the web
+</I>&gt;<i>server, I can get it too forward all emails to a specific location or email.
+</I>&gt;<i>But I don't know if that's the proper way to set it up.
+</I>&gt;<i>
+</I>&gt;<i>I am pretty new to running Servers though I have a lot of Mac experience,
+</I>&gt;<i>and a good amount of OS X experience too.  But this one is not coming to me.
+</I>&gt;<i>
+</I>&gt;<i>I also don't have all the discs as I got the server software from my Fire
+</I>&gt;<i>House when they decided that they didn't want to &quot;waste&quot; time with learning
+</I>&gt;<i>a Mac (even though I volunteered to keep it up and running). They only gave
+</I>&gt;<i>me the &quot;installer disc&quot; though I don't think I need any others.  So any how,
+</I>&gt;<i>they are still working on a windows version trying to get it running and I
+</I>&gt;<i>would like to have this one up before they have the windows up, (so I can
+</I>&gt;<i>say told you so :) )
+</I>&gt;<i>
+</I>&gt;<i>Anyways,  If some one can point me to a good site or can email me some
+</I>&gt;<i>better directions to follow.
+</I>&gt;<i>
+</I>&gt;<i>Mail service is up and running
+</I>&gt;<i>The server is a DNS server as well
+</I>&gt;<i>Web is running
+</I>&gt;<i>AFP is running
+</I>&gt;<i>
+</I>&gt;<i>Thank you all so much.
+</I>&gt;<i>
+</I>&gt;<i>By the way,  I am a student and can get a cheaper copy of the 10 client
+</I>&gt;<i>version, Should I invest in that? Will it give me the answers I seek?
+</I>&gt;<i>I would like to get a home version running as well, though I wasn't going to
+</I>&gt;<i>try and purchase the server software till they released 10.3,  For now I am
+</I>&gt;<i>using the companies serial number, which unless they decide to use it (I
+</I>&gt;<i>hope they do) then I will lose it and need to buy a new one anyways.  Thanks
+</I>&gt;<i>for all the help
+</I>&gt;<i>
+</I>&gt;<i>--
+</I>&gt;<i>Pedro P Guimaraes
+</I>&gt;<i>911 Communications / EMT / Fire Fighter
+</I>&gt;<i>Princeton Twp Police
+</I>&gt;<i>Mercer County Lifecomm
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>----------
+</I>&gt;<i>Check out the Mac OS X email list FAQ
+</I>&gt;<i><A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i>To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i>&lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>Need help from a real person? Try. 
+</I>&gt;<i>&lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>----------
+</I>&gt;<i>$14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your Mac ISP
+</I>&gt;<i>Serious Mac Internet Solutions From NineWire!   <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i>DVIator   | Run Dual ADC displays on your G4 or just one on an older Mac!
+</I>&gt;<i>Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>    Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>   this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000088.html">Mail Setup question
+</A></li>
+	<LI>Next message: <A HREF="000090.html">[X Servers] Mail Setup question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#89">[ date ]</a>
+              <a href="thread.html#89">[ thread ]</a>
+              <a href="subject.html#89">[ subject ]</a>
+              <a href="author.html#89">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to REALLY kill Finder.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20REALLY%20kill%20Finder.&In-Reply-To=AF88A973-5545-42B1-A0E1-5D970FEF7E5B%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003129.html">
+   <LINK REL="Next"  HREF="003140.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to REALLY kill Finder.</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20REALLY%20kill%20Finder.&In-Reply-To=AF88A973-5545-42B1-A0E1-5D970FEF7E5B%40secure-computing.net"
+       TITLE="[X-Unix] How to REALLY kill Finder.">macmonster at myrealbox.com
+       </A><BR>
+    <I>Sat May 24 13:41:48 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003129.html">[X-Unix] How to REALLY kill Finder.
+</A></li>
+        <LI>Next message: <A HREF="003140.html">[X-Unix] How to REALLY kill Finder.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3131">[ date ]</a>
+              <a href="thread.html#3131">[ thread ]</a>
+              <a href="subject.html#3131">[ subject ]</a>
+              <a href="author.html#3131">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 24 May 2008, at 06:25, Eric F Crist wrote:
+&gt;<i> On May 23, 2008, at 2:49 PM, Stroller wrote:
+</I>&gt;&gt;<i> ...
+</I>&gt;&gt;<i> Last night I was converting a bunch of video files in Quicktime  
+</I>&gt;&gt;<i> and copying them to a samba server on the LAN (so I could play  
+</I>&gt;&gt;<i> them on my Linux-based media machine) when the Finder stopped  
+</I>&gt;&gt;<i> responding and I got the spinning beachball of death.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The beachball appeared when I clicked on one of the files in  
+</I>&gt;&gt;<i> Finder and it tried to generate a preview in column-view. The  
+</I>&gt;&gt;<i> media files were fairly big ones (1 gig) and .mkv format (which  
+</I>&gt;&gt;<i> seem particularly processor-intensive to decode) and I'm pretty  
+</I>&gt;&gt;<i> sure the file in question was on the Samba server.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> So ... I figured ... I'd just force-relaunch the Finder and go  
+</I>&gt;&gt;<i> back and open the folder in a different view in order to copy it  
+</I>&gt;&gt;<i> wherever it needed to be.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> After doing so, though, Finder fails to restart - I've got no  
+</I>&gt;&gt;<i> icons on my desktop and I can't navigate to a folder of files to  
+</I>&gt;&gt;<i> click on the one I want to view.
+</I>&gt;<i>
+</I>&gt;<i> I tried to post a reply earlier, but it was reject due to being &gt;5K.
+</I>
+If you have a copy in sent items then perhaps you could resend a copy  
+direct to me, so I can enjoy your 5K of wisdom.
+
+&gt;<i> First, I would try to kill the process that's involved with  
+</I>&gt;<i> transferring or otherwise reading the file over the network.
+</I>
+Hmmmn, I thought that WAS Finder that did this.
+
+&gt;<i> Second, if that fails, I'd try killing the process that's involved  
+</I>&gt;<i> with QuickLook.  I don't think this is internal to Finder itself,  
+</I>&gt;<i> so there should be a separate process.
+</I>
+Ah! No, I'm using 10.4 - the preview that it was generating was this  
+kind:
+<A HREF="http://www.bioneural.net/wp-content/uploads/iblog/d70rawtiger.jpg">http://www.bioneural.net/wp-content/uploads/iblog/d70rawtiger.jpg</A>
+(except of a movie, obviously)
+
+&gt;<i> reading through all of the output for your user with ps should at  
+</I>&gt;<i> least give you some clues as to what you can try to kill along the  
+</I>&gt;<i> way.  Unfortunately, the only thing you can do is experiment.  The  
+</I>&gt;<i> disturbing thing is that a kill -9 on Finder isn't working.
+</I>&gt;<i> Hope this helps.  Try posting a copy of a ps auxwwwww here, or at  
+</I>&gt;<i> least directly to me.
+</I>
+Attached. Had to zip it because it was 8k alone.
+
+The most interesting process is &quot;/sbin/umount -f /Volumes/4GIG CF&quot; -  
+this refers to a CFcard that was plugged into my Mac through an  
+adaptor dongle.
+
+Maybe my memory is mistaken as to what I was doing when Finder died,  
+because copying to this CFcard stalled at c 20% and I got a complaint  
+about removal when I pulled it.
+
+Perhaps its this unmount process that's holding the Finder up, but  
+that doesn't respond to `sudo kill -9 6180`either.
+Is there any way to force restart the disk automounting daemon?
+
+&gt;<i> You could try nice(ing) the processes you're interested in save to  
+</I>&gt;<i> get them the proc time so you can save your work, but I'm afraid  
+</I>&gt;<i> you may be stuck rebooting the system if all this fails.
+</I>
+That's not the problem at all - everything else on my system is  
+running fine. There's no problem with stuff hogging the CPU - other  
+applications respond quickly and I can save from them. It's just that  
+I don't want to close this particular program if I can help it,  
+because one *can't* save its state. It's actually not that important  
+and I guess I could reboot if I had to, but this is annoying me, now,  
+and I'd just like to get to the bottom of the problem.
+
+Stroller.
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003129.html">[X-Unix] How to REALLY kill Finder.
+</A></li>
+	<LI>Next message: <A HREF="003140.html">[X-Unix] How to REALLY kill Finder.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3131">[ date ]</a>
+              <a href="thread.html#3131">[ thread ]</a>
+              <a href="subject.html#3131">[ subject ]</a>
+              <a href="author.html#3131">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

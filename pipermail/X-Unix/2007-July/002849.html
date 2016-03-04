@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Postfix and proxies
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Postfix%20and%20proxies&In-Reply-To=20070720230446.GA29587%40absent.local">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002848.html">
+   <LINK REL="Next"  HREF="002850.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Postfix and proxies</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Postfix%20and%20proxies&In-Reply-To=20070720230446.GA29587%40absent.local"
+       TITLE="[X-Unix] Postfix and proxies">ecrist at secure-computing.net
+       </A><BR>
+    <I>Fri Jul 20 16:51:28 PDT 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002848.html">[X-Unix] Postfix and proxies
+</A></li>
+        <LI>Next message: <A HREF="002850.html">[X-Unix] Postfix and proxies
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2849">[ date ]</a>
+              <a href="thread.html#2849">[ thread ]</a>
+              <a href="subject.html#2849">[ subject ]</a>
+              <a href="author.html#2849">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Jul 20, 2007, at 6:04 PMJul 20, 2007, John Harrold wrote:
+
+&gt;<i> Howdy
+</I>&gt;<i>
+</I>&gt;<i> I've got a bit of a problem. I'm a Peace Corps volunteer working at  
+</I>&gt;<i> the
+</I>&gt;<i> National Univeristy of Samoa (NUS). I get my internet connection  
+</I>&gt;<i> through
+</I>&gt;<i> NUS and I use postfix to send my email through gmail's secure POP  
+</I>&gt;<i> server.
+</I>&gt;<i> My delima is that my ISP (which is NUS) has been flagged as a spam  
+</I>&gt;<i> source
+</I>&gt;<i> (the entire university goes through a single ip address on the  
+</I>&gt;<i> internet).
+</I>&gt;<i> Because my email is routed through a known spam source, it's getting
+</I>&gt;<i> rejected by some hosts.
+</I>&gt;<i>
+</I>&gt;<i> I've had lots of crazy issues with the network here (such web pages  
+</I>&gt;<i> being
+</I>&gt;<i> banned because of particular phrases). One solution I've used in  
+</I>&gt;<i> the past
+</I>&gt;<i> is to create a socks 5 proxy over ssh using the '-D' option. Many  
+</I>&gt;<i> networked
+</I>&gt;<i> applications have application level proxy settings and for many  
+</I>&gt;<i> that don't
+</I>&gt;<i> the system wide proxy settings seem to work.
+</I>&gt;<i>
+</I>&gt;<i> However, the system wide settings don't appear to work for postfix.  
+</I>&gt;<i> I was
+</I>&gt;<i> wondering if anyone here could help me either:
+</I>&gt;<i>
+</I>&gt;<i>   o configure postfix to route all traffic through a socks 5 proxy
+</I>&gt;<i>
+</I>&gt;<i>   o create some sort of jailed environment that can achieve the  
+</I>&gt;<i> same effect
+</I>&gt;<i>
+</I>&gt;<i> Thanks.
+</I>&gt;<i>
+</I>
+Why are you using a proxy at all?  Does the university block outside  
+mail traffic and/or intercept it?  If so, I'd do one of the following:
+
+1) Have someone set up a mail server for you, and possibly an SSH  
+tunnel to send your email.
+2) Use GMail's web interface
+3) Have users on the other end white-list your email address.
+
+If they're *not* blocking outgoing mail traffic (or intercepting it),  
+just send your email directly to GMail and forget about the proxy.
+-----
+Eric F Crist
+Secure Computing Networks
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002848.html">[X-Unix] Postfix and proxies
+</A></li>
+	<LI>Next message: <A HREF="002850.html">[X-Unix] Postfix and proxies
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2849">[ date ]</a>
+              <a href="thread.html#2849">[ thread ]</a>
+              <a href="subject.html#2849">[ subject ]</a>
+              <a href="author.html#2849">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

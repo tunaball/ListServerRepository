@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Phantom drive
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Phantom%20drive&In-Reply-To=list-11784020%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000624.html">
+   <LINK REL="Next"  HREF="000626.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Phantom drive</H1>
+    <B>Ben Gold</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Phantom%20drive&In-Reply-To=list-11784020%40mail.ninewire.com"
+       TITLE="[X-Unix] Phantom drive">bgold at acedsl.com
+       </A><BR>
+    <I>Mon Mar 29 10:43:43 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000624.html">[X-Unix] Phantom drive
+</A></li>
+        <LI>Next message: <A HREF="000626.html">[X-Unix] Newbie hard drive backup dilemma
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#625">[ date ]</a>
+              <a href="thread.html#625">[ thread ]</a>
+              <a href="subject.html#625">[ subject ]</a>
+              <a href="author.html#625">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This raises the question that I've had for awhile... are there any 
+firewire probing utilities?  If not, why not?
+
+Unlike old SCSI drives (remember SCSI probe?), it seems like it's very 
+hard to get a report on what the firewire bus is seeing vs. what the OS 
+is mounting.  I've often pined for some utility that would tell me how 
+many devices are seen on the firewire bus.  Is there some limitation in 
+the firewire spec that makes it impossible to see a drive or device 
+that's not mounting/working?
+
+I've had some luck with DiskWarriror seeing corrupted drives, but I've 
+also had drives that wouldn't mount unless I restarted or re-logged in. 
+  I assume it had something to do with what has been noted below, a 
+phantom diskmount directory.
+
+-Ben
+
+On Mar 29, 2004, at 1:12 PM, Stroller wrote:
+
+&gt;<i>
+</I>&gt;<i> On Mar 29, 2004, at 5:28 pm, Phil Dobbin wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Last night I had a power cut and when the power was restored, the 
+</I>&gt;&gt;<i> external LaCie FW drive I use for backups wouldn't mount. Console 
+</I>&gt;&gt;<i> spewed a lot of this:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Mar 29 00:58:52 iMac-Server /sbin/autodiskmount[213]: disk1s2    hfs  
+</I>&gt;&gt;<i>     yes   yes   Backup           [not mounted]
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Mar 29 00:58:52 iMac-Server /sbin/autodiskmount[213]: mountDisks: 
+</I>&gt;&gt;<i> mkdir(/Volumes/Backup) failed, File exists
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Apple System Profiler could see the drive and Disk Utility could see 
+</I>&gt;&gt;<i> it and verify it and gave it a clean bill of health but it seemed the 
+</I>&gt;&gt;<i> data on the drive had been lost/corrupted. Based on this assumption I 
+</I>&gt;&gt;<i> went ahead and did the reformat.
+</I>&gt;<i>
+</I>&gt;<i> I don't think you needed to format it.
+</I>&gt;<i> I think from this logfile that when a removable drive is added 
+</I>&gt;<i> /sbin/autodiskmount detects it, reads the volumename of it and creates 
+</I>&gt;<i> a corresponding directory in /Volumes. When the drive is unmounted the 
+</I>&gt;<i> system removes the subdirectory of /Volume.
+</I>&gt;<i>
+</I>&gt;<i> I think that when your system crashed /Volumes/Backup was not removed, 
+</I>&gt;<i> so when you plugged the drive in again /sbin/autodiskmount was not 
+</I>&gt;<i> able to create that directory (because it already existed), This 
+</I>&gt;<i> caused autodiskmount to exit instead of mounting the volume.
+</I>&gt;<i>
+</I>&gt;<i> I think that if you'd unplugged the firewire drive and typed `sudo rm 
+</I>&gt;<i> -rf /Volumes/Backup` all would have been well when you plugged the 
+</I>&gt;<i> drive in again.
+</I>&gt;<i>
+</I>&gt;&gt;<i> Now the directory listing for reformated external drive looks like 
+</I>&gt;&gt;<i> this. `Backup' is the one I lost: `Magnolia' is the new, visible 
+</I>&gt;&gt;<i> directory.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> bash2.05a <A HREF="../../../mailman/listinfo/x-unix.html">phil at iMac-Server</A> Mon Mar 29:16:45:32 / $ cd Volumes/
+</I>&gt;&gt;<i> bash2.05a <A HREF="../../../mailman/listinfo/x-unix.html">phil at iMac-Server</A> Mon Mar 29:16:45:51 /Volumes $ ls -aF
+</I>&gt;&gt;<i> ../        ../       Backup/   Magnolia/
+</I>&gt;&gt;<i> ...
+</I>&gt;&gt;<i> What is the best course of action with `Backup' ? Is it safe just to 
+</I>&gt;&gt;<i> rm it?
+</I>&gt;<i>
+</I>&gt;<i> I'd certainly risk it. I'd leave the drive unplugged as I did so, but 
+</I>&gt;<i> I don't think this is a dangerous operation.
+</I>&gt;<i>
+</I>&gt;<i> Stroller.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;<i> Mac ISP Serious Mac Internet Solutions From NineWire!   
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older 
+</I>&gt;<i> Mac! Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>   Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;<i>
+</I>&gt;<i> OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s - 
+</I>&gt;<i> <A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000624.html">[X-Unix] Phantom drive
+</A></li>
+	<LI>Next message: <A HREF="000626.html">[X-Unix] Newbie hard drive backup dilemma
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#625">[ date ]</a>
+              <a href="thread.html#625">[ thread ]</a>
+              <a href="subject.html#625">[ subject ]</a>
+              <a href="author.html#625">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

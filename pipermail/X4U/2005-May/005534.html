@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] More on Spotlight
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20More%20on%20Spotlight&In-Reply-To=20050503153252.E31593BCEB2%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005537.html">
+   <LINK REL="Next"  HREF="005538.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] More on Spotlight</H1>
+    <B>John Baltutis</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20More%20on%20Spotlight&In-Reply-To=20050503153252.E31593BCEB2%40listserver.themacintoshguy.com"
+       TITLE="[X4U] More on Spotlight">baltwo at san.rr.com
+       </A><BR>
+    <I>Tue May  3 10:39:16 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005537.html">[X4U] Tuning Tiger
+</A></li>
+        <LI>Next message: <A HREF="005538.html">[X4U] Tiger breaks Hypercard
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5534">[ date ]</a>
+              <a href="thread.html#5534">[ thread ]</a>
+              <a href="subject.html#5534">[ subject ]</a>
+              <a href="author.html#5534">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 05/03/05, Kirk McElhearn &lt;<A HREF="../../../mailman/listinfo/x4u.html">kirklists at wanadoo.fr</A>&gt; wrote:
+&gt;<i> On May 3, 2005, at 9:32 AM, John Baltutis wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Here are two detailed looks at Spotlight:
+</I>&gt;&gt;<i> &lt;<A HREF="http://arstechnica.com/reviews/os/macosx-10.4.ars/9">http://arstechnica.com/reviews/os/macosx-10.4.ars/9</A>&gt; and
+</I>&gt;&gt;<i> &lt;<A HREF="http://www.tidbits.com/tb-issues/TidBITS-778.html">http://www.tidbits.com/tb-issues/TidBITS-778.html</A>&gt;. Read both
+</I>&gt;&gt;<i> because they give different perspectives.
+</I>&gt;<i>
+</I>&gt;<i> And Apple's posted a lot of interesting info here:
+</I>&gt;<i> <A HREF="http://www.apple.com/macosx/tips/spotlight.html">http://www.apple.com/macosx/tips/spotlight.html</A>
+</I>&gt;<i>
+</I>
+Thanks. That clears things up quite a bit.
+
+&gt;<i> Now why don't they put this kind of stuff in the help... That's a
+</I>&gt;<i> real pita.
+</I>
+Because they had a release date, no matter what the state of support
+documentation?
+
+BTW, I got this from John Siracusa, author of the arstechnica article, in
+response to the question- how does one go about indexing system level
+directories, which are excluded by default?:
+
+edit this file:
+
+    % sudo emacs /.Spotlight-V100/_rules.plist
+
+and make it look something like  this:
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple Computer//DTD PLIST 1.0//EN&quot; &quot;http://
+www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;dict&gt;
+         &lt;key&gt;EXCLUDE&lt;/key&gt;
+         &lt;array/&gt;
+         &lt;key&gt;INCLUDE&lt;/key&gt;
+         &lt;array&gt;
+             &lt;string&gt;/private&lt;/string&gt;
+             &lt;string&gt;/usr&lt;/string&gt;
+         &lt;/array&gt;
+         &lt;key&gt;NOTE&lt;/key&gt;
+         &lt;string&gt;Specify paths to include or exclude, preceeding
+rules which target user-homes with ~/&lt;/string&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+
+...and so on, adding each directory you want to include.  Then tell
+Spotlight to reindex your drive:
+
+    % sudo mdutil -E /
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005537.html">[X4U] Tuning Tiger
+</A></li>
+	<LI>Next message: <A HREF="005538.html">[X4U] Tiger breaks Hypercard
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5534">[ date ]</a>
+              <a href="thread.html#5534">[ thread ]</a>
+              <a href="subject.html#5534">[ subject ]</a>
+              <a href="author.html#5534">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

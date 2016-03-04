@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] sips
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20sips&In-Reply-To=list-11982886%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000687.html">
+   <LINK REL="Next"  HREF="000688.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] sips</H1>
+    <B>Brian P. Minnebo</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20sips&In-Reply-To=list-11982886%40mail.ninewire.com"
+       TITLE="[X-Unix] sips">brian at minnebo.net
+       </A><BR>
+    <I>Thu Apr  8 07:26:56 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000687.html">[X-Unix] sips
+</A></li>
+        <LI>Next message: <A HREF="000688.html">[X-Unix] sips
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#689">[ date ]</a>
+              <a href="thread.html#689">[ thread ]</a>
+              <a href="subject.html#689">[ subject ]</a>
+              <a href="author.html#689">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> 
+</I>&gt;<i> Hello Folks,
+</I>&gt;<i> 
+</I>&gt;<i> Has anyone begun using sips? (&quot;Scriptable Image Processing System, a built in component of the OS X graphics subsystem&quot;)
+</I>&gt;<i> 
+</I>&gt;<i> I have a friend who is a graphic artist and long time Mac user. He's moved to OS X from 9 and likes it although he's a  card-carrying command line sceptic. He often asks &quot;why all the hoopla about OS X internals? what can UNIX do for me?&quot;.
+</I>
+ ...
+
+&gt;<i> My first attempt was the following test, I ran this on a set of around 50 images from a digital camera in separate sub directories :-
+</I>&gt;<i> 
+</I>&gt;<i> find . -name '*.jpg' |xargs -j % sips -s format bmp %
+</I>&gt;<i> 
+</I>&gt;<i> This works fine, the files are updated in place but the .jpg filename extension is not changed from jpg to bmp.
+</I>
+Try something like this:
+
+  # pipe list of jpg's to while loop
+  find . -name \*.jpg -print | while read i
+  do 
+	# calculate filename w/out extension
+    dir=`dirname $i` 
+    base=`basename $i .jpg`
+    file=&quot;$dir/$base&quot;
+
+	# update and rename file
+    echo sips -s format bmp &quot;$file.jpg&quot;
+    echo mv &quot;$file.jpg&quot; &quot;$file.bmp&quot;
+  done
+
+Remove the &quot;echo &quot; parts when you are satisfied the command will do what  you expect.
+
+&gt;<i> 
+</I>&gt;<i> Has anyone done anything more useful with this utility?
+</I>
+Actuall, I've not used it.  I rely on ImageMagick for such things.
+
+Brian
+-- 
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000687.html">[X-Unix] sips
+</A></li>
+	<LI>Next message: <A HREF="000688.html">[X-Unix] sips
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#689">[ date ]</a>
+              <a href="thread.html#689">[ thread ]</a>
+              <a href="subject.html#689">[ subject ]</a>
+              <a href="author.html#689">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

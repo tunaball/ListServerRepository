@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Newbies] Setting up Mysql for use with OS Commerce.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20Setting%20up%20Mysql%20for%20use%20with%20OS%20Commerce.&In-Reply-To=list-12603254%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004084.html">
+   <LINK REL="Next"  HREF="004085.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Newbies] Setting up Mysql for use with OS Commerce.</H1>
+    <B>Eugene Lee</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20Setting%20up%20Mysql%20for%20use%20with%20OS%20Commerce.&In-Reply-To=list-12603254%40mail.ninewire.com"
+       TITLE="[X Newbies] Setting up Mysql for use with OS Commerce.">list-themacintoshguy at fsck.net
+       </A><BR>
+    <I>Thu May  6 11:59:09 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004084.html">[X Newbies] Setting up Mysql for use with OS Commerce.
+</A></li>
+        <LI>Next message: <A HREF="004085.html">Default window views
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4086">[ date ]</a>
+              <a href="thread.html#4086">[ thread ]</a>
+              <a href="subject.html#4086">[ subject ]</a>
+              <a href="author.html#4086">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Thu, May 06, 2004 at 01:35:22PM -0400, Lee Sargent wrote:
+:<i> Eugene wrote:
+</I>:<i> &gt;
+</I>:<i> &gt; 2) Make sure osCommerce is configured with the correct settings to
+</I>:<i> &gt; access MySQL, i.e. hostname (&quot;localhost&quot;?), database name, the MySQL
+</I>:<i> &gt; username and password.
+</I>:<i> 
+</I>:<i> Now I am hosting this web site locally In the documents folder of apache.
+</I>:<i> 
+</I>:<i> When I start the install.php file for oscommerce, I don't import a database
+</I>:<i> so I unselect that option and I select save configuration.
+</I>:<i> 
+</I>:<i> The next page configures itself  WWW address ( <A HREF="http://127.0.0.1/catalog/">http://127.0.0.1/catalog/</A> ),
+</I>:<i> Webserver root directory ( /library/webserver/documents/catalog ), http
+</I>:<i> cookie domain ( 127.0.0.1 and http cookie path ( /catalog/ )
+</I>:<i> 
+</I>:<i> I don't change any of that and so I contine on to the next page and I this
+</I>:<i> is where I am currently confused.
+</I>:<i> 
+</I>:<i> It asks for the Database Server the options for that are hostname or
+</I>:<i> Ip address.  Then comes the username, password, database name and
+</I>:<i> session storage options.
+</I>:<i> 
+</I>:<i> This is where I must have to have a database.  Do I make the database
+</I>:<i> use Filemaker Pro 6?  What about this host name or IP address.  Where
+</I>:<i> do I put this database once I have created it?
+</I>
+There's no reason to even mention Filemaker Pro, since you are trying to
+get MySQL working.  Since MySQL is local, the hostname is &quot;localhost&quot;.
+To create a user account, do something like this in the MySQL command
+line interface:
+
+	shell&gt; mysql --user=root mysql
+	mysql&gt; GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP
+	-&gt;     ON dbname.*
+	-&gt;     TO 'username'@'localhost'
+	-&gt;     IDENTIFIED BY 'password';
+
+where &quot;dbname&quot;, &quot;username&quot;, and &quot;password&quot; are yours to invent.
+
+	<A HREF="http://dev.mysql.com/doc/mysql/en/Adding_users.html">http://dev.mysql.com/doc/mysql/en/Adding_users.html</A>
+
+Then create database itself:
+
+	mysql&gt; CREATE DATABASE dbname;
+
+Sidenote: setting up MySQL and osCommerce is *not* a newbies question!
+
+
+-- 
+Eugene Lee
+<A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004084.html">[X Newbies] Setting up Mysql for use with OS Commerce.
+</A></li>
+	<LI>Next message: <A HREF="004085.html">Default window views
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4086">[ date ]</a>
+              <a href="thread.html#4086">[ thread ]</a>
+              <a href="subject.html#4086">[ subject ]</a>
+              <a href="author.html#4086">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

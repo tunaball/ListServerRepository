@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Servers] smb.conf configuration Q's
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20smb.conf%20configuration%20Q%27s&In-Reply-To=list-11986091%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000266.html">
+   <LINK REL="Next"  HREF="000268.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Servers] smb.conf configuration Q's</H1>
+    <B>Dalton Hamilton</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20smb.conf%20configuration%20Q%27s&In-Reply-To=list-11986091%40mail.ninewire.com"
+       TITLE="[X Servers] smb.conf configuration Q's">dalton_hamilton at mac.com
+       </A><BR>
+    <I>Thu Apr  8 08:24:07 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000266.html">smb.conf configuration Q's
+</A></li>
+        <LI>Next message: <A HREF="000268.html">[X Servers] Server Monitor can't connect [fixed]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#267">[ date ]</a>
+              <a href="thread.html#267">[ thread ]</a>
+              <a href="subject.html#267">[ subject ]</a>
+              <a href="author.html#267">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>If I understand what you're trying to do, I think you want &quot;create 
+permissions&quot; specified in the inidividual shares and &quot;inherent 
+permissions&quot; in the global.  Here is a smb.conf that will force the 
+permission on each file created such that the permissions will be the 
+same permissions as the parent directory.  The in the example below is 
+called [ashare] located in a directory /shares/ashare.
+
+
+
+
+[global]
+         client code page = 437
+         coding system = utf8
+         guest account = unknown
+         encrypt passwords = YES
+         local master = YES
+         max smbd processes = 0
+         print command = /usr/sbin/PrintServiceAccess printps %p  %s
+         lpq command = /usr/sbin/PrintServiceAccess jobs %p
+         lprm command = /usr/sbin/PrintServiceAccess remove %p  %j
+         lppause command = /usr/sbin/PrintServiceAccess hold %p  %j
+         lpresume command = /usr/sbin/PrintServiceAccess release %p  %j
+         printer admin = unknown, @staff
+         server string = Mac OS X Server
+         log file = /Library/Logs/WindowsServices/WindowsFileService.log
+         netbios name = osx
+         workgroup = YOUR_WORKGROUP
+         wins support = YES
+         domain master = YES
+         inherit permissions = YES
+         log level = 0
+[ashare]
+         path = /shares/ashare
+         public = NO
+         create mask = 0644
+         directory mask = 0755
+         read only = NO
+         comment = macosx
+
+
+
+
+On Apr 8, 2004, at 7:16 AM, Christopher Jensen wrote:
+
+&gt;<i> i have a G5 tower that is being used for a fileserver for 3 people as 
+</I>&gt;<i> well as a light-use desktop machine.  the fileserver clients are a mix 
+</I>&gt;<i> of Windows XP Pro and OS 10.3 users.  my issue is with the &quot;create 
+</I>&gt;<i> mode&quot; in the [global] section of smb.conf.  the man pages and all the 
+</I>&gt;<i> reference i could find says that if you specify &quot;create mode = 0777&quot; 
+</I>&gt;<i> in the global you can facilitate everyone saving files to the share 
+</I>&gt;<i> with full access, which is what i want as default, with particular 
+</I>&gt;<i> shares' create mode being overwritten in later share sections of the 
+</I>&gt;<i> .conf file.
+</I>&gt;<i>
+</I>&gt;<i> the problem is, the files are being written 0700, and i can't seem to 
+</I>&gt;<i> change that.  can someone give me a copy of the default smb.conf file 
+</I>&gt;<i> with just the modifications necessary to allow 0777 permissions as a 
+</I>&gt;<i> default setting?
+</I>&gt;<i>
+</I>&gt;<i> thanks in advance!
+</I>&gt;<i> chris
+</I>&gt;<i> ---------------------------------
+</I>&gt;<i> Chris Jensen
+</I>&gt;<i> Vis Dynamics, Inc.
+</I>&gt;<i> e: <A HREF="../../../mailman/listinfo/x-servers.html">chris at visdynamics.com</A>
+</I>&gt;<i> p: 616.456.6566x28
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;<i> Mac ISP Serious Mac Internet Solutions From NineWire!   
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older 
+</I>&gt;<i> Mac! Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>   Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000266.html">smb.conf configuration Q's
+</A></li>
+	<LI>Next message: <A HREF="000268.html">[X Servers] Server Monitor can't connect [fixed]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#267">[ date ]</a>
+              <a href="thread.html#267">[ thread ]</a>
+              <a href="subject.html#267">[ subject ]</a>
+              <a href="author.html#267">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

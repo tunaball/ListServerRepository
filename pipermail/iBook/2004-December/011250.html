@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [iBook] More on my mail crash troubles
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BiBook%5D%20More%20on%20my%20mail%20crash%20troubles&In-Reply-To=49423476-4D85-11D9-80FD-000393B54914%40ybb.ne.jp">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011248.html">
+   <LINK REL="Next"  HREF="011252.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[iBook] More on my mail crash troubles</H1>
+    <B>Scott Warren</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BiBook%5D%20More%20on%20my%20mail%20crash%20troubles&In-Reply-To=49423476-4D85-11D9-80FD-000393B54914%40ybb.ne.jp"
+       TITLE="[iBook] More on my mail crash troubles">sw at shelton.org
+       </A><BR>
+    <I>Tue Dec 14 07:10:50 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011248.html">[iBook] More on my mail crash troubles
+</A></li>
+        <LI>Next message: <A HREF="011252.html">[iBook] iBook advice
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11250">[ date ]</a>
+              <a href="thread.html#11250">[ thread ]</a>
+              <a href="subject.html#11250">[ subject ]</a>
+              <a href="author.html#11250">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+I have often found that a corrupted mailbox can freeze up Mail on start 
+up.  What I will do to cure this is go to the \home\library\mail 
+folder, make a &quot;backup&quot; folder in \mail, move everything from with in 
+\mail into the backup folder, then restart mail.  When it comes up, it 
+will download ALL of the messages from the server again.  You will not 
+see any old email or any customized folders because they are safe in 
+the backup folder we just made.  Once this is done quit mail, then 
+start this loop:
+
+- COPY 1 mailbox from \mail\backup\mailbox  to  \mail\mailbox
+- run the Mail.app again
+- open that mailbox and see if you can view your emails.  sometimes 
+going to the top menu Mailbox --&gt; rebuild will fix a troubled mailbox.  
+(always good to have backups before you do this)
+- Quit mail, go back to the top and repeat until you have all your 
+mailboxes back.
+
+Once these are in, you can go to 
+\mail\backup\POP-&lt;<A HREF="../../../mailman/listinfo/ibook.html">youremail at yourdomain</A>&gt;.  In here is stored your Inbox, 
+Sent, and Drafts folders.  Rename the inbox to something else (like 
+Inbox1 or OldInbox) and copy that to the \mail\mailbox folder.  The 
+newly named inbox will show up in your customized mailbox list.  Open 
+it like in the steps above.
+
+
+
+
+On Dec 13, 2004, at 10:04 PM, Thomas Bridgeland wrote:
+
+&gt;&gt;<i> I don't want to trash it and reinstall Mail, because there are some
+</I>&gt;&gt;<i> important recent e-mails I need to save. Any hints would be
+</I>&gt;&gt;<i> appreciated.
+</I>&gt;<i>
+</I>&gt;<i> You said:
+</I>&gt;<i>
+</I>&gt;<i> ....All of your Mail files should be found in your Users folder in
+</I>&gt;<i> Library--&gt;Mail -- so I'd start by making a back-up copy of that file,
+</I>&gt;<i> just in case.
+</I>&gt;<i>
+</I>&gt;<i> You might try trashing the Preferences for Mail in your Users folder in
+</I>&gt;<i> Library--&gt;Preferences (it's called &quot;com.apple.mail.plist&quot;), and see if
+</I>&gt;<i> that helps....
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> First, thanks for suggesting that I pull the Mail files out of the 
+</I>&gt;<i> Users-Library folder, I hadn't known that, or forgot it anyway. It 
+</I>&gt;<i> should save the stuff I need.
+</I>&gt;<i>
+</I>&gt;<i> I did try trashing the Preferences but no effect.
+</I>&gt;<i>
+</I>&gt;<i> I got something new last time I tried to troubleshoot, a message box 
+</I>&gt;<i> with:
+</I>&gt;<i>
+</I>&gt;<i> 'The Mailbox &quot;~/Library/Mail/<A HREF="../../../mailman/listinfo/ibook.html">POP-tmbridgeland at etc</A> etc my e-mail 
+</I>&gt;<i> address/INBOX.mbox&quot; is currently locked by &quot;Bridgeland Thomas&quot; on host 
+</I>&gt;<i> &quot;etc etc my computers name.local.&quot;. If you open a mailbox that is in 
+</I>&gt;<i> use you may damage its contents.
+</I>&gt;<i>
+</I>&gt;<i> This was followed by three choice buttons, Cancel, Open Read Only, and 
+</I>&gt;<i> Open Anyway. I have seen this box twice and tried Open Read Only and 
+</I>&gt;<i> Open Anyway. In both cases  Mail froze again in a second or two 
+</I>&gt;<i> anyway.
+</I>&gt;<i>
+</I>&gt;<i> Any more good advice? Thanks!
+</I>&gt;<i>
+</I>&gt;<i> Tom
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> iBook mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/ibook.html">iBook at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/ibook.html">http://listserver.themacintoshguy.com/mailman/listinfo/ibook</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011248.html">[iBook] More on my mail crash troubles
+</A></li>
+	<LI>Next message: <A HREF="011252.html">[iBook] iBook advice
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11250">[ date ]</a>
+              <a href="thread.html#11250">[ thread ]</a>
+              <a href="subject.html#11250">[ subject ]</a>
+              <a href="author.html#11250">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

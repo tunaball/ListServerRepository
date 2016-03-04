@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] APPLE's Mail Program
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20APPLE%27s%20Mail%20Program&In-Reply-To=300810F9-D37D-4B6E-BED7-F2F735E67736%40comcast.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="019586.html">
+   <LINK REL="Next"  HREF="019591.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] APPLE's Mail Program</H1>
+    <B>Doug McNutt</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20APPLE%27s%20Mail%20Program&In-Reply-To=300810F9-D37D-4B6E-BED7-F2F735E67736%40comcast.net"
+       TITLE="[X4U] APPLE's Mail Program">douglist at macnauchtan.com
+       </A><BR>
+    <I>Tue Jan  1 12:24:48 PST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="019586.html">[X4U] APPLE's Mail Program
+</A></li>
+        <LI>Next message: <A HREF="019591.html">[X4U] Apple's Mail Application
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19588">[ date ]</a>
+              <a href="thread.html#19588">[ thread ]</a>
+              <a href="subject.html#19588">[ subject ]</a>
+              <a href="author.html#19588">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Apple mail uses format-flowed which is described in RFC2646. That is a procedure for placing returns in long lines to keep the length below 80 characters.
+
+It also uses spaces after the returns to flag them as something to removed before displaying a message. It all worked pretty well after it was introduced by Qualcomm / Eudora.
+
+RFC3676 introduced a &quot;delsp=yes&quot; item to the format-flowed standard in 2004. The idea was to move the spacing control to the client's side rather than the source. Apple mail takes it seriously and manages to introduce two spaces together when wrapping lines. Many mail clients don't know about that and remove only one of the spaces that were specified in the original format-flowed. And double spaces within the &lt;&gt; syntax are not handled properly either.
+
+Apple has been told about it and has explicitly said &quot;we're right and they're wrong.&quot; So if your recipient's mail client has not been rewritten since 2004 you're in trouble.
+
+Now the SMTP spec calls for allowing line lengths of up to 998 characters and the only mail clients that can't handle that are ones written for thermal paper or teletype machines. I now tell Eudora NOT to use format-flowed and just let the lines run on. Mail clients then wrap the lines fine at display and long URL's don't get extra returns added in the first place so there's nothing to remove. Try changing your window width and see if this message wraps to your new size.
+
+So how does one tell Apple mail to do that? I haven't figured that out and besides my wife who sends me broken links all the time thinks Apple mail is just great.  Sigh.
+
+&lt;<A HREF="http://www.ietf.org/rfc/rfc3676.txt">http://www.ietf.org/rfc/rfc3676.txt</A>&gt;
+&lt;<A HREF="http://www.ietf.org/rfc/rfc2646.txt">http://www.ietf.org/rfc/rfc2646.txt</A>&gt;
+&lt;<A HREF="http://www.ietf.org/rfc/rfc2822.txt">http://www.ietf.org/rfc/rfc2822.txt</A>&gt;
+
+-- 
+
+Applescript syntax is like English spelling:
+Roughly, though not thoroughly, thought through.
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="019586.html">[X4U] APPLE's Mail Program
+</A></li>
+	<LI>Next message: <A HREF="019591.html">[X4U] Apple's Mail Application
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19588">[ date ]</a>
+              <a href="thread.html#19588">[ thread ]</a>
+              <a href="subject.html#19588">[ subject ]</a>
+              <a href="author.html#19588">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

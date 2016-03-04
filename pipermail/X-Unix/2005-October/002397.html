@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] A little shell scripting help
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20A%20little%20shell%20scripting%20help&In-Reply-To=027708BE-417E-4EA2-B77E-55DDC0FFA723%40gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002404.html">
+   <LINK REL="Next"  HREF="002406.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] A little shell scripting help</H1>
+    <B>Cloyce D. Spradling</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20A%20little%20shell%20scripting%20help&In-Reply-To=027708BE-417E-4EA2-B77E-55DDC0FFA723%40gmail.com"
+       TITLE="[X-Unix] A little shell scripting help">cloyce+xunix at headgear.org
+       </A><BR>
+    <I>Mon Oct  3 15:18:06 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002404.html">[X-Unix] [OT] A little shell scripting help
+</A></li>
+        <LI>Next message: <A HREF="002406.html">[X-Unix] A little shell scripting help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2397">[ date ]</a>
+              <a href="thread.html#2397">[ thread ]</a>
+              <a href="subject.html#2397">[ subject ]</a>
+              <a href="author.html#2397">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Mon, Oct 03, 2005 at 05:14:43PM -0400, Mac Daddy wrote:
+:<i> Instead line 6 [ if ($retry&gt;1) ] fails with a &quot;line 6: 2: command not  
+</I>:<i> found&quot; error.
+</I>
+:<i> Ugh! It's killing me! Why??? And what's the &quot;2:&quot; refer to anyway?
+</I>
+&quot;Why&quot; has already been ably answered. :)
+
+As to what &quot;2:&quot; refers to, it's $retry.  In Bourne shell, you can use
+parentheses to run a command in a subshell.  So the shell saw
+
+  if (2&gt;1)
+
+and knew that in order to evaluate the conditional, it would need to run
+a program called &quot;2&quot; in a subshell.  So your syntax wasn't bad (except that
+it didn't do what you wanted), and the error message is just telling you
+that it can't find any program named &quot;2&quot;.
+
+--
+Cloyce
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002404.html">[X-Unix] [OT] A little shell scripting help
+</A></li>
+	<LI>Next message: <A HREF="002406.html">[X-Unix] A little shell scripting help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2397">[ date ]</a>
+              <a href="thread.html#2397">[ thread ]</a>
+              <a href="subject.html#2397">[ subject ]</a>
+              <a href="author.html#2397">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

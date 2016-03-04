@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [CUBE] Permissions and OSX
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20Permissions%20and%20OSX&In-Reply-To=list-10654017%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="006802.html">
+   <LINK REL="Next"  HREF="006804.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[CUBE] Permissions and OSX</H1>
+    <B>kevin at 216websolutions.com</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20Permissions%20and%20OSX&In-Reply-To=list-10654017%40mail.ninewire.com"
+       TITLE="[CUBE] Permissions and OSX">kevin at 216websolutions.com
+       </A><BR>
+    <I>Wed Feb  4 14:57:53 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="006802.html">[CUBE] Permissions and OSX
+</A></li>
+        <LI>Next message: <A HREF="006804.html">[CUBE] Permissions and OSX
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6803">[ date ]</a>
+              <a href="thread.html#6803">[ thread ]</a>
+              <a href="subject.html#6803">[ subject ]</a>
+              <a href="author.html#6803">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>My mistake- -perm -600 should have been just -perm 600.
+
+
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> Original Message &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+</I>
+On 2/4/04, 5:45:44 PM, &lt;<A HREF="../../../mailman/listinfo/cube.html">kevin at 216websolutions.com</A>&gt; wrote regarding Re: 
+[CUBE] Permissions and OSX:
+
+
+&gt;<i> sudo chmod should do it. For the nobody files, sudo chown. If those don't
+</I>&gt;<i> work, enable the root account, and su to root and do it then. There are a
+</I>&gt;<i> variety of ways to make this even easier. If the files are being
+</I>&gt;<i> transferred via ftp, look into changing the user's umask setting, though
+</I>&gt;<i> that may have unintended consequences in other settings. Also, the
+</I>&gt;<i> command &quot;find . -type -f -perm -600 |xargs chmod 644 can be used to
+</I>&gt;<i> change all files with permissions of 600, for example, to 644.
+</I>
+&gt;<i> You can learn a lot with the man command. Start with man man, then go to
+</I>&gt;<i> man chown, man chmod, and man find.
+</I>
+&gt;<i> On 2/4/04, 5:13:19 PM, Rod Clifford &lt;<A HREF="../../../mailman/listinfo/cube.html">rod at eslickdesign.com</A>&gt; wrote regarding
+</I>&gt;<i> [CUBE] Permissions and OSX:
+</I>
+
+&gt;<i> &gt; This is aimed for the unix (read: smart) members of the list:
+</I>&gt;<i> &gt; Is there a way in terminal to globally change permissions to folders
+</I>&gt;<i> &gt; containing files copied from another machine?
+</I>
+&gt;<i> &gt; We frequently swap files between machines, permissions for the files
+</I>&gt;<i> &gt; have been set by machine A (original owner)
+</I>&gt;<i> &gt; and cannot be changed by machine B (new owner who copied the files onto
+</I>&gt;<i> &gt; his machine) &quot;you do not have permission to modify
+</I>&gt;<i> &gt; this file&quot;.
+</I>&gt;<i> &gt; Changing permissions on the folder for the files is pretty hit and
+</I>&gt;<i> &gt; miss. Individual files are usually owned by &quot;nobody&quot; with
+</I>&gt;<i> &gt; guests having read only access.
+</I>
+&gt;<i> &gt; help
+</I>
+&gt;<i> &gt; Rod
+</I>
+
+&gt;<i> &gt; ----------
+</I>&gt;<i> &gt; Check out the Cube email list FAQ
+</I>&gt;<i> &gt; <A HREF="http://www.themacintoshguy.com/lists/Cube.html">http://www.themacintoshguy.com/lists/Cube.html</A>
+</I>
+&gt;<i> &gt; To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> &gt; To switch to the DIGEST mode, E-mail to
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> &gt; Need help from a real person? Try.
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-request at lists.themacintoshguy.com</A>&gt;
+</I>
+&gt;<i> &gt; ----------
+</I>&gt;<i> &gt; $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your Mac
+</I>&gt;<i> ISP
+</I>&gt;<i> &gt; Serious Mac Internet Solutions From NineWire!
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>
+&gt;<i> &gt;  T3Hub  |  3 Port USB Hub weighs less than an ounce!
+</I>&gt;<i> &gt; Dr. Bott|   &lt;<A HREF="http://www.drbott.com/prod/T3Hub.html">http://www.drbott.com/prod/T3Hub.html</A>&gt;
+</I>
+&gt;<i> &gt;    Cyberian   | Support this list when you buy at Outpost.com!
+</I>&gt;<i> &gt;    Outpost    | <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+</I>
+&gt;<i> &gt; ADC Extension | Extend the built in cable of your flat panel by 10 ft.
+</I>&gt;<i> &gt;   Dr. Bott    |    &lt;<A HREF="http://www.drbott.com/prod/ADCExtension.html">http://www.drbott.com/prod/ADCExtension.html</A>&gt;
+</I>
+&gt;<i> ----------
+</I>&gt;<i> Check out the Cube email list FAQ
+</I>&gt;<i> <A HREF="http://www.themacintoshguy.com/lists/Cube.html">http://www.themacintoshguy.com/lists/Cube.html</A>
+</I>
+&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-digest at lists.themacintoshguy.com</A>&gt;
+&gt;<i> Need help from a real person? Try.  
+</I>&lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-request at lists.themacintoshguy.com</A>&gt;
+
+&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your Mac 
+</I>ISP
+&gt;<i> Serious Mac Internet Solutions From NineWire!   
+</I><A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+
+&gt;<i>  T3Hub  |  3 Port USB Hub weighs less than an ounce!
+</I>&gt;<i> Dr. Bott|   &lt;<A HREF="http://www.drbott.com/prod/T3Hub.html">http://www.drbott.com/prod/T3Hub.html</A>&gt;
+</I>
+&gt;<i>    Cyberian   | Support this list when you buy at Outpost.com!
+</I>&gt;<i>    Outpost    | <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+</I>
+&gt;<i> ADC Extension | Extend the built in cable of your flat panel by 10 ft.
+</I>&gt;<i>   Dr. Bott    |    &lt;<A HREF="http://www.drbott.com/prod/ADCExtension.html">http://www.drbott.com/prod/ADCExtension.html</A>&gt;
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="006802.html">[CUBE] Permissions and OSX
+</A></li>
+	<LI>Next message: <A HREF="006804.html">[CUBE] Permissions and OSX
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6803">[ date ]</a>
+              <a href="thread.html#6803">[ thread ]</a>
+              <a href="subject.html#6803">[ subject ]</a>
+              <a href="author.html#6803">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

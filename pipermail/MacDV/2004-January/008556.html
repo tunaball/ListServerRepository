@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MacDV] Re: Can't save iMovie 3.03 Projects
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20Can%27t%20save%20iMovie%203.03%20Projects&In-Reply-To=list-10055111%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="008555.html">
+   <LINK REL="Next"  HREF="008557.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MacDV] Re: Can't save iMovie 3.03 Projects</H1>
+    <B>Peter van der Linden</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20Can%27t%20save%20iMovie%203.03%20Projects&In-Reply-To=list-10055111%40mail.ninewire.com"
+       TITLE="[MacDV] Re: Can't save iMovie 3.03 Projects">pvdl at afu.com
+       </A><BR>
+    <I>Sat Jan  3 17:13:54 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="008555.html">[MacDV] Re: Can't save iMovie 3.03 Projects
+</A></li>
+        <LI>Next message: <A HREF="008557.html">[MacDV] Re: Can't save iMovie 3.03 Projects
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8556">[ date ]</a>
+              <a href="thread.html#8556">[ thread ]</a>
+              <a href="subject.html#8556">[ subject ]</a>
+              <a href="author.html#8556">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Jan 3, 2004, at 4:50 PM, Carlton Kelly wrote:
+
+&gt;<i> UFS...
+</I>&gt;<i>
+</I>&gt;<i> ~ $ df -t ufs
+</I>&gt;<i> Filesystem    512-blocks     Used    Avail Capacity  Mounted on
+</I>&gt;<i> /dev/disk0s10   38812406 25327444 11544342    69%    /
+</I>&gt;<i> ~ $ df -t hfs
+</I>&gt;<i> ~ $
+</I>
+The use of UFS is the cause of your difficulty with iMovie, Carl.
+
+UFS ( = &quot;Unix File System&quot;) is a design for laying out a filesystem on 
+disk.  It is used throughout the entire Unix world.  Unfortunately, 
+Apple chose to use HFS+ as the standard for its Unix-based operating 
+system.  HSF+ is an evolution of HFS, bringing it up to date and 
+providing modern FS features.  It supports things that Apple wanted 
+(like case insensitive file names) but it is incompatible with the 
+entire rest of the world.  Gee, what a familiar story.
+
+For that reason, Apple also supports the formatting and use of UFS.  
+Someone developing software for another platform on MacOS X might chose 
+to use UFS, so that file transfer is easier.  It would be a strange 
+choice otherwise.  Can you say if you chose UFS when you did the 
+original installation, or did someone do it for you?
+
+See <A HREF="http://docs.info.apple.com/article.html?artnum=25316">http://docs.info.apple.com/article.html?artnum=25316</A>
+&quot;Unless you have a specific reason to use UFS, you should use the Mac 
+OS Extended format&quot;
+
+Your only option at this point is to backup all your data, reformat the 
+drive as HFS+, reinstall the OS and all apps, and copy your data back 
+in again.   If I were in your shoes, I would do this regardless of 
+whether I wanted to use iMovie or not.   Running UFS on Macs paints you 
+into a poorly-supported corner.  For example, Airport does not work 
+when Mac OS X is installed on a UFS formatted volume.  Some file 
+metadata is not available using UFS.
+
+Good luck.
+
+     Peter
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="008555.html">[MacDV] Re: Can't save iMovie 3.03 Projects
+</A></li>
+	<LI>Next message: <A HREF="008557.html">[MacDV] Re: Can't save iMovie 3.03 Projects
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8556">[ date ]</a>
+              <a href="thread.html#8556">[ thread ]</a>
+              <a href="subject.html#8556">[ subject ]</a>
+              <a href="author.html#8556">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Re: X4U Always starts up in OS 9 &amp; Dock at top
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Re%3A%20X4U%20Always%20starts%20up%20in%20OS%209%20%26%20Dock%20at%20top&In-Reply-To=20050418030853.8E2AF38ADB6%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004850.html">
+   <LINK REL="Next"  HREF="004830.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Re: X4U Always starts up in OS 9 &amp; Dock at top</H1>
+    <B>Deborah Puerini</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Re%3A%20X4U%20Always%20starts%20up%20in%20OS%209%20%26%20Dock%20at%20top&In-Reply-To=20050418030853.8E2AF38ADB6%40listserver.themacintoshguy.com"
+       TITLE="[X4U] Re: X4U Always starts up in OS 9 &amp; Dock at top">lovesalsa at cox.net
+       </A><BR>
+    <I>Sun Apr 17 20:30:54 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004850.html">[X4U] New Browser
+</A></li>
+        <LI>Next message: <A HREF="004830.html">[X4U] Re: X4U Always starts up in OS 9 &amp; Dock at top
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4829">[ date ]</a>
+              <a href="thread.html#4829">[ thread ]</a>
+              <a href="subject.html#4829">[ subject ]</a>
+              <a href="author.html#4829">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> Sounds like your OSX system may not be functioning so the Mac is
+</I>&gt;<i> defaulting to the next available OS at startup.
+</I>&gt;<i>
+</I>&gt;<i> Do you get the Mac with a question mark for a few seconds at startup?
+</I>&gt;<i>
+</I>&gt;<i> Is OSX/OS9 on the same volume?
+</I>&gt;<i>
+</I>&gt;<i> Have you tried diagnostic tools over the drive's directory, like
+</I>&gt;<i> DiskWarrior or Apple's DiskUtility. Have you tried repairing 
+</I>&gt;<i> permissions?
+</I>&gt;<i>
+</I>&gt;<i> Is your OSX system clearly selected when you go into the OS9 &quot;Startup
+</I>&gt;<i> Disk&quot; Control Panel?
+</I>&gt;<i>
+</I>&gt;<i> Coj
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+&gt;<i> Howdy there X4Uers
+</I>&gt;<i>
+</I>&gt;<i> Every time I shut down then start up again, I get booted into OS 9,
+</I>&gt;<i> even when I go to startup disk and specify my OS X volume.
+</I>&gt;<i>
+</I>&gt;<i> Anyone have any ideas on this one? Hoping it's something real simple!
+</I>&gt;<i>
+</I>&gt;<i> Thanks a lot.
+</I>&gt;<i>
+</I>&gt;<i> Deb in Rhode Island
+</I>&gt;<i> -- 
+</I>
+Hi Brett
+
+Yep I was getting a folder with the little face blinking on and off. 
+Yep OS X and 9 are on the same volume. I did repair permissions and all 
+that other stuff and everything seems OK now. I don't shut down that 
+much anyway, just wondered about it when I did. Thank you for your 
+help.
+
+I found a way to put the dock at the top from Mac OS X Hints for Jaguar 
+(chapter 3) by Rob Griffiths, edited by David Pogue, I did a google 
+search &quot;OS X dock at top&quot; and got the whole chapter! You use terminal:
+
+1. Open Terminal.
+
+This program is in your Applications&#8594;Utilities folder.
+
+2. At the % prompt, type this: defaults write com.apple.Dock 
+orientation top (and
+then press Enter).
+
+See page 5 for an explanation. In this case, you&#8217;ve just issued the 
+magic command
+that puts the Dock at the top of the screen.
+
+3. Quit Terminal. Then, to make your change take effect, quit the Dock.
+
+One way is simply to log out and then log in again. If you don&#8217;t have 
+that kind of
+patience, open Process Viewer (a program in your Applications&#8594;Utilities 
+folder).
+
+Now sort the list by name (click the Name column) so you can easily 
+find Dock.
+Highlight Dock, and then choose Processes&#8594;Quit Process. The Dock quits 
+and
+restarts&#8212;and the Dock is now at the top of your screen.
+
+If you ever tire of the
+effect, you can always move the Dock back to a standard location by 
+Controlclicking
+its divider bar in choosing, for example, &#8220;Position at Right&#8221; from the
+contextual menu.
+
+Note: If you prefer keeping the Dock hidden, move the mouse just to the 
+bottom of the menu bar to
+make it slide back into view&#8212;not the very top of the screen
+
+I did it and it works great. It's kind of hard to get sometimes (it's a 
+small space right under the top menus), but I was always having the 
+hidden dock pop up when it was at the bottom at the most inopportune 
+times!
+&gt;<i>
+</I>Deb in Rhode Island
+========
+Intolerance is itself a form of violence and an obstacle to the growth 
+of a true democratic spirit.
+                                              ~ Mahatma Ghandi
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004850.html">[X4U] New Browser
+</A></li>
+	<LI>Next message: <A HREF="004830.html">[X4U] Re: X4U Always starts up in OS 9 &amp; Dock at top
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4829">[ date ]</a>
+              <a href="thread.html#4829">[ thread ]</a>
+              <a href="subject.html#4829">[ subject ]</a>
+              <a href="author.html#4829">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

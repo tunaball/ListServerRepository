@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] virex cron
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20virex%20cron&In-Reply-To=list-11753958%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000594.html">
+   <LINK REL="Next"  HREF="000596.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] virex cron</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20virex%20cron&In-Reply-To=list-11753958%40mail.ninewire.com"
+       TITLE="[X-Unix] virex cron">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Sun Mar 28 03:49:04 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000594.html">[X-Unix] Stopping the Webdav Exploit in Apache
+</A></li>
+        <LI>Next message: <A HREF="000596.html">[X-Unix] Stopping the Webdav Exploit in Apache
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#595">[ date ]</a>
+              <a href="thread.html#595">[ thread ]</a>
+              <a href="subject.html#595">[ subject ]</a>
+              <a href="author.html#595">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Mar 27, 2004, at 10:05 pm, lists3-200402 wrote:
+
+&gt;<i> does anyone know how to append a date to a summary for a virex cron 
+</I>&gt;<i> job?... i checked the virex 7.2.1 manual and it doesn't seem to have a 
+</I>&gt;<i> switch for that. here's my command:
+</I>&gt;<i>
+</I>&gt;<i> /usr/local/vscanx/vscanx --move /SERVER/VOLUME/VIREX_OUT/QUARANTINE 
+</I>&gt;<i> /SERVER/VOLUME/SHARE --recursive --unzip --atime-preserve 
+</I>&gt;<i> --ignore-links  --summary &gt;&gt; /SERVER/VOLUME/VIREX_OUT/SUMMARY.TXT
+</I>
+I think this should do it:
+   /usr/local/vscanx/vscanx --move /SERVER/VOLUME/VIREX_OUT/QUARANTINE 
+/SERVER/VOLUME/SHARE --recursive --unzip --atime-preserve 
+--ignore-links  --summary &gt;&gt; /SERVER/VOLUME/VIREX_OUT/SUMMARY.TXT &amp;&amp; 
+echo &quot;Finished at:&quot;  &gt;&gt; /SERVER/VOLUME/VIREX_OUT/SUMMARY.TXT &amp;&amp; date &gt;&gt; 
+/SERVER/VOLUME/VIREX_OUT/SUMMARY.TXT
+
+For the hard-of-wrapping, that's all one line. The &quot;&amp;&amp;&quot; means &quot;wait 
+until the previous command is finished and then run the command that 
+follows&quot;. I would personally prepend the date to the file, but you pays 
+your money &amp; takes your choice.
+
+Stroller.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000594.html">[X-Unix] Stopping the Webdav Exploit in Apache
+</A></li>
+	<LI>Next message: <A HREF="000596.html">[X-Unix] Stopping the Webdav Exploit in Apache
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#595">[ date ]</a>
+              <a href="thread.html#595">[ thread ]</a>
+              <a href="subject.html#595">[ subject ]</a>
+              <a href="author.html#595">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

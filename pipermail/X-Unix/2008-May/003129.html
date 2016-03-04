@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to REALLY kill Finder.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20REALLY%20kill%20Finder.&In-Reply-To=2D266F7F-57E3-460F-B601-3DCBD5189910%40myrealbox.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003128.html">
+   <LINK REL="Next"  HREF="003131.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to REALLY kill Finder.</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20REALLY%20kill%20Finder.&In-Reply-To=2D266F7F-57E3-460F-B601-3DCBD5189910%40myrealbox.com"
+       TITLE="[X-Unix] How to REALLY kill Finder.">ecrist at secure-computing.net
+       </A><BR>
+    <I>Fri May 23 22:25:24 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003128.html">[X-Unix] How to REALLY kill Finder.
+</A></li>
+        <LI>Next message: <A HREF="003131.html">[X-Unix] How to REALLY kill Finder.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3129">[ date ]</a>
+              <a href="thread.html#3129">[ thread ]</a>
+              <a href="subject.html#3129">[ subject ]</a>
+              <a href="author.html#3129">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On May 23, 2008, at 2:49 PM, Stroller wrote:
+
+&gt;<i> Hi there,
+</I>&gt;<i>
+</I>&gt;<i> I posted this question to <A HREF="http://discussions.apple.com">http://discussions.apple.com</A> before  
+</I>&gt;<i> realising that you guys will probably have some better answers. So  
+</I>&gt;<i> please excuse me in the (unlikely) event you read this twice.
+</I>&gt;<i>
+</I>&gt;<i> Last night I was converting a bunch of video files in Quicktime and  
+</I>&gt;<i> copying them to a samba server on the LAN (so I could play them on  
+</I>&gt;<i> my Linux-based media machine) when the Finder stopped responding and  
+</I>&gt;<i> I got the spinning beachball of death.
+</I>&gt;<i>
+</I>&gt;<i> The beachball appeared when I clicked on one of the files in Finder  
+</I>&gt;<i> and it tried to generate a preview in column-view. The media files  
+</I>&gt;<i> were fairly big ones (1 gig) and .mkv format (which seem  
+</I>&gt;<i> particularly processor-intensive to decode) and I'm pretty sure the  
+</I>&gt;<i> file in question was on the Samba server.
+</I>&gt;<i>
+</I>&gt;<i> So all in all everything seemed to be against the Finder creating  
+</I>&gt;<i> this preview and I figured it was going to take a long time to do  
+</I>&gt;<i> so, so I'd just force-relaunch the Finder and go back and open the  
+</I>&gt;<i> folder in a different view in order to copy it wherever it needed to  
+</I>&gt;<i> be.
+</I>&gt;<i>
+</I>&gt;<i> After doing so, though, Finder fails to restart - I've got no icons  
+</I>&gt;<i> on my desktop and I can't navigate to a folder of files to click on  
+</I>&gt;<i> the one I want to view.
+</I>&gt;<i>
+</I>&gt;<i> Often in the past when I've experienced this, typing `open /path/to/ 
+</I>&gt;<i> folder` in terminal has had the effect of forcing Finder to restart,  
+</I>&gt;<i> however on this occasion I get this error message:
+</I>&gt;<i> &quot;2008-05-23 18:11:07.383 open7567 LSOpenFromURLSpec() returned -600  
+</I>&gt;<i> for application (null) urls <A HREF="file://localhost/Applications/.&quot;">file://localhost/Applications/.&quot;</A>
+</I>&gt;<i>
+</I>&gt;<i> If I look for the process using `ps` I see the process name in  
+</I>&gt;<i> brackets:
+</I>&gt;<i>  $ ps -wwwwwx | grep Finder
+</I>&gt;<i>  5958 ?? E 0:00.00 (Finder)
+</I>&gt;<i>  $
+</I>&gt;<i> I presume the brackets indicate that Finder is behaving badly, but  
+</I>&gt;<i> `man ps` doesn't seem to explain exactly what they mean. Apparently  
+</I>&gt;<i> the &quot;E&quot; in the above line indicates that the process is trying to  
+</I>&gt;<i> exit.
+</I>&gt;<i>
+</I>&gt;<i> Anyway, I can't get any further using `kill -9 5958` or anything  
+</I>&gt;<i> else I've tried so far.
+</I>&gt;<i>
+</I>&gt;<i> The Finder icon is still showing in the Dock and if I right-click on  
+</I>&gt;<i> it I see &quot;Application not responding&quot; (greyed out), &quot;Hide&quot; and  
+</I>&gt;<i> &quot;Relaunch&quot;. Choosing &quot;Relaunch&quot; has no effect. Finder does not seem  
+</I>&gt;<i> to appear in Activity Monitor (showing &quot;All Processes&quot;) . If I open  
+</I>&gt;<i> the &quot;Force Quit Applications&quot; dialogue again the Finder is still  
+</I>&gt;<i> shown and highlighting it changes the button from &quot;Force Quit&quot; to  
+</I>&gt;<i> &quot;Relaunch&quot;, but clicking that has no effect (except that Finder  
+</I>&gt;<i> disappears from the lit of programs; it reappears if I close the  
+</I>&gt;<i> &quot;Force Quit&quot; window and reopen it from the Apple menu).
+</I>&gt;<i>
+</I>&gt;<i> Obviously I could sort this by rebooting my computer, but I really  
+</I>&gt;<i> don't want to do that right now. Can anyone suggest a way of  
+</I>&gt;<i> properly killing this process so that Finder can restart? (a way  
+</I>&gt;<i> that doesn't kill off all my active windows, that is!)
+</I>&gt;<i>
+</I>&gt;<i> Many thanks in advance for any suggestions,
+</I>
+
+I tried to post a reply earlier, but it was reject due to being &gt;5K.
+
+First, I would try to kill the process that's involved with  
+transferring or otherwise reading the file over the network.  Second,  
+if that fails, I'd try killing the process that's involved with  
+QuickLook.  I don't think this is internal to Finder itself, so there  
+should be a separate process.  reading through all of the output for  
+your user with ps should at least give you some clues as to what you  
+can try to kill along the way.  Unfortunately, the only thing you can  
+do is experiment.  The disturbing thing is that a kill -9 on Finder  
+isn't working.  You could try nice(ing) the processes you're  
+interested in save to get them the proc time so you can save your  
+work, but I'm afraid you may be stuck rebooting the system if all this  
+fails.
+
+Hope this helps.  Try posting a copy of a ps auxwwwww here, or at  
+least directly to me.
+
+-----
+Eric F Crist
+Secure Computing Networks
+
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003128.html">[X-Unix] How to REALLY kill Finder.
+</A></li>
+	<LI>Next message: <A HREF="003131.html">[X-Unix] How to REALLY kill Finder.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3129">[ date ]</a>
+              <a href="thread.html#3129">[ thread ]</a>
+              <a href="subject.html#3129">[ subject ]</a>
+              <a href="author.html#3129">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

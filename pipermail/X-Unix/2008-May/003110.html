@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] old port for ssh
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20old%20port%20for%20ssh&In-Reply-To=9088D4EF-D336-4CBF-9C32-1939E8202887%40myrealbox.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003109.html">
+   <LINK REL="Next"  HREF="003111.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] old port for ssh</H1>
+    <B>M K</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20old%20port%20for%20ssh&In-Reply-To=9088D4EF-D336-4CBF-9C32-1939E8202887%40myrealbox.com"
+       TITLE="[X-Unix] old port for ssh">mike at lvnv.com
+       </A><BR>
+    <I>Thu May  8 10:21:21 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003109.html">[X-Unix] old port for ssh
+</A></li>
+        <LI>Next message: <A HREF="003111.html">[X-Unix] old port for ssh
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3110">[ date ]</a>
+              <a href="thread.html#3110">[ thread ]</a>
+              <a href="subject.html#3110">[ subject ]</a>
+              <a href="author.html#3110">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On May 8, 2008, at 8:29 AM, Stroller wrote:
+
+&gt;<i>
+</I>&gt;<i> On 8 May 2008, at 03:38, M K wrote:
+</I>&gt;&gt;<i> ...
+</I>&gt;&gt;&gt;<i> The ssh command has the option to specify what version is used when
+</I>&gt;&gt;&gt;<i> connecting to a remote host.  I believe it's ssh -p &lt;port&gt; - 
+</I>&gt;&gt;&gt;<i> &lt;version&gt;
+</I>&gt;&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">username at host</A>, replace &lt;version&gt; with 1 or 2.  I think if you put  
+</I>&gt;&gt;&gt;<i> a 1
+</I>&gt;&gt;&gt;<i> there, things will work just fine.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> No luck... I tried it just to be sure.
+</I>&gt;&gt;<i> it has to be SSH v2
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> this is the error I get by the way...
+</I>&gt;&gt;<i> channel 0: open failed: resource shortage: Channel open failed
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> and like I said, it only happens in openSSH 4.6 and later...
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I'm sure it's bug in their SSH Daemon...so I need to get an old  
+</I>&gt;&gt;<i> port of OpenSSH
+</I>&gt;<i>
+</I>&gt;<i> It might just be that the client on your machine is trying to  
+</I>&gt;<i> enforce security standards which weren't available when the older  
+</I>&gt;<i> server was written. It may not be the version you have to change,  
+</I>&gt;<i> but something else - look, for example, at the variety of -o options  
+</I>&gt;<i> in `man ssh`.
+</I>&gt;<i>
+</I>&gt;<i> You might find that `ssh -v hostname` (or `ssh -v -v hostname` or  
+</I>&gt;<i> `ssh -v -v -v hostname`) gives more information about the problem  
+</I>&gt;<i> and enables you to find a workaround (using the current client).
+</I>&gt;<i>
+</I>&gt;<i> Stroller.
+</I>&gt;<i>
+</I>&gt;<i> __________
+</I>
+
+thanks, those are good ideas.
+
+I've already sent them the ssh -vvv &lt;ip&gt;  output so they could see  
+where everything was getting gummed up...
+I haven't heard back from them...
+
+but in the meantime, I have to shell into another box then shell into  
+the switch...it's just a pain...
+
+I guess I could look at it like it's inherently more secure ...  &lt;???&gt;
+
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003109.html">[X-Unix] old port for ssh
+</A></li>
+	<LI>Next message: <A HREF="003111.html">[X-Unix] old port for ssh
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3110">[ date ]</a>
+              <a href="thread.html#3110">[ thread ]</a>
+              <a href="subject.html#3110">[ subject ]</a>
+              <a href="author.html#3110">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

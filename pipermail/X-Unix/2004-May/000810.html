@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Application 'launch-cache'...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Application%20%27launch-cache%27...&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000809.html">
+   <LINK REL="Next"  HREF="000811.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Application 'launch-cache'...</H1>
+    <B>Kuestner, Bjoern</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Application%20%27launch-cache%27...&In-Reply-To="
+       TITLE="[X-Unix] Application 'launch-cache'...">Bjoern.Kuestner at drkw.com
+       </A><BR>
+    <I>Wed May 19 01:29:10 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000809.html">new PowerMac G5 list
+</A></li>
+        <LI>Next message: <A HREF="000811.html">[X-Unix] Application 'launch-cache'...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#810">[ date ]</a>
+              <a href="thread.html#810">[ thread ]</a>
+              <a href="subject.html#810">[ subject ]</a>
+              <a href="author.html#810">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+&gt;&gt;&gt;<i> is there such thing as a type of cache (within the os / system) memory
+</I>&gt;&gt;&gt;<i> that could be increased so that a large application that is 
+</I>&gt;&gt;&gt;<i> continually being launched successively would load faster?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Yes, I believe that this has been built into OS X since Jaguar, but I 
+</I>&gt;&gt;<i> don't know any way for the user to influence it.
+</I>&gt;<i>
+</I>&gt;<i>I think Jerry is referring to the pre-build scheme. Which is the same 
+</I>&gt;<i>thing only different. It just eliminates the dynamic linking phase and 
+</I>&gt;<i>goes back to the old stand-by of statically linked programs. It doesn't 
+</I>&gt;<i>load the program into any kind of cache.
+</I>
+OS X also does actual caching. Run any of the available applications to fix
+your prebindings and you should see a speedup at launch if the app was not
+prebound already.
+
+Then start the app. Quit the app. Start it again and it should load
+significantly faster. The effect is quite noticeable on my iBook for many
+apps. Then if I don't use the app for a while starting it again takes just
+as long because it's not in the cache anymore.
+
+OS X uses all available RAM for caching all sorts of things including
+application launches. That's what also confuses people at times when they
+have 1 GB of memory installed and run a memory monitor. After a while RAM
+will fill up to around 90% depending on their work. So they think they have
+a memory leak or some app hogging RAM. But it's just OS X for instance
+keeping stuff in RAM although it's not used anymore just in case the user
+decides otherwise and does use it again. If there's a better way to use the
+RAM for something else OS X will overwrite it. 
+
+&gt;&gt;<i> and the rendering software takes as long to launch as it does to
+</I>&gt;&gt;<i> actually do it's task...
+</I>&gt;<i>
+</I>&gt;<i> Why not leave the rendering app running?
+</I>
+He can't. I don't believe Xgrid works that way.
+
+What about putting a smaller &quot;agent application&quot; inbetween. The agent is
+started and quit by Xgrid and then connects to a continously running &quot;worker
+thread&quot; on the machine.
+
+Just a thought,
+
+Bj&#246;rn
+
+
+
+
+----------
+Check out the Mac OS X email list FAQ
+<A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+
+To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-off at lists.themacintoshguy.com</A>&gt;
+To switch to the DIGEST mode, E-mail to
+&lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-digest at lists.themacintohguy.com</A>&gt;
+Need help from a real person? Try.
+&lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-request at lists.themacintoshgy.com</A>&gt;
+
+----------
+$14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your Ma ISP Serious Mac Internet Solutions From NineWire!   <A HREF="http://macinternetacces.com">http://macinternetacces.com</A>
+
+DVIator   | Run Dual ADC displays on your G4 or just one on an older Ma! 
+Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+
+   Support   | Support this list by clicking here before you buy!
+  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+
+OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s -
+<A HREF="http://www.oxfaq.com">http://www.oxfaq.com</A>
+
+
+--------------------------------------------------------------------------------
+The information contained herein is confidential and is intended solely for the
+addressee. Access by any other party is unauthorised without the express
+written permission of the sender. If you are not the intended recipient, please
+contact the sender either via the company switchboard on +44 (0)20 7623 8000, or
+via e-mail return. If you have received this e-mail in error or wish to read our
+e-mail disclaimer statement and monitoring policy, please refer to 
+<A HREF="http://www.drkw.com/disc/email/">http://www.drkw.com/disc/email/</A> or contact the sender. 3167
+--------------------------------------------------------------------------------
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000809.html">new PowerMac G5 list
+</A></li>
+	<LI>Next message: <A HREF="000811.html">[X-Unix] Application 'launch-cache'...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#810">[ date ]</a>
+              <a href="thread.html#810">[ thread ]</a>
+              <a href="subject.html#810">[ subject ]</a>
+              <a href="author.html#810">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

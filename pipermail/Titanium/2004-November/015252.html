@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Cross Platform Networking
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Cross%20Platform%20Networking&In-Reply-To=EBF3886D-4170-11D9-86D5-000393A49120%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="015251.html">
+   <LINK REL="Next"  HREF="015247.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Cross Platform Networking</H1>
+    <B>Chris Olson</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Cross%20Platform%20Networking&In-Reply-To=EBF3886D-4170-11D9-86D5-000393A49120%40mac.com"
+       TITLE="[Ti] Cross Platform Networking">chris.olson at astcomm.net
+       </A><BR>
+    <I>Sun Nov 28 21:24:54 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="015251.html">[Ti] Cross Platform Networking
+</A></li>
+        <LI>Next message: <A HREF="015247.html">[Ti] PrinterSharing Mac/Windows
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15252">[ date ]</a>
+              <a href="thread.html#15252">[ thread ]</a>
+              <a href="subject.html#15252">[ subject ]</a>
+              <a href="author.html#15252">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Nov 28, 2004, at 1:08 PM, Sambouka wrote:
+
+&gt;<i> - Home PC connected to a DSL line broadcasting a wireless network 
+</I>&gt;<i> through Airport Express
+</I>&gt;<i> - 2 PowerBooks
+</I>&gt;<i> - 1 PC Laptop
+</I>&gt;<i> -  Another Airport Express to amplify the signal.
+</I>
+I don't understand this.  So you got the home PC connected to the DSL 
+modem on one ethernet interface, with a second ethernet interface 
+hooked to the AirPort Express, and then you're using internet sharing 
+on the PC?  Or you got the AirPort Express hooked to the DSL modem, and 
+all machines are wireless?  I assume the second situation.
+
+The first thing to check is your workgroup name if you have Windows 
+PC's involved.  To change it in Mac OS X, go to /Applications/Utilities 
+and open the Directory Access application.  Click to authenticate, then 
+highlight the SMB option and click on the Configure button.  You'll see 
+where to change the workgroup name.  Using SMB (Windows networking 
+protocol), no machine will see any other unless they're on the same 
+workgroup.  On Windows I think you right click on My Computer and 
+select properties or something like that to find it.  It'll make you 
+reboot if you change the workgroup name - typical Windows stuff.
+
+The next thing to make certain of is that all machines are on the same 
+subnet.  If your AirPort Express is using IP 10.0.0.1 (default), then 
+all machines on the network must have IP addresses of 10.0.0.x.
+
+Beyond that, it should &quot;just work&quot;
+--
+Chris
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="015251.html">[Ti] Cross Platform Networking
+</A></li>
+	<LI>Next message: <A HREF="015247.html">[Ti] PrinterSharing Mac/Windows
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15252">[ date ]</a>
+              <a href="thread.html#15252">[ thread ]</a>
+              <a href="subject.html#15252">[ subject ]</a>
+              <a href="author.html#15252">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

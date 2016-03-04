@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] PPP Modem Init
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20PPP%20Modem%20Init&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010922.html">
+   <LINK REL="Next"  HREF="010924.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] PPP Modem Init</H1>
+    <B>Jason Tertadian</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20PPP%20Modem%20Init&In-Reply-To="
+       TITLE="[Ti] PPP Modem Init">haiku23 at mac.com
+       </A><BR>
+    <I>Thu Oct 23 17:44:25 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010922.html">[Ti] bad luck with power adapter
+</A></li>
+        <LI>Next message: <A HREF="010924.html">O.T. - Mac OS 10.3 up to date
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10923">[ date ]</a>
+              <a href="thread.html#10923">[ thread ]</a>
+              <a href="subject.html#10923">[ subject ]</a>
+              <a href="author.html#10923">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Loren ...
+
+The modem scripts are located in /Library/Modem Scripts.
+
+Locate the one that corresponds to your selected modem and edit it in BBedit or TextEdit.
+The actual modification of these files is tricky so I'd recommend working with a copy of the original.
+
+There's a big block of text at the beginning of the file that's commented out with exclamation points.  Under that block look for a section that starts with a line containing &quot;@LABEL 2.&quot;  A few lines below that is a line that starts with &quot;write.&quot;  This line is where you want to put your init string.  It should be inserted after the &quot;AT&quot; and before the &quot;\13.&quot;
+
+In my case, since I have a v.92 US Robotics my line in the file looks like this:
+
+    write &quot;AT&amp;F1S11=5 +PIG=1 +PMH=1 +PQC=3\13&quot;13
+
+(You'll notice the same S11 command in there that you're trying to use.  I have mine set to 5ms so it dials super fast.)
+
+
+
+Apple actually has a doc posted on their Knowledge Base about the modification of init strings.  It's article 42657.
+
+Let me know if this helped at all.
+... jsn
+
+
+
+On Thursday, October 23, 2003, at 12:20PM, Loren Schooley &lt;<A HREF="../../../mailman/listinfo/titanium.html">loren at flash.net</A>&gt; wrote:
+
+&gt;<i>Hiya cats,
+</I>&gt;<i>I have been searching online and in the help menus, and to no avail, am I
+</I>&gt;<i>able figure out how to add an init string to my PPP options. I tried writing
+</I>&gt;<i>a mini-script in /Library/Terminal Scripts and just using a basic S11=35
+</I>&gt;<i>string as a test, but I don't think it works that way.
+</I>&gt;<i>
+</I>&gt;<i>Anyone point me in the righteous direction?
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010922.html">[Ti] bad luck with power adapter
+</A></li>
+	<LI>Next message: <A HREF="010924.html">O.T. - Mac OS 10.3 up to date
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10923">[ date ]</a>
+              <a href="thread.html#10923">[ thread ]</a>
+              <a href="subject.html#10923">[ subject ]</a>
+              <a href="author.html#10923">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

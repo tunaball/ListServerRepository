@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] &quot;Bad CPU type&quot;
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20%22Bad%20CPU%20type%22&In-Reply-To=list-13954602%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000929.html">
+   <LINK REL="Next"  HREF="000932.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] &quot;Bad CPU type&quot;</H1>
+    <B>Juan Manuel Palacios</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20%22Bad%20CPU%20type%22&In-Reply-To=list-13954602%40mail.ninewire.com"
+       TITLE="[X-Unix] &quot;Bad CPU type&quot;">jmpalaciosp at eml.cc
+       </A><BR>
+    <I>Mon Jun 14 13:51:18 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000929.html">[X-Unix] &quot;Bad CPU type&quot;
+</A></li>
+        <LI>Next message: <A HREF="000932.html">xclock
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#931">[ date ]</a>
+              <a href="thread.html#931">[ thread ]</a>
+              <a href="subject.html#931">[ subject ]</a>
+              <a href="author.html#931">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jun 14, 2004, at 12:36 PM, Victor Eijkhout wrote:
+
+&gt;&gt;<i> 	Aha! Here, this next line calls gcc with the &quot;-fast&quot; optimization 
+</I>&gt;&gt;<i> flag. Well, it turns out that Apple's gcc default configuration 
+</I>&gt;&gt;<i> causes this flag to produce binaries *exclusively&quot; for the G5 
+</I>&gt;&gt;<i> architecture... how do you like that??
+</I>&gt;<i>
+</I>&gt;<i> Thank you so much for finding that. I don't think I'd've found it on 
+</I>&gt;<i> my own.
+</I>
+	Hey, my pleasure! That's exactly what this mailing lists are for...
+
+&gt;<i>
+</I>&gt;<i> I've now replaced &quot;-fast&quot; by &quot;-O2&quot; in the makefile. Simplest solution 
+</I>&gt;<i> and reasonably portable.
+</I>
+	You are correct my friend, &quot;-O2&quot; is more portable than &quot;-fast 
+-mcpu=7450&quot; because, even though the latter encompasses the widest set 
+of Apple architectures, it is still an Apple only optimization flag; a 
+Makefile with those choices will fail miserably, say, on Linux. Have 
+you considered the portable topmost &quot;-O3&quot; flag? Reportedly it is the 
+highest optimization, though of course you may ask yourself if you 
+really need it when you start encountering compilation time trade offs.
+
+&gt;<i>
+</I>&gt;<i> If I understood the autoconf shit (:-/) better I would repair that: 
+</I>&gt;<i> from the log file you can clearly see that it compiles some test file 
+</I>&gt;<i> with &quot;-fast&quot;, and if that succeeds it accepts the option. It should 
+</I>&gt;<i> actually run it.
+</I>
+	Can't say much here because, honestly, haven't even touched a single 
+autoconf script in my life (read tons, of course)... some would praise 
+me and say I'm smart for that, some would say I'm an ignorant newbie... 
+maybe I'm both! :-) But the one thing I can tell you, is that such test 
+would have succeeded on a G5 and your code would still  *not* be 
+portable; so, as you wisely say, maybe just sticking to the &quot;-O&quot; set of 
+optimization flags is the best solution
+
+&gt;<i>
+</I>&gt;<i> Btw, elsewhere someone suggested doing &quot;otool -h&quot; on the executable. 
+</I>&gt;<i> That gave me (with /usr/include/mach/machine.h) the information that 
+</I>&gt;<i> the executable was for PowerPC 970.
+</I>
+	Which is exactly the technical name of the G5: cputype 18 
+(CPU_TYPE_POWERPC) and cpusubtype 18 (CPU_SUBTYPE_POWERPC_970); with 
+&quot;-fast -mcpu=7450&quot; the binary becomes cputype 18 and cpusubtype 0 
+(CPU_SUBTYPE_POWERPC_ALL).
+
+&gt;<i>
+</I>&gt;<i> Anyway. We're off and running. Thanks again!
+</I>
+	I'm glad you are, pleasure helping you! Regards,...
+
+
+		Juan
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000929.html">[X-Unix] &quot;Bad CPU type&quot;
+</A></li>
+	<LI>Next message: <A HREF="000932.html">xclock
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#931">[ date ]</a>
+              <a href="thread.html#931">[ thread ]</a>
+              <a href="subject.html#931">[ subject ]</a>
+              <a href="author.html#931">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

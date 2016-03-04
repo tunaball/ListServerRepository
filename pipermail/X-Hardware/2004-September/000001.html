@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-HW] OSX and Formac Proformance
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-hardware%40listserver.themacintoshguy.com?Subject=%5BX-HW%5D%20OSX%20and%20Formac%20Proformance&In-Reply-To=EF0779C4-0663-11D9-950E-000A95AAF3E8%40frisurf.no">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000000.html">
+   <LINK REL="Next"  HREF="000002.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-HW] OSX and Formac Proformance</H1>
+    <B>Cloyce D. Spradling</B> 
+    <A HREF="mailto:x-hardware%40listserver.themacintoshguy.com?Subject=%5BX-HW%5D%20OSX%20and%20Formac%20Proformance&In-Reply-To=EF0779C4-0663-11D9-950E-000A95AAF3E8%40frisurf.no"
+       TITLE="[X-HW] OSX and Formac Proformance">cloyce+xhard at headgear.org
+       </A><BR>
+    <I>Tue Sep 14 08:57:29 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000000.html">[X-HW] OSX and Formac Proformance
+</A></li>
+        <LI>Next message: <A HREF="000002.html">[X-HW] New List Server Up and Running.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1">[ date ]</a>
+              <a href="thread.html#1">[ thread ]</a>
+              <a href="subject.html#1">[ subject ]</a>
+              <a href="author.html#1">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Tue, Sep 14, 2004 at 05:37:06PM +0200, Are Hansen wrote:
+
+:<i> Searching the net, I found a solution: go in to Terminal, and key the 
+</I>:<i> following:
+</I>
+:<i> sudo nvram boot-args=&quot;romndrv=1&quot;
+</I>
+:<i> But there is a Catch-22 here: I can only do this by booting in OSX!
+</I>
+That's true for that command, but there is hope!  What this command does
+is poke a value into the OpenBoot PROM NVRAM.  And you can do that from the
+OBP prompt!
+
+So right after power-on, enter OpenBoot by holding down Option-OpenApple-O-F.
+Mash them together and hold them until you get to the prompt.  There's
+some banner info; on my TiBook it looks like
+
+   Apple PowerBook3,5 4.5.3f2 BootROM build on 10/25/02 at 10:31:30
+   Copyright 1994-2002 Apple Computer, Inc.
+   All Rights Reserved.
+
+   Welcome to Open Firmware, the system time and date is: 23:49:14 09/14/2004
+     The battery capacity is: 81 percent
+
+   To continue booting, type &quot;mac-boot&quot; and press return.
+   To shut down, type &quot;shut-down&quot; and press return.
+
+    ok
+   0 &gt;
+
+The &quot;0 &gt;&quot; is the prompt.
+
+Enter
+
+  setenv boot-args romndrv=1
+  printenv boot-args
+  mac-boot
+
+The printenv is just so you can verify that it was set to what you want.
+You can look at all the variables if you do just 'printenv' by itself.
+
+It's possible to put this in the nvramrc, where it should in theory always
+be applied, but I'm not familiar enough with Apple's OBP to tell you how
+to do it without screwing stuff up.
+
+Good luck!
+--
+Cloyce
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000000.html">[X-HW] OSX and Formac Proformance
+</A></li>
+	<LI>Next message: <A HREF="000002.html">[X-HW] New List Server Up and Running.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1">[ date ]</a>
+              <a href="thread.html#1">[ thread ]</a>
+              <a href="subject.html#1">[ subject ]</a>
+              <a href="author.html#1">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-hardware.html">More information about the X-Hardware
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

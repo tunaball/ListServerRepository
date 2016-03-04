@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Can't rm or mv Library/Preferences/*.plist files?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20Can%27t%20rm%20or%20mv%20Library/Preferences/%2A.plist%20files%3F&In-Reply-To=%3C572A8485-6DF6-45FD-92FD-01F3180F7BDD%40stellar.eclipse.co.uk%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="003457.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X-Unix] Can't rm or mv Library/Preferences/*.plist files?</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20Can%27t%20rm%20or%20mv%20Library/Preferences/%2A.plist%20files%3F&In-Reply-To=%3C572A8485-6DF6-45FD-92FD-01F3180F7BDD%40stellar.eclipse.co.uk%3E"
+       TITLE="[X-Unix] Can't rm or mv Library/Preferences/*.plist files?">stroller at stellar.eclipse.co.uk
+       </A><BR>
+    <I>Tue Jan 28 00:13:01 PST 2014</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="003457.html">[X-Unix] Can't rm or mv Library/Preferences/*.plist files?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3456">[ date ]</a>
+              <a href="thread.html#3456">[ thread ]</a>
+              <a href="subject.html#3456">[ subject ]</a>
+              <a href="author.html#3456">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi there,
+
+Having recently upgraded to Mavericks, one of the apps I use regularly is crashing a lot, so I want to remove the Preferences (and Application Support) files and see if it behaves any better. Devs and other users all tell me that this build works for them on Mavericks.
+
+I created a directory in my homedir and moved the files in the normal way:
+
+  mkdir MyPrefs
+  ls Library/Preferences/*appname*.plist
+  mv Library/Preferences/*appname*.plist MyPrefs
+
+But as soon as I restarted the app, it had remembered my details, and was trying to log on as me to my default server - not what I expected!
+
+When I checked again, Library/Preferences/*appname*.plist was present, and it was exactly the same&#185; as the plist I'd just backed up.
+
+I think I noticed this behaviour under Lion 10.7 - it annoyed me then, but I ignored it for the time being. With Mavericks I feel a bit more committed to OS X, and I want to find out what's going on - could anyone possibly explain please?
+
+I assume that the app is recovering the preferences from a cache directory or something - where is it, and what purpose does it serve, please?
+
+Thanks in advance for any advice,
+
+Stroller.
+
+
+
+
+&#185; Near enough - I had to `plutil -convert xml1 *plist` and run a diff, to find that the only change was today's date, seeming to indicate when the app had been last run. I.E. the preferences file had been re-created when I launched the app, and saved when I quit it.
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="003457.html">[X-Unix] Can't rm or mv Library/Preferences/*.plist files?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3456">[ date ]</a>
+              <a href="thread.html#3456">[ thread ]</a>
+              <a href="subject.html#3456">[ subject ]</a>
+              <a href="author.html#3456">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

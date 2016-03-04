@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Unlinking a file... illegal characters?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Unlinking%20a%20file...%20illegal%20characters%3F&In-Reply-To=775a7167ce0d5cb91a0cfa8fb3f33d95%40myrealbox.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001555.html">
+   <LINK REL="Next"  HREF="001560.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Unlinking a file... illegal characters?</H1>
+    <B>Eugene</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Unlinking%20a%20file...%20illegal%20characters%3F&In-Reply-To=775a7167ce0d5cb91a0cfa8fb3f33d95%40myrealbox.com"
+       TITLE="[X-Unix] Unlinking a file... illegal characters?">list-themacintoshguy at fsck.net
+       </A><BR>
+    <I>Thu Feb 24 17:23:37 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001555.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+        <LI>Next message: <A HREF="001560.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1559">[ date ]</a>
+              <a href="thread.html#1559">[ thread ]</a>
+              <a href="subject.html#1559">[ subject ]</a>
+              <a href="author.html#1559">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Fri, Feb 25, 2005 at 12:14:17AM +0000, Stroller wrote:
+:<i> 
+</I>:<i> I have a file that I don't seem to be able to remove from the trash.  
+</I>:<i> Emptying the trash simply doesn't work - nothing happens, you still see  
+</I>:<i> paper in the basket - and I seem to be unable to remove it from the  
+</I>:<i> command line, as shown:
+</I>:<i> 
+</I>:<i>   $ rm -rf /Volumes/CLEARLIGHT/.Trashes/
+</I>:<i>   rm:  
+</I>:<i> /Volumes/CLEARLIGHT/.Trashes//501/legoland/ 
+</I>:<i> e&#204;&#128;y&#204;&#136;y&#204;&#136;y&#204;&#136;vk&#226;&#144;&#128;&#226;&#144;&#128;..&#226;&#144;&#128;&#226;&#144;&#128;: File name too long
+</I>:<i>   rm: /Volumes/CLEARLIGHT/.Trashes//501/legoland: Directory not empty
+</I>:<i>   rm: /Volumes/CLEARLIGHT/.Trashes//501: Directory not empty
+</I>:<i>   rm: /Volumes/CLEARLIGHT/.Trashes/: Directory not empty
+</I>:<i>
+</I>[...]
+:<i> 
+</I>:<i> The file originated on a customer's Windows box, which I backed-up by  
+</I>:<i> booting to MandrakeMove &amp; `cp -Rf /mnt/windows/* /path/to/Clearlight`.  
+</I>:<i> I guess the file has become corrupt at some point - I've tried removing  
+</I>:<i> it under Lunix, Windows &amp; Mac OS X, but all so far to no avail. If I  
+</I>:<i> delete it in Windows it ends up in a Recycler directory which I then am  
+</I>:<i> unable to `rm -rf`. Occasionally, if I boot to Windows with this drive  
+</I>:<i> plugged in the firewire bus, Windows will complain that the drive needs  
+</I>:<i> repairing &amp; will checkdisk it, but the file still remains.
+</I>:<i> 
+</I>:<i> Any suggestions?
+</I>
+Try deleting as root?
+
+	$ sudo rm -rf /Volumes/CLEARLIGHT/.Trashes/
+
+
+-- 
+Eugene Lee
+<A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001555.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+	<LI>Next message: <A HREF="001560.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1559">[ date ]</a>
+              <a href="thread.html#1559">[ thread ]</a>
+              <a href="subject.html#1559">[ subject ]</a>
+              <a href="author.html#1559">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

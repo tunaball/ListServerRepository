@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Deleting pesky files
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Deleting%20pesky%20files&In-Reply-To=1112314207.424c915fc7b61%40webmail.colorado.edu">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004362.html">
+   <LINK REL="Next"  HREF="004364.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Deleting pesky files</H1>
+    <B>John Daschbach</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Deleting%20pesky%20files&In-Reply-To=1112314207.424c915fc7b61%40webmail.colorado.edu"
+       TITLE="[X4U] Deleting pesky files">jldasch at mac.com
+       </A><BR>
+    <I>Sat Apr  2 17:13:57 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004362.html">[X4U] Blocking ports from dialup interface
+</A></li>
+        <LI>Next message: <A HREF="004364.html">[X4U] OT-Applecare activation question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4363">[ date ]</a>
+              <a href="thread.html#4363">[ thread ]</a>
+              <a href="subject.html#4363">[ subject ]</a>
+              <a href="author.html#4363">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Have you tried deleting them from a terminal?  e.g.
+
+cd /Users/myhome/Desktop
+rm -r -f PeskyFolder
+
+or
+
+sudo rm -r -f PeskFolder
+
+Do you run an antivirus program.  I started to have this problem at 
+work, trying to eject a portable drive and getting the in use error.  
+Using 'top' in a terminal showed that Norton anti virus was busy 
+working on the portable drive.  Once I made the anti-virus on demand 
+only the problem went away.
+
+Although I have not done it on OS X, dropping into single user mode 
+might work.  As root (and perhaps sudo depending on how it's setup) you 
+can
+
+/sbin/init 1
+
+from a terminal, which should leave you with a non-gui console session. 
+  Generally most file systems are unmounted when you do this, which 
+might help.   The as root (or sudo) you could delete as above.
+
+Note that names which work in the Mac world can sometimes be a real 
+pain in the Unix world.  For instance, if you have any file/folder 
+beginning with a '-' life is very hard, or one with ' in it.  Spaces 
+are not fun but easy to quote or escape around.   I'm sure this doesn't 
+sound fun, but one of the really great things about Mac OS X is that 
+it's Unix at the core, and Unix started from extremely bright minds and 
+has a long development history.
+
+-John
+
+
+On Mar 31, 2005, at 4:10 PM, <A HREF="../../../mailman/listinfo/x4u.html">Kevin.Hahn at colorado.edu</A> wrote:
+
+&gt;<i> I can't move or delete the files, it won't let me do anything with 
+</I>&gt;<i> them but let
+</I>&gt;<i> them sit on the desktop in various different locations on the desktop, 
+</I>&gt;<i> no
+</I>&gt;<i> folders on the desktop, no moving them to a shared folder, no doing 
+</I>&gt;<i> anything
+</I>&gt;<i> with them but looking at them and wanting them to go away.
+</I>&gt;<i>
+</I>&gt;<i> Kevin
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i> Message: 6
+</I>&gt;&gt;<i> Date: Thu, 31 Mar 2005 16:23:13 -0500
+</I>&gt;&gt;<i> From: Mark Des Cotes &lt;<A HREF="../../../mailman/listinfo/x4u.html">mark at astroprinting.com</A>&gt;
+</I>&gt;&gt;<i> Subject: Re: [X4U] Deleting pesky files
+</I>&gt;&gt;<i> To: &quot;A place to discuss Mac OS X for the casual user.&quot;
+</I>&gt;&gt;<i> 	&lt;<A HREF="../../../mailman/listinfo/x4u.html">x4u at listserver.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;<i> Message-ID: &lt;<A HREF="../../../mailman/listinfo/x4u.html">b00025ffdaba42d859d87d05f4e4dcbb at astroprinting.com</A>&gt;
+</I>&gt;&gt;<i> Content-Type: text/plain; charset=US-ASCII; format=flowed
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> If your machine is capable of booting into OS9 you could do that and
+</I>&gt;&gt;<i> delete the files from there. Otherwise try placing the files in your
+</I>&gt;&gt;<i> Public folder then logging in under a different User and delete them
+</I>&gt;&gt;<i> from there.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Mark Des Cotes
+</I>&gt;&gt;<i> Systems Manager/Graphic Designer
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Astro Printing Service (Cornwall) Ltd.
+</I>&gt;&gt;<i> 3308 Second Street East
+</I>&gt;&gt;<i> Cornwall Ontario Canada  K6H 6J8
+</I>&gt;&gt;<i> T (613) 932-9281 Ext 106,  F (613) 932-1052
+</I>&gt;&gt;<i> www.astroprinting.com
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X4U mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">X4U at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">http://listserver.themacintoshguy.com/mailman/listinfo/x4u</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random 
+</I>&gt;<i> stuff:
+</I>&gt;<i>          <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004362.html">[X4U] Blocking ports from dialup interface
+</A></li>
+	<LI>Next message: <A HREF="004364.html">[X4U] OT-Applecare activation question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4363">[ date ]</a>
+              <a href="thread.html#4363">[ thread ]</a>
+              <a href="subject.html#4363">[ subject ]</a>
+              <a href="author.html#4363">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

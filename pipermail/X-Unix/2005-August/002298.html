@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Bus Error with DarwinPorts app
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Bus%20Error%20with%20DarwinPorts%20app&In-Reply-To=6849acc805081721095e3984bb%40mail.gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002297.html">
+   <LINK REL="Next"  HREF="002301.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Bus Error with DarwinPorts app</H1>
+    <B>Philip J Robar</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Bus%20Error%20with%20DarwinPorts%20app&In-Reply-To=6849acc805081721095e3984bb%40mail.gmail.com"
+       TITLE="[X-Unix] Bus Error with DarwinPorts app">pjrobar at areyoureallythatstupid.org
+       </A><BR>
+    <I>Wed Aug 17 22:57:34 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002297.html">[X-Unix] Bus Error with DarwinPorts app
+</A></li>
+        <LI>Next message: <A HREF="002301.html">[X-Unix] cups
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2298">[ date ]</a>
+              <a href="thread.html#2298">[ thread ]</a>
+              <a href="subject.html#2298">[ subject ]</a>
+              <a href="author.html#2298">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Aug 17, 2005, at 11:09 PM, ~flipper wrote:
+
+
+&gt;<i> For a couple years (running Jag) I used a little executable called  
+</I>&gt;<i> chmdump ...
+</I>&gt;<i>
+</I>&gt;<i> I knuckle under, do the install, by the book, and on any run of the
+</I>&gt;<i> exe, i get: Bus Error
+</I>&gt;<i>
+</I>&gt;<i> What Bus, what Error?
+</I>
+
+The memory bus. Data is being written or read that is not aligned  
+correctly with the chunks that your computer's memory is broken upinto.
+
+Simplifying greatly, lets say the program in question is trying to  
+read or write four chunks of data and that your computer says that  
+all such data can only be read from or written to at even multiples  
+of four: 0, 4, 8, ...  If the errant program tries to read or write  
+the data at position one, for instance, the computer's hardware  
+catches the error and reports a bus error. (If the program tried to  
+read or write memory it didn't own it would report a segmentation  
+fault.)
+
+Something has changed in Tiger, most likely the compiler, that is now  
+exposing an error in this program that has been there all along.
+
+Since you didn't know what a bus error is I'm assuming that you're  
+not a programmer. You need to get a programmer to find and fix the  
+problem for you or report the problem to the author(s) and wait for  
+them to fix it.
+
+
+Phil
+--
+&quot;Voice or no voice, the people can always be brought to the bidding  
+of the leaders. That is easy. All you have to do is tell them they  
+are being attacked, and denounce the pacifists for lack of patriotism  
+and exposing the country to greater danger. It works the same in any  
+country.&quot; - Hermann Goering
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002297.html">[X-Unix] Bus Error with DarwinPorts app
+</A></li>
+	<LI>Next message: <A HREF="002301.html">[X-Unix] cups
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2298">[ date ]</a>
+              <a href="thread.html#2298">[ thread ]</a>
+              <a href="subject.html#2298">[ subject ]</a>
+              <a href="author.html#2298">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

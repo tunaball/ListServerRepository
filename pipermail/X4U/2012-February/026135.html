@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Permissions, Networking and Lion
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX4U%5D%20Permissions%2C%20Networking%20and%20Lion&In-Reply-To=%3Cp06240812cb594f2aa04c%40%5B192.168.0.17%5D%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="026126.html">
+   <LINK REL="Next"  HREF="026124.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X4U] Permissions, Networking and Lion</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX4U%5D%20Permissions%2C%20Networking%20and%20Lion&In-Reply-To=%3Cp06240812cb594f2aa04c%40%5B192.168.0.17%5D%3E"
+       TITLE="[X4U] Permissions, Networking and Lion">david.ledger at ivdcs.co.uk
+       </A><BR>
+    <I>Thu Feb  9 03:00:17 PST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="026126.html">[X4U] Permissions, Networking and Lion
+</A></li>
+        <LI>Next message: <A HREF="026124.html">[X4U] Cell phone
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#26135">[ date ]</a>
+              <a href="thread.html#26135">[ thread ]</a>
+              <a href="subject.html#26135">[ subject ]</a>
+              <a href="author.html#26135">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 12:19 -0500 8/2/12, <A HREF="../../../mailman/listinfo/x4u.html">jetlag11 at mac.com</A> wrote:
+&gt;<i>On Feb 7, 2012, at 5:42 PM, David Ledger wrote:
+</I>
+&gt;<i>When you connect to the other Mac, if you do so as the user that 
+</I>&gt;<i>owns the files and folders you want to access, there should be no 
+</I>&gt;<i>problem. Copying a file across and getting an empty file means that 
+</I>&gt;<i>the destination folder is writable by the user doing it, so the file 
+</I>&gt;<i>is created, but the file gets permissions that don't allow the user 
+</I>&gt;<i>to write the contents into it. We need to know more to diagnose the 
+</I>&gt;<i>problem. Have you made any changes to try to help the situation?
+</I>&gt;<i>===============
+</I>&gt;<i>David -
+</I>
+&gt;<i>Thank you for your assistance. I have two Macs (that we're talking 
+</I>&gt;<i>about): early MacBook (MB) running 10.6.8 where I'm user J1, and 
+</I>&gt;<i>recent Mini (Mini) running 10.7.3 where I'm J2. I want to be able to 
+</I>&gt;<i>freely move and modify Documents folder items between the two 
+</I>&gt;<i>systems. They're connected over a local network.
+</I>
+&gt;<i>(1 10.6-&gt;10.7) Today, I was sitting at Mini as J2. I remotely 
+</I>&gt;<i>successfully logged into MB as J1, and J1's document folder contents 
+</I>&gt;<i>displayed. I copied file J1-1 to Mini successfully but, while its 
+</I>&gt;<i>permissions on J1 were rw, rw, rw, the copied file on Mini had 
+</I>&gt;<i>permissions rw, rw, r. The file opened correctly on Mini &amp; I could 
+</I>&gt;<i>modify it and save it. Why did the permissions change?
+</I>
+Every Unix process has  a variable property called 'umask'. It's a 
+number that when viewed in binary has a bit position for every bit of 
+a POSIX permissions setting. rw, rw, rw in the Finder Info is 
+translated from a Unix OSIX permission of rw-rw-rw-, which is a 
+humanly more understandable of the binary number 110110110. The 'r's, 
+'w's and '-'s come from the position of the bit in the number, and it 
+showing as r/w/x or '-' comes from the bit being 1 or 0. So the 
+protection is held as just 9 bits of a number thats kept in the data 
+that describes the file. When a file is created the protection bits 
+of the new file are set to the-9-bits-you-might-expect logical AND'd 
+with the inverse of the umask. In your case the source file has 
+protection bits 110110110 so the-9-bits-you-might-expect would be the 
+same -
+110110110. If the umask is 000000010 (decimal 2, which is common), 
+its inverse is
+111111101 and if you AND those two together (only a 1 where both are 1) you get
+110110100 which is displayed in Unix as rw-rw-r-- and in the Finder 
+info as rw, rw, r.
+So umask is a way of saying (with a value of 2) 'don't make any file 
+I create writable by Other. This is quite a reasonable thing to do in 
+most cases and so is the default.
+
+If the file is being copied by J2, the new file should be created by 
+J2 and hence owned by J2. In that case the first group of permissions 
+apply, which are rw and so J2 can write the contents into it. If J2 
+can't then I suspect that either the file already existed created by 
+some other user, or for some reason the source ownership is being 
+applied to the destination (a bug), or there's some ACL (Access 
+Control List) present that is overriding POSIX protection. (ACLs are 
+a kludge to make Unix protection work more flexibly, but the same 
+control can usually be done with careful directory hierarchies and 
+use of groups).
+
+&gt;<i>(2 10.7-&gt;10.6) Still sitting at Mini as J2 and connected to MB as 
+</I>&gt;<i>J1, I tried to copy file J2-A to MB. File permissions on J2 were rw, 
+</I>&gt;<i>rw, rw. Before doing this, I went downstairs to MB and changed the 
+</I>&gt;<i>permissions in J1's Documents folder to rw, rw, rw and applied to 
+</I>&gt;<i>enclosed items. Back upstairs to Mini. The file, J2-A, copied over 
+</I>&gt;<i>at zero length. Still at Mini, I was allowed to delete J2-1 from MB 
+</I>&gt;<i>without an admin password &amp; apparently successfully.
+</I>
+Umask would also apply there, with the same 3 possibilities for the 
+reason. Bug being a likely one.
+
+&gt;<i>
+</I>&gt;<i>But when I tried to repeat the copy - copy J2-A to J1 on the MB 
+</I>&gt;<i>while sitting at Mini - my admin password was required. This dialog 
+</I>&gt;<i>box then appeared:
+</I>&gt;<i>&quot;A newer item named &#179;20120208 Letter of Retirement.pdf&#178; already 
+</I>&gt;<i>exists in this location. Do you want to replace it with the older 
+</I>&gt;<i>one you&#185;re moving?&quot; with Keep Both Files, Stop, &amp; Replace as the 
+</I>&gt;<i>three buttons.
+</I>&gt;<i>
+</I>&gt;<i>Clicked Replace and this appeared: &quot;The operation can&#185;t be completed 
+</I>&gt;<i>because an item with the name &#179;&#178; already exists.&quot; I got rid of this, 
+</I>&gt;<i>end of story - NOT. On MB, file J2-A appeared, again, and again with 
+</I>&gt;<i>zero length.
+</I>&gt;<i>
+</I>&gt;<i>(In the past, I selected Keep Both Files which would generate tens 
+</I>&gt;<i>of thousands of zero length copies.)
+</I>&gt;<i>
+</I>&gt;<i>My first conclusion is that file transfers from Lion to Snow Leopard 
+</I>&gt;<i>don't work.
+</I>&gt;<i>
+</I>&gt;<i>My second conclusion is that I need a better understanding of 
+</I>&gt;<i>permissions under Lion that I have acquired in the preceding 17 
+</I>&gt;<i>years. Or Lion has a permissions bug.
+</I>
+When I get a chance I'll do some tests.
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+HP-UX specialist of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x4u.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="026126.html">[X4U] Permissions, Networking and Lion
+</A></li>
+	<LI>Next message: <A HREF="026124.html">[X4U] Cell phone
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#26135">[ date ]</a>
+              <a href="thread.html#26135">[ thread ]</a>
+              <a href="subject.html#26135">[ subject ]</a>
+              <a href="author.html#26135">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Join Two HFS Volumes?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Join%20Two%20HFS%20Volumes%3F&In-Reply-To=BAYC1-PASMTP010592F7820FD612F6DA8AD2E10%40cez.ice">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010360.html">
+   <LINK REL="Next"  HREF="010367.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Join Two HFS Volumes?</H1>
+    <B>Carlos</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Join%20Two%20HFS%20Volumes%3F&In-Reply-To=BAYC1-PASMTP010592F7820FD612F6DA8AD2E10%40cez.ice"
+       TITLE="[G4] Join Two HFS Volumes?">carlos3543 at comcast.net
+       </A><BR>
+    <I>Tue Jun 28 16:30:02 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010360.html">[G4] Join Two HFS Volumes?
+</A></li>
+        <LI>Next message: <A HREF="010367.html">[G4] Join Two HFS Volumes?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10362">[ date ]</a>
+              <a href="thread.html#10362">[ thread ]</a>
+              <a href="subject.html#10362">[ subject ]</a>
+              <a href="author.html#10362">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jun 28, 2005, at 3:14 PM, Alex wrote:
+
+&gt;<i> But I don't understand what advantage this would provide over the  
+</I>&gt;<i> default mount point /Volumes.
+</I>&gt;<i>
+</I>
+
+Okay, I think I've muddled the issue enough and may have been going  
+at it the wrong way. First off, thanks to everyone for trying to  
+help. Second, let me start over and try to be more clear.
+
+1. I have a file server with multiple drives.
+2. The drives are mounted at startup by OS X and appear on the  
+server's desktop (or the user's desktop who's logged in at the server  
+console) as separate volumes.
+3. The three drives I currently have are mounted as follows: Startup  
+as root (/), and the other two as /Volumes/DriveA and /Volumes/DriveB.
+
+So far so good, should be clear to everyone. Continuing:
+
+4. When a network host connects to the server, the user has to mount  
+all three drives to be able to &quot;see&quot; them.
+
+5. what I _want_ is to be able to mount a single network volume from  
+the host, and &quot;see&quot; the data contained on the other drives without  
+mounting them separately.
+
+6. I want to administer this at the server end if possible, so that  
+nothing ever changes on the host side, regardless of how many times I  
+add, remove, or change the drives on the server.
+
+Is that as clear as mud? Here's a little more information for the  
+long-suffering...
+
+Right now, if I connect to the server and mount the root volume  
+(let's call it &quot;Poseidon&quot;), I get this on my host computer  
+( &quot;Daedalus&quot;):
+
+[Daedalus:~] charles% ls -alF /Volumes
+total 4
+drwxrwxrwt    4 root     admin     136 Jun 28 19:12 ./
+drwxrwxr-t   46 root     admin    1666 Jun 27 23:20 ../
+lrwxr-xr-x    1 root     admin       1 Jun 27 23:20 Daedalus 80GB@ -&gt; /
+drwxr-xr-x   35 charles  charles  1146 Jun 23 16:53 Poseidon/
+
+
+[Daedalus:~] charles% ls -alF /Volumes/Poseidon
+&lt;snip&gt;
+drwxrwxrwx    6 charles  charles      264 Jun 27 20:48 Volumes/
+&lt;snip&gt;
+
+
+[Daedalus:~] charles% ls -alF /Volumes/Poseidon/Volumes
+total 20
+drwxrwxrwx    6 charles  charles   264 Jun 27 20:48 ./
+drwxr-xr-x   35 charles  charles  1146 Jun 23 16:53 ../
+lr-xr-xr-x    1 charles  charles     1 Apr 27 20:26 Poseidon@ -&gt; /
+
+
+Which brings us back to &quot;doe&quot;. I can't &quot;See&quot; any of the other drives  
+mounted on the server unless I mount them individually on each host.  
+This is what I'm trying to avoid. I want to mount _one_ network  
+volume, and see _all_ the file systems on the server, wherever they  
+happen to be mounted.
+
+Thank you all, and I love this list!
+
+Carlos
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010360.html">[G4] Join Two HFS Volumes?
+</A></li>
+	<LI>Next message: <A HREF="010367.html">[G4] Join Two HFS Volumes?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10362">[ date ]</a>
+              <a href="thread.html#10362">[ thread ]</a>
+              <a href="subject.html#10362">[ subject ]</a>
+              <a href="author.html#10362">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

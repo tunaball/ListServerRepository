@@ -1,0 +1,74 @@
+
+
+24.11.2004 kello 04:41, Geoffrey Loeffler kirjoitti:
+
+
+ Just wondering if anyone has a G5 and what you think.
+
+<excerpt>Thanks
+
+Geoff
+
+
+_______________________________________________
+
+G5 mailing list
+
+G5@listserver.themacintoshguy.com
+
+http://listserver.themacintoshguy.com/mailman/listinfo/g5
+
+
+
+</excerpt>
+
+Some minor kernel panics in my mind...
+
+
+Maybe someone could help me with tracking down the problem. Here's
+short report from one example: 
+
+
+<fontfamily><param>Helvetica</param>Date/Time:      2004-11-19
+08:31:58 +0200
+
+OS Version:     10.3.6 (Build 7R28)
+
+Report Version: 2
+
+
+Command: Mail
+
+Path:    /Applications/Mail.app/Contents/MacOS/Mail
+
+Version: 1.3.9 (619)
+
+PID:     347
+
+Thread:  1
+
+
+Exception:  EXC_BAD_ACCESS (0x0001)
+
+Codes:      KERN_INVALID_ADDRESS (0x0001) at 0x76696365
+
+
+Thread 0:
+
+0   libSystem.B.dylib              	0x90016f48
+semaphore_wait_signal_trap + 0x8
+
+1   libSystem.B.dylib              	0x900021e0 pthread_mutex_lock +
+0x1c0
+
+2   ...apple.AddressBook.framework 	0x939fcf04 +[ABAddressBook
+sharedAddressBook] + 0x40
+
+3   com.apple.IMFramework          	0x89586458 -[FezStartupController 
+
+
+Any help appreciated!
+
+
+Petri</fontfamily>
+

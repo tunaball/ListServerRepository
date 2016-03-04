@@ -1,0 +1,238 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Duo2400] Re: Question for 2400 OSX users
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:duolist%40listserver.themacintoshguy.com?Subject=%5BDuo2400%5D%20Re%3A%20Question%20for%202400%20OSX%20users&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000425.html">
+   <LINK REL="Next"  HREF="000426.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Duo2400] Re: Question for 2400 OSX users</H1>
+    <B>Ivan Drucker</B> 
+    <A HREF="mailto:duolist%40listserver.themacintoshguy.com?Subject=%5BDuo2400%5D%20Re%3A%20Question%20for%202400%20OSX%20users&In-Reply-To="
+       TITLE="[Duo2400] Re: Question for 2400 OSX users">ivanxqz at yahoo.com
+       </A><BR>
+    <I>Thu Dec 19 02:21:22 PST 2002</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000425.html">[Duo2400] Re: Duo/2400 List - where we all are (3)
+</A></li>
+        <LI>Next message: <A HREF="000426.html">[Duo2400] Re: Duo/2400 List - where we all are (3)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#427">[ date ]</a>
+              <a href="thread.html#427">[ thread ]</a>
+              <a href="subject.html#427">[ subject ]</a>
+              <a href="author.html#427">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+
+&gt;<i>This is my understanding of how RamDoubler worked (this is from using 
+</I>&gt;<i>several versions and a bunch of company faqs).
+</I>&gt;<i>
+</I>&gt;<i>Lets say you have 100 megs of ram. Ram Doubler 8 gave you 300 megs 
+</I>&gt;<i>(later versions tripled instead of doubled). Now you could only assign 
+</I>&gt;<i>a program as much ram as you physically had, but, and this is the 
+</I>&gt;<i>biggie, it no longer mattered that your OS needed 40 megs. You could 
+</I>&gt;<i>still assign Photoshop 100 megs instead of only 60, and with triple the 
+</I>&gt;<i>ram you still had 160 left for your other programs. Lets see, SF = 
+</I>&gt;<i>40mb, Pshop = 100mb, Freehand = 50, Quark = 50 and enough left over for 
+</I>&gt;<i>Maelstrom, Fetch, Eudora and Newswatcher. Not too shabby for a Mac with 
+</I>&gt;<i>only 100 megs of ram.
+</I>
+Kinda. This is what's going on at the user level. But RAM Doubler doesn't 
+&quot;give&quot; you additional memory any more than StuffIt gives you additional 
+disk space. The way RAM Doubler does its magic is twofold: 1) it makes 
+available to other programs memory that is reserved by a running 
+application but not currently in use and 2) it replaces Apple's Virtual 
+Memory system with an (arguably) more efficient one. In later versions of 
+the OS (maybe 8.5 and onward) Apple's VM became far better than it used 
+to be, and is always enabled by default.
+
+Virtual memory of any sort means that when memory is full, parts that 
+aren't being used get written out to disk for later retrieval when 
+needed, so that space can be made for programs that need it now. OS X 
+(and all modern operating systems, including Windows NT/2000/XP) always 
+are running Virtual Memory). The downside to using virtual memory is, of 
+course, the performance hit of having to hit the hard drive, which is 
+much slower than RAM.
+
+Thus even without RAM Doubler, you can use VM on OS 9 to &quot;give&quot; yourself 
+more memory for free, and you can set how much (via the Memory control 
+panel). Apple's VM will work as you expect. Think of RAM as a desk and 
+your HD as your file cabinet. This is oversimplified, but say you have 
+100 MB, and have set your VM for 200 MB (total). The system uses 40, and 
+you launch FreeHand (which you have assigned 50), so the system will run 
+(more or less) without using VM, because you're still within the limits 
+of your physical RAM. Your desk is not yet full.
+
+But then if you launch Quark (another 50), the system will see that there 
+is no room in physical RAM, and write some or all of the memory being 
+used by FreeHand, and clear the room in RAM so you can launch Quark. In 
+other words, you've taken some of what was on your desk and put it in the 
+front of your file cabinet for quick retrieval when needed, so that you 
+could make room for something else. The system will now say that you've 
+got 140 MB being used, but (at least) 40 of that is stored on the disk 
+temporarily, and to use it would require clearing out some of what's in 
+physical RAM and reloading it (taking some of what's on your desk and 
+putting it in the front of your file cabinet, so that you can again make 
+space for what you put there initially on your desk).
+
+This can be very efficient as long as both Quark and FreeHand aren't both 
+trying to do things at the same time. If you're just going back and forth 
+between them, you might have to wait a second while memory for one 
+unloads and the other loads, but that's it. If they're both working 
+actively on their documents, though, you'll have a flurry of disk 
+thrashing as the two apps compete for available RAM. The reason why you 
+have to keep your application memory sizes to within physical RAM under 
+any VM system (including RAM Doubler) is that if an app's memory has to 
+be partially stored on disk at all times, you're constantly going to be 
+loading and unloading memory for that app if you work with a document 
+large enough to spill over.
+
+Anyway, let's say Photoshop is set to 75 MB -- if you try to launch it at 
+this point, you'll get an out of memory, because you set your VM ceiling 
+at 200 MB, and you only have 60 MB left. But the ceiling is arbitrary -- 
+you could set it higher, at the cost of potential slowdown by loading and 
+unloading more apps, and also you have to reserve more of your HD space 
+for it.
+
+What RAM Doubler brings to the table is that under Apple's VM system, if 
+Quark is set to 50 MB so that you can work effectively with large 
+documents, most of the time 40 MB or so are going to waste; Quark has 
+just reserved the memory in case it needs it. RAM Doubler sees that 40 MB 
+are not being used, and lets other programs use it *before* having use VM 
+to write stuff out to disk. So you're right, you can give all of your 
+apps huge memory partitions, secure in the knowledge that under RAM 
+Doubler, you can run many more programs at once because it won't let any 
+memory go to waste before writing to disk. If Quark is only using 10 MB, 
+and Photoshop is only using 15 MB, and FreeHand is only using 20, and the 
+system is using 40, you're still within the limits of physical RAM and 
+don't have to do any disk writing.
+
+However, you don't get something for nothing, and you'll have the usual 
+VM limitations under some circumstances. If you're working with a large 
+Quark file that uses all 50 MB, then RD can't give any of its memory to 
+other apps. So if you launch Photoshop and open a large file that uses 
+all 75 MB, there's still only 100 MB of physical RAM, and RD has to write 
+some of the memory being used by Quark to disk, just as Apple's VM system 
+does. When RD has to do this, it's a lot less magical because there's the 
+usual VM performance hit. This is why RD imposes a ceiling (initially 
+double your memory, later triple); it's an arbitrary ceiling, but if they 
+set it too high, you'll get slowdowns just because the active memory 
+needs of all your running apps are likely to not fit in physical RAM, and 
+then it's just a disk-based VM system.
+
+Personally, on my 2400 I have 112 MB, and use no virtual memory at all, 
+and instead live with running fewer apps at once. I usually find it 
+comfortable enough.
+
+&gt;<i>Therefore OSX on a machine with limited resources wouldn't be juggling 
+</I>&gt;<i>these resources between a greedy system and program(s) but rather 
+</I>&gt;<i>devote all 100 to the OS and still have a lot left over for other 
+</I>&gt;<i>tasks. At the very least it would allow you to run Classic and one or 
+</I>&gt;<i>two other apps efficiently.
+</I>
+Not so simple. OS X requires an ungodly amount of RAM just for its lovely 
+user interface. All those transparencies are expensive and in order to 
+get decent performance out of things like window resizing the system 
+keeps multiple copies of the screen in memory at all times. That is, if 
+you have enough memory -- if you don't, it uses VM to write screen data 
+to disk. (Hint: run in Thousands, not Millions [which probably isn't an 
+option anyway on a 2400]). There's also all kinds of under the hood stuff 
+going on that I don't even know about that also demands RAM.
+
+If you have only 112 MB of RAM, it's unlikely that you can run Classic 
+efficiently even all by itself. It's just not enough. Remember that 128 
+MB is Apple's minimum requirement for OS X, and that's barely enough. 
+You'll be VM thrashing till the cows come home. Classic is the most 
+resource-intensive part of OS X. Sorry...
+
+&gt;<i>The fact that system-bloat didn't cut into my available ram was the 
+</I>&gt;<i>main reason I started using RD, I no longer had to be frugal with how 
+</I>&gt;<i>much useless crap was in my SF (bring it on AfterDark).
+</I>
+System bloat should have still cut into your available RAM under RD -- 
+it's just that so much more was being made available to you by reclaiming 
+unused memory for your apps that it didn't matter.
+
+&gt;<i>Considering how 
+</I>&gt;<i>crafty the RD programmers were and how well OSX manages memory I'm sure 
+</I>&gt;<i>that RamDoubler X would be fantastic for earlier Powerbooks trying to 
+</I>&gt;<i>run OSX.
+</I>
+No doubt they are very crafty, but this makes no sense. The point is that 
+OS X manages memory more efficiently, hence no need (or possiblity) for 
+RAM Doubler X to do a better job. Under OS X, you don't assign memory 
+partitions to applications as you do in OS 9; they don't need to reserve 
+memory for their documents in advance. I don't know enough about what 
+happens under the hood in OS X to say definitively that there is no room 
+at all for a memory-enhancement product, but I really doubt that there 
+is. Also let us not forget that Apple's minimum PowerBook for OS X is a 
+Wall Street, and that takes 256 MB of RAM.
+
+&gt;<i> PS. My 2400 should be arriving friday, I'm very excited.
+</I>
+Cool! You'll have to let us know how you like it.
+
+Ivan.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000425.html">[Duo2400] Re: Duo/2400 List - where we all are (3)
+</A></li>
+	<LI>Next message: <A HREF="000426.html">[Duo2400] Re: Duo/2400 List - where we all are (3)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#427">[ date ]</a>
+              <a href="thread.html#427">[ thread ]</a>
+              <a href="subject.html#427">[ subject ]</a>
+              <a href="author.html#427">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/duolist.html">More information about the DuoList
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

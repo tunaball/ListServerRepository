@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] What's in an MP3's resource fork..?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20What%27s%20in%20an%20MP3%27s%20resource%20fork..%3F&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000742.html">
+   <LINK REL="Next"  HREF="000744.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] What's in an MP3's resource fork..?</H1>
+    <B>Kuestner, Bjoern</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20What%27s%20in%20an%20MP3%27s%20resource%20fork..%3F&In-Reply-To="
+       TITLE="[X-Unix] What's in an MP3's resource fork..?">Bjoern.Kuestner at drkw.com
+       </A><BR>
+    <I>Fri Apr 23 06:27:02 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000742.html">[X-Unix] Vac  Auto  Reply
+</A></li>
+        <LI>Next message: <A HREF="000744.html">[X-Unix] 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#743">[ date ]</a>
+              <a href="thread.html#743">[ thread ]</a>
+              <a href="subject.html#743">[ subject ]</a>
+              <a href="author.html#743">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+&gt;<i>Resource forks are not transparent to the user, 
+</I>
+I guess they just aren't because not many think of them and work with them
+and had them explained well.
+
+I remember when I first started learning about networks. The concept of
+ports for a long time was incomprehensible to me: &quot;Well, I got the IP
+number, so what do I need that port number for? I know the machine. That's
+enough, right?&quot;
+
+Most everybody on this list and definitely Eugene is gonna smile over this
+as for them and now for me ports have become second nature of who we are.
+(Well, something like that. (c:)
+
+But I find the similarities to files and resource forks quite similar:
+
+A file without a resource fork is like a server that has no different port
+addresses.
+
+Sure you can still setup different server processes on that machine, but
+every connection being made has to be sorted out exactly what server process
+it asks for. So for huge servers with lots of client-server applications
+going on it might just be better to run dedicated machines: One server
+process per machine.
+
+Same with a file: Say you have something that requires all kinds of
+different data ... text, sound, images, code. You can put all that into one
+file and work with it. But oh what a pain to find what you need in that
+stream of data. So you end up creating hundreds of files and you can address
+whatever item you need individually ... although they really only make sense
+if you keep them together.
+
+For servers the solution is ports: I got the IP, and what I need is an SSH
+connection, so #22, could you please stand up? No problem having thousands
+of different type connections running at the same time on one machine.
+
+For files the solution is &quot;resources&quot; or call it &quot;file ports&quot; if you will: I
+got the file name, now I need that &quot;squeek&quot; sound, so ID 3441, could you
+please stand up? No problem having thousands of individual items within one
+file.
+
+Another way I like to think of resource forks is like each file as a
+mini-database. Databases structure and group things together that belong
+together. It's not good to put each cell, each field into a separate file,
+although that would be technically possible. It's not even common anymore to
+put each record or table into a separate file. No, everything is grouped in
+tables and then there are even groups of tables related with each other.
+
+Sure, I could put each and everything in separate files. Early databases did
+the same. I don't know how old the concept of ports is, but maybe in the
+early days of networking there was indeed just one dedicated server to
+connect to.
+
+So to bring my point to an end: If people find resources &quot;not transparent&quot;,
+then they might just not be used to it. People today still have problems
+understanding ports and (relational) databases. But are they a good thing?
+Yes. Yes, until somebody will think of something better.
+
+I think it's just the course of history that makes &quot;file ports&quot; (aka
+&quot;resource forks&quot;) not transparent.
+
+If engineers had thought of relational databases, object oriented
+programming, and some other breakthrough paradigms before ... where would
+the public understanding of computing be today? 
+
+Some group of programmers decided that the name of the file should define
+the type of data. These programmers are to blame that it is now second
+nature to people that a suffix indicates the data type. Now that should be
+confusing and not transparent for users! But it's not, just because they're
+used to it. Funny. 
+
+Had the programmers decided that each file should start with a text portion
+of meta data, then nobody in their wildest dream would think that a name and
+a data type have anything to do with each other like size and data type have
+nothing to do with each other. Everybody would find it natural that to
+communicate data type to the OS they would have to change the text prefix in
+the file. If the OS would reference files by numbers and the name of the
+file were just part of that text portion, then users would grasp meta data
+even clearer and each OS could handle files as it wishes.
+
+But yes, we're not yet there. And we'll just have to live that some things
+will stay like they are for a long time because they have already been like
+this for a long time.
+
+It's actually easier for users who don't care about &quot;transparent&quot; or not in
+terms of a mental concept. If the app is just one file then that is
+super-transparent for my parents. &quot;Hey, it's your browser, there it is.&quot; Now
+if they see a collection of files for what should just be &quot;a browser&quot; (read
+that as &quot;one browser&quot;) that is so non-transparent to them.
+
+Uh, ah, looking for a cool one-liner to finish this up. Cannot think of one.
+Too bad. (c:
+
+Bjorn
+
+
+
+&gt;<i>Check out the Mac OS X email list FAQ
+</I>&gt;<i><A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i>To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i>&lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>Need help from a real person? Try.  
+</I>&gt;<i>&lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>----------
+</I>&gt;<i>$14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting 
+</I>&gt;<i>from your Mac ISP 
+</I>&gt;<i>Serious Mac Internet Solutions From NineWire!   
+</I><A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+
+DVIator   | Run Dual ADC displays on your G4 or just one on an older Mac! 
+Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+
+   Support   | Support this list by clicking here before you buy!
+  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+
+OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s -
+<A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+
+
+--------------------------------------------------------------------------------
+The information contained herein is confidential and is intended solely for the
+addressee. Access by any other party is unauthorised without the express 
+written permission of the sender. If you are not the intended recipient, please 
+contact the sender either via the company switchboard on +44 (0)20 7623 8000, or
+via e-mail return. If you have received this e-mail in error or wish to read our
+e-mail disclaimer statement and monitoring policy, please refer to 
+<A HREF="http://www.drkw.com/disc/email/">http://www.drkw.com/disc/email/</A> or contact the sender.
+--------------------------------------------------------------------------------
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000742.html">[X-Unix] Vac  Auto  Reply
+</A></li>
+	<LI>Next message: <A HREF="000744.html">[X-Unix] 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#743">[ date ]</a>
+              <a href="thread.html#743">[ thread ]</a>
+              <a href="subject.html#743">[ subject ]</a>
+              <a href="author.html#743">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

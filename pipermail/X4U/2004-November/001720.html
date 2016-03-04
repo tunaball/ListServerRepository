@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Airport upgrade troubles
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Airport%20upgrade%20troubles&In-Reply-To=BDBF7B4E.2F33B%25kirklists%40wanadoo.fr">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001713.html">
+   <LINK REL="Next"  HREF="001725.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Airport upgrade troubles</H1>
+    <B>Xavier Noria</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Airport%20upgrade%20troubles&In-Reply-To=BDBF7B4E.2F33B%25kirklists%40wanadoo.fr"
+       TITLE="[X4U] Airport upgrade troubles">fxn at hashref.com
+       </A><BR>
+    <I>Tue Nov 16 12:50:52 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001713.html">[X4U] Airport upgrade troubles
+</A></li>
+        <LI>Next message: <A HREF="001725.html">[X4U] Formatting a firewire drive in os9.2.2
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1720">[ date ]</a>
+              <a href="thread.html#1720">[ thread ]</a>
+              <a href="subject.html#1720">[ subject ]</a>
+              <a href="author.html#1720">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Nov 16, 2004, at 9:39 AM, Kirk McElhearn wrote:
+
+&gt;<i> On 11/16/04 9:34 AM, &quot;Xavier Noria&quot; &lt;<A HREF="../../../mailman/listinfo/x4u.html">fxn at hashref.com</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> There are always problems here updating the Airport Extreme base
+</I>&gt;&gt;<i> station.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Even with the PowerBook put in front of the station, but the update
+</I>&gt;&gt;<i> wizard says it cannot communicate with the base station (which it
+</I>&gt;&gt;<i> founds at least) and the Airport Admin Utility even does not list the
+</I>&gt;&gt;<i> station. If I try to get to it using &quot;Other&quot; it says it cannot read 
+</I>&gt;&gt;<i> the
+</I>&gt;&gt;<i> configuration file.
+</I>&gt;<i>
+</I>&gt;<i> You'll need to reset the base station - it's a pain, but it usually 
+</I>&gt;<i> solves
+</I>&gt;<i> the problem. Check the Apple website for instructions.
+</I>
+Thank you! Unfortunately it didn't work here, the base station even 
+didn't show up in the admin utility. I tried the 1 second reset, and 
+the 5 seconds reset, no luck.
+
+When I was about to give up it occured to me that maybe I could unplug 
+the station from the router and try again one last time. The ADSL at 
+home enters via a router, and the base station is then plugged there 
+through an Ethernet cable. OK, I unplugged the station from the 
+station, and unplugged/plugged it from the current.
+
+It worked!
+
+I am not very familiar with networks, but looks like the base station 
+somehow justs passes its IP to the PowerBook, because when the base 
+station wasn't plugged into the router the laptop had a 10.0.x.x 
+address, and the tools found the base station at 10.0.1.1.
+
+Afterwards, when I put the Ethernet cable in the plug again and renew 
+DHCP, the laptop got a 192.168.x.x that looks like an IP from the 
+router. If the interface is different it may happen that the laptop 
+just didn't resolve 10.0.1.1 in the router's network. Does that make 
+sense? Why is not the base station managing its own network and doing 
+NAT towards the router?
+
+-- fxn
+
+</PRE>
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001713.html">[X4U] Airport upgrade troubles
+</A></li>
+	<LI>Next message: <A HREF="001725.html">[X4U] Formatting a firewire drive in os9.2.2
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1720">[ date ]</a>
+              <a href="thread.html#1720">[ thread ]</a>
+              <a href="subject.html#1720">[ subject ]</a>
+              <a href="author.html#1720">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

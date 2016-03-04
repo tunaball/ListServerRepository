@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] General Scripting Question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20General%20Scripting%20Question&In-Reply-To=24072B3A-45E3-41CE-B55C-98CD1E0A0170%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003312.html">
+   <LINK REL="Next"  HREF="003313.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] General Scripting Question</H1>
+    <B>Brian Medley</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20General%20Scripting%20Question&In-Reply-To=24072B3A-45E3-41CE-B55C-98CD1E0A0170%40mac.com"
+       TITLE="[X-Unix] General Scripting Question">bpm-list-osx-unix at 4321.tv
+       </A><BR>
+    <I>Mon Apr 13 20:45:43 PDT 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003312.html">[X-Unix] General Scripting Question
+</A></li>
+        <LI>Next message: <A HREF="003313.html">[X-Unix] compiling &quot;universal&quot; commandline utilities?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3310">[ date ]</a>
+              <a href="thread.html#3310">[ thread ]</a>
+              <a href="subject.html#3310">[ subject ]</a>
+              <a href="author.html#3310">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This shows the free space on the / volume.
+
+$ df -k | perl -ne 'next unless $_ =~ m#/$#; print;'                                                                 
+/dev/disk0s2    116753840 105746456  10751384    91%    /
+
+This shows if there is more than 5GB free.
+
+$ df -k | perl -ne 'next unless $_ =~ \
+m#/$#; print;' | perl -ane 'print(&quot;More than 5GB free\n&quot;) if \
+$F[3] &gt; 5_000_000;'
+More than 5GB free
+
+This will run a command if there is more than 5GB free.
+
+$ df -k | perl -ne 'next unless $_ =~ m#/$#; print;' | perl -ane \
+'exit(0) if $F[3] &gt; 5_000_000; exit(1)' &amp;&amp; echo &quot;command here&quot;
+command here
+
+On Mon, Apr 13, 2009 at 02:37:14PM -0500, Russell McGaha wrote:
+
+&gt;<i> -----BEGIN PGP SIGNED MESSAGE-----
+</I>&gt;<i> Hash: SHA1
+</I>&gt;<i>
+</I>&gt;<i> Folks;
+</I>&gt;<i> 	I want to look into something I'm not even sure is possible.
+</I>&gt;<i> 	Here's the scenario; I have a script that backs up a directory  
+</I>&gt;<i> [archives it] with the date in the name, this script runs every weekday.  
+</I>&gt;<i> What I want to do is; after making the archive, check the available space 
+</I>&gt;<i> on that drive, if it is under say 5GB, then check the free space on a 
+</I>&gt;<i> backup drive, and if the free space there is over say 10GB move the 
+</I>&gt;<i> oldest archives of the first drive onto the second.  When both drives are 
+</I>&gt;<i> too full, I want the script to send me an email letting me know I need to 
+</I>&gt;<i> clean the drives up.
+</I>&gt;<i> 	Anyone know if this is even possible??
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Russell
+</I>&gt;<i> -----BEGIN PGP SIGNATURE-----
+</I>&gt;<i> Version: GnuPG/MacGPG2 v2.0.11 (Darwin)
+</I>&gt;<i>
+</I>&gt;<i> iEYEARECAAYFAknjlIEACgkQ5T2I5lFJnG+UJgCeMZjZTNGOHlWDVSs+4f2IQ8Kp
+</I>&gt;<i> 8r4AoNXphhho1UpsHz9VA7cPp1fl1D2t
+</I>&gt;<i> =zDFg
+</I>&gt;<i> -----END PGP SIGNATURE-----
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>
+-- 
+Brian Medley
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003312.html">[X-Unix] General Scripting Question
+</A></li>
+	<LI>Next message: <A HREF="003313.html">[X-Unix] compiling &quot;universal&quot; commandline utilities?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3310">[ date ]</a>
+              <a href="thread.html#3310">[ thread ]</a>
+              <a href="subject.html#3310">[ subject ]</a>
+              <a href="author.html#3310">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

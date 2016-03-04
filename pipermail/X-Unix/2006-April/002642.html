@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] parsing help?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20parsing%20help%3F&In-Reply-To=763F803B-0D15-4B0B-9BFD-7546E974D2CA%40hughes.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002641.html">
+   <LINK REL="Next"  HREF="002643.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] parsing help?</H1>
+    <B>Wing Wong</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20parsing%20help%3F&In-Reply-To=763F803B-0D15-4B0B-9BFD-7546E974D2CA%40hughes.net"
+       TITLE="[X-Unix] parsing help?">wingedpower at gmail.com
+       </A><BR>
+    <I>Thu Apr 27 12:47:51 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002641.html">[X-Unix] parsing help?
+</A></li>
+        <LI>Next message: <A HREF="002643.html">[X-Unix] parsing help?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2642">[ date ]</a>
+              <a href="thread.html#2642">[ thread ]</a>
+              <a href="subject.html#2642">[ subject ]</a>
+              <a href="author.html#2642">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 4/27/06, Russell McGaha &lt;<A HREF="../../../mailman/listinfo/x-unix.html">RussellMcGaha at hughes.net</A>&gt; wrote:
+&gt;<i> All;
+</I>&gt;<i>         I guess what I REALY need to do, is change the pattern
+</I>&gt;<i> &quot;&lt;return&gt;,,, ... ,&quot; to &quot;,&quot; . Is there a simple way to do this?
+</I>&gt;<i> because of the &lt;return&gt; char, I'm not sure how to correctly do this.
+</I>&gt;<i>
+</I>&gt;<i> Russell
+</I>
+Russell,
+
+Can you post an actual couple of lines of the actual data and then a
+couple of lines of what you would like that data to actually look
+like? The various commas and dots are confusing to read and interpret
+accurately.
+
+&gt;<i>From what you just posted, I'm hearing:
+</I>
+You have a series of lines in the exported csv file that takes the form of:
+
+&lt;CR/LF&gt;,,,,,,,,,,,
+&lt;CR/LF&gt;,,,,,,,,,,,
+&lt;CR/LF&gt;,,,,,,,,,,,
+
+And you want to reduce the commas to a single comma?
+
+# To reduce a string of commas into one comma:
+cat source.csv | sed -e 's/[,][,]*/,/g' &gt; single_comma.csv
+
+# To get rid of the CR/LF and reduce the string of commas to one comma:
+cat source.csv | sed -e 's/[\n][,][,]*/,/g' &gt; no_crlf_single_comma.csv
+
+Not sure if that is what you really want to do. If you are looking to
+change the order of the various parameters, you can use awk to do
+that.
+
+IF, your file is actually looking something like this:
+
+,,,,,,,,,^M
+,,,,,,,,,^M
+,,,,,,,,,^M
+,,,,,,,,,^M
+
+Ie, a an exported csv file using DOS/WIN cr/lf conventions, and you
+just want to get rid of the ^M's, but want to retain the line breaks:
+
+cat source.csv | tr '^V^M' '\012' &gt; convertedlinefeeds.csv
+# The ^V is CTRL-V and the ^M is hitting the ENTER key after the CTRL-V
+
+or, you can use the dos2unix binary to convert the linefeeds for you.
+
+But like I noted above, if you can send a sample of what the actual
+lines look like and a sample of what you'd like the lines to look
+like, it would be much easier to give example code snippets.
+
+Wing
+
+--
+Wing Wong
+<A HREF="../../../mailman/listinfo/x-unix.html">wingedpower at gmail.com</A>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002641.html">[X-Unix] parsing help?
+</A></li>
+	<LI>Next message: <A HREF="002643.html">[X-Unix] parsing help?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2642">[ date ]</a>
+              <a href="thread.html#2642">[ thread ]</a>
+              <a href="subject.html#2642">[ subject ]</a>
+              <a href="author.html#2642">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Servers] Forcing server to perform fsck on restart 
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20Forcing%20server%20to%20perform%20fsck%20on%20restart%20&In-Reply-To=list-4661601%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000061.html">
+   <LINK REL="Next"  HREF="000063.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Servers] Forcing server to perform fsck on restart </H1>
+    <B>Robert Nicholson</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20Forcing%20server%20to%20perform%20fsck%20on%20restart%20&In-Reply-To=list-4661601%40mail.ninewire.com"
+       TITLE="[X Servers] Forcing server to perform fsck on restart ">robert at elastica.com
+       </A><BR>
+    <I>Thu Jan 30 14:26:31 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000061.html">[X Servers] XServe becoming unresponsive for 30 secs or so
+</A></li>
+        <LI>Next message: <A HREF="000063.html">[X Servers] Forcing server to perform fsck on restart 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#62">[ date ]</a>
+              <a href="thread.html#62">[ thread ]</a>
+              <a href="subject.html#62">[ subject ]</a>
+              <a href="author.html#62">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>If the machine was not shutdown gracefully it will do the write thing 
+when it is restarted.
+
+When the machine reboots its startup scripts will run fsck -p and that 
+program will examine
+the filesystem and it will know that the machine wasn't shutdown 
+gracefully and it will proceed
+to fix the problem caused by that.
+
+On Thursday, January 30, 2003, at 06:12  PM, R. Hannes Niedner wrote:
+
+&gt;<i> On 1/30/03 10:07 AM, &quot;R. Hannes Niedner&quot; &lt;<A HREF="../../../mailman/listinfo/x-servers.html">hannes.niedner at gmx.net</A>&gt; 
+</I>&gt;<i> wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> The subject line says it all. How can I issue a reboot command 
+</I>&gt;&gt;<i> telling the
+</I>&gt;&gt;<i> Xserve running MacOS Server 10.2.3 to perform a filesystem check on 
+</I>&gt;&gt;<i> restart?
+</I>&gt;&gt;<i> The machine was down due to power failure and I want to clean it up 
+</I>&gt;&gt;<i> before
+</I>&gt;&gt;<i> putting it back into service. Maybe it is done automatically after an
+</I>&gt;&gt;<i> &quot;unclean&quot;shutdown?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Thanks/h
+</I>&gt;<i>
+</I>&gt;<i> Before someone telling me hold down command+s on restart .... I want 
+</I>&gt;<i> to do
+</I>&gt;<i> the whole thing remotely preferably via ssh.
+</I>&gt;<i>
+</I>&gt;<i> Sorry for not being clear enough in the original message/h
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;<i> Mac ISP
+</I>&gt;<i> Serious Mac Internet Solutions From NineWire!   
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older 
+</I>&gt;<i> Mac!
+</I>&gt;<i> Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>    Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>   this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000061.html">[X Servers] XServe becoming unresponsive for 30 secs or so
+</A></li>
+	<LI>Next message: <A HREF="000063.html">[X Servers] Forcing server to perform fsck on restart 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#62">[ date ]</a>
+              <a href="thread.html#62">[ thread ]</a>
+              <a href="subject.html#62">[ subject ]</a>
+              <a href="author.html#62">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

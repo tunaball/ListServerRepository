@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Re: [X-Unix] Why didn't Apple change the line break&#160;?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%3D%3FISO-8859-1%3FQ%3FRe%3A_%5BX-Unix%5D_Why_didn%27t_Apple_change_the_line_bre%3F%3D%0A%09%3D%3FISO-8859-1%3FQ%3Fak%3DA0%3D3F%3F%3D&In-Reply-To=16D4FFC5-0B37-11D9-BE2C-000A95CD828E%40landover.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000023.html">
+   <LINK REL="Next"  HREF="000025.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Re: [X-Unix] Why didn't Apple change the line break&#160;?</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%3D%3FISO-8859-1%3FQ%3FRe%3A_%5BX-Unix%5D_Why_didn%27t_Apple_change_the_line_bre%3F%3D%0A%09%3D%3FISO-8859-1%3FQ%3Fak%3DA0%3D3F%3F%3D&In-Reply-To=16D4FFC5-0B37-11D9-BE2C-000A95CD828E%40landover.com"
+       TITLE="Re: [X-Unix] Why didn't Apple change the line break&#160;?">magill at mcgillsociety.org
+       </A><BR>
+    <I>Mon Sep 20 16:19:49 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000023.html">Re: [X-Unix] Why didn't Apple change the line break&#160;?
+</A></li>
+        <LI>Next message: <A HREF="000025.html">[X-Unix] Why didn't Apple change the line break ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#24">[ date ]</a>
+              <a href="thread.html#24">[ thread ]</a>
+              <a href="subject.html#24">[ subject ]</a>
+              <a href="author.html#24">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 20 Sep, 2004, at 14:58, Brent Baisley wrote:
+&gt;<i> Unix standard is just a line break, Mac standard is  just a carriage 
+</I>&gt;<i> return. Changing it to Unix standard probably would have broken all 
+</I>&gt;<i> text interfaces in all programs on the Mac since they wouldn't know 
+</I>&gt;<i> where a line ended. Windows uses both line feeds and carriage returns. 
+</I>&gt;<i> So if anything, Apple should have change to Windows standard as sort 
+</I>&gt;<i> of a transition.
+</I>&gt;<i> For web stuff, I find if I code to Unix standard I'm pretty safe. 
+</I>&gt;<i> Probably because the web was originally based in Unix/Mainframe, so 
+</I>&gt;<i> most Mac programs used for the web would recognize how a line ends.
+</I>&gt;<i>
+</I>&gt;<i> Both the terms line feed and carriage return are kind of antiquated. 
+</I>&gt;<i> Derived from the type writer. A line feed &quot;scrolled&quot; the paper to the 
+</I>&gt;<i> next line, but left you in the same spot vertically. A &quot;carriage 
+</I>&gt;<i> return&quot; returned the &quot;carriage&quot; back to the left. So if you think 
+</I>&gt;<i> about it, Windows is the only platform that got it right using both a 
+</I>&gt;<i> carriage return and line feed. When you press return you are brought 
+</I>&gt;<i> to the start of the next line. Then there is the vertical tab, which 
+</I>&gt;<i> FileMaker using as a return within the database. Go figure.
+</I>&gt;<i>
+</I>&gt;<i> On Sep 20, 2004, at 2:44 PM, Alexandre Quessy wrote:
+</I>&gt;&gt;<i> I am a web developer, and I am having problems with charcter 
+</I>&gt;&gt;<i> encoding, and especially line breaks on Mac OS X. I wonder why Apple 
+</I>&gt;&gt;<i> didn't change the line break to the UNIX standard instead of keeping 
+</I>&gt;&gt;<i> the same old one. Anyone have an idea&#160;?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Character encodings are common and universal (ISO-8859-1 and UTF-8, 
+</I>&gt;&gt;<i> mainly for me) but line break aren't. Why not switch&#160;?
+</I>
+This issue has been around since the beginning of &quot;interactive&quot; 
+computing -- the IBM world (long before Microsoft, used the &quot;newline&quot; 
+which was a composite character that did BOTH a carriage-return and a 
+linefeed. Most common usage -- the good ol' 2741, aka IBM Selectric.
+Which also harkens up some the TTY heritage of interactive usage.
+
+As far as the Mac and OS X is concerned, the issue is actually one 
+dependent upon your choice of editor.
+
+The &quot;most rational&quot; of the command line editors -- emacs -- doesn't 
+care. It will read either and switch to that &quot;mode&quot; or you can convert 
+from one to the other. If you want a GUI editor that does the same 
+thing, use BBedit. Even Apple's TextEdit can deal with the two by 
+changing preferences to &quot;plain text.&quot; (RTF documents are 100% 
+incompatible with Unix by definition. Their formating information is 
+simply NOT &quot;plain text.&quot;)
+
+The only time that the difference between Line-Feed and Carriage-Return 
+becomes an issues is when you are using one of the command line display 
+command -- cat. When used on a Carriage-Return file. (I think both 
+&quot;more&quot; and &quot;less&quot; also do the conversion for you, but I don't have a 
+file handy to test.)
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000023.html">Re: [X-Unix] Why didn't Apple change the line break&#160;?
+</A></li>
+	<LI>Next message: <A HREF="000025.html">[X-Unix] Why didn't Apple change the line break ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#24">[ date ]</a>
+              <a href="thread.html#24">[ thread ]</a>
+              <a href="subject.html#24">[ subject ]</a>
+              <a href="author.html#24">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

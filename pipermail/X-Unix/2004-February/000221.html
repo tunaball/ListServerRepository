@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] nevermind, figured it out ;) (re: simple commandline
+	one-shot emailer)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20nevermind%2C%20figured%20it%20out%20%3B%29%20%28re%3A%20simple%20commandline%0A%09one-shot%20emailer%29&In-Reply-To=list-10617814%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000218.html">
+   <LINK REL="Next"  HREF="000222.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] nevermind, figured it out ;) (re: simple commandline
+	one-shot emailer)</H1>
+    <B>Barry Lyden</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20nevermind%2C%20figured%20it%20out%20%3B%29%20%28re%3A%20simple%20commandline%0A%09one-shot%20emailer%29&In-Reply-To=list-10617814%40mail.ninewire.com"
+       TITLE="[X-Unix] nevermind, figured it out ;) (re: simple commandline
+	one-shot emailer)">blyden at mac.com
+       </A><BR>
+    <I>Tue Feb  3 03:54:03 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000218.html">[X-Unix] ethereal for MacOSX
+</A></li>
+        <LI>Next message: <A HREF="000222.html">[X-Unix] Simple commandline mail client
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#221">[ date ]</a>
+              <a href="thread.html#221">[ thread ]</a>
+              <a href="subject.html#221">[ subject ]</a>
+              <a href="author.html#221">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Just curious - If you don't mind my asking,  what is this script intended
+for? Command line interfaces to the UNIX mail facility are already there -
+but controlling the server and from fields are not usually something that
+folks do, so you must have a unique reason.
+
+
+On 2/3/04 12:30 AM, &quot;Peter Marreck&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">prm1 at cornell.edu</A>&gt; wrote:
+
+&gt;<i> I just went ahead and coded a perl script to accomplish the job.
+</I>&gt;<i> Discovered &quot;Net::SMTP&quot; was included in the stock Perl distribution and
+</I>&gt;<i> then googled it for script ideas since I'm a perl n00b. Enjoy... feel
+</I>&gt;<i> free to add error-handling, I was just going for the quick-and-dirty
+</I>&gt;<i> here. I saved it as &quot;email&quot; and chmod +x'ed it. Usage is like so:
+</I>&gt;<i> ./email -server=mail.optonline.com -from=<A HREF="../../../mailman/listinfo/x-unix.html">billc at optonline.com</A>
+</I>&gt;<i> -to=<A HREF="../../../mailman/listinfo/x-unix.html">monica at optonline.com</A> -subject=&quot;altoids&quot; -body=&quot;Curiously strong
+</I>&gt;<i> mints. Indeed.&quot;
+</I>&gt;<i> 
+</I>&gt;<i> #!/usr/bin/perl -s
+</I>&gt;<i> use Net::SMTP;
+</I>&gt;<i> # parameters that this script accepts: -server, -from, -to, -subject,
+</I>&gt;<i> -body
+</I>&gt;<i> # This debug flag will print debugging code,
+</I>&gt;<i> # depending on its value.
+</I>&gt;<i> # Set this to 1 to print debug code.
+</I>&gt;<i> # Set it to 0 to turn it off.
+</I>&gt;<i> my $DEBUG = 0;
+</I>&gt;<i> # Create a new SMTP object
+</I>&gt;<i> $smtp = Net::SMTP-&gt;new($server, Debug =&gt; $DEBUG);
+</I>&gt;<i> # If you can't connect, don't proceed with the rest of the script
+</I>&gt;<i> die &quot;Couldn't connect to server&quot; unless $smtp;
+</I>&gt;<i> # Initiate the mail transaction
+</I>&gt;<i> $smtp-&gt;mail( $from );
+</I>&gt;<i> $smtp-&gt;to( $to );
+</I>&gt;<i> # Start the mail
+</I>&gt;<i> $smtp-&gt;data();
+</I>&gt;<i> # Send the header
+</I>&gt;<i> $smtp-&gt;datasend(&quot;To:  $to\n&quot;);
+</I>&gt;<i> $smtp-&gt;datasend(&quot;From:  $from\n&quot;);
+</I>&gt;<i> $smtp-&gt;datasend(&quot;Subject: $subject\n&quot;);
+</I>&gt;<i> $smtp-&gt;datasend(&quot;\n&quot;);
+</I>&gt;<i> # Send the body.
+</I>&gt;<i> $smtp-&gt;datasend(&quot;$body\n\n&quot;);
+</I>&gt;<i> # Send the termination string
+</I>&gt;<i> $smtp-&gt;dataend();
+</I>&gt;<i> # Close the connection
+</I>&gt;<i> $smtp-&gt;quit();
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i> 
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> 
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your Mac ISP
+</I>&gt;<i> Serious Mac Internet Solutions From NineWire!   <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i> 
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older Mac!
+</I>&gt;<i> Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i> 
+</I>&gt;<i>  Support   | Support this list by clicking here before you buy!
+</I>&gt;<i> this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;<i> 
+</I>&gt;<i> OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s -
+</I>&gt;<i> <A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000218.html">[X-Unix] ethereal for MacOSX
+</A></li>
+	<LI>Next message: <A HREF="000222.html">[X-Unix] Simple commandline mail client
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#221">[ date ]</a>
+              <a href="thread.html#221">[ thread ]</a>
+              <a href="subject.html#221">[ subject ]</a>
+              <a href="author.html#221">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

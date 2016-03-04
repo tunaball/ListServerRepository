@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Postfix and proxies
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Postfix%20and%20proxies&In-Reply-To=AD0C6054-601D-4B33-B70D-186026F41AE4%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002849.html">
+   <LINK REL="Next"  HREF="002851.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Postfix and proxies</H1>
+    <B>John Harrold</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Postfix%20and%20proxies&In-Reply-To=AD0C6054-601D-4B33-B70D-186026F41AE4%40secure-computing.net"
+       TITLE="[X-Unix] Postfix and proxies">john.m.harrold at gmail.com
+       </A><BR>
+    <I>Fri Jul 20 17:13:24 PDT 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002849.html">[X-Unix] Postfix and proxies
+</A></li>
+        <LI>Next message: <A HREF="002851.html">[X-Unix] Postfix and proxies
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2850">[ date ]</a>
+              <a href="thread.html#2850">[ thread ]</a>
+              <a href="subject.html#2850">[ subject ]</a>
+              <a href="author.html#2850">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+|<i> Why are you using a proxy at all?  Does the university block outside  
+</I>|<i> mail traffic and/or intercept it?  If so, I'd do one of the following:
+</I>
+I think this should answer the 'why' question:
+
+|<i> &gt;My delima is that my ISP (which is NUS) has been flagged as a spam
+</I>|<i> &gt;source (the entire university goes through a single ip address on the
+</I>|<i> &gt;internet).  Because my email is routed through a known spam source, it's
+</I>|<i> &gt;getting rejected by some hosts.
+</I>
+So I need the email to originate somewhere else. If I can get it to use the
+socks proxy, then that would sovle my problem.
+  
+|<i> 1) Have someone set up a mail server for you, and possibly an SSH  
+</I>|<i> tunnel to send your email.
+</I>
+Are you volunteering to do this? Otherwise, this option isnt really available.
+If you can tell me how to use postfix to send email over an ssh tunnel, I'm all
+ears -- that's what I want to do.
+
+|<i> 2) Use GMail's web interface
+</I>
+This works great for one or two emails. However, during the day, the
+internet is not fast enough to use the web interface reliably -- I'm living
+in a developing country and the entire University essentially shares a DSL
+modem.
+
+|<i> 3) Have users on the other end white-list your email address.
+</I>
+I've tried this unsuccessfully. 
+
+|<i> If they're *not* blocking outgoing mail traffic (or intercepting it),  
+</I>|<i> just send your email directly to GMail and forget about the proxy.
+</I>
+The email still originates from a kown spam source, which is in the
+headers, even though it _is_ going through gmail. Check my mail header, it
+should say something like:
+
+        Received: from absent.grok.tv ( [63.100.216.2])
+        by mx.google.com with ESMTPS id f42sm6622337rvb.2007.07.20.16.05.07
+        (version=TLSv1/SSLv3 cipher=OTHER);
+        Fri, 20 Jul 2007 16:05:11 -0700 (PDT)
+
+
+I should stress the point that I'm working/living in a developing country so
+solutions that do not involve others are more likely to be implemented and
+work. For example I've tried to get the network admins here to get us off the
+spam list, I've tried to get white listed by some of the people recieving my
+emails,e tc. So back to my original quesiton. Is there anyone out there who
+can tell me how do one of the following: 
+
+&gt;<i>  o configure postfix to route all traffic through a socks 5 proxy                                   
+</I>&gt;<i>                                                                                                     
+</I>&gt;<i>  o create some sort of jailed environment that can achieve the same effect 
+</I>
+
+
+
+-- 
+---------------------------------------------------------- 
+                            | /&quot;\                         
+ john harrold               | \ / ASCII ribbon campaign   
+ john.m.harrold _at_ gmail  |  X  against HTML mail       
+                            | / \                         
+----------------------------------------------------------
+  gpg --keyserver pgp.mit.edu --recv-key B23241CB
+----------------------------------------------------------
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002849.html">[X-Unix] Postfix and proxies
+</A></li>
+	<LI>Next message: <A HREF="002851.html">[X-Unix] Postfix and proxies
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2850">[ date ]</a>
+              <a href="thread.html#2850">[ thread ]</a>
+              <a href="subject.html#2850">[ subject ]</a>
+              <a href="author.html#2850">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

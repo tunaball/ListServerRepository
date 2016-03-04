@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: Putting Serial # into System Profiler 
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Putting%20Serial%20%23%20into%20System%20Profiler%20&In-Reply-To=20041124222602.42CA11A8B1E%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001359.html">
+   <LINK REL="Next"  HREF="001353.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: Putting Serial # into System Profiler </H1>
+    <B>Peter Dyballa</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Putting%20Serial%20%23%20into%20System%20Profiler%20&In-Reply-To=20041124222602.42CA11A8B1E%40listserver.themacintoshguy.com"
+       TITLE="[X-Unix] Re: Putting Serial # into System Profiler ">Peter_Dyballa at Web.DE
+       </A><BR>
+    <I>Thu Nov 25 02:53:52 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001359.html">[X-Unix] Getting global IP address
+</A></li>
+        <LI>Next message: <A HREF="001353.html">[X-Unix] Re: Putting Serial # into System Profiler 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1335">[ date ]</a>
+              <a href="thread.html#1335">[ thread ]</a>
+              <a href="subject.html#1335">[ subject ]</a>
+              <a href="author.html#1335">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Am 24.11.2004 um 23:26 schrieb 
+<A HREF="../../../mailman/listinfo/x-unix.html">x-unix-request at listserver.themacintoshguy.com</A>:
+
+&gt;<i> Apple System Profiler displays the serial number in only about half of
+</I>&gt;<i> our company computers (mostly iMacs). How would one go about entering
+</I>&gt;<i> serial numbers into the Apple System Profiler for the rest of them?
+</I>
+The serial number is stored in the OpenBoot PROM (OBP). There probably 
+is more than way to access it, the first one being burning, the second 
+a hard reset/PROM reset. The third one would be Forth, the programming 
+language of OBP while your 'in the OBP', having booted while pressing 
+alt-Apple-O-F (OF = Open Firmware). In this state you can list devices, 
+change working directories, set boot paths, list your environment ...
+
+ioreg can retrieve quite a lot of settings from OBP. 'ioreg -l -p 
+IODeviceTree | grep IOPlatformSerialNumber' returns that serial number.
+
+There are a few places with documentation on the OpenBoot PROM, coming 
+from DEC/Digital, adopted by Sun and Apple too. These two companies 
+have some docs around ...
+
+Sun OS/Solaris has a simple command, eeprom, to alter the values in OBP 
+(as root, the super-user). In the time when the PROMs were unreliable 
+and had to be exchanged every few years there was a (not hat official) 
+programme to change the MAC address to be able to re-use a once bought 
+software license.
+
+--
+Greetings
+
+   Pete                                           0
+                                            %-/\_//
+                                             (*)(*)
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001359.html">[X-Unix] Getting global IP address
+</A></li>
+	<LI>Next message: <A HREF="001353.html">[X-Unix] Re: Putting Serial # into System Profiler 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1335">[ date ]</a>
+              <a href="thread.html#1335">[ thread ]</a>
+              <a href="subject.html#1335">[ subject ]</a>
+              <a href="author.html#1335">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

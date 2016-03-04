@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] setting up aliases in bash  / Tiger
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20setting%20up%20aliases%20in%20bash%20%20/%20Tiger&In-Reply-To=DE4F7360-63BD-462B-9B7C-CBDAF68CDF9C%40ljsworld.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002749.html">
+   <LINK REL="Next"  HREF="002752.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] setting up aliases in bash  / Tiger</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20setting%20up%20aliases%20in%20bash%20%20/%20Tiger&In-Reply-To=DE4F7360-63BD-462B-9B7C-CBDAF68CDF9C%40ljsworld.com"
+       TITLE="[X-Unix] setting up aliases in bash  / Tiger">macmonster at myrealbox.com
+       </A><BR>
+    <I>Wed Sep 27 10:52:58 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002749.html">[X-Unix] setting up aliases in bash  / Tiger
+</A></li>
+        <LI>Next message: <A HREF="002752.html">[X-Unix] setting up aliases in bash  / Tiger
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2751">[ date ]</a>
+              <a href="thread.html#2751">[ thread ]</a>
+              <a href="subject.html#2751">[ subject ]</a>
+              <a href="author.html#2751">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 27 Sep 2006, at 18:40, ..lj wrote:
+&gt;<i> On Sep 27, 2006, at 10:18, David Gilden wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Could someone point to me tutorial that would show me what files  
+</I>&gt;&gt;<i> in Tiger
+</I>&gt;&gt;<i> I can edit in Terminal so that I can set up some basic aliases...?
+</I>&gt;<i>
+</I>&gt;<i> try editing
+</I>&gt;<i> ~/.profile
+</I>
+Why .profile &amp; why not .bash_profile? There must be a difference  
+between them - anyone got any ideas what?
+
+This is what I have:
+
+    970 ~ $ cat .bashrc
+    PS1=&quot;\! \w \$ &quot;
+
+    alias rm=&quot;rm -i&quot;
+    alias mv=&quot;mv -i&quot;
+    alias cp=&quot;cp -i&quot;
+
+    export HISTSIZE=900
+    export HISTFILESIZE=900
+    export PATH=$PATH:/Developer/Tools/:/usr/local/bin:/usr/local/bin
+    971 ~ $ cat .bash_profile
+    #alias ssg=&quot;ssh -q -o StrictHostKeyChecking=no -o  
+UserKnownHostsFile=/dev/null&quot;
+    alias ssg=&quot;ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/ 
+dev/null&quot;
+
+    #This file is sourced by bash when you log in interactively.
+    [ -f ~/.bashrc ] &amp;&amp; . ~/.bashrc
+
+    972 ~ $
+
+I can't remember exactly why one set of aliases is one &amp; not the  
+other. Most of the time both shells are sourced, but I believe there  
+are some commands that you might not wish to be aliased in a non- 
+interactive shell (such as a cron job?).
+
+Stroller.
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002749.html">[X-Unix] setting up aliases in bash  / Tiger
+</A></li>
+	<LI>Next message: <A HREF="002752.html">[X-Unix] setting up aliases in bash  / Tiger
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2751">[ date ]</a>
+              <a href="thread.html#2751">[ thread ]</a>
+              <a href="subject.html#2751">[ subject ]</a>
+              <a href="author.html#2751">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

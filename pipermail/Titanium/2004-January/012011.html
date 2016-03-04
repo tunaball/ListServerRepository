@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Fwd: [Ti] Al-book start-up speed (v Windows XP)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Fwd%3A%20%5BTi%5D%20Al-book%20start-up%20speed%20%28v%20Windows%20XP%29&In-Reply-To=list-10079688%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="012010.html">
+   <LINK REL="Next"  HREF="012012.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Fwd: [Ti] Al-book start-up speed (v Windows XP)</H1>
+    <B>arjan.bos at icu.nl</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Fwd%3A%20%5BTi%5D%20Al-book%20start-up%20speed%20%28v%20Windows%20XP%29&In-Reply-To=list-10079688%40mail.ninewire.com"
+       TITLE="[Ti] Fwd: [Ti] Al-book start-up speed (v Windows XP)">arjan.bos at icu.nl
+       </A><BR>
+    <I>Thu Jan  8 12:48:18 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="012010.html">[Ti] Phone Assistant
+</A></li>
+        <LI>Next message: <A HREF="012012.html">[Ti] Fwd: [Ti] Al-book start-up speed (v Windows XP)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12011">[ date ]</a>
+              <a href="thread.html#12011">[ thread ]</a>
+              <a href="subject.html#12011">[ subject ]</a>
+              <a href="author.html#12011">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 5 jan 2004, at 20:35, Dr. Trevor J. Hutley wrote:
+
+&gt;<i> At 21:23 +0100 4/1/04, <A HREF="../../../mailman/listinfo/titanium.html">arjan.bos at icu.nl</A> wrote:
+</I>&gt;&gt;<i> Trevor,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I had noticed that when I start up my 15.2&quot; Al Powerbook, that the 
+</I>&gt;&gt;&gt;<i> start-up is quite slow.
+</I>&gt;&gt;&gt;<i> This seemed to be a result of my recent upgrade to Panther 10.3.2.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I really can recommend the sleep mode of your Mac.
+</I>&gt;<i>
+</I>&gt;<i> Arjan - perhaps you got the wrong impression from my story about 
+</I>&gt;<i> start-ups!  They were simply experiments.  In normal use, I always use 
+</I>&gt;<i> the sleep mode.  My computer works day and night (<A HREF="../../../mailman/listinfo/titanium.html">Folding at Home</A> when I 
+</I>&gt;<i> am not working on the keyboard) and sleeps during my trips to and from 
+</I>&gt;<i> the office or on travel/business trips.
+</I>&gt;<i>
+</I>&gt;<i> I also highly recommend only the sleep mode.  Start-up from sleep is 
+</I>&gt;<i> about 1 second, and that always impresses anyone standing  around.
+</I>&gt;<i>
+</I>
+Trevor,
+
+It seems that you're right. Via slashdot, I found an article about 
+MacOSX, called &quot;What is MacOS X ?&quot;
+<A HREF="http://www.kernelthread.com/mac/osx/">http://www.kernelthread.com/mac/osx/</A>
+This talks about how the unix underpinning of the OS works. It starts 
+of with Open Firmware and then talks about booting. On the bottom of 
+this page: <A HREF="http://www.kernelthread.com/mac/osx/arch_boot.html">http://www.kernelthread.com/mac/osx/arch_boot.html</A> , I found 
+that something called BootCache was (partly) broken by &quot;a recent update 
+to Panther&quot;. This slowed down the boot process up to 100%
+
+ From that page:
+&lt;quote&gt;
+
+/System/Library/Extensions/BootCache.kext is the location of the kernel 
+extension implementing the cache while 
+Contents/Resources/BootCacheControl within that directory is the 
+user-level control utility (it lets you load the playlist, among other 
+things). The effectiveness of BootCache can be gauged from the 
+following: in a recent update to &quot;Panther&quot;, a reference to 
+BootCacheControl was broken. BootCache is started (via the control 
+utility) in /etc/rc, and a prefetch tag is inserted (unless the system 
+is booting in safe mode). /etc/rc looks forBootCacheControl in the 
+&quot;kext&quot; directory, as well as in /usr/sbin, and finds it in the former 
+(it doesn't exist in the latter). However, another program (possibly 
+loginwindow.app) accesses/usr/sbin/BootCacheControl directly, and does 
+not find it. For what it's worth, makingBootCacheControl available in 
+/usr/sbin, say via a symlink, reduces the boot time (measured from 
+clicking on the &quot;Restart&quot; confirmation button to the point where 
+absolutely everything has shown up on the system menu) from 135 seconds 
+to 60 seconds on one of my machines!
+
+&lt;/quote&gt;
+
+So if you're daring enough, you could try to speedup things a bit.
+BTW, I'm satisfied with my boot times as they are.
+
+But good of you to spot this increase!
+
+Met vriendelijke groeten,
+Arjan
+
+-- Multiple exclamation marks are a sure sign of a sick mind -- (Terry 
+Pratchett)
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="012010.html">[Ti] Phone Assistant
+</A></li>
+	<LI>Next message: <A HREF="012012.html">[Ti] Fwd: [Ti] Al-book start-up speed (v Windows XP)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12011">[ date ]</a>
+              <a href="thread.html#12011">[ thread ]</a>
+              <a href="subject.html#12011">[ subject ]</a>
+              <a href="author.html#12011">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

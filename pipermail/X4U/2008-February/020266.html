@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] GraphicsAppSupport.framework
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20GraphicsAppSupport.framework&In-Reply-To=20080218172650.C357DE185A2%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="020265.html">
+   <LINK REL="Next"  HREF="020267.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] GraphicsAppSupport.framework</H1>
+    <B>John Baltutis</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20GraphicsAppSupport.framework&In-Reply-To=20080218172650.C357DE185A2%40listserver.themacintoshguy.com"
+       TITLE="[X4U] GraphicsAppSupport.framework">baltwo at san.rr.com
+       </A><BR>
+    <I>Mon Feb 18 11:43:18 PST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="020265.html">[X4U] G5 iMac-isight battery replacement
+</A></li>
+        <LI>Next message: <A HREF="020267.html">[X4U] Menu Bar oddity
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20266">[ date ]</a>
+              <a href="thread.html#20266">[ thread ]</a>
+              <a href="subject.html#20266">[ subject ]</a>
+              <a href="author.html#20266">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 02/16/08, Joseph Ayers &lt;<A HREF="../../../mailman/listinfo/x4u.html">lobster at neu.edu</A>&gt; wrote:
+&gt;<i>
+</I>&gt;<i> After updating to OS X 10.5.2 and installing the Leopard Graphics update
+</I>&gt;<i> and iLifeSupport_8.2 I've started getting this error in a
+</I>&gt;<i> number of APPs including iWork and Interface Builder.
+</I>&gt;<i>
+</I>&gt;<i> Dyld Error Message: Library not loaded:
+</I>&gt;<i>
+</I>&gt;<i>/System/Library/PrivateFrameworks/GraphicsAppSupport.framework/Versions/A/Frameworks/ImageKit.framework/Versions/A/ImageKit
+</I>&gt;<i>   Referenced from:
+</I>&gt;<i>
+</I>&gt;<i>/System/Library/PrivateFrameworks/iLifeMediaBrowser.framework/Versions/A/iLifeMediaBrowser
+</I>&gt;<i>   Reason: image not found
+</I>&gt;<i>
+</I>&gt;<i> /System/Library/PrivateFrameworks/GraphicsAppSupport.framework/ has no
+</I>&gt;<i> folder &quot;Versions&quot;
+</I>&gt;<i>
+</I>&gt;<i> Any idea how to fix this?
+</I>
+Normally, that means you have a hosed installation. The error indicates that
+you're missing the ImageKit executable or that
+/System/Library/PrivateFrameworks/GraphicsAppSupport.framework/Versions/ is
+missing. Reinstall the 10.5.2 COMBO and Graphics updates, repair permissions,
+and see if that fixes the problem.
+
+On my machine, with both updates installed, these Teerminal commands show:
+
+$ ls -al /System/Library/PrivateFrameworks/GraphicsAppSupport.framework/total 32
+
+lrwxr-xr-x    1 root  wheel    24 Feb  4 19:53 CodeResources -&gt;
+Versions/A/CodeResources
+lrwxr-xr-x    1 root  wheel    27 Feb  4 19:53 Frameworks -&gt;
+Versions/Current/Frameworks
+lrwxr-xr-x    1 root  wheel    35 Feb  4 19:53 GraphicsAppSupport -&gt;
+Versions/Current/GraphicsAppSupport
+lrwxr-xr-x    1 root  wheel    26 Feb  4 19:53 Resources -&gt;
+Versions/Current/Resources
+drwxr-xr-x    4 root  wheel   136 Feb 4 19:53 Versions
+
+$ ls -al
+/System/Library/PrivateFrameworks/GraphicsAppSupport.framework/Versions/A/Frameworks/ImageKit.framework/Versions/A/
+
+-rw-r--r--    1 root  wheel     32548 Dec 19 20:19 CodeResources
+drwxr-xr-x   14 root  wheel       476 Oct 10 22:01 Headers
+-rwxr-xr-x    1 root  wheel  10472560 Dec 19 20:18 ImageKit
+drwxr-xr-x  271 root  wheel      9214 Feb  6 20:41 Resources
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="020265.html">[X4U] G5 iMac-isight battery replacement
+</A></li>
+	<LI>Next message: <A HREF="020267.html">[X4U] Menu Bar oddity
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20266">[ date ]</a>
+              <a href="thread.html#20266">[ thread ]</a>
+              <a href="subject.html#20266">[ subject ]</a>
+              <a href="author.html#20266">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

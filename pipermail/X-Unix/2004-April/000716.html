@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] PHP 4.3.6 Compile
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20PHP%204.3.6%20Compile&In-Reply-To=list-12254592%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000715.html">
+   <LINK REL="Next"  HREF="000717.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] PHP 4.3.6 Compile</H1>
+    <B>Craig Hoffman</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20PHP%204.3.6%20Compile&In-Reply-To=list-12254592%40mail.ninewire.com"
+       TITLE="[X-Unix] PHP 4.3.6 Compile">choffman at katomic.com
+       </A><BR>
+    <I>Tue Apr 20 11:42:32 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000715.html">[X-Unix] PHP 4.3.6 Compile
+</A></li>
+        <LI>Next message: <A HREF="000717.html">[X-Unix] What's in an MP3's resource fork..?     [Was: Re: [X4U] ._annoying_files on SMB shares - can I remove them..?]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#716">[ date ]</a>
+              <a href="thread.html#716">[ thread ]</a>
+              <a href="subject.html#716">[ subject ]</a>
+              <a href="author.html#716">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I look at the ./configure --help and thats how it was listed so I 
+changed it.  All seems well....
+&gt;<i> -with-pdflib=/sw&quot; to &quot;--with-pdflib-dir=/sw
+</I>__________________________________
+Craig Hoffman - eClimb Media
+
+v: (847) 644 - 8914
+f: (847) 866 - 1946
+e: <A HREF="../../../mailman/listinfo/x-unix.html">choffman at eclimb.net</A>
+w: www.eclimb.net
+_________________________________
+On Apr 20, 2004, at 1:02 PM, Eugene Lee wrote:
+
+&gt;<i> On Tue, Apr 20, 2004 at 08:46:25AM -0500, Craig Hoffman wrote:
+</I>&gt;<i> :
+</I>&gt;<i> : Hi everyone,
+</I>&gt;<i> : I got working.  Here is my configure that worked:
+</I>&gt;<i> :
+</I>&gt;<i> : ./configure' '--with-zlib-dir=/usr/local/' '--with-gd'
+</I>&gt;<i> : '--with-jpeg-dir=/sw' '--with-png-dir=/sw'
+</I>&gt;<i> : '--with-mysql=/usr/local/mysql' '--with-xml' '--with-pdflib-dir=/sw'
+</I>&gt;<i> : '--enable-ftp' '--enable-ldap' '--with-curl=/sw' '-enable-calendar'
+</I>&gt;<i> : '--with-expat-dir=/sw' '--enable-mime-magic' '--disable-debug'
+</I>&gt;<i> : '--enable-pic' '--enable-sysvsem' '--enable-sysvshm' '--enable-exif'
+</I>&gt;<i> : '--with-gettext=/sw' '--with-ncurses' '--with-dom'
+</I>&gt;<i> : '--with-apxs=/usr/sbin/apxs'
+</I>&gt;<i>
+</I>&gt;<i> The only differences between your current set of configure options
+</I>&gt;<i> and the set that caused the libjpeg problem is that you removed
+</I>&gt;<i> &quot;--with-freetype-dir=/sw&quot; and &quot;--with-tiff-dir=/sw&quot;, and changed
+</I>&gt;<i> &quot;--with-pdflib=/sw&quot; to &quot;--with-pdflib-dir=/sw&quot;.  Hmmm.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> -- 
+</I>&gt;<i> Eugene Lee
+</I>&gt;<i> <A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;<i> Mac ISP
+</I>&gt;<i> Serious Mac Internet Solutions From NineWire!   
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older 
+</I>&gt;<i> Mac!
+</I>&gt;<i> Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>    Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>   this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;<i>
+</I>&gt;<i> OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s - 
+</I>&gt;<i> <A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000715.html">[X-Unix] PHP 4.3.6 Compile
+</A></li>
+	<LI>Next message: <A HREF="000717.html">[X-Unix] What's in an MP3's resource fork..?     [Was: Re: [X4U] ._annoying_files on SMB shares - can I remove them..?]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#716">[ date ]</a>
+              <a href="thread.html#716">[ thread ]</a>
+              <a href="subject.html#716">[ subject ]</a>
+              <a href="author.html#716">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

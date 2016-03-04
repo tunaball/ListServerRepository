@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] command line cp question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20command%20line%20cp%20question&In-Reply-To=20051202104334.A90645CB784%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010550.html">
+   <LINK REL="Next"  HREF="010523.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] command line cp question</H1>
+    <B>John Baltutis</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20command%20line%20cp%20question&In-Reply-To=20051202104334.A90645CB784%40listserver.themacintoshguy.com"
+       TITLE="[X4U] command line cp question">baltwo at san.rr.com
+       </A><BR>
+    <I>Fri Dec  2 11:35:19 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010550.html">[X4U] OK to keep passwords in Keychain?
+</A></li>
+        <LI>Next message: <A HREF="010523.html">[X4U] 3 network questions
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10521">[ date ]</a>
+              <a href="thread.html#10521">[ thread ]</a>
+              <a href="subject.html#10521">[ subject ]</a>
+              <a href="author.html#10521">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 12/02/05, Kansas Territory &lt;<A HREF="../../../mailman/listinfo/x4u.html">kansast at mac.com</A>&gt; wrote:
+&gt;<i> On Dec 1, 2005, at 9:38 PM, Stroller wrote:
+</I>&gt;&gt;<i> On Dec 1, 2005, at 9:28 pm, Kansas Territory wrote:
+</I>&gt;&gt;&gt;<i> Could someone give me a hint or a clue as to how I could on a
+</I>&gt;&gt;&gt;<i> server, via the command line..
+</I>&gt;&gt;&gt;<i> COPY all files that end in .pl   into a directory.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I know if I'm in one directory.. I could do something like
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> cp *.pl  backupdirectory
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> But I want to start up on the root level  /      and copy ALL
+</I>&gt;&gt;&gt;<i> files on the server than end in .pl
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    find / -name &quot;*.pl&quot; -exec cp \{} backupdir \;
+</I>&gt;<i>
+</I>&gt;<i> Thanks for the reply.
+</I>&gt;<i>
+</I>&gt;<i> find / -name &quot;*.pl&quot; -exec cp \{} perlscripts/
+</I>&gt;<i>
+</I>&gt;<i> i tried running this from the command line...  I get:
+</I>&gt;<i>
+</I>&gt;<i> find: missing argument to `-exec'
+</I>&gt;<i>
+</I>&gt;<i> I'm trying to run this from a command line.. on  a Linux box if that
+</I>&gt;<i> makes any difference ?
+</I>
+You need to include the escape character and the semicolon at the line's end
+(and maybe even have to escape the trailing /):
+
+The example was: find / -name &quot;*.pl&quot; -exec cp \{} backupdir \;
+
+Yours: find / -name &quot;*.pl&quot; -exec cp \{} perlscripts/ \:
+</PRE>
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010550.html">[X4U] OK to keep passwords in Keychain?
+</A></li>
+	<LI>Next message: <A HREF="010523.html">[X4U] 3 network questions
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10521">[ date ]</a>
+              <a href="thread.html#10521">[ thread ]</a>
+              <a href="subject.html#10521">[ subject ]</a>
+              <a href="author.html#10521">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

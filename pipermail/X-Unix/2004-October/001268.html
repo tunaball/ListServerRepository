@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] SSH without requiring password between 2 machines
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20SSH%20without%20requiring%20password%20between%202%20machines&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001272.html">
+   <LINK REL="Next"  HREF="001269.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] SSH without requiring password between 2 machines</H1>
+    <B>Our Pal Al</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20SSH%20without%20requiring%20password%20between%202%20machines&In-Reply-To="
+       TITLE="[X-Unix] SSH without requiring password between 2 machines">opa at nyc.rr.com
+       </A><BR>
+    <I>Thu Oct 28 04:32:40 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001272.html">[X-Unix] Disk &amp; System maintenance
+</A></li>
+        <LI>Next message: <A HREF="001269.html">[X-Unix] SSH without requiring password between 2 machines
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1268">[ date ]</a>
+              <a href="thread.html#1268">[ thread ]</a>
+              <a href="subject.html#1268">[ subject ]</a>
+              <a href="author.html#1268">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I'm trying to enable SSH without requiring a password between my OSX 
+machine and another OSX Mac.
+
+On my mac  I used ssh-keygen to make an rsa key.
+I copied the id_rsa.pub file from my ~/.ssh directory to the 
+authorized_keys file in the ~/.ssh directory of my target Mac
+On the target I edited /etc/sshd_config to uncomment  
+&quot;PubkeyAuthentication yes&quot; and &quot;AuthorizedKeysFile      
+.ssh/authorized_keys&quot;, and then turned Remote Login of and on in the 
+Sharing preference.
+
+And yet, whenever I try to ssh to my target, I can't at all. I get 
+&quot;Connection closed by &lt;remote ip#&gt;&quot;
+
+What am I still doing wrong? For now I have to rename authorized keys 
+to get in.
+
+- opa
+
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001272.html">[X-Unix] Disk &amp; System maintenance
+</A></li>
+	<LI>Next message: <A HREF="001269.html">[X-Unix] SSH without requiring password between 2 machines
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1268">[ date ]</a>
+              <a href="thread.html#1268">[ thread ]</a>
+              <a href="subject.html#1268">[ subject ]</a>
+              <a href="author.html#1268">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

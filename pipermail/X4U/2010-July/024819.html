@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Extracting data from an email
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX4U%5D%20Extracting%20data%20from%20an%20email&In-Reply-To=%3CAA4F2FB3-DDBC-4CBE-AB0B-B6ED552BDB52%40ldml.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="024818.html">
+   <LINK REL="Next"  HREF="024820.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X4U] Extracting data from an email</H1>
+    <B>Simon Forster</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX4U%5D%20Extracting%20data%20from%20an%20email&In-Reply-To=%3CAA4F2FB3-DDBC-4CBE-AB0B-B6ED552BDB52%40ldml.com%3E"
+       TITLE="[X4U] Extracting data from an email">simon-lists at ldml.com
+       </A><BR>
+    <I>Sun Jul 18 01:09:39 PDT 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="024818.html">[X4U] Extracting data from an email
+</A></li>
+        <LI>Next message: <A HREF="024820.html">[X4U] Earthquake
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#24819">[ date ]</a>
+              <a href="thread.html#24819">[ thread ]</a>
+              <a href="subject.html#24819">[ subject ]</a>
+              <a href="author.html#24819">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 17 Jul 2010, at 17:14, Andy wrote:
+
+&gt;<i> I want to extract some data from emails sent from a shopping cart. The data will be something like Product: xxxx
+</I>&gt;<i> Order No: xxxx, Name: xxxx, Address: xxxx etc.
+</I>&gt;<i> The emails will arrive as either html or plain text. I want to be able to automatically extract this data and insert it into a Filemaker database.
+</I>&gt;<i> I know I can run a script from a Rule in Mail or Entourage to save/export the emails as plain text but how to get the data into a form that Filemaker can use?
+</I>&gt;<i> Or is there some other way of doing this? 
+</I>&gt;<i> 
+</I>&gt;<i> Any help from you guys would be really appreciated.
+</I>
+There's a number of ways to do this - depending on volumes, whether the order data needs to be matched up with other data in FileMaker, how automated you need the process to be, etc.
+
+I'm guessing that there wont be too many entries? Probably you could parse out the data and add it into FileMaker all via AppleScript. Personally I tend to add in a bit of perl via AppleScript's do shell script step as I understand regular expressions and find that mechanism easier - but if you need regular expressions and don't want to go with perl, check out the Satimage extension &lt;<A HREF="http://www.satimage.fr/software/en/downloads/downloads_companion_osaxen.html">http://www.satimage.fr/software/en/downloads/downloads_companion_osaxen.html</A>&gt;.
+
+However, I'm reasonably confident that you'll be able to get away with using plain old AppleScript.
+
+Go to the AppleScript users list for more info on using AppleScript &lt;<A HREF="http://lists.apple.com/mailman/listinfo/applescript-users">http://lists.apple.com/mailman/listinfo/applescript-users</A>&gt;.
+
+Split the process into a couple of stages:
+
+- Get the email
+- Parse out the bits you want
+- Add to FileMaker
+
+Each stage can be developed and debugged on its own before stitching together to get it to work as you want.
+
+As a tip, if you're using Apple's Mail application, you can fire a rule to run an AppleScript. For instance I have a rule which identifies certain incoming emails and drops them straight into my &quot;To Do&quot; application. Handy when I'm out and about and suddenly think of something - I just send myself an email and it's in the list next time I check.
+
+HTH
+
+Simon
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="024818.html">[X4U] Extracting data from an email
+</A></li>
+	<LI>Next message: <A HREF="024820.html">[X4U] Earthquake
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#24819">[ date ]</a>
+              <a href="thread.html#24819">[ thread ]</a>
+              <a href="subject.html#24819">[ subject ]</a>
+              <a href="author.html#24819">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

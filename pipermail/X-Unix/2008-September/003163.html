@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How does one find a string in a binary file, etc.?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20does%20one%20find%20a%20string%20in%20a%20binary%20file%2C%20etc.%3F&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="003164.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How does one find a string in a binary file, etc.?</H1>
+    <B>Aaron</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20does%20one%20find%20a%20string%20in%20a%20binary%20file%2C%20etc.%3F&In-Reply-To="
+       TITLE="[X-Unix] How does one find a string in a binary file, etc.?">aaron at macuser.fastmail.fm
+       </A><BR>
+    <I>Tue Sep  2 05:57:55 PDT 2008</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="003164.html">[X-Unix] How does one find a string in a binary file, etc.?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3163">[ date ]</a>
+              <a href="thread.html#3163">[ thread ]</a>
+              <a href="subject.html#3163">[ subject ]</a>
+              <a href="author.html#3163">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Once upon a time, like the 1970's or 80's, I probably could have written a C (or Fortran!) program to solve this problem, but my mind isn't in that space any more.
+
+I have an 80-GB file that 's an exact device copy of a drive from which I'm trying to recover some erased files. The files I'm trying to recover (AddressBook data files) are XML text files, each less than 4 KB in size and beginning with the same sequence of about 180 bytes.
+
+I split the humongous file into 160 512-MB files. Going through a few of the latter files individually with the GUI program HexEdit 2.0, I found a few of the missing AddressBook files, and confirmed my expectation that they would start on a 4-KB boundary (hex address ending in 000)  in the larger files.
+
+I still remember enough csh/tcsh programming to write a script to at least separate out those of the larger files that contain one or more of the files I'm trying to recover, so as to speed up the process that I've tried already using HexEdit. That is, I could do that if I could find a command that tests a binary file for the presence of a string. It seems that such a command would surely exist, but I haven't been able to find one. (If the larger files I need to test consisted of text lines, it would probably be trivial using awk or sed.)
+
+Also, If I can figure out how to sequentially convert each 4-KB block from a large file into a separate file that can be tested (and either saved or discarded), it would make the whole process even easier. 
+
+Equivalently, I would go through the large file and test at each 4-KB boundary for the presence of the desired string and, if it was found, I would copy the 4-KB chunk beginning at that point to a new file.
+
+So, the commands I'm looking for would each do one or more of the following:
+
+1) Search a binary file for the presence of a string in the file.
+
+2) Compare a string to the portion of a binary file beginning at a specific byte offset. (I can figure out how to compare a string to the beginning of a file!)
+
+3) Extract a portion of a large file beginning at a specific offset and of a specific length. A special case would be to extract and process fixed-sized chunks sequentially.
+
+This isn't rocket science and, as I indicated above, once upon a time I probably could have written a C program to accomplish the task in the time it's taken me to write this message.  But even then, I'd still want to know if the tools I'm referring to are out there.
+
+ - Aaron
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="003164.html">[X-Unix] How does one find a string in a binary file, etc.?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3163">[ date ]</a>
+              <a href="thread.html#3163">[ thread ]</a>
+              <a href="subject.html#3163">[ subject ]</a>
+              <a href="author.html#3163">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

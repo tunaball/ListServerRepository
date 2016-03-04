@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Stop Terminal truncating stdout to window width?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Stop%20Terminal%20truncating%20stdout%20to%20window%20width%3F&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002774.html">
+   <LINK REL="Next"  HREF="002776.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Stop Terminal truncating stdout to window width?</H1>
+    <B>Jerry Krinock</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Stop%20Terminal%20truncating%20stdout%20to%20window%20width%3F&In-Reply-To="
+       TITLE="[X-Unix] Stop Terminal truncating stdout to window width?">jerry at ieee.org
+       </A><BR>
+    <I>Tue Nov 28 11:42:54 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002774.html">[Tcbug] Re: [X-Unix] Re: [PB] Compiling on MacOS X (source was
+	written for winblow...) [moved from PB]
+</A></li>
+        <LI>Next message: <A HREF="002776.html">[X-Unix] Stop Terminal truncating stdout to window width?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2775">[ date ]</a>
+              <a href="thread.html#2775">[ thread ]</a>
+              <a href="subject.html#2775">[ subject ]</a>
+              <a href="author.html#2775">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Whenever I a run a command which produces stdout wider than the window, it
+gets truncated immediately.  For example, say I'm trying to find a process
+named &quot;myProcess&quot;
+
+ps -alx | grep myProcess
+
+If I save this in a .command script, give it to someone and they run it,
+myProcess is usually not found because the ps stdout will be longer than 80
+characters, and some not-so-smart ass decided to truncate this to the
+Terminal window width, ^before^ it even gets piped to grep.  If the user
+then make the window wider and re-runs the command, it works.  ARGGGHHH!!!!
+
+I've been searching without success for a way to change this infantile
+behavior.  Seems like it should be an environment variable of some kind.  Is
+there?
+
+Jerry Krinock
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002774.html">[Tcbug] Re: [X-Unix] Re: [PB] Compiling on MacOS X (source was
+	written for winblow...) [moved from PB]
+</A></li>
+	<LI>Next message: <A HREF="002776.html">[X-Unix] Stop Terminal truncating stdout to window width?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2775">[ date ]</a>
+              <a href="thread.html#2775">[ thread ]</a>
+              <a href="subject.html#2775">[ subject ]</a>
+              <a href="author.html#2775">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

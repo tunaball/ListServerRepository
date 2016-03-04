@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Hiding apps from the command line
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11729289%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000535.html">
+   <LINK REL="Next"  HREF="000537.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Hiding apps from the command line</H1>
+    <B>Simon Forster</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11729289%40mail.ninewire.com"
+       TITLE="[X-Unix] Hiding apps from the command line">simon-lists at ldml.com
+       </A><BR>
+    <I>Fri Mar 26 08:05:37 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000535.html">Setting variables for hide script
+</A></li>
+        <LI>Next message: <A HREF="000537.html">[X-Unix] Hiding apps from the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#536">[ date ]</a>
+              <a href="thread.html#536">[ thread ]</a>
+              <a href="subject.html#536">[ subject ]</a>
+              <a href="author.html#536">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 26 Mar 2004, at 15:19, Kirk McElhearn wrote:
+
+&gt;&gt;<i> The error seems to get thrown if the second command line arg is not
+</I>&gt;&gt;<i> given - whether it's needed or not.
+</I>&gt;<i>
+</I>&gt;<i> I still get it, even if I add another argument.
+</I>
+What error? &quot;syntax error: No user interaction allowed. (-1713)&quot;?
+
+&gt;&gt;<i> # hide -x           - shows terminal
+</I>&gt;<i>
+</I>&gt;<i> Why? Since you're typing this from Terminal, it shouldn't matter.
+</I>
+If I'm in the terminal and want to hide all apps except Mail but still 
+keep terminal showing, hide -ox Mail does this for me. Though it'd 
+probably be better to just allow you to specify multiple arguments for 
+the -o command.
+
+I'd decided to change the script so the commands were additive - 
+although most of them are mutually exclusive so it was a waste of time 
+- until I added the -x switch.
+
+&gt;<i> I wonder if the &quot;begins with&quot; and &quot;contains&quot; is any better/faster than
+</I>&gt;<i> simply &quot;is -o&quot; etc.?
+</I>
+Additive switches.
+
+&gt;&gt;<i> if &quot;$1&quot; contains &quot;x&quot; then tell application &quot;Terminal&quot; to activate
+</I>&gt;&gt;<i> else if exists application process &quot;$1&quot; then
+</I>&gt;&gt;<i> set visible of application process &quot;$1&quot; to false
+</I>&gt;<i>
+</I>&gt;<i> This part's not working for me...
+</I>
+Hmm. Once again I need to supply 2 arguments. hide Mail Mail for 
+example works (for me).
+
+Simon Forster
+_____________________________________________________
+  LDML Ltd, 62 Pall Mall, London, SW1Y 5HZ, UK
+  Tel: +44 (0)70 9230 5244   Fax: +44 (0)70 9230 5247
+_____________________________________________________
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000535.html">Setting variables for hide script
+</A></li>
+	<LI>Next message: <A HREF="000537.html">[X-Unix] Hiding apps from the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#536">[ date ]</a>
+              <a href="thread.html#536">[ thread ]</a>
+              <a href="subject.html#536">[ subject ]</a>
+              <a href="author.html#536">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

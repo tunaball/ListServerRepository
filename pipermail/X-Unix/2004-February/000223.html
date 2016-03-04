@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Simple commandline mail client
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Simple%20commandline%20mail%20client&In-Reply-To=list-10616818%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000222.html">
+   <LINK REL="Next"  HREF="000224.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Simple commandline mail client</H1>
+    <B>James Bucanek</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Simple%20commandline%20mail%20client&In-Reply-To=list-10616818%40mail.ninewire.com"
+       TITLE="[X-Unix] Simple commandline mail client">subscriber at gloaming.com
+       </A><BR>
+    <I>Tue Feb  3 07:28:52 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000222.html">[X-Unix] Simple commandline mail client
+</A></li>
+        <LI>Next message: <A HREF="000224.html">[X-Unix] Simple commandline mail client
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#223">[ date ]</a>
+              <a href="thread.html#223">[ thread ]</a>
+              <a href="subject.html#223">[ subject ]</a>
+              <a href="author.html#223">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Peter Marreck wrote on Tuesday, February 3, 2004:
+
+&gt;<i>Here's my situation- I merely want to be able to enter some SMTP 
+</I>&gt;<i>settings (server, login, etc.) in a config file (or as additional 
+</I>&gt;<i>parameters on a commandline) so I can do something like &quot;mail <A HREF="../../../mailman/listinfo/x-unix.html">me at me.com</A> 
+</I>&gt;<i>'this is the subject' 'this is the body'&quot; so I can include it in a 
+</I>&gt;<i>script. I don't want to have to mess with installing or configuring 
+</I>&gt;<i>mail SERVERS such as Postfix etc., and I don't want something that will 
+</I>&gt;<i>automatically break with the next OS upgrade. I also don't necessarily 
+</I>&gt;<i>want to applescript mail.app. Does anyone know of such a CL app?
+</I>
+The tool is called 'sendmail', it's built in, and will do everything you need.  If you are using OS X 10.3, Postfix is already installed and configured for use as a simply mail delivery agent.  All you have to do is turn is on by editing your /etc/hostconfig file to say
+
+    MAILSERVER=-AUTOMATIC-
+
+This does not turn your system into a mail server, but will fire up just enough of Postfix engine to send mail.
+
+Caveat: If you are behind a firewall that prohibits or restricts outgoing SMTP connections, then you might, indeed, have some additional configuration work to do before sendmail will deliver for you.  But it's not difficult.
+
+______________________________________________________
+James Bucanek       &lt;mailto:<A HREF="../../../mailman/listinfo/x-unix.html">privatereply at gloaming.com</A>&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000222.html">[X-Unix] Simple commandline mail client
+</A></li>
+	<LI>Next message: <A HREF="000224.html">[X-Unix] Simple commandline mail client
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#223">[ date ]</a>
+              <a href="thread.html#223">[ thread ]</a>
+              <a href="subject.html#223">[ subject ]</a>
+              <a href="author.html#223">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

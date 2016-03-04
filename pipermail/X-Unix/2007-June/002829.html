@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] ssh sudo password in clear text
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20ssh%20sudo%20password%20in%20clear%20text&In-Reply-To=FCCB26DE-DFFC-4510-9984-E20DF0E60108%40yacht.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002828.html">
+   <LINK REL="Next"  HREF="002830.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] ssh sudo password in clear text</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20ssh%20sudo%20password%20in%20clear%20text&In-Reply-To=FCCB26DE-DFFC-4510-9984-E20DF0E60108%40yacht.com"
+       TITLE="[X-Unix] ssh sudo password in clear text">ecrist at secure-computing.net
+       </A><BR>
+    <I>Sun Jun 10 15:31:09 PDT 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002828.html">[X-Unix] ssh sudo password in clear text
+</A></li>
+        <LI>Next message: <A HREF="002830.html">[X-Unix] ssh sudo password in clear text
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2829">[ date ]</a>
+              <a href="thread.html#2829">[ thread ]</a>
+              <a href="subject.html#2829">[ subject ]</a>
+              <a href="author.html#2829">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jun 10, 2007, at 4:50 PMJun 10, 2007, Paul Hess wrote:
+&gt;&gt;<i> echo &quot;password&quot; | ssh someserver.com sudo mailstuff/sa-learn.sh
+</I>&gt;<i>
+</I>&gt;<i> Hi Eric,
+</I>&gt;<i>
+</I>&gt;<i> Here's the rub that brings me back to square one (unless I  
+</I>&gt;<i> misunderstand the piping).
+</I>&gt;<i>
+</I>&gt;<i> If I use the command above, wouldn't the password be sent to &quot;ssh&quot;  
+</I>&gt;<i> rather than sent to the &quot;sudo&quot; command?  I think I somehow need to  
+</I>&gt;<i> put echo &quot;password&quot; into the command line after ssh to be piped to  
+</I>&gt;<i> sudo but I don't understand the syntax to do that.  I believe it  
+</I>&gt;<i> has to do with single quotes but I can't find a way to get it right.
+</I>
+Paul,
+
+The echo &quot;password&quot;  portion of the command gets piped into the  
+entirety of ssh someserver.com sudo mailstuff/sa-learn.sh.  In this  
+case, the sudo ... is what reads that input from stdin.
+
+To help you understand:
+
+foo | bar
+
+In the above example, foo is seen as input on stdin from bar('s)  
+perspective.  Try the command I sent you, it should work just fine.   
+I tested it on my systems here, an OS X client connecting to a  
+FreeBSD 6.x server, and things went swimmingly.  If the command  
+*does*, for some reason, fail, add a -S (hyphen upper S) after sudo  
+and before mailstuff/sa-learn.sh.  This option tells sudo to accept  
+the password from stdin rather than a device (read tty).
+
+Give it a try and tell me how it goes.
+
+HTH
+
+*For the record, I don't sit at home on a Sunday waiting for X-Unix  
+email, I, (un)fortunately have the benefit of a [Cr|Bl]ackberry that  
+summons me in the middle of my honey-do list... ;)
+-----
+Eric F Crist
+Secure Computing Networks
+
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002828.html">[X-Unix] ssh sudo password in clear text
+</A></li>
+	<LI>Next message: <A HREF="002830.html">[X-Unix] ssh sudo password in clear text
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2829">[ date ]</a>
+              <a href="thread.html#2829">[ thread ]</a>
+              <a href="subject.html#2829">[ subject ]</a>
+              <a href="author.html#2829">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

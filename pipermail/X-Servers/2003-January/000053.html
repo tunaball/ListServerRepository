@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Mounting Home Directories with SMB via LDAP
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=Mounting%20Home%20Directories%20with%20SMB%20via%20LDAP&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000052.html">
+   <LINK REL="Next"  HREF="000054.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Mounting Home Directories with SMB via LDAP</H1>
+    <B>Forrest Beck</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=Mounting%20Home%20Directories%20with%20SMB%20via%20LDAP&In-Reply-To="
+       TITLE="Mounting Home Directories with SMB via LDAP">forrest at da.org
+       </A><BR>
+    <I>Fri Jan 24 14:22:07 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000052.html">[X Servers] Authentication
+</A></li>
+        <LI>Next message: <A HREF="000054.html">[X Servers] Mounting Home Directories with SMB via LDAP
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#53">[ date ]</a>
+              <a href="thread.html#53">[ thread ]</a>
+              <a href="subject.html#53">[ subject ]</a>
+              <a href="author.html#53">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I have a X Server and a couple 10.2 clients.  I have set up the clients
+to authenticate via LDAP 3 to our Active Directory DC (Setup was based
+off of Chuck Simciak Writeup
+<A HREF="http://www.absynthespad.com/macintosh/ldaptoad1.html">http://www.absynthespad.com/macintosh/ldaptoad1.html</A>).  the
+authentication process works.  But I cannot get the home directories to
+mount.  I have tried two ways.  1) The client and server authenticate to
+AD to mount the home directory (like suggested in Apple's Integrating
+OSX with Active Directory)  and 2) The client authenticates to AD and
+mounts a smb share on the same server. 
+ 
+The later is what I really would want to happen, since my faculty
+already have Home directories on the Windows Server.  
+ 
+Does anyone out there know what to use when mounting a home directory
+via SMB instead of AFP?
+ 
+Currently my Mounts CN contains the following:
+ 
+1&gt; cn: Faculty:/Users; 
+1&gt; vfsdir: /Network/Servers; 
+1&gt; vfstype: url; 
+2&gt; vfsopts:
+url==<A HREF="smb://;AUTH=NO%20USER%20AUTHENT@faculty.school.da.org/Users;">smb://;AUTH=NO%20USER%20AUTHENT@faculty.school.da.org/Users;</A> net; 
+ 
+User's contain the following:
+ 
+ 1&gt; primaryGroupID: 513; 
+ 1&gt; name: Forrest Beck; 
+ 1&gt; sAMAccountName: fbeck;  
+ 1&gt; userSharedFolderOther: /Network/Servers/faculty/Users/fbeck; 
+ 1&gt; UniqueID: 1302; 
+ 1&gt; MacHomeDirectory:
+&lt;home_Dir&gt;&lt;url&gt;<A HREF="smb://faculty.school.da.org/Users&lt;/url">smb://faculty.school.da.org/Users&lt;/url</A>&gt;&lt;path&gt;fbeck&lt;/path&gt;
+&lt;/home_Dir&gt;; 
+ 
+MacHomeDirectory is mapped to HomeDirectory..
+ 
+ 
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000052.html">[X Servers] Authentication
+</A></li>
+	<LI>Next message: <A HREF="000054.html">[X Servers] Mounting Home Directories with SMB via LDAP
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#53">[ date ]</a>
+              <a href="thread.html#53">[ thread ]</a>
+              <a href="subject.html#53">[ subject ]</a>
+              <a href="author.html#53">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

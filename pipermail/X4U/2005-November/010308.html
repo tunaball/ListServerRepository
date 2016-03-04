@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] New toy!
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20New%20toy%21&In-Reply-To=BFACA250.2A8F%25chowse%40charter.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010196.html">
+   <LINK REL="Next"  HREF="010201.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] New toy!</H1>
+    <B>Xavier Noria</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20New%20toy%21&In-Reply-To=BFACA250.2A8F%25chowse%40charter.net"
+       TITLE="[X4U] New toy!">fxn at hashref.com
+       </A><BR>
+    <I>Fri Nov 25 12:41:38 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010196.html">[X4U] New toy!
+</A></li>
+        <LI>Next message: <A HREF="010201.html">[X4U] New toy!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10308">[ date ]</a>
+              <a href="thread.html#10308">[ thread ]</a>
+              <a href="subject.html#10308">[ subject ]</a>
+              <a href="author.html#10308">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Nov 25, 2005, at 18:13, Charles Howse wrote:
+
+&gt;<i> My nephew gave me an IMB 512MB USB 2.0 Memory Key!
+</I>&gt;<i> Cool, it's the first memory stick I've had.
+</I>&gt;<i>
+</I>&gt;<i> I just love my PowerMac...I inserted the stick, noticed that the  
+</I>&gt;<i> lights
+</I>&gt;<i> inside started blinking, and Bam! there it was on the desktop,  
+</I>&gt;<i> mounted and
+</I>&gt;<i> ready!
+</I>&gt;<i>
+</I>&gt;<i> It came with several Windoze apps to encrypt the contents, which,  
+</I>&gt;<i> of course
+</I>&gt;<i> I can't use.
+</I>&gt;<i>
+</I>&gt;<i> I'd like to be able to somehow secure the contents, and be able to  
+</I>&gt;<i> use the
+</I>&gt;<i> stick on any computer (Mac, Windows, Linux, etc.).
+</I>&gt;<i>
+</I>&gt;<i> Any suggestions for strategy and applications?
+</I>
+I use a command-line utility that works on the Mac, Linux, and  
+Windows, at least, called mcrypt():
+
+     % file foo.pl
+     foo.pl: ASCII text
+     % mcrypt -a rijndael-256 foo.pl
+     Enter the passphrase (maximum of 512 characters)
+     Please use a combination of upper and lower case letters and  
+numbers.
+     Enter passphrase:
+
+     Enter passphrase:
+
+
+     File foo.pl was encrypted.
+     % file foo.pl.nc
+     foo.pl.nc: mcrypt 2.5 encrypted data, algorithm: rijndael-256,  
+keysize: 32 bytes, mode: cbc,
+
+To decrypt:
+
+     % mcrypt -d foo.pl.nc
+     Enter passphrase:
+
+     File foo.pl.nc was decrypted.
+
+mcrypt know which algorithm was used to encrypt, so -d is enough.
+
+This utility has an Emacs mode that provides transparent edition of  
+encrypted files, that's the way I maintain my passwords file.
+
+-- fxn
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010196.html">[X4U] New toy!
+</A></li>
+	<LI>Next message: <A HREF="010201.html">[X4U] New toy!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10308">[ date ]</a>
+              <a href="thread.html#10308">[ thread ]</a>
+              <a href="subject.html#10308">[ subject ]</a>
+              <a href="author.html#10308">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

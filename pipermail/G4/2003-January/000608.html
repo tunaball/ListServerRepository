@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] G4 upgrades on a beige G3 - scsi and printer help?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20G4%20upgrades%20on%20a%20beige%20G3%20-%20scsi%20and%20printer%20help%3F&In-Reply-To=list-4307912%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000607.html">
+   <LINK REL="Next"  HREF="000609.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] G4 upgrades on a beige G3 - scsi and printer help?</H1>
+    <B>Ramsey French</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20G4%20upgrades%20on%20a%20beige%20G3%20-%20scsi%20and%20printer%20help%3F&In-Reply-To=list-4307912%40mail.ninewire.com"
+       TITLE="[G4] G4 upgrades on a beige G3 - scsi and printer help?">rammjet at bisnaga.com
+       </A><BR>
+    <I>Mon Jan  6 20:33:49 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000607.html">[G4] G4 upgrades on a beige G3 - scsi and printer help?
+</A></li>
+        <LI>Next message: <A HREF="000609.html">[G4] G4 upgrades on a beige G3 - scsi and printer help?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#608">[ date ]</a>
+              <a href="thread.html#608">[ thread ]</a>
+              <a href="subject.html#608">[ subject ]</a>
+              <a href="author.html#608">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Try this:
+
+Do what you have to do to deactivate the Ghostprint and Gimp-Print
+installation temporarily.
+
+Open Print Center
+Hold down the &quot;Option&quot; key and click &quot;Add&quot; printer
+In the pop-up, select &quot;Advanced&quot;
+Under &quot;Device&quot; select &quot;USB&quot;
+Under &quot;Device Name&quot; type &quot;Stylus 600&quot;
+Under &quot;Device URI&quot; type &quot;<A HREF="file://dev/null&quot;">file://dev/null&quot;</A>
+Under &quot;Printer Model&quot; select &quot;ESP&quot; (they misspelled)
+Select one of the (old) Epson Stylus printers in the bottom pane.
+Click &quot;Add&quot;
+
+This uses the Unix CUPS printing module built into OSX Jaguar.  It is very
+similar to Gimp-Print.  You can also configure it through your web browser
+by going to this address:  <A HREF="http://127.0.0.1:631">http://127.0.0.1:631</A>
+
+CUPS already has a version of Ghostprint installed to support it.
+Hopefully, the new installation did not adversely affect it.  You can read
+about CUPS here in the manual installed by Jaguar onto your computer:
+<A HREF="http://127.0.0.1:631/sum.html#1_1">http://127.0.0.1:631/sum.html#1_1</A>
+
+
+On 1/6/03 10:41 PM, &quot;Jim Morris&quot; &lt;<A HREF="../../../mailman/listinfo/g4.html">jpmorris at shaw.ca</A>&gt; wrote:
+
+&gt;<i> Thanks for the effort to help, Phil. Tried both of your suggestions but
+</I>&gt;<i> am still getting the program code (at least I think that's what it is).
+</I>&gt;<i> At the moment I have it hooked up to one of the USB ports on the back
+</I>&gt;<i> of my G4/400 Sawtooth. Tried printing from programs other than Word as
+</I>&gt;<i> well but same results.
+</I>&gt;<i> 
+</I>&gt;<i> Any other thoughts?
+</I>&gt;<i> Jim
+</I>&gt;<i> 
+</I>&gt;<i> On Monday, January 6, 2003, at 07:59 AM, Phil A. Lefebvre wrote:
+</I>&gt;<i> 
+</I>&gt;&gt;<i> On 1/5/03 at 7:39 PM -0800, Jim Morris wrote:
+</I>&gt;&gt;&gt;<i> I followed this advice as I can't print to my old Stylus 600 now that
+</I>&gt;&gt;&gt;<i> I've upgraded from OS 9. This printer has been accessed through a USB
+</I>&gt;&gt;&gt;<i> hub for several years. After installing Ghostprint and Giimp-print, I
+</I>&gt;&gt;&gt;<i> can now add the 600 to the printer list and select it. Tried a test
+</I>&gt;&gt;&gt;<i> page out of Word X but, instead of printing the page, it starts
+</I>&gt;&gt;&gt;<i> churning out pages of what I guess is program code (%!PS-Adobe-3.0,
+</I>&gt;&gt;&gt;<i> %RBINumCopies, etc).
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> Any suggestions for me?
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> Yes, don't use Word! ;-) I've never had that problem with my Stylus
+</I>&gt;&gt;<i> 600, Gimp-Print, and OS X, but I have it hooked directly to the FW/USB
+</I>&gt;&gt;<i> combo PCI card in my Beige G3. Maybe the hub is interfering. Try a
+</I>&gt;&gt;<i> direct connection. (Epson, and most printer makers, always recommends
+</I>&gt;&gt;<i> against hubs for their printers.)
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> Also, maybe try a reinstall. The Gimp-Print install instructions are
+</I>&gt;&gt;<i> pretty picky. At one point I changed a setting and lost all
+</I>&gt;&gt;<i> communication with the printer. Had to do a reinstall to get it
+</I>&gt;&gt;<i> working again.
+</I>&gt;&gt;<i> -- 
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000607.html">[G4] G4 upgrades on a beige G3 - scsi and printer help?
+</A></li>
+	<LI>Next message: <A HREF="000609.html">[G4] G4 upgrades on a beige G3 - scsi and printer help?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#608">[ date ]</a>
+              <a href="thread.html#608">[ thread ]</a>
+              <a href="subject.html#608">[ subject ]</a>
+              <a href="author.html#608">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

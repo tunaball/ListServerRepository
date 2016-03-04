@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Program association settings in OS X / Default
+	association....FTP...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Program%20association%20settings%20in%20OS%20X%20/%20Default%0A%09association....FTP...&In-Reply-To=BE93B708.115A5%25meged%40earthlink.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005077.html">
+   <LINK REL="Next"  HREF="005105.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Program association settings in OS X / Default
+	association....FTP...</H1>
+    <B>John Richardson</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Program%20association%20settings%20in%20OS%20X%20/%20Default%0A%09association....FTP...&In-Reply-To=BE93B708.115A5%25meged%40earthlink.net"
+       TITLE="[X4U] Program association settings in OS X / Default
+	association....FTP...">richards at spawar.navy.mil
+       </A><BR>
+    <I>Tue Apr 26 09:51:45 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005077.html">[X4U] Program association settings in OS X
+</A></li>
+        <LI>Next message: <A HREF="005105.html">[X4U] Program association settings in OS X
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5081">[ date ]</a>
+              <a href="thread.html#5081">[ thread ]</a>
+              <a href="subject.html#5081">[ subject ]</a>
+              <a href="author.html#5081">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello,
+
+Hope the following helps. It is from the applescript list. I included 3
+answers
+and you may have to glean bits from each answer. It is somewhat related to
+all
+the threads about launch services, plists, protocols,.......
+
+John F. Richardson
+
+======================= The Stuff ptotocol ======================
+
+&gt;<i> Why does this execute script editor on my machine from the apple site?
+</I>&gt;<i>
+</I>&gt;<i> There is an HTML line in the source on the apple site with an cute
+</I>&gt;<i> icon that
+</I>&gt;<i> says click here and it will run script editor on your machine
+</I>&gt;<i> (I.e., I'm at
+</I>&gt;<i> the apple site and it will execute script editor on my machine.
+</I>&gt;<i> That is so
+</I>&gt;<i> cool. And it works. The dots are just standard portions of the HTML
+</I>&gt;<i> that I
+</I>&gt;<i> have striped like the image parameter. I assume that the key is
+</I>&gt;<i> &quot;<A HREF="applescript://com.apple.scripteditor&quot;.">applescript://com.apple.scripteditor&quot;.</A>
+</I>&gt;<i>
+</I>&gt;<i> &lt;a href=&quot;<A HREF="applescript://com.apple.scripteditor&quot;">applescript://com.apple.scripteditor&quot;</A>&gt;........
+</I>&gt;<i> name=&quot;clickscripteditor&quot; ... &lt;/a&gt;
+</I>&gt;<i>
+</I>&gt;<i> Why does this work? Is there a chapter in some documentation about
+</I>&gt;<i> this? Is
+</I>&gt;<i> this some sort of clever web services use of SOAP,whatever,.....?
+</I>
+Nothing so complicated.  &quot;applescript:&quot; is just another URL scheme;
+Script Editor registers itself as the default handler for that
+scheme, and voila!  You can read about it at &lt;<A HREF="http://www.apple.com/">http://www.apple.com/</A>
+applescript/scripteditor/12.html&gt;.
+
+
+--Chris Nebel
+AppleScript Engineering
+
+################
+
+&gt;<i> A partial answer to my previous post.
+</I>&gt;<i>
+</I>&gt;<i> URL PROTOCOL SUPPORT
+</I>&gt;<i>
+</I>&gt;<i> I assume that a null action just simply executes the scripteditor.
+</I>&gt;<i>
+</I>&gt;<i> So, is there a list of com.apple.XXX strings that work? Sort of like
+</I>&gt;<i> com.apple.iCal or com.apple.Safari or ,......
+</I>&gt;<i>
+</I>&gt;<i> Perhaps the stuff protocol. Then the systems is told that the stuuf
+</I>&gt;<i> protocol
+</I>&gt;<i> is handled by iCal.
+</I>&gt;<i>     <A HREF="stuff://com.apple.iCal">stuff://com.apple.iCal</A>
+</I>&gt;<i> Where would one register the protocol?
+</I>
+The com.apple.scripteditor bit is mostly filler.  Exactly who gets
+the URL request is actually determined by Launch Services based on
+which applications say they can handle &quot;applescript:&quot; URLs.  You
+specify that in your application plist; see &lt;http://
+developer.apple.com/documentation/MacOSX/Conceptual/BPRuntimeConfig/
+Concepts/PListKeys.html#//apple_ref/doc/uid/20001431/TPXREF115&gt; for
+details.
+
+################
+
+&gt;<i> Thanks. By the way, Christopher, since you work for apple according
+</I>&gt;<i> to the email address. If I want a Carbon App to handle a custom
+</I>&gt;<i> protocol is the solution convoluted. Is it just a case of editing
+</I>&gt;<i> the apps Info.Plist to indicate which protocol to support. In this
+</I>&gt;<i> case it is the &quot;<A HREF="simvrml://&quot;">simvrml://&quot;</A> protocol.
+</I>
+As it happens, I just answered your question on-list.  (That's what I
+get for reading my list mail first.)  Registering for a scheme is
+simply a matter of adding it to your plist and then getting yourself
+registered with Launch Services, which should happen automatically
+when you launch the application.  See &lt; <A HREF="http://developer.apple.com/">http://developer.apple.com/</A>
+documentation/MacOSX/Conceptual/BPRuntimeConfig/Concepts/
+PListKeys.html&gt; under CFBundleURLTypes for details.  In your case, it
+would look something like this:
+
+CFBundleURLTypes = (
+     {
+         CFBundleURLName = &quot;SimVRML&quot;;
+         CFBundleURLSchemes = ( &quot;simvrml&quot; );
+         CFBundleTypeRole = &quot;Viewer&quot;;
+     }
+)
+
+
+--Chris Nebel
+AppleScript Engineering
+
+
+
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005077.html">[X4U] Program association settings in OS X
+</A></li>
+	<LI>Next message: <A HREF="005105.html">[X4U] Program association settings in OS X
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5081">[ date ]</a>
+              <a href="thread.html#5081">[ thread ]</a>
+              <a href="subject.html#5081">[ subject ]</a>
+              <a href="author.html#5081">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

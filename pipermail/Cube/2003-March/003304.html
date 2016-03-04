@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [CUBE] what's the drill again? New HD...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20what%27s%20the%20drill%20again%3F%20New%20HD...&In-Reply-To=list-5278087%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003303.html">
+   <LINK REL="Next"  HREF="003306.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[CUBE] what's the drill again? New HD...</H1>
+    <B>Joost van de Griek</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20what%27s%20the%20drill%20again%3F%20New%20HD...&In-Reply-To=list-5278087%40mail.ninewire.com"
+       TITLE="[CUBE] what's the drill again? New HD...">joost at jvdg.net
+       </A><BR>
+    <I>Wed Mar 12 03:42:37 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003303.html">[CUBE] nostalgia buffs
+</A></li>
+        <LI>Next message: <A HREF="003306.html">GeForce 2MX with tower heatsink fails
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3304">[ date ]</a>
+              <a href="thread.html#3304">[ thread ]</a>
+              <a href="subject.html#3304">[ subject ]</a>
+              <a href="author.html#3304">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 2003-03-12 00:54, &quot;Matthew Herrebout&quot; &lt;<A HREF="../../../mailman/listinfo/cube.html">mherrebout at real.com</A>&gt; wrote:
+
+&gt;<i> Got a Seagate 2MB 120GB. What's a good way to copy over data?
+</I>&gt;<i> 
+</I>&gt;<i> a) CCC entire current drive (30GB) to 120, re-install OS X.2, update to
+</I>&gt;<i> latest OS version?
+</I>
+That would probably be the easiest solution. Archive and Install after
+cloning the entire drive, as Hal suggested.
+
+&gt;<i> b) install OS X.2 clean on 120, update to latest OS version, painstakingly
+</I>&gt;<i> copy necessary Mail, prefs, etc over?
+</I>
+It's not all that painstakingly; everything is contained in the /Users
+folder. So, after a clean Jaguar install on the new drive, just copy the
+Users folder from the old drive:
+
+# sudo ditto -rsrcFork /Volumes/&lt;old drive name&gt;/Users /Users
+
+You will have to reinstall all your applications, though.
+
+&gt;<i> The point of this post --&gt; Is there a painless way to copy data so that the
+</I>&gt;<i> new drive has all my users, files, preferences on it, yet has a nice clean
+</I>&gt;<i> updated OS? I'm so-so at command line and want to avoid Permissions Hell,
+</I>&gt;<i> Users Hell and Invisible Files Hell.
+</I>
+Well, that's where it gets a little tricky. Most likely, the user IDs on the
+new install won't match those on the old one. Permissions shouldn't change,
+so no trouble there. You'll want to give the users on the new system proper
+ownership of their files again. So, for each user, you'll need to reset
+their Home folder's ownership:
+
+# sudo chown -R &lt;user&gt;:staff /Users/&lt;user&gt;/*
+
+&gt;<i> I have an external FW case to put the new drive in.
+</I>
+That'll make things a bit easier. You can then install everything on the new
+drive, boot from it to test, and only after you've verified it all works
+right, can you swap the drives and have everything set up for you. All the
+time, you'll have all the data backed up on the old drive, for safety's
+sake.
+
+,xtG
+.tsooJ
+-- 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    &lt;o))&gt;&lt;        &lt;o))&gt;&lt;
+                                        &lt;o))&gt;&lt;
+     &lt;o))&gt;&lt;                &lt;o))&gt;&lt;
+              &lt;o))&gt;&lt;                 &lt;o))&gt;&lt;
+      \V/
+_______|_______\|/_______V_\/vV_________\|/_____
+-- 
+Joost van de Griek
+&lt;<A HREF="http://www.jvdg.net/">http://www.jvdg.net/</A>&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003303.html">[CUBE] nostalgia buffs
+</A></li>
+	<LI>Next message: <A HREF="003306.html">GeForce 2MX with tower heatsink fails
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3304">[ date ]</a>
+              <a href="thread.html#3304">[ thread ]</a>
+              <a href="subject.html#3304">[ subject ]</a>
+              <a href="author.html#3304">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

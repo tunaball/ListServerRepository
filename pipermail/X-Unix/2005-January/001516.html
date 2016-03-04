@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] OSXvnc
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20OSXvnc&In-Reply-To=20050107033322.7F66E212D5B%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001514.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] OSXvnc</H1>
+    <B>SeaSoft Systems</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20OSXvnc&In-Reply-To=20050107033322.7F66E212D5B%40listserver.themacintoshguy.com"
+       TITLE="[X-Unix] OSXvnc">seasoft at west.net
+       </A><BR>
+    <I>Sun Jan 23 15:19:35 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001514.html">[X-Unix] sftp instance during ssh shell?
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1516">[ date ]</a>
+              <a href="thread.html#1516">[ thread ]</a>
+              <a href="subject.html#1516">[ subject ]</a>
+              <a href="author.html#1516">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Background:
+
+I have been trying for a couple days to get a VNC connection on my 
+LAN (for starters) between my only OS 10.2.8 box and a collection of 
+OS 8.6 and 9.2 macs. So far, no joy; the VNC client I am using 
+(VNCthing; the only one I can find that is said to work on pre OSX 
+systems) sits and thinks for a few minutes, then returns a &quot;server 
+not found&quot; error. (I know about Timbuktu but want to learn about VNC; 
+hence my effort.)
+
+The setup:
+
+- OSX box: Bombich's Share My Desktop v1.2 (aka &quot;SMD&quot;; a GUI to the 
+OSXvnc server in the BSD subsystem).
+
+- BSD subsystem is installed on the OSX box.
+
+- OS 8&amp;9 boxes: VNCthing v2.2 (w/carbonlib 1.6)
+
+- The connection attempt from OS9 to OSX uses the (fixed) LAN IP of 
+the OSX box and the SMD assigned VNC port number (5901): 
+192.168.167.xxx:5901
+
+Googling for similar setups returns an unhelpful array of VNC 
+successes and failures with, to my eye, no pattern.
+
+
+In TOP, I see a &quot;OSXvnc-ser&quot; item that comes and goes with SMD 
+activation. That obviously looks promising.
+
+I wanted to see what version of OSXvnc I was running (to see if a new 
+fink install might help), but I can't find anything remotely like 
+&quot;OSXvnc&quot; in a Finder find, or in a terminal find with this command:
+
+	sudo find / -name &quot;OSXvnc*&quot; -print
+
+- Shouldn't OSXvnc show up in a global terminal find if it shows up in TOP?
+
+- Does its absence mean it is a &quot;hidden&quot; process of some other program unit?
+
+- How can I determine it's version number?
+
+Any guidance on either the OSXvnc version number determination, or 
+clues as to why the VNC connection won't fly, would be most 
+appreciated.
+
+
+Regards,
+
+Richard
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001514.html">[X-Unix] sftp instance during ssh shell?
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1516">[ date ]</a>
+              <a href="thread.html#1516">[ thread ]</a>
+              <a href="subject.html#1516">[ subject ]</a>
+              <a href="author.html#1516">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

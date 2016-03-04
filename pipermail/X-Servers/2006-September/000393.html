@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Servers] &quot;Clear&quot; a hung port?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX-Servers%5D%20%22Clear%22%20a%20hung%20port%3F&In-Reply-To=492199F0-6691-4CB7-80CC-D1E1928CCC79%40gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000392.html">
+   <LINK REL="Next"  HREF="000394.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Servers] &quot;Clear&quot; a hung port?</H1>
+    <B>lisa</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX-Servers%5D%20%22Clear%22%20a%20hung%20port%3F&In-Reply-To=492199F0-6691-4CB7-80CC-D1E1928CCC79%40gmail.com"
+       TITLE="[X-Servers] &quot;Clear&quot; a hung port?">jaguar at gmu.edu
+       </A><BR>
+    <I>Fri Sep 15 18:58:47 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000392.html">[X-Servers] &quot;Clear&quot; a hung port?
+</A></li>
+        <LI>Next message: <A HREF="000394.html">[X-Servers] &quot;Clear&quot; a hung port?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#393">[ date ]</a>
+              <a href="thread.html#393">[ thread ]</a>
+              <a href="subject.html#393">[ subject ]</a>
+              <a href="author.html#393">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+   From a strictly UNIX perspective, with what you're describing it  
+seems like you should still be able to see that phantom connection  
+process out there connected to your box.  So I don't know if you need  
+to clear the port so much as clear all connections to that port. (Not  
+having used MYOB FileEdge I can't really speak to how the application  
+handles locking)  When your users login using the MYOB FileEdge  
+server can you see their individual connections in Activity Monitor?   
+If so you should be able to clear the individual connection to the  
+MYOB FileEdge server as opposed to clearing the application itself.   
+If you're not sure what the user process looks like then you could  
+open Activity Monitor before anyone logs in and then have them login  
+to the MYOB FileEdge server and see what new connection is created.   
+Once you can identify their connections and kill them through  
+activity monitor you can also kill them through terminal by using the  
+ps command to find the connections and the kill command to kill  
+them.  (In the advent you need to kill both the user connections  
+*and* the MYOB FileEdge server all of that can be done by command  
+line commands in terminal using the same ps and kill commands.)
+Let me know if I need to be more clear.  I just woke up from nap. :)
+-lisa
+
+On Sep 15, 2006, at 12:55 PM, Peter Krug wrote:
+
+&gt;<i> XServerfolk,
+</I>&gt;<i>
+</I>&gt;<i> I am running Server 10.3.9 on a G5 tower.  One of the services I am  
+</I>&gt;<i> running is an MYOB FileEdge server to share a single data file  
+</I>&gt;<i> among 3 licensed users - it is shared via an MYOB control panel  
+</I>&gt;<i> that lets you turn on/off sharing and set the port the spftware  
+</I>&gt;<i> uses to share the file.  My problem is that one of the users of the  
+</I>&gt;<i> software gets bumped off her network periodically, which causes the  
+</I>&gt;<i> server to think she is still logged in because she does not log out  
+</I>&gt;<i> properly.  At that point, one of our 3 licenses is lost until I  
+</I>&gt;<i> restart the Xserver because the serving software still thinks this  
+</I>&gt;<i> person is using the data file. I cannot turn sharing off via the  
+</I>&gt;<i> control panel for the same reason.
+</I>&gt;<i>
+</I>&gt;<i> I can force quit the control panel via Activity Monitor to stop  
+</I>&gt;<i> sharing the file, but unless I change the port, when I start it  
+</I>&gt;<i> back up we still have the logged in user problem.  I am wondering  
+</I>&gt;<i> if there is a way to &quot;clear&quot; the port of all network activity to  
+</I>&gt;<i> bounce this phantom user off the server.  IF there is a terminal  
+</I>&gt;<i> command for this, it would be wonderful because I could do this  
+</I>&gt;<i> remotely.
+</I>&gt;<i>
+</I>&gt;<i> Sorry to be so long-winded.  Thanks in advance for any help.
+</I>&gt;<i>
+</I>&gt;<i> Peter
+</I>&gt;<i>
+</I>&gt;<i> A little computer haiku:
+</I>&gt;<i> I can't remember
+</I>&gt;<i> the last time I restarted
+</I>&gt;<i> I love OS X
+</I>&gt;<i>
+</I>&gt;<i> This message sent with Mail.app 2.1 on Mac OS X 10.4.7
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Servers mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-servers.html">X-Servers at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-servers.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-servers</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000392.html">[X-Servers] &quot;Clear&quot; a hung port?
+</A></li>
+	<LI>Next message: <A HREF="000394.html">[X-Servers] &quot;Clear&quot; a hung port?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#393">[ date ]</a>
+              <a href="thread.html#393">[ thread ]</a>
+              <a href="subject.html#393">[ subject ]</a>
+              <a href="author.html#393">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

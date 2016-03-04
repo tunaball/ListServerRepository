@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [P1] RAM question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20RAM%20question&In-Reply-To=20040318144551.38059.qmail%40web40019.mail.yahoo.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="007316.html">
+   <LINK REL="Next"  HREF="007318.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[P1] RAM question</H1>
+    <B>J.C. Webber III</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20RAM%20question&In-Reply-To=20040318144551.38059.qmail%40web40019.mail.yahoo.com"
+       TITLE="[P1] RAM question">jcw at kingoblio.com
+       </A><BR>
+    <I>Thu Mar 18 21:06:03 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="007316.html">[P1] weird Safari?
+</A></li>
+        <LI>Next message: <A HREF="007318.html">[CUBE] Dual monitor puzzler- with Radeon 7000
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7317">[ date ]</a>
+              <a href="thread.html#7317">[ thread ]</a>
+              <a href="subject.html#7317">[ subject ]</a>
+              <a href="author.html#7317">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Sarah Andrews Cook wrote:
+&gt;<i> Hi everyone,
+</I>
+&gt;<i> And after all of this exposition, finally, here is my dilemma:
+</I>&gt;<i> the director of our data unit (who is in charge of hardware
+</I>&gt;<i> buying and upgrades) is telling me that, for the applications I
+</I>&gt;<i> use, an increase from 384 to 640MB will make minimal difference,
+</I>&gt;<i> that I wouldn't really notice an increase in performance, due
+</I>&gt;<i> mainly to the limitations of the processor. This runs counter to
+</I>&gt;<i> everything I've heard (basically, that increasing RAM will always
+</I>&gt;<i> help), but he's also much more of an expert than I am, so I'm
+</I>&gt;<i> wondering if he's right. Can anyone shed any light on this for
+</I>&gt;<i> me? Any websites out there, benchmarking, etc. you could direct
+</I>&gt;<i> me to?
+</I>
+More memory won't help at all unless you are using up what you have.  
+It will not speed up anything if you can already fit (and run) all your
+current applications without having to use swap space.  What is swap
+space?  That's disk drive space that is used to extend your memory when
+your physical memory is full.  It is very slow compared to RAM.  When
+your system needs more memory for the currently running process it
+'swaps out' some pieces of your idle processes to that reserved disk
+space.  When you want to use one of those idle processes again the
+system must bring that program (and any data it is manipulating) back in
+from the disk.  This is a very slow operation when compared to switching
+applications when the both fit in existing physical RAM.
+
+How do you know if you're swapping?  Well, being an old Unix guy myself,
+I'd launch &quot;/usr/bin/vm_stat 2&quot; in the terminal app (that '2' means
+refresh every 2 seconds), but I know most of you old time Mac-heads
+cringe at the mere mention of the command line, so I would point you to
+/Applications/Utilities/Activity Monitor.  Click on the 'System Memory'
+tab towards the bottom of the window and then launch every application
+you want to use, all at the same time.  Then watch the pretty picture and
+see your free memory disappear.  An interesting statistic to watch is
+the Page ins/outs.  The page-ins are going to be high because I believe
+they count normal disk reads that happen when you launch any program, 
+which is combined with the number of page-ins from swap.  But the
+page-outs shouldn't be very high.  My system has been up for 2.5 days
+and my page-outs number is only ~4500.  I've got 1.5Gigs of RAM and I
+just launched every app on my dock and I never paged out once, so more
+memory added to my system wouldn't speed anything up for me.
+
+But if you are swapping (paging in and out) then you will benefit
+GREATLY from additional RAM.
+
+BTW, this activity is thanks to the virtual memory management
+capabilities of Unix.
+
+8^)
+-- 
+J.C. Webber III
+Technical Lead, Unix System Administrator
+<A HREF="../../../mailman/listinfo/cube.html">jcw at kingoblio.com</A>       www.kingoblio.com
+Please, if you use Windows, do not add my address to your Address Book.
+I do not wish to be spammed or have my email address hijacked by a virus
+and used for fraudulent purposes.  Thank you.
+If you use a Mac, never mind.  Mac's don't get viruses.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="007316.html">[P1] weird Safari?
+</A></li>
+	<LI>Next message: <A HREF="007318.html">[CUBE] Dual monitor puzzler- with Radeon 7000
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7317">[ date ]</a>
+              <a href="thread.html#7317">[ thread ]</a>
+              <a href="subject.html#7317">[ subject ]</a>
+              <a href="author.html#7317">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

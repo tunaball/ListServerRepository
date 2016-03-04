@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] HD Mounting Trouble
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20HD%20Mounting%20Trouble&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001517.html">
+   <LINK REL="Next"  HREF="001519.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] HD Mounting Trouble</H1>
+    <B>Dave Higgins</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20HD%20Mounting%20Trouble&In-Reply-To="
+       TITLE="[X-Unix] HD Mounting Trouble">dave at just4.com
+       </A><BR>
+    <I>Tue Feb  1 16:36:13 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001517.html">[X-Unix] OSXvnc
+</A></li>
+        <LI>Next message: <A HREF="001519.html">[X-Unix] HD Mounting Trouble
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1518">[ date ]</a>
+              <a href="thread.html#1518">[ thread ]</a>
+              <a href="subject.html#1518">[ subject ]</a>
+              <a href="author.html#1518">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I'm having trouble with one particular HD not mounting properly. 
+Although this is not necessarily a UNIX problem, I'm hoping maybe there 
+will be a UNIX solution.
+
+What happens is this: An external (USB) HD will not re-mount when 
+rebooting into OS X. If I reboot into OS 9, it will mount. If it has 
+failed to mount in OS X when I move to OS 9, I have to wait for the 
+drive to run through a repair cycle (I presume that's what it is). 
+After a few minutes the HD will mount on OS 9. When I reboot into OS X, 
+it will mount at this point. But, if I have to reboot OS X for any 
+reason (be it my choice or forced to by lockup or installer), the drive 
+won't mount until going back into 9 again then back to X.
+
+When in OS X, but unable to mount, the drive does show up in Disk 
+Utility. The volume name, however, is greyed out. If I select it and 
+hit the &quot;Mount&quot; button, nothing happens. If I eject it there, then 
+unplug and re-plug in the USB cable, it will go back to the same 
+thing... USB drive unit shows, but volume doesn't mount. Disk Utility 
+will let me run a test/repair on it, and shows no problem.
+
+I've also thrown all the tests that Tech Tool Pro and Norton Disk 
+Doctor have at it, but all tests show no errors. Usually, when doing 
+this, of course, it has to un-mount the drive and it don't come back 
+until doing the double reboot dance again.
+
+It's not the fault of the USB case. I swap it out with another USB case 
+I have (different brand) and the problem swaps with the drive.
+
+I've tried studying the &quot;mount&quot; man page, along with the associated 
+files, but can't seem to come up with a proper solution, although I'm 
+still not that savvy when it comes to this type of UNIX works. I've 
+recorded what running just plain &quot;mount&quot; in Terminal gives me both with 
+the drive mounted and without it mounted. The missing line when not 
+mounted is:
+
+/dev/disk0s10 on /Volumes/Bonehead (local, nodev, nosuid, journaled)
+
+Anyone seen anything like this? Any suggestions? I'm hoping that 
+&quot;mount&quot; might do the trick with the right command string, but I just 
+don't know the right syntax to get it to work. Until I'm able to copy 
+it all over to another drive (it's a WD 250G that's pretty full) and 
+reformat it, I'd be willing to run a shell one-liner to mount it after 
+reboots (I basically leave it running all the time anyway, so...).
+
+Thanks for any help and ideas.
+
+Dave.
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001517.html">[X-Unix] OSXvnc
+</A></li>
+	<LI>Next message: <A HREF="001519.html">[X-Unix] HD Mounting Trouble
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1518">[ date ]</a>
+              <a href="thread.html#1518">[ thread ]</a>
+              <a href="subject.html#1518">[ subject ]</a>
+              <a href="author.html#1518">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

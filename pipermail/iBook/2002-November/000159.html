@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Jaguar Checks Disks?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=Jaguar%20Checks%20Disks%3F&In-Reply-To=list-3858659%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000158.html">
+   <LINK REL="Next"  HREF="000160.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Jaguar Checks Disks?</H1>
+    <B>Ian Sidle</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=Jaguar%20Checks%20Disks%3F&In-Reply-To=list-3858659%40mail.ninewire.com"
+       TITLE="Jaguar Checks Disks?">macmouse4 at attbi.com
+       </A><BR>
+    <I>Tue Nov 26 15:29:35 PST 2002</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000158.html">[P1] jaguar on a rev A clamshell
+</A></li>
+        <LI>Next message: <A HREF="000160.html">[P1] jaguar on a rev A clamshell
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#159">[ date ]</a>
+              <a href="thread.html#159">[ thread ]</a>
+              <a href="subject.html#159">[ subject ]</a>
+              <a href="author.html#159">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> I've heard rumors (if you want to call it that) that Jaguar (and maybe
+</I>&gt;<i> other versions of OS X) run the fsck command (to check/repair disks) in
+</I>&gt;<i> the background at startup - is this true?
+</I>
+Short answer - Yes and no.
+
+Long answer..
+No. It is not possible for fsck to run in the background on any 
+*running* file system. I guess they could have it run on a non-system 
+disk while booting, but thats kind of excessive and likely you would 
+wait for the disk to run disk repair. Now with the new journalized 
+filesystem mode for HFS+, it might be possible to run &quot;fsck&quot; on the 
+filesystem while its startup. While &quot;fsck&quot; would mean &quot;disk repair 
+stuff&quot; on the drive, not fsck itself. For the FS being journalized, it 
+gets mounted and the journal file is examined and the file system is 
+updated for the modifications in it.. so technically, its mounted and 
+&quot;running&quot; but this takes a few seconds (if that) which would then be 
+complete before the os has started up completely.
+
+One interesting note was that I have an external firewire-ide case I 
+got some time ago. I obtained a 2nd hand hd from a windows/pc machine 
+and put it in such box. I plugged it into my ibook (while running) and 
+the disk activity light popped on on the drive but the drive didn't 
+mount (didn't show up on the desktop). Upon running &quot;top -u&quot; it showed 
+that fsck_msdos was running at 100%. I guess the fs was damaged and why 
+it was taken out.. So After waiting an hour and it still not coming up, 
+I manually killed fsck and ran disk utility and reformatted the drive 
+(which I was going to do anyway). So in that case, fsck was running in 
+the background but not on the system disk.. I'm not sure if this would 
+be done on a HFS drive or not.. and this probably could be a problem 
+for some who is not as knowledgeable as me.. although eventually I 
+think the check would have finished anyway.
+
+Hope that answers your question.
+
+thanks,
+Ian Sidle
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000158.html">[P1] jaguar on a rev A clamshell
+</A></li>
+	<LI>Next message: <A HREF="000160.html">[P1] jaguar on a rev A clamshell
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#159">[ date ]</a>
+              <a href="thread.html#159">[ thread ]</a>
+              <a href="subject.html#159">[ subject ]</a>
+              <a href="author.html#159">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

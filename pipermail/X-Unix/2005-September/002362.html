@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] mount_hfs   situation needing help here
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20mount_hfs%20%20%20situation%20needing%20help%20here&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002359.html">
+   <LINK REL="Next"  HREF="002363.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] mount_hfs   situation needing help here</H1>
+    <B>~flipper</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20mount_hfs%20%20%20situation%20needing%20help%20here&In-Reply-To="
+       TITLE="[X-Unix] mount_hfs   situation needing help here">lord.flipper at gmail.com
+       </A><BR>
+    <I>Mon Sep  5 04:48:19 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002359.html">[X-Unix] script generating iCal events?
+</A></li>
+        <LI>Next message: <A HREF="002363.html">[X-Unix] mount_hfs   situation needing help here
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2362">[ date ]</a>
+              <a href="thread.html#2362">[ thread ]</a>
+              <a href="subject.html#2362">[ subject ]</a>
+              <a href="author.html#2362">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I'll try to be brief, knowing it's a holiday in some parts of the World, and don't really expect an answer/help today...
+
+I had an incident two weeks ago. A read/write catastrophe to an external drive (firewire 800, 3 partitions).
+
+Trying to sort through the basics of the man mount, and man mount_hfs, and it looks like I might be able to get this thing going again.
+
+But I have a couple questions.  When I look at the internal drive it has a particular  'bsd name' (disk0s3, and disk0s7...there's no s5, because that is free space being used by a Linux install that hasn't actually worked yet).
+
+My first question is: What do i name the proposed manually-mounted drive? Should I use one name for the entire drive (disregarding its 3 partitions?), and my idea, at this point, is to mount another working external drive on the firewire bus, make a note of the name the system assigns it, and then replace the drive with the one that seems to not mount, and use the 'notated' name as the name for the mount_hfs maneuver. Does that sound about right?
+
+Second question: Mount point? The internal drive shows an inode of &quot;2&quot;. Is that a mount point? I thought the point would be an octal or hexadecimal allocation address of some kind, so i don't want to proceed until I have a solid, educated guess. Any clues on that?
+
+I could create a folder and 'mount' the drive there, but how? Will the mount command recognize a file path, or do i need an allocation block (start point) to make it work?
+
+I KNOW that the drive is sound, mechanically.  After the incident, the internal drive had a trashed directory, which DiskWarrior straightened out, easily.  I have to assume that the external drive's directory is simply trashed, to a greater degree (considering that the I/O was happening there, and was probably sabotaged by the Finder in cahoots with a subsequent crash of SystemUIServer). Apple Sys Profiler, and even Peripheral Vision see it as an IDE firewire device, but it shows up nowhere else, nor do its partitions (in PV or ASP).
+
+The drive contains 150 gigabytes of books and music, and other stuff. The music can be replaced, but the book I was reading at the time of the incident was a job-searching related tome, and it, and many resume/cover letter guides, as well as all my Linux (Understanding the Kernel, etc) are critically needed here.
+
+I'm going to cross-post this note to one other list, and if any readers here happen to be on that list, I beg forgiveness, but I am really up a creek without all my job-hunting stuff (living in a town with zero networked connections, and a history of jobs by word-of-mouth = impending disaster, hence the urgency).
+
+Thank you,
+Brian Stegner
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002359.html">[X-Unix] script generating iCal events?
+</A></li>
+	<LI>Next message: <A HREF="002363.html">[X-Unix] mount_hfs   situation needing help here
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2362">[ date ]</a>
+              <a href="thread.html#2362">[ thread ]</a>
+              <a href="subject.html#2362">[ subject ]</a>
+              <a href="author.html#2362">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

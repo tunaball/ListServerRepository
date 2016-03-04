@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] rsync &amp; ssh
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20rsync%20%26%20ssh&In-Reply-To=list-14580780%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001042.html">
+   <LINK REL="Next"  HREF="001045.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] rsync &amp; ssh</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20rsync%20%26%20ssh&In-Reply-To=list-14580780%40mail.ninewire.com"
+       TITLE="[X-Unix] rsync &amp; ssh">magill at mcgillsociety.org
+       </A><BR>
+    <I>Wed Jul  7 11:49:59 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001042.html">[X-Unix] HD with both OSX- and linux-readable partitions
+</A></li>
+        <LI>Next message: <A HREF="001045.html">[X-Unix] rsync &amp; ssh
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1044">[ date ]</a>
+              <a href="thread.html#1044">[ thread ]</a>
+              <a href="subject.html#1044">[ subject ]</a>
+              <a href="author.html#1044">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;&gt;<i> From: Stroller &lt;<A HREF="../../../mailman/listinfo/x-unix.html">MacMonster at myrealbox.com</A>&gt;
+</I>&gt;&gt;<i> Unix is *horribly* obscure &amp; complex, and for no good reason other 
+</I>&gt;&gt;<i> than
+</I>&gt;&gt;<i> compatibility with legacy systems.
+</I>
+Untrue. The complexity of Unix has nothing to do with compatibility.  
+(And you would be amazed at how little compatibility exists with 
+&quot;legacy systems.&quot; When was the last time you used either Pascal or 
+Lisp, let alone Fortran or Cobol under Unix?)
+
+The simple reason for the complexity of unix is its flexibility!
+  *** There is normally more than one way to achieve the desired 
+results. ***
+(and that is true even without Perl!)
+
+Similarly, the only reason that Unix is obscure is the fact that it is 
+a &quot;foreign language.&quot;
+
+If you are a speaker of English, American style, understanding English, 
+UK style is not too difficult -- but what on earth is a Zebra Crossing? 
+However, understanding French is utterly impossible. (And we won't even 
+consider American's understanding Scots or Irish.)
+
+Unix is no different -- every &quot;brand&quot; of Unix is different, and this 
+includes all of the dialects of Linux. BSD Unix is different from 
+SystemV or Solaris and Suse Linux is different from RedHat. ... and all 
+are different from FreeBSD which is the root of Darwin, but is 
+different from OSX. Then we have the fact that Linux on a 64-bit Alpha 
+is a RADICALLY different Linux than exists on a 32-bit Wintel box.)
+
+The &quot;obscurity&quot; factor is evident when you discover that there are many 
+IDENTICAL terms in these variants, which have DIFFERENT meanings ... 
+that is to say the parameters for the same command are different, and 
+their &quot;default&quot; output is different. &quot;ps&quot; is just one such command.
+
+Unix is like any other language -- it is a step-wise learning curve, 
+with LARGE treads and high risers. To be &quot;productive&quot; in Unix requires 
+a large base of &quot;basic&quot; knowledge. Then as you go along on that plateau 
+of knowledge, you discover &quot;something new&quot; and suddenly your 
+productivity increases dramatically.
+
+This is not at all unlike learning a program as &quot;simple&quot; as Word (not 
+to mention emacs or edt). It's &quot;easy&quot; to learn enough to create, read 
+and modify plain text documents... but then you find one that somebody 
+has stuck pictures in! Wow, how did the do that.
+
+It has been said that 90+% of the users of Word use less than 10% of 
+its features. The same is true of emacs or vi.
+
+The computer is no different than an automobile. Some people never 
+learn to use a manual transmission -- some people never learn to use 
+the command line. Some people never heard of a carburetor, some people 
+think &quot;the kernel&quot; is the guy who sells Fried Chicken. And there are 
+those who can actually tune a twin-barrel carb, just as there are those 
+who can write kernel modules; but the vast majority of people NEVER 
+even consider, let alone understand, that level of &quot;black magic.&quot;
+
+Anything which you don't know is always more obscure and complex than 
+that which you do know. I've never understood scoring in Tennis for 
+example, but have no problems following a Fencing match.
+
+And, in the computer business, you must be VERY careful what you call 
+&quot;legacy.&quot; VMS and Tru64 Unix have had Access Control Lists and other 
+related C2-security measures for 15-20 years, which simply do not exist 
+in any version of Unix or Linux today. Similarly, they have always 
+supported &quot;resource controls&quot; also known as accounting. While BSD unix 
+has historically had &quot;some form of accounting,&quot; have you ever tried to 
+turn it on in Darwin?
+
+[BTW: Zebra crossing == cross walk -- as on the cover of Abby Road.]
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001042.html">[X-Unix] HD with both OSX- and linux-readable partitions
+</A></li>
+	<LI>Next message: <A HREF="001045.html">[X-Unix] rsync &amp; ssh
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1044">[ date ]</a>
+              <a href="thread.html#1044">[ thread ]</a>
+              <a href="subject.html#1044">[ subject ]</a>
+              <a href="author.html#1044">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

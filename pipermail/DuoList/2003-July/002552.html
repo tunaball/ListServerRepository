@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Cardbus on boot using OS 9
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:duolist%40listserver.themacintoshguy.com?Subject=Cardbus%20on%20boot%20using%20OS%209&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002551.html">
+   <LINK REL="Next"  HREF="002553.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Cardbus on boot using OS 9</H1>
+    <B>Brian Getz</B> 
+    <A HREF="mailto:duolist%40listserver.themacintoshguy.com?Subject=Cardbus%20on%20boot%20using%20OS%209&In-Reply-To="
+       TITLE="Cardbus on boot using OS 9">briang113 at yahoo.com
+       </A><BR>
+    <I>Thu Jul 24 17:30:12 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002551.html">Lind Supercharger II available
+</A></li>
+        <LI>Next message: <A HREF="002553.html">Removing trackball (Was: Re: [Duo2400]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2552">[ date ]</a>
+              <a href="thread.html#2552">[ thread ]</a>
+              <a href="subject.html#2552">[ subject ]</a>
+              <a href="author.html#2552">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Fellow listers,
+
+The other day I was rereading Ivan's account of OS X
+on his 2400. I was thinking about trying it, but
+decided against it.
+
+Anyway I was intrigued by his problem of the 10/100
+ethernet card issues and finding a cheap Compusa house
+card and using the chipset manufactures drivers and
+getting it to work using OS 8 because OS 9 hotswap not
+supported and as you know you can't boot with a
+cardbus card installed under OS 9.
+
+Well I wanted to use 100 base T on my 2400 and decided
+to buy a Compusa card and play around.  Picked up a
+10/100 cardbus at compusa(by the way they hide them so
+you don't know they have a cheap one, had to ask for
+it.)
+
+Well I took it home and suprise the Mac drivers are
+included but not mentioned on the box.
+
+Anyway to the good part. I found after much
+experimenting. I found that use the Realtek drivers(
+download available at the Realtek website, RTL8139
+driver for Mac OS 9 install it and not the Compusa
+one, start the computer in OS 9, then restart( not
+shut down and powerup) and insert the 10/100 card
+after the bong the 2400 will bootup. Select TCP/IP and
+choose &quot;Ethernet slot RTL8139&quot;, suprise you have
+10/100 ethernet under OS 9.
+
+Okay here is the tricky part when are done, you must
+unselect the TCP/IP RTL8139 to disable card before you
+eject it. then shut down.
+
+Also everytime you want to use the card boot up first
+restart and insert as described above, then reslect
+driver.
+
+I don't know why it works but it does everytime. I
+know it is kloogy(sp) and a lot of work but if you
+don't already have a 100 baseT ethernet card and want
+one that works on the cheap (19.99) there you go.
+
+Of course you must have a cardbus enabled 2400
+
+Brian  
+
+
+=====
+Brian 
+Personal Email <A HREF="../../../mailman/listinfo/duolist.html">briang113 at yahoo.com</A>
+
+__________________________________
+Do you Yahoo!?
+Yahoo! SiteBuilder - Free, easy-to-use web site design software
+<A HREF="http://sitebuilder.yahoo.com">http://sitebuilder.yahoo.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002551.html">Lind Supercharger II available
+</A></li>
+	<LI>Next message: <A HREF="002553.html">Removing trackball (Was: Re: [Duo2400]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2552">[ date ]</a>
+              <a href="thread.html#2552">[ thread ]</a>
+              <a href="subject.html#2552">[ subject ]</a>
+              <a href="author.html#2552">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/duolist.html">More information about the DuoList
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

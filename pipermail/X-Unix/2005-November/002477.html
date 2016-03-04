@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: Loop structure syntax question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Loop%20structure%20syntax%20question&In-Reply-To=20051124011806.6625E5B58B6%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002476.html">
+   <LINK REL="Next"  HREF="002478.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: Loop structure syntax question</H1>
+    <B>Peter Dyballa</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Loop%20structure%20syntax%20question&In-Reply-To=20051124011806.6625E5B58B6%40listserver.themacintoshguy.com"
+       TITLE="[X-Unix] Re: Loop structure syntax question">Peter_Dyballa at Web.DE
+       </A><BR>
+    <I>Thu Nov 24 01:59:31 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002476.html">[X-Unix] Loop structure syntax question
+</A></li>
+        <LI>Next message: <A HREF="002478.html">[X-Unix] Re: Loop structure syntax question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2477">[ date ]</a>
+              <a href="thread.html#2477">[ thread ]</a>
+              <a href="subject.html#2477">[ subject ]</a>
+              <a href="author.html#2477">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Am 24.11.2005 um 02:18 schrieb 
+<A HREF="../../../mailman/listinfo/x-unix.html">x-unix-request at listserver.themacintoshguy.com</A>:
+
+&gt;<i> foreach login ( `cat ./logins_A.txt` )
+</I>&gt;<i> dscl . merge /groups/cq users &quot;$login&quot;@&lt;mydomain.com&gt;
+</I>&gt;<i> end
+</I>&gt;<i>
+</I>
+&quot;$login&quot; looks a bit suspicious. ${login} cleanly separates the 
+variable's name from other text.
+
+'cat ./&lt;some file&gt;' is suspicious too. It completely relies on the fact 
+that the shell script is run in the same directory where this file is. 
+An absolute path name might be more appropriate, or a sequence of 
+saving the current working directory, changing to that with the file, 
+and returning.
+
+Could be a better syntax is 'dscl . merge /groups/cq users 
+&quot;${login}@&lt;mydomain.com&gt;&quot;'.
+
+	( dscl . merge /groups/cq users &quot;${login}@&lt;mydomain.com&gt;&quot; ) &gt;&gt;&amp; 
+Errors_dscl.list
+	printf &quot;The command &gt;%s&lt; returned %d\n&quot; &quot;dscl . merge /groups/cq users 
+${login}@&lt;mydomain.com&gt;&quot; $status &gt;&gt; Errors_dscl.list
+
+would log all errors in a file (Errors_dscl.list), which too would hold 
+the actual dscl command and its return values. You can make the file's 
+name an absolute path name.
+
+--
+Greetings
+
+   Pete
+
+Bake Pizza not war!
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002476.html">[X-Unix] Loop structure syntax question
+</A></li>
+	<LI>Next message: <A HREF="002478.html">[X-Unix] Re: Loop structure syntax question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2477">[ date ]</a>
+              <a href="thread.html#2477">[ thread ]</a>
+              <a href="subject.html#2477">[ subject ]</a>
+              <a href="author.html#2477">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] MAC address swap conundrum
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20MAC%20address%20swap%20conundrum&In-Reply-To=20050405143747.0138C36A41B%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001728.html">
+   <LINK REL="Next"  HREF="001730.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] MAC address swap conundrum</H1>
+    <B>SeaSoft Systems</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20MAC%20address%20swap%20conundrum&In-Reply-To=20050405143747.0138C36A41B%40listserver.themacintoshguy.com"
+       TITLE="[X-Unix] MAC address swap conundrum">seasoft at west.net
+       </A><BR>
+    <I>Sat Apr  9 11:35:57 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001728.html">[X-Unix] Escape key problems with ssh and ee
+</A></li>
+        <LI>Next message: <A HREF="001730.html">[X-Unix] Re: MAC address swap conundrum
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1729">[ date ]</a>
+              <a href="thread.html#1729">[ thread ]</a>
+              <a href="subject.html#1729">[ subject ]</a>
+              <a href="author.html#1729">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I have really no clue here. Could anyone with some network expertise 
+help me understand this situation or point me to a resource or more 
+appropriate forum? I have Googled my brains out but have not found 
+anything helpful.
+
+My setup:
+
+A small LAN (behind a linksys switch/router) comprising an OSX eMac 
+(running 10.2.8), several older (OS 8.6) Macs, and a WIN NT box. One 
+of the OS 8.6 macs runs a web server.
+
+Early last week, the web server machine burped up several identical 
+errors over a 10 minute interval; the error message:
+
+&quot;Another device on your TCP/IP Internet, which has the physical 
+address 00:80:77:36:2e:a6 is currently using the same IP address 
+(192.168.167.21). This may cause disruption of your Internet 
+services.&quot;
+
+I understand this message, which I have in the distant past elicited 
+by inappropriate adjustments of local IP numbers on my machines. This 
+time, however, I was not even in the room.
+
+I couldn't match the displayed MAC # with any hardware on my LAN, and 
+the problem did not persist, so I left it to lie in peace.
+
+Fast forward to this AM; curious about the current &quot;sudo 
+vulnerability&quot; issue, I started looking through my OSX system logs 
+for the past week just to educate myself. I came across the following 
+mach_kernel error entries; notice that the last dozen or so document 
+some sort of &quot;MAC# toggling&quot; in progress:
+
+&gt;&gt;&gt;<i>  Begin OSX System Log Snippet
+</I>Apr  5 18:53:47 eMac mach_kernel: USBF: 1843600.692 
+IOUSBInterface[0x291e000]::handleOpen failing because 
+super::handleOpen failed (someone already has it open)
+Apr  5 18:53:47 eMac mach_kernel: USBF: 1843600.692 
+IOUSBInterface[0x291e000]::open super::open failed (0x0)
+Apr  5 18:53:48 eMac mach_kernel: USBF: 1843602.114 
+IOUSBInterface[0x291e000]::handleOpen failing because 
+super::handleOpen failed (someone already has it open)
+Apr  5 18:53:48 eMac mach_kernel: USBF: 1843602.114 
+IOUSBInterface[0x291e000]::open super::open failed (0x0)
+Apr  5 19:05:34 eMac mach_kernel: arp: 192.168.167.21 moved from 
+00:05:02:4b:39:12 to 00:80:77:36:2e:a6 on en0
+Apr  5 19:05:42 eMac mach_kernel: ipv4_control: in_pcb_grab_port 
+retval=48 so=2c7eb84
+Apr  5 19:05:42 eMac mach_kernel: sip_control: ipv4_control returns 
+error=30 for so=2c7eb84 kp=2ae6564
+Apr  5 19:08:32 eMac mach_kernel: arp: 192.168.167.21 moved from 
+00:80:77:36:2e:a6 to 00:05:02:4b:39:12 on en0
+Apr  5 19:09:31 eMac mach_kernel: arp: 192.168.167.21 moved from 
+00:05:02:4b:39:12 to 00:80:77:36:2e:a6 on en0
+Apr  5 19:09:31 eMac mach_kernel: arp: 192.168.167.21 moved from 
+00:80:77:36:2e:a6 to 00:05:02:4b:39:12 on en0
+Apr  5 19:10:12 eMac mach_kernel: arp: 192.168.167.21 moved from 
+00:05:02:4b:39:12 to 00:80:77:36:2e:a6 on en0
+Apr  5 19:10:12 eMac mach_kernel: arp: 192.168.167.21 moved from 
+00:80:77:36:2e:a6 to 00:05:02:4b:39:12 on en0
+Apr  5 19:11:11 eMac mach_kernel: arp: 192.168.167.21 moved from 
+00:05:02:4b:39:12 to 00:80:77:36:2e:a6 on en0
+Apr  5 19:11:11 eMac mach_kernel: arp: 192.168.167.21 moved from 
+00:80:77:36:2e:a6 to 00:05:02:4b:39:12 on en0
+Apr  5 19:11:34 eMac mach_kernel: arp: 192.168.167.21 moved from 
+00:05:02:4b:39:12 to 00:80:77:36:2e:a6 on en0
+Apr  5 19:11:34 eMac mach_kernel: arp: 192.168.167.21 moved from 
+00:80:77:36:2e:a6 to 00:05:02:4b:39:12 on en0
+Apr  5 19:14:17 eMac mach_kernel: arp: 192.168.167.21 moved from 
+00:05:02:4b:39:12 to 00:80:77:36:2e:a6 on en0
+Apr  5 19:14:17 eMac mach_kernel: arp: 192.168.167.21 moved from 
+00:80:77:36:2e:a6 to 00:05:02:4b:39:12 on en0
+Apr  5 19:19:43 eMac mach_kernel: arp: 192.168.167.21 moved from 
+00:05:02:4b:39:12 to 00:80:77:36:2e:a6 on en0
+Apr  5 19:19:43 eMac mach_kernel: arp: 192.168.167.21 moved from 
+00:80:77:36:2e:a6 to 00:05:02:4b:39:12 on en0
+&gt;&gt;&gt;<i>  End System Log Snippet
+</I>
+So the OSX system log captured the MAC address switching that got my 
+attention last week. To a layman, this repeated &quot;toggling&quot; of a local 
+IP (192.168.167.21) between the *correct* MAC addresses for the 
+server machine (00:05:02:4b:39:12) and this bogus MAC address 
+(00:80:77:36:2e:a6) is to say the least, bizarre.
+
+My question: what the devil is going on here?
+
+- Is the Linksys router willy-nilly re-assigning MAC addresses to my 
+local IP numbers?
+
+- Is the eMac OSX system involved somehow?
+
+- Is this a symptom of a system compromise of some kind?
+
+Richard
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001728.html">[X-Unix] Escape key problems with ssh and ee
+</A></li>
+	<LI>Next message: <A HREF="001730.html">[X-Unix] Re: MAC address swap conundrum
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1729">[ date ]</a>
+              <a href="thread.html#1729">[ thread ]</a>
+              <a href="subject.html#1729">[ subject ]</a>
+              <a href="author.html#1729">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

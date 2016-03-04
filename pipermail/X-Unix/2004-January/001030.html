@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] .bash_profile
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20.bash_profile&In-Reply-To=list-10171811%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001019.html">
+   <LINK REL="Next"  HREF="001041.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] .bash_profile</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20.bash_profile&In-Reply-To=list-10171811%40mail.ninewire.com"
+       TITLE="[X-Unix] .bash_profile">magill at mcgillsociety.org
+       </A><BR>
+    <I>Fri Jan  9 19:59:45 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001019.html">[X-Unix] script question (cron - adobefnt*.lst)
+</A></li>
+        <LI>Next message: <A HREF="001041.html">script question (cron - adobefnt*.lst)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1030">[ date ]</a>
+              <a href="thread.html#1030">[ thread ]</a>
+              <a href="subject.html#1030">[ subject ]</a>
+              <a href="author.html#1030">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 09 Jan, 2004, at 04:50, Simon Forster wrote:
+&gt;<i> Just out of curiosity, what sort of changes are people making to their 
+</I>&gt;<i> shell environment by changing .bash_profile? Really I'm just after 
+</I>&gt;<i> hints and tips which could make my command line experience easier.
+</I>
+Personally, I use a &quot;.profile&quot; which is invoked across sh/ksh/bash, and 
+across multiple OS types ... but then I'm a multi-platform Unix type...
+
+What do I set? Depending on the platform I'm using (which is determined 
+in .profile)
+
+PATH
+LD_LIBRARY_PATH
+MANPATH
+
+I set umask to be 077 (but then I'm a paranoid security type).
+
+I set different prompts depending on if I'm sudo'd to root or not... 
+and I use a long, two line prompt which displays the directory I'm in, 
+the userid and the hostname. (Again, I run multiple systems and it is 
+useful to know which window is where... with either X11 or simple ssh.)
+
+EDITOR=/usr/bin/emacs
+VISUAL=/usr/bin/emacs
+
+
+# ------------------------------------- if less exists make it the pager
+if [[ -f /usr/local/bin/less || -f /usr/bin/less ]]; then
+         PAGER=less
+#   -e Exit less at second eof... [--quit-at-eof]
+#   -X Disables termcap initialization and deinitialization strings
+#      eliminates clearing the screen at EOF...[--no-init]
+         LESS=&quot;-e -X&quot;
+         export PAGER LESS
+fi
+# -------------------------------------
+
+size and location of the history file (HISTSIZE SAVEHIST HISTFILE)
+
+BLOCKSIZE and CLICOLOR for &quot;ls&quot;
+
+I use two aliases all the time:
+
+alias ls=&quot;ls -als&quot;
+alias rm=&quot;rm -i&quot;
+
+This gives me the long form of ls by default and always asks me if I 
+want to delete files.
+(You can always bypass the expansions by &quot;\ls&quot; if you need some other 
+format.)
+
+and for a paging form of ls as found in tcsh:
+
+# ------------------------------------- for the ls comand:
+#     to get bash to do what tcsh does -- with:
+#            alias ll        'ls -lag \!* | more'
+#     this function, works with ksh, bash, zsh:
+ll()
+{
+         /bin/ls -alsv $* | less
+}
+
+Under different situations I also use and therefore set
+ENV=.envfile_&lt;hostname&gt;
+
+And put stuff specific to particular application environments in there.
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000 - [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001019.html">[X-Unix] script question (cron - adobefnt*.lst)
+</A></li>
+	<LI>Next message: <A HREF="001041.html">script question (cron - adobefnt*.lst)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1030">[ date ]</a>
+              <a href="thread.html#1030">[ thread ]</a>
+              <a href="subject.html#1030">[ subject ]</a>
+              <a href="author.html#1030">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

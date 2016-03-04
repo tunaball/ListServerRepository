@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] re: quotas - My math stinks!
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20re%3A%20quotas%20-%20My%20math%20stinks%21&In-Reply-To=F1F0A93D-341C-4207-9DE0-0B9D2868F8FE%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003248.html">
+   <LINK REL="Next"  HREF="003251.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] re: quotas - My math stinks!</H1>
+    <B>Charles Howse</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20re%3A%20quotas%20-%20My%20math%20stinks%21&In-Reply-To=F1F0A93D-341C-4207-9DE0-0B9D2868F8FE%40secure-computing.net"
+       TITLE="[X-Unix] re: quotas - My math stinks!">chowse at charter.net
+       </A><BR>
+    <I>Fri Jan  9 07:59:17 PST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003248.html">[X-Unix] re: quotas - My math stinks!
+</A></li>
+        <LI>Next message: <A HREF="003251.html">[X-Unix] re: quotas - My math stinks!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3250">[ date ]</a>
+              <a href="thread.html#3250">[ thread ]</a>
+              <a href="subject.html#3250">[ subject ]</a>
+              <a href="author.html#3250">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>WAY TO GO ERIC!!  Now we're making progress in a way that makes sense  
+to me!
+However...
+On my system, the situation is reversed.
+
+larry:/ root# du -kd1 /Users
+18557108	/Users/charles
+2341624	/Users/randi
+392	/Users/Shared
+20899124	/Users
+
+larry:/ root# repquota -a
+                         1K Block limits               File limits
+User                used        soft        hard  grace    used  soft   
+hard  grace
+_spotlight--          32           0           0              5      
+0     0
+_lp       --         512           0           0              5      
+0     0
+_teamsserver--        1636           0           0           1403      
+0     0
+505       --          16           0           0              2      
+0     0
+_mdnsresponder--          52           0           0               
+4     0     0
+_unknown  --           0           0           0             39      
+0     0
+_amavisd  --           8           0           0              6      
+0     0
+_postdrop --           0           0           0              7      
+0     0
+staff     --     1750792           0           0           2540      
+0     0
+admin     --     1414044           0           0          22564      
+0     0
+daemon    --         756           0           0             24      
+0     0
+charles   --    19588728           0           0          47637      
+0     0
+_clamav   --       61428           0           0             32      
+0     0
+mail      --           0           0           0              1      
+0     0
+nobody    --          32           0           0              9      
+0     0
+_securityagent--          32           0           0               
+5     0     0
+_atsserver--        8188           0           0              5      
+0     0
+
+                         1K Block limits               File limits
+User                used        soft        hard  grace    used  soft   
+hard  grace
+_spotlight--          32           0           0              5      
+0     0
+_lp       --          72           0           0             13      
+0     0
+_teamsserver--        1636           0           0           1403      
+0     0
+505       --         580           0           0             12      
+0     0
+_xgridagent--           0           0           0              2      
+0     0
+_mdnsresponder--          52           0           0               
+4     0     0
+_unknown  --           0           0           0             11      
+0     0
+_amavisd  --           8           0           0              6      
+0     0
+_installer--      138252           0           0             48      
+0     0
+_uucp     --        1520           0           0             10      
+0     0
+_xgridcontroller--           0           0           0               
+2     0     0
+daemon    --           0           0           0              3      
+0     0
+charles   --    22142460           0           0          72932      
+0     0
+_clamav   --       61636           0           0             33      
+0     0
+_postfix  --           0           0           0             36      
+0     0
+_update_sharing--       22644           0           0              
+13     0     0
+nobody    --        8564           0           0              7      
+0     0
+_securityagent--         248           0           0              
+10     0     0
+randi     --     1040524     2000000     2000000            716      
+0     0
+_atsserver--        8188           0           0              5      
+0     0
+
+Notice that user randi only appears once in repquota -a, and the total  
+is smaller than the du output.
+
+Therefore??? du is telling me that there are files in /Users/randi  
+that belong to another user???  Does that make sense?  How can we  
+check that?
+And checking the reverse...the output of repquota...how can we check  
+the path for each file owned by user randi?
+
+Any other scenarios that would match what's going on?
+(Again..WAY TO GO, big breakthrough on what I was looking for!)
+
+
+On Jan 9, 2009, at 8:14 AM, Eric F Crist wrote:
+
+&gt;<i> I would ask that you remember that du will show files owned by ALL  
+</I>&gt;<i> users under a given path.  repquota will show the calculation for  
+</I>&gt;<i> all files, regardless of path, owned by a given user.  Without  
+</I>&gt;<i> actually having your system in front of me, it's hard to show you an  
+</I>&gt;<i> exact example.
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003248.html">[X-Unix] re: quotas - My math stinks!
+</A></li>
+	<LI>Next message: <A HREF="003251.html">[X-Unix] re: quotas - My math stinks!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3250">[ date ]</a>
+              <a href="thread.html#3250">[ thread ]</a>
+              <a href="subject.html#3250">[ subject ]</a>
+              <a href="author.html#3250">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

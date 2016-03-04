@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Network Time
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Network%20Time&In-Reply-To=list-8475161%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004188.html">
+   <LINK REL="Next"  HREF="004190.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Network Time</H1>
+    <B>Perry The Cynic</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Network%20Time&In-Reply-To=list-8475161%40mail.ninewire.com"
+       TITLE="[G4] Network Time">perry at cynic.org
+       </A><BR>
+    <I>Mon Sep 22 21:09:54 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004188.html">[G4] creating a new folder with editable name
+</A></li>
+        <LI>Next message: <A HREF="004190.html">10.2.8
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4189">[ date ]</a>
+              <a href="thread.html#4189">[ thread ]</a>
+              <a href="subject.html#4189">[ subject ]</a>
+              <a href="author.html#4189">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>--On Monday, September 22, 2003 7:35 AM -0400 Pastor Mac 
+&lt;<A HREF="../../../mailman/listinfo/g4.html">pastormac at macmail.com</A>&gt; wrote:
+
+&gt;<i> I've noticed in the Jaguar Date/Time CP that the ntp (Network Time)
+</I>&gt;<i> preferences seemingly do not allow adding servers nor adjust how often a
+</I>&gt;<i> server is queried.  Can these things still be changed? How--via a cron
+</I>&gt;<i> job?  How would a script be written for such?
+</I>&gt;<i>
+</I>&gt;<i> Pax,
+</I>&gt;<i>
+</I>&gt;<i> Pastor Mac
+</I>&gt;<i> On OS X
+</I>
+
+Ah. Things are much cooler than you suspect. :-)
+
+If you can't seem to type a server name into the &quot;NTP Server:&quot; field, you 
+probably didn't log in as an administrator. Click on the little padlock 
+icon in the lower left corner of the window and type an administrator 
+password. The field will unlock and let you type into it.
+
+In fact, you can type several server names separated with spaces, and the 
+server will try them all simultaneously and automatically pick a &quot;good&quot; one 
+to synchronize against. That's particularly nice if you have a powerbook 
+that moves around networks that are hemmed in by firewalls.
+
+That's not the cool part yet. Rather than the old &quot;check every so often and 
+fix the clock&quot; way, OS X runs a genuine NTP daemon (called &quot;ntpd&quot;, of 
+course). The daemon talks to all listed time servers, determines how often 
+it needs to do so, picks a &quot;good&quot; one to synchronize with, and switches to 
+another if the current one goes bad. That's why you can't set a time 
+interval; the process is self-regulating (for minimum network traffic).
+
+Finally, if you really want to mess with the details of the NTP protocol, 
+you should know that what you type into the &quot;NTP Server:&quot; field actually 
+ends up in the file /etc/ntp.conf, which is a bog-standard ntpd 
+configuration file that you can hack to your heart's (and abilities') 
+content. If you do this, don't type into the preferences panel, or it will 
+wipe out your custom edits. (If you have no idea what to put into that 
+file, you probably don't want to. :-)
+
+And for a final, ultra-geeky thrill, open up Terminal and type &quot;ntpdc&quot;. 
+This is the (UNIX standard) ntpd control program, which can tell you in 
+excruciating detail how your time server is doing. Try the &quot;sysinfo&quot; and 
+&quot;peers&quot; commands.
+
+Cheers
+  -- perry
+---------------------------------------------------------------------------
+Perry The Cynic                                             <A HREF="../../../mailman/listinfo/g4.html">perry at cynic.org</A>
+To a blind optimist, an optimistic realist must seem like an Accursed Cynic.
+---------------------------------------------------------------------------
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004188.html">[G4] creating a new folder with editable name
+</A></li>
+	<LI>Next message: <A HREF="004190.html">10.2.8
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4189">[ date ]</a>
+              <a href="thread.html#4189">[ thread ]</a>
+              <a href="subject.html#4189">[ subject ]</a>
+              <a href="author.html#4189">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+</body></html>

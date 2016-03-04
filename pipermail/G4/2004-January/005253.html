@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Panther upgrade
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Panther%20upgrade&In-Reply-To=list-10056190%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005252.html">
+   <LINK REL="Next"  HREF="005254.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Panther upgrade</H1>
+    <B>Perry The Cynic</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Panther%20upgrade&In-Reply-To=list-10056190%40mail.ninewire.com"
+       TITLE="[G4] Panther upgrade">perry at cynic.org
+       </A><BR>
+    <I>Sat Jan  3 22:56:01 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005252.html">[G4] Panther upgrade
+</A></li>
+        <LI>Next message: <A HREF="005254.html">Another Epson scanner problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5253">[ date ]</a>
+              <a href="thread.html#5253">[ thread ]</a>
+              <a href="subject.html#5253">[ subject ]</a>
+              <a href="author.html#5253">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Wow! That's a lot of fear you've got bottled up there. :-)
+
+In general: lighten up. What you're planning to do is absolutely normal and 
+simple, and shouldn't cause you any heartburn. Basically you will
+ (*) Insert installation CD
+ (*) Reboot with &quot;C&quot; key held down
+ (*) Optionally, launch the disk tool and format/partition the disk
+ (*) Pick the right partition to install into
+ (*) Install
+
+You can then switch between Jaguar and Panther using the startup 
+preferences/control panel, or by holding down the Option key while 
+rebooting to get the &quot;pick disk&quot; menu. Everything's going to be all right.
+
+Now if you *must* know the answers to your fears, here are some:
+
+You can install Panther and Jaguar versions on different partitions (on the 
+same or different disks) and boot them both without problems. They will not 
+mess up existing filesystems. This will not change your OF settings (unless 
+you perform certain arcane rituals involving installation over the network).
+
+The only supported way to get a case sensitive filesystem is to use UFS. I 
+would strongly discourage you from doing this; UFS performs like a dog, and 
+has no fork support. If you absolutely must have case sensitivity for some 
+work, partition the disk, install the system into an HFS+ partition, and 
+format a separate work partition for UFS.
+
+During OS installation, you boot off the installation CD. It doesn't matter 
+whether (or what type) of existing system(s) you have on other disks. 
+Nothing will be installed into partitions that are not the install target. 
+Just don't install into the wrong place. :-)
+
+If you want to make it physically certain that your Mac can't write to a 
+disk, you have to either disconnect it (using the ATA or power cables), or 
+jumper the drive to write-protect mode. Neither is necessary for what you 
+say you're going to do, but I understand paranoia. :-) If you do this, make 
+sure your Mac is off when you do it, and ground yourself properly.
+
+Both Jaguar and Panther support journaled HFS+. Enabling journaling during 
+install (well, formatting) is *not* a problem, and it helps stability 
+(though it slows things down *slightly*). A non-journal HFS+ system (say, 
+9.2) will be able to use a journaled filesystem just fine *if* it was shut 
+down cleanly, though of course it won't use journaling itself.
+
+Some of the mechanisms of remote filesystem mounting have changed from 
+Jaguar to Panther, so you *may* need to re-work any custom hacks you did. 
+Most of the changes are in autoimmune functionality though, so if you 
+explicitly invoke mount_afp, you're probably okay (except for changes to 
+explicit mount point paths, of course).
+
+Cheers
+  -- perry
+
+--On Saturday, January 3, 2004 8:17 PM -0700 Doug McNutt 
+&lt;<A HREF="../../../mailman/listinfo/g4.html">douglist at macnauchtan.com</A>&gt; wrote:
+
+&gt;<i> So you can understand my reply (below) to my girlfriend - er -  wife Kit
+</I>&gt;<i> who was an MCI and Pansophic guru in the past..
+</I>&gt;<i>
+</I>&gt;<i> I run OS neXt version 10.2.8 on a G4 sawtooth. I appreciate it. It allows
+</I>&gt;<i> me to regress to my roots as a FORTRAN programmer with assembly language
+</I>&gt;<i> roots into a Control Data drum scope computer I used well before the
+</I>&gt;<i> mouse was invented. The machine is named Earth and it's disks are Luna,
+</I>&gt;<i> Mir, and Hubble. It is truly nice to be able to gcc a source file and
+</I>&gt;<i> have it work.
+</I>&gt;<i>
+</I>&gt;<i> I have asked Kit to install panther on the G4. I once used the G4 as a
+</I>&gt;<i> primary computer using Microbesoft Excel and Apple's MPW to control my
+</I>&gt;<i> finances and a productive consulting business.. When OS neXt was
+</I>&gt;<i> introduced I placed all of my  important business on an older Mac 8500
+</I>&gt;<i> which was updated to OS 9.1. My G4 was relegated to experimentation with
+</I>&gt;<i> UNIX and the free software foundation. Actually, BBEdit worksheets and
+</I>&gt;<i> Telnet to an Intel box running Linux has been productive.
+</I>&gt;<i>
+</I>&gt;<i> I have backed up the entire contents of the disk &quot;Luna&quot; to CD-ROM's using
+</I>&gt;<i> an Mac 5500 which I trust;., The next step (without a pun) is to install
+</I>&gt;<i> Panther on Luna. I have asked that the disk be reinitialized with a
+</I>&gt;<i> case-sensitive format if possible. I pray that, after that, it will be
+</I>&gt;<i> possible to boot into Jaguar from the existing image on Mir.  But it's
+</I>&gt;<i> not so clear. It's possible that the installation of Panther will muck
+</I>&gt;<i> with EEPROM in a manner that will make it impossible to reboot into
+</I>&gt;<i> Jaguar.
+</I>&gt;<i>
+</I>&gt;<i> I'm not sure if I need to physically disconnect the ATA cable to the Mir
+</I>&gt;<i> disk to prevent unanticipated changes. I'm thinking about that and would
+</I>&gt;<i> appreciate any advice.
+</I>&gt;<i>
+</I>&gt;<i> Kit points out that installation of Panther may cause a reboot into
+</I>&gt;<i> Jaguar to fail. I have spent a lot of time persuading Jaguar to use my
+</I>&gt;<i> SE/30 running Mac OS 7.5.3 as a file server. Connecting to the server has
+</I>&gt;<i> required that I learn about system calls mount_afp and the like and I
+</I>&gt;<i> fully expect that my startup shell scripts will require modification.
+</I>&gt;<i>
+</I>&gt;<i> I doubt that I can execute ControlPanels:StartupDisk to choose a new boot
+</I>&gt;<i> partition but I'm pretty sure I can physically disconnect Luna and
+</I>&gt;<i> reboot.  Where are the instructions? How does one choose a startup disk
+</I>&gt;<i> in Panther? Do I have to install it to find out?
+</I>&gt;<i>
+</I>&gt;<i> Read on to understand where we are.
+</I>&gt;<i>
+</I>&gt;<i> At 17:22 -0700 1/3/04, Kit Harass wrote:
+</I>&gt;<i> &gt; Looks like the only concern with a dual boot. (is the prospect that
+</I>&gt;<i> &gt; journaling will cause Jauguar to fail.)
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; <A HREF="http://www.macosxhints.com/article.php?story=20031025023359826">http://www.macosxhints.com/article.php?story=20031025023359826</A>
+</I>&gt;<i> &gt; 10.3: Possible kernel panics on dual-boot machines
+</I>&gt;<i>
+</I>&gt;<i> My reply to Kit. She's also my wife, but she's also an experienced
+</I>&gt;<i> software manager: She has installed Panther on a Pismo powerbook but
+</I>&gt;<i> that's just a start.
+</I>&gt;<i>
+</I>&gt;<i> Luna should be reformatted. Everything has been backed up. I really don't
+</I>&gt;<i> know if it makes sense to crate a partition for virtual RAM imaging.
+</I>&gt;<i> Apple doesn't provide any guidance.
+</I>&gt;<i>
+</I>&gt;<i> I'll bet there are more problems. What I really worry about is my 3
+</I>&gt;<i> PCI-driven black and white monitors powered by older ATI cards.
+</I>&gt;<i>
+</I>&gt;<i> If asked, do not enable journalling on Mir or Hubble.
+</I>&gt;<i>
+</I>&gt;<i> If asked only for all or none, do not enable journalling at all.
+</I>&gt;<i>
+</I>&gt;<i> If not asked. Go and look for a way to disable journalling on Mir and
+</I>&gt;<i> Hubble. Otherwise figure out a way to disable journalling everywhere.
+</I>&gt;<i>
+</I>&gt;<i> If that's a problem pull the power plug, and ask. I will physically
+</I>&gt;<i> disconnect Hubble and Mir.
+</I>&gt;<i>
+</I>&gt;<i> Otherwise just do something. There is NOTHING of serious importance in OS
+</I>&gt;<i> neXt. I have made it a point to keep it that way.
+</I>&gt;<i>
+</I>&gt;<i> And. . . I intend to keep it that way. OSA 9.1 has everything important
+</I>&gt;<i> to our well being. The 8500 will remain live and well and we have two of
+</I>&gt;<i> them. We can toss the G4 into the river if necessary, and I would enjoy
+</I>&gt;<i> inviting the press to observe the procedure.
+</I>&gt;<i>
+</I>&gt;<i> Steve is NOT to be trusted. The G4 is truly for play only. If it doesn't
+</I>&gt;<i> work for a year it's OK. The IRS won't even know about it..
+</I>&gt;<i>
+</I>&gt;<i> What I really hope is that the PRAM or BOOT ROM are not being mucked with
+</I>&gt;<i> by Panther. There is no way to tell. The final test is to physically
+</I>&gt;<i> disconnect Luna and boot from Hubble.. If that fails we are going 100% to
+</I>&gt;<i> Linux with no - NONE - not at all - no way - looking back.
+</I>&gt;<i>
+</I>&gt;<i> Perhaps we can get YellowDog to run on the G4, If not, I swear we will
+</I>&gt;<i> drown it in Fountain Creek with the Gazette reporters invited.
+</I>&gt;<i>
+</I>&gt;<i> Remember that ALL important financial information is safely stored in
+</I>&gt;<i> MacOS 9.1 format on the 8500.
+</I>&gt;<i>
+</I>&gt;<i> Doug
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> --&gt;  There are 10 kinds of people:  those who understand binary, and
+</I>&gt;<i> those who don't &lt;--
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> G4ist, a listserv for discussion of everything G4.
+</I>&gt;<i> FAQ at &lt;<A HREF="../../../../www.themacintoshguy.com/lists/G4.html">http://www.themacintoshguy.com/lists/G4.html</A>&gt;.
+</I>&gt;<i> Send a message to &lt;<A HREF="../../../mailman/listinfo/g4.html">G4-DIGEST at themacintoshguy.com</A>&gt; to switch to the digest.
+</I>&gt;<i>
+</I>&gt;<i> XRouter | Share your DSL or cable modem between multiple computers!
+</I>&gt;<i> Dr. Bott | Now $139.99      &lt;<A HREF="http://www.drbott.com/prod/xrouter.html">http://www.drbott.com/prod/xrouter.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> Dr. Bott LLC   4-port USB Hub in translucent Graphite!
+</I>&gt;<i> Dr. Bott LLC   &lt;<A HREF="http://www.drbott.com/prod/ghub.html">http://www.drbott.com/prod/ghub.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> Small Dog Electronics   <A HREF="http://www.smalldog.com">http://www.smalldog.com</A>  | Canon Digital Cameras |
+</I>&gt;<i> --Quicksilver &amp; refurbished G4's arriving daily! |   and Camcorders!!    |
+</I>&gt;<i>
+</I>&gt;<i> MacResQ Specials: LaCie SCSI CDR From $99! PowerBook 3400/200 Only $879!
+</I>&gt;<i> Norton AntiVirus 6 Only $19! We Stock PARTS! &lt;<A HREF="http://www.macresq.com">http://www.macresq.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s -
+</I>&gt;<i> <A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>
+
+
+---------------------------------------------------------------------------
+Perry The Cynic                                             <A HREF="../../../mailman/listinfo/g4.html">perry at cynic.org</A>
+To a blind optimist, an optimistic realist must seem like an Accursed Cynic.
+---------------------------------------------------------------------------
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005252.html">[G4] Panther upgrade
+</A></li>
+	<LI>Next message: <A HREF="005254.html">Another Epson scanner problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5253">[ date ]</a>
+              <a href="thread.html#5253">[ thread ]</a>
+              <a href="subject.html#5253">[ subject ]</a>
+              <a href="author.html#5253">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

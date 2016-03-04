@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Tiger: random kernel panics
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Tiger%3A%20random%20kernel%20panics&In-Reply-To=BAYC1-PASMTP0493CCB8FCF28C1EA036D3D2020%40cez.ice">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="006516.html">
+   <LINK REL="Next"  HREF="006518.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Tiger: random kernel panics</H1>
+    <B>DZ-Jay</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Tiger%3A%20random%20kernel%20panics&In-Reply-To=BAYC1-PASMTP0493CCB8FCF28C1EA036D3D2020%40cez.ice"
+       TITLE="[X4U] Tiger: random kernel panics">dz at caribe.net
+       </A><BR>
+    <I>Sun May 29 06:45:00 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="006516.html">[X4U] Tiger: random kernel panics
+</A></li>
+        <LI>Next message: <A HREF="006518.html">[X4U] Tiger: random kernel panics
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6517">[ date ]</a>
+              <a href="thread.html#6517">[ thread ]</a>
+              <a href="subject.html#6517">[ subject ]</a>
+              <a href="author.html#6517">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On May 29, 2005, at 08:27, Alex wrote:
+&gt;<i> It's not that simple. First, V.92 is a little more complex [1]. 
+</I>&gt;<i> Second, much may depend on what the modem script actually does and 
+</I>&gt;<i> what init strings is using (if you're a CCL expert, you can check it 
+</I>&gt;<i> yourself with a text editor). If your ISP does not specifically offer 
+</I>&gt;<i> V.92 service, you should use the V.90 script.
+</I>
+I wouldn't call myself a 'CCL expert', but I know my way around the 
+UNIX environment.  However, the Mac environment is alien to me, so 
+where would I find the modem scripts?
+
+&gt;<i> Again, it's not that simple. First, we don't know that it's the PPP 
+</I>&gt;<i> NKE which causes the problem -- that's an assumption. Second, the 
+</I>&gt;<i> modem is actually a &quot;softmodem&quot;, the Mac equivalent of a Winmodem [2]. 
+</I>&gt;<i> So it's entirely possible for an error during intialization or 
+</I>&gt;<i> handshake stages to cause it to hang later and lead to a KP.
+</I>
+Although I agree that anything is quite possible, given enough 
+probability, I suspect that this is a red herring (I could be wrong, of 
+course).  Like I have mentioned before, I am becoming more and more 
+convinced that the problem lies in the 10.4.1 update; I have already 
+erase/installed the system 3 times, and restored some of my preferences 
+and configured the system to my liking, yet this last time I did not 
+install the 10.4.1 update, so in a very empirical way, that is the only 
+difference to the previous installations -- and it hasn't crashed once 
+while performing exactly the same operations as before.  In the 
+previous 2 installations, I was not able to reproduce the problem at 
+will, but it *did* occur in a more or less reliable way after certain 
+events, mainly going to sleep and waking up.  It certainly occurred 
+more than once in a 24 hour period.
+
+I will, though, for the sake of thoroughness, play with the modem 
+scripts, just to not leave any stones unturned.
+
+&gt;&gt;<i> I am really keen on holding the 10.4.1 update as a suspect
+</I>&gt;<i>
+</I>&gt;<i> That's a possibility, of course. Have you checked the usual places? I 
+</I>&gt;<i> don't recall seeing this kind of problem reported. But, if the update 
+</I>&gt;<i> caused it, it may still be that it caused it by changing or updating 
+</I>&gt;<i> the modem script, or introducing NKE changes that make some setting on 
+</I>&gt;<i> your machine not work well with your ISP. So it's still something you 
+</I>&gt;<i> want to look into.
+</I>
+Being new to the Mac community, I'm not sure I know all &quot;the usual 
+places&quot;, but I have certainly looked in obvious places like some Mac 
+discussion groups, the Apple.com knowledge base (or whatever its 
+called), and just general googling.  Like you, I have not found 
+anything on the subject.  And, according to the 10.4.1 update article, 
+it doesn't seem to have any changes in the PPP module, although it 
+mentions some unrelated Networking changes.  I even contacted Apple 
+support and they referred my case to an &quot;engineer&quot; (whatever that 
+means) and will get back to me some other day.  But I'm not holding my 
+breath on that one, since the technician didn't even seem interested in 
+getting a copy of the panic.log.
+
+Do you know if there is a way to rollback an installed update?  What I 
+would like to do is install the 10.4.1 update, then go through 
+different modem scripts or other configuration changes to try to 
+isolate and reproduce the problem, but erase/install the system is 
+taking way too long in between for my taste.
+
+	Thanx again!
+	dZ.
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="006516.html">[X4U] Tiger: random kernel panics
+</A></li>
+	<LI>Next message: <A HREF="006518.html">[X4U] Tiger: random kernel panics
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6517">[ date ]</a>
+              <a href="thread.html#6517">[ thread ]</a>
+              <a href="subject.html#6517">[ subject ]</a>
+              <a href="author.html#6517">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

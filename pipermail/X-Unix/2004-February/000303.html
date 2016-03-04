@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> /dev/fd/*
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=/dev/fd/%2A&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000302.html">
+   <LINK REL="Next"  HREF="000304.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>/dev/fd/*</H1>
+    <B>Jeep Hauser</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=/dev/fd/%2A&In-Reply-To="
+       TITLE="/dev/fd/*">jhauser at usc.edu
+       </A><BR>
+    <I>Tue Feb 17 09:41:28 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000302.html">[X-Unix] FTP Server
+</A></li>
+        <LI>Next message: <A HREF="000304.html">[X-Unix] /dev/fd/*
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#303">[ date ]</a>
+              <a href="thread.html#303">[ thread ]</a>
+              <a href="subject.html#303">[ subject ]</a>
+              <a href="author.html#303">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi folks,
+
+A friend's box was broken into (a Raq, not MOSX), and one of the 
+commands the intruder did was:
+
+	find / -mmin -180 -ls
+
+If I understand this correctly, it will traverse the entire 
+filesystem (when executed as root) and list (in -ls format) every 
+file that has been modified in the last 180 minutes (though I'm not 
+sure wh
+
+For kick, I ran this on my MOSX box and found a *ton* of stuff in 
+various /dev/fd/* subdirectories, notably .jpg files that are 
+mirrored in my /Users/&lt;username&gt;/Photos/iPhoto Library directory. I 
+can't seem to find a pattern as to why these files are still in 
+/dev/fd (not all of my iPhoto files are in there, just some), nor why 
+the output of the find command doesn't seem to limit itself to the 
+last 180 minutes.
+
+On the Raq (sorry, but I don't know the shell used), it truly returns 
+files modified within 180 minutes. On my MOSX (10.3.2) tsch shell, it 
+returns files going back to last summer.
+
+When using '180' instead of '-180' it returns nothing at all. I don't 
+know the difference, and the man pages aren't helping me figure that 
+out.
+
+Soooo... is find misbehaving? Is it MOSX?
+
+How about all those files in /dev/df/* -- are those really just 
+pointers to the actual files, or actual files? What I could find on 
+/dev/df/* on Google talks about how it's like a /tmp for various 
+things, but it's more complex than what I'm familiar with.
+
+Thanks much,
+
+Jeep
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000302.html">[X-Unix] FTP Server
+</A></li>
+	<LI>Next message: <A HREF="000304.html">[X-Unix] /dev/fd/*
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#303">[ date ]</a>
+              <a href="thread.html#303">[ thread ]</a>
+              <a href="subject.html#303">[ subject ]</a>
+              <a href="author.html#303">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

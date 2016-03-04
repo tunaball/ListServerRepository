@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] How to get actual kernel panic data? (update)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20How%20to%20get%20actual%20kernel%20panic%20data%3F%20%28update%29&In-Reply-To=49DE7177.9000202%40comcast.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="018706.html">
+   <LINK REL="Next"  HREF="018712.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] How to get actual kernel panic data? (update)</H1>
+    <B>Eric Smith</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20How%20to%20get%20actual%20kernel%20panic%20data%3F%20%28update%29&In-Reply-To=49DE7177.9000202%40comcast.net"
+       TITLE="[G4] How to get actual kernel panic data? (update)">eric-s-smith at comcast.net
+       </A><BR>
+    <I>Fri Apr 10 13:58:48 PDT 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="018706.html">[G4] How to get actual kernel panic data?
+</A></li>
+        <LI>Next message: <A HREF="018712.html">[G4] How to get actual kernel panic data?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#18716">[ date ]</a>
+              <a href="thread.html#18716">[ thread ]</a>
+              <a href="subject.html#18716">[ subject ]</a>
+              <a href="author.html#18716">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>It appears that the cause of this problem is the Airport module.
+In fact, checking around the web this appears to be a very common
+problem with many people experiencing the same kernel panic symptoms.
+Sometimes replacing or even just reseating the Airport module is
+effective in fixing it but sometimes the problem persists even after
+replacement. In my case, if removing the Airport module seems to fix
+the panics, I'll probably just leave it removed since I rarely do
+anything with this system that requires networking. Also using an
+external usb wifi card is an option.
+
+Thanks to those who responded.
+
+Eric S.
+
+Eric Smith wrote:
+&gt;<i> Eric,
+</I>&gt;<i> 
+</I>&gt;<i> Trying different RAM would be very difficult (or not possible)
+</I>&gt;<i> because my iBook is one of these, with 512MB soldered to the board:
+</I>&gt;<i> &lt;<A HREF="http://lowendmac.com/ibooks/14in-ibook-g4-1.42-ghz.html">http://lowendmac.com/ibooks/14in-ibook-g4-1.42-ghz.html</A>&gt;
+</I>&gt;<i> 
+</I>&gt;<i> As far as cooling, I suppose it's possible but it has sometimes
+</I>&gt;<i> panicked during boot from a cold start, so something would have
+</I>&gt;<i> to be overheating awfully quickly. (And other times it runs for
+</I>&gt;<i> 20 minutes.)
+</I>&gt;<i> 
+</I>&gt;<i> I suspect that some part on the motherboard is failing, and there's
+</I>&gt;<i> not much that can be done about it anyway. Darn. Oh well, maybe I'll
+</I>&gt;<i> look for a used 12&quot; Powerbook, since that seems to have such a good
+</I>&gt;<i> reputation.
+</I>&gt;<i> 
+</I>&gt;<i> Thanks for the link on the kernel panic. I'll check it out.
+</I>&gt;<i> 
+</I>&gt;<i> Eric S.
+</I>&gt;<i> 
+</I>&gt;<i> Eric Wood wrote:
+</I>&gt;&gt;<i> Man, that's a rotten thing to have start up. Did the shop you took it 
+</I>&gt;&gt;<i> to try different RAM? Certainly it's either there or on the board some 
+</I>&gt;&gt;<i> place, considering it happens from a different drive with a different 
+</I>&gt;&gt;<i> system installation. One other thought is some failure in the cooling? 
+</I>&gt;&gt;<i> I could imagine a kernel panic coming up if something overheats. Maybe 
+</I>&gt;&gt;<i> a thorogh cleaning with canned air would do the trick.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> As for kernel panic data, the lead I've found is at 
+</I>&gt;&gt;<i> <A HREF="http://www.index-site.com/kernelpanic.html">http://www.index-site.com/kernelpanic.html</A>
+</I>&gt;&gt;<i> &quot;I would also look at the Panic.log file with the Console program on 
+</I>&gt;&gt;<i> your machine to see what may have caused the kernel panic if you get 
+</I>&gt;&gt;<i> one. &quot;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Eric W.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Am 09.04.2009 um 16:16 schrieb Eric Smith:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> My iBook G4 has started experiencing regular kernel panics.
+</I>&gt;&gt;&gt;<i> My immediate question is how can I get the actual kernel
+</I>&gt;&gt;&gt;<i> panic message to display, rather than the generic message
+</I>&gt;&gt;&gt;<i> (&quot;You must restart your computer ...&quot;) ?
+</I>&gt;&gt;&gt;<i> It's a long shot but maybe there's some clue in there
+</I>&gt;&gt;&gt;<i> I could decipher.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Background: this started happening out of the blue.
+</I>&gt;&gt;&gt;<i> Once it started, it would either happen during the boot,
+</I>&gt;&gt;&gt;<i> or if it did boot all the way up it would happen as soon
+</I>&gt;&gt;&gt;<i> as I tried to log in. I was able to boot from the install
+</I>&gt;&gt;&gt;<i> CD without any problems and run Disk Utility, repair the
+</I>&gt;&gt;&gt;<i> filesystem and repair permissions (but no significant
+</I>&gt;&gt;&gt;<i> problems were seen). After doing this it would run for
+</I>&gt;&gt;&gt;<i> a longer period of time after booting, but after about
+</I>&gt;&gt;&gt;<i> 15-20 minutes of operation it would panic again, and
+</I>&gt;&gt;&gt;<i> then start panicking on every boot again.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I took it to my authorized Apple repair shop (and they're
+</I>&gt;&gt;&gt;<i> good; I've used them for years on different systems).
+</I>&gt;&gt;&gt;<i> They ran all their HW diagnostics and found nothing
+</I>&gt;&gt;&gt;<i> (I have never opened it and added RAM or anything else),
+</I>&gt;&gt;&gt;<i> and wiped the disk clean and reinstalled. They also tried
+</I>&gt;&gt;&gt;<i> different kb/mouse, running off an external drive, etc.
+</I>&gt;&gt;&gt;<i> The result: still random panics, although they claim the
+</I>&gt;&gt;&gt;<i> panics are less frequent now. At that point they gave up.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> So I'm not sure what to do next. Live with a system that
+</I>&gt;&gt;&gt;<i> panics at random intervals and hope it doesn't get worse,
+</I>&gt;&gt;&gt;<i> or declare it a total loss? I don't expect that taking it
+</I>&gt;&gt;&gt;<i> to Apple will be of any use because they will probably just
+</I>&gt;&gt;&gt;<i> want to replace the logic board at a prohibitive cost.
+</I>&gt;&gt;&gt;<i> All I'm thinking is that if I can gather some more data on
+</I>&gt;&gt;&gt;<i> the actual panics there might be some hope.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Thanks,
+</I>&gt;&gt;&gt;<i> Eric S.
+</I>&gt;&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;&gt;<i> G4 mailing list
+</I>&gt;&gt;&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">G4 at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">http://listserver.themacintoshguy.com/mailman/listinfo/g4</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> G4 mailing list
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">G4 at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">http://listserver.themacintoshguy.com/mailman/listinfo/g4</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> G4 mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">G4 at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">http://listserver.themacintoshguy.com/mailman/listinfo/g4</A>
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I></PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="018706.html">[G4] How to get actual kernel panic data?
+</A></li>
+	<LI>Next message: <A HREF="018712.html">[G4] How to get actual kernel panic data?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#18716">[ date ]</a>
+              <a href="thread.html#18716">[ thread ]</a>
+              <a href="subject.html#18716">[ subject ]</a>
+              <a href="author.html#18716">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

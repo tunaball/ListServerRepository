@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MV] Question for iListen veterans...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macvoice%40listserver.themacintoshguy.com?Subject=%5BMV%5D%20Question%20for%20iListen%20veterans...&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001617.html">
+   <LINK REL="Next"  HREF="001623.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MV] Question for iListen veterans...</H1>
+    <B>tscheresky at micron.com</B> 
+    <A HREF="mailto:macvoice%40listserver.themacintoshguy.com?Subject=%5BMV%5D%20Question%20for%20iListen%20veterans...&In-Reply-To="
+       TITLE="[MV] Question for iListen veterans...">tscheresky at micron.com
+       </A><BR>
+    <I>Tue Apr 25 10:51:59 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001617.html">[MV] Change of address
+</A></li>
+        <LI>Next message: <A HREF="001623.html">[MV] Question for iListen veterans...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1622">[ date ]</a>
+              <a href="thread.html#1622">[ thread ]</a>
+              <a href="subject.html#1622">[ subject ]</a>
+              <a href="author.html#1622">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks Joe... I think I can roll my own, but I would like a suggestion
+or insight into how you implemented the &quot;Up 10 Lines&quot; macro.  Did you do
+it by repeating the following statement 10 times between try/end try:
+
+typeKey &quot;up arrow&quot;
+
+or is there a construct to tell AppleScript to execute the statement 10
+times?  Thanks...
+
+Todd    
+
+-----Original Message-----
+From: <A HREF="../../../mailman/listinfo/macvoice.html">macvoice-bounces at listserver.themacintoshguy.com</A>
+[mailto:<A HREF="../../../mailman/listinfo/macvoice.html">macvoice-bounces at listserver.themacintoshguy.com</A>] On Behalf Of
+Joseph Senecal
+Sent: Monday, April 24, 2006 10:30 PM
+To: A place to discuss speech recognition on Macintosh.
+Subject: Re: [MV] Question for iListen veterans...
+
+Todd,
+
+What I did was create a collection of macros:
+Up One Line, Up Two Lines, Up Three Lines, Up Four Lines, Up Five  
+Lines, and Up Ten Lines.
+
+I picked these numbers because that's what an older Dictation product  
+(Power Secretary) did. I didn't add more because just doing these 6  
+commands was tedious enough when multiplied by the number of cursor  
+control commands I wanted.
+
+I have these all in a command set that I could send anyone who's  
+interested. I'll need to warn you though, you will probably have  
+problems loading the set and some of the commands will need to be  
+fixed by hand. At least that's what happens everytime I transfer the  
+set between machines.
+
+Joe Senecal
+
+On Apr 23, 2006, at 8:15 PM, Chuck Rogers wrote:
+
+&gt;<i> Todd (and everyone else):
+</I>&gt;<i>
+</I>&gt;<i> What you are trying to do is use a variable in a command name.  
+</I>&gt;<i> Unfortunately, with iListen 1.6.8 or earlier, you cannot have a  
+</I>&gt;<i> variable in a command name, so there is no way to do what you want  
+</I>&gt;<i> to do. There may be something that would do something similar in a  
+</I>&gt;<i> future version of iListen, but I have no other information at this  
+</I>&gt;<i> time.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Best Regards,
+</I>&gt;<i>
+</I>&gt;<i> Chuck Rogers, Chief Evangelist
+</I>&gt;<i> MacSpeech, Inc.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Apr 23, 2006, at 9:57 PM, <A HREF="../../../mailman/listinfo/macvoice.html">tscheresky at micron.com</A> wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> I want to write a macro for iListen 1.6.8 which will allow me to  
+</I>&gt;&gt;<i> press up arrow 1 through 40 times, depending on number I say when  
+</I>&gt;&gt;<i> issuing the command.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I know that the code for &quot;up arrow one&quot; would be:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> try
+</I>&gt;&gt;<i>     typeKey &quot;up arrow&quot;
+</I>&gt;&gt;<i> end try
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> How would I modify this command to accept numbers 1 through 40?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Thanks...
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Todd
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> MacVoice mailing list
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/macvoice.html">MacVoice at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/macvoice.html">http://listserver.themacintoshguy.com/mailman/listinfo/macvoice</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;&gt;<i> stuff:
+</I>&gt;&gt;<i>          <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> MacVoice mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/macvoice.html">MacVoice at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/macvoice.html">http://listserver.themacintoshguy.com/mailman/listinfo/macvoice</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+_______________________________________________
+MacVoice mailing list
+<A HREF="../../../mailman/listinfo/macvoice.html">MacVoice at listserver.themacintoshguy.com</A>
+<A HREF="../../../mailman/listinfo/macvoice.html">http://listserver.themacintoshguy.com/mailman/listinfo/macvoice</A>
+
+Listmom is trying to clean out his closets! Vintage Mac and random
+stuff:
+         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001617.html">[MV] Change of address
+</A></li>
+	<LI>Next message: <A HREF="001623.html">[MV] Question for iListen veterans...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1622">[ date ]</a>
+              <a href="thread.html#1622">[ thread ]</a>
+              <a href="subject.html#1622">[ subject ]</a>
+              <a href="author.html#1622">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macvoice.html">More information about the MacVoice
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

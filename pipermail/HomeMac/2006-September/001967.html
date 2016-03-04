@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [HM] Volume Scheme, RAID questions
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:homemac%40listserver.themacintoshguy.com?Subject=%5BHM%5D%20Volume%20Scheme%2C%20RAID%20questions&In-Reply-To=77385AC6-E0D0-4022-8F85-8FE06AD8F707%40drizzle.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001966.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[HM] Volume Scheme, RAID questions</H1>
+    <B>Duane Murphy</B> 
+    <A HREF="mailto:homemac%40listserver.themacintoshguy.com?Subject=%5BHM%5D%20Volume%20Scheme%2C%20RAID%20questions&In-Reply-To=77385AC6-E0D0-4022-8F85-8FE06AD8F707%40drizzle.com"
+       TITLE="[HM] Volume Scheme, RAID questions">duanemurphy at mac.com
+       </A><BR>
+    <I>Sat Sep 30 15:25:57 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001966.html">[HM] Volume Scheme, RAID questions
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1967">[ date ]</a>
+              <a href="thread.html#1967">[ thread ]</a>
+              <a href="subject.html#1967">[ subject ]</a>
+              <a href="author.html#1967">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>--- At Sat, 30 Sep 2006 15:07:05 -0700, Chris Beamis wrote:
+
+&gt;<i>Hi,
+</I>&gt;<i>   I'm using disk utility, and I have two identical hard drives.  One  
+</I>&gt;<i>is the boot drive, and it has a single volume.  My hope is to do a  
+</I>&gt;<i>mirror RAID setup so that the second drive always mirrors the first.   
+</I>&gt;<i>When I try to follow the instructions in 10.4.8 help I get to the  
+</I>&gt;<i>point where I'm supposed to click 'create' but it is greyed out.  So  
+</I>&gt;<i>I thought maybe I need to format the second drive first.  
+</I>
+Yes, the drive must be formatted before applying RAID selections.
+
+&gt;<i>I want to  
+</I>&gt;<i>format it identical to the boot drive, but when I click on the boot  
+</I>&gt;<i>drive, then the 'partition' tab, under Volume Scheme it says  
+</I>&gt;<i>Current.  But when I do the same for the second drive, setting Volume  
+</I>&gt;<i>Scheme to Current, everything else is greyed out, I can't type the  
+</I>&gt;<i>volume name or format or size.  The stuff gets ungreyed if, under  
+</I>&gt;<i>Volume Scheme I click on 1 partition, but then I'm not doing it  
+</I>&gt;<i>exactly like the boot drive.
+</I>&gt;<i>
+</I>&gt;<i>   Can anyone explain to me what the terms &quot;Current&quot; and &quot;1  
+</I>&gt;<i>Partition&quot; mean in this context?
+</I>
+Current is exactly what it says. It's just whatever the current
+partition is for the drive that is selected. It's not useful to think
+about it in terms of something that can be applied to another drive,
+because current is about just the selected drive.
+
+Chances are there is only one partition on your boot drive. You can find
+out the sizes by clicking in the partition. Then you can press tab to go
+through the other partitions. There maybe small unused space that can't
+be clicked in that tabbing with show to you.
+
+By the way RAID will simply use the smallest size of the two partitions
+when you create the RAID. So as long as the second drive is formatted at
+least the same size as the first you'll be good.
+
+ ...Duane
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001966.html">[HM] Volume Scheme, RAID questions
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1967">[ date ]</a>
+              <a href="thread.html#1967">[ thread ]</a>
+              <a href="subject.html#1967">[ subject ]</a>
+              <a href="author.html#1967">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/homemac.html">More information about the HomeMac
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

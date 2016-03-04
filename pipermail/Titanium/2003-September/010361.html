@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] FireWire Port Problem
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20FireWire%20Port%20Problem&In-Reply-To=list-8583478%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010360.html">
+   <LINK REL="Next"  HREF="010320.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] FireWire Port Problem</H1>
+    <B>b</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20FireWire%20Port%20Problem&In-Reply-To=list-8583478%40mail.ninewire.com"
+       TITLE="[Ti] FireWire Port Problem">fl1pper at earthlink.net
+       </A><BR>
+    <I>Tue Sep 30 13:44:42 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010360.html">[Ti] 10.2.8
+</A></li>
+        <LI>Next message: <A HREF="010320.html">[Ti] pcmcia card causes crashes - any suggestions?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10361">[ date ]</a>
+              <a href="thread.html#10361">[ thread ]</a>
+              <a href="subject.html#10361">[ subject ]</a>
+              <a href="author.html#10361">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Tarik paused, thought it over, and spoke thusly:
+
+&gt;<i>On Tuesday, September 30, 2003, at 05:41  pm, b wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i>External devices 'power-up' on the FireWire bus, but aren't 
+</I>&gt;&gt;<i>detected, so, who knows? Thanks for your input.
+</I>&gt;<i>
+</I>&gt;<i>Yes I believe these are the same symptoms.
+</I>&gt;<i>
+</I>&gt;<i>I have seen 3 other Ti's fail in the same way, all 400/500 models. 
+</I>&gt;<i>There is nothing at fault with your power supply, I think has to do 
+</I>&gt;<i>with some kind of &quot;arcing&quot; phenomenon within the IEEE 1394 
+</I>&gt;<i>implementation Apple used back then...but that's my hazard at a 
+</I>&gt;<i>guess.
+</I>&gt;<i>
+</I>&gt;<i>--
+</I>&gt;<i>Tarik
+</I>
+After some research, I find it is, indeed, arcing. Power in the 
+cable, or device, that gets accidentally shunted over to the data 
+line (s) in the cable or device. This fries the PHY box that is on 
+the host firewire port. (It is responsible for sending power out of 
+the 'extra' wires in the ports that also supply power in addition to 
+data.
+
+Usually a cable (that either twists, or is mounted backwards (hard 
+but possible, apparently), is the culprit. The advice, in terms of 
+prevention, is to use high quality cables, change them often 
+(monthly?), be careful on plugging-in, don't let the cable 'twist' 
+anywhere near the connector ends, and if possible, use 3-way ( 
+External Power/Off/Bus Power) devices.
+
+A short, high-quality cable, that might have developed an arc due to 
+subtle 'twists', over time, probably fried the port on my Powerbook. 
+If Apple had implemented the anti-Static/anti-Power over/under 
+circuit on the port, earlier, it all would have been avoided.
+
+As for me, given current dire straits, I may just wait ( quite a 
+while ) for an UltraWide SCSI PC card, and go that route (skipping 
+FireWire/USB and the slow drives, altogether). I hope such a thing 
+exists. In the meantime, I am all the way out of business.
+
+~flipper
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010360.html">[Ti] 10.2.8
+</A></li>
+	<LI>Next message: <A HREF="010320.html">[Ti] pcmcia card causes crashes - any suggestions?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10361">[ date ]</a>
+              <a href="thread.html#10361">[ thread ]</a>
+              <a href="subject.html#10361">[ subject ]</a>
+              <a href="author.html#10361">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

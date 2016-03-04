@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] PB Fan Noise/Heat
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20PB%20Fan%20Noise/Heat&In-Reply-To=p0623090fbf1728bac1ac%40192.168.1.2">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="017474.html">
+   <LINK REL="Next"  HREF="017454.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] PB Fan Noise/Heat</H1>
+    <B>Jean-Paul Thuot</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20PB%20Fan%20Noise/Heat&In-Reply-To=p0623090fbf1728bac1ac%40192.168.1.2"
+       TITLE="[Ti] PB Fan Noise/Heat">fearsome.orange at gmail.com
+       </A><BR>
+    <I>Thu Aug  4 16:14:53 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="017474.html">[Ti] Ti logicboard and combo upgrade ?
+</A></li>
+        <LI>Next message: <A HREF="017454.html">[Ti] 10.3.9 Won't boot
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17452">[ date ]</a>
+              <a href="thread.html#17452">[ thread ]</a>
+              <a href="subject.html#17452">[ subject ]</a>
+              <a href="author.html#17452">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I believe that would be Ctrl-clicking on the file, and choose Get
+Info.  Under permissions details you will see three catergories, which
+should then be obvious to you.  After you've made the proper
+adjustments (Group =&gt; wheel etc.) make sure you click the button at
+the bottom so that the permission changes include what's inside the
+folder, not just the folder itself.
+
+Cheers,
+
+Jean-Paul
+
+On 8/4/05, Richard Edwards &lt;<A HREF="../../../mailman/listinfo/titanium.html">richard.e at btconnect.com</A>&gt; wrote:
+&gt;<i> 
+</I>&gt;<i> Hi Folks
+</I>&gt;<i> There's a fix for the noise my PB emits much of the day and the heat
+</I>&gt;<i> that goes with it
+</I>&gt;<i> at <A HREF="http://www.deleet.de/ray/pbfanfix.html">http://www.deleet.de/ray/pbfanfix.html</A>
+</I>&gt;<i> 
+</I>&gt;<i> This tells me
+</I>&gt;<i> Quote
+</I>&gt;<i> The fix
+</I>&gt;<i> Downgrade the relevant System Extension. It turned out to be:
+</I>&gt;<i> /System/Library/Extensions/AppleADM103x.kext
+</I>&gt;<i> This extension handles the temperature readout from certain Analog
+</I>&gt;<i> Devices Digital Thermometers over the I2C bus.
+</I>&gt;<i> First, make a backup of the version that is included in 10.3.2.
+</I>&gt;<i> The old version for the Extension can be found in the standalone
+</I>&gt;<i> updater 10.2.8. Don't run the updater (or quit if it launches
+</I>&gt;<i> automatically).
+</I>&gt;<i> Extract the extension. To extract single files form the Package, get
+</I>&gt;<i> something like Pacifist or use the shell.
+</I>&gt;<i> Copy the extension into /System/Library/Extensions.
+</I>&gt;<i> Make sure that the owner of the extension and everything inside (it's
+</I>&gt;<i> a package and packages are directories) is root and the group is
+</I>&gt;<i> wheel. THIS IS IMPORTANT. Otherwise, the system won't load these
+</I>&gt;<i> extensions, which may have severe consequences. The Finder displays
+</I>&gt;<i> the owner root as system, so this is ok as well.
+</I>&gt;<i> Reboot.
+</I>&gt;<i> Enjoy the Silence. (and put on your asbestos gloves again)
+</I>&gt;<i> Unquote
+</I>&gt;<i> 
+</I>&gt;<i> It tells me to :
+</I>&gt;<i> 
+</I>&gt;<i> 'Make sure that the owner of the extension and everything inside
+</I>&gt;<i> (it's a package and packages are directories) is root and the group
+</I>&gt;<i> is wheel.'
+</I>&gt;<i> 
+</I>&gt;<i> I'm not sure how to do that - can anyone here advise ?
+</I>&gt;<i> 
+</I>&gt;<i> biiGGGGG TIA
+</I>&gt;<i> Richard
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> --
+</I>&gt;<i> Richard Edwards &lt;<A HREF="../../../mailman/listinfo/titanium.html">richard at spherestudio.co.uk</A>&gt;
+</I>&gt;<i> Studio Principal
+</I>&gt;<i> Sphere Studio LLP
+</I>&gt;<i> 020 8343 2186 Desk
+</I>&gt;<i> 07905 792 387 Mobile
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Titanium mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/titanium.html">Titanium at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/titanium.html">http://listserver.themacintoshguy.com/mailman/listinfo/titanium</A>
+</I>&gt;<i> 
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random stuff:
+</I>&gt;<i>          <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I></PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="017474.html">[Ti] Ti logicboard and combo upgrade ?
+</A></li>
+	<LI>Next message: <A HREF="017454.html">[Ti] 10.3.9 Won't boot
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17452">[ date ]</a>
+              <a href="thread.html#17452">[ thread ]</a>
+              <a href="subject.html#17452">[ subject ]</a>
+              <a href="author.html#17452">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

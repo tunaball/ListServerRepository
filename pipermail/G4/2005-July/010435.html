@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] [OT] wrong Java version running???
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20%5BOT%5D%20wrong%20Java%20version%20running%3F%3F%3F&In-Reply-To=20050702045648.853C0476464%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010454.html">
+   <LINK REL="Next"  HREF="010438.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] [OT] wrong Java version running???</H1>
+    <B>John Baltutis</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20%5BOT%5D%20wrong%20Java%20version%20running%3F%3F%3F&In-Reply-To=20050702045648.853C0476464%40listserver.themacintoshguy.com"
+       TITLE="[G4] [OT] wrong Java version running???">baltwo at san.rr.com
+       </A><BR>
+    <I>Sat Jul  2 00:10:17 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010454.html">[G4] Mac Help?
+</A></li>
+        <LI>Next message: <A HREF="010438.html">[G4] [OT] wrong Java version running???
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10435">[ date ]</a>
+              <a href="thread.html#10435">[ thread ]</a>
+              <a href="subject.html#10435">[ subject ]</a>
+              <a href="author.html#10435">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 07/01/05, Alex &lt;<A HREF="../../../mailman/listinfo/g4.html">lists at lexial.ca</A>&gt; wrote:
+&gt;<i> On Jul 1, 2005, at 16:10, Jay Snoke wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> I am trying to take some on-line training that requires Java version
+</I>&gt;&gt;<i> 1.4.2 (verified with a tech-assist phone call) and appears to be
+</I>&gt;&gt;<i> written for Windows systems.  Each and ever time I access the server
+</I>&gt;&gt;<i> with any browser I have (Safari, firefox, IE, Netscape), a java
+</I>&gt;&gt;<i> console pops up in the background with the following data on it:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Java(TM) Plug-in: Version 1.3.1
+</I>&gt;<i>
+</I>&gt;<i> This is an issue I don't understand.
+</I>&gt;<i>
+</I>&gt;<i> On one hand, Safari does not require or use the Java plug-in. Indeed,
+</I>&gt;<i> Apple's Java FAQ[1] clearly states that Safari supports Java applets
+</I>&gt;<i> under v1.4.x only. My understanding is that the v1.3.1 plug-in provides
+</I>&gt;<i> support for older browsers.
+</I>&gt;<i>
+</I>&gt;<i> OTOH, if I check the configuration with an external tool such
+</I>&gt;<i> BrowserHawk[2], the Java plug-in version is reported as 1.3.1. Why? No
+</I>&gt;<i> clue. There's an issue somewhere, and it may not be with the Java
+</I>&gt;<i> applet code, but with how Safari reports the Java version. The
+</I>&gt;<i> /Library/Internet Plug-Ins configuration suggests that only Cocoa apps
+</I>&gt;<i> can use the v1.4.x plug-in, but that doesn't explain why the applet
+</I>&gt;<i> doesn't run in Safari. Disabling it from the Java 1.3.1 Plugin Settings
+</I>&gt;<i> doesn't seem to have any effect.
+</I>
+Launch Safari 2.0 (Tiger), select menu Window-&gt;Installed plugins reveals these:
+
+Java Plug-in for Cocoa
+Java 1.4.2_07 Plug-in (Cocoa) - from file &quot;JavaPluginCocoa.bundle&quot;.
+MIME Type				Description				Extensions
+application/x-java-jnlp-file		Java Web Start Applications		jnlp
+application/x-java-applet		Basic Java Applets			javaapplet
+
+Java Plug-in (CFM)
+Java 1.3.1 Plug-in (CFM) - from file &quot;Java Applet Plugin Enabler&quot;.
+MIME Type				Description				Extensions
+application/x-java-vm			1.3.1 Specific Java Applets		javaapplettags
+application/x-java-applet		Basic Java Applets			javaapplet
+
+Terminal reveals:
+
+$ java -version
+java version &quot;1.4.2_07&quot;
+Java(TM) 2 Runtime Environment, Standard Edition (build 1.4.2_07-215)
+Java HotSpot(TM) Client VM (build 1.4.2-50, mixed mode)
+
+So, I conclude that Safari uses whichever plug-in is required, but it's
+basic setup is to use version 1.4.2.
+
+See &lt;<A HREF="http://docs.info.apple.com/article.html?artnum=301382">http://docs.info.apple.com/article.html?artnum=301382</A>&gt; for details on
+installing 1.4.2 in 10.3.9 and &lt;<A HREF="http://www.apple.com/macosx/features/java/">http://www.apple.com/macosx/features/java/</A>&gt;
+for Java for Tiger.
+
+For the adventurous ones, see
+&lt;<A HREF="http://docs.info.apple.com/article.html?artnum=301073">http://docs.info.apple.com/article.html?artnum=301073</A>&gt; for details on
+installing Java 2 SE 5.0 Release 1.
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010454.html">[G4] Mac Help?
+</A></li>
+	<LI>Next message: <A HREF="010438.html">[G4] [OT] wrong Java version running???
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10435">[ date ]</a>
+              <a href="thread.html#10435">[ thread ]</a>
+              <a href="subject.html#10435">[ subject ]</a>
+              <a href="author.html#10435">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Owner/Group changes depending on login?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Owner/Group%20changes%20depending%20on%20login%3F&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002762.html">
+   <LINK REL="Next"  HREF="002764.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Owner/Group changes depending on login?</H1>
+    <B>Jeffrey Ellis</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Owner/Group%20changes%20depending%20on%20login%3F&In-Reply-To="
+       TITLE="[X-Unix] Owner/Group changes depending on login?">jellis at dhnet.us
+       </A><BR>
+    <I>Sun Oct 29 20:48:06 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002762.html">[X-Unix] Where is lchown?
+</A></li>
+        <LI>Next message: <A HREF="002764.html">[X-Unix] Owner/Group changes depending on login?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2763">[ date ]</a>
+              <a href="thread.html#2763">[ thread ]</a>
+              <a href="subject.html#2763">[ subject ]</a>
+              <a href="author.html#2763">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi--
+
+I just viewed the same group of files from the same ext. firewire drive on
+the same machine, but booted from two different drives, and two different
+OS's.
+
+These files are at the root of Drive A, which contains neither of the boot
+volumes.
+
+The first time I viewed Drive A from a 10.3.7 boot volume. This is how it
+looked:
+
+drwxrwxrwx   8 jeffrey  admin         272  7 Oct  2004 Act 2a Project
+drwxrwxrwx   7 jeffrey  admin         238 12 Sep  2004 Act 2c Project
+drwxrwxrwx   4 jeffrey  admin         136  6 May  2005 Andrew - King of the
+Wo Project
+drwxrwxr-x  45 root     admin        1530 29 May  2002 Applications
+
+Next, I booted from a 10.4.8 volume. Again, these are the same files from
+Drive A.
+
+drwxrwxrwx    8 jeffrey  jeffrey       272 Oct  7  2004 Act 2a Project
+drwxrwxrwx    7 jeffrey  jeffrey       238 Sep 12  2004 Act 2c Project
+drwxrwxrwx    4 jeffrey  jeffrey       136 May  6  2005 Andrew - King of the
+Wo Project
+drwxrwxr-x   45 jeffrey  jeffrey      1530 May 29  2002 Applications
+
+Now, it has since come to my attention that this is happening because I have
+these volumes set to Ignore Ownership in the Finder. So my first question
+is, is there some flag which is visible at the command line which would show
+this, and if so, what command would I use?
+
+But more &#139; and stranger to me &#139; is that when I&#185;m sudo&#185;d, the same volumes
+suddenly give &#179;unknown&#178; as their Owner/Group?? And this is even for volumes
+where Ignore Ownership is not checked.
+
+drwxrwxrwx    8 unknown  unknown  -     272 Oct  7  2004 Act 2a Project
+drwxrwxrwx    7 unknown  unknown  -     238 Sep 12  2004 Act 2c Project
+drwxrwxrwx    4 unknown  unknown  -     136 May  6  2005 Andrew - King of
+the Wo Project
+drwxrwxr-x   45 unknown  unknown  -    1530 May 29  2002 Applications
+
+I have checked ls  with &#173;n for these volumes, and indeed, they seem to have
+numerical user-ids I don&#185;t recognize &#139; but then why are they associated with
+an Owner name when viewed as a non-superuser, and only display as unknown
+when a superuser?
+
+Anyway, the gist of this is I jesdongitit &lt;grin&gt; Can someone explain how all
+this works?
+
+All My Best,
+Jeffrey
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002762.html">[X-Unix] Where is lchown?
+</A></li>
+	<LI>Next message: <A HREF="002764.html">[X-Unix] Owner/Group changes depending on login?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2763">[ date ]</a>
+              <a href="thread.html#2763">[ thread ]</a>
+              <a href="subject.html#2763">[ subject ]</a>
+              <a href="author.html#2763">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

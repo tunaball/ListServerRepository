@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] HFS+ vs. UFS for Panther boot partition on G4
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20HFS%2B%20vs.%20UFS%20for%20Panther%20boot%20partition%20on%20G4&In-Reply-To=p05100303bfaa773477c9%40%5B192.168.1.14%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011694.html">
+   <LINK REL="Next"  HREF="011717.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] HFS+ vs. UFS for Panther boot partition on G4</H1>
+    <B>Aaron</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20HFS%2B%20vs.%20UFS%20for%20Panther%20boot%20partition%20on%20G4&In-Reply-To=p05100303bfaa773477c9%40%5B192.168.1.14%5D"
+       TITLE="[G4] HFS+ vs. UFS for Panther boot partition on G4">macuser at aarons.fastmail.fm
+       </A><BR>
+    <I>Wed Nov 23 16:16:05 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011694.html">[G4] HFS+ vs. UFS for Panther boot partition on G4
+</A></li>
+        <LI>Next message: <A HREF="011717.html">[G4] HFS+ vs. UFS for Panther boot partition on G4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11696">[ date ]</a>
+              <a href="thread.html#11696">[ thread ]</a>
+              <a href="subject.html#11696">[ subject ]</a>
+              <a href="author.html#11696">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> Date: Wed, 23 Nov 2005 12:52:18 -0700
+</I>&gt;<i>To: &lt;<A HREF="../../../mailman/listinfo/g4.html">g4 at listserver.themacintoshguy.com</A>&gt;
+</I>&gt;<i>From: Doug McNutt &lt;<A HREF="../../../mailman/listinfo/g4.html">douglist at macnauchtan.com</A>&gt;
+</I>&gt;<i>Subject: Re: [G4] HFS+ vs. UFS for Panther boot partition on G4
+</I>&gt;<i>
+</I>&gt;<i>At 04:26 -0800 11/23/05, Aaron wrote:
+</I>&gt;&gt;<i>I have a few hard disks that I'll shortly be reformatting. While I'll probably format one of them, at least, to boot into OS X on earlier Macs, I want to format one to be best for running OS X on my G4 Dual MDD. I'm wondering about the advantages of the UNIX file system vs. HFS+ for the OS X boot partition.
+</I>&gt;<i>
+</I>&gt;<i>I'm betting that OS neXt would refuse to install on a strictly UNIX file system. neXt uses resource forks and file metadata - TYPE and CREATOR - that are nor supported in UNIX file systems.
+</I>
+I don't have my OS X installation disks handy to try, but I did copy a couple of files containing a resource fork (one using the X Finder and another using File Buddy) to a UFS-formatted partition and compared them to the original using File Buddy. They are identical. The copies also have the same icons and Type and Creator codes.
+
+I remember reading very recently that a Mac file is represented on a UNIX file system by three files -- one for the resource fork, one for the data fork, and one for the Finder info. When I find the info again, I'll provide a reference to it.
+
+The one thing that seems to be lost when a file is copied in OS X, even to another HFS+ disk, is Finder comments. Unfortunately, I lost some important info before I realized it!
+
+ - Aaron
+
+&gt;<i>The Linux folks have gone away from the older UFS to newer and better stuff.
+</I>&gt;<i>
+</I>&gt;<i>It is possible, even without server software, to make an HFS+ file system that is case-sensitive. I had some difficulty booting Panther from such a disk but I do most of my work on a partition that is case sensitive. It makes testing of stuff that is headed for a real UNIX box more realistic.
+</I></PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011694.html">[G4] HFS+ vs. UFS for Panther boot partition on G4
+</A></li>
+	<LI>Next message: <A HREF="011717.html">[G4] HFS+ vs. UFS for Panther boot partition on G4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11696">[ date ]</a>
+              <a href="thread.html#11696">[ thread ]</a>
+              <a href="subject.html#11696">[ subject ]</a>
+              <a href="author.html#11696">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Postfix troubles
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Postfix%20troubles&In-Reply-To=list-10538624%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000209.html">
+   <LINK REL="Next"  HREF="000211.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Postfix troubles</H1>
+    <B>Alan Harper</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Postfix%20troubles&In-Reply-To=list-10538624%40mail.ninewire.com"
+       TITLE="[X-Unix] Postfix troubles">lists at aussiegeek.net
+       </A><BR>
+    <I>Sun Feb  1 12:55:07 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000209.html">[X-Unix] Question about using RsyncX
+</A></li>
+        <LI>Next message: <A HREF="000211.html">ethereal for MacOSX
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#210">[ date ]</a>
+              <a href="thread.html#210">[ thread ]</a>
+              <a href="subject.html#210">[ subject ]</a>
+              <a href="author.html#210">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>It is pretty easy to enable postfix from the command line. I did it in a couple of minutes over the weekend (just upgraded to panther on the weekend two, god it rocks, i'm happy that apple has fixed the maximisng routine so it centres the window)
+
+This is from memory but i did the following as root
+
+chown -R postfix /var/spool/postfix
+chown root /var/spool/postfix
+set MAILSERVER=-YES- in /etc/hostconfig
+edited /etc/postfix/master.cf and removed the # in the follwoing line:
+smtp      inet  n       -       n       -       -       smtpd
+
+Ran &quot;postfix check&quot; to see that all is well
+
+Any questions e-mail me I might know
+On Fri, Jan 30, 2004 at 03:56:51AM +0000, Stroller wrote:
+&gt;<i> 
+</I>&gt;<i> On Jan 29, 2004, at 6:56 pm, Dennis Fazio wrote:
+</I>&gt;<i> 
+</I>&gt;<i> &gt;--On Wednesday, January 28, 2004 09:02 AM -0600 Michael Grant 
+</I>&gt;<i> &gt;&lt;<A HREF="../../../mailman/listinfo/x-unix.html">soft at bdanube.com</A>&gt; wrote:
+</I>&gt;<i> &gt;&gt;... Since I *only* want to use Postfix to send mail from this
+</I>&gt;<i> &gt;&gt;particular machine for now and, as Stroller rightly points out, don't 
+</I>&gt;<i> &gt;&gt;want
+</I>&gt;<i> &gt;&gt;to risk opening the machine as an open relay for spammers,
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;You may want to consider. Postfix Enabler (on Versiontracker or 
+</I>&gt;<i> &gt;Macupdate). It does this with a click of a button. If you want to set 
+</I>&gt;<i> &gt;it as an IMAP/POP server later, it does that too with relay 
+</I>&gt;<i> &gt;protection.
+</I>&gt;<i> 
+</I>&gt;<i> I'm sure that Postfix Enabler is very good, but I'm gathering the 
+</I>&gt;<i> impression that it's a proprietary, closed-source GUI tool. I know it's 
+</I>&gt;<i> only $10, but this is a Unit-oriented list - if one learns how to 
+</I>&gt;<i> enable Postfix from the commandline, using pico or vi to edit the 
+</I>&gt;<i> config files, one has the benefit that one will be sure to be able to 
+</I>&gt;<i> configure Postifx on any Unix system in the future.
+</I>&gt;<i> 
+</I>&gt;<i> Stroller.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i> 
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> 
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your Mac 
+</I>&gt;<i> ISP Serious Mac Internet Solutions From NineWire!   
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i> 
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older Mac! 
+</I>&gt;<i> Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i> 
+</I>&gt;<i>   Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;<i> 
+</I>&gt;<i> OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s - 
+</I>&gt;<i> <A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>
+-- 
+Alan Harper			E: <A HREF="../../../mailman/listinfo/x-unix.html">alan at aussiegeek.net</A>
+Linux / Mac Geek		W: www.aussiegeek.net
+Mac OS X: Because making Unix user friendly was easier than fixing windows
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000209.html">[X-Unix] Question about using RsyncX
+</A></li>
+	<LI>Next message: <A HREF="000211.html">ethereal for MacOSX
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#210">[ date ]</a>
+              <a href="thread.html#210">[ thread ]</a>
+              <a href="subject.html#210">[ subject ]</a>
+              <a href="author.html#210">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

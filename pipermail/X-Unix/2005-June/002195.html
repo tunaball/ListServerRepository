@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Cron problem
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Cron%20problem&In-Reply-To=1799850655-1119479046-cardhu_blackberry.rim.net-13714-%40engine10-cell05">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002191.html">
+   <LINK REL="Next"  HREF="002200.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Cron problem</H1>
+    <B>Marley Graham</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Cron%20problem&In-Reply-To=1799850655-1119479046-cardhu_blackberry.rim.net-13714-%40engine10-cell05"
+       TITLE="[X-Unix] Cron problem">mgraham at aquaflo.com
+       </A><BR>
+    <I>Thu Jun 23 15:56:31 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002191.html">[X-Unix] Cron problem
+</A></li>
+        <LI>Next message: <A HREF="002200.html">[X-Unix] Cron problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2195">[ date ]</a>
+              <a href="thread.html#2195">[ thread ]</a>
+              <a href="subject.html#2195">[ subject ]</a>
+              <a href="author.html#2195">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I put in the full path, but I still get the same error; crontab  
+doesn't seem to like the parentheses in the $(/bin/date +%r) command.
+
+I decided to try another approach. I created a script to get the date  
+format that I really want (hh:mm:ss):
+
+$ cat exacttime
+     #!/bin/bash
+     date +%r &gt; tempdate
+     awk '{print $1}' tempdate
+     rm tempdate
+     exit
+
+and another script to call screencapture and append the time to the  
+name of the resultant file:
+
+$ cat screenpictimed
+     #!/bin/bash
+     screencapture mg$(/users/marleygraham/exacttime)
+     exit
+
+which produces a file like:
+
+     mg04:25:59
+
+I know it is not elegant scripting, but it should get the job done.
+
+Marley Graham
+Aqua-Flo Supply
+==============
+
+On Jun 22, 2005, at 3:23 PM, Norman Cohen wrote:
+
+&gt;<i> 2 points. With cron you need the full path to the date function.  
+</I>&gt;<i> Type &quot;which date&quot; in the terminal to get the path. Second, I'd  
+</I>&gt;<i> suggest formatting the date string to not include the colon  
+</I>&gt;<i> character. In applescript, this is the default symbol for  
+</I>&gt;<i> separating directories and files in partial or full paths, just as  
+</I>&gt;<i> the / character is used in unix.
+</I>&gt;<i>
+</I>&gt;<i> Norm
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">Nacohen at mac.com</A>
+</I>&gt;<i> Sent wirelessly via BlackBerry from T-Mobile.
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>          <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002191.html">[X-Unix] Cron problem
+</A></li>
+	<LI>Next message: <A HREF="002200.html">[X-Unix] Cron problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2195">[ date ]</a>
+              <a href="thread.html#2195">[ thread ]</a>
+              <a href="subject.html#2195">[ subject ]</a>
+              <a href="author.html#2195">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: Root Exploit via sudo
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Root%20Exploit%20via%20sudo&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001748.html">
+   <LINK REL="Next"  HREF="001755.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: Root Exploit via sudo</H1>
+    <B>Kuestner, Bjoern</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Root%20Exploit%20via%20sudo&In-Reply-To="
+       TITLE="[X-Unix] Re: Root Exploit via sudo">Bjoern.Kuestner at drkw.com
+       </A><BR>
+    <I>Wed Apr 13 01:32:24 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001748.html">[X-Unix] Re: Root Exploit via sudo
+</A></li>
+        <LI>Next message: <A HREF="001755.html">[X-Unix] Buggy Fink, sym &amp; hard links.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1749">[ date ]</a>
+              <a href="thread.html#1749">[ thread ]</a>
+              <a href="subject.html#1749">[ subject ]</a>
+              <a href="author.html#1749">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+&gt;<i>I am still at a loss with this thread. What is the key real issue? If 
+</I>&gt;<i>you can sudo then you have an admin PW and you can muck about without 
+</I>&gt;<i>issue so what's this thread really about? Maybe its about being a 
+</I>&gt;<i>little sloppy and an academic usage of trojans.
+</I>
+I guess that's the underlying question, just how &quot;academic&quot; such a trojan
+is. 
+
+Within the history of sudo on Unix and Linux systems has there ever been
+such a trojan? 
+
+An then, within the history of sudo on Unix and Linux systems has there ever
+been one which wrote sudo logs to a group-readable file vs. the more common
+and here suggested root-only-readable file?
+
+I'd be surprised if Apple would not fix this with the next security update
+and within Tiger when there is such a simple solution at hand to retain the
+good security reputation of OS X. Apple might consider the issue technically
+silly, but politically and marketing-wise Apple would not help their brand
+name if they start discussing about this. 
+
+&gt;<i>Although I agree with the security focus article in principal, too 
+</I>&gt;<i>many of use operate our day-to-day accounts as admin accounts as well 
+</I>&gt;<i>- intrinsically a bad move. 
+</I>
+I confess, so do I. I tried to do without for a while. But there were just
+so many apps that I like to use but which don't display the full
+authentication dialog. Whenever they need elevated privileges they only ask
+for the password, not for a login. Unless you're logged in as an admin you
+cannot use these applications. )c:
+
+Actually, that was a long time ago. Maybe I should try again what the
+current situation is.
+
+What are experiences of users here that do not use an admin account as their
+main work account? And do they fiddle with the system much (where I could
+imagine that the lack of admin privileges gets in the way like just to
+install a new little tool to /Applications.)
+
+&gt;<i>Properly, you should never use an admin 
+</I>&gt;<i>account for day to day work - it would be like logging on to linux as 
+</I>&gt;<i>root for day-to-day activities. 
+</I>
+No. Because even admins cannot simply &quot;rm -rf /&quot;. They have to sudo and just
+being asked for the password should (and does for me) put you in the mental
+alert mode.
+
+The same is true in the GUI. You're always asked for a password first to do
+certain things. That's not the case with root.
+
+Also many hacking attempts fail just by the simple case that there is no
+root login on an OS X system (in the default configuration). With root
+enabled that, too, is much worse than using admin as your daily work
+account.
+
+&gt;<i>I find it amazing that securityfocus 
+</I>&gt;<i>would call out OSX in particular as this &quot;risk&quot; is true for any user 
+</I>&gt;<i>on Unix or Linux derivative who has sudo privileges. 
+</I>
+Like I wrote above: probably not, because for all those read access to the
+sudo log is much more restricted. It's OS X's default settings which cause
+the problem, not a code or architecture problem.
+
+This default setting simplifies the bad stuff that a trojan horse can do. 
+
+Of course, from my perspective, all those systems which still have root
+enabled (and many systems do, even in sensitive areas) actually run a
+similarly significant if not a higher risk. But that, too, is just a matter
+of the productive configuration and maybe the default configuration. Not
+that Linux or Solaris or AIX in itself is insecure. You can run Solaris
+without root. (Ah, or so I think. (c: )
+
+&gt;<i>Additionally, lets look at relative risk. If you have a public IP or 
+</I>&gt;<i>are behind a router/firewall and have SSH open &quot;because its secure&quot; 
+</I>&gt;<i>and are using stock out-of-the-box defaults you have a much larger 
+</I>&gt;<i>risk going on than the the one securityfocus proposes.
+</I>
+Could you elaborate on that?
+
+If I'm behind a router and have SSH open within my intranet, do you see a
+specific security risk that is &quot;much larger&quot;?
+
+And if I expose my SSH port to the internet, do you have specific security
+issues in mind that I should be aware off?
+
+Thanks,
+
+Bjorn
+
+
+
+
+
+_______________________________________________
+X-Unix mailing list
+<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+
+Listmom is trying to clean out his closets! Vintage Mac and random stuff:
+         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------
+The information contained herein is confidential and is intended solely for the
+addressee. Access by any other party is unauthorised without the express
+written permission of the sender. If you are not the intended recipient, please
+contact the sender either via the company switchboard on +44 (0)20 7623 8000, or
+via e-mail return. If you have received this e-mail in error or wish to read our
+e-mail disclaimer statement and monitoring policy, please refer to 
+<A HREF="http://www.drkw.com/disc/email/">http://www.drkw.com/disc/email/</A> or contact the sender. 3167
+--------------------------------------------------------------------------------
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001748.html">[X-Unix] Re: Root Exploit via sudo
+</A></li>
+	<LI>Next message: <A HREF="001755.html">[X-Unix] Buggy Fink, sym &amp; hard links.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1749">[ date ]</a>
+              <a href="thread.html#1749">[ thread ]</a>
+              <a href="subject.html#1749">[ subject ]</a>
+              <a href="author.html#1749">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

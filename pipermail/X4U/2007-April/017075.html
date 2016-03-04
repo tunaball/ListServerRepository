@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] How do I clone to a NAS?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20How%20do%20I%20clone%20to%20a%20NAS%3F&In-Reply-To=8ADB4177-EBDC-4A71-A53A-EA2AFDD25B0D%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="017074.html">
+   <LINK REL="Next"  HREF="017076.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] How do I clone to a NAS?</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20How%20do%20I%20clone%20to%20a%20NAS%3F&In-Reply-To=8ADB4177-EBDC-4A71-A53A-EA2AFDD25B0D%40mac.com"
+       TITLE="[X4U] How do I clone to a NAS?">macmonster at myrealbox.com
+       </A><BR>
+    <I>Fri Apr  6 07:51:25 PDT 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="017074.html">[X4U] Hello?
+</A></li>
+        <LI>Next message: <A HREF="017076.html">[X4U] OSX diaporama: how many pictures?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17075">[ date ]</a>
+              <a href="thread.html#17075">[ thread ]</a>
+              <a href="subject.html#17075">[ subject ]</a>
+              <a href="author.html#17075">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 15 Mar 2007, at 16:57, Neil wrote:
+
+&gt;<i> I have a Buffalo Terrastation network attached RAID storage drive.   
+</I>&gt;<i> I also have a LaCie Big Disk FW800/USB2 RAID external drive.  I  
+</I>&gt;<i> would like to clone the contents of my LaCie drive to my new NAS.   
+</I>&gt;<i> I can mount my NAS share in the Finder and copy files to it, but I  
+</I>&gt;<i> can't select the share in Carbon Copy Cloner nor Super Duper.
+</I>
+No, you wouldn't be able to. I'm pretty sure this is because the CCC  
+&amp; SuperDuper are front-end for the `ditto` command - they're probably  
+protecting you from trying to blindly copy resource-forks across the  
+network.
+
+&gt;<i>   I tried just copying the files, but I got an error message that  
+</I>&gt;<i> the file name is too long so it stopped copying.  The NAS has a web  
+</I>&gt;<i> interface that says that the file format is XFS.  I thought it  
+</I>&gt;<i> should handle long file names.  So, does anybody have any  
+</I>&gt;<i> suggestions?  Thanks.
+</I>&gt;<i> (The NAS supports SMB and AFP out of the box.)
+</I>
+Hmmmn... how are you mounting the NAS?
+Have you tried using Apple-K in Finder and then <A HREF="afp://NAS.name">afp://NAS.name</A> as  
+well as <A HREF="smb://NAS.name">smb://NAS.name</A> ?
+
+What filesystem is the LaCie drive formatted with?
+
+I wouldn't be at all surprised to find that Samba has long filename  
+issues, but would be surprised if it couldn't handle files from a  
+FAT32-formatted drive. Apple's HFS, on the other hand, and the way  
+that Finder allows you to put punctuation in filenames, seems be very  
+flexible (far more than many other filesystems or network file- 
+sharing protocols, I'd imagine).
+
+I don't think you'll find this easy to overcome. I'm sure that just  
+making a tar or zip archive of the files on the LaCie drive would be  
+unsatisfactory, although you might find that you can copy a .dmg disk  
+image of it onto the NAS which can be mounted acceptably.
+
+You might try copying via the command-line and redirecting stderr to  
+a text file (you might have to use the find command to cp each file  
+individually, piping through tar twice to preserve directory  
+structure), so that afterwards you can examine in that which  
+filenames have failed. If it's only a handful then you might be able  
+to simply rename them.
+
+I'd have most confidence in taking the XFS disk out of the NAS unit  
+and connecting it &amp; the LaCie to a Linux box. If this is successful  
+then the drive can be placed back in the NAS &amp; you _should_ be able  
+to access the files ok, but if there are significant numbers of files  
+that can't be copied that way then you're h0sed.
+
+Stroller.
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="017074.html">[X4U] Hello?
+</A></li>
+	<LI>Next message: <A HREF="017076.html">[X4U] OSX diaporama: how many pictures?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17075">[ date ]</a>
+              <a href="thread.html#17075">[ thread ]</a>
+              <a href="subject.html#17075">[ subject ]</a>
+              <a href="author.html#17075">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

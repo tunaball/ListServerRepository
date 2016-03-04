@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] panic - 10.4.4?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20panic%20-%2010.4.4%3F&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="019053.html">
+   <LINK REL="Next"  HREF="019058.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] panic - 10.4.4?</H1>
+    <B>Dr Trevor J. Hutley</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20panic%20-%2010.4.4%3F&In-Reply-To="
+       TITLE="[Ti] panic - 10.4.4?">TrevorHutley at consultant.com
+       </A><BR>
+    <I>Sat Jan 21 20:17:24 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="019053.html">[Ti] Network available detection
+</A></li>
+        <LI>Next message: <A HREF="019058.html">[Ti] Airport card is not detecting networks
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19057">[ date ]</a>
+              <a href="thread.html#19057">[ thread ]</a>
+              <a href="subject.html#19057">[ subject ]</a>
+              <a href="author.html#19057">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Overnight, my 1.25 Al-book is running the daily backup to my FW800 disk.
+I turn the screen brightness down (off).
+
+Since upgrading to 10.4.4 (day of issue) I have had quite a few cases  
+now where the screen brightness is not responsive, and the computer  
+is blocked.
+
+This morning, it happened, and I captured the Report, which says:
+
+		panic(cpu 0 caller 0x0003FEA8): zalloc: &quot;kalloc.64&quot; (3786560  
+elements) retry fail 3
+
+Of course, that statement means nothing to me.
+
+I also saw:
+
+  com.apple.iokit.IOSCSIReducedBlockCommandsDevice(1.4.4)@0x2eafc000
+             dependency: com.apple.iokit.IOSCSIArchitectureModelFamily 
+(1.4.4)@0x584000
+             dependency: com.apple.iokit.IOStorageFamily(1.5)@0x49f000
+          com.faronics.driver.DFXDriver(2.0.48)@0x7ef000
+             dependency: com.apple.iokit.IOStorageFamily(1.5)@0x49f000
+          com.apple.iokit.IOStorageFamily(1.5)@0x49f000
+
+all of which seem to relate to input and output.
+
+Does anyone have any idea if this PANIC s due to anything I am doing?
+
+It is rather inconvenient that about every other morning, the  
+computer is blocked..........
+
+has anyone else noticed anything like this?
+
+regards,  Trevor
+
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="019053.html">[Ti] Network available detection
+</A></li>
+	<LI>Next message: <A HREF="019058.html">[Ti] Airport card is not detecting networks
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19057">[ date ]</a>
+              <a href="thread.html#19057">[ thread ]</a>
+              <a href="subject.html#19057">[ subject ]</a>
+              <a href="author.html#19057">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

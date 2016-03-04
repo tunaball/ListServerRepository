@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Firefox problems.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Firefox%20problems.&In-Reply-To=439AB9F3-2FAC-4C09-B240-CE3B06FAD773%40comcast.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011212.html">
+   <LINK REL="Next"  HREF="011223.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Firefox problems.</H1>
+    <B>Daniel Brieck Jr.</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Firefox%20problems.&In-Reply-To=439AB9F3-2FAC-4C09-B240-CE3B06FAD773%40comcast.net"
+       TITLE="[G4] Firefox problems.">djbrieck at mac.com
+       </A><BR>
+    <I>Tue Oct 11 20:24:24 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011212.html">[G4] Firefox problems.
+</A></li>
+        <LI>Next message: <A HREF="011223.html">[G4] Firefox problems.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11214">[ date ]</a>
+              <a href="thread.html#11214">[ thread ]</a>
+              <a href="subject.html#11214">[ subject ]</a>
+              <a href="author.html#11214">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hector,
+
+Note that you your bookmarks are not  stored in the Firefox  
+Application package itself. Firefox bookmarks and preferences  are  
+stored in a specific and separate location from the actual  
+application.  This is true for almost all mac application
+
+For Firefox 1.0.6 (what I am using)  the Path to Application is:
+/Applications/Firefox
+
+Path to Firefox's preferences and bookmarks file is:
+/Users/Yourusername/Library/Application Support/Firefox/
+
+and additional preferences file (not sure what is in there or does  
+specifically) here:
+
+/Users/Yourusername/Library/Preferences/org.mozilla.firefox.plist
+
+In those locations are stored the specific files to run Firefox to  
+your preference. Things are different for you since you are running  
+an older version of Firefox.  The  preferences are unfortunately  
+located in a different location for version 0.8.
+
+/Users/Yourusername/Library/Phoenix/
+
+So you can see where the problem is now  and why you were getting the  
+appearance of losing your bookmarks when installing Firefox 1.0.7  
+into the Application folder.
+
+To Fix...
+
+1. Lauch Firefox 0.8 and export your bookmarks and save the file to  
+the desktop...
+2. Quit firefox 0.8 and move it to the trash or some other location  
+other than Applications
+3. Install firefox 1.0.7, launch it, and import your bookmarks file  
+that you saved to the desktop
+
+Or if that does not work copy your bookmarks file manually from the  
+Phoenix folder above and try to import that file into firefox 1.0.7.  
+Note that you do not want to copy anything more from that profile  
+folder in the Phoenix folder. Such as Extensions, Themes, etc.  and  
+try to copy that to the new profile of firefox. Just get your  
+bookmarks file and go or else you might cause stability problems with  
+running firefox 1.0.7 with an old profile and configuration.
+
+This should solve the problem, let me know if you need more help.
+
+Sources:
+Profile folder location...
+<A HREF="http://www.mozilla.org/products/firefox/releases/0.8.html">http://www.mozilla.org/products/firefox/releases/0.8.html</A>
+<A HREF="http://www.mozilla.org/products/firefox/releases/1.0.7.html">http://www.mozilla.org/products/firefox/releases/1.0.7.html</A>
+
+
+Daniel J. Brieck Jr.
+
+On Oct 11, 2005, at 10:04 PM, Hector I. Macedo wrote:
+
+&gt;<i> I am having a problem trying to update  Firefox version 0.8 with  
+</I>&gt;<i> the newest version. When I tried to copy the new one to the  
+</I>&gt;<i> Applications folder, I get the following :
+</I>&gt;<i>
+</I>&gt;<i> &quot;The operation cannot be completed because you do not have  
+</I>&gt;<i> sufficient privileges for some of the items&quot;
+</I>&gt;<i>
+</I>&gt;<i> I allready repaired permissions and also opened the &quot;info window&quot;  
+</I>&gt;<i> of Firefox to get myself the permission but still get the same dialog.
+</I>&gt;<i>
+</I>&gt;<i> What should I do in order to update?  I don't want to just replace  
+</I>&gt;<i> one version with another by thrashing the old one since I will lose  
+</I>&gt;<i> my bookmarks. (I tried it and  that happened, so I retrieved the  
+</I>&gt;<i> old version from the thrash)
+</I>&gt;<i>
+</I>&gt;<i> Any help will be appreciated.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Hector I. Macedo                                          &quot;Lord of  
+</I>&gt;<i> the Flies&quot;
+</I>&gt;<i> Dallas, TX 75248
+</I></PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011212.html">[G4] Firefox problems.
+</A></li>
+	<LI>Next message: <A HREF="011223.html">[G4] Firefox problems.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11214">[ date ]</a>
+              <a href="thread.html#11214">[ thread ]</a>
+              <a href="subject.html#11214">[ subject ]</a>
+              <a href="author.html#11214">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Black Screen with white words saying operation not
+	supported by device...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Black%20Screen%20with%20white%20words%20saying%20operation%20not%0A%09supported%20by%20device...&In-Reply-To=32E3DCBC-FBDB-4D4B-BC4E-C6F30445D1D4%40gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="013047.html">
+   <LINK REL="Next"  HREF="013083.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Black Screen with white words saying operation not
+	supported by device...</H1>
+    <B>Philip J Robar</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Black%20Screen%20with%20white%20words%20saying%20operation%20not%0A%09supported%20by%20device...&In-Reply-To=32E3DCBC-FBDB-4D4B-BC4E-C6F30445D1D4%40gmail.com"
+       TITLE="[X4U] Black Screen with white words saying operation not
+	supported by device...">pjrobar at areyoureallythatstupid.org
+       </A><BR>
+    <I>Sat Apr  8 07:32:29 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="013047.html">[X4U] Black Screen with white words saying operation not supported
+	by device...
+</A></li>
+        <LI>Next message: <A HREF="013083.html">[X4U] Motorola RAZR V3c as bluetooth modem?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13080">[ date ]</a>
+              <a href="thread.html#13080">[ thread ]</a>
+              <a href="subject.html#13080">[ subject ]</a>
+              <a href="author.html#13080">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Apr 6, 2006, at 1:48 PM, Lee Licata wrote:
+
+&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> Have a 17&quot; PB (Leeze), running 10.4.5 with all updates.
+</I>&gt;<i>
+</I>&gt;<i> Sometimes, but not always, when I startup the PB, after tones, but  
+</I>&gt;<i> before the blue backdrop shows up, a black screen with the  
+</I>&gt;<i> following words shows up:
+</I>&gt;<i>
+</I>&gt;<i> Leeze getty: /dev/console: Operation not supported by device
+</I>&gt;<i>
+</I>&gt;<i> A review of the system console log shows the following two lines  
+</I>&gt;<i> just after this one that appears on the black screen:
+</I>&gt;<i>
+</I>&gt;<i> Leeze launchd: getty repeating too quickly on port /dev/console,  
+</I>&gt;<i> sleeping
+</I>&gt;<i> Leeze /System/Library/CoreServices/loginwindow.app/Contents/MacOS/ 
+</I>&gt;<i> loginwindow: Login Window Application Started
+</I>&gt;<i>
+</I>&gt;<i> If I wait about 30 seconds, PB starts up normally.
+</I>&gt;<i>
+</I>&gt;<i> Using cocktail, made all files visible.
+</I>&gt;<i>
+</I>&gt;<i> Found the folder &quot;dev&quot; at the root but the folder &quot;console&quot; is an  
+</I>&gt;<i> alias. Could not find the original.
+</I>&gt;<i>
+</I>&gt;<i> Relogged in as &quot;root&quot; and still could not find the original.
+</I>
+I did a web search and couldn't find a direct answer to your problem,  
+but it sure sounds like something is playing around with your  
+console. Are you allowing Apple Remote Desktop connections in Sharing  
+Preferences by any chance?
+
+Here's some things to check.
+
+/dev/console should not be an alias, as it's a device. You should see  
+the following in a terminal window. The stuff after the '&gt;' is what  
+you type, the second line is the result:
+
+	&gt; ls -l /dev/console
+	crw-------   1 pjrobar  pjrobar    0,   0 Apr  6 12:51 /dev/console
+
+Of course you will see different user and group names, and date and  
+time.
+
+Here's what your /etc/ttys file should look like:
+
+	&gt; ls -l /etc/ttys
+	-rw-r--r--   1 root  wheel  2271 Aug 22  2005 /etc/ttys
+
+You should find this near the top of /etc/ttys:
+
+#console        &quot;/usr/libexec/getty std.57600&quot;  vt100   on secure
+console &quot;/System/Library/CoreServices/loginwindow.app/Contents/MacOS/ 
+loginwindow&quot; vt100 on secure onoption=&quot;/usr/libexec/getty std.9600&quot;
+
+
+Phil
+--
+&quot;They that can give up essential liberty to obtain a little temporary  
+safety deserve neither liberty nor safety.&quot;
+-- Benjamin Franklin
+
+
+
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="013047.html">[X4U] Black Screen with white words saying operation not supported
+	by device...
+</A></li>
+	<LI>Next message: <A HREF="013083.html">[X4U] Motorola RAZR V3c as bluetooth modem?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13080">[ date ]</a>
+              <a href="thread.html#13080">[ thread ]</a>
+              <a href="subject.html#13080">[ subject ]</a>
+              <a href="author.html#13080">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How do I restart the ssh daemon?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20do%20I%20restart%20the%20ssh%20daemon%3F&In-Reply-To=list-11240126%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000421.html">
+   <LINK REL="Next"  HREF="000423.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How do I restart the ssh daemon?</H1>
+    <B>Phil Ershler</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20do%20I%20restart%20the%20ssh%20daemon%3F&In-Reply-To=list-11240126%40mail.ninewire.com"
+       TITLE="[X-Unix] How do I restart the ssh daemon?">ershler at cvrti.utah.edu
+       </A><BR>
+    <I>Fri Mar  5 15:24:40 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000421.html">[X-Unix] How do I restart the ssh daemon?
+</A></li>
+        <LI>Next message: <A HREF="000423.html">[X-Unix] Tape Backup - DDS3
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#422">[ date ]</a>
+              <a href="thread.html#422">[ thread ]</a>
+              <a href="subject.html#422">[ subject ]</a>
+              <a href="author.html#422">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>The ssh daemon does not run all the time. It is started as needed by the
+xinetd - the extended Internet services daemon.
+
+buzz:/ admin$ cd /etc/xinetd.d
+buzz:/etc/xinetd.d admin$ ls
+auth            comsat          echo-udp        ftp             ntalk   
+         smbd            tftp
+bootps          daytime         eppc            ftp.darwin      
+printer.bak     ssh             time
+chargen         daytime-udp     exec            login           shell   
+         swat            time-udp
+chargen-udp     echo            finger          nmbd            
+smb-direct      telnet
+buzz:/etc/xinetd.d admin$ cat ssh
+service ssh
+{
+         disable         = no
+         socket_type     = stream
+         wait            = no
+         user            = root
+         server          = /usr/libexec/sshd-keygen-wrapper
+         server_args     = -i
+         groups          = yes
+         flags           = REUSE IPv6
+         session_create  = yes
+}
+
+See man xinetd for details.
+
+HTH,
+
+Phil
+
+On Mar 5, 2004, at 3:57 PM, Doug McNutt wrote:
+
+&gt;<i> At 14:09 -0800 3/5/04, Marley Graham wrote:
+</I>&gt;&gt;<i> It should be sshd, not ssd; is that what you tried?
+</I>&gt;&gt;<i> On Mar 5, 2004, at 1:02 PM, Our Pal Al wrote:
+</I>&gt;&gt;&gt;<i> Toggling Remote Login in the System Preferences UI isn't working. I 
+</I>&gt;&gt;&gt;<i> then
+</I>&gt;&gt;&gt;<i> killed the sshd processes on the command line and thought just a 
+</I>&gt;&gt;&gt;<i> 'sudo
+</I>&gt;&gt;&gt;<i> /usr/bin/ssd' would work to restart it, but no dice.
+</I>&gt;<i>
+</I>&gt;<i> I thought of that too but couldn't find /usr/bin/sshd
+</I>&gt;<i>
+</I>&gt;<i> It turns out that it is in
+</I>&gt;<i>
+</I>&gt;<i> /usr/sbin/sshd
+</I>&gt;<i>
+</I>&gt;<i> -- 
+</I>&gt;<i> --&gt; Marriage and kilo are troubled words. Turmoil results when 
+</I>&gt;<i> centuries-old usage is altered in specialized jargon &lt;--.
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000421.html">[X-Unix] How do I restart the ssh daemon?
+</A></li>
+	<LI>Next message: <A HREF="000423.html">[X-Unix] Tape Backup - DDS3
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#422">[ date ]</a>
+              <a href="thread.html#422">[ thread ]</a>
+              <a href="subject.html#422">[ subject ]</a>
+              <a href="author.html#422">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [BTM] T68i, Jabra, &amp; Mac OS X Address Book...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:bluetooth-mac%40listserver.themacintoshguy.com?Subject=%5BBTM%5D%20T68i%2C%20Jabra%2C%20%26%20Mac%20OS%20X%20Address%20Book...&In-Reply-To=list-5459756%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001044.html">
+   <LINK REL="Next"  HREF="001046.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[BTM] T68i, Jabra, &amp; Mac OS X Address Book...</H1>
+    <B>Jonas Salling</B> 
+    <A HREF="mailto:bluetooth-mac%40listserver.themacintoshguy.com?Subject=%5BBTM%5D%20T68i%2C%20Jabra%2C%20%26%20Mac%20OS%20X%20Address%20Book...&In-Reply-To=list-5459756%40mail.ninewire.com"
+       TITLE="[BTM] T68i, Jabra, &amp; Mac OS X Address Book...">jonassalling at mac.com
+       </A><BR>
+    <I>Fri Mar 28 04:26:23 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001044.html">[BTM] T68i, Jabra, &amp; Mac OS X Address Book...
+</A></li>
+        <LI>Next message: <A HREF="001046.html">[BTM] T68i, Jabra, &amp; Mac OS X Address Book...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1045">[ date ]</a>
+              <a href="thread.html#1045">[ thread ]</a>
+              <a href="subject.html#1045">[ subject ]</a>
+              <a href="author.html#1045">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Here's how to configure Clicker to use a service that will work on the 
+P800. It also allows for simultaneous operation with Address Book:
+
+1. Quit System Preferences
+2. Kill the &quot;Sony Ericsson Clicker Helper&quot; application. Use the
+Process&#160;Viewer to do this.
+3. In the terminal, write:
+defaults write com.salling.SonyEricssonClickerHelper ServiceUUID
+&quot;0000110300001000800000805f9b34fb&quot;
+(all on one line)
+4. Launch System Prefs and activate the Clicker pane to restart the 
+helper
+app.
+
+To go back to the old behavior, replace step 3 with:
+defaults remove com.salling.SonyEricssonClickerHelper ServiceUUID
+(again, all on one line)
+
+Please be aware that the bluetooth serial drivers hooked up to the 
+Dial-up
+Network service of the phone will crash the machine if SEC is active 
+when
+using them (from, say Internet Connect or any other serial-port app). 
+This
+seems to be an issue in OS X 10.2.4 (10.2.5 doesn't have this problem).
+
+
+Cheers,
+Jonas
+
+PS. This trick won't be necessary in the next version of Clicker.
+
+
+On fredag, mar 28, 2003, at 13:21 Europe/Stockholm, Martim Weinstein 
+wrote:
+
+&gt;<i> I have a P800 and can't get the clicker to work... any more info on 
+</I>&gt;<i> this?
+</I>&gt;<i>
+</I>&gt;<i> The P800 doesn't yet work with iSync or the address book to dial and 
+</I>&gt;<i> send sms. I hope this will come soon. Otherwise it works perfectly 
+</I>&gt;<i> with my HBH-30 headset.
+</I>&gt;<i>
+</I>&gt;<i> -mw
+</I>&gt;<i>
+</I>&gt;<i> Okay, and which one is the fatherboard?
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Sexta, Mar 28, 2003, at 10:42 Europe/Lisbon, Jonas Salling wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> I can add to the discussion of using several applications with 
+</I>&gt;&gt;<i> Bluetooth phones that RFCOMM-based communication is limited to the 
+</I>&gt;&gt;<i> number of services available on the phone.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> For instance, the T68 series of phones expose three serial port 
+</I>&gt;&gt;<i> services (Serial 1, Serial 2, and Dial-up Networking). These work a 
+</I>&gt;&gt;<i> lot like wired serial ports. What this means is that 
+</I>&gt;&gt;<i> devices/applications need to be configured to not clash (use the same 
+</I>&gt;&gt;<i> service) with each other.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I think this is true for all bluetooth phones.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> - jonas
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> PS. Sony Ericsson Clicker's proximity functionality will work with 
+</I>&gt;&gt;<i> the P800, albeit with some configuration in the currently available 
+</I>&gt;&gt;<i> version.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On fredag, mar 28, 2003, at 11:35 Europe/Stockholm, Steinar S&#230;land 
+</I>&gt;&gt;<i> wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I don't know about that, but the P800 is not compatible with SEC 
+</I>&gt;&gt;&gt;<i> (&quot;Sony
+</I>&gt;&gt;&gt;<i> Ericsson Clicker&quot;), where you use the T68i as a remote control for 
+</I>&gt;&gt;&gt;<i> the Mac.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> /SS
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> From: Joost van de Griek &lt;<A HREF="../../../mailman/listinfo/bluetooth-mac.html">joost at jvdg.net</A>&gt;
+</I>&gt;&gt;&gt;&gt;<i> Reply-To: &quot;Bluetooth-Mac&quot; &lt;<A HREF="../../../mailman/listinfo/bluetooth-mac.html">bluetooth-mac at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;&gt;&gt;<i> Date: Fri, 28 Mar 2003 10:37:53 +0100
+</I>&gt;&gt;&gt;&gt;<i> To: &quot;Bluetooth-Mac&quot; &lt;<A HREF="../../../mailman/listinfo/bluetooth-mac.html">bluetooth-mac at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;&gt;&gt;<i> Subject: Re: [BTM] T68i, Jabra, &amp; Mac OS X Address Book...
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> On 2003-03-28 07:12, JA wrote:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Does anyone know if this limitation applies to the P800 as well? I 
+</I>&gt;&gt;&gt;&gt;<i> am about
+</I>&gt;&gt;&gt;&gt;<i> to  replace my T68 with one, but I would like to know about this 
+</I>&gt;&gt;&gt;&gt;<i> kind of
+</I>&gt;&gt;&gt;&gt;<i> shortcoming before I do...
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> ,xtG
+</I>&gt;&gt;&gt;&gt;<i> .tsooJ
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> #############################################################
+</I>&gt;&gt;&gt;<i> This message is sent to you because you are subscribed to
+</I>&gt;&gt;&gt;<i>   the mailing list &lt;<A HREF="../../../mailman/listinfo/bluetooth-mac.html">bluetooth-mac at lists.themacintoshguy.com</A>&gt;.
+</I>&gt;&gt;&gt;<i> To unsubscribe, E-mail to: 
+</I>&gt;&gt;&gt;<i> &lt;<A HREF="../../../mailman/listinfo/bluetooth-mac.html">bluetooth-mac-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;&gt;&gt;<i> &lt;<A HREF="../../../mailman/listinfo/bluetooth-mac.html">bluetooth-mac-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;&gt;<i> Send administrative queries to  
+</I>&gt;&gt;&gt;<i> &lt;<A HREF="../../../mailman/listinfo/bluetooth-mac.html">bluetooth-mac-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> #############################################################
+</I>&gt;&gt;<i> This message is sent to you because you are subscribed to
+</I>&gt;&gt;<i>  the mailing list &lt;<A HREF="../../../mailman/listinfo/bluetooth-mac.html">bluetooth-mac at lists.themacintoshguy.com</A>&gt;.
+</I>&gt;&gt;<i> To unsubscribe, E-mail to: 
+</I>&gt;&gt;<i> &lt;<A HREF="../../../mailman/listinfo/bluetooth-mac.html">bluetooth-mac-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;&gt;<i> &lt;<A HREF="../../../mailman/listinfo/bluetooth-mac.html">bluetooth-mac-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;<i> Send administrative queries to  
+</I>&gt;&gt;<i> &lt;<A HREF="../../../mailman/listinfo/bluetooth-mac.html">bluetooth-mac-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> #############################################################
+</I>&gt;<i> This message is sent to you because you are subscribed to
+</I>&gt;<i>  the mailing list &lt;<A HREF="../../../mailman/listinfo/bluetooth-mac.html">bluetooth-mac at lists.themacintoshguy.com</A>&gt;.
+</I>&gt;<i> To unsubscribe, E-mail to: 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/bluetooth-mac.html">bluetooth-mac-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/bluetooth-mac.html">bluetooth-mac-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Send administrative queries to  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/bluetooth-mac.html">bluetooth-mac-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001044.html">[BTM] T68i, Jabra, &amp; Mac OS X Address Book...
+</A></li>
+	<LI>Next message: <A HREF="001046.html">[BTM] T68i, Jabra, &amp; Mac OS X Address Book...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1045">[ date ]</a>
+              <a href="thread.html#1045">[ thread ]</a>
+              <a href="subject.html#1045">[ subject ]</a>
+              <a href="author.html#1045">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/bluetooth-mac.html">More information about the Bluetooth-mac
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

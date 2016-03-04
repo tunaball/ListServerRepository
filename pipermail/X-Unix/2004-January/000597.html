@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Altering .bashrc in bash to add to $PATH
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Altering%20.bashrc%20in%20bash%20to%20add%20to%20%24PATH&In-Reply-To=list-10152617%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000641.html">
+   <LINK REL="Next"  HREF="000652.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Altering .bashrc in bash to add to $PATH</H1>
+    <B>Robert Ameeti</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Altering%20.bashrc%20in%20bash%20to%20add%20to%20%24PATH&In-Reply-To=list-10152617%40mail.ninewire.com"
+       TITLE="[X-Unix] Altering .bashrc in bash to add to $PATH">robert at ameeti.net
+       </A><BR>
+    <I>Thu Jan  8 05:34:47 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000641.html">[X-Unix] Postfix howto
+</A></li>
+        <LI>Next message: <A HREF="000652.html">[X-Unix] Remove last ten lines of files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#597">[ date ]</a>
+              <a href="thread.html#597">[ thread ]</a>
+              <a href="subject.html#597">[ subject ]</a>
+              <a href="author.html#597">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>On Wed, Jan 07, 2004 at 10:05:11PM -0800, Robert Ameeti wrote:
+</I>&gt;:<i>
+</I>&gt;:<i> echo $SHELL gives me /bin/bash
+</I>&gt;:<i> echo $PATH gives me /bin:/sbin:/usr/bin:/usr/sbin
+</I>&gt;:<i>
+</I>&gt;:<i> I am wanting to add /Library/MySQL/bin to my path
+</I>&gt;:<i>
+</I>&gt;:<i> While in my home directory, I do pico .bashrc
+</I>&gt;:<i>
+</I>&gt;:<i> Pico opens with a single line that says:
+</I>&gt;:<i>
+</I>&gt;:<i> export PATH=&quot;$PATH:/Library/MySQL/bin&quot;
+</I>&gt;:<i>
+</I>&gt;:<i> How far off am I in getting my PATH altered to include that additional
+</I>&gt;:<i> path? I am thinking that I am doing what I need to do but it doesn't
+</I>&gt;:<i> appear to be working.   :-(
+</I>&gt;<i>
+</I>&gt;<i>The line above looks right.  But the ~/.bashrc file needs to be executed.
+</I>&gt;<i>The easiest thing to do is to close your current Terminal window and open
+</I>&gt;<i>a new one.  If the new Terminal window does not get your new $PATH, then
+</I>&gt;<i>you need remove the line above from ~/.bashrc and insert it into either
+</I>&gt;<i>~/.profile or ~/.bash_profile (whichever one exists).
+</I>
+adsl-66-51-193-110:~ rameeti$ ls -A
+.CFUserTextEncoding     .bashrc.save            Music
+.DS_Store               Desktop                 Pictures
+.Trash                  Documents               Public
+.bash_history           Library                 Sites
+.bashrc                 Movies
+
+As shown above, I only have .bash* files and the .bash files are the ones being created and modified.
+
+Any other ideas?
+
+-- 
+&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;
+Robert Ameeti
+
+Happiness is not a state to arrive at, but a manner of traveling.
+
+- Margaret Lee Runbeck
+&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000641.html">[X-Unix] Postfix howto
+</A></li>
+	<LI>Next message: <A HREF="000652.html">[X-Unix] Remove last ten lines of files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#597">[ date ]</a>
+              <a href="thread.html#597">[ thread ]</a>
+              <a href="subject.html#597">[ subject ]</a>
+              <a href="author.html#597">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

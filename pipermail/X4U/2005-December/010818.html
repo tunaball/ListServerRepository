@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] OT - Secure Web Page Validation Problem
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20OT%20-%20Secure%20Web%20Page%20Validation%20Problem&In-Reply-To=20051218214232.GA12216%40dark-age.linksys">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010816.html">
+   <LINK REL="Next"  HREF="010822.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] OT - Secure Web Page Validation Problem</H1>
+    <B>Milton van der Veen</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20OT%20-%20Secure%20Web%20Page%20Validation%20Problem&In-Reply-To=20051218214232.GA12216%40dark-age.linksys"
+       TITLE="[X4U] OT - Secure Web Page Validation Problem">miltonlist at hurontel.on.ca
+       </A><BR>
+    <I>Sun Dec 18 18:26:26 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010816.html">[X4U] OT - Secure Web Page Validation Problem
+</A></li>
+        <LI>Next message: <A HREF="010822.html">[X4U] OT - Secure Web Page Validation Problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10818">[ date ]</a>
+              <a href="thread.html#10818">[ thread ]</a>
+              <a href="subject.html#10818">[ subject ]</a>
+              <a href="author.html#10818">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Dec 18, 2005, at 4:42 PM, Eugene wrote:
+
+&gt;<i> On Sat, Dec 17, 2005 at 10:17:05PM CST, Milton van der Veen  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x4u.html">miltonlist at hurontel.on.ca</A>&gt; wrote:
+</I>&gt;<i> :
+</I>&gt;<i> : I look after a web site for Sleeping Children Around the World. We
+</I>&gt;<i> : use PayPal for credit card donations and had to set up a sequence of
+</I>&gt;<i> : secure pages on our web site to handle that. We use our ISPs secure
+</I>&gt;<i> : server to save money.
+</I>&gt;<i> :
+</I>&gt;<i> : But I keep getting people using Firefox browser who tell me they're
+</I>&gt;<i> : getting the HTML code in their browser instead of the rendered page.
+</I>&gt;<i> : &lt;<A HREF="https://host.zerowebhosting.com/scaw/secure/index.shtml">https://host.zerowebhosting.com/scaw/secure/index.shtml</A>&gt;
+</I>&gt;<i> :
+</I>&gt;<i> [...]
+</I>&gt;<i> :
+</I>&gt;<i> : I've checked with my ISP and they assure me that their server is set
+</I>&gt;<i> : up correctly. They also tell me that the page is coded correctly.  
+</I>&gt;<i> But
+</I>&gt;<i> : I still get regular complaints ... especially now as the giving
+</I>&gt;<i> : season is here.
+</I>&gt;<i>
+</I>&gt;<i> Your ISP is run by morons.  Their web server is set up incorrectly.
+</I>&gt;<i> When a browser goes to your URL, it gets the following response  
+</I>&gt;<i> headers:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Date: Sun, 18 Dec 2005 21:29:45 GMT
+</I>&gt;&gt;<i> Server: Apache/1.3.33 (Unix)
+</I>&gt;&gt;<i> PHP/4.3.10 Rewrit/1.1a mod_ssl/2.8.22 OpenSSL/0.9.7e
+</I>&gt;&gt;<i> Last-Modified: Sun, 18 Dec 2005 06:23:54 GMT
+</I>&gt;&gt;<i> Etag: &quot;21b013-3e8a-43a5007a&quot;
+</I>&gt;&gt;<i> Accept-Ranges: bytes
+</I>&gt;&gt;<i> Content-Length: 16010
+</I>&gt;&gt;<i> Content-Type: text/plain
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 200 OK
+</I>&gt;<i>
+</I>&gt;<i> The &quot;Content-Type&quot; header is set to &quot;text/plain&quot;.  This means that the
+</I>&gt;<i> web server is telling your web browser that the following page is a
+</I>&gt;<i> plain text page.  If it was set up correctly, it would report an HTML
+</I>&gt;<i> page with a Content-Type of &quot;text/html&quot;.
+</I>&gt;<i>
+</I>&gt;<i> So why is Firefox having problems?  It's not.  It's operating in a
+</I>&gt;<i> strict mode that tightly adheres to web standards.  Other browsers may
+</I>&gt;<i> be more fault-tolerant.  They accept the Content-Type as plain  
+</I>&gt;<i> text, but
+</I>&gt;<i> upon receiving the page they inspect the page contents.  If the deep
+</I>&gt;<i> inspection reveals that the page is actually an HTML document,  
+</I>&gt;<i> browsers
+</I>&gt;<i> internally mark the Content-Type as &quot;text/html&quot; and process it as an
+</I>&gt;<i> HTML document instead of a plain text page.
+</I>
+Thanks for the additional ammunition, Eugene. I can't find anywhere  
+in my code where I declare the code as being plain text. But I have  
+gone through my files and removed the &quot;s&quot; in the extension. Now, it  
+seems to be working all right. Did I not have to go to the trouble?  
+The link is now:
+&lt;<A HREF="https://host.zerowebhosting.com/scaw/secure/index.html">https://host.zerowebhosting.com/scaw/secure/index.html</A>&gt;
+
+And Firefox seems to be having no trouble with it now.
+
+Milton
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010816.html">[X4U] OT - Secure Web Page Validation Problem
+</A></li>
+	<LI>Next message: <A HREF="010822.html">[X4U] OT - Secure Web Page Validation Problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10818">[ date ]</a>
+              <a href="thread.html#10818">[ thread ]</a>
+              <a href="subject.html#10818">[ subject ]</a>
+              <a href="author.html#10818">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

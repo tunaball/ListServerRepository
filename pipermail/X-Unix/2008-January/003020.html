@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Calling Applescript alarm from script
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Calling%20Applescript%20alarm%20from%20script&In-Reply-To=0884882E-965B-4486-B877-CB4D21513EA1%40myrealbox.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003016.html">
+   <LINK REL="Next"  HREF="003022.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Calling Applescript alarm from script</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Calling%20Applescript%20alarm%20from%20script&In-Reply-To=0884882E-965B-4486-B877-CB4D21513EA1%40myrealbox.com"
+       TITLE="[X-Unix] Calling Applescript alarm from script">ecrist at secure-computing.net
+       </A><BR>
+    <I>Sat Jan 26 08:14:21 PST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003016.html">[X-Unix] Calling Applescript alarm from script
+</A></li>
+        <LI>Next message: <A HREF="003022.html">[X-Unix] Calling Applescript alarm from script
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3020">[ date ]</a>
+              <a href="thread.html#3020">[ thread ]</a>
+              <a href="subject.html#3020">[ subject ]</a>
+              <a href="author.html#3020">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Jan 26, 2008, at 3:49 AM, Stroller wrote:
+
+&gt;<i>
+</I>&gt;<i> On 25 Jan 2008, at 23:05, Eric F Crist wrote:
+</I>&gt;&gt;<i> On Jan 25, 2008, at 4:13 PM, Stroller wrote:
+</I>&gt;&gt;&gt;<i> On 25 Jan 2008, at 15:18, TjL wrote:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> However, what I would really like to do is have it pop up some  
+</I>&gt;&gt;&gt;&gt;<i> kind of
+</I>&gt;&gt;&gt;&gt;<i> alert window on my Mac with some kind of sound which keeps  
+</I>&gt;&gt;&gt;&gt;<i> repeating
+</I>&gt;&gt;&gt;&gt;<i> until I acknowledge the window.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Set a rule in Mail.app, so that if &quot;From:&quot; equals &quot;My Notify  
+</I>&gt;&gt;&gt;<i> Script &lt;<A HREF="../../../mailman/listinfo/x-unix.html">script at localhost</A>&gt;&quot; then play sound &quot;klaxxon&quot;.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> That only works if Mail.app happens to be running.  If Mail.app  
+</I>&gt;&gt;<i> isn't running, messages aren't being received, and filters aren't  
+</I>&gt;&gt;<i> being processed.
+</I>&gt;<i>
+</I>&gt;<i> Yeah, well, the script only runs if the computer is switched on, and  
+</I>&gt;<i> other notifications are only useful if the computer has monitor &amp;/or  
+</I>&gt;<i> speakers connected to it, &amp;/or someone is logged into the machine.
+</I>&gt;<i>
+</I>&gt;<i> I assumed that the script was written in Bash, piping curl to grep  
+</I>&gt;<i> to sendmail - it may be blinkered of me, but I find this the most  
+</I>&gt;<i> &quot;obvious&quot; way to solve that part of the problem already described by  
+</I>&gt;<i> TjL - and I would find it clumsy to mix shell script &amp; AppleScript.  
+</I>&gt;<i> Here any script that is run by a schedule is run on the headless  
+</I>&gt;<i> server in the cupboard under the stairs - I'm sure that'll be  
+</I>&gt;<i> switched on at any time, which I can't say of any given desktop  
+</I>&gt;<i> machine.
+</I>&gt;<i>
+</I>&gt;<i> Besides, if I'm at a computer then my mail is open. For me - your  
+</I>&gt;<i> milage may vary - it's just the most logical way to be notified of  
+</I>&gt;<i> stuff that's going on.
+</I>&gt;<i>
+</I>&gt;<i> Finally - I considered writing this in my original response - no  
+</I>&gt;<i> language which we discuss here is the best one for the task. The  
+</I>&gt;<i> easiest programming syntax is &quot;hey, kid! make sure you check this  
+</I>&gt;<i> webpage every day - it tells you if you get a day off school.&quot;
+</I>
+
+Wow, condescending much?  In my opinion, it's improper to expect that  
+a certain application already be running for a notification such as  
+this.  Like you, my mail application is often opened when I'm using my  
+computer, but often is not always.
+
+However, your commentary got me thinking.  I know that the schools and/ 
+or news channels here in Minnesota have the option of signing up for  
+alerts.  I simply had to register my email address and when our school  
+closes, I get an email notification.  In addition to that, my  
+blackberry has its own email address, to which I use only for special  
+alerts and notifications.  It may be most beneficial to simply set up  
+some sort of SMS alert.  Most major cellular providers in the US have  
+a way in which you can send an email to a cell phone.
+
+
+-----
+Eric F Crist
+Secure Computing Networks
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003016.html">[X-Unix] Calling Applescript alarm from script
+</A></li>
+	<LI>Next message: <A HREF="003022.html">[X-Unix] Calling Applescript alarm from script
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3020">[ date ]</a>
+              <a href="thread.html#3020">[ thread ]</a>
+              <a href="subject.html#3020">[ subject ]</a>
+              <a href="author.html#3020">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

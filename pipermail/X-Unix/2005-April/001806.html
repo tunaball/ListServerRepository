@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] CL Usenet and email
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20CL%20Usenet%20and%20email&In-Reply-To=r02010500-1038-45F8E420AEBF11D993AD000A959D1544%40%5B10.0.1.6%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001805.html">
+   <LINK REL="Next"  HREF="001794.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] CL Usenet and email</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20CL%20Usenet%20and%20email&In-Reply-To=r02010500-1038-45F8E420AEBF11D993AD000A959D1544%40%5B10.0.1.6%5D"
+       TITLE="[X-Unix] CL Usenet and email">magill at mcgillsociety.org
+       </A><BR>
+    <I>Sun Apr 17 15:18:30 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001805.html">[X-Unix] Which Window manager/Desktop Environment
+</A></li>
+        <LI>Next message: <A HREF="001794.html">[X-Unix] CL Usenet and email
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1806">[ date ]</a>
+              <a href="thread.html#1806">[ thread ]</a>
+              <a href="subject.html#1806">[ subject ]</a>
+              <a href="author.html#1806">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 16 Apr, 2005, at 17:34, James Bucanek wrote:
+&gt;<i> Jamie Kahn Genet wrote on Sunday, April 17, 2005:
+</I>&gt;&gt;<i> James Bucanek &lt;<A HREF="../../../mailman/listinfo/x-unix.html">subscriber at gloaming.com</A>&gt; wrote:
+</I>&gt;&gt;&gt;<i> Went to IMAP years ago.  Ran away screaming and cursing.  Will 
+</I>&gt;&gt;&gt;<i> probably
+</I>&gt;&gt;&gt;<i> never go back.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Why exactly, if you don't mind me asking?
+</I>&gt;<i>
+</I>&gt;<i> For my needs, it simply adds a useless layer of complexity to getting 
+</I>&gt;<i> my mail.  Mainly, it's just dreadfully slow.  Even with a cable modem 
+</I>&gt;<i> Internet connection, just opening my mail app was painful because it 
+</I>&gt;<i> would have to re-sync with 100+ mailboxes.  Reading a hundred local 
+</I>&gt;<i> files is orders of magnitude faster.
+</I>&gt;<i>
+</I>&gt;<i> It was also a dog getting mail.  To apply any kind of complex 
+</I>&gt;<i> filtering, every message still had to be downloaded to my local 
+</I>&gt;<i> client, which would then have to send command back to the server to 
+</I>&gt;<i> move the message around.  A POP client just gets the messages and does 
+</I>&gt;<i> something with it (locally).  Much faster.  So IMAP actually created 
+</I>&gt;<i> more Internet traffic than POP.
+</I>&gt;<i>
+</I>&gt;<i> If I want to run a script (like my mail archiving script) or 
+</I>&gt;<i> re-process mail, often it had to be read (again) from the server, then 
+</I>&gt;<i> more interminably slow IMAP commands have to sent back to the server 
+</I>&gt;<i> to update the mailbox.  It's not like it didn't work, but the exact 
+</I>&gt;<i> same procedure on local mailbox files are about a thousand times 
+</I>&gt;<i> faster.  And, I don't have to be connected to the Internet to use 
+</I>&gt;<i> them.
+</I>&gt;<i>
+</I>&gt;<i> I admit where IMAP can be really useful for someone who accesses their 
+</I>&gt;<i> mail from multiple locations (like a home and work computer).  And if 
+</I>&gt;<i> I were in that situation, I might consider setting up an IMAP account 
+</I>&gt;<i> to do that.  But outside of that advantage, IMAP simply takes 
+</I>&gt;<i> everything that a good POP client can do and gets in the way.
+</I>
+That's the entire difference between POP and IMAP.
+
+The POP protocol was designed to download all your mail to your desktop 
+each time you connect to the server and not leave any messages behind 
+on the server. The primary assumption made by the POP protocol is that 
+you will always read mail from only one location. Using the &quot;Leave mail 
+on server&quot; option impacts POP even more than it does IMAP ... because 
+you have to down-load ALL your messages every time. [It also becomes 
+much more of a security issue if you use public clients.] That's slow 
+enough with 10 or 20 messages, but as you get to several hundred, it 
+gets painful. Plus the fact that most pop clients tend to barf as the 
+number of messages being processed (even locally) approaches a couple 
+of thousand... but that's a client problem, not an issue with the 
+protocol. The POP protocol is not designed to support either multiple 
+locations, or extensive &quot;archiving&quot; on the server.
+
+The IMAP protocol was designed to leave the mail on the server so that 
+mail could be read from multiple locations and only download the 
+message headers to a client until a message is selected to be read. The 
+premise being that your mail processing would be done on the server.
+
+The tradeoff is as you describe it -- local processing is faster, but 
+you must always access your mail from only one location, or be willing 
+to risk loosing mail you have downloaded to the &quot;wrong machine.&quot;
+
+If you have 150 mail boxes with thousands of messages (as I do) POP is 
+simply not a reasonable alternative unless you are willing to stick 
+bigger disk drives on your &quot;desktop&quot; machine instead of your mail 
+server ... or not archive anything &quot;on-line.&quot; In my case, my IMAP 
+server is on my local network and accessing it takes place at 100 meg 
+speed.
+
+Granted, if you are using some remote ISP's mail server, setting up a 
+local mail server is a bit of effort. In that case, POP is also 
+preferred in that you don't have to worry about your mail sitting 
+around on your ISP's backup tapes. (Assuming that you are paranoid 
+about such things in the first place.)
+
+BTW, don't forget most Cable Modem connections are only 1.5 meg or 
+maybe 3 meg in speed. They may clock at 10 meg, but that's not their 
+throughput speed. They are actively limited. For example, several 
+different services in this area (Philadelphia) charge different rates 
+for &quot;residential&quot; - 1.5 meg; &quot;gaming&quot; - 3 meg; and &quot;business&quot; 3-5 meg. 
+I'm not aware of any local cable provider who will &quot;guarantee&quot; 10 meg 
+throughput, even for their business service.
+
+T.T.F.N.
+William H. Magill
+# Beige G3 [Rev A motherboard - 300 MHz 768 Meg] OS X 10.2.8
+# Flat-panel iMac (2.1) [800MHz - Super Drive - 768 Meg] OS X 10.3.8
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg] Tru64 5.1a
+# XP1000  [Alpha 21264-3 (EV6) - 256 meg] FreeBSD 5.3
+# XP1000  [Alpha 21264-A (EV 6.7) - 384 meg] FreeBSD 5.3
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001805.html">[X-Unix] Which Window manager/Desktop Environment
+</A></li>
+	<LI>Next message: <A HREF="001794.html">[X-Unix] CL Usenet and email
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1806">[ date ]</a>
+              <a href="thread.html#1806">[ thread ]</a>
+              <a href="subject.html#1806">[ subject ]</a>
+              <a href="author.html#1806">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

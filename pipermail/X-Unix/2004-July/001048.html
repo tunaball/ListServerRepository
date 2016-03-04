@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] rsync &amp; ssh
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20rsync%20%26%20ssh&In-Reply-To=list-14585902%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001047.html">
+   <LINK REL="Next"  HREF="001049.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] rsync &amp; ssh</H1>
+    <B>Brian Medley</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20rsync%20%26%20ssh&In-Reply-To=list-14585902%40mail.ninewire.com"
+       TITLE="[X-Unix] rsync &amp; ssh">bpm-list-osx-unix at 4321.tv
+       </A><BR>
+    <I>Wed Jul  7 17:09:12 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001047.html">[X-Unix] rsync &amp; ssh
+</A></li>
+        <LI>Next message: <A HREF="001049.html">Airport Extreme (3.4.2) inactivity timer
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1048">[ date ]</a>
+              <a href="thread.html#1048">[ thread ]</a>
+              <a href="subject.html#1048">[ subject ]</a>
+              <a href="author.html#1048">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Thu, Jul 08, 2004 at 12:07:21AM +0100, Stroller wrote:
+
+&gt;<i> `ls -l foo` means &quot;show full details of the file foo&quot;
+</I>&gt;<i> `ls -l -R` means &quot;show full details of all the files in the directory &amp; 
+</I>&gt;<i> all directories below it&quot;
+</I>&gt;<i> 
+</I>&gt;<i> `grep foo bar` means &quot;look for foo in the file bar&quot;
+</I>&gt;<i> `grep -R bar` means &quot;look (recursively?) for bar on standard input&quot;
+</I>&gt;<i> 
+</I>&gt;<i> So to show full details of the file &quot;-R&quot; we use `ls -l -- -R`
+</I>&gt;<i> But to look for the expression &quot;-R&quot; in the file bar we use `grep -e -R 
+</I>&gt;<i> bar`
+</I>
+$ cat r            
+-R
+$ grep -- -R r
+-R
+$ grep -- -A r
+$ 
+
+&gt;<i> `tar` requires the -f flag to indicate that the following
+</I>&gt;<i> argument is the name of a file on which to operate, whereas the
+</I>&gt;<i> file to operate on is always the last argument to the `gzip`
+</I>&gt;<i> command. Unix would be less horribly complicated, quicker to
+</I>&gt;<i> learn for beginners &amp; handier for experienced users alike, if
+</I>&gt;<i> flags were standardised and some of these anomalies revised,
+</I>&gt;<i> however some overnight &quot;standardisation&quot; would break every
+</I>&gt;<i> shell-script on the planet.
+</I>
+<A HREF="http://www.unix.org/single_unix_specification/">http://www.unix.org/single_unix_specification/</A>
+
+It would not have to break every shell script.  For example, the
+behavior of some versions Solaris depends on your path.  
+
+-- 
+~`^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-., \|/  (___)  \|/ _,.-=~'`^`
+                                      @~./'O o`\.~@
+      &quot;Knowledge is Power&quot;           /__( \___/ )__\  *PPPFFBT!*
+         -- Francis Bacon               `\__`U_/'
+ _.-=~'``'~=-._.-=~'``'~=-._.-=~'`^`'~= &lt;____|'  ^^`'~=-.,__,.-=
+~'^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-.,__,.-==--^'~=-.,__,.-=~'`^`
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001047.html">[X-Unix] rsync &amp; ssh
+</A></li>
+	<LI>Next message: <A HREF="001049.html">Airport Extreme (3.4.2) inactivity timer
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1048">[ date ]</a>
+              <a href="thread.html#1048">[ thread ]</a>
+              <a href="subject.html#1048">[ subject ]</a>
+              <a href="author.html#1048">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

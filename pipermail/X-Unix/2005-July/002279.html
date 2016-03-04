@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] is &quot;sync&quot; still broken?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20is%20%22sync%22%20still%20broken%3F&In-Reply-To=5bf4a8bcafbfcde14d4bc45a5d298bd7%40myrealbox.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002278.html">
+   <LINK REL="Next"  HREF="002280.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] is &quot;sync&quot; still broken?</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20is%20%22sync%22%20still%20broken%3F&In-Reply-To=5bf4a8bcafbfcde14d4bc45a5d298bd7%40myrealbox.com"
+       TITLE="[X-Unix] is &quot;sync&quot; still broken?">magill at mcgillsociety.org
+       </A><BR>
+    <I>Mon Jul 25 12:50:16 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002278.html">[X-Unix] Need help w/.login and unix exec files
+</A></li>
+        <LI>Next message: <A HREF="002280.html">[X-Unix] Problem with old umask setting
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2279">[ date ]</a>
+              <a href="thread.html#2279">[ thread ]</a>
+              <a href="subject.html#2279">[ subject ]</a>
+              <a href="author.html#2279">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Has anybody gotten iSync to work yet under 10.4?  (with Contacts)
+
+I still find it failing even after the last upgrade to 10.4.2
+
+It starts off fine, but then dies with the message:
+&quot;Could not post change notification to replicant server.&quot;
+
+And in fact, I find a different number of records in my .mac address  
+book than in my on-line address book.
+
+(DotMactranslator.log)
+
+2005-07-25 15:42:55 -0400 - [DMT:9475:0x307fc0 Notifications main.m 
+(351)] Launching to sync in sesssion &quot;E7DD01EC- 
+F67B-4D33-9120-000E6C2BE913&quot;
+2005-07-25 15:42:55 -0400 - [DMT:9475:0x307fc0 Notifications main.m 
+(459)] Syncing Data Classes CONT, BKMK
+2005-07-25 15:43:02 -0400 - [DMT:9475:0x307fc0 SyncEngineLogging  
+DotMacSyncer.mm(1586)] Sync mode is Fast Syncing
+2005-07-25 15:43:02 -0400 - [DMT:9475:0x307fc0 SyncEngineLogging  
+DotMacSyncer.mm(1745)] Prepare to get changes for entity names  
+com.apple.contacts.Phone Number com.apple.contacts.Email Address  
+com.apple.contacts.Street Address com.apple.contacts.Related Name  
+com.apple.contacts.Date com.apple.contacts.IM  
+com.apple.contacts.Contact com.apple.contacts.Group  
+com.apple.palm.contacts.Category, will timeout at 2005-07-25 16:43:02  
+-0400
+2005-07-25 15:43:13 -0400 - [DMT:9475:0x307fc0 SyncEngineLogging  
+DotMacSyncer.mm(1767)] The engine has mingled, and  
+prepareToPullChangesForEntityNames: returned YES
+2005-07-25 15:43:26 -0400 - [DMT:9475:0x307fc0 DotMacLogging  
+DotMacSession.m(507)] Could not post change notification to replicant  
+server.
+2005-07-25 15:43:27 -0400 - [DMT:9475:0x307fc0 SyncEngineLogging  
+DotMacSyncer.mm(1964)] Finished syncing for data class CONT
+2005-07-25 15:43:32 -0400 - [DMT:9475:0x307fc0 SyncEngineLogging  
+DotMacSyncer.mm(1586)] Sync mode is Fast Syncing
+2005-07-25 15:43:32 -0400 - [DMT:9475:0x307fc0 SyncEngineLogging  
+DotMacSyncer.mm(1745)] Prepare to get changes for entity names  
+com.apple.bookmarks.Folder com.apple.bookmarks.Bookmark, will timeout  
+at 2005-07-25 16:43:32 -0400
+2005-07-25 15:43:38 -0400 - [DMT:9475:0x307fc0 SyncEngineLogging  
+DotMacSyncer.mm(1767)] The engine has mingled, and  
+prepareToPullChangesForEntityNames: returned YES
+2005-07-25 15:43:45 -0400 - [DMT:9475:0x307fc0 DotMacLogging  
+DotMacSession.m(507)] Could not post change notification to replicant  
+server.
+2005-07-25 15:43:46 -0400 - [DMT:9475:0x307fc0 SyncEngineLogging  
+DotMacSyncer.mm(1964)] Finished syncing for data class BKMK
+
+
+T.T.F.N.
+William H. Magill
+# Beige G3 [Rev A motherboard - 300 MHz 768 Meg] OS X 10.2.8
+# Flat-panel iMac (2.1) [800MHz - Super Drive - 768 Meg] OS X 10.4.1
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg] Tru64 5.1a
+# XP1000  [Alpha 21264-3 (EV6) - 256 meg] FreeBSD 5.3
+# XP1000  [Alpha 21264-A (EV 6.7) - 384 meg] FreeBSD 5.3
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002278.html">[X-Unix] Need help w/.login and unix exec files
+</A></li>
+	<LI>Next message: <A HREF="002280.html">[X-Unix] Problem with old umask setting
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2279">[ date ]</a>
+              <a href="thread.html#2279">[ thread ]</a>
+              <a href="subject.html#2279">[ subject ]</a>
+              <a href="author.html#2279">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] PATH ?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20PATH%20%3F&In-Reply-To=42221BAD.4060107%40tampabay.rr.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001594.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] PATH ?</H1>
+    <B>Doug McNutt</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20PATH%20%3F&In-Reply-To=42221BAD.4060107%40tampabay.rr.com"
+       TITLE="[X-Unix] PATH ?">douglist at macnauchtan.com
+       </A><BR>
+    <I>Sun Feb 27 11:53:09 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001594.html">[X-Unix] Re: PATH ?
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1596">[ date ]</a>
+              <a href="thread.html#1596">[ thread ]</a>
+              <a href="subject.html#1596">[ subject ]</a>
+              <a href="author.html#1596">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 14:12 -0500 2/27/05, Richard Nagle wrote:
+&gt;<i>okay: mac 10.3 ( using bash as terminal )
+</I>&gt;<i>where would be the PATH file ( need to add a string )
+</I>&gt;<i>so I can launch a Application.
+</I>
+Timothy is correct about the variable $PATH but I worry about your terms &quot;launch&quot; and Application&quot;. Those are pretty specific to Aqua applications and the OS neXt GUI. If you are using something like:
+
+open application
+
+or
+
+open -a application SomeFile
+
+changing PATH won't help. If the application has extension .app or file type APPL you should expect that Finder knows about it and just use its short name. If you want to specify something else it'll require a full path. PATH is for &quot;unix executables&quot; and they are quite different from Cocoa or Carbon applications.
+
+If you do need to change your path globally consider doing it in $HOME/.MacOS/environment.plist. It's an XML file and directory you have to create but what you do there will be read at login time and persist in everything you do rather than just in your shell of choice. There is an Apple tech note on it.
+
+-- 
+
+Applescript syntax is like English spelling:
+Roughly, but not thoroughly, thought through.
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001594.html">[X-Unix] Re: PATH ?
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1596">[ date ]</a>
+              <a href="thread.html#1596">[ thread ]</a>
+              <a href="subject.html#1596">[ subject ]</a>
+              <a href="author.html#1596">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

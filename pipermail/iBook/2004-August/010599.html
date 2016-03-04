@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> my sleep/lockup problems traced?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=my%20sleep/lockup%20problems%20traced%3F&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010598.html">
+   <LINK REL="Next"  HREF="010600.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>my sleep/lockup problems traced?</H1>
+    <B>Reid Conti</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=my%20sleep/lockup%20problems%20traced%3F&In-Reply-To="
+       TITLE="my sleep/lockup problems traced?">rconti at gmail.com
+       </A><BR>
+    <I>Mon Aug  2 16:50:09 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010598.html">[P1] Airport not waking after sleep...antenna problem
+</A></li>
+        <LI>Next message: <A HREF="010600.html">The Digest Lives and the digi-cams have their own loop
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10599">[ date ]</a>
+              <a href="thread.html#10599">[ thread ]</a>
+              <a href="subject.html#10599">[ subject ]</a>
+              <a href="author.html#10599">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Well, ok, not entirely.  I was having this whole problem of my airport
+signal going to zero a few months ago, so I'm sure it's more than just
+the simple answer I provide here.  But I have discovered something
+interesting.
+
+As you may recall, my ibook was occasionally (and more frequently)
+losing it's signal.  All of a sudden nothing, from 4 base stations
+visible, to zero.  Putting the computer to sleep, then waking it again
+(and I verified by sleeping using the menu option and NOT just closing
+the lid) would bring back 3 wireless networks, not the 4th, the
+linksys i was using.  For that to work, I'd have to go reset the
+linksys.  Not sure if I ever tried JUST resetting the linksys, and not
+sleeping the computer, but I can't imagine 4 networks would have
+magically showed up.
+
+So it looked like the linksys was locking up, which caused some kind
+of bug in the airport software on my 600mhz ibook that made it lose
+track of all networks.  By sleeping and waking it, it would get its
+senses back, but of course my linksys was down because it was locked
+up.
+
+I finally got pissed the other day, ripped the linksys out of the loop
+and threw it down the hall.  I reconfigured my roommate's belkin that
+was doing access point only (both are B-only routers, BTW) to do the
+routing duties, reconfigured my airport express in client mode to use
+the belkin instead so I could still stream music, and went on my way. 
+Well, nevermind how impossible it is to reconfigure airport express
+when in client mode (you have to reset it, as it's not visible as a
+base station when in client mode.. so you have to use the manual reset
+switch.  And the damn thing takes ages to come back up, this goes for
+any time its' restarted it seems).  Oh, and at some point both the
+laptop and AX tried to use the same IP, and no matter how many times I
+restarted each network connection, they REFUSED to pick different IPs.
+ My ibook kept saying another device was using 192.168.2.9.  Yeah, NO
+KIDDING.  This is why we use DHCP.  PICK A NEW ONE!  grr.  Finally I
+resolved it by giving the ibook a manual IP, or rebooting it, or
+something.  any of the above would have worked.  So yes, all seemed
+resolved at this point.
+
+Until it happened again.  And again.  And again.  The belkin was
+locking up every 20 mins or so.  I can no longer remember if I was
+sleeping the ibook or just resetting the belkin.  I think both.  So
+again, some kind of bug in the airport software seems to make all base
+stations disappear ... er... now I'm trying to remember if the
+remaining 2 base stations still showed up.  Well, I guess it would be
+easy enoguh to go home and test, but the roommate was getting annoyed
+at the connection dropping constantly.
+
+Finally I decided enough was enough and yanked the airport express,
+opting instead to use my old &quot;long cable&quot; method of stereo bliss.
+
+Problem solved.  Later in the day I plugged the AX back into the wall
+and had it join the network.  It's been living happily ever since, but
+I haven't been using the music streaming feature at all, which is why
+I have the AX in the first place.  I suspect several things are
+happening here.
+
+First, I'm streaming music using 802.11b to a base station, which is
+then streaming it out to  the AX.  The base stations obviously don't
+like this consistant streaming, sometimes they start skipping before
+they crap out entirely.  Cheap base stations not liking high data
+rates?  No clue, although I don't seem to recall having this problem
+when I've done several-hour local network file transfers one-way via
+wireless, which is clearly more demanding on maximum bandwidth on the
+wireless.  I'm thinking (hoping?) that if the laptop and base station
+were both G-compatable, and of course could talk G to the AX, I would
+not have this problem.
+
+Secondly, airport software seems to hate it when the base station
+locks up.  If the base station didn't lock up, there would be no
+problem.
+
+Or perhaps the airport software is freaking out at some point, and
+that locks up the base station?
+
+hmmm....
+
+The linksys is current hardware and the latest firmware, and my ibook
+has the latest software, as does the AX.  Not sure about the belkin's
+firmware, but on top of spending much of my weekend futzing with these
+things, plus working 8 hours a day/7 days a week at two tech jobs, I'm
+not really feeling like messing with the belkin's firmware.
+
+I'm hoping this all works better when I use the AX as my only base
+station...  I posted this on Apple's support site, and while some
+people are having problems with dropouts, nobody is having this base
+station lockup issue I am...  odd.
+
+- reid
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010598.html">[P1] Airport not waking after sleep...antenna problem
+</A></li>
+	<LI>Next message: <A HREF="010600.html">The Digest Lives and the digi-cams have their own loop
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10599">[ date ]</a>
+              <a href="thread.html#10599">[ thread ]</a>
+              <a href="subject.html#10599">[ subject ]</a>
+              <a href="author.html#10599">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Parallels Dammit! Anyone here running Linux under it?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Parallels%20Dammit%21%20Anyone%20here%20running%20Linux%20under%20it%3F&In-Reply-To=061B6035-8B45-4A6A-968D-92CE95BFEE82%40gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002812.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Parallels Dammit! Anyone here running Linux under it?</H1>
+    <B>Wing Wong</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Parallels%20Dammit%21%20Anyone%20here%20running%20Linux%20under%20it%3F&In-Reply-To=061B6035-8B45-4A6A-968D-92CE95BFEE82%40gmail.com"
+       TITLE="[X-Unix] Parallels Dammit! Anyone here running Linux under it?">wingedpower at gmail.com
+       </A><BR>
+    <I>Fri May 18 13:43:04 PDT 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002812.html">[X-Unix] Parallels Dammit! Anyone here running Linux under it?
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2813">[ date ]</a>
+              <a href="thread.html#2813">[ thread ]</a>
+              <a href="subject.html#2813">[ subject ]</a>
+              <a href="author.html#2813">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi MD,
+
+The problem, I think, has something to do with how certain CPU(s) and
+OS(s) deal with idle/sleep states, internal to the OS. Time drift is
+an issue which plagues virtual machines.
+
+I've heard of some suggesting the following in your grub configuration
+(/boot/grub/menu.lst):
+
+title SOME INSTANCE OF LINUX UNDER GRUB
+     root (hd0,0)
+     kernel /vmlinuz-some-revision ro root=/dev/some-root-device quiet
+acpi=off noapic nolapic
+
+Note the &quot;acpi=off noapic nolapic&quot; options. Those disable certain
+sleep/power management features as well as timing features for the
+Linux OS. Give those a try and see if it doesn't help with the time
+issues.
+
+Good Luck!
+
+Wing.
+
+
+On 5/18/07, Mac Daddy &lt;<A HREF="../../../mailman/listinfo/x-unix.html">macdaddee at gmail.com</A>&gt; wrote:
+&gt;<i> Unlike most people, I'm running FC6 under Parallels on my Mac, not
+</I>&gt;<i> Windows. I figured I'd be more likely find similar users on the Unix
+</I>&gt;<i> side of the Mac lists. I hope so.
+</I>&gt;<i>
+</I>&gt;<i> I'm having an ANNOYING problem where my system clock in the Parallels
+</I>&gt;<i> environment continuously gains time as the day goes on. If I reset it
+</I>&gt;<i> with a hwclock command, within a few minutes it's as much as 5
+</I>&gt;<i> minutes fast, and within about 30 it's an hour ahead. And
+</I>&gt;<i> everything's all shot to HELL if I put my Mac to sleep and wake it
+</I>&gt;<i> back up. Time's just all over the place.
+</I>&gt;<i>
+</I>&gt;<i> The more I google it the more I am convinced this is a hardware
+</I>&gt;<i> problem, not a Fedora problem, the &quot;hardware&quot; here being the
+</I>&gt;<i> Parallels VM. The time and zone of the greater Mac outside is always
+</I>&gt;<i> correct. This is a problem because I need to immerse myself in the
+</I>&gt;<i> Linux environment at work and send e-mail from within there ...
+</I>&gt;<i> frequently time-stamped in the future, sometimes the past (after
+</I>&gt;<i> sleeping my Mac)!  Grrrrr!
+</I>&gt;<i>
+</I>&gt;<i> Has anyone encountered this? And hopefully resolved it?
+</I>&gt;<i>
+</I>&gt;<i> -md
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random stuff:
+</I>&gt;<i>          <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>
+
+
+-- 
+Wing Wong
+<A HREF="../../../mailman/listinfo/x-unix.html">wingedpower at gmail.com</A>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002812.html">[X-Unix] Parallels Dammit! Anyone here running Linux under it?
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2813">[ date ]</a>
+              <a href="thread.html#2813">[ thread ]</a>
+              <a href="subject.html#2813">[ subject ]</a>
+              <a href="author.html#2813">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

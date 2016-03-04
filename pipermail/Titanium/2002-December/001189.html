@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] utility for defragmenting my internal HAD?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20utility%20for%20defragmenting%20my%20internal%20HAD%3F&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001188.html">
+   <LINK REL="Next"  HREF="001190.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] utility for defragmenting my internal HAD?</H1>
+    <B>Chris Olson</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20utility%20for%20defragmenting%20my%20internal%20HAD%3F&In-Reply-To="
+       TITLE="[Ti] utility for defragmenting my internal HAD?">chris at astcomm.net
+       </A><BR>
+    <I>Fri Dec 20 17:56:18 PST 2002</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001188.html">[Ti] utility for defragmenting my internal HAD?
+</A></li>
+        <LI>Next message: <A HREF="001190.html">screen brightness and the PMU
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1189">[ date ]</a>
+              <a href="thread.html#1189">[ thread ]</a>
+              <a href="subject.html#1189">[ subject ]</a>
+              <a href="author.html#1189">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bill Reburn wrote:
+&gt;<i> Ok you geeks (I mean that with respect of course),
+</I>&gt;<i> 
+</I>&gt;<i> So is the question 'to Defrag or not to Defrag?' still in the air?
+</I>
+It's not necessary with unix systems, and OS X is unix (Darwin/BSD 
+underpinnings).
+
+There are actually two kinds of fragmentation - file fragmentation and 
+volume fragmentation. File fragmentation refers to what happens when a 
+file gets broken into lots of tiny pieces so that every little nook and 
+cranny of the hard disk can get used (very common with Windows).  Volume 
+fragmentation just means that all of the files aren't crammed together 
+in one (mostly) contiguous part of the hard disk.  But when you defrag a 
+FAT32 partition, as soon as you delete something, you create a hole that 
+immediately gets filled by something else, actually reducing efficiency 
+and enhancing further file fragmentation.  I don't know exactly how the 
+defrag tools work for MacOS 9 and prior.
+
+File fragmentation can be bad - volume fragmentation, not really, and 
+can be an advantage.
+
+UNIX filesystem drivers (like Darwin), use high degrees of volume 
+fragmentation, by default, to combat file fragmentation, making defrag 
+unnecessary, or even harmful in some instances.  Anybody that's ever had 
+some sectors go bad on a hard drive, knows that lots of file fragments 
+mean the possibility of a much greater number of corrupted files. 
+Typically, with failed hard disks in unix machines, virtually all data 
+is recoverable with various tools, and that's not the case with non-unix 
+operating systems.
+
+I vote for no - don't defrag OS X's filesystem.
+-- 
+Chris
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001188.html">[Ti] utility for defragmenting my internal HAD?
+</A></li>
+	<LI>Next message: <A HREF="001190.html">screen brightness and the PMU
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1189">[ date ]</a>
+              <a href="thread.html#1189">[ thread ]</a>
+              <a href="subject.html#1189">[ subject ]</a>
+              <a href="author.html#1189">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

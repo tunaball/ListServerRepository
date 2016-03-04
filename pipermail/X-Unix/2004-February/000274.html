@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Stupid Mac OS X question (?)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Stupid%20Mac%20OS%20X%20question%20%28%3F%29&In-Reply-To=list-10776362%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000273.html">
+   <LINK REL="Next"  HREF="000276.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Stupid Mac OS X question (?)</H1>
+    <B>Brian Medley</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Stupid%20Mac%20OS%20X%20question%20%28%3F%29&In-Reply-To=list-10776362%40mail.ninewire.com"
+       TITLE="[X-Unix] Stupid Mac OS X question (?)">bpm-list-osx-unix at 4321.tv
+       </A><BR>
+    <I>Wed Feb 11 14:09:45 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000273.html">[X-Unix] Start, re-start? again &amp; again?
+</A></li>
+        <LI>Next message: <A HREF="000276.html">[X-Unix] Disk utility wierdness
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#274">[ date ]</a>
+              <a href="thread.html#274">[ thread ]</a>
+              <a href="subject.html#274">[ subject ]</a>
+              <a href="author.html#274">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Wed, Feb 11, 2004 at 12:12:35AM -0600, Albert Lunde wrote:
+
+&gt;<i> &gt;Or maybe just a stupid idea. Is there anything wrong with doing this:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;   sudo chmod -R go-rwx ~/*
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;I.e. I want to block out access of others to everything in my home
+</I>&gt;<i> &gt;folder, but will doing this break anything in the system? Are there
+</I>&gt;<i> &gt;files that must be readable by group and/or other?
+</I>&gt;<i> 
+</I>&gt;<i> I wouldn't do it if I were you. I can't cite a specific example other
+</I>&gt;<i> than public_html (as someone else noted) that needs access, but it's
+</I>&gt;<i> irrevesible unless you've kept careful track of permissions, and it's
+</I>&gt;<i> over-kill.
+</I>&gt;<i> 
+</I>&gt;<i> You can get the same protective effect, with less risk, by typing:
+</I>&gt;<i> 
+</I>&gt;<i> ls -ld $HOME
+</I>&gt;<i> chmod 700 $HOME
+</I>
+One problem though, if you want to have a ~user html page you'll need
+permissions 701 on $HOME.  The web server uid has to have access to
+$HOME/Sites (or whatever your web server is configured to use)...unless
+the web server has been designated to run as root (which I can't see
+ever being a good idea).
+
+Sigh...if only we had ACLs...
+
+-- 
+~'`^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^`'~=-., \|/  (___)  \|/ _,.-=~'`^`
+                                               @~./'O o`\.~@
+               &quot;Knowledge is Power&quot;           /__( \___/ )__\  *PPPFFBT!*
+                  -- Francis Bacon               `\__`U_/'
+ _,.-=~'`^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^`'~= &lt;____|'  ^^`'~=-.,__,.-=
+~`'^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^`'~=-.,__,.-==--^'~=-.,__,.-=~'`^`
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000273.html">[X-Unix] Start, re-start? again &amp; again?
+</A></li>
+	<LI>Next message: <A HREF="000276.html">[X-Unix] Disk utility wierdness
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#274">[ date ]</a>
+              <a href="thread.html#274">[ thread ]</a>
+              <a href="subject.html#274">[ subject ]</a>
+              <a href="author.html#274">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

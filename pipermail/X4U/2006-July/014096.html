@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Testing conection
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Testing%20conection&In-Reply-To=B4137694-F897-41E1-932D-F7507752FFB7%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="014089.html">
+   <LINK REL="Next"  HREF="014097.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Testing conection</H1>
+    <B>Charles Howse</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Testing%20conection&In-Reply-To=B4137694-F897-41E1-932D-F7507752FFB7%40mac.com"
+       TITLE="[X4U] Testing conection">chowse at charter.net
+       </A><BR>
+    <I>Wed Jul 12 13:06:16 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="014089.html">[X4U] Testing conection
+</A></li>
+        <LI>Next message: <A HREF="014097.html">[X4U] Testing conection
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14096">[ date ]</a>
+              <a href="thread.html#14096">[ thread ]</a>
+              <a href="subject.html#14096">[ subject ]</a>
+              <a href="author.html#14096">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jul 12, 2006, at 6:54 AM, Jan Melichar wrote:
+
+&gt;<i> I'm living with a long term problem with the internet connection at  
+</I>&gt;<i> my office - connection keeps dropping. I have have had a lot of  
+</I>&gt;<i> visits from telephone engineers who tell me that I have a very good  
+</I>&gt;<i> quality line but the line keeps dropping. :Last week I was told  
+</I>&gt;<i> that a circuit at the exchange has been changed and I have to say  
+</I>&gt;<i> the connection seems to be better but my 'ultimate' test is  
+</I>&gt;<i> streaming radio which keeps loosing connection with monotonous  
+</I>&gt;<i> frequency (this very rarely happens to me at home with the same  
+</I>&gt;<i> ISP, router and similar Mac setup and same radio station- yes I  
+</I>&gt;<i> have tried different pouters and the problem is the same)
+</I>&gt;<i>
+</I>&gt;<i> I realise the problem could be with the BBC servers or the radio  
+</I>&gt;<i> stations connected via iTunes and any number of other things (even  
+</I>&gt;<i> though I do not get the same problem at home) so what I would like  
+</I>&gt;<i> to be able to do is have some means whereby I can monitor more  
+</I>&gt;<i> effectively whether I have a connection or not and that this can be  
+</I>&gt;<i> documented.Anyone with any suggestions on how this might be done.
+</I>
+Would this work for you?
+
+#!/bin/sh
+host=24.159.76.1
+logfile=Documents/ping_results.txt
+stats=`curl -s <A HREF="http://192.168.100.1/signaldata.html">http://192.168.100.1/signaldata.html</A> | grep dB | tr -d  
+\&lt;TD\&gt; | tr -d /`
+test=`ping -c 3 $host 2&gt;&amp;1 | grep packets`
+look=`tail -1 Documents/ping_results.txt`
+
+if [ &quot;$test&quot; == &quot;$look&quot; ] ; then
+        :
+else
+       	echo &gt;&gt; $logfile
+       	date &gt;&gt; $logfile
+	echo &quot;$stats&quot; &gt;&gt; $logfile
+        	echo &quot;$test&quot; &gt;&gt; $logfile
+fi
+
+exit 0
+
+
+Line-by-line:
+line 1. sha-bang
+line 2. one of my isp's gateway servers
+line 3. file to save results into
+line 4. use curl to get the current power levels and s/n ratio from  
+my cable modem
+line 5. ping the gateway server 3 times only and grep the results for  
+the line containing &quot;packets&quot;
+line 6. look at the last line of the results file
+If: the last line of the results file is exactly the same as the  
+result of the ping, then do nothing, otherwise write the results to  
+the file.
+
+Sample output with explanations in brackets:
+Wed Jul 12 04:25:04 CDT 2006
+37 dB
+-6 dBmV
+52 dBmV
+3 packets transmitted, 2 packets received, 33% packet loss
+[online and all readings in the normal range]
+
+Wed Jul 12 04:30:03 CDT 2006
+37 dB
+-6 dBmV
+52 dBmV
+3 packets transmitted, 3 packets received, 0% packet loss
+[online and all readings in the normal range]
+
+Wed Jul 12 14:21:28 CDT 2006
+
+3 packets transmitted, 0 packets received, 100% packet loss
+[The modem is apparently offline, since it's readings are not  
+displayed, and we are offline here at the Mac]
+
+Wed Jul 12 14:30:02 CDT 2006
+36 dB
+-9 dBmV
+53 dBmV
+3 packets transmitted, 3 packets received, 0% packet loss
+[9 minutes later, back online...go figure]
+
+Comments and improvements welcomed.
+
+--
+Webmaster's Computer Page -
+<A HREF="http://bubbabbq.homeunix.net/webmaster.html">http://bubbabbq.homeunix.net/webmaster.html</A>
+
+
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="014089.html">[X4U] Testing conection
+</A></li>
+	<LI>Next message: <A HREF="014097.html">[X4U] Testing conection
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14096">[ date ]</a>
+              <a href="thread.html#14096">[ thread ]</a>
+              <a href="subject.html#14096">[ subject ]</a>
+              <a href="author.html#14096">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

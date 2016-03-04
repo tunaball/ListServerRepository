@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] The which command lies?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20The%20which%20command%20lies%3F&In-Reply-To=%3C411f975b1002151901x52657cd8s87ff59bf47764466%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003364.html">
+   <LINK REL="Next"  HREF="003366.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X-Unix] The which command lies?</H1>
+    <B>Steve Morris</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20The%20which%20command%20lies%3F&In-Reply-To=%3C411f975b1002151901x52657cd8s87ff59bf47764466%40mail.gmail.com%3E"
+       TITLE="[X-Unix] The which command lies?">barbershopsteve at gmail.com
+       </A><BR>
+    <I>Mon Feb 15 19:01:39 PST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003364.html">[X-Unix] Changing a file's open-with program at the command	line.
+</A></li>
+        <LI>Next message: <A HREF="003366.html">[X-Unix] The which command lies?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3365">[ date ]</a>
+              <a href="thread.html#3365">[ thread ]</a>
+              <a href="subject.html#3365">[ subject ]</a>
+              <a href="author.html#3365">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I just discovered that the which command on my snow leopard OS is lieing to
+me. I have had a succession of problems with installing various versions of
+perl which then fail with cpan, all in all a frustrating experience. That
+means I have perl installed in multiple places. I have been trying to make
+the one I like the default. I tried using alias, changing the path, putting
+a symbolic link to my preferred version in my ~/bin directory (which is
+always at the front of my $PATH) and the &quot;which&quot; command keeps telling me
+that /usr/bin/perl is the magic one that will be executed. I finally got
+suspicious and tried to get perl to tell me where it lived. perl -e 'print
+&quot;$0\n&quot;;' was unhelpful; perl -e '&quot;print $^X\n&quot;;' was unhelpful. Finally I
+remembered @INC and tried these two commands which should give identical
+results if 'which' can be trusted:
+
+`which perl` -e 'print &quot;@INC\n&quot;;'
+ perl -e 'print &quot;@INC\n&quot;;'
+
+Instead these commands gave me totally different results indicating two
+different installations of perl. It turns out that my redirections were
+working but &quot;which&quot; wasn't seeing them.
+
+What the heck is wrong with the &quot;which&quot; command on OSX? Why do &quot;bash&quot; and
+&quot;which&quot; disagree on the actual path of the command to run? What is the point
+of having a &quot;which&quot; command if it doesn't match.
+
+Regards,
+
+Steve
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="../attachments/20100215/b06aae9b/attachment.htm">http://listserver.themacintoshguy.com/pipermail/x-unix/attachments/20100215/b06aae9b/attachment.htm</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003364.html">[X-Unix] Changing a file's open-with program at the command	line.
+</A></li>
+	<LI>Next message: <A HREF="003366.html">[X-Unix] The which command lies?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3365">[ date ]</a>
+              <a href="thread.html#3365">[ thread ]</a>
+              <a href="subject.html#3365">[ subject ]</a>
+              <a href="author.html#3365">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

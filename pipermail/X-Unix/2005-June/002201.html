@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Cron problem
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Cron%20problem&In-Reply-To=7D1BB9E4-5C0D-4167-AEA0-9D6EB9C2C324%40aquaflo.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002197.html">
+   <LINK REL="Next"  HREF="002204.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Cron problem</H1>
+    <B>Brian Medley</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Cron%20problem&In-Reply-To=7D1BB9E4-5C0D-4167-AEA0-9D6EB9C2C324%40aquaflo.com"
+       TITLE="[X-Unix] Cron problem">bpm-list-osx-unix at 4321.tv
+       </A><BR>
+    <I>Fri Jun 24 08:22:08 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002197.html">[X-Unix] Cron problem - Again
+</A></li>
+        <LI>Next message: <A HREF="002204.html">[X-Unix] Cron problem solved
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2201">[ date ]</a>
+              <a href="thread.html#2201">[ thread ]</a>
+              <a href="subject.html#2201">[ subject ]</a>
+              <a href="author.html#2201">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Wed, Jun 22, 2005 at 01:58:40PM -0700, Marley Graham wrote:
+
+&gt;<i> Now I would like to schedule that for every half-hour, so I put the  
+</I>&gt;<i> following entry in crontab:
+</I>&gt;<i> 
+</I>&gt;<i> 0,30 7-16 * * 1-6 screencapture /mgscreen$( date +%R )
+</I>&gt;<i> 
+</I>&gt;<i> and I get the following error reported through Unix mail:
+</I>&gt;<i> 
+</I>&gt;<i> Subject: Cron &lt;<A HREF="../../../mailman/listinfo/x-unix.html">marleygraham at Marley-Grahams-Computer</A>&gt; screencapture / 
+</I>&gt;<i> mgscreen$( d
+</I>&gt;<i> X-Cron-Env: &lt;SHELL=/bin/sh&gt;
+</I>&gt;<i> X-Cron-Env: &lt;PATH=/usr/bin:/bin&gt;
+</I>&gt;<i> X-Cron-Env: &lt;LOGNAME=marleygraham&gt;
+</I>&gt;<i> X-Cron-Env: &lt;USER=marleygraham&gt;
+</I>&gt;<i> X-Cron-Env: &lt;HOME=/Users/marleygraham&gt;
+</I>&gt;<i> Date: Wed, 22 Jun 2005 13:00:00 -0700 (PDT)
+</I>&gt;<i> 
+</I>&gt;<i> /bin/sh: -c: line 1: unexpected EOF while looking for matching `)'
+</I>&gt;<i> /bin/sh: -c: line 2: syntax error: unexpected end of file
+</I>&gt;<i> 
+</I>&gt;<i> Can someone tell me why cron doesn't like the syntax when it works OK  
+</I>&gt;<i> on the command line?
+</I>
+Sorry for the late reply.  I know you've already fixed this, but
+I don't recal reading someone giving the reason why the above
+did not work.  I believe it did not work because of the &quot;%&quot;.
+&gt;<i>From the crontab man page:
+</I>
+     The ``sixth'' field (the rest of the line) specifies the command to be
+     run.  The entire command portion of the line, up to a newline or % char-
+     acter, will be executed by /bin/sh or by the shell specified in the SHELL
+     variable of the cronfile.  Percent-signs (%) in the command, unless
+     escaped with backslash (\), will be changed into newline characters, and
+     all data after the first % will be sent to the command as standard input.
+     ...
+
+Therefore, perhaps this would have worked:
+
+    0,30 7-16 * * 1-6 screencapture /mgscreen$( date +\%R )
+
+-- 
+~`^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-., \|/  (___)  \|/ _,.-=~'`^`
+                                      @~./'O o`\.~@
+      &quot;Knowledge is Power&quot;           /__( \___/ )__\  *PPPFFBT!*
+         -- Francis Bacon               `\__`U_/'
+ _.-=~'``'~=-._.-=~'``'~=-._.-=~'`^`'~= &lt;____|'  ^^`'~=-.,__,.-=
+~'^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-.,__,.-==--^'~=-.,__,.-=~'`^`
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002197.html">[X-Unix] Cron problem - Again
+</A></li>
+	<LI>Next message: <A HREF="002204.html">[X-Unix] Cron problem solved
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2201">[ date ]</a>
+              <a href="thread.html#2201">[ thread ]</a>
+              <a href="subject.html#2201">[ subject ]</a>
+              <a href="author.html#2201">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

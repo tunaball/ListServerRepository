@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] /dev/fd/*
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20/dev/fd/%2A&In-Reply-To=list-10896250%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000303.html">
+   <LINK REL="Next"  HREF="000305.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] /dev/fd/*</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20/dev/fd/%2A&In-Reply-To=list-10896250%40mail.ninewire.com"
+       TITLE="[X-Unix] /dev/fd/*">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Tue Feb 17 10:35:12 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000303.html">/dev/fd/*
+</A></li>
+        <LI>Next message: <A HREF="000305.html">Erroneous file size of Pine attachments
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#304">[ date ]</a>
+              <a href="thread.html#304">[ thread ]</a>
+              <a href="subject.html#304">[ subject ]</a>
+              <a href="author.html#304">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Feb 17, 2004, at 5:41 pm, Jeep Hauser wrote:
+&gt;<i>
+</I>&gt;<i> A friend's box was broken into (a Raq, not MOSX), and one of the 
+</I>&gt;<i> commands the intruder did was:
+</I>&gt;<i> ...
+</I>&gt;<i> If I understand this correctly, it will traverse the entire filesystem 
+</I>&gt;<i> (when executed as root) and list (in -ls format) every file that has 
+</I>&gt;<i> been modified in the last 180 minutes (though I'm not sure wh...
+</I>
+It looks like you were about to say &quot;I'm not sure why&quot; there - in case 
+you haven't realised, it's probably because he was logged in for 3 
+hours &amp; wanted to check what files he'd changed, and probably, also, 
+cover his tracks. Silly of him not to edit .bash_history.
+
+&gt;<i> For kick, I ran this on my MOSX box and found a *ton* of stuff in 
+</I>&gt;<i> various /dev/fd/* subdirectories, notably .jpg files that are mirrored 
+</I>&gt;<i> in my /Users/&lt;username&gt;/Photos/iPhoto Library directory. I can't seem 
+</I>&gt;<i> to find a pattern as to why these files are still in /dev/fd (not all 
+</I>&gt;<i> of my iPhoto files are in there, just some), nor why the output of the 
+</I>&gt;<i> find command doesn't seem to limit itself to the last 180 minutes.
+</I>
+They're not really &quot;in&quot; /dev/fd/*. /dev is a special directory for 
+hardware devices &amp; other magic stuff.
+
+For instance:
+   $ head -1 /dev/random
+   N&#154;zM&#220;&#254;&#148;qP&#205;&#254;,_&#252;&amp;O
+                 7
+showed something different next time I tried it, and will show 
+something different nearly [1] every time you try it, too. This is a 
+useful source of random (or perhaps pseudo-random, I don't know) 
+numbers for programmers.
+
+Back to /dev/fd/*... `man fd` says:
+
+DESCRIPTION
+      The files /dev/fd/0 through /dev/fd/# refer to file descriptors 
+which can
+      be accessed through the file system...
+      Opening the files /dev/stdin, /dev/stdout and /dev/stderr is 
+equivalent
+      to the following calls...
+
+Which means about as much to me as it does to you, however these links 
+are perhaps enlightening:
+
+&lt;<A HREF="http://www.macobserver.com/tips/macosxcl101/2002/20020607.shtml">http://www.macobserver.com/tips/macosxcl101/2002/20020607.shtml</A>&gt;
+&quot;A file descriptor is a low-level Unix I/O concept that is really only 
+interesting to systems programmers. (What can I say, we're easily 
+entertained.)&quot;
+
+and:
+
+&lt;<A HREF="http://www.cs.nmsu.edu/~lking/kernserv.html">http://www.cs.nmsu.edu/~lking/kernserv.html</A>&gt;
+File descriptors provide per-process unique, non-negative integers that 
+are used to identify an open file (or socket). For user processes, all 
+interaction with files is done via file descriptors. File descriptors 
+are also used for access and manipulation of POSIX semaphores and POSIX 
+shared memory.
+
+My best guess is that you had iPhoto open at the time. I suspect that 
+if you rebooted &amp; tried this `find` command again with  minimal 
+applications open it would find far fewer results. But to avoid such 
+spurious matches you should probably use something like `find / -mmin 
+-180 -not -path /dev -ls`  [2]
+
+&gt;<i> On the Raq (sorry, but I don't know the shell used), it truly returns 
+</I>&gt;<i> files modified within 180 minutes. On my MOSX (10.3.2) tsch shell, it 
+</I>&gt;<i> returns files going back to last summer.
+</I>
+Try it again, excluding /dev (if the command I just gave doesn't work, 
+then just pipe the output to `grep -v /dev`   ;-])
+
+&gt;<i> When using '180' instead of '-180' it returns nothing at all. I don't 
+</I>&gt;<i> know the difference, and the man pages aren't helping me figure that 
+</I>&gt;<i> out.
+</I>
+It doesn't help that the BSD man page for `find` is pants. The GNU one 
+(on my Linux system) seems to answer your question:
+
+    TESTS
+        Numeric arguments can be specified as
+        +n     for greater than n,
+        -n     for less than n,
+        n      for exactly n.
+
+So:
+- `find / -mmin +180 means &quot;find files modified more than 180 ago.&quot;
+- `find / -mmin -180 means &quot;find files modified within the last 180 
+minutes.&quot;
+-  `find / -mmin 180` means &quot;find files modified exactly 180 minutes 
+ago.&quot;
+
+If it's any consolation man pages DO generally get easier to read, once 
+you're familliar with their quirks. Chapter 3 of The UNIX HATERS 
+Handbook &lt;<A HREF="http://www.simson.net/ref/ugh.pdf">http://www.simson.net/ref/ugh.pdf</A>&gt; is a good read, tho'.
+
+&gt;<i> Soooo... is find misbehaving? Is it MOSX?
+</I>
+Neither. Perhaps the Raq has a different approach to file-descriptors, 
+doesn't use the /dev/ file-system &amp;/or has a version of `find` which is 
+clever enough to ignore /dev.
+
+&gt;<i> How about all those files in /dev/df/* -- are those really just 
+</I>&gt;<i> pointers to the actual files...
+</I>
+Erm... something like that.
+
+Stroller.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000303.html">/dev/fd/*
+</A></li>
+	<LI>Next message: <A HREF="000305.html">Erroneous file size of Pine attachments
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#304">[ date ]</a>
+              <a href="thread.html#304">[ thread ]</a>
+              <a href="subject.html#304">[ subject ]</a>
+              <a href="author.html#304">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Panthers Virtual Memory
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Panthers%20Virtual%20Memory&In-Reply-To=list-11748601%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000583.html">
+   <LINK REL="Next"  HREF="000587.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Panthers Virtual Memory</H1>
+    <B>Adrian Simmons</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Panthers%20Virtual%20Memory&In-Reply-To=list-11748601%40mail.ninewire.com"
+       TITLE="[X-Unix] Panthers Virtual Memory">adriman at ntlworld.com
+       </A><BR>
+    <I>Sat Mar 27 07:33:05 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000583.html">[X-Unix] Panthers Virtual Memory
+</A></li>
+        <LI>Next message: <A HREF="000587.html">[X-Unix] 0th Annual Shell X-Unix Scripting Contest
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#584">[ date ]</a>
+              <a href="thread.html#584">[ thread ]</a>
+              <a href="subject.html#584">[ subject ]</a>
+              <a href="author.html#584">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Adrian Simmons wrote:
+&gt;<i> I'm going to experiment with some of this right now
+</I>
+Ok, I set /etc/rc like so (all on one line of course, watch out for the 
+wrap):
+
+dynamic_pager -H 40000000 -L 320000000 -S 256000000 -F ${swapdir}/swapfile
+
+And after starting up had one swapfile:
+-rw------T   1 root  wheel       244M 27 Mar 14:42 swapfile0
+
+Then opened up a tonne of apps:
+-rw------T   1 root  wheel       244M 27 Mar 14:42 swapfile0
+-rw------T   1 root  wheel       244M 27 Mar 14:54 swapfile1
+-rw------T   1 root  wheel       244M 27 Mar 14:56 swapfile2
+-rw------T   1 root  wheel       244M 27 Mar 15:03 swapfile3
+-rw------T   1 root  wheel       244M 27 Mar 15:16 swapfile4
+
+And quit them:
+-rw------T   1 root  wheel       244M 27 Mar 14:42 swapfile0
+-rw------T   1 root  wheel       244M 27 Mar 14:54 swapfile1
+-rw------T   1 root  wheel       244M 27 Mar 14:56 swapfile2
+
+Just to confirm - all the options detailed in the man page still work. 
+Which means all these people having problems with Panther's VM (creating 
+large swapfiles and then not deleting them till reboot) can probably fix 
+them by playing with how /etc/rc calls dynamic_pager.
+
+On a sidenote:
+Also, I discoved a 500mb VM storage file on my swap partition - I 
+started in classic a couple of days ago, that's OS9's vm file - so I 
+deleted that, but it obviously didn't help my vm situation, no doubt 
+panther wouldn't have complained the disk was full without that there, 
+and I wouldn't have been prompted to figure out all this :)
+
+Adrian
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000583.html">[X-Unix] Panthers Virtual Memory
+</A></li>
+	<LI>Next message: <A HREF="000587.html">[X-Unix] 0th Annual Shell X-Unix Scripting Contest
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#584">[ date ]</a>
+              <a href="thread.html#584">[ thread ]</a>
+              <a href="subject.html#584">[ subject ]</a>
+              <a href="author.html#584">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

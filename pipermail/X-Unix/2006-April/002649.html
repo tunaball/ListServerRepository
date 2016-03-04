@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Can you get the path from an inode?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Can%20you%20get%20the%20path%20from%20an%20inode%3F&In-Reply-To=20060428130704.799E176C77%40isis.visi.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002648.html">
+   <LINK REL="Next"  HREF="002650.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Can you get the path from an inode?</H1>
+    <B>Eugene</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Can%20you%20get%20the%20path%20from%20an%20inode%3F&In-Reply-To=20060428130704.799E176C77%40isis.visi.com"
+       TITLE="[X-Unix] Can you get the path from an inode?">list-themacintoshguy at fsck.net
+       </A><BR>
+    <I>Sat Apr 29 16:12:30 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002648.html">[X-Unix] Can you get the path from an inode?
+</A></li>
+        <LI>Next message: <A HREF="002650.html">[X-Unix] Can you get the path from an inode?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2649">[ date ]</a>
+              <a href="thread.html#2649">[ thread ]</a>
+              <a href="subject.html#2649">[ subject ]</a>
+              <a href="author.html#2649">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Fri, Apr 28, 2006 at 08:07:04AM CDT, Craig A. Finseth &lt;<A HREF="../../../mailman/listinfo/x-unix.html">fin at finseth.com</A>&gt; wrote:
+:<i> 
+</I>:<i> 	...
+</I>:<i>    I have an application which tells me only the inode number of a file it is
+</I>:<i>    having problems with.  Is there any way to get the path and filename from
+</I>:<i>    the inode number?
+</I>:<i> 	...
+</I>:<i> 
+</I>:<i> You can get _a_ path (there may be many), but it is work.
+</I>:<i> 
+</I>:<i> - Start at the root of the volume.
+</I>:<i> - Loop through all entries in the directory
+</I>:<i> 	- See if you found your inode.
+</I>:<i> 	- If it's a directory, recurse on it
+</I>
+Blah, anyone can do a brute-force search.  But I wonder if there
+is a simple function call where you input an inode and a device,
+and get a path.
+
+
+-- 
+Eugene
+<A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002648.html">[X-Unix] Can you get the path from an inode?
+</A></li>
+	<LI>Next message: <A HREF="002650.html">[X-Unix] Can you get the path from an inode?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2649">[ date ]</a>
+              <a href="thread.html#2649">[ thread ]</a>
+              <a href="subject.html#2649">[ subject ]</a>
+              <a href="author.html#2649">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

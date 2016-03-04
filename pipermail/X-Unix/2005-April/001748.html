@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: Root Exploit via sudo
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Root%20Exploit%20via%20sudo&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001753.html">
+   <LINK REL="Next"  HREF="001749.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: Root Exploit via sudo</H1>
+    <B>Kuestner, Bjoern</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Root%20Exploit%20via%20sudo&In-Reply-To="
+       TITLE="[X-Unix] Re: Root Exploit via sudo">Bjoern.Kuestner at drkw.com
+       </A><BR>
+    <I>Wed Apr 13 00:20:58 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001753.html">[X-Unix] Re: Korn shell?
+</A></li>
+        <LI>Next message: <A HREF="001749.html">[X-Unix] Re: Root Exploit via sudo
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1748">[ date ]</a>
+              <a href="thread.html#1748">[ thread ]</a>
+              <a href="subject.html#1748">[ subject ]</a>
+              <a href="author.html#1748">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+&gt;&gt;&gt;<i>
+</I>&gt;&gt;<i> if you simply change the place where sudo logs to,
+</I>&gt;&gt;<i> the security hazard is removed without added inconvenience.
+</I>&gt;<i>
+</I>&gt;<i> I think you have to not only change the place but also
+</I>&gt;<i> a) secure that a script cannot easily read from a config file the new
+</I>&gt;<i> location
+</I>&gt;<i> b) better, secure the permission for the new log file.
+</I>
+If you read the official note at
+<A HREF="http://www.securityfocus.com/archive/1/395107/2005-04-03/2005-04-09/0">http://www.securityfocus.com/archive/1/395107/2005-04-03/2005-04-09/0</A>
+
+it will recommend to change the logging to /var/log/secure.log which is 
+owned by root and chmod 600 by default
+&lt;&lt;&lt;
+
+I knew that. Just the posted lines were ambiguous enough, leaving the option
+to change the sudo log to any other place and not minding the permissions.
+And that is simply not enough.
+
+Security Focus suggested one good place which per default also meets the
+condition b) of more restrictive permission. 
+
+But I thought you were trying to go beyond this specific recommendation and
+hinting that one could use any place for the sudo log. Which is true ... if
+the permissions are changed.
+
+Well, I guess, most people on this list are knowledgeable enough to figure
+that writing sudo logs to a world-readable file would solve the problem only
+partially.
+
+Bjorn
+
+
+--------------------------------------------------------------------------------
+The information contained herein is confidential and is intended solely for the
+addressee. Access by any other party is unauthorised without the express 
+written permission of the sender. If you are not the intended recipient, please 
+contact the sender either via the company switchboard on +44 (0)20 7623 8000, or
+via e-mail return. If you have received this e-mail in error or wish to read our
+e-mail disclaimer statement and monitoring policy, please refer to 
+<A HREF="http://www.drkw.com/disc/email/">http://www.drkw.com/disc/email/</A> or contact the sender. 3166
+--------------------------------------------------------------------------------
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001753.html">[X-Unix] Re: Korn shell?
+</A></li>
+	<LI>Next message: <A HREF="001749.html">[X-Unix] Re: Root Exploit via sudo
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1748">[ date ]</a>
+              <a href="thread.html#1748">[ thread ]</a>
+              <a href="subject.html#1748">[ subject ]</a>
+              <a href="author.html#1748">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

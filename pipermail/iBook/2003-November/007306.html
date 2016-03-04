@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [P1] Disappeared Dock Icons
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20Disappeared%20Dock%20Icons&In-Reply-To=list-9181756%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="007305.html">
+   <LINK REL="Next"  HREF="007307.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[P1] Disappeared Dock Icons</H1>
+    <B>Gary Adams</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20Disappeared%20Dock%20Icons&In-Reply-To=list-9181756%40mail.ninewire.com"
+       TITLE="[P1] Disappeared Dock Icons">gdadams1 at cox.net
+       </A><BR>
+    <I>Sat Nov  8 15:01:57 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="007305.html">[P1] Disappeared Dock Icons
+</A></li>
+        <LI>Next message: <A HREF="007307.html">[P1] Times RO font question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7306">[ date ]</a>
+              <a href="thread.html#7306">[ thread ]</a>
+              <a href="subject.html#7306">[ subject ]</a>
+              <a href="author.html#7306">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Kim:
+I neglected to say that I've got a 30 gb hard drive internally--running 
+10.2.8 from an external 60gb drive with plenty of space, and have 1 gb 
+RAM. I appreciate the help, but I don't think that's the problem.
+
+Gary
+On Saturday, November 8, 2003, at 04:34 PM, Kim Gammelgaard wrote:
+
+&gt;<i> If you are on a Pismo, your Harddisk may not be very large, and 
+</I>&gt;<i> perhaps you
+</I>&gt;<i> ran out of memory on the harddisk. Virtual Memory of OSX prior to 10.3 
+</I>&gt;<i> took
+</I>&gt;<i> chunks 80 MB in size out of your harddisk, and it didn't update the 
+</I>&gt;<i> figure
+</I>&gt;<i> in the finder properly. The only way I know to make the finder give a 
+</I>&gt;<i> fair
+</I>&gt;<i> number is to delete something. I have roughly 1 GB left on my main 
+</I>&gt;<i> partition
+</I>&gt;<i> for swap space, and it is not a rare event that I almost run out of 
+</I>&gt;<i> space. I
+</I>&gt;<i> have 320 MB RAM for that matter. Copy and past the following lines in 
+</I>&gt;<i> your
+</I>&gt;<i> Terminal to see how much space the virtual memory uses and how much is 
+</I>&gt;<i> left:
+</I>&gt;<i>
+</I>&gt;<i> cd /var/vm
+</I>&gt;<i> ls -l
+</I>&gt;<i> df -k .
+</I>&gt;<i>
+</I>&gt;<i> I get the following right now in Panther:
+</I>&gt;<i>
+</I>&gt;<i> [Kims-iBook:/var/vm] kgani% cd /var/vm
+</I>&gt;<i> [Kims-iBook:/var/vm] kgani% ls -l
+</I>&gt;<i> total 524288
+</I>&gt;<i> drwx--x--x  8 root  wheel        272 30 Oct 17:45 app_profile
+</I>&gt;<i> -rw------T  1 root  wheel   67108864  8 Nov 14:02 swapfile0
+</I>&gt;<i> -rw------T  1 root  wheel   67108864  8 Nov 15:05 swapfile1
+</I>&gt;<i> -rw------T  1 root  wheel  134217728  8 Nov 16:02 swapfile2
+</I>&gt;<i> [Kims-iBook:/var/vm] kgani% df -k .
+</I>&gt;<i> Filesystem   1K-blocks    Used  Avail Capacity  Mounted on
+</I>&gt;<i> /dev/disk0s9   4455292 3575252 835488    81%    /
+</I>&gt;<i> [Kims-iBook:/var/vm] kgani%
+</I>&gt;<i>
+</I>&gt;<i> This means that I have used about 256 MB of Virtual memory ( The 
+</I>&gt;<i> 524288 are
+</I>&gt;<i> 512 byte blocks, so you have to divide by two to get KB and divide by 
+</I>&gt;<i> 1024
+</I>&gt;<i> to get MB) and have 816 MB left on the partition. I try to follow those
+</I>&gt;<i> numbers closely if I get strange error messages, as low memory 
+</I>&gt;<i> situations
+</I>&gt;<i> can make your Mac act up very strange indeed.
+</I>&gt;<i>
+</I>&gt;<i> If you have panther use this instead:
+</I>&gt;<i>
+</I>&gt;<i> cd /var/vm
+</I>&gt;<i> ls -lh
+</I>&gt;<i> df -h .
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> The h means: Human readable, and gives this answer instead:
+</I>&gt;<i>
+</I>&gt;<i> [Kims-iBook:/var/vm] kgani% ls -lh
+</I>&gt;<i> total 524288
+</I>&gt;<i> drwx--x--x  8 root  wheel       272B 30 Oct 17:45 app_profile
+</I>&gt;<i> -rw------T  1 root  wheel        64M  8 Nov 14:02 swapfile0
+</I>&gt;<i> -rw------T  1 root  wheel        64M  8 Nov 15:05 swapfile1
+</I>&gt;<i> -rw------T  1 root  wheel       128M  8 Nov 16:02 swapfile2
+</I>&gt;<i> df -kh .[Kims-iBook:/var/vm] kgani% df -h .
+</I>&gt;<i> Filesystem     Size   Used  Avail Capacity  Mounted on
+</I>&gt;<i> /dev/disk0s9   4.2G   3.4G   816M    81%    /
+</I>&gt;<i> [Kims-iBook:/var/vm] kgani%
+</I>&gt;<i>
+</I>&gt;<i> I think that is a cool new feature :-)
+</I>&gt;<i>
+</I>&gt;<i> Cheers,
+</I>&gt;<i>
+</I>&gt;<i> Kim
+</I>&gt;<i>
+</I>&gt;<i> On 08/11/03 20:53, &quot;Gary Adams&quot; &lt;<A HREF="../../../mailman/listinfo/ibook.html">gdadams1 at cox.net</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> This morning, I fired up the Pismo in 10.2.8 and the first thing I
+</I>&gt;&gt;<i> noticed was the dock icons were huge instead of small. I ended up
+</I>&gt;&gt;<i> restarting after Mail hung and then realized that only the OS X icons
+</I>&gt;&gt;<i> (Mail, iChat, etc.) were in the dock.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I booted from another drive and ran Disk Utility which found some
+</I>&gt;&gt;<i> allocation errors. Restarted. Still no other icons. Googled and found 
+</I>&gt;&gt;<i> a
+</I>&gt;&gt;<i> suggestion to delete the Finder .plist in the terminal. That didn't 
+</I>&gt;&gt;<i> fix
+</I>&gt;&gt;<i> it either. Found another suggestion to fix the permissions. Anybody
+</I>&gt;&gt;<i> have a clue?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> (I've since added the icons again, but it was a pain.)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Gary
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> iBookList, a listserv for users and fans of Apple's iBook.
+</I>&gt;<i> FAQ at &lt;<A HREF="../../../../www.themacintoshguy.com/lists/iBookListFAQ.shtml">http://www.themacintoshguy.com/lists/iBookListFAQ.shtml</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/ibook.html">ibook-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/ibook.html">ibook-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/ibook.html">ibook-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> ----------
+</I>&gt;<i> Small Dog Electronics    <A HREF="http://www.smalldog.com">http://www.smalldog.com</A>   | Enter To Win A |
+</I>&gt;<i>   --  Canon Digital Camcorders start at $799       |  Free iBook!   |
+</I>&gt;<i>
+</I>&gt;<i> iBookPlanet.com |  Visit iBookPlanet.com for the hottest
+</I>&gt;<i>                 |  iBook News, Features, Reviews &amp; More.
+</I>&gt;<i>
+</I>&gt;<i>    RoadTools $30 PodiumPad available at Apple retail stores, $20 
+</I>&gt;<i> Traveler
+</I>&gt;<i>   CoolPad at Staples. Both in white for iBooks at 
+</I>&gt;<i> &lt;<A HREF="http://roadtools.com">http://roadtools.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> MacResQ Specials: LaCie SCSI CDR From $99! PowerBook 3400/200 Only 
+</I>&gt;<i> $879!
+</I>&gt;<i> Norton AntiVirus 6 Only $19! We Stock PARTS! &lt;<A HREF="http://www.macresq.com">http://www.macresq.com</A>&gt;
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="007305.html">[P1] Disappeared Dock Icons
+</A></li>
+	<LI>Next message: <A HREF="007307.html">[P1] Times RO font question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7306">[ date ]</a>
+              <a href="thread.html#7306">[ thread ]</a>
+              <a href="subject.html#7306">[ subject ]</a>
+              <a href="author.html#7306">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

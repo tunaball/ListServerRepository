@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Script monitoring
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Script%20monitoring&In-Reply-To=D7FC43CC-269D-47D2-B129-4E709D535CCA%40canfieldtack.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002290.html">
+   <LINK REL="Next"  HREF="002292.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Script monitoring</H1>
+    <B>FFrassy</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Script%20monitoring&In-Reply-To=D7FC43CC-269D-47D2-B129-4E709D535CCA%40canfieldtack.com"
+       TITLE="[X-Unix] Script monitoring">ff.listes at cote-ouest.net
+       </A><BR>
+    <I>Tue Aug 16 13:48:31 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002290.html">[X-Unix] Expression/script edit series of txt files in separate
+	subdirectories
+</A></li>
+        <LI>Next message: <A HREF="002292.html">[X-Unix] Expression/script edit series of txt files in separate
+	subdirectories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2291">[ date ]</a>
+              <a href="thread.html#2291">[ thread ]</a>
+              <a href="subject.html#2291">[ subject ]</a>
+              <a href="author.html#2291">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi, maybee some of you are good at applescript so with 1028 i use the script
+below to monitor fmpro and relauch it, going to tiger it seems that i have a
+problem with the shell script kill fmpro, I have to force quit the app and
+the script relaunch correctly and i would like to sleep ;-)
+Idea ?
+Thanks
+FF
+
+on idle
+    tell application &quot;URL Access Scripting&quot;
+        try
+            download &quot;<A HREF="http://127.0.0.1:1080/testfile.html">http://127.0.0.1:1080/testfile.html&quot;</A> to file
+&quot;emeraude:Users:ff:Desktop:testfile.html&quot; replacing yes
+        on error
+            try
+                do shell script &quot;sudo kill  `ps -auxww | grep FileMaker |
+grep -v grep | awk '{print $2}'`&quot; password &quot;mypassword&quot; with administrator
+privileges
+            end try
+            tell application &quot;FileMaker Pro&quot;
+                activate
+                open file &quot;emeraude:Users:ff:Desktop:FMP:_launch.fp5&quot;
+            end tell
+            set fichiernom to &quot;emeraude:Users:ff:Desktop:red&#233;marrage FMPro&quot;
+            download &quot;<A HREF="http://127.0.0.1:1080/testfile.html">http://127.0.0.1:1080/testfile.html&quot;</A> to file
+fichiernom
+        end try
+    end tell
+    return 30
+end idle
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002290.html">[X-Unix] Expression/script edit series of txt files in separate
+	subdirectories
+</A></li>
+	<LI>Next message: <A HREF="002292.html">[X-Unix] Expression/script edit series of txt files in separate
+	subdirectories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2291">[ date ]</a>
+              <a href="thread.html#2291">[ thread ]</a>
+              <a href="subject.html#2291">[ subject ]</a>
+              <a href="author.html#2291">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

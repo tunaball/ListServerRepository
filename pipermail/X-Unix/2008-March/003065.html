@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Altering system parameters (e.g. IP addresses) on
+	MacOSXserver
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Altering%20system%20parameters%20%28e.g.%20IP%20addresses%29%20on%0A%09MacOSXserver&In-Reply-To=5D0AB444-B5B5-4002-A403-9AA14F9B882F%40columbia.edu">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003062.html">
+   <LINK REL="Next"  HREF="003066.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Altering system parameters (e.g. IP addresses) on
+	MacOSXserver</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Altering%20system%20parameters%20%28e.g.%20IP%20addresses%29%20on%0A%09MacOSXserver&In-Reply-To=5D0AB444-B5B5-4002-A403-9AA14F9B882F%40columbia.edu"
+       TITLE="[X-Unix] Altering system parameters (e.g. IP addresses) on
+	MacOSXserver">ecrist at secure-computing.net
+       </A><BR>
+    <I>Sun Mar  9 16:12:35 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003062.html">[X-Unix] Altering system parameters (e.g. IP addresses) on
+	MacOSXserver
+</A></li>
+        <LI>Next message: <A HREF="003066.html">[X-Unix] Altering system parameters (e.g. IP addresses) on
+	MacOSXserver
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3065">[ date ]</a>
+              <a href="thread.html#3065">[ thread ]</a>
+              <a href="subject.html#3065">[ subject ]</a>
+              <a href="author.html#3065">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Ok Ken, as promised:
+
+You should have a command called networksetup.  This allows you to  
+change all(most?) of the settings you would find in the network  
+preference pane.  To permanently change the static IP address of a  
+given system, run the following command:
+
+# networksetup -listallnetworkservices
+
+This command will list all your network ports.  Why you have to call  
+them by their name escapes me, but whatver.
+
+Next, run the following command:
+
+# networksetup -setmanual &lt;network_service&gt; &lt;new_ip&gt; &lt;new_mask&gt;  
+&lt;default_router&gt;
+
+The only funk above is the network_service item.  This is really just  
+the network adapter's name.  So, to set an IP of 10.0.0.2 with a  
+subnet of 255.0.0.0 and a default route of 10.0.0.1 on my MacBook  
+Pro's ethernet address, I'd do the following:
+
+# networksetup -setmanual Ethernet 10.0.0.2 255.0.0.0 10.0.0.1
+
+Note, you've gotta be root (or sudo it).
+
+This **WILL** persist through reboots.
+HTH
+Eric
+
+
+On Mar 9, 2008, at 3:58 PM, Ken Rossman wrote:
+
+&gt;<i> Eric,
+</I>&gt;<i>
+</I>&gt;&gt;<i> Ken, if you can give me a few hours, I'll get you the complete  
+</I>&gt;&gt;<i> answer.
+</I>&gt;<i>
+</I>&gt;<i> Thanks...  that would be useful.  Awhile back, I took a class in Mac  
+</I>&gt;<i> OS X server
+</I>&gt;<i> admin, and still have the books.  Just not sure right now where  
+</I>&gt;<i> those are, but
+</I>&gt;<i> I would think the answer is in there.  I remember issuing a whole  
+</I>&gt;<i> lot of
+</I>&gt;<i> (Apple-ish) long and mixed-case command line incantations to do  
+</I>&gt;<i> various things
+</I>&gt;<i> with various system tables and such.  Just don't recall any  
+</I>&gt;<i> particulars.
+</I>&gt;<i>
+</I>&gt;<i> Glad to see things on Mac OS X moving a good bit more in the  
+</I>&gt;<i> direction of being
+</I>&gt;<i> &quot;Linux-ish&quot; or generally &quot;Unix-ish&quot; in any case...
+</I>&gt;<i>
+</I>&gt;&gt;<i> You lost your connection because the server IP changed. Connect  
+</I>&gt;&gt;<i> with the new
+</I>&gt;&gt;<i> IP and you should be fine.
+</I>&gt;<i>
+</I>&gt;<i> Ah, but that was exactly what I did, and it did not work.  I had my  
+</I>&gt;<i> PowerBook
+</I>&gt;<i> direct-ether-connected point-to-point to the server, and was able to  
+</I>&gt;<i> ssh in
+</I>&gt;<i> using the old address range.  issued the ifconfig command (adding in  
+</I>&gt;<i> specific
+</I>&gt;<i> broadcast and netmask fields as well as the IP address change), then  
+</I>&gt;<i> changed
+</I>&gt;<i> the PowerBook interface address to be in the same subnet range as  
+</I>&gt;<i> what I just
+</I>&gt;<i> changed the server to, but no luck.
+</I>&gt;<i>
+</I>&gt;<i> I know I must have just done something stupid, but I'm not spotting  
+</I>&gt;<i> it.
+</I>&gt;<i>
+</I>&gt;&gt;<i> I'll get you the permanent fix when I'm at a terminal and not my  
+</I>&gt;&gt;<i> blackberry. :)
+</I>&gt;<i>
+</I>&gt;<i> OK, I'll take you up on that!  :-)
+</I>&gt;<i>
+</I>&gt;<i> Thanks,
+</I>&gt;<i> K
+</I>&gt;<i>
+</I>
+-----
+Eric F Crist
+Secure Computing Networks
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003062.html">[X-Unix] Altering system parameters (e.g. IP addresses) on
+	MacOSXserver
+</A></li>
+	<LI>Next message: <A HREF="003066.html">[X-Unix] Altering system parameters (e.g. IP addresses) on
+	MacOSXserver
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3065">[ date ]</a>
+              <a href="thread.html#3065">[ thread ]</a>
+              <a href="subject.html#3065">[ subject ]</a>
+              <a href="author.html#3065">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

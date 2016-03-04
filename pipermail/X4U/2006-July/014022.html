@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Problem with prolific2303 usbserial driver
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Problem%20with%20prolific2303%20usbserial%20driver&In-Reply-To=50BCE100-874C-4903-BD10-8179FA51EF22%40charter.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="014017.html">
+   <LINK REL="Next"  HREF="014018.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Problem with prolific2303 usbserial driver</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Problem%20with%20prolific2303%20usbserial%20driver&In-Reply-To=50BCE100-874C-4903-BD10-8179FA51EF22%40charter.net"
+       TITLE="[X4U] Problem with prolific2303 usbserial driver">macmonster at myrealbox.com
+       </A><BR>
+    <I>Thu Jul  6 15:53:30 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="014017.html">[X4U] Problem with prolific2303 usbserial driver
+</A></li>
+        <LI>Next message: <A HREF="014018.html">[X4U] OT: Belkin UPS
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14022">[ date ]</a>
+              <a href="thread.html#14022">[ thread ]</a>
+              <a href="subject.html#14022">[ subject ]</a>
+              <a href="author.html#14022">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi again, Cheryl,
+
+:<i>D
+</I>
+On 6 Jul 2006, at 09:52, Cheryl Homiak wrote:
+
+&gt;<i> I am trying to hook up a braille display to my mac mini using a  
+</I>&gt;<i> usbserial cable. The cable uses the prolific pl2303 driver and I  
+</I>&gt;<i> have the latest version;
+</I>
+I'm guessing you mean you're using something like this: http:// 
+tinyurl.com/qlhre
+?
+
+&gt;<i> echo &quot;I am very frustrated with usbserial&quot; &gt; /dev/cu.usbserial
+</I>&gt;<i> gets that repeated--this macine has speech as well as braille.  
+</I>&gt;<i> however, after that first response, unless I either reboot or  
+</I>&gt;<i> unplug the cable from the usb port and replug it, I get no further  
+</I>&gt;<i> responses. If I do unplug and replug the usb connector, I then get  
+</I>&gt;<i> another successful response--but only one.
+</I>&gt;<i> There is nothing defective in the serial cable or the usbserial  
+</I>&gt;<i> adaptor as they load and work perfectly and consistently on my  
+</I>&gt;<i> linux laptop.
+</I>
+I don't know that you're going to be TOO lucky here, I'm afraid. :(
+Most of the discussion here is usually about getting printing working  
+across a network and about PDFs &amp; stuff like that. You *might* have  
+more lucky on the <A HREF="../../../mailman/listinfo/x4u.html">x-unix at listserver.themacintoshguy.com</A> list, but I'd  
+hope the manufacturer (or Prolific) would be most responsive. After  
+all, characters in &amp; out is ENTIRELY what this product &amp; chipset is  
+about.
+
+My only guess is that maybe OS X is adding some spurious character to  
+the end of the data stream which the braille reader is unable to  
+interpret. Is it possible to connect the usbserial cable to your Mac  
+and its output to the serial port of a Linux box? And then read  
+what's coming out the Mac &amp; into the Linux box?
+
+`echo &quot;I am very frustrated with usbserial&quot; &gt; /dev/cu.usbserial`  
+SHOULDN'T add any characters like this - it should be very simple. So  
+I am kinda pulling at straws to think what's wrong. Could it be your  
+terminal program? Have you tried writing a 3-line Bash script to do  
+the same thing? If the terminal is the problem then a Bash script  
+will run an truer environment &amp; running it repeatedly should work.
+
+Finally, try a different version of the driver. If a PPC driver will  
+run under Rosetta then I might be inclined to give that a go. It is  
+possible that a later driver has introduced a bug. Ideally Prolific's  
+tech support will give you a debug version of the driver &amp; get their  
+coders involved - such a use of their products is critical to you,  
+and a good company will recognise the value to their reputation of  
+supporting their products in this way.
+
+Stroller.
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="014017.html">[X4U] Problem with prolific2303 usbserial driver
+</A></li>
+	<LI>Next message: <A HREF="014018.html">[X4U] OT: Belkin UPS
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14022">[ date ]</a>
+              <a href="thread.html#14022">[ thread ]</a>
+              <a href="subject.html#14022">[ subject ]</a>
+              <a href="author.html#14022">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

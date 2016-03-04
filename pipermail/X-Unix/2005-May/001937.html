@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Beginner Questions: Setting up access to localhost for
+	testing only.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Beginner%20Questions%3A%20Setting%20up%20access%20to%20localhost%20for%0A%09testing%20only.&In-Reply-To=a06200604bea9869e22a6%40%5B206.172.188.14%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001936.html">
+   <LINK REL="Next"  HREF="001938.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Beginner Questions: Setting up access to localhost for
+	testing only.</H1>
+    <B>Jon Allen Boone</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Beginner%20Questions%3A%20Setting%20up%20access%20to%20localhost%20for%0A%09testing%20only.&In-Reply-To=a06200604bea9869e22a6%40%5B206.172.188.14%5D"
+       TITLE="[X-Unix] Beginner Questions: Setting up access to localhost for
+	testing only.">ipmonger at delamancha.org
+       </A><BR>
+    <I>Thu May 12 16:01:12 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001936.html">[X-Unix] Beginner Questions: Setting up access to localhost
+	for 	testing only.
+</A></li>
+        <LI>Next message: <A HREF="001938.html">[X-Unix] Beginner Questions: Setting up access to localhost for
+	testing only.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1937">[ date ]</a>
+              <a href="thread.html#1937">[ thread ]</a>
+              <a href="subject.html#1937">[ subject ]</a>
+              <a href="author.html#1937">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On May 12, 2005, at 18:38, <A HREF="../../../mailman/listinfo/x-unix.html">dm87 at proparallax.com</A> wrote:
+
+&gt;<i> Thanks Jon and Jakob!  I have it setup now and running.  I have run  
+</I>&gt;<i> it in WebServer and thought I'd give it a go in Sites to see how  
+</I>&gt;<i> that works.
+</I>&gt;<i>
+</I>&gt;<i> I have been looking at file permissions.  Obviously I do not want  
+</I>&gt;<i> the world to be able to read my phpMyAdmin config file, it has  
+</I>&gt;<i> passwords in it.
+</I>&gt;<i>
+</I>&gt;<i> Questions:
+</I>&gt;<i>
+</I>&gt;<i> 1)  I have used octet numbers for permissions before, and am having  
+</I>&gt;<i> a little trouble getting used to the way Panther &quot;Get Info&quot; handles  
+</I>&gt;<i> permissions.  I am still painfully slow on the command line, so I  
+</I>&gt;<i> tend to use the GUI when possible.  I want to set the files to 644,  
+</I>&gt;<i> and I think the following reflects 644:
+</I>&gt;<i> owner: read/write
+</I>&gt;<i> group: read only
+</I>&gt;<i> other: read only
+</I>&gt;<i> Is this correct?  And are these the appropriate permissions to use  
+</I>&gt;<i> for developing a php site on Panther?
+</I>
+You've interpreted the permissions correctly.  It's an additive  
+property, displayed in octal (base8, ranging from 0-7).  Read = 4,  
+Write = 2, Execute = 1.
+
+Files are often 644 (Read+Write, Read,Read) and directories are  
+typically 755 (Read+Write+Execute/Read+Execute/Read+Execute).
+
+Now, I don't do php, so I can't help you there.
+
+
+&gt;<i> 2)  When I look at the permissions for the config.php file I find  
+</I>&gt;<i> that they are greyed out and I may not change them.  So, that means  
+</I>&gt;<i> they are left at 644.  That makes the config.php file readable to  
+</I>&gt;<i> the world, in theory.  However, when I try to bring up the config  
+</I>&gt;<i> file with the browser, I get a blank page.  This is good, I think.   
+</I>&gt;<i> But what is going on?  Is the config.php file secure from viewing  
+</I>&gt;<i> by the world?  Are my passwords secure?
+</I>
+I'm not a php'er, so I'll leave it to someone else to help.  But I  
+would expect you to get a Permission Error (403) or perhaps an  
+Unauthorized (401) error.  Safari doesn't seem to display these,  
+however...
+
+--jon
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001936.html">[X-Unix] Beginner Questions: Setting up access to localhost
+	for 	testing only.
+</A></li>
+	<LI>Next message: <A HREF="001938.html">[X-Unix] Beginner Questions: Setting up access to localhost for
+	testing only.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1937">[ date ]</a>
+              <a href="thread.html#1937">[ thread ]</a>
+              <a href="subject.html#1937">[ subject ]</a>
+              <a href="author.html#1937">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

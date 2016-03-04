@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] open-x11
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20open-x11&In-Reply-To=43DA03EE.7060408%40gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002553.html">
+   <LINK REL="Next"  HREF="002555.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] open-x11</H1>
+    <B>Christina Huggins</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20open-x11&In-Reply-To=43DA03EE.7060408%40gmail.com"
+       TITLE="[X-Unix] open-x11">chuggins at fidlet.com
+       </A><BR>
+    <I>Fri Jan 27 13:11:33 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002553.html">[X-Unix] open-x11
+</A></li>
+        <LI>Next message: <A HREF="002555.html">[X-Unix] Reconstructing Cyrus Mailboxes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2554">[ date ]</a>
+              <a href="thread.html#2554">[ thread ]</a>
+              <a href="subject.html#2554">[ subject ]</a>
+              <a href="author.html#2554">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hmmm...I tried that.  It didn't seem to do it - i still get the same  
+error.  Any other ideas?
+
+
+On Jan 27, 2006, at 6:28 AM, Adrian Simmons wrote:
+
+&gt;<i> Christina Huggins wrote:
+</I>&gt;&gt;<i> /opt/local/bin/gimp
+</I>&gt;<i> Is that where gimp is? Usually Fink installs things in /sw,  
+</I>&gt;<i> although you may have darwinports installed and have gimp installed  
+</I>&gt;<i> with that?
+</I>&gt;<i>
+</I>&gt;&gt;<i> (Note that I can open gimp fine through an x terminal like  
+</I>&gt;&gt;<i> aterm.)  Does anyone have a clue as to what might be going on?
+</I>&gt;<i> The usual advice is to edit your bash profile (assuming you're  
+</I>&gt;<i> using Tiger and the default shell), which can be found at  
+</I>&gt;<i> ~/.profile and add the following (assuming you have both fink and  
+</I>&gt;<i> darwinports installed):
+</I>&gt;<i>
+</I>&gt;<i> # set up the path for fink and darwinports
+</I>&gt;<i> if [ -f /sw/bin/init.sh ]
+</I>&gt;<i> then
+</I>&gt;<i>     . /sw/bin/init.sh
+</I>&gt;<i> fi
+</I>&gt;<i>
+</I>&gt;<i> if [ -f /opt/local/bin/port ]
+</I>&gt;<i> then
+</I>&gt;<i>     append_path PATH /opt/local/bin
+</I>&gt;<i>     append_path MANPATH /opt/local/share/man
+</I>&gt;<i> fi
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> And this to make X11 apps launch from terminal, set the display:
+</I>&gt;<i>
+</I>&gt;<i> [[ -z $DISPLAY ]] &amp;&amp; export DISPLAY=':0.0'
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> HTH
+</I>&gt;<i>
+</I>&gt;<i> -- 
+</I>&gt;<i> adrinux (aka Adrian Simmons) &lt;<A HREF="http://adrinux.perlucida.com">http://adrinux.perlucida.com</A>&gt;
+</I>&gt;<i> e-mail &lt;mailto:<A HREF="../../../mailman/listinfo/x-unix.html">adrinux at gmail.com</A>&gt;
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002553.html">[X-Unix] open-x11
+</A></li>
+	<LI>Next message: <A HREF="002555.html">[X-Unix] Reconstructing Cyrus Mailboxes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2554">[ date ]</a>
+              <a href="thread.html#2554">[ thread ]</a>
+              <a href="subject.html#2554">[ subject ]</a>
+              <a href="author.html#2554">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Command to get permissions of a single item?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Command%20to%20get%20permissions%20of%20a%20single%20item%3F&In-Reply-To=C16C1110.290F6%25jerry%40ieee.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="015297.html">
+   <LINK REL="Next"  HREF="015296.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Command to get permissions of a single item?</H1>
+    <B>Craig A. Finseth</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Command%20to%20get%20permissions%20of%20a%20single%20item%3F&In-Reply-To=C16C1110.290F6%25jerry%40ieee.org"
+       TITLE="[X4U] Command to get permissions of a single item?">fin at finseth.com
+       </A><BR>
+    <I>Tue Oct 31 05:50:31 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="015297.html">[X4U] Command to get permissions of a single item?
+</A></li>
+        <LI>Next message: <A HREF="015296.html">[X4U] Safari Menu for Firefox?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15300">[ date ]</a>
+              <a href="thread.html#15300">[ thread ]</a>
+              <a href="subject.html#15300">[ subject ]</a>
+              <a href="author.html#15300">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>   For a shell script I'm writing.  I need a command which will get the
+   permissions, either as a string or an octal number, for a single item
+   (directory, regular file, or symlink).
+
+   I thought this would be easy, but after an hour of searching I can't find
+   such a thing.  The only command I can find for reading permissions is &quot;ls&quot;,
+   but of course that gives it for ITEMS IN the subject, which must be a
+   directory.
+
+&quot;ls -d XXX&quot; will give the permissions for XXX if XXX is a directory.
+
+   We have chmod to CHANGE the permissions, but how can we READ them?
+
+Perl is your friend:
+
+------------------------------------------------------------
+#!/usr/bin/perl
+
+foreach $a (@ARGV) {
+	( $device, $inode, $mode, $nlinks, $uid, $gid, $rdev, $size, $atime,
+		$mtime, $ctime, $blksize, $blocks ) = stat($a);
+	print &quot;file $a:\n&quot;;
+	printf &quot;\tmode\t%o\n&quot;, $mode;
+	# other information you may want...
+	print &quot;\tuid\t$uid\n&quot;;
+	print &quot;\tgid\t$gid\n&quot;;
+	print &quot;\tsize\t$size\n&quot;;
+	}
+
+exit 0;
+------------------------------------------------------------
+
+(Your path to Perl may vary.)
+
+Craig
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="015297.html">[X4U] Command to get permissions of a single item?
+</A></li>
+	<LI>Next message: <A HREF="015296.html">[X4U] Safari Menu for Firefox?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15300">[ date ]</a>
+              <a href="thread.html#15300">[ thread ]</a>
+              <a href="subject.html#15300">[ subject ]</a>
+              <a href="author.html#15300">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

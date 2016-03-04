@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Cannot Un-Mount Partition
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Cannot%20Un-Mount%20Partition&In-Reply-To=20051211012535.0A5E35DCBF3%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010720.html">
+   <LINK REL="Next"  HREF="010677.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Cannot Un-Mount Partition</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Cannot%20Un-Mount%20Partition&In-Reply-To=20051211012535.0A5E35DCBF3%40listserver.themacintoshguy.com"
+       TITLE="[X4U] Cannot Un-Mount Partition">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Sun Dec 11 01:59:01 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010720.html">[X4U] iPod Shuffle
+</A></li>
+        <LI>Next message: <A HREF="010677.html">[X4U] safari to boom box
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10676">[ date ]</a>
+              <a href="thread.html#10676">[ thread ]</a>
+              <a href="subject.html#10676">[ subject ]</a>
+              <a href="author.html#10676">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>From: revDAVE &lt;<A HREF="../../../mailman/listinfo/x4u.html">coolcat at hosting4days.com</A>&gt;
+</I>&gt;<i>  Currently I am unable to un-mount a partition ( drag to the trash) ... The
+</I>&gt;<i>error says that is currently in use...
+</I>&gt;<i>Here is the history of what I did. ..
+</I>&gt;<i>
+</I>&gt;<i>-  partition 1 = Panther 10.3.9
+</I>&gt;<i>-  I used carbon copy cloner to duplicate this on partition number 2
+</I>&gt;<i>-  then I upgraded to Tiger 10.4.3 on partition 1
+</I>&gt;<i>- ( I did all necessary repair permissions - repair drives etc. before and
+</I>&gt;<i>after -  on both systems)
+</I>&gt;<i>-  basically everything is working fine on both systems - however - when I
+</I>&gt;<i>am in Tiger - I am  unable to un-mount partition 2 ( older Panther) -  and
+</I>&gt;<i>it says drive is in use...
+</I>&gt;<i>-  this leads me to believe that either there are aliases - or symbolic
+</I>&gt;<i>links or something else that are pointing from Tiger to Panther somehow...
+</I>&gt;<i>BTW:  no programs are active at the time
+</I>&gt;<i>-  for various reasons I need to Un-Mount Partition 2 from time to time -
+</I>&gt;<i>while I am in Tiger...
+</I>&gt;<i>
+</I>&gt;<i>* Question: how can I fix this? I certainly do not want to have to reinstall
+</I>&gt;<i>entire operating systems there are working well (except for this problem)
+</I>&gt;<i>...  Is there some utility that can help repair this?
+</I>
+In terminal do:=
+
+sudo lsof | grep /Volumes
+     (password when prompted)
+
+This will list all the open files on the non-root partitions that are 
+mounted under /Volumes.
+
+If it shows just a few then they will indicate where to look. If 
+there's lots and you have partitions other than these two, try
+
+sudo lsof | grep &quot;/Volumes/&lt;thePantherPartition&gt;&quot;
+
+with &lt;thePantherPartition&gt; replaced by whatever it's called, and 
+you'll only see those on that partition. You only need the quotes if 
+the name of the Panther partition has spaces or similar. If there's 
+still lots, it's just a long slog through them.
+
+For each one, or each group that seem to go together, decide if you 
+should be running that thing from your Panther partition. If not 
+check the equivalent place on the Tiger partition. If the object 
+isn't there, copying it across may help, but if it's being accesses 
+via an alias you need to find the alias. As aliases aren't a Unix 
+thing I'm not familiar with how to do that, but someone else here 
+might. Applescript perhaps? Anyone?
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+Chair of HPUX SysAdmin SIG of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x4u.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010720.html">[X4U] iPod Shuffle
+</A></li>
+	<LI>Next message: <A HREF="010677.html">[X4U] safari to boom box
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10676">[ date ]</a>
+              <a href="thread.html#10676">[ thread ]</a>
+              <a href="subject.html#10676">[ subject ]</a>
+              <a href="author.html#10676">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

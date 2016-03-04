@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Recursive one-line chmod
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Recursive%20one-line%20chmod&In-Reply-To=C1F8871B-18EA-4F72-837A-8CDE035B7ED3%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002370.html">
+   <LINK REL="Next"  HREF="002372.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Recursive one-line chmod</H1>
+    <B>Rod Buchanan</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Recursive%20one-line%20chmod&In-Reply-To=C1F8871B-18EA-4F72-837A-8CDE035B7ED3%40mac.com"
+       TITLE="[X-Unix] Recursive one-line chmod">lists at sofstats.com
+       </A><BR>
+    <I>Wed Sep 21 11:34:40 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002370.html">[X-Unix] Recursive one-line chmod
+</A></li>
+        <LI>Next message: <A HREF="002372.html">[X-Unix] Spam
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2371">[ date ]</a>
+              <a href="thread.html#2371">[ thread ]</a>
+              <a href="subject.html#2371">[ subject ]</a>
+              <a href="author.html#2371">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 9/21/05 11:09 AM, &quot;Phillip Burk&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">philburk at mac.com</A>&gt; wrote:
+
+&gt;<i> Alright, I'm trying to use ARD to issue a one-line command that will
+</I>&gt;<i> step through all the directories in /Users and assign recursive
+</I>&gt;<i> proper ownership.  I don't care if it errors on the Shared folder, I
+</I>&gt;<i> have a login hook to blast that to 777.  I have no clue as to the
+</I>&gt;<i> proper syntax of the thing although if I were using a script to do
+</I>&gt;<i> this I imagine it would use a foreach command to parse the usernames
+</I>&gt;<i> from the individual directories themselves and then assign ownership
+</I>&gt;<i> based on that username.
+</I>&gt;<i> 
+</I>&gt;<i> Kinda like this:
+</I>&gt;<i> 
+</I>&gt;<i> Foreach directory in /Users
+</I>&gt;<i>      assign name to $username
+</I>&gt;<i>      if $username==&quot;Shared&quot; then next
+</I>&gt;<i>      endif
+</I>&gt;<i>      chown -R $username:admin /Users/$username
+</I>
+This _should_ do what you want.  It echos the commands to the screen instead
+of running them:
+
+for d in /Users/*
+do
+u=`basename $d`
+if [ &quot;$u&quot; != &quot;Shared&quot; ]
+then
+echo &quot;chown -R $u:admin $d&quot;
+fi
+done
+
+Here it is all on one line:
+
+for d in /Users/*; do u=`basename $d`; if [ &quot;$u&quot; != &quot;Shared&quot; ]; then echo
+&quot;chown -R $u:admin $d&quot;; fi; done
+
+To &quot;make it so&quot; change
+
+    echo &quot;chown -R $u:admin $d&quot;
+
+to
+
+    chown -R $u:admin $d
+
+No warranty expressed or implied.  Your mileage may vary.  Yada yada yada...
+:<i>)
+</I>
+-- 
+Rod
+
+Claiming that the Macintosh is inferior to Windows because most people
+use Windows, is like saying that all other restaurants serve food that is
+inferior to McDonalds'.
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002370.html">[X-Unix] Recursive one-line chmod
+</A></li>
+	<LI>Next message: <A HREF="002372.html">[X-Unix] Spam
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2371">[ date ]</a>
+              <a href="thread.html#2371">[ thread ]</a>
+              <a href="subject.html#2371">[ subject ]</a>
+              <a href="author.html#2371">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

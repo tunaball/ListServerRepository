@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] question about 'find'
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20question%20about%20%27find%27&In-Reply-To=20051128103542.GB12279%40Dark-Age.local">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002490.html">
+   <LINK REL="Next"  HREF="002493.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] question about 'find'</H1>
+    <B>Stewart C. Russell</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20question%20about%20%27find%27&In-Reply-To=20051128103542.GB12279%40Dark-Age.local"
+       TITLE="[X-Unix] question about 'find'">scruss at scruss.com
+       </A><BR>
+    <I>Mon Nov 28 05:28:26 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002490.html">[X-Unix] question about 'find'
+</A></li>
+        <LI>Next message: <A HREF="002493.html">[X-Unix] question about 'find'
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2491">[ date ]</a>
+              <a href="thread.html#2491">[ thread ]</a>
+              <a href="subject.html#2491">[ subject ]</a>
+              <a href="author.html#2491">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Eugene wrote:
+&gt;<i> 
+</I>&gt;<i> Sending the list of filenames to xargs(1) is always nice,
+</I>&gt;<i> especially because it is much more efficient and speedier.
+</I>
+You do have to be careful with xargs if you're processing a *lot* of 
+arguments. BSD xargs has a default argument limit of 5000 (hidden in the 
+'-n' para of the manual), so if you're calling xargs through sort (say), 
+the results may not be what you expect.
+
+I think (but could be wrong) that the limit for GNU xargs might be 
+different, so cross-platform scripters should be wary. I was going to 
+give an example, but OS X doesn't include seq(1), to my dismay.
+
+&gt;<i> However, unlike other flavors, OS X filenames tend to contain
+</I>&gt;<i> whitespace characters that break traditional Unix tools  ...
+</I>
+And many others, such as brackets/braces. I assume (hope!) that '/' is 
+no longer legal, for it was the scourge of the Solaris-based CAP/AUFS admin.
+
+What's list wisdom on methods of dealing with special characters? I find 
+'while' to be a somewhat useful construct, as in:
+
+&lt;command&gt; | while read file
+do
+  # do something based on $file
+done
+
+cheers,
+  Stewart
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002490.html">[X-Unix] question about 'find'
+</A></li>
+	<LI>Next message: <A HREF="002493.html">[X-Unix] question about 'find'
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2491">[ date ]</a>
+              <a href="thread.html#2491">[ thread ]</a>
+              <a href="subject.html#2491">[ subject ]</a>
+              <a href="author.html#2491">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

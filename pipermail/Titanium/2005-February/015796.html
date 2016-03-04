@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] PB Batteries
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20PB%20Batteries&In-Reply-To=BE2D3944.3090%25jwegriffin%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="015760.html">
+   <LINK REL="Next"  HREF="015800.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] PB Batteries</H1>
+    <B>Carbotron</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20PB%20Batteries&In-Reply-To=BE2D3944.3090%25jwegriffin%40mac.com"
+       TITLE="[Ti] PB Batteries">jason at kradcarbon.com
+       </A><BR>
+    <I>Tue Feb  8 17:18:58 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="015760.html">[Ti] PB Batteries
+</A></li>
+        <LI>Next message: <A HREF="015800.html">[Ti] wanted: dead batteries!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15796">[ date ]</a>
+              <a href="thread.html#15796">[ thread ]</a>
+              <a href="subject.html#15796">[ subject ]</a>
+              <a href="author.html#15796">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>having jsut recieved my 4400mah battery(unfortunately cosmetically 
+blemished new, by hi-capacity), and been monitoring it for the past few 
+days with xbattery. i left it plugged into the wall for about 48 hrs, 
+with the machine sleeping(ti 800 + 65w ac adaptor), after that i got 
+about  and  i've come to a few conclusions that need confirmation.
+
+1: it senses when it's done charging not by capacity and current 
+charge, but by voltage. predicted times are from amperage current and 
+capacity.
+this new battery peaks at 16.8v!! it then stops charging. it seems to 
+stop charging and goes to trickle anytime the voltage goes above 16.5v 
+taking the battery out and putting it back in seems to start it 
+charging back up, but then it stumbles again. the light on the power 
+adapter sometimes goes green, even when it's regular charging. soon 
+after it stops charging. it'll also predict  only a few minutes(less 
+than 5) till a full charge from low% full. it'll actually get it's full 
+charge, but it's a serious pain to get it there!  these cells are 
+peaking at 4.2v each, so they're all 8 working well. i'm wondering if 
+these are working too well! this was it's first few cycles. has anyone 
+else seen this?
+
+2: some batteries have with a non-resettable capacity values!
+i've drained it from my initial 48 hr charge out to sleeping with a 
+good 20 extra minutes of run-time past one minute remaining. after 
+charging it back up, it's still exactly 4.400Ah. yeah right. is there a 
+way(other than a full discharge till sleep) to reset the battery's 
+capacity value?
+
+thank you all very much!
+
+	-Jason Economou
+	Carbotron Composites
+
+
+On Feb 7, 2005, at 3:27 PM, John Griffin wrote:
+
+Arjan Bos typed this message on 2/7/05 3:21 PM:
+
+&gt;<i> #!/bin/bash
+</I>&gt;<i>
+</I>&gt;<i> [ -x /usr/sbin/ioreg ] &amp;&amp; \
+</I>&gt;<i>      /usr/sbin/ioreg -p IODeviceTree -n &quot;battery&quot; -w 0 | \
+</I>&gt;<i>      sed -ne '/| *{/,/| *}/ {
+</I>&gt;<i> s/^[ |]*//g
+</I>&gt;<i> /^[{}]/!p
+</I>&gt;<i>         }' | \
+</I>&gt;<i>   awk '/Battery/ {
+</I>&gt;<i>                 gsub(&quot;[{}()\&quot;]&quot;,&quot;&quot;, $3)
+</I>&gt;<i>                 gsub(&quot;,&quot;,&quot; &quot;,$3)
+</I>&gt;<i>                 split($3,ct,&quot; &quot;)
+</I>&gt;<i>                 # extract flag value and convert to hex
+</I>&gt;<i>                 sub(&quot;Flags=&quot;,&quot;&quot;,ct[2])
+</I>&gt;<i>                 str=sprintf(&quot;Flags=%d/0x%03x&quot;,ct[2],ct[2])
+</I>&gt;<i>                 sub(&quot;Flags=[0-9]*&quot;,str,$3)
+</I>&gt;<i>                 # get max and current charge levels
+</I>&gt;<i>                 sub(&quot;.*=&quot;,&quot;&quot;,ct[4])
+</I>&gt;<i>                 sub(&quot;.*=&quot;,&quot;&quot;,ct[5])
+</I>&gt;<i>                 printf(&quot;%s [%.1f%%]\n&quot;, tolower($3), 100*ct[5]/ct[4])
+</I>&gt;<i>                 }'
+</I>&gt;<i>
+</I>&gt;<i> #EOF
+</I>
+
+Hmm! All I get is a series of error codes!
+
+jg
+
+
+_______________________________________________
+Titanium mailing list
+<A HREF="../../../mailman/listinfo/titanium.html">Titanium at listserver.themacintoshguy.com</A>
+<A HREF="../../../mailman/listinfo/titanium.html">http://listserver.themacintoshguy.com/mailman/listinfo/titanium</A>
+
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="015760.html">[Ti] PB Batteries
+</A></li>
+	<LI>Next message: <A HREF="015800.html">[Ti] wanted: dead batteries!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15796">[ date ]</a>
+              <a href="thread.html#15796">[ thread ]</a>
+              <a href="subject.html#15796">[ subject ]</a>
+              <a href="author.html#15796">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

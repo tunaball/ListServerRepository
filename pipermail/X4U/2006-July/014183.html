@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Mac printing through a Win 2003 Server
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Mac%20printing%20through%20a%20Win%202003%20Server&In-Reply-To=C0E68A07.8C04%25rgilmor%40uwo.ca">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="014177.html">
+   <LINK REL="Next"  HREF="014184.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Mac printing through a Win 2003 Server</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Mac%20printing%20through%20a%20Win%202003%20Server&In-Reply-To=C0E68A07.8C04%25rgilmor%40uwo.ca"
+       TITLE="[X4U] Mac printing through a Win 2003 Server">macmonster at myrealbox.com
+       </A><BR>
+    <I>Fri Jul 21 14:37:24 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="014177.html">[X4U] Mac printing through a Win 2003 Server
+</A></li>
+        <LI>Next message: <A HREF="014184.html">[X4U] Mac printing through a Win 2003 Server
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14183">[ date ]</a>
+              <a href="thread.html#14183">[ thread ]</a>
+              <a href="subject.html#14183">[ subject ]</a>
+              <a href="author.html#14183">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 21 Jul 2006, at 18:41, Richard Gilmore wrote:
+&gt;<i> ...
+</I>&gt;<i> First off here at the university we&#8217;re very very paranoid and security
+</I>&gt;<i> conscious. So the printers are being moved to an internal private  
+</I>&gt;<i> IP network
+</I>&gt;<i> through a Windows 2003 server. What I&#8217;ve been told is the printers  
+</I>&gt;<i> will be
+</I>&gt;<i> on that network and access to the rest of the world will be done  
+</I>&gt;<i> through a
+</I>&gt;<i> second non-private IP network. What I&#8217;ve been told is this is  
+</I>&gt;<i> accomplished
+</I>&gt;<i> on the Windows side by the machine having two different IP  
+</I>&gt;<i> addresses at the
+</I>&gt;<i> same time. So the computer has one foot in one network and one foot  
+</I>&gt;<i> in the
+</I>&gt;<i> other.
+</I>
+This _sounds_ like simple Network Address Translation.
+
+NAT is most often seen on network routers (just like Apple's Airport)  
+where one globally unique address is mapped to a range of addresses  
+within a private network. But it is equally possible to translate one  
+range of addresses to another, so that 192.168.0.x is translated to  
+10.0.0.x for instance (or equally 10.0.0.x+y).
+
+I wouldn't normally see any need for this in a printing  
+environment... my first assumption was that the idea is to prevent  
+one computer on the network grabbing PDFs intended for another, but  
+then print jobs are never normally encrypted on a network anyway.
+
+&gt;<i> I&#8217;m also told this concept came out of the UNIX community and was
+</I>&gt;<i> ported over to the Windows world.
+</I>
+If this is indeed NAT then, yes, that's the case. It's certainly been  
+common for years for Unix machines to support multiple network  
+interfaces with separate addresses (and it's surely easier to do so  
+than to have a single computer with multiple network interfaces on  
+the same network??).
+
+&gt;<i> This is the first I&#8217;ve heard of this.
+</I>
+Sorry it's such a shock to you, but Windows has many useful features  
+nowadays.
+
+&gt;<i> Now
+</I>&gt;<i> for our Macs to be able to print and access the outside world  
+</I>&gt;<i> simultaneously
+</I>&gt;<i> we need to pull off this same trick. Does anybody know anything  
+</I>&gt;<i> about this
+</I>&gt;<i> and how this would be done on a Mac?
+</I>
+Assuming the Windows box is doing nothing more than NAT then you  
+should just be able to route through the Windows box. If the Windows  
+box is acting as the print server (and perhaps using Active Directory  
+stuff to determine who has permission to access each printer??) then  
+it's doing more than simply having &quot;one foot in one network and one  
+foot in the other&quot;.
+
+&gt;<i> Does anybody know anything about this
+</I>&gt;<i> and how this would be done on a Mac?
+</I>
+Ummm... well if that's necessary then presumably a Mac with two  
+network cards would &quot;serve&quot; (haw haw!) equally well. An Xserve ships  
+with two network interfaces, I think, but I'm sure you can shove an  
+extra PCI card in an old PowerMac.
+
+Whichever is the real scenario this would surely allow the Mac to see  
+both networks and either route the traffic between them or operate as  
+network print server to them both.
+
+&gt;<i> Would this have to be done through the
+</I>&gt;<i> command line or is there a GUI or???
+</I>
+Well, the Mac should just show the extra interface in System  
+Preferences &gt; Network. Configure IP addresses as appropriate to the  
+separate network subnets.
+
+If you're actually packet-forwarding (NAT) with the Mac then I  
+believe `man ipfw` explains how to configure it at the CLI. Yes,  
+there are GUI utilities to do the same thing.
+
+&gt;<i> I am clueless any info at all would be
+</I>&gt;<i> a helpful place to start.
+</I>
+I'm fairly disappointed that a university can't support Macs and are  
+throwing this at someone who is as confused by this setup as you  
+obviously are. But it kinda does jibe with my experience as a uni  
+undergrad 3 or 4 years ago - the IT service there were also  
+interested only in Windows. My inclination is to say &quot;find a local IT  
+consultant with some Mac experience&quot; but maybe that isn't in the  
+budget. If your principle (principal?) job for the uni is maintaining  
+Macs then I guess the best thing I can say is &quot;Ha ha! It ain't the  
+OS9 days any more, bud! I guess you should get a clue&quot;. Oooops. Did I  
+just say that? Sorry.
+
+[TO BE CONTINUED...]
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="014177.html">[X4U] Mac printing through a Win 2003 Server
+</A></li>
+	<LI>Next message: <A HREF="014184.html">[X4U] Mac printing through a Win 2003 Server
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14183">[ date ]</a>
+              <a href="thread.html#14183">[ thread ]</a>
+              <a href="subject.html#14183">[ subject ]</a>
+              <a href="author.html#14183">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

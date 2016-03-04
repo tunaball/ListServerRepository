@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Finding Parent Directory of Searched-For File
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Finding%20Parent%20Directory%20of%20Searched-For%20File&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003324.html">
+   <LINK REL="Next"  HREF="003329.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Finding Parent Directory of Searched-For File</H1>
+    <B>John Baltutis</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Finding%20Parent%20Directory%20of%20Searched-For%20File&In-Reply-To="
+       TITLE="[X-Unix] Finding Parent Directory of Searched-For File">baltwo at san.rr.com
+       </A><BR>
+    <I>Mon May  4 19:02:21 PDT 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003324.html">[X-Unix] Re: X-Unix Digest, Vol 48, Issue 1
+</A></li>
+        <LI>Next message: <A HREF="003329.html">[X-Unix] Renaming files with spaces
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3325">[ date ]</a>
+              <a href="thread.html#3325">[ thread ]</a>
+              <a href="subject.html#3325">[ subject ]</a>
+              <a href="author.html#3325">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 5/4/09,  Eric F Crist &lt;<A HREF="../../../mailman/listinfo/x-unix.html">ecrist at secure-computing.net</A>&gt; wrote:
+&gt;<i> On May 4, 2009, at 12:02 AM, Rick Gordon wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> How would I do a recursive search that will  provide a path to the
+</I>&gt;&gt;<i> parent folder of a searched-for file?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> For instance, this command will find the file in a recursive search,
+</I>&gt;&gt;<i> but it provides no information on the path to that file:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> (starting from a suitable starting place)
+</I>&gt;&gt;<i> 	ls -Rl | grep &quot;Bookmarks.plist&quot;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 	-rw-rw-rw- 1 mobile mobile 100934 May  3 20:37 Bookmarks.plist
+</I>&gt;&gt;<i> 	-rw-rw-rw- 1 mobile mobile    143 Apr 30 22:12
+</I>&gt;&gt;<i> Bookmarks.plist.anchor.plist
+</I>&gt;&gt;<i> 	-rw-rw-rw- 1 root   mobile 203551 Apr  9 09:00 Bookmarks.plist.bup
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> ... will find all instances of files with Bookmarks.plist in the
+</I>&gt;&gt;<i> name, but does not provide any paths to the found files. How can I
+</I>&gt;&gt;<i> get the path?
+</I>&gt;<i>
+</I>&gt;<i> You're going about this wrong.  The ls command doesn't print path
+</I>&gt;<i> information, it's just a directory listing.  You want to use the find
+</I>&gt;<i> command.  So, here's the example I used.  This example was run from my
+</I>&gt;<i> home directory.
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">ecrist at Swordfish</A>:~-&gt; find . -name &quot;*Bookmarks.plist&quot;
+</I>&gt;<i> ./Library/Application Support/Versions/Bookmarks.plist
+</I>&gt;<i> ./Library/Safari/Bookmarks.plist
+</I>
+Alternatively, use the locate command-it's faster, since there's no searching
+the computer, just the locate database:
+
+locate &quot;Bookmarks.plist&quot;
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003324.html">[X-Unix] Re: X-Unix Digest, Vol 48, Issue 1
+</A></li>
+	<LI>Next message: <A HREF="003329.html">[X-Unix] Renaming files with spaces
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3325">[ date ]</a>
+              <a href="thread.html#3325">[ thread ]</a>
+              <a href="subject.html#3325">[ subject ]</a>
+              <a href="author.html#3325">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

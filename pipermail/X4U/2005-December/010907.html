@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] .mailloc email address files have turned into folders for
+	me!
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20.mailloc%20email%20address%20files%20have%20turned%20into%20folders%20for%0A%09me%21&In-Reply-To=F90C00B2-E809-4949-8E41-98F6DF255AF1%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010906.html">
+   <LINK REL="Next"  HREF="010911.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] .mailloc email address files have turned into folders for
+	me!</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20.mailloc%20email%20address%20files%20have%20turned%20into%20folders%20for%0A%09me%21&In-Reply-To=F90C00B2-E809-4949-8E41-98F6DF255AF1%40mac.com"
+       TITLE="[X4U] .mailloc email address files have turned into folders for
+	me!">macmonster at myrealbox.com
+       </A><BR>
+    <I>Thu Dec 22 04:46:29 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010906.html">[X4U] .mailloc email address files have turned into folders for me!
+</A></li>
+        <LI>Next message: <A HREF="010911.html">[X4U] BTV Pro errors
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10907">[ date ]</a>
+              <a href="thread.html#10907">[ thread ]</a>
+              <a href="subject.html#10907">[ subject ]</a>
+              <a href="author.html#10907">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Dec 22, 2005, at 6:55 am, Michael Elliott wrote:
+&gt;<i>
+</I>&gt;<i> I have a folder on an iDisk which has about 300 email address 
+</I>&gt;<i> &quot;bookmarks&quot;  (the foo.mailloc files that come from dragging a person's 
+</I>&gt;<i> email address to the desktop) which have mysteriously turned into 
+</I>&gt;<i> folders!
+</I>&gt;<i>
+</I>&gt;<i> Does anybody have any idea of how I can change these &quot;folders&quot; back to 
+</I>&gt;<i> .mailloc files, short of retyping and dragging to the folder for each 
+</I>&gt;<i> one?  Perhaps some type of file type editor or something?
+</I>
+.mailloc files store the email address in the resource-fork, as 
+illustrated below:
+
+	$  DeRez Desktop/*mailloc
+	data 'drag' (128) {
+	        $&quot;0000 0001 0000 0000 0000 0000 0000 0002&quot;            /* 
+................ */
+	        $&quot;5445 5854 0000 0100 0000 0000 0000 0000&quot;            /* 
+TEXT............ */
+	        $&quot;7572 6C20 0000 0100 0000 0000 0000 0000&quot;            /* url 
+............ */
+	};
+	
+	data 'TEXT' (256) {
+	        $&quot;6D61 696C 746F 3A78 3475 406C 6973 7473&quot;            /* 
+mailto:<A HREF="../../../mailman/listinfo/x4u.html">x4u at lists</A> */
+	        $&quot;6572 7665 722E 7468 656D 6163 696E 746F&quot;            /* 
+erver.themacinto */
+	        $&quot;7368 6775 792E 636F 6D&quot;                             /* 
+shguy.com */
+	};
+	
+	data 'url ' (256) {
+	        $&quot;6D61 696C 746F 3A78 3475 406C 6973 7473&quot;            /* 
+mailto:<A HREF="../../../mailman/listinfo/x4u.html">x4u at lists</A> */
+	        $&quot;6572 7665 722E 7468 656D 6163 696E 746F&quot;            /* 
+erver.themacinto */
+	        $&quot;7368 6775 792E 636F 6D&quot;                             /* 
+shguy.com */
+	};
+
+I think it's highly unlikely that they have _actually_ turned into 
+folders:
+
+	 $ ls -ld Desktop/*mailloc
+	-rw-r--r--  1 stroller  stroller  0 22 Dec 12:22 
+Desktop/<A HREF="../../../mailman/listinfo/x4u.html">x4u at listserver.themacintoshguy.com.mailloc</A>
+
+more likely the icon has just changed.
+
+There is a man page for `resource`on both my systems (10.3 &amp; 10.4), but 
+calling `resource` gives me &quot;command not found&quot;. If you're able to 
+recover the addresses from these files then personally I'd dump them 
+into a plain text file. It shouldn't be too hard to import into address 
+book from there.
+
+Stroller.
+
+</PRE>
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010906.html">[X4U] .mailloc email address files have turned into folders for me!
+</A></li>
+	<LI>Next message: <A HREF="010911.html">[X4U] BTV Pro errors
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10907">[ date ]</a>
+              <a href="thread.html#10907">[ thread ]</a>
+              <a href="subject.html#10907">[ subject ]</a>
+              <a href="author.html#10907">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Command to find if a certain app is running?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Command%20to%20find%20if%20a%20certain%20app%20is%20running%3F&In-Reply-To=866B5849-6E52-4BD6-BD5D-A1BE8199884D%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003293.html">
+   <LINK REL="Next"  HREF="003295.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Command to find if a certain app is running?</H1>
+    <B>Jerry Krinock</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Command%20to%20find%20if%20a%20certain%20app%20is%20running%3F&In-Reply-To=866B5849-6E52-4BD6-BD5D-A1BE8199884D%40secure-computing.net"
+       TITLE="[X-Unix] Command to find if a certain app is running?">jerry at ieee.org
+       </A><BR>
+    <I>Fri Mar 27 06:42:03 PDT 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003293.html">[X-Unix] Command to find if a certain app is running?
+</A></li>
+        <LI>Next message: <A HREF="003295.html">[X-Unix] Command to find if a certain app is running?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3294">[ date ]</a>
+              <a href="thread.html#3294">[ thread ]</a>
+              <a href="subject.html#3294">[ subject ]</a>
+              <a href="author.html#3294">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 2009 Mar 27, at 05:01, Eric F Crist wrote:
+
+&gt;<i> Sometimes, you need to add a few w's to the command to parse it  
+</I>&gt;<i> properly:
+</I>
+Yes, it took me about 5 years of using bash to learn why ps didn't  
+always work.
+
+Anyhow, thanks Christoph.  I was hoping there might be something that  
+would identify an app from Launch Services database, but  then I  
+figured that since I'm mainly concerned with false alarms and can  
+tolerate misses, I could use ps and grep...
+
+# Assume that $appName is both the package name and the executable
+# name of the desired app.  Warning: Either or both of these
+# assumptions can be wrong.
+appsRunning=`ps -alxww | grep -c &quot;$appName.app/Contents/MacOS/$appName&quot;`
+# If $appName is running, results count will be 2, the second
+# one being the grep process itself.  Subtract that one.
+let &quot;appsRunning -= 1&quot;
+if (($appsRunning &gt; 0))
+then
+echo &quot;$appName is running&quot;
+else
+echo &quot;$appName is not running&quot;
+fi
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003293.html">[X-Unix] Command to find if a certain app is running?
+</A></li>
+	<LI>Next message: <A HREF="003295.html">[X-Unix] Command to find if a certain app is running?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3294">[ date ]</a>
+              <a href="thread.html#3294">[ thread ]</a>
+              <a href="subject.html#3294">[ subject ]</a>
+              <a href="author.html#3294">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

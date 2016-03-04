@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] re: quotas - My math stinks!
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20re%3A%20quotas%20-%20My%20math%20stinks%21&In-Reply-To=1BF92975-F69A-42E2-A48B-39C8F13E5505%40charter.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003255.html">
+   <LINK REL="Next"  HREF="003257.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] re: quotas - My math stinks!</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20re%3A%20quotas%20-%20My%20math%20stinks%21&In-Reply-To=1BF92975-F69A-42E2-A48B-39C8F13E5505%40charter.net"
+       TITLE="[X-Unix] re: quotas - My math stinks!">ecrist at secure-computing.net
+       </A><BR>
+    <I>Fri Jan  9 09:52:02 PST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003255.html">[X-Unix] re: quotas - My math stinks!
+</A></li>
+        <LI>Next message: <A HREF="003257.html">[X-Unix] re: quotas - My math stinks!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3256">[ date ]</a>
+              <a href="thread.html#3256">[ thread ]</a>
+              <a href="subject.html#3256">[ subject ]</a>
+              <a href="author.html#3256">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Try running, as root, checkquota -a.
+
+Eric
+
+On Jan 9, 2009, at 11:43 AM, Charles Howse wrote:
+
+&gt;<i> larry:~ root# find /Users/randi -false -user randi -exec ls -lah {} \;
+</I>&gt;<i> [Found a GaZillion]
+</I>&gt;<i> larry:~ root# find /Users/randi -false -user randi -exec chown -R  
+</I>&gt;<i> randi:staff * {} \;
+</I>&gt;<i> larry:~ root#
+</I>&gt;<i> larry:~ root# find /Users/randi -false -user randi -exec ls -lah {} \;
+</I>&gt;<i> larry:~ root#
+</I>&gt;<i> larry:~ root# du -dk1 /Users/randi
+</I>&gt;<i> 4683248	/Users/randi
+</I>&gt;<i> larry:~ root#
+</I>&gt;<i> larry:~ root# repquota -u /
+</I>&gt;<i>                        1K Block limits               File limits
+</I>&gt;<i> User                used        soft        hard  grace    used   
+</I>&gt;<i> soft  hard  grace
+</I>&gt;<i> _spotlight--          32           0           0              5      
+</I>&gt;<i> 0     0
+</I>&gt;<i> _lp       --          72           0           0             13      
+</I>&gt;<i> 0     0
+</I>&gt;<i> _teamsserver--        1636           0           0            
+</I>&gt;<i> 1403     0     0
+</I>&gt;<i> 505       --         580           0           0             12      
+</I>&gt;<i> 0     0
+</I>&gt;<i> _xgridagent--           0           0           0              2      
+</I>&gt;<i> 0     0
+</I>&gt;<i> _mdnsresponder--          52           0           0               
+</I>&gt;<i> 4     0     0
+</I>&gt;<i> _unknown  --           0           0           0             11      
+</I>&gt;<i> 0     0
+</I>&gt;<i> _amavisd  --           8           0           0              6      
+</I>&gt;<i> 0     0
+</I>&gt;<i> _installer--      138252           0           0             48      
+</I>&gt;<i> 0     0
+</I>&gt;<i> _uucp     --        1520           0           0             10      
+</I>&gt;<i> 0     0
+</I>&gt;<i> _xgridcontroller--           0           0           0               
+</I>&gt;<i> 2     0     0
+</I>&gt;<i> daemon    --           0           0           0              3      
+</I>&gt;<i> 0     0
+</I>&gt;<i> charles   --    20089480           0           0          71889      
+</I>&gt;<i> 0     0
+</I>&gt;<i> _clamav   --       61636           0           0             33      
+</I>&gt;<i> 0     0
+</I>&gt;<i> _postfix  --           0           0           0             36      
+</I>&gt;<i> 0     0
+</I>&gt;<i> _update_sharing--       22644           0           0              
+</I>&gt;<i> 13     0     0
+</I>&gt;<i> nobody    --        8564           0           0              7      
+</I>&gt;<i> 0     0
+</I>&gt;<i> _securityagent--         252           0           0              
+</I>&gt;<i> 10     0     0
+</I>&gt;<i> randi     +-     2351400     2000000     2000000   none    1709      
+</I>&gt;<i> 0     0
+</I>&gt;<i> _atsserver--        8188           0           0              5      
+</I>&gt;<i> 0     0
+</I>&gt;<i> larry:~ root#
+</I>&gt;<i>
+</I>&gt;<i> Still have a problem :(
+</I>&gt;<i>
+</I>&gt;<i> On Jan 9, 2009, at 11:20 AM, Eric F Crist wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> On Jan 9, 2009, at 11:15 AM, Charles Howse wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> BINGO!!!!!  EUREKA!!!  THREE CHEERS, TWO BENCHES!!!
+</I>&gt;&gt;&gt;<i> That's it.  Her files belong to me.
+</I>&gt;&gt;&gt;<i> I'll chown them to her, and run du and repquota again, and report  
+</I>&gt;&gt;&gt;<i> back.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Thanks SO much, Eric.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> On Jan 9, 2009, at 10:51 AM, Eric F Crist wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> find /Users/randi -false -user randi
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Quotas are often confused as based on directory structure, rather  
+</I>&gt;&gt;<i> than file ownership.  Glad I could help.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> ---
+</I>&gt;&gt;<i> Eric Crist
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> X-Unix mailing list
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>
+---
+Eric Crist
+
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003255.html">[X-Unix] re: quotas - My math stinks!
+</A></li>
+	<LI>Next message: <A HREF="003257.html">[X-Unix] re: quotas - My math stinks!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3256">[ date ]</a>
+              <a href="thread.html#3256">[ thread ]</a>
+              <a href="subject.html#3256">[ subject ]</a>
+              <a href="author.html#3256">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

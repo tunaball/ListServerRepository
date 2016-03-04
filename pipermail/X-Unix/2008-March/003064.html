@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Mysterious Volume in Terminal
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Mysterious%20Volume%20in%20Terminal&In-Reply-To=f05210600c3fa02a0bc69%40%5B192.168.0.109%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003063.html">
+   <LINK REL="Next"  HREF="003067.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Mysterious Volume in Terminal</H1>
+    <B>Richard Hartman</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Mysterious%20Volume%20in%20Terminal&In-Reply-To=f05210600c3fa02a0bc69%40%5B192.168.0.109%5D"
+       TITLE="[X-Unix] Mysterious Volume in Terminal">seasoft at west.net
+       </A><BR>
+    <I>Sun Mar  9 15:01:24 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003063.html">[X-Unix] Mysterious Volume in Terminal
+</A></li>
+        <LI>Next message: <A HREF="003067.html">[X-Unix] Altering system parameters (e.g. IP addresses) on Mac OS
+	X server
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3064">[ date ]</a>
+              <a href="thread.html#3064">[ thread ]</a>
+              <a href="subject.html#3064">[ subject ]</a>
+              <a href="author.html#3064">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Mar 9, 2008, at 2:13 PM, Scott E Lasley wrote:
+
+&gt;<i> I've run into this sort of thing before when a backup script went  
+</I>&gt;<i> haywire.  Back2 is a directory in the /Volumes directory, not an  
+</I>&gt;<i> actual volume that would show up in the Finder or disk utilities.  
+</I>&gt;<i> Notice the drwxr-xr-x permissions for Back2 vs the lrwxr-xr-x  
+</I>&gt;<i> permissions for iMac20.  If you open the /Volumes directory, e.g.  
+</I>&gt;<i> using the Go-&gt;Go to Folder... menu item, you will see Back2 and can  
+</I>&gt;<i> delete it.  Or you can delete it from Terminal using sudo rm -r / 
+</I>&gt;<i> Volumes/Back2.  Deleting from the Finder is safer in case of a typo  
+</I>&gt;<i> in the sudo rm command.
+</I>&gt;<i>
+</I>&gt;<i> In my case, the simple script I used called rsync to back up to a  
+</I>&gt;<i> volume named Backup: rsync -av /Users /Volumes/Backup.  When the  
+</I>&gt;<i> script ran once and the Backup volume was not mounted, rsync created  
+</I>&gt;<i> a /Volumes/Backup directory and backed up /Users to that directory.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> hth,
+</I>&gt;<i> Scott
+</I>
+On Mar 9, 2008, at 2:17 PM, John Baltutis wrote:
+
+&gt;<i> On 03/09/08, Richard Hartman &lt;<A HREF="../../../mailman/listinfo/x-unix.html">seasoft at west.net</A>&gt; wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> This is giving me fits.
+</I>&gt;&gt;<i>
+</I>
+snip
+&gt;&gt;<i> How do I delete this rogue volume and make it disappear from my
+</I>&gt;&gt;<i> Volumes listing? And, presumably, recover a bit of disk space in the
+</I>&gt;&gt;<i> process.
+</I>&gt;<i>
+</I>&gt;<i> A classic &quot;false backup/clone&quot; which occurs when using SuperDuper!  
+</I>&gt;<i> or Carbon
+</I>&gt;<i> Copy Cloner and the app loses connection to the original target HD.  
+</I>&gt;<i> See
+</I>&gt;<i> &lt;<A HREF="http://forums.bombich.com/viewtopic.php?t=3852">http://forums.bombich.com/viewtopic.php?t=3852</A>&gt; for details. Just  
+</I>&gt;<i> run this in
+</I>&gt;<i> the Terminal:
+</I>&gt;<i>
+</I>&gt;<i> sudo rm -R /Volumes/Back2
+</I>
+
+You guys are marvelous. I kind of thought something like this was  
+going on, but was too intimidated to try the deletion.
+
+Problem Solved; thanks so very much.
+
+Richard
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003063.html">[X-Unix] Mysterious Volume in Terminal
+</A></li>
+	<LI>Next message: <A HREF="003067.html">[X-Unix] Altering system parameters (e.g. IP addresses) on Mac OS
+	X server
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3064">[ date ]</a>
+              <a href="thread.html#3064">[ thread ]</a>
+              <a href="subject.html#3064">[ subject ]</a>
+              <a href="author.html#3064">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

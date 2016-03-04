@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [P1] Fix_prebinding is crashing on start
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20Fix_prebinding%20is%20crashing%20on%20start&In-Reply-To=list-4588019%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001827.html">
+   <LINK REL="Next"  HREF="001829.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[P1] Fix_prebinding is crashing on start</H1>
+    <B>Richard McKay</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20Fix_prebinding%20is%20crashing%20on%20start&In-Reply-To=list-4588019%40mail.ninewire.com"
+       TITLE="[P1] Fix_prebinding is crashing on start">richard.mckay1 at virgin.net
+       </A><BR>
+    <I>Sat Jan 25 00:01:07 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001827.html">quicken eats it, where to get the sw to reinstall?
+</A></li>
+        <LI>Next message: <A HREF="001829.html">[P1] Love the iBook, but battery life seems kinda skimpy!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1828">[ date ]</a>
+              <a href="thread.html#1828">[ thread ]</a>
+              <a href="subject.html#1828">[ subject ]</a>
+              <a href="author.html#1828">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Meg,
+
+I have seen this problem on other lists recently, below is the fix that was
+posted.
+
+HTH,
+
+Richard
+--
+
+Meg St. Clair wrote the following:
+
+&gt;<i> The last couple of times I've started up my iBook, I've gotten a crash log
+</I>&gt;<i> which indicates that fix_prebinding has crashed. I know that 10.2.3 is
+</I>&gt;<i> supposed to handle fixing prebinding automatically. Should I be concerned
+</I>&gt;<i> about this? How do I handle it? Any suggestions?
+</I>
+fix that was posted (slightly edited):
+
+prebinding is like a link between the different libraries on the
+system. It permits the applications to be launched quickly and
+efficiency. If you install new software on your computer you might
+need to do an update prebinding (you can find out more information about
+this if you look at man update_prebinding in the terminal).
+
+You can try to fix this yourself by doing the following in an admin users
+account in terminal...
+
+Go in the terminal and type :
+cd /                                (press return)
+sudo update_prebinding -root /      (press return)
+
+(when the system asks you for a password type the password you used to log
+in to that admin users account)
+
+The system will do an update prebinding to relink the libraries and the
+executables.
+
+It might be a good idea to run repair privileges afterwards as especially
+after installation of new items, some installers can mess up your system.
+
+Cheers,
+
+Richard
+--
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001827.html">quicken eats it, where to get the sw to reinstall?
+</A></li>
+	<LI>Next message: <A HREF="001829.html">[P1] Love the iBook, but battery life seems kinda skimpy!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1828">[ date ]</a>
+              <a href="thread.html#1828">[ thread ]</a>
+              <a href="subject.html#1828">[ subject ]</a>
+              <a href="author.html#1828">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

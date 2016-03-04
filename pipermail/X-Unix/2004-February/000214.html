@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> GDBM_File: scratching my head
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=GDBM_File%3A%20scratching%20my%20head&In-Reply-To=listadmin-10604636%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000213.html">
+   <LINK REL="Next"  HREF="000215.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>GDBM_File: scratching my head</H1>
+    <B>osx at colya.com</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=GDBM_File%3A%20scratching%20my%20head&In-Reply-To=listadmin-10604636%40mail.ninewire.com"
+       TITLE="GDBM_File: scratching my head">osx at colya.com
+       </A><BR>
+    <I>Mon Feb  2 09:31:13 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000213.html">[X-Unix] ethereal for MacOSX
+</A></li>
+        <LI>Next message: <A HREF="000215.html">ethereal for MacOSX 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#214">[ date ]</a>
+              <a href="thread.html#214">[ thread ]</a>
+              <a href="subject.html#214">[ subject ]</a>
+              <a href="author.html#214">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I am trying to run a script that references GDBM_File
+
+No matter what I do.. I am stuck..
+
+Issuing ./parsexmlguide.pl --file ./listings/test.xml gives:
+
+iBook:~/guidedir tivo$ ./parsexmlguide.pl --file ./listings/test.imdb.xml
+Can't locate GDBM_File.pm in @INC (@INC contains: . /sw/lib/perl5
+/System/Library/Perl/5.8.1/darwin-thread-multi-2level
+/System/Library/Perl/5.8.1 /Library/Perl/5.8.1/darwin-thread-multi-2level
+/Library/Perl/5.8.1 /Library/Perl
+/Network/Library/Perl/5.8.1/darwin-thread-multi-2level
+/Network/Library/Perl/5.8.1 /Network/Library/Perl) at TiVo/ServerId/Series.pm
+line 8.
+BEGIN failed--compilation aborted at TiVo/ServerId/Series.pm line 8.
+Compilation failed in require at ./parsexmlguide.pl line 29.
+BEGIN failed--compilation aborted at ./parsexmlguide.pl line 29.
+
+
+I have tried to install GDBM  via CPAN with no success...
+
+Results below:
+
+cpan&gt; install GDBM_File
+CPAN: Storable loaded ok
+Going to read /Users/tivo/.cpan/Metadata
+  Database was generated on Sat, 31 Jan 2004 05:49:50 GMT
+Running install for module GDBM_File
+Running make for N/NW/NWCLARK/perl-5.8.3.tar.gz
+
+The most recent version &quot;1.07&quot; of the module &quot;GDBM_File&quot;
+comes with the current version of perl (5.8.3).
+I'll build that only if you ask for something like
+    force install GDBM_File
+or
+    install N/NW/NWCLARK/perl-5.8.3.tar.gz
+Running make test
+  Make had some problems, maybe interrupted? Won't test
+  Has no own directory
+Running make install
+  Has no own directory
+  Make had some problems, maybe interrupted? Won't install
+
+
+I then installed Perl 5.8.3, which apparently includes GDBM_File. 
+
+After it was all done, I ran the command again, specifically pointing to 5.8.3
+(/usr/local/bin/perl parsexmlguide.pl --file ./listings/test.imdb.xml), with
+the same original result.  I really need help now, as I'm reaching the far
+corners of my linux knowledge.
+
+
+
+Ideally I'd like it to run under the standard 5.8.1 MacOSX PERL, but have had 0
+luck.  Any help will be greatly appreciated!
+
+----------------------------------------------------------------
+This message was sent using IMP, the Internet Messaging Program.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000213.html">[X-Unix] ethereal for MacOSX
+</A></li>
+	<LI>Next message: <A HREF="000215.html">ethereal for MacOSX 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#214">[ date ]</a>
+              <a href="thread.html#214">[ thread ]</a>
+              <a href="subject.html#214">[ subject ]</a>
+              <a href="author.html#214">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

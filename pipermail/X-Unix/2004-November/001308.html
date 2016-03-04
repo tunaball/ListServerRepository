@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Is it possible to set unique umask for folder?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Is%20it%20possible%20to%20set%20unique%20umask%20for%20folder%3F&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001307.html">
+   <LINK REL="Next"  HREF="001309.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Is it possible to set unique umask for folder?</H1>
+    <B>Simon Forster</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Is%20it%20possible%20to%20set%20unique%20umask%20for%20folder%3F&In-Reply-To="
+       TITLE="[X-Unix] Is it possible to set unique umask for folder?">simon-lists at ldml.com
+       </A><BR>
+    <I>Wed Nov 24 04:25:42 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001307.html">[X-Unix] MTUs in Panther
+</A></li>
+        <LI>Next message: <A HREF="001309.html">[X-Unix] Is it possible to set unique umask for folder?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1308">[ date ]</a>
+              <a href="thread.html#1308">[ thread ]</a>
+              <a href="subject.html#1308">[ subject ]</a>
+              <a href="author.html#1308">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>We have some files being saved to a directory (by the Finder IIRC). 
+These files have default permissions of 755 - which is Mac OS X's 
+default from what I can gather. What we'd like is that files saved to 
+this particular directory have universal read and write privileges 
+(777). For fairly obvious reasons, we'd prefer not to change the system 
+wide defaults, just the mode for this one directory.
+
+Is this possible? Can one have a directory specific umask?
+
+I can write a cron script to change permissions every 30 minutes. I 
+imagine I can write a folder action script which'll run a chmod when 
+something's added to the folder - and presumably I can write a shell 
+(or Python) script to do a similar task. However, these options seem 
+inelegant as they're fixing the problem after the event.
+
+I've had a look around and have learnt a reasonable amount about 
+permissions and umasks - but I haven't found a direct answer to this 
+(simple) question.
+
+TIA for any hints, tips and references.
+
+Simon Forster
+_____________________________________________________
+  LDML Ltd, 62 Pall Mall, London, SW1Y 5HZ, UK
+  Tel: +44 (0)70 9230 5244   Fax: +44 (0)70 9230 5247
+_____________________________________________________
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001307.html">[X-Unix] MTUs in Panther
+</A></li>
+	<LI>Next message: <A HREF="001309.html">[X-Unix] Is it possible to set unique umask for folder?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1308">[ date ]</a>
+              <a href="thread.html#1308">[ thread ]</a>
+              <a href="subject.html#1308">[ subject ]</a>
+              <a href="author.html#1308">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

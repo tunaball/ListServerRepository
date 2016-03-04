@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] need root help
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20need%20root%20help&In-Reply-To=list-13580065%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="014222.html">
+   <LINK REL="Next"  HREF="014224.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] need root help</H1>
+    <B>Steve Wozniak</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20need%20root%20help&In-Reply-To=list-13580065%40mail.ninewire.com"
+       TITLE="[Ti] need root help">steve at woz.org
+       </A><BR>
+    <I>Sat May 29 17:09:40 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="014222.html">[Ti] need root help
+</A></li>
+        <LI>Next message: <A HREF="014224.html">Home automation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14223">[ date ]</a>
+              <a href="thread.html#14223">[ thread ]</a>
+              <a href="subject.html#14223">[ subject ]</a>
+              <a href="author.html#14223">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 4:52 PM -0500 2004.05.29, Kynan Shook wrote:
+&gt;<i>
+</I>&gt;<i>You have several options, Steve.
+</I>&gt;<i>I think the easiest one to work with is probably to enable the root user, log in as such, and change the keyboard preference as the root user.  Detailed steps:
+</I>&gt;<i>1. Open Netinfo Manager in the Utilities folder.  From the Security menu, choose Enable Root User.  You will need to provide an administrative password, and if the computer was initially set up with no root password, you'll need to give it one too (otherwise, you'll need to know the root password, or reset it if you don't).
+</I>&gt;<i>2. Log out.
+</I>&gt;<i>3. In the login window, choose &quot;Other...&quot; to log in as root, and type the root password.
+</I>&gt;<i>4. Once you are logged in as root (the name in the menu bar will say System Administrator, if you have fast user switching enabled), open System Preferences, and disable all but your favorite keyboard layout (in this case, US, but you could just as easily switch to anything else your heart desires).
+</I>&gt;<i>5. Log out of root.
+</I>&gt;<i>6. Log in as your normal user; your preferred keyboard layout should now work properly.  Make sure you know the right way to type your password in this keyboard layout, or you'll have to reset your password!
+</I>&gt;<i>7. Go back into NetInfo Manager and disable the root account (Security menu, Disable Root User)
+</I>&gt;<i>8. There is no step eight!
+</I>&gt;<i>
+</I>&gt;<i>OK, so it's not *quite* as easy as getting an iMac on the Internet with Jeff Goldblum's help, but it's not terribly difficult.  There are several other ways to enable the root user, if you prefer; such as &quot;dsenableroot -u username&quot; where username is the username (duh) of an administrative account.  It will then prompt you first for that account's password, and then prompt twice to confirm the root account's password.
+</I>&gt;<i>
+</I>&gt;<i>While testing to make *sure* that this would work for you, I encountered a problem; namely, after logging in as root the first time, the &quot;Other...&quot; user no longer appeared in the accounts list!  This made it a challenge to go back and set it to QWERTY again.  Going back into NetInfo Manager to re-enable the root account had no effect, though it didn't error out either.  However, if this happens to you, there is an easy shortcut to get from the &quot;list of users&quot; view of accounts to the &quot;name and password boxes&quot; view for the login window.  Press the down arrow once to select a user (any one, doesn't matter), and then press Option-Return; the window will transform to a name and password box.  Enter &quot;root&quot; as the user, and type the root password.
+</I>&gt;<i>
+</I>&gt;<i>I still haven't figured out exactly why this occurred - maybe a corrupt XML file somewhere.  The root user is still enabled, as I can log in as root using the above trick, but NetInfo Manager doesn't think it is enabled.
+</I>&gt;<i>
+</I>&gt;<i>Anyway, I prefaced this with &quot;you have several options,&quot; so here are the other ways I have heard of, but have not personally tried:
+</I>&gt;<i>Supposedly, TinkerTool can change the keyboard layout.  I didn't find this setting in the current version of TinkerTool, though I found a setting that allows you to change the default startup language in TinkerTool System.  Anybody else had any luck with this?
+</I>&gt;<i>Also, I read a claim by a software author that his product, SetKbd, could change this - however it looks more like it's automatically setting the keyboard preference *after* you log in.
+</I>&gt;<i>URLs:
+</I>&gt;<i><A HREF="http://www.bresink.de/osx/index.html">http://www.bresink.de/osx/index.html</A>
+</I>&gt;<i><A HREF="http://www.jaw.it/pages/download.html">http://www.jaw.it/pages/download.html</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>I think you could also fix this with a clean OS install *without* preserving users and network settings, and then copying the user data from the Previous Systems folder.  Otherwise, it'll probably pick up the same old keyboard settings that root had before.
+</I>&gt;<i>
+</I>&gt;<i>It's just a random guess, but the preferences file that stores this information may be /Library/Preferences/com.apple.HIToolbox.plist, or some similar file (just do a search for HIToolbox - there are also HIToolbox plists in the ByHost folder).
+</I>&gt;<i>HTH,
+</I>
+Thanks, Kynan, for this incredible and helpful answer. I'll try it as my other attempts have still been fruitless.
+-- 
+
+Regards,
+
+Steve  (is tv wake zone?)
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="014222.html">[Ti] need root help
+</A></li>
+	<LI>Next message: <A HREF="014224.html">Home automation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14223">[ date ]</a>
+              <a href="thread.html#14223">[ thread ]</a>
+              <a href="subject.html#14223">[ subject ]</a>
+              <a href="author.html#14223">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

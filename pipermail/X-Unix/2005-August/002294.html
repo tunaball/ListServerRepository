@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] lpr ( unix thing...) ?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20lpr%20%28%20unix%20thing...%29%20%3F&In-Reply-To=4302C11B.9070607%40tampabay.rr.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002293.html">
+   <LINK REL="Next"  HREF="002335.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] lpr ( unix thing...) ?</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20lpr%20%28%20unix%20thing...%29%20%3F&In-Reply-To=4302C11B.9070607%40tampabay.rr.com"
+       TITLE="[X-Unix] lpr ( unix thing...) ?">macmonster at myrealbox.com
+       </A><BR>
+    <I>Wed Aug 17 05:00:51 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002293.html">[X-Unix] lpr ( unix thing...) ?
+</A></li>
+        <LI>Next message: <A HREF="002335.html">[X-Unix] Sync services in Tiger
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2294">[ date ]</a>
+              <a href="thread.html#2294">[ thread ]</a>
+              <a href="subject.html#2294">[ subject ]</a>
+              <a href="author.html#2294">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Aug 17, 2005, at 5:46 am, Richard Nagle wrote:
+&gt;<i>
+</I>&gt;<i> now in the terminal window, I type: lpr test.txt
+</I>&gt;<i> which should just print this simple text doc, to my default printer...
+</I>&gt;<i>
+</I>&gt;<i> Yes, it does... HOWEVER... a problem
+</I>&gt;<i> its printing to my HP LaserJet 5siMx
+</I>&gt;<i> but its printing to the first tray, and not using the 4 tray (2000 
+</I>&gt;<i> sheet feeder) and its asking for prepunch paper?... odd
+</I>&gt;<i> ...
+</I>&gt;<i> well, anyways, is there a way to edit this print file,
+</I>&gt;<i> or config file... or how does one fix this...?
+</I>
+Hi,
+
+This is a &quot;unix / laserjet&quot; thing: `lpr` won't try to tell the LaserJet 
+which tray to use - indeed, it probably doesn't even know your printer 
+IS a LaserJet.
+
+A Google 
+<A HREF="http://groups-beta.google.com/groups?q=lpr%20laserjet%20tray&hl=en">http://groups-beta.google.com/groups?q=lpr%20laserjet%20tray&amp;hl=en</A> 
+confirms my understanding that appropriate control codes can be sent to 
+the printer to manage stuff like this, and suggest that some Linux 
+distros bundle tools to do this.
+
+You may be able to find the appropriate codes in the LasetJet's manual 
+- I recently met a guy who had done a lot of this - and add them as a 
+header to the top of the text file, or it may simply be possible to 
+alter the default tray in the 5SI's menu and have no further problems. 
+I haven't used the 5SI much myself, but it's usually possible to print 
+out menu-map and configuration pages on HPs.
+
+Stroller.
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002293.html">[X-Unix] lpr ( unix thing...) ?
+</A></li>
+	<LI>Next message: <A HREF="002335.html">[X-Unix] Sync services in Tiger
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2294">[ date ]</a>
+              <a href="thread.html#2294">[ thread ]</a>
+              <a href="subject.html#2294">[ subject ]</a>
+              <a href="author.html#2294">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

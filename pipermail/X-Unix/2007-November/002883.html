@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Standard Protocol Equivalent for Terminal &quot;open&quot;
+	Command??
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Standard%20Protocol%20Equivalent%20for%20Terminal%20%22open%22%0A%09Command%3F%3F&In-Reply-To=p06230917c35132626ff2%40%5B192.168.1.69%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002882.html">
+   <LINK REL="Next"  HREF="002884.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Standard Protocol Equivalent for Terminal &quot;open&quot;
+	Command??</H1>
+    <B>david</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Standard%20Protocol%20Equivalent%20for%20Terminal%20%22open%22%0A%09Command%3F%3F&In-Reply-To=p06230917c35132626ff2%40%5B192.168.1.69%5D"
+       TITLE="[X-Unix] Standard Protocol Equivalent for Terminal &quot;open&quot;
+	Command??">macosxforme at gmail.com
+       </A><BR>
+    <I>Fri Nov  2 13:29:41 PDT 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002882.html">[X-Unix] Standard Protocol Equivalent for Terminal &quot;open&quot; Command??
+</A></li>
+        <LI>Next message: <A HREF="002884.html">[X-Unix] Standard Protocol Equivalent for Terminal
+	&quot;open&quot; Command??
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2883">[ date ]</a>
+              <a href="thread.html#2883">[ thread ]</a>
+              <a href="subject.html#2883">[ subject ]</a>
+              <a href="author.html#2883">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Nov 2, 2007, at 4:01 PM, Rick Gordon wrote:
+
+&gt;<i> [Cross-posted to the OS X for Users list, but with no response to  
+</I>&gt;<i> date]
+</I>&gt;<i>
+</I>&gt;<i> Is there any standard (or easily distributable) protocol  
+</I>&gt;<i> (syntactically like http, file, ftp, etc.) that can be prefixed to  
+</I>&gt;<i> a POSIX path that can duplicate a Terminal &quot;open&quot; command? So that  
+</I>&gt;<i> (assuming that the protocol was &quot;open&quot;):
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="open:///Library/Application%20Support">open:///Library/Application%20Support</A> would open the global  
+</I>&gt;<i> Application Support folder in the Finder, or
+</I>&gt;<i> <A HREF="open:///Applications/Utilities/Disk%20Utility.app">open:///Applications/Utilities/Disk%20Utility.app</A> would launch the  
+</I>&gt;<i> Disk Utility application, or
+</I>&gt;<i> <A HREF="reveal:///Applications/Utilities/Disk%20Utility.app">reveal:///Applications/Utilities/Disk%20Utility.app</A> would reveal  
+</I>&gt;<i> the Disk Utility application in the Finder?
+</I>&gt;<i>
+</I>&gt;<i> Some thing like that would be a boon for technical support emails  
+</I>&gt;<i> requiring an unsophisticated user to easily access a file or  
+</I>&gt;<i> folder, without having to laboriously explain the file path.
+</I>&gt;<i> -- 
+</I>
+Why not simply use:
+
+open /Applications/Utilities/Disk\ Utility.app
+
+  or for a file path:
+
+open /Library/Application\ Support
+
+You can even bundle it within a double-clickable AppleScript if you  
+want.
+
+ie, via:
+
+do shell script &quot;open /Applications/Utilities/Disk\ Utility.app&quot;
+
+although you can do that via AppleScript itself.
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002882.html">[X-Unix] Standard Protocol Equivalent for Terminal &quot;open&quot; Command??
+</A></li>
+	<LI>Next message: <A HREF="002884.html">[X-Unix] Standard Protocol Equivalent for Terminal
+	&quot;open&quot; Command??
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2883">[ date ]</a>
+              <a href="thread.html#2883">[ thread ]</a>
+              <a href="subject.html#2883">[ subject ]</a>
+              <a href="author.html#2883">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

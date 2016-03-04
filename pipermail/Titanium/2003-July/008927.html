@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Speed up
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Speed%20up&In-Reply-To=list-7594788%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="008926.html">
+   <LINK REL="Next"  HREF="008928.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Speed up</H1>
+    <B>Loren Schooley</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Speed%20up&In-Reply-To=list-7594788%40mail.ninewire.com"
+       TITLE="[Ti] Speed up">loren at flash.net
+       </A><BR>
+    <I>Thu Jul 17 13:02:40 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="008926.html">[Ti] Virtual PC 6.0 on BigAl
+</A></li>
+        <LI>Next message: <A HREF="008928.html">[Ti] Troubleshooting help needed
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8927">[ date ]</a>
+              <a href="thread.html#8927">[ thread ]</a>
+              <a href="subject.html#8927">[ subject ]</a>
+              <a href="author.html#8927">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 7/17/03 1:27 PM, &quot;Michael Bigley&quot; &lt;<A HREF="../../../mailman/listinfo/titanium.html">wakinyan at fuse.net</A>&gt; wrote:
+
+&gt;&gt;<i> I know this is an old subject, but I have found very few who utilize and
+</I>&gt;&gt;<i> take advantage of it, and that is using sysctl to boost browser and other
+</I>&gt;&gt;<i> download speeds. I tested it out with different numbers and the results
+</I>&gt;&gt;<i> proved accordingly. This hack works!
+</I>&gt;<i> 
+</I>&gt;<i> Are these changes written to a file so they survive reboots, etc?
+</I>
+No. What I had to do was open /etc/rc.common, and at the bottom paste
+
+/usr/sbin/sysctl -w net.inet.tcp.sendspace=65536 &gt; /dev/null
+/usr/sbin/sysctl -w net.inet.tcp.recvspace=65536 &gt; /dev/null
+/usr/sbin/sysctl -w kern.ipc.maxsockbuf=524288 &gt; /dev/null
+/usr/sbin/sysctl -w net.inet.tcp.delayed_ack=0 &gt; /dev/null
+/usr/sbin/sysctl -w net.inet.udp.recvspace=73728 &gt; /dev/null
+
+:<i>wq!
+</I>
+I'm sure it can be done cleaner, but this works. 
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="008926.html">[Ti] Virtual PC 6.0 on BigAl
+</A></li>
+	<LI>Next message: <A HREF="008928.html">[Ti] Troubleshooting help needed
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8927">[ date ]</a>
+              <a href="thread.html#8927">[ thread ]</a>
+              <a href="subject.html#8927">[ subject ]</a>
+              <a href="author.html#8927">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

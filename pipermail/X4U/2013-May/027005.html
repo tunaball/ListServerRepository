@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Backup
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX4U%5D%20Backup&In-Reply-To=%3C0DF5031E-B5CE-4D4D-9066-C4D76EA23DFF%40macattorney.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="027002.html">
+   <LINK REL="Next"  HREF="027008.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X4U] Backup</H1>
+    <B>Randy B. Singer</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX4U%5D%20Backup&In-Reply-To=%3C0DF5031E-B5CE-4D4D-9066-C4D76EA23DFF%40macattorney.com%3E"
+       TITLE="[X4U] Backup">randy at macattorney.com
+       </A><BR>
+    <I>Thu May 23 12:49:23 PDT 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="027002.html">[X4U] Backup
+</A></li>
+        <LI>Next message: <A HREF="027008.html">[X4U] Backup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#27005">[ date ]</a>
+              <a href="thread.html#27005">[ thread ]</a>
+              <a href="subject.html#27005">[ subject ]</a>
+              <a href="author.html#27005">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On May 23, 2013, at 2:27 AM, Roy v.d. Westhuizen wrote:
+
+&gt;<i> How does SuperDuper compare to Carbon Cop Cloner? What makes one better than the other?
+</I>
+I recommend SuperDuper! (not CCC) for creating a clone backup. SD is dead easy to use. There are few choices in the software, so there are few opportunities to screw up. And the program is excellent about telling you exactly what it is that you are about to do before you do it. (Which is really important.)
+
+Someone on another list wrote a really great post on this.  I've saved it for just such an occasion.  Here it is, and a followup post by someone else:
+
+
+&gt;&gt;<i> Any thoughts about CCC over SuperDuper?
+</I>
+I have always preferred SuperDuper over CCC.
+
+The impression I have is that the guy who wrote SuperDuper is a perfectionist. He won't release a version until he's run exhaustive tests and is satisfied that it correctly handles every situation, including some really bizarre edge cases.
+
+The guy who wrote CCC seems (to me) to have slapped something together that correctly handles 99% of all cases, and called that &quot;good enough&quot;. When deficiencies are found, he eventually gets around to fixing them, but in his own time.
+
+Case in point: when Leopard was released, CCC was Johnny-on-the-Spot with a new Leopard-compatible version. SuperDuper wasn't available for Leopard for several weeks. Why? Because one of the new features introduced in Leopard was Time Machine. SuperDuper wasn't released until it could not only correctly duplicate a Time Machine disk, but any other disk that contained the same sort of hard links that made TM backups so difficult to duplicate correctly. CCC decided that 99% of all users would never attempt to duplicate a TM backup, so it wasn't necessary to get that right.
+
+Case in point: I do not trust sector-level (aka block-level) copies for my backups. A sector-level copy of a disk volume with a corrupted catalog will give you a copy of that corrupted catalog. If you have a corrupted catalog, you usually don't know about it for days, weeks, or even months. By the time you realize you have a problem, your sector-level backups also have the problem, and you find yourself with no backup just when you need it most. SuperDuper never uses a sector-level copy; it always copies file by file, and that's the way a backup program should work. CCC prefers to do a sector-level copy, probably because it's usually faster. But for backups, given a choice between fast and correct, I'll take the correct method every time. Who cares how quickly my backup program can destroy my backups? CCC does have an option to force a sector-level copy, but does not offer the complementary option to force a file-level copy. It's either &quot;make me do it the wrong way, or let me do it the wrong way. Your choice.&quot;
+
+BTW: Most of the times I've had to restore a disk from backup, it's because the catalog got corrupted, not because of hardware errors. Because I always use file-level backups, I've always been able to recover. Had I been using sector-level backups, I'd have lost everything I have several times over by now. The perils of sector-level backups are not merely hypothetical.
+
+BTW: CCC still will not back up a TM volume correctly UNLESS you force a sector-level copy, but then you have to pray that there's no catalog damage. But hey, 99% of the time there isn't.
+
+When it comes to backup, I want mine done by the perfectionist. If I could be 100% sure that nothing would go wrong, I wouldn't be wasting my time doing backups. I back up precisely because that last 1% is worth worrying about.
+
+-Ron Hunsinger
+
+__._,_.___
+
+
+This is one of the best reviews of SuperDuper (SD) vs. Carbon Copy Cloner (CCC) I have ever read, and I agree with it 100%. CCC has always been much less polished, and has had varying levels of attention paid to fixing it's deficiencies.
+
+There was even a period of approximately two years, when the developer of CCC started working at Apple, and the program fell into complete disrepair (I know we're not talking about a house, but the analogy fits).
+
+It was during that time that a lot of people started using SD, myself included, and what we discovered was that SD was simply the more reliable program overall. This wasn't just anecdotal, there were actual comparison tests of things like which program was the most thorough at backing up different kinds of metadata, and there were many verified bugs that plagued CCC, which were not fixed for years.
+
+
+___________________________________________
+Randy B. Singer
+Co-author of The Macintosh Bible (4th, 5th, and 6th editions)
+
+Macintosh OS X Routine Maintenance
+<A HREF="http://www.macattorney.com/ts.html">http://www.macattorney.com/ts.html</A>
+___________________________________________
+
+
+
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="027002.html">[X4U] Backup
+</A></li>
+	<LI>Next message: <A HREF="027008.html">[X4U] Backup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#27005">[ date ]</a>
+              <a href="thread.html#27005">[ thread ]</a>
+              <a href="subject.html#27005">[ subject ]</a>
+              <a href="author.html#27005">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

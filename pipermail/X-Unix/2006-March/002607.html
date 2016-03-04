@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] strange tar behavior
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20strange%20tar%20behavior&In-Reply-To=9D051319-D5BC-49C8-BCDF-2293DE4ED5C7%40charter.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002606.html">
+   <LINK REL="Next"  HREF="002608.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] strange tar behavior</H1>
+    <B>Cloyce D. Spradling</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20strange%20tar%20behavior&In-Reply-To=9D051319-D5BC-49C8-BCDF-2293DE4ED5C7%40charter.net"
+       TITLE="[X-Unix] strange tar behavior">cloyce+xunix at headgear.org
+       </A><BR>
+    <I>Mon Mar 20 09:31:24 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002606.html">[X-Unix] strange tar behavior
+</A></li>
+        <LI>Next message: <A HREF="002608.html">[X-Unix] strange tar behavior
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2607">[ date ]</a>
+              <a href="thread.html#2607">[ thread ]</a>
+              <a href="subject.html#2607">[ subject ]</a>
+              <a href="author.html#2607">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Mon, Mar 20, 2006 at 11:14:29AM -0600, Charles Howse wrote:
+
+:<i> But, when I do
+</I>:<i> $ tar --list --verbose --file=bin.tgz
+</I>:<i> tar: This does not look like a tar archive
+</I>:<i> tar: Skipping to next header
+</I>:<i> tar: Read 2804 bytes from bin.tgz
+</I>:<i> tar: Error exit delayed from previous errors
+</I>
+:<i> However, I can use Finder to expand the tgz file, and it looks fine.
+</I>
+:<i> Anyone have an idea of what's going on?
+</I>
+In the command above, you asked tar to list the contents of a tar file, but
+you gave it the name of a tar file that has been gzipped.  I think you'll
+have better luck if you also use '--uncompress'.
+
+--
+Cloyce
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002606.html">[X-Unix] strange tar behavior
+</A></li>
+	<LI>Next message: <A HREF="002608.html">[X-Unix] strange tar behavior
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2607">[ date ]</a>
+              <a href="thread.html#2607">[ thread ]</a>
+              <a href="subject.html#2607">[ subject ]</a>
+              <a href="author.html#2607">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

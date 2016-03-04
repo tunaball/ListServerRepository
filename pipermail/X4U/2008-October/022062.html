@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Can't set MS Word as the default
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Can%27t%20set%20MS%20Word%20as%20the%20default&In-Reply-To=20081026231837.B81344955972%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="022061.html">
+   <LINK REL="Next"  HREF="022063.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Can't set MS Word as the default</H1>
+    <B>John Baltutis</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Can%27t%20set%20MS%20Word%20as%20the%20default&In-Reply-To=20081026231837.B81344955972%40listserver.themacintoshguy.com"
+       TITLE="[X4U] Can't set MS Word as the default">baltwo at san.rr.com
+       </A><BR>
+    <I>Sun Oct 26 19:26:21 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="022061.html">[X4U] Want to know more about Blu-Ray?
+</A></li>
+        <LI>Next message: <A HREF="022063.html">[X4U] RE: Can't set MS Word as the default
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#22062">[ date ]</a>
+              <a href="thread.html#22062">[ thread ]</a>
+              <a href="subject.html#22062">[ subject ]</a>
+              <a href="author.html#22062">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 10/26/08, James Hurley &lt;<A HREF="../../../mailman/listinfo/x4u.html">jhurley0305 at sbcglobal.net</A>&gt; wrote:
+&gt;<i>
+</I>&gt;&gt;<i> I don't know how this happened but my Mac suddenly has trouble 
+</I>&gt;&gt;<i> recognizing Word documents.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Even the screen icon is now missing on Word documents.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> If I control-click on a Word document, the default program to open 
+</I>&gt;&gt;<i> a Word file is Text Edit. If I select Other and choose MS Word in 
+</I>&gt;&gt;<i> my Applications folder it does open it word. But only that one 
+</I>&gt;&gt;<i> time. The next time I try to open it, Text Edit is again the 
+</I>&gt;&gt;<i> default application.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> If I do a Get Info on a Word file, Text Edit is listed as the 
+</I>&gt;&gt;<i> application in which the file will open. If I select Other and 
+</I>&gt;&gt;<i> choose Word, then MS Word appears in the drop down menu as the app 
+</I>&gt;&gt;<i> to open  the file. But if I then click on the &quot;Change All&quot;button, 
+</I>&gt;&gt;<i> the drop down menu changes to Word Pad, an application that needs 
+</I>&gt;&gt;<i> to go through Fusion to open.  It is not possible to do a Change 
+</I>&gt;&gt;<i> All to MS Word.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Any thoughts on this very weird avoidance of Word as the app for
+</I>&gt;&gt;<i> opening Word documents?
+</I>&gt;<i>
+</I>&gt;<i> I have had some second thoughts on this issue--my Mac not 
+</I>&gt;<i> recognizing .doc files as Word documents.
+</I>&gt;<i>
+</I>&gt;<i> I used to regularly get a message when I tried to open a Word 
+</I>&gt;<i> document on one computer when another computer on the network was 
+</I>&gt;<i> running Word. It was something  to the effect that I couldn't run 
+</I>&gt;<i> word on two computers at once.
+</I>&gt;<i>
+</I>&gt;<i> But I don't get that message any more. I don't mean to be paranoid, 
+</I>&gt;<i> but is  it possible the MS has altered the cache (or whatever in the
+</I>&gt;<i> System files) so that Word is no longer recognized on this one computer?
+</I>
+Sounds like a hosed LaunchServices database file. Launch the Terminal.app in
+/Applications/Utilities/, copy and paste the following command into window, hit
+the return key, quit the Terminal.app, and restart (Note that this is all one
+line):
+
+Leopard:
+
+/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister
+-kill -r -domain local -domain system -domain user
+
+Tiger:
+
+/System/Library/Frameworks/ApplicationServices.framework/Frameworks/LaunchServices.framework/Support/lsregister
+-kill -r -f -domain local -domain system -domain user
+
+After restarting, CMD+I on a .doc file and set Word to open it, and click on
+the Change all button.
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="022061.html">[X4U] Want to know more about Blu-Ray?
+</A></li>
+	<LI>Next message: <A HREF="022063.html">[X4U] RE: Can't set MS Word as the default
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#22062">[ date ]</a>
+              <a href="thread.html#22062">[ thread ]</a>
+              <a href="subject.html#22062">[ subject ]</a>
+              <a href="author.html#22062">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

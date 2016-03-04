@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Finding Parent Directory of Searched-For File
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Finding%20Parent%20Directory%20of%20Searched-For%20File&In-Reply-To=31a130740905040933g77238a9co4258a0967e96ef34%40mail.gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003318.html">
+   <LINK REL="Next"  HREF="003323.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Finding Parent Directory of Searched-For File</H1>
+    <B>Xavier Noria</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Finding%20Parent%20Directory%20of%20Searched-For%20File&In-Reply-To=31a130740905040933g77238a9co4258a0967e96ef34%40mail.gmail.com"
+       TITLE="[X-Unix] Finding Parent Directory of Searched-For File">fxn at hashref.com
+       </A><BR>
+    <I>Mon May  4 09:34:38 PDT 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003318.html">[X-Unix] Finding Parent Directory of Searched-For File
+</A></li>
+        <LI>Next message: <A HREF="003323.html">[X-Unix] Finding Parent Directory of Searched-For File
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3319">[ date ]</a>
+              <a href="thread.html#3319">[ thread ]</a>
+              <a href="subject.html#3319">[ subject ]</a>
+              <a href="author.html#3319">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Mon, May 4, 2009 at 6:33 PM, Xavier Noria &lt;<A HREF="../../../mailman/listinfo/x-unix.html">fxn at hashref.com</A>&gt; wrote:
+
+&gt;<i> &#160;find . -name '*.css' | xargs ls -l
+</I>&gt;<i> -rw-r--r--@ 1 fxn &#160;fxn &#160; 1530 Jun &#160;8 &#160;2007 ./stylesheets/datepicker.css
+</I>&gt;<i> -rw-r--r-- &#160;1 fxn &#160;fxn &#160; &#160;742 Feb 27 &#160;2007 ./stylesheets/redbox.css
+</I>&gt;<i> -rwxr-xr-x@ 1 fxn &#160;fxn &#160; 7717 Aug 25 &#160;2008 ./stylesheets/structure.css
+</I>&gt;<i> -rwxr-xr-x@ 1 fxn &#160;fxn &#160;14341 Aug 25 &#160;2008 ./stylesheets/type.css
+</I>
+I forgot a couple of bits to be robust to spaces:
+
+$ find . -name '*.css' -print0 | xargs -0 ls -l
+-rw-r--r--@ 1 fxn  fxn   1530 Jun  8  2007 ./stylesheets/datepicker.css
+-rw-r--r--  1 fxn  fxn    742 Feb 27  2007 ./stylesheets/redbox.css
+-rwxr-xr-x@ 1 fxn  fxn   7717 Aug 25  2008 ./stylesheets/structure.css
+-rwxr-xr-x@ 1 fxn  fxn  14341 Aug 25  2008 ./stylesheets/type.css
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003318.html">[X-Unix] Finding Parent Directory of Searched-For File
+</A></li>
+	<LI>Next message: <A HREF="003323.html">[X-Unix] Finding Parent Directory of Searched-For File
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3319">[ date ]</a>
+              <a href="thread.html#3319">[ thread ]</a>
+              <a href="subject.html#3319">[ subject ]</a>
+              <a href="author.html#3319">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

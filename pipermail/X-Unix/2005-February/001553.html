@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: cp question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20cp%20question&In-Reply-To=e8366fe1a53bdfea12fb1476c1d4bc5b%40direcway.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001552.html">
+   <LINK REL="Next"  HREF="001554.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: cp question</H1>
+    <B>Timothy Luoma</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20cp%20question&In-Reply-To=e8366fe1a53bdfea12fb1476c1d4bc5b%40direcway.com"
+       TITLE="[X-Unix] Re: cp question">lists at tntluoma.com
+       </A><BR>
+    <I>Thu Feb 24 14:34:22 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001552.html">[X-Unix] cp question
+</A></li>
+        <LI>Next message: <A HREF="001554.html">[X-Unix] cp question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1553">[ date ]</a>
+              <a href="thread.html#1553">[ thread ]</a>
+              <a href="subject.html#1553">[ subject ]</a>
+              <a href="author.html#1553">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Feb 24, 2005, at 5:01 PM, Russell McGaha wrote:
+
+&gt;<i> Folks;
+</I>&gt;<i> 	I've got a question about how to only copy certain files of a folder 
+</I>&gt;<i> [more accurately to not copy].
+</I>&gt;<i> 	I've a 10.2.8 system [so I'll be using tsch] that I need to copy the 
+</I>&gt;<i> files in one director to another directory; this is no problem, BUT I 
+</I>&gt;<i> need to EXCLUDE a couple of files; this is a problem.  how can I 'walk 
+</I>&gt;<i> a directory and look at the next file to be copied and exclude it if 
+</I>&gt;<i> necessary'?
+</I>&gt;<i>  my source directory will look something like 
+</I>&gt;<i> this:'/Backup-HD/DailBckups/DayOfWeek-Evening/'; destination 
+</I>&gt;<i> '/FolderToCopyTo/'.  I'm currently ending the source with a wild-card 
+</I>&gt;<i> '*' to copy everything.
+</I>&gt;<i> 	Any suggestions on how to EXCLUDE certain files that I know the exact 
+</I>&gt;<i> names of?
+</I>
+You ought to be looking at rsync and its --exclude flag
+
+This is the script I use to backup my $HOME directory to a SMB mount 
+(SERVER)
+
+
+rsync -avz 							\
+	--delete-after 					\
+	--exclude &quot;luomat/.Trash&quot; 		\
+	--exclude &quot;luomat/Music&quot; 		\
+	--exclude &quot;luomat/Library/Mail&quot;	\
+	--exclude &quot;luomat/Library/Application Support/Camino/Cache&quot; \
+	--exclude &quot;luomat/Library/Application 
+Support/Firefox/Profiles/default.qbq/Cache&quot; \
+	--exclude &quot;luomat/Library/Preferences/Opera Preferences/Mail/&quot; \
+	--exclude &quot;luomat/Library/Application Support/NetNewsWire/Cache&quot; \
+	--exclude &quot;luomat/Library/Caches&quot; \
+	--exclude &quot;luomat/Temp&quot; \
+	/Users/luomat SERVER:backups/luomat/
+
+TjL
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001552.html">[X-Unix] cp question
+</A></li>
+	<LI>Next message: <A HREF="001554.html">[X-Unix] cp question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1553">[ date ]</a>
+              <a href="thread.html#1553">[ thread ]</a>
+              <a href="subject.html#1553">[ subject ]</a>
+              <a href="author.html#1553">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

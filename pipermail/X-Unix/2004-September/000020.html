@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to use ESC as Meta in Enhanced Carbon Emacs?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20use%20ESC%20as%20Meta%20in%20Enhanced%20Carbon%20Emacs%3F&In-Reply-To=CC823132-0A54-11D9-BD94-000393768D2C%40mcgillsociety.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000019.html">
+   <LINK REL="Next"  HREF="000009.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to use ESC as Meta in Enhanced Carbon Emacs?</H1>
+    <B>Benjamin L. Russell</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20use%20ESC%20as%20Meta%20in%20Enhanced%20Carbon%20Emacs%3F&In-Reply-To=CC823132-0A54-11D9-BD94-000393768D2C%40mcgillsociety.org"
+       TITLE="[X-Unix] How to use ESC as Meta in Enhanced Carbon Emacs?">dekudekuplex at yahoo.com
+       </A><BR>
+    <I>Sun Sep 19 14:51:43 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000019.html">[X-Unix] How to use ESC as Meta in Enhanced Carbon Emacs?
+</A></li>
+        <LI>Next message: <A HREF="000009.html">[X-Unix] How to find your DHCP server...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20">[ date ]</a>
+              <a href="thread.html#20">[ thread ]</a>
+              <a href="subject.html#20">[ subject ]</a>
+              <a href="author.html#20">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+--- &quot;William H. Magill&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>&gt;
+wrote:
+
+&gt;<i> On 19 Sep, 2004, at 03:59, Benjamin L. Russell
+</I>&gt;<i> wrote:
+</I>&gt;<i> &gt; In the /Applications/Utilities/Keycaps
+</I>&gt;<i> application,
+</I>&gt;<i> &gt; when I press the &quot;Escape&quot; key by itself, usually
+</I>&gt;<i> &gt; nothing happens (I write &quot;usually&quot; because if I
+</I>&gt;<i> hold
+</I>&gt;<i> &gt; &quot;Escape&quot; for a few seconds, then Keycaps registers
+</I>&gt;<i> the
+</I>&gt;<i> &gt; key-press, and if I then press &quot;Escape&quot; quickly
+</I>&gt;<i> &gt; immediately afterwards, sometimes this key-press
+</I>&gt;<i> also
+</I>&gt;<i> &gt; registers).
+</I>&gt;<i> 
+</I>&gt;<i> This sounds more and more like a hardware problem --
+</I>&gt;<i> a bad keyboard.
+</I>&gt;<i> 
+</I>&gt;<i> It is not unheard of for single keys to &quot;die.&quot;
+</I>&gt;<i> 
+</I>&gt;<i> Modern keyboards tend to be more robust than those
+</I>&gt;<i> of yore, but I've 
+</I>&gt;<i> still had them fail.
+</I>
+Actually, I just found the answer, right after reading
+your reply now.
+
+The problem was that &quot;Escape&quot; was set as my listening
+key in Speech Preferences.
+
+I just visited the Apple Service and Support Web site
+( see <A HREF="http://www.apple.com/support/">http://www.apple.com/support/</A> ), did a search
+for the topic &quot;Escape key,&quot; and found a suspicious
+entry called &quot;Mac OS X: Keyboard Works, Except for One
+Key&quot; (Article ID: 25553) ( see
+<A HREF="http://docs.info.apple.com/article.html?artnum=25553">http://docs.info.apple.com/article.html?artnum=25553</A>
+).
+
+This is what the article stated:
+
+----- article follows immediately after this line
+-----
+Mac OS X: Keyboard Works, Except for One Key
+
+                When Apple Speakable Items is on, one
+key on the keyboard may not work if it's set as the
+Listening Key. This document applies to Mac OS X 10.1
+or later.          
+
+                Your keyboard works fine, except for
+one key. If you change keyboards, the same thing
+happens.  If you log in using a different account, the
+same keyboard responds OK. 
+ 
+ 
+ Solution
+ 
+ The key that doesn't work may be set as the Speech
+Listening Key. Follow these steps to chose a different
+key:
+ 
+1. Choose Apple menu &gt; System Preferences.
+ 2. Choose View &gt; Speech.
+ 3. Click the Speech Recognition tab then the
+Listening tab.
+ 4. Click the Change Key button.
+ 5. Press a different key to use, such as the Escape
+key (esc).
+ 6. Click OK.
+----- article follows immediately after this line
+-----
+
+I changed the listening key to the &quot;Clear&quot; key on the
+Apple Wireless Keyboard's numeric keypad, and now the
+Escape key works fine by itself in Emacs.  No longer
+is it the case that &quot;Shift&quot; + &quot;Escape&quot; = &quot;Escape.&quot;
+
+-- DekuDekuplex
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000019.html">[X-Unix] How to use ESC as Meta in Enhanced Carbon Emacs?
+</A></li>
+	<LI>Next message: <A HREF="000009.html">[X-Unix] How to find your DHCP server...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20">[ date ]</a>
+              <a href="thread.html#20">[ thread ]</a>
+              <a href="subject.html#20">[ subject ]</a>
+              <a href="author.html#20">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

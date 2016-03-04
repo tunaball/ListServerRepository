@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MacDV] Re: more about the inutility of defragmenting an OS X FS.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20more%20about%20the%20inutility%20of%20defragmenting%20an%20OS%20X%20FS.&In-Reply-To=list-10007418%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="008454.html">
+   <LINK REL="Next"  HREF="008456.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MacDV] Re: more about the inutility of defragmenting an OS X FS.</H1>
+    <B>Peter van der Linden</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20more%20about%20the%20inutility%20of%20defragmenting%20an%20OS%20X%20FS.&In-Reply-To=list-10007418%40mail.ninewire.com"
+       TITLE="[MacDV] Re: more about the inutility of defragmenting an OS X FS.">pvdl at afu.com
+       </A><BR>
+    <I>Wed Dec 31 09:23:40 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="008454.html">[MacDV] Re: imovie storage
+</A></li>
+        <LI>Next message: <A HREF="008456.html">[MacDV] Re: more about the inutility of defragmenting an OS X FS.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8455">[ date ]</a>
+              <a href="thread.html#8455">[ thread ]</a>
+              <a href="subject.html#8455">[ subject ]</a>
+              <a href="author.html#8455">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Dec 30, 2003, at 8:45 PM, James Asherman wrote:
+&gt;<i>  There is a graphic map that shows that a significant portion of what 
+</I>&gt;<i> you might think is freee space is actually small useless holes in 
+</I>&gt;<i> otherwise crowded areas. and llarge tracts of frree space have iTunes 
+</I>&gt;<i> hanging around like muggers waiting for some video to screw up.
+</I>&gt;<i> Jim
+</I>
+Let me put this another way, Jim.
+Your view on disk defragmenting (whatever that means in the context of 
+HFS+, which already uses groups of allocation blocks called &quot;clumps&quot; to 
+limit fragmentation at the sector level) relies on at least three false 
+assumptions:
+
+1.  The HD map shown by programs like is an accurate representation of 
+disk sector layout on disk
+2.  The disk controller places sectors at the addresses you give it, at 
+the time you give them
+3.  Adjacent sector addresses given to the disk controller represent 
+adjacent physical addresses on disk
+
+All three of these assumptions are false for today's disk drives.  To 
+give a simple example, multi-platter disks break assumption 3.  
+Read/write coalescing done by the disk controller (buffering and 
+reordering disk commands) breaks assumption 2.   Flaw mapping (which 
+long ago moved from the OS kernel into the disk controller) breaks 
+assumptions 2 and 3.  Logical Block Addressing and the consequent 
+geometry translation inside the controller breaks assumption 1.
+
+As if that isn't enough, Panther automatically coalesces small and 
+medium sized files (smaller than 20MB) on journalled HFS+ disks when 
+they are opened.  Further, MacOSX caches file and directory data 
+extensively.
+
+The bottom line is this: there are multiple levels of translation 
+within the kernel I/O subsystem, PROM, the disk controller, and the 
+hard disk itself.  The cylinder/head/sector numbers that people are 
+trying to optimize with defragmentation long ago stopped having any 
+real relationship to the actual drive characteristics.  MacOS X 
+software that does defragmentation is at worst a fraud (like the 
+Syncronys &quot;RAM doubler&quot; of a few years ago) and at best an unnecessary 
+holdover from the days of MacOS 9 and earlier.
+
+Apple itself says, disk de-fragmentation is &quot;probably not required if 
+you use MacOS X&quot;  and &quot;there is little benefit to defragmenting.&quot;
+
+So far no one claiming that defragmentation is useful has actually 
+produced any data to support their position.  They just have &quot;feelings&quot; 
+that they &quot;know&quot;.  I invite anyone who believes that disk 
+defragmentation does anything measurable to affect performance, to 
+benchmark a program before and after defragmentation under MacOS 10.3 
+and send me the data and results.  If I can reproduce results showing 
+defragmentation is helpful I will gladly eat these words.  That won't 
+happen because manual defragmenting does nothing measurably useful 
+under MacOS X 10.3 on HFS+.
+
+     Peter
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="008454.html">[MacDV] Re: imovie storage
+</A></li>
+	<LI>Next message: <A HREF="008456.html">[MacDV] Re: more about the inutility of defragmenting an OS X FS.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8455">[ date ]</a>
+              <a href="thread.html#8455">[ thread ]</a>
+              <a href="subject.html#8455">[ subject ]</a>
+              <a href="author.html#8455">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Installing kismet using Fink
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Installing%20kismet%20using%20Fink&In-Reply-To=416A2A9A.80204%40underwares.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001160.html">
+   <LINK REL="Next"  HREF="001163.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Installing kismet using Fink</H1>
+    <B>Ryan Duff</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Installing%20kismet%20using%20Fink&In-Reply-To=416A2A9A.80204%40underwares.org"
+       TITLE="[X-Unix] Installing kismet using Fink">ryan at duff-duff.net
+       </A><BR>
+    <I>Mon Oct 11 05:00:57 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001160.html">[X-Unix] Installing kismet using Fink
+</A></li>
+        <LI>Next message: <A HREF="001163.html">[X-Unix] Installing kismet using Fink
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1162">[ date ]</a>
+              <a href="thread.html#1162">[ thread ]</a>
+              <a href="subject.html#1162">[ subject ]</a>
+              <a href="author.html#1162">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I did recently (2 weeks ago) try to install kismet and got the same error. I
+gave up and used kismac instead. I went back and picked up from where I left
+off after reading this email and had it compiling correctly within 15
+minutes. Here are the steps you need to take to get it to install correctly:
+
+1. Go to dopesquad.org and download this file...
+<A HREF="http://www.dopesquad.net/security/Viha-0.0.1a.tar.gz">http://www.dopesquad.net/security/Viha-0.0.1a.tar.gz</A>
+
+2. As per the readme after it unzips, copy the wifi.framework folder to your
+/library/frameworks folder. You can also copy the stumbler executable into
+your /bin or /usr/bin folder (keep in mind you need to sudo to copy
+something into the /bin folder), however, I'm not sure if you necessarily
+copy the stumbler file or not for it to work. I did anyway.
+
+3. Run a 'fink install system-viha'
+	- it should now find the binary wifi.framework that it needed 
+	and complete without problems.
+
+4. Run 'fink install kismet' and it should ask you a few things and compile.
+
+
+
+Its currently compiling on my 700mhz 14&quot; iBook with out any problems. 
+
+
+-Ryan
+
+PS - Theres also a fink mailing list for questions like these. Check it out
+at <A HREF="http://fink.sourceforge.net/lists/">http://fink.sourceforge.net/lists/</A> 
+
+ 
+
+-----Original Message-----
+From: <A HREF="../../../mailman/listinfo/x-unix.html">x-unix-bounces at listserver.themacintoshguy.com</A>
+[mailto:<A HREF="../../../mailman/listinfo/x-unix.html">x-unix-bounces at listserver.themacintoshguy.com</A>] On Behalf Of
+Alexandre Gauthier
+Sent: Monday, October 11, 2004 2:39 AM
+To: A place to discuss Mac OS X from the perspective of the command line.
+Subject: [X-Unix] Installing kismet using Fink
+
+I recently (okay that would be lying -- make that a few months ago) tried to
+install kismet using Fink. Everything seems to go well except for the
+viha-driver, which fails to install. I tried this on many different machines
+which all responded with the same error messages...
+
+xerxes:~ supernaut$ fink install kismet
+/usr/bin/sudo /sw/bin/fink  install kismet Reading package info...
+Updating package index... done.
+Information about 3939 packages read in 178 seconds.
+The following package will be installed or updated:
+ kismet
+The following additional package will be installed:
+ system-viha
+Do you want to continue? [Y/n] y
+dpkg -i
+/sw/fink/dists/unstable/main/binary-darwin-powerpc/net/system-viha_0.0.1a-3_
+darwin-powerpc.deb
+(Reading database ... 50179 files and directories currently installed.)
+Unpacking system-viha (from .../system-viha_0.0.1a-3_darwin-powerpc.deb) ...
+ld: can't locate framework for: -framework WiFi Cannot link against the WiFi
+framework.
+Did you forget to install it?
+Hint: read the full description of this package.
+dpkg: error processing
+/sw/fink/dists/unstable/main/binary-darwin-powerpc/net/system-viha_0.0.1a-3_
+darwin-powerpc.deb
+(--install):
+ subprocess pre-installation script returned error exit status 1 Errors were
+encountered while processing:
+ 
+/sw/fink/dists/unstable/main/binary-darwin-powerpc/net/system-viha_0.0.1a-3_
+darwin-powerpc.deb
+### execution of dpkg failed, exit code 1
+Failed: can't install package system-viha-0.0.1a-3 xerxes:~ supernaut$
+
+
+It seems to be complaining against a missing framework, but the details
+seems scarce. I am posting this in hope that someone better informed could
+enlighten me on what package this aforementionned package would be part of.
+
+--
+Alexandre Gauthier
+<A HREF="../../../mailman/listinfo/x-unix.html">supernaut at underwares.org</A>
+
+underwares.org
+Obscure IT knowledge Open Database
+
+The human brain operates at only 10% of its capacity. The rest is overhead
+for the operating system.
+
+_______________________________________________
+X-Unix mailing list
+<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001160.html">[X-Unix] Installing kismet using Fink
+</A></li>
+	<LI>Next message: <A HREF="001163.html">[X-Unix] Installing kismet using Fink
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1162">[ date ]</a>
+              <a href="thread.html#1162">[ thread ]</a>
+              <a href="subject.html#1162">[ subject ]</a>
+              <a href="author.html#1162">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

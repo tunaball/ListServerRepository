@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Cron jobs not running, how to log cron
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Cron%20jobs%20not%20running%2C%20how%20to%20log%20cron&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000951.html">
+   <LINK REL="Next"  HREF="000954.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Cron jobs not running, how to log cron</H1>
+    <B>David Haines</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Cron%20jobs%20not%20running%2C%20how%20to%20log%20cron&In-Reply-To="
+       TITLE="Cron jobs not running, how to log cron">haines.d at comcast.net
+       </A><BR>
+    <I>Wed Jun 16 18:48:21 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000951.html">[X-Unix] Remote force logout and lockout of user
+</A></li>
+        <LI>Next message: <A HREF="000954.html">x host question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#953">[ date ]</a>
+              <a href="thread.html#953">[ thread ]</a>
+              <a href="subject.html#953">[ subject ]</a>
+              <a href="author.html#953">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I've setup two cron jobs to run , setup as root and set to run as root, on a
+10.3.3 OS X Server machine.
+
+The permissions for the scripts called by the crontab are set for read,write
+&amp; execute for root user only, and I can invoke the scripts manually as root.
+
+But the cron job does not run.
+
+When I added these jobs to the crontab, there was no error message either.
+
+Here's the listing (crontab -l) :
+
+45      1       *       *       *       root    /etc/ditto_daily.sh
+15      0       *       *       1,2,4,6 root    /etc/junkmailcleanup.sh
+
+
+The permissions for the first script:
+
+-rwx------  1 root  wheel  1005  8 Apr 11:51 /etc/ditto_daily.sh
+
+Please tell me the stupid and obvious thing I'm overlooking, and how you
+would go about logging the results of cron jobs... In order to look
+for/track down errors or problems
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000951.html">[X-Unix] Remote force logout and lockout of user
+</A></li>
+	<LI>Next message: <A HREF="000954.html">x host question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#953">[ date ]</a>
+              <a href="thread.html#953">[ thread ]</a>
+              <a href="subject.html#953">[ subject ]</a>
+              <a href="author.html#953">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

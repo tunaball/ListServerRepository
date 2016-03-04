@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> How To: Sharing Mac internet with Palm TT/Zire72 via bluetooth
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:bluetooth-mac%40listserver.themacintoshguy.com?Subject=How%20To%3A%20Sharing%20Mac%20internet%20with%20Palm%20TT/Zire72%20via%20bluetooth&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001955.html">
+   <LINK REL="Next"  HREF="001957.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>How To: Sharing Mac internet with Palm TT/Zire72 via bluetooth</H1>
+    <B>Stephen Jonke</B> 
+    <A HREF="mailto:bluetooth-mac%40listserver.themacintoshguy.com?Subject=How%20To%3A%20Sharing%20Mac%20internet%20with%20Palm%20TT/Zire72%20via%20bluetooth&In-Reply-To="
+       TITLE="How To: Sharing Mac internet with Palm TT/Zire72 via bluetooth">sjj_public at mac.com
+       </A><BR>
+    <I>Fri Jul  2 08:03:06 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001955.html">AW: [BTM] OS X 10.3.4, Bluetooth and Nokia 6310
+</A></li>
+        <LI>Next message: <A HREF="001957.html">Change of Adderss
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1956">[ date ]</a>
+              <a href="thread.html#1956">[ thread ]</a>
+              <a href="subject.html#1956">[ subject ]</a>
+              <a href="author.html#1956">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is a common request. I can vouch that this technique works both 
+with a Palm Tungsten T and a PalmOne Zire72. Note: I did not write the 
+scripts and in fact the scripts were created for a Nokia cell phone, 
+but I found that they work fine with Palm's too.
+
+Well, the first thing to note is that it can be a bit flakey, so expect
+to have to do some fiddling. Having said that... here's how to do it.
+
+1. Note that the following scripts will only work for admin users. If
+you can install applications in the /Applications folder, then you have
+admin privileges and the scripts will work. If you can't then these
+scripts won't work. Presuming you have an admin account (by default the
+first user created on a Mac is an admin), download the scripts at the
+following address:
+
+    &lt;<A HREF="http://homepage.mac.com/cks3/Share2Blue2thv3.1.sit">http://homepage.mac.com/cks3/Share2Blue2thv3.1.sit</A>&gt;
+
+  From that download, just grab the scripts in the folder called
+&quot;Share2Blue2th Stand-alone Script Apps&quot;. Put them in your /Applications
+folder or wherever you prefer.
+
+2. Pair your Mac with your Palm if you haven't done so already. I
+recommend doing this from your Mac. Open System Preferences -&gt;
+Bluetooth. Click the &quot;Devices&quot; tab. Click the &quot;Set Up New Device&quot;
+button and follow the instructions. Make sure that your Zire's
+bluetooth is enabled, and discoverable is set on it. For the &quot;Device
+Type&quot; select &quot;Other Device&quot;. Note that bluetooth passwords are numbers
+only, no letters!
+
+3. On your Palm go to Preferences -&gt; Connection. Make a New connection
+(click the New... button). Enter a name such as MyMac or whatever is
+recognizable. Set it to be as follows:
+
+     Connect to: PC
+            Via: Bluetooth
+         Device: &lt;click the box and select your Mac&gt;
+
+Next, click the &quot;Details...&quot; button and set the speed to &quot;115,200 bps&quot;.
+Flow ctl should be &quot;Automatic&quot;.
+
+To select the &quot;Device&quot; your Mac may have to be discoverable. Or it may
+list it anyway since you paired already. I can't remember.  If your Mac
+isn't listed, then set your Mac to be discoverable (in System
+Preferences -&gt; Bluetooth) and try again. Once you have it selected as
+the Device on the Palm you can turn &quot;Discoverable&quot; back off on your Mac
+if you wish.
+
+4.  On your Palm go to Preferences -&gt; Network. Make a New network
+(click &quot;New&quot; button). Give the service a name such as &quot;Net via MyMac&quot;
+or whatever is recognizable for you. Leave the username and password
+as-is. From the &quot;Connection&quot; pop-up menu select the &quot;Connection&quot; you
+created in step 3.
+
+Now it is set up. To use it do the following:
+
+0. First make sure bluetooth is on on your Palm and your Mac.
+
+1. On your Mac run the appropriate script (either &quot;Share Airport to
+Bluetooth&quot; or &quot;Share Ethernet to Bluetooth&quot;. Use the one that
+corresponds to how your Mac accesses the internet. It will prompt you
+for your password. The first time you run the script it's also going to
+ask you to enter the &quot;MAC Address&quot; of your Palm. It explains how to
+look that up. Make sure you enter the &quot;MAC address&quot; with colons instead
+of dashes (it is shown as dashes on your Palm) and triple check that
+you have it entered correctly. It will only ask you this the first
+time.
+
+Wait for the script to complete its run and it will quit automatically.
+Wait for it to quit automatically before proceeding to step 2!
+
+2. On your Palm go to Preferences -&gt; Network. Select the network you
+created in step 4 above if it is not already selected. Click the
+&quot;Connect&quot; button. That's it! Now you can use Web Pro or Versa Mail or
+whatever.
+
+3. When you are done with the connection, you should, on the Palm, go
+to Preferences -&gt; Network and click the &quot;Disconnect&quot; button. That's the
+graceful way to break the connection. If you want to connect again, go
+back to step 1.
+
+There is also a script called &quot;Kill Net over Bluetooth&quot;. Normally you
+don't need to run this, but you may have to if the connection is broken
+ungracefully, such as the Palm turning itself off after being idle for
+a period of time. Most of the time you try to run the kill script it
+will just say there are no matching processes. That's OK. If you try to
+run one of the Share scripts and it complains that the port is already
+in use, or something to that effect, then you need to run the Kill
+script first.
+
+Once you get the setup done it isn't too bad although sometimes it can
+be flakey. I've had the connection to the Mac drop for no apparent
+reason. When in doubt, disconnect on the Palm, run the Kill script on
+your Mac and then run the Share script again on your Mac. Then connect
+from the Palm.
+
+Let me know if this walk through works for you!
+
+Steve
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001955.html">AW: [BTM] OS X 10.3.4, Bluetooth and Nokia 6310
+</A></li>
+	<LI>Next message: <A HREF="001957.html">Change of Adderss
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1956">[ date ]</a>
+              <a href="thread.html#1956">[ thread ]</a>
+              <a href="subject.html#1956">[ subject ]</a>
+              <a href="author.html#1956">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/bluetooth-mac.html">More information about the Bluetooth-mac
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

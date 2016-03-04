@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Unlinking a file... illegal characters?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Unlinking%20a%20file...%20illegal%20characters%3F&In-Reply-To=517fa92e2186870f27a9b9c63ba75282%40myrealbox.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001573.html">
+   <LINK REL="Next"  HREF="001579.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Unlinking a file... illegal characters?</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Unlinking%20a%20file...%20illegal%20characters%3F&In-Reply-To=517fa92e2186870f27a9b9c63ba75282%40myrealbox.com"
+       TITLE="[X-Unix] Unlinking a file... illegal characters?">magill at mcgillsociety.org
+       </A><BR>
+    <I>Fri Feb 25 18:39:40 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001573.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+        <LI>Next message: <A HREF="001579.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1575">[ date ]</a>
+              <a href="thread.html#1575">[ thread ]</a>
+              <a href="subject.html#1575">[ subject ]</a>
+              <a href="author.html#1575">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 25 Feb, 2005, at 12:07, Stroller wrote:
+&gt;&gt;&gt;<i> Unfortunately:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>   $ ls legoland/
+</I>&gt;&gt;&gt;<i>   e??y??y??y??vk??????..??????
+</I>&gt;&gt;&gt;<i>   339 /Volumes/CLEARLIGHT/foo $ ls -lFa -i legoland/
+</I>&gt;&gt;&gt;<i>   ls: e??y??y??y??vk??????..??????: File name too long
+</I>&gt;&gt;&gt;<i>   total 128
+</I>&gt;&gt;&gt;<i>   731381 drwxrwxrwx  1 stroller  admin  32768 22 Nov 03:27 ./
+</I>&gt;&gt;&gt;<i>   772975 drwxrwxrwx  1 stroller  admin  32768 25 Feb 01:53 ../
+</I>&gt;&gt;&gt;<i>   $
+</I>&gt;<i> Would I be over-optimistic if I suggested that a different quoting 
+</I>&gt;<i> method in the script might fix this? As you suggested, I thought about 
+</I>&gt;<i> writing a program to do the job, but I never got as far in C as 
+</I>&gt;<i> file-handling.
+</I>
+Have you tried emacs?
+
+Since this is &quot;legoland&quot; something, I would assume that the file name 
+is full of &quot;foreign&quot; (Danish) characters encoded via something other 
+than utf-8.
+
+Emacs &quot;dired&quot; will usually deal with all of the &quot;weird&quot; issues 
+associated with &quot;obscure&quot; character sets i.e. non-ascii. It's 
+particularly useful when the file name has actual embedded control 
+characters in it (often inserted by hackers to prevent file discovery 
+and manipulation or removal).
+
+For one thing, it will usually have no trouble reading the &quot;long lines&quot; 
+and then getting the appropriate inode information to do the deletion 
+with.
+
+cd to the directory involved.
+launch emacs
+type &quot;escape-x-dired&quot; and just hit return when it asks for the 
+directory.
+
+You can then use the arrow keys to navigate down the lines of the 
+buffer.
+Select one file and press &quot;d&quot; (&quot;u&quot; is the inverse) and a &quot;D&quot; will 
+appear in the left margin.
+Type  &quot;x&quot; and emacs will prompt
+delete &quot;.....&quot; (yes or no)
+type &quot;yes&quot;
+
+If the process is successful, then do another or several more.
+
+To exit emacs type &quot;cntl-x cntl-c&quot;
+
+
+T.T.F.N.
+William H. Magill
+# Beige G3 [Rev A motherboard - 300 MHz 768 Meg] OS X 10.2.8
+# Flat-panel iMac (2.1) [800MHz - Super Drive - 768 Meg] OS X 10.3.7
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg] Tru64 5.1a
+# XP1000  [Alpha 21264-3 (EV6) - 256 meg] FreeBSD 5.3
+# XP1000  [Alpha 21264-A (EV 6.7) - 384 meg] FreeBSD 5.3
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001573.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+	<LI>Next message: <A HREF="001579.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1575">[ date ]</a>
+              <a href="thread.html#1575">[ thread ]</a>
+              <a href="subject.html#1575">[ subject ]</a>
+              <a href="author.html#1575">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

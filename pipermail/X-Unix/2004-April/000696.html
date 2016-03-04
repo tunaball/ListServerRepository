@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Directory Sizes
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Directory%20Sizes&In-Reply-To=list-12096481%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000695.html">
+   <LINK REL="Next"  HREF="000698.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Directory Sizes</H1>
+    <B>Juan Manuel Palacios</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Directory%20Sizes&In-Reply-To=list-12096481%40mail.ninewire.com"
+       TITLE="[X-Unix] Directory Sizes">jmpalaciosp at eml.cc
+       </A><BR>
+    <I>Thu Apr 15 08:23:41 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000695.html">[X-Unix] Initialize via command line
+</A></li>
+        <LI>Next message: <A HREF="000698.html">GNU Readline
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#696">[ date ]</a>
+              <a href="thread.html#696">[ thread ]</a>
+              <a href="subject.html#696">[ subject ]</a>
+              <a href="author.html#696">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+	Just a quick contribution to the bank of answers:
+
+On Apr 13, 2004, at 1:47 PM, Alex wrote:
+
+&gt;<i>
+</I>&gt;<i> (And, an ancillary question: Is there a command which does what ls 
+</I>&gt;<i> does, but knows about resource forks?).
+</I>&gt;<i>
+</I>&gt;<i> TIA, f
+</I>&gt;<i>
+</I>
+	You can view the size of resource forks with plain ls(1) by appending 
+/rsrc to the files that contain them:
+
+$[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: Trabajo](275/0,0)-&gt; ls LogoBorrador.ai
+-rw-r--r--  1 juan  staff    152K 13 Mar  2001 LogoBorrador.ai
+
+$[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: Trabajo](276/0,0)-&gt; ls LogoBorrador.ai/rsrc
+-rw-r--r--  1 juan  staff    9K 13 Mar  2001 LogoBorrador.ai/rsrc
+
+	You see? There at first I got a long listing of &quot;LogoBorrador.ai&quot; and 
+then of the same file but with the /rsrc suffix, 
+&quot;LogoBorrador.ai/rsrc&quot;; the size of that last listing is that of the 
+resource fork. There are other things you can find out about it through 
+the command line, with tools like &quot;lsmac&quot; and &quot;GetFileInfo&quot;, the former 
+attainable from the &quot;osxutils&quot; package from the 
+<A HREF="http://darwinports.opendarwin.org/">http://darwinports.opendarwin.org/</A> project and the latter attainable 
+from the Xcode package.
+
+	Hope that helps, regards....
+
+
+		Juan
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000695.html">[X-Unix] Initialize via command line
+</A></li>
+	<LI>Next message: <A HREF="000698.html">GNU Readline
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#696">[ date ]</a>
+              <a href="thread.html#696">[ thread ]</a>
+              <a href="subject.html#696">[ subject ]</a>
+              <a href="author.html#696">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

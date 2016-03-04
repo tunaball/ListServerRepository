@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] remote access
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20remote%20access&In-Reply-To=p06230911c125d07355a1%40%5B10.0.1.9%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="014764.html">
+   <LINK REL="Next"  HREF="014765.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] remote access</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20remote%20access&In-Reply-To=p06230911c125d07355a1%40%5B10.0.1.9%5D"
+       TITLE="[X4U] remote access">macmonster at myrealbox.com
+       </A><BR>
+    <I>Thu Sep  7 07:28:13 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="014764.html">[X4U] remote access
+</A></li>
+        <LI>Next message: <A HREF="014765.html">[X4U] remote access
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14766">[ date ]</a>
+              <a href="thread.html#14766">[ thread ]</a>
+              <a href="subject.html#14766">[ subject ]</a>
+              <a href="author.html#14766">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 7 Sep 2006, at 14:39, Daly Jessup wrote:
+
+&gt;<i> At 1:55 PM +0100 7/9/06, Simon Forster wrote:
+</I>&gt;&gt;<i> On 7 Sep 2006, at 13:15, Daly Jessup wrote:
+</I>&gt;<i>
+</I>&gt;&gt;&gt;<i> I am describing this because I do not believe I could use VNC or  
+</I>&gt;&gt;&gt;<i> Timbuktu or anything else to get into the overall network in  
+</I>&gt;&gt;&gt;<i> these companies.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> From a technological viewpoint, I think you're almost certainly  
+</I>&gt;&gt;<i> wrong. Sounds like you're setting up a VPN using a secure passkey  
+</I>&gt;&gt;<i> generator. Once the VPN's in place, effectively you are part of  
+</I>&gt;&gt;<i> the network at work.
+</I>&gt;<i>
+</I>&gt;<i> Yes, that's what I'm doing. They have a VPN server, and the passkey  
+</I>&gt;<i> generator gives me access. I get connected to the network, and from  
+</I>&gt;<i> there, can use Remote Desktop Connection to access my particular PC  
+</I>&gt;<i> on that network and control it.  What I meant to say was that  
+</I>&gt;<i> without the VPN, I would not be able to get into the network at  
+</I>&gt;<i> all, much less access my computer.
+</I>&gt;<i>
+</I>&gt;<i> Since I have only a hazy idea of how these things work, I don't  
+</I>&gt;<i> quite understand what you are saying I'm wrong about.  Do you think  
+</I>&gt;<i> there's some other way into that secure network besides the VPN?
+</I>
+I think the haziness comes from your original phrasing: &quot;I do not  
+believe I could use ... anything else to get into the overall network  
+in these companies&quot; - I found that a little confusing, too.
+
+You have described two technologies used to access your office LAN -  
+VPN and RDC. You use VPN to get into the overall network, but only  
+using the Microsoft Remote Desktop Connection once you have done  
+that. You are not using the Remote Desktop Connection to &quot;get into&quot;  
+the secure network.
+
+Your employer happens to implement their security this way. If you're  
+going to have Windows desktops &amp; servers then it's not a bad way to  
+do it, but they could have done it lots of other ways, too.
+
+&gt;<i> I don't have  Remote Desktop on the PC. I just have the XP &quot;Allow  
+</I>&gt;<i> Remote Connections&quot; option checked. The Remote Desktop Connection  
+</I>&gt;<i> is on the Mac and it lets me view and control the PC from my Mac at  
+</I>&gt;<i> home.
+</I>
+Um... you probably DO have Remote Desktop on the PC, you just don't  
+use it.
+
+Remote Desktop is Microsoft's name for the client software. They have  
+a couple of names for the server software - the &quot;Allow Remote  
+Connections&quot; checkbox manifests itself as one of these, but the  
+traditional name is &quot;Microsoft Terminal Services&quot;.
+
+You only have the &quot;Allow Remote Connections&quot; checkbox because you  
+have XP Professional installed on your office PCs - it's not  
+installed as part of XP Home, for instance, and I'm not sure about  
+Windows 2000. Your employer could have chosen to use VNC or Timbuktu  
+instead.
+
+I'm pretty sure that when you connect to a machine which has the  
+&quot;Allow Remote Connections&quot; checkbox enabled then you take over that  
+machine completely, and no-one else can use that computer at the same  
+time you do. Your employer might find that of a dozen employees only  
+8 or 10 are ever in the office at once, that usually 4 or 5 people  
+are working remotely in this way, and that the present scenario is a  
+waste of desks; they could use their office-space more efficiently if  
+&quot;your&quot; computer in the office wasn't tied up when you connect remotely.
+
+In this case they could decide to install Terminal Services on a  
+server so that all users connecting remotely do so to that machine;  
+they will not share the desktop, but each will have their own  
+&quot;virtual desktop&quot; and will be able to undertake different tasks on  
+the machine at the same time. In this case the employer could decide  
+there is no need for VPN connection, and that staff will use  
+encrypted Remote Desktop Connection both to &quot;get into&quot; the network  
+and to access the server.
+
+Stroller.
+
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="014764.html">[X4U] remote access
+</A></li>
+	<LI>Next message: <A HREF="014765.html">[X4U] remote access
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14766">[ date ]</a>
+              <a href="thread.html#14766">[ thread ]</a>
+              <a href="subject.html#14766">[ subject ]</a>
+              <a href="author.html#14766">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

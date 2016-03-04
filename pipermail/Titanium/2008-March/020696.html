@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Problem Accessing a Specific Website
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Problem%20Accessing%20a%20Specific%20Website&In-Reply-To=C6483E3BCC25B043BD1169939A34A60D04375A4E%40XCH-NE-1V1.ne.nos.boeing.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="020694.html">
+   <LINK REL="Next"  HREF="020698.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Problem Accessing a Specific Website</H1>
+    <B>Scott Strehlow</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Problem%20Accessing%20a%20Specific%20Website&In-Reply-To=C6483E3BCC25B043BD1169939A34A60D04375A4E%40XCH-NE-1V1.ne.nos.boeing.com"
+       TITLE="[Ti] Problem Accessing a Specific Website">strehlow at usermail.com
+       </A><BR>
+    <I>Fri Mar 14 10:27:18 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="020694.html">[Ti] Problem Accessing a Specific Website
+</A></li>
+        <LI>Next message: <A HREF="020698.html">[Ti] Problem Accessing a Specific Website
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20696">[ date ]</a>
+              <a href="thread.html#20696">[ thread ]</a>
+              <a href="subject.html#20696">[ subject ]</a>
+              <a href="author.html#20696">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Jerry,
+
+According to <A HREF="http://whois.domaintools.com/bbt.com,">http://whois.domaintools.com/bbt.com,</A> that site is on a  
+dedicated server with the IP 208.11.12.253.  Try going to http:// 
+208.11.12.253 and see if the site comes up.  It does for me.  If so,  
+then you are having trouble somewhere in the DNS process.  You might  
+try a different DNS server location and then try the URL again.  If  
+it still doesn't work, then your machine may have somehow gotten that  
+URL into the hosts file.
+
+Open /private/etc/hosts in TextEdit.  Most people's should look like  
+this:
+
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+127.0.0.1	localhost
+255.255.255.255	broadcasthost
+::<i>1             localhost
+</I>
+If you have other items in there, that may be ok, but the important  
+one to look for is bbt.com.  If it is there, it must be removed.  You  
+need root privilege to edit this file.  Open a terminal and type &quot;man  
+hosts&quot; for more info.
+
+Scott
+
+
+
+On Mar 14, 2008, at 9:55 AM, Obrecht, Jerry A wrote:
+
+&gt;<i> Hi, all.  I am running 10.4.11 on a TiBook.  There is one website, my
+</I>&gt;<i> bank's, which I cannot get into.  Whenever I try, I get an immediate
+</I>&gt;<i> error from the browser that says to the effect that the server has
+</I>&gt;<i> dropped the connection.  This happens with either Safari, Camino, or
+</I>&gt;<i> Firefox, and has been happening for some time, in fact since I first
+</I>&gt;<i> upgraded to 10.4.6.  I do not experience a problem using a Windows
+</I>&gt;<i> machine with IE or Firefox.
+</I>&gt;<i>
+</I>&gt;<i> Would you all mind verifying access to the website yourselves,
+</I>&gt;<i> www.bbt.com , and letting me know what may be mis-set on my TiBook
+</I>&gt;<i> before I complain to the bank?
+</I>&gt;<i>
+</I>&gt;<i> Thanks in advance, and apologies for cross posting: hoping to reach a
+</I>&gt;<i> wide audience.
+</I>&gt;<i>
+</I>&gt;<i> Jerry
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Titanium mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/titanium.html">Titanium at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/titanium.html">http://listserver.themacintoshguy.com/mailman/listinfo/titanium</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="020694.html">[Ti] Problem Accessing a Specific Website
+</A></li>
+	<LI>Next message: <A HREF="020698.html">[Ti] Problem Accessing a Specific Website
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20696">[ date ]</a>
+              <a href="thread.html#20696">[ thread ]</a>
+              <a href="subject.html#20696">[ subject ]</a>
+              <a href="author.html#20696">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

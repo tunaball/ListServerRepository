@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Can't startup in Single User mode
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Can%27t%20startup%20in%20Single%20User%20mode&In-Reply-To=20050522150045.7CDB44C04B%40webmail2.spymac.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="009635.html">
+   <LINK REL="Next"  HREF="009638.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Can't startup in Single User mode</H1>
+    <B>Perry The Cynic</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Can%27t%20startup%20in%20Single%20User%20mode&In-Reply-To=20050522150045.7CDB44C04B%40webmail2.spymac.net"
+       TITLE="[G4] Can't startup in Single User mode">perry at cynic.org
+       </A><BR>
+    <I>Sun May 22 16:03:51 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="009635.html">[G4] Can't startup in Single User mode
+</A></li>
+        <LI>Next message: <A HREF="009638.html">[G4] Virtual PC starts up when the computer does
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9637">[ date ]</a>
+              <a href="thread.html#9637">[ thread ]</a>
+              <a href="subject.html#9637">[ subject ]</a>
+              <a href="author.html#9637">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>--On Sunday, May 22, 2005 5:00 PM +0200 <A HREF="../../../mailman/listinfo/g4.html">ksimones at spymac.com</A> wrote:
+
+&gt;<i> (I posted this on the x4u list also.)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Hello all.
+</I>&gt;<i> I'm posting for a friend who can't startup in single user mode and I
+</I>&gt;<i> don't have any answers for him. I thought he may have a bad keyboard, but
+</I>&gt;<i> he tried a new one and still doesn't work (cmd+s during startup).
+</I>&gt;<i>
+</I>&gt;<i> [...]
+</I>&gt;<i>
+</I>&gt;<i> Any help would be greatly appreciated. It's strange that such a basic
+</I>&gt;<i> level task can't be done on his machine.. One thing I just thought of and
+</I>&gt;<i> haven't suggested to him is to reset the system via the CUDA button or
+</I>&gt;<i> remove the battery. Is there anything anyone can think of for this one?
+</I>
+Well, you should reset the PRAM (aka Open Firmware), of course: reboot, 
+hold down Cmd+opt+P+R, wait for restart chime, continue holding for three 
+cycles, then let go. [The three-cycles thing is probably no longer 
+necessary, but it was needed on old(er) Macs, and has become something of a 
+magic incantation. Can't hurt, anyway. :-)]
+
+If your OF parameters are set weirdly, you can get all kinds of strange 
+behavior. The reset should clear all such state back to the defaults.
+
+Another try: Reboot, hold Cmd+Opt+O+F. This should get you into the Open 
+Firmware prompt. If *that* happens to prompt for a password, you've got OF 
+security enabled (that's one reason why single-user booting may not work). 
+But switching the RAM should have reset OF protection already...
+
+At the OF prompt, typing reset-all&lt;return&gt; should also reset everything.
+
+If you can get to the OF prompt at all, you can also explicitly request 
+single-user boot by setting the boot-args variable to include the string 
+'-s'.
+
+Cheers
+  -- perry
+---------------------------------------------------------------------------
+Perry The Cynic                                             <A HREF="../../../mailman/listinfo/g4.html">perry at cynic.org</A>
+To a blind optimist, an optimistic realist must seem like an Accursed Cynic.
+---------------------------------------------------------------------------
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="009635.html">[G4] Can't startup in Single User mode
+</A></li>
+	<LI>Next message: <A HREF="009638.html">[G4] Virtual PC starts up when the computer does
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9637">[ date ]</a>
+              <a href="thread.html#9637">[ thread ]</a>
+              <a href="subject.html#9637">[ subject ]</a>
+              <a href="author.html#9637">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

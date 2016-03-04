@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Archiving files on 10.3 - resource forks?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Archiving%20files%20on%2010.3%20-%20resource%20forks%3F&In-Reply-To=f05210601bfd3545c22b1%40%5B192.168.1.100%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010952.html">
+   <LINK REL="Next"  HREF="010954.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Archiving files on 10.3 - resource forks?</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Archiving%20files%20on%2010.3%20-%20resource%20forks%3F&In-Reply-To=f05210601bfd3545c22b1%40%5B192.168.1.100%5D"
+       TITLE="[X4U] Archiving files on 10.3 - resource forks?">macmonster at myrealbox.com
+       </A><BR>
+    <I>Wed Dec 28 08:19:57 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010952.html">[X4U] Archiving files on 10.3 - resource forks?
+</A></li>
+        <LI>Next message: <A HREF="010954.html">[X4U] Help needs help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10973">[ date ]</a>
+              <a href="thread.html#10973">[ thread ]</a>
+              <a href="subject.html#10973">[ subject ]</a>
+              <a href="author.html#10973">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 24 Dec 2005, at 19:44, John Baltutis wrote:
+&gt;<i>
+</I>&gt;<i> This works best for me. Clone the entire volume to an ext FWHD,  
+</I>&gt;<i> using Carbon
+</I>&gt;<i> Copy Cloner, SuperDuper!, or any other app that creates a bootable  
+</I>&gt;<i> backup. Boot
+</I>&gt;<i> into the volume, ensure everything works as on the original, then  
+</I>&gt;<i> upgrade ...
+</I>
+Ok, I thought that sounded too easy but please consider me a convert.
+
+I wanted to take advantage of the time spent away at my mothers to  
+backup my PowerMac - I figured that the slow part was going to to be  
+copying across the network to my slow old file-server.
+
+I ssh'd home and used `hdiutil`to create a 2gig auto-expanding sparse- 
+image then dittoed the files across before running out of space on  
+the sparseimage. If I were at home I might have spent more time  
+trying to work out what was going wrong, but I hate doing serious  
+homework on the cramped 12&quot; screen of my laptop.
+
+So I tried using `hdiutil create -srcfolder /Users/stroller` but this  
+repeatedly failed for lack of disk space. My home dir was about 24gig  
+in all (so many iTunes!) and I was able to free up about another  
+38gig on the 80gig hard-drive. My only guess is that when called in  
+this form `hdiutil` makes a complete copy of the files before then  
+making a full-size disk-image, but the only way to determine this  
+would be to free up more space &amp; try again. That wasn't really a  
+possibility.
+
+After several attempts at this I decided to just create an over-sized  
+disk image - 30gigs or so - and ditto the lot on to it, but by the  
+time this finished and was copied across the LAN I was due home and  
+had little time to check the backup had been successful.
+
+Arriving home, then, I finally decided to do as you suggested. I  
+cleared out a spare firewire drive, formatted HFS+ &amp; ran CCC. It took  
+two attempts - the first time it wasn't bootable for some reason -  
+and the little drive was stuffed full, but when it was finished I  
+could boot up, enter the imaged system &amp; be fairly confident I'd got  
+everything.
+
+The bootable image proved IMMENSELY useful, as I did a format &amp;  
+install on my old disk - there was just too much junk on there for an  
+upgrade, but it turned out that iCal uses a different format for  
+storing its data and copying the Preferences files and Application  
+Support folders across from the firewire drive to the new one was  
+unsuccessful. The Tiger installer itself must do some magic when  
+upgrading, because my schedule came out blank!
+
+I have a year &amp; a half worth of customer data cluttered in my iCal  
+schedule, and I really didn't want to lose it. Thanks to your advice  
+I was able to boot into the old install &amp; select &quot;Export&quot; in iCal.  
+The import into the new version preserved all my data.
+
+I'm extremely grateful to the list,
+
+Stroller.
+
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010952.html">[X4U] Archiving files on 10.3 - resource forks?
+</A></li>
+	<LI>Next message: <A HREF="010954.html">[X4U] Help needs help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10973">[ date ]</a>
+              <a href="thread.html#10973">[ thread ]</a>
+              <a href="subject.html#10973">[ subject ]</a>
+              <a href="author.html#10973">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Running fsck on a target disk
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Running%20fsck%20on%20a%20target%20disk&In-Reply-To=C101F131.F0A%25supernaut%40underwares.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002726.html">
+   <LINK REL="Next"  HREF="002728.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Running fsck on a target disk</H1>
+    <B>John Johnson</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Running%20fsck%20on%20a%20target%20disk&In-Reply-To=C101F131.F0A%25supernaut%40underwares.org"
+       TITLE="[X-Unix] Running fsck on a target disk">johnatl at mac.com
+       </A><BR>
+    <I>Sat Aug 12 12:06:36 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002726.html">[X-Unix] Running fsck on a target disk
+</A></li>
+        <LI>Next message: <A HREF="002728.html">[X-Unix] Bash scripting Question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2727">[ date ]</a>
+              <a href="thread.html#2727">[ thread ]</a>
+              <a href="subject.html#2727">[ subject ]</a>
+              <a href="author.html#2727">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>There is a little info on it here:
+<A HREF="http://tinyurl.com/7yvvw">http://tinyurl.com/7yvvw</A>
+
+Basically, /rdisk's are raw, unbuffered (character mode) access to  
+the disk, whereas /disk's are buffered by the kernel.
+
+Regards,
+   JJ
+
+On 11-Aug-2006, at 08:32, Alexandre Gauthier wrote:
+
+&gt;<i> Hi Eric,
+</I>&gt;<i>
+</I>&gt;<i> I only asked since when you boot in single user mode and issue an  
+</I>&gt;<i> fsck on
+</I>&gt;<i> the root file system as per the instructions, it uses /dev/ 
+</I>&gt;<i> rdisk0sX, the raw
+</I>&gt;<i> block device...
+</I>&gt;<i>
+</I>&gt;<i> It's also what /etc/rc does, I believe... But thanks!
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On 27/07/06 15:49, &quot;Eric F Crist&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">ecrist at secure-computing.net</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Alexandre,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> According to all the documentation from Apple I've read, and my small
+</I>&gt;&gt;<i> amount of experience, no.  You should use disk0s3, not rdisk0s3.
+</I>&gt;&gt;<i> Don't know the particulars though.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Eric
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Jul 27, 2006, at 6:09 AM, Alexandre Gauthier wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Sorry for interrupting, but is that not supposed to be  
+</I>&gt;&gt;&gt;<i> &quot;rdisk0s3&quot;? As
+</I>&gt;&gt;&gt;<i> in, the raw block device? /etc/rc does this when fsck'ing...
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Eric F Crist wrote:
+</I>&gt;&gt;&gt;&gt;<i> Thom,
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> There is only one 'trick' to running fsck. You need to define the
+</I>&gt;&gt;&gt;&gt;<i> mount point as one of the arguments, usually the last. On a typical
+</I>&gt;&gt;&gt;&gt;<i> Mac system running Mac OS X, you could run fsck on the primary file
+</I>&gt;&gt;&gt;&gt;<i> system by running:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> # fsck_hfs /dev/disk0s3
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> To run the above command on an HFS formatted file system, type:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> # df -h
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> This allows you to find out where your disk is mounted. When I
+</I>&gt;&gt;&gt;&gt;<i> connect
+</I>&gt;&gt;&gt;&gt;<i> a USB HFS formatted disk (an old startup volume, actually) I get:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Filesystem Size Used Avail Capacity Mounted on
+</I>&gt;&gt;&gt;&gt;<i> /dev/disk0s3 93G 34G 58G 37% /
+</I>&gt;&gt;&gt;&gt;<i> devfs 100K 100K 0B 100% /dev
+</I>&gt;&gt;&gt;&gt;<i> fdesc 1.0K 1.0K 0B 100% /dev
+</I>&gt;&gt;&gt;&gt;<i> &lt;volfs&gt; 512K 512K 0B 100% /.vol
+</I>&gt;&gt;&gt;&gt;<i> automount -nsl [201] 0B 0B 0B 100% /Network
+</I>&gt;&gt;&gt;&gt;<i> automount -fstab [205] 0B 0B 0B 100% /automount/Servers
+</I>&gt;&gt;&gt;&gt;<i> automount -static [205] 0B 0B 0B 100% /automount/static
+</I>&gt;&gt;&gt;&gt;<i> /dev/disk1s3 74G 67G 7.2G 90% /Volumes/Macintosh HD 1
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> I can see that my new mount, Macintosh HD 1, is filesystem
+</I>&gt;&gt;&gt;&gt;<i> /dev/disk1s3 which means, 2nd hard disk, slice 3. Computers  
+</I>&gt;&gt;&gt;&gt;<i> typically
+</I>&gt;&gt;&gt;&gt;<i> start counting from 0, so 1 is actually 2. ;)
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Finally, to run fsck, we use Apple's fsck_hfs utility against the
+</I>&gt;&gt;&gt;&gt;<i> above listed filesystem, NOT the mount point, /Volumes/Macintosh
+</I>&gt;&gt;&gt;&gt;<i> HD 1.
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> # fsck_hfs /dev/disk1s3
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> I hope this helps!
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> -----
+</I>&gt;&gt;&gt;&gt;<i> Eric F Crist
+</I>&gt;&gt;&gt;&gt;<i> Secure Computing Networks
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;&gt;&gt;<i> X-Unix mailing list
+</I>&gt;&gt;&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random
+</I>&gt;&gt;&gt;&gt;<i> stuff:
+</I>&gt;&gt;&gt;&gt;<i> <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> -- 
+</I>&gt;&gt;&gt;<i> Alexandre Gauthier
+</I>&gt;&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">supernaut at underwares.org</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> underwares.org
+</I>&gt;&gt;&gt;<i> Obscure IT knowledge Open Database
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> The human brain operates at only 10% of its capacity. The rest is
+</I>&gt;&gt;&gt;<i> overhead for
+</I>&gt;&gt;&gt;<i> the operating system.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;&gt;<i> X-Unix mailing list
+</I>&gt;&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random
+</I>&gt;&gt;&gt;<i> stuff:
+</I>&gt;&gt;&gt;<i>          <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> -----
+</I>&gt;&gt;<i> Eric F Crist
+</I>&gt;&gt;<i> Secure Computing Networks
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> X-Unix mailing list
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;&gt;<i> stuff:
+</I>&gt;&gt;<i>          <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>          <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002726.html">[X-Unix] Running fsck on a target disk
+</A></li>
+	<LI>Next message: <A HREF="002728.html">[X-Unix] Bash scripting Question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2727">[ date ]</a>
+              <a href="thread.html#2727">[ thread ]</a>
+              <a href="subject.html#2727">[ subject ]</a>
+              <a href="author.html#2727">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

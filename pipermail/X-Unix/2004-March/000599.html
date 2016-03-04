@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> virex cron
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=virex%20cron&In-Reply-To=list-11761592%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000598.html">
+   <LINK REL="Next"  HREF="000600.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>virex cron</H1>
+    <B>lists3-200402</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=virex%20cron&In-Reply-To=list-11761592%40mail.ninewire.com"
+       TITLE="virex cron">lists3-200402 at verizon.net
+       </A><BR>
+    <I>Sun Mar 28 07:29:58 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000598.html">Newbie hard drive backup dilemma
+</A></li>
+        <LI>Next message: <A HREF="000600.html">[X-Unix] Stopping the WebDAV Exploit in Apache
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#599">[ date ]</a>
+              <a href="thread.html#599">[ thread ]</a>
+              <a href="subject.html#599">[ subject ]</a>
+              <a href="author.html#599">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Stroller &lt;<A HREF="../../../mailman/listinfo/x-unix.html">MacMonster at myrealbox.com</A>&gt; wrote:
+
+&gt;<i>On Mar 27, 2004, at 10:05 pm, lists3-200402 wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i>  does anyone know how to append a date to a summary for a virex cron
+</I>&gt;&gt;<i>  job?... i checked the virex 7.2.1 manual and it doesn't seem to have a
+</I>&gt;&gt;<i>  switch for that. here's my command:
+</I>&gt;&gt;<i>
+</I>&gt;<i>  &gt; /usr/local/vscanx/vscanx --move /SERVER/VOLUME/VIREX_OUT/QUARANTINE
+</I>&gt;&gt;<i>  /SERVER/VOLUME/SHARE --recursive --unzip --atime-preserve
+</I>&gt;&gt;<i>  --ignore-links  --summary &gt;&gt; /SERVER/VOLUME/VIREX_OUT/SUMMARY.TXT
+</I>&gt;<i>
+</I>&gt;<i>I think this should do it:
+</I>&gt;<i>    /usr/local/vscanx/vscanx --move /SERVER/VOLUME/VIREX_OUT/QUARANTINE
+</I>&gt;<i>/SERVER/VOLUME/SHARE --recursive --unzip --atime-preserve
+</I>&gt;<i>--ignore-links  --summary &gt;&gt; /SERVER/VOLUME/VIREX_OUT/SUMMARY.TXT &amp;&amp;
+</I>&gt;<i>echo &quot;Finished at:&quot;  &gt;&gt; /SERVER/VOLUME/VIREX_OUT/SUMMARY.TXT &amp;&amp; date &gt;&gt;
+</I>&gt;<i>/SERVER/VOLUME/VIREX_OUT/SUMMARY.TXT
+</I>&gt;<i>
+</I>&gt;<i>For the hard-of-wrapping, that's all one line. The &quot;&amp;&amp;&quot; means &quot;wait
+</I>&gt;<i>until the previous command is finished and then run the command that
+</I>&gt;<i>follows&quot;. I would personally prepend the date to the file, but you pays
+</I>&gt;<i>your money &amp; takes your choice.
+</I>&gt;<i>
+</I>&gt;<i>Stroller.
+</I>
+wow, dude, you rock! here's the output (of course i've scanned a few 
+times so there are no viruses):
+
+	Summary report on /SERVER/VOLUME/*
+	File(s)
+        	Total files: ...........  126831
+        	Clean: .................  126831
+        	Not scanned: ...........       0
+        	Possibly Infected: .....       4
+        	Moved: .................       4
+	Finished at:
+	Sun Mar 28 08:35:23 EST 2004
+
+(note: the four files that were found to be &quot;possibly infected&quot; and 
+therefore &quot;moved&quot; are test files...see &lt;<A HREF="http://eicar.com">http://eicar.com</A>&gt; for more 
+info...the virex manual goes into more detail...pretty nifty)
+
+the only problem i noticed is that now i get this error in the 
+terminal when i run the cron script manually (cut/paste into root 
+terminal):
+
+	/SERVER/VOLUME/VIREX_OUT/QUARANTINE
+         file could not be opened.
+
+...the QUARANTINE folder's permissions were adjusted to this after i 
+first saw the message:
+
+	chown -R myself:admin /SERVER/VOLUME/VIREX_OUT
+
+and then...
+
+	chmod -R 777 /SERVER/VOLUME/VIREX_OUT/
+
+...but i still got the same error. the report is fine (thanks a 
+million, stroller!!!). should i disregard?
+
+don
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000598.html">Newbie hard drive backup dilemma
+</A></li>
+	<LI>Next message: <A HREF="000600.html">[X-Unix] Stopping the WebDAV Exploit in Apache
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#599">[ date ]</a>
+              <a href="thread.html#599">[ thread ]</a>
+              <a href="subject.html#599">[ subject ]</a>
+              <a href="author.html#599">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

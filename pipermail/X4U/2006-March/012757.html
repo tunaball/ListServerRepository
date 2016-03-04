@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Finder not registering Permission changes under 10.4.5
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Finder%20not%20registering%20Permission%20changes%20under%2010.4.5&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="012761.html">
+   <LINK REL="Next"  HREF="012760.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Finder not registering Permission changes under 10.4.5</H1>
+    <B>Brett Conlon</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Finder%20not%20registering%20Permission%20changes%20under%2010.4.5&In-Reply-To="
+       TITLE="[X4U] Finder not registering Permission changes under 10.4.5">brett.conlon at SonyDADC.com
+       </A><BR>
+    <I>Tue Mar  7 17:11:23 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="012761.html">[X4U] Applescript or terminal gurus: how to force video mirroring?
+</A></li>
+        <LI>Next message: <A HREF="012760.html">[X4U] DSL versus Cable ??
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12757">[ date ]</a>
+              <a href="thread.html#12757">[ thread ]</a>
+              <a href="subject.html#12757">[ subject ]</a>
+              <a href="author.html#12757">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hiya,
+
+I've been writing a droplet AppleScript to change the permissions on a 
+dropped folder (and it's contents - files and folders) to full read/write 
+and I've just been playing with the terminal and the Info window under 
+10.4.5 and have found that the Finder isn't keeping up with the changes 
+I'm making in terminal.
+
+I create a new folder called &quot;Test&quot; and set the following privileges via 
+Get Info window:
+
+Owner (brett): read/write
+Group (brett): no access
+Others : read/write
+
+If I check in the terminal (ls -l) I see the privileges as they should be:
+drwx---rwx   4 brett  brett  136 Mar  8 10:52 Test
+
+If I then change it via terminal (chmod -R g=rwx Test) so that the group 
+has read/write access:
+drwxrwxrwx   4 brett  brett  136 Mar  8 10:52 Test
+
+When I Get Info on the folder &quot;Test&quot; it still shows:
+Group (brett): no access
+
+I have to log out then back in to see the changes. Is anyone else having 
+this issue under 10.4.5? Surely Apple would have cleared up this &quot;delayed 
+Finder update&quot; issue by now!
+
+In doing similar tests yesterday under 10.3.9 I remember seeing the 
+Privileges in the Get Info window changing without having to even close it 
+and Get Info again.
+
+Cheers,
+
+Coj
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <A HREF="../attachments/20060308/a516c71f/attachment.html">http://listserver.themacintoshguy.com/pipermail/x4u/attachments/20060308/a516c71f/attachment.html</A>
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="012761.html">[X4U] Applescript or terminal gurus: how to force video mirroring?
+</A></li>
+	<LI>Next message: <A HREF="012760.html">[X4U] DSL versus Cable ??
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12757">[ date ]</a>
+              <a href="thread.html#12757">[ thread ]</a>
+              <a href="subject.html#12757">[ subject ]</a>
+              <a href="author.html#12757">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

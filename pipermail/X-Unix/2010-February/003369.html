@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] The which command lies?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20The%20which%20command%20lies%3F&In-Reply-To=%3C411f975b1002161039v18d7c5bdn7a9e29f28028f552%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003368.html">
+   <LINK REL="Next"  HREF="003370.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X-Unix] The which command lies?</H1>
+    <B>Steve Morris</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20The%20which%20command%20lies%3F&In-Reply-To=%3C411f975b1002161039v18d7c5bdn7a9e29f28028f552%40mail.gmail.com%3E"
+       TITLE="[X-Unix] The which command lies?">barbershopsteve at gmail.com
+       </A><BR>
+    <I>Tue Feb 16 10:39:58 PST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003368.html">[X-Unix] The which command lies?
+</A></li>
+        <LI>Next message: <A HREF="003370.html">[X-Unix] The which command lies?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3369">[ date ]</a>
+              <a href="thread.html#3369">[ thread ]</a>
+              <a href="subject.html#3369">[ subject ]</a>
+              <a href="author.html#3369">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Eric F Crist&gt; Not addressing the exact problem, but the one most likely to arise
+&gt;<i>
+</I>&gt;<i> &gt; next: if you are executing Perl scripts, the path of the Perl
+</I>&gt;<i> &gt; interpreter is normally given in the first line. &#160;This will override
+</I>&gt;<i> &gt; the version of Perl that is in your path.
+</I>&gt;<i>
+</I>&gt;<i> Only the script is being executed directly, and not being called as an argument to the perl binary.
+</I>
+I'm not sure what you are trying to say here. It sounds backwards.
+Scripts can't be executed directly. They are text files. Except in
+very unusual cases microprocessors can't execute text files. Only the
+interpreter (the perl binary) gets &quot;executed.&quot; The shell parses the
+first line of the script then launches the interpreter indicated there
+with the script path as an argument, probably via fork and exec or
+similar system calls. This can be confusing because perl modifies $0
+(from the C argv[0]) to reflect the name of the script rather than the
+name of the executable. In perl $^X is supposed to be the fully
+qualified perl binary name.
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003368.html">[X-Unix] The which command lies?
+</A></li>
+	<LI>Next message: <A HREF="003370.html">[X-Unix] The which command lies?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3369">[ date ]</a>
+              <a href="thread.html#3369">[ thread ]</a>
+              <a href="subject.html#3369">[ subject ]</a>
+              <a href="author.html#3369">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] BASH problem?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20BASH%20problem%3F&In-Reply-To=BDE1B78E.3C5D9%25lhelms%40sonic.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001392.html">
+   <LINK REL="Next"  HREF="001394.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] BASH problem?</H1>
+    <B>Russell McGaha</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20BASH%20problem%3F&In-Reply-To=BDE1B78E.3C5D9%25lhelms%40sonic.net"
+       TITLE="[X-Unix] BASH problem?">RussellMcGaha at mac.com
+       </A><BR>
+    <I>Mon Dec 13 03:22:44 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001392.html">[X-Unix] BASH problem?
+</A></li>
+        <LI>Next message: <A HREF="001394.html">[X-Unix] BASH problem?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1393">[ date ]</a>
+              <a href="thread.html#1393">[ thread ]</a>
+              <a href="subject.html#1393">[ subject ]</a>
+              <a href="author.html#1393">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Actually yes and no; I am relatively new to command line programming.  
+After I chmoded the file it ran [is running] just fine as a cron job, 
+and before I changed my shell to bash, was running just fine as a 
+sourced file .
+
+Russell
+On Dec 12, 2004, at 10:53 AM, Larry Helms wrote:
+
+&gt;<i>
+</I>&gt;<i> Been coding long?  Or just reading about it... JUST KIDDING!
+</I>&gt;<i>
+</I>&gt;<i> Seriously though, you've made a very simple syntactic error.
+</I>&gt;<i> You need to remove the SPACE between 'Myday' and `date
+</I>&gt;<i>
+</I>&gt;<i> I cut-n-pasted this little tidbit onto my system...
+</I>&gt;<i> Made that change, chmod'd the file... And was able to execute
+</I>&gt;<i> it is no problems.
+</I>&gt;<i> ______________________________________________________________________
+</I>&gt;<i>     Cosmo :: /Users/lhelms
+</I>&gt;<i>     lhelms &gt; vi bob
+</I>&gt;<i>
+</I>&gt;<i>     #!/bin/tcsh -x
+</I>&gt;<i>
+</I>&gt;<i>     set Myday=`date '+%a'`
+</I>&gt;<i>     echo $Myday `date` | tee -a tempfile
+</I>&gt;<i>     setenv CVSROOT :pserver:<A HREF="../../../mailman/listinfo/x-unix.html">anonymous at cvs-mirror.mozilla.org</A>:/cvsroot
+</I>&gt;<i>
+</I>&gt;<i>     env | grep -i shell
+</I>&gt;<i>     ~
+</I>&gt;<i>     ~
+</I>&gt;<i>     ~
+</I>&gt;<i>     &quot;bob&quot; 7L, 161C written
+</I>&gt;<i>
+</I>&gt;<i> __________ Change security so you can execute the script.
+</I>&gt;<i>
+</I>&gt;<i>     Cosmo :: /Users/lhelms
+</I>&gt;<i>     lhelms &gt; chmod 755 bob
+</I>&gt;<i>
+</I>&gt;<i> __________ Shows that I'm executing under the
+</I>&gt;<i>
+</I>&gt;<i>     Cosmo :: /Users/lhelms
+</I>&gt;<i>     lhelms &gt; env|grep -i shell
+</I>&gt;<i>     SHELL=/bin/zsh
+</I>&gt;<i>
+</I>&gt;<i> __________ Now, execute bob.
+</I>&gt;<i>
+</I>&gt;<i>     Cosmo :: /Users/lhelms
+</I>&gt;<i>     lhelms &gt; ./bob
+</I>&gt;<i>
+</I>&gt;<i>     Executing /Users/lhelms/.cshrc
+</I>&gt;<i>
+</I>&gt;<i>     set Myday=`date '+%a'`
+</I>&gt;<i>     date +%a
+</I>&gt;<i>     tee -a tempfile
+</I>&gt;<i>     echo Sun `date`
+</I>&gt;<i>     date
+</I>&gt;<i>     Sun Sun Dec 12 08:41:09 PST 2004
+</I>&gt;<i>     setenv CVSROOT :pserver:<A HREF="../../../mailman/listinfo/x-unix.html">anonymous at cvs-mirror.mozilla.org</A>:/cvsroot
+</I>&gt;<i>
+</I>&gt;<i> __________ Display contents of tempfile
+</I>&gt;<i>
+</I>&gt;<i>     Cosmo :: /Users/lhelms
+</I>&gt;<i>     lhelms &gt; cat tempfile
+</I>&gt;<i>     Sun Sun Dec 12 08:41:09 PST 2004
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001392.html">[X-Unix] BASH problem?
+</A></li>
+	<LI>Next message: <A HREF="001394.html">[X-Unix] BASH problem?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1393">[ date ]</a>
+              <a href="thread.html#1393">[ thread ]</a>
+              <a href="subject.html#1393">[ subject ]</a>
+              <a href="author.html#1393">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

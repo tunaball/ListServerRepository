@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Cron problem?  [maybe]
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Cron%20problem%3F%20%20%5Bmaybe%5D&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002454.html">
+   <LINK REL="Next"  HREF="002461.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Cron problem?  [maybe]</H1>
+    <B>Russell McGaha</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Cron%20problem%3F%20%20%5Bmaybe%5D&In-Reply-To="
+       TITLE="[X-Unix] Cron problem?  [maybe]">RussellMcGaha at direcway.com
+       </A><BR>
+    <I>Thu Nov 10 17:48:57 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002454.html">[X-Unix] enabling postfix and BIND in Tiger
+</A></li>
+        <LI>Next message: <A HREF="002461.html">[X-Unix] Cron problem?  [maybe]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2460">[ date ]</a>
+              <a href="thread.html#2460">[ thread ]</a>
+              <a href="subject.html#2460">[ subject ]</a>
+              <a href="author.html#2460">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Folks;
+	I've a bit of a problem; I have an automated script to open a  
+Filemaker Document that doesn't always fire of correctly.  The bash  
+script is supposed to open the document, at 1825 via cron, only  
+sometimes it launches the application without opening the document.  
+Here is the script;
+
+#!/bin/bash
+
+FileMaker=&quot;&quot;;
+let loop=0;
+echo &quot;Start&quot;
+open /AutoCloseDown;
+
+while [[ &quot;$Filemaker&quot; = &quot;&quot; &amp;&amp; ((loop -lt 2)) ]]; do
+
+open /AutoCloseDown;
+Filemaker=$(top -l1 | grep &quot;FileMaker&quot;);
+
+echo &quot;Filemaker= &quot;$Filemaker
+
+let loop++
+echo $loop
+sleep 5
+done
+
+echo &quot;stopping&quot;
+exit 0
+
+As you see I try to open the doc twice [to make sure it launches], I  
+thought at first the Filemaker was not launching, but the script now  
+makes sure it does, and the app is open but the Doc doesn't open.   
+I've also tried this with an Applescript with similar erratic  
+results.  Has anyone out there had any troubles like this??  And more  
+important, have any idea how to make sure this doc opens consistently???
+
+Russell
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002454.html">[X-Unix] enabling postfix and BIND in Tiger
+</A></li>
+	<LI>Next message: <A HREF="002461.html">[X-Unix] Cron problem?  [maybe]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2460">[ date ]</a>
+              <a href="thread.html#2460">[ thread ]</a>
+              <a href="subject.html#2460">[ subject ]</a>
+              <a href="author.html#2460">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

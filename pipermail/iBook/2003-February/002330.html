@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> firewire drive format?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=firewire%20drive%20format%3F&In-Reply-To=list-4653320%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002329.html">
+   <LINK REL="Next"  HREF="002331.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>firewire drive format?</H1>
+    <B>Ian Sidle</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=firewire%20drive%20format%3F&In-Reply-To=list-4653320%40mail.ninewire.com"
+       TITLE="firewire drive format?">macmouse4 at attbi.com
+       </A><BR>
+    <I>Sat Feb  8 10:29:17 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002329.html">[P1] Quick Scanner question.
+</A></li>
+        <LI>Next message: <A HREF="002331.html">How do I do CD to CD copy?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2330">[ date ]</a>
+              <a href="thread.html#2330">[ thread ]</a>
+              <a href="subject.html#2330">[ subject ]</a>
+              <a href="author.html#2330">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> Message-id: &lt;<A HREF="../../../mailman/listinfo/ibook.html">9443722 at newdasher.Dartmouth.EDU</A>&gt;
+</I>&gt;<i> Date: 29 Jan 2003 19:11:49 EST
+</I>&gt;<i> From: <A HREF="../../../mailman/listinfo/ibook.html">Alric.J.Lam at Dartmouth.EDU</A> (Alric J. Lam)
+</I>&gt;<i> Subject: [P1] firewire drive format?
+</I>&gt;<i>
+</I>&gt;<i> Hello all,
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> I would like to use my firewire hard drive to store files from both my 
+</I>&gt;<i> iBook at
+</I>&gt;<i> home and my PC at work.  Are there any advantages or disadvantages to 
+</I>&gt;<i> formatting
+</I>&gt;<i> with HFS+ as opposed to FAT32 or NTFS?  I've heard that OSX will read 
+</I>&gt;<i> PC
+</I>&gt;<i> formats, while Win XP needs extra software (like MacDrive 5) to read 
+</I>&gt;<i> mac
+</I>&gt;<i> formatted disks.  I would rather not pay for software at this time, so 
+</I>&gt;<i> I am
+</I>&gt;<i> leaning towards formatting it with a PC format, but I'd first like to 
+</I>&gt;<i> know if
+</I>&gt;<i> there are any problems that might occur on the Mac side if I do that.
+</I>
+Sorry for the late message. I can only really read the list digests on 
+the weekends anymore..
+
+HFS and HFS+ are macintosh formats, with support for resource 
+forks,etc. HFS+ is quite efficient with disk space and supports large 
+partitions and files. normal HFS has a limit of 2GB I believe. Mac's 
+can read both fine. Windows can read HFS with third party software (to 
+some extent). Linux can read/write HFS (but its experimental). No way 
+for HFS+ on either.
+
+FAT32 is the filesystem created for windows 95 (and above). Functional 
+with all versions later then win95. Its not the best file system (in 
+file efficiency) but it works.Mac's and windows (and linux) can all 
+read/write this file system no problems. I believe mac os 7 and above 
+can read it.
+
+NTFS is a file system designed for Windows NT/2K/XP. Its a bit more 
+efficient then FAT32 but not by much. The main reason is it adds real 
+file system security on the files. Only Windows NT/2K/XP can read/write 
+this filesystem reliably.Windows 95/98/ME can *not* use it. No way mac 
+any version. Linux has read support (its experimental) and write 
+support but its *very* dangerous [requires a special repair each time 
+used].
+
+You can do the dual partition setup someone suggested but with FAT32 
+fine the way it is its kinda redundant. You could do it, but simply put 
+- you can only get the windows stuff from a windows machine and the mac 
+stuff from a mac. You can't see files from HFS that are on FAT32.
+
+Resource Forks - With Mac OS X, they have *removed* resource forks from 
+all binaries and data files. They are no longer needed. Its debatable 
+if this is a good move or not. Thus it is perfectly safe to keep OSX 
+Native (non-carbon) programs and files on FAT32. You won't be able to 
+keep carbon or os9 (classic) programs on the drive however. If its just 
+data files then there will be no problems.
+
+So In conclusion, your best bet is to use FAT32.
+
+thanks,
+Ian Sidle
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002329.html">[P1] Quick Scanner question.
+</A></li>
+	<LI>Next message: <A HREF="002331.html">How do I do CD to CD copy?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2330">[ date ]</a>
+              <a href="thread.html#2330">[ thread ]</a>
+              <a href="subject.html#2330">[ subject ]</a>
+              <a href="author.html#2330">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

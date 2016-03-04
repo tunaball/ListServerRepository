@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Call for bash prompts
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Call%20for%20bash%20prompts&In-Reply-To=list-10974568%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000336.html">
+   <LINK REL="Next"  HREF="000338.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Call for bash prompts</H1>
+    <B>Kirk McElhearn</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Call%20for%20bash%20prompts&In-Reply-To=list-10974568%40mail.ninewire.com"
+       TITLE="[X-Unix] Call for bash prompts">kirklists at wanadoo.fr
+       </A><BR>
+    <I>Sat Feb 21 00:35:35 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000336.html">[X-Unix] Call for bash prompts
+</A></li>
+        <LI>Next message: <A HREF="000338.html">[X-Unix] Backdoor method to add users
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#337">[ date ]</a>
+              <a href="thread.html#337">[ thread ]</a>
+              <a href="subject.html#337">[ subject ]</a>
+              <a href="author.html#337">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 2/21/04 4:27 AM, &quot;Joe Block&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">jpb at ApesSeekingKnowledge.net</A>&gt; wrote:
+
+&gt;<i> Well, do you count updating the Terminal.app / X11 xterm window title
+</I>&gt;<i> bar in addition to the prompt as making it multiline and complicated?
+</I>
+Well.... Yes and no. Yes, because I've already got that - you can put the
+same info in the title bar of a Terminal window under bash following this
+hint:
+
+<A HREF="http://www.macosxhints.com/article.php?story=20031015173932306">http://www.macosxhints.com/article.php?story=20031015173932306</A>
+
+&gt;<i> 
+</I>&gt;<i> # here is the relevant portion of my .bash_profile
+</I>&gt;<i> export PS1='[\u@\h:\w]\$ '
+</I>&gt;<i> export TITLEBAR='\[\033]0;\u@\h:\w \007\]'
+</I>&gt;<i> # Terminal sets TERM_PROGRAM so we can tell it apart from regular VT100
+</I>&gt;<i> case &quot;$TERM_PROGRAM&quot; in
+</I>&gt;<i>        &quot;Apple_Terminal&quot;)PS1=&quot;$TITLEBAR$PS1&quot;
+</I>&gt;<i> esac
+</I>&gt;<i> case &quot;$TERM&quot; in
+</I>&gt;<i>        
+</I>&gt;<i> &quot;xterm&quot;|&quot;vt100&quot;|&quot;color-xterm&quot;|&quot;xterm-color&quot;)PS1=&quot;$TITLEBAR$PSRAW&quot;
+</I>&gt;<i> esac
+</I>&gt;<i> 
+</I>&gt;<i> This sets the prompt (and the Terminal window's title bar) to
+</I>&gt;<i> 
+</I>&gt;<i> [<A HREF="../../../mailman/listinfo/x-unix.html">username at hostname</A>:/path/to/cwd]$
+</I>&gt;<i> 
+</I>&gt;<i> to prevent awkward errors like rebooting the wrong server from the
+</I>&gt;<i> command line, or deleting the live configuration files when you think
+</I>&gt;<i> you're working on the . If you don't want the full path, just the
+</I>&gt;<i> current directory name, replace \w with \W.  Replacing \h with \H will
+</I>&gt;<i> put the Rendezvous name in the prompt on Panther.
+</I>&gt;<i> 
+</I>&gt;<i> Fiddling the title bar is also convenient because it allows you to use
+</I>&gt;<i> Terminal's Dock menu to jump straight to the window you want rather
+</I>&gt;<i> than guessing, which is important to me because I typically have 6-12
+</I>&gt;<i> windows open.
+</I>
+Yes, I agree.
+
+I have been trying to reproduce something you can do in tcsh - you can put
+the actual command name in the title bar as well, but it doesn't seem that
+this is possible in bash.
+ 
+Kirk
+ 
+        My latest book: How to Do Everything with Mac OS X Panther
+                  <A HREF="http://www.mcelhearn.com/htde.html">http://www.mcelhearn.com/htde.html</A>
+ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+ . . . . . . .  <A HREF="../../../mailman/listinfo/x-unix.html">kirk at mcelhearn.com</A> | <A HREF="http://www.mcelhearn.com">http://www.mcelhearn.com</A>  . . . . . .
+ . .  Kirk McElhearn | Chemin de la Lauze | 05600 Guillestre | France  . .
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000336.html">[X-Unix] Call for bash prompts
+</A></li>
+	<LI>Next message: <A HREF="000338.html">[X-Unix] Backdoor method to add users
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#337">[ date ]</a>
+              <a href="thread.html#337">[ thread ]</a>
+              <a href="subject.html#337">[ subject ]</a>
+              <a href="author.html#337">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

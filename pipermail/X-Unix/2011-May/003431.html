@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] A (seemingly) simple question...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20A%20%28seemingly%29%20simple%20question...&In-Reply-To=%3CAF1AB886-C19C-4C26-8744-3310B3DF64B1%40mcgillsociety.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="003432.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X-Unix] A (seemingly) simple question...</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20A%20%28seemingly%29%20simple%20question...&In-Reply-To=%3CAF1AB886-C19C-4C26-8744-3310B3DF64B1%40mcgillsociety.org%3E"
+       TITLE="[X-Unix] A (seemingly) simple question...">magill at mcgillsociety.org
+       </A><BR>
+    <I>Tue May 24 13:03:09 PDT 2011</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="003432.html">[X-Unix] A (seemingly) simple question...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3431">[ date ]</a>
+              <a href="thread.html#3431">[ thread ]</a>
+              <a href="subject.html#3431">[ subject ]</a>
+              <a href="author.html#3431">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I was working on debugging a problem (not with macports) and discovered something I could not find...
+
+Where is the &quot;console log&quot; file now?
+
+The file(s) which &quot;Console.app&quot; reports as &quot;All Messages&quot; and &quot;Console Messages.&quot;
+
+At one time there was an actual file called &quot;console.log,&quot; however find does not find it anymore.
+	(sudo  find . -name \*console.log\* -print )
+
+I visited all of the &quot;usual suspects&quot; 
+
+/private/var/log
+/private/tmp/
+/private/tmp/
+/Library/logs
+
+And tried to find something at developer.apple.com but trying to guess where/what apple did to logging is
+not getting me anywhere.  
+
+I'm guessing that the ASL (Apple System Log facility) is the answer. [ man asl(3)]
+That man page implies that all of the old syslog files are still supported &quot;for backwards compatibility.&quot;
+However, that does not appear to be true for the Console log file.
+
+And, &quot;syslog -C&quot; reports entirely different information compared to the console.app.
+
+
+
+T.T.F.N.
+William H. Magill
+# iMac6,1 Core 2 Duo [2.16GHz - 3 GB 667] OS X 10.6.7
+# MacBook Pro4.1 Core 2 Duo [2.5GHz - 4GB 667] OS X 10.6.7
+# Mac mini Core Duo [1.66 Ghz - 2 GB 667]OS X 10.6.7
+# Flat-panel iMac (2.1) [800MHz - Super Drive - 768 Meg] OS X 10.4.11 
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg] Tru64 5.1a 
+# XP1000 [Alpha 21264-3 (EV6) - 256 meg] FreeBSD 5.3
+# XP1000 [Alpha 21264-A (EV6-7) - 256 meg] FreeBSD 5.3
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at me.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+
+
+
+
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="003432.html">[X-Unix] A (seemingly) simple question...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3431">[ date ]</a>
+              <a href="thread.html#3431">[ thread ]</a>
+              <a href="subject.html#3431">[ subject ]</a>
+              <a href="author.html#3431">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

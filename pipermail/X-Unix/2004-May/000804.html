@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Application 'launch-cache'...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Application%20%27launch-cache%27...&In-Reply-To=list-12842073%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000803.html">
+   <LINK REL="Next"  HREF="000805.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Application 'launch-cache'...</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Application%20%27launch-cache%27...&In-Reply-To=list-12842073%40mail.ninewire.com"
+       TITLE="[X-Unix] Application 'launch-cache'...">magill at mcgillsociety.org
+       </A><BR>
+    <I>Tue May 18 07:38:53 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000803.html">[X-Unix] Application 'launch-cache'...
+</A></li>
+        <LI>Next message: <A HREF="000805.html">Application 'launch-cache'...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#804">[ date ]</a>
+              <a href="thread.html#804">[ thread ]</a>
+              <a href="subject.html#804">[ subject ]</a>
+              <a href="author.html#804">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 17 May, 2004, at 23:15, Jerry Krinock wrote:
+&gt;<i> on 04/05/17 08:12, luke at <A HREF="../../../mailman/listinfo/x-unix.html">etyrnal at ameritech.net</A> wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> is there such thing as a type of cache (within the os / system) memory
+</I>&gt;&gt;<i> that could be increased so that a large application that is 
+</I>&gt;&gt;<i> continually
+</I>&gt;&gt;<i> being launched successively would load faster?
+</I>&gt;<i>
+</I>&gt;<i> Yes, I believe that this has been built into OS X since Jaguar, but I 
+</I>&gt;<i> don't
+</I>&gt;<i> know any way for the user to influence it.
+</I>
+I think Jerry is referring to the pre-build scheme. Which is the same 
+thing only different. It just eliminates the dynamic linking phase and 
+goes back to the old stand-by of statically linked programs. It doesn't 
+load the program into any kind of cache.
+
+&gt;<i>
+</I>&gt;&gt;<i> i have xgrid set up to do distributed rendering on my Micro-Cluster&#169; 
+</I>&gt;&gt;<i> ...
+</I>&gt;<i>
+</I>&gt;<i> sounds like you're having fun
+</I>&gt;<i>
+</I>&gt;&gt;<i> and the rendering software takes as long to launch as it does to
+</I>&gt;&gt;<i> actually do it's task...
+</I>&gt;<i>
+</I>&gt;<i> Why not leave the rendering app running?
+</I>
+He can't. I don't believe Xgrid works that way.
+
+I haven't looked at Xgrid closely, but based on the way similar systems 
+work, this is what I would expect...
+
+ From what I understand, Xgrid is a classic master-slave setup common to 
+so-called &quot;super-computers.&quot; (Long ago Digital had what we called 
+&quot;Alpha Farms&quot; under what is now Tru64 Unix, but then was called OSF/1.) 
+I say &quot;so-called&quot; because the premise is that the job in question can 
+be carved up into little pieces and outsourced to random folk who are 
+allowed &quot;do their part,&quot; and then the results are re-assembled by the 
+master &quot;when its all over.&quot; [This is very different from the similar 
+concept done at the CPU level on an instruction by instruction basis. 
+We won't see N-way multi-processing at the CPU level until Power5 (or 
+is it 6?) is released.]
+
+This means that certain kinds of jobs are VERY suited to this kind of 
+treatment. The individual pieces are both &quot;logical&quot; and &quot;substantial.&quot;  
+An &quot;independent&quot; chunk of the problem can be carved off, isolated and 
+still retain &quot;enough&quot; work to be done to make the process of carving it 
+up (i.e. overhead) worth the effort.  Other types of jobs, however, 
+really do need a &quot;bigger hammer.&quot;
+
+This particular problem appears to be of the type that is quite 
+borderline -- the problem can be carved up into sub-tasks, but the 
+amount of work to be done by the sub-task is barely equal to the effort 
+required to do the carving and setup work necessary to do the job.
+
+Super Computing is a funny beast. It really is NOT what most people 
+think it is. Every super computer in the world runs at virtually the 
+same speed, (the speed of the unit processor) until whatever technique 
+which makes that computer super kicks in, then it takes off. In the old 
+days, we had vector processors and array processors just to name two 
+styles of &quot;super computers.&quot; But you had to uniquely code and compile 
+for each type of &quot;super&quot; so that you could utilize its effects. Each 
+one was different and coding techniques which worked optimally for one 
+scheme frequently caused slow-downs on the other!
+
+The overall effect is not unlike a hydroplane boat -- the boat moves 
+like any other boat until it gets up enough speed to sit back on its 
+&quot;shoe&quot; and hydroplane ... then it's off like a rocket.  Or even a 
+liquid fuel rocket... it takes a long time to build up enough thrust to 
+get it moving, but eventually it can move very fast. Or consider 
+&quot;overdrive&quot; (5th gear these days) in the automobile. The gear ratios 
+present yield a very efficient transfer at speed ... but you can't use 
+it to overcome inertia (i.e. start-up), when you need power, not speed.
+
+Other than that... Yes. The memory system (as well as other components) 
+can be tuned, and must be tuned if you want to optimize for a 
+particular type of work. I haven't explored Free BSD, which Darwin is 
+based upon, so I don't know what is available, but there are ways of 
+tuning things -- just remember, that you will be boldly going where 
+virtually no one else has any interest in going.  I would ask around on 
+the FreeBSD lists for ideas. But again, you are moving into wizzard 
+territory, beyond the area where any &quot;mere mortal&quot; cares to play. My 
+guess is you will probably find 50 kindred souls in the US and maybe 
+100 world-wide. (Another place to ask is the University of Virginia as 
+well as Apple's own ACG - Advanced Computation group - 
+www.apple.com/acg/ - my understanding is that Richard Crandall is quite 
+&quot;approachable.&quot; He may be able to put you in touch with others in the 
+rendering business.)
+
+Remember -- OSX, like all versions of Unix(tm), is a general-purpose, 
+time-sharing, operating system! No version of Unix(tm) supports 
+&quot;real-time&quot; processing without taking specific actions to support RT. 
+This is true of any operating system. Every thing sold by every vendor 
+(including Linux) is &quot;optimized&quot; for general-purpose, time-sharing. 
+This is why there are &quot;variants,&quot; such as &quot;Imbedded Linux&quot; or Palm or 
+Symbian or that which runs your iPod (whose name I forget off hand). 
+All these have features which make them &quot;undesirable&quot; for a consumer 
+oriented OS, but VERY desirable for special purposes.
+
+Until you've worked on a box which has only 4K of memory (yes K not M) 
+you don't know what &quot;coding optimization&quot; means!
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000803.html">[X-Unix] Application 'launch-cache'...
+</A></li>
+	<LI>Next message: <A HREF="000805.html">Application 'launch-cache'...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#804">[ date ]</a>
+              <a href="thread.html#804">[ thread ]</a>
+              <a href="subject.html#804">[ subject ]</a>
+              <a href="author.html#804">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Servers] Mail Server Mailing List
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX-Servers%5D%20Mail%20Server%20Mailing%20List&In-Reply-To=7097bd8c0604101442y2dd91247s7313df3b2c02d8cb%40mail.gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000382.html">
+   <LINK REL="Next"  HREF="000384.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Servers] Mail Server Mailing List</H1>
+    <B>Lydia Osborne</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX-Servers%5D%20Mail%20Server%20Mailing%20List&In-Reply-To=7097bd8c0604101442y2dd91247s7313df3b2c02d8cb%40mail.gmail.com"
+       TITLE="[X-Servers] Mail Server Mailing List">osborne at wc.edu
+       </A><BR>
+    <I>Mon Apr 10 15:01:59 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000382.html">[X-Servers] Mail Server Mailing List
+</A></li>
+        <LI>Next message: <A HREF="000384.html">[X-Servers] Mail Server Mailing List
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#383">[ date ]</a>
+              <a href="thread.html#383">[ thread ]</a>
+              <a href="subject.html#383">[ subject ]</a>
+              <a href="author.html#383">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Wing,
+Here is what I received when I did the various commands
+
+Dig cccc.edu
+
+; &lt;&lt;&gt;&gt; DiG 9.2.2 &lt;&lt;&gt;&gt; ccccd.edu
+;; global options:  printcmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 25507
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 2
+
+;; QUESTION SECTION:
+;ccccd.edu.                     IN      A
+
+;; ANSWER SECTION:
+ccccd.edu.              73452   IN      A       66.147.168.4
+
+;; AUTHORITY SECTION:
+ccccd.edu.              36661   IN      NS      ns2.ccccd.edu.
+ccccd.edu.              36661   IN      NS      ns1.ccccd.edu.
+
+;; ADDITIONAL SECTION:
+ns1.ccccd.edu.          39596   IN      A       66.147.168.4
+ns2.ccccd.edu.          61857   IN      A       66.147.168.6
+
+;; Query time: 11 msec
+;; SERVER: 208.189.202.44#53(208.189.202.44)
+;; WHEN: Mon Apr 10 16:51:56 2006
+;; MSG SIZE  rcvd: 111
+
+Host ccccd.edu
+kyrie:~ osborne$ host www.ccccd.edu
+www.ccccd.edu has address 66.147.168.26
+
+NSlookup ccccd.edu
+kyrie:~ osborne$ nslookup ccccd.edu
+Note:  nslookup is deprecated and may be removed from future releases.
+Consider using the `dig' or `host' programs instead.  Run nslookup with
+the `-sil[ent]' option to prevent this message from appearing.
+Server:         67.67.182.10
+Address:        67.67.182.10#53
+
+
+Dig server87
+
+ &lt;&lt;&gt;&gt; DiG 9.2.2 &lt;&lt;&gt;&gt; server87.appriver.com
+;; global options:  printcmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NXDOMAIN, id: 29591
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;server87.appriver.com.         IN      A
+
+;; AUTHORITY SECTION:
+appriver.com.           7078    IN      SOA     ns1.swbell.net. 
+postmaster.swbell.net. 2005012701 3600 900 604800 7200
+
+;; Query time: 16 msec
+;; SERVER: 67.67.182.10#53(67.67.182.10)
+;; WHEN: Mon Apr 10 16:54:59 2006
+;; MSG SIZE  rcvd: 100
+
+
+Host server 87
+(I don't know if I had the correct syntax on this one so I tried it a 
+couple of ways. I'm still a command line newbie)
+
+kyrie:~ osborne$ host server87.appriver.com
+Host server87.appriver.com not found: 3(NXDOMAIN)
+kyrie:~ osborne$ host www.server87.appriver.com
+Host www.server87.appriver.com not found: 3(NXDOMAIN)
+
+NSLookup server87.appriver.com
+kyrie:~ osborne$ nslookup server87.appriver.com
+Note:  nslookup is deprecated and may be removed from future releases.
+Consider using the `dig' or `host' programs instead.  Run nslookup with
+the `-sil[ent]' option to prevent this message from appearing.
+Server:         67.67.182.10
+Address:        67.67.182.10#53
+
+** server can't find server87.appriver.com: NXDOMAIN
+
+Dig for server86
+
+; &lt;&lt;&gt;&gt; DiG 9.2.2 &lt;&lt;&gt;&gt; server86.appriver.com
+;; global options:  printcmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NXDOMAIN, id: 45943
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;server86.appriver.com.         IN      A
+
+;; AUTHORITY SECTION:
+appriver.com.           6765    IN      SOA     ns1.swbell.net. 
+postmaster.swbell.net. 2005012701 3600 900 604800 7200
+
+;; Query time: 3 msec
+;; SERVER: 67.67.182.10#53(67.67.182.10)
+;; WHEN: Mon Apr 10 17:00:12 2006
+;; MSG SIZE  rcvd: 100
+
+NSLookup server86
+kyrie:~ osborne$ nslookup server86.appriver.com
+Note:  nslookup is deprecated and may be removed from future releases.
+Consider using the `dig' or `host' programs instead.  Run nslookup with
+the `-sil[ent]' option to prevent this message from appearing.
+Server:         67.67.182.10
+Address:        67.67.182.10#53
+
+** server can't find server86.appriver.com: NXDOMAIN
+
+
+
+
+Any ideas on what to try next?
+
+Thanks!
+Lydia
+&gt;<i>   
+</I></PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000382.html">[X-Servers] Mail Server Mailing List
+</A></li>
+	<LI>Next message: <A HREF="000384.html">[X-Servers] Mail Server Mailing List
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#383">[ date ]</a>
+              <a href="thread.html#383">[ thread ]</a>
+              <a href="subject.html#383">[ subject ]</a>
+              <a href="author.html#383">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

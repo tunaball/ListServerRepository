@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> PowerBook energy usage
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=PowerBook%20energy%20usage&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="013966.html">
+   <LINK REL="Next"  HREF="013968.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>PowerBook energy usage</H1>
+    <B>Kynan Shook</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=PowerBook%20energy%20usage&In-Reply-To="
+       TITLE="PowerBook energy usage">kshook at cae.wisc.edu
+       </A><BR>
+    <I>Sun May 16 01:43:15 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="013966.html">[Ti] fixing the famous&quot; Kernel Panic&quot;
+</A></li>
+        <LI>Next message: <A HREF="013968.html">TiBook display (dis)assembly details
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13967">[ date ]</a>
+              <a href="thread.html#13967">[ thread ]</a>
+              <a href="subject.html#13967">[ subject ]</a>
+              <a href="author.html#13967">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Well, I just thought some people on this list might be interested in 
+how much power they're using by doing certain things, especially for 
+those extremely concerned about making their battery last as long as 
+possible before they need to recharge; I borrowed a portable energy 
+meter from the local library, and I figured out approximately how much 
+power various features use on my 12 and 17&quot; PowerBooks.  Now, I'm not a 
+total geek - the energy meter was actually intended for use determining 
+how much power all my roommate's networking equipment is using.  We're 
+probably the only apartment in the world (and almost certainly the 
+smallest and crappiest - this is student housing, after all) using a 
+Cisco 5000 router instead of an Ethernet hub.  He actually has a 4-post 
+rack with that and a number of other devices (a few routers, a few 
+switches, some fiber optic cable running here and there...).
+
+Anyway, if anybody else decides to do this for whatever reason, your 
+results WILL be different.  Also, the power usage jumps around a LOT in 
+general; the meter updates the display about every quarter second or 
+so, and it would fluctuate by anywhere from a few tenths of a Watt to 5 
+or more Watts, just as normal operation of the computer as the CPU 
+turns itself on and off, and the disk cache gets flushed, and all that. 
+  I did a fair amount of averaging in my head, and a little bit of 
+guessing.  Configurations are as follows:
+17&quot;/1 GHz/60 GB/1 GB (55 Watt-hour battery)
+12&quot;/1 GHz/80 GB/768 MB/SuperDrive (47 Watt-hour battery)
+Approximate power use for various things, and which of the computers 
+the measurements apply to:
+
+12&quot;:
+Airport: 0.8 W
+Bluetooth: around 0.3 W
+Optical drive spinning at low speed (versus off): 3 W
+Optical drive spinning at high speed (versus off): 4 W
+Hard drive (idle, versus off): 0.8 W
+Duplicating a large file: 2-4 W more than the hard drive at idle.
+Duplicating many small files: 3-5 W more than the HD at idle (more CPU 
+usage).
+iTunes visuals: 7 W
+Backlight dimmed (via brightness keys) versus display off (via Energy 
+Saver): 1 W
+Backlight on lowest setting versus backlight dimmed: 1 W
+Backlight on highest setting versus dimmed: 4 W
+Minimum power consumption: HD spinning but idle, backlight at minimum, 
+Airport and Bluetooth off, minimal CPU and GPU usage: 12 W total for 
+the whole computer.
+
+17&quot;:
+Airport: 0.8 W
+Backlight dimmed versus display off: 1.5 W
+Backlight dimmed to lowest brightness setting: 1.5 W
+Backlight dimmed to highest brightness setting: 8 W
+CPU at 100% versus ~3%, full speed (1 GHz): 11-12 W
+CPU at 100%, full-speed versus reduced speed (1 GHz versus 667 MHz): 8 W
+CPU at ~3%, full speed versus reduced speed: minimal difference (this 
+doesn't surprise me too much; the CPU shuts off any parts of itself 
+that aren't being used; changing the clock speed of something that's 
+taking power isn't going to make it take any less power.  ;-))
+Keyboard backlight: no noticeable difference
+Minimum power consumption: HD spinning but idle, Airport and Bluetooth 
+off, backlight on at lowest brightness, minimal CPU and GPU usage: 16 W 
+for the whole computer.
+Typical power consumption: HD reading and writing occasionally, Airport 
+on, backlight at about half, moderate CPU usage, etc: 20-35 W.
+Maximum power consumption: battery at fast charge (other sources of 
+power drain, eg display brightness, just take power that would 
+otherwise go to the battery, the total power usage doesn't change at 
+all): 60 W
+
+Both: the fan being on or off did not make a large difference in power 
+usage.  Of course, if the fan is on, that probably means that the CPU 
+has been under moderate to heavy use, and so it's an indicator of high 
+power consumption.  That 11 extra Watts that your computer uses while 
+very active would nearly halve your battery life.  And if you have the 
+backlight on full, you would chop off a fair amount of time, too.
+
+It should be noted that these measurements (especially the ones for the 
+whole computer) are NOT the same as what they'd be while on battery 
+power: the power adapter takes some power, and some things are affected 
+by a power change that can't be simulated on AC (some circuitry isn't 
+used on battery, the speakers and sound circuitry won't turn off while 
+on AC, etc.).  The 16 W minimal usable power drain would likely be 
+several Watts less while on battery power, but I don't have an easy way 
+of testing that.
+
+Anyway, hope somebody else finds this interesting; you can see how much 
+faster your battery will drain at the highest brightness, certainly!
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="013966.html">[Ti] fixing the famous&quot; Kernel Panic&quot;
+</A></li>
+	<LI>Next message: <A HREF="013968.html">TiBook display (dis)assembly details
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13967">[ date ]</a>
+              <a href="thread.html#13967">[ thread ]</a>
+              <a href="subject.html#13967">[ subject ]</a>
+              <a href="author.html#13967">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

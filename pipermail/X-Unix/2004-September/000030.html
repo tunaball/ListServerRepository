@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Why didn't App le change the line break&#160;?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Why%20didn%27t%20App%20le%20change%20the%20line%0A%09%3D%3Fiso-8859-1%3FQ%3Fbreak%3DA0%3D3F%3F%3D&In-Reply-To=20040921144007.GB8496%40Dark-Age.local">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000029.html">
+   <LINK REL="Next"  HREF="000040.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Why didn't App le change the line break&#160;?</H1>
+    <B>James Bucanek</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Why%20didn%27t%20App%20le%20change%20the%20line%0A%09%3D%3Fiso-8859-1%3FQ%3Fbreak%3DA0%3D3F%3F%3D&In-Reply-To=20040921144007.GB8496%40Dark-Age.local"
+       TITLE="[X-Unix] Why didn't App le change the line break&#160;?">subscriber at gloaming.com
+       </A><BR>
+    <I>Tue Sep 21 08:21:46 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000029.html">[X-Unix] Why didn't Apple change the line break&#160;?
+</A></li>
+        <LI>Next message: <A HREF="000040.html">[X-Unix] Why didn't Apple change the line break??
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#30">[ date ]</a>
+              <a href="thread.html#30">[ thread ]</a>
+              <a href="subject.html#30">[ subject ]</a>
+              <a href="author.html#30">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Eugene Lee wrote on Tuesday, September 21, 2004:
+
+&gt;<i>On Tue, Sep 21, 2004 at 05:09:51AM -0700, Craig wrote:
+</I>&gt;:<i> 
+</I>&gt;:<i> This may be unrelated, but why is it that on OS X, if you redirect the
+</I>&gt;:<i> output of ls or some other commands into a text file then open the
+</I>&gt;:<i> file with a text editor, you see something like this:
+</I>&gt;:<i> 
+</I>&gt;:<i> [01;34malias sketchbook examples[0m
+</I>&gt;:<i> [0mls.txt[0m
+</I>&gt;:<i> [01;34mnew pix[0m
+</I>&gt;:<i> [0moreilly.com -- Online Catalog- PDF Hacks.webloc[0m
+</I>&gt;:<i> [0mwiretap.sit[0m
+</I>&gt;:<i> [0mzip code article-LVRJ.html[0m
+</I>&gt;:<i> [0mzip code map-LVRJ.gif[0m
+</I>&gt;:<i> [m
+</I>
+&lt;clip&gt;
+
+&gt;<i>You're not using a standard version of &quot;ls&quot;.  Do this and report
+</I>&gt;<i>what you see in a text editor:
+</I>&gt;<i>
+</I>&gt;<i>   $ /bin/ls &gt; files.txt
+</I>
+Eugene's probably right.  You're using a non-standard version of ls or you have something (probably CLICOLOR_FORCE) set in your environment.
+
+I didn't look at your output of ls closely enough.  When you said &quot;ls and some other commands&quot; I assumed you were having this problem with all of your command-line tools.
+
+The garbage you see here are ANSI terminal escape codes.  These are sequences that tell a CRT terminal (or emulator) to switch colors, text styles, or change cursor position.  Normally, ls is smart enough not to ouput these codes if the destination device isn't a termnal.  But you can configure ls to always output color codes, in which case you'll end up with the codes in your file or pipe.  Or you are using a non-standard version of ls that is doing the same thing.
+
+-- 
+James Bucanek &lt;mailto:<A HREF="../../../mailman/listinfo/x-unix.html">privatereply at gloaming.com</A>&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000029.html">[X-Unix] Why didn't Apple change the line break&#160;?
+</A></li>
+	<LI>Next message: <A HREF="000040.html">[X-Unix] Why didn't Apple change the line break??
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#30">[ date ]</a>
+              <a href="thread.html#30">[ thread ]</a>
+              <a href="subject.html#30">[ subject ]</a>
+              <a href="author.html#30">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

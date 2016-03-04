@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Servers] Sendmail, PHP, etc
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20Sendmail%2C%20PHP%2C%20etc&In-Reply-To=list-7120983%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000194.html">
+   <LINK REL="Next"  HREF="000196.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Servers] Sendmail, PHP, etc</H1>
+    <B>Justin French</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20Sendmail%2C%20PHP%2C%20etc&In-Reply-To=list-7120983%40mail.ninewire.com"
+       TITLE="[X Servers] Sendmail, PHP, etc">justin at indent.com.au
+       </A><BR>
+    <I>Fri Jul  4 20:08:05 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000194.html">Sendmail problems
+</A></li>
+        <LI>Next message: <A HREF="000196.html">[X Servers] Sendmail, PHP, etc
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#195">[ date ]</a>
+              <a href="thread.html#195">[ thread ]</a>
+              <a href="subject.html#195">[ subject ]</a>
+              <a href="author.html#195">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I've got it all working now...
+
+thanks to all
+Justin
+
+
+On Friday, July 4, 2003, at 10:44  PM, Justin French wrote:
+
+&gt;<i> I followed those instructions, but still no luck...
+</I>&gt;<i>
+</I>&gt;<i> I've emptied /var/log/mail.log, restarted my computer, and attempted 
+</I>&gt;<i> to send an email via a PHP script.  here's the new log:
+</I>&gt;<i>
+</I>&gt;<i> ---
+</I>&gt;<i> Jul  4 22:28:36 Justin-Frenchs-Computer sendmail[397]: File 
+</I>&gt;<i> descriptors missing on startup: stdin, stdout, stderr; Bad file 
+</I>&gt;<i> descriptor
+</I>&gt;<i> Jul  4 22:28:36 Justin-Frenchs-Computer sendmail[403]: starting daemon 
+</I>&gt;<i> (8.12.9): <A HREF="../../../mailman/listinfo/x-servers.html">SMTP+queueing at 01</A>:00:00
+</I>&gt;<i> Jul  4 22:28:36 Justin-Frenchs-Computer sendmail[405]: File 
+</I>&gt;<i> descriptors missing on startup: stdin, stdout, stderr; Bad file 
+</I>&gt;<i> descriptor
+</I>&gt;<i> Jul  4 22:28:36 Justin-Frenchs-Computer sendmail[406]: starting daemon 
+</I>&gt;<i> (8.12.9): <A HREF="../../../mailman/listinfo/x-servers.html">queueing at 01</A>:00:00
+</I>&gt;<i> Jul  4 22:31:16 Justin-Frenchs-Computer sendmail[404]: h64CCvnt000523: 
+</I>&gt;<i> to=&lt;<A HREF="../../../mailman/listinfo/x-servers.html">justin at indent.com.au</A>&gt;, 
+</I>&gt;<i> ctladdr=&lt;<A HREF="../../../mailman/listinfo/x-servers.html">nobody at justin-frenchs-computer.local</A>&gt; (-2/-2)$
+</I>&gt;<i> rred: Name server: indent.com.au.: host name lookup failure
+</I>&gt;<i> Jul  4 22:32:26 Justin-Frenchs-Computer sendmail[447]: h64CWQkM000447: 
+</I>&gt;<i> from=nobody, size=102, class=0, nrcpts=1, 
+</I>&gt;<i> msgid=&lt;<A HREF="../../../mailman/listinfo/x-servers.html">200307041232.h64CWQkM000447 at just</A>$
+</I>&gt;<i> Jul  4 22:32:26 Justin-Frenchs-Computer sendmail[448]: h64CWQvR000448: 
+</I>&gt;<i> from=&lt;<A HREF="../../../mailman/listinfo/x-servers.html">nobody at justin-frenchs-computer.local</A>&gt;, size=340, class=0, 
+</I>&gt;<i> nrcpts=1, msgid=&lt;$
+</I>&gt;<i> 27.0.0.1]
+</I>&gt;<i> Jul  4 22:32:26 Justin-Frenchs-Computer sendmail[447]: h64CWQkM000447: 
+</I>&gt;<i> to=<A HREF="../../../mailman/listinfo/x-servers.html">justin at indent.com.au</A>, ctladdr=nobody (-2/-2), delay=00:00:00, 
+</I>&gt;<i> xdelay=00:00:00,$
+</I>&gt;<i> ccepted for delivery)
+</I>&gt;<i> Jul  4 22:33:56 Justin-Frenchs-Computer sendmail[404]: h64COBnt000557: 
+</I>&gt;<i> to=&lt;<A HREF="../../../mailman/listinfo/x-servers.html">justin at indent.com.au</A>&gt;, 
+</I>&gt;<i> ctladdr=&lt;<A HREF="../../../mailman/listinfo/x-servers.html">nobody at justin-frenchs-computer.local</A>&gt; (-2/-2)$
+</I>&gt;<i> rred: Name server: indent.com.au.: host name lookup failure
+</I>&gt;<i> ---
+</I>&gt;<i>
+</I>&gt;<i> Any help would be great,
+</I>&gt;<i>
+</I>&gt;<i> Justin
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;<i> Mac ISP Serious Mac Internet Solutions From NineWire!   
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older 
+</I>&gt;<i> Mac! Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>   Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;<i> ---
+</I>&gt;<i> [This E-mail scanned for viruses]
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000194.html">Sendmail problems
+</A></li>
+	<LI>Next message: <A HREF="000196.html">[X Servers] Sendmail, PHP, etc
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#195">[ date ]</a>
+              <a href="thread.html#195">[ thread ]</a>
+              <a href="subject.html#195">[ subject ]</a>
+              <a href="author.html#195">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

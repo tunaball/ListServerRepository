@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Newbies] Printing a list of items
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20Printing%20a%20list%20of%20items&In-Reply-To=list-13639745%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004165.html">
+   <LINK REL="Next"  HREF="004167.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Newbies] Printing a list of items</H1>
+    <B>Norman Cohen</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20Printing%20a%20list%20of%20items&In-Reply-To=list-13639745%40mail.ninewire.com"
+       TITLE="[X Newbies] Printing a list of items">nacohen at mac.com
+       </A><BR>
+    <I>Tue Jun  1 13:48:12 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004165.html">[X Newbies] Printing a list of items
+</A></li>
+        <LI>Next message: <A HREF="004167.html">[X Newbies] Printing a list of items
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4166">[ date ]</a>
+              <a href="thread.html#4166">[ thread ]</a>
+              <a href="subject.html#4166">[ subject ]</a>
+              <a href="author.html#4166">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Applescript might be able to help you here. I've attached an 
+applescript that will provide the paths of everything dropped onto it 
+(if you save the script as an application) and places these paths in 
+the clipboard. You can then paste the output wherever you want. It 
+won't do everything that you want, but it might get you started.
+
+Norm
+
+on open theItem
+	set thepath to &quot;&quot;
+	set quote to &quot;\&quot;&quot;
+	--	display dialog (count of theItem)
+	if (count of theItem) &gt; 1 then
+		set thedelim to display dialog &quot;Do you want to separate multiple 
+listing by a space or a return?&quot; buttons {&quot;Space&quot;, &quot;Return&quot;} default 
+button 1
+		set thedelim to (button returned of thedelim as string)
+	else
+		set thedelim to &quot; &quot;
+	end if
+	--display dialog thedelim
+	repeat with eachItem in theItem
+		set thepath to thepath &amp; &quot;'&quot; &amp; POSIX path of (eachItem as string) &amp; 
+&quot;'&quot;
+		if thedelim is equal to &quot;Space&quot; then
+			set thepath to thepath &amp; &quot; &quot;
+		else
+			set thepath to thepath &amp; return
+		end if
+	end repeat
+	set theScript to &quot;echo &quot; &amp; quote &amp; thepath &amp; quote &amp; &quot;| pbcopy&quot;
+	do shell script theScript
+	--display dialog &quot;The clipboard contains the directory listing.&quot;
+end open
+
+
+Norman Cohen
+<A HREF="../../../mailman/listinfo/x-newbies.html">nacohen at mac.com</A>
+
+&quot;An adventure is only an inconvenience rightly considered. An 
+inconvenience is an adventure wrongly considered.&quot;
+G. K. Chesterton
+On Jun 1, 2004, at 11:00 AM, VS wrote:
+
+&gt;<i> At 09.26 -0400 04-06-01, Alex wrote:
+</I>&gt;&gt;<i> As to the original question, &quot;How does one print a list of the 
+</I>&gt;&gt;<i> contents of a folder in system X&quot;, the simplest is copy and paste. 
+</I>&gt;&gt;<i> Open the folder in list view, open all enclosed folders (if any) -- 
+</I>&gt;&gt;<i> opt-right arrow -- select all, copy, then paste in the target 
+</I>&gt;&gt;<i> application (e.g., TextEdit).
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Thanks for this tip, but I have had problems with this: when I copy 
+</I>&gt;<i> everything in a listed folder like this and paste it the items get 
+</I>&gt;<i> pasted in no specific order. It's not alphabetical, not reverse 
+</I>&gt;<i> alphabetical, not creation time or any other known order, just random. 
+</I>&gt;<i> So it's not useful at all for me, sadly.
+</I>&gt;<i>
+</I>&gt;<i> This also means that the technique described won't list subfolders 
+</I>&gt;<i> directly beneath it's containing folder, but somewhere beneath the 
+</I>&gt;<i> list of the items at the top level. Very strange and unuseful...
+</I>&gt;<i>
+</I>&gt;<i> I don't know what causes this, I use localised Finder (for Swedish 
+</I>&gt;<i> users) but that doesn't seem to be the issue as the pasted order isn't 
+</I>&gt;<i> correct in Swedish either...:-)
+</I>&gt;<i>
+</I>&gt;<i> Anyone have any idea??
+</I>&gt;<i>
+</I>&gt;<i> / Vicki
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-newbies.html">X-Newbies-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-newbies.html">X-Newbies-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-newbies.html">X-Newbies-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;<i> Mac ISP Serious Mac Internet Solutions From NineWire!   
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older 
+</I>&gt;<i> Mac! Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>   Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;<i>
+</I>&gt;<i> OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s - 
+</I>&gt;<i> <A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004165.html">[X Newbies] Printing a list of items
+</A></li>
+	<LI>Next message: <A HREF="004167.html">[X Newbies] Printing a list of items
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4166">[ date ]</a>
+              <a href="thread.html#4166">[ thread ]</a>
+              <a href="subject.html#4166">[ subject ]</a>
+              <a href="author.html#4166">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

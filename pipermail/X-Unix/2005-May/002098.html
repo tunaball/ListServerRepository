@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Problem with xxd tools
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Problem%20with%20xxd%20tools&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002097.html">
+   <LINK REL="Next"  HREF="002099.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Problem with xxd tools</H1>
+    <B>Hudson Barton</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Problem%20with%20xxd%20tools&In-Reply-To="
+       TITLE="[X-Unix] Problem with xxd tools">hhbv at highwinds.com
+       </A><BR>
+    <I>Sun May 29 21:11:44 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002097.html">[X-Unix] parsing a file into smaller files
+</A></li>
+        <LI>Next message: <A HREF="002099.html">[X-Unix] Problem with xxd tools
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2098">[ date ]</a>
+              <a href="thread.html#2098">[ thread ]</a>
+              <a href="subject.html#2098">[ subject ]</a>
+              <a href="author.html#2098">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello, I wonder if anyone can help me fix this little problem.
+
+I'm using the &quot;XXD&quot; tools for hexing and unhexing the result of 
+encryptions produced by the &quot;openssl&quot; commands.  I'm using a 
+Macintosh G4 with Tiger.  The environment is shell scripts 
+(Applescript).
+
+The Encrpytion process is... [Plaintext ==&gt;&gt; Encryption  ==&gt;&gt; Hexed 
+String].  Then the reverse is...  [Hexed String  ==&gt;&gt; Decryption ==&gt;&gt; 
+Plaintext].
+
+When I use XXD, the encryption result produced by openssl (a string) 
+is usually different (unpredictably) after being hexed and unhexed by 
+XXD.  The error causes my decryption to fail.
+
+Specifically, the problem is that the input string for XXD almost 
+always contains ASCII character 10 (a line feed) in one or more 
+places, and XXD often (or always - ????) returns ASCII character 13 
+instead (a carriage return) when unhexing.  I don't think there is 
+any way for me to work around this problem.  XXD needs to return 
+exactly what it started with.
+
+To recap, the original text (in file &quot;fin&quot;) contains one or more 
+incidents of ascii character 10==&gt;&gt;
+
+The relevant lines of my code are:
+Hexing:  	do shell script &quot;xxd  -p -u  -c 20  &quot; &amp; fin
+Unhexing:  	do shell script &quot;xxd -r  -p -u -c 20 &quot; &amp; fin
+
+===&gt;&gt;&gt; result contains ascii character 13 instead of ascii character 10
+
+Suggestions?
+
+
+H.
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002097.html">[X-Unix] parsing a file into smaller files
+</A></li>
+	<LI>Next message: <A HREF="002099.html">[X-Unix] Problem with xxd tools
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2098">[ date ]</a>
+              <a href="thread.html#2098">[ thread ]</a>
+              <a href="subject.html#2098">[ subject ]</a>
+              <a href="author.html#2098">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

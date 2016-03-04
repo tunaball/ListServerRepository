@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] On restart cpu reduces from 867mhz to 566mhz
+	(Longish-please clip for reply)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20On%20restart%20cpu%20reduces%20from%20867mhz%20to%20566mhz%0A%09%28Longish-please%20clip%20for%20reply%29&In-Reply-To=list-9998699%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011926.html">
+   <LINK REL="Next"  HREF="011928.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] On restart cpu reduces from 867mhz to 566mhz
+	(Longish-please clip for reply)</H1>
+    <B>John Griffin</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20On%20restart%20cpu%20reduces%20from%20867mhz%20to%20566mhz%0A%09%28Longish-please%20clip%20for%20reply%29&In-Reply-To=list-9998699%40mail.ninewire.com"
+       TITLE="[Ti] On restart cpu reduces from 867mhz to 566mhz
+	(Longish-please clip for reply)">jwegriffin at mac.com
+       </A><BR>
+    <I>Tue Dec 30 09:26:45 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011926.html">[Ti] On restart cpu reduces from 867mhz to 566mhz
+	(Longish-please clip for reply)
+</A></li>
+        <LI>Next message: <A HREF="011928.html">[Ti] On restart cpu reduces from 867mhz to 566mhz (Longish-please clip for reply)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11927">[ date ]</a>
+              <a href="thread.html#11927">[ thread ]</a>
+              <a href="subject.html#11927">[ subject ]</a>
+              <a href="author.html#11927">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>OK, I got this from the following link:
+
+<A HREF="http://www.macosxhints.com/article.php?story=20031127211855401&query=sysctl">http://www.macosxhints.com/article.php?story=20031127211855401&amp;query=sysctl</A>
+
+Here is one person's testing results:
+
+Authored by: ahbe on Thu, Dec 4 '03 at 12:40PM
+
+Ok listen up, this should answer many of your questions. Here's my setup:
+867Mhz 12&quot; Powerbook OS X Panther 10.3.1 Xbench 1.1.3 I created a new
+account just for this test. This is mostly because my primary account has a
+bunch of stuff running in the background, and I wanted to make this as
+subjective as possible. So, after a fresh restart I logged into my newly
+created account and did a sysctl hw.cpufrequency and got back an answer of
+533Mhz like everyone else. I ran Xbench on CPU test only and after several
+dozen tries, got an average of about 98.3 (It varies slightly). I than
+shutdown my powerbook, and reset the PMU. When I started it back up and
+logged into my special account and did a sysctl hw.cpufrequency test again,
+this time it said my CPU was running at 866MHz. Much better. I then ran
+Xbench again, and guess what. I got the EXACT same scores. Somewhere around
+98.3. So, what does this tell me? sysctl doesn't tell you anything. Ignore
+it. In fact, just restarting my computer, not reseting the PMU, will give me
+different answers when I do a sysctl hw.cpufrequency. Sometimes I get
+533MHz, sometimes I get 866MHz. So, at least on my 12&quot; Powerbook, it doesn't
+matter. Any perceived speed increases are just in your head. Hope this
+helps. -- Ahbe
+
+So, it appears that some Powerbooks (1 Ghz Powerbooks and 12&quot; Aluminium
+books in particular) return an incorrect value in Terminal and other similar
+UNIX utilities.
+
+jg
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011926.html">[Ti] On restart cpu reduces from 867mhz to 566mhz
+	(Longish-please clip for reply)
+</A></li>
+	<LI>Next message: <A HREF="011928.html">[Ti] On restart cpu reduces from 867mhz to 566mhz (Longish-please clip for reply)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11927">[ date ]</a>
+              <a href="thread.html#11927">[ thread ]</a>
+              <a href="subject.html#11927">[ subject ]</a>
+              <a href="author.html#11927">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

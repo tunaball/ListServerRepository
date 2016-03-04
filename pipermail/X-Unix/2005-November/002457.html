@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] how to send mail from commandline?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20how%20to%20send%20mail%20from%20commandline%3F&In-Reply-To=E52C96C1-0C80-4C47-94AD-0003AC7B42DB%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002456.html">
+   <LINK REL="Next"  HREF="002458.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] how to send mail from commandline?</H1>
+    <B>Warren Pollans</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20how%20to%20send%20mail%20from%20commandline%3F&In-Reply-To=E52C96C1-0C80-4C47-94AD-0003AC7B42DB%40secure-computing.net"
+       TITLE="[X-Unix] how to send mail from commandline?">warren at meyer-pollans.net
+       </A><BR>
+    <I>Thu Nov 10 14:40:14 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002456.html">[X-Unix] how to send mail from commandline?
+</A></li>
+        <LI>Next message: <A HREF="002458.html">[X-Unix] how to send mail from commandline?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2457">[ date ]</a>
+              <a href="thread.html#2457">[ thread ]</a>
+              <a href="subject.html#2457">[ subject ]</a>
+              <a href="author.html#2457">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>thanks,  all of the various suggestions are fine and work IF postfix is 
+properly configured.
+
+My problem was that the postfix configuration was hosed - I don't how 
+it got that way.
+
+Once I fixed the postfix config, my original method worked fine
+
+
+On Nov 10, 2005, at 4:24 PM, Eric F Crist wrote:
+
+&gt;<i> On Nov 9, 2005, at 12:58 PM, Ben Gold wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> I've wanted occasionally to be able to send an email from the command 
+</I>&gt;&gt;<i> line also.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I've always wondered if there is no way to send one without turning 
+</I>&gt;&gt;<i> on Postfix?   I always thought it would be possible to simply send 
+</I>&gt;&gt;<i> out a message much like my Apple Mail program does &#8211; some command 
+</I>&gt;&gt;<i> where I type in the destination, message, AND my ISPs mail server.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Is this not possible?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Why do I need to run a server just to send an email?  If numerous 
+</I>&gt;&gt;<i> programs can connect to my ISPs mail server, why can't I?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Or do I misunderstand that Postfix is a server, not a client?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I don't know a lot about *nix, but I was hoping this was possible.
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> sorry, accidentally hit send...
+</I>&gt;<i>
+</I>&gt;<i> You can also send an email from the command line using the mail 
+</I>&gt;<i> command:
+</I>&gt;<i>
+</I>&gt;<i> [Swordfish:~] username% mail <A HREF="../../../mailman/listinfo/x-unix.html">username at secure-computing.net</A>
+</I>&gt;<i> Subject: this is a test
+</I>&gt;<i> This is another way to send an email.  Similar to the telnet method, I 
+</I>&gt;<i> need to finish this email using a . on a line by itself.
+</I>&gt;<i>
+</I>&gt;<i> ..
+</I>&gt;<i> EOT
+</I>&gt;<i>
+</I>&gt;<i> You can attach a file using the following series of command:
+</I>&gt;<i>
+</I>&gt;<i> [swordfish:~] username% mail <A HREF="../../../mailman/listinfo/x-unix.html">username at secure-computing.net</A> &lt; 
+</I>&gt;<i> testfile.txt
+</I>&gt;<i>
+</I>&gt;<i> HTH
+</I>&gt;<i> -----
+</I>&gt;<i> Eric F Crist
+</I>&gt;<i> Secure Computing Networks
+</I>&gt;<i> <A HREF="http://www.secure-computing.net">http://www.secure-computing.net</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random 
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002456.html">[X-Unix] how to send mail from commandline?
+</A></li>
+	<LI>Next message: <A HREF="002458.html">[X-Unix] how to send mail from commandline?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2457">[ date ]</a>
+              <a href="thread.html#2457">[ thread ]</a>
+              <a href="subject.html#2457">[ subject ]</a>
+              <a href="author.html#2457">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

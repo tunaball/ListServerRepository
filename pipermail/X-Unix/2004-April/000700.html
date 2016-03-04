@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] GNU Readline
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20GNU%20Readline&In-Reply-To=list-12218028%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000699.html">
+   <LINK REL="Next"  HREF="000701.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] GNU Readline</H1>
+    <B>Alexandre Gauthier</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20GNU%20Readline&In-Reply-To=list-12218028%40mail.ninewire.com"
+       TITLE="[X-Unix] GNU Readline">supernaut at raptorized.com
+       </A><BR>
+    <I>Mon Apr 19 04:27:26 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000699.html">[X-Unix] GNU Readline
+</A></li>
+        <LI>Next message: <A HREF="000701.html">[X-Unix] GNU Readline
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#700">[ date ]</a>
+              <a href="thread.html#700">[ thread ]</a>
+              <a href="subject.html#700">[ subject ]</a>
+              <a href="author.html#700">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is why you should try Fink.
+<A HREF="http://fink.sourceforge.net">http://fink.sourceforge.net</A>
+
+
+I will also confirm the dependencies on my Linux box.
+
+angeldust:~ # emerge -va tclspice
+
+These are the packages that I would merge, in order:
+
+Calculating dependencies ...done!
+[ebuild  N    ] x11-misc/ttmkfdir-3.0.9-r1   19 kB
+[ebuild  N    ] media-libs/fontconfig-2.2.1   599 kB
+[ebuild  N    ] x11-base/opengl-update-1.5   [empty/missing/bad digest]
+[ebuild  N    ] x11-base/xfree-4.3.0-r5  -3dfx -3dnow -bindist -cjk -debug
+-doc -ipv6 -mmx +nls +pam -sdk -sse -static -truetype -xml2  71,131 kB
+[ebuild  N    ] dev-lang/tk-8.3.4-r1   2,531 kB
+[ebuild  N    ] dev-tcltk/tclreadline-2.1.0   156 kB
+[ebuild  N    ] dev-tcltk/blt-2.4z   2,149 kB
+[ebuild  N    ] app-sci/tclspice-0.2.15   2,946 kB
+
+Total size of downloads: 79,534 kB
+
+Do you want me to merge these packages? [Yes/No]
+
+
+I would look it up using fink, but my iBook is already in my courier bag,
+upstairs. I might leave an updated message later.
+
+-----Original Message-----
+From: Mac OS X Unix [mailto:<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at lists.themacintoshguy.com</A>] On Behalf Of
+Stroller
+Sent: 19 avril 2004 04:13
+To: Mac OS X Unix
+Subject: Re: [X-Unix] GNU Readline
+
+
+On Apr 19, 2004, at 4:12 am, Jerry Krinock wrote:
+
+&gt;<i> I want to compile an open-source project called tclspice (an electronic
+</I>&gt;<i> circuit simulator).  I downloaded the &quot;source&quot; file, opened a Terminal
+</I>&gt;<i> window in its folder and typed &quot;./configure&quot;.  Result: Many lines of 
+</I>&gt;<i> text
+</I>&gt;<i> reporting progress in finding stuff, mostly OK, until:
+</I>&gt;<i>
+</I>&gt;<i> Checking for readline:
+</I>&gt;<i> checking for readline/readline.h... no
+</I>&gt;<i> configure: error: Couldn't find GNU readline headers.
+</I>&gt;<i>
+</I>&gt;<i> After this, I found another open-source project called readline4-4.2a 
+</I>&gt;<i> which
+</I>&gt;<i> seems to be what the above notification says I'm missing.
+</I>&gt;<i>
+</I>&gt;<i> Should I configure, make and make install this readline package first?
+</I>
+That is certainly what I'd try. The problem with compiling stuff from 
+source is that there's no handling of dependencies - the packages upon 
+which the source code you're installing depends.
+
+Beware, tho', that tclspice seems to use the tk widget set; whilst I 
+know applications using this will compile on OS X, I think it may be a 
+little bit of  a chore to do so. My Linux box lists the following 
+packages as dependencies for tclspice:
+
+    $ emerge -p tclspice
+       These are the packages that I would merge, in order:
+
+    Calculating dependencies ...done!
+    [ebuild  N    ] x11-misc/ttmkfdir-3.0.9-r1
+    [ebuild  N    ] media-libs/fontconfig-2.2.1
+    [ebuild  N    ] x11-base/opengl-update-1.5
+    [ebuild  N    ] x11-base/xfree-4.3.0-r5
+    [ebuild  N    ] dev-lang/tk-8.3.4-r1
+    [ebuild  N    ] media-libs/glide-v3-3.10-r3
+    [ebuild  N    ] dev-tcltk/tclreadline-2.1.0
+    [ebuild  N    ] dev-tcltk/blt-2.4z
+    [ebuild  N    ] app-sci/tclspice-0.2.15
+
+If a binary package is available for OS X, I would certainly be 
+inclined to use it.
+
+Stroller.
+
+
+----------
+Check out the Mac OS X email list FAQ
+<A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+
+To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-off at lists.themacintoshguy.com</A>&gt;
+To switch to the DIGEST mode, E-mail to
+&lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-digest at lists.themacintoshguy.com</A>&gt;
+Need help from a real person? Try.
+&lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-request at lists.themacintoshguy.com</A>&gt;
+
+----------
+$14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your Mac ISP
+
+Serious Mac Internet Solutions From NineWire!   <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+
+DVIator   | Run Dual ADC displays on your G4 or just one on an older Mac! 
+Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+
+   Support   | Support this list by clicking here before you buy!
+  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+
+OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s -
+<A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000699.html">[X-Unix] GNU Readline
+</A></li>
+	<LI>Next message: <A HREF="000701.html">[X-Unix] GNU Readline
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#700">[ date ]</a>
+              <a href="thread.html#700">[ thread ]</a>
+              <a href="subject.html#700">[ subject ]</a>
+              <a href="author.html#700">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

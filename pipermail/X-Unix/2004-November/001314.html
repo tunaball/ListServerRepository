@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Files Whose Names Begin With &quot;.&quot;
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Files%20Whose%20Names%20Begin%20With%20%22.%22&In-Reply-To=BDC9E0CA.718E%25jerry%40ieee.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001313.html">
+   <LINK REL="Next"  HREF="001315.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Files Whose Names Begin With &quot;.&quot;</H1>
+    <B>Phillip Burk</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Files%20Whose%20Names%20Begin%20With%20%22.%22&In-Reply-To=BDC9E0CA.718E%25jerry%40ieee.org"
+       TITLE="[X-Unix] Files Whose Names Begin With &quot;.&quot;">philburk at mac.com
+       </A><BR>
+    <I>Wed Nov 24 07:10:31 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001313.html">[X-Unix] Files Whose Names Begin With &quot;.&quot;
+</A></li>
+        <LI>Next message: <A HREF="001315.html">[X-Unix] Files Whose Names Begin With &quot;.&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1314">[ date ]</a>
+              <a href="thread.html#1314">[ thread ]</a>
+              <a href="subject.html#1314">[ subject ]</a>
+              <a href="author.html#1314">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Nov 24, 2004, at 9:55 AM, Jerry Krinock wrote:
+
+&gt;<i> I have a wonderful new little 
+</I>&gt;<i> MP3-player/bluetooth-headset/radio/dictaphone
+</I>&gt;<i> pendant made in Hong Kong.  It is advertised to work on &quot;Mac OS 9 or 
+</I>&gt;<i> above&quot;,
+</I>&gt;<i> but the developers literally don't know about OS X.
+</I>&gt;<i>
+</I>&gt;<i> One minor problem I have is that when I write an audio file to it, it 
+</I>&gt;<i> always
+</I>&gt;<i> writes two files, for example:
+</I>&gt;<i>
+</I>&gt;<i> MyAudioTrack.mp3    2000 KB  contains actual audio
+</I>&gt;<i> ._MyAudioTrack.mp3     4 KB  is useless
+</I>
+The filesystem of that little device doesn't grok resources forks.  the 
+&quot;._&quot; file is a resource fork.
+
+&gt;<i> How can I remove the useless files?  As I found from experiment and by
+</I>&gt;<i> reading &quot;man rm&quot;, rm will not touch anything which begins with &quot;.&quot;
+</I>
+Eh?  I'm able to rm dotfiles as either an admin user or prefaced with 
+sudo.
+
+You could try either forcing it:
+
+rm -f &quot;._whateverdotfile&quot;
+
+or use sudo and your admin password:
+
+sudo rm -f &quot;._whateverdotfile&quot;
+
+&gt;<i> From doing a Google search I found a suggestion to use ftp to delete 
+</I>&gt;<i> the
+</I>&gt;<i> these files, but there must be an easier way!
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001313.html">[X-Unix] Files Whose Names Begin With &quot;.&quot;
+</A></li>
+	<LI>Next message: <A HREF="001315.html">[X-Unix] Files Whose Names Begin With &quot;.&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1314">[ date ]</a>
+              <a href="thread.html#1314">[ thread ]</a>
+              <a href="subject.html#1314">[ subject ]</a>
+              <a href="author.html#1314">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

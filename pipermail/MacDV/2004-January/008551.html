@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MacDV] Re: Can't save iMovie 3.03 Projects
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20Can%27t%20save%20iMovie%203.03%20Projects&In-Reply-To=list-10042612%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="008550.html">
+   <LINK REL="Next"  HREF="008552.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MacDV] Re: Can't save iMovie 3.03 Projects</H1>
+    <B>Carlton Kelly</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20Can%27t%20save%20iMovie%203.03%20Projects&In-Reply-To=list-10042612%40mail.ninewire.com"
+       TITLE="[MacDV] Re: Can't save iMovie 3.03 Projects">carlkelly at adelphia.net
+       </A><BR>
+    <I>Sat Jan  3 14:55:30 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="008550.html">Guerilla Stabilizer
+</A></li>
+        <LI>Next message: <A HREF="008552.html">[MacDV] Re: Can't save iMovie 3.03 Projects
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8551">[ date ]</a>
+              <a href="thread.html#8551">[ thread ]</a>
+              <a href="subject.html#8551">[ subject ]</a>
+              <a href="author.html#8551">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks for the advice, although I'm still in the same boat -- my copy 
+of iMovie seems to be corrupted. I looked in the Console app and this 
+is the error message recorded whenever iMovie attempts to save the 
+Project file:
+
+FSpExchangeFiles failed; Project not saved! (-50)
+
+I've tried searching on Google and Apple Support but all of the 
+references seem to be targeted to developers and how their applications 
+should handle the condition., i.e. there's not much I can do about it.
+
+I suppose the only thing left to try would be to reinstall iMovie. I'm 
+not sure how to go about doing that...
+
+Carl
+
+On Jan 2, 2004, at 6:29 PM, Peter van der Linden wrote:
+
+&gt;<i>
+</I>&gt;<i> On Jan 2, 2004, at 2:34 PM, Carlton Kelly wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> the iMovie Project File is created at Project creation (as it should 
+</I>&gt;&gt;<i> be), but is never successfully updated by the iMovie Application. It 
+</I>&gt;&gt;<i> always contains 0 bytes.
+</I>&gt;<i>
+</I>&gt;<i> If you can create the empty file OK, then it is probably not a 
+</I>&gt;<i> permissions problem.
+</I>&gt;<i> It indicates that all the directories in the path are accessible to 
+</I>&gt;<i> you.
+</I>&gt;<i> Just to be sure, after the project file is created, and before writing 
+</I>&gt;<i> to it, in a terminal window do:
+</I>&gt;<i>
+</I>&gt;<i>        chmod 777 your-file
+</I>&gt;<i>        ls -l  your-file
+</I>&gt;<i>
+</I>&gt;<i> where &quot;your-file&quot; is the file in question.
+</I>&gt;<i> The &quot;ls&quot; should show you as the owner of the file, and permissions of 
+</I>&gt;<i> &quot;rwxrwxrwx&quot;
+</I>&gt;<i>
+</I>&gt;<i> Are you trying to do something as a different user to the one who owns 
+</I>&gt;<i> that directory?
+</I>&gt;<i>
+</I>&gt;<i> You could try running the iMovie process under ktrace, and look to see 
+</I>&gt;<i> if any of the system calls fail, particularly write.  Look for lines 
+</I>&gt;<i> like this:
+</I>&gt;<i>   6000 find     CALL  write(0x1,0xd000,0x14)
+</I>&gt;<i>   6000 find     GIO   fd 1 wrote 20 bytes
+</I>&gt;<i>        &quot;./frompc/work/a.exe
+</I>&gt;<i>        &quot;
+</I>&gt;<i>   6000 find     RET   write 20/0x14
+</I>&gt;<i>
+</I>&gt;<i> but with an error indication, i.e. the Generic I/O (GIO) asked it to 
+</I>&gt;<i> write non-zero number of bytes, and the RET showed it wrote zero.    
+</I>&gt;<i> man ktrace, man kdump has more info on this utility.
+</I>&gt;<i>
+</I>&gt;<i> I don't really know what the problem is, but ktrace will tell you what 
+</I>&gt;<i> the app is trying to do.
+</I>&gt;<i>
+</I>&gt;<i>     Peter
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> &lt;<A HREF="../../../../www.themacintoshguy.com/lists/MacDV.html">http://www.themacintoshguy.com/lists/MacDV.html</A>&gt;.
+</I>&gt;<i> Send a message to &lt;<A HREF="../../../mailman/listinfo/macdv.html">MacDV-DIGEST at themacintoshguy.com</A>&gt; to switch to the 
+</I>&gt;<i> digest version.
+</I>&gt;<i>
+</I>&gt;<i> XRouter | Share your DSL or cable modem between multiple computers! 
+</I>&gt;<i> Dr. Bott | Now $139.99      &lt;<A HREF="http://www.drbott.com/prod/xrouter.html">http://www.drbott.com/prod/xrouter.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>   Cyberian   | Support this list when you buy at Outpost.com!
+</I>&gt;<i>   Outpost    |         <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+</I>&gt;<i>
+</I>&gt;<i> MacResQ Specials: LaCie SCSI CDR From $99! PowerBook 3400/200 Only 
+</I>&gt;<i> $879! Norton AntiVirus 6 Only $19! We Stock PARTS! 
+</I>&gt;<i> &lt;<A HREF="http://www.macresq.com">http://www.macresq.com</A>&gt;
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="008550.html">Guerilla Stabilizer
+</A></li>
+	<LI>Next message: <A HREF="008552.html">[MacDV] Re: Can't save iMovie 3.03 Projects
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8551">[ date ]</a>
+              <a href="thread.html#8551">[ thread ]</a>
+              <a href="subject.html#8551">[ subject ]</a>
+              <a href="author.html#8551">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

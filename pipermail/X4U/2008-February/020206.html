@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Making a DVD copy-CSS protection
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Making%20a%20DVD%20copy-CSS%20protection&In-Reply-To=26416838-8B90-4CA4-B950-9A03BE9AD56B%40ca.rr.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="020203.html">
+   <LINK REL="Next"  HREF="020208.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Making a DVD copy-CSS protection</H1>
+    <B>Brett Conlon</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Making%20a%20DVD%20copy-CSS%20protection&In-Reply-To=26416838-8B90-4CA4-B950-9A03BE9AD56B%40ca.rr.com"
+       TITLE="[X4U] Making a DVD copy-CSS protection">brettnlis at bigpond.com
+       </A><BR>
+    <I>Fri Feb  8 18:57:06 PST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="020203.html">[X4U] Making a DVD copy-CSS protection
+</A></li>
+        <LI>Next message: <A HREF="020208.html">[X4U] Making a DVD copy-CSS protection
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20206">[ date ]</a>
+              <a href="thread.html#20206">[ thread ]</a>
+              <a href="subject.html#20206">[ subject ]</a>
+              <a href="author.html#20206">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hiya,
+
+I only have Toast Lite so have never had access to its DVD-ROM (UDF)  
+option.
+
+UDIF (Universal Disc Image Format) is Apple's OSX Disc Image format  
+(.dmg files). I don't believe it will suit DVD purposes.
+
+However, I did find a neat trick for accessing Disk Utility's hidden  
+formats. Just type the following into Terminal (press return) then  
+launch Disk Utility and try creating an image as per before. See if a  
+UDF/ISO format option is available - I tested this in 10.3.9 but there  
+isn't a UDF/ISO option.
+
+defaults write com.apple.DiskUtility advanced-image-options 1
+
+I can't find any information on the &quot;DVD/CD Master&quot; format but from my  
+past experience it hasn't created a DVD disc that will work in my  
+player so I'm a bit mystified about what it is used for...
+
+Oh, and when I'm experimenting with creating DVD discs I always first  
+use a re-writable disc until I get it right - no coasters that way!
+
+Cheers,
+
+Coj
+
+On 09/02/2008, at 12:03 PM, Crandon David wrote:
+
+&gt;<i> Hey Brett,
+</I>&gt;<i>
+</I>&gt;<i> Thanks for your reply.
+</I>&gt;<i>
+</I>&gt;<i> I used MacTheRipper and it came out fine. I then tried Toast 6 to  
+</I>&gt;<i> make a copy using the DATA tab, and chose DVD-ROM (UDF). It burned  
+</I>&gt;<i> OK, but verification said it had a bad sector, and sure enough about  
+</I>&gt;<i> halfway through it froze. This happened twice more, once with Toast 7.
+</I>&gt;<i>
+</I>&gt;<i> Next I tried Fast DVD Copy and it burned it OK, it's playing now,  
+</I>&gt;<i> and I'll see if it plays through all the way. But while it IS  
+</I>&gt;<i> playing on my 3 year old Pioneer DVD player, Apples DVD Player on my  
+</I>&gt;<i> computer wouldn't recognize it. I also noticed that the icon of the  
+</I>&gt;<i> disc on my computer was titled &quot;DVD MOVIE&quot; and not the real title of  
+</I>&gt;<i> the disc.  (Led Zeppelin I).
+</I>&gt;<i>
+</I>&gt;<i> Launching Disk Utility (I'm using 10.4.11), doesn't show exactly the  
+</I>&gt;<i> chose for formatting as you suggested, but it does have two options  
+</I>&gt;<i> that might work...you tell me. One is &quot;DVD/CD Master&quot; and the other  
+</I>&gt;<i> is &quot;UDIF stub&quot;. There are many others of course.
+</I>&gt;<i>
+</I>&gt;<i> What do you think? These coasters are getting expensive! Although  
+</I>&gt;<i> Fry's has there store brand DVD+R for a little over a buck each.
+</I>&gt;<i>
+</I>&gt;<i> David
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Feb 7, 2008, at 11:00 PM, Brett Conlon wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Hi David,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Yes, MacTheRipper is your buddy for removing copy protectiuon as  
+</I>&gt;&gt;<i> others have noted.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I'm not sure about 10.4 but on 10.5, once you have a folder  
+</I>&gt;&gt;<i> containing the VIDEO_TS folder (and perhaps the DVD also has other  
+</I>&gt;&gt;<i> items in it like PC games or other additional files in there too) a  
+</I>&gt;&gt;<i> FREE and easy way to create a UDF formatted disc (UDF is the native  
+</I>&gt;&gt;<i> format for DVD players - some players may reject non-UDF formatted  
+</I>&gt;&gt;<i> discs) is to launch Disk Utility and choose &quot;Disc Image from  
+</I>&gt;&gt;<i> Folder&quot; under the File/New menus. Then choose the DVD folder  
+</I>&gt;&gt;<i> created by MacTheRipper and specify &quot;hyb rid image (HFS+/ISO/UDF)  
+</I>&gt;&gt;<i> from the format menu and save the image file to wherever you want.  
+</I>&gt;&gt;<i> You can then use Disc Utility or Toast Lite to burn the image.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I had a look in 10.3's Disk Utility and it doesn't have the hybrid  
+</I>&gt;&gt;<i> format option.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Cheers,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Cojcolds
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> ps. I also have a small AppleScript droplet app that will create a  
+</I>&gt;&gt;<i> UDF formatted ISO file from a dropped folder and burn it for you if  
+</I>&gt;&gt;<i> you like.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On 08/02/2008, at 8:14 AM, Crandon David wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> OK, since the courts have said it's OK for someone to have their  
+</I>&gt;&gt;&gt;<i> own personal copy of a commercial CD or DVD, how do I go about  
+</I>&gt;&gt;&gt;<i> copying it?
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Toast 7 &amp; 8 won't let me make a copy when the movie DVD has the  
+</I>&gt;&gt;&gt;<i> CSS copy protection scheme. Toast 6 will let me make a copy since  
+</I>&gt;&gt;&gt;<i> it doesn't notice the CSS protection, but then the copy won't play  
+</I>&gt;&gt;&gt;<i> in DVD Player because it doesn't have the CSS copy protection plan  
+</I>&gt;&gt;&gt;<i> on the disc...
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Can anyone help?
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> David
+</I>&gt;&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;&gt;<i> X4U mailing list
+</I>&gt;&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">X4U at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">http://listserver.themacintoshguy.com/mailman/listinfo/x4u</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Seven Cent Deals - Great legacy stuff Great Legacy <A HREF="Pricehttp://www.drbott.com/prod/db.lasso?cat=Seven+Cent+Deal">Pricehttp://www.drbott.com/prod/db.lasso?cat=Seven+Cent+Deal</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> X4U mailing list
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">X4U at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">http://listserver.themacintoshguy.com/mailman/listinfo/x4u</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Seven Cent Deals - Great legacy stuff Great Legacy <A HREF="Pricehttp://www.drbott.com/prod/db.lasso?cat=Seven+Cent+Deal">Pricehttp://www.drbott.com/prod/db.lasso?cat=Seven+Cent+Deal</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="020203.html">[X4U] Making a DVD copy-CSS protection
+</A></li>
+	<LI>Next message: <A HREF="020208.html">[X4U] Making a DVD copy-CSS protection
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20206">[ date ]</a>
+              <a href="thread.html#20206">[ thread ]</a>
+              <a href="subject.html#20206">[ subject ]</a>
+              <a href="author.html#20206">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

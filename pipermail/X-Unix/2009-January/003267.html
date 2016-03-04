@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Sed - remove line numbers
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Sed%20-%20remove%20line%20numbers&In-Reply-To=A369AB56-2F29-4695-BFB1-07C9C2F4C9F3%40charter.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003266.html">
+   <LINK REL="Next"  HREF="003268.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Sed - remove line numbers</H1>
+    <B>Filipp Lepalaan</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Sed%20-%20remove%20line%20numbers&In-Reply-To=A369AB56-2F29-4695-BFB1-07C9C2F4C9F3%40charter.net"
+       TITLE="[X-Unix] Sed - remove line numbers">filipp at mac.com
+       </A><BR>
+    <I>Sat Jan 24 15:09:50 PST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003266.html">[X-Unix] Sed - remove line numbers
+</A></li>
+        <LI>Next message: <A HREF="003268.html">[X-Unix] Sed - remove line numbers
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3267">[ date ]</a>
+              <a href="thread.html#3267">[ thread ]</a>
+              <a href="subject.html#3267">[ subject ]</a>
+              <a href="author.html#3267">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Probably not the most efficient way of doing it, but:
+
+cat filename | sed -E 's/^[0-9]+\. //' | tr -s '\n'
+
+:<i>)
+</I>
+
+-filipp
+
+On 25.01.2009, at 0:47, Charles Howse wrote:
+
+&gt;<i> Hi,
+</I>&gt;<i> I can't find an example of what I need to do online, could someone  
+</I>&gt;<i> please give me an example of how to use sed to remove the line  
+</I>&gt;<i> numbers and carriage returns/linefeeds from a 100 line file?
+</I>&gt;<i>
+</I>&gt;<i> Currently:
+</I>&gt;<i> 1. &lt;string of text&gt;
+</I>&gt;<i>
+</I>&gt;<i> 2. &lt;string of text&gt;
+</I>&gt;<i>
+</I>&gt;<i> 3. &lt;string of text&gt;
+</I>&gt;<i> ...
+</I>&gt;<i> 100. &lt;string of text&gt;
+</I>&gt;<i>
+</I>&gt;<i> Result:
+</I>&gt;<i> &lt;string of text&gt;
+</I>&gt;<i> &lt;string of text&gt;
+</I>&gt;<i> &lt;string of text&gt;
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> Thanks,
+</I>&gt;<i> Charles
+</I>&gt;<i>
+</I>&gt;<i> Signs you're getting old...
+</I>&gt;<i> A $4.00 bottle of wine is no longer &quot;pretty good stuff&quot;.
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003266.html">[X-Unix] Sed - remove line numbers
+</A></li>
+	<LI>Next message: <A HREF="003268.html">[X-Unix] Sed - remove line numbers
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3267">[ date ]</a>
+              <a href="thread.html#3267">[ thread ]</a>
+              <a href="subject.html#3267">[ subject ]</a>
+              <a href="author.html#3267">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

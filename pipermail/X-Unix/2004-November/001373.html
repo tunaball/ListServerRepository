@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] limit cpu usage
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20limit%20cpu%20usage&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001370.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] limit cpu usage</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20limit%20cpu%20usage&In-Reply-To="
+       TITLE="[X-Unix] limit cpu usage">magill at mcgillsociety.org
+       </A><BR>
+    <I>Mon Nov 29 11:00:22 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001370.html">[X-Unix] Re: X-Unix Digest, Vol 3, Issue 8
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1373">[ date ]</a>
+              <a href="thread.html#1373">[ thread ]</a>
+              <a href="subject.html#1373">[ subject ]</a>
+              <a href="author.html#1373">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> On Nov 25, 2004, at 11:14 PM, Brian Medley wrote:
+</I>&gt;&gt;<i> On Wed, Nov 24, 2004 at 11:41:08PM -0500, William H. Magill wrote:
+</I>&gt;&gt;&gt;<i> On 24 Nov, 2004, at 20:29, Brian Medley wrote:
+</I>&gt;&gt;&gt;&gt;<i> I've googled around, but haven't found an answer to this
+</I>&gt;&gt;&gt;&gt;<i> question.  I would like to limit the max % cpu a process can
+</I>&gt;&gt;&gt;&gt;<i> have.  Something similar to ulimit; however, ulimit only allows
+</I>&gt;&gt;&gt;&gt;<i> limiting the number of cpu seconds a job can run.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> This is not philosophically possible on a Unix system.
+</I>&gt;&gt;<i> ...
+</I>&gt;&gt;&gt;<i> The reason is a long discussion of Operating System theory, but 
+</I>&gt;&gt;&gt;<i> briefly
+</I>&gt;&gt;&gt;<i> put, Unix simply does not have the &quot;hooks&quot; necessary to implement any
+</I>&gt;&gt;&gt;<i> useful kind of Resource Control.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Interesting, if you feel like writing more about the subject I'd
+</I>&gt;&gt;<i> like to know.
+</I>
+First off, remember that there is Unix(tm) and there are a plethora of 
+&quot;unix&quot; operating systems. (Which, as Linus Torvalds constantly reminds 
+people, does NOT include Linux, &quot;Linux is not Unix.&quot;)
+
+Basically, the standard Unix job scheduler does classic, time-sharing, 
+&quot;round robin&quot; service of individual processes. Each process gets a &quot;CPU 
+quantum&quot; (timeslice) to use, unless it quits using that quantum early 
+(such as to fire off an I/O or perform some other system call); then 
+the next &quot;ready to run&quot; process gets a quantum to execute. There are 
+priorities and other subtleties, but, as Eugene Lee pointed out, the 
+unix priority system is not absolute. [Preemptive multi-tasking allows 
+the scheduler to &quot;preempt&quot; a running process, even though it could 
+effectively &quot;use another quantum&quot; and continue running (a CPU bound 
+task). This is one big difference in the schedulers between OS9 and OS 
+X.]
+
+This is also why unmodified Unix does not support real-time activities 
+... you cannot guarantee that any given event will receive timely 
+attention.  The goal of the Unix scheduling algorithms is to keep the 
+CPU active at all times. (Some versions even have an &quot;idle instruction&quot; 
+to execute when nothing else is &quot;runable.&quot;)
+
+Put another way, the classic Unix scheduling algorithm is &quot;CPU 
+centric,&quot; not process or class centric. It is trying to keep the CPU 
+busy at all times.
+
+Solaris and Tru64 Unix, like AIX and the other proprietary Unix 
+versions, have added hooks over the years to allow third parties to 
+write job scheduler (class scheduler) add-ons for their OS. The work on 
+Solaris and Tru64 was done around 98 or 99 in support of the same 
+product (whose name I don't recall at the moment). AIX, did it for a 
+different vendor as I recall.
+
+ From the End User's point of view, these products effectively replace 
+the standard Unix job scheduler with one using a different algorithm 
+supporting many different parameters which more closely resemble the 
+resource management systems (now called Workload Management by HP) 
+found in other &quot;proprietary&quot; operating systems, like DEC's VMS and 
+IBM's OS/360.  These resource management systems allowed, and in fact 
+required, the System Operator to define &quot;policies&quot; -- &quot;partitions,&quot; CPU 
+or memory percentages and similar things -- for each individual process 
+(or class) running on the system. These are the same kind of &quot;policy&quot; 
+decisions which must be made for IP routers with &quot;policy based routing&quot; 
+structures. IPv6 continues this trend with things like the Quality of 
+Service (QOS) parameter.
+
+Tru64 and OSX are both based on the Mach kernel, and the kinds of 
+modifications (hooks) necessary for implementing a &quot;class scheduler&quot; 
+mostly involve the addition of counters for all of the things that are 
+going to be involved in controlling the processes. The &quot;process control 
+block&quot; gets expanded and new tools are developed to modify and display 
+things like &quot;class&quot; or whatever other parameter is being &quot;controlled.&quot;
+
+Not totally unrelated to this is the inclusion in Tiger of ACLs -- 
+Access Control Lists.
+
+Today, Apple is not &quot;really&quot; after the Enterprise Computing market. 
+While powerful, Apple's hardware is still &quot;not that big.&quot; Apple just 
+has its toe in the water with its 2x &quot;multi-processor&quot; SMP systems. As 
+they move upwards to 4x, 8x, 16x SMPs and as the new Power-5 &quot;SMP on a 
+chip&quot; architecture rolls out, they will of necessity, change the 
+capabilities of the OS X scheduler. Even today, Apple's SMP technology 
+leaves a lot to be desired. True SMP, where any give INSTRUCTION, not 
+just a process, can execute on any available CPU, is hard. [Clusters 
+are a whole different animal and basically unrelated to this 
+discussion. They have, &quot;yet another scheduler.&quot;]
+
+If you Google for &quot;unix scheduler&quot; you will find a number of papers on 
+the topic. It's still a &quot;hot&quot; Computer Science topic.
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001370.html">[X-Unix] Re: X-Unix Digest, Vol 3, Issue 8
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1373">[ date ]</a>
+              <a href="thread.html#1373">[ thread ]</a>
+              <a href="subject.html#1373">[ subject ]</a>
+              <a href="author.html#1373">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

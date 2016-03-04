@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] help with 10.4
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20help%20with%2010.4&In-Reply-To=1EC4AC7C-7B48-438C-AB97-551C26C0D17A%40swedenmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="018690.html">
+   <LINK REL="Next"  HREF="018695.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] help with 10.4</H1>
+    <B>Lisbeth Zachs</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20help%20with%2010.4&In-Reply-To=1EC4AC7C-7B48-438C-AB97-551C26C0D17A%40swedenmail.com"
+       TITLE="[Ti] help with 10.4">zachs at swedenmail.com
+       </A><BR>
+    <I>Wed Dec 14 00:45:30 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="018690.html">[Ti] help with 10.4
+</A></li>
+        <LI>Next message: <A HREF="018695.html">[Ti] help with 10.4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#18691">[ date ]</a>
+              <a href="thread.html#18691">[ thread ]</a>
+              <a href="subject.html#18691">[ subject ]</a>
+              <a href="author.html#18691">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+&gt;<i> 14 dec 2005 kl. 04.27 skrev Mark Swanson:
+</I>&gt;<i>
+</I>&gt;&gt;<i> I carbon copied it to an external firewire drive. &lt;clip&gt; My 200  
+</I>&gt;&gt;<i> gig  went schizo and won't let me log in.
+</I>&gt;<i> ----------
+</I>&gt;<i> At one point or other this was a known bug in CCC.
+</I>----------
+In the help section of CCC (my version is 2.3 should update I  
+guess :-)) it says:
+
+Q(17): I've booted from the clone, but it presents me with a login  
+screen and won't accept my password. What do I do?
+A: Occasionally (but rarely), the NetInfo database does not copy  
+properly. Often this is because the target disk was not formatted  
+before cloning. The fix is fairly easy:
+
+Reboot into single-user mode (hold down command+s during boot). When  
+prompted, type:
+
+fsck -y
+[repeat until it no longer says that the Filesystem was modified]
+mount -uw /
+cd /var/db/
+rm .AppleSetupDone
+cd netinfo
+mv local.nidb local.nidb.bak
+exit
+
+As the system boots, you will get the Apple Setup Assistant. Enter  
+your name, password, etc (be sure to use the same short name). You  
+should be able to get in just fine now.
+
+
+
+Hope this will help you too.
+
+
+Lisbeth in Gothenburg
+&lt;<A HREF="http://homepage.mac.com/holisticum/">http://homepage.mac.com/holisticum/</A>&gt; updat 050215
+&lt;<A HREF="http://www.got-a-mac.org">http://www.got-a-mac.org</A>&gt; medlemssida f&#246;r Got-a-Mac (Mug in Gothenburg)
+
+</PRE>
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="018690.html">[Ti] help with 10.4
+</A></li>
+	<LI>Next message: <A HREF="018695.html">[Ti] help with 10.4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#18691">[ date ]</a>
+              <a href="thread.html#18691">[ thread ]</a>
+              <a href="subject.html#18691">[ subject ]</a>
+              <a href="author.html#18691">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Servers] Authentication - I can't get it to work...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX-Servers%5D%20Authentication%20-%20I%20can%27t%20get%20it%20to%20work...&In-Reply-To=5A7690D8-124B-11D9-BF7C-000A95BE103C%40declan.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000288.html">
+   <LINK REL="Next"  HREF="000289.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Servers] Authentication - I can't get it to work...</H1>
+    <B>davewalker1 at mac.com</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX-Servers%5D%20Authentication%20-%20I%20can%27t%20get%20it%20to%20work...&In-Reply-To=5A7690D8-124B-11D9-BF7C-000A95BE103C%40declan.com"
+       TITLE="[X-Servers] Authentication - I can't get it to work...">davewalker1 at mac.com
+       </A><BR>
+    <I>Thu Sep 30 02:45:31 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000288.html">[X-Servers] OS X machines very slowww on PC Network
+</A></li>
+        <LI>Next message: <A HREF="000289.html">[X-Servers] Blue and white G3 and Panther upgrade
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#290">[ date ]</a>
+              <a href="thread.html#290">[ thread ]</a>
+              <a href="subject.html#290">[ subject ]</a>
+              <a href="author.html#290">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Frank
+
+Have you got a DNS up and running with forward and reverse mappings for 
+the server?
+I you haven't, there is a whole heap of Open Directory stuff that won't 
+work. Also, just to make things really fun, once Open Directory has 
+been set up without a DNS, it is nearly impossible to get it to 
+acknowledge the existence of one...
+Easiest way to get round it is to set up a DNS on one of the client 
+machines for now, and use that to re-set up the server machine.
+There are a few bits on the apple support site about getting the 
+kerberos stuff working again, but not much about the OD stuff
+
+Sorry to break the bad news, but there it is.
+
+Dave
+
+
+On 29 Sep 2004, at 20:11, Frank Flynn wrote:
+
+&gt;<i>
+</I>&gt;<i> I have an X-server, new 10.3 - after a fresh install I've got it set 
+</I>&gt;<i> up as an Open Directory Master.  I have created a few users.  I have 
+</I>&gt;<i> added some Mac's (but now it's set to allow any Mac to connect)
+</I>&gt;<i>
+</I>&gt;<i> Under the Open Directory tab in the Server Admin tool it shows 
+</I>&gt;<i> everything is running.
+</I>&gt;<i>
+</I>&gt;<i> I can login to this box from any user by:
+</I>&gt;<i>  -connect to server (from the finder)
+</I>&gt;<i>  -ssh
+</I>&gt;<i>  -Server Admin tool (only me because only I can administrate the 
+</I>&gt;<i> server)
+</I>&gt;<i>
+</I>&gt;<i> But I cannot login to a client machine using this LDAP server.  I have 
+</I>&gt;<i> set up Directory Access on the client machines (enabled LDAP3, added 
+</I>&gt;<i> this server to the search path).  All that happens is anytime I login 
+</I>&gt;<i> it refuses my login.
+</I>&gt;<i>
+</I>&gt;<i> So back to the manual and I try:
+</I>&gt;<i>    ldapsearch -h 192.168.100.1 -b &quot;dc=ecxample,dc=com&quot; -x   (adjusted 
+</I>&gt;<i> for my server)
+</I>&gt;<i>
+</I>&gt;<i> and it returns my users and various encoded text I assume to be binary 
+</I>&gt;<i> and encrypted passwords and such.
+</I>&gt;<i>
+</I>&gt;<i> Does anyone have a clue where to look next?  Are there debug tools 
+</I>&gt;<i> that can tell me where the break down is?  I'm not sure if I've got 
+</I>&gt;<i> the clients or the server set up properly.  Apple manual tells me to 
+</I>&gt;<i> look in the kdc.log file for error messages but in fact there is no 
+</I>&gt;<i> such file and no obvious way to turn kdc logging on.
+</I>&gt;<i>
+</I>&gt;<i> Any help appreciated
+</I>&gt;<i> Frank
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Servers mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-servers.html">X-Servers at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-servers.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-servers</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000288.html">[X-Servers] OS X machines very slowww on PC Network
+</A></li>
+	<LI>Next message: <A HREF="000289.html">[X-Servers] Blue and white G3 and Panther upgrade
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#290">[ date ]</a>
+              <a href="thread.html#290">[ thread ]</a>
+              <a href="subject.html#290">[ subject ]</a>
+              <a href="author.html#290">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

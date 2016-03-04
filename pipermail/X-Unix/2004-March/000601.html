@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> macos-x-server digest, Vol 3 #2702 - 19 msgs
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=macos-x-server%20digest%2C%20Vol%203%20%232702%20-%2019%20msgs&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000600.html">
+   <LINK REL="Next"  HREF="000602.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>macos-x-server digest, Vol 3 #2702 - 19 msgs</H1>
+    <B>lists3-200402</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=macos-x-server%20digest%2C%20Vol%203%20%232702%20-%2019%20msgs&In-Reply-To="
+       TITLE="macos-x-server digest, Vol 3 #2702 - 19 msgs">lists3-200402 at verizon.net
+       </A><BR>
+    <I>Sun Mar 28 11:07:58 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000600.html">[X-Unix] Stopping the WebDAV Exploit in Apache
+</A></li>
+        <LI>Next message: <A HREF="000602.html">[X-Unix] Stopping the WebDAV Exploit in Apache
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#601">[ date ]</a>
+              <a href="thread.html#601">[ thread ]</a>
+              <a href="subject.html#601">[ subject ]</a>
+              <a href="author.html#601">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>please forgive the cross-post, but i wanted to thank michael johnson, 
+david pooser and stroller for their replies to my &quot;virex cron&quot; post. 
+i studied all three ways and went with stroller's method at the 
+bottom. here's my original post:
+
+	does anyone know how to append a date to a summary
+	for a virex cron job?... i checked the virex 7.2.1
+	manual and it doesn't seem to have a switch for that.
+
+	here's my command:
+
+	/usr/local/vscanx/vscanx --move
+	/SERVER/VOLUME/VIREX_OUT/QUARANTINE
+	/SERVER/VOLUME/SHARE --recursive --unzip
+	--atime-preserve --ignore-links  --summary &gt;&gt;
+	/SERVER/VOLUME/VIREX_OUT/SUMMARY.TXT
+
+here are the responses i got:
+
+Michael Johnson &lt;<A HREF="../../../mailman/listinfo/x-unix.html">kaiser at emjay.net</A>&gt; wrote:
+
+&gt;<i>The easiest thing to do will be to script it.
+</I>&gt;<i>
+</I>&gt;<i>--------------start--------------
+</I>&gt;<i>
+</I>&gt;<i>#!/bin/tcsh
+</I>&gt;<i>
+</I>&gt;<i>setenv TODAY `date +%d.%m.%y`
+</I>&gt;<i>
+</I>&gt;<i>/usr/local/vscanx/vscanx --move /SERVER/VOLUME/VIREX_OUT/QUARANTINE
+</I>&gt;<i>/SERVER/VOLUME/SHARE --recursive --unzip --atime-preserve
+</I>&gt;<i>--ignore-links  --summary &gt;&gt; /SERVER/VOLUME/VIREX_OUT/SUMMARY$TODAY.TXT
+</I>&gt;<i>
+</I>&gt;<i>exit
+</I>&gt;<i>
+</I>&gt;<i>-------------end----------------
+</I>&gt;<i>
+</I>&gt;<i>This should do it for you.  Use everything between the start and end
+</I>&gt;<i>lines but not including them.  Run a cron job on the script instead of
+</I>&gt;<i>vscanx directly.  It will put in the current date.  Look at the man
+</I>&gt;<i>page for date to figure out how to do the time if you want that as
+</I>&gt;<i>well.
+</I>&gt;<i>
+</I>&gt;<i>-Michael
+</I>
+
+Dave Pooser &lt;<A HREF="../../../mailman/listinfo/x-unix.html">dave.xserver at alfordmedia.com</A>&gt; wrote:
+
+&gt;<i>  &gt; does anyone know how to append a date to a summary for a virex cron
+</I>&gt;<i>  &gt; job? i got things set up on my client servers so the sharepoints are
+</I>&gt;<i>  &gt; scanned nightly, infected files are moved to a quarantined folder,
+</I>&gt;<i>  &gt; and a summary is appended to a text file...but the appended summary
+</I>&gt;<i>  &gt; doesn't include the date.
+</I>&gt;<i>
+</I>&gt;<i>Why not just add a cron job that echoes the date to that text file before
+</I>&gt;<i>your cron job that runs vscanx? So you'd have a summary that went:
+</I>&gt;<i>
+</I>&gt;<i>3/27/04
+</I>&gt;<i>Blah blah blah (whatever Virex outputs)
+</I>&gt;<i>3/28/04
+</I>&gt;<i>Yadda yadda yadda
+</I>&gt;<i>
+</I>&gt;<i>...and so on?
+</I>&gt;<i>--
+</I>&gt;<i>Dave Pooser
+</I>
+Stroller &lt;<A HREF="../../../mailman/listinfo/x-unix.html">MacMonster at myrealbox.com</A>&gt; wrote:
+
+&gt;<i>I think this should do it:
+</I>&gt;<i>    /usr/local/vscanx/vscanx --move /SERVER/VOLUME/VIREX_OUT/QUARANTINE
+</I>&gt;<i>/SERVER/VOLUME/SHARE --recursive --unzip --atime-preserve
+</I>&gt;<i>--ignore-links  --summary &gt;&gt; /SERVER/VOLUME/VIREX_OUT/SUMMARY.TXT &amp;&amp;
+</I>&gt;<i>echo &quot;Finished at:&quot;  &gt;&gt; /SERVER/VOLUME/VIREX_OUT/SUMMARY.TXT &amp;&amp; date &gt;&gt;
+</I>&gt;<i>/SERVER/VOLUME/VIREX_OUT/SUMMARY.TXT
+</I>&gt;<i>
+</I>&gt;<i>For the hard-of-wrapping, that's all one line. The &quot;&amp;&amp;&quot; means &quot;wait
+</I>&gt;<i>until the previous command is finished and then run the command that
+</I>&gt;<i>follows&quot;. I would personally prepend the date to the file, but you pays
+</I>&gt;<i>your money &amp; takes your choice.
+</I>&gt;<i>
+</I>&gt;<i>Stroller.
+</I>&gt;<i>
+</I>
+thanks!
+don
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000600.html">[X-Unix] Stopping the WebDAV Exploit in Apache
+</A></li>
+	<LI>Next message: <A HREF="000602.html">[X-Unix] Stopping the WebDAV Exploit in Apache
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#601">[ date ]</a>
+              <a href="thread.html#601">[ thread ]</a>
+              <a href="subject.html#601">[ subject ]</a>
+              <a href="author.html#601">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

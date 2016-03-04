@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Managing startup services
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=Managing%20startup%20services&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000258.html">
+   <LINK REL="Next"  HREF="000260.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Managing startup services</H1>
+    <B>Robert Frank</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=Managing%20startup%20services&In-Reply-To="
+       TITLE="Managing startup services">robert.frank at unibas.ch
+       </A><BR>
+    <I>Fri Mar 19 06:20:52 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000258.html">Managing startup services
+</A></li>
+        <LI>Next message: <A HREF="000260.html">[X Servers] Managing startup services
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#259">[ date ]</a>
+              <a href="thread.html#259">[ thread ]</a>
+              <a href="subject.html#259">[ subject ]</a>
+              <a href="author.html#259">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 19 Mar 2004, at 14:56, Mac OS X Servers wrote:
+
+&gt;<i> I have two questions regarding startup. First, it appears that most 
+</I>&gt;<i> services
+</I>&gt;<i> like Apache do not start at STARTUP but at LOGIN. Yesterday I came in 
+</I>&gt;<i> after
+</I>Nope. Something is seriously wrong with your server. All services start 
+independently of any logins.
+The startup is controled in the specs within each startup folder of 
+each service in either
+/System/Library/StartupItems or /Library/StartupItems.
+
+&gt;<i> an unexplained &quot;event&quot; to find the server rebooted and waiting for me 
+</I>&gt;<i> to log
+</I>Check out what this 'event' was, sounds bad.
+
+&gt;<i> in to Mac OS X, and it appears the web server etc., did not start 
+</I>&gt;<i> until I
+</I>&gt;<i> did so. Is this true?? Do I have to turn on &quot;Automatic Login&quot; ... on a
+</I>&gt;<i> SERVER??
+</I>As said, definitely not. Something is wrong.
+&gt;<i>
+</I>&gt;<i> Second, I am having trouble getting the &quot;run on startup&quot; setting of 
+</I>&gt;<i> MySQL to
+</I>check /etc/hostconfig and look for the variable MYSQL
+It should be present and have a value of -YES-.
+
+&gt;<i> stick. This makes me think there must be a better way of managing apps 
+</I>&gt;<i> that
+</I>&gt;<i> have no GUI at startup. Do any of you run non-GUI apps? If so, how do 
+</I>&gt;<i> you
+</I>&gt;<i> have them start?
+</I>&gt;<i>
+</I>&gt;<i> Thanks,
+</I>&gt;<i>     peter
+</I>
+Robert
+
+Departement Informatik             tel  +41 (0)61 267 14 66
+Universitaet Basel                      fax. +41 (0)61 267 14 61
+Robert Frank
+Klingelbergstrasse 50              <A HREF="../../../mailman/listinfo/x-servers.html">Robert.Frank at unibas.ch</A>
+CH-4056 Basel
+Switzerland
+<A HREF="http://www.informatik.unibas.ch/personen/frank_r.html">http://www.informatik.unibas.ch/personen/frank_r.html</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000258.html">Managing startup services
+</A></li>
+	<LI>Next message: <A HREF="000260.html">[X Servers] Managing startup services
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#259">[ date ]</a>
+              <a href="thread.html#259">[ thread ]</a>
+              <a href="subject.html#259">[ subject ]</a>
+              <a href="author.html#259">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

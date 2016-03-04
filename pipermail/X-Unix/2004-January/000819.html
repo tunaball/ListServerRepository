@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] script question (cron - adobefnt*.lst)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20script%20question%20%28cron%20-%20adobefnt%2A.lst%29&In-Reply-To=list-10162298%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000808.html">
+   <LINK REL="Next"  HREF="000830.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] script question (cron - adobefnt*.lst)</H1>
+    <B>Eugene Lee</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20script%20question%20%28cron%20-%20adobefnt%2A.lst%29&In-Reply-To=list-10162298%40mail.ninewire.com"
+       TITLE="[X-Unix] script question (cron - adobefnt*.lst)">list-themacintoshguy at fsck.net
+       </A><BR>
+    <I>Fri Jan  9 01:16:45 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000808.html">[X-Unix] Altering .bashrc in bash to add to $PATH
+</A></li>
+        <LI>Next message: <A HREF="000830.html">.bash_profile
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#819">[ date ]</a>
+              <a href="thread.html#819">[ thread ]</a>
+              <a href="subject.html#819">[ subject ]</a>
+              <a href="author.html#819">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Thu, Jan 08, 2004 at 03:58:20PM -0500, Don Montalvo wrote:
+:<i> 
+</I>:<i> these two seem to do the same thing:
+</I>:<i> 
+</I>:<i> 	find / -name 'AdobeFnt*.lst' -exec rm -f {} \;
+</I>:<i> 
+</I>:<i> 		(and)
+</I>:<i> 
+</I>:<i> 	find / -name &quot;AdobeFnt*.lst&quot; -exec rm -f {} ';'
+</I>:<i> 
+</I>:<i> first question: which script is best for using as cron job?
+</I>
+After the shell is done with variable expansion, both of these forms:
+
+	find / -name 'AdobeFnt*.lst'
+	find / -name &quot;AdobeFnt*.lst&quot;
+
+come out to the same thing.  However, the single-quoted string allows
+less escape characters than the double-quoted string.  The former may be
+better if you are trying to list files that contain unusual characters
+like the dollar sign ('$').
+
+
+-- 
+Eugene Lee
+<A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000808.html">[X-Unix] Altering .bashrc in bash to add to $PATH
+</A></li>
+	<LI>Next message: <A HREF="000830.html">.bash_profile
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#819">[ date ]</a>
+              <a href="thread.html#819">[ thread ]</a>
+              <a href="subject.html#819">[ subject ]</a>
+              <a href="author.html#819">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

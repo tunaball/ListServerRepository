@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] what the fork?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20what%20the%20fork%3F&In-Reply-To=list-15845289%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000094.html">
+   <LINK REL="Next"  HREF="000096.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] what the fork?</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20what%20the%20fork%3F&In-Reply-To=list-15845289%40mail.ninewire.com"
+       TITLE="[X-Unix] what the fork?">magill at mcgillsociety.org
+       </A><BR>
+    <I>Mon Aug  9 18:48:30 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000094.html">[X-Unix] what the fork?
+</A></li>
+        <LI>Next message: <A HREF="000096.html">[X-Unix] what the fork?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#95">[ date ]</a>
+              <a href="thread.html#95">[ thread ]</a>
+              <a href="subject.html#95">[ subject ]</a>
+              <a href="author.html#95">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 09 Aug, 2004, at 15:03, Victor Eijkhout wrote:
+&gt;<i> Trying to install some big package (lots of compiles):
+</I>&gt;<i>
+</I>&gt;<i> /bin/sh: fork: Resource temporarily unavailable
+</I>&gt;<i> /bin/sh: fork: Resource temporarily unavailable
+</I>&gt;<i> /bin/sh: fork: Resource temporarily unavailable
+</I>
+It's a Kernel limit.
+
+The problem usually has to do with the defaults for the number of 
+processes which any single uid may have (or even the system). 
+[Nominally - &quot;maxprocperuser&quot;]
+
+I don't know in Darwin, but in most Unix versions, these are NOT 
+dynamic numbers but are normally set  when the kernel is built. 
+However, because most Unix systems are optimized for multi-user time 
+sharing, and not for &quot;scientific&quot; work or even heavy duty programming, 
+the limits are frequently encountered doing exactly what you are trying 
+to do -- install some large package.
+
+There is nothing wrong.  The Kernel is just doing what it was told to 
+do.
+
+It looks like in Darwin, the parameter involved might be NPIDS (maximum 
+number of PIDs per process) which is set to 16. But I'm not 
+particularly conversant with the kernel.
+
+In some Unix versions these can be modified via /etc/sysconfigtab.
+
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000094.html">[X-Unix] what the fork?
+</A></li>
+	<LI>Next message: <A HREF="000096.html">[X-Unix] what the fork?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#95">[ date ]</a>
+              <a href="thread.html#95">[ thread ]</a>
+              <a href="subject.html#95">[ subject ]</a>
+              <a href="author.html#95">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

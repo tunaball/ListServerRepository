@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Root Exploit via sudo
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Root%20Exploit%20via%20sudo&In-Reply-To=2ff5c341a99c790d623d71f3530e2c2c%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001724.html">
+   <LINK REL="Next"  HREF="001726.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Root Exploit via sudo</H1>
+    <B>Juan Manuel Palacios</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Root%20Exploit%20via%20sudo&In-Reply-To=2ff5c341a99c790d623d71f3530e2c2c%40mac.com"
+       TITLE="[X-Unix] Root Exploit via sudo">jmpalaciosp at eml.cc
+       </A><BR>
+    <I>Fri Apr  8 07:03:56 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001724.html">[X-Unix] Root Exploit via sudo
+</A></li>
+        <LI>Next message: <A HREF="001726.html">[X-Unix] Re: Root Exploit via sudo
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1725">[ date ]</a>
+              <a href="thread.html#1725">[ thread ]</a>
+              <a href="subject.html#1725">[ subject ]</a>
+              <a href="author.html#1725">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Apr 8, 2005, at 9:23 AM, Stephen Jonke wrote:
+
+&gt;<i>
+</I>&gt;<i> That's how I had interpreted it too, but I do see now that this is not 
+</I>&gt;<i> the case. I just tried running an installer with authentication and 
+</I>&gt;<i> then immediately tried a sudo in the terminal - it still requested my 
+</I>&gt;<i> password. I had thought it did work that way, but it would seem I was 
+</I>&gt;<i> mistaken. I think my mistake in this regard goes to back when there 
+</I>&gt;<i> was the issue that Finder authentication worked just like sudo, so you 
+</I>&gt;<i> could authenticate to drag copy a file into a restricted folder, and 
+</I>&gt;<i> then for 5 minutes all gates were open. They fixed that a while ago.
+</I>&gt;<i>
+</I>&gt;<i> So the alleged security risk does seem to be a fairly marginal one - 
+</I>&gt;<i> it only applies to doing sudo in the terminal. Well, almost...
+</I>&gt;<i>
+</I>&gt;<i> There is one exception. Via applescript you can effectively invoke the 
+</I>&gt;<i> sudo command, so such scripts do make it easy for Mom to use &quot;sudo&quot;. 
+</I>&gt;<i> For example I created a script application that runs repairPermissions 
+</I>&gt;<i> &quot;with administrator privileges&quot; specifically to make that easier for 
+</I>&gt;<i> others to do. That prompts for an admin password and it uses &quot;sudo&quot; to 
+</I>&gt;<i> do its thing! Thus *I* have made it easy for my Mom to use the sudo 
+</I>&gt;<i> command! I tested this and verified that after a successful &quot;with 
+</I>&gt;<i> authentication&quot; you can do &quot;sudo&quot; in the terminal to your hearts 
+</I>&gt;<i> content (for 5 minutes anyway.) I'll have to rethink such things now. 
+</I>&gt;<i> The behavior of that should probably have its default behavior changed 
+</I>&gt;<i> to not stay authenticated after the command is issued!
+</I>&gt;<i>
+</I>&gt;<i> Steve
+</I>
+
+	Authentication through the Mac OS X GUI is not routed via sudo, this 
+is a common misconception. Whatever panel you see asking you for your 
+admin password is plugging directly into the various security 
+frameworks offered by the system (look in 
+/System/Library/Frameworks/Security*), so the scope of this &quot;glitch&quot; is 
+indeed rather limited. It is true that Apple *could* setup things 
+differently to further limit this &quot;vulnerability&quot; (outputting to a more 
+secure log file is quite reasonable), but trying to point this out as a 
+Mac OS X specific vulnerability is rather absurd and pointless in my 
+opinion. In any case, it could only be argued that Mac OS X is not 
+*shipped* as secure as it could be, but the potential of being that 
+secure is definitely there, already built into the system and into 
+sudo.
+
+	Most definitely a non-issue for the vast majority of people, again in 
+my opinion. Regards,...
+
+
+		Juan
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001724.html">[X-Unix] Root Exploit via sudo
+</A></li>
+	<LI>Next message: <A HREF="001726.html">[X-Unix] Re: Root Exploit via sudo
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1725">[ date ]</a>
+              <a href="thread.html#1725">[ thread ]</a>
+              <a href="subject.html#1725">[ subject ]</a>
+              <a href="author.html#1725">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

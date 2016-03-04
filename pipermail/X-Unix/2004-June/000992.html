@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Using SYSLOG
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Using%20SYSLOG&In-Reply-To=list-14406067%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000991.html">
+   <LINK REL="Next"  HREF="000993.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Using SYSLOG</H1>
+    <B>Kevin Stevens</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Using%20SYSLOG&In-Reply-To=list-14406067%40mail.ninewire.com"
+       TITLE="[X-Unix] Using SYSLOG">groups at pursued-with.net
+       </A><BR>
+    <I>Mon Jun 28 13:04:42 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000991.html">[X-Unix] Setting Page Type/Quality
+</A></li>
+        <LI>Next message: <A HREF="000993.html">[X-Unix] Finding duplicates
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#992">[ date ]</a>
+              <a href="thread.html#992">[ thread ]</a>
+              <a href="subject.html#992">[ subject ]</a>
+              <a href="author.html#992">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+
+On Mon, 28 Jun 2004, AKappyCT wrote:
+
+&gt;<i> Can anyone advise on configuring SYSLOG on a Panther box to receive
+</I>&gt;<i> such messages and designate a file to log them to?
+</I>
+Maybe!  I use my system in such a way.
+
+&gt;<i> The switch config:
+</I>&gt;<i> &gt; 3. Configure remote logging by using the following command:
+</I>&gt;<i> &gt; config syslog {add} &lt;ipaddress&gt; &lt;facility&gt; {&lt;priority&gt;}
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; where:
+</I>&gt;<i> &gt;  ipaddress Specifies the IP address of the syslog host.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;  facility Specifies the syslog facility level for local use. Options
+</I>&gt;<i> &gt; include local0 through local7.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;  priority Filters the log to display message with the selected
+</I>&gt;<i> &gt; priority or higher (more critical). Priorities include (in order)
+</I>&gt;<i> &gt; critical, emergency, alert, error, warning, notice, info, and debug.
+</I>&gt;<i> &gt; If not specified, only critical priority messages are sent to the
+</I>&gt;<i> &gt; syslog host.
+</I>
+1.  Configure your switch as above.  Those look like Cisco instructions,
+you can Google to find more information if you need help with that part.
+
+2.  Configure your Panther system to log external syslog messages.  Most
+of these steps require root privileges to implement.
+
+a.  Configure /etc/syslog.conf to accept the messages. Add an entry near
+the bottom of the file that reflects facility.priority and destination
+file name you want to log.  For example:
+	local3.*                           /var/log/netscreen
+
+I prefer to use the wildcard here to accept any messages to local3, and
+adjust the level on the output device (the switch), but you can also
+specify the priority here.
+
+b.  Create the log file.  The file can be located anywhere, but /var/log
+is standard.  As you can see I'm logging messages from my NetScreen
+firewall.  The file needs to pre-exist; syslogd won't create it for you,
+so &quot;touch&quot; it to create it and adjust rights per your needs.
+
+c.  Change the /etc/rc startup script file to alter the syslogd launch
+settings.  !WARNING! -- This file controls system startup.  You can screw
+up your environment quite thoroughly by altering this file!  !WARNING!  I
+wish that Apple provided the equivalent of FreeBSD's rc.conf file to make
+these kind of changes, but they don't.  Use appropriate care and caution.
+
+!NEXT WARNING!  The man page for syslogd is WRONG!  Don't reference it!
+If you manually run /usr/sbin/syslogd, it will report its switch settings,
+and you can see that they are different than those listed in the man page.
+The man page at www.freebsd.org for syslogd seems to be more accurate, but
+I don't fully trust it either, as I have no guarantee that it refers to
+the same executable.
+
+Locate the line in /etc/rc that reads: /usr/sbin/syslogd -s -m 0 The
+needed change is to remove the -s setting to allow external host logging
+via UDP.  The specific change that I made was to change that line to:
+/usr/sbin/syslogd -vv -m 10.  This adds verbosity to the logging, removes
+the -s setting, and sets the &quot;mark&quot; message interval to 10 minutes (the
+default 0 setting disables mark messages).  Save and exit.
+
+Note that this configuration opens your machine to potential DOS attacks
+via UDP.  There are ways to restrict host access to syslogd, but they
+require the correct @#$!#%$ documentation to implement.  This is fairly
+safe in MY environment at the present time, you have to assess your own.
+
+d.  Modify firewall settings as necessary to permit inbound syslog
+traffic.  I don't run the Apple firewall on my syslog system, so can't
+help with config details, but you need to permit in UDP on port 514 for
+the sending host.
+
+3.  Relaunch syslogd.  I prefer to reboot, since I want to verify that the
+rc changes work correctly, but you can kill the current syslogd and
+restart it with your new settings if you prefer.
+
+4.  Verify that syslog messages are being sent, received, and logged.
+Obviously if they are getting logged, the other steps work.  However,
+depending on your sending device and the priority level you have set, you
+may not see any messages.  Debugging steps I use include:
+
+- using the logger utility to create local syslog messages and ensure they
+get logged correctly.
+
+- using tcpdump (tcpdump udp port 514) to verify that inbound messages are
+being received.
+
+- using debug syslog and/or temporarily changing the output priority level
+on the switch to ensure it is kicking out messages.
+
+5.  Note that after things are working, you may be getting duplicate
+messages in your console.log or system.log, due to wildcard entries.  If
+desired, you can use &lt;facility&gt;.none entries to block unwanted duplicates.
+
+Hope this helps!
+
+KeS
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000991.html">[X-Unix] Setting Page Type/Quality
+</A></li>
+	<LI>Next message: <A HREF="000993.html">[X-Unix] Finding duplicates
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#992">[ date ]</a>
+              <a href="thread.html#992">[ thread ]</a>
+              <a href="subject.html#992">[ subject ]</a>
+              <a href="author.html#992">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

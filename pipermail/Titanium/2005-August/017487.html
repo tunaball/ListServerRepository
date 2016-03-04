@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Airport Card Troubles
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Airport%20Card%20Troubles&In-Reply-To=4B613047-A66A-4E5E-BD70-1873AB10C625%40astcomm.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="017485.html">
+   <LINK REL="Next"  HREF="017488.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Airport Card Troubles</H1>
+    <B>Michael Ramirez</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Airport%20Card%20Troubles&In-Reply-To=4B613047-A66A-4E5E-BD70-1873AB10C625%40astcomm.net"
+       TITLE="[Ti] Airport Card Troubles">mramirez at mac.com
+       </A><BR>
+    <I>Tue Aug 16 16:37:10 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="017485.html">[Ti] Airport Card Troubles
+</A></li>
+        <LI>Next message: <A HREF="017488.html">[Ti] Airport Card Troubles
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17487">[ date ]</a>
+              <a href="thread.html#17487">[ thread ]</a>
+              <a href="subject.html#17487">[ subject ]</a>
+              <a href="author.html#17487">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Chris, thanks for the suggestion. I reverted back as per your  
+instructions, but I'm still having the same problems. I even  
+installed a fresh 10.4 on an external HD and still have the same  
+problem. My guesses are that Apple may have updated the firmware on  
+the card, I see this &quot;Aug 10 22:59:42 Firestorm kernel[0]:  
+AirPortFirmware: start Sta f/w download&quot; in the System Log, my  
+connection from the card to the antenna is faulty, or the card itself  
+has gone bad. The search continues. Will post if I find out anything  
+more.
+
+-Michael
+
+On Aug 15, 2005, at 8:42 PM, Chris Olson wrote:
+
+&gt;<i> On Aug 15, 2005, at 1:31 PM, Michael Ramirez wrote:
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i> I've been having some trouble with my Airport Card on my 15&quot;  
+</I>&gt;&gt;<i> Titanium 400 MHz dropping the wireless connection for no apparent  
+</I>&gt;&gt;<i> reason. It started with the connection working fine then it  
+</I>&gt;&gt;<i> started to drop (meaning full signal to nothing) from time to  
+</I>&gt;&gt;<i> time. The dropping has become progressively worse and now I rarely  
+</I>&gt;&gt;<i> get signal at all. I tried the battery compartment trick, with no  
+</I>&gt;&gt;<i> improvement. There is a discussion going on over on the Apple  
+</I>&gt;&gt;<i> support site, which leads me to believe that it may be the upgrade  
+</I>&gt;&gt;<i> to 10.4.2. &lt;<A HREF="http://discussions.info.apple.com/webx?14@@.">http://discussions.info.apple.com/webx?14@@.</A> 
+</I>&gt;&gt;<i> 68b3c235/19&gt; Anyone else having this type of problem and have a  
+</I>&gt;&gt;<i> fix? Is there an easy way to revert back to 10.4? Thanks for  
+</I>&gt;&gt;<i> anyones help.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> All kinds of people having problems, not only with the old AirPort  
+</I>&gt;<i> cards with Broadcom chipsets, but third party wireless with  
+</I>&gt;<i> Broadcom chipsets as well.
+</I>&gt;<i>
+</I>&gt;<i> Follow these instructions _EXACTLY_ to downgrade, or you will break  
+</I>&gt;<i> your system.
+</I>&gt;<i>
+</I>&gt;<i> Remove /System/Library/Extensions/AppleAirPort.kext (version 3.4.4)  
+</I>&gt;<i> along with AppleAirPort2.kext (version 4.0)
+</I>&gt;<i>
+</I>&gt;<i> Download and install Pacifist. If your networking is broken connect  
+</I>&gt;<i> with ethernet cable or you will have to download from another  
+</I>&gt;<i> computer, burn to a CD, and install on the affected Mac. Pacifist  
+</I>&gt;<i> can be gotten here ( <A HREF="http://www.charlessoft.com/">http://www.charlessoft.com/</A> )
+</I>&gt;<i>
+</I>&gt;<i> Insert your Tiger installation DVD and using Pacifist open the / 
+</I>&gt;<i> System/Installation/Packages/OSInstall.mpkg file on the DVD. In  
+</I>&gt;<i> Pacifist under the Contents of Essentials.pgk browse to the /System/ 
+</I>&gt;<i> Library/Extensions directory and install the following kernel  
+</I>&gt;<i> extensions using the Install button in the toolbar of Pacifist:
+</I>&gt;<i>
+</I>&gt;<i> AppleAirPort.kext (version 3.4.4, same as the new one in 10.4.2),
+</I>&gt;<i> AppleAirPort2.kext (version 3.5), and
+</I>&gt;<i> AppleAirPort3.kext (version 3.6).
+</I>&gt;<i>
+</I>&gt;<i> You'll now be running the old version of the AirPort drivers  
+</I>&gt;<i> (kernel extensions).  I've successfully downgraded about a dozen  
+</I>&gt;<i> already with a 100% success rate.
+</I>&gt;<i>
+</I>
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="017485.html">[Ti] Airport Card Troubles
+</A></li>
+	<LI>Next message: <A HREF="017488.html">[Ti] Airport Card Troubles
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17487">[ date ]</a>
+              <a href="thread.html#17487">[ thread ]</a>
+              <a href="subject.html#17487">[ subject ]</a>
+              <a href="author.html#17487">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

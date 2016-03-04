@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] using rsync to automatically backup home directories (was
+	RE: rsync help)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20using%20rsync%20to%20automatically%20backup%20home%20directories%20%28was%0A%09RE%3A%20rsync%20help%29&In-Reply-To=8A055370-D74F-4017-A9B2-30C094D4F6EE%40west.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002993.html">
+   <LINK REL="Next"  HREF="002997.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] using rsync to automatically backup home directories (was
+	RE: rsync help)</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20using%20rsync%20to%20automatically%20backup%20home%20directories%20%28was%0A%09RE%3A%20rsync%20help%29&In-Reply-To=8A055370-D74F-4017-A9B2-30C094D4F6EE%40west.net"
+       TITLE="[X-Unix] using rsync to automatically backup home directories (was
+	RE: rsync help)">ecrist at secure-computing.net
+       </A><BR>
+    <I>Thu Jan 24 09:39:46 PST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002993.html">[X-Unix] rsync help
+</A></li>
+        <LI>Next message: <A HREF="002997.html">[X-Unix] using rsync to automatically backup home directories
+	(was RE: rsync help)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2996">[ date ]</a>
+              <a href="thread.html#2996">[ thread ]</a>
+              <a href="subject.html#2996">[ subject ]</a>
+              <a href="author.html#2996">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Since a few people showed interest, I'll spam the list with my  
+solution for incremental backups of the mac in my life.
+
+The major problem I had was that most of the macs in my life are  
+laptops.  That means two primary things:
+1) They go to sleep when I do. ;)
+2) They roam off-network.
+
+Since I already have a server network setup at home (secure- 
+computing.net), I simply made use of my current backup server's hard  
+disk space, and rsync.
+
+The first step was to create an easy backup script, that was clickable  
+for a user to manually backup their files.  *side note, when I say  
+user, I mean my beloved fiance ;)*
+
+This script contained a single line:
+rsync -av --delete ~/ --exclude=&quot;Caches&quot; --exclude=&quot;*.cdr&quot; -- 
+exclude=&quot;*.iso&quot; --exclude=&quot;.Trash&quot; --exclude=&quot;.Spotlight-V100&quot; -- 
+exclude=&quot;.Trashes&quot; backup-server:/usr/backups/`hostname`
+
+All the user needed to do was click on the script and it would backup  
+any changes to their files.
+
+At this point, her hard drive crashed.  Easy enough, we had backups.   
+Well, the original backups from my testing.  6 months before.  Damn.
+
+So, we had the need to automate.  I tried iCal, but if the laptop was  
+asleep for 3 days, it would try to backup three times, and we got an  
+iCal alert for each day.  My solution was to use the oft-unused (on  
+Macs) cron daemon.  I added the following entry to her crontab:
+
+00	*	*	*	*	/Users/&lt;username&gt;/backup.command
+
+This, coupled with the backup.command file I'll paste below, results  
+in her laptop backing itself up every hour, incrementally.  This works  
+great, as she's often (2-3 times a day, on average) using her laptop  
+as the hour rolls over.  Since she mostly surfs the web and checks  
+email, the backup actually takes about 60 seconds to 2 minutes.
+
+As I have found, this script works great on my laptop as well, even  
+though my system roams with me to Starbucks, the office, and  
+elsewhere.  That being said, my backups take about 1 minute to 5  
+minutes.  The big thing when remote from the backup server is to have  
+the --exclude=&quot;Caches&quot;.  These, especially Safari, can get rather large.
+
+On my system, I've coupled GeekTool (<A HREF="http://projects.tynsoe.org/en/geektool/">http://projects.tynsoe.org/en/geektool/</A> 
+) to tail the log file from my backups, so I can keep track of them  
+throughout the day.  Without going further into GeekTool, here's the  
+script I've got for that:
+&lt;CONSOLE&gt; echo &quot;System Backup Log:&quot;; tail -n 20 /Users/ecrist/.logs/ 
+`date &quot;+%m&quot;`/`date &quot;+%d-%H&quot;`.log ; echo &quot;\nUpdated at `date`.&quot;
+
+So, here's my minimal backup.command script:
+
+#!/bin/sh
+month=`date &quot;+%m&quot;`
+file=`date &quot;+%d-%H&quot;`
+# dont run if it's already running!
+if [ -e &quot;/tmp/back.pid&quot; ]
+then
+echo &quot;Backups already running as PID `cat /tmp/back.pid`.  Aborting...&quot;
+else
+echo $$ &gt; /tmp/back.pid
+## ALL ONE LINE BETWEEN ##
+rsync -av --delete ~/ --exclude=&quot;Caches&quot; --exclude=&quot;*.cdr&quot; -- 
+exclude=&quot;*.iso&quot; --exclude=&quot;.Trash&quot; --exclude=&quot;.Spotlight-V100&quot; -- 
+exclude=&quot;.Trashes&quot; backup-server:/usr/backups/`hostname` &gt; /Users/ 
+ecrist/.logs/$month/$file.log 2&gt;&amp;1
+## ALL ONE LINE BETWEEN ^^ ##
+rm /tmp/back.pid
+fi
+echo &quot;Finished at `date`&quot; &gt;&gt; /Users/ecrist/.logs/$month/$file.log
+
+
+One final note.  My backup server has a user account for everyone  
+that's going to be backing up their system.  Their backup directory  
+has 0700 permissions for security's sake.  Since we're backing up  
+laptops mostly, the `hostname` part of the rsync command works fine.   
+This could be clarified for multiuser systems by running the cron job  
+as root on the Macs, or simply creating a new rsync command such as:
+
+rsync -av --delete ~/ &lt;excludes&gt; backup-server:/usr/backups/`hostname`/ 
+`whoami`
+
+Just make sure in this case that their user belongs to a group that  
+has rwx access to the `hostname` directory.
+
+Glad I could contribute something!  If this is confusing or you need  
+help, please don't hesitate to ask!
+-----
+Eric F Crist
+Secure Computing Networks
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002993.html">[X-Unix] rsync help
+</A></li>
+	<LI>Next message: <A HREF="002997.html">[X-Unix] using rsync to automatically backup home directories
+	(was RE: rsync help)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2996">[ date ]</a>
+              <a href="thread.html#2996">[ thread ]</a>
+              <a href="subject.html#2996">[ subject ]</a>
+              <a href="author.html#2996">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

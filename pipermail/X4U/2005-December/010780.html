@@ -1,0 +1,224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] ._*** files on a mp3 player question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20._%2A%2A%2A%20files%20on%20a%20mp3%20player%20question&In-Reply-To=20051216170426.PMPX5868.centrmmtao05.cox.net%40%5B172.18.53.8%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010777.html">
+   <LINK REL="Next"  HREF="010781.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] ._*** files on a mp3 player question</H1>
+    <B>Jerry Krinock</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20._%2A%2A%2A%20files%20on%20a%20mp3%20player%20question&In-Reply-To=20051216170426.PMPX5868.centrmmtao05.cox.net%40%5B172.18.53.8%5D"
+       TITLE="[X4U] ._*** files on a mp3 player question">jerry at ieee.org
+       </A><BR>
+    <I>Fri Dec 16 11:28:54 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010777.html">[X4U] ._*** files on a mp3 player question
+</A></li>
+        <LI>Next message: <A HREF="010781.html">[X4U] Superdrive replacement for iMac
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10780">[ date ]</a>
+              <a href="thread.html#10780">[ thread ]</a>
+              <a href="subject.html#10780">[ subject ]</a>
+              <a href="author.html#10780">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>on 05/12/16 09:05, Nick Scalise at <A HREF="../../../mailman/listinfo/x4u.html">nickscalise at cox.net</A> wrote:
+
+&gt;<i> There are lots of scripts out on the internet that will hunt down those ._
+</I>&gt;<i> files for you.
+</I>
+Well, I couldn't find any of those scripts back when I wrote mine, so here
+it is.  It's an AppleScript, but it calls shell scripts to do some of the
+work.
+
+It's crude, but it works for me and with some tweaking it might work for
+you, or at least you can get some useful tips out of it...........
+
+set playerVolumeLabel to &quot;BOOM&quot;
+
+Log_Start()
+
+set theLogFile to result
+
+tell application &quot;Finder&quot;
+    if (disk &quot;BOOM&quot;) exists then
+        
+        -- remove existing files
+        tell me to Log_Add(&quot;Removing 'Radio' folder on BOOM&quot;)
+        try
+            --do shell script &quot;rm /Volumes/BOOM/Radio/*&quot;
+            do shell script &quot;rm -rf /Volumes/BOOM/Radio&quot;
+        end try
+        
+        tell me to Log_Add(&quot;Making new 'Radio' folder on BOOM&quot;)
+        try
+            do shell script &quot;mkdir /Volumes/BOOM/Radio&quot;
+        end try
+        
+        (*tell me to Log_Add(&quot;Remounting disk 'BOOM'&quot;)
+        try
+            do shell script &quot;diskutil mount /Volumes/BOOM&quot;
+            set result to errMsg as string
+            tell me to Log_Add(errMsg)
+        end try*)
+        
+        -- write new files
+        -- I use the Finder here, because if I use the unix &quot;cp&quot; command,
+the files do not play in the correct order.
+        tell me to Log_Add(&quot;Writing new files to BOOM&quot;)
+
+        set theSelection to {} as list -- kludge, may help
+        set theSelection to every file of folder &quot;NewHijacks&quot; of folder
+&quot;Music&quot; of home
+
+        with timeout of 600 seconds
+           log theSelection
+            duplicate every item of theSelection to folder &quot;Radio&quot; of disk
+&quot;BOOM&quot;
+        end timeout
+        tell me to Log_Add(&quot;Done writing.&quot;)
+ 
+        tell me to Log_Add(&quot;Removing resource forks&quot;)
+        -- remove resource forks, because they begin with &quot;._&quot;
+        -- The following 3 tries resource forks of files with names
+containing up to 2 &quot;dots&quot;:
+        -- The &quot;try&quot; are used because you may get an error message if there
+are no such files.
+        try
+            do shell script &quot;rm /Volumes/BOOM/Radio/._*&quot;
+        end try
+        try
+            do shell script &quot;rm /Volumes/BOOM/Radio/._*.*&quot;
+        end try
+        try
+            do shell script &quot;rm /Volumes/BOOM/Radio/._*.*.*&quot;
+        end try
+        
+        tell me to Log_Add(&quot;Repairing disk 'BOOM'&quot;)
+        try
+            do shell script &quot;diskutil repairvolume /Volumes/BOOM&quot;
+        end try
+        do shell script &quot;sleep 2&quot;
+        
+        -- eject player
+        tell me to Log_Add(&quot;Ejecting BOOM&quot;)
+        do shell script &quot;diskutil eject /Volumes/BOOM&quot;
+        -- if I ever have trouble with that, try this which works better
+        -- do shell script &quot;diskutil unmount force /Volumes/BOOM&quot;
+        do shell script &quot;sleep 6&quot;
+        say &quot;BOOM. eejected&quot;
+    else
+        tell me to Log_Add(&quot;'BOOM' is gone!&quot;)
+        say &quot;Please connect the portable player and start this application
+again&quot;
+    end if
+end tell
+
+Log_Destroy(theLogFile)
+
+(* Logging Functions  *)
+(* In order to log the progress, which is helpful in troubleshooting, I open
+a new TextEdit document and write log messages to this TextEdit document.
+Note that it is made on the desktop, for convenience.  At the end of the
+script, this document is closed and its file deleted from the desktop *)
+on Log_Start()
+    tell application &quot;Finder&quot;
+        make new file at desktop --as alias
+        set theLogFile to result
+        open theLogFile
+    end tell
+    return theLogFile
+end Log_Start
+
+
+on Log_Add(newText)
+    tell application &quot;TextEdit&quot;
+        copy text of first document to oldText
+        set newText to oldText &amp; return &amp; return &amp; newText
+        set text of first document to newText
+        -- The following will only work if TextEdit opens new documents as
+rich text by default.
+        --tell application &quot;TextEdit&quot; to set size of text of first document
+to 20
+    end tell
+end Log_Add
+
+on Log_Destroy(theLogFile)
+    tell application &quot;TextEdit&quot; to close first document
+    tell application &quot;Finder&quot; to delete theLogFile
+end Log_Destroy
+
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010777.html">[X4U] ._*** files on a mp3 player question
+</A></li>
+	<LI>Next message: <A HREF="010781.html">[X4U] Superdrive replacement for iMac
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10780">[ date ]</a>
+              <a href="thread.html#10780">[ thread ]</a>
+              <a href="subject.html#10780">[ subject ]</a>
+              <a href="author.html#10780">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [CUBE] OSX forgets window resizing... (little OT)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20OSX%20forgets%20window%20resizing...%20%28little%20OT%29&In-Reply-To=list-11799833%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="007485.html">
+   <LINK REL="Next"  HREF="007487.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[CUBE] OSX forgets window resizing... (little OT)</H1>
+    <B>macubelist at bridgehead.de</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20OSX%20forgets%20window%20resizing...%20%28little%20OT%29&In-Reply-To=list-11799833%40mail.ninewire.com"
+       TITLE="[CUBE] OSX forgets window resizing... (little OT)">macubelist at bridgehead.de
+       </A><BR>
+    <I>Tue Mar 30 07:04:07 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="007485.html">[CUBE] OSX forgets window resizing... (little OT)
+</A></li>
+        <LI>Next message: <A HREF="007487.html">[CUBE] OSX forgets window resizing... (little OT)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7486">[ date ]</a>
+              <a href="thread.html#7486">[ thread ]</a>
+              <a href="subject.html#7486">[ subject ]</a>
+              <a href="author.html#7486">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi LM,
+
+yes, you are right, it is an invisible file. one of many. each and 
+every folder that you have looked at has one of those.
+&quot;looked&quot; - that means they are not existent until you &quot;open&quot; or look at 
+the contents of a folder with the finder. The finder looks if the file 
+exists, and tries to read the settings. If it succeeds, the folder is 
+displayed the way you set it. If there is no file, or if the file is 
+corrupt, the finder displays the folder in it's default setting.
+
+So this file has no importance to the underlying unix-system. It is 
+more like a preference file for the finder. If you delete it, more or 
+less nothing happens. It will be created as soon as you open the folder 
+with the finder again.
+
+Your way of deleting the file would be ok, I guess. But you need to 
+trash the one thats causing the problem, and it will be tedious to find 
+it. I do respect peoples' fear of terminal or any similar philosophy. 
+But I am happily using the terminal, so I would just &quot;cd&quot; into the 
+folder, and &quot;rm .DS_Store&quot; the file. basta.
+
+&gt;<i> And once this issue is happening to every finder window I open (no 
+</I>&gt;<i> specific order or nature), my question is... which &quot;.DS_Store&quot; to 
+</I>&gt;<i> delete!?
+</I>Well, of course the one thats inside the directory that doesn't display 
+like it should.
+
+Cheers,
+
+Wolf
+
+
+
+Am 30.03.2004 um 15:05 schrieb Luis Meleiro:
+
+&gt;<i> Wolf,
+</I>&gt;<i>
+</I>&gt;<i> I really appreciate your support but, as far as I understand, this is 
+</I>&gt;<i> supposed to be an invisible file (once it starts by a single dot), 
+</I>&gt;<i> &quot;.DS_Store&quot;. Can I just simply use the cmd+f (including visible and 
+</I>&gt;<i> invisible files option) and drag it to the trash, and then try to 
+</I>&gt;<i> restore the preferences for the 'Finder.app' itself!? Or is this 
+</I>&gt;<i> procedure going to be somehow harmful for the Operating System!?
+</I>&gt;<i>
+</I>&gt;<i> Sorry but I don't feel that comfortable messing around with the 
+</I>&gt;<i> 'Terminal.app' :(
+</I>&gt;<i>
+</I>&gt;<i> Thanks in advance,
+</I>&gt;<i> LM
+</I>&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> <A HREF="../../../mailman/listinfo/cube.html">macubelist at bridgehead.de</A> - 2004/03/30 10:35 AM &gt;&gt;&gt;
+</I>&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> the settings are stored in the .DS_Store file in the directory/folder
+</I>&gt;<i> itself. Maybe it's corrupt or the write permission is wrong.
+</I>&gt;<i> I'd try to close the windows displaying the folder, open terminal,
+</I>&gt;<i> change into the folder and delete the .DS_Store file.
+</I>&gt;<i> Then open the folder and set it up the way you want.
+</I>&gt;<i>
+</I>&gt;<i> Cheers
+</I>&gt;<i>
+</I>&gt;<i> Wolf
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="007485.html">[CUBE] OSX forgets window resizing... (little OT)
+</A></li>
+	<LI>Next message: <A HREF="007487.html">[CUBE] OSX forgets window resizing... (little OT)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7486">[ date ]</a>
+              <a href="thread.html#7486">[ thread ]</a>
+              <a href="subject.html#7486">[ subject ]</a>
+              <a href="author.html#7486">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

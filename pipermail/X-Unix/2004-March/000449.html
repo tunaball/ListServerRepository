@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Copying to multiple directories
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Copying%20to%20multiple%20directories&In-Reply-To=list-11331379%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000448.html">
+   <LINK REL="Next"  HREF="000450.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Copying to multiple directories</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Copying%20to%20multiple%20directories&In-Reply-To=list-11331379%40mail.ninewire.com"
+       TITLE="[X-Unix] Copying to multiple directories">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Thu Mar 11 07:21:05 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000448.html">[X-Unix] Copying to multiple directories
+</A></li>
+        <LI>Next message: <A HREF="000450.html">[X-Unix] Copying to multiple directories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#449">[ date ]</a>
+              <a href="thread.html#449">[ thread ]</a>
+              <a href="subject.html#449">[ subject ]</a>
+              <a href="author.html#449">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Mar 11, 2004, at 12:38 pm, Harvey Riekoff wrote:
+
+&gt;<i> Also when I run the command &quot;$ ls -d /Users/*/Library | xargs -I % 
+</I>&gt;<i> echo cp fileA %&quot;  I get the following message &quot;su: $: Command not 
+</I>&gt;<i> found&quot;
+</I>
+&quot;$&quot; is not part of the command, but is the placeholder you normally see 
+at a user's command shell when it's waiting for an instruction to be 
+typed in. So when someone posts an email message with a line beginning 
+&quot;$&quot; it means &quot;type the rest of this line in at the terminal&quot;. (&quot;#&quot; is 
+the root's command prompt, so we're ignoring file &amp; directory 
+permissions on your users' folders for the present.)
+
+So what Brian is actually suggesting you do is type `ls -d 
+/Users/*/Library | xargs -I % echo cp fileA %` in at the terminal.
+(I use these `quotes` to indicate a command in the same way as &quot;$&quot; 
+because they have a similar significance to the shell, too).
+
+In fact, what Brian's command will actually do is display the same 
+output that he's pasted into his message - again it is convention that 
+the lines following a $ are exactly what the terminal displays, copied 
+&amp; pasted into the email message.
+
+So the `echo` command is run (which means &quot;show the rest of the line on 
+the screen&quot;) instead of the `cp` command - we don't see the `echo`, we 
+just see what comes after it.
+$ ls -d /Users/*/Library | xargs -I % echo cp fileA %
+   cp fileA /Users/bpm/Library
+   cp fileA /Users/jasonp/Library
+   cp fileA /Users/jmh/Library
+
+What Brian is doing in his posting is DEMONSTRATING the use of the pipe 
+(&quot;|&quot;) and the `xargs` command (see `man xargs`), suggesting that you 
+run this, change &quot;fileA&quot; to the name of the file you actually want to 
+copy, and check that it will do what you require. Then run the command 
+again, but WITHOUT the `echo` (use the up-arrow key to bring up the 
+previous line for editing) to actually perform the copying you require.
+
+Notes:
+- the `ls -d /Users/*/Library` actually does the shell expansion you 
+require.
+- `man xargs` explains:
+      -I replstr
+              Execute utility for each input line, replacing one or more
+              occurences of replstr...
+- I believe the &quot;%&quot; is a placeholder to enclose the command being 
+executed by `xargs`, however I don't immediately find this clearly 
+documented anywhere.
+
+HTH,
+
+Stroller.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000448.html">[X-Unix] Copying to multiple directories
+</A></li>
+	<LI>Next message: <A HREF="000450.html">[X-Unix] Copying to multiple directories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#449">[ date ]</a>
+              <a href="thread.html#449">[ thread ]</a>
+              <a href="subject.html#449">[ subject ]</a>
+              <a href="author.html#449">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

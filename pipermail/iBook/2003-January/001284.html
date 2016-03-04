@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [P1] Safari Web Browser
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20Safari%20Web%20Browser&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001283.html">
+   <LINK REL="Next"  HREF="001285.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[P1] Safari Web Browser</H1>
+    <B>Zachary Heaton</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20Safari%20Web%20Browser&In-Reply-To="
+       TITLE="[P1] Safari Web Browser">zheaton at ameritech.net
+       </A><BR>
+    <I>Wed Jan  8 12:14:46 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001283.html">[P1] OS X + X11
+</A></li>
+        <LI>Next message: <A HREF="001285.html">iBook &amp; printers connectivity
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1284">[ date ]</a>
+              <a href="thread.html#1284">[ thread ]</a>
+              <a href="subject.html#1284">[ subject ]</a>
+              <a href="author.html#1284">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Wednesday, Jan 8, 2003, at 09:55 Canada/Eastern, Jim Freeman wrote:
+
+&gt;<i> Has anyone figured out how to import bookmarks from Omniweb?
+</I>&gt;<i>
+</I>&gt;<i> Jim
+</I>
+There is probably a faster way to do this, but here's how I pulled it 
+off.  Safari's documentation states that it auto-imports bookmarks from 
+IE on the first time that it boots up.  Fortunately, Omniweb bookmarks 
+(~/Library/Application Support/Omniweb/Bookmarks.html) are in nearly 
+the same file format as IE bookmarks.  Thus, the trick is to copy your 
+Omniweb bookmarks file, rename the copy to &quot;Favorites.html&quot;, and place 
+it in &quot;~/Library/Preferences/Explorer/&quot; .  Now, go up a directory into 
+your Preferences folder, and move the file &quot;com.apple.Safari.plist&quot; to 
+your desktop.  This last step &quot;fools&quot; Safari into thinking that it has 
+not been launched before.  (Of course, if you are feeling adventurous, 
+you can always open up the preferences file and set the 
+&quot;IEFavoritesWereImported&quot; tag to &quot;No&quot; or &quot;&lt;false/&gt; - no guarantees, 
+this isn't how I did it.)
+
+Now, all that you need to do is launch Safari, and it will 
+automatically import your &quot;Internet Explorer&quot; bookmarks, which are 
+really your Omniweb bookmarks.  (It will also create a new 
+&quot;com.apple.Safari.plist&quot; file and nuke all of your preferences - either 
+replace the new .plist file with the old one you removed or put your 
+preferences back the way you like them by hand.  You may also wish to 
+put back your real IE &quot;Favorites.html&quot; file if you had to move it out 
+of the way.)
+
+There are two major caveats to this procedure, both of which are easily 
+fixable.
+
+1.  Omniweb supports giving addresses to bookmark folders.  Safari does 
+not.  Thus, if you have bookmark folders with addresses defined in 
+Omniweb, in Safari they will show up with a name like:
+
+&gt;<i> &lt;a href=&quot;<A HREF="http://www.google.com/">http://www.google.com/&quot;</A> lastCheckedTime=62993007 
+</I>&gt;<i> wordCount=173&gt;Google&lt;/a&gt;
+</I>
+Fortunately, you can select that URL in the Safari folder name and drag 
+and drop it within the Safari bookmark manager to create a new 
+bookmark.  Or, you can clean up the bookmarks ahead of time in Omniweb. 
+  It's a toss-up as to which will be easier.
+
+2.  Even if you don't have an address assigned to a folder, you will 
+still get folder names like this:
+
+&gt;<i> &lt;a lastCheckedTime=57712409&gt;Search&lt;/a&gt;
+</I>
+You can either do what I did, which is to grit your teeth and clean 
+them up in Safari, or you can probably fix the text with a little 
+search-and-replace in BBEdit before you open the file.  Which method 
+you choose depends on how comfortable you are with using grep.  One 
+helpful hint:  In the Omniweb bookmarks file, the folder names are 
+enclosed by &lt;h3&gt; and &lt;/h3&gt; tags.  If you try the BBEdit route, let us 
+all know if you find a search pattern that does the trick without 
+stripping the address from regular bookmarks.
+
+-----------
+
+The frustrating thing about this is that it would take so little to get 
+the browser to import Omniweb bookmarks - just a change in which folder 
+it looked in and a few routines to clean up some text.  But then again, 
+this is a beta.  Hopefully, they will add this feature in the final 
+version.
+
+Regards,
+Zach Heaton
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001283.html">[P1] OS X + X11
+</A></li>
+	<LI>Next message: <A HREF="001285.html">iBook &amp; printers connectivity
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1284">[ date ]</a>
+              <a href="thread.html#1284">[ thread ]</a>
+              <a href="subject.html#1284">[ subject ]</a>
+              <a href="author.html#1284">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

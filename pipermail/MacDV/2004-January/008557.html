@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MacDV] Re: Can't save iMovie 3.03 Projects
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20Can%27t%20save%20iMovie%203.03%20Projects&In-Reply-To=list-10055255%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="008556.html">
+   <LINK REL="Next"  HREF="008558.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MacDV] Re: Can't save iMovie 3.03 Projects</H1>
+    <B>Carlton Kelly</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20Can%27t%20save%20iMovie%203.03%20Projects&In-Reply-To=list-10055255%40mail.ninewire.com"
+       TITLE="[MacDV] Re: Can't save iMovie 3.03 Projects">carlkelly at adelphia.net
+       </A><BR>
+    <I>Sat Jan  3 21:07:44 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="008556.html">[MacDV] Re: Can't save iMovie 3.03 Projects
+</A></li>
+        <LI>Next message: <A HREF="008558.html">[MacDV] Re: Creating Slide Shows Part II
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8557">[ date ]</a>
+              <a href="thread.html#8557">[ thread ]</a>
+              <a href="subject.html#8557">[ subject ]</a>
+              <a href="author.html#8557">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Peter,
+
+Well that will certainly free up some disk space.... :-)
+
+Thanks for the history lesson. I did choose UFS on purpose (I *like* 
+case sensitivity), but in retrospect it was a poor choice. I guess I 
+better buy some blank CDs.
+
+Thanks again for the assistance.
+
+Carl
+
+On Jan 3, 2004, at 8:13 PM, Peter van der Linden wrote:
+
+&gt;<i> On Jan 3, 2004, at 4:50 PM, Carlton Kelly wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> UFS...
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> ~ $ df -t ufs
+</I>&gt;&gt;<i> Filesystem    512-blocks     Used    Avail Capacity  Mounted on
+</I>&gt;&gt;<i> /dev/disk0s10   38812406 25327444 11544342    69%    /
+</I>&gt;&gt;<i> ~ $ df -t hfs
+</I>&gt;&gt;<i> ~ $
+</I>&gt;<i>
+</I>&gt;<i> The use of UFS is the cause of your difficulty with iMovie, Carl.
+</I>&gt;<i>
+</I>&gt;<i> UFS ( = &quot;Unix File System&quot;) is a design for laying out a filesystem on 
+</I>&gt;<i> disk.  It is used throughout the entire Unix world.  Unfortunately, 
+</I>&gt;<i> Apple chose to use HFS+ as the standard for its Unix-based operating 
+</I>&gt;<i> system.  HSF+ is an evolution of HFS, bringing it up to date and 
+</I>&gt;<i> providing modern FS features.  It supports things that Apple wanted 
+</I>&gt;<i> (like case insensitive file names) but it is incompatible with the 
+</I>&gt;<i> entire rest of the world.  Gee, what a familiar story.
+</I>&gt;<i>
+</I>&gt;<i> For that reason, Apple also supports the formatting and use of UFS.  
+</I>&gt;<i> Someone developing software for another platform on MacOS X might 
+</I>&gt;<i> chose to use UFS, so that file transfer is easier.  It would be a 
+</I>&gt;<i> strange choice otherwise.  Can you say if you chose UFS when you did 
+</I>&gt;<i> the original installation, or did someone do it for you?
+</I>&gt;<i>
+</I>&gt;<i> See <A HREF="http://docs.info.apple.com/article.html?artnum=25316">http://docs.info.apple.com/article.html?artnum=25316</A>
+</I>&gt;<i> &quot;Unless you have a specific reason to use UFS, you should use the Mac 
+</I>&gt;<i> OS Extended format&quot;
+</I>&gt;<i>
+</I>&gt;<i> Your only option at this point is to backup all your data, reformat 
+</I>&gt;<i> the drive as HFS+, reinstall the OS and all apps, and copy your data 
+</I>&gt;<i> back in again.   If I were in your shoes, I would do this regardless 
+</I>&gt;<i> of whether I wanted to use iMovie or not.   Running UFS on Macs paints 
+</I>&gt;<i> you into a poorly-supported corner.  For example, Airport does not 
+</I>&gt;<i> work when Mac OS X is installed on a UFS formatted volume.  Some file 
+</I>&gt;<i> metadata is not available using UFS.
+</I>&gt;<i>
+</I>&gt;<i> Good luck.
+</I>&gt;<i>
+</I>&gt;<i>     Peter
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> &lt;<A HREF="../../../../www.themacintoshguy.com/lists/MacDV.html">http://www.themacintoshguy.com/lists/MacDV.html</A>&gt;.
+</I>&gt;<i> Send a message to &lt;<A HREF="../../../mailman/listinfo/macdv.html">MacDV-DIGEST at themacintoshguy.com</A>&gt; to switch to the 
+</I>&gt;<i> digest version.
+</I>&gt;<i>
+</I>&gt;<i> XRouter | Share your DSL or cable modem between multiple computers! 
+</I>&gt;<i> Dr. Bott | Now $139.99      &lt;<A HREF="http://www.drbott.com/prod/xrouter.html">http://www.drbott.com/prod/xrouter.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>   Cyberian   | Support this list when you buy at Outpost.com!
+</I>&gt;<i>   Outpost    |         <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+</I>&gt;<i>
+</I>&gt;<i> MacResQ Specials: LaCie SCSI CDR From $99! PowerBook 3400/200 Only 
+</I>&gt;<i> $879! Norton AntiVirus 6 Only $19! We Stock PARTS! 
+</I>&gt;<i> &lt;<A HREF="http://www.macresq.com">http://www.macresq.com</A>&gt;
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="008556.html">[MacDV] Re: Can't save iMovie 3.03 Projects
+</A></li>
+	<LI>Next message: <A HREF="008558.html">[MacDV] Re: Creating Slide Shows Part II
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8557">[ date ]</a>
+              <a href="thread.html#8557">[ thread ]</a>
+              <a href="subject.html#8557">[ subject ]</a>
+              <a href="author.html#8557">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

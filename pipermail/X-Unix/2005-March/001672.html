@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] need help with a command
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20need%20help%20with%20a%20command&In-Reply-To=20050306175734.63386328403%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001670.html">
+   <LINK REL="Next"  HREF="001674.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] need help with a command</H1>
+    <B>PoolMouse</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20need%20help%20with%20a%20command&In-Reply-To=20050306175734.63386328403%40listserver.themacintoshguy.com"
+       TITLE="[X-Unix] need help with a command">poolmouse_nyc at mac.com
+       </A><BR>
+    <I>Fri Mar 25 14:34:55 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001670.html">[X-Unix] Getting volume name from a disk image file?
+</A></li>
+        <LI>Next message: <A HREF="001674.html">[X-Unix] Re: lookupd
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1672">[ date ]</a>
+              <a href="thread.html#1672">[ thread ]</a>
+              <a href="subject.html#1672">[ subject ]</a>
+              <a href="author.html#1672">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Eugene &lt;<A HREF="../../../mailman/listinfo/x-unix.html">list-themacintoshguy at fsck.net</A>&gt; wrote:
+
+&gt;<i>On Wed, Mar 02, 2005 at 01:37:51PM +0000, Stroller wrote:
+</I>&gt;:<i>
+</I>&gt;:<i> On Mar 2, 2005, at 11:41 am, Eugene wrote:
+</I>&gt;:<i>
+</I>&gt;:<i> &gt;: ... Also, sometimes it's best handling directories and
+</I>&gt;:<i> &gt;: non-directory files separately when changing permissions,
+</I>&gt;:<i> &gt;: e.g.  setting the 'x' (execute) bit makes sense for
+</I>&gt;:<i> &gt;: directories but not for non-executable traditional Unix
+</I>&gt;:<i> &gt;: files.  So, you could construct two commands like:
+</I>&gt;:<i> &gt;:
+</I>&gt;:<i> &gt;:  find PATH -type d -not -name '~Archive' -exec chmod DIR-MODE {} \;
+</I>&gt;:<i> &gt;:  find PATH -type f -exec chmod NONDIR-MODE {} \;
+</I>&gt;:<i> &gt;:
+</I>&gt;:<i> &gt;: ... for changing dirs and regular files separately.
+</I>&gt;:<i> &gt;
+</I>&gt;:<i> &gt;Or do it all at once?
+</I>&gt;:<i> &gt;
+</I>&gt;:<i> &gt;	find PATH \(-type d -o -type f) -not \( -type d -a -name '~Archive'
+</I>&gt;:<i> &gt;\) -exec chmod MODE &quot;{}&quot; \;
+</I>&gt;:<i>
+</I>&gt;:<i> That'll apply the same permissions to the directories as to the regular
+</I>&gt;:<i> files. As Scott said, we want directories to have +xxx permissions, but
+</I>&gt;:<i> not h4x0r.sh or tr0j4n.exe which got saved there by mistake.
+</I>&gt;<i>
+</I>&gt;<i>I wasn't responding to Scott.  I was responding specifically to
+</I>&gt;<i>the original poster, Don &lt;<A HREF="../../../mailman/listinfo/x-unix.html">poolmouse_nyc at mac.com</A>&gt;, and his request.
+</I>&gt;<i>Don never stated exactly what kind of permissions he wanted to
+</I>&gt;<i>apply.  And knowing the permissions issues with directories, I
+</I>&gt;<i>just went for the nastiest single-line command I could think of.
+</I>&gt;<i>
+</I>&gt;<i>--
+</I>&gt;<i>Eugene Lee
+</I>&gt;<i><A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+</I>
+sorry for the late reply...didn't see the answers come in (i usually 
+copy the original poster so they know they got a response - many of 
+us are on many lists). i need to change folders to 777 and files to 
+666.
+
+don
+
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001670.html">[X-Unix] Getting volume name from a disk image file?
+</A></li>
+	<LI>Next message: <A HREF="001674.html">[X-Unix] Re: lookupd
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1672">[ date ]</a>
+              <a href="thread.html#1672">[ thread ]</a>
+              <a href="subject.html#1672">[ subject ]</a>
+              <a href="author.html#1672">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

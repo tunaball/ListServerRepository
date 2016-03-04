@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] G4 Powerbook Won't Boot Up. Help?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20G4%20Powerbook%20Won%27t%20Boot%20Up.%20Help%3F&In-Reply-To=41617a253f35fc050425c88ed6ec9773%40gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011385.html">
+   <LINK REL="Next"  HREF="011367.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] G4 Powerbook Won't Boot Up. Help?</H1>
+    <B>Eric Volker</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20G4%20Powerbook%20Won%27t%20Boot%20Up.%20Help%3F&In-Reply-To=41617a253f35fc050425c88ed6ec9773%40gmail.com"
+       TITLE="[G4] G4 Powerbook Won't Boot Up. Help?">ebv1 at charter.net
+       </A><BR>
+    <I>Thu Oct 27 19:34:50 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011385.html">[G4] G4 Powerbook Won't Boot Up. Help?
+</A></li>
+        <LI>Next message: <A HREF="011367.html">[G4] G4 Powerbook Won't Boot Up. Help?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11365">[ date ]</a>
+              <a href="thread.html#11365">[ thread ]</a>
+              <a href="subject.html#11365">[ subject ]</a>
+              <a href="author.html#11365">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Ron-
+
+This is not my area of expertise, but I can see at least one problem 
+with your approach. When running fsck_hfs, drop the 'n' option and 
+replace it with 'y'. This will force fsck_hfs to at least try to fix any 
+problems it finds. Thus you would enter:
+
+fsck_hfs -fy /dev/disk0s9
+
+This is assuming that /dev/disk0s9 is actually the raw device that 
+corresponds to his drive.
+
+Trying to mount your friend's hard drive on your G4 is certainly a valid 
+option. Don't be upset if it doesn't immediately mount, but instead 
+start Disk Utility and see if it appears there. If it does, you can 
+attempt to repair the drive with Disk Utility.
+
+I'm not familiar with Disk Warrior, but it might help if you pass on 
+whatever error your friend got when trying to repair the disk with that 
+utility. If I recall correctly, Disk Warrior comes highly recommended, 
+so I'm surprised it didn't at least tell you something useful.
+
+Eric
+
+Ron Michael wrote:
+
+&gt;<i> I have a buddy who is having G4 Powerbook problems which is stopping 
+</I>&gt;<i> him from booting up. He's tried Disk Warrior and that wouldn't repair 
+</I>&gt;<i> it. I'm pasting some of the on-screen messages he's getting but this 
+</I>&gt;<i> is as far as he can get before it hangs. I may be posting  too much 
+</I>&gt;<i> but hopefully it might help someone smarter than me interpret what's 
+</I>&gt;<i> going on. He was afraid to re-install until I posted this message 
+</I>&gt;<i> (also at my suggestion) since he's hoping his data is still all there. 
+</I>&gt;<i> Any advice I can pass along to him. I've got Tech Tool Pro but he 
+</I>&gt;<i> lives about an hour away. I thought about having him come over, 
+</I>&gt;<i> connecting the Powerbook to my G4, via Firewire and Target Disk mode 
+</I>&gt;<i> but if it won't start up, that idea won't help.
+</I>&gt;<i> Thanks a lot.
+</I>&gt;<i> Ron in Memphis
+</I>&gt;<i>
+</I>&gt;<i> 0. hfs: WARNING - blocks on volume Macintosh HD not allocated!
+</I>&gt;<i>
+</I>&gt;<i> 1. panic(cpu0): 0x300 - Data Access
+</I>&gt;<i>
+</I>&gt;<i> 2. panic: We are hanging here.
+</I>&gt;<i>
+</I>&gt;<i> 3. Incorrect block count for filesystem.log
+</I>&gt;<i> It should be 15987 instead of 15988 (---or is it  file 
+</I>&gt;<i> system.log---probably just one word.)
+</I>&gt;<i>
+</I>&gt;<i> 4. Invalid key length (4, 9807)
+</I>&gt;<i>
+</I>&gt;<i> 5. Volume check failed
+</I>&gt;<i>
+</I>&gt;<i> 6. Warning: blocks on volume MacIntosch HD not allocated
+</I>&gt;<i>
+</I>&gt;<i> 7. Returning false early
+</I>&gt;<i>
+</I>&gt;<i> 8. Connector or machine incorrect  (this message may be on same line 
+</I>&gt;<i> at #7 message. I know it follows #7 message.)
+</I>&gt;<i>
+</I>&gt;<i> 9. After running fsck_hfs -fn /dev/disk0s9, I get these messages:
+</I>&gt;<i>    ** /dev/rdisk0s9 (No WRITE)
+</I>&gt;<i> **Root file system
+</I>&gt;<i> **Checking HFS Plus volume
+</I>&gt;<i> **Checking Extents Overflow file.
+</I>&gt;<i> **Checking Catalog file.
+</I>&gt;<i>    Invalid extent entry
+</I>&gt;<i> (4, 9807)
+</I>&gt;<i> **The volume Macintosh HD needs to be repaired.
+</I>&gt;<i> **Volume check failed.
+</I>&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> G4 mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">G4 at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">http://listserver.themacintoshguy.com/mailman/listinfo/g4</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I></PRE>
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011385.html">[G4] G4 Powerbook Won't Boot Up. Help?
+</A></li>
+	<LI>Next message: <A HREF="011367.html">[G4] G4 Powerbook Won't Boot Up. Help?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11365">[ date ]</a>
+              <a href="thread.html#11365">[ thread ]</a>
+              <a href="subject.html#11365">[ subject ]</a>
+              <a href="author.html#11365">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

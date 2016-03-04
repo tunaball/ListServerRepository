@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Displaying windows over the network
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Displaying%20windows%20over%20the%20network&In-Reply-To=BAY19-DAV23417D434BA217496CF22EA6B0%40phx.gbl">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001534.html">
+   <LINK REL="Next"  HREF="001539.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Displaying windows over the network</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Displaying%20windows%20over%20the%20network&In-Reply-To=BAY19-DAV23417D434BA217496CF22EA6B0%40phx.gbl"
+       TITLE="[X-Unix] Displaying windows over the network">magill at mcgillsociety.org
+       </A><BR>
+    <I>Wed Feb 16 17:45:20 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001534.html">[X-Unix] Displaying windows over the network
+</A></li>
+        <LI>Next message: <A HREF="001539.html">[X-Unix] Re: My ip address
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1538">[ date ]</a>
+              <a href="thread.html#1538">[ thread ]</a>
+              <a href="subject.html#1538">[ subject ]</a>
+              <a href="author.html#1538">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 14 Feb, 2005, at 19:42, KL Tah wrote:
+&gt;<i> I have a question about displaying windows on my machine in X11 when 
+</I>&gt;<i> I'm
+</I>&gt;<i> logged in to a remote machine with several layers of remote machines 
+</I>&gt;<i> beneath
+</I>&gt;<i> it.
+</I>&gt;<i>
+</I>&gt;<i> If I'm logged onto say remote_machine_1, using
+</I>&gt;<i> Ssh -X remote_machine1,
+</I>&gt;<i> I can open xterm fine on my mac.
+</I>&gt;<i>
+</I>&gt;<i> The problem is that once on remote_machine1, if I do another ssh -X
+</I>&gt;<i> remotemachine2 say, I can't open a window from that machine even after
+</I>&gt;<i> setting the display environment. Output looks something like that:
+</I>&gt;<i> Remote_machine2:mydir% xterm &amp;  &lt;--(seems fine here, but moments 
+</I>&gt;<i> later...)
+</I>&gt;<i> [2] 18152
+</I>&gt;<i> Remote_machine2:mydir% xterm Xt error: Can't open display: 
+</I>&gt;<i> xxx.xxx.x.x:0
+</I>&gt;<i>
+</I>&gt;<i> Where I have replaced my ip_address with x's.
+</I>
+Wow, the message delay from hotmail is significant!  (look at the 
+headers, it arrived about an hour ago -- 2 days later.)
+
+You don't indicate what OS is involved on each machine in your string, 
+so here are a couple of possibilities.
+
+First, BOTH the client and server implementations of SSH on EACH 
+machine have to be configured for X11-Forwarding.
+
+In the client:
+      ForwardX11 yes
+
+In sshd:
+      X11Forwarding yes
+
+I believe the defaults are &quot;No&quot; for all SSH implementations.
+
+Second, don't forget:    xxx.xxx.x.x:0 is &quot;definitely&quot; wrong.
+
+Most SSH implementations default to a displacement of 10 for the 
+display.  xxx.xxx.x.x:10 would be the correct address.
+
+Third, if the X11-Forwarding is turned on, you should only have to set 
+your DISPLAY variable on your local machine to &quot;ip-addr:0.0&quot; and ssh 
+will take care of the translation, incrementing it as needed. You 
+should only ever set the DISPLAY variable on your local client machine.
+
+One last point, older ssh implementations do not implement &quot;-X&quot;, they 
+only implemnt &quot;-x&quot; which DISABLES X11 forwarding. Which means that if 
+SSHD is not configured by the SysAdmin for X11-Forwarding, you're out 
+of luck.
+
+[You can use ssh -v to see the connection dialog. You should find lines 
+something along the lines of:
+&quot;Warning: No xauth data; using fake authentication data for X11 
+forwarding.&quot;
+&quot;debug1: Requesting X11 forwarding with authentication spoofing.&quot;
+depending on your setup.]
+
+T.T.F.N.
+William H. Magill
+# Beige G3 [Rev A motherboard - 300 MHz 768 Meg] OS X 10.2.8
+# Flat-panel iMac (2.1) [800MHz - Super Drive - 768 Meg] OS X 10.3.7
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg] Tru64 5.1a
+# XP1000  [Alpha 21264-3 (EV6) - 256 meg] FreeBSD 5.3
+# XP1000  [Alpha 21264-A (EV 6.7) - 384 meg] FreeBSD 5.3
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001534.html">[X-Unix] Displaying windows over the network
+</A></li>
+	<LI>Next message: <A HREF="001539.html">[X-Unix] Re: My ip address
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1538">[ date ]</a>
+              <a href="thread.html#1538">[ thread ]</a>
+              <a href="subject.html#1538">[ subject ]</a>
+              <a href="author.html#1538">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

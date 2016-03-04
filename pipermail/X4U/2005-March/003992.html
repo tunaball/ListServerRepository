@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] How can I easily replace '/' with '-' in file names?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20How%20can%20I%20easily%20replace%20%27/%27%20with%20%27-%27%20in%20file%20names%3F&In-Reply-To=p062102a0be5e08687e41%40%5B192.168.2.114%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003989.html">
+   <LINK REL="Next"  HREF="003993.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] How can I easily replace '/' with '-' in file names?</H1>
+    <B>Juan Pablo</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20How%20can%20I%20easily%20replace%20%27/%27%20with%20%27-%27%20in%20file%20names%3F&In-Reply-To=p062102a0be5e08687e41%40%5B192.168.2.114%5D"
+       TITLE="[X4U] How can I easily replace '/' with '-' in file names?">jpablovilla at spymac.com
+       </A><BR>
+    <I>Wed Mar 16 08:57:27 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003989.html">[X4U] How can I easily replace '/' with '-' in file names?
+</A></li>
+        <LI>Next message: <A HREF="003993.html">[X4U] How can I easily replace '/' with '-' in file names?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3992">[ date ]</a>
+              <a href="thread.html#3992">[ thread ]</a>
+              <a href="subject.html#3992">[ subject ]</a>
+              <a href="author.html#3992">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>you may try to run a script in the directory you have your files
+it could be something like this
+
+for files in * ; do
+	newname=$(echo $files | sed 's/\//-/g')
+	cp $files $newname
+done
+
+im sorry i havent tryed it but i think it could work
+
+
+On Mar 16, 2005, at 1:04 PM, Robert Ameeti wrote:
+
+&gt;<i> I recently started backing up my PowerBook to the server at work but 
+</I>&gt;<i> the OS at work is Windows. As such, the files within my PowerBook that 
+</I>&gt;<i> are named with a '/' cause Apple's Backup program to error.
+</I>&gt;<i>
+</I>&gt;<i> How can I easily change all occurrences of the '/' character to a '-' 
+</I>&gt;<i> character?
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X4U mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">X4U at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">http://listserver.themacintoshguy.com/mailman/listinfo/x4u</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random 
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003989.html">[X4U] How can I easily replace '/' with '-' in file names?
+</A></li>
+	<LI>Next message: <A HREF="003993.html">[X4U] How can I easily replace '/' with '-' in file names?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3992">[ date ]</a>
+              <a href="thread.html#3992">[ thread ]</a>
+              <a href="subject.html#3992">[ subject ]</a>
+              <a href="author.html#3992">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

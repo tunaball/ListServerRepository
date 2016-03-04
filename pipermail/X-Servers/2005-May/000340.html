@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Servers] 10.3.9 Server - DHCP and Static IP Addressing
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX-Servers%5D%2010.3.9%20Server%20-%20DHCP%20and%20Static%20IP%20Addressing&In-Reply-To=p06210202bea94a3050a4%40%5B216.161.36.6%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000339.html">
+   <LINK REL="Next"  HREF="000341.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Servers] 10.3.9 Server - DHCP and Static IP Addressing</H1>
+    <B>oemx</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX-Servers%5D%2010.3.9%20Server%20-%20DHCP%20and%20Static%20IP%20Addressing&In-Reply-To=p06210202bea94a3050a4%40%5B216.161.36.6%5D"
+       TITLE="[X-Servers] 10.3.9 Server - DHCP and Static IP Addressing">oem at mac.com
+       </A><BR>
+    <I>Thu May 12 18:10:13 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000339.html">[X-Servers] 10.3.9 Server - DHCP and Static IP Addressing
+</A></li>
+        <LI>Next message: <A HREF="000341.html">[X-Servers] Dual G5 Tower as a 10.4 Server?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#340">[ date ]</a>
+              <a href="thread.html#340">[ thread ]</a>
+              <a href="subject.html#340">[ subject ]</a>
+              <a href="author.html#340">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> Hi All,
+</I>&gt;<i>
+</I>&gt;<i> We have a Netopia R5300 T1 router, with a block of .1-.31 static  
+</I>&gt;<i> assigned internet IPs. Minus 1 address for the router, it is set to  
+</I>&gt;<i> pass the others through untouched. We previously had the router  
+</I>&gt;<i> handling NAT and DHCP but had one of our DHCP Windows clients catch  
+</I>&gt;<i> a Worm and do a broadcast directly through the router.
+</I>Enjoy W$ :-)
+&gt;<i> Two things:
+</I>&gt;<i> 1. I would like the rest of the static IPs to pass through our  
+</I>&gt;<i> XServe for improved firewall, monitoring, etc. but to still be  
+</I>&gt;<i> accessible to/from the internet.
+</I>Do you mean :
+your client in one side of the Xserve (LAN Side)
+and internet in the second ethernet NIC of your Xserve. (WANSide)
+And if so, you want your clients to be able to brwose internet, mail,  
+etc&#8230; and eventually be accessible FROM WAN.
+
+&gt;<i> 2. I am also trying to set up a block of 192.168.0.x addresses to  
+</I>&gt;<i> be DHCPed through the XServer, predominately for the Windows users.
+</I>&gt;<i>
+</I>&gt;<i> I have succeeded in getting AFP, DNS, Firewall and VPN activated  
+</I>&gt;<i> but am having trouble setting up DHCP or the static addresses  
+</I>&gt;<i> (other than the IP for the XServe itself).
+</I>&gt;<i> No luck at all with setting up the static IPs (using NAT?)
+</I>What do you really consider as static IP, static or DHCP  
+withStaticIP. ?? Anyway-&gt; see further the mail&#8230;
+
+&gt;<i>
+</I>&gt;<i> I have looked through all the docs, looked through the discussion  
+</I>&gt;<i> boards and posted to the Apple Discussion list but have been unable  
+</I>&gt;<i> to find any info to solve these two items. Anyone have any ideas or  
+</I>&gt;<i> direction to materials covering this?
+</I>
+You need to do and check many things:
+
+1st) you've done it : DNS setup.
+
+2sd) for your DHCP things, you need
+
+&gt;<i> and only partial luck setting up the DHCP addresses. If I manually  
+</I>&gt;<i> set addresses from the DHCP address block on the client computers  
+</I>&gt;<i> everything works fine. But if I set it up for dynamic assignment  
+</I>&gt;<i> the addresses do not get passed down to the client machines and  
+</I>&gt;<i> they are unable to connect.
+</I>
+a- in Workgroup Manager : go to Computer list and be sure to get all  
+your computers listed in at least one list.
+    - for the macs it's easy :-) just click Browse and pick up your  
+client in the list. Or if you've got the host name and MACAdress just  
+click on the + button and type in your datas. (I, personnaly, name  
+the computer with its host name : computer.domain.com)
+   - for Windows Clients, arrrrggg, I don't remember where on windows  
+you set this up but you need to enter the computer name in the  
+windows list ( for exemple : WINMACHINE) on the Xserve. Go on the W$  
+and in ctrl-click-&gt;properties, you can set the WORKGROUP or domain  
+(depends on your Server admin setup), and the computer name.
+
+b-in SystemePreferences/network
+
+- Be Sure to put your WAN interface in top of the list and your LAN  
+just after.
+- You'll need to enable NAT, and I've read, and successfully tested,  
+that you SHOULD LEAVE EMPTY the GATEWAY address on the LAN settings.  
+you also have to enter your Server IP in the DNS field (presuming it  
+is providing DNS to your LAN).
+
+c- in ServerAdmin
+
+NAT : some say you should ONLY activate the service and NOT click on  
+the popupmenu.
+In facts it depends on your en0 and en1. (to know which is what, just  
+launch NetworkUtility)
+
+if your LAN is en0 and WAN en1, then you should select share en1.
+you can check this in /etc/nat/natd.plist (eventually you'll have to  
+alter also the natd.plist.default - BACKUP it BEFORE !!!)
+
+d- Server Admin
+DHCP -VPN just be sure to NOT have the same 'range' for DHCP and VPN.
+exemple:
+DHCP : 192.168.1.40-&gt;192.168.1.80
+VPN : 192.168.1.140-&gt;192.168.1.180
+enter your Server IP in DNS field.
+
+e- acces from the outside :
+You'll have to play with the firewal here, and second you'll have  
+also to play with your Router, so WAN can get access, but you should  
+VPN, at this stage and then connect to the server.
+
+f- hope it helps
+
+h- I have suffer (knowing only Mac -since AppleIIe) when I HAD to  
+setup a W$ in my network&#8230; really suffered.
+:<i>-)
+</I>oemx
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000339.html">[X-Servers] 10.3.9 Server - DHCP and Static IP Addressing
+</A></li>
+	<LI>Next message: <A HREF="000341.html">[X-Servers] Dual G5 Tower as a 10.4 Server?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#340">[ date ]</a>
+              <a href="thread.html#340">[ thread ]</a>
+              <a href="subject.html#340">[ subject ]</a>
+              <a href="author.html#340">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

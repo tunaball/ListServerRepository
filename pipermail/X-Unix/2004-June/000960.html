@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Cron jobs not running, how to log cron
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Cron%20jobs%20not%20running%2C%20how%20to%20log%20cron&In-Reply-To=list-14010690%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000959.html">
+   <LINK REL="Next"  HREF="000961.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Cron jobs not running, how to log cron</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Cron%20jobs%20not%20running%2C%20how%20to%20log%20cron&In-Reply-To=list-14010690%40mail.ninewire.com"
+       TITLE="[X-Unix] Cron jobs not running, how to log cron">magill at mcgillsociety.org
+       </A><BR>
+    <I>Thu Jun 17 09:40:27 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000959.html">[X-Unix] Cron jobs not running, how to log cron
+</A></li>
+        <LI>Next message: <A HREF="000961.html">[X-Unix] xclock
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#960">[ date ]</a>
+              <a href="thread.html#960">[ thread ]</a>
+              <a href="subject.html#960">[ subject ]</a>
+              <a href="author.html#960">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 16 Jun, 2004, at 21:48, David Haines wrote:
+&gt;<i> I've setup two cron jobs to run , setup as root and set to run as 
+</I>&gt;<i> root, on a
+</I>&gt;<i> 10.3.3 OS X Server machine.
+</I>&gt;<i>
+</I>&gt;<i> The permissions for the scripts called by the crontab are set for 
+</I>&gt;<i> read,write
+</I>&gt;<i> &amp; execute for root user only, and I can invoke the scripts manually as 
+</I>&gt;<i> root.
+</I>&gt;<i>
+</I>&gt;<i> But the cron job does not run.
+</I>&gt;<i>
+</I>&gt;<i> When I added these jobs to the crontab, there was no error message 
+</I>&gt;<i> either.
+</I>&gt;<i>
+</I>&gt;<i> Here's the listing (crontab -l) :
+</I>&gt;<i>
+</I>&gt;<i> 45      1       *       *       *       root    /etc/ditto_daily.sh
+</I>&gt;<i> 15      0       *       *       1,2,4,6 root    /etc/junkmailcleanup.sh
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> The permissions for the first script:
+</I>&gt;<i>
+</I>&gt;<i> -rwx------  1 root  wheel  1005  8 Apr 11:51 /etc/ditto_daily.sh
+</I>&gt;<i>
+</I>&gt;<i> Please tell me the stupid and obvious thing I'm overlooking, and how 
+</I>&gt;<i> you
+</I>&gt;<i> would go about logging the results of cron jobs... In order to look
+</I>&gt;<i> for/track down errors or problems
+</I>
+Yup, you probably are ...
+
+First, define &quot;not-running&quot; --
+
+           grep -i cron /var/log/*
+If there are entries somewhere in the /var/log files of the form:
+
+CRON[nnnnn]: (root) CMD (/etc/ditto_daily.sh)
+
+Then cron is running your script. It is your script which is failing.
+
+The usual problem with cron jobs is the path -- Cron INTENTIONALLY does 
+not include any of the normal, expected  environmental variables.  It 
+is a security feature. This is why scripts which run from &quot;your 
+account&quot; work fine, but don't work when you run them from cron. You are 
+making invalid assumptions about the environment.
+
+OS X (1.3.4)'s default /etc/crontab defines ONLY:
+
+SHELL=/bin/sh
+PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin
+HOME=/var/log
+
+Anything else you want must be added in the script you are trying to 
+run.
+
+Alternately, specify complete path names for everything -- which is a 
+good idea from a security point of view anyway.  This means including 
+&quot;commands&quot; like &quot;mv&quot; as /bin/mc &quot;cp&quot; as
+/bin/cp, etc.
+
+One trick I use is to simply define a &quot;/etc/profile-cron&quot; which is 
+included as the first line of every cronjob. In this I set the path, 
+and similar things for the environment I plan to use via:
+
+&quot;. /etc/profile-cron&quot;
+
+This is the scheme used by the system with the normal periodic tasks -- 
+the first line in the file sources &quot;/etc/defaults/periodic.conf&quot;
+
+Cron itself does not provide any useful logging information for things 
+like this -- you have to build it into your script... (mainly because 
+cron is working fine, it's your script that is failing.)
+
+Change your crontab entry to something like:
+
+45  1 * * *    root    /etc/ditto_daily.sh &gt; /var/log/ditto.out 2&gt;&amp;1
+
+/var/log/ditto.out will then contain any error messages.
+
+Of course, you probably then also need to add:
+
+set -x
+and or
+set -xv
+
+So that you can actually tell what command the resulting errors belong 
+to.
+
+And make certain that there is a blank line after the last entry in the 
+/etc/crontab.
+(I.e. a cr/lf at the end of the last data line.)
+
+I always end the file with a single &quot;#&quot; to guarantee the actual crontab 
+entry is read.
+
+As a good educational exercise create a file: /usr/local/adm/crontest2 
+(or whatever)
+
+      #!/bin/sh
+      set -x
+      printenv
+      #
+
+chmod it to execute.
+
+and run it as above:
+45  * * * *    root    /usr/local/adm/crontest2 &gt; 
+/var/log/crontest2.out 2&gt;&amp;1
+
+crontest2.out will then show you what environment your &quot;naked&quot; cron job 
+executes in.
+
+Don't forget to delete the entry from crontab after testing.
+
+Also, remember to always pick a time that is at least 2 minutes in the 
+future for your test time. This allows cron time to re-read the entries 
+and set itself up so that you don't get caught on a clock change that 
+you weren't expecting. NOTHING happens instantaneously, despite how 
+fast a G5 seems ...!
+
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000959.html">[X-Unix] Cron jobs not running, how to log cron
+</A></li>
+	<LI>Next message: <A HREF="000961.html">[X-Unix] xclock
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#960">[ date ]</a>
+              <a href="thread.html#960">[ thread ]</a>
+              <a href="subject.html#960">[ subject ]</a>
+              <a href="author.html#960">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Newbies] Daily UNIX Task
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20Daily%20UNIX%20Task&In-Reply-To=list-7749616%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002019.html">
+   <LINK REL="Next"  HREF="002021.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Newbies] Daily UNIX Task</H1>
+    <B>Gretchen Hayman</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20Daily%20UNIX%20Task&In-Reply-To=list-7749616%40mail.ninewire.com"
+       TITLE="[X Newbies] Daily UNIX Task">gretchen at sedl.org
+       </A><BR>
+    <I>Mon Jul 28 14:41:11 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002019.html">[X Newbies] Disk First Aid [was Re: [X Newbies] MacJanitor]
+</A></li>
+        <LI>Next message: <A HREF="002021.html">[X Newbies] Daily UNIX Task
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2020">[ date ]</a>
+              <a href="thread.html#2020">[ thread ]</a>
+              <a href="subject.html#2020">[ subject ]</a>
+              <a href="author.html#2020">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Sunday, Jul 27, 2003, at 23:54 US/Central, Edwin Snyder wrote:
+
+&gt;<i> When I try using either MacJanitor or the Terminal to do daily tasks 
+</I>&gt;<i> it says no such file or directory.
+</I>&gt;<i> But when I go to etc directory the daily file is there along with 
+</I>&gt;<i> weekly and monthly which I can run.
+</I>&gt;<i> Any ideas what's happening?
+</I>
+Sounds like your path may be messed up, or you don't have enough 
+privileges to execute this.  Are you an admin user?  I'm not familar 
+with Macjanitor (preferring to do things the CLI way), so perhaps 
+someone else can address that?
+
+In Terminal, do this to check your path:
+
+echo $PATH
+
+It should list the following:
+/bin:/usr/bin:/sbin:/usr/sbin
+
+If it does, then try this command for running the daily script:
+
+sudo /etc/daily
+
+The &quot;sudo&quot; lets you run this as a super user (i.e. root-like powers), 
+which is necessary for some of the tasks which deal with files owned by 
+root.  If that works, then just substitute &quot;weekly&quot; and &quot;monthly&quot; for 
+&quot;daily&quot; above.
+
+gretchen
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002019.html">[X Newbies] Disk First Aid [was Re: [X Newbies] MacJanitor]
+</A></li>
+	<LI>Next message: <A HREF="002021.html">[X Newbies] Daily UNIX Task
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2020">[ date ]</a>
+              <a href="thread.html#2020">[ thread ]</a>
+              <a href="subject.html#2020">[ subject ]</a>
+              <a href="author.html#2020">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

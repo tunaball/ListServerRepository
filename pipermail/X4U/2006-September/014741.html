@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Using Apple's Find (Command F)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Using%20Apple%27s%20Find%20%28Command%20F%29&In-Reply-To=20060905002315.414391EB621%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="014734.html">
+   <LINK REL="Next"  HREF="014742.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Using Apple's Find (Command F)</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Using%20Apple%27s%20Find%20%28Command%20F%29&In-Reply-To=20060905002315.414391EB621%40listserver.themacintoshguy.com"
+       TITLE="[X4U] Using Apple's Find (Command F)">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Tue Sep  5 10:07:01 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="014734.html">[X4U] webcam
+</A></li>
+        <LI>Next message: <A HREF="014742.html">[X4U] webcam
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14741">[ date ]</a>
+              <a href="thread.html#14741">[ thread ]</a>
+              <a href="subject.html#14741">[ subject ]</a>
+              <a href="author.html#14741">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>From: Daly Jessup &lt;<A HREF="../../../mailman/listinfo/x4u.html">jessup at san.rr.com</A>&gt;
+&gt;<i>At 1:35 PM -0700 3/9/06, John Baltutis wrote:
+</I>&gt;&gt;<i>Quick tutorial. All of Spotlight's arcane stuff is stored in the hidden,
+</I>&gt;&gt;<i>root-level directory /.Spotlight V100. To view its contents, use the
+</I>&gt;&gt;<i>Terminal.app command ls, preceeding it with sudo:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>sudo ls -al /.Spotlight-V100/   ----&gt;
+</I>&gt;&gt;<i>. . .
+</I>&gt;&gt;<i>_rules.plist
+</I>&gt;&gt;<i>store.db
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Use the cp command to back it up (so you can replace it if you screw it up),
+</I>&gt;&gt;<i>copy it to your desktop, open it in TextEdit, add the new parts, save it, and
+</I>&gt;&gt;<i>cp it back, replacing the original.
+</I>&gt;<i>
+</I>&gt;<i>Thank you so much. Coincidentally, I have been studying a basic Unix
+</I>&gt;<i>tutorial this afternoon so that was less confusing than it might have
+</I>&gt;<i>been  an hour ago!
+</I>&gt;<i>
+</I>&gt;<i>But I notice in the listing of /.Spotlight-V100/ that its size is
+</I>&gt;<i>zero. and when I try to view it (I used &quot;cat&quot; - was that wrong?) it
+</I>&gt;<i>says &quot;No such file or directory&quot;.
+</I>
+If as root you do:
+ls -al /.Spotlight-V100/
+you are specifying an absolute filename - it starts with a '/'. A
+cp _rules.plist &lt;destination&gt;
+assumes the _rules.plist to be in the current directory. Easiest to do
+sudo cp /.Spotlight-V100/_rules.plist .
+to copy it to the current directory.
+
+If the size of _rules.plist is zero I wouldn't expect Spotlight to 
+work because it doesn't know what to include.
+To see its contents, 'cat' is fine as long as you you have rights.
+sudo cat /.Spotlight-V100/_rules.plist
+should work.
+
+&gt;<i>I appear not to have journaled my hard drive. Would that make this
+</I>&gt;<i>process not work? My guess is that the answer is &quot;yes&quot;. So can you
+</I>&gt;<i>only change this .plist if your disk is set up to be journaled?
+</I>
+A journaled filesystem is a different thing. Before making a change 
+that would make a filesystem corrupt if not completed, it writes its 
+intentions in a journal. If the change doesn't complete and the 
+filesystem need fixing, it can roll the part-change back.
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+Chair of HPUX SysAdmin SIG of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x4u.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="014734.html">[X4U] webcam
+</A></li>
+	<LI>Next message: <A HREF="014742.html">[X4U] webcam
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14741">[ date ]</a>
+              <a href="thread.html#14741">[ thread ]</a>
+              <a href="subject.html#14741">[ subject ]</a>
+              <a href="author.html#14741">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

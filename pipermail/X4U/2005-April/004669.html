@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Tiger, iPhoto and Metadata
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Tiger%2C%20iPhoto%20and%20Metadata&In-Reply-To=a7596670293202003724dd3b87fd96d7%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004665.html">
+   <LINK REL="Next"  HREF="004394.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Tiger, iPhoto and Metadata</H1>
+    <B>Andrew T. Lynch</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Tiger%2C%20iPhoto%20and%20Metadata&In-Reply-To=a7596670293202003724dd3b87fd96d7%40mac.com"
+       TITLE="[X4U] Tiger, iPhoto and Metadata">atlynch at mac.com
+       </A><BR>
+    <I>Fri Apr 15 09:39:23 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004665.html">[X4U] Tiger, iPhoto and Metadata
+</A></li>
+        <LI>Next message: <A HREF="004394.html">[X4U] strange network problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4669">[ date ]</a>
+              <a href="thread.html#4669">[ thread ]</a>
+              <a href="subject.html#4669">[ subject ]</a>
+              <a href="author.html#4669">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Pete,
+    I have been attempting to get my keywords and albums into and out of 
+iPhoto for some time now.  I found that using perl to parse the 
+AlbumData.xml file works for extracting.  I have also found that using 
+applescript is not feasible.  I have almost 25,000 images in iPhoto, 
+and using applescript to do anything is pathetically slow.  I tried to 
+run an applescript keyword extractor to dump out all the keywords, and 
+calculated that it would take 15 hours to run.
+
+  Adding keywords with applescript is another issue.  I know it can be 
+done, but it is not straighforward.  Not only do you need to add the 
+keyword to the photo, but you need to be sure that the keyword exists 
+in the keyword list as well.
+
+   What I am trying to do is split my library into smaller libraries and 
+preserve the keyword and album data. I have seen many suggestions which 
+have you copy the entire library, then delete the portion you do not 
+want in the new library.  This makes me very nervous as the 
+AlbumData.xml in the new library still points to the photos in the old 
+library, and I am concerned that the deletes may occur in the wrong 
+library.  It may work to rebuild the library after the copy, and before 
+the deletes, but I'm not sure I trust this either.
+
+   I have also seen applescripts which use third party tools to read and 
+write the keyword data into the iptc fields in the images, but I have 
+not been able to get any of them to work.  I think they were written 
+for an earlier version of iPhoto.
+
+
+   I really like iPhoto, and iPhoto 5 (and a new fast Mac) has given 
+what I need to switch from iView MediaPro to iPhoto,  but I would 
+really like the ability to export and import the proprietary iPhoto 
+information.
+
+Cheers
+   Drew
+
+On Apr 15, 2005, at 7:49 AM, Pete Zimowski wrote:
+
+&gt;<i> OK you brainiacs!
+</I>&gt;<i>
+</I>&gt;<i> As I was poking deeper into iPhoto (5, specifically) than I had ever 
+</I>&gt;<i> before in anticipation of &quot;presenting&quot; it to our local user group 
+</I>&gt;<i> (MMOOS - Maine Macintosh Owners &amp; Operators Society), I made the 
+</I>&gt;<i> following discovery:
+</I>&gt;<i>
+</I>&gt;<i> iPhoto 5 (and, I presume all others before it) does not and cannot 
+</I>&gt;<i> edit metadata embedded in the image from the digital camera.  It 
+</I>&gt;<i> certainly does display some of the EXIF data, but there's no way to 
+</I>&gt;<i> examine or edit IPTC data or keywords or comments.
+</I>&gt;<i>
+</I>&gt;<i> But wait, you say, there are keywords and comments capabilities in 
+</I>&gt;<i> iPhoto.  Yes, but they are &quot;proprietary&quot; keywords and comments to 
+</I>&gt;<i> iPhoto, and stored not in the photo but in the &quot;AlbumData.xml&quot; file 
+</I>&gt;<i> within the iPhoto Library folder.  This would not be an issue with 
+</I>&gt;<i> casual consumers, I would think, unless they &quot;graduated&quot; to Photoshop 
+</I>&gt;<i> Elements or higher and discover that all their organization schemes in 
+</I>&gt;<i> iPhoto won't carry over.
+</I>&gt;<i>
+</I>&gt;<i> I know that there are AppleScript packages out there that attempt to 
+</I>&gt;<i> handle the task of adding the iPhoto keywords and comments to the 
+</I>&gt;<i> appropriate metadata tags.  I have used a couple and found them to be 
+</I>&gt;<i> &quot;quirky&quot; at best.  Has anyone found any that work?
+</I>&gt;<i>
+</I>&gt;<i> Secondly, can anyone using Tiger tell me (off-list if need be) whether 
+</I>&gt;<i> or not this &quot;shortcoming&quot; is addressed in 10.4?  With all the apps 
+</I>&gt;<i> getting embedded Spotlight, perhaps iPhoto will change its tune and go 
+</I>&gt;<i> to actually editing metadata, so that there would be a seamless 
+</I>&gt;<i> crossover of capabilities with File Browser (soon to be &quot;Bridge&quot;), and 
+</I>&gt;<i> any other tool that actually used metadata.
+</I>&gt;<i>
+</I>&gt;<i> If the incongruity is not addressed in Tiger, seems to me there would 
+</I>&gt;<i> be an opportunity for a commercial (shareware at the least) 
+</I>&gt;<i> application that would contain AppleScripting to &quot;convert&quot; iPhoto data 
+</I>&gt;<i> into real metadata.
+</I>&gt;<i>
+</I>&gt;<i> Any thoughts, oh wise ones?
+</I>&gt;<i>
+</I>&gt;<i> Pete Zimowski
+</I>&gt;<i> macmaineiac.com
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X4U mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">X4U at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">http://listserver.themacintoshguy.com/mailman/listinfo/x4u</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random 
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>- Andrew T. Lynch
+- Chief Zymurgist
+- Verisity Design Inc.
+- (650)934-6875
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004665.html">[X4U] Tiger, iPhoto and Metadata
+</A></li>
+	<LI>Next message: <A HREF="004394.html">[X4U] strange network problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4669">[ date ]</a>
+              <a href="thread.html#4669">[ thread ]</a>
+              <a href="subject.html#4669">[ subject ]</a>
+              <a href="author.html#4669">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

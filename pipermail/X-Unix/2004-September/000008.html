@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to use ESC as Meta in Enhanced Carbon Emacs?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20use%20ESC%20as%20Meta%20in%20Enhanced%20Carbon%20Emacs%3F&In-Reply-To=list-16561881%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000004.html">
+   <LINK REL="Next"  HREF="000018.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to use ESC as Meta in Enhanced Carbon Emacs?</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20use%20ESC%20as%20Meta%20in%20Enhanced%20Carbon%20Emacs%3F&In-Reply-To=list-16561881%40mail.ninewire.com"
+       TITLE="[X-Unix] How to use ESC as Meta in Enhanced Carbon Emacs?">magill at mcgillsociety.org
+       </A><BR>
+    <I>Wed Sep 15 13:39:46 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000004.html">[X-Unix] How to find your DHCP server...
+</A></li>
+        <LI>Next message: <A HREF="000018.html">[X-Unix] How to use ESC as Meta in Enhanced Carbon Emacs?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8">[ date ]</a>
+              <a href="thread.html#8">[ thread ]</a>
+              <a href="subject.html#8">[ subject ]</a>
+              <a href="author.html#8">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;&gt;<i> Do you have the box &quot;Use option key as meta key&quot;
+</I>&gt;&gt;<i> checked?
+</I>&gt;&gt;<i> (most probable cause.)
+</I>&gt;<i>
+</I>&gt;<i> No (see above)
+</I>
+Mumble... I was betting that was the cause.
+
+&gt;&gt;<i> Look at the file:
+</I>&gt;&gt;<i> /usr/share/emacs/21.1/lisp/startup.el see if there
+</I>&gt;&gt;<i> is
+</I>&gt;&gt;<i> a
+</I>&gt;&gt;<i> (setq mac-command-key-is-meta t)
+</I>&gt;&gt;<i> [There shouldn't be one.]
+</I>&gt;<i>
+</I>&gt;<i> No, there isn't.
+</I>&gt;<i>
+</I>&gt;<i> What else could possibly be the cause?  Are we using
+</I>&gt;<i> the same version/build of the Terminal application?
+</I>&gt;<i> Mine is 1.3.1 (v82).
+</I>&gt;<i>
+</I>&gt;<i> -- DekuDekuplex
+</I>
+I was probably looking at the 10.3.5 version instead of 10.2.8 when I 
+wrote the above.
+
+You are running 10.2.6, correct? (I must have deleted the original, and 
+there are no archives.)
+
+What gets inserted in the file if you type &quot;esc&quot; in an emacs buffer? 
+Since its not recognized you should be able to simply type it as a 
+character.
+
+You don't have any kind of special keyboard configuration program by 
+any chance?
+
+How about a ~/.emacs file?
+
+The answer must be one of two things.
+
+Since the option key DOES work as escape: the implication is that there 
+is either a global definition in effect (in the terminal application or 
+in &quot;keycaps&quot;) which causes the option key to emit the keyboard code for 
+escape, or emacs has been specifically configured to recognize the 
+option key instead of the escape key.
+
+
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000004.html">[X-Unix] How to find your DHCP server...
+</A></li>
+	<LI>Next message: <A HREF="000018.html">[X-Unix] How to use ESC as Meta in Enhanced Carbon Emacs?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8">[ date ]</a>
+              <a href="thread.html#8">[ thread ]</a>
+              <a href="subject.html#8">[ subject ]</a>
+              <a href="author.html#8">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

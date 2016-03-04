@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: Re: Unlinking a file... illegal characters? 
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Re%3A%20Unlinking%20a%20file...%20illegal%20characters%3F%20&In-Reply-To=20050225093812.0FEF3315532%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001566.html">
+   <LINK REL="Next"  HREF="001569.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: Re: Unlinking a file... illegal characters? </H1>
+    <B>Peter Dyballa</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Re%3A%20Unlinking%20a%20file...%20illegal%20characters%3F%20&In-Reply-To=20050225093812.0FEF3315532%40listserver.themacintoshguy.com"
+       TITLE="[X-Unix] Re: Re: Unlinking a file... illegal characters? ">Peter_Dyballa at Web.DE
+       </A><BR>
+    <I>Fri Feb 25 02:26:02 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001566.html">[X-Unix] Re: cp question
+</A></li>
+        <LI>Next message: <A HREF="001569.html">[X-Unix] Re: Re: Unlinking a file... illegal characters?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1567">[ date ]</a>
+              <a href="thread.html#1567">[ thread ]</a>
+              <a href="subject.html#1567">[ subject ]</a>
+              <a href="author.html#1567">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Am 25.02.2005 um 10:38 schrieb 
+<A HREF="../../../mailman/listinfo/x-unix.html">x-unix-request at listserver.themacintoshguy.com</A>:
+
+&gt;<i> I can move the containing folder out of .Trashes so that it is visible
+</I>&gt;<i> in Finder, as shown in
+</I>&gt;<i> &lt;<A HREF="http://mac.stroller.uk.eu.org/crghygreyufgyg.gif">http://mac.stroller.uk.eu.org/crghygreyufgyg.gif</A>&gt;, but as soon as I
+</I>&gt;<i> click on it, it disappears. So I can't highlight it, click on it, then
+</I>&gt;<i> rename it. If I unmount the volume &amp; plug it back in there, then file
+</I>&gt;<i> returns.
+</I>
+That reveals what your mail hid a bit (could have been a line break 
+from some mail or list software): the file's name starts with a 
+linefeed or carriage return!
+
+Then even GNU Emacs can't help you!
+
+Try this in Terminal:
+
+1.) ls -ali
+2.) drag the legoland directory from Finder and throw it on the Terminal
+3.) press return -- you might see something like this (with my test 
+objects):
+
+   /Users/pete/.Trash/legoland:
+   total used in directory 9896 available 33009316
+total 9888
+3558148 -rw-r--r--    1 pete  pete         5 25 Feb 11:10 ?Mist?
+3558161 -rw-r--r--    1 pete  pete        40 25 Feb 11:12 ?Mist..Mist?
+  547961 drwx------   18 pete  pete       612 25 Feb 11:18 .
+  293239 drwxrwsr-x  310 pete  pete     10540 25 Feb 01:35 ..
+3395098 -rw-------    1 pete  pete      6148 19 Feb 22:50 .DS_Store
+
+4.) find &amp; remove this way in Terminal:
+
+	find /Volumes/CLEARLIGHT/.Trashes/501/legoland -inum 3558161 -exec rm 
+{} \;
+
+but don't use my inode number but the one from your listing! It will be 
+gone withing milliseconds!
+
+--
+Greetings
+
+   Pete
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001566.html">[X-Unix] Re: cp question
+</A></li>
+	<LI>Next message: <A HREF="001569.html">[X-Unix] Re: Re: Unlinking a file... illegal characters?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1567">[ date ]</a>
+              <a href="thread.html#1567">[ thread ]</a>
+              <a href="subject.html#1567">[ subject ]</a>
+              <a href="author.html#1567">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

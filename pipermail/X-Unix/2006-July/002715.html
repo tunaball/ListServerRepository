@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to determine which network component is failing
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20determine%20which%20network%20component%20is%20failing&In-Reply-To=1F3FF8EB-774E-4C19-897D-5DBED8ABE732%40charter.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002713.html">
+   <LINK REL="Next"  HREF="002718.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to determine which network component is failing</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20determine%20which%20network%20component%20is%20failing&In-Reply-To=1F3FF8EB-774E-4C19-897D-5DBED8ABE732%40charter.net"
+       TITLE="[X-Unix] How to determine which network component is failing">macmonster at myrealbox.com
+       </A><BR>
+    <I>Tue Jul 25 20:45:15 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002713.html">[X-Unix] How to determine which network component is failing
+</A></li>
+        <LI>Next message: <A HREF="002718.html">[X-Unix] How to determine which network component is failing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2715">[ date ]</a>
+              <a href="thread.html#2715">[ thread ]</a>
+              <a href="subject.html#2715">[ subject ]</a>
+              <a href="author.html#2715">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Well done!
+
+I shall be keeping a copy of these notes in my archive. I shall have  
+to install curl on a customer's Windows PC and give her an icon to  
+click which will reboot the router for her.
+
+
+On 25 Jul 2006, at 23:25, Charles Howse wrote:
+&gt;&gt;<i> ...
+</I>&gt;&gt;<i> I think the relevant sections of the HTML are...
+</I>
+Addendum:
+    &lt;form method=get action=Gozila.cgi&gt;
+
+&gt;&gt;<i> &lt;SCRIPT language=JavaScript&gt;function pppoeAction(F,I) 
+</I>&gt;&gt;<i> { F.pppoeAct.value = I; F.submit();}function DHCPAct(F,I) 
+</I>&gt;&gt;<i> { F.dhcpAction.value = I; F.submit();}function showAlert(){alert 
+</I>&gt;&gt;<i> ('');}&lt;/SCRIPT&gt;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> and:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> &lt;input type=hidden name=dhcpAction&gt; ...
+</I>&gt;&gt;<i> &lt;input type=button value='DHCP Renew' onClick=DHCPAct(this.form,1)&gt;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> `curl --manual` gives more examples than `man curl`, but the  
+</I>&gt;&gt;<i> <A HREF="http://curl.haxx.se/">http://curl.haxx.se/</A> website looks more comprehensive still. They  
+</I>&gt;&gt;<i> have a mailing list, so you might find what you need by searching  
+</I>&gt;&gt;<i> the archives of that, or posting to it.
+</I>&gt;<i>
+</I>&gt;<i> I made quite a bit of progress playing with curl this afternoon.
+</I>&gt;<i> FYI, the following commands work:
+</I>&gt;<i>
+</I>&gt;<i> - Router -
+</I>&gt;<i> # dhcp release - $ curl -u admin:pw &quot;<A HREF="http://192.168.254.254/">http://192.168.254.254/</A> 
+</I>&gt;<i> Gozila.cgi?dhcpAction=0&quot;
+</I>&gt;<i> # dhcp renew - $ curl -u admin:pw &quot;<A HREF="http://192.168.254.254/">http://192.168.254.254/</A> 
+</I>&gt;<i> Gozila.cgi?dhcpAction=1&quot;
+</I>
+These curl commands relate to the HTML / Javascript snippet in the  
+quoted above it, I think...
+
+&gt;<i> - Modem -
+</I>&gt;<i> # Reboot Modem - $ curl -d &quot;BUTTON_INPUT=Restart%20Cable%20Modem&quot;  
+</I>&gt;<i> 192.168.100.1/configdata.html
+</I>
+Can you possibly post the HMTL from the webpage for the modem,  
+please, so I can see can example of when I might use this form?
+
+Stroller.
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002713.html">[X-Unix] How to determine which network component is failing
+</A></li>
+	<LI>Next message: <A HREF="002718.html">[X-Unix] How to determine which network component is failing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2715">[ date ]</a>
+              <a href="thread.html#2715">[ thread ]</a>
+              <a href="subject.html#2715">[ subject ]</a>
+              <a href="author.html#2715">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

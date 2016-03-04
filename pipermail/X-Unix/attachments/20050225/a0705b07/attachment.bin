@@ -1,0 +1,43 @@
+On Fri, 25 Feb 2005 17:07:32 +0000, Stroller
+<<MacMonster@myrealbox.com> wrote:
+
+
+<excerpt>Would I be over-optimistic if I suggested that a different
+quoting 
+
+method in the script might fix this? As you suggested, I thought about 
+
+writing a program to do the job, but I never got as far in C as 
+
+file-handling.
+
+</excerpt>
+
+The inode is the only chance you have to successfully refer to the
+file. Using "find ... -exec rm {} ;", or "find ... | xargs rm" aren't
+going to behave any differently than what you've already tried from
+the command line.
+
+
+That said, I would consider trying the following:
+
+1. Boot into single-user mode.
+
+2. Use ls -i to get the file's inode.
+
+3. Use clri to clear the inode.
+
+4. Use fsck to repair the filesystem OR perform a safe boot.
+
+5. Perform a normal reboot.
+
+
+Note that I have NOT tried using clri under OS X, but I assume that
+since it's present, it has been integrated to work with HFS+
+filesystems.
+
+
+Good luck,
+
+Michael
+

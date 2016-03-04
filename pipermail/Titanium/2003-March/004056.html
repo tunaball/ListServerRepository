@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] synchronizing hard drives
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20synchronizing%20hard%20drives&In-Reply-To=list-5184816%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004055.html">
+   <LINK REL="Next"  HREF="004057.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] synchronizing hard drives</H1>
+    <B>Warwick Teale</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20synchronizing%20hard%20drives&In-Reply-To=list-5184816%40mail.ninewire.com"
+       TITLE="[Ti] synchronizing hard drives">warwick_teale at mac.com
+       </A><BR>
+    <I>Mon Mar  3 07:02:47 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004055.html">synchronizing hard drives
+</A></li>
+        <LI>Next message: <A HREF="004057.html">[Ti] printer sharing ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4056">[ date ]</a>
+              <a href="thread.html#4056">[ thread ]</a>
+              <a href="subject.html#4056">[ subject ]</a>
+              <a href="author.html#4056">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Mal, just interested in why you want this... you have a reason .
+
+Somethings that come to mind are:
+
+1) costly and not financially practical but good!: use a shared disk 
+array with RORKE DATA SANimage with shared partitions.. needs some FC 
+HBA's too. not for you I think but mention it. This would give you a 
+SINGLE image shared between two or more machines.. very costly in a 
+sense. no need to synchronise AND you would have the benefit of a RAID5 
+or some similar rotating parity disk array... .. as 'instant' as you 
+could get where both machines could UPDATE at the file level (data 
+level locking)..
+
+2) more practical--&gt; ON a use a backup/recovery application like DANTZ 
+&quot;retrospect&quot;.It would be awkward to this because both macs would be in 
+use and there would have to be some 'arrangement' between each about 
+WHO was the 'production'. machine and who had the synchronisation of 
+the catlg.
+
+MOvement of the data over the GbE would be heavy depending on the 
+frequency or interval of synchronisation you wanted ... 'instant?&quot;.. 
+hope not! (lol).
+
+You could rely on the software to do this when it was time. But i think 
+you will need apple script or some method to schedule at the 
+interval/frequqncy you want to keep the machines in synch.
+
+As most of us in the IT world have experienced, applications are locked 
+out while b/r apps do their stuff, for reasons of 'p.o.c.' and 
+serialisation.... so maybe some annoyance for you while this happens 
+around your feet while you work!
+
+3)  do it your self with apple scripts and 'cp' commands or 'drag and 
+drop&quot; + mistakes I'd image.
+
+It could be done with scripts and some thought.
+
+WHEN do moth machines have to be in SYNCH? Instantly? or a at each hour.
+
+interested in what others think.
+
+fwiw
+
+w
+On Monday, March 3, 2003, at 10:44 PM, Malcolm Hamilton wrote:
+
+&gt;<i> Can anyone advise me how I can keep the hard drives of my two G4s 
+</I>&gt;<i> synchronized (if that's the word)?  I have a Titanium and a G4 tower, 
+</I>&gt;<i> side by side (except when I travel):  I currently use the Ti for most 
+</I>&gt;<i> of my organizational tasks (e-mailing, calendar, writing projects, 
+</I>&gt;<i> etc.), and the tower mostly for video editing (but because it's 
+</I>&gt;<i> faster, I sometimes surf the web with it, etc.).  It occurs to me, 
+</I>&gt;<i> though, that ideally I should have the same applications loaded on 
+</I>&gt;<i> both machines, so if one should experience problems I can just switch 
+</I>&gt;<i> to the other and carry on with my work.
+</I>&gt;<i>
+</I>&gt;<i> Loading each hard drive with the same apps., prefs and files is within 
+</I>&gt;<i> my capabilities.  However, what I'd like to know is the easiest way 
+</I>&gt;<i> possible to synch up (not to mention back-up) both drives at the end 
+</I>&gt;<i> of each working day.
+</I>&gt;<i> The two computers are hooked up with an ethernet cable, so I know I 
+</I>&gt;<i> can drag files back and forth.  But is there a simpler, more elegant, 
+</I>&gt;<i> way to update - - in both directions - - in one fell swoop?
+</I>&gt;<i>
+</I>&gt;<i> Software or hardware suggestions?  Any and all advice would be 
+</I>&gt;<i> appreciated!
+</I>&gt;<i> --
+</I>&gt;<i> Regards,
+</I>&gt;<i> Malcolm
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Titanium email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/Titanium.html">http://www.themacintoshguy.com/lists/Titanium.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/titanium.html">Titanium-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/titanium.html">Titanium-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/titanium.html">Titanium-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;<i> Mac ISP Serious Mac Internet Solutions From NineWire!   
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> RoadTools $30 PodiumPad available at Apple retail stores, $20 Traveler 
+</I>&gt;<i> CoolPad at Staples. Both in white for iBooks at &lt;<A HREF="http://roadtools.com">http://roadtools.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>  Cyberian   | Support this list when you buy at Outpost.com!
+</I>&gt;<i>  Outpost    |         <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004055.html">synchronizing hard drives
+</A></li>
+	<LI>Next message: <A HREF="004057.html">[Ti] printer sharing ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4056">[ date ]</a>
+              <a href="thread.html#4056">[ thread ]</a>
+              <a href="subject.html#4056">[ subject ]</a>
+              <a href="author.html#4056">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

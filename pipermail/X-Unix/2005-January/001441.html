@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] &quot;Macintosh Compatibility&quot; of Flash Disks
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20%22Macintosh%20Compatibility%22%20of%20Flash%20Disks&In-Reply-To=BDFE03A7.8477%25jerry%40ieee.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001456.html">
+   <LINK REL="Next"  HREF="001438.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] &quot;Macintosh Compatibility&quot; of Flash Disks</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20%22Macintosh%20Compatibility%22%20of%20Flash%20Disks&In-Reply-To=BDFE03A7.8477%25jerry%40ieee.org"
+       TITLE="[X-Unix] &quot;Macintosh Compatibility&quot; of Flash Disks">magill at mcgillsociety.org
+       </A><BR>
+    <I>Mon Jan  3 09:36:39 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001456.html">[X-Unix] Renaming &quot;NO NAME&quot; Flash Disks
+</A></li>
+        <LI>Next message: <A HREF="001438.html">[X-Unix] Re: fonts for X11 app
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1441">[ date ]</a>
+              <a href="thread.html#1441">[ thread ]</a>
+              <a href="subject.html#1441">[ subject ]</a>
+              <a href="author.html#1441">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 02 Jan, 2005, at 23:01, Jerry Krinock wrote:
+&gt;<i> Among other things, I'd say you believe that OS X should support file
+</I>&gt;<i> reading and writing to any flash-based camera or mp3 player.
+</I>
+It definitely supports reading.
+
+Writing is a different story. While the physical device can be written 
+to,
+it will depend on a number of other issues as to weather or not the data
+written can be read by the destination device (camera or mp3 player).
+
+One example is a flash card for an iPac. Without an intermediary like
+PocketMac, to do the conversions, simple drag and drop just results in
+Mac files on the device, which are not readable by the device.
+
+I've got a pair of readers, one for Memory Sticks and one for flash 
+cards.
+Both are &quot;dumb&quot; devices, they simply make electrical connections (both
+via USB). And both allow me to read and write to either Memory Sticks or
+Flash Cards as long as I'm using an appropriate software package.
+
+For what it's worth, even though iPhoto launches when I plug in a 
+Memory Stick,
+I use &quot;Image Capture&quot; to read it.  I think somewhere along the line I
+&quot;unconfigured&quot; iPhoto so that it wouldn't read the stick directly, but 
+don't
+recall why I did it anymore. I copy the images to disk and then import 
+them
+into iPhoto.
+
+Eric covered the mount command issues pretty completely.
+
+For &quot;obvious&quot; resource and marketing reasons, Apple itself only 
+&quot;qualifies&quot;
+certain options for OS X, even though the underlying Unix environment 
+has
+no problems with many others.
+
+I was using Digital (DEC) SCSI drives directly on my 9600 under Darwin 
+years
+ago even though they &quot;weren't supported&quot; (and still aren't). Today, I 
+still
+use them under OS X on several different boxes ... SCSI is SCSI and it's
+all in the use of the &quot;disklabel&quot; or formatting program, not necessarily
+limiting oneself to Apple's GUI based Disk Utility.
+
+In short, the issue is not so much the mechanical and electrical 
+ability to
+simply recognize and mount the media, the underlying FreeBSD code 
+handles
+that, but in having the appropriate &quot;utility&quot; to read and write the 
+media
+in a format that the destination device can understand.
+
+Note that this same situation applies to removable, portable FireWire 
+disk
+devices, like a FireLite or an iPod, and the various USB &quot;keychain&quot; 
+drives.
+They all work. They can all work seamlessly from OSX to OSX box. Getting
+them to work &quot;cross-platform&quot; takes a bit of knowledge. It's all no 
+different
+than back in the &quot;good old days&quot; of 7 and 9 track tape drives ... or 
+even with
+today's DLTs, AITs and the like.
+
+Dealing with &quot;removable media&quot; cross-platform, is sill an &quot;art form.&quot;
+
+T.T.F.N.
+William H. Magill
+# Beige G3 [Rev A motherboard - 300 MHz 768 Meg] OS X 10.2.8
+# Flat-panel iMac (2.1) [800MHz - Super Drive - 768 Meg] OS X 10.3.7
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg] Tru64 5.1a
+# XP1000  [Alpha 21264-3 (EV6) - 256 meg] FreeBSD 5.3
+# XP1000  [Alpha 21264-A (EV 6.7) - 384 meg] FreeBSD 5.3
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+</PRE>
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001456.html">[X-Unix] Renaming &quot;NO NAME&quot; Flash Disks
+</A></li>
+	<LI>Next message: <A HREF="001438.html">[X-Unix] Re: fonts for X11 app
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1441">[ date ]</a>
+              <a href="thread.html#1441">[ thread ]</a>
+              <a href="subject.html#1441">[ subject ]</a>
+              <a href="author.html#1441">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

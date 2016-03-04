@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] SSH without requiring password between 2 machines -SOLVED
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20SSH%20without%20requiring%20password%20between%202%20machines%20-SOLVED&In-Reply-To=20041029074025.GB423%40Dark-Age.local">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001278.html">
+   <LINK REL="Next"  HREF="001276.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] SSH without requiring password between 2 machines -SOLVED</H1>
+    <B>Our Pal Al</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20SSH%20without%20requiring%20password%20between%202%20machines%20-SOLVED&In-Reply-To=20041029074025.GB423%40Dark-Age.local"
+       TITLE="[X-Unix] SSH without requiring password between 2 machines -SOLVED">opa at nyc.rr.com
+       </A><BR>
+    <I>Sat Oct 30 17:05:47 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001278.html">[X-Unix] SSH without requiring password between 2 machines
+</A></li>
+        <LI>Next message: <A HREF="001276.html">[X-Unix] SSH without requiring password between 2 machines
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1281">[ date ]</a>
+              <a href="thread.html#1281">[ thread ]</a>
+              <a href="subject.html#1281">[ subject ]</a>
+              <a href="author.html#1281">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>So I sent my output from 'ssh -v' to the list Friday but the results 
+pushed the message up to 6k, which was first held by the moderator for 
+large size, then rejected. &quot;no reason given&quot;.
+
+In desperation I chatted with a UNIX Guru I've recently made a business 
+acquaintance with. He told me a LOT of things about ssh ... but didn't 
+solve the problem. Got me thinking in the right direction though and I 
+realized it was -
+
+LINE FEEDS!!!! AAARRGGHH!
+
+On my originator machine I made my public ssh key, then did a 'more' of 
+the file, highlighted the key and copy/pasted it into a vi window on my 
+target machine, saving it as &quot;authorized_keys&quot;.
+
+Everything LOOKED fine, especially as all my terminal  windows are the 
+same size that I like, but the line breaks were ENTIRELY OFF!! 
+Authorized_keys never had my public key!
+
+I mounted my target machine via Appletalk and drag and dropped the file 
+on my target machine naming it &quot;authorized_keys&quot;. Works like a charm! 
+Now some other things I'm doing can proceed and I've even realized some 
+interesting things like ssh-ing to another machine without a password 
+as another user, so it's certainly been revealing. Thanks all for your 
+responses.
+
+-opa
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001278.html">[X-Unix] SSH without requiring password between 2 machines
+</A></li>
+	<LI>Next message: <A HREF="001276.html">[X-Unix] SSH without requiring password between 2 machines
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1281">[ date ]</a>
+              <a href="thread.html#1281">[ thread ]</a>
+              <a href="subject.html#1281">[ subject ]</a>
+              <a href="author.html#1281">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Remove last ten lines of files
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Remove%20last%20ten%20lines%20of%20files&In-Reply-To=list-10080446%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000331.html">
+   <LINK REL="Next"  HREF="000353.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Remove last ten lines of files</H1>
+    <B>Xavier Noria</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Remove%20last%20ten%20lines%20of%20files&In-Reply-To=list-10080446%40mail.ninewire.com"
+       TITLE="[X-Unix] Remove last ten lines of files">fxn at hashref.com
+       </A><BR>
+    <I>Mon Jan  5 18:23:32 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000331.html">[X-Unix] Remove last ten lines of files
+</A></li>
+        <LI>Next message: <A HREF="000353.html">[X-Unix] missing man pages (fixed)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#342">[ date ]</a>
+              <a href="thread.html#342">[ thread ]</a>
+              <a href="subject.html#342">[ subject ]</a>
+              <a href="author.html#342">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Jan 5, 2004, at 9:32 PM, Victor Eijkhout wrote:
+
+&gt;<i> At 21:45 +0900 2004/01/02, Kino wrote:
+</I>&gt;&gt;<i> On Jan 2, 2004, at 8:04 PM, Kuestner, Bjoern wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> does anybody have a simple solution to remove the last ten lines of 
+</I>&gt;&gt;&gt;<i> files
+</I>&gt;&gt;&gt;<i> (of variable length).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> #! /bin/sh
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> i=`grep -c $ $*`
+</I>&gt;&gt;<i> j=`expr $i - 10`
+</I>&gt;&gt;<i> if [ $j -lt 1 ]; then
+</I>&gt;&gt;<i> j=$i
+</I>&gt;&gt;<i> fi
+</I>&gt;&gt;<i> head -n $j $*
+</I>&gt;<i>
+</I>&gt;<i>  awk -v n=`tail -n +10 YOURFILE | wc -l` 'NR&lt;n {print}' YOURFILE
+</I>
+We'd need a definition of &quot;last 10 lines&quot;:
+
+     <A HREF="../../../mailman/listinfo/x-unix.html">fxn at conway</A>:~/tmp% perl -e 'print &quot;a\nb\n&quot;' &gt; bar.txt
+     <A HREF="../../../mailman/listinfo/x-unix.html">fxn at conway</A>:~/tmp% wc -l bar.txt
+            2 bar.txt
+     <A HREF="../../../mailman/listinfo/x-unix.html">fxn at conway</A>:~/tmp% perl -e 'print &quot;a\nb&quot;' &gt; bar.txt
+     <A HREF="../../../mailman/listinfo/x-unix.html">fxn at conway</A>:~/tmp% wc -l bar.txt
+            1 bar.txt
+
+Assuming the file ends in a newline and can be slurped, this would be a 
+filter in Perl:
+
+     $ perl -0777 -pe's/(.*\n){0,10}$//' filename
+
+To modify the file in place instead:
+
+     $ perl -0777 -pi -e's/(.*\n){0,10}$//' filename
+
+-- fxn
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000331.html">[X-Unix] Remove last ten lines of files
+</A></li>
+	<LI>Next message: <A HREF="000353.html">[X-Unix] missing man pages (fixed)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#342">[ date ]</a>
+              <a href="thread.html#342">[ thread ]</a>
+              <a href="subject.html#342">[ subject ]</a>
+              <a href="author.html#342">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

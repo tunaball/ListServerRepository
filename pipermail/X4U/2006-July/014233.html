@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] System Log Question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20System%20Log%20Question&In-Reply-To=C0F22140.D235%25jamesrob%40sonic.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="014231.html">
+   <LINK REL="Next"  HREF="014235.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] System Log Question</H1>
+    <B>Philip J Robar</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20System%20Log%20Question&In-Reply-To=C0F22140.D235%25jamesrob%40sonic.net"
+       TITLE="[X4U] System Log Question">philip.robar at gmail.com
+       </A><BR>
+    <I>Sun Jul 30 12:55:26 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="014231.html">[X4U] System Log Question
+</A></li>
+        <LI>Next message: <A HREF="014235.html">[X4U] System Log Question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14233">[ date ]</a>
+              <a href="thread.html#14233">[ thread ]</a>
+              <a href="subject.html#14233">[ subject ]</a>
+              <a href="author.html#14233">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jul 30, 2006, at 8:41 AM, Jim Robertson wrote:
+
+&gt;<i> This morning I noticed that Console was open to the system.log
+</I>&gt;<i>
+</I>&gt;<i> The message displayed was:
+</I>&gt;<i>
+</I>&gt;<i> Jul 30 03:15:19 JSR-PowerMac-G5 cp: error processing extended  
+</I>&gt;<i> attributes:
+</I>&gt;<i> Operation not permitted
+</I>&gt;<i>
+</I>&gt;<i> I KNOW I was asleep at 3 am. What does this mean? Did one of the
+</I>&gt;<i> applications I left open try to do something it should not have?
+</I>&gt;<i>
+</I>&gt;<i> Should I be worried?
+</I>
+I searched Google for this (hint, hint) and found the following  
+explanation at several sites:
+
+<A HREF="http://web.mac.com/ordonezi/iWeb/Tips%20and%20Tricks/Sever%20Tips%">http://web.mac.com/ordonezi/iWeb/Tips%20and%20Tricks/Sever%20Tips%</A> 
+20and%20Tricks/3E1CFED9-BC40-4E29-A295-DB30759744E4.html
+or
+<A HREF="http://tinyurl.com/fo3q9">http://tinyurl.com/fo3q9</A>
+
+Quoting this site:
+
+cp: error processing extended attributes: Operation not permitted
+
+Annoying huh?  Every day, this error message is added to your log  
+early in the A.M. Why is this happening? Well our /usr/sbin/periodic  
+daily script is trying to do the following action:
+
+cp /dev/null $tmp_output
+
+Since /dev/null isn&#8217;t just any old file cp can&#8217;t fully copy it. To  
+make this message go away fire up pico, nano, vi, emac, etc. and  
+edit /usr/sbin/periodic find the line above and change it to:
+
+ &gt; $tmp_output
+
+Go ahead and run the following command to make sure you did it right.  
+No errors in terminal or system log means it&#8217;s running correctly
+
+/usr/sbin/periodic daily
+
+This change will do the same thing as originally set but won&#8217;t output  
+an error to your system logs. Make sure you&#8217;re VERY careful when  
+editing this file and only make the changes noted above.
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="014231.html">[X4U] System Log Question
+</A></li>
+	<LI>Next message: <A HREF="014235.html">[X4U] System Log Question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14233">[ date ]</a>
+              <a href="thread.html#14233">[ thread ]</a>
+              <a href="subject.html#14233">[ subject ]</a>
+              <a href="author.html#14233">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

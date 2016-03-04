@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] limit cpu usage
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20limit%20cpu%20usage&In-Reply-To=39BC6A28-3E9C-11D9-B4F8-000393768D2C%40mcgillsociety.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001328.html">
+   <LINK REL="Next"  HREF="001345.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] limit cpu usage</H1>
+    <B>Robert Tillyard</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20limit%20cpu%20usage&In-Reply-To=39BC6A28-3E9C-11D9-B4F8-000393768D2C%40mcgillsociety.org"
+       TITLE="[X-Unix] limit cpu usage">rob2 at atvetsystems.com
+       </A><BR>
+    <I>Thu Nov 25 02:27:27 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001328.html">[X-Unix] limit cpu usage
+</A></li>
+        <LI>Next message: <A HREF="001345.html">[X-Unix] limit cpu usage
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1334">[ date ]</a>
+              <a href="thread.html#1334">[ thread ]</a>
+              <a href="subject.html#1334">[ subject ]</a>
+              <a href="author.html#1334">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Sorry to reply to the follow-up but I deleted the original.
+
+Traditionally in Unix if you need to restrict the CPU usage you would 
+just drop the process priority using nice(). If the system is idle it 
+still allows the process to take the idle CPU capacity but gives 
+priority others with a normal priority.
+
+I think on OS X this is done with getpriority() and  setpriority(). 
+You'll need to look at the man pages to see how to do this and I've 
+only ever used nice() before and I can't see man pages for nice().
+
+Regards, Rob.
+
+On 25 Nov 2004, at 4:41 am, William H. Magill wrote:
+
+&gt;<i> On 24 Nov, 2004, at 20:29, Brian Medley wrote:
+</I>&gt;&gt;<i> I've googled around, but haven't found an answer to this
+</I>&gt;&gt;<i> question.  I would like to limit the max % cpu a process can
+</I>&gt;&gt;<i> have.  Something similar to ulimit; however, ulimit only allows
+</I>&gt;&gt;<i> limiting the number of cpu seconds a job can run.
+</I>&gt;<i>
+</I>&gt;<i> This is not philosophically possible on a Unix system.
+</I>&gt;<i>
+</I>&gt;<i> What you want to do is a common resource control feature found in 
+</I>&gt;<i> Enterprise Class systems like VMS and MVS, but not Unix.
+</I>&gt;<i>
+</I>&gt;<i> Over the years, there have been any number of companies who have 
+</I>&gt;<i> written Kernel code to create a &quot;resource management&quot; system for Unix 
+</I>&gt;<i> -- but they tend to cost big bucks and only run on &quot;mainframe class&quot; 
+</I>&gt;<i> Unix boxes ... AND, they never really work the way one expects them to 
+</I>&gt;<i> work anyway.
+</I>&gt;<i>
+</I>&gt;<i> The reason is a long discussion of Operating System theory, but 
+</I>&gt;<i> briefly put, Unix simply does not have the &quot;hooks&quot; necessary to 
+</I>&gt;<i> implement any useful kind of Resource Control.
+</I>&gt;<i>
+</I>&gt;<i> T.T.F.N.
+</I>&gt;<i> William H. Magill
+</I>
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001328.html">[X-Unix] limit cpu usage
+</A></li>
+	<LI>Next message: <A HREF="001345.html">[X-Unix] limit cpu usage
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1334">[ date ]</a>
+              <a href="thread.html#1334">[ thread ]</a>
+              <a href="subject.html#1334">[ subject ]</a>
+              <a href="author.html#1334">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

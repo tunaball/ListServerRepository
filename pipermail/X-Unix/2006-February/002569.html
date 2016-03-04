@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: X-Unix Digest, Vol 18, Issue 2
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20X-Unix%20Digest%2C%20Vol%2018%2C%20Issue%202&In-Reply-To=20060224053527.48CDD69C23A%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002568.html">
+   <LINK REL="Next"  HREF="002570.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: X-Unix Digest, Vol 18, Issue 2</H1>
+    <B>Robert Frank</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20X-Unix%20Digest%2C%20Vol%2018%2C%20Issue%202&In-Reply-To=20060224053527.48CDD69C23A%40listserver.themacintoshguy.com"
+       TITLE="[X-Unix] Re: X-Unix Digest, Vol 18, Issue 2">robert.frank at unibas.ch
+       </A><BR>
+    <I>Thu Feb 23 23:43:51 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002568.html">[X-Unix] Backup script help
+</A></li>
+        <LI>Next message: <A HREF="002570.html">[X-Unix] Backup script help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2569">[ date ]</a>
+              <a href="thread.html#2569">[ thread ]</a>
+              <a href="subject.html#2569">[ subject ]</a>
+              <a href="author.html#2569">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 24/02/2006, at 6:35 , x-unix- 
+<A HREF="../../../mailman/listinfo/x-unix.html">request at listserver.themacintoshguy.com</A> wrote:
+&gt;<i> Hi,
+</I>&gt;<i> This is rather long, sorry.
+</I>&gt;<i>
+</I>&gt;<i> Rather than use a 'third-party' application to do my backups, I have
+</I>&gt;<i> written a bash script to backup my important files to another
+</I>&gt;<i> computer on my home lan.  Why?  Just because I can.
+</I>&gt;<i>
+</I>&gt;<i> It's working well, with the exception of a couple of things I would
+</I>&gt;<i> like some input on.
+</I>&gt;<i>
+</I>&gt;<i> First, I'm not satisfied with how I'm verifying that the backup
+</I>&gt;<i> volume on the remote server is mounted or not.  Can anyone help make
+</I>&gt;<i> that section 'bullet-proof'?
+</I>&gt;<i>
+</I>&gt;<i> Second, [...]
+</I>&gt;<i>
+</I>&gt;<i> Here is my script...
+</I>&gt;<i> *****
+</I>&gt;<i> #!/bin/bash
+</I>&gt;<i>
+</I>&gt;<i> ## NOTE: ADD 'n' TO THE cmd OPTIONS WHEN TESTING
+</I>&gt;<i>
+</I>&gt;<i> dc=`date +%m%d%y`
+</I>&gt;<i> file='/Users/Charles/Documents/backup.log.'$dc'.txt'
+</I>&gt;<i> cmd='rsync -uvrtp --delete-after'
+</I>&gt;<i> src=/Users/Charles
+</I>&gt;<i> dest=/Users/charles/mnt
+</I>&gt;<i>
+</I>&gt;<i> # Is the server on?
+</I>&gt;<i> ping -o -t 5 moe &gt; /dev/null 2&gt;&amp;1
+</I>&gt;<i> if [ &quot;$?&quot; -ne 0 ] ; then
+</I>&gt;<i> 	# Assume server is not on, display alert and quit
+</I>&gt;<i> 	echo &quot;Cannot ping server, exiting&quot; &gt;&gt; $file
+</I>&gt;<i> 	mail -s &quot;Weekly Backup results&quot; charles &lt; $file
+</I>&gt;<i>      	exit
+</I>&gt;<i> else
+</I>&gt;<i> 	# The server is on, is the backup volume mounted?
+</I>&gt;<i> 	if [ `ls /Users/charles/mnt/FreeBSD &gt; /dev/null 2&gt;&amp;1` ] ; then
+</I>&gt;<i> 		#Volume is mounted, continue
+</I>&gt;<i>            ...
+</I>&gt;<i> 	else
+</I>&gt;<i> 		# Volume is not mounted, mount it and continue
+</I>&gt;<i> 		mount -t nfs moe:/backup /Users/charles/mnt &gt; /dev/null 2&gt;&amp;1
+</I>as proposed, save the return code here
+
+&gt;<i> 		if [ &quot;$?&quot; -eq 0 ] ; then
+</I>&gt;<i> 			# Mounted OK
+</I>&gt;<i> 			echo `date` &gt; $file
+</I>&gt;<i> 			echo &gt;&gt; $file
+</I>&gt;<i> 			echo &quot;Mounted volume successfully, continuing.&quot; &gt;&gt; $file
+</I>&gt;<i> 			echo &gt;&gt; $file
+</I>&gt;<i> 		else	
+</I>&gt;<i> 			# Mount failed
+</I>&gt;<i> 			if [ &quot;$?&quot; ! -eq 0 ] ; then
+</I>use '-ne' instead of '! -eq'
+'!' tries to negate the following *expression* (c.f. man test) and '- 
+eq 0' isn't an expression, so thigs will go wrong here!
+If you insist on using '!' then it's '! &quot;$?&quot; -eq 0'.
+
+
+&gt;<i> 				echo `date` &gt; $file
+</I>&gt;<i> 				echo &gt;&gt; $file
+</I>&gt;<i> 				echo &quot;Mount returned&quot; &quot;$?&quot; &quot;, exiting.&quot; &gt;&gt; $file
+</I>use the saved return value here
+
+&gt;<i> 				mail -s &quot;Weekly Backup results&quot; charles &lt; $file					
+</I>&gt;<i> 				exit
+</I>&gt;<i> 			fi
+</I>&gt;<i> 		fi
+</I>&gt;<i> 	fi
+</I>&gt;<i> fi
+</I>
+Robert
+
+Departement Informatik   FGB   tel   +41 (0)61 267 14 66
+Universit&#228;t Basel                          fax. +41 (0)61 267 14 61
+Robert Frank
+Klingelbergstrasse 50                 <A HREF="../../../mailman/listinfo/x-unix.html">Robert.Frank at unibas.ch</A>
+CH-4056 Basel
+Switzerland                                   http:// 
+www.informatik.unibas.ch/personen/frank_r.html
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002568.html">[X-Unix] Backup script help
+</A></li>
+	<LI>Next message: <A HREF="002570.html">[X-Unix] Backup script help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2569">[ date ]</a>
+              <a href="thread.html#2569">[ thread ]</a>
+              <a href="subject.html#2569">[ subject ]</a>
+              <a href="author.html#2569">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

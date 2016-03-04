@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Application 'launch-cache'...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Application%20%27launch-cache%27...&In-Reply-To=list-12867523%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000811.html">
+   <LINK REL="Next"  HREF="000813.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Application 'launch-cache'...</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Application%20%27launch-cache%27...&In-Reply-To=list-12867523%40mail.ninewire.com"
+       TITLE="[X-Unix] Application 'launch-cache'...">magill at mcgillsociety.org
+       </A><BR>
+    <I>Wed May 19 09:09:13 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000811.html">[X-Unix] Application 'launch-cache'...
+</A></li>
+        <LI>Next message: <A HREF="000813.html">[X-Unix] Application 'launch-cache'...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#812">[ date ]</a>
+              <a href="thread.html#812">[ thread ]</a>
+              <a href="subject.html#812">[ subject ]</a>
+              <a href="author.html#812">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 19 May, 2004, at 04:29, Kuestner, Bjoern wrote:
+&gt;<i> Then start the app. Quit the app. Start it again and it should load
+</I>&gt;<i> significantly faster. The effect is quite noticeable on my iBook for 
+</I>&gt;<i> many
+</I>&gt;<i> apps. Then if I don't use the app for a while starting it again takes 
+</I>&gt;<i> just
+</I>&gt;<i> as long because it's not in the cache anymore.
+</I>&gt;<i>
+</I>&gt;<i> OS X uses all available RAM for caching all sorts of things including
+</I>&gt;<i> application launches. That's what also confuses people at times when 
+</I>&gt;<i> they
+</I>&gt;<i> have 1 GB of memory installed and run a memory monitor. After a while 
+</I>&gt;<i> RAM
+</I>&gt;<i> will fill up to around 90% depending on their work. So they think they 
+</I>&gt;<i> have
+</I>&gt;<i> a memory leak or some app hogging RAM. But it's just OS X for instance
+</I>&gt;<i> keeping stuff in RAM although it's not used anymore just in case the 
+</I>&gt;<i> user
+</I>&gt;<i> decides otherwise and does use it again. If there's a better way to 
+</I>&gt;<i> use the
+</I>&gt;<i> RAM for something else OS X will overwrite it.
+</I>
+No cache here, just normal virtual memory management.
+
+What you are describing is the implementation of a LRU - Least Recently 
+Used - paging algorithm, as applied to physical memory.
+
+The concept that any program must LOAD at 0,0 in physical memory and 
+grow upwards is a holdover from pre-virtual days. While the LOGICAL 
+memory addresses of a program normally begin at 0,0, that address may 
+be mapped to any convenient page in Physical Memory. The Virtual Memory 
+Subsystem handles all of this mapping between physical and logical 
+memory, &quot;automagically.&quot;  Similarly, logical program memory is not 
+necessarily a contiguous block of physical memory, but can be randomly 
+assigned to physical pages. All of these issues are dealt with 
+&quot;automagically&quot; today by the compilers and the operating system.
+
+So yes, if a system has gobs of free physical memory, the OS will not 
+re-use &quot;dirty&quot; pages of physical memory until they have been &quot;cleaned.&quot; 
+You can call this caching, and in one sense it is, but it is an effect 
+of the virtual memory system, not an active caching effort. That is to 
+say, it is NOT all of the memory associated with a particular program 
+that are kept &quot;alive&quot; as a unit, but rather memory pages are time 
+stamped as to their last usage (possibly read, but definitely written) 
+and then &quot;re-used&quot; according to those time stamps an their 
+&quot;cleanliness.&quot; Put another way, it is memory pages which are cached, 
+not programs.
+
+There is a garbage collection algorithm which will ultimately &quot;scrub&quot; 
+all of those dirty pages in memory and if not recently used, mark them 
+as empty, and physical memory usage will go down.
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000811.html">[X-Unix] Application 'launch-cache'...
+</A></li>
+	<LI>Next message: <A HREF="000813.html">[X-Unix] Application 'launch-cache'...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#812">[ date ]</a>
+              <a href="thread.html#812">[ thread ]</a>
+              <a href="subject.html#812">[ subject ]</a>
+              <a href="author.html#812">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

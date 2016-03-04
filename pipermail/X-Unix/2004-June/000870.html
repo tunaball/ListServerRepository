@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] copy 101 question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20copy%20101%20question&In-Reply-To=list-13745551%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000869.html">
+   <LINK REL="Next"  HREF="000871.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] copy 101 question</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20copy%20101%20question&In-Reply-To=list-13745551%40mail.ninewire.com"
+       TITLE="[X-Unix] copy 101 question">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Sun Jun  6 03:34:16 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000869.html">[X-Unix] How can a fill a hard drive with data?
+</A></li>
+        <LI>Next message: <A HREF="000871.html">[X-Unix] copy 101 question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#870">[ date ]</a>
+              <a href="thread.html#870">[ thread ]</a>
+              <a href="subject.html#870">[ subject ]</a>
+              <a href="author.html#870">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jun 5, 2004, at 11:14 pm, James Bucanek wrote:
+
+&gt;<i> Scott Warren wrote on Saturday, June 5, 2004:
+</I>&gt;<i>
+</I>&gt;&gt;<i> I am wanting to back up just .doc files onto my firewire drive.  What
+</I>&gt;&gt;<i> is the Mac/Unix version of
+</I>&gt;&gt;<i>   xcopy *.doc E:\backup -r
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I have tried  cp -R *.doc \volumes\myfirewire    and this only copies
+</I>&gt;&gt;<i> whats in the current directory and does not recurs the tree.
+</I>&gt;<i> ...
+</I>&gt;<i> In UNIX, the Swiss Army knife of directory recursion is the Find tool. 
+</I>&gt;<i>  Heres one way to use the find tool in combination with the tar (Tape 
+</I>&gt;<i> ARchive) tool to transfer a sparse set of hierarchically organized 
+</I>&gt;<i> files from one directory tree to another:
+</I>&gt;<i>
+</I>&gt;<i>     cd ~
+</I>&gt;<i>     find Documents -type f -name '*.doc' -print0 | tar -cf - 
+</I>&gt;<i> --files-from - --null | tar -xvf - -C /Volumes/firewire
+</I>&gt;<i>
+</I>&gt;<i> In English, I used the find tool to search my entire Documents folder 
+</I>&gt;<i> for regular files (this excludes any directories or symbolic links) 
+</I>&gt;<i> who's name matches the patter '*.doc'.  I piped this list to the tar 
+</I>&gt;<i> tool and told it to create an archive (c) outputting the results to 
+</I>&gt;<i> stdout (-f -).  Instead of listing the files to archive on the 
+</I>&gt;<i> command, I told it to read the list of files from stdin (which will be 
+</I>&gt;<i> the output of the find tool).  Finally, I piped the resulting archive 
+</I>&gt;<i> directly into a second invocation of tar that extracts (-x) the 
+</I>&gt;<i> archive read from stdin (-f -) into a specific directory (-C 
+</I>&gt;<i> /Volumes/firewire).  The -v option just outputs the names of the files 
+</I>&gt;<i> as they are processed so we can watch the fun.
+</I>
+I believe that you have tarred the files &amp; then untarred them again in 
+order to preserve the directory-tree structure of the files, so that if 
+the user has ~/foo/some.doc and ~/foo/bar/some.doc then both files will 
+be copied to the destination drive and appropriate subdirectories made. 
+I don't know if this is the default behaviour of xcopy, but believe 
+it's worth commenting on, because otherwise I'd regard this line as 
+more intuitive:
+     find Documents -name '*.doc' -exec cp \{\} /Volumes/firewire ;
+
+I can't see any shorter way than yours to preserve the directories when 
+copying found files, however. It seems to me a little inelegant to have 
+to use `tar` twice in this way - I would have expected a single command 
+to be available to do the the same thing, or a suitable flag to `cp`, 
+but I can't find either.
+
+Stroller.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000869.html">[X-Unix] How can a fill a hard drive with data?
+</A></li>
+	<LI>Next message: <A HREF="000871.html">[X-Unix] copy 101 question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#870">[ date ]</a>
+              <a href="thread.html#870">[ thread ]</a>
+              <a href="subject.html#870">[ subject ]</a>
+              <a href="author.html#870">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

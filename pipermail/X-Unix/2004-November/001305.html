@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] curl install problem
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20curl%20install%20problem&In-Reply-To=06B945CE-36A9-11D9-B63D-0030654C9EC6%40eml.cc">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001304.html">
+   <LINK REL="Next"  HREF="001306.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] curl install problem</H1>
+    <B>Phil Dobbin</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20curl%20install%20problem&In-Reply-To=06B945CE-36A9-11D9-B63D-0030654C9EC6%40eml.cc"
+       TITLE="[X-Unix] curl install problem">phildobbin at pobox.com
+       </A><BR>
+    <I>Mon Nov 15 01:53:44 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001304.html">[X-Unix] curl install problem
+</A></li>
+        <LI>Next message: <A HREF="001306.html">[X-Unix] MTUs in Panther
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1305">[ date ]</a>
+              <a href="thread.html#1305">[ thread ]</a>
+              <a href="subject.html#1305">[ subject ]</a>
+              <a href="author.html#1305">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 14/11/2004 @ 01:52 GMT, Juan Manuel Palacios, <A HREF="../../../mailman/listinfo/x-unix.html">jmpalaciosp at eml.cc</A>, wrote:
+
+&gt;<i>On Nov 14, 2004, at 8:46 PM, Phil Dobbin wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> I'm trying to update curl from Jag's 7.7.2 to 7.10.7 in order to 
+</I>&gt;&gt;<i> install WWW::Curl but I'm puzzled by the make install errors I'm 
+</I>&gt;&gt;<i> getting:
+</I>&gt;<i>
+</I>&gt;<i>   DarwinPorts currently offers curl 7.12.2, but I'm not too sure how 
+</I>&gt;<i>it 
+</I>&gt;<i>compiles on Jaguar (apparently there are very few DP users with 
+</I>&gt;<i>Jaguar). You can ask in the dp mailing list, have a look at 
+</I>&gt;<i><A HREF="http://darwinports.opendarwin.org">http://darwinports.opendarwin.org</A> for more info. However,...
+</I>
+Hi, Juan.
+
+As far as I can tell 7.10.7 is the newest version of curl that will compile on Jag (I did check out DP).
+
+[snip error codes]
+
+&gt;<i>   This is a *really* weird choice for a man directory, even more if 
+</I>&gt;<i>you 
+</I>&gt;<i>consider this is a &quot;third party&quot; installation. That dir should be 
+</I>&gt;<i>either /usr/local/man or /usr/local/share/man, unless you specified 
+</I>&gt;<i>something else in the &quot;configure&quot; script
+</I>
+That's made me realise what I've done. I used the --prefix=/usr/bin on the configure script in an effort to overwrite the system curl which, after a quick look in the directory, is the reason for the errors.
+
+If I leave configure to install in its default location of /usr/local it *should* compile OK. I'll then flag the Perl Makefile to /usr/local when installing WWW::Curl
+
+[...]
+
+Thanks for your help,
+
+Regards,
+
+    Phil (please cc me if possible: I'm on digest).
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001304.html">[X-Unix] curl install problem
+</A></li>
+	<LI>Next message: <A HREF="001306.html">[X-Unix] MTUs in Panther
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1305">[ date ]</a>
+              <a href="thread.html#1305">[ thread ]</a>
+              <a href="subject.html#1305">[ subject ]</a>
+              <a href="author.html#1305">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

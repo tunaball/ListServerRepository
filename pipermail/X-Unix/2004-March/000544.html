@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Hiding apps from the command line
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11727990%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000543.html">
+   <LINK REL="Next"  HREF="000545.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Hiding apps from the command line</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11727990%40mail.ninewire.com"
+       TITLE="[X-Unix] Hiding apps from the command line">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Fri Mar 26 09:05:10 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000543.html">[X-Unix] Hiding apps from the command line
+</A></li>
+        <LI>Next message: <A HREF="000545.html">[X-Unix] Hiding apps from the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#544">[ date ]</a>
+              <a href="thread.html#544">[ thread ]</a>
+              <a href="subject.html#544">[ subject ]</a>
+              <a href="author.html#544">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Mar 26, 2004, at 1:59 pm, Eugene Lee wrote:
+&gt;<i>
+</I>&gt;<i> # This script lets you hide a specified application, the Finder, all
+</I>&gt;<i> # applications but the Finder, or all applications other than a 
+</I>&gt;<i> specified
+</I>&gt;<i> # application.
+</I>&gt;<i> # Syntax is as follows:
+</I>&gt;<i> #
+</I>&gt;<i> # hide o [appname] - hides all other apps
+</I>&gt;<i> # hide a           - hides all apps but Finder
+</I>&gt;<i> # hide f           - hides Finder
+</I>&gt;<i> # hide [appname]   - hides specified app
+</I>&gt;<i> # hide v [appname] - shows specified app
+</I>&gt;<i> # hide t           - shows all apps
+</I>
+You're missing an flag. You either need a flag for &quot;hide&quot; (the same as 
+running the command without a flag) or you need a flag to specify that 
+the next argument is the app name. Otherwise someone will, eventually, 
+discover that the command is unable to hide an app named o (or -o, as 
+the cae may be).
+
+Also, if you're going to use $1 ...$9... as variables in your script, 
+it's also worth including this line in the script before you do so:
+  if [ -z &quot;$1&quot; ]
+   then
+     echo &quot;ERROR! This script requires a commandline argument, silly!&quot; 
+ &gt;&amp;2
+     exit 1
+   fi
+
+&gt;<i>     if &quot;$1&quot; is &quot;a&quot;
+</I>&gt;<i>         set visible of every process whose visible is true and name is 
+</I>&gt;<i> not &quot;Finder&quot; and name is not &quot;$1&quot; to false
+</I>&gt;<i>     else if &quot;$1&quot; is &quot;f&quot;
+</I>&gt;<i>         set visible of application process &quot;Finder&quot; to false
+</I>&gt;<i>     else if &quot;$1&quot; is &quot;o&quot;
+</I>&gt;<i>         set visible of every process whose visible is true and name is 
+</I>&gt;<i> not &quot;$2&quot; to false
+</I>&gt;<i>     else if &quot;$1&quot; is &quot;t&quot;
+</I>&gt;<i>         set visible of every process whose visible is false to true
+</I>&gt;<i>     else if exists application process &quot;$1&quot;
+</I>&gt;<i>         set visible of application process &quot;$1&quot; to false
+</I>&gt;<i>     end if
+</I>
+I'd say there's a good case for a case statement here, haw haw..!
+
+Also, check out the `getopts` construct on pages 138 - 139 of the 
+Advanced Bash&#8722;Scripting Guide (free download from the LDP).
+
+Stroller.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000543.html">[X-Unix] Hiding apps from the command line
+</A></li>
+	<LI>Next message: <A HREF="000545.html">[X-Unix] Hiding apps from the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#544">[ date ]</a>
+              <a href="thread.html#544">[ thread ]</a>
+              <a href="subject.html#544">[ subject ]</a>
+              <a href="author.html#544">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

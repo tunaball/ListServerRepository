@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Renaming &quot;NO NAME&quot; Flash Disks
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Renaming%20%22NO%20NAME%22%20Flash%20Disks&In-Reply-To=BE01FA3A.8676%25jerry%40ieee.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001464.html">
+   <LINK REL="Next"  HREF="001441.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Renaming &quot;NO NAME&quot; Flash Disks</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Renaming%20%22NO%20NAME%22%20Flash%20Disks&In-Reply-To=BE01FA3A.8676%25jerry%40ieee.org"
+       TITLE="[X-Unix] Renaming &quot;NO NAME&quot; Flash Disks">magill at mcgillsociety.org
+       </A><BR>
+    <I>Wed Jan  5 20:57:44 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001464.html">[X-Unix] Renaming &quot;NO NAME&quot; Flash Disks
+</A></li>
+        <LI>Next message: <A HREF="001441.html">[X-Unix] &quot;Macintosh Compatibility&quot; of Flash Disks
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1456">[ date ]</a>
+              <a href="thread.html#1456">[ thread ]</a>
+              <a href="subject.html#1456">[ subject ]</a>
+              <a href="author.html#1456">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 05 Jan, 2005, at 23:10, Jerry Krinock wrote:
+&gt;<i> However, if I plug it into an old Mac booted into OS9, the name is 
+</I>&gt;<i> enabled
+</I>&gt;<i> for editing!!  When I change &quot;NO NAME&quot; to &quot;MyDisk&quot;, and look in the 
+</I>&gt;<i> file
+</I>&gt;<i> browser on the MP3 player, I see it has created a file at the root 
+</I>&gt;<i> level
+</I>&gt;<i> named MyDisk.  The amazing thing is that this file is not visible in 
+</I>&gt;<i> the
+</I>&gt;<i> Finder, and also does not show in Terminal when I type &quot;ls -al&quot;.  I 
+</I>&gt;<i> wonder
+</I>&gt;<i> what kind of magic file is this?  How does a disk know it's own name?
+</I>
+It's stored in the disk label.
+
+What you are seeing is actually the partition name, not the disk name.
+
+For example, this is the first internal drive on my system, which has 
+two partitions:
+BenNevis and Loch.
+
+dun&gt; diskutil list disk0
+/dev/disk0
+    #:                   type name               size      identifier
+    0: Apple_partition_scheme                    *55.9 GB  disk0
+    1:    Apple_partition_map                    31.5 KB   disk0s1
+    2:         Apple_Driver43                    28.0 KB   disk0s2
+    3:         Apple_Driver43                    28.0 KB   disk0s3
+    4:       Apple_Driver_ATA                    28.0 KB   disk0s4
+    5:       Apple_Driver_ATA                    28.0 KB   disk0s5
+    6:         Apple_FWDriver                    256.0 KB  disk0s6
+    7:     Apple_Driver_IOKit                    256.0 KB  disk0s7
+    8:          Apple_Patches                    256.0 KB  disk0s8
+    9:              Apple_HFS BenNevis           27.9 GB   disk0s9
+   10:              Apple_HFS Loch               27.9 GB   disk0s10
+
+As I recall, you can't change the name without re-partitioning under OS 
+X.
+
+T.T.F.N.
+William H. Magill
+# Beige G3 [Rev A motherboard - 300 MHz 768 Meg] OS X 10.2.8
+# Flat-panel iMac (2.1) [800MHz - Super Drive - 768 Meg] OS X 10.3.7
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg] Tru64 5.1a
+# XP1000  [Alpha 21264-3 (EV6) - 256 meg] FreeBSD 5.3
+# XP1000  [Alpha 21264-A (EV 6.7) - 384 meg] FreeBSD 5.3
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001464.html">[X-Unix] Renaming &quot;NO NAME&quot; Flash Disks
+</A></li>
+	<LI>Next message: <A HREF="001441.html">[X-Unix] &quot;Macintosh Compatibility&quot; of Flash Disks
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1456">[ date ]</a>
+              <a href="thread.html#1456">[ thread ]</a>
+              <a href="subject.html#1456">[ subject ]</a>
+              <a href="author.html#1456">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

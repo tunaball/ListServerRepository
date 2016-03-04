@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Stopping the Webdav Exploit in Apache
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Stopping%20the%20Webdav%20Exploit%20in%20Apache&In-Reply-To=list-11755991%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000591.html">
+   <LINK REL="Next"  HREF="000593.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Stopping the Webdav Exploit in Apache</H1>
+    <B>Scott Haneda</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Stopping%20the%20Webdav%20Exploit%20in%20Apache&In-Reply-To=list-11755991%40mail.ninewire.com"
+       TITLE="Stopping the Webdav Exploit in Apache">scott at newgeo.com
+       </A><BR>
+    <I>Sat Mar 27 18:42:04 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000591.html">[X-Unix] 0th Annual Shell X-Unix Scripting Contest (was Re: [X4U] Terminal Comand to Hide App Layers)
+</A></li>
+        <LI>Next message: <A HREF="000593.html">[X-Unix] Stopping the Webdav Exploit in Apache
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#592">[ date ]</a>
+              <a href="thread.html#592">[ thread ]</a>
+              <a href="subject.html#592">[ subject ]</a>
+              <a href="author.html#592">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Ever since I got on Comcast for internet, I have seen some strange stuff in
+my apache logs.  I am serving up my mrtg stats on port 80 just so I can see
+what is going on no matter where I am.  In doing this, I get to see what is
+coming on on my apache logs, not that this really matters, but it has been
+bothering me that I can not do what I want to do.
+
+The first thing I did what start tracking the worms and other issues
+# create special cases to get code red and others out of my logs!
+SetEnvIfNoCase Request_URI &quot;/cmd\.exe&quot; msjunk
+SetEnvIfNoCase Request_URI &quot;/Admin\.dll&quot; msjunk
+SetEnvIfNoCase Request_URI &quot;/root\.exe&quot; msjunk
+SetEnvIfNoCase Request_URI &quot;/httpodbc\.dll&quot; msjunk
+SetEnvIfNoCase Request_URI &quot;/owssvr\.dll&quot; msjunk
+SetEnvIfNoCase Request_URI &quot;/default\.ida&quot; msjunk
+
+I send these logs to a serrate log...
+CustomLog &quot;/private/var/log/httpd/msjunk_log&quot; virtual env=msjunk
+CustomLog &quot;/private/var/log/httpd/msjunk_IP_log&quot; justIP env=msjunk
+
+One is the full request, the last one is just the IP
+
+Every 5 minutes cron picks up the IP log and adds it to a blackhole list so
+they can not talk to me again.
+
+This has captures all trouble but one...
+
+Me.me.com 24.90.81.237 - - [27/Mar/2004:08:02:27 -0800] &quot;SEARCH
+/\x90\x02\xb1\x02\xb1\x02\xb1\x02\xb1\x02\xb1\x02\xb1\x02\xb1\x02\xb1\x02\xb
+1\x02\xb1\x02\xb1\x02\xb1\x02\xb1\x02\xb1\x02\xb1\x02\xb1\x02\xb1\x02\xb1\x0
+2\xb1\x02\xb1\x02\xb1\x02\xb1\x02\xb1\x02\xb1\x02\xb1\x02\xb1\x02\xb1\x02\xb
+1\x02\xb1\x02\xb1\x02\xb1\x02\xb1\x02\xb1\x02\xb1\x02\xb1\x02\xb1\x02\xb1\x0
+2\xb1\x02\xb1\  ... 32,820 total chars
+
+For the life of me, I can not mimic this URI request, every attempt I make
+to try to create a test case so I can see how to pattern match this with
+SetEnvIfNoCase Request_URI yields a \\x02\\etc\\etc in my logs.
+
+Any idea whats going on here and how I can pattern match this?
+
+-- 
+-------------------------------------------------------------
+Scott Haneda                                Tel: 415.898.2602
+<A HREF="http://www.newgeo.com">http://www.newgeo.com</A>                       Fax: 313.557.5052
+<A HREF="../../../mailman/listinfo/x-unix.html">scott at newgeo.com</A>                            Novato, CA U.S.A.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000591.html">[X-Unix] 0th Annual Shell X-Unix Scripting Contest (was Re: [X4U] Terminal Comand to Hide App Layers)
+</A></li>
+	<LI>Next message: <A HREF="000593.html">[X-Unix] Stopping the Webdav Exploit in Apache
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#592">[ date ]</a>
+              <a href="thread.html#592">[ thread ]</a>
+              <a href="subject.html#592">[ subject ]</a>
+              <a href="author.html#592">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Safari - not remembering visited links
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Safari%20-%20not%20remembering%20visited%20links&In-Reply-To=20050612092851.4ACB1442561%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="006964.html">
+   <LINK REL="Next"  HREF="006970.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Safari - not remembering visited links</H1>
+    <B>John Baltutis</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Safari%20-%20not%20remembering%20visited%20links&In-Reply-To=20050612092851.4ACB1442561%40listserver.themacintoshguy.com"
+       TITLE="[X4U] Safari - not remembering visited links">baltwo at san.rr.com
+       </A><BR>
+    <I>Sun Jun 12 12:10:02 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="006964.html">[X4U] Authoring HTML email in OSX 10.4.1 ?
+</A></li>
+        <LI>Next message: <A HREF="006970.html">[X4U] Safari - not remembering visited links
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6966">[ date ]</a>
+              <a href="thread.html#6966">[ thread ]</a>
+              <a href="subject.html#6966">[ subject ]</a>
+              <a href="author.html#6966">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 06/12/05,  revDAVE &lt;<A HREF="../../../mailman/listinfo/x4u.html">coolcat at hostalive.com</A>&gt; wrote:
+&gt;<i> On 6/11/05 1:24 AM, &quot;John Baltutis&quot; &lt;<A HREF="../../../mailman/listinfo/x4u.html">baltwo at san.rr.com</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Only if the permissions on the com.apple.safari.plist files in
+</I>&gt;&gt;<i> ~/Library/Preferences/ were read only.
+</I>&gt;<i>
+</I>&gt;<i> Yes John - that's actually what my situation was several years back for some
+</I>&gt;<i> crazy reason ...
+</I>&gt;<i>
+</I>&gt;&gt;<i>If that was the case and other
+</I>&gt;&gt;<i> preferences files are read only, you have severe permissions problems with
+</I>&gt;&gt;<i> your setup. AFAIK, they should all be read &amp; write for you (the admin user
+</I>&gt;&gt;<i> and your username group)-at least that's what mine show.
+</I>&gt;<i>
+</I>&gt;<i>  I noticed something else that maybe you can shed some light on ... For a
+</I>&gt;<i> very long time now, when I save a Web-page in safari, the save window opens
+</I>&gt;<i> very slowly - then I save - then it closes slowly also...
+</I>&gt;<i>
+</I>&gt;<i> *  as of this morning - after applying some of the changes in this thread -
+</I>&gt;<i> which basically amounted to  fooling with this preference text:
+</I>&gt;<i>
+</I>&gt;<i>  &lt;key&gt;WebKitHistoryAgeInDaysLimit&lt;/key&gt;
+</I>&gt;<i>  &lt;string&gt;365&lt;/string&gt;
+</I>&gt;<i>  &lt;key&gt;WebKitHistoryItemLimit&lt;/key&gt;
+</I>&gt;<i>  &lt;string&gt;9999&lt;/string&gt;
+</I>&gt;<i>
+</I>&gt;<i> -  and trying some of your ideas and the terminal:
+</I>&gt;<i>
+</I>&gt;<i> defaults write com.apple.safari WebKitHistoryItemLimit 1000
+</I>&gt;<i>
+</I>&gt;<i> ... *  then I am happy to report that the safari save window has gone from a
+</I>&gt;<i> dead slow crawl to lightning fast!!!!
+</I>&gt;<i>
+</I>&gt;<i> Q:   the question I have is why did this happen? Since I believe my old
+</I>&gt;<i> WebKitHistoryItemLimit was something small like 200 (verses some incredibly
+</I>&gt;<i> large number) ...  I don't know how this would affect the  save window...
+</I>&gt;<i> Any ideas? Even more importantly -  if this happens again in the future -
+</I>&gt;<i> how can I fix it again?
+</I>
+I don't know. I haven't seen any slowdown using the save window.
+
+&gt;<i> Also -  I am keeping my fingers crossed - but it appears ( prior to this
+</I>&gt;<i> thread) -  that the latest version of safari has fixed longstanding bug:
+</I>&gt;<i>
+</I>&gt;<i> -  let's assume we had a Web-page listing lots of other Web page articles -
+</I>&gt;<i> ( such as a Google search results page)
+</I>&gt;<i> -  I would sometimes command click from the main page, on 10 or more of the
+</I>&gt;<i> links - opening up 10 separate pages -  then I would go through them one by
+</I>&gt;<i> one and hand save each individually ...  The bug was - that sometimes
+</I>&gt;<i> randomly in the middle of trying to save - safari would crash -  no
+</I>&gt;<i> particular order or reason ...  Now this problem has seemed to vanish - but
+</I>&gt;<i> as I said I am keeping my fingers crossed ...
+</I>&gt;<i>
+</I>&gt;<i> ...  Many times I submitted a bug report to Apple - maybe they finally
+</I>&gt;<i> listened
+</I>
+Could be, I never did the multiple page opening, so I can't say.
+
+For those who might be interested in how I discovered the various plist
+additions, here's a bit of history (apply the same logic to any
+com.apple.xxxx.plist file).
+
+I read the Safari.plist file using the command:
+defaults read com.apple.safari
+This showed things like:
+WebKitDefaultFontSize = 16;
+WebKitDefaultTextEncodingName = &quot;ISO-8859-1&quot;;
+WebKitHistoryItemLimit = 1500;
+
+This led me to search Apple's Developer site
+&lt;<A HREF="http://developer.apple.com/macosx/">http://developer.apple.com/macosx/</A>&gt; for webkit programming. That led to
+Web Kit Objective-C Programming Guide at
+&lt;<A HREF="http://developer.apple.com/documentation/Cocoa/Conceptual/DisplayWebContent/index.html">http://developer.apple.com/documentation/Cocoa/Conceptual/DisplayWebContent/index.html</A>&gt;.
+Knowing that all web related applications use bits and pieces from this,
+led me to &quot;Managing History&quot; which pointed to the
+/System/Library/Frameworks/WebKit.framework/Versions/A/Headers/WebHistory.h
+file. That file contains the various WebHistoryItems, so I concluded any of
+those could be added to the the Safari plist (drop it on TextEdit and you
+can read the details). One of those was historyAgeInDaysLimit which I
+changed to WebKitHistoryAgeInDaysLimit to conform to other Safari plist
+items.
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="006964.html">[X4U] Authoring HTML email in OSX 10.4.1 ?
+</A></li>
+	<LI>Next message: <A HREF="006970.html">[X4U] Safari - not remembering visited links
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6966">[ date ]</a>
+              <a href="thread.html#6966">[ thread ]</a>
+              <a href="subject.html#6966">[ subject ]</a>
+              <a href="author.html#6966">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

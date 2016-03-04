@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Newbies] System Crash
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20System%20Crash&In-Reply-To=list-9288905%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002720.html">
+   <LINK REL="Next"  HREF="002722.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Newbies] System Crash</H1>
+    <B>Scott</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20System%20Crash&In-Reply-To=list-9288905%40mail.ninewire.com"
+       TITLE="[X Newbies] System Crash">scott-xlists at scotist.com
+       </A><BR>
+    <I>Sat Nov 15 20:32:32 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002720.html">[X Newbies] System Crash
+</A></li>
+        <LI>Next message: <A HREF="002722.html">[X Newbies] System Crash
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2721">[ date ]</a>
+              <a href="thread.html#2721">[ thread ]</a>
+              <a href="subject.html#2721">[ subject ]</a>
+              <a href="author.html#2721">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Nov 15, 2003, at 8:11 PM, Steven Rogers wrote:
+
+&gt;<i>
+</I>&gt;<i> On Saturday, November 15, 2003, at 09:57 PM, J wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> How can I find information about why my system crashed?
+</I>&gt;<i>
+</I>&gt;<i> Looks like you've already decided that its lack of memory below
+</I>&gt;<i>
+</I>&gt;&gt;<i> It made a horrendous noise and a translucent screen came up with 
+</I>&gt;&gt;<i> restart instructions on it. I know it's lack of memory but there is 
+</I>&gt;&gt;<i> no way to allocate to this so how do I fix that?
+</I>&gt;<i>
+</I>&gt;<i> A little more detail would be in order - like what you were doing at 
+</I>&gt;<i> the time, anything new installed lately, has the machine been 
+</I>&gt;<i> generally unstable, etc.
+</I>&gt;<i>
+</I>&gt;<i> Just posting &quot;my machine crashed - why is that?&quot; is kind of like 
+</I>&gt;<i> posting &quot;I lost my car keys - where are they?&quot;
+</I>&gt;<i>
+</I>
+True,. She  did give us enough information to know that a kernel panic 
+occurred. Kernel panic logs can usually be found in 
+/Library/Logs/panic.log . The log may or may not provide any 
+human-decipherable information. Most is useful only in testing in a 
+debugging environment.
+
+
+This one, for instance, has one section in particular which may help:
+-----------------
+panic(cpu 0): 0x400 - Inst access
+Latest stack backtrace for cpu 0:
+       Backtrace:
+          0x000833B8 0x0008389C 0x0001ED8C 0x00090800 0x00093A6C
+Proceeding back via exception chain:
+    Exception state (sv=0x21416280)
+       PC=0x00000000; MSR=0x40009030; DAR=0x002CA278; DSISR=0x40000000; 
+LR=0x0025EB48; R1=0x128CB8C0; XCP=0x00000010 (0x400 - Inst access)
+       Backtrace:
+          0x0024B2C0 0x240705BC 0x0028B784 0x0028B5F0 0x002479D8 
+0x00247A2C 0x00079214 0x00079284
+          0x00021660 0x00013A28 0x000219F0 0x00041104 0x000163B4 
+0x000187A0 0x00019FE0 0x0002FDE0
+          0x00208260 0x002080E8 0x0023DAA4 0x00093C00 0x703A2F2F
+       Kernel loadable modules in backtrace (with dependencies):
+          com.apple.iokit.ApplePCCardATA(1.0.3f1)@0x2406f000
+             dependency: com.apple.iokit.IOATAFamily(1.5.5f1)@0x20427000
+    Exception state (sv=0x209B9A00)
+       PC=0x90034F4C; MSR=0x0000D030; DAR=0x0108B9B0; DSISR=0x40000000; 
+LR=0x9002C8EC; R1=0xBFFFE820; XCP=0x00000030 (0xC00 - System call)
+
+Kernel version:
+Darwin Kernel Version 7.0.0:
+Wed Sep 24 15:48:39 PDT 2003; root:xnu/xnu-517.obj~1/RELEASE_PPC
+
+-------------------
+
+This part:
+
+&gt;<i>       Kernel loadable modules in backtrace (with dependencies):
+</I>&gt;<i>          com.apple.iokit.ApplePCCardATA(1.0.3f1)@0x2406f000
+</I>&gt;<i>             dependency: com.apple.iokit.IOATAFamily(1.5.5f1)@0x20427000
+</I>
+Points to a PC Card being the culprit. In this case, I can combine the 
+information Steve suggests to come up with a cause.
+At the time, I'd been inserting and removing a PC Card Compact Flash 
+reader. If I recall correctly, I'd not been terribly nice about doing 
+so - didn't unmount it. For that matter, I might have removed or 
+inserted it when the machine was asleep. It's been a while.
+
+
+
+-- 
+Scott
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002720.html">[X Newbies] System Crash
+</A></li>
+	<LI>Next message: <A HREF="002722.html">[X Newbies] System Crash
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2721">[ date ]</a>
+              <a href="thread.html#2721">[ thread ]</a>
+              <a href="subject.html#2721">[ subject ]</a>
+              <a href="author.html#2721">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

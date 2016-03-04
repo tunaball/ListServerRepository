@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Spotlight indexing Maildir from alternative MUA
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Spotlight%20indexing%20Maildir%20from%20alternative%20MUA&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002673.html">
+   <LINK REL="Next"  HREF="002675.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Spotlight indexing Maildir from alternative MUA</H1>
+    <B>John Harrold</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Spotlight%20indexing%20Maildir%20from%20alternative%20MUA&In-Reply-To="
+       TITLE="[X-Unix] Spotlight indexing Maildir from alternative MUA">john.m.harrold at gmail.com
+       </A><BR>
+    <I>Sat Jun 10 17:23:35 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002673.html">[X-Unix] shell script - online or not?
+</A></li>
+        <LI>Next message: <A HREF="002675.html">[X-Unix] BBEdit Unicode UTF-8 Encoding Prefix Makes Scripts Fail
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2674">[ date ]</a>
+              <a href="thread.html#2674">[ thread ]</a>
+              <a href="subject.html#2674">[ subject ]</a>
+              <a href="author.html#2674">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Howdy,
+
+I use mutt as my MUA and I recently converted all of my mail from mbox to
+maildir format. I'd like to be able to index my mail in spotlight so it
+would be searchable. I was wondering if anyone could suggest a convenient
+way to do this. I looked around on the web and the nearest thing I've come
+up with is the following:
+
+<A HREF="http://blog.gmane.org/gmane.mail.mh-e.user/page=9">http://blog.gmane.org/gmane.mail.mh-e.user/page=9</A>
+
+Basically I tell the &quot;system&quot;, sorry I don't really know the correct
+terminology her, that the files are text files by doing the following:
+
+  find /path/to/mh/top-level/directory/ -name &quot;[0-9]*&quot; -type f \ 
+     -exec /Developer/Tools/SetFile -t TEXT {} \;
+
+Then I tell spotlight to index them:
+
+  mdimport /path/to/mh/top-level/directory/ 
+
+I was wondering if anyone had anything to add to this? I've never messed
+with spotlight at this level, so I thought it would be good to ask before I
+started mucking around with it.
+
+Thanks.
+
+-- 
+---------------------------------------------------------- 
+                            | /&quot;\                         
+ john harrold               | \ / ASCII ribbon campaign   
+ john.m.harrold _at_ gmail  |  X  against HTML mail       
+                            | / \                         
+----------------------------------------------------------
+  gpg --keyserver pgp.mit.edu --recv-key B23241CB
+----------------------------------------------------------
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002673.html">[X-Unix] shell script - online or not?
+</A></li>
+	<LI>Next message: <A HREF="002675.html">[X-Unix] BBEdit Unicode UTF-8 Encoding Prefix Makes Scripts Fail
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2674">[ date ]</a>
+              <a href="thread.html#2674">[ thread ]</a>
+              <a href="subject.html#2674">[ subject ]</a>
+              <a href="author.html#2674">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

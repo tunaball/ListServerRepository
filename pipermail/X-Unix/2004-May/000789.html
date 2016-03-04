@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Trying to get rid of unwanted files
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Trying%20to%20get%20rid%20of%20unwanted%20files&In-Reply-To=BCC8E392.359E2%25lhelms%40sonic.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000782.html">
+   <LINK REL="Next"  HREF="000779.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Trying to get rid of unwanted files</H1>
+    <B>Mark Gibson</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Trying%20to%20get%20rid%20of%20unwanted%20files&In-Reply-To=BCC8E392.359E2%25lhelms%40sonic.net"
+       TITLE="[X-Unix] Trying to get rid of unwanted files">gibsonm at bigpond.net.au
+       </A><BR>
+    <I>Thu May 13 13:49:20 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000782.html">[X-Unix] Trying to get rid of unwanted files
+</A></li>
+        <LI>Next message: <A HREF="000779.html">[X-Unix] Trying to get rid of unwanted files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#789">[ date ]</a>
+              <a href="thread.html#789">[ thread ]</a>
+              <a href="subject.html#789">[ subject ]</a>
+              <a href="author.html#789">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 08:34 -0700 13/5/04, Larry Helms wrote:
+&gt;<i>No... Executing rm * only removes the files.  If you were to use rm -rf *
+</I>&gt;<i>... THAT would remove the directory as well.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i>  From: Mark Gibson &lt;<A HREF="../../../mailman/listinfo/x-unix.html">gibsonm at bigpond.net.au</A>&gt;
+</I>&gt;&gt;<i>  Date: Fri, 14 May 2004 00:26:01 +1000
+</I>&gt;&gt;<i>  To: Mac OS X Unix &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;<i>  Cc: Larry Helms &lt;<A HREF="../../../mailman/listinfo/x-unix.html">lhelms at sonic.net</A>&gt;
+</I>&gt;&gt;<i>  Subject: Re: [X-Unix] Trying to get rid of unwanted files
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  At 07:17 -0700 13/5/04, Larry Helms wrote:
+</I>&gt;&gt;&gt;<i>  [cron schedule date/time stuff] cd /var/spool/cups; rm *; {other commands
+</I>&gt;&gt;&gt;<i>  you want to perform}
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>   From: Mark Gibson &lt;<A HREF="../../../mailman/listinfo/x-unix.html">gibsonm at bigpond.net.au</A>&gt;
+</I>&gt;&gt;&gt;&gt;<i>   Reply-To: &quot;Mac OS X Unix&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;&gt;&gt;<i>   Date: Fri, 14 May 2004 00:09:24 +1000
+</I>&gt;&gt;&gt;&gt;<i>   To: &quot;Mac OS X Unix&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;&gt;&gt;<i>   Subject: [X-Unix] Trying to get rid of unwanted files
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>   Hi,
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>   I'm one of many suffering from OS 10.3.3's print server bloat problem
+</I>&gt;&gt;&gt;&gt;<i>   (the /var/spool/cups/tmp directory files with 1000's of files and the
+</I>&gt;&gt;&gt;&gt;<i>   print service chokes and fails).
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>   I've written a cron task to clean out the /tmp folder but I'm trying
+</I>&gt;&gt;&gt;&gt;<i>   to find a suitable Unix command to clean out the /cups folder,
+</I>&gt;&gt;&gt;&gt;<i>   leaving the /tmp folder behind.
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>   I want to end up with two tasks, one that cleans /tmp (deletes the
+</I>&gt;&gt;&gt;&gt;<i>   contents) and one that removes everything from /cups except the /tmp
+</I>&gt;&gt;&gt;&gt;<i>   directory.
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>   Can anyone point this GUI user in the right direction (please keep
+</I>&gt;&gt;&gt;&gt;<i>  it simple)?
+</I>&gt;&gt;&gt;&gt;<i>   --
+</I>&gt;&gt;&gt;&gt;<i>   Regards,
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>   Mark (}-:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>   AIM / iChat: gibsonm1
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>   &quot;I'd rather have a frontal lobotomy than Windoze in front of me...&quot;
+</I>&gt;&gt;&gt;&gt;<i>  -- Brian J. Lowry
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  Yes,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  But wont that remove /tmp as well?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  /tmp is in /cups (i.e. /var/spool/cups/tmp). I need something that
+</I>&gt;&gt;<i>  removes the files but leaves the structure intact.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  Happy to be corrected BTW.
+</I>&gt;&gt;<i>  --
+</I>&gt;&gt;<i>  Regards,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  Mark (}-:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  AIM / iChat: gibsonm1
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  Fleschely janglers, opyn preisers and blamers of hemself or of any
+</I>&gt;&gt;<i>  other, tithing tellers, rouners and tutilers of tales, and alle maner
+</I>&gt;&gt;<i>  of pinchers, kept I never that thei sawe this book -- C.O.U
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>
+Larry,
+
+OK. I'll give rm -f * a go (as I don't want to confirm each deletion).
+
+My concern is that there seems to be an upper limit to the number of 
+files that rm can cope with.
+
+Hopefully running this script daily will keep the number of files in 
+/cups beneath that.
+
+I know I have to use a different approach in /tmp because the files 
+there can reach several thousands in a 24 hr period.
+
+Thanks.
+
+Al - I know how it feels, it was 0100 when I was posting and its now 
+0630 (thankfully its Friday!).
+-- 
+Regards,
+
+Mark (}-:
+
+AIM / iChat: gibsonm1
+
+Most of the people I know use Macs, and it feels like we're a 
+privileged minority, though the odd thing is that, unlike Mercedes' 
+or BMWs, they are not significantly more expensive than the 
+competition. Why does anybody use anything else?  -Douglas Adams
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000782.html">[X-Unix] Trying to get rid of unwanted files
+</A></li>
+	<LI>Next message: <A HREF="000779.html">[X-Unix] Trying to get rid of unwanted files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#789">[ date ]</a>
+              <a href="thread.html#789">[ thread ]</a>
+              <a href="subject.html#789">[ subject ]</a>
+              <a href="author.html#789">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

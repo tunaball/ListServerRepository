@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] ISPs, DSL, dhcp vs. PPPoE, and VOIP
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20ISPs%2C%20DSL%2C%20dhcp%20vs.%20PPPoE%2C%20and%20VOIP&In-Reply-To=C37C8767.135DA%25jamesrob%40sonic.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="019345.html">
+   <LINK REL="Next"  HREF="019350.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] ISPs, DSL, dhcp vs. PPPoE, and VOIP</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20ISPs%2C%20DSL%2C%20dhcp%20vs.%20PPPoE%2C%20and%20VOIP&In-Reply-To=C37C8767.135DA%25jamesrob%40sonic.net"
+       TITLE="[X4U] ISPs, DSL, dhcp vs. PPPoE, and VOIP">macmonster at myrealbox.com
+       </A><BR>
+    <I>Thu Dec  6 05:36:18 PST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="019345.html">[X4U] ISPs, DSL, dhcp vs. PPPoE, and VOIP
+</A></li>
+        <LI>Next message: <A HREF="019350.html">[X4U] ISPs, DSL, dhcp vs. PPPoE, and VOIP
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19343">[ date ]</a>
+              <a href="thread.html#19343">[ thread ]</a>
+              <a href="subject.html#19343">[ subject ]</a>
+              <a href="author.html#19343">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 6 Dec 2007, at 00:50, Jim Robertson wrote:
+&gt;<i> ... One carries the DSL signal, and
+</I>&gt;<i> my dim recollection when I set things up was that I couldn't use  
+</I>&gt;<i> that line
+</I>&gt;<i> for DirecTV's middle of the night phone calls that update the  
+</I>&gt;<i> schedule on my
+</I>&gt;<i> TiVo.
+</I>
+I believe this is incorrect, but it is often cited (for fax machines  
+&amp; restaurant credit-card machines here in the UK), so distance from  
+the exchange / line noise may be a factor.
+
+Fax &amp; the Tivo data phonecalls are designed to go over a regular  
+voice telephone line, and you have splitters which allow you to talk  
+at the same time as your DSL is active - I have yet to be convinced  
+of any reason why modem-fax-data calls should not work over the voice  
+section. Indeed, I have many customers here in the UK using their Sky  
+satellite subscription boxes on the same line as their ADSL.
+
+&gt;<i> ..Another concern here is that the max download rate I
+</I>&gt;<i> can get at this address via DSL is 3 mbits/sec because of my linear  
+</I>&gt;<i> distance
+</I>&gt;<i> from the nearest fiber closet. Anyone able to hazard a guess  
+</I>&gt;<i> whether that's
+</I>&gt;<i> enough bandwidth for one line VOIP (it wouldn't be the primary  
+</I>&gt;<i> voice line)
+</I>&gt;<i> as well as general internet access for 2-5 Macs (typical  
+</I>&gt;<i> residential use,
+</I>&gt;<i> although my son does some bittorrent downloads - no hosting - when  
+</I>&gt;<i> he thinks
+</I>&gt;<i> I'm not looking).
+</I>
+3megs is LOADS for VoIP - in fact, 512/256 is quite adequate for a  
+VoIP line or two - and the chief-limiting factor is upload speed  
+(since speech has to go both ways), which you don't mention. I think,  
+in fact, that a voice channel is c 100kbps, so you can get two  
+channels over a traditional 512/256 ADSL service, but that is a  
+little tight if you're putting any more data over it. Think of it  
+this way, tho' - your DSL connection is fat enough for voice over  
+Skpe - why shouldn't it be adequate for any other VoIP service?
+
+In fact, your son IS hosting when he downloads via BitTorrent, or  
+should be, as it is a distributed protocol - clients are configured  
+to share the parts of the file they've already got and give  
+preference to other clients who have shared most with them (i.e.  
+discriminating against those who don't share).
+<A HREF="http://en.wikipedia.org/wiki/BitTorrent_Protocol">http://en.wikipedia.org/wiki/BitTorrent_Protocol</A>
+<A HREF="http://cognitiveatrophy.blogspot.com/2005_02_01_archive.html">http://cognitiveatrophy.blogspot.com/2005_02_01_archive.html</A> (3rd  
+diagram)
+
+ From your point of view there are two principle problems with  
+BitTorrent:
+- it can easily saturate your connection with fast downloads leaving  
+no width for anything else.
+- it tends to generate a particularly high number of connections.
+
+Both of these can cause VoIP connections to drop or break up, but:
+- the first is resolved with traffic prioritising, probably provided  
+by any router intended for VoIP use,
+- the second can fill up the router's NAT table. This used to be a  
+problem - 3 years ago? - with routers with 4meg / 8meg RAM. I see,  
+however, that many now have 32meg or 64meg, so you should be ok.
+Neveertheless, you should be aware of BitTorrent's potential to cause  
+problems with VoIP and be prepared to experiement with shutting BT  
+down if you experience problems with phonecalls breaking up (reboot  
+the router &amp; the problem should resolve itself within a few minutes).
+
+I don't know anything about the VoIP services supplied by telephone  
+companies, so can't answer your AT&amp;T questions.
+
+Stroller.
+</PRE>
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="019345.html">[X4U] ISPs, DSL, dhcp vs. PPPoE, and VOIP
+</A></li>
+	<LI>Next message: <A HREF="019350.html">[X4U] ISPs, DSL, dhcp vs. PPPoE, and VOIP
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19343">[ date ]</a>
+              <a href="thread.html#19343">[ thread ]</a>
+              <a href="subject.html#19343">[ subject ]</a>
+              <a href="author.html#19343">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

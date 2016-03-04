@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Good easy to use cross platform FTP client
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX4U%5D%20Good%20easy%20to%20use%20cross%20platform%20FTP%20client&In-Reply-To=%3Cp0624084dce686f78ac77%40%5B192.168.0.17%5D%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="027175.html">
+   <LINK REL="Next"  HREF="027167.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X4U] Good easy to use cross platform FTP client</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX4U%5D%20Good%20easy%20to%20use%20cross%20platform%20FTP%20client&In-Reply-To=%3Cp0624084dce686f78ac77%40%5B192.168.0.17%5D%3E"
+       TITLE="[X4U] Good easy to use cross platform FTP client">david.ledger at ivdcs.co.uk
+       </A><BR>
+    <I>Wed Sep 25 04:35:41 PDT 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="027175.html">[X4U] Good easy to use cross platform FTP client
+</A></li>
+        <LI>Next message: <A HREF="027167.html">[X4U] IOS 7 'Videos' app
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#27178">[ date ]</a>
+              <a href="thread.html#27178">[ thread ]</a>
+              <a href="subject.html#27178">[ subject ]</a>
+              <a href="author.html#27178">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 12:22 -0600 24/9/13, Doug McNutt wrote:
+&gt;<i>At 10:57 +0100 9/24/13, David Ledger wrote:
+</I>&gt;&gt;<i>One option is to give them an account on your Mac, turn on Remote 
+</I>&gt;&gt;<i>Login in Sharing Preferences, and set your router to send SSH 
+</I>&gt;&gt;<i>requests to your Mac. They can then use an FTP-alike application 
+</I>&gt;&gt;<i>that can do 'scp' (copy over ssh) and grab it directly. It would be 
+</I>&gt;&gt;<i>worth them checking with an ssh login first using 'putty' or 
+</I>&gt;&gt;<i>similar to get the ssh keys sorted out.
+</I>
+&gt;<i>Absolutely!.  I have been doing that for several years and it never 
+</I>&gt;<i>fails. There are some problems though that require some study in 
+</I>&gt;<i>order to make it work.
+</I>
+&gt;<i>1) You have to know your IP address and the address for the distant 
+</I>&gt;<i>target machine. That wouldn't be hard except for the attitude of 
+</I>&gt;<i>companies that provide connectivity. They can and do deliberately 
+</I>&gt;<i>change your IP address periodically just to keep you from running 
+</I>&gt;<i>your own web site. There are ways to test for changes and post the 
+</I>&gt;<i>changed value on, say, your own web site. You can also register, and 
+</I>&gt;<i>pay for, a fixed IP address.  Either way some cash is required. 
+</I>&gt;<i>&lt;<A HREF="http://WhatsMyIP.com">http://WhatsMyIP.com</A>&gt;, or something like that, will help.
+</I>
+My previous ISP just gave you a fixed IP. My current one does for a 
+one-off payment of &#163;6. Most people I hear about get the same IP for 
+months, some find it only changes if their modem disconnects for some 
+reason. There's often a long subdomain name that the ISP maintains 
+for you. Generally not a problem in the UK, but it may be elsewhere.
+
+&gt;<i>2) You just have to worry about maintaining a $HOME/.ssh/ directory. 
+</I>&gt;<i>That means you must not be afraid of Terminal.app and a shell with 
+</I>&gt;<i>which you can prepare and maintain files that must be there.  They 
+</I>&gt;<i>have names like known_hosts, authorized_keys, id_rsa,  and 
+</I>&gt;<i>id_rsa.pub. They are where public and private cryptographic keys are 
+</I>&gt;<i>stored along with remote hosts which are allowed. ssh will require 
+</I>&gt;<i>that permissions for that directory allow access only by the user.
+</I>
+&gt;<i>3) ssh can work using passwords but it is far less secure than 
+</I>&gt;<i>connections with public and private keys which users need to 
+</I>&gt;<i>understand and create for themselves. It's a whole lot more effort 
+</I>&gt;<i>and just will never be as simple as https which uses parts of ssh. 
+</I>&gt;<i>Even the bankers won't allow browser-less connections using ssh 
+</I>&gt;<i>probably because they can't figure out how to explain the usage to 
+</I>&gt;<i>their customers. Shhh  --  there is some mathematics involved.
+</I>
+True. The more secure you want to be, the more work you have to do. 
+If you're not too worried and Remote Login will only be available by 
+arrangement then you can take some shortcuts. If your router can be 
+set up to only allow incoming ssh from a single or range of IPs then 
+you can use that to give security as well.
+
+&gt;<i>I have never been able to share my work or other files using ssh 
+</I>&gt;<i>with anyone not comfortable with UNIX or Linux. Apple doesn't really 
+</I>&gt;<i>like those parts of the BSD UNIX it chose as an underlayment for OS 
+</I>&gt;<i>X. Have you noticed that Finder's Connect to Server by FTP will 
+</I>&gt;<i>allow you to download but simply doesn't allow the other direction? 
+</I>&gt;<i>There is no way to Connect to Server using ssh or its scp protocols. 
+</I>&gt;<i>Why not???  And that reference to putty  pretty much makes the same 
+</I>&gt;<i>case.  Putty is put_tty where the tty is a teletypewriter from long 
+</I>&gt;<i>ago. Bash and csh are more recent shells.
+</I>
+In my opinion OS X peaked at around Panther. Ever since then it's 
+been getting further from user control. For me, Lion is too much of a 
+downgrade. As my Macs die I expect to be moving to Linux.
+
+My experience of Putty is really limited to using it to connect to a 
+client's Unix boxes from a client supplied Windows box and opening 
+xterms and the like back onto the PC. I've done a bit more, but 
+insufficiently often to really remember it. At one client their 
+firewall meant that we had to jump through hoops to get things like 
+Unix diagnostic reports back to the PC for emailing to the 
+manufacturer. I could, however, scp them from a secured Unix box to 
+my Mac at home and then get them to the PC from there.
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+<A HREF="../../../mailman/listinfo/x4u.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="027175.html">[X4U] Good easy to use cross platform FTP client
+</A></li>
+	<LI>Next message: <A HREF="027167.html">[X4U] IOS 7 'Videos' app
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#27178">[ date ]</a>
+              <a href="thread.html#27178">[ thread ]</a>
+              <a href="subject.html#27178">[ subject ]</a>
+              <a href="author.html#27178">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Re: YIPPEE! - Quad 2.5 GHz
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Re%3A%20YIPPEE%21%20-%20Quad%202.5%20GHz&In-Reply-To=11BB38A3-2DC7-49FF-8B8D-7E49CC2A0596%40atvetsystems.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="009705.html">
+   <LINK REL="Next"  HREF="009615.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Re: YIPPEE! - Quad 2.5 GHz</H1>
+    <B>Philip J Robar</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Re%3A%20YIPPEE%21%20-%20Quad%202.5%20GHz&In-Reply-To=11BB38A3-2DC7-49FF-8B8D-7E49CC2A0596%40atvetsystems.com"
+       TITLE="[X4U] Re: YIPPEE! - Quad 2.5 GHz">pjrobar at areyoureallythatstupid.org
+       </A><BR>
+    <I>Fri Oct 28 08:17:30 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="009705.html">[X4U] Re: YIPPEE! - Quad 2.5 GHz
+</A></li>
+        <LI>Next message: <A HREF="009615.html">[X4U] Re: YIPPEE! - Quad 2.5 GHz
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9706">[ date ]</a>
+              <a href="thread.html#9706">[ thread ]</a>
+              <a href="subject.html#9706">[ subject ]</a>
+              <a href="author.html#9706">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Oct 22, 2005, at 3:08 PM, Robert Tillyard wrote:
+
+&gt;<i> On 22 Oct 2005, at 18:07, TjL wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> ...... Original Message .......
+</I>&gt;&gt;<i> On Sat, 22 Oct 2005 02:55:26 -0700 &quot;Philip J Robar&quot;
+</I>&gt;&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x4u.html">pjrobar at areyoureallythatstupid.org</A>&gt; wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> All OSX-native apps are multi-threaded and thus benefit from any
+</I>&gt;&gt;&gt;&gt;<i> multi-proc system.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Umm, no they're not. Applications must be explicitly coded to use
+</I>&gt;&gt;&gt;<i> multiple threads. This is a non-trivial task.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> are Apple apps?  That's what I first read this to imply (all  
+</I>&gt;&gt;<i> native Apple
+</I>&gt;&gt;<i> apps vs OSX apps).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I have heard it said in the past that only some apps *should* be  
+</I>&gt;&gt;<i> coded to
+</I>&gt;&gt;<i> use multiple threads.
+</I>&gt;<i>
+</I>&gt;<i> Because Mac OS X/UNIX is a multi-tasking system I would have  
+</I>&gt;<i> thought it would benefit from more processors. If you're running  
+</I>&gt;<i> Photoshop on it's own you probably still have your mail application  
+</I>&gt;<i> and possibly iTunes running in the background.
+</I>
+Yes, but there's a difference between an OS juggling multiple  
+applications (multitasking) and an individual application having  
+multiple threads within itself and those threads being run in a  
+manner to take advantage of multiple processors. So keeping things  
+really, really simple:
+
+An application or process, in computer science terms, is the largest  
+thing that is known to (i.e. runnable by) the OS. Each process is  
+complete unto itself and is started/scheduled/stopped by the OS. With  
+most modern OSs and hardware each process is isolated/protected from  
+other processes. And since each process has a nearly complete self  
+contained copy of the system resources it uses it is unusual for any  
+given process to conflict with or damage another process or the OS  
+itself. Multitasking OSs are written, by definition, to arbitrate  
+between process and minimized resource conflicts.
+
+A thread is a little process brought to life by a process. A process  
+can start many (many) threads. Each thread lives within the context  
+of and is contained by the parent process and shares most of its  
+parent's resources, but can act independently. As such, it can, if  
+not written properly, thrash any resource owned by the parent.
+
+Threads reintroduce much of the badness of Mac OS Classic, but keep  
+it isolated to individual processes. So why do we want them? Since  
+threads share most of their resources with their parent they start up  
+much, much faster and consume significantly fewer resources than  
+creating a new process does. This was especially an issue on older  
+hardware, but is still a factor today. It is reasonable to run 100's  
+or even 1000's of threads on even small or embedded computers.  
+Threads can be used to preserve an application's interactivity, even  
+without multiprocessors. Potentially long running tasks can be run in  
+the background via a thread, while the application continues to  
+respond to the user and perform other tasks. Another advantage of  
+threads is that a process's threads can communicate between  
+themselves and share information with less overhead than when doing  
+so between processes. All of this combines to make threads the method  
+of choice for using multiple processors in an application.
+
+A multitasking OS can juggle several applications at once. If it has  
+only one processor it does so by rapidly switching between the  
+various applications thereby giving the illusion that they're all  
+running at once. Given a reasonable scheduling algorithm for the  
+switching and reasonable behavior on the part of the applications  
+this illusion holds up pretty well.
+
+Having a multitasking OS does not guarantee that multiple processors  
+will be taken complete advantage of in the way most people think they  
+should be. For instance later versions of Mac OS Classic implement  
+what is known as Asymmetric Multiprocessing. The OS itself runs on a  
+single processor. Each application, while it is running, is assigned  
+to a single processor and all of that application's work is done by  
+that processor, even if the application is multithreaded. Special  
+libraries (helper software) are needed to let applications take  
+advantage of multiple processors in the situation and the programmer  
+has to be very, very, very careful when doing this as the various  
+services and resources provided by OSs have several levels of  
+multithreading awareness (MT unsafe, safe, or hot) and non-SMP OSs  
+tend to be mostly unaware.
+
+OS X implements Symmetric Multiprocessing (SMP). Not only does it  
+distribute and schedule applications among processors, it also does  
+the distribution and scheduling of threads - relieving applications  
+of the need to be multiprocessor aware. SMP OSs also tend to be much  
+more multithreading friendly as most services have been updated to be  
+at least MT safe and MT hot where possible, thus making MT  
+applications more reliable.
+
+In short it takes both an SMP operating system and good programming  
+to fully take advantage of an MP machine from both a performance and  
+interactively standpoint.
+
+Phil
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="009705.html">[X4U] Re: YIPPEE! - Quad 2.5 GHz
+</A></li>
+	<LI>Next message: <A HREF="009615.html">[X4U] Re: YIPPEE! - Quad 2.5 GHz
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9706">[ date ]</a>
+              <a href="thread.html#9706">[ thread ]</a>
+              <a href="subject.html#9706">[ subject ]</a>
+              <a href="author.html#9706">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

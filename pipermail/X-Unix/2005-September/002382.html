@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] What unix command ?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20What%20unix%20command%20%3F&In-Reply-To=43383CEF.9080403%40tampabay.rr.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002383.html">
+   <LINK REL="Next"  HREF="002384.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] What unix command ?</H1>
+    <B>Xavier Noria</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20What%20unix%20command%20%3F&In-Reply-To=43383CEF.9080403%40tampabay.rr.com"
+       TITLE="[X-Unix] What unix command ?">fxn at hashref.com
+       </A><BR>
+    <I>Mon Sep 26 12:36:49 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002383.html">[X-Unix] What unix command ?
+</A></li>
+        <LI>Next message: <A HREF="002384.html">[X-Unix] What unix command ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2382">[ date ]</a>
+              <a href="thread.html#2382">[ thread ]</a>
+              <a href="subject.html#2382">[ subject ]</a>
+              <a href="author.html#2382">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sep 26, 2005, at 20:24, Richard Nagle wrote:
+
+&gt;<i> Looking for a unix command's that can do the following:
+</I>&gt;<i>
+</I>&gt;<i> inside a folder on my desktop, there are txt documents,
+</I>&gt;<i> that I need to fix the file names...
+</I>&gt;<i>
+</I>&gt;<i> ie:
+</I>&gt;<i>
+</I>&gt;<i> message: fixing the mac power supplyeml..txt
+</I>&gt;<i>
+</I>&gt;<i>     Now look at the end of this message, its a .txt file,
+</I>&gt;<i>     however, I need to do this:....
+</I>&gt;<i>
+</I>&gt;<i>     going backwards, from ; .txt and remove the eml,
+</I>&gt;<i>     then slide over the .txt,
+</I>&gt;<i>
+</I>&gt;<i> So the end results are;
+</I>&gt;<i> message: fixing the mac power supply.txt
+</I>
+I tested this, but please try it first on a copy of the directory:
+
+   % cd directory_with_the_files_to_rename
+   % /bin/ls *eml..txt | perl -nle '/(.*)eml/ &amp;&amp; rename $_, &quot;$1.txt&quot;'
+
+-- fxn
+
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002383.html">[X-Unix] What unix command ?
+</A></li>
+	<LI>Next message: <A HREF="002384.html">[X-Unix] What unix command ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2382">[ date ]</a>
+              <a href="thread.html#2382">[ thread ]</a>
+              <a href="subject.html#2382">[ subject ]</a>
+              <a href="author.html#2382">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

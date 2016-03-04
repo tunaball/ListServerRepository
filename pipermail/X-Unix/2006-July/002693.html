@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to determine which network component is failing
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20determine%20which%20network%20component%20is%20failing&In-Reply-To=5CEDCCA4-FB52-4FE3-90AC-7D873A52D18B%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002692.html">
+   <LINK REL="Next"  HREF="002694.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to determine which network component is failing</H1>
+    <B>Charles Howse</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20determine%20which%20network%20component%20is%20failing&In-Reply-To=5CEDCCA4-FB52-4FE3-90AC-7D873A52D18B%40mac.com"
+       TITLE="[X-Unix] How to determine which network component is failing">chowse at charter.net
+       </A><BR>
+    <I>Sun Jul 23 07:44:30 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002692.html">[X-Unix] How to determine which network component is failing
+</A></li>
+        <LI>Next message: <A HREF="002694.html">[X-Unix] How to determine which network component is failing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2693">[ date ]</a>
+              <a href="thread.html#2693">[ thread ]</a>
+              <a href="subject.html#2693">[ subject ]</a>
+              <a href="author.html#2693">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jul 23, 2006, at 8:54 AM, Dennis Fazio wrote:
+
+&gt;<i>
+</I>&gt;<i> On Jul 23, 2006, at 8:03 AM, Charles Howse wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> This morning, I was offline, and just by accident decided to try  
+</I>&gt;&gt;<i> and release and renew the ip address using the web interface of  
+</I>&gt;&gt;<i> the router.
+</I>&gt;&gt;<i> BINGO!  Online again!
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Is this an indication that the router is not noticing that the  
+</I>&gt;&gt;<i> lease has expired on my dhcp assigned ip address from the modem?   
+</I>&gt;&gt;<i> Or is it an indication that the modem is not renewing it's ip  
+</I>&gt;&gt;<i> address?  Or is it something else?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Can I tell the router to release / renew the ip address from a  
+</I>&gt;&gt;<i> shell script?
+</I>&gt;<i>
+</I>&gt;<i> I'm not familiar enough with things to say what your problem might  
+</I>&gt;<i> be from your description.
+</I>&gt;<i>
+</I>&gt;<i> But, you can verify if you got a good IP address in the network  
+</I>&gt;<i> preferences panel. There is a button there to also renew your DHCP  
+</I>&gt;<i> lease. Often turning airport off and on or disonnecting and  
+</I>&gt;<i> reconnecting the ethernet cable triggers things also. When the  
+</I>&gt;<i> connection is working, do a traceroute to get the IP of the cable  
+</I>&gt;<i> modem and the next upstream hop. Then you can progressively ping  
+</I>&gt;<i> through the path to see where things are failing (LAN or cable  
+</I>&gt;<i> modem/upstream path).
+</I>
+Hmmm...
+[<A HREF="../../../mailman/listinfo/x-unix.html">charles at larry</A>:~]$ traceroute -P ICMP charter.net
+traceroute to charter.net (64.192.190.12), 64 hops max, 60 byte packets
+1  10.162.0.1 (10.162.0.1)  9.527 ms  6.892 ms  9.817 ms
+2  24-159-70-1.dhcp.jcsn.tn.charter.com (24.159.70.1)  8.235 ms   
+5.684 ms  6.037 ms
+3  172.21.28.102 (172.21.28.102)  7.518 ms  9.843 ms  6.499 ms
+4  24-159-64-2.static.jcsn.tn.charter.com (24.159.64.2)  7.095 ms   
+5.891 ms  5.571 ms
+5  24-159-64-194.static.jcsn.tn.charter.com (24.159.64.194)  18.533  
+ms  15.586 ms  14.195 ms
+6  24-159-64-41.static.jcsn.tn.charter.com (24.159.64.41)  13.611 ms   
+14.333 ms  13.454 ms
+7  nsvltn1wcx010-pos-4-0-wcg.net (64.200.71.13)  13.760 ms  15.220  
+ms  13.982 ms
+8  cncnoh1wcx010-pos9-0-wcg.net (64.200.240.238)  19.386 ms  19.584  
+ms  20.741 ms
+9  bflony1wcx010-pos-9-0-wcg.net (64.200.249.81)  41.534 ms  44.325  
+ms  41.017 ms
+10  albyny1wcx010-pos-5-0-wcg.net (64.200.68.221)  40.459 ms  36.872  
+ms  37.777 ms
+11  albyny1wcx010-pos6-0-wcg.net (64.200.87.229)  46.237 ms  45.016  
+ms  43.975 ms
+12  nycmny2wcx1-pos6-0.wcg.net (64.200.68.53)  42.453 ms  42.129 ms   
+41.600 ms
+13  nycmny2wcx1-charter-12-1.wcg.net (64.200.81.218)  54.802 ms   
+53.621 ms  51.565 ms
+14  64-192-190-12.wcg.net (64.192.190.12)  51.627 ms  51.018 ms   
+51.482 ms
+
+The ip address of the modem, as shown on the status page of the  
+router, doesn't show up above.
+
+I have been working with curl to get the ip address, but it returns a  
+real mess:
+[<A HREF="../../../mailman/listinfo/x-unix.html">charles at larry</A>:~]$ curl -s <A HREF="http://192.168.254.254/Status_Router.htm">http://192.168.254.254/Status_Router.htm</A>
+&lt;HTML&gt;&lt;HEAD&gt;&lt;TITLE&gt;Setup&lt;/TITLE&gt;&lt;META http-equiv=Content-Language  
+content=en-us&gt;&lt;META http-equiv=Content-Type content='text/html;  
+charset=iso-8859-1'&gt;&lt;style fprolloverstyle&gt;A:hover {color: #00FFFF} 
+BODY{FONT: 10pt Arial,Helvetica,sans-serif; COLOR: black}TH {FONT:  
+bold 10pt Arial,Helvetica,sans-serif; COLOR: white;}TABLE {FONT: 10pt  
+Arial,Helvetica,sans-serif; COLOR: black; BORDER: Medium White None;  
+border-collapse: collapse}TD{font-size: 8pt; font-family: Arial,  
+Helvetica, sans-serif}.num{FONT: 8pt Courier,serif;}.bar{background- 
+color:white;}A{text-decoration: none;}A:link{color: #ffffff;}A:visited 
+{color: #ffffff;}A:hover {color: #00FFFF;}.small A:link{color:  
+#B5B5E6;}.small A:visited{color: #B5B5E6;}.small A:hover {color:  
+#00FFFF;}&lt;/style&gt;&lt;SCRIPT language=JavaScript&gt;function pppoeAction(F,I) 
+{   F.pppoeAct.value = I;   F.submit();}function DHCPAct(F,I) 
+{      F.dhcpAction.value = I; F.submit();}function showAlert(){alert 
+('');}&lt;/SCRIPT&gt;...
+[snip a ton of html garbage]
+
+It's in there, but pulling it out in a shell script will be very  
+problematic.
+
+&gt;<i>
+</I>&gt;<i> You can also just assign static addresses to your computers if you  
+</I>&gt;<i> think DHCP is being problematic. That will isolate whether the  
+</I>&gt;<i> problem is connectivity/routing or address assignment. I find  
+</I>&gt;<i> BwanaDik is a good tool for determining if you have good internal  
+</I>&gt;<i> and external addresses set.
+</I>
+I use static addresses on all the lan computers.  The dhcp server on  
+the router is turned off.
+One issue might be that the modem's lan address is 192.168.100.1, and  
+the default address for the router is 192.168.1.1.  I have changed  
+that to 192.168.254.254, and set the computers to 192.168.254.*/ 
+255.255.255.0.
+Do you think it would help anything to set the router to  
+192.168.100.254, and the computers to 192.168.100.*/255.255.255.0?
+Then everything would be on the same subnet.
+That will be easy to do, I will change it while I wait for a reply  
+from the list, and see what happens.
+
+I have the iStat nano widget, which shows my internal/external ip  
+addresses.
+
+--
+Tall Tales R Us! - Bubba's Blog -
+<A HREF="http://bubbabbq.homeunix.net/blog.html">http://bubbabbq.homeunix.net/blog.html</A>
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002692.html">[X-Unix] How to determine which network component is failing
+</A></li>
+	<LI>Next message: <A HREF="002694.html">[X-Unix] How to determine which network component is failing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2693">[ date ]</a>
+              <a href="thread.html#2693">[ thread ]</a>
+              <a href="subject.html#2693">[ subject ]</a>
+              <a href="author.html#2693">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

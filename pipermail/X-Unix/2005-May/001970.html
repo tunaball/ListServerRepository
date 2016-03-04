@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] path for terminal.app and x11
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20path%20for%20terminal.app%20and%20x11&In-Reply-To=21e7f01ca1b7e17a3efaad7583a69e02%40famaco.com.my">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001955.html">
+   <LINK REL="Next"  HREF="001973.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] path for terminal.app and x11</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20path%20for%20terminal.app%20and%20x11&In-Reply-To=21e7f01ca1b7e17a3efaad7583a69e02%40famaco.com.my"
+       TITLE="[X-Unix] path for terminal.app and x11">magill at mcgillsociety.org
+       </A><BR>
+    <I>Sun May 15 18:13:15 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001955.html">[X-Unix] path for terminal.app and x11
+</A></li>
+        <LI>Next message: <A HREF="001973.html">[X-Unix] path for terminal.app and x11
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1970">[ date ]</a>
+              <a href="thread.html#1970">[ thread ]</a>
+              <a href="subject.html#1970">[ subject ]</a>
+              <a href="author.html#1970">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 14 May, 2005, at 00:15, sham khalil wrote:
+&gt;<i> i have edited .profile file to include /opt/local/ in the $PATH
+</I>&gt;<i> PATH=&quot; /bin:/sbin:/usr/bin:/usr/sbin:/opt/local/bin:/opt/local/sbin&quot;
+</I>&gt;<i>
+</I>&gt;<i> but on X11  $PATH doesn't have /opt/local
+</I>&gt;<i> PATH=&quot;/usr/bin:/bin:/usr/sbin:/sbin:/Users/shamkhalil:/usr/X11R6/bin&quot;
+</I>&gt;<i>
+</I>&gt;<i> how do i change $PATH on X11?
+</I>
+There are multiple answers to that question.
+
+Anything which operates from the AQUA GUI (the login window) requires  
+the path (and other similar stuff) be entered in the ~/.MacOSX/ 
+environment.plist file.
+
+Anything which operates without the AQUA GUI requires the path  
+information in one of the initialization files for your particular  
+shell.
+
+The .MacOSX/environment.plist is documented on the developer site:
+(you can find related things by searching for &quot;environment.plist&quot;)
+
+Environment Variables
+<A HREF="http://developer.apple.com/qa/qa2001/qa1255.html">http://developer.apple.com/qa/qa2001/qa1255.html</A>
+
+setting environment variables for user processes
+<A HREF="http://developer.apple.com/qa/qa2001/qa1067.html">http://developer.apple.com/qa/qa2001/qa1067.html</A>
+
+I have something like this in my file:
+
+&lt;dict&gt;
+         &lt;key&gt;LC_ALL&lt;/key&gt;
+         &lt;string&gt;C&lt;/string&gt;
+         &lt;key&gt;LANG&lt;/key&gt;
+         &lt;string&gt;ENGLISH&lt;/string&gt;
+         &lt;key&gt;PATH&lt;/key&gt;       &lt;string&gt;/bin:/sbin:/usr/bin:/usr/local/ 
+bin:/usr/sbin:/usr/local1/bin:/opt/local/bin&lt;/string&gt;
+         &lt;key&gt;LD_LIBRARY_PATH&lt;/key&gt;
+         &lt;string&gt;/usr/local1/lib:/usr/local1/opt/local/lib&lt;/string&gt;
+         &lt;key&gt;DISPLAY&lt;/key&gt;
+         &lt;string&gt;:0&lt;/string&gt;
+&lt;/dict&gt;
+
+
+
+T.T.F.N.
+William H. Magill
+# Beige G3 [Rev A motherboard - 300 MHz 768 Meg] OS X 10.2.8
+# Flat-panel iMac (2.1) [800MHz - Super Drive - 768 Meg] OS X 10.3.8
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg] Tru64 5.1a
+# XP1000  [Alpha 21264-3 (EV6) - 256 meg] FreeBSD 5.3
+# XP1000  [Alpha 21264-A (EV 6.7) - 384 meg] FreeBSD 5.3
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001955.html">[X-Unix] path for terminal.app and x11
+</A></li>
+	<LI>Next message: <A HREF="001973.html">[X-Unix] path for terminal.app and x11
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1970">[ date ]</a>
+              <a href="thread.html#1970">[ thread ]</a>
+              <a href="subject.html#1970">[ subject ]</a>
+              <a href="author.html#1970">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

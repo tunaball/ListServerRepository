@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Bash scripting help
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Bash%20scripting%20help&In-Reply-To=AB844F0C-856A-4304-835C-BC0ACE7E67AC%40direcway.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002440.html">
+   <LINK REL="Next"  HREF="002442.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Bash scripting help</H1>
+    <B>Philip J Robar</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Bash%20scripting%20help&In-Reply-To=AB844F0C-856A-4304-835C-BC0ACE7E67AC%40direcway.com"
+       TITLE="[X-Unix] Bash scripting help">pjrobar at areyoureallythatstupid.org
+       </A><BR>
+    <I>Tue Nov  8 09:56:18 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002440.html">[X-Unix] Bash scripting help
+</A></li>
+        <LI>Next message: <A HREF="002442.html">[X-Unix] Bash scripting help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2441">[ date ]</a>
+              <a href="thread.html#2441">[ thread ]</a>
+              <a href="subject.html#2441">[ subject ]</a>
+              <a href="author.html#2441">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Nov 8, 2005, at 8:02 AM, Russell McGaha wrote:
+
+&gt;<i> I'm trying to check if a process is running before continuing my  
+</I>&gt;<i> script
+</I>&gt;<i> (BTW I'm a relative new-be at shell scripting); here's what I've  
+</I>&gt;<i> tried:
+</I>
+<A HREF="http://www.shelldorado.com">http://www.shelldorado.com</A>
+
+and
+
+Advanced Bash-Scripting Guide by Medel Cooper at &lt;<A HREF="http://www.tldp.org/">http://www.tldp.org/</A> 
+LDP/abs/html/&gt;
+
+are good places to look for shell scripting help.
+
+Here's my version of your script.
+
+Phil
+
+
+#!/bin/bash
+
+FileMaker=&quot;&quot;;
+let loop=0;													# Could also be ((loop = 0)), or let &quot;loop = 0&quot;
+
+echo &quot;Start&quot;
+
+# &quot;[[&quot; is an extended form of test. It lets &quot;&amp;&amp;&quot; behave as you  
+expected it to.
+# '&lt;' seems like it should have worked since it's within double  
+parentheses,
+# but &quot;-lt&quot; definitely gives the expected numerical result.
+
+while [[ &quot;$Filemaker&quot; == &quot;&quot; &amp;&amp; ((loop -lt 10)) ]]; do		# &quot;$loop&quot;  
+within double parentheses is incorrect.
+
+	# Command Substitution, &quot;$(some command)&quot; - replaces &quot;$(some  
+command)&quot; with output of the command.
+	# Normally one would use some form of ps(1) in this situation.
+	# foo(someNumber) refers to the &quot;foo&quot; command in section  
+&quot;someNumber&quot; of the man pages.
+
+	Filemaker=$(top -l1 | grep &quot;FileMaker&quot;)
+	echo &quot;Filemaker = &quot; $Filemaker
+
+	let loop++												# Could also be ((loop++))
+	echo $loop
+
+done
+
+echo &quot;stopping&quot;
+
+exit 0
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002440.html">[X-Unix] Bash scripting help
+</A></li>
+	<LI>Next message: <A HREF="002442.html">[X-Unix] Bash scripting help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2441">[ date ]</a>
+              <a href="thread.html#2441">[ thread ]</a>
+              <a href="subject.html#2441">[ subject ]</a>
+              <a href="author.html#2441">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

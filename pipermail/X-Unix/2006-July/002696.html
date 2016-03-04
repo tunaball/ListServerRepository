@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to determine which network component is failing
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20determine%20which%20network%20component%20is%20failing&In-Reply-To=7097bd8c0607241027l6488580bjd4f8d83e2b892d28%40mail.gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002695.html">
+   <LINK REL="Next"  HREF="002703.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to determine which network component is failing</H1>
+    <B>Wing Wong</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20determine%20which%20network%20component%20is%20failing&In-Reply-To=7097bd8c0607241027l6488580bjd4f8d83e2b892d28%40mail.gmail.com"
+       TITLE="[X-Unix] How to determine which network component is failing">wingedpower at gmail.com
+       </A><BR>
+    <I>Mon Jul 24 10:29:47 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002695.html">[X-Unix] How to determine which network component is failing
+</A></li>
+        <LI>Next message: <A HREF="002703.html">[X-Unix] How to determine which network component is failing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2696">[ date ]</a>
+              <a href="thread.html#2696">[ thread ]</a>
+              <a href="subject.html#2696">[ subject ]</a>
+              <a href="author.html#2696">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 7/24/06, Wing Wong &lt;<A HREF="../../../mailman/listinfo/x-unix.html">wingedpower at gmail.com</A>&gt; wrote:
+&gt;<i> On 7/23/06, Charles Howse &lt;<A HREF="../../../mailman/listinfo/x-unix.html">chowse at charter.net</A>&gt; wrote:
+</I>&gt;<i> &gt; Hardware setup:
+</I>&gt;<i> &gt; ISP: Charter Communications, 2 megabit service
+</I>&gt;<i> &gt; Cable Modem: Motorola SB4200 Surfboard
+</I>&gt;<i> &gt; Router: Linksys Etherfast(r) Cable/DSL Router BEFSR41 V3 Firmware
+</I>&gt;<i> &gt; Version: 1.04.17
+</I>&gt;<i> &gt; Computers: 2 FreeBSD 6.1-RELEASE. 1 Mac OS X 10.4.7, 100 baseT
+</I>&gt;<i> &gt; ethernet connections on all
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; This morning, I was offline, and just by accident decided to try and
+</I>&gt;<i> &gt; release and renew the ip address using the web interface of the router.
+</I>&gt;<i> &gt; BINGO!  Online again!
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Is this an indication that the router is not noticing that the lease
+</I>&gt;<i> &gt; has expired on my dhcp assigned ip address from the modem?  Or is it
+</I>&gt;<i> &gt; an indication that the modem is not renewing it's ip address?  Or is
+</I>&gt;<i> &gt; it something else?
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Can I tell the router to release / renew the ip address from a shell
+</I>&gt;<i> &gt; script?
+</I>
+Side note:
+
+If your Linksys router has been updated with an &quot;opened&quot; firmware and
+you have shell access to the box. You can issue the dhcp release/renew
+via an automated SSH session. Just install your DSA public key entry
+onto the router and script the reboot from your workstation. If you
+want, you can also script the reboot from within the router itself.
+
+Good luck!
+
+-- 
+Wing Wong
+<A HREF="../../../mailman/listinfo/x-unix.html">wingedpower at gmail.com</A>
+</PRE>
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002695.html">[X-Unix] How to determine which network component is failing
+</A></li>
+	<LI>Next message: <A HREF="002703.html">[X-Unix] How to determine which network component is failing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2696">[ date ]</a>
+              <a href="thread.html#2696">[ thread ]</a>
+              <a href="subject.html#2696">[ subject ]</a>
+              <a href="author.html#2696">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

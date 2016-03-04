@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> step-by-step Bluetooth Serial Utility setup for T68 dial-up and GPRS
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:bluetooth-mac%40listserver.themacintoshguy.com?Subject=step-by-step%20Bluetooth%20Serial%20Utility%20setup%20for%20T68%20dial-up%20and%20GPRS&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002202.html">
+   <LINK REL="Next"  HREF="002204.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>step-by-step Bluetooth Serial Utility setup for T68 dial-up and GPRS</H1>
+    <B>KOZAK Imre Oliver</B> 
+    <A HREF="mailto:bluetooth-mac%40listserver.themacintoshguy.com?Subject=step-by-step%20Bluetooth%20Serial%20Utility%20setup%20for%20T68%20dial-up%20and%20GPRS&In-Reply-To="
+       TITLE="step-by-step Bluetooth Serial Utility setup for T68 dial-up and GPRS">ki023 at hszk.bme.hu
+       </A><BR>
+    <I>Mon Mar  3 14:24:31 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002202.html">Bluetooth Serial Utility in Jaguar 10.2.4
+</A></li>
+        <LI>Next message: <A HREF="002204.html">Share mac internet via bluetooth step-by-step
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2203">[ date ]</a>
+              <a href="thread.html#2203">[ thread ]</a>
+              <a href="subject.html#2203">[ subject ]</a>
+              <a href="author.html#2203">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is some info to set up an Ericsson T68 to connect via Bluetooth 
+using the serial port service of the phone.
+
+1. Pair via Bluetooth the T68 and the Apple machine.
+2. Open Applications/Utilities/Bluetooth Serial Utility (comes with the 
+Jaguar 10.2.4 update)
+3. Click New...
+4. Select Device...
+5. Select Device/T68(phone's name)&quot;, select &quot;Serial Port 1&quot; on the 
+other side, click Select
+    (You can press Search and Refresh Services if nothing appears)
+6. Name: T68-BT-serial
+    Outgoing: selected
+    Show in Network Preferences: checked
+    Port type: RS-232
+7. Relaunch Network Preferences (to make it detect the new port)
+8. Select your location
+9. Show: T68-BT-serial
+10. TCP/IP: enter DNS servers if necessary (any DNS server should work 
+if it is not too far away geographically)
+
+GSM data dial-up
+11. PPP:
+     Account Name: (your dial-up login name)
+     Password: (your dial-up password)
+     Telephone Number: (your dial-up tel. number)
+12. Modem - Ericsson Infrared
+
+GPRS
+11. PPP
+     Account Name: (your APN login name)
+     Password: (your APN password)
+     Telephone Number: (your APN server name)
+12. Modem - GPRS Generic
+
+13. Show: Network Port Configurations
+14. Uncheck all unnecessary ports
+15. Click Apply now
+16. Connect from Applications/Internet Connect by selecting 
+T68_BT-serial port
+
+Sometimes the Dial-up Networking service also works.
+
+The GPRS generic script can be downloaded from 
+<A HREF="http://www.xs4all.nl/~m10/gprs/GPRS4MacOS.bin">http://www.xs4all.nl/~m10/gprs/GPRS4MacOS.bin</A> (450 kbyte, instructions 
+included for installation)
+Brand specific GPRS scripts are at <A HREF="http://www.taniwha.org.uk">http://www.taniwha.org.uk</A>
+APN login names are available at <A HREF="http://www.taniwha.org.uk/gprs.html">http://www.taniwha.org.uk/gprs.html</A>
+
+The first connection is always painless after boot. However, (probably 
+due to my Tungsten) I have to kill the &quot;/usr/sbin/blued&quot; process with 
+Process Wizard from <A HREF="http://www.lachoseinteractive.net,">http://www.lachoseinteractive.net,</A> before I can 
+reconnect. In fact blued relaunces right after the kill. If I don't 
+kill the blued process, the connection process is stuck somewhere at 
+beginning. Removing the USB BT adapter after connection only causes an 
+RFCOMM error, and I really have to reboot to be able to connect again.
+
+I have an Acer BT-500 bluetooth adapter, it is based on the CSR chip, 
+too, similarly to the D-Link DBT-120. There is a nice list at 
+<A HREF="http://www.holtmann.org/linux/bluetooth/features.html">http://www.holtmann.org/linux/bluetooth/features.html</A>
+
+Hope these help for some,
+Imi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002202.html">Bluetooth Serial Utility in Jaguar 10.2.4
+</A></li>
+	<LI>Next message: <A HREF="002204.html">Share mac internet via bluetooth step-by-step
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2203">[ date ]</a>
+              <a href="thread.html#2203">[ thread ]</a>
+              <a href="subject.html#2203">[ subject ]</a>
+              <a href="author.html#2203">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/bluetooth-mac.html">More information about the Bluetooth-mac
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

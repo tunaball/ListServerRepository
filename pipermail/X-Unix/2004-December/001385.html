@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] BASH problem?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20BASH%20problem%3F&In-Reply-To=20041207122331.GJ6425%40Dark-Age.local">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001380.html">
+   <LINK REL="Next"  HREF="001389.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] BASH problem?</H1>
+    <B>Russell McGaha</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20BASH%20problem%3F&In-Reply-To=20041207122331.GJ6425%40Dark-Age.local"
+       TITLE="[X-Unix] BASH problem?">RussellMcGaha at mac.com
+       </A><BR>
+    <I>Tue Dec  7 16:33:16 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001380.html">[X-Unix] BASH problem?
+</A></li>
+        <LI>Next message: <A HREF="001389.html">[X-Unix] BASH problem?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1385">[ date ]</a>
+              <a href="thread.html#1385">[ thread ]</a>
+              <a href="subject.html#1385">[ subject ]</a>
+              <a href="author.html#1385">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Start of script segment
+
+#!/bin/tcsh -x
+
+set Myday = `date '+%a'`
+echo $Myday `date` | tee -a tempfile
+setenv CVSROOT :pserver:<A HREF="../../../mailman/listinfo/x-unix.html">anonymous at cvs-mirror.mozilla.org</A>:/cvsroot
+
+end of script segment
+
+errors
+
+[18:30:21 Tue Dec 07] [localhost:~] russellm$source MozScript1d.txt
+Tue Dec 7 18:30:53 CST 2004
+-bash: setenv: command not found
+-bash: @: command not found
+-bash: MozScript1d.txt: line 16: syntax error near unexpected token 
+`else'
+-bash: MozScript1d.txt: line 16: `       else'
+[18:30:53 Tue Dec 07] [localhost:~] russellm$
+
+
+On Dec 7, 2004, at 6:23 AM, Eugene wrote:
+
+&gt;<i> On Tue, Dec 07, 2004 at 05:47:01AM -0600, Russell McGaha wrote:
+</I>&gt;<i> :
+</I>&gt;<i> : 	In an effort to start learning Bash I change my shell from Tcsh to
+</I>&gt;<i> : Bash, but that's caused a problem.  I've a script that runs nightly 
+</I>&gt;<i> to
+</I>&gt;<i> : pull and build Mozilla, the script is a Tcsh script with a first line
+</I>&gt;<i> : of &quot;#!/bin/tcsh -x&quot;.  Now I THOUGHT, that line told the 'system' to 
+</I>&gt;<i> run
+</I>&gt;<i> : that script under Tcsh; but with my shell set to Bash, I get all 
+</I>&gt;<i> kinds
+</I>&gt;<i> : of Bash errors on the first lines of the script and the script 
+</I>&gt;<i> doesn't
+</I>&gt;<i> : run.  I've tried running &quot;do script with command &quot;/bin/tcsh;source
+</I>&gt;<i> : MozScript1d.txt;&quot; &quot; from an AppleScript to invoke Tsch first, and 
+</I>&gt;<i> then
+</I>&gt;<i> : run the script; but all though Tsch gets invoked my scripts doesn't.
+</I>&gt;<i> : 	Anyone know what I'm doing wrong or how I can correct this?
+</I>&gt;<i>
+</I>&gt;<i> It would help if you posted the first few lines of that script that is
+</I>&gt;<i> already bombing.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> -- 
+</I>&gt;<i> Eugene Lee
+</I>&gt;<i> <A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001380.html">[X-Unix] BASH problem?
+</A></li>
+	<LI>Next message: <A HREF="001389.html">[X-Unix] BASH problem?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1385">[ date ]</a>
+              <a href="thread.html#1385">[ thread ]</a>
+              <a href="subject.html#1385">[ subject ]</a>
+              <a href="author.html#1385">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

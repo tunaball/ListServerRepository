@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to set up initial xterm defaults (or what do you use as a xterm on the Mac)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20set%20up%20initial%20xterm%20defaults%20%28or%20what%20do%20you%20use%20as%20a%20xterm%20on%20the%20Mac%29&In-Reply-To=list-12517800%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000756.html">
+   <LINK REL="Next"  HREF="000758.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to set up initial xterm defaults (or what do you use as a xterm on the Mac)</H1>
+    <B>Eugene Lee</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20set%20up%20initial%20xterm%20defaults%20%28or%20what%20do%20you%20use%20as%20a%20xterm%20on%20the%20Mac%29&In-Reply-To=list-12517800%40mail.ninewire.com"
+       TITLE="[X-Unix] How to set up initial xterm defaults (or what do you use as a xterm on the Mac)">list-themacintoshguy at fsck.net
+       </A><BR>
+    <I>Mon May  3 00:18:54 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000756.html">[X-Unix] How to set up initial xterm defaults (or what do you use as a xterm on the Mac)
+</A></li>
+        <LI>Next message: <A HREF="000758.html">[X-Unix] deleting files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#757">[ date ]</a>
+              <a href="thread.html#757">[ thread ]</a>
+              <a href="subject.html#757">[ subject ]</a>
+              <a href="author.html#757">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sun, May 02, 2004 at 02:37:07PM -0400, Juan Manuel Palacios wrote:
+:<i> 
+</I>:<i> On May 1, 2004, at 10:00 AM, David Ledger wrote:
+</I>:<i> &gt;
+</I>:<i> &gt;I use
+</I>:<i> &gt;	xterm -ls -sb -sl 10000  -name ...   -title ... ...
+</I>:<i> &gt;-ls	= login shell - make the shell running in the new xterm window a 
+</I>:<i> &gt;login shell that reads .profile etc.
+</I>:<i> &gt;-sb	= scroll bar
+</I>:<i> &gt;-sl &lt;n&gt;	= no. of scrolback lines = &lt;n&gt;
+</I>:<i> &gt;-name	set the contents of the title bar and name of the icon
+</I>:<i> &gt;-title	(if you can iconise rather than dock on minimise)
+</I>:<i> 
+</I>:<i> 	Hi David! Though the response was not meant for me, it has proved to 
+</I>:<i> be very useful nonetheless,... long live the mailing lists ;-) There's 
+</I>:<i> still one thing lacking in my xinitrc file however, and I thought I 
+</I>:<i> could ask you: is there any setting that could take over the dimensions 
+</I>:<i> of the xterm window? I'm looking for something akin to the &quot;Dimensions&quot; 
+</I>:<i> settings in the &quot;Window&quot; section of Mac OS X's Terminal's &quot;Window 
+</I>:<i> Settings&quot; panel. I tried looking in X11.app's Preferences but couldn't 
+</I>:<i> find anything to that effect. Wait... I just found out xterm is 
+</I>:<i> documented (man 1 xterm), but it's a looooong page! You think you could 
+</I>:<i> help me here?
+</I>
+It's a geometry setting that is standard among most X programs.
+
+	xterm -geometry WIDTHxHEIGHT
+
+where WIDTH and HEIGHT are the number of characters, respectively.
+
+For more details:
+
+	man 7 X
+
+
+-- 
+Eugene Lee
+<A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000756.html">[X-Unix] How to set up initial xterm defaults (or what do you use as a xterm on the Mac)
+</A></li>
+	<LI>Next message: <A HREF="000758.html">[X-Unix] deleting files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#757">[ date ]</a>
+              <a href="thread.html#757">[ thread ]</a>
+              <a href="subject.html#757">[ subject ]</a>
+              <a href="author.html#757">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

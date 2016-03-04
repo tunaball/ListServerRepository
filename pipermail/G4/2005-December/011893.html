@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Router definition and Ethernet Broadband question.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Router%20definition%20and%20Ethernet%20Broadband%20question.&In-Reply-To=p06230901bfc494811a8a%40%5B193.203.141.107%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011890.html">
+   <LINK REL="Next"  HREF="011894.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Router definition and Ethernet Broadband question.</H1>
+    <B>Philip J Robar</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Router%20definition%20and%20Ethernet%20Broadband%20question.&In-Reply-To=p06230901bfc494811a8a%40%5B193.203.141.107%5D"
+       TITLE="[G4] Router definition and Ethernet Broadband question.">pjrobar at areyoureallythatstupid.org
+       </A><BR>
+    <I>Tue Dec 13 09:28:25 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011890.html">[G4] Router definition and Ethernet Broadband question.
+</A></li>
+        <LI>Next message: <A HREF="011894.html">[G4] Router definition and Ethernet Broadband question.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11893">[ date ]</a>
+              <a href="thread.html#11893">[ thread ]</a>
+              <a href="subject.html#11893">[ subject ]</a>
+              <a href="author.html#11893">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Dec 13, 2005, at 7:18 AM, Alex Hurst wrote:
+
+&gt;<i> Tony wrote in part:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Its all beside the point, a router can be a good thing in  
+</I>&gt;&gt;<i> protecting oneself
+</I>&gt;&gt;<i> from the evils of the internet.
+</I>&gt;<i>
+</I>&gt;<i> Forgive my ignorance, but is a router the same thing as a hub?
+</I>&gt;<i>
+</I>&gt;<i> [snip]
+</I>
+No. Keeping things simple. A hub connections several wires together  
+to form a network. Packets are distributed to all ports on the hub  
+regardless of which port the machine the packets are actually  
+addressed to is actually hooked up to. Unmanaged switches are like  
+hubs except they only send data out the port that the machine they  
+are addressed to is hooked up to. This reduces the amount of traffic  
+on any given segment of the network, which allows for higher  
+performance. Even simple unmanaged switches used to be much more  
+expensive than hubs. Although it's unlikely to make any difference on  
+a home network unmanaged switches are now so inexpensive that it  
+doesn't make any sense to buy a hub.
+
+The addresses that switches use to direct data to the correct port  
+are associated with the physical network connection on each machine.  
+They are called ethernet or more properly MAC (media access control)  
+addresses. These address are what ultimately provide each computer  
+with a unique identity on a network.
+
+Routers on the other hand are used to direct packets between  
+networks, e.g. between your home network and the Internet (or more  
+specifically your ISP's network), using higher level IP (internet  
+protocol) addresses. IP addresses are explicitly not permanently tied  
+to a specific computer so that the computer associated with that  
+address can be changed without others having to being aware of the  
+change.
+
+Home routers commonly include a small switch,  know how to talk to a  
+cable or DSL modem, and also provide NAT (network address  
+translation) and DHCP (dynamic host configuration Protocol) services.  
+NAT allows all the machines on a network to share the, usually,  
+single public address that an ISP assigns to a customer. In addition  
+NAT, combined with the use of private IP address, protects your local  
+network in a couple of ways. Private addresses are a range of IP  
+address that everyone has formally agreed not to route over the  
+public Internet. This means that information traveling from one  
+computer to another on your local network can not leak out of your  
+network. Secondly, since the private addresses are only visible to  
+your network, no one outside of your network knows about or can  
+access your computers unless you specifically set up a relation  
+between your public address, a specific service, and a machine on  
+your local network.
+
+DHCP is a convenience that centralizes the assignment of network  
+personalities to computers on a network rather than having to  
+individually configure each machine. Basically with DHCP when a  
+computer wakes up it asks the network &quot;who am I&quot; and the DHCP server  
+responds with the information needed for the computer to configure  
+it's network presence.
+
+
+&gt;<i> As I have a Netgear Ethernet hub which links my G4 to two G3 Macs  
+</I>&gt;<i> with no problem, am I right in assuming that I just plug the  
+</I>&gt;<i> broadband modem connection into any free socket?
+</I>
+No. While you could make this arrangement work by adding a second  
+network interface to one of your computers and setting up internet  
+connection sharing, home routers are now so inexpensive that it's far  
+more trouble than it's worth. You should get a home router as  
+described above. Home routers are cheap, you can get one for $0 to a  
+few $10's of dollars depending on how hard you look and how you feel  
+about rebates.
+
+Also, while many vendors advertise their NAT feature as a firewall,  
+and NAT does indeed provide all the protection that most people need,  
+I'd advise that you get a router that provides an SPI (statefull  
+packet inspection) firewall. SPI used to be found only in expensive  
+firewall products, but it is now quite common even in inexpensive  
+home routers.
+
+You might also consider getting a wireless router in anticipation of  
+future needs, especially since they can often be purchased for the  
+same price as a non-wireless router.
+
+Another router feature that is poised to become important is QOS  
+(quality of service) which allows a router to prioritize the flow of  
+time sensitive information such as VOIP (voice, i.e. telephone, over  
+IP), streaming video and audio, and gaming.
+
+  I recently purchased a wireless router with all of the features  
+mentioned above and more for $30.
+
+&gt;<i>  I seem to remember the hub has one socket that's slightly  
+</I>&gt;<i> different from the others in function, but it didn't come with an  
+</I>&gt;<i> instruction book.
+</I>
+That port is used to hook up one hub/switch to another with out the  
+use of a special cable so as to be able to expand the size of your  
+network.
+
+
+Phil
+--
+&quot;I distrust those people who know so well what God wants them to do  
+because I notice it always coincides with their own desires.&quot; --  
+Susan B. Anthony
+
+
+
+</PRE>
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011890.html">[G4] Router definition and Ethernet Broadband question.
+</A></li>
+	<LI>Next message: <A HREF="011894.html">[G4] Router definition and Ethernet Broadband question.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11893">[ date ]</a>
+              <a href="thread.html#11893">[ thread ]</a>
+              <a href="subject.html#11893">[ subject ]</a>
+              <a href="author.html#11893">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

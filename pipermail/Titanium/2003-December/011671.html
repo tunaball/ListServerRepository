@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] setting the gateway in Jagaur/Network
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20setting%20the%20gateway%20in%20Jagaur/Network&In-Reply-To=list-9752465%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011670.html">
+   <LINK REL="Next"  HREF="011672.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] setting the gateway in Jagaur/Network</H1>
+    <B>Tarik Bilgin</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20setting%20the%20gateway%20in%20Jagaur/Network&In-Reply-To=list-9752465%40mail.ninewire.com"
+       TITLE="[Ti] setting the gateway in Jagaur/Network">tarik at opalblue.com
+       </A><BR>
+    <I>Sat Dec 13 04:50:21 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011670.html">setting the gateway in Jagaur/Network
+</A></li>
+        <LI>Next message: <A HREF="011672.html">[Ti] setting the gateway in Jaguar/Network
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11671">[ date ]</a>
+              <a href="thread.html#11671">[ thread ]</a>
+              <a href="subject.html#11671">[ subject ]</a>
+              <a href="author.html#11671">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 13 Dec 2003, at 08:53, Dr Trevor J. Hutley wrote:
+&gt;<i>
+</I>&gt;<i> There seems no option in the [Jaguar 10.2.8] Network panel to enter 
+</I>&gt;<i> the router ID if the main IP address is assigned by the DHCP server. 
+</I>&gt;<i> Is there a way round this?
+</I>
+I am not sure I understand the exact technical detail of what is going 
+on from what you have given us, but I will make some stabs in the dark:
+
+1) Since POP mail seems to work for manual IP addresses, you could ask 
+the support team to assign your Powerbook a fixed IP address which 
+would then mean you could use it manually instead of with a DHCP 
+server. Have you asked them if the POP server will only respond to 
+certain IP addresses as an authentication measure? If this is true you 
+will need a manual IP address to collect your mail.
+
+2) If they tell you that doesn't matter - make sure that the DNS server 
+IP is the gateway IP address.
+
+a) Once you have done this try the following:
+
+open a terminal and try:
+
+ping nameofmailserver.domain.suffix
+
+ping x.x.x.x (where x.x.x.x is the IP address of the mailserver)
+
+If you can ping in both of these situations (you should see some 
+responses when you do the ping) then try telling mail.app the details 
+of your POP3 account, and compare for any glaring details with the 
+Outlook/PC version.
+
+You will see in the advanced tab there is a port number. This is 99.99% 
+port 110  for most mail servers but your environment may use a 
+different port (I seem to remember SSL authenticating mail servers use 
+220 by default).
+
+Furthermore perhaps your mail server is using SSL to authenticate 
+itself to you and then to encrypt the data (seems unlikely they encrypt 
+in Saudi where there are very strict rules on keeping communications 
+secret) and if this is the case you need to tick the box in 
+Accounts/Advanced and enter the relevant info (you need to speak to 
+your support again to get this).
+
+Sorry this wasn't a simple quick answer but from the info you provided 
+it wasn't clear what the issue is.
+--
+
+Tarik Bilgin
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011670.html">setting the gateway in Jagaur/Network
+</A></li>
+	<LI>Next message: <A HREF="011672.html">[Ti] setting the gateway in Jaguar/Network
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11671">[ date ]</a>
+              <a href="thread.html#11671">[ thread ]</a>
+              <a href="subject.html#11671">[ subject ]</a>
+              <a href="author.html#11671">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

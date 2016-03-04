@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: Pokey LAN transfers (Resolved + a followup)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Pokey%20LAN%20transfers%20%28Resolved%20%2B%20a%20followup%29&In-Reply-To=1264F072-B419-495F-8756-28368434E16E%40west.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="002970.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: Pokey LAN transfers (Resolved + a followup)</H1>
+    <B>Richard Hartman</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Pokey%20LAN%20transfers%20%28Resolved%20%2B%20a%20followup%29&In-Reply-To=1264F072-B419-495F-8756-28368434E16E%40west.net"
+       TITLE="[X-Unix] Re: Pokey LAN transfers (Resolved + a followup)">seasoft at west.net
+       </A><BR>
+    <I>Wed Jan  2 21:43:08 PST 2008</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="002970.html">[X-Unix] Re: Pokey LAN transfers (Resolved + a followup)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2969">[ date ]</a>
+              <a href="thread.html#2969">[ thread ]</a>
+              <a href="subject.html#2969">[ subject ]</a>
+              <a href="author.html#2969">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>For those of you with interest in this goat rope, there has been a  
+development that isn't surprising in hindsight; in fact most of you  
+will simply think &quot;well, duh!&quot; But, for any other noobs struggling to  
+make sense of it all, consider this:
+
+I was having sporadic &amp; bizarre trouble with DVD burns on my &quot;system  
+#2&quot; MacBookPro (see below; running Leopard) and after much  
+troubleshooting, tracked the problem down to some errant system &amp;  
+plist files.
+
+The MBPro Leopard had been a clean install, not an upgrade, but it  
+got a &quot;migration assist&quot; from my existing Tiger system. On the  
+suspicion that the migration might have caused other issues, I erased  
+&amp; re-installed &amp; updated Leopard on the MBPro, AND installed every  
+necessary piece of software from scratch (i.e., NO migration).
+
+Lo and behold, finder copies of the kind that formerly went at 25  
+megabits per second are now shooting across at full speed (100 mbps).
+
+So, although there was no indication in my console or system logs  
+that anything was awry before the reinstall, in fact that pesky  
+migration assistant evidently produced some sort of havoc. The Finder  
+now copies as fast as rsync.
+
+Moral, for me: Never, ever use migration assistant for major system  
+upgrades; it oughta be a law...
+
+Richard
+
+On Dec 27, 2007, at 11:49 AM, Richard Hartman wrote:
+
+&gt;<i> Thanks to Wing Wong, Nick Scalise, David Ledger and Brian Medley  
+</I>&gt;<i> for their thoughtful responses. For some reason, Wing Wong's  
+</I>&gt;<i> detailed response didn't make it to the list and is reproduced  
+</I>&gt;<i> (far) below.
+</I>&gt;<i>
+</I>&gt;<i> Here is a summary of what I learned:
+</I>&gt;<i>
+</I>&gt;<i> The overhead on my setup of mounting a volume on the desktop (via  
+</I>&gt;<i> AFP) is evidently enormous:
+</I>&gt;<i>
+</I>&gt;<i> - Mounting a LAN volume on the local desktop and then using cp on a  
+</I>&gt;<i> large (2GB) file using a terminal window (copying from mounted LAN  
+</I>&gt;<i> volume to internal disk drive)  produced transfer rates of only  
+</I>&gt;<i> about 25 megabits/sec.
+</I>&gt;<i>
+</I>&gt;<i> - Unmounting the LAN volume and instead using scp or rsync (and the  
+</I>&gt;<i> IP address of the source mac) produced the expected transfer rate  
+</I>&gt;<i> of 100 megabits/sec, which was the speed limit expected by the  
+</I>&gt;<i> slowest network element in the loop (the 100 mbps nic on one of the  
+</I>&gt;<i> macs).
+</I>&gt;<i>
+</I>&gt;<i> Regards,
+</I>&gt;<i>
+</I>&gt;<i> Rich
+</I>&gt;<i>
+</I>&gt;&gt;<i> On Dec 26, 2007 1:54 PM, Richard Hartman &lt; <A HREF="../../../mailman/listinfo/x-unix.html">seasoft at west.net</A>&gt; wrote:
+</I>&gt;&gt;<i> I'm looking for guidance on how best to copy large data sets between
+</I>&gt;&gt;<i> macs on a network (Finder, terminal cp, other?).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The setup: Copying from mac #1 (a 2006 iMac running 10.4.11 with
+</I>&gt;&gt;<i> built-in 100bps ethernet) to mac #2 (a recent PBPro running 10.5.1
+</I>&gt;&gt;<i> with built-in Gigabit ethernet). Macs connected by a Gigabit netgear
+</I>&gt;&gt;<i> switch.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I had hoped to get sustained transfers between these two macs of
+</I>&gt;&gt;<i> 50-70 mbps (throttled by the rate-limiting 100 mbps iMac capability).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> However, copying a single 2 GByte file, by mounting the (Tiger) imac
+</I>&gt;&gt;<i> on the (Leopard) MBPro desktop and using terminal &quot;cp&quot; command from
+</I>&gt;&gt;<i> the MBPro terminal, results in a sustained transfer rate of only
+</I>&gt;&gt;<i> about 2.5 mB/sec (25 mbps).
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I></PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="002970.html">[X-Unix] Re: Pokey LAN transfers (Resolved + a followup)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2969">[ date ]</a>
+              <a href="thread.html#2969">[ thread ]</a>
+              <a href="subject.html#2969">[ subject ]</a>
+              <a href="author.html#2969">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

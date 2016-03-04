@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Mac mini as an Internet Gateway.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Mac%20mini%20as%20an%20Internet%20Gateway.&In-Reply-To=F47B0A16-9E4E-4F3B-9D29-DF36DEDE708E%40atvetsystems.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010733.html">
+   <LINK REL="Next"  HREF="010739.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Mac mini as an Internet Gateway.</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Mac%20mini%20as%20an%20Internet%20Gateway.&In-Reply-To=F47B0A16-9E4E-4F3B-9D29-DF36DEDE708E%40atvetsystems.com"
+       TITLE="[X4U] Mac mini as an Internet Gateway.">macmonster at myrealbox.com
+       </A><BR>
+    <I>Wed Dec 14 08:04:06 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010733.html">[X4U] Mac mini as an Internet Gateway.
+</A></li>
+        <LI>Next message: <A HREF="010739.html">[X4U] Mac mini as an Internet Gateway.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10737">[ date ]</a>
+              <a href="thread.html#10737">[ thread ]</a>
+              <a href="subject.html#10737">[ subject ]</a>
+              <a href="author.html#10737">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Dec 14, 2005, at 1:07 pm, Robert Tillyard wrote:
+
+&gt;<i> I'm planning on using Mac OS X Server 10.4 on a Mac mini to handle 
+</I>&gt;<i> e-mail/web proxy for a group of computers (Mac and Windows). Our ISP 
+</I>&gt;<i> gives us a router with a fixed public IP Address.
+</I>&gt;<i>
+</I>&gt;<i> I'm currently using a UNIX box with two network cards to do this, one 
+</I>&gt;<i> card has the public IP address and the other is our internal network.
+</I>&gt;<i>
+</I>&gt;<i> Is it feasible to so this on a Mac mini with a single ethernet port? 
+</I>&gt;<i> I'm wondering if I can use ifconfig to 'alias' the external IP address 
+</I>&gt;<i> to the same ethernet port that has our internal address. I know it 
+</I>&gt;<i> would be better to have two network cards but I don't have a G5 or 
+</I>&gt;<i> XServe spare to do this with.
+</I>
+I'm not sure what you're trying to do here...
+
+If you want to use the Mac Mini as a (NAT) router then it won't work. I 
+looked into this fairly extensively - admittedly under Linux rather 
+than Mac OS X, but it shouldn't make any difference - trying to route 
+through a single physical interface causes packet collisions and 
+slowdowns &amp; all manner of Bad Things. It might work _extremely slowly_ 
+but people who know far more than me report that it's such a terrible 
+idea you shouldn't even try - maybe you can find a USB Ethernet adaptor 
+with Mac drivers instead.
+
+On the other hand, if you just want to have a little web / email server 
+that has two IP addresses then this is no problem at all. You don't 
+even have to use `ifconfig` - just go into System Preferences &gt; Network 
+and choose &quot;Show: Network Port Configurations&quot; from the dropdown (10.3 
+here); add a new configuration called &quot;Built-on Ethernet - wibble&quot; and 
+assign it the port &quot;Built-in Ethernet&quot;. You will find you're able to 
+check both configurations to make them simultaneously active, and can 
+configure each one separately as normal.
+
+Stroller.
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010733.html">[X4U] Mac mini as an Internet Gateway.
+</A></li>
+	<LI>Next message: <A HREF="010739.html">[X4U] Mac mini as an Internet Gateway.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10737">[ date ]</a>
+              <a href="thread.html#10737">[ thread ]</a>
+              <a href="subject.html#10737">[ subject ]</a>
+              <a href="author.html#10737">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] [OT] TCP ACK...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20%5BOT%5D%20TCP%20ACK...&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="002558.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] [OT] TCP ACK...</H1>
+    <B>Simon Forster</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20%5BOT%5D%20TCP%20ACK...&In-Reply-To="
+       TITLE="[X-Unix] [OT] TCP ACK...">simon-lists at ldml.com
+       </A><BR>
+    <I>Thu Feb  2 09:15:32 PST 2006</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="002558.html">[X-Unix] [OT] TCP ACK...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2557">[ date ]</a>
+              <a href="thread.html#2557">[ thread ]</a>
+              <a href="subject.html#2557">[ subject ]</a>
+              <a href="author.html#2557">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Can someone with a better understanding of the TCP networking  
+protocol than me tell me what should happen if machine B is receiving  
+a bunch of data, sending TCP ACKs quite cheerfully and then machine A  
+doesn't receive one of the ACKs? Who should jump in next? My layman  
+view is that machine A should resend its previous bunch of data, to  
+which machine B will again send an ACK - but I may well be wrong. I'm  
+sure that this is documented but I haven't succeeded in finding an  
+appropriate link yet - and I don't want to have to spend days  
+understanding all the minutiae of detail surrounding TCP data flows  
+before I find a suitable answer.
+
+A bit more detail for those interested: We're accepting (on machine  
+B) an HTTP file upload from a telco (sent by machine A) -  
+unfortunately, frequently the uploaded data is truncated  
+(particularly large files during busy times). I've looked at output  
+from tcpdump, and  can quite clearly see the data coming in from  
+machine A and ACKs going out fro machine B after every couple of  
+datagrams (terminology?). On the interrupted feeds, you'll see an ACK  
+go out... and then nothing. After 5 minutes, our server sends a  
+finish every one minute, after which a reset will be returned  
+(sometimes after a few finishes have been sent). What I'd like to  
+know is what should happen if an acknowledgement isn't received by  
+the sending server?
+
+Thanks for shedding any light on this.
+
+ATB
+
+Simon Forster
+_______________________________________________________
+  LDML Ltd, 62 Pall Mall, London, SW1Y 5HZ, UK
+  Tel: +44 (0)845 257 6086   Fax: +44 (0)70 9230 5247
+_______________________________________________________
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="002558.html">[X-Unix] [OT] TCP ACK...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2557">[ date ]</a>
+              <a href="thread.html#2557">[ thread ]</a>
+              <a href="subject.html#2557">[ subject ]</a>
+              <a href="author.html#2557">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

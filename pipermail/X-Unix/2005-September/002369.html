@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Recursive one-line chmod
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Recursive%20one-line%20chmod&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002368.html">
+   <LINK REL="Next"  HREF="002370.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Recursive one-line chmod</H1>
+    <B>Phillip Burk</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Recursive%20one-line%20chmod&In-Reply-To="
+       TITLE="[X-Unix] Recursive one-line chmod">philburk at mac.com
+       </A><BR>
+    <I>Wed Sep 21 09:09:12 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002368.html">[X-Unix] how to determine if FW drive is attached
+</A></li>
+        <LI>Next message: <A HREF="002370.html">[X-Unix] Recursive one-line chmod
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2369">[ date ]</a>
+              <a href="thread.html#2369">[ thread ]</a>
+              <a href="subject.html#2369">[ subject ]</a>
+              <a href="author.html#2369">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Alright, I'm trying to use ARD to issue a one-line command that will  
+step through all the directories in /Users and assign recursive  
+proper ownership.  I don't care if it errors on the Shared folder, I  
+have a login hook to blast that to 777.  I have no clue as to the  
+proper syntax of the thing although if I were using a script to do  
+this I imagine it would use a foreach command to parse the usernames  
+from the individual directories themselves and then assign ownership  
+based on that username.
+
+Kinda like this:
+
+Foreach directory in /Users
+     assign name to $username
+     if $username==&quot;Shared&quot; then next
+     endif
+     chown -R $username:admin /Users/$username
+
+or something like that.  I'm not a programmer, heck, I'm not even a  
+shell-scripter.  I just need a little push with the syntax.  If I  
+have to push and run a script remotely to do this I'll do that.
+
+Thanks.
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002368.html">[X-Unix] how to determine if FW drive is attached
+</A></li>
+	<LI>Next message: <A HREF="002370.html">[X-Unix] Recursive one-line chmod
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2369">[ date ]</a>
+              <a href="thread.html#2369">[ thread ]</a>
+              <a href="subject.html#2369">[ subject ]</a>
+              <a href="author.html#2369">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

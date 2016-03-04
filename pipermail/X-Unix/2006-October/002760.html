@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] need help creating a find/move script
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20need%20help%20creating%20a%20find/move%20script&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002759.html">
+   <LINK REL="Next"  HREF="002761.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] need help creating a find/move script</H1>
+    <B>don</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20need%20help%20creating%20a%20find/move%20script&In-Reply-To="
+       TITLE="[X-Unix] need help creating a find/move script">poolmouse_nyc at mac.com
+       </A><BR>
+    <I>Mon Oct 16 23:57:16 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002759.html">[X-Unix] Terminal Syntax for Writing to /private/etc/authorization
+</A></li>
+        <LI>Next message: <A HREF="002761.html">[X-Unix] Where is lchown?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2760">[ date ]</a>
+              <a href="thread.html#2760">[ thread ]</a>
+              <a href="subject.html#2760">[ subject ]</a>
+              <a href="author.html#2760">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>i was wondering if the unix gurus on this list could help me out with 
+a script i'm trying to create. the script will be used as a &quot;pre&quot; 
+script for bru so only full backup stage files (which are over 150g 
+in size) are upstaged (moved to tape) while incremental stage files 
+are moved to a folder where bru will not try to put them on tape.
+
+1. search /Users/Shared/Staging directory for files that are under 
+100g in size and over 24hrs old
+2. move the files to /Users/Shared/Incrementals
+
+i thought the script should look something like this:
+
+find /Users/Shared/Staging/. -type f -atime +1 -size -100000000k 
+-exec mv {} /Users/Shared/Incrementals/. \;
+
+...how does this look? thanks for sharing your knowledge. :)
+
+don
+-- 
+
+don montalvo, nyc
+curmudgeon at large
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002759.html">[X-Unix] Terminal Syntax for Writing to /private/etc/authorization
+</A></li>
+	<LI>Next message: <A HREF="002761.html">[X-Unix] Where is lchown?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2760">[ date ]</a>
+              <a href="thread.html#2760">[ thread ]</a>
+              <a href="subject.html#2760">[ subject ]</a>
+              <a href="author.html#2760">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

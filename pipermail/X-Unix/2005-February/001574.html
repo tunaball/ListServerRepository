@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: Compile ? 
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Compile%20%3F%20&In-Reply-To=7e44bcaa252affa4e6d46ba8b1e816aa%40Web.DE">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001558.html">
+   <LINK REL="Next"  HREF="001564.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: Compile ? </H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Compile%20%3F%20&In-Reply-To=7e44bcaa252affa4e6d46ba8b1e816aa%40Web.DE"
+       TITLE="[X-Unix] Re: Compile ? ">magill at mcgillsociety.org
+       </A><BR>
+    <I>Fri Feb 25 18:24:33 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001558.html">[X-Unix] Re: Compile ? 
+</A></li>
+        <LI>Next message: <A HREF="001564.html">[X-Unix] Compile ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1574">[ date ]</a>
+              <a href="thread.html#1574">[ thread ]</a>
+              <a href="subject.html#1574">[ subject ]</a>
+              <a href="author.html#1574">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> Am 25.02.2005 um 01:14 schrieb 
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">x-unix-request at listserver.themacintoshguy.com</A>:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Is there a tutorial or doc, that gives step by step,
+</I>&gt;&gt;<i> on how to compile source code, into a app for the macintosh?
+</I>&gt;&gt;<i> also allow to select certain feature of the code to turn on or off.
+</I>
+This is a topic for several basic computer programming courses. There 
+have been many text books written about it as well as any number of 
+O'Reilly books.
+
+Already existing Open Source Unix apps are &quot;straight forward&quot; in that 
+over the years there have been several tools developed to make the 
+process work -- notably Configure and Make.
+As was mentioned -- use Darwin Ports
+       <A HREF="http://darwinports.opendarwin.org/">http://darwinports.opendarwin.org/</A>
+or Fink
+       <A HREF="http://fink.sourceforge.net/">http://fink.sourceforge.net/</A>
+
+Virtually any Open Source app that you want has already been ported to 
+OSX by either or both of theses projects.
+
+Also, as was mentioned earlier each application has unique components 
+(modules) which are compiled individually and then either inserted into 
+libraries or otherwise linked together to form a complete program.
+
+The &quot;Configure&quot; program is run to establish the &quot;environment&quot; necessary 
+for your particular platform and deal with certain options that are 
+common. It will ask you a collection of questions and provide 
+&quot;standard&quot; answers for them which you can take or modify at your whim.
+
+The &quot;make&quot; program runs a set of scripts that contain the rules for 
+compiling &quot;the stuff&quot; -- which module has to be compiled first, what 
+library it needs to be put into, etc. Make also will &quot;frequently&quot; 
+control which portions of the code are compiled or not based on 
+settings made in the &quot;make files,&quot; frequently by Configure.
+
+If none of this makes much sense, any basic O'Reilly text on writing 
+programs in C for Unix will explain everything, in great detail.
+
+Now, however, if you want to make a GUI app for OSX, you have a whole 
+different kettle of fish to fry. Basically you need to become familiar 
+with Apple's &quot;Developer CD&quot; and its environment. &quot;Many&quot; &quot;new&quot; GUI apps 
+for OSX are being developed using Apple's X-Code development 
+environment. Most older GUI apps were developed using Code Warrior. 
+There are other &quot;application development environments&quot; available from 
+third parties which manage all kinds of things for you &quot;automagically.&quot;
+
+... not the least of these things which require management for all apps 
+is the source code itself. &quot;CVS&quot; (Concurrent Versions System) is the 
+current &quot;Source Code Management&quot; system of choice for most Open Source 
+projects. Older code may still use SCS itself or RCS (Revision Control 
+System). (OSX supports rcs as does most of the BSD world, while SCS 
+comes from the System V world.)
+
+Again, if all of this alphabet soup is confusing -- go to O'Reilly 
+(www.oreilly.com) and start with any of the &quot;Nutshell&quot; books on Unix 
+programming.
+[Note that O'Reilly also has a &quot;Mac Dev Center which has lots of 
+tutorials on many things.]
+
+... and did I mention -- all of this can be modified depending upon 
+which language you are using.
+
+Again, your question is basically what keeps Computer Science Freshman 
+occupied all year, and frequently Sophomores as well.
+
+
+T.T.F.N.
+William H. Magill
+# Beige G3 [Rev A motherboard - 300 MHz 768 Meg] OS X 10.2.8
+# Flat-panel iMac (2.1) [800MHz - Super Drive - 768 Meg] OS X 10.3.7
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg] Tru64 5.1a
+# XP1000  [Alpha 21264-3 (EV6) - 256 meg] FreeBSD 5.3
+# XP1000  [Alpha 21264-A (EV 6.7) - 384 meg] FreeBSD 5.3
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+</PRE>
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001558.html">[X-Unix] Re: Compile ? 
+</A></li>
+	<LI>Next message: <A HREF="001564.html">[X-Unix] Compile ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1574">[ date ]</a>
+              <a href="thread.html#1574">[ thread ]</a>
+              <a href="subject.html#1574">[ subject ]</a>
+              <a href="author.html#1574">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

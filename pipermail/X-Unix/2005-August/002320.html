@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] two shell scripts for those behind dialup connections
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20two%20shell%20scripts%20for%20those%20behind%20dialup%20connections&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002319.html">
+   <LINK REL="Next"  HREF="002321.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] two shell scripts for those behind dialup connections</H1>
+    <B>Timothy Luoma</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20two%20shell%20scripts%20for%20those%20behind%20dialup%20connections&In-Reply-To="
+       TITLE="[X-Unix] two shell scripts for those behind dialup connections">lists at tntluoma.com
+       </A><BR>
+    <I>Thu Aug 25 16:14:13 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002319.html">[X-Unix] Unix Mail ?
+</A></li>
+        <LI>Next message: <A HREF="002321.html">[X-Unix] two shell scripts for those behind dialup connections
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2320">[ date ]</a>
+              <a href="thread.html#2320">[ thread ]</a>
+              <a href="subject.html#2320">[ subject ]</a>
+              <a href="author.html#2320">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+I often find that I want to download a large PDF that isn't  
+compressed.  (I don't know why they don't at least .zip them)
+
+Since I am behind a slow dialup connection, so it's worth a little  
+extra effort to make the download faster.
+
+I wrote two little scripts.  The first one runs on the local  
+computer, and executes the second one (gaz) on a server where I have  
+a shell account (using ssh)
+
+'gaz' runs wget, retrieves the file, then runs bzip2 on it.
+
+The initial script then runs 'scp' to copy the file from the server  
+to the local HD, and then runs bunzip2 and opens the file
+
+So all I do is run the first script (which I called 'sif' [save it  
+fast]) like this:
+
+     sif <A HREF="http://www.example.com/pub/docs/whatever.pdf">http://www.example.com/pub/docs/whatever.pdf</A>
+
+
+This works best if you:
+
+     a) have wget installed on the server :-)
+
+     b) have ssh setup to not require passwords, although that's not  
+strictly necessary
+
+here is 'sif' followed by 'gaz' (get and zip... although I suppose it  
+should have been gab for get and bzip2... whatever happened to bzip1  
+btw?  I'm always trying to 'bzip' and 'bunzip' files)
+
+
+
+#!/bin/sh
+
+REMOTE_HOST=server.example.com
+
+REMOTE_HOST_PORT=22
+
+REMOTE_DIR=/backups
+
+LOCAL_DIR=$HOME/Downloads/
+
+
+SHORTNAME=`basename $1`
+
+ssh -p $REMOTE_HOST_PORT $REMOTE_HOST &quot;gaz $@&quot;
+
+scp -P $REMOTE_HOST_PORT $REMOTE_HOST:$REMOTE_DIR/$SHORTNAME.bz2  
+$LOCAL_DIR
+
+bunzip2 $LOCAL_DIR/$SHORTNAME.bz2
+
+open $LOCAL_DIR/$SHORTNAME
+
+exit 0
+# END OF FIRST FILE (sif)
+
+
+
+#!/bin/sh
+
+# this is 'gaz' on 'server.example.com'
+
+SHORTNAME=`basename $1`
+
+# make this the same as $REMOTE_DIR above
+SAVE_TO_DIR=/backups
+
+cd $SAVE_TO_DIR &amp;&amp; \
+wget --no-directories &quot;$*&quot; &amp;&amp; \
+bzip2 -9v &quot;$SHORTNAME&quot; &amp;&amp; \
+echo &quot;Done $SHORTNAME.bz2&quot;
+
+exit 0
+# END OF SECOND FILE (gaz)
+
+
+</PRE>
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002319.html">[X-Unix] Unix Mail ?
+</A></li>
+	<LI>Next message: <A HREF="002321.html">[X-Unix] two shell scripts for those behind dialup connections
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2320">[ date ]</a>
+              <a href="thread.html#2320">[ thread ]</a>
+              <a href="subject.html#2320">[ subject ]</a>
+              <a href="author.html#2320">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

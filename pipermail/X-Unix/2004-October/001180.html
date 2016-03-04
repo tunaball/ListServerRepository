@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Grep and backreferences with BBEdit
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Grep%20and%20backreferences%20with%20BBEdit&In-Reply-To=5234264.1097604745923.JavaMail.nickscalise%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001179.html">
+   <LINK REL="Next"  HREF="001181.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Grep and backreferences with BBEdit</H1>
+    <B>James Avgeris</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Grep%20and%20backreferences%20with%20BBEdit&In-Reply-To=5234264.1097604745923.JavaMail.nickscalise%40mac.com"
+       TITLE="[X-Unix] Grep and backreferences with BBEdit">jima at itempo.com
+       </A><BR>
+    <I>Tue Oct 12 11:48:26 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001179.html">[X-Unix] Grep and backreferences with BBEdit
+</A></li>
+        <LI>Next message: <A HREF="001181.html">[X-Unix] Grep and backreferences with BBEdit
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1180">[ date ]</a>
+              <a href="thread.html#1180">[ thread ]</a>
+              <a href="subject.html#1180">[ subject ]</a>
+              <a href="author.html#1180">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Oct 12, 2004, at 11:12 AM, Nick Scalise wrote:
+
+&gt;<i> Hello,
+</I>&gt;<i>
+</I>&gt;<i> I do not have a strictly unix question. I am very weak at grep and 
+</I>&gt;<i> could use some rudimentary help.
+</I>&gt;<i>
+</I>&gt;<i> In BBEdit 6.5, I am wanting to do a search and replace for all 
+</I>&gt;<i> occurances of &lt;a href=&quot;name.jpg&quot;&gt;, where 'name' is the variable. I 
+</I>&gt;<i> want to add a images/ to the beginning of the 'name' variable.
+</I>&gt;<i>
+</I>&gt;<i> So, I think I have the first part figured out, I find &lt;a 
+</I>&gt;<i> href=&quot;[a-zA-Z0-9+]+.jpg&quot;&gt; using grep in BBEdit's find dialog, this 
+</I>&gt;<i> seems to produce the desired result. Please let me know if there is a 
+</I>&gt;<i> better way.
+</I>&gt;<i>
+</I>&gt;<i> Where I am lost is the backreference part. What is the pattern I would 
+</I>&gt;<i> add in the replace dialog that would add 'images/'  so that the 
+</I>&gt;<i> original &lt;a href='name.jpg'&gt; would end up &lt;a href=&quot;images/name.jpg&quot;&gt;
+</I>&gt;<i>
+</I>&gt;<i> TIA
+</I>&gt;<i> --
+</I>&gt;<i> Nick Scalise
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">nickscalise at mac.com</A>
+</I>
+Nick, here's a GREP pattern you could use in BBEdit:
+
+(&lt;a href=&quot;)([^&quot;]+&quot;&gt;)
+
+Then in the replace dialog it would be:
+
+\1images/\2
+
+the \1 represents the match between the first parentheses, and the \2 
+is the second. The [^&quot;]+ matches anything that is not a double quote, 
+which MAY not have made a difference in this case but is better 
+(assuming you can rely on the quotes being there) because GREP is 
+greedy and will match as it can so you need to be restrictive.
+
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001179.html">[X-Unix] Grep and backreferences with BBEdit
+</A></li>
+	<LI>Next message: <A HREF="001181.html">[X-Unix] Grep and backreferences with BBEdit
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1180">[ date ]</a>
+              <a href="thread.html#1180">[ thread ]</a>
+              <a href="subject.html#1180">[ subject ]</a>
+              <a href="author.html#1180">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

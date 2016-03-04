@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Turn on file sharing from the Terminal?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Turn%20on%20file%20sharing%20from%20the%20Terminal%3F&In-Reply-To=2038fbcdad92e0b289f2e21b78edeb0e%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004625.html">
+   <LINK REL="Next"  HREF="004632.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Turn on file sharing from the Terminal?</H1>
+    <B>Ben Gold</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Turn%20on%20file%20sharing%20from%20the%20Terminal%3F&In-Reply-To=2038fbcdad92e0b289f2e21b78edeb0e%40mac.com"
+       TITLE="[X4U] Turn on file sharing from the Terminal?">bgold at acedsl.com
+       </A><BR>
+    <I>Wed Apr 13 20:13:50 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004625.html">[X4U] Turn on file sharing from the Terminal?
+</A></li>
+        <LI>Next message: <A HREF="004632.html">[X4U] Turn on file sharing from the Terminal?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4628">[ date ]</a>
+              <a href="thread.html#4628">[ thread ]</a>
+              <a href="subject.html#4628">[ subject ]</a>
+              <a href="author.html#4628">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Sorry, I missed the beginning of this thread.
+
+typing &quot;sudo AppleFileServer&quot; then your password, should turn on 
+file-sharing.
+
+I'm not positive if it will work if you've never set sharing up before 
+&#8211;&#160;I do remember that I had trouble with it once.  But I just tried it 
+out via ssh on my G4 and it worked great.
+
+I believe I once found some options to turn sharing on and off via this 
+command, but I've been unable to find any info recently.  If anyone 
+knows more about this command, please let us know.
+
+-Ben
+
+On Apr 13, 2005, at 9:47 PM, Peter Krug wrote:
+
+&gt;<i> Sooo....  If I type the lines below in the terminal, it will turn on 
+</I>&gt;<i> file sharing?  Keep in mind that I cannot see what I am typing.  If I 
+</I>&gt;<i> screw this up, will it completely hose the OS?
+</I>&gt;<i>
+</I>&gt;<i> What if I copy a com.apple.sharing.firewall.plist from a computer that 
+</I>&gt;<i> does have file sharing turned on into the other computer's 
+</I>&gt;<i> /Library/Preferences (via target mode).  It will be difficult to get 
+</I>&gt;<i> the file into the proper place on the damaged computer since I don't 
+</I>&gt;<i> even know if it will recognize another computer in target mode, not to 
+</I>&gt;<i> mention the authentication issues getting /Library access on the 
+</I>&gt;<i> damaged computer.  It's not fun running blind...
+</I>&gt;<i>
+</I>&gt;<i> Thanks,
+</I>&gt;<i>
+</I>&gt;<i> Peter
+</I>&gt;<i>
+</I>&gt;<i> On Apr 13, 2005, at 6:13 PM, Stroller wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Apr 13, 2005, at 10:01 pm, Peter Krug wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I can open the terminal (At least I'm pretty sure I can).  Is there 
+</I>&gt;&gt;&gt;<i> a simple command that will turn on filesharing from the terminal?  I 
+</I>&gt;&gt;&gt;<i> can't use the Sharing pref pane since I cannot see where the cursor 
+</I>&gt;&gt;&gt;<i> is.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Take a look at /Library/Preferences/com.apple.sharing.firewall.plist 
+</I>&gt;&gt;<i> &amp; `man defaults`.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On my system ftp is turned  on right now, bit not file sharing:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>                 ...
+</I>&gt;&gt;<i>                 &lt;key&gt;FTP Access&lt;/key&gt;
+</I>&gt;&gt;<i>                 &lt;dict&gt;
+</I>&gt;&gt;<i>                         &lt;key&gt;editable&lt;/key&gt;
+</I>&gt;&gt;<i>                         &lt;integer&gt;0&lt;/integer&gt;
+</I>&gt;&gt;<i>                         &lt;key&gt;enable&lt;/key&gt;
+</I>&gt;&gt;<i>                         &lt;integer&gt;1&lt;/integer&gt;
+</I>&gt;&gt;<i>                         &lt;key&gt;port&lt;/key&gt;
+</I>&gt;&gt;<i>                         &lt;array&gt;
+</I>&gt;&gt;<i>                                 &lt;string&gt;20-21&lt;/string&gt;
+</I>&gt;&gt;<i>                                 &lt;string&gt;*&lt;/string&gt;
+</I>&gt;&gt;<i>                         &lt;/array&gt;
+</I>&gt;&gt;<i>                         &lt;key&gt;row&lt;/key&gt;
+</I>&gt;&gt;<i>                         &lt;integer&gt;4&lt;/integer&gt;
+</I>&gt;&gt;<i>                 &lt;/dict&gt;
+</I>&gt;&gt;<i>                 &lt;key&gt;Personal File Sharing&lt;/key&gt;
+</I>&gt;&gt;<i>                 &lt;dict&gt;
+</I>&gt;&gt;<i>                         &lt;key&gt;editable&lt;/key&gt;
+</I>&gt;&gt;<i>                         &lt;integer&gt;0&lt;/integer&gt;
+</I>&gt;&gt;<i>                         &lt;key&gt;enable&lt;/key&gt;
+</I>&gt;&gt;<i>                         &lt;integer&gt;0&lt;/integer&gt;
+</I>&gt;&gt;<i>                         &lt;key&gt;port&lt;/key&gt;
+</I>&gt;&gt;<i>                         &lt;array&gt;
+</I>&gt;&gt;<i>                                 &lt;string&gt;548&lt;/string&gt;
+</I>&gt;&gt;<i>                                 &lt;string&gt;427&lt;/string&gt;
+</I>&gt;&gt;<i>                         &lt;/array&gt;
+</I>&gt;&gt;<i>                         &lt;key&gt;row&lt;/key&gt;
+</I>&gt;&gt;<i>                         &lt;integer&gt;0&lt;/integer&gt;
+</I>&gt;&gt;<i>                 &lt;/dict&gt;
+</I>&gt;&gt;<i>                 ...
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X4U mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">X4U at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">http://listserver.themacintoshguy.com/mailman/listinfo/x4u</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random 
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004625.html">[X4U] Turn on file sharing from the Terminal?
+</A></li>
+	<LI>Next message: <A HREF="004632.html">[X4U] Turn on file sharing from the Terminal?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4628">[ date ]</a>
+              <a href="thread.html#4628">[ thread ]</a>
+              <a href="subject.html#4628">[ subject ]</a>
+              <a href="author.html#4628">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

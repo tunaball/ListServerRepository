@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] G4/667 upgrade: Sony 215A1 CDRW 48x24x48x &amp; Appleburning 
+ software
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20G4/667%20upgrade%3A%20Sony%20215A1%20CDRW%2048x24x48x%20%26%20Appleburning%20%0A%20software&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002362.html">
+   <LINK REL="Next"  HREF="002364.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] G4/667 upgrade: Sony 215A1 CDRW 48x24x48x &amp; Appleburning 
+ software</H1>
+    <B>B Yen</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20G4/667%20upgrade%3A%20Sony%20215A1%20CDRW%2048x24x48x%20%26%20Appleburning%20%0A%20software&In-Reply-To="
+       TITLE="[G4] G4/667 upgrade: Sony 215A1 CDRW 48x24x48x &amp; Appleburning 
+ software">byen00 at earthlink.net
+       </A><BR>
+    <I>Thu May  1 22:53:24 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002362.html">[G4] cd rom drive
+</A></li>
+        <LI>Next message: <A HREF="002364.html">OT - Problem with Sound Prefs/Pro Speakers
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2363">[ date ]</a>
+              <a href="thread.html#2363">[ thread ]</a>
+              <a href="subject.html#2363">[ subject ]</a>
+              <a href="author.html#2363">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+
+<A HREF="../../../mailman/listinfo/g4.html">Tracker at aol.com</A> wrote:
+
+&gt;<i> ASP is telling you that you don't have the machine that is really there. The
+</I>&gt;<i> software is not recognizing the newer model. It is entirely probable that
+</I>&gt;<i> your particular model is not actually supported yet by the Apple burning
+</I>&gt;<i> software.
+</I>&gt;<i>
+</I>&gt;<i> The thing to remember with any third party device is that the driver software
+</I>&gt;<i> for it may not be compatible with a Mac, or it may not be available yet.
+</I>&gt;<i>
+</I>&gt;<i> I had to wait about 4 months before my Sony CD/RW-145s was finally supported
+</I>&gt;<i> by the OS upgrade. I could use it with Toast to burn, but it wouldn't work as
+</I>&gt;<i> a boot drive and wasn't able to burn with Apple software until the driver was
+</I>&gt;<i> updated.
+</I>&gt;<i>
+</I>&gt;<i> Unless having the ability to boot from the drive is absolute, I suggest
+</I>&gt;<i> getting the latest Toast version to burn with. IMHO, Toast is a whale of a
+</I>&gt;<i> lot better than the Apple burner. I got around the boot problem by installing
+</I>&gt;<i> the original 24x CD in an external case and putting it on the shelf until I
+</I>&gt;<i> had a CD boot situation.
+</I>
+I posted my problem at xlr8yourmac.com G4 forum:
+
+<A HREF="http://bbs.xlr8yourmac.com/ubb/Forum27/HTML/000301.html">http://bbs.xlr8yourmac.com/ubb/Forum27/HTML/000301.html</A>
+
+BDAqua sent me a copy of Carbon HexEdit, &amp; in the SonyCDR file
+[ in Extensions/Authoring Support Files ]
+
+I edited out CRX140E..made it CRX215E, see below. I almost got the thing working:
+
+- it burned the track
+- &quot;track closing&quot;: did that
+- &quot;session closing&quot;.. GOT HUNG UP (I waited a full 15 minutes)
+
+I had to Force Quit out of BurnDisc to get out of it (clicking &quot;stop&quot; doesn't
+work).
+When I re-booted, the disk had no entries &amp; 0K available. I wasted 3 disks, trying
+to get things working. (I even tried editing CRX140E into CRX215E1, but that didn't
+
+work).
+
+I will note that re-booting doesn't seem to be necessary, you just change SonyCDR &amp;
+
+it seems to recognize the changes.
+
+I'm out of ideas, any suggestions?
+
+Here's the string I'm playing with
+[ note that the only thing I've changed is the &quot;CRX215ECD-RW&quot;, which used to be
+&quot;CRX140ECD-RW&quot; ]
+
+SONYCD-RW CRX215ECD-RW CRX700ECD-RW CRX155ECD-RW CRX170ECD-RW CRX800ECD-RW
+CRX100CD-RW CRX120CD-RW CRX140CD-RW CRX145CD-RW CRX160CD-RW CRX700CD-RW CRX75LCD-RW
+CRX10UCD-RW CRX155CD-RW CRX170CD-RW
+CRX800cd-rdvd-rsonyBlankProgressCloseSessionWriteBlocksSetWriteParamsPageSynchronizeCacheSDAPExecuteCDBSDAPDispatchDriveReadyReadDiscInfoPrivateInterfaceLib
+
+----
+
+I noticed there is &quot;CloseSessionWriteBlocks&quot;. Is the whole hack a waste-of-time, if
+something more is necessary?
+
+
+
+
+&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> G4ist, a listserv for discussion of everything G4.
+</I>&gt;<i> FAQ at &lt;<A HREF="../../../../www.themacintoshguy.com/lists/G4.html">http://www.themacintoshguy.com/lists/G4.html</A>&gt;.
+</I>&gt;<i> Send a message to &lt;<A HREF="../../../mailman/listinfo/g4.html">G4-DIGEST at themacintoshguy.com</A>&gt; to switch to the digest.
+</I>&gt;<i>
+</I>&gt;<i> XRouter | Share your DSL or cable modem between multiple computers!
+</I>&gt;<i> Dr. Bott | Now $139.99      &lt;<A HREF="http://www.drbott.com/prod/xrouter.html">http://www.drbott.com/prod/xrouter.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> Dr. Bott LLC   4-port USB Hub in translucent Graphite!
+</I>&gt;<i> Dr. Bott LLC   &lt;<A HREF="http://www.drbott.com/prod/ghub.html">http://www.drbott.com/prod/ghub.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> Small Dog Electronics   <A HREF="http://www.smalldog.com">http://www.smalldog.com</A>  | Canon Digital Cameras |
+</I>&gt;<i> --Quicksilver &amp; refurbished G4's arriving daily! |   and Camcorders!!    |
+</I>&gt;<i>
+</I>&gt;<i> MacResQ Specials: LaCie SCSI CDR From $99! PowerBook 3400/200 Only $879!
+</I>&gt;<i> Norton AntiVirus 6 Only $19! We Stock PARTS! &lt;<A HREF="http://www.macresq.com">http://www.macresq.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s - <A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002362.html">[G4] cd rom drive
+</A></li>
+	<LI>Next message: <A HREF="002364.html">OT - Problem with Sound Prefs/Pro Speakers
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2363">[ date ]</a>
+              <a href="thread.html#2363">[ thread ]</a>
+              <a href="subject.html#2363">[ subject ]</a>
+              <a href="author.html#2363">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+</body></html>

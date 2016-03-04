@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] rsync &amp; ssh [DRIFT]
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20rsync%20%26%20ssh%20%5BDRIFT%5D&In-Reply-To=list-14623996%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001057.html">
+   <LINK REL="Next"  HREF="001059.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] rsync &amp; ssh [DRIFT]</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20rsync%20%26%20ssh%20%5BDRIFT%5D&In-Reply-To=list-14623996%40mail.ninewire.com"
+       TITLE="[X-Unix] rsync &amp; ssh [DRIFT]">magill at mcgillsociety.org
+       </A><BR>
+    <I>Fri Jul  9 13:58:58 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001057.html">[X-Unix] rsync &amp; ssh [DRIFT]
+</A></li>
+        <LI>Next message: <A HREF="001059.html">[X-Unix] rsync &amp; ssh [DRIFT]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1058">[ date ]</a>
+              <a href="thread.html#1058">[ thread ]</a>
+              <a href="subject.html#1058">[ subject ]</a>
+              <a href="author.html#1058">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 09 Jul, 2004, at 15:30, Brian Medley wrote:
+&gt;<i> On Fri, Jul 09, 2004 at 12:44:27PM +0100, David Ledger wrote:
+</I>&gt;&gt;&gt;<i> It would not have to break every shell script.  For example,
+</I>&gt;&gt;&gt;<i> the behavior of some versions Solaris depends on your path.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The behavior of _all_ versions of Unix depends on your PATH.
+</I>&gt;<i>
+</I>&gt;<i> True, but I am not aware (but I don't have significant
+</I>&gt;<i> experience) with many Unix variants that contain multiple
+</I>&gt;<i> versions of the same utility.  Solaris had a directory tree
+</I>&gt;<i> called xpg4 (iirc) - something like /usr/xpg4/bin,
+</I>&gt;<i> /usr/xpg4/sbin, etc.  /usr/bin/ps was the old compatible ps and
+</I>&gt;<i> /usr/xpg4/bin/ps was the &quot;new&quot; open group standards compliant ps.
+</I>&gt;<i>
+</I>&gt;<i> This is what I was getting at.
+</I>
+But the &quot;path&quot; concept is the very core of Unix. It has been since the 
+beginning. If you don't understand the implications of the &quot;path&quot; then 
+you don't understand Unix.
+
+UNIX has two primary &quot;roots&quot; -- BSD and SystemV. BSD Unix meetings 
+(Usenix) were long hair and sandals; System V meetings (Unisphere) were 
+suits. Or put another way BSD Unix had its roots firmly in the academic 
+world, System V was a product used for &quot;real world&quot;, i.e. production 
+use. For many years, SystemV had something like 90% market share. (In 
+the form of  &quot;black box&quot; systems from SCO!)
+
+Each of those &quot;universes&quot; had duplicates of the same commands, but they 
+behaved differently, different output, different arguments, AND same 
+arguments, different output!
+
+As part of the constant efforts to gain &quot;market share,&quot; (new clients) 
+ALL Commercial Unix variants implemented a &quot;universe&quot; concept so that 
+one could switch from one style to another.  By the early 90s every 
+&quot;unix&quot; out there had two directory trees for the primary &quot;command&quot; 
+structure. The ability to do this is one of the strengths of Unix.
+
+As Unix evolved, compliance with things like the SVID test (for System 
+V compatibility) and the assorted POSIX and UNIX(tm) branding test 
+suites have homogenized things to the point where today, one never 
+finds a real BSD or a real SystemV environment. Then GNU and Linux got 
+into the mix and generated another batch of variants... now the same 
+program would take either arguments.
+
+xpg4 (1992) is one of the Unix standards. Solaris is itself a 
+bastardization of Unix. The old Sun OS was predominantly BSD Unix. Sun 
+worked a deal with ATT(or was it IBM) to generate a new Operating 
+system -- the product was called Solaris, and was basically a SystemV 
+Unix. But Sun was confronted with a major conversion problem -- it's 
+existing customer base was BSD folk, but it was trying to lure new 
+customers who were System V folks. (DEC and IBM did the same thing.... 
+And remember, Unix was invented on a PDP! Sun did not exist as a 
+company for another 10 years! Bill Joy was still in grade school!)
+
+OSF was much the same thing - Digital was the only vendor who ever 
+implemented OSF/1 -- every other vendor made their existing Proprietary 
+versions of Unix &quot;compliant&quot; with the OSF/1 standard. How? by modifying 
+the path command as much as anything.
+
+The we get to Linux... there is NOTHING common about Linux. Try running 
+Alpha Linux sometime, or even Linux on the PowerPC. Those variants are 
+quite different from Wintel Linux by Red Hat  (which is what everybody 
+REALLY means when they say Linux.)
+
+Darwin (i.e. OSX) happens to derive from FreeBSD, so it's dominant look 
+and feel is BSD Unix. The BSD Unix look and feel is quite different 
+than Linux or System V.  Many, if not most, of the differences are 
+proprietary. That is the main reason why neither GNU nor Linux conform 
+to the Unix standards. [The discussion of how &quot;Standards&quot; can be 
+proprietary is a separate can of worms.]
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001057.html">[X-Unix] rsync &amp; ssh [DRIFT]
+</A></li>
+	<LI>Next message: <A HREF="001059.html">[X-Unix] rsync &amp; ssh [DRIFT]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1058">[ date ]</a>
+              <a href="thread.html#1058">[ thread ]</a>
+              <a href="subject.html#1058">[ subject ]</a>
+              <a href="author.html#1058">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

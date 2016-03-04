@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Where to put my personal Perl Modules?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Where%20to%20put%20my%20personal%20Perl%20Modules%3F&In-Reply-To=C0D7EE44.23A52%25jerry%40ieee.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002687.html">
+   <LINK REL="Next"  HREF="002691.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Where to put my personal Perl Modules?</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Where%20to%20put%20my%20personal%20Perl%20Modules%3F&In-Reply-To=C0D7EE44.23A52%25jerry%40ieee.org"
+       TITLE="[X-Unix] Where to put my personal Perl Modules?">ecrist at secure-computing.net
+       </A><BR>
+    <I>Mon Jul 10 14:22:49 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002687.html">[X-Unix] Where to put my personal Perl Modules?
+</A></li>
+        <LI>Next message: <A HREF="002691.html">[X-Unix] How to determine which network component is failing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2688">[ date ]</a>
+              <a href="thread.html#2688">[ thread ]</a>
+              <a href="subject.html#2688">[ subject ]</a>
+              <a href="author.html#2688">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+On Jul 10, 2006, at 1:45 PM, Jerry Krinock wrote:
+
+&gt;<i> I have written several perl scripts that I keep in ~/bin.  Also, ~/ 
+</I>&gt;<i> bin is in
+</I>&gt;<i> my bash PATH, so I can access them from any current directory.
+</I>&gt;<i>
+</I>&gt;<i> But today I wrote a perl Module and added it as a subfolder to ~/ 
+</I>&gt;<i> bin.  If I
+</I>&gt;<i> cd to ~/bin and run a perl script which &quot;uses&quot; the Module from  
+</I>&gt;<i> there, it
+</I>&gt;<i> works fine.  But if I'm somewhere else and type the command,  
+</I>&gt;<i> relying on my
+</I>&gt;<i> bash PATH to find it, the perl compiler cannot find my module.   
+</I>&gt;<i> It's looking
+</I>&gt;<i> in all these system paths:
+</I>&gt;<i>
+</I>[snip]
+
+&gt;<i> I hate installing things outside my home folder.  Is there a robust,
+</I>&gt;<i> non-kludgey solution to this?
+</I>
+
+Try defining the entire path to the module you're trying to use.   
+Simply make reference to $HOME/bin/ as a relative path, even set it  
+as some sort of variable if you'd prefer, so that your script can  
+correctly find the module you need.
+
+- -----
+Eric F Crist
+Secure Computing Networks
+<A HREF="http://www.secure-computing.net">http://www.secure-computing.net</A>
+
+
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.3 (Darwin)
+
+iEYEARECAAYFAkSyxSoACgkQUVeKtG0kPmphjQCgl+DarzLD3C0WAUcq91WdDWgN
+9T0An2DTk8r8hmoxprp0msBEGbI+X0tz
+=RNRN
+-----END PGP SIGNATURE-----
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002687.html">[X-Unix] Where to put my personal Perl Modules?
+</A></li>
+	<LI>Next message: <A HREF="002691.html">[X-Unix] How to determine which network component is failing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2688">[ date ]</a>
+              <a href="thread.html#2688">[ thread ]</a>
+              <a href="subject.html#2688">[ subject ]</a>
+              <a href="author.html#2688">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

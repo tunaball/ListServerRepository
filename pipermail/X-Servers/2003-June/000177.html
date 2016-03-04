@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Servers] Server stalls regularly
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20Server%20stalls%20regularly&In-Reply-To=list-6940710%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000176.html">
+   <LINK REL="Next"  HREF="000178.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Servers] Server stalls regularly</H1>
+    <B>Stephen R. Smith</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20Server%20stalls%20regularly&In-Reply-To=list-6940710%40mail.ninewire.com"
+       TITLE="[X Servers] Server stalls regularly">ssmith at alignsoft.com
+       </A><BR>
+    <I>Mon Jun 30 07:27:01 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000176.html">Server stalls regularly
+</A></li>
+        <LI>Next message: <A HREF="000178.html">XServe RAID 1 (mirroring)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#177">[ date ]</a>
+              <a href="thread.html#177">[ thread ]</a>
+              <a href="subject.html#177">[ subject ]</a>
+              <a href="author.html#177">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Jan,
+
+Fire up the server monitor and check the error logs, that will likely give
+you a stream of time stamped instances that you can troubleshoot.
+
+I've seem this when the server is configured to get it's directory
+information from a NetInfo parent, and the parent either doesn't exist (it's
+a single server network) or has disappeared.  If you ran the Open Directory
+Assistant (which runs after the initial OSX Server Wizard) and selected
+'Gets directory information from a parent server' or something to that
+effect, then that's likely your problem.  You want to set it to provides
+info to other servers if you need to login with Windows machines, or stores
+and used local info if your server is self contained (not part of a larger
+distributed NetInfo network) and doesn't need to authenticate Windows users
+(isn't going to support Windows clients).  You can run the Wizard again,
+it's in Applications:Utilities:Open Directory Assistant - you'll need to
+reboot in order to affect the changes.
+
+Cheers,
+:<i>Steve
+</I>
+
+-- 
+Stephen R. Smith                Tel: 905.633.9178
+Senior Developer                Fax: 905.634.1064
+Align Software Inc.             Email: <A HREF="../../../mailman/listinfo/x-servers.html">ssmith at alignsoft.com</A>
+WWW: <A HREF="http://www.alignsoft.com/">http://www.alignsoft.com/</A>
+-----------------------------------------------------------
+     &quot;bringing order to chaos in the information age&quot;
+-----------------------------------------------------------
+
+
+&gt;<i> From: Jan Henning &lt;<A HREF="../../../mailman/listinfo/x-servers.html">henning at r-l.de</A>&gt;
+</I>&gt;<i> Reply-To: &quot;Mac OS X Servers&quot; &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Date: Sun, 29 Jun 2003 14:04:22 +0200
+</I>&gt;<i> To: &quot;Mac OS X Servers&quot; &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Subject: [X Servers] Server stalls regularly
+</I>&gt;<i> 
+</I>&gt;<i> Since installing Mac OS X server; I have a peculiar stalling problem
+</I>&gt;<i> that I cannot find the reason for:
+</I>&gt;<i> 
+</I>&gt;<i> Among other things, I have the iTunes songs on the server. Every 15 to
+</I>&gt;<i> 20 minutes, playing stops for half a minute or so. iTunes is not the
+</I>&gt;<i> only affected application; the Finder may also display the spinning
+</I>&gt;<i> beach ball during this time.
+</I>&gt;<i> 
+</I>&gt;<i> The strange thing is that I used to have installed the normal Mac OS X
+</I>&gt;<i> on the exact same computer without any problems at all. It is strange
+</I>&gt;<i> as well that the server responds normally to pings during its stalls.
+</I>&gt;<i> 
+</I>&gt;<i> Can anybody shed some light on what might cause this problem?
+</I>&gt;<i> 
+</I>&gt;<i> Details follow:
+</I>&gt;<i> 
+</I>&gt;<i> Server setup:
+</I>&gt;<i> - Blue-and-white G3, 448 MB RAM, 80 + 40 GB disks
+</I>&gt;<i> - Mac OS X Server 10.2.6
+</I>&gt;<i> - Servers running: AFP (&quot;Apple&quot;), FTP. All other servers available in
+</I>&gt;<i> Server Settings are off.
+</I>&gt;<i> - No other software running on the server computer
+</I>&gt;<i> 
+</I>&gt;<i> Clients
+</I>&gt;<i> - Power Mac G4 and PowerBook G3; no recongnizable difference regarding
+</I>&gt;<i> the stalling problem
+</I>&gt;<i> 
+</I>&gt;<i> Network
+</I>&gt;<i> - Twisted pair Ethernet
+</I>&gt;<i> - 100 Mbit switch
+</I>&gt;<i> - Internet connection through an ADSL router (Internet traffic does not
+</I>&gt;<i> seem to be impaired during the stalls)
+</I>&gt;<i> - one to three active computers (it does not seem to make a difference
+</I>&gt;<i> how many of them are switched on or what they are doing)
+</I>&gt;<i> 
+</I>&gt;<i> Thanks in advance
+</I>&gt;<i> Jan
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> --------------------------------------------------------------------
+</I>&gt;<i> Jan Henning
+</I>&gt;<i> ROSEMANN &amp; LAURIDSEN GMBH
+</I>&gt;<i> Am Schlossberg 14, D-82547 Eurasburg, Germany
+</I>&gt;<i> 
+</I>&gt;<i> Phone: +49 700 0200 0700, Fax: +49 8179 9307-12
+</I>&gt;<i> E-Mail: <A HREF="../../../mailman/listinfo/x-servers.html">henning at r-l.de</A>, Web: www.r-l.de
+</I>&gt;<i> --------------------------------------------------------------------
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i> 
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> 
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your Mac ISP
+</I>&gt;<i> Serious Mac Internet Solutions From NineWire!   <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i> 
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older Mac!
+</I>&gt;<i> Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i> 
+</I>&gt;<i>  Support   | Support this list by clicking here before you buy!
+</I>&gt;<i> this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000176.html">Server stalls regularly
+</A></li>
+	<LI>Next message: <A HREF="000178.html">XServe RAID 1 (mirroring)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#177">[ date ]</a>
+              <a href="thread.html#177">[ thread ]</a>
+              <a href="subject.html#177">[ subject ]</a>
+              <a href="author.html#177">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

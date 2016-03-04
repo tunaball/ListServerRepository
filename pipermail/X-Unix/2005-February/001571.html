@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] cp question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20cp%20question&In-Reply-To=p05100309be4420c33bd1%40%5B192.168.1.14%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001556.html">
+   <LINK REL="Next"  HREF="001555.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] cp question</H1>
+    <B>Russell McGaha</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20cp%20question&In-Reply-To=p05100309be4420c33bd1%40%5B192.168.1.14%5D"
+       TITLE="[X-Unix] cp question">RussellMcGaha at direcway.com
+       </A><BR>
+    <I>Fri Feb 25 07:55:03 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001556.html">[X-Unix] cp question
+</A></li>
+        <LI>Next message: <A HREF="001555.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1571">[ date ]</a>
+              <a href="thread.html#1571">[ thread ]</a>
+              <a href="subject.html#1571">[ subject ]</a>
+              <a href="author.html#1571">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Doug;
+	Yes I use CpMac [see below]; could you annotate your script a little, 
+I don't really understand what your doing nor how your doing it [at 
+best, I'm still learning shell scripting] I've included what I'm 
+currently using below.  It is the beginning of an self correcting 
+series of scripts that will run on my [the one I administer] FileMaker 
+Pro Server 5.5 Mac.
+	ANY help, insight, or suggestions are welcome!
+Russell
+currently working script below
+
+#!/bin/tcsh
+
+set DayStr=`date +%A`;
+set PathToFolder=&quot;/Volumes/Backup-HD/DailyBackups/&quot;
+
+switch ($DayStr)
+     case &quot;Monday&quot;:
+set folder=&quot;Monday&quot;
+breaksw
+  case &quot;Tuesday&quot;:
+set folder=&quot;Tuesday&quot;
+breaksw
+  case &quot;Wednesday&quot;:
+set folder=&quot;Wednesday&quot;
+breaksw
+  case &quot;Thursday&quot;:
+set folder=&quot;Thursday&quot;
+breaksw
+  case &quot;Friday&quot;:
+set folder=&quot;Friday&quot;
+breaksw
+      default:
+echo &quot;not Monday thru Friday&quot;
+exit
+breaksw
+endsw ;
+
+echo ;
+set folder=$folder-Evening;
+set ArcFolder=$PathToFolder$folder
+
+/Developer/Tools/CpMac -p $ArcFolder/* /BHC\ v5.5;
+
+exit;
+
+On Feb 24, 2005, at 6:33 PM, Doug McNutt wrote:
+
+&gt;<i> At 16:01 -0600 2/24/05, Russell McGaha wrote:
+</I>&gt;&gt;<i> Folks;
+</I>&gt;&gt;<i>  I've got a question about how to only copy certain files of a folder 
+</I>&gt;&gt;<i> [more accurately to not copy].
+</I>&gt;&gt;<i>  I've a 10.2.8 system [so I'll be using tsch] that I need to copy the 
+</I>&gt;&gt;<i> files in one director to another directory; this is no problem, BUT I 
+</I>&gt;&gt;<i> need to EXCLUDE a couple of files
+</I>&gt;<i>
+</I>&gt;<i> Try this. Replace the echos with your copy commands. Do you want cpMac 
+</I>&gt;<i> for the resources? The current directory needs to be your starting 
+</I>&gt;<i> point.
+</I>&gt;<i>
+</I>&gt;<i> #!/bin/tcsh
+</I>&gt;<i> #  arguments are files not to be copied
+</I>&gt;<i> foreach fff (*)
+</I>&gt;<i> 	set flag = 0
+</I>&gt;<i> 	set nnn = ${#argv}
+</I>&gt;<i> 	while ($nnn &gt; 0)
+</I>&gt;<i> 		if (&quot;$fff&quot; =~ &quot;$argv[$nnn]&quot;) then
+</I>&gt;<i> 			set flag = 1
+</I>&gt;<i> 		endif
+</I>&gt;<i> 		@ nnn--
+</I>&gt;<i> 	end
+</I>&gt;<i> 	if ($flag == 0) then
+</I>&gt;<i> 		echo &quot;yes $fff&quot;
+</I>&gt;<i> 	else
+</I>&gt;<i> 		echo &quot;not $fff&quot;
+</I>&gt;<i> 	endif
+</I>&gt;<i> end
+</I>&gt;<i>
+</I>&gt;<i> And. . .
+</I>&gt;<i>
+</I>&gt;<i> I did it wrong and left out the space after the @ sign. The result was 
+</I>&gt;<i> a process that simply could not be killed, even by the superuser and 
+</I>&gt;<i> even with -9. Software restart resulted in a kernel panic that did not 
+</I>&gt;<i> terminate for over 5 minutes. Hardware restart fixed it. I thought 
+</I>&gt;<i> such things were impossible in OS neXt!
+</I>&gt;<i>
+</I>&gt;<i> I also tried it with a foreach ($argv) and had intractable problems 
+</I>&gt;<i> with file names (as arguments) containing spaces.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> -- 
+</I>&gt;<i>
+</I>&gt;<i> --&gt; From the U S of A, the only socialist country that refuses to 
+</I>&gt;<i> admit it. &lt;--
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001556.html">[X-Unix] cp question
+</A></li>
+	<LI>Next message: <A HREF="001555.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1571">[ date ]</a>
+              <a href="thread.html#1571">[ thread ]</a>
+              <a href="subject.html#1571">[ subject ]</a>
+              <a href="author.html#1571">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] VNC through router
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20VNC%20through%20router&In-Reply-To=9E4368A5-5159-40FB-B85A-B81CB5EA8635%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="006452.html">
+   <LINK REL="Next"  HREF="006538.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] VNC through router</H1>
+    <B>Michael Elliott</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20VNC%20through%20router&In-Reply-To=9E4368A5-5159-40FB-B85A-B81CB5EA8635%40mac.com"
+       TITLE="[X4U] VNC through router">michaelelliott at mac.com
+       </A><BR>
+    <I>Fri May 27 18:31:11 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="006452.html">[X4U] VNC through router
+</A></li>
+        <LI>Next message: <A HREF="006538.html">[X4U] VNC through router
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6461">[ date ]</a>
+              <a href="thread.html#6461">[ thread ]</a>
+              <a href="subject.html#6461">[ subject ]</a>
+              <a href="author.html#6461">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>John,
+
+In Chicken of the VNC, try using the host name instead of a specific  
+IP address.  If you can connect to the router via ethernet, or if it  
+is wireless, wirelessly, then in the &quot;Host&quot; area, enter the computer  
+name of the computer that is running the server followed by .local.   
+For example, my iMac is named &quot;iMac&quot; in the Sharing tab on System  
+prefs.  I'm connecting to the iMac, which is running OSXVNC, via  
+Airport at the moment.  So I type
+
+iMac.local
+
+into the Host area, give my password, and connect.
+
+I believe that if your router is set up properly, it will allow you  
+to connect this way whether it is a wired or wireless router.  If you  
+can't connect, then it's probably a port-forwarding issue, tho it  
+sounds like the port 5900 is the right one.  Some routers call these  
+&quot;virtual servers&quot; I think, or port forwarding.
+
+If you can connect by listing the host name, but then can't when you  
+enter an IP, I suspect that you may be entering the IP assigned via  
+DHCP by the router.  Try finding the router's External IP address and  
+try connecting to that.
+
+Michael
+
+
+On May 27, 2005, at 12:40 PM, John Azevedo wrote:
+
+&gt;<i>
+</I>&gt;<i> On May 27, 2005, at 12:30 PM, Ean Kingston wrote:
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i> On May 26, 2005 09:16 pm, John Azevedo wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I connect to a macmini on my home LAN via VNC and ARD. How can I
+</I>&gt;&gt;&gt;<i> connect from a remote location? I have a router connected to a cable
+</I>&gt;&gt;&gt;<i> modem at home and I'll be using dialup from the remote location.  
+</I>&gt;&gt;&gt;<i> I've
+</I>&gt;&gt;&gt;<i> tried opening port 5900 on the router but I can't connect.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> That should work as long as you are forwarding 5900 to the macmini
+</I>&gt;&gt;<i> appropriately
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> How do I forward to the Macmini?
+</I>&gt;<i> I'm using Chicken of the VNC as a client, I've entered the  
+</I>&gt;<i> Macmini's IP in the Host field and 5900 in the Display/Port field.  
+</I>&gt;<i> On the router (Asante) in the Distributed Servers Setup I've  
+</I>&gt;<i> entered 5900 in the Service Port field, in the Server IP field I've  
+</I>&gt;<i> entered the Macmini's IP and checked the Enable box. Still doesn't  
+</I>&gt;<i> work.
+</I>&gt;<i>
+</I>&gt;<i> Any help is much appreciated.
+</I>&gt;<i>
+</I>&gt;<i> TIA
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X4U mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">X4U at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">http://listserver.themacintoshguy.com/mailman/listinfo/x4u</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="006452.html">[X4U] VNC through router
+</A></li>
+	<LI>Next message: <A HREF="006538.html">[X4U] VNC through router
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6461">[ date ]</a>
+              <a href="thread.html#6461">[ thread ]</a>
+              <a href="subject.html#6461">[ subject ]</a>
+              <a href="author.html#6461">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Copying User Accounts
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Copying%20User%20Accounts&In-Reply-To=53A8A575-CFC9-4080-8848-F7A8ED1BE1F4%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005716.html">
+   <LINK REL="Next"  HREF="005720.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Copying User Accounts</H1>
+    <B>lj Palmer</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Copying%20User%20Accounts&In-Reply-To=53A8A575-CFC9-4080-8848-F7A8ED1BE1F4%40mac.com"
+       TITLE="[X4U] Copying User Accounts">darwin at ljsworld.com
+       </A><BR>
+    <I>Fri May  6 22:56:07 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005716.html">[X4U] Copying User Accounts
+</A></li>
+        <LI>Next message: <A HREF="005720.html">[X4U] Copying User Accounts
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5719">[ date ]</a>
+              <a href="thread.html#5719">[ thread ]</a>
+              <a href="subject.html#5719">[ subject ]</a>
+              <a href="author.html#5719">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an Shell file that I've used in terminal to create new accounts 
+on a machine remotely. You could use it then copy the User folders from 
+the other machines. ( This worked for Panther but my Tiger is still in 
+route.)
+_______
+#/bin/sh
+sudo nicl / -create /users/grey uid 501
+sudo nicl / -create /users/grey gid 20
+sudo nicl / -create /users/grey shell /bin/bash
+sudo nicl / -create /users/grey home /Users/lj
+sudo nicl / -create /users/grey realname &quot;..lj&quot;
+sudo nicl / -create /users/grey passwd	\*
+
+sudo ditto /System/Library/User\ Template/English.lproj /Users/lj
+#copy your files here or modify previous line
+sudo chown -R lj:staff /Users/lj
+_______
+..lj
+
+On May 6, 2005, at 13:16, P. H. Adams wrote:
+
+&gt;<i> Looking for a bit of advice here. Been having some problems with the 
+</I>&gt;<i> HD on my iMac that I think a good reformatting may cure (file system 
+</I>&gt;<i> corruption; did a surface scan and it came out good). I used my PB to 
+</I>&gt;<i> put a fresh install of Tiger on an external FW drive and used that to 
+</I>&gt;<i> boot the iMac from. It all looks good, but now I want to get my data 
+</I>&gt;<i> off the iMac drive and onto the external. Ideally, what I'd like to do 
+</I>&gt;<i> is clone the user accounts to the external so that, in case something 
+</I>&gt;<i> goes awry with the reformatting, I have all my user accounts available 
+</I>&gt;<i> on the FW drive. I'm unsure of how to get the fresh OS to recognize 
+</I>&gt;<i> the 3 user accounts, though. I could just create new accounts and copy 
+</I>&gt;<i> the data,  but is there anyway to just copy them over intact? Also, 
+</I>&gt;<i> once I get the drive reformatted and everything reinstalled, I'll need 
+</I>&gt;<i> to copy them back over to the iMac drive. I may just be able to use 
+</I>&gt;<i> CCC for this, and copy the whole kit and kaboodle. Anyone have any 
+</I>&gt;<i> advice for the best way to proceed? Thanks much!
+</I>&gt;<i>
+</I>&gt;<i> -patch
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X4U mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">X4U at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">http://listserver.themacintoshguy.com/mailman/listinfo/x4u</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random 
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>=lj
+skype: ljsworld
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005716.html">[X4U] Copying User Accounts
+</A></li>
+	<LI>Next message: <A HREF="005720.html">[X4U] Copying User Accounts
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5719">[ date ]</a>
+              <a href="thread.html#5719">[ thread ]</a>
+              <a href="subject.html#5719">[ subject ]</a>
+              <a href="author.html#5719">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

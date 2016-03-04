@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Invisible flash drive on G4
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BG4%5D%20Invisible%20flash%20drive%20on%20G4&In-Reply-To=%3C8AB947DB-1F40-4753-8BFD-BA5CB2F31AB5%40atmyhome.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="020033.html">
+   <LINK REL="Next"  HREF="020023.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[G4] Invisible flash drive on G4</H1>
+    <B>K.Reitz</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BG4%5D%20Invisible%20flash%20drive%20on%20G4&In-Reply-To=%3C8AB947DB-1F40-4753-8BFD-BA5CB2F31AB5%40atmyhome.org%3E"
+       TITLE="[G4] Invisible flash drive on G4">kristen at atmyhome.org
+       </A><BR>
+    <I>Tue Mar  6 20:34:02 PST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="020033.html">[G4] Invisible flash drive on G4
+</A></li>
+        <LI>Next message: <A HREF="020023.html">[G4] Camino crashes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20034">[ date ]</a>
+              <a href="thread.html#20034">[ thread ]</a>
+              <a href="subject.html#20034">[ subject ]</a>
+              <a href="author.html#20034">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+
+On Mar 6, 2012, at 5:36 PM, Ronald Sweet wrote:
+
+&gt;<i> Thank you to Diane, Kristen, Robert R.Rosenberg, Harry A. Freeman, and Wayne Wilkin for their suggestions and comments for solving the problem I reported on March 3. Unfortunately I still haven't been able to fix it.
+</I>&gt;<i> 
+</I>&gt;<i> Diane - the flash drive's icon does not appear when I open a new Finder window. The checkboxes to make Hard disks; CDs, DVDs, and iPods; and Connected servers show on the Desktop are all checked in the Finder's Preferences/General menu.
+</I>&gt;<i> 
+</I>&gt;<i> Kristen - I haven't come across the term Mystic desktop before, and I don't know whether my G4's desktop is one. But the flash disk icon does not appear on the desktop, whatever kind it is. The hard drive icon does appear in the upper right-hand corner. There are actually two internal hard drives in this G4, master and slave, and both icons appear as they should.
+</I>&gt;<i> 
+</I>&gt;<i> Robert - in Finder/Preferences/Sidebar menu, the hard disks checkbox is checked, as are all the others. The flash drive icon does not appear in the Finder's sidebar.
+</I>&gt;<i> 
+</I>&gt;<i> Harry - in the Finder/Preferences/General menu in the OS on my G4 (X 10.4.11), the top three checkboxes are for Hard disks; CDs, DVDs, and iPods; and Connected servers. There isn't one especially for External disks. I have assumed that &quot;Hard disks&quot; includes both internal and external.
+</I>&gt;<i> 
+</I>&gt;<i> Wayne - Yes, the flash disk is recognized in Disk Utility (as 2.0 GB Generic Flash Disk .../Flash Disk 1), and also in the Mac menu/About This Mac/More info .../Hardware/USB/USB High-Speed Bus, Mass Storage/Flash Disk 1. In Disk Utility, selecting Flash Disk 1 and running Verify Disk yields &quot;Volume passed verification&quot;. But although Disk Utility and About This Mac recognize the flash drive, its icon does not appear on the desktop.
+</I>&gt;<i> 
+</I>&gt;<i> Yet when I plug the flash drive into a mid-2010 MacBook or a mid-2011 iMac, the icon appears. I don't understand the inconsistency.
+</I>&gt;<i> 
+</I>&gt;<i> Ronald Sweet
+</I>&gt;<i> 
+</I>
+Ronald,
+
+Mystic is the code name for your computer, a Gigabit G4. I find saying Mystic is easier then saying all those other descriptive terms.
+
+I suspect that whatever user your logged in as on your Mystic, is not the same user your flash drive was created under. Basically you don't have permission to access that drive. Lets find out.
+
+Plug your flash drive into the Mystic
+Open Terminal.app, it's in the Utilities section of Applications
+
+enter this command:
+
+	ls -l /Volumes
+
+One of the Volumes listed will be the flash drive and it will list file permissions followed by Username:Groupname for that flash drive. You will also find your other 2 drives. But don't do anything with them.
+
+If the file permissions are not drwxrwxrwx AND the Username is not the user name your logged into on the Mystic, then you don't have permissions to this drive and it will not show up on your desktop.
+
+To fix permissions should they be different then I have stated, issue this command (assuming your login is an administrative login in on your Mystic)
+	sudo chmod 777 /Volumes/&lt;your flash drive name here&gt;
+
+OR
+
+put your flash into one of the other computers where it works and  &lt;Control&gt;&lt;click&gt; the drive icon then select from the menu 'Get Info'. At the bottom of the new window, change settings to allow everyone to read and write the flash drive. Eject the flash drive and try it again in your Mystic
+
+Kristen
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG/MacGPG2 v2.0.17 (Darwin)
+Comment: GPGTools - <A HREF="http://gpgtools.org">http://gpgtools.org</A>
+
+iEYEARECAAYFAk9W5T4ACgkQF1wXlvLxlNgFAwCeI0E9eHeQoTZl9zJLgZbv4It4
+RncAmwU98ev+44Xlw3EReAJd+2h7ny/O
+=NNLp
+-----END PGP SIGNATURE-----
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="020033.html">[G4] Invisible flash drive on G4
+</A></li>
+	<LI>Next message: <A HREF="020023.html">[G4] Camino crashes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20034">[ date ]</a>
+              <a href="thread.html#20034">[ thread ]</a>
+              <a href="subject.html#20034">[ subject ]</a>
+              <a href="author.html#20034">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

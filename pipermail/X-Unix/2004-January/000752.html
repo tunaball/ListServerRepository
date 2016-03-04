@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Altering .bashrc in bash to add to $PATH
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Altering%20.bashrc%20in%20bash%20to%20add%20to%20%24PATH&In-Reply-To=list-10162677%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000741.html">
+   <LINK REL="Next"  HREF="000763.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Altering .bashrc in bash to add to $PATH</H1>
+    <B>Robert Ameeti</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Altering%20.bashrc%20in%20bash%20to%20add%20to%20%24PATH&In-Reply-To=list-10162677%40mail.ninewire.com"
+       TITLE="[X-Unix] Altering .bashrc in bash to add to $PATH">robert at ameeti.net
+       </A><BR>
+    <I>Thu Jan  8 14:10:00 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000741.html">[X-Unix] script question (cron - adobefnt*.lst)
+</A></li>
+        <LI>Next message: <A HREF="000763.html">[X-Unix] script question (cron - adobefnt*.lst)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#752">[ date ]</a>
+              <a href="thread.html#752">[ thread ]</a>
+              <a href="subject.html#752">[ subject ]</a>
+              <a href="author.html#752">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> &gt;&gt;At 22:05 -0800 1/7/04, Robert Ameeti wrote:
+</I>
+Before:
+
+&gt;<i> &gt;&gt;&gt;echo $SHELL gives me /bin/bash
+</I>&gt;<i> &gt;&gt;&gt;echo $PATH gives me /bin:/sbin:/usr/bin:/usr/sbin
+</I>
+I wanted $PATH to be:
+/Library/mySQL/bin:/bin:/sbin:/usr/bin:/usr/sbin
+
+It seems that Apple has changed the default shell from tcsh to bash as of Panther. Most users seem to be more familiar with tcsh.
+
+bash uses the .bash_profile file in the ~ directory for path enhancement. So for me, the answer was:
+
+echo 'export PATH=/Library/MySQL/bin:$PATH' &gt;&gt; ~/.bash_profile
+
+Others will need to alter the above path enhancement as necessary to accomplish their goal.
+
+Thanks to all for your pointers. It took a village to get this simple thing done.  lol
+
+-- 
+&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;
+Robert Ameeti
+
+And which dwarf are you?
+&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000741.html">[X-Unix] script question (cron - adobefnt*.lst)
+</A></li>
+	<LI>Next message: <A HREF="000763.html">[X-Unix] script question (cron - adobefnt*.lst)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#752">[ date ]</a>
+              <a href="thread.html#752">[ thread ]</a>
+              <a href="subject.html#752">[ subject ]</a>
+              <a href="author.html#752">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

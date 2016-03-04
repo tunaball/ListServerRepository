@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Re: Leopard Issues - Some Responses
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Re%3A%20Leopard%20Issues%20-%20Some%20Responses&In-Reply-To=85F1A99D-9EA4-449F-B1AF-5F8225450DCF%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="019315.html">
+   <LINK REL="Next"  HREF="019321.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Re: Leopard Issues - Some Responses</H1>
+    <B>Robert Ameeti</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Re%3A%20Leopard%20Issues%20-%20Some%20Responses&In-Reply-To=85F1A99D-9EA4-449F-B1AF-5F8225450DCF%40mac.com"
+       TITLE="[X4U] Re: Leopard Issues - Some Responses">Robert at Ameeti.net
+       </A><BR>
+    <I>Tue Dec  4 22:38:58 PST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="019315.html">[X4U] Re: Leopard Issues - Some Responses
+</A></li>
+        <LI>Next message: <A HREF="019321.html">[X4U] Re: Leopard Issues - Some Responses
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19316">[ date ]</a>
+              <a href="thread.html#19316">[ thread ]</a>
+              <a href="subject.html#19316">[ subject ]</a>
+              <a href="author.html#19316">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 12:26 AM -0500, 12/5/07, Jon wrote:
+
+&gt;<i>I went to the Westell modem site (192.168.1.1). The connection 
+</I>&gt;<i>summary shows a primary DNS of 71.250.0.12, and a secondary DNS of 
+</I>&gt;<i>71.242.0.12. I couldn't change them. In any case, since both 
+</I>&gt;<i>computers use the Westell, these DNS can't be reason for the 
+</I>&gt;<i>different results.
+</I>
+Look at the DNS settings of each computer in the System Preferences, 
+not on the router. The DNS of the computer overrides the routers.
+
+&gt;<i>In any event, when I type &quot;chevrolet&quot;, in the MacBook I get the 
+</I>&gt;<i>Verizon-Yahoo search program
+</I>
+Does that really pass the smell test?
+
+&gt;<i>I respectfully request help, but - please - explain why 10.4 still 
+</I>&gt;<i>works and 10.5 hasn't from the first day I installed it. (And I'd 
+</I>&gt;<i>love to see a tech bulletin that could explain it further.)
+</I>
+DNS works like this:
+
+When you enter something into the browser's address bar (URL), the 
+browser takes what you enter and looks it up in the computer's 
+'hosts' file. If there is not entry for that URL in the hosts file, 
+then the URL is then potentially checked against the network's hosts 
+file, if it exists. If that file does not exist, the URL is checked 
+against one of the randomly selected DNS servers that are referenced 
+in the Network panel. Depending on whether that DNS server has a 
+listing for the entry, it may get passed up all the way to the root 
+servers for each top level domain.
+
+ie.
+If I type jr in my browser, 'jr' is checked in my hosts file. If my 
+network administrator wants my computer to connect to the server 
+named 'jr' on our network, he will have put an entry into my hosts 
+file directing all calls for 'jr' to its IP address (ie. 
+192.168.1.105). If my administrator has no entry in my hosts file for 
+that URL, then it is passed on to the networks hosts file and the 
+same lookup happens. When it is not found in that DNS server, it is 
+then passed on to the ISP's DNS server. This should happen all the 
+way up until the DNS server is configured to not validate against 
+URLs that do not have a top level domain as part of the URL (.com, 
+.net, .org, .gov, etc) When the URL is not found in the DNS server's 
+zone file, it is then said to be in error and that error is passed 
+all the way back down the chain to your computer. Your browser can if 
+configured to do so, change the request, appending on additional 
+information and then re-request a reevaluation of the new URL. (Doing 
+all of the re-requesting does in fact take time and may in fact be 
+slower than a user's typing in the .com in the first place.) Many 
+browsers will first add a .com and then send for a response, and if 
+it fails, then they might add on the www. and have it check again.
+
+The passing up the chain of DNS servers allows for the valid response 
+of a domain that may not have been recently used when it might pass 
+all the way up to the .com root server.
+
+In this case, the Verizon DNS server has been configured to not 
+accept any URL that does not have a top level domain as part of the 
+URL and to send back their search page instead of an error. Because 
+you one computer did not get the error result, it was not able to 
+'guess' and resend the request with additional information.
+
+Network Solutions used to be the monopoly in the Registrar business 
+of the Internet. When the dropped the ball and gave shitty customer 
+service, every knowledgeable IT administrator started running ftom 
+them and Network Solutions started losing their hold on the market. 
+They then too started redirecting errors in users DNS lookups to 
+their servers. See 
+&lt;<A HREF="http://bcn.boulder.co.us/~neal/ietf/verisign-abuse.html">http://bcn.boulder.co.us/~neal/ietf/verisign-abuse.html</A>&gt; for what 
+the did and the holy wars that started at that time. Verizon is now 
+risking the same thing by doing this same stupid mistake in hopes of 
+making an extra dollar.
+
+Kinda like the HP computer that I just opened up and found that they 
+don't include system disks for the user. They expect that the average 
+user is going to read the slip of paper that says to make your own 
+recovery disks. Ya right. I just spent 1 hr and 7 mins on the phone 
+with them till they gave up and are now mailing them to me (instead 
+of charging me $14.95 for the set.) When companies try to save them 
+self a $1, I'll make them pay many times more to learn not to be 
+cheap and screw the customer. I'd like to figure out a way to muck 
+with Verizon cuz I hate their policies as well, but I'm not coming up 
+with anything quickly fortunately for them.
+
+
+-- 
+
+&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;
+Robert Ameeti
+
+&quot;Stop trying to perfect your child, but keep trying to perfect your relationship with him.&quot;
+~   Dr. Henker
+&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;
+</PRE>
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="019315.html">[X4U] Re: Leopard Issues - Some Responses
+</A></li>
+	<LI>Next message: <A HREF="019321.html">[X4U] Re: Leopard Issues - Some Responses
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19316">[ date ]</a>
+              <a href="thread.html#19316">[ thread ]</a>
+              <a href="subject.html#19316">[ subject ]</a>
+              <a href="author.html#19316">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Hardware RAID Setup
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20Hardware%20RAID%20Setup&In-Reply-To=%3C201005122015.o4CKFZ9m038917%40x.it.okstate.edu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003392.html">
+   <LINK REL="Next"  HREF="003395.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X-Unix] Hardware RAID Setup</H1>
+    <B>Martin McCormick</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20Hardware%20RAID%20Setup&In-Reply-To=%3C201005122015.o4CKFZ9m038917%40x.it.okstate.edu%3E"
+       TITLE="[X-Unix] Hardware RAID Setup">martin at x.it.okstate.edu
+       </A><BR>
+    <I>Wed May 12 13:15:35 PDT 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003392.html">[X-Unix] Hardware RAID Setup
+</A></li>
+        <LI>Next message: <A HREF="003395.html">[X-Unix] Hardware RAID Setup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3394">[ date ]</a>
+              <a href="thread.html#3394">[ thread ]</a>
+              <a href="subject.html#3394">[ subject ]</a>
+              <a href="author.html#3394">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Stroller writes:
+&gt;<i> Like I say, never used RAID on Macs, but a little bit on Linux now (with 
+</I>&gt;<i> at
+</I>&gt;<i> least 3 different controllers).
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> When you initialise the array it will wipe out any data on the disks. The
+</I>&gt;<i> long wait you mentioned was the drives zeroing out. After the
+</I>&gt;<i> initialisation is completed, the two drives of a RAID1 array will always
+</I>&gt;<i> (in normal use) contain identical copies of data (subject to the 
+</I>&gt;<i> completion
+</I>&gt;<i> of writes on each).
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> The initialisation will (surely) NOT mirror existing data to an array
+</I>&gt;<i> during creation, although some RAID controllers / userspace utilities 
+</I>&gt;<i> offer
+</I>&gt;<i> a &quot;migrate&quot; command.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> What you could do, for instance, if you have a working installation of
+</I>&gt;<i> MacOS on drive A, is to build an array Z from drives B &amp; C. Then dd from A
+</I>&gt;<i> to Z. I have undertaken some variations of this under Linux; depending 
+</I>&gt;<i> upon
+</I>&gt;<i> the complexity of what you're undertaking it can be either very easy and
+</I>&gt;<i> straightforward or time-consuming and somewhat harrowing.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> You will likely only be able to use the drives when connected to the
+</I>&gt;<i> controller - i.e. you cannot remove one drive and read it on a different
+</I>&gt;<i> computer, unless that machine has the same RAID controller. If one drive
+</I>&gt;<i> fails you will be prompted to replace the drive - you should be able to
+</I>&gt;<i> work with only the single drive in the meantime. After you replace the
+</I>&gt;<i> failed drive the array will be rebuilt (copied, effectively) onto the new
+</I>&gt;<i> disk, and again you should be able to use the system during this rebuild
+</I>&gt;<i> process (disk operations will be slowed, as your use of the disk is
+</I>&gt;<i> effectively &quot;shared&quot; with the rebuild).
+</I>
+	This sounds like what the documentation I have been
+reading was saying. I guess I will go ahead and see if the disk
+utility will format it and maybe I will get a usable device out
+of it. Once that happens, it should work as the raid card,
+itself, seems to be satisfied.
+
+Martin McCormick
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003392.html">[X-Unix] Hardware RAID Setup
+</A></li>
+	<LI>Next message: <A HREF="003395.html">[X-Unix] Hardware RAID Setup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3394">[ date ]</a>
+              <a href="thread.html#3394">[ thread ]</a>
+              <a href="subject.html#3394">[ subject ]</a>
+              <a href="author.html#3394">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

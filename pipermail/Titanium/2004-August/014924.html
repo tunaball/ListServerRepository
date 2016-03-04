@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] [Ti]Journaling, was --&gt; Journeling.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20%5BTi%5DJournaling%2C%20was%20--%3E%20Journeling.&In-Reply-To=list-15784566%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="014923.html">
+   <LINK REL="Next"  HREF="014925.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] [Ti]Journaling, was --&gt; Journeling.</H1>
+    <B>b</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20%5BTi%5DJournaling%2C%20was%20--%3E%20Journeling.&In-Reply-To=list-15784566%40mail.ninewire.com"
+       TITLE="[Ti] [Ti]Journaling, was --&gt; Journeling.">syrflip at verizon.net
+       </A><BR>
+    <I>Fri Aug  6 15:27:39 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="014923.html">[Ti] Journeling.
+</A></li>
+        <LI>Next message: <A HREF="014925.html">[Ti] [Ti]Journaling, was --&gt; Journeling.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14924">[ date ]</a>
+              <a href="thread.html#14924">[ thread ]</a>
+              <a href="subject.html#14924">[ subject ]</a>
+              <a href="author.html#14924">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>David DelMonte paused, thought it over, and spoke thusly:
+
+&gt;<i>Flipper, sorry about the original spelling.. I appreciate your 
+</I>&gt;<i>insight. You didn't mention though about disk optimization provided 
+</I>&gt;<i>by journaling that others have mentioned. What are your thoughts 
+</I>&gt;<i>there?
+</I>&gt;<i>
+</I>&gt;<i>David
+</I>
+defragging files, while leaving the so-called 'free space all broken 
+up, is pointless, and potentially worse. Let me explain, ANY app that 
+collects a file, or files, that are in separate places, then finds 
+space for the file as one contiguous block, is doing two things: One, 
+it is leaving more smaller, non-contiguous allocation blocks (the 
+places where each file's different parts were located), and Two: It 
+is creating even more fragmentation of the pre-existing 'free' drive 
+space.
+
+As much as i recommend against Symantec products on the Mac, the 
+Speed Disk (which was probably acquired from folks who had nothing to 
+do with the atrocious Disk Doctor), is the only way to go. It 
+analyzes the entire drive, which is time-consuming, and crucially 
+necessary, then not only does it de-frag the files (all of them), it 
+clears all of the free drive space into one contiguous block of 
+allocation blocks... leaving all of the critical drive files 
+(extents, wrapper, header, directory, etc) right at the 'top' of the 
+drive, where they must be.
+
+The journaling feature doesn't even belong in the same diiscussion as 
+optimization/defragmentation. It may be useful (though i doubt it) 
+for other things, but speeding up, and securing the operation of the 
+drive, isn't one of them.
+
+Same goes for InTech's Disk Defrag, which also does the quick, 
+piecemeal, file defrag, leaving the 'clean' space worse off than 
+before the so-called 'de-fragging.
+
+Alsoft's Plus optimizer is slow as anything, and won't move 
+'anchored' files. Which are almost always, files that are 'anchored' 
+by third-party apps that are violating Apple APIs, anyway. Norton 
+just gives them the heave-ho.
+
+Lots of RAM, defragged free drive space, and 15-20% of always-free 
+space is the way to go. Everything happens faster, and when it's time 
+for a periodic defrag, that goes a lot quicker, too, courtesy of RAM 
+and free drive space.
+
+A simple real world example: let's say one runs Dreamweaver. It makes 
+a nice example because the installation contains a little over 
+thirteen thousand files. Mostly small files, but a lot of them.
+
+So, we're running Dreamweaver, which, let's say was installed on a 
+nice, fragmented drive... so, the files are scattered, broken into 
+pieces, and scattered more, just on the install.... now, after lots 
+of editing (more frags), deleting (more frags, importing snapshots, 
+editing them, deleting some (a lot more frags).... the journaling 
+kicks in and sees a large chunk of the app in three places, near a 
+lot of the rerst of the apps files, and 'fixes it'. It creates more 
+small holes in the sectors where most of the app resides, and maybe 
+the 'space' it moves the 'fixed, reassembled into one' file to is ove 
+here, between a fonts cache, and a few forgotten attachments from 
+when you used to use eudora... get it? A mess.
+
+you run a real defragger/optimizer, and lo and behold, a 
+graphically-enabled inspection of the allocation blocks shows all 
+13k+ Dreamweaver files in one, long unbroken chain of allocation 
+blocks. Now which 'state' do you suppose Dreamweaver is going to 
+function the most efficiently in?
+
+The reason Panther's pseodo-defragging-on-the-fly has given people 
+the wrong impression is simple, and it isn't because people are dumb, 
+not even. There's this 'myth', which like all myths has some truth to 
+it, that goes like this: But Unix 'likes' to have files spread across 
+the drive&quot;.
+
+Yeah, that's right, it does, because the System knows that modern 
+drives can pick up things in certain places faster when they're 
+'striped'. BUT, and it's a big but... what the parrots of the myth 
+fail to understand, acknowledge, or are simply ignorant of is this; 
+pro Unix setups never have anything except for the kernel, and it's 
+own sub-systems on the same drive. Never. Applications? forget it. 
+Public directories? No way. Nothing, nada.
+
+The System-generated fragmentation that occurs, and there's a lot, 
+just do a real defrag, reboot into Jag or Panther, and then, without 
+launching any apps, reboot back into the defrag CD, or partition and 
+re-scan the drive: several hundred fragged files. Nice job OS. 
+&lt;laughs&gt;
+
+If all you want to do is run the Finder, then forget about frags, let 
+panther deal with it. But as soon as you want to get some work done 
+you have two choices: Move all apps and Documents and scratch disks 
+to separate drives, or run a defragger, routinely. It's as simple as 
+that.
+
+~flipper
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="014923.html">[Ti] Journeling.
+</A></li>
+	<LI>Next message: <A HREF="014925.html">[Ti] [Ti]Journaling, was --&gt; Journeling.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14924">[ date ]</a>
+              <a href="thread.html#14924">[ thread ]</a>
+              <a href="subject.html#14924">[ subject ]</a>
+              <a href="author.html#14924">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Newbies] eMac can't keep time
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20eMac%20can%27t%20keep%20time&In-Reply-To=list-4784873%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000687.html">
+   <LINK REL="Next"  HREF="000688.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Newbies] eMac can't keep time</H1>
+    <B>Wiley Hodges</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20eMac%20can%27t%20keep%20time&In-Reply-To=list-4784873%40mail.ninewire.com"
+       TITLE="[X Newbies] eMac can't keep time">wiley+osxlists at hodgesfamily.com
+       </A><BR>
+    <I>Fri Feb  7 08:46:39 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000687.html">[X Newbies] eMac can't keep time
+</A></li>
+        <LI>Next message: <A HREF="000688.html">Seeking the source of kernel panics
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#690">[ date ]</a>
+              <a href="thread.html#690">[ thread ]</a>
+              <a href="subject.html#690">[ subject ]</a>
+              <a href="author.html#690">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+I actually believe that the network time capability has the ability to 
+help with clock accuracy even when you're not connected to the network.
+
+The underlying UNIX ntpd measures the rate at which your clock drifts 
+out of time, and applies compensation to your system clock based on 
+this observed skew. Without using a time server, there's no basis for 
+this measurement. Once you start using a time server, you should see 
+more accurate timekeeping from you system clock.
+
+The guys who wrote ntpd were pretty anal; not only does ntpd measure 
+clock drift, it also estimates the time it takes for a packet 
+containing time data to reach your machine from the time server and 
+compensates for that transit time.
+
+As always, your mileage may vary, particularly if there's a hardware 
+problem with your clock.
+
+Best,
+
+--Wiley
+
+
+On Friday, Feb 7, 2003, at 07:28 US/Pacific, David Crandon wrote:
+
+&gt;<i> It has baffled me that while they have had $10 watches that keep almost
+</I>&gt;<i> perfect time for the last 15 years, a $3000 computer can't.
+</I>&gt;<i>
+</I>&gt;<i> It's always been this way...yes, you need network time to keep it it 
+</I>&gt;<i> line.
+</I>&gt;<i>
+</I>&gt;<i> David Crandon
+</I>&gt;<i>
+</I>&gt;<i> Deetya wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Dear all,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I'm confused why my eMac can't seem to keep the time. The clock would
+</I>&gt;&gt;<i> speed up until it's woefully out of sync with real time.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Is it a weak battery or something?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I don't use network time. Should I use it? Will it cure the
+</I>&gt;&gt;<i> time-wonkiness, or is it only a treatment, not a cure?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I'm on an eMac with Mac OS 10.1.5
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Thanks in advance.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I love to give homemade gifts... umm, which of the kids would you 
+</I>&gt;&gt;<i> like?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> ----------
+</I>&gt;&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-newbies.html">X-Newbies-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-newbies.html">X-Newbies-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;<i> Need help from a real person? Try.  
+</I>&gt;&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-newbies.html">X-Newbies-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> ----------
+</I>&gt;&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;&gt;<i> Mac ISP
+</I>&gt;&gt;<i> Serious Mac Internet Solutions From NineWire!   
+</I>&gt;&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older 
+</I>&gt;&gt;<i> Mac!
+</I>&gt;&gt;<i> Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    Support   | Support this list by clicking here before you buy!
+</I>&gt;&gt;<i>   this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s - 
+</I>&gt;&gt;<i> <A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-newbies.html">X-Newbies-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-newbies.html">X-Newbies-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-newbies.html">X-Newbies-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;<i> Mac ISP
+</I>&gt;<i> Serious Mac Internet Solutions From NineWire!   
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older 
+</I>&gt;<i> Mac!
+</I>&gt;<i> Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>    Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>   this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;<i>
+</I>&gt;<i> OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s - 
+</I>&gt;<i> <A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000687.html">[X Newbies] eMac can't keep time
+</A></li>
+	<LI>Next message: <A HREF="000688.html">Seeking the source of kernel panics
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#690">[ date ]</a>
+              <a href="thread.html#690">[ thread ]</a>
+              <a href="subject.html#690">[ subject ]</a>
+              <a href="author.html#690">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

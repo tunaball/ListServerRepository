@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: My ip address
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20My%20ip%20address&In-Reply-To=f05cb0f322518b90791d27f2815a3b14%40Web.DE">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001539.html">
+   <LINK REL="Next"  HREF="001543.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: My ip address</H1>
+    <B>Craig</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20My%20ip%20address&In-Reply-To=f05cb0f322518b90791d27f2815a3b14%40Web.DE"
+       TITLE="[X-Unix] Re: My ip address">craig at craigwdesigns.com
+       </A><BR>
+    <I>Thu Feb 17 15:36:05 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001539.html">[X-Unix] Re: My ip address
+</A></li>
+        <LI>Next message: <A HREF="001543.html">[X-Unix] Re: My ip address
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1542">[ date ]</a>
+              <a href="thread.html#1542">[ thread ]</a>
+              <a href="subject.html#1542">[ subject ]</a>
+              <a href="author.html#1542">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Feb 17, 2005, at 2:02 AM, Peter Dyballa wrote:
+
+&gt;<i>
+</I>&gt;<i> Am 17.02.2005 um 01:32 schrieb 
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">x-unix-request at listserver.themacintoshguy.com</A>:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Anyone know a slick one-liner in xterm to find out what ip address I'm
+</I>&gt;&gt;<i> assigned (i.e. Without having to go to System Prefrences)?
+</I>&gt;<i>
+</I>&gt;<i> ifconfig -a | grep -w inet | grep -v ' 127' | awk '{print $2}'
+</I>&gt;<i>
+</I>&gt;<i> (Similiarly for IPv6)
+</I>&gt;<i> --
+</I>&gt;<i>
+</I>
+here's two that rely on the whatismyip.com website:
+
+#using lynx --dump:
+url=&quot;whatismyip.com&quot;
+/sw/bin/lynx --nocolor --dump $url | head -10 |  grep &quot;Your IP&quot; |  awk 
+'{print $4}'
+
+# using curl:
+curl -s &quot;<A HREF="http://whatismyip.com">http://whatismyip.com&quot;</A> | grep &quot;Your IP&quot; | awk '{print $4}'
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001539.html">[X-Unix] Re: My ip address
+</A></li>
+	<LI>Next message: <A HREF="001543.html">[X-Unix] Re: My ip address
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1542">[ date ]</a>
+              <a href="thread.html#1542">[ thread ]</a>
+              <a href="subject.html#1542">[ subject ]</a>
+              <a href="author.html#1542">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

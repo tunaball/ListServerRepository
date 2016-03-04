@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Using Apple's Find (Command F)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Using%20Apple%27s%20Find%20%28Command%20F%29&In-Reply-To=20060905002314.A0B201EB620%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="014727.html">
+   <LINK REL="Next"  HREF="014729.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Using Apple's Find (Command F)</H1>
+    <B>John Baltutis</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Using%20Apple%27s%20Find%20%28Command%20F%29&In-Reply-To=20060905002314.A0B201EB620%40listserver.themacintoshguy.com"
+       TITLE="[X4U] Using Apple's Find (Command F)">baltwo at san.rr.com
+       </A><BR>
+    <I>Mon Sep  4 21:54:45 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="014727.html">[X4U] Quickly Converting JPEGs to PPT Slides
+</A></li>
+        <LI>Next message: <A HREF="014729.html">[X4U] Using Apple's Find (Command F)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14728">[ date ]</a>
+              <a href="thread.html#14728">[ thread ]</a>
+              <a href="subject.html#14728">[ subject ]</a>
+              <a href="author.html#14728">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 09/03/06, Daly Jessup &lt;<A HREF="../../../mailman/listinfo/x4u.html">jessup at san.rr.com</A>&gt; wrote, in a couple of posts:
+&gt;<i> At 1:35 PM -0700 3/9/06, John Baltutis wrote:
+</I>&gt;&gt;<i>Quick tutorial. All of Spotlight's arcane stuff is stored in the hidden,
+</I>&gt;&gt;<i>root-level directory /.Spotlight V100. To view its contents, use the
+</I>&gt;&gt;<i>Terminal.app command ls, preceeding it with sudo:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>sudo ls -al /.Spotlight-V100/   ----&gt;
+</I>&gt;&gt;<i>.journalHistoryLog
+</I>&gt;&gt;<i>.store.db
+</I>&gt;&gt;<i>ContentIndex.db
+</I>&gt;&gt;<i>Store-V1 (which contains a ton of indexes)
+</I>&gt;&gt;<i>_IndexPolicy.plist
+</I>&gt;&gt;<i>_rules.plist
+</I>&gt;&gt;<i>store.db
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Use the cp command to back it up (so you can replace it if you screw it up),
+</I>&gt;&gt;<i>copy it to your desktop, open it in TextEdit, add the new parts, save it, and
+</I>&gt;&gt;<i>cp it back, replacing the original.
+</I>&gt;<i>
+</I>&gt;<i> Thank you so much. Coincidentally, I have been studying a basic Unix
+</I>&gt;<i> tutorial this afternoon so that was less confusing than it might have
+</I>&gt;<i> been  an hour ago!
+</I>&gt;<i>
+</I>&gt;<i> But I notice in the listing of /.Spotlight-V100/ that its size is
+</I>&gt;<i> zero. and when I try to view it (I used &quot;cat&quot; - was that wrong?) it
+</I>&gt;<i> says &quot;No such file or directory&quot;.
+</I>
+Very confusing. What has size zero? The /.Spotlight-V100 directory? Shouldn't
+be. On my machine,
+ ls -al / ---&gt;
+drw-------   11 root    baltwo      374 Sep  4 00:50 .Spotlight-V100
+
+which just shows the directory size of 374 and not the size of its contents.
+
+&gt;<i> Or maybe I am misinterpreting the &quot;----&gt;&quot; in your instructions.
+</I>
+The ---&gt; just indicates the results from the ls -al command. Here's the full
+output:
+
+sudo ls -al /.Spotlight-V100/
+drw-------   11 root  unknown       374 Sep  4 00:50 .
+drwxrwxr-t   36 root  admin        1258 Sep  3 22:03 ..
+-rw-------    1 root  unknown         0 Sep  4 11:46 .journalHistoryLog
+-rw-------    1 root  unknown  47861760 Sep  4 21:34 .store.db
+-rw-------    1 root  unknown  99614720 Sep  4 20:57 ContentIndex.db
+drwx------    2 root  unknown        68 Aug 22 16:28 Store-V1
+-rw-------    1 root  unknown       238 Sep  4 00:50 _IndexPolicy.plist
+-rw-------    1 root  unknown       230 Sep  4 00:40 _exclusions.plist
+-rw-------    1 root  unknown       619 Feb  3  2006 _rules.plist
+-rw-------    1 root  unknown       378 Jan 21  2006 _rules.plist.bak
+-rw-------    1 root  unknown  47861760 Sep  4 21:20 store.db
+
+Note that I have journaling turned off-doin't think it's viable for single-user
+machines, only servers-thus its size is 0.
+
+&gt;<i> I appear not to have journaled my hard drive. Would that make this
+</I>&gt;<i> process not work? My guess is that the answer is &quot;yes&quot;. So can you
+</I>&gt;<i> only change this .plist if your disk is set up to be journaled?
+</I>
+Which process are you talking about? The one about modifying the _rules.plist?
+
+&gt;<i> Still, I see the listing as you show above. When I type:
+</I>&gt;<i> sudo cp _rules.plist rules2.plist
+</I>&gt;<i> in an effor to back it up (then move it to the Desktop later) it
+</I>&gt;<i> tells me &quot;No such file or directory&quot;.
+</I>&gt;<i> My tutorial hasn't taken me yet to knowing what the underline before
+</I>&gt;<i> its name means.
+</I>
+Terminal 101 when dealing with system-level objects. You have to give the
+entire path; thus,
+
+sudo cp /.Spotlight-V100/_rules.plist /.Spotlight-V100/_ rules2.plist --backs
+up the original
+sudo cp /.Spotlight-V100/_rules.plist ~/Desktop/ --copies _rules.plist to the
+Desktop
+
+You don't need to include the file's name, since it doesn't exist. Make the
+changes, then
+
+sudo ~/Desktop/_rules.plist /.Spotlight-V100/ --and it overwrites the original.
+
+Restart and it should be in operation.
+
+Despite your correction, I answered everything you originally posted.
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="014727.html">[X4U] Quickly Converting JPEGs to PPT Slides
+</A></li>
+	<LI>Next message: <A HREF="014729.html">[X4U] Using Apple's Find (Command F)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14728">[ date ]</a>
+              <a href="thread.html#14728">[ thread ]</a>
+              <a href="subject.html#14728">[ subject ]</a>
+              <a href="author.html#14728">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

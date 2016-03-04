@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Open Firmware overclocking
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=Open%20Firmware%20overclocking&In-Reply-To=list-5947441%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004044.html">
+   <LINK REL="Next"  HREF="004047.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Open Firmware overclocking</H1>
+    <B>Chris Nelson</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=Open%20Firmware%20overclocking&In-Reply-To=list-5947441%40mail.ninewire.com"
+       TITLE="Open Firmware overclocking">chrisnelson at mac.com
+       </A><BR>
+    <I>Tue Apr 29 10:20:25 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004044.html">[CUBE] iToungs 4
+</A></li>
+        <LI>Next message: <A HREF="004047.html">Machine Woes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4046">[ date ]</a>
+              <a href="thread.html#4046">[ thread ]</a>
+              <a href="subject.html#4046">[ subject ]</a>
+              <a href="author.html#4046">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I tried this last week on a lark, fairly certain that it would not work.
+
+Unfortunately, I was right.
+
+The cube rebooted perfectly and did report a clock speed of 533 with a 
+bus speed of 133. However, testing revealed absolutely no change in 
+performance from the stock 450 MHz configuration.
+
+My totally uninformed guess is that this script alters nothing other 
+than the data that is returned to Apple System Profiler by the NVRAM. 
+(i.e. The cube is still running at 450 with 100 bus, but ASP is 
+retrieving data for 533 with 133...)
+
+&gt;<i>
+</I>&gt;<i> ------------------------------
+</I>&gt;<i>
+</I>&gt;<i> Message-ID: &lt;00be01c30e6b$f4d20540$<A HREF="../../../mailman/listinfo/cube.html">fc6250d5 at sestow2572</A>&gt;
+</I>&gt;<i> From: &quot;Joakim Skog&quot; &lt;<A HREF="../../../mailman/listinfo/cube.html">joakim.skog at home.se</A>&gt;
+</I>&gt;<i> Subject: [CUBE] Overclock a Cube through open firmware?
+</I>&gt;<i> Date: Tue, 29 Apr 2003 18:25:32 +0200
+</I>&gt;<i>
+</I>&gt;<i> According to the swedish Mac news site <A HREF="http://www.macnytt.com">http://www.macnytt.com</A> it 
+</I>&gt;<i> should be
+</I>&gt;<i> possible to change the bus frequency and the clock frequency on Macs 
+</I>&gt;<i> with a
+</I>&gt;<i> 100 Mhz system bus by just enter some code into open firmeware. The 
+</I>&gt;<i> hack
+</I>&gt;<i> changes the system bus to 133 Mhz and the processor speed to something 
+</I>&gt;<i> like
+</I>&gt;<i> 533 Mhz. They also note that you should check that your memory type is
+</I>&gt;<i> compatible with the higher bus speed before trying the hack, otherwise 
+</I>&gt;<i> it
+</I>&gt;<i> sure will crash.
+</I>&gt;<i>
+</I>&gt;<i> What do you think about this? Below is the instructions quickly 
+</I>&gt;<i> translated.
+</I>&gt;<i> Use at your own risk!
+</I>&gt;<i>
+</I>&gt;<i> /Joakim
+</I>&gt;<i>
+</I>&gt;<i> 1. Restart the computer
+</I>&gt;<i>
+</I>&gt;<i> 2. Press option+alt+o+f when restarting to enter Open Firmware.
+</I>&gt;<i>
+</I>&gt;<i> 3. write nvedit and confirm with &lt;return&gt; to enter the configuration 
+</I>&gt;<i> editor.
+</I>&gt;<i>
+</I>&gt;<i> 4. write exactly the follwoing, with spaces but without carrier 
+</I>&gt;<i> returns:
+</I>&gt;<i>
+</I>&gt;<i> &quot; /&quot; select-dev&lt;return&gt;
+</I>&gt;<i> 7efdc44 &quot; clock-frequency&quot; get-my-property 2drop ! &lt;return&gt;
+</I>&gt;<i> &quot; /cpus/<A HREF="../../../mailman/listinfo/cube.html">PowerPC,G4 at 0</A>&quot; select-dev&lt;return&gt;
+</I>&gt;<i> 1fca0554 &quot; clock-frequency&quot; get-my-property 2drop ! &lt;return&gt;
+</I>&gt;<i> 7efdc44 &quot; bus-frequency&quot; get-my-property 2drop ! &lt;return&gt;
+</I>&gt;<i> 1fbf711 &quot; timebase-frequency&quot; get-my-property 2drop !
+</I>&gt;<i>
+</I>&gt;<i> 5. press ctrl+c to exit the configuration editor.
+</I>&gt;<i>
+</I>&gt;<i> 6. write nvstore and confirm with &lt;return&gt;
+</I>&gt;<i>
+</I>&gt;<i> 7. write setenv use-nvramrc? true and confirm with &lt;return&gt;
+</I>&gt;<i>
+</I>&gt;<i> 8. write reset-all and confirm with &lt;return&gt; to restart the computer.
+</I>&gt;<i>
+</I>&gt;<i> If your computer is unstable after this hack, reset the pram
+</I>&gt;<i> (option-alt-p-r).
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004044.html">[CUBE] iToungs 4
+</A></li>
+	<LI>Next message: <A HREF="004047.html">Machine Woes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4046">[ date ]</a>
+              <a href="thread.html#4046">[ thread ]</a>
+              <a href="subject.html#4046">[ subject ]</a>
+              <a href="author.html#4046">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

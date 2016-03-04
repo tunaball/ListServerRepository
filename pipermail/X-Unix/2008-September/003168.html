@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How does one find a string in a binary  file, etc.?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20does%20one%20find%20a%20string%20in%20a%20binary%20%20file%2C%20etc.%3F&In-Reply-To=20080902160700.8B8C220A7E%40heartbeat2.messagingengine.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003166.html">
+   <LINK REL="Next"  HREF="003169.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How does one find a string in a binary  file, etc.?</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20does%20one%20find%20a%20string%20in%20a%20binary%20%20file%2C%20etc.%3F&In-Reply-To=20080902160700.8B8C220A7E%40heartbeat2.messagingengine.com"
+       TITLE="[X-Unix] How does one find a string in a binary  file, etc.?">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Tue Sep  2 11:18:15 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003166.html">[X-Unix] How does one find a string in a binary file, etc.?
+</A></li>
+        <LI>Next message: <A HREF="003169.html">[X-Unix] How does one find a string in a binary file, etc.?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3168">[ date ]</a>
+              <a href="thread.html#3168">[ thread ]</a>
+              <a href="subject.html#3168">[ subject ]</a>
+              <a href="author.html#3168">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 09:06 -0700 2/9/08, Aaron wrote:
+&gt;<i>Thanks, Bj&#246;rn, for your quick response.
+</I>&gt;<i>
+</I>&gt;&gt;<i>From: &quot;B. Kuestner&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">kuestner at macnews.de</A>&gt;
+</I>&gt;&gt;<i>Date: Tue, 2 Sep 2008 15:43:00 +0200
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Try &quot;man strings&quot;.
+</I>&gt;<i>
+</I>&gt;<i>That gets a negative result. &quot;man string&quot; turns up a bunch of C 
+</I>&gt;<i>functions. &quot;apropos string&quot; turns up lots and lots of C functions 
+</I>&gt;<i>and a few other useless items. Am I missing something?
+</I>
+My Leopard is also missing a man page for 'strings'. For other 
+versions of strings
+   strings -a file
+searches the entire binary. If it thinks it's an app, only the data 
+segment is searched.
+   strings -t x file
+shows the offset where the string is found. 'x' can be 'd' for 
+decimal, 'o' for octal, 'x' for hex.
+
+Searching with perl is another possibility.
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+HP-UX specialist of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x-unix.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003166.html">[X-Unix] How does one find a string in a binary file, etc.?
+</A></li>
+	<LI>Next message: <A HREF="003169.html">[X-Unix] How does one find a string in a binary file, etc.?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3168">[ date ]</a>
+              <a href="thread.html#3168">[ thread ]</a>
+              <a href="subject.html#3168">[ subject ]</a>
+              <a href="author.html#3168">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Is it possible to set unique umask for folder?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Is%20it%20possible%20to%20set%20unique%20umask%20for%20folder%3F&In-Reply-To=BDCA42C1.31601%25kirklists%40wanadoo.fr">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001309.html">
+   <LINK REL="Next"  HREF="001311.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Is it possible to set unique umask for folder?</H1>
+    <B>Craig A. Finseth</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Is%20it%20possible%20to%20set%20unique%20umask%20for%20folder%3F&In-Reply-To=BDCA42C1.31601%25kirklists%40wanadoo.fr"
+       TITLE="[X-Unix] Is it possible to set unique umask for folder?">fin at finseth.com
+       </A><BR>
+    <I>Wed Nov 24 05:00:34 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001309.html">[X-Unix] Is it possible to set unique umask for folder?
+</A></li>
+        <LI>Next message: <A HREF="001311.html">[X-Unix] Is it possible to set unique umask for folder?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1310">[ date ]</a>
+              <a href="thread.html#1310">[ thread ]</a>
+              <a href="subject.html#1310">[ subject ]</a>
+              <a href="author.html#1310">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>   &gt; We have some files being saved to a directory (by the Finder IIRC).
+   &gt; These files have default permissions of 755 - which is Mac OS X's
+   &gt; default from what I can gather. What we'd like is that files saved to
+   &gt; this particular directory have universal read and write privileges
+   &gt; (777). For fairly obvious reasons, we'd prefer not to change the system
+   &gt; wide defaults, just the mode for this one directory.
+   &gt; 
+   &gt; Is this possible? Can one have a directory specific umask?
+	...
+   As far as I understand, no - umask is a system-wide setting.
+	...
+
+Actually, it's per-process.
+
+There are a couple of choices.
+
+First, is there any way to set the (default) umask in the process that is 
+doing the saving?
+
+Second, you could write an AppleScript to run whenever the directory is
+changed.  It just needs to do the equivalent of:
+
+	chmod a+rw *
+
+Craig
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001309.html">[X-Unix] Is it possible to set unique umask for folder?
+</A></li>
+	<LI>Next message: <A HREF="001311.html">[X-Unix] Is it possible to set unique umask for folder?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1310">[ date ]</a>
+              <a href="thread.html#1310">[ thread ]</a>
+              <a href="subject.html#1310">[ subject ]</a>
+              <a href="author.html#1310">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

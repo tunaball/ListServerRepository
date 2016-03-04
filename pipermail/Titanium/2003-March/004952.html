@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] VirtualPC Question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20VirtualPC%20Question&In-Reply-To=list-5474150%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004951.html">
+   <LINK REL="Next"  HREF="004953.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] VirtualPC Question</H1>
+    <B>Chris Olson</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20VirtualPC%20Question&In-Reply-To=list-5474150%40mail.ninewire.com"
+       TITLE="[Ti] VirtualPC Question">chris at mercury1.astcomm.net
+       </A><BR>
+    <I>Sat Mar 29 18:03:08 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004951.html">[Ti] VirtualPC Question
+</A></li>
+        <LI>Next message: <A HREF="004953.html">[Ti] VirtualPC Question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4952">[ date ]</a>
+              <a href="thread.html#4952">[ thread ]</a>
+              <a href="subject.html#4952">[ subject ]</a>
+              <a href="author.html#4952">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Saturday, March 29, 2003, at 07:05 PM, b wrote:
+&gt;<i>
+</I>&gt;<i> Thank you very much for your reply. I failed to mention I'm on VPC 
+</I>&gt;<i> 5.0.4
+</I>&gt;<i>
+</I>&gt;<i> I figured it out. There's no extensions on the Sparse drive Images. 
+</I>&gt;<i> Nor is there a file with a .vhdp extension. This might be due to my 
+</I>&gt;<i> setup. Be that as it may, after reading your letter, i went and looked 
+</I>&gt;<i> very carefully at the files. They seemed exactly the same. I used File 
+</I>&gt;<i> Buddy, with visibility on all to look at each one, and then it hit 
+</I>&gt;<i> me....&lt;pause to feel dumb&gt;... the files looked identical, because the 
+</I>&gt;<i> VirtualPC folder in the OSX partition...was an alias. And it was 
+</I>&gt;<i> pointed at the my OS 9 Documents folder.
+</I>
+LOL.  That'll do it every time!  Good thing you didn't trash that 
+folder in your OS 9 Documents directory!  VPC wouldn't run very well 
+with a broken symlink :-)
+
+&gt;<i> That's good news, except for the fact that trashing the OSX VPC folder 
+</I>&gt;<i> will only give 8 kb of space rather than 4 GBs  &lt;laughs&gt;
+</I>
+Things are getting better as we go.  You just recovered almost 4GB of 
+disk space without even trying :-)
+
+&gt;<i> One- Did you use VPC 5 at some point and upgrade? and if so, did you 
+</I>&gt;<i> trash the VPC 5 app?
+</I>
+No.  My previous version was VPC 3.0 running in OS 9.  I had Windows 98 
+installed in that and it performed very well.  However, in order to use 
+it I had to reboot to OS 9.  I also run linux servers, so I like to 
+keep current with various linux distros.  I had several powerpc linux 
+installs in one of my laptops and got tired of rebooting different 
+linux distros all the time too.  So I bought VPC6.  My old Win98 drive 
+image from VPC 3.0 converted with no problem when I upgraded.
+
+&gt;<i> Two- I'm curious what you think of Redhat Linux in VPC? I realize 
+</I>&gt;<i> there's some performance gain in VPC 6, which I don't use, yet, but 
+</I>&gt;<i> it's mostly screen redraw stuff from my limited experience testing VPC 
+</I>&gt;<i> 6. Does Linux run pretty well on your setup?
+</I>
+Redhat is a dog.  On native hardware it's a dog.  The BlueCurve 
+interface leaves much to be desired, and it's the poorest RPM based 
+desktop linux I've seen.  My favorite is Debian.  I finally came up 
+with an /etc/X11/XF86Config-4 file that got X running in Woody, then 
+apt-get upgraded it to Sid so I could try out the latest cutting edge 
+in Debian.  I also got a powerpc install of Debian on a different 
+partition on this machine, but it's no different than the x86 install, 
+and VPC allows me to run it without rebooting.  KDE3.1 is no speed 
+demon on emulated hardware, but it's fully functional - I'd say about 
+like Windows 2000.  Compared to running the powerpc install of 
+Debian/KDE3 on native hardware, which we'll rate a 10, I would rate the 
+x86 install in VPC as a 6 for performance.  It's about the same whether 
+you choose Redhat or Debian or anything running KDE.  Gnome might 
+perform marginally better, but it's not too noticeable.  Once you shut 
+down X and run linux at the command line, you really can't tell the 
+difference between native and emulated hardware for performance.  I 
+must say, though, that heavy programs like Konqueror do perform quite 
+well in the VPC install, and I'm overall happy with it.  It sure beats 
+rebooting  to run them, and OS X is the One True Desktop anyway, so I 
+have no desire to run linux desktops to actually *use* them to do any 
+work.
+
+Just my personal opinion; If you want a rpm based linux desktop distro 
+to run in VPC, I'd pick either SuSE or Mandrake before I'd install 
+Redhat.  Installing Debian in VPC is not for the uninitiated.  Awhile 
+back I did have Xandros 1.0 installed (Debian based).  It went in with 
+no problems, but Xandros is a pretty unexciting linux distro so I 
+removed it.
+--
+Chris
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004951.html">[Ti] VirtualPC Question
+</A></li>
+	<LI>Next message: <A HREF="004953.html">[Ti] VirtualPC Question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4952">[ date ]</a>
+              <a href="thread.html#4952">[ thread ]</a>
+              <a href="subject.html#4952">[ subject ]</a>
+              <a href="author.html#4952">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

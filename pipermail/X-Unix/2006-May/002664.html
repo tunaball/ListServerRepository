@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] text file parsing?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20text%20file%20parsing%3F&In-Reply-To=7D1FA998-508D-4B87-8966-1443E44FF899%40acedsl.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002663.html">
+   <LINK REL="Next"  HREF="002665.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] text file parsing?</H1>
+    <B>Wing Wong</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20text%20file%20parsing%3F&In-Reply-To=7D1FA998-508D-4B87-8966-1443E44FF899%40acedsl.com"
+       TITLE="[X-Unix] text file parsing?">wingedpower at gmail.com
+       </A><BR>
+    <I>Wed May  3 11:18:35 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002663.html">[X-Unix] text file parsing?
+</A></li>
+        <LI>Next message: <A HREF="002665.html">[X-Unix] Forcing Mail.app to use a proxy
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2664">[ date ]</a>
+              <a href="thread.html#2664">[ thread ]</a>
+              <a href="subject.html#2664">[ subject ]</a>
+              <a href="author.html#2664">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Depending on the version of sed, you can use parenthesis around the
+pattern and then \1 to put the pattern back. Since you are deleting
+all lines after the pattern, you might want to insert a newline and a
+recognizable keyword after the pattern, then delete everything after
+the keyword.
+
+goggling for : sed, substitution, \1 or variables, buffers
+
+Good luck!
+
+Oh, if you happen to know what kind of file you are dealing with,
+there might already be an interpreter for it, which can do a
+[format]=&gt;[ascii/text] conversion for you. Which would be alot easier
+going in the long run.
+
+Wing.
+
+On 5/3/06, Ben Gold &lt;<A HREF="../../../mailman/listinfo/x-unix.html">bgold at acedsl.com</A>&gt; wrote:
+&gt;<i> Bj&#246;rn, Robert,
+</I>&gt;<i>
+</I>&gt;<i> Thanks... almost there.
+</I>&gt;<i>
+</I>&gt;<i> The strings command got rid of the binary garbage and effectively
+</I>&gt;<i> deleted the first line.  I'm still left with a bunch of ASCII garbage
+</I>&gt;<i> at the end of the file.
+</I>&gt;<i> Using sed, I did the following:
+</I>&gt;<i>
+</I>&gt;<i>                 sed '/Pattern/, $d' OldFile &gt; NewFile
+</I>&gt;<i>
+</I>&gt;<i> Which almost works perfectly!  The only problem is that sed omits the
+</I>&gt;<i> Pattern along with the lines that follow it.  I want it to omit only
+</I>&gt;<i> everything after Pattern, so the resulting file ends with Pattern.
+</I>&gt;<i>
+</I>&gt;<i> I've done about 15 minutes of looking on a website but cannot get
+</I>&gt;<i> any  syntax to work.
+</I>&gt;<i>
+</I>&gt;<i> Thanks in advance for anymore help,
+</I>&gt;<i>
+</I>&gt;<i> Ben
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random stuff:
+</I>&gt;<i>          <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>
+
+--
+Wing Wong
+<A HREF="../../../mailman/listinfo/x-unix.html">wingedpower at gmail.com</A>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002663.html">[X-Unix] text file parsing?
+</A></li>
+	<LI>Next message: <A HREF="002665.html">[X-Unix] Forcing Mail.app to use a proxy
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2664">[ date ]</a>
+              <a href="thread.html#2664">[ thread ]</a>
+              <a href="subject.html#2664">[ subject ]</a>
+              <a href="author.html#2664">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Backdoor method to add users
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Backdoor%20method%20to%20add%20users&In-Reply-To=list-10984995%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000347.html">
+   <LINK REL="Next"  HREF="000349.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Backdoor method to add users</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Backdoor%20method%20to%20add%20users&In-Reply-To=list-10984995%40mail.ninewire.com"
+       TITLE="[X-Unix] Backdoor method to add users">magill at mcgillsociety.org
+       </A><BR>
+    <I>Sun Feb 22 06:09:02 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000347.html">[X-Unix] Call for bash prompts
+</A></li>
+        <LI>Next message: <A HREF="000349.html">[X-Unix] Backdoor method to add users
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#348">[ date ]</a>
+              <a href="thread.html#348">[ thread ]</a>
+              <a href="subject.html#348">[ subject ]</a>
+              <a href="author.html#348">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 21 Feb, 2004, at 14:22, Alex wrote:
+&gt;<i> On Saturday, Feb 21, 2004, at 13:49 Canada/Eastern, William H. Magill 
+</I>&gt;<i> wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> [...] The &quot;UID&quot; [...] is a numeric value whose maximum value is 
+</I>&gt;&gt;<i> determined by both the number of bits the hardware architecture 
+</I>&gt;&gt;<i> supports (as in 8/16/32/64) and by the coding of the kernel to 
+</I>&gt;&gt;<i> support a particular &quot;address&quot; space. [...] if OS X is 64 bit clean, 
+</I>&gt;&gt;<i> it supports a 64 bit number, [...]
+</I>&gt;<i>
+</I>&gt;<i> I was under the impression that, even on some 32-bit and 64-bit 
+</I>&gt;<i> systems, the UID is limited to 65535 (biggest 16-bit unsigned 
+</I>&gt;<i> integer). I don't recall where I read this -- is it incorrect?
+</I>
+Yes. It is very implementation dependent. That is the limit on 32 bit 
+systems.
+
+In Tru64 Unix the value is 4,294,967,294 (32 bits 2 reserved values). 
+Note that this &quot;restriction&quot; applies to GIDs as well as UIDs.
+
+However, System V based environments have that 65,535 limit.
+
+&quot;The System V file system (S5FS) does not support the maximum range of 
+UIDs and GIDs. Any file system syscall that specifies UIDs and GIDs 
+greater than 65,535 returns an EINVAL error. Users assigned a UID or 
+GID greater than 65,535 cannot create or own files on a System V file 
+system. Consider using the UFS or AdvFS as a solution.&quot;
+
+Keep in mind, the System V file system mentioned is essentially the 
+original UFS file system -- pre BSD 4.x when it was expanded to allow a 
+size greater than 2GB. It is virtually unused today. (When was the last 
+time you saw a REAL ATT System V implementation?)
+
+However, the &quot;user name&quot; is STILL limited to 8 characters. [Which is a 
+royal pain in the pituti but it is so ingrained in the definition of 
+Unix that it cannot be changed, despite 15+ years worth of trying. 
+Which drives those of us who come from a VMS background nuts -- we had 
+64 character usernames back in 1980!!! ... but then, back in those days 
+the attitude was, &quot;nobody would ever need more than 640K of memory,&quot; 
+despite that fact that VMS was virtual and already supporting much more 
+than one meg of (expenisve) physical memory. Unix was developed on PDPs 
+where a 512K machine was a HUGE and expensive machine!]
+
+The limits for OS X are defined in
+             /usr/include/sys/syslimits.h
+
+#define UID_MAX            2147483647U  /* max value for a uid_t 
+(2^31-2) */
+
+#define GID_MAX            2147483647U  /* max value for a gid_t 
+(2^31-2) */
+
+[These are from a G4 environment. I haven't looked at the G5 builds.]
+
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000 - [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000347.html">[X-Unix] Call for bash prompts
+</A></li>
+	<LI>Next message: <A HREF="000349.html">[X-Unix] Backdoor method to add users
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#348">[ date ]</a>
+              <a href="thread.html#348">[ thread ]</a>
+              <a href="subject.html#348">[ subject ]</a>
+              <a href="author.html#348">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

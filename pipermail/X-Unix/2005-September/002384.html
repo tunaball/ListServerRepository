@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] What unix command ?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20What%20unix%20command%20%3F&In-Reply-To=43383CEF.9080403%40tampabay.rr.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002382.html">
+   <LINK REL="Next"  HREF="002386.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] What unix command ?</H1>
+    <B>Ken Rossman</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20What%20unix%20command%20%3F&In-Reply-To=43383CEF.9080403%40tampabay.rr.com"
+       TITLE="[X-Unix] What unix command ?">rossman at columbia.edu
+       </A><BR>
+    <I>Mon Sep 26 13:14:27 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002382.html">[X-Unix] What unix command ?
+</A></li>
+        <LI>Next message: <A HREF="002386.html">[X-Unix] Parsing or splitting a text file
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2384">[ date ]</a>
+              <a href="thread.html#2384">[ thread ]</a>
+              <a href="subject.html#2384">[ subject ]</a>
+              <a href="author.html#2384">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Here is yet another way to do a mass rename (I do this all the time),  
+using
+built-in features of the default unix shell under Mac OS X -- bash:
+
+   $ for i in *eml..txt; do echo $i; mv $i $i{%%eml..txt}.txt; done
+
+See the man pages for an explanation of '##' and '%%' shell variable
+modifiers.  These are quite useful.
+
+By the way, the above might be more politely written in a multi-line  
+format
+in a separate script file, but writing it in the above fashion, all  
+on one
+line, with semicolons for line separators, makes it easy for me to  
+command-
+line-edit the program if I goofed it up the first few times.  I can just
+recall the command, edit, and re-execute it (I use the emacs-mode  
+editing,
+but vi-mode editing is also available).
+
+KR
+
+On Sep 26, 2005, at 2:24 PM, Richard Nagle wrote:
+
+&gt;<i> Looking for a unix command's that can do the following:
+</I>&gt;<i>
+</I>&gt;<i> inside a folder on my desktop, there are txt documents,
+</I>&gt;<i> that I need to fix the file names...
+</I>&gt;<i>
+</I>&gt;<i> ie:
+</I>&gt;<i>
+</I>&gt;<i> message: fixing the mac power supplyeml..txt
+</I>&gt;<i>
+</I>&gt;<i>     Now look at the end of this message, its a .txt file,
+</I>&gt;<i>     however, I need to do this:....
+</I>&gt;<i>
+</I>&gt;<i>     going backwards, from ; .txt and remove the eml,
+</I>&gt;<i>     then slide over the .txt,
+</I>&gt;<i>
+</I>&gt;<i> So the end results are;
+</I>&gt;<i> message: fixing the mac power supply.txt
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> I've got 1000's of messages like this,
+</I>&gt;<i> its a plugin filter, that adds this eml.
+</I>&gt;<i> to every email message...that are exported
+</I>&gt;<i>
+</I>&gt;<i> I did in fact Contact the author, 3 months ago.
+</I>&gt;<i> N/A as of yet.
+</I>&gt;<i>
+</I>&gt;<i> Thanks all...
+</I>&gt;<i> Richard
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> -- 
+</I>&gt;<i>
+</I>&gt;<i> I will not be pushed, filed, stamped, indexed, briefed, debriefed,  
+</I>&gt;<i> or numbered!
+</I>&gt;<i> My life is my own - No. 6
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>
+Ken Rossman
+<A HREF="../../../mailman/listinfo/x-unix.html">rossman at columbia.edu</A>
+973-509-7669 (home)
+973-202-0974 (cell)
+
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002382.html">[X-Unix] What unix command ?
+</A></li>
+	<LI>Next message: <A HREF="002386.html">[X-Unix] Parsing or splitting a text file
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2384">[ date ]</a>
+              <a href="thread.html#2384">[ thread ]</a>
+              <a href="subject.html#2384">[ subject ]</a>
+              <a href="author.html#2384">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] syslogd problems
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20syslogd%20problems&In-Reply-To=list-13841758%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000896.html">
+   <LINK REL="Next"  HREF="000899.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] syslogd problems</H1>
+    <B>James Bucanek</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20syslogd%20problems&In-Reply-To=list-13841758%40mail.ninewire.com"
+       TITLE="[X-Unix] syslogd problems">subscriber at gloaming.com
+       </A><BR>
+    <I>Wed Jun  9 12:26:28 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000896.html">[X-Unix] Yet another confirmation on netwrok
+ connection...........
+</A></li>
+        <LI>Next message: <A HREF="000899.html">[X-Unix] syslogd problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#898">[ date ]</a>
+              <a href="thread.html#898">[ thread ]</a>
+              <a href="subject.html#898">[ subject ]</a>
+              <a href="author.html#898">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Kevin Stevens wrote on Wednesday, June 9, 2004:
+
+&gt;<i>What I don't understand is why, if I load a largish program from this
+</I>&gt;<i>point, I get pageouts instead of simply deallocating some of that vast
+</I>&gt;<i>pool of inactive memory (it actually does that, I've watched it with some
+</I>&gt;<i>slow growth apps like pine sorting a large newsgroup).
+</I>
+Inactive memory can exist in several states.  Inactive+allocated means that the memory block is mapped into a process's memory space, but simply hasn't been accessed in awhile.  Thus the term &quot;inactive&quot; rather than &quot;unused.&quot;  These blocks can not be simply discarded.  They belong to some app and contain data.  These are typically the first candidates for blocks that will be swapped out if new blocks are needed.
+
+The kernal periodically sweeps the list of active blocks and marks those as inactive that haven't been touched in awhile.  It has an algorithm that tries to maintain an optimal balance between active and inactive blocks.
+
+Inactive+unallocated are used as temporary cache.  These can contain previously loaded code, disk buffers, whatever.  The idea is that the kernel knows what's in these blocks and can instantly resurrect them if the need arises.  These blocks do not have to paged out to be reused.
+
+What can be confusing is that most of the system status utility simply list the total amount of &quot;inactive&quot; memory, without regard to what kind or combination of &quot;inactive&quot; it is.  You'll often notice the number of inactive blocks jump up or down as a consequence of a process touching a bunch of memory, or after not touching it for awhile.
+
+&gt;<i>Or why I need 3+
+</I>&gt;<i>GB of swap in the first place, or why after allocating all that &quot;base&quot;
+</I>&gt;<i>swap it needs to add another 74MB swap file.
+</I>
+Probably because it ran out of real RAM and some process asked for more.  This happens quite often. ;)
+
+______________________________________________________
+James Bucanek       &lt;mailto:<A HREF="../../../mailman/listinfo/x-unix.html">privatereply at gloaming.com</A>&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000896.html">[X-Unix] Yet another confirmation on netwrok
+ connection...........
+</A></li>
+	<LI>Next message: <A HREF="000899.html">[X-Unix] syslogd problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#898">[ date ]</a>
+              <a href="thread.html#898">[ thread ]</a>
+              <a href="subject.html#898">[ subject ]</a>
+              <a href="author.html#898">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

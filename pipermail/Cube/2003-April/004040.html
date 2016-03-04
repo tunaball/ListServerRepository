@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Overclock a Cube through open firmware?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=Overclock%20a%20Cube%20through%20open%20firmware%3F&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004039.html">
+   <LINK REL="Next"  HREF="004041.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Overclock a Cube through open firmware?</H1>
+    <B>Joakim Skog</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=Overclock%20a%20Cube%20through%20open%20firmware%3F&In-Reply-To="
+       TITLE="Overclock a Cube through open firmware?">joakim.skog at home.se
+       </A><BR>
+    <I>Tue Apr 29 09:25:32 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004039.html">[CUBE] Cube shutdown!
+</A></li>
+        <LI>Next message: <A HREF="004041.html">[CUBE] Superdrive
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4040">[ date ]</a>
+              <a href="thread.html#4040">[ thread ]</a>
+              <a href="subject.html#4040">[ subject ]</a>
+              <a href="author.html#4040">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>According to the swedish Mac news site <A HREF="http://www.macnytt.com">http://www.macnytt.com</A> it should be
+possible to change the bus frequency and the clock frequency on Macs with a
+100 Mhz system bus by just enter some code into open firmeware. The hack
+changes the system bus to 133 Mhz and the processor speed to something like
+533 Mhz. They also note that you should check that your memory type is
+compatible with the higher bus speed before trying the hack, otherwise it
+sure will crash.
+
+What do you think about this? Below is the instructions quickly translated.
+Use at your own risk!
+
+/Joakim
+
+1. Restart the computer
+
+2. Press option+alt+o+f when restarting to enter Open Firmware.
+
+3. write nvedit and confirm with &lt;return&gt; to enter the configuration editor.
+
+4. write exactly the follwoing, with spaces but without carrier returns:
+
+&quot; /&quot; select-dev&lt;return&gt;
+7efdc44 &quot; clock-frequency&quot; get-my-property 2drop ! &lt;return&gt;
+&quot; /cpus/<A HREF="../../../mailman/listinfo/cube.html">PowerPC,G4 at 0</A>&quot; select-dev&lt;return&gt;
+1fca0554 &quot; clock-frequency&quot; get-my-property 2drop ! &lt;return&gt;
+7efdc44 &quot; bus-frequency&quot; get-my-property 2drop ! &lt;return&gt;
+1fbf711 &quot; timebase-frequency&quot; get-my-property 2drop !
+
+5. press ctrl+c to exit the configuration editor.
+
+6. write nvstore and confirm with &lt;return&gt;
+
+7. write setenv use-nvramrc? true and confirm with &lt;return&gt;
+
+8. write reset-all and confirm with &lt;return&gt; to restart the computer.
+
+If your computer is unstable after this hack, reset the pram
+(option-alt-p-r).
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004039.html">[CUBE] Cube shutdown!
+</A></li>
+	<LI>Next message: <A HREF="004041.html">[CUBE] Superdrive
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4040">[ date ]</a>
+              <a href="thread.html#4040">[ thread ]</a>
+              <a href="subject.html#4040">[ subject ]</a>
+              <a href="author.html#4040">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

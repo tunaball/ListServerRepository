@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] PC133 RAM in PC100 slots?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20PC133%20RAM%20in%20PC100%20slots%3F&In-Reply-To=41E399AA-263C-4D66-9AE4-DB5BFCD9712F%40bellsouth.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="017554.html">
+   <LINK REL="Next"  HREF="017553.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] PC133 RAM in PC100 slots?</H1>
+    <B>John Niven</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20PC133%20RAM%20in%20PC100%20slots%3F&In-Reply-To=41E399AA-263C-4D66-9AE4-DB5BFCD9712F%40bellsouth.net"
+       TITLE="[G4] PC133 RAM in PC100 slots?">senseamp at yahoo.com
+       </A><BR>
+    <I>Wed May 14 20:44:56 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="017554.html">[G4] PC133 RAM in PC100 slots?
+</A></li>
+        <LI>Next message: <A HREF="017553.html">[G4] PC133 RAM in PC100 slots?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17555">[ date ]</a>
+              <a href="thread.html#17555">[ thread ]</a>
+              <a href="subject.html#17555">[ subject ]</a>
+              <a href="author.html#17555">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I'm really having problems with this thread now!
+
+It's been a while since I worked on memories but they do not have &quot;clocks&quot; onboard. Rather clocks are supplied by the system bus to the RAM which then responds to a read or write request. The speed of the RAM is defined by how fast you can clock it and still get proper operation. Therefore a 100MHz memory bus clocks at 100MHz and does not care what the speed rating of the memories attached to it are: they either work at that speed or not. PC100 type ram is tested to work at bus speeds of up to 100MHz. PC133 ram is tested to work on buses up to 133MHz so running it on a 100MHz bus will definitely work. A 100MHz bus, however, will NOT speed up to 133MHZ just because you put PC133 ram in the slot! 
+
+OK?
+
+John
+
+--- On Wed, 5/14/08, Steve Adams &lt;<A HREF="../../../mailman/listinfo/g4.html">adamss99 at bellsouth.net</A>&gt; wrote:
+
+&gt;<i> From: Steve Adams &lt;<A HREF="../../../mailman/listinfo/g4.html">adamss99 at bellsouth.net</A>&gt;
+</I>&gt;<i> Subject: Re: [G4] PC133 RAM in PC100 slots?
+</I>&gt;<i> To: &quot;A place to discuss Apple's G4 computers.&quot; &lt;<A HREF="../../../mailman/listinfo/g4.html">g4 at listserver.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Date: Wednesday, May 14, 2008, 8:58 PM
+</I>&gt;<i> You are right. In fact, a 100 MHz bus should work at speeds
+</I>&gt;<i> upwards of  
+</I>&gt;<i> 250-300 MHz or you're going to have problems at 100
+</I>&gt;<i> MHz. The speed is  
+</I>&gt;<i> a hardware issue dealing with handshaking between
+</I>&gt;<i> processor, memory  
+</I>&gt;<i> chips, and peripheral chips on the same bus. The bus will
+</I>&gt;<i> work no  
+</I>&gt;<i> faster than the slowest device on the bus. The speed is
+</I>&gt;<i> generally  
+</I>&gt;<i> limited by the processor or the memory chips. A PC133 RAM
+</I>&gt;<i> on a 100 MHz  
+</I>&gt;<i> is a good thing because the data will be ready on the bus
+</I>&gt;<i> faster, with  
+</I>&gt;<i> less chances of an error by the time the processor is ready
+</I>&gt;<i> to read  
+</I>&gt;<i> the data.
+</I>&gt;<i> 
+</I>&gt;<i> Steve Adams
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> On May 14, 2008, at 9:32 PM, C D T wrote:
+</I>&gt;<i> 
+</I>&gt;<i> &gt; Someone please nail me if I'm wrong, but I
+</I>&gt;<i> don't think the bus speed  
+</I>&gt;<i> &gt; is the limiting factor.  Even in a machine that has a
+</I>&gt;<i> faster bus  
+</I>&gt;<i> &gt; speed and can use faster memory, the machine can only
+</I>&gt;<i> work at the  
+</I>&gt;<i> &gt; speed of the slowest memory module installed.  That is
+</I>&gt;<i> why you  
+</I>&gt;<i> &gt; usually don't mix speeds.  PC133 is generally
+</I>&gt;<i> backward compatible  
+</I>&gt;<i> &gt; and will function in PC100 spec'd computers - but
+</I>&gt;<i> at the slower speed.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Dan
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; On May 14, 2008, at 9:14 PM, Harry Freeman wrote:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt; Greeting Eric,
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Should work, however the PC133 RAM will run at the
+</I>&gt;<i> same speed as  
+</I>&gt;<i> &gt;&gt; PC100 RAM because PC100 RAM is the fastest RAM
+</I>&gt;<i> that the buss can use.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> ----------------------------------------------------
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; On May 14, 2008, at 4:20 PM, Eric Buczynski wrote:
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; Hey all. I checked my archived list of emails
+</I>&gt;<i> regarding this but I  
+</I>&gt;<i> &gt;&gt;&gt; couldn't find the answer to this. I just
+</I>&gt;<i> bought a G4 Sawtooth for  
+</I>&gt;<i> &gt;&gt;&gt; my bud who is fairly new to computers. I have
+</I>&gt;<i> leftover RAM from my  
+</I>&gt;<i> &gt;&gt;&gt; G4 Digital Audio that uses PC133 RAM, while
+</I>&gt;<i> the Sawtooth uses  
+</I>&gt;<i> &gt;&gt;&gt; PC100 RAM. Would adding the PC133 RAM in the
+</I>&gt;<i> Sawtooth cause any  
+</I>&gt;<i> &gt;&gt;&gt; problems at all? I appreciate your help.
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; Eric Buczynski
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> &gt;&gt;&gt; G4 mailing list
+</I>&gt;<i> &gt;&gt;&gt; <A HREF="../../../mailman/listinfo/g4.html">G4 at listserver.themacintoshguy.com</A>
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">http://listserver.themacintoshguy.com/mailman/listinfo/g4</A>
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; _______________________________________________
+</I>&gt;<i> &gt;&gt; G4 mailing list
+</I>&gt;<i> &gt;&gt; <A HREF="../../../mailman/listinfo/g4.html">G4 at listserver.themacintoshguy.com</A>
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">http://listserver.themacintoshguy.com/mailman/listinfo/g4</A>
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; _______________________________________________
+</I>&gt;<i> &gt; G4 mailing list
+</I>&gt;<i> &gt; <A HREF="../../../mailman/listinfo/g4.html">G4 at listserver.themacintoshguy.com</A>
+</I>&gt;<i> &gt;
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">http://listserver.themacintoshguy.com/mailman/listinfo/g4</A>
+</I>&gt;<i> 
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> G4 mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">G4 at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">http://listserver.themacintoshguy.com/mailman/listinfo/g4</A>
+</I>
+
+      
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="017554.html">[G4] PC133 RAM in PC100 slots?
+</A></li>
+	<LI>Next message: <A HREF="017553.html">[G4] PC133 RAM in PC100 slots?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17555">[ date ]</a>
+              <a href="thread.html#17555">[ thread ]</a>
+              <a href="subject.html#17555">[ subject ]</a>
+              <a href="author.html#17555">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

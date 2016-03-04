@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to determine which network component is failing
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20determine%20which%20network%20component%20is%20failing&In-Reply-To=FBBC11D8-C384-4D2D-B44F-C84A9E7FAE65%40myrealbox.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002708.html">
+   <LINK REL="Next"  HREF="002715.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to determine which network component is failing</H1>
+    <B>Charles Howse</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20determine%20which%20network%20component%20is%20failing&In-Reply-To=FBBC11D8-C384-4D2D-B44F-C84A9E7FAE65%40myrealbox.com"
+       TITLE="[X-Unix] How to determine which network component is failing">chowse at charter.net
+       </A><BR>
+    <I>Tue Jul 25 15:25:18 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002708.html">[X-Unix] How to determine which network component is failing
+</A></li>
+        <LI>Next message: <A HREF="002715.html">[X-Unix] How to determine which network component is failing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2713">[ date ]</a>
+              <a href="thread.html#2713">[ thread ]</a>
+              <a href="subject.html#2713">[ subject ]</a>
+              <a href="author.html#2713">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jul 24, 2006, at 7:52 PM, Stroller wrote:
+
+&gt;<i>
+</I>&gt;<i> On 24 Jul 2006, at 22:19, Charles Howse wrote:
+</I>&gt;&gt;<i> ...
+</I>&gt;&gt;<i> It's too big for the 5k limit.  It bounced.
+</I>&gt;&gt;<i> I've posted it here:
+</I>&gt;&gt;<i> <A HREF="http://bubbabbq.homeunix.net/router_status.html">http://bubbabbq.homeunix.net/router_status.html</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> The &quot;--form&quot; parameter to `curl` may allow for button presses on  
+</I>&gt;&gt;&gt;<i> a webpage.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Hmmm...I'll have to play with that.
+</I>&gt;<i>
+</I>&gt;<i> I think the relevant sections of the HTML are...
+</I>&gt;<i>
+</I>&gt;<i> &lt;SCRIPT language=JavaScript&gt;function pppoeAction(F,I) 
+</I>&gt;<i> { F.pppoeAct.value = I; F.submit();}function DHCPAct(F,I) 
+</I>&gt;<i> { F.dhcpAction.value = I; F.submit();}function showAlert(){alert 
+</I>&gt;<i> ('');}&lt;/SCRIPT&gt;
+</I>&gt;<i>
+</I>&gt;<i> and:
+</I>&gt;<i>
+</I>&gt;<i> &lt;input type=hidden name=dhcpAction&gt; ...
+</I>&gt;<i> &lt;input type=button value='DHCP Renew' onClick=DHCPAct(this.form,1)&gt;
+</I>&gt;<i>
+</I>&gt;<i> `curl --manual` gives more examples than `man curl`, but the http:// 
+</I>&gt;<i> curl.haxx.se/ website looks more comprehensive still. They have a  
+</I>&gt;<i> mailing list, so you might find what you need by searching the  
+</I>&gt;<i> archives of that, or posting to it.
+</I>
+I made quite a bit of progress playing with curl this afternoon.
+FYI, the following commands work:
+
+- Router -
+# dhcp release - $ curl -u admin:pw &quot;<A HREF="http://192.168.254.254/">http://192.168.254.254/</A> 
+Gozila.cgi?dhcpAction=0&quot;
+# dhcp renew - $ curl -u admin:pw &quot;<A HREF="http://192.168.254.254/Gozila.cgi?">http://192.168.254.254/Gozila.cgi?</A> 
+dhcpAction=1&quot;
+- Modem -
+# Reboot Modem - $ curl -d &quot;BUTTON_INPUT=Restart%20Cable%20Modem&quot;  
+192.168.100.1/configdata.html
+
+I will need a little more support on scripting the testing part, so  
+please stay tuned.
+And a big &quot;Thanks&quot; for the link to the curl site.
+
+--
+Webmaster's Computer Page -
+<A HREF="http://bubbabbq.homeunix.net/webmaster.html">http://bubbabbq.homeunix.net/webmaster.html</A>
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002708.html">[X-Unix] How to determine which network component is failing
+</A></li>
+	<LI>Next message: <A HREF="002715.html">[X-Unix] How to determine which network component is failing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2713">[ date ]</a>
+              <a href="thread.html#2713">[ thread ]</a>
+              <a href="subject.html#2713">[ subject ]</a>
+              <a href="author.html#2713">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

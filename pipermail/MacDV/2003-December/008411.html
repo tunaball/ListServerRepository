@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MacDV] Re: dead simple question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20dead%20simple%20question&In-Reply-To=list-9995115%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="008410.html">
+   <LINK REL="Next"  HREF="008412.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MacDV] Re: dead simple question</H1>
+    <B>Laine Lee</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20dead%20simple%20question&In-Reply-To=list-9995115%40mail.ninewire.com"
+       TITLE="[MacDV] Re: dead simple question">llee at moss.utsa.edu
+       </A><BR>
+    <I>Tue Dec 30 10:00:12 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="008410.html">[MacDV] iDVD discs &amp; playback problems
+</A></li>
+        <LI>Next message: <A HREF="008412.html">[MacDV] Re: iDVD discs &amp; playback problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8411">[ date ]</a>
+              <a href="thread.html#8411">[ thread ]</a>
+              <a href="subject.html#8411">[ subject ]</a>
+              <a href="author.html#8411">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Here's information and a version of the script that will let you drag and
+drop the source movie. It will also give you a little flexibility about what
+size files you create. Remember, it requires QuickTime Pro, enough disk
+space and time to do the copying. You paste it into Script Editor and save
+it as an application (you'll be prompted for the default destination for
+movie chunks when you save or compile).
+
+ Apple updated this article on the Knowledgebase recently:
+
+<A HREF="http://docs.info.apple.com/article.html?artnum=93494">http://docs.info.apple.com/article.html?artnum=93494</A>
+
+It tells you that iMovie can't import files larger than two gigabytes in
+size and links a page that tells you how to split files into smaller chunks
+if you have QuickTime Pro. Here's an Applescript I wrote that will do the
+job for you automatically. Save it as a application with the Script Editor
+and drag your big movie files onto the application's icon. You'll be
+prompted for a folder for saving the resulting split movie chunks into. If
+you want to change the output folder, just open and save the application
+again using the script editor. This script also requires QuickTime Pro (5 or
+higher) and can take quite a long time to work if your dragged file is
+really big.
+
+
+-------
+
+property mydestination : choose folder with prompt &#172;
+    &quot;Choose a destination folder for the segments.&quot;
+
+on open sourcefile
+    set this_time to 1
+    
+    tell application &quot;QuickTime Player&quot;
+        activate
+        stop every movie
+        try
+            if exists movie 1 then close movie 1
+            
+            -- CHECK FOR THE CORRECT VERSION OF QUICKTIME
+            set the QT_version to (the QuickTime version as string)
+            set the player_version to (the version as string)
+            set the required_version to &quot;5.0.2&quot;
+            if (the QT_version is less than the required_version) or &#172;
+                (the player_version is less than the required_version) then
+                set the error_message to &#172;
+                    &quot;This script requires QuickTime &quot; &amp; &#172;
+                    the required_version &amp; &quot;  or greater.&quot; &amp; &#172;
+                    return &amp; return &amp; &#172;
+                    &quot;Current QuickTime Version: &quot; &amp; QT_version &amp; return &amp; &#172;
+                    &quot;Current QuickTime Player Version: &quot; &amp; player_version
+                my upgrade_QT(error_message)
+            end if
+            
+            -- CHECK FOR QUICKTIME PRO
+            if QuickTime Pro installed is false then
+                set the error_message to &quot;This script requires a
+            QuickTime Pro installation on this system.&quot;
+                my upgrade_QT(error_message)
+            end if
+            
+            set myfile to open sourcefile
+            
+        on error error_message number error_number
+            if the error_number is not -128 then
+                beep
+                display dialog error_message buttons {&quot;Cancel&quot;} default
+button 1
+            end if
+        end try
+        
+        --if not (exists movie 1) then error &quot;No movies are open.&quot;
+        
+    end tell
+    repeat
+        activate
+        display dialog &#172;
+            &quot;Enter the number of seconds for segments.
+            560 should make them less than 2 G in size.&quot; default answer &#172;
+            &quot;560&quot; buttons {&quot;Cancel&quot;, &quot;Set Segment Length&quot;} default button 2
+        copy the result as list to {segment_length_in_seconds, go_ahead}
+        try
+            if the segment_length_in_seconds is not &quot;&quot; then
+                set the segment_length_in_seconds to the &#172;
+                    segment_length_in_seconds as number
+                exit repeat
+            end if
+        end try
+    end repeat
+    
+    
+    repeat
+        try
+            tell application &quot;QuickTime Player&quot;
+                
+                tell movie 1
+                    set the selection end to (the selection start + &#172;
+                        (segment_length_in_seconds * time scale))
+                end tell
+                if (data size of movie 1) &gt; 0 then
+                    set start_name to name of movie 1
+                    cut movie 1
+                    make new movie
+                    paste movie 1
+                   
+                    set mynewfile to ((mydestination as string) &amp; &#172;
+                        start_name &amp; &quot;_&quot; &amp; this_time)
+                    with timeout of 3600 seconds
+                        export movie 1 to file (mynewfile &amp; &quot;.dv&quot;) &#172;
+                            as DV stream using most recent settings
+                    end timeout
+                    close movie 1 without saving
+                else
+                    error number -128
+                end if
+            end tell
+            set this_time to (this_time + 1)
+        on error
+            tell application &quot;QuickTime Player&quot;
+                activate
+                if (data size of movie 1) &gt; 0 then
+                    with timeout of 3600 seconds
+                        export movie 1 to file (((mydestination as string) &amp;
+this_time) &amp; &quot;.dv&quot;) &#172;
+                            as DV stream using most recent settings
+                    end timeout
+                    close movie 1 without saving
+                else
+                    close movie 1 without saving
+                end if
+            end tell
+            exit repeat
+        end try
+    end repeat
+end open
+
+on upgrade_QT(passed_message)
+    tell application &quot;QuickTime Player&quot;
+        activate
+        stop every movie
+        set the target_URL to &quot;<A HREF="http://www.apple.com/quicktime/download/">http://www.apple.com/quicktime/download/&quot;</A>
+        display dialog passed_message &amp; return &amp; return &amp; &#172;
+            &quot;If this computer is currently connected to the Internet, &quot; &amp; &#172;
+            &quot;click the ?pgrade?button to visit the QuickTime Website.&quot;
+buttons &#172;
+            {&quot;Upgrade&quot;, &quot;Cancel&quot;} default button 2
+        ignoring application responses
+            tell application &quot;Finder&quot;
+                open location target_URL
+            end tell
+        end ignoring
+        error number -128
+    end tell
+end upgrade_QT
+
+-------
+-- 
+Laine Lee
+<A HREF="../../../mailman/listinfo/macdv.html">llee at lonestar.utsa.edu</A>
+<A HREF="http://lonestar.utsa.edu/llee">http://lonestar.utsa.edu/llee</A>
+ 
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="008410.html">[MacDV] iDVD discs &amp; playback problems
+</A></li>
+	<LI>Next message: <A HREF="008412.html">[MacDV] Re: iDVD discs &amp; playback problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8411">[ date ]</a>
+              <a href="thread.html#8411">[ thread ]</a>
+              <a href="subject.html#8411">[ subject ]</a>
+              <a href="author.html#8411">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

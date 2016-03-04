@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Displaying data traffic
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Displaying%20data%20traffic&In-Reply-To=4D418F54-2684-11D9-9336-000A95CD828E%40landover.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001249.html">
+   <LINK REL="Next"  HREF="001253.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Displaying data traffic</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Displaying%20data%20traffic&In-Reply-To=4D418F54-2684-11D9-9336-000A95CD828E%40landover.com"
+       TITLE="[X-Unix] Displaying data traffic">magill at mcgillsociety.org
+       </A><BR>
+    <I>Mon Oct 25 07:24:18 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001249.html">[X-Unix] Displaying data traffic
+</A></li>
+        <LI>Next message: <A HREF="001253.html">[X-Unix] Displaying data traffic
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1252">[ date ]</a>
+              <a href="thread.html#1252">[ thread ]</a>
+              <a href="subject.html#1252">[ subject ]</a>
+              <a href="author.html#1252">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 25 Oct, 2004, at 08:49, Brent Baisley wrote:
+&gt;<i> Netstat has a bunch of options for looking at network stuff. Just type 
+</I>&gt;<i> &quot;man netstat&quot; and start reading. For basic interval monitoring, type 
+</I>&gt;<i> &quot;netstat -w 1&quot;, which will give you network stats at 1 second 
+</I>&gt;<i> intervals.
+</I>&gt;<i>
+</I>&gt;<i> On Oct 22, 2004, at 10:31 PM, Mark Philip wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Hi all,
+</I>&gt;&gt;<i> How do I display a list of data traffic (either moving via Ethernet 
+</I>&gt;&gt;<i> port or Airport adapter) in the terminal? Is it possible to display 
+</I>&gt;&gt;<i> rates (ie. speed)?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Please excuse me if the question is rather trivial, but I'm trying to 
+</I>&gt;&gt;<i> pick up the command line.
+</I>
+The main thing to know about Unix statistics is that they present you 
+with raw data.
+
+That is to say, they are either dumping instantaneous information 
+(snapshots), or cumulative from some point in time, typically from the 
+last boot, but maybe from when the monitoring tool was launched.
+
+You are expected to either know what it means usefully (especially for 
+I/O); or proceed to dump that data into some other program for 
+analysis.
+
+Apple's AMU -- Airport Management Utility (download from the Airport 
+support site at Apple)
+will display things like signal strength and noise as well as total 
+packets transmitted and received as well as errors.
+
+&quot;Speed&quot; is a relative term in Networking.
+
+Or put another way -- if you have a 10 megabit Ethernet interface, the 
+&quot;wire speed&quot; is ALWAYS 10 megabits per second. That's the clock rate on 
+the interface and it must operate at that speed if it operates at all. 
+Any data transferred will always transfer at a rate of 10 megabits per 
+second. However, the amount of data transfered will vary depending upon 
+things like the amount of collisions and retransmissions, capability of 
+the CPU and I/O system to feed data to the NIC &quot;at speed,&quot; etc.
+
+Measuring &quot;speed,&quot; in terms of the throughput of data, requires 
+integrating the actual packet counts over time.
+
+In the end, this &quot;throughput speed&quot; is itself a relative thing -- 
+everything, end-to-end, in the link effects the value, not just your 
+box. This is why most Unix tools give you the data and expect you to 
+know exactly what it is you are trying to determine.  They don't 
+present you with a &quot;simple answer&quot; because the answer is not simple.
+
+The classic misunderstood tool is &quot;ping.&quot; Ping was developed as a tool 
+to determine if it was even possible to get from point A to point B on 
+the net. However, many, gamers especially, talk about ping times as if 
+they were absolute measures of network speed. In reality, they only 
+show that a particular type of packet can make it from point A to point 
+B and back in a particular time. However, ICMP packets are particular 
+special purpose critters known to the TCP/IP stack and treated with 
+special handling; frequently only in hardware and never by the stack 
+itself. Frequently, many parts of the network (i.e. routers) simply 
+ignore, drop or block them, especially if the network is busy, 
+producing unpredictable or non-reproducible results.
+
+As for looking at &quot;data traffic&quot; visible to a network interface, the 
+question becomes -- are you looking to look at ALL data traffic seen by 
+the interface, or only data traffic ADDRESSED to that interface?
+
+Normally, a network interface will only pass &quot;up the stack&quot; that data 
+which is addressed to the particular machine (MAC address). This means 
+that you are only looking at the packets addressed to you, not all the 
+packets on that network segment. However, a tool which switches the 
+interface into &quot;promiscuous mode&quot; will display ALL traffic on that 
+segment. [Yes that is exactly what security folks worry about all the 
+time.] Generally speaking, one uses SNMP and a switch or router to look 
+at all the traffic on a give segment, but that is another extensive 
+topic.
+
+So in the end, the answer is -- your question is not trivial, but is in 
+fact quite complex.
+It is also not really related to learning the command line.  There are 
+a couple of basic Unix texts floating around from O'Reilly that will 
+get you started -- look at the ones for FreeBSD as they are closest to 
+OS X of all the various Unix variants out there.
+
+And remember, as Linus Torvalds constantly says -- &quot;Linux is NOT Unix!&quot;
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001249.html">[X-Unix] Displaying data traffic
+</A></li>
+	<LI>Next message: <A HREF="001253.html">[X-Unix] Displaying data traffic
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1252">[ date ]</a>
+              <a href="thread.html#1252">[ thread ]</a>
+              <a href="subject.html#1252">[ subject ]</a>
+              <a href="author.html#1252">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Logging connect attempts
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Logging%20connect%20attempts&In-Reply-To=list-10805777%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000289.html">
+   <LINK REL="Next"  HREF="000291.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Logging connect attempts</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Logging%20connect%20attempts&In-Reply-To=list-10805777%40mail.ninewire.com"
+       TITLE="[X-Unix] Logging connect attempts">magill at mcgillsociety.org
+       </A><BR>
+    <I>Thu Feb 12 13:15:38 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000289.html">[X-Unix] Disk utility wierdness
+</A></li>
+        <LI>Next message: <A HREF="000291.html">[X-Unix] Logging connect attempts
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#290">[ date ]</a>
+              <a href="thread.html#290">[ thread ]</a>
+              <a href="subject.html#290">[ subject ]</a>
+              <a href="author.html#290">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 12 Feb, 2004, at 11:17, peter boardman wrote:
+&gt;<i> Last year I borrowed a Windoze laptop for a week and connected it to 
+</I>&gt;<i> the internet for
+</I>&gt;<i> about an hour. During that time unknown to me the machine was attacked 
+</I>&gt;<i> by a worm
+</I>&gt;<i> - no email attachments or anything, just being connected to the 
+</I>&gt;<i> internet was
+</I>&gt;<i> sufficient. When I returned the laptop to head office it caused 
+</I>&gt;<i> havoc...
+</I>&gt;<i>
+</I>&gt;<i> Is it fair to assume that this type of attack doesn&#8217;t occur on Macs? 
+</I>&gt;<i> (Assuming, say,
+</I>&gt;<i> that the firewall in Panther is enabled?) Is there a way to see or log 
+</I>&gt;<i> any attempts to
+</I>&gt;<i> infiltrate my machine while it&#8217;s connected?
+</I>
+Yes, more or less.
+
+ANY machine connected to the Internet is susceptible to attack at any 
+time.
+
+Windows machines are particularly susceptible to attacks because they 
+are inherently &quot;wide open.&quot;
+
+Consequently, especially at the present time, Windows machines are the 
+most likely to be penetrated as the bulk of the current attacks are 
+oriented to &quot;well-known&quot; Windows vulnerabilities. (&quot;Well known&quot; to the 
+crackers ... sadly, not to the Windows users.)
+
+Unix oriented attacks will effect Mac OS X, but, comparatively 
+speaking, those are &quot;less common.&quot;
+
+It all depends upon who and what the &quot;script kiddies&quot; are up to at any 
+give point in time. No Windows specific attack can work on a Unix 
+oriented box, they are looking for different things. (And that ignores 
+issues of different instruction sets necessary to implement the worm 
+after an opening is found.)
+
+By comparison, OSX is inherently secure &quot;out of the box.&quot; You have to 
+open up the ports by enabling things like web service and file sharing.
+
+Even without the firewall enabled, depending upon which services you 
+have enabled, most do significant logging themselves. For example look 
+at /var/log/httpd/access_log or error_log. You will see things like:
+
+GET /scripts/..%255c%255c../winnt/system32/cmd.exe?/c+dir&quot; 404 4652
+
+This is an Windows exploit attempt via the Apache Server. It failed 
+because it is after a windows specific directory. (404 = file not 
+found).
+
+Scan the contents of /var/log and its sub-directories.
+
+One last point -- your &quot;borrowed&quot; machine is pretty typical of far too 
+many &quot;enterprise&quot; based machines. It was probably not &quot;up to rev&quot; with 
+the latest Microsoft patches. This is what took down a number of number 
+enterprises recently (Philadelphia and Maryland come to mind) -- they 
+believe that because their machines were used behind firewalls, they 
+didn't need to be &quot;current.&quot; While it is possible that a &quot;new&quot; worm 
+attacked the laptop, the probability was that it was simply not current 
+with Microsoft's patches. ... i.e. the Corporate IT department brought 
+the problem on themselves.
+
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000 - [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000289.html">[X-Unix] Disk utility wierdness
+</A></li>
+	<LI>Next message: <A HREF="000291.html">[X-Unix] Logging connect attempts
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#290">[ date ]</a>
+              <a href="thread.html#290">[ thread ]</a>
+              <a href="subject.html#290">[ subject ]</a>
+              <a href="author.html#290">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

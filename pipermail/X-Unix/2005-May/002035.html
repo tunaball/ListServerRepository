@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] 10.4: manpath seems not to be working properly
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%2010.4%3A%20manpath%20seems%20not%20to%20be%20working%20properly&In-Reply-To=AC57C8E7-EA44-4332-8035-694C9C26B0FF%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001989.html">
+   <LINK REL="Next"  HREF="001990.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] 10.4: manpath seems not to be working properly</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%2010.4%3A%20manpath%20seems%20not%20to%20be%20working%20properly&In-Reply-To=AC57C8E7-EA44-4332-8035-694C9C26B0FF%40mac.com"
+       TITLE="[X-Unix] 10.4: manpath seems not to be working properly">magill at mcgillsociety.org
+       </A><BR>
+    <I>Sat May 21 16:14:07 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001989.html">[X-Unix] 10.4: manpath seems not to be working properly
+</A></li>
+        <LI>Next message: <A HREF="001990.html">[X-Unix] Compiling GAIM on OS X / Or Getting it to Run?!! 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2035">[ date ]</a>
+              <a href="thread.html#2035">[ thread ]</a>
+              <a href="subject.html#2035">[ subject ]</a>
+              <a href="author.html#2035">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 17 May, 2005, at 09:59, Jason Verlander wrote:
+
+&gt;<i> After _upgrading_ to 10.4 I've found that manpath is not analyzing  
+</I>&gt;<i> and finding man pages for items that have been placed into /usr/ 
+</I>&gt;<i> local/bin with the man pages being put into /usr/local/man. I have / 
+</I>&gt;<i> usr/local/bin in my path and manpath should automatically add /usr/ 
+</I>&gt;<i> local/man to my search path it seems. At least, that's the way the  
+</I>&gt;<i> manpath man page seems to indicates.
+</I>&gt;<i>
+</I>&gt;<i> Anyone seen this or have any thoughts on how I might resolve it?
+</I>
+Apple evidently switched &quot;man&quot; commands in Tiger.
+
+While Darwin has historically been based on FreeBSD, it appears that  
+Apple has picked up the man system for Tiger from OpenBSD.
+
+FreeBSD 5.3 still supports &quot;/etc/manpath.config&quot;.
+
+OpenBSD 3.7 supports &quot;/etc/man.conf&quot;
+
+Apple (Darwin) has picked up &quot;/usr/share/misc/man.conf
+
+The &quot;man&quot; binary seems to be version &quot;1.5o1&quot; -- but there is no  
+further source or version information in the binary.
+
+I suspect that this version of man is the one also found in most  
+Linux distros now.
+
+OS X 1.4 does not define a MANPATH variable by default (/etc/profile  
+or /etc/csh.cshrc).
+
+BTW: Note that the environment variable is MANPATH (all caps), not  
+manpath.
+
+Note also: The Apple version of man apparently will read config files  
+from:
+
+/usr/share/misc/man.conf
+/usr/share/misc/man.config
+/etc/man.conf
+/etc/man.config
+/usr/lib/man.conf
+/usr/lib/man.config
+
+
+T.T.F.N.
+William H. Magill
+# Beige G3 [Rev A motherboard - 300 MHz 768 Meg] OS X 10.2.8
+# Flat-panel iMac (2.1) [800MHz - Super Drive - 768 Meg] OS X 10.3.8
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg] Tru64 5.1a
+# XP1000  [Alpha 21264-3 (EV6) - 256 meg] FreeBSD 5.3
+# XP1000  [Alpha 21264-A (EV 6.7) - 384 meg] FreeBSD 5.3
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001989.html">[X-Unix] 10.4: manpath seems not to be working properly
+</A></li>
+	<LI>Next message: <A HREF="001990.html">[X-Unix] Compiling GAIM on OS X / Or Getting it to Run?!! 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2035">[ date ]</a>
+              <a href="thread.html#2035">[ thread ]</a>
+              <a href="subject.html#2035">[ subject ]</a>
+              <a href="author.html#2035">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

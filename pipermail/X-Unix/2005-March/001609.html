@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] SSH tunnel vs. 10.3.8 vs. port forwarding
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20SSH%20tunnel%20vs.%2010.3.8%20vs.%20port%20forwarding&In-Reply-To=fb24dc9c46f1ae63152c69e9f17d3487%40tampabay.rr.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001608.html">
+   <LINK REL="Next"  HREF="001611.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] SSH tunnel vs. 10.3.8 vs. port forwarding</H1>
+    <B>Cloyce D. Spradling</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20SSH%20tunnel%20vs.%2010.3.8%20vs.%20port%20forwarding&In-Reply-To=fb24dc9c46f1ae63152c69e9f17d3487%40tampabay.rr.com"
+       TITLE="[X-Unix] SSH tunnel vs. 10.3.8 vs. port forwarding">cloyce+xunix at headgear.org
+       </A><BR>
+    <I>Sun Mar  6 09:57:27 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001608.html">[X-Unix] SSH tunnel vs. 10.3.8 vs. port forwarding
+</A></li>
+        <LI>Next message: <A HREF="001611.html">[X-Unix] SSH tunnel vs. 10.3.8 vs. port forwarding
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1609">[ date ]</a>
+              <a href="thread.html#1609">[ thread ]</a>
+              <a href="subject.html#1609">[ subject ]</a>
+              <a href="author.html#1609">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sun, Mar 06, 2005 at 12:50:15PM -0500, Jeff Winchester wrote:
+:<i> I would expect, once the tunnel is running, to be able to telnet to 
+</I>:<i> localhost ports 1100 or 2500 and see the ISP's POP3 or SMTP, but I get 
+</I>:<i> something to the effect of:
+</I>
+:<i> 	marius:~ jeff$ telnet localhost 1100
+</I>:<i> 	Trying ::1...
+</I>
+This means that localhost on your system first resolves to the IPv6 localhost
+address.  Try it with 127.0.0.1 and see if it doesn't work.
+
+If it does, you can probably change localhost to return the IPv4 localhost
+address first, but I don't have any OS X systems handy to verify.
+
+--
+Cloyce
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001608.html">[X-Unix] SSH tunnel vs. 10.3.8 vs. port forwarding
+</A></li>
+	<LI>Next message: <A HREF="001611.html">[X-Unix] SSH tunnel vs. 10.3.8 vs. port forwarding
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1609">[ date ]</a>
+              <a href="thread.html#1609">[ thread ]</a>
+              <a href="subject.html#1609">[ subject ]</a>
+              <a href="author.html#1609">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

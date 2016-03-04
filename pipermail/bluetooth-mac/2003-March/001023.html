@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Help with a FileMaker Script
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:bluetooth-mac%40listserver.themacintoshguy.com?Subject=Help%20with%20a%20FileMaker%20Script&In-Reply-To=CECD7AE0-5660-11D7-B426-00039344B672%40lieberman.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001022.html">
+   <LINK REL="Next"  HREF="001024.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Help with a FileMaker Script</H1>
+    <B>Steve Savery</B> 
+    <A HREF="mailto:bluetooth-mac%40listserver.themacintoshguy.com?Subject=Help%20with%20a%20FileMaker%20Script&In-Reply-To=CECD7AE0-5660-11D7-B426-00039344B672%40lieberman.com"
+       TITLE="Help with a FileMaker Script">steve_s at mac.com
+       </A><BR>
+    <I>Wed Mar 19 07:08:38 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001022.html">Siemens S55 - screen dimensions
+</A></li>
+        <LI>Next message: <A HREF="001024.html">[BTM] Help with a FileMaker Script
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1023">[ date ]</a>
+              <a href="thread.html#1023">[ thread ]</a>
+              <a href="subject.html#1023">[ subject ]</a>
+              <a href="author.html#1023">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This was posted by a fellow 'scripter earlier. Works a treat for me.
+
+--BEGIN--
+set myVolume to &quot;Name of Drive to mount&quot;
+set myServer to &quot;Name of Server with myVolume&quot;
+set myPassword to &quot;Your Password&quot;
+
+tell application &quot;Finder&quot; to set volExists to exists (disk myVolume)
+if volExists = false then
+	try
+		mount volume myVolume on server myServer with password myPassword
+	on error
+		display dialog &quot;Could not mount \&quot;&quot; &amp; myVolume &amp; &quot; \&quot;&quot; buttons 
+{&quot;Cancel&quot;} with icon stop
+		return
+	end try
+end if
+--END--
+
+Hope this helps Aaron!
+
+Steve
+
+On Friday, March 14, 2003, at 09:06  pm, Aaron Willems wrote:
+
+&gt;<i> Hello Everyone,
+</I>&gt;<i>
+</I>&gt;<i> Thanks for everyone's help before in helping me write my first script.
+</I>&gt;<i> It was script to mount an Appleshare Volume on my desktop.  I want to
+</I>&gt;<i> write a second script that acts as a Qualifier. Simply put, I want an
+</I>&gt;<i> Applescript that checks to see if the drive is already mounted. I
+</I>&gt;<i> figured I need an &quot;if&quot; Statement. Something like &quot;true if it exists&quot;,
+</I>&gt;<i> or &quot;false or not&quot;
+</I>&gt;<i>
+</I>&gt;<i> Am I on the right track.
+</I>&gt;<i>
+</I>&gt;<i> Thanks in advance for any Help.
+</I>&gt;<i>
+</I>&gt;<i> Aaron Willems
+</I>&gt;<i> Network Administrator
+</I>&gt;<i> Lieberman Productions
+</I>&gt;<i>
+</I>&gt;<i> For reference the first script looked like this.
+</I>&gt;<i>
+</I>&gt;<i> tell application &quot;Finder&quot;
+</I>&gt;<i> 	activate
+</I>&gt;<i> 	open location &quot;afp:/at/name of server:*&quot;
+</I>&gt;<i> end tell
+</I>&gt;<i>
+</I>_______________________________________________
+Steve Savery
+Bristol, United Kingdom
+[Mac OS X 10.2.4]
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001022.html">Siemens S55 - screen dimensions
+</A></li>
+	<LI>Next message: <A HREF="001024.html">[BTM] Help with a FileMaker Script
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1023">[ date ]</a>
+              <a href="thread.html#1023">[ thread ]</a>
+              <a href="subject.html#1023">[ subject ]</a>
+              <a href="author.html#1023">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/bluetooth-mac.html">More information about the Bluetooth-mac
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

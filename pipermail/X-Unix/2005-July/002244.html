@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Rsync mirroring w/o including all volumes
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Rsync%20mirroring%20w/o%20including%20all%20volumes&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="002245.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Rsync mirroring w/o including all volumes</H1>
+    <B>Michael Wise</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Rsync%20mirroring%20w/o%20including%20all%20volumes&In-Reply-To="
+       TITLE="[X-Unix] Rsync mirroring w/o including all volumes">spiski at okean.com
+       </A><BR>
+    <I>Sun Jul  3 15:35:18 PDT 2005</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="002245.html">[X-Unix] Rsync mirroring w/o including all volumes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2244">[ date ]</a>
+              <a href="thread.html#2244">[ thread ]</a>
+              <a href="subject.html#2244">[ subject ]</a>
+              <a href="author.html#2244">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Greetings,
+
+I'm trying to use rsync with cron to do a nightly mirror of all data 
+from a tower's primary internal drive to a second internal drive on 
+the same machine.
+
+This is the command I'm using:
+
+/usr/bin/rsync -a --delete /Volumes/Drive_1/* /Volumes/Drive_2
+
+
+It is mirroring the data. but it's mirroring /*...and not /Volumes/Drive_1/*
+
+The second drive has all of /Volumes/Drive_1/* plus all of 
+Volumes/*....such that Drive_2 has two copies of Drive_1: one at it's 
+root level and the other as a mirror of itself 
+(/Volumes/Drive_2/Volumes/Drive_2)
+
+
+How can I make rsynch mirror only the contents of Drive_1 to Drive_2? 
+Am I overlooking something?
+
+
+
+TIA,
+
+
+--Mike
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="002245.html">[X-Unix] Rsync mirroring w/o including all volumes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2244">[ date ]</a>
+              <a href="thread.html#2244">[ thread ]</a>
+              <a href="subject.html#2244">[ subject ]</a>
+              <a href="author.html#2244">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

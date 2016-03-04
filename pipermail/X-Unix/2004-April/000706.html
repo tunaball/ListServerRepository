@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] What's in an MP3's resource fork..?     [Was: Re: [X4U] ._annoying_files on SMB shares - can I remove them..?]
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20What%27s%20in%20an%20MP3%27s%20resource%20fork..%3F%20%20%20%20%20%5BWas%3A%20Re%3A%20%5BX4U%5D%20._annoying_files%20on%20SMB%20shares%20-%20can%20I%20remove%20them..%3F%5D&In-Reply-To=list-12238835%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000705.html">
+   <LINK REL="Next"  HREF="000707.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] What's in an MP3's resource fork..?     [Was: Re: [X4U] ._annoying_files on SMB shares - can I remove them..?]</H1>
+    <B>Jakob Peterh&#228;nsel</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20What%27s%20in%20an%20MP3%27s%20resource%20fork..%3F%20%20%20%20%20%5BWas%3A%20Re%3A%20%5BX4U%5D%20._annoying_files%20on%20SMB%20shares%20-%20can%20I%20remove%20them..%3F%5D&In-Reply-To=list-12238835%40mail.ninewire.com"
+       TITLE="[X-Unix] What's in an MP3's resource fork..?     [Was: Re: [X4U] ._annoying_files on SMB shares - can I remove them..?]">jakob at hjemme.dk
+       </A><BR>
+    <I>Mon Apr 19 23:19:41 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000705.html">[X-Unix] PHP 4.3.6 Compile
+</A></li>
+        <LI>Next message: <A HREF="000707.html">[X-Unix] What's in an MP3's resource fork..?     [Was: Re:
+	[X4U] ._annoying_files on SMB shares - can I remove them..?]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#706">[ date ]</a>
+              <a href="thread.html#706">[ thread ]</a>
+              <a href="subject.html#706">[ subject ]</a>
+              <a href="author.html#706">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+Rest assured the .DS_Store is left by the Finder:
+
+1: It's invisible (the .)
+2: It's only containing info about how to display the enclosing folder.
+
+Resource forks from user files will be called ._&lt;filename&gt; if I 
+remember right.
+
+____________________________________________
+Jakob Peterh&#228;nsel
+Network Consultant
+Tel: +45 7022 1014
+Fax: +45 7022 1013
+Mob: +45&#160;22 68 49 61
+<A HREF="../../../mailman/listinfo/x-unix.html">jp at netpoint.com</A>
+www.NetPoint.com
+
+
+On 20. apr 2004, at 4:34, Stroller wrote:
+
+&gt;<i>
+</I>&gt;<i> On Apr 10, 2004, at 3:12 pm, Alex wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> ._FileName are separate files where the content of the resource 
+</I>&gt;&gt;&gt;&gt;<i> fork is stored. Mac files have two forks, a data fork and a 
+</I>&gt;&gt;&gt;&gt;<i> resource fork. This file architecture is incomprehensible to other 
+</I>&gt;&gt;&gt;&gt;<i> OSs, so the most common effect of copying a Mac file to a foreign 
+</I>&gt;&gt;&gt;&gt;<i> OS is the stripping of the resource fork. To avoid this, when 
+</I>&gt;&gt;&gt;&gt;<i> copying to a Win volume, Mac OS X copies the content of the 
+</I>&gt;&gt;&gt;&gt;<i> resource fork to a separate file.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> [...] Okies, so what applications NEED the data in the resource 
+</I>&gt;&gt;&gt;<i> fork..?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> There's no hard-and-fast rule. For instance, I believe you mentioned 
+</I>&gt;&gt;<i> InDesign. This one stores the PICT preview in the resource fork, so 
+</I>&gt;&gt;<i> you should still be able to open .indd files on Windows or Mac even 
+</I>&gt;&gt;<i> if the resource fork is stripped.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> By and large, you may assume files from x-platform apps (e.g., 
+</I>&gt;&gt;<i> InDesign, Illustrator, FileMaker, Office, etc.) either won't have a 
+</I>&gt;&gt;<i> resource fork or won't have any critical data there; while Mac-only 
+</I>&gt;&gt;<i> apps may store important data in the resource fork.
+</I>&gt;<i>
+</I>&gt;<i> Sorry to be bringing this up again, but I'm now in the middle of 
+</I>&gt;<i> writing my killer Bash script for removing unwanted .DS_Store from SMB 
+</I>&gt;<i> shares.
+</I>&gt;<i>
+</I>&gt;<i>      echo &quot;Looking for .DS_Store files left by Apple's Finder in 
+</I>&gt;<i> $path&quot; &gt;&amp;2
+</I>&gt;<i>      FILES=`find $path -name .*DS_Store`;
+</I>&gt;<i>      for file in $FILES
+</I>&gt;<i>      do
+</I>&gt;<i>        if [ `file -b $file` = &quot;data&quot; ]
+</I>&gt;<i>        then
+</I>&gt;<i>           rm $file
+</I>&gt;<i>        fi
+</I>&gt;<i>      done
+</I>&gt;<i>
+</I>&gt;<i> Since I figure it's possible that a user might name an important 
+</I>&gt;<i> document .DS_Store, I use `file` to check that they're the same 
+</I>&gt;<i> filetype as all the other .DS_Store I had lying around to check 
+</I>&gt;<i> against. I don't think there's any other way to determine 
+</I>&gt;<i> programatically whether ._DS_Store files are really the anticipated 
+</I>&gt;<i> Finder-droppings rather than lurking Word documents, although I've 
+</I>&gt;<i> been interested to note that all of mine from this evening's session 
+</I>&gt;<i> are either 6148 bytes long, or double that, 12292.
+</I>&gt;<i>
+</I>&gt;<i> So I think it's safe to say that the resource forks of jpegs and other 
+</I>&gt;<i> images can safely be removed, as with Word .doc files. But what about 
+</I>&gt;<i> those of MP3s..? Does iTunes keep any data there..? What about any 
+</I>&gt;<i> other filetypes of which the resource forks are either essential or 
+</I>&gt;<i> unimportant..?
+</I>&gt;<i>
+</I>&gt;<i> Thanks,
+</I>&gt;<i>
+</I>&gt;<i> Stroller.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;<i> Mac ISP Serious Mac Internet Solutions From NineWire!   
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older 
+</I>&gt;<i> Mac! Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>   Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;<i>
+</I>&gt;<i> OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s - 
+</I>&gt;<i> <A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000705.html">[X-Unix] PHP 4.3.6 Compile
+</A></li>
+	<LI>Next message: <A HREF="000707.html">[X-Unix] What's in an MP3's resource fork..?     [Was: Re:
+	[X4U] ._annoying_files on SMB shares - can I remove them..?]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#706">[ date ]</a>
+              <a href="thread.html#706">[ thread ]</a>
+              <a href="subject.html#706">[ subject ]</a>
+              <a href="author.html#706">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

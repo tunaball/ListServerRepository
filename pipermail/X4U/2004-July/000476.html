@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Firewire Problems
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=Firewire%20Problems&In-Reply-To=list-15442826%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000475.html">
+   <LINK REL="Next"  HREF="000477.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Firewire Problems</H1>
+    <B>Richard Brown</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=Firewire%20Problems&In-Reply-To=list-15442826%40mail.ninewire.com"
+       TITLE="Firewire Problems">richard at go2rba.com
+       </A><BR>
+    <I>Sun Jul 25 21:02:17 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000475.html">[X4U] Stolen iChat AIM Name
+</A></li>
+        <LI>Next message: <A HREF="000477.html">[X4U] Won't rouse from sleep
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#476">[ date ]</a>
+              <a href="thread.html#476">[ thread ]</a>
+              <a href="subject.html#476">[ subject ]</a>
+              <a href="author.html#476">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I have gone rounds with the Firewire problems in most flavors of OS X.
+
+Your problem looks like the classic problem of earlier OS X, such as 
+10.1.2, which was heavily discussed in Apple's own tech forums a while 
+back. Turns out Apple left in a bizarre hardware shutdown command from 
+which a Firewire drive can NOT awake without a restart.
+
+Here is a repost of a similar issue AND FIX for same I once put on the 
+Mac DV forum concerning a G4 and Firewire...
+
+Apart from 5 internal drives in my G4, I have 15 ADS Firewire cases, 
+usually with 8-12 online at any given time 24/7... I have every flavor 
+of the ADS case since they started with Oxford chipsets. The best, by 
+far, is the dual USB 2.0 - Firewire 400 external case, but sadly, it is 
+MOST reliable under USB, not Firewire. Mac users are stuck, more or 
+less, WITH Firewire. The beauty of the unit described is that it 
+handles drives above 137 GB without issue, as in, can't wait for the 
+Hitachi (formerly IBM) 400 GB units to ship.
+
+Caveats:
+
+1) The ADS cases (seldomly, but it happens) develop weird power supply 
+issues, the net effect of which being it powers down drives, or cycles 
+drives in a constant reboot cycle.  This can lock up OS X, up to 
+10.3.3. Only ONE drive need have this problem to lock everything, and 
+it can happen at, of course the worst possible moments.
+
+2) If you are using older OS X, there is an OS issue, particularly back 
+to 10.1.2, where a hardware shutdown command is issued from the OS to 
+all external Firewire drives. If you see this behavior, and are 
+frustrated from these lockups, the first thing you can do is: shut the 
+Firewire drive down. It is not receiving or sending any data anyway, 
+and it will not hurt data as a result. We did this a hundred times 
+(easy) without issue, until an engineer and Unix guru (who discovered 
+the anomaly) came up with a workaround: use the Terminal program, and 
+issue the command:
+
+sudo pmset -a spindown 0
+
+This will tell OS X's  underlying Unix to NOT shutdown external 
+Firewire drives. Works great, but WILL reveal if you suffer from No. 1, 
+above.
+
+Richard Brown
+
+
+On Jul 25, 2004, at 10:20 PM, Mac OS X for Users wrote:
+
+&gt;<i> (2) Often, the next time I go to mount this disk, even a day later, it 
+</I>&gt;<i> will
+</I>&gt;<i> not show up in the Finder, and/or Path Finder, and/or /Volumes.  The 
+</I>&gt;<i> only
+</I>&gt;<i> way to get it back seems to be to restart.
+</I>&gt;<i>
+</I>&gt;<i> Issue (1) is a minor annoyance, but issue (2) is a real pain.
+</I>&gt;<i>
+</I>&gt;<i> Have others experienced the same?  Can anyone explain to me why this 
+</I>&gt;<i> is a
+</I>&gt;<i> feature and not a bug?  Does anyone know if Apple is addressing this 
+</I>&gt;<i> issue?
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000475.html">[X4U] Stolen iChat AIM Name
+</A></li>
+	<LI>Next message: <A HREF="000477.html">[X4U] Won't rouse from sleep
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#476">[ date ]</a>
+              <a href="thread.html#476">[ thread ]</a>
+              <a href="subject.html#476">[ subject ]</a>
+              <a href="author.html#476">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

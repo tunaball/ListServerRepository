@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Parsing or splitting a text file
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Parsing%20or%20splitting%20a%20text%20file&In-Reply-To=p05100309bf60a65bd607%40%5B192.168.1.14%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002390.html">
+   <LINK REL="Next"  HREF="002389.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Parsing or splitting a text file</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Parsing%20or%20splitting%20a%20text%20file&In-Reply-To=p05100309bf60a65bd607%40%5B192.168.1.14%5D"
+       TITLE="[X-Unix] Parsing or splitting a text file">magill at mcgillsociety.org
+       </A><BR>
+    <I>Thu Sep 29 09:03:02 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002390.html">[X-Unix] Parsing or splitting a text file
+</A></li>
+        <LI>Next message: <A HREF="002389.html">[X-Unix] Parsing or splitting a text file
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2391">[ date ]</a>
+              <a href="thread.html#2391">[ thread ]</a>
+              <a href="subject.html#2391">[ subject ]</a>
+              <a href="author.html#2391">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 28 Sep, 2005, at 16:07, Doug McNutt intoned:
+&gt;<i> At 15:16 -0400 9/28/05, Richard Nagle wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> What would be the fastest way,
+</I>&gt;&gt;<i> of splitting a large text document into separate doc,
+</I>&gt;&gt;<i> via a common identifier &quot;From ???@???&quot;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> This From ???@???, is at the top of every email document,
+</I>&gt;&gt;<i> inside this large single text file.
+</I>&gt;&gt;<i> this file contains about 15,000 emails.
+</I>&gt;<i>
+</I>&gt;<i> That sounds like a job for perl.
+</I>&gt;<i>
+</I>&gt;<i> I was fussing with mailboxes produced by Eudora that look a lot  
+</I>&gt;<i> like that. (This list for instance.) I was collecting and sorting  
+</I>&gt;<i> by Subject: line to make one file file for each subject. It's been  
+</I>&gt;<i> a while since I looked at it.  When I realized I needed to handle  
+</I>&gt;<i> &quot;Antwort&quot;, &quot;AW&quot;, and others I got discouraged.  Ask off line if  
+</I>&gt;<i> you'd like a copy of my last known perl script.
+</I>
+The original file sounds like it is in standard &quot;mbox&quot; format.
+          First line is &quot;From:&quot;
+          Each message is separated from the next
+          by a single blank line above the next &quot;From:&quot;
+
+(This format is the format used by Apple's Mail.app to store messages.)
+
+Briefly, &quot;mbox&quot; (all messages in one file) is the standard unix  
+&quot;mail&quot; program format, while one file per message is the standard  
+format for the &quot;mh&quot; program. These two formats have existed &quot;forever&quot;  
+and there are any number of tools around to convert from one to the  
+other.
+
+That being the case, there are a ton of &quot;digestifiers&quot; and  
+&quot;undigestifiers&quot; floating around on the net (since the beginning of  
+the ARPAnet) which will take single messages and put them into one  
+file as well as take the single file and parse them out into a single  
+file per message.
+
+T.T.F.N.
+William H. Magill
+# Beige G3 [Rev A motherboard - 300 MHz 768 Meg] OS X 10.2.8
+# Flat-panel iMac (2.1) [800MHz - Super Drive - 768 Meg] OS X 10.4.1
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg] Tru64 5.1a
+# XP1000  [Alpha 21264-3 (EV6) - 256 meg] FreeBSD 5.3
+# XP1000  [Alpha 21264-A (EV 6.7) - 384 meg] FreeBSD 5.3
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002390.html">[X-Unix] Parsing or splitting a text file
+</A></li>
+	<LI>Next message: <A HREF="002389.html">[X-Unix] Parsing or splitting a text file
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2391">[ date ]</a>
+              <a href="thread.html#2391">[ thread ]</a>
+              <a href="subject.html#2391">[ subject ]</a>
+              <a href="author.html#2391">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] ATA drives and buses in G4 Dual MDD
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20ATA%20drives%20and%20buses%20in%20G4%20Dual%20MDD&In-Reply-To=20051110075838.5EFF45703A8%40frontend2.messagingengine.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011526.html">
+   <LINK REL="Next"  HREF="011534.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] ATA drives and buses in G4 Dual MDD</H1>
+    <B>Philip J Robar</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20ATA%20drives%20and%20buses%20in%20G4%20Dual%20MDD&In-Reply-To=20051110075838.5EFF45703A8%40frontend2.messagingengine.com"
+       TITLE="[G4] ATA drives and buses in G4 Dual MDD">pjrobar at areyoureallythatstupid.org
+       </A><BR>
+    <I>Thu Nov 10 03:44:27 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011526.html">[G4] ATA drives and buses in G4 Dual MDD
+</A></li>
+        <LI>Next message: <A HREF="011534.html">[G4] Partitioning Software
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11527">[ date ]</a>
+              <a href="thread.html#11527">[ thread ]</a>
+              <a href="subject.html#11527">[ subject ]</a>
+              <a href="author.html#11527">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Nov 9, 2005, at 11:58 PM, Aaron wrote:
+
+&gt;<i> I've recently acquired a G4 Dual 867 MHz MDD that came with only  
+</I>&gt;<i> the original I (I think) drives. The HD has the following  
+</I>&gt;<i> description (excerpted from System Profiler):
+</I>&gt;<i>
+</I>&gt;<i>   Capacity:	57.27 GB
+</I>&gt;<i>   Model:	IBM-IC35L060AVVA07-0
+</I>&gt;<i>   Revision:	VA3BA52A
+</I>&gt;<i>
+</I>&gt;<i> The optical disk is the misnamed &quot;SuperDrive&quot; -- misnamed because  
+</I>&gt;<i> it should be called the &quot;Super-Slow Drive&quot;. (It's presently out of  
+</I>&gt;<i> the computer while I'm working on adding another, faster drive, so  
+</I>&gt;<i> I can't look it up on System Profiler.)
+</I>&gt;<i>
+</I>&gt;<i> Anyway, I've added two Maxtor ATA133 drives (120 and 80 decimal MB)  
+</I>&gt;<i> and am about to add a Lite-On CD/DVD read-and-write everything  
+</I>&gt;<i> drive that reads and writes CD's at 48x (7200KB/sec) and DVD's at  
+</I>&gt;<i> 16x (21600KB/sec).
+</I>&gt;<i>
+</I>&gt;<i> I know that the machine had 3 ATA buses: ATA33, ATA66 and ATA100,  
+</I>&gt;<i> each of which can handle two drives, but will, presumably, slow  
+</I>&gt;<i> down if both drives are being accessed at once. I also have a  
+</I>&gt;<i> Sonnet Tempo ATA133 card that I can use if it would make a  
+</I>&gt;<i> substantial difference in speed.
+</I>
+Your machine has two ATA interfaces: ATA66 and ATA100. Get a copy of  
+MacTracker to learn more.
+
+Unless you've got something better to do with it you might as well  
+use the Sonnet. That way you can put each drive on it's own channel.
+
+
+&gt;<i> My general question is:
+</I>&gt;<i>
+</I>&gt;<i> What speed ATA bus (and what combination of devices and buses) will  
+</I>&gt;<i> get the maximum, or nearly maximum, actual transfer rate out of the  
+</I>&gt;<i> various drives?
+</I>
+Put the drives you use the most on the faster interface unless you  
+tend to use them at the same time as only one drive on a interface  
+can be accessed at a time.
+
+
+&gt;<i> Specific questions include:
+</I>&gt;<i>
+</I>&gt;<i> What is the ATA speed of the IBM drive described above?
+</I>
+I could tell you, but it's better to teach a man to fish ... In other  
+words Google is your friend.
+
+
+&gt;<i> What speed of ATA bus is necessary to run the Lite-On drive at full  
+</I>&gt;<i> speed?
+</I>
+The ATA 66. ATA 33 would be good enough though.
+
+
+&gt;<i> Will an ATA133 drive run faster on an ATA133 bus from an ATA133  
+</I>&gt;<i> card than from a built-in ATA100 bus?
+</I>
+Unlikely, and even if the difference is measureable you won't notice  
+the difference.
+
+
+Phil
+--
+&quot;America is at that awkward stage. It's too late to work within the  
+system, but too early to shoot the bastards.&quot; -- Claire Wolfe, 101  
+Things to Do 'Til the Revolution
+
+
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011526.html">[G4] ATA drives and buses in G4 Dual MDD
+</A></li>
+	<LI>Next message: <A HREF="011534.html">[G4] Partitioning Software
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11527">[ date ]</a>
+              <a href="thread.html#11527">[ thread ]</a>
+              <a href="subject.html#11527">[ subject ]</a>
+              <a href="author.html#11527">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

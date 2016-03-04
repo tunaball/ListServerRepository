@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Altering .bashrc in bash to add to $PATH
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Altering%20.bashrc%20in%20bash%20to%20add%20to%20%24PATH&In-Reply-To=list-10162677%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000886.html">
+   <LINK REL="Next"  HREF="000908.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Altering .bashrc in bash to add to $PATH</H1>
+    <B>Raoul Armfield</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Altering%20.bashrc%20in%20bash%20to%20add%20to%20%24PATH&In-Reply-To=list-10162677%40mail.ninewire.com"
+       TITLE="[X-Unix] Altering .bashrc in bash to add to $PATH">armfield at amnh.org
+       </A><BR>
+    <I>Fri Jan  9 07:27:57 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000886.html">[X-Unix] .bash_profile
+</A></li>
+        <LI>Next message: <A HREF="000908.html">[X-Unix] .bash_profile
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#897">[ date ]</a>
+              <a href="thread.html#897">[ thread ]</a>
+              <a href="subject.html#897">[ subject ]</a>
+              <a href="author.html#897">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>What about if you use the ln command 
+
+Ln -s /sqldirectory/sql ~/sql
+
+This puts it in your home directory so that you can do exactly what you
+are trying to do.  You can also substitute ~/sql for any directory in
+your $PATH. Usually /bin is where most people place it
+
+Raoul  
+
+:<i>-----Original Message-----
+</I>:<i>From: Mac OS X Unix [mailto:<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at lists.themacintoshguy.com</A>] 
+</I>:<i>On Behalf Of Robert Ameeti
+</I>:<i>Sent: Thursday, January 08, 2004 4:25 PM
+</I>:<i>To: Mac OS X Unix
+</I>:<i>Subject: Re: [X-Unix] Altering .bashrc in bash to add to $PATH
+</I>:<i>
+</I>:&gt;<i>On 08 Jan, 2004, at 10:11, Doug McNutt wrote:
+</I>:&gt;<i>
+</I>:&gt;&gt;<i>At 22:05 -0800 1/7/04, Robert Ameeti wrote:
+</I>:&gt;&gt;&gt;<i>echo $SHELL gives me /bin/bash
+</I>:&gt;&gt;&gt;<i>echo $PATH gives me /bin:/sbin:/usr/bin:/usr/sbin
+</I>:&gt;&gt;<i>
+</I>:&gt;&gt;<i>I'm a tcsh kind of guy but I have had similar problems.
+</I>:&gt;<i>
+</I>:&gt;<i>The important thing to understand here is that you are 
+</I>:<i>talking about apples and oranges. They just look the same 
+</I>:<i>because they are both round:
+</I>:&gt;<i>
+</I>:&gt;<i>  ...  The traditional Unix &quot;dot files&quot; (aka &quot;Resource 
+</I>:<i>Control&quot; or &quot;.rc&quot; files)
+</I>:&gt;<i>        and &quot;environment.plist.&quot;
+</I>:<i>
+</I>:<i>While I appreciate the education, I am not any closer in 
+</I>:<i>getting where I need to be.
+</I>:<i>
+</I>:<i>When I am using terminal, I want to be able to just type sql 
+</I>:<i>and be able to access that command. For that, I understand 
+</I>:<i>that I must enhance my path. I am currently set to using bash 
+</I>:<i>as that is what Apple set as my default shell. It seems that 
+</I>:<i>others typically are using tcsh and perhaps I should be 
+</I>:<i>changing to that. I am open to that option if I am more likely 
+</I>:<i>to get answers to my questions as I am new to all of this.
+</I>:<i>
+</I>:<i>I am thinking that I am hearing that while using bash, the 
+</I>:<i>file that I should instead be altering/creating is 
+</I>:<i>.bash_profile as this is the file that will allow me to more 
+</I>:<i>easily use my sql command. Is this correct given my current bash shell?
+</I>:<i>
+</I>:<i>-- 
+</I>:<i>&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;
+</I>:<i>Robert Ameeti
+</I>:<i>
+</I>:<i>The Police Are Not Here To Create Disorder. They're Here To 
+</I>:<i>Preserve Disorder.
+</I>:<i>
+</I>:<i>- Former Chicago Mayor Daley During The Infamous 1968 Convention
+</I>:<i>&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;
+</I>:<i>
+</I>:<i>----------
+</I>:<i>Check out the Mac OS X email list FAQ
+</I>:<i><A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>:<i>
+</I>:<i>To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-off at lists.themacintoshguy.com</A>&gt;
+</I>:<i>To switch to the DIGEST mode, E-mail to 
+</I>:<i>&lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-digest at lists.themacintoshguy.com</A>&gt;
+</I>:<i>Need help from a real person? Try.  
+</I>:<i>&lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-request at lists.themacintoshguy.com</A>&gt;
+</I>:<i>
+</I>:<i>----------
+</I>:<i>$14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting 
+</I>:<i>from your Mac ISP 
+</I>:<i>Serious Mac Internet Solutions From NineWire!   
+</I>:<i><A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>:<i>
+</I>:<i>DVIator   | Run Dual ADC displays on your G4 or just one on an 
+</I>:<i>older Mac! 
+</I>:<i>Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>:<i>
+</I>:<i>   Support   | Support this list by clicking here before you buy!
+</I>:<i>  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>:<i>
+</I>:<i>OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s - 
+</I>:<i><A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>:<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000886.html">[X-Unix] .bash_profile
+</A></li>
+	<LI>Next message: <A HREF="000908.html">[X-Unix] .bash_profile
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#897">[ date ]</a>
+              <a href="thread.html#897">[ thread ]</a>
+              <a href="subject.html#897">[ subject ]</a>
+              <a href="author.html#897">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

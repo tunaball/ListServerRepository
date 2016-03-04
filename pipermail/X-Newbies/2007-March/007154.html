@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Newbies] How to get rid of or fix a file
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20How%20to%20get%20rid%20of%20or%20fix%20a%20file&In-Reply-To=1BE37BCE-A5DD-4A8B-B0AB-6A30C9BE2BB9%40earthlink.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="007153.html">
+   <LINK REL="Next"  HREF="007155.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Newbies] How to get rid of or fix a file</H1>
+    <B>Philip J Robar</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20How%20to%20get%20rid%20of%20or%20fix%20a%20file&In-Reply-To=1BE37BCE-A5DD-4A8B-B0AB-6A30C9BE2BB9%40earthlink.net"
+       TITLE="[X-Newbies] How to get rid of or fix a file">philip.robar at gmail.com
+       </A><BR>
+    <I>Sun Mar  4 12:28:58 PST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="007153.html">[X-Newbies] How to get rid of or fix a file
+</A></li>
+        <LI>Next message: <A HREF="007155.html">[X-Newbies] How to get rid of or fix a file
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7154">[ date ]</a>
+              <a href="thread.html#7154">[ thread ]</a>
+              <a href="subject.html#7154">[ subject ]</a>
+              <a href="author.html#7154">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Mar 4, 2007, at 4:49 AM, Peter Saint James wrote:
+
+&gt;<i> In attempting to make a backup, SuperDuper reports a corrupted file  
+</I>&gt;<i> which it will not copy and therefore will not complete the backup. I  
+</I>&gt;<i> moved the file to the trash, but when I tried to empty the trash, I  
+</I>&gt;<i> got a warning box saying that the file was in use.
+</I>&gt;<i>
+</I>&gt;<i> The file is this one:
+</I>&gt;<i>
+</I>&gt;<i> 	/System/Library/Frameworks/JavaVM.framework/Versions/1.4.2/ 
+</I>&gt;<i> Libraries/./libsuncmm.jnilib
+</I>&gt;<i>
+</I>&gt;<i> Is it better I don't trash this file?  If I should not, what do I do  
+</I>&gt;<i> about it?
+</I>&gt;<i>
+</I>&gt;<i> If it's okay to trash the file, how do I find out what process it  
+</I>&gt;<i> belongs to so that I can get it out use? Since it is a system file,  
+</I>&gt;<i> does this mean that's impossible?
+</I>
+Let's start with an analogy: A non-decorative part of your car isn't  
+working. So even though you know nothing about what the part does or  
+how cars work or how to fix them, you decide to throw away the damaged  
+part without finding out if there is an underlying problem and hope  
+that the car keeps running. Unfortunately the part is stuck and a  
+small hammer doesn't work so you go to a forum where you hope there is  
+someone more knowledgeable than you and ask if its OK to use a bigger  
+hammer to beat on it until it breaks off.
+
+The answer would be, no!
+
+1) Put the file back where it came from.
+2) Run Disk Utility. This will tell you if there is a more serious  
+underlying problem with the file system or not. If there is a problem,  
+keep running it until there isn't a problem anymore. If Disk Utility  
+is unable to fix the problem try rebooting in safe mode. Disk Utility  
+runs as part of the safe mode startup process and can do things in  
+this state that it can't when run on a live system. Once in safe mode  
+try Disk Utility again. If this doesn't work try other tools like Disk  
+Warrior, ProSoft, etc. At some point in this process you may find  
+yourself in need of knowledgeable or professional help.
+
+3 If you get to the point where you know your file system is OK then  
+reinstall the version of Java that has the corrupted file. We know  
+that this is version 1.4.2 from the line you included in your message.  
+A little web searching tells us that its installer can be found at <A HREF="http://www.apple.com/support/downloads/javaupdate142.html">http://www.apple.com/support/downloads/javaupdate142.html</A> 
+. You are also comforted since you read the documentation at the site  
+and it tells you that other versions of Java 1.4.x will be completely  
+replaced with the new installation.
+
+(By the way, if the first run of Disk Utility doesn't find any  
+problems or only finds minor ones then you're probably Ok. If there  
+were more serious problems, but they also are fixed then you're also  
+OK, but there's no guarantee, depending on the type of damage found,  
+that there aren't more corrupt or lost files. This is why regular and  
+rotating backups are so important.)
+
+Else, if your file system and/or other files are still corrupted you  
+save as much data as you can by telling SuperDuper! to ignore things  
+it can't read. Then you wipe your disk, restore from your last good  
+backup or reinstall from scratch, and then selectively restore from  
+your backups.
+
+
+lsof is a command line tool that shows what files running processes  
+have open.
+
+Phil
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="007153.html">[X-Newbies] How to get rid of or fix a file
+</A></li>
+	<LI>Next message: <A HREF="007155.html">[X-Newbies] How to get rid of or fix a file
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7154">[ date ]</a>
+              <a href="thread.html#7154">[ thread ]</a>
+              <a href="subject.html#7154">[ subject ]</a>
+              <a href="author.html#7154">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

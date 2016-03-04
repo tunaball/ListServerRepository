@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [CUBE] Yes It Works! Anyone try a larger drive than 120 GB in
+ a cube?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20Yes%20It%20Works%21%20Anyone%20try%20a%20larger%20drive%20than%20120%20GB%20in%0A%20a%20cube%3F&In-Reply-To=list-6581551%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004822.html">
+   <LINK REL="Next"  HREF="004824.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[CUBE] Yes It Works! Anyone try a larger drive than 120 GB in
+ a cube?</H1>
+    <B>Allan Hise</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20Yes%20It%20Works%21%20Anyone%20try%20a%20larger%20drive%20than%20120%20GB%20in%0A%20a%20cube%3F&In-Reply-To=list-6581551%40mail.ninewire.com"
+       TITLE="[CUBE] Yes It Works! Anyone try a larger drive than 120 GB in
+ a cube?">allan at hise.org
+       </A><BR>
+    <I>Thu Jun 12 06:26:52 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004822.html">[CUBE] Sonnet Encore processor upgrade
+</A></li>
+        <LI>Next message: <A HREF="004824.html">[CUBE] No It Does Not Work! Bogus &quot;Loophole&quot; Does Not Overcome 128 GB HD Limit In Cubes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4823">[ date ]</a>
+              <a href="thread.html#4823">[ thread ]</a>
+              <a href="subject.html#4823">[ subject ]</a>
+              <a href="author.html#4823">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+It is probably because large drives (&gt;128 GB or whatever the magic number
+is...) require extra bits to address the data greater than that magic
+number. The Cube's bus doe not have those bits, so it can't access that
+data. The drive was partitioned in a systhem that is capable of seeing the
+whole drive. The partition map is stored in very low addresses, so the
+cube can see it and tries to use it as is.  Disk Utitlity is trying to
+tell you that the partition map sees a big ol hunk of drive space free,
+but it can't really talk to most of it.
+
+My guess is that once you fill up the addressable space, depending on how
+smart the OS is, you'll either be told the disk is full or you will have
+file corruption and / or lost files. And, as previous posters have noted,
+you may totally hose things when you run a disk utility, once again, based
+on how smart the programmers made it to deal with situations like this.
+
+Allan
+
+On Wed, 11 Jun 2003, Kunga wrote:
+
+&gt;<i> OK so each partition in Disk Utility shows capacities correctly until I
+</I>&gt;<i> get to the fourth one when it says
+</I>&gt;<i> Capacity 22.73 GB
+</I>&gt;<i> Available 127.57 GB
+</I>&gt;<i>
+</I>&gt;<i> So what's up with that discrepancy? Does that mean it won't take more
+</I>&gt;<i> than 22.73 GB of stuff before it explodes? Or what?
+</I>&gt;<i>
+</I>&gt;<i> k
+</I>&gt;<i>
+</I>&gt;<i> &quot;T-Minus 2 Weeks And Counting&quot; &lt;<A HREF="http://www.apple-zone.com">http://www.apple-zone.com</A>&gt;
+</I>&gt;<i> &quot;iPod Old vs. New - A Comparative Analysis&quot; &lt;<A HREF="http://www.ipod-zone.com">http://www.ipod-zone.com</A>&gt;
+</I>&gt;<i> &quot;Loophole Lets Big Hard Drives Inside Cubes&quot; &lt;<A HREF="http://www.cube-zone.com">http://www.cube-zone.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> On Wednesday, June 11, 2003, at 02:27  PM, Joost van de Griek wrote:
+</I>&gt;<i>
+</I>&gt;<i> &gt; On 2003-06-11 23:00, Kunga wrote:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt; I can't find fsck on Version Tracker. You have a URL for fsck?
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Sure: &lt;/Applications/Utilities/Disk Utility&gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; In other words: it comes with the OS. You can run it from the Terminal
+</I>&gt;<i> &gt;  by typing fsck, if you don't want Disk Utility's GUI.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Cube email list FAQ
+</I>&gt;<i> <A HREF="http://www.themacintoshguy.com/lists/Cube.html">http://www.themacintoshguy.com/lists/Cube.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  &lt;<A HREF="../../../mailman/listinfo/cube.html">Cube-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your Mac ISP
+</I>&gt;<i> Serious Mac Internet Solutions From NineWire!   <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i>  T3Hub  |  3 Port USB Hub weighs less than an ounce!
+</I>&gt;<i> Dr. Bott|   &lt;<A HREF="http://www.drbott.com/prod/T3Hub.html">http://www.drbott.com/prod/T3Hub.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>    Cyberian   | Support this list when you buy at Outpost.com!
+</I>&gt;<i>    Outpost    | <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+</I>&gt;<i>
+</I>&gt;<i> ADC Extension | Extend the built in cable of your flat panel by 10 ft.
+</I>&gt;<i>   Dr. Bott    |    &lt;<A HREF="http://www.drbott.com/prod/ADCExtension.html">http://www.drbott.com/prod/ADCExtension.html</A>&gt;
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004822.html">[CUBE] Sonnet Encore processor upgrade
+</A></li>
+	<LI>Next message: <A HREF="004824.html">[CUBE] No It Does Not Work! Bogus &quot;Loophole&quot; Does Not Overcome 128 GB HD Limit In Cubes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4823">[ date ]</a>
+              <a href="thread.html#4823">[ thread ]</a>
+              <a href="subject.html#4823">[ subject ]</a>
+              <a href="author.html#4823">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] syslogd problems
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20syslogd%20problems&In-Reply-To=list-13800902%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000887.html">
+   <LINK REL="Next"  HREF="000889.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] syslogd problems</H1>
+    <B>Kevin Stevens</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20syslogd%20problems&In-Reply-To=list-13800902%40mail.ninewire.com"
+       TITLE="[X-Unix] syslogd problems">groups at pursued-with.net
+       </A><BR>
+    <I>Tue Jun  8 10:17:00 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000887.html">[X-Unix] syslogd problems
+</A></li>
+        <LI>Next message: <A HREF="000889.html">[X-Unix] Question about the latest security updates
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#888">[ date ]</a>
+              <a href="thread.html#888">[ thread ]</a>
+              <a href="subject.html#888">[ subject ]</a>
+              <a href="author.html#888">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Tue, 8 Jun 2004, William H. Magill wrote:
+
+&gt;<i> On 07 Jun, 2004, at 22:01, Kevin Stevens wrote:
+</I>&gt;<i> &gt; Ok, I'm tired of this.  Can anyone help me with the OS X syslogd
+</I>&gt;<i> &gt; program and syslogd.conf?  Please start with where the hell I can find
+</I>&gt;<i> &gt; accurate documentation.
+</I>&gt;<i>
+</I>&gt;<i> Please report this to Apple. It is a &quot;known problem&quot; -- Unix engineers
+</I>&gt;<i> update the modules in the System and fail to update the man pages.
+</I>
+Will do, thanks.
+
+&gt;<i> The &quot;current&quot; man page can be found at www.freebsd.com - select &quot;Manual
+</I>&gt;<i> Pages&quot; from the left column, and then type &quot;syslogd&quot; into the box.
+</I>
+Or I could just pull them from my FreeBSD box.  ;)  Didn't realize they
+were the same.  Does that mean that I should be able to cross-reference
+userland executable issues in general, or just expect the same
+functionality?  FreeBSD 4.x or 5.x?
+
+... (checking)
+Well, I already see one potential problem.  -u per the BSD man page
+enables unique priority logging, while per the OS X man page it sets UDP
+mode!  No wonder I was having trouble getting it to work!
+grr...
+
+&gt;<i> &gt; I want to log syslog entries from a different device to my G5
+</I>&gt;<i> &gt; (10.3.4).  I can eventually get syslog info to be accepted and logged
+</I>&gt;<i> &gt; by killing syslogd and restarting it with the -u option.  However, in
+</I>&gt;<i> &gt; both my and a friend's experience, doing so will cause the machine to
+</I>&gt;<i> &gt; become totally unresponsive to mouse, keyboard, or remote access
+</I>&gt;<i> &gt; within 24-48 hours.  Leaving a 'top' session running doesn't show any
+</I>&gt;<i> &gt; obvious problems with memory, processes, or CPU when this happens.
+</I>&gt;<i>
+</I>&gt;<i> A full disk?
+</I>
+No, scores of gigs free.
+
+&gt;<i> A &quot;deadly embrace&quot; in the Disk I/O system? (I know this problem exists
+</I>&gt;<i> with Adaptec SCSI in 10.2.8.)  If the system is unresponsive, I would
+</I>&gt;<i> expect something like this.
+</I>
+Maybe.  But by &quot;unresponsive&quot; I mean that the mouse will move around the
+screen, but won't activate/bring forward different running windows (though
+the window contents, for example 'top', keep refreshing).  That doesn't
+seem very disk-ish.  How would I check, some incantation of vmstat or
+iostat?
+
+&gt;<i> &gt; A separate issue is that I don't see an obvious way to restart syslogd
+</I>&gt;<i> &gt; with different options without hacking around in the system rc script,
+</I>&gt;<i> &gt; which I'm loathe to do for best practice reasons.
+</I>&gt;<i>
+</I>&gt;<i> No, I don't believe there is. (Although you should not have to, it
+</I>&gt;<i> appears to be the only place where anything is done with syslogd --
+</I>&gt;<i> StartupItems does nothing.)
+</I>
+Did I mention 'grr....'?
+
+Thanks for the response, just getting the correct man page is a huge step
+forward!
+
+KeS
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000887.html">[X-Unix] syslogd problems
+</A></li>
+	<LI>Next message: <A HREF="000889.html">[X-Unix] Question about the latest security updates
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#888">[ date ]</a>
+              <a href="thread.html#888">[ thread ]</a>
+              <a href="subject.html#888">[ subject ]</a>
+              <a href="author.html#888">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

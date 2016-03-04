@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Networking when booting OS X in text mode
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Networking%20when%20booting%20OS%20X%20in%20text%20mode&In-Reply-To=4164E065.2010701%40underwares.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001107.html">
+   <LINK REL="Next"  HREF="001109.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Networking when booting OS X in text mode</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Networking%20when%20booting%20OS%20X%20in%20text%20mode&In-Reply-To=4164E065.2010701%40underwares.org"
+       TITLE="[X-Unix] Networking when booting OS X in text mode">magill at mcgillsociety.org
+       </A><BR>
+    <I>Thu Oct  7 11:07:15 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001107.html">[X-Unix] Networking when booting OS X in text mode
+</A></li>
+        <LI>Next message: <A HREF="001109.html">[X-Unix] An interesting Journal problem and fix
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1108">[ date ]</a>
+              <a href="thread.html#1108">[ thread ]</a>
+              <a href="subject.html#1108">[ subject ]</a>
+              <a href="author.html#1108">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 07 Oct, 2004, at 02:21, Alexandre Gauthier wrote:
+&gt;<i> As most of you already know, you can use OS X in almost pure 
+</I>&gt;<i> frambuffered console mode by doing a few nasty tweaks and typing 
+</I>&gt;<i> &gt;console as the username in the login prompt. This should dump you in 
+</I>&gt;<i> pure text mode, no graphical window server whatsoever.
+</I>&gt;<i>
+</I>&gt;<i> However, my concern is the following.
+</I>&gt;<i>
+</I>&gt;<i> *** The Wrong:
+</I>&gt;<i> Apparently, OS X seems to initialize networking for, say, airport in 
+</I>&gt;<i> my case, only when a graphical session is started.
+</I>&gt;<i> It seems that all adapters are brought up, but they don't seem to 
+</I>&gt;<i> follow the profile currently applied. They just stand there, 
+</I>&gt;<i> basically, in &quot;unknown&quot; state. Following this logic, they only seem to 
+</I>&gt;<i> work when you are _logged in_ as well. I don't think networking is 
+</I>&gt;<i> fully operational (at least in the case of 802.11b) until you have 
+</I>&gt;<i> started a session. At least in my case.
+</I>&gt;<i> I understand why that would happen, since profiles and the airport 
+</I>&gt;<i> manager seem to only apply inside your session since the airport 
+</I>&gt;<i> applet is only launched then.
+</I>&gt;<i>
+</I>&gt;<i> *** The what:
+</I>&gt;<i> Well, I would like to know if there is a way to enable networking 
+</I>&gt;<i> while in full text-mode-only-we-like-framebuffered-consoles mode.
+</I>&gt;<i> So far, ifconfig returns the interface (ne1), but it is in the state 
+</I>&gt;<i> &quot;unknown&quot;.
+</I>&gt;<i>
+</I>&gt;<i> *** The why:
+</I>&gt;<i> Don't ask why I want to do this ;) I just feel like it. It has to do 
+</I>&gt;<i> with me being easily distracted when programming bash (I tend to do 
+</I>&gt;<i> everything in perl, whenever I can. As for if that is a good or a bad 
+</I>&gt;<i> habit... ;P), and a strange, utterly immoral fondness for text 
+</I>&gt;<i> environnements.
+</I>
+The answer is actually &quot;simple.&quot;
+
+There are some configurations which are &quot;system wide&quot; and some which 
+are dependent upon the individual user.
+
+Each user can configure their own &quot;location&quot; profile, which includes 
+which network interfaces are being used, and how.
+
+The &quot;system&quot; can configure certain interfaces by way of the Sharing 
+panel. However, if nothing is &quot;shared&quot; (file sharing, Ftp, remote 
+login, etc.) then nothing is configured which would require a 
+networking interface. (One assumes it will use the location profile of 
+the Admin user, but I don't know.)
+
+My iMac runs remote login and web sharing, and is accessible via 802.11 
+independent of anyone being logged in on the head.
+
+One assumes that you are using your userid (not root) to login via 
+ &gt;console.
+You will note that you are running the same environment as you get via 
+Terminal (less .MacOSX/environment.plist).
+I happen to have multiple userids configured on my box, so &gt;console 
+gives one a classic login prompt. I don't know how this would change if 
+there is only one userid on the box.
+
+My box comes up (in &gt;console) with the 802.11 interface fully 
+configured and operational.
+
+BTW, I wouldn't call it a &quot;frame buffered,&quot; but rather &quot;character cell.&quot;
+
+I haven't tested this, but it is also quite possible that immediately 
+after a reboot, and logging in via &gt;console, things will be inactive. 
+However, in my case, I have accessed the various activated services 
+immediately following a reboot, never having logged in via the head.
+
+Note also, since I use the iMac exclusively via 802.11, I have 
+eliminated the other interfaces from &quot;active&quot; status in the Admin 
+user's profile. Given Apple's &quot;Smart Networking,&quot; it is possible that 
+this is why interfaces would be in an &quot;unknown&quot; state. But again, I 
+would assume that the activation of say, the remote login service, when 
+that daemon (sshd) initializes, it would trigger the &quot;smart networking&quot; 
+code during boot.
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001107.html">[X-Unix] Networking when booting OS X in text mode
+</A></li>
+	<LI>Next message: <A HREF="001109.html">[X-Unix] An interesting Journal problem and fix
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1108">[ date ]</a>
+              <a href="thread.html#1108">[ thread ]</a>
+              <a href="subject.html#1108">[ subject ]</a>
+              <a href="author.html#1108">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

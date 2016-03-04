@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] mail.app and clamav?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20mail.app%20and%20clamav%3F&In-Reply-To=list-13092586%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000839.html">
+   <LINK REL="Next"  HREF="000842.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] mail.app and clamav?</H1>
+    <B>Adrian Simmons</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20mail.app%20and%20clamav%3F&In-Reply-To=list-13092586%40mail.ninewire.com"
+       TITLE="[X-Unix] mail.app and clamav?">adrinux at ntlworld.com
+       </A><BR>
+    <I>Mon May 31 05:23:13 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000839.html">[X-Unix] SMB and Windows Server2003
+</A></li>
+        <LI>Next message: <A HREF="000842.html">[X-Unix] SMB and Windows Server2003
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#840">[ date ]</a>
+              <a href="thread.html#840">[ thread ]</a>
+              <a href="subject.html#840">[ subject ]</a>
+              <a href="author.html#840">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Warren Pollans wrote:
+&gt;<i> would like to find a way to have 
+</I>&gt;<i> mail.app pass mail through clamav - antivirus scanner. 
+</I>For myself, I use:
+fetchmail &gt; postfix &gt; procmail(clamassassin &gt; clamav)(spamassassin) &gt; 
+mail spool &gt; qpopper &gt; mail.app
+
+fetchamail to collect mail from the pop accounts, which passes messages 
+to postfix, which in turn passes them to procmail (which filters through 
+clamav using the clamassassin script, and filters through spamassassin), 
+which delivers them to my user mail spool in /var/mail, qpopper then 
+sits between the mail spool and mail.app.
+
+Also I have procmail rules which delete messages that clamav detects a 
+virus in and high scoring spam, and I monitor my procmail log file with 
+geektool, so I can watch out for false positives in a nice translucent 
+panel on my desktop :)
+
+You may well be able to feed messages to clamav from mail.app using a 
+rule and an applescript, you might find the clamassassin script useful 
+for that (it's a shell script I think), in terms of what you need to do.
+
+HTH
+
+-- 
+adrinux (aka Adrian Simmons)
+e-mail &lt;mailto:<A HREF="../../../mailman/listinfo/x-unix.html">adrinux at ntlworld.com</A>&gt;
+AOL or Yahoo Messenger ID: perlucida
+Microsoft Messenger ID: <A HREF="../../../mailman/listinfo/x-unix.html">adrian at perlucida.com</A>
+blog &lt;<A HREF="http://adrinux.perlucida.com">http://adrinux.perlucida.com</A>&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000839.html">[X-Unix] SMB and Windows Server2003
+</A></li>
+	<LI>Next message: <A HREF="000842.html">[X-Unix] SMB and Windows Server2003
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#840">[ date ]</a>
+              <a href="thread.html#840">[ thread ]</a>
+              <a href="subject.html#840">[ subject ]</a>
+              <a href="author.html#840">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

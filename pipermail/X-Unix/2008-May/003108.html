@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] old port for ssh
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20old%20port%20for%20ssh&In-Reply-To=D4FA32C0-2636-4630-814D-B44C85FBF284%40lvnv.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003106.html">
+   <LINK REL="Next"  HREF="003095.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] old port for ssh</H1>
+    <B>ecrist at secure-computing.net</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20old%20port%20for%20ssh&In-Reply-To=D4FA32C0-2636-4630-814D-B44C85FBF284%40lvnv.com"
+       TITLE="[X-Unix] old port for ssh">ecrist at secure-computing.net
+       </A><BR>
+    <I>Thu May  8 06:22:24 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003106.html">[X-Unix] old port for ssh
+</A></li>
+        <LI>Next message: <A HREF="003095.html">[X-Unix] old port for ssh
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3108">[ date ]</a>
+              <a href="thread.html#3108">[ thread ]</a>
+              <a href="subject.html#3108">[ subject ]</a>
+              <a href="author.html#3108">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&lt;<A HREF="../../../mailman/listinfo/x-unix.html">BCC10388-16FA-48B6-930B-1B6863E7035B at gmail.com</A>&gt; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">D4FA32C0-2636-4630-814D-B44C85FBF284 at lvnv.com</A>&gt;
+Message-ID: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">895d15a830108c4cd8e877a90947133f at localhost</A>&gt;
+X-Sender: <A HREF="../../../mailman/listinfo/x-unix.html">ecrist at secure-computing.net</A>
+Received: from 74-95-66-25-Minnesota.hfc.comcastbusiness.net [74.95.66.25]
+	via tank.he-ip6.secure-computing.net [2001:470:1f01:724::150]
+	 with HTTP/1.1 (POST); Thu, 08 May 2008 08:22:24 -0500
+User-Agent: Secure Computing WebMail
+Content-Type: text/plain; charset=&quot;UTF-8&quot;
+Content-Transfer-Encoding: 8bit
+
+
+On Wed, 7 May 2008 19:40:01 -0700, M K &lt;<A HREF="../../../mailman/listinfo/x-unix.html">mike at lvnv.com</A>&gt; wrote:
+&gt;<i> 
+</I>&gt;<i> On May 6, 2008, at 10:47 PM, Robar Philip wrote:
+</I>&gt;<i> 
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On May 6, 2008, at 9:33 PM, M K wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I need an older port of OpenSSH than what comes with Leopard.
+</I>&gt;&gt;&gt;<i> I have OpenSSH_5.0p1, I need a version of OpenSSH less than 4.5
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> [snip]
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> How do I remove the current port of OpenSSH?
+</I>&gt;&gt;&gt;<i> (I read somewhere that I just need to delete the current file, but
+</I>&gt;&gt;&gt;<i> that doesn't seem right)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> You shouldn't. Replacing the vendor shipped version of something
+</I>&gt;&gt;<i> with your own is almost always a bad idea. Install the older version
+</I>&gt;&gt;<i> somewhere like /usr/local/bin or /opt/local/bin. Then write a little
+</I>&gt;&gt;<i> script called something like &quot;oldssh&quot; which runs the older version
+</I>&gt;&gt;<i> or just type the full path to the older version.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Where can I find a really old port so I don't have to compile it
+</I>&gt;&gt;&gt;<i> myself and risk screwing something up?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I did a quick Google search but didn't find an obvious pointer.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Phil
+</I>&gt;<i> 
+</I>&gt;<i> I can't seem to find an old port either...I've looked all around...
+</I>&gt;<i> 
+</I>&gt;<i> I think I might just compile it...
+</I>
+
+That's probably your best bet.  With the proper developer tools, this
+should be relatively trivial.  Also, if you have an old version of Mac OS X
+around, you could probably simply copy the binary to your system, to an
+alternate location such as /usr/local/bin, or /opt/bin/, so as not to
+interfere with the system installed version of OpenSSH.  If you run into
+library problems, you can probably symlink the newer libs to a name
+matching what the old binary is looking for.  It's kind of a hack, but
+works in a pinch.
+
+Let me know if you need any help.
+
+Eric Crist
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003106.html">[X-Unix] old port for ssh
+</A></li>
+	<LI>Next message: <A HREF="003095.html">[X-Unix] old port for ssh
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3108">[ date ]</a>
+              <a href="thread.html#3108">[ thread ]</a>
+              <a href="subject.html#3108">[ subject ]</a>
+              <a href="author.html#3108">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

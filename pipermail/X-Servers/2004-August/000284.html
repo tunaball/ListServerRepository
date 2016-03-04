@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Servers] Server Monitor can't connect [fixed]
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20Server%20Monitor%20can%27t%20connect%20%5Bfixed%5D&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000283.html">
+   <LINK REL="Next"  HREF="000285.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Servers] Server Monitor can't connect [fixed]</H1>
+    <B>Marcel Hochuli</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20Server%20Monitor%20can%27t%20connect%20%5Bfixed%5D&In-Reply-To="
+       TITLE="[X Servers] Server Monitor can't connect [fixed]">mhochuli at a-f.ch
+       </A><BR>
+    <I>Fri Aug  6 03:35:38 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000283.html">[X Servers] Sharing external HD with PCs over SMB?
+</A></li>
+        <LI>Next message: <A HREF="000285.html">[X Servers] Server Monitor can't connect [fixed]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#284">[ date ]</a>
+              <a href="thread.html#284">[ thread ]</a>
+              <a href="subject.html#284">[ subject ]</a>
+              <a href="author.html#284">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi James
+
+I had the very same problem yesterday while installing Mac OS X Server 
+10.3.3 on a new Xserve G5. I never had 10.3.3 Installer CDs before and 
+I never had the same problem before (I installed almost 30 Xserve so 
+far).
+
+Which was your install procedure? Directly on Xserve with keyboard and 
+monitor, remotely with Server Assistant on another system or the server 
+attached via FireWire to another system?
+
+I did the last. I connected the Xserve via FireWire on my PowerBook and 
+installed it that way. It could be, that the installer removed the 
+missing line from watchdog.conf as it is intelligently determining that 
+the PowerBook is not supporting hwmond.
+
+That's my consideration. We would know it more exactly, if you tell us 
+how you installed it.
+
+
+Thanks,
+Marcel
+
++---
+mailto:<A HREF="../../../mailman/listinfo/x-servers.html">mhochuli at a-f.ch</A>
+otherto:<A HREF="../../../mailman/listinfo/x-servers.html">noway at a-f.ch</A>
+____________________________________
+
+Am 12 Apr 2004 13:09:46 -0700 schrieb James Bucanek:
+
+&gt;<i> James Bucanek wrote on Sunday, March 28, 2004:
+</I>&gt;&gt;<i> I'm having the darnest time with Server Monitor (OS X Server 10.3.3 + 
+</I>&gt;&gt;<i> XServe G5).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Everything seems to be working just fine, except that the Server
+</I>&gt;&gt;<i> Monitor application won't work.  I either get the status &quot;Waiting for
+</I>&gt;&gt;<i> response&quot; or &quot;User name or password is incorrect&quot; (they're not).
+</I>&gt;<i>
+</I>&gt;<i> For what it's worth, I finally figured out what my problem was.  The 
+</I>&gt;<i> hwmond daemon wasn't running.
+</I>&gt;<i>
+</I>&gt;<i> From a discussion in the Apple X Server forum, I added the line
+</I>&gt;<i>
+</I>&gt;<i> &#160;&#160;&#160;&#160;hwmond:respawn:/usr/sbin/hwmond # Hardware Monitor daemon
+</I>&gt;<i>
+</I>&gt;<i> to the /etc/watchdog.conf file. Now Server Monitor works!
+</I>&gt;<i>
+</I>&gt;<i> Note that this was a clean install (twice!) of OS X 10.3.3.  Why 
+</I>&gt;<i> wouldn't hwmond be included in this file (or wherever it belongs)?
+</I>&gt;<i>
+</I>&gt;<i> ______________________________________________________
+</I>&gt;<i> James Bucanek       &lt; mailto:<A HREF="../../../mailman/listinfo/x-servers.html">privatereply at gloaming.com</A> &gt;
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000283.html">[X Servers] Sharing external HD with PCs over SMB?
+</A></li>
+	<LI>Next message: <A HREF="000285.html">[X Servers] Server Monitor can't connect [fixed]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#284">[ date ]</a>
+              <a href="thread.html#284">[ thread ]</a>
+              <a href="subject.html#284">[ subject ]</a>
+              <a href="author.html#284">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

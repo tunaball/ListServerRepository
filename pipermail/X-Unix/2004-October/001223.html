@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Apache &amp; ifconfig - success!
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Apache%20%26%20ifconfig%20-%20success%21&In-Reply-To=20041019104239.GG422%40Dark-Age.local">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001222.html">
+   <LINK REL="Next"  HREF="001224.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Apache &amp; ifconfig - success!</H1>
+    <B>Pedro fp</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Apache%20%26%20ifconfig%20-%20success%21&In-Reply-To=20041019104239.GG422%40Dark-Age.local"
+       TITLE="[X-Unix] Apache &amp; ifconfig - success!">lists at pedro.Net.au
+       </A><BR>
+    <I>Wed Oct 20 21:02:59 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001222.html">[X-Unix] Apache &amp; ifconfig - success!
+</A></li>
+        <LI>Next message: <A HREF="001224.html">[X-Unix] Apache &amp; ifconfig - success!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1223">[ date ]</a>
+              <a href="thread.html#1223">[ thread ]</a>
+              <a href="subject.html#1223">[ subject ]</a>
+              <a href="author.html#1223">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>G'day Folks
+
+On 19/10/2004, at 8:42 PM, Eugene wrote:
+
+&gt;<i> On Tue, Oct 19, 2004 at 06:44:30PM +1000, Pedro fp wrote:
+</I>&gt;<i> :
+</I>&gt;<i> : I've got it all working, 32 virtual servers!
+</I>&gt;<i>
+</I>&gt;<i> congrats!
+</I>
+Thanks. Given my experience in these things I think it's something of 
+an achievement.
+
+&gt;<i> : Now I just have a bit of a problem with a couple where when I visit
+</I>&gt;<i> : them in my browser it downloads the home page to my downloads folder
+</I>&gt;<i> : rather than loading it in my browser ... hmmmm. Any clues as to what
+</I>&gt;<i> : might cause that?
+</I>&gt;<i>
+</I>&gt;<i> the Content-Type being sent in the HTTP headers might be incorrect.
+</I>&gt;<i> are you viewing static content or dynamically-created content?  what
+</I>&gt;<i> is the filename extension?
+</I>
+Mostly .php with one exception being .html file.
+
+On 20/10/2004, at 10:40 AM, Eric Crist wrote:
+
+&gt;<i> What directories (full path, please).  Apache looks in some 
+</I>&gt;<i> directories and handles them in a special way.
+</I>
+One, the test copy of my personal site is ...
+
+/Volumes/RMS/pedroNet/pedro
+
+All my web projects are in sub-folders of /Volumes/RMS/pedroNet and all 
+my virtual servers point in there except for the one serving the Apache 
+documentation which points to the folder where Mac OS X keeps that.
+
+Having explained that I now have it working. I put a line ...
+	DirectoryIndex index.html index.php
+inside each VirtualHost directive block &amp; that got it working. I don't 
+understand why as this line is already in the &lt;IfModule mod_php4.c&gt; 
+directive block &amp; the php sites were working fine when I had it all on 
+127.0.0.1.
+
+Thanx for all &amp;
+Cheers, Pedro :-)
+
+Web: &lt;<A HREF="http://www.pedro.net.au">http://www.pedro.net.au</A>&gt;                    PGP Key ID: 387CD96F
+Instant messaging...  AIM: bandidoOfOz  ICQ: 27671678  Jabber: pedrofp
+                       MSN: <A HREF="../../../mailman/listinfo/x-unix.html">mail at pedro.net.au</A>           Yahoo: pedro_fp
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+&quot;Good actions ennoble us, and we are the sons of our own deeds.&quot;
+                                              Miguel de Cervantes
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001222.html">[X-Unix] Apache &amp; ifconfig - success!
+</A></li>
+	<LI>Next message: <A HREF="001224.html">[X-Unix] Apache &amp; ifconfig - success!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1223">[ date ]</a>
+              <a href="thread.html#1223">[ thread ]</a>
+              <a href="subject.html#1223">[ subject ]</a>
+              <a href="author.html#1223">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

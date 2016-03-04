@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Networking &quot;guru&quot; needed, dialin PPP not working
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Networking%20%22guru%22%20needed%2C%20dialin%20PPP%20not%20working&In-Reply-To=DED22A07-1B1C-4ACE-8932-5FD9B0BFF09D%40tntluoma.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002260.html">
+   <LINK REL="Next"  HREF="002262.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Networking &quot;guru&quot; needed, dialin PPP not working</H1>
+    <B>Pablo</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Networking%20%22guru%22%20needed%2C%20dialin%20PPP%20not%20working&In-Reply-To=DED22A07-1B1C-4ACE-8932-5FD9B0BFF09D%40tntluoma.com"
+       TITLE="[X-Unix] Networking &quot;guru&quot; needed, dialin PPP not working">jpablovilla at spymac.com
+       </A><BR>
+    <I>Mon Jul 11 13:49:36 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002260.html">[X-Unix] Re: Networking &quot;guru&quot; needed, dialin PPP not working
+</A></li>
+        <LI>Next message: <A HREF="002262.html">[X-Unix] Re: Networking &quot;guru&quot; needed, dialin PPP not working
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2261">[ date ]</a>
+              <a href="thread.html#2261">[ thread ]</a>
+              <a href="subject.html#2261">[ subject ]</a>
+              <a href="author.html#2261">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Ok, im not a guru or nothing like it, but something is really wierd 
+here, if you connect to the FreeBSD machine and it gives you an 
+192.168.1.x IP address then you will have 2 interfaces of the same 
+machine ( the FreeBSD machine ) in the same network, I dont think that 
+any machine can route that ,even if you set ip_forwarding it shouldnt 
+work. Try changing the network IP address of you DHCP in the FreeBSD to 
+something like 192.168.2.x and add a default route in the linksys 
+router( the one that works as a router ) to 192.168.2.x to the FreeBSD 
+machine.
+This is the idea
+
+			|----------------YOUR LAN--------------|
+				|
+				|
+			( 192.168.1.200 )
+			    FREE-BSD
+			( 192.168.2.200 )
+				|
+				|
+			DIAL-UP
+				|
+				|
+		     ( 192.168.2.10 )
+		   YOUR POWERBOOK
+
+Please let me know if it worked, or if what i just sayd doesn't make 
+any sense to you :)
+
+Good Luck
+
+
+
+On Jul 10, 2005, at 11:13 PM, Timothy Luoma wrote:
+
+&gt;<i>
+</I>&gt;<i> I have a very strange situation going on which has exhausted my 
+</I>&gt;<i> knowledge of what to try.  I am desperately hoping that someone with 
+</I>&gt;<i> Unix networking will have a solution, or at least some ideas.
+</I>&gt;<i>
+</I>&gt;<i> My office LAN is a DSL connection hooked to a Linksys router
+</I>&gt;<i>
+</I>&gt;<i>                                           |----Office 1 (192.168.1.31)
+</I>&gt;<i> DSL --- Linksys Router ----|
+</I>&gt;<i>               192.168.1.1         |----Office 2 (192.168.1.32)
+</I>&gt;<i>                                           |
+</I>&gt;<i>                                           |----Office 3  (192.168.1.33)
+</I>&gt;<i>                                           |
+</I>&gt;<i>                                           |------My Office ---- 
+</I>&gt;<i> another Linksys router (B)
+</I>&gt;<i>                                                                        
+</I>&gt;<i>                      |
+</I>&gt;<i>                                                                        
+</I>&gt;<i>                      |
+</I>&gt;<i>                                                                        
+</I>&gt;<i>   |---------------|--------------|
+</I>&gt;<i>                                                                        
+</I>&gt;<i>   |                                    |
+</I>&gt;<i>                                                                        
+</I>&gt;<i>   |                                    |
+</I>&gt;<i>                                                                        
+</I>&gt;<i>   |                                    |
+</I>&gt;<i>                                                                     
+</I>&gt;<i> FreeBSD                        Powerbook (when at office)
+</I>&gt;<i>                                                                  
+</I>&gt;<i> (192.168.1.200)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> The 2nd Linksys router (B) has the network cable plugged into one of 
+</I>&gt;<i> the 4 LAN ports, i.e. it is not seen as a hub, it just acts as an 
+</I>&gt;<i> &quot;extension cord&quot; letting me plug in 2 machines into the LAN.
+</I>&gt;<i>
+</I>&gt;<i> The FreeBSD machine is hooked to a phone line which has 'pppd' and 
+</I>&gt;<i> 'mgetty' setup for dial IN access.  When my Powerbook (running 
+</I>&gt;<i> Tiger/10.4.1) is at home, I dial in to the office network and get an 
+</I>&gt;<i> IP of 192.168.1.x from the FreeBSD machine.
+</I>&gt;<i>
+</I>&gt;<i> Here is the problem:
+</I>&gt;<i>
+</I>&gt;<i> The majority of the time when I dial in to the FreeBSD machine, I 
+</I>&gt;<i> cannot access the Internet.  In fact, usually I cannot even ping the 
+</I>&gt;<i> router (192.168.1.1).  I can ALWAYS ping the FreeBSD machine, but I 
+</I>&gt;<i> cannot ssh into it (the ssh process dies somewhere between lines 4 and 
+</I>&gt;<i> 5 below, after some time in limbo where nothing seems to happen)
+</I>&gt;<i>
+</I>&gt;<i> 1    debug1: SSH2_MSG_SERVICE_ACCEPT received
+</I>&gt;<i> 2    debug2: key: /Users/tim/.ssh/identity (0x3006d0)
+</I>&gt;<i> 3    debug2: key: /Users/tim/.ssh/id_dsa (0x306f80)
+</I>&gt;<i> 4    debug2: key: /Users/tim/.ssh/id_rsa (0x306fd0)
+</I>&gt;<i> 5    debug1: Authentications that can continue: 
+</I>&gt;<i> publickey,keyboard-interactive
+</I>&gt;<i>
+</I>&gt;<i> (step 5 shows a successful connection, usually (when it fails) after 
+</I>&gt;<i> step 4 I see &quot;connection closed to 192.168.1.200&quot;)
+</I>&gt;<i>
+</I>&gt;<i> Here's the real mystery.  If I leave the connection up and running and 
+</I>&gt;<i> wait, somewhere between 2 minutes and 30 minutes later the connection 
+</I>&gt;<i> will &quot;come alive&quot; and suddenly it will work flawlessly.
+</I>&gt;<i>
+</I>&gt;<i> I can sometimes seem to &quot;wake up&quot; the connection by trying to make 
+</I>&gt;<i> connections (ssh, fetch mail, ichat).
+</I>&gt;<i>
+</I>&gt;<i> It seems to me (although this is just a guess) that SOMETHING is not 
+</I>&gt;<i> being initialized properly when the dialin connection is made, but it 
+</I>&gt;<i> takes awhile for it to get all sorted out.
+</I>&gt;<i>
+</I>&gt;<i> The problem is that I have no idea where the problem is or what I 
+</I>&gt;<i> should be trying to solve this problem.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Any help or even educated guesses would be appreciated.
+</I>&gt;<i>
+</I>&gt;<i> TjL
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random 
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002260.html">[X-Unix] Re: Networking &quot;guru&quot; needed, dialin PPP not working
+</A></li>
+	<LI>Next message: <A HREF="002262.html">[X-Unix] Re: Networking &quot;guru&quot; needed, dialin PPP not working
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2261">[ date ]</a>
+              <a href="thread.html#2261">[ thread ]</a>
+              <a href="subject.html#2261">[ subject ]</a>
+              <a href="author.html#2261">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

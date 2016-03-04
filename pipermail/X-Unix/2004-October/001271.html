@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Disk &amp; System maintenance
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Disk%20%26%20System%20maintenance&In-Reply-To=E4BCAC84-28B5-11D9-BD16-0030656A1BF6%40christian.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001267.html">
+   <LINK REL="Next"  HREF="001272.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Disk &amp; System maintenance</H1>
+    <B>Eric Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Disk%20%26%20System%20maintenance&In-Reply-To=E4BCAC84-28B5-11D9-BD16-0030656A1BF6%40christian.net"
+       TITLE="[X-Unix] Disk &amp; System maintenance">ecrist at secure-computing.net
+       </A><BR>
+    <I>Thu Oct 28 07:49:04 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001267.html">[X-Unix] Disk &amp; System maintenance
+</A></li>
+        <LI>Next message: <A HREF="001272.html">[X-Unix] Disk &amp; System maintenance
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1271">[ date ]</a>
+              <a href="thread.html#1271">[ thread ]</a>
+              <a href="subject.html#1271">[ subject ]</a>
+              <a href="author.html#1271">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Oct 28, 2004, at 2:49 AM, Mark Philip wrote:
+
+&gt;<i> Hi all,
+</I>&gt;<i> With OSX 10.2, other than the CRON utility, are there other utilities 
+</I>&gt;<i> that can optimise the system and disks?
+</I>&gt;<i>
+</I>&gt;<i> Specifically:
+</I>&gt;<i>
+</I>&gt;<i> 1) Tuning overall system performance
+</I>&gt;<i> 2) Defragmenting the hard disk (I used to do this on Windows 
+</I>&gt;<i> machines). Is this now necessary on OSX?
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> Best,
+</I>&gt;<i> Mark.
+</I>
+The cron utility is not a disk optimization program, rather it is a 
+scheduling daemon.  From the cron(8) man page:
+
+Cron searches /var/cron/tabs for crontab files which are named after
+      accounts in /etc/passwd; crontabs found are loaded into memory.  
+Cron
+      also searches for /etc/crontab which is in a different format (see
+      crontab(5)).  Cron then wakes up every minute, examining all stored
+      crontabs, checking each command to see if it should be run in the 
+current
+      minute.  When executing commands, any output is mailed to the 
+owner of
+      the crontab (or to the user named in the MAILTO environment 
+variable in
+      the crontab, if such exists).
+
+      Additionally, cron checks each minute to see if its spool 
+directory's
+      modtime (or the modtime on /etc/crontab) has changed, and if it 
+has, cron
+      will then examine the modtime on all crontabs and reload those 
+which have
+      changed.  Thus cron need not be restarted whenever a crontab file 
+is mod-
+      ified.  Note that the crontab(1) command updates the modtime of 
+the spool
+      directory whenever it changes a crontab.
+
+As far as your questions into tuning system performance and 
+de-fragmenting the hard disk,  Apple is of the opinion that you 
+generally don't need to defragment your hard drive if you are running 
+OS X 10.2 or higher:
+
+<A HREF="http://docs.info.apple.com/article.html?artnum=25668">http://docs.info.apple.com/article.html?artnum=25668</A>
+
+Generally, you could purchase the Norton suite of software to tune your 
+system for you, but simply adding RAM is the best thing you could do to 
+improve performance.
+
+HTH
+
+-----
+Eric F Crist
+Secure Computing Networks
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: PGP.sig
+Type: application/pgp-signature
+Size: 194 bytes
+Desc: This is a digitally signed message part
+Url : <A HREF="../attachments/20041028/df0456dd/PGP.bin">http://listserver.themacintoshguy.com/pipermail/x-unix/attachments/20041028/df0456dd/PGP.bin</A>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001267.html">[X-Unix] Disk &amp; System maintenance
+</A></li>
+	<LI>Next message: <A HREF="001272.html">[X-Unix] Disk &amp; System maintenance
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1271">[ date ]</a>
+              <a href="thread.html#1271">[ thread ]</a>
+              <a href="subject.html#1271">[ subject ]</a>
+              <a href="author.html#1271">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

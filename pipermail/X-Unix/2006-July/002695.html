@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to determine which network component is failing
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20determine%20which%20network%20component%20is%20failing&In-Reply-To=F02C6228-5F35-42AE-AA3A-A5E1F75CD06E%40charter.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002719.html">
+   <LINK REL="Next"  HREF="002696.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to determine which network component is failing</H1>
+    <B>Wing Wong</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20determine%20which%20network%20component%20is%20failing&In-Reply-To=F02C6228-5F35-42AE-AA3A-A5E1F75CD06E%40charter.net"
+       TITLE="[X-Unix] How to determine which network component is failing">wingedpower at gmail.com
+       </A><BR>
+    <I>Mon Jul 24 10:27:24 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002719.html">[X-Unix] How to determine which network component is failing
+</A></li>
+        <LI>Next message: <A HREF="002696.html">[X-Unix] How to determine which network component is failing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2695">[ date ]</a>
+              <a href="thread.html#2695">[ thread ]</a>
+              <a href="subject.html#2695">[ subject ]</a>
+              <a href="author.html#2695">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 7/23/06, Charles Howse &lt;<A HREF="../../../mailman/listinfo/x-unix.html">chowse at charter.net</A>&gt; wrote:
+&gt;<i> Hardware setup:
+</I>&gt;<i> ISP: Charter Communications, 2 megabit service
+</I>&gt;<i> Cable Modem: Motorola SB4200 Surfboard
+</I>&gt;<i> Router: Linksys Etherfast(r) Cable/DSL Router BEFSR41 V3 Firmware
+</I>&gt;<i> Version: 1.04.17
+</I>&gt;<i> Computers: 2 FreeBSD 6.1-RELEASE. 1 Mac OS X 10.4.7, 100 baseT
+</I>&gt;<i> ethernet connections on all
+</I>&gt;<i>
+</I>&gt;<i> This morning, I was offline, and just by accident decided to try and
+</I>&gt;<i> release and renew the ip address using the web interface of the router.
+</I>&gt;<i> BINGO!  Online again!
+</I>&gt;<i>
+</I>&gt;<i> Is this an indication that the router is not noticing that the lease
+</I>&gt;<i> has expired on my dhcp assigned ip address from the modem?  Or is it
+</I>&gt;<i> an indication that the modem is not renewing it's ip address?  Or is
+</I>&gt;<i> it something else?
+</I>&gt;<i>
+</I>&gt;<i> Can I tell the router to release / renew the ip address from a shell
+</I>&gt;<i> script?
+</I>
+Yes. I have a WRT54G Linksys router hooked up to my cablemodem and
+this does indeed happen once in a while. Basically, when this happens,
+one of two things happen:
+
+1) the cablemodem/service has died and the cablemodem needs to be power-cycled.
+2) the dhcp lease needs to be renewed.
+
+Typically, I've found the lease to work fine by itself. But from time
+to time, it doesn't. :/ The reasons for this vary, but I'm guessing
+it's someone bouncing something over at the cable provider side and
+the lease is just &quot;forgotten&quot;, leaving your router with a useless
+lease. So, hitting the release/renew will let you grab a new useful
+lease, and back on the net.
+
+I suppose you could script a lynx application to login to the web
+interface of your Linksys router and perform a lease release/renew
+once in while or when it is unable to access some remote server on the
+internet.
+
+Ie,
+
+1) am I able to see the world?
+** check google.com
+** check msn.com
+** check yourfavoritesite.com
+If at least one is up, then you are essentially live and the other two
+sites are coincidentally dead.
+
+2) If I'm not up, let's run the scripted lynx session to perform a
+release/renew of my IP address on the router.
+
+3) Check output of the script. Did I actually get an IP address or am
+I still stuck with 0.0.0.0? Wait a bit longer and run the scripted
+lynx to read the DHCP address from the router again. If fail yet
+again, scream for help!!
+
+If you have some means to, you could script a powercycle of the cable
+modem itself with an intelligent power socket. (serial control or over
+net control) Just make sure you don't powercycle more frequently than
+necessary. I've blown devices that way. ;) If you powercycle every
+30seconds to every 5 minutes, it's amazing what 2 solid weeks of power
+cycling will do to a device.
+
+
+-- 
+Wing Wong
+<A HREF="../../../mailman/listinfo/x-unix.html">wingedpower at gmail.com</A>
+</PRE>
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002719.html">[X-Unix] How to determine which network component is failing
+</A></li>
+	<LI>Next message: <A HREF="002696.html">[X-Unix] How to determine which network component is failing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2695">[ date ]</a>
+              <a href="thread.html#2695">[ thread ]</a>
+              <a href="subject.html#2695">[ subject ]</a>
+              <a href="author.html#2695">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

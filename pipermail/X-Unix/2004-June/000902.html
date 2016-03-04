@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> dirty restart problems ...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=dirty%20restart%20problems%20...&In-Reply-To=list-13841758%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000901.html">
+   <LINK REL="Next"  HREF="000903.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>dirty restart problems ...</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=dirty%20restart%20problems%20...&In-Reply-To=list-13841758%40mail.ninewire.com"
+       TITLE="dirty restart problems ...">magill at mcgillsociety.org
+       </A><BR>
+    <I>Thu Jun 10 08:07:07 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000901.html">[X-Unix] syslogd problems
+</A></li>
+        <LI>Next message: <A HREF="000903.html">[X-Unix] dirty restart problems ...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#902">[ date ]</a>
+              <a href="thread.html#902">[ thread ]</a>
+              <a href="subject.html#902">[ subject ]</a>
+              <a href="author.html#902">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 09 Jun, 2004, at 13:59, Kevin Stevens wrote:
+&gt;<i> ... Power cycle is the only way I know to resolve the situation.
+</I>&gt;<i> Followed by a reboot, BTW, as one REALLY, REALLY, BAD THING about
+</I>&gt;<i> OS X 10.3x is that the system will not come up reliably after a
+</I>&gt;<i> power cycle.  I don't mean unreliable as in fdisk gets stuck and
+</I>&gt;<i> you have to manually intervene, I mean unreliable as in it appears
+</I>&gt;<i> to come up properly, after an expected interval of &quot;checking local
+</I>&gt;<i> disks&quot;, but is not in fact running critical services such as mail,
+</I>&gt;<i> DNS, or remote access (ssh).  You HAVE to do a normal reboot after
+</I>&gt;<i> a dirty start in order to ensure proper operation. This is a problem
+</I>&gt;<i> if you aren't physically at the box, because you can't log in remotely
+</I>&gt;<i> to do it.
+</I>&gt;<i>
+</I>&gt;<i> My assumption is that the rc dependencies aren't bulletproof, but 
+</I>&gt;<i> whatever
+</I>&gt;<i> the cause,it's a very, very bad thing.
+</I>
+I started another thread with this because it is a very different and 
+important problem, which needs to be addressed.
+
+In a word, I believe the answer to your assumption is &quot;Yes!&quot;
+
+ From what I can tell the new concepts of the boot process are far from 
+well thought out.
+
+They only address the &quot;optimal&quot; situation -- where everything works &quot;as 
+expected.&quot;
+
+I happen to have 10.2.8 running on my Beige G3 along with 12-9gig Ultra 
+SCSI disks, and any time I have a crash or need to force a reboot 
+without a clean shutdown, I have to do it twice. WHY? Because certain 
+things which need to be running are not running, and things which 
+depend upon them simply fail. (lookupd being the most notorious) and 
+even though the system &quot;comes up&quot; and &quot;looks ok&quot; from the single user 
+GUI (login window) point of view, it doesn't work correctly. [And yes, 
+my G4 with the 160gig FW boot drive has the same problems, but 
+differently.]
+
+Granted, a portion of this is the way the daemons are written, but the 
+reality is that some of the startup process &quot;take time&quot; before they are 
+working, and part of the startup process expects everything to already 
+be working correctly when it is &quot;its turn&quot; and no mechanism exists to 
+hold those later parts until former complete. (Or if it does exist in 
+the new boot scheme, it doesn't work correctly.)
+
+If I remember correctly from my pokings around a while back, lookupd is 
+the base culprit here. Given time, the pure unix stuff all works 
+correctly, but anything which depends upon lookupd is screwed. It's not 
+that lookupd is not running, it is, but it is giving out wrong 
+information. One work-around is to change the look-up order to include 
+flat-files. That way any of the pure unix apps will work &quot;as expected&quot; 
+without lookupd getting in their face.
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000901.html">[X-Unix] syslogd problems
+</A></li>
+	<LI>Next message: <A HREF="000903.html">[X-Unix] dirty restart problems ...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#902">[ date ]</a>
+              <a href="thread.html#902">[ thread ]</a>
+              <a href="subject.html#902">[ subject ]</a>
+              <a href="author.html#902">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

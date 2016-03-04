@@ -1,0 +1,76 @@
+#!/bin/sh
+#
+# Load Daniel Becker's modified Trackpad Driver on recent PowerBooks and iBooks
+# This is released under a BSD license.
+# By J. P. Block <jpb@apesseekingknowledge.net>
+# and Joe Stroller <stroller@bigfoot.com>
+
+. /etc/rc.common
+
+# http://www.macdevcenter.com/pub/a/mac/2003/10/21/startup.html says:
+#   The StartupItems specification requires that the executable file
+#   has the same name as the subdirectory that contains it and that the
+#   executable is in the root level of subdirectory.
+#
+# But since Joe User might choose to run this script manually
+# (for testing or otherwise), we can't rely on $PWD and have
+# to define the /path/to/the.kext programatically
+
+MYDIR="${0%/*}" 
+
+if [ "$UID" != "0" ]
+  then
+  echo "Who are you, kid? Get r00t if you wanna me55 with kernel m0dulez!"
+  exit 1
+fi
+
+# Check to make sure we have a patched driver to load, or bad things will
+# happen when we unload the original driver and can't find the patched driver
+# to replace it.
+
+if [ ! -d "$MYDIR/AppleADBMouse.kext" ]; then
+        ConsoleMessage "No patched AppleADBMouse.kext found."
+        exit 0
+fi
+
+# We have to source Apple's /etc/rc.common in order to get the ConsoleMessage
+# function, but it breaks the below:
+#
+#if [ -z "$1" ]
+#then
+#   echo "ERROR! This script requires a commandline argument, silly!"
+#fi
+
+# You don't have to be drunk to write Bash scripts on a Macintosh, but it helps!
+#
+ConsoleMessage ""
+ConsoleMessage ' * If you see a message below saying "$1: unbound variable"'
+ConsoleMessage " * It probably means $0 "
+ConsoleMessage ' * has been called without a parameter (like "start" or "stop")'
+ConsoleMessage " * "
+ConsoleMessage " * If this message annoys you then please bitch to (IE file a"
+ConsoleMessage " * bug report with) Apple, compaining that their /etc/rc.common"
+ConsoleMessage " * functions break standard Bash syntax like: "
+ConsoleMessage ' *   if [ -z "$1" ] ; then echo "missing parameter" ; fi '
+ConsoleMessage ""
+
+case "$1" in
+        start)
+
+                ConsoleMessage "Loading Two Finger Scrolling"
+# make sure the permissions are correct on it before we load it
+                chown -R root:wheel $MYDIR/AppleADBMouse.kext
+               kextunload -b com.apple.driver.AppleADBMouse && kextload $MYDIR//AppleADBMouse.kext
+        ;;
+        stop)
+
+                ConsoleMessage "Stopping Two Finger Scrolling"
+                /usr/bin/logger "Stopping Two Finger Scrolling"
+                kextunload $MYDIR/AppleADBMouse.kext && kextload /System/Library/Extensions/AppleADBMouse.kext
+        ;;
+        *)
+                echo "Neither \"Start\" nor \"Stop\" are spelled \"$1\""
+        ;;
+esac
+
+exit 0

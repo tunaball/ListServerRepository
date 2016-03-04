@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> rsync &amp; ssh
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=rsync%20%26%20ssh&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001031.html">
+   <LINK REL="Next"  HREF="001033.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>rsync &amp; ssh</H1>
+    <B>amoser at sewanee.edu</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=rsync%20%26%20ssh&In-Reply-To="
+       TITLE="rsync &amp; ssh">amoser at sewanee.edu
+       </A><BR>
+    <I>Mon Jul  5 14:30:25 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001031.html">[X-Unix] Changing owner globally
+</A></li>
+        <LI>Next message: <A HREF="001033.html">[X-Unix] rsync &amp; ssh
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1032">[ date ]</a>
+              <a href="thread.html#1032">[ thread ]</a>
+              <a href="subject.html#1032">[ subject ]</a>
+              <a href="author.html#1032">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>A few months ago I set up (relying in part on helpful
+instructions at
+<A HREF="http://www.math.ohio-state.edu/%7Eccunning/osx-backup.html">http://www.math.ohio-state.edu/%7Eccunning/osx-backup.html</A>)
+a rudimentary backup scheme from my powerbook to an iMac: in
+the wee hours of the morning the powerbook would connect to
+the imac via ssh, using public key authentication, and would
+then use rsync to synchronize some key folders. This felt
+like quite an accomplishment, since I'm a bit of a unix
+idiot, but I've recently noticed that the ssh connection no
+longer works -- any attempt to ssh from the powerbook to the
+imac yields the following msg:
+
+WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now
+(man-in-the-middle attack)!
+It is also possible that the RSA host key has just been
+changed.
+The fingerprint for the RSA key sent by the remote host is
+5f:6a:9d:b6:63:b1:3b:5f:65:91:ee:62:44:e9:3d:d7.
+Please contact your system administrator.
+Add correct host key in /var/root/.ssh/known_hosts to get
+rid of this message.
+Offending key in /var/root/.ssh/known_hosts:1
+RSA host key for 10.0.1.2 has changed and you have requested
+strict checking.
+Host key verification failed.
+
+Keeping in mind that my knowledge of unix (and the technical
+terms associated with it) is woefully inadequate, any
+suggestions about what I need to do to get the ssh and
+backup scheme up and running again? (I think I changed the
+admin password on the imac recently, so that may account for
+the problem, but I still don't know quite what to do to
+solve it.)
+
+Also, it seems like there just aren't many unix resources
+(books, websites, etc.) geared toward showing people who
+aren't unix gurus but are competent with computers how they
+can leverage the unix commands inn Mac OS X to accomplish
+useful things like backups. (Man pages tend to be pretty
+unhelpful in this respect.) Any thoughts on this score?
+
+Thanks!
+
+
+
+Andrew Moser
+Department of Philosophy
+University of the South
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001031.html">[X-Unix] Changing owner globally
+</A></li>
+	<LI>Next message: <A HREF="001033.html">[X-Unix] rsync &amp; ssh
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1032">[ date ]</a>
+              <a href="thread.html#1032">[ thread ]</a>
+              <a href="subject.html#1032">[ subject ]</a>
+              <a href="author.html#1032">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

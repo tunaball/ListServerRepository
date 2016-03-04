@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Command to find if a certain app is running?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Command%20to%20find%20if%20a%20certain%20app%20is%20running%3F&In-Reply-To=d2ecb10b0903270724x15be23fbk7132f5a5e16a114b%40mail.gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003297.html">
+   <LINK REL="Next"  HREF="003298.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Command to find if a certain app is running?</H1>
+    <B>Juan Manuel Palacios</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Command%20to%20find%20if%20a%20certain%20app%20is%20running%3F&In-Reply-To=d2ecb10b0903270724x15be23fbk7132f5a5e16a114b%40mail.gmail.com"
+       TITLE="[X-Unix] Command to find if a certain app is running?">jmpalaciosp at eml.cc
+       </A><BR>
+    <I>Fri Mar 27 10:20:50 PDT 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003297.html">[X-Unix] Command to find if a certain app is running?
+</A></li>
+        <LI>Next message: <A HREF="003298.html">[X-Unix] Command to find if a certain app is running?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3299">[ date ]</a>
+              <a href="thread.html#3299">[ thread ]</a>
+              <a href="subject.html#3299">[ subject ]</a>
+              <a href="author.html#3299">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Mar 27, 2009, at 9:54 AM, TjL wrote:
+
+&gt;<i> On Fri, Mar 27, 2009 at 2:58 AM, Christoph Hammann  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-unix.html">chammann at mac.com</A>&gt; wrote:
+</I>&gt;&gt;<i> The first command you're looking for is ps aux | grep processname .  
+</I>&gt;&gt;<i> The
+</I>&gt;&gt;<i> second is apropos .
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> It is often a good idea to throw out 'grep' in the responses for grep
+</I>&gt;<i> (and, the 'w' as someone else mentioned)
+</I>&gt;<i>
+</I>&gt;<i> ps auxwwwww | grep iTunes | grep -v grep
+</I>
+
+	There's an alternative to this filtering technique (note that purpose  
+of the backlash in front of my ps command is only to temporarily turn  
+off the shell alias I have setup for it, as outlined in my previous  
+reply to this thread):
+
+$[jmpp @jmpp: Documents](38/0 0,0) -&gt; \ps -A | grep -i itunes
+   291 ??         0:01.03 /Applications/iTunes.app/Contents/Resources/ 
+iTunesHelper.app/Contents/MacOS/iTunesHelper -psn_0_86037
+   300 ??         3:04.85 /Library/PreferencePanes/ 
+SizzlingKeys.prefPane/Contents/Resources/SizzlingKeys4iTunes.app/ 
+Contents/MacOS/SizzlingKeys4iTunes -psn_0_110619
+   302 ??        77:54.21 /Applications/iTunes.app/Contents/MacOS/ 
+iTunes -psn_0_114716
+21769 ttys005    0:00.00 grep -i itunes
+
+	Now we pipe to a second grep to filter the grep result itself:
+
+$[jmpp @jmpp: Documents](39/0 0,0) -&gt; \ps -A | grep -i itunes | grep - 
+v grep
+   291 ??         0:01.03 /Applications/iTunes.app/Contents/Resources/ 
+iTunesHelper.app/Contents/MacOS/iTunesHelper -psn_0_86037
+   300 ??         3:04.85 /Library/PreferencePanes/ 
+SizzlingKeys.prefPane/Contents/Resources/SizzlingKeys4iTunes.app/ 
+Contents/MacOS/SizzlingKeys4iTunes -psn_0_110619
+   302 ??        77:54.27 /Applications/iTunes.app/Contents/MacOS/ 
+iTunes -psn_0_114716
+
+	But there is a pretty cool way to do it in just a single pipe-to-grep  
+operation:
+
+$[jmpp @jmpp: Documents](40/0 0 0,0) -&gt; \ps -A | grep -i [i]tunes
+   291 ??         0:01.03 /Applications/iTunes.app/Contents/Resources/ 
+iTunesHelper.app/Contents/MacOS/iTunesHelper -psn_0_86037
+   300 ??         3:04.85 /Library/PreferencePanes/ 
+SizzlingKeys.prefPane/Contents/Resources/SizzlingKeys4iTunes.app/ 
+Contents/MacOS/SizzlingKeys4iTunes -psn_0_110619
+   302 ??        77:54.33 /Applications/iTunes.app/Contents/MacOS/ 
+iTunes -psn_0_114716
+
+	I can't really remember the regular expression fu that takes place  
+with the brackets surrounding the first letter of the search pattern  
+(I do remember that it's more complicated that I'd originally thought  
+when I first read on it), but in any case it does take care of  
+filtering the grep command from the ps output since it doesn't match  
+the pattern. The -i in the now-one-and-only grep filter only buys us  
+case-insensitive matching, so as to be able to type itunes rather than  
+iTunes.
+
+	HTH!
+
+-jmpp
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003297.html">[X-Unix] Command to find if a certain app is running?
+</A></li>
+	<LI>Next message: <A HREF="003298.html">[X-Unix] Command to find if a certain app is running?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3299">[ date ]</a>
+              <a href="thread.html#3299">[ thread ]</a>
+              <a href="subject.html#3299">[ subject ]</a>
+              <a href="author.html#3299">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

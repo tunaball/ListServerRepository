@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Permissions Repair
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Permissions%20Repair&In-Reply-To=4999EF9A-EE33-4ECE-8193-2ACFE366A380%40consultant.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="020681.html">
+   <LINK REL="Next"  HREF="020684.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Permissions Repair</H1>
+    <B>MB</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Permissions%20Repair&In-Reply-To=4999EF9A-EE33-4ECE-8193-2ACFE366A380%40consultant.com"
+       TITLE="[Ti] Permissions Repair">digital.discuss at gmail.com
+       </A><BR>
+    <I>Wed Feb 27 09:05:19 PST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="020681.html">[Ti] Permissions Repair
+</A></li>
+        <LI>Next message: <A HREF="020684.html">[Ti] Permissions Repair
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20683">[ date ]</a>
+              <a href="thread.html#20683">[ thread ]</a>
+              <a href="subject.html#20683">[ subject ]</a>
+              <a href="author.html#20683">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dr. Trevor J. Hutley suggested:
+&gt;<i>sudo diskutil repairPermissions /
+</I>&gt;<i>
+</I>&gt;<i>			(password required)
+</I>
+Actually, you need an *admin* password in order to use the command
+&quot;sudo&quot; (superuser do). Not all users have admin priviligies, though it's
+common on one account machines to let the sole userhave admin status.
+The best way to find out is of course to try the command and your
+password and OS X will tell you.
+In case your user is not an admin and there is an admin account or an
+activated root account on your Mac, you do not need to change the status
+of your user or relogin in th GUI. To use this the diskutil you can use
+the &quot;su&quot; command and login as the privileged admin user like this:
+
+su [admin_user_name]  [return]
+then supply your password and hit [return] again
+
+then execute the diskutil command with arguments again, this time
+dropping &quot;sudo&quot;:
+
+diskutil repairPermissions / [return]
+then supply your password and hit [return] again
+
+The latter &quot;/&quot; denotes the whole OS filesystem, though not on other
+partitions than the boot volume.
+
+&gt;<i>Just in case it is of help to anyone else with a laptop and Leopard.
+</I>Leopard (10.5) is not a requirement. This command have been around since
+10.2 at least. Also it works
+on all OS X systems, not just the &quot;books&quot; (Powerbook, iBook, Macbook).
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="020681.html">[Ti] Permissions Repair
+</A></li>
+	<LI>Next message: <A HREF="020684.html">[Ti] Permissions Repair
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20683">[ date ]</a>
+              <a href="thread.html#20683">[ thread ]</a>
+              <a href="subject.html#20683">[ subject ]</a>
+              <a href="author.html#20683">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

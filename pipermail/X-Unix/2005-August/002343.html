@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Setting up an SFTP server?  Or possibly an SSH
+	option?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Setting%20up%20an%20SFTP%20server%3F%20%20Or%20possibly%20an%20SSH%0A%09option%3F&In-Reply-To=0CA8EDDA-E9C5-4968-89FF-41D561DB54C3%40inductionconcepts.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002346.html">
+   <LINK REL="Next"  HREF="002344.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Setting up an SFTP server?  Or possibly an SSH
+	option?</H1>
+    <B>FFrassy</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Setting%20up%20an%20SFTP%20server%3F%20%20Or%20possibly%20an%20SSH%0A%09option%3F&In-Reply-To=0CA8EDDA-E9C5-4968-89FF-41D561DB54C3%40inductionconcepts.com"
+       TITLE="[X-Unix] Setting up an SFTP server?  Or possibly an SSH
+	option?">ff.listes at cote-ouest.net
+       </A><BR>
+    <I>Mon Aug 29 23:47:14 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002346.html">[X-Unix] Setting up an SFTP server?  Or possibly an SSH option?
+</A></li>
+        <LI>Next message: <A HREF="002344.html">[X-Unix] Setting up an SFTP server?  Or possibly an SSH option?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2343">[ date ]</a>
+              <a href="thread.html#2343">[ thread ]</a>
+              <a href="subject.html#2343">[ subject ]</a>
+              <a href="author.html#2343">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi rad, if you are nearly over your quota, you could use sftp the first time
+via the terminal
+(make some test before)
+sftp yourserverIP
+sftp&gt; cd /backup/
+sftp&gt; dir -l
+sftp&gt; get yourfile.tgz
+sftp&gt; quit
+(this work very well)
+
+And after you could use rsync to just update the file who have been modified
+and even better duplicate the file you got by sftp (Monday, Tuesday...) and
+create a cron for each day
+(make some test before)
+ssh <A HREF="../../../mailman/listinfo/x-unix.html">user at yourserverIP</A>
+sudo -s
+rsync -e ssh -avz --stats --progress --delete
+<A HREF="../../../mailman/listinfo/x-unix.html">user at yourserverIP</A>:/Applications/webserver/ /Applications/webserver/
+(last command on one line)
+
+This way you could have many backup and transfert only the file that have
+been changed. Man rsync in the terminal will help you with the options.
+FF
+ 
+
+
+Le 30/08/05 06:10, &#171;&#160;Rad Craig&#160;&#187; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">rad at inductionconcepts.com</A>&gt; a &#233;crit&#160;:
+
+&gt;<i> I am trying to setup an SFTP server to download copies of our website
+</I>&gt;<i> backups.  We make a full backup once a week, just over 2GB right now.
+</I>&gt;<i> 
+</I>&gt;<i> My webhost builds the backup archive and will send it to a remote FTP/
+</I>&gt;<i> SFTP server.  I need to do this because when I make a backup, it
+</I>&gt;<i> nearly pushes me over our quota on the website and makes my mail
+</I>&gt;<i> server act up.  I have to use SFTP because of the 2GB limit of FTP.
+</I>&gt;<i> 
+</I>&gt;<i> I would also be open to using SSH and some form of secure copy.  I
+</I>&gt;<i> know very little about UNIX, so I'm looking for some help.  It
+</I>&gt;<i> doesn't have to be completely automated, but that would be very nice,
+</I>&gt;<i> to write a script.  I have SSH access to my web host.
+</I>&gt;<i> 
+</I>&gt;<i> So I'm looking for some help from the UNIX gurus out there to help me
+</I>&gt;<i> accomplish this.  I at least need a way to have the download sent
+</I>&gt;<i> manually to an SFTP server running on my OSX box, or better yet, some
+</I>&gt;<i> type of automated script to do this once a week, to fetch a backup
+</I>&gt;<i> off of my webhost. I can probably talk to them about helping me with
+</I>&gt;<i> a script and cron job to build the backup archive once a week.
+</I>&gt;<i> 
+</I>&gt;<i> I have read that there is a built in SFTP server in OSX, but I have
+</I>&gt;<i> no idea how to configure it.  I tried CrushFTP today and got it to
+</I>&gt;<i> connect and login, but when the download tried to start, I got a &quot;550
+</I>&gt;<i> Access not allowed&quot; error, then I remembered the 2GB limit for FTP,
+</I>&gt;<i> so I am guessing that was the cause because everything else seemed to
+</I>&gt;<i> be setup correctly, it got through my firewall, logged in
+</I>&gt;<i> successfully, etc.  So I have that part done right.
+</I>&gt;<i> 
+</I>&gt;<i> Can someone help me please?  Any help will be greatly appreciated.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Rad...
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i> 
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random stuff:
+</I>&gt;<i>        <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i> 
+</I>
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002346.html">[X-Unix] Setting up an SFTP server?  Or possibly an SSH option?
+</A></li>
+	<LI>Next message: <A HREF="002344.html">[X-Unix] Setting up an SFTP server?  Or possibly an SSH option?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2343">[ date ]</a>
+              <a href="thread.html#2343">[ thread ]</a>
+              <a href="subject.html#2343">[ subject ]</a>
+              <a href="author.html#2343">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

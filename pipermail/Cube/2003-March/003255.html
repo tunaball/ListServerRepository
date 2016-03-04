@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [CUBE] OT : When is 1.5 not enough?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20OT%20%3A%20When%20is%201.5%20not%20enough%3F&In-Reply-To=list-5264127%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003254.html">
+   <LINK REL="Next"  HREF="003256.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[CUBE] OT : When is 1.5 not enough?</H1>
+    <B>Brooks Graham</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCUBE%5D%20OT%20%3A%20When%20is%201.5%20not%20enough%3F&In-Reply-To=list-5264127%40mail.ninewire.com"
+       TITLE="[CUBE] OT : When is 1.5 not enough?">brooksgraham at mac.com
+       </A><BR>
+    <I>Mon Mar 10 12:40:58 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003254.html">OT : When is 1.5 not enough?
+</A></li>
+        <LI>Next message: <A HREF="003256.html">Cube on Linux!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3255">[ date ]</a>
+              <a href="thread.html#3255">[ thread ]</a>
+              <a href="subject.html#3255">[ subject ]</a>
+              <a href="author.html#3255">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Are you looking at the Resident Size (RSIZE), Resident Private Size 
+(RPRVT), or the Virtual Size (VSIZE) column?
+
+The Resident Size is the total amount of memory allocated for both code 
+and data along with resident shared libraries for that single process. 
+A shared library is only resident in memory once, although many 
+processes will link to it and add it's size to it's own in the RSIZE 
+column.  As the man page states: &quot;real pages that this process 
+currently has associated with it.  Some may be shared by other 
+processes&quot;
+
+The Virtual Size includes lots of other items along with the shared 
+libraries (resident or not) that the process linked with and if you add 
+up all the VSIZEs it should (probably) way exceed your physical memory. 
+  Look at the VSIZE of the kernel process.  Mine shows a VSIZE of 519 
+MB! (RSIZE=84MB)
+
+Resident Private (RPRVT) is the column you really want to look at for 
+the memory consumption of any process (other than the kernel, which is 
+a special case)  That's just the resident code and data pages and gives 
+a better indication of memory consumption.
+
+HTH
+
+-brooks
+
+On Monday, March 10, 2003, at 01:49 PM, john allan wrote:
+
+&gt;<i>
+</I>&gt;<i> I am grateful for that ... amazing ... Mail 130 MB [ 2 MB more just 
+</I>&gt;<i> from launching this email to send ], Terminal 70 MB, Safari 78 MB, 
+</I>&gt;<i> LoginWIndow [ why? ] 71.4 MB ... Hell's teeth these Unix Geeks know 
+</I>&gt;<i> how to produce code.
+</I>&gt;<i>
+</I>&gt;<i> As someone that remembers OS 6 where a System Folder and all apps 
+</I>&gt;<i> could fit in one floppy, and who could do almost as much on it as I do 
+</I>&gt;<i> on OS X, I wonder what the hair oil is going on it there.
+</I>&gt;<i>
+</I>&gt;<i> 227 MB just for System, email and browsing!!!!
+</I>&gt;<i>
+</I>&gt;<i> [ Oops, 113 MB just gone for iTunes ]
+</I>&gt;<i>
+</I>&gt;<i> John
+</I>&gt;<i>
+</I>&gt;&gt;&gt;<i> When is 1.5 not enough?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Open a terminal window, type &quot;top&quot; + return. If the number of pageouts
+</I>&gt;&gt;<i> mentioned in the header is more than zero, 1.5 GB has not been enough 
+</I>&gt;&gt;<i> and VM
+</I>&gt;&gt;<i> has kicked in.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> ,xtG
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003254.html">OT : When is 1.5 not enough?
+</A></li>
+	<LI>Next message: <A HREF="003256.html">Cube on Linux!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3255">[ date ]</a>
+              <a href="thread.html#3255">[ thread ]</a>
+              <a href="subject.html#3255">[ subject ]</a>
+              <a href="author.html#3255">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

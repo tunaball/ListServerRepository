@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] shell scripting
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20shell%20scripting&In-Reply-To=list-10281675%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000125.html">
+   <LINK REL="Next"  HREF="000127.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] shell scripting</H1>
+    <B>Brian Medley</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20shell%20scripting&In-Reply-To=list-10281675%40mail.ninewire.com"
+       TITLE="[X-Unix] shell scripting">bpm-list-osx-unix at 4321.tv
+       </A><BR>
+    <I>Thu Jan 15 19:34:51 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000125.html">[X-Unix] shell scripting
+</A></li>
+        <LI>Next message: <A HREF="000127.html">vim support
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#126">[ date ]</a>
+              <a href="thread.html#126">[ thread ]</a>
+              <a href="subject.html#126">[ subject ]</a>
+              <a href="author.html#126">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Fri, Jan 16, 2004 at 04:16:08AM +0100, Joaquin Henriquez Alzola wrote:
+
+&gt;<i> You do this with the find command use the -mtime
+</I>
+ahh..jolly good...forgot the wonderful find options...
+
+so:
+
+    cd $src_dir
+    find . -newer reference_file -print0 | xargs -0 -J % cp % $dst_dir
+    touch reference_file
+
+Should work?
+
+But I like the rsync option best, b/c, as best as I can tell, it
+wouldn't have the race condition of files being missed b/c they were
+inserted into the directory after the find command was finished finding
+files, but before the touch command.
+
+-- 
+~'`^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^`'~=-., \|/  (___)  \|/ _,.-=~'`^`
+                                               @~./'O o`\.~@
+               &quot;Knowledge is Power&quot;           /__( \___/ )__\  *PPPFFBT!*
+                  -- Francis Bacon               `\__`U_/'
+ _,.-=~'`^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^`'~= &lt;____|'  ^^`'~=-.,__,.-=
+~`'^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^`'~=-.,__,.-==--^'~=-.,__,.-=~'`^`
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000125.html">[X-Unix] shell scripting
+</A></li>
+	<LI>Next message: <A HREF="000127.html">vim support
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#126">[ date ]</a>
+              <a href="thread.html#126">[ thread ]</a>
+              <a href="subject.html#126">[ subject ]</a>
+              <a href="author.html#126">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

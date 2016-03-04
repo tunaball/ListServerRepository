@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Another feature added to hide script
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Another%20feature%20added%20to%20hide%20script&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000554.html">
+   <LINK REL="Next"  HREF="000556.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Another feature added to hide script</H1>
+    <B>Kirk McElhearn</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Another%20feature%20added%20to%20hide%20script&In-Reply-To="
+       TITLE="Another feature added to hide script">kirklists at wanadoo.fr
+       </A><BR>
+    <I>Fri Mar 26 10:34:40 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000554.html">[X-Unix] FW: [X-Unix] Hiding apps from the command line
+</A></li>
+        <LI>Next message: <A HREF="000556.html">[X-Unix] Hiding apps from the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#555">[ date ]</a>
+              <a href="thread.html#555">[ thread ]</a>
+              <a href="subject.html#555">[ subject ]</a>
+              <a href="author.html#555">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is fun... :-)
+
+I figured it would be useful to add a quit feature to the script, using the
+-q option. Here's my current version of the entire script. Watch out for
+line breaks. Anyone who wants a copy, e-mail me off-list and I'll send a
+text file.
+
+
+
+#!/bin/sh
+# This script lets you hide a specified application, the Finder, all
+applications
+# but the Finder, or all applications other than a specified application, as
+well
+# as bring any application to the front or toggle hidden and visible
+applications.
+# Script written by Eugene Lee, Kirk McElhearn and Simon Forster.
+#
+# Syntax is as follows:
+# 
+# hide [appname]    - hides specified app
+# hide -x [appname] - hides all apps but specified app; if no app is
+specified, Terminal remains visible
+# hide -a [appname] - hides all apps but Finder; if an application is
+specified, it remains visible as well
+# hide -f           - hides Finder
+# hide -v [appname] - brings specified app to the front, whether it is
+hidden or visible already
+# hide -t           - toggles visible/hidden apps
+# hide -s           - shows all apps
+# hide -q [appname] - quits specified app
+# 
+# Applications whose names contain spaces must be quoted, i.e., hide
+&quot;microsoft word&quot;.
+# This command is case-insensitive.
+
+osascript &lt;&lt;END
+    set arg1 to &quot;$1&quot;
+    set arg2 to &quot;$2&quot;
+    tell application &quot;Finder&quot;
+        if arg1 begins with &quot;-&quot; then
+            if arg1 contains &quot;o&quot; then set visible of every process whose
+visible is true and name is not arg2 to false
+            if arg1 contains &quot;a&quot; then set visible of every process whose
+visible is true and name is not &quot;Finder&quot; and name is not arg2 to false
+            if arg1 contains &quot;f&quot; then set visible of process &quot;Finder&quot; to
+false
+            if arg1 contains &quot;v&quot; then tell me to tell application arg2 to
+activate
+            if arg1 contains &quot;q&quot; then tell me to tell application arg2 to
+quit
+            if arg1 contains &quot;t&quot; then
+                set theVisible to name of every process whose visible is
+true
+                repeat with theProcess in every process
+                    if theVisible contains name of theProcess then
+                        set visible of contents of theProcess to false
+                    else
+                        set visible of contents of theProcess to true
+                    end if
+                end repeat
+            end if
+            if arg1 contains &quot;x&quot; then tell application &quot;Terminal&quot; to
+activate
+            else if exists application process arg1 then
+            set visible of application process arg1 to false
+        end if
+    end tell
+END
+
+    
+
+
+
+
+ 
+ 
+Kirk
+ 
+        My latest book: How to Do Everything with Mac OS X Panther
+                  <A HREF="http://www.mcelhearn.com/htde.html">http://www.mcelhearn.com/htde.html</A>
+ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+ . . . . . . .  <A HREF="../../../mailman/listinfo/x-unix.html">kirk at mcelhearn.com</A> | <A HREF="http://www.mcelhearn.com">http://www.mcelhearn.com</A>  . . . . . .
+ . .  Kirk McElhearn | Chemin de la Lauze | 05600 Guillestre | France  . .
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000554.html">[X-Unix] FW: [X-Unix] Hiding apps from the command line
+</A></li>
+	<LI>Next message: <A HREF="000556.html">[X-Unix] Hiding apps from the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#555">[ date ]</a>
+              <a href="thread.html#555">[ thread ]</a>
+              <a href="subject.html#555">[ subject ]</a>
+              <a href="author.html#555">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

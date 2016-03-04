@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] dirty restart problems ...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20dirty%20restart%20problems%20...&In-Reply-To=list-13872484%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000902.html">
+   <LINK REL="Next"  HREF="000904.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] dirty restart problems ...</H1>
+    <B>Kevin Stevens</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20dirty%20restart%20problems%20...&In-Reply-To=list-13872484%40mail.ninewire.com"
+       TITLE="[X-Unix] dirty restart problems ...">groups at pursued-with.net
+       </A><BR>
+    <I>Thu Jun 10 09:33:29 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000902.html">dirty restart problems ...
+</A></li>
+        <LI>Next message: <A HREF="000904.html">[X-Unix] dirty restart problems ...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#903">[ date ]</a>
+              <a href="thread.html#903">[ thread ]</a>
+              <a href="subject.html#903">[ subject ]</a>
+              <a href="author.html#903">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+
+On Thu, 10 Jun 2004, William H. Magill wrote:
+
+&gt;<i> On 09 Jun, 2004, at 13:59, Kevin Stevens wrote:
+</I>&gt;<i> &gt; ... Power cycle is the only way I know to resolve the situation.
+</I>&gt;<i> &gt; Followed by a reboot, BTW, as one REALLY, REALLY, BAD THING about
+</I>&gt;<i> &gt; OS X 10.3x is that the system will not come up reliably after a
+</I>&gt;<i> &gt; power cycle.  I don't mean unreliable as in fdisk gets stuck and
+</I>&gt;<i> &gt; you have to manually intervene, I mean unreliable as in it appears
+</I>&gt;<i> &gt; to come up properly, after an expected interval of &quot;checking local
+</I>&gt;<i> &gt; disks&quot;, but is not in fact running critical services such as mail,
+</I>&gt;<i> &gt; DNS, or remote access (ssh).  You HAVE to do a normal reboot after
+</I>&gt;<i> &gt; a dirty start in order to ensure proper operation. This is a problem
+</I>&gt;<i> &gt; if you aren't physically at the box, because you can't log in remotely
+</I>&gt;<i> &gt; to do it.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; My assumption is that the rc dependencies aren't bulletproof, but
+</I>&gt;<i> &gt; whatever the cause,it's a very, very bad thing.
+</I>&gt;<i>
+</I>&gt;<i> I started another thread with this because it is a very different and
+</I>&gt;<i> important problem, which needs to be addressed.
+</I>&gt;<i>
+</I>&gt;<i> In a word, I believe the answer to your assumption is &quot;Yes!&quot;
+</I>&gt;<i>
+</I>&gt;<i>  From what I can tell the new concepts of the boot process are far from
+</I>&gt;<i> well thought out.
+</I>&gt;<i>
+</I>&gt;<i> They only address the &quot;optimal&quot; situation -- where everything works &quot;as
+</I>&gt;<i> expected.&quot;
+</I>
+Agree.  Now, how do we get Apple to address it?  I can't imagine opening
+an AppleCare case for this, is there a developer mechanism for initiating
+trouble tickets?  At the very least they could include the OS X Server
+watchdog utility, and use that as a sanity check.
+
+&gt;<i> I happen to have 10.2.8 running on my Beige G3 along with 12-9gig Ultra
+</I>&gt;<i> SCSI disks, and any time I have a crash or need to force a reboot
+</I>&gt;<i> without a clean shutdown, I have to do it twice. WHY? Because certain
+</I>&gt;<i> things which need to be running are not running, and things which
+</I>&gt;<i> depend upon them simply fail. (lookupd being the most notorious) and
+</I>&gt;<i> even though the system &quot;comes up&quot; and &quot;looks ok&quot; from the single user
+</I>&gt;<i> GUI (login window) point of view, it doesn't work correctly. [And yes,
+</I>&gt;<i> my G4 with the 160gig FW boot drive has the same problems, but
+</I>&gt;<i> differently.]
+</I>
+It's good to know this was a 10.2 issue as well; I wasn't running OS X in
+a server role then (and frankly didn't have many dirty startup situations
+before the syslogd issue).  I didn't realize it went back so far.
+
+&gt;<i> Granted, a portion of this is the way the daemons are written, but the
+</I>&gt;<i> reality is that some of the startup process &quot;take time&quot; before they are
+</I>&gt;<i> working, and part of the startup process expects everything to already
+</I>&gt;<i> be working correctly when it is &quot;its turn&quot; and no mechanism exists to
+</I>&gt;<i> hold those later parts until former complete. (Or if it does exist in
+</I>&gt;<i> the new boot scheme, it doesn't work correctly.)
+</I>
+That's my perception from reviewing system logs, as well.  This is
+fundamental stuff, it is as unacceptable from OS X as it would be for
+Solaris/*BSD/Linux.
+
+&gt;<i> If I remember correctly from my pokings around a while back, lookupd is
+</I>&gt;<i> the base culprit here. Given time, the pure unix stuff all works
+</I>&gt;<i> correctly, but anything which depends upon lookupd is screwed. It's not
+</I>&gt;<i> that lookupd is not running, it is, but it is giving out wrong
+</I>&gt;<i> information. One work-around is to change the look-up order to include
+</I>&gt;<i> flat-files. That way any of the pure unix apps will work &quot;as expected&quot;
+</I>&gt;<i> without lookupd getting in their face.
+</I>
+Have you verified that workaround, or is it a hypothesis?  Lookupd seems
+likely, as it's a common element to the things that don't work, but I
+didn't think that changing the lookup order took lookupd out of the
+picture, it just gives it a different input source?
+
+KeS
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000902.html">dirty restart problems ...
+</A></li>
+	<LI>Next message: <A HREF="000904.html">[X-Unix] dirty restart problems ...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#903">[ date ]</a>
+              <a href="thread.html#903">[ thread ]</a>
+              <a href="subject.html#903">[ subject ]</a>
+              <a href="author.html#903">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

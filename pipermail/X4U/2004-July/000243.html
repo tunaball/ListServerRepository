@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Home Networking Questions ( Static IP verses DHCP)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Home%20Networking%20Questions%20%28%20Static%20IP%20verses%20DHCP%29&In-Reply-To=list-14588468%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000256.html">
+   <LINK REL="Next"  HREF="000244.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Home Networking Questions ( Static IP verses DHCP)</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Home%20Networking%20Questions%20%28%20Static%20IP%20verses%20DHCP%29&In-Reply-To=list-14588468%40mail.ninewire.com"
+       TITLE="[X4U] Home Networking Questions ( Static IP verses DHCP)">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Thu Jul  8 00:54:18 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000256.html">Setting Shell Defaults for root
+</A></li>
+        <LI>Next message: <A HREF="000244.html">[X4U] Journeling (long)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#243">[ date ]</a>
+              <a href="thread.html#243">[ thread ]</a>
+              <a href="subject.html#243">[ subject ]</a>
+              <a href="author.html#243">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>From: Eugene Lee &lt;<A HREF="../../../mailman/listinfo/x4u.html">list-themacintoshguy at fsck.net</A>&gt;
+</I>&gt;<i>On Wed, Jul 07, 2004 at 12:37:48PM -0500, James Rice wrote:
+</I>&gt;:<i> I know the functions of DHCP.  (I'm a network/system admin of a mixed
+</I>&gt;:<i> Irix/Mac/Linux/Wintel shop, four physical locations).  As far as a
+</I>&gt;:<i> firewall assigned DMZ goes, we use a double firewall DMZ with the two
+</I>&gt;:<i> firewalls being from a different vendor with  a different OS (if they
+</I>&gt;:<i> crack the first one, they have access to the DMZ only but they will need
+</I>&gt;:<i> to use an different set of tools to crack the second to get to the LAN)
+</I>&gt;:<i> but our network is entirely set up static except for 20 addresses in the
+</I>&gt;:<i> high end of our subnets for notebook/tablets that move from office to
+</I>&gt;:<i> office.  I feel that most network admin tasks are easier on a mixed
+</I>&gt;:<i> network if the address scheme is static.  There is a certain amount of
+</I>&gt;:<i> record keeping involved to avoid IP conflicts, but it's a small price to
+</I>&gt;:<i> pay.  I just can't see the advantage of having a  DHCP client running on
+</I>&gt;:<i> a machine with a manually assigned address.
+</I>&gt;<i>
+</I>&gt;<i>Ummm, because DHCP does more than assign an IP address.  And so it's the
+</I>&gt;<i>other stuff that may change.  Given, the other stuff isn't supposed to
+</I>&gt;<i>change that often.  So some advantages are at best small.  But there are
+</I>&gt;<i>still needs for manual allocation in environments that strongly prefer
+</I>&gt;<i>static IP addresses (some IPsec and VPN implementations).  Better to ask,
+</I>&gt;<i>does any node on your network require an unchanging IP address?
+</I>&gt;<i>
+</I>&gt;:<i> This is of course on a small network of four class C subnets routed into
+</I>&gt;:<i> a small WAN.  If I had a class A or even a B, the sheer overhead of
+</I>&gt;:<i> recordkeeping would make DHCP a must.  We also don't netboot anything,
+</I>&gt;:<i> do not use NIS and only rarely use tftp so some of the more advanced
+</I>&gt;:<i> features of DHCP aren't needed in our little corner of the world.
+</I>&gt;<i>
+</I>&gt;<i>Agreed, DHCP is overkill for most shops.
+</I>
+The easiest setup I've had is to get the router to do DHCP with fixed 
+MAC -&gt; IP mapping for the normal hosts.  It's all set up in one 
+place, and all hosts just need to be set to use DHCP.  My first SMC 
+Barricade did this fine.  The one that replaced it when the first one 
+cooked has that facility, and others, removed :-(
+Going back to putting each host's details in its Network Prefs for 
+each Location is prone to errors as I use 2 ISPs, cheap evenings &amp; 
+weekends/full price, wireless/wired for 2 laptops, modem on 
+router/internal modem ... .  If we could put the details in a conf 
+file rather than have to use a GUI ...
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+Chair of HPUX SysAdmin SIG of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x4u.html">dledger at ivdcs.co.uk</A> (also <A HREF="../../../mailman/listinfo/x4u.html">dledger at ivdcs.demon.co.uk</A>)
+www.ivdcs.co.uk
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000256.html">Setting Shell Defaults for root
+</A></li>
+	<LI>Next message: <A HREF="000244.html">[X4U] Journeling (long)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#243">[ date ]</a>
+              <a href="thread.html#243">[ thread ]</a>
+              <a href="subject.html#243">[ subject ]</a>
+              <a href="author.html#243">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

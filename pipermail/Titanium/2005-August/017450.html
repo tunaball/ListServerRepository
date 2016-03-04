@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] PB Fan Noise/Heat
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20PB%20Fan%20Noise/Heat&In-Reply-To=5bea61069a5411d52b95545f2bcc2b43%40swedenmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="017448.html">
+   <LINK REL="Next"  HREF="017449.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] PB Fan Noise/Heat</H1>
+    <B>Richard Edwards</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20PB%20Fan%20Noise/Heat&In-Reply-To=5bea61069a5411d52b95545f2bcc2b43%40swedenmail.com"
+       TITLE="[Ti] PB Fan Noise/Heat">richard.e at btconnect.com
+       </A><BR>
+    <I>Wed Aug  3 19:13:36 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="017448.html">[Ti] TI upgrade ?
+</A></li>
+        <LI>Next message: <A HREF="017449.html">[Ti] Ti 15&quot; screen dropped &amp; bent
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17450">[ date ]</a>
+              <a href="thread.html#17450">[ thread ]</a>
+              <a href="subject.html#17450">[ subject ]</a>
+              <a href="author.html#17450">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Hi Folks
+There's a fix for the noise my PB emits much of the day and the heat 
+that goes with it
+at <A HREF="http://www.deleet.de/ray/pbfanfix.html">http://www.deleet.de/ray/pbfanfix.html</A>
+
+This tells me
+Quote
+The fix
+Downgrade the relevant System Extension. It turned out to be:
+/System/Library/Extensions/AppleADM103x.kext
+This extension handles the temperature readout from certain Analog 
+Devices Digital Thermometers over the I2C bus.
+First, make a backup of the version that is included in 10.3.2.
+The old version for the Extension can be found in the standalone 
+updater 10.2.8. Don't run the updater (or quit if it launches 
+automatically).
+Extract the extension. To extract single files form the Package, get 
+something like Pacifist or use the shell.
+Copy the extension into /System/Library/Extensions.
+Make sure that the owner of the extension and everything inside (it's 
+a package and packages are directories) is root and the group is 
+wheel. THIS IS IMPORTANT. Otherwise, the system won't load these 
+extensions, which may have severe consequences. The Finder displays 
+the owner root as system, so this is ok as well.
+Reboot.
+Enjoy the Silence. (and put on your asbestos gloves again)
+Unquote
+
+It tells me to :
+
+'Make sure that the owner of the extension and everything inside 
+(it's a package and packages are directories) is root and the group 
+is wheel.'
+
+I'm not sure how to do that - can anyone here advise ?
+
+biiGGGGG TIA
+Richard
+
+
+
+
+
+
+
+-- 
+Richard Edwards &lt;<A HREF="../../../mailman/listinfo/titanium.html">richard at spherestudio.co.uk</A>&gt;
+Studio Principal
+Sphere Studio LLP
+020 8343 2186 Desk
+07905 792 387 Mobile
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="017448.html">[Ti] TI upgrade ?
+</A></li>
+	<LI>Next message: <A HREF="017449.html">[Ti] Ti 15&quot; screen dropped &amp; bent
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17450">[ date ]</a>
+              <a href="thread.html#17450">[ thread ]</a>
+              <a href="subject.html#17450">[ subject ]</a>
+              <a href="author.html#17450">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

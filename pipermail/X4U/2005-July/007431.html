@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Double Apps in &quot;Open With&quot; menu
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Double%20Apps%20in%20%22Open%20With%22%20menu&In-Reply-To=BBA7E6E7-7516-4E97-9929-A60214774E31%40kirkmcvey.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="007429.html">
+   <LINK REL="Next"  HREF="007435.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Double Apps in &quot;Open With&quot; menu</H1>
+    <B>Nick Scalise</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Double%20Apps%20in%20%22Open%20With%22%20menu&In-Reply-To=BBA7E6E7-7516-4E97-9929-A60214774E31%40kirkmcvey.com"
+       TITLE="[X4U] Double Apps in &quot;Open With&quot; menu">nickscalise at mac.com
+       </A><BR>
+    <I>Fri Jul  8 06:49:22 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="007429.html">[X4U] Double Apps in &quot;Open With&quot; menu
+</A></li>
+        <LI>Next message: <A HREF="007435.html">[X4U] Double Apps in &quot;Open With&quot; menu
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7431">[ date ]</a>
+              <a href="thread.html#7431">[ thread ]</a>
+              <a href="subject.html#7431">[ subject ]</a>
+              <a href="author.html#7431">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Friday, July 08, 2005, at 07:17AM, Kirk McVey &lt;<A HREF="../../../mailman/listinfo/x4u.html">mail at kirkmcvey.com</A>&gt; wrote:
+
+&gt;<i>In the finder, when I right-click on a file (a .jpg for example) and  
+</I>&gt;<i>select the &quot;Open With&quot; menu, I get a double listing of all the  
+</I>&gt;<i>programs that could open it (Photoshop twice, Illustrator twice,  
+</I>&gt;<i>Safari twice, etc.). I've searched for duplicates and there are none.  
+</I>&gt;<i>I've also looked in the contextual menus folders and don't see anything.
+</I>&gt;<i>What am I missing? Does any one else have/had this issue? If you  
+</I>&gt;<i>could direct me, I'd appreciate it. I'm using OS X 10.4.1.
+</I>
+James S Jones posted the solution to your issue back in February:
+
+&lt;<A HREF="http://www.macosxhints.com/article.php?story=20031215144430486&query=How+to+rebuild+the+LaunchServices+database">http://www.macosxhints.com/article.php?story=20031215144430486&amp;query=How+to+rebuild+the+LaunchServices+database</A>&gt;
+
+If your &quot;Open With&quot; menu shows applications that are no longer installed, or shows some of them as duplicates, you can use the following Terminal command to rebuild your LaunchServices database:
+/System/Library/Frameworks/ApplicationServices.framework/\
+Frameworks/LaunchServices.framework/Support/lsregister \
+-kill -r -domain local -domain system -domain user
+Just calling lsregister by itself will show some explanation:
+lsregister: [OPTIONS] [-domain { system | local | user | network }]... [path]...
+Search the paths for application bundles and add each found item to the Launch
+Services database.  For domain specifications, ask CF for the list of application locations in the given domain(s).
+
+  -kill     Reset the global Launch Services database before doing anything else
+  -lint     Print information about plist errors while registering bundles
+  -convert  Register apps found in older LS database files
+  -load     Load the LaunchServices service plugin if it's not already loaded.
+  -lazy n   Sleep for n seconds before registering apps if the local cache
+            is aleady populated.
+  -r        Recursively register directory contents, do not recurse into
+            packages or invisible directories.
+  -R        Recursively register directory contents, including the contents
+            of packages and invisible directories.
+  -f        force-update registration info even if mod date is unchanged
+  -v        Display progress information.
+  -dump     Display full database contents after registration.
+  -h        Display this help.
+
+
+Good luck,
+--
+Nick Scalise
+<A HREF="../../../mailman/listinfo/x4u.html">nickscalise at mac.com</A>
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="007429.html">[X4U] Double Apps in &quot;Open With&quot; menu
+</A></li>
+	<LI>Next message: <A HREF="007435.html">[X4U] Double Apps in &quot;Open With&quot; menu
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7431">[ date ]</a>
+              <a href="thread.html#7431">[ thread ]</a>
+              <a href="subject.html#7431">[ subject ]</a>
+              <a href="author.html#7431">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

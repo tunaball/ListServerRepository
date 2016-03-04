@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [BTM] Cheesy fix for non-syncing Tungsten/T's!
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:bluetooth-mac%40listserver.themacintoshguy.com?Subject=%5BBTM%5D%20Cheesy%20fix%20for%20non-syncing%20Tungsten/T%27s%21&In-Reply-To=list-4435083%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002106.html">
+   <LINK REL="Next"  HREF="002108.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[BTM] Cheesy fix for non-syncing Tungsten/T's!</H1>
+    <B>Stephen Jonke</B> 
+    <A HREF="mailto:bluetooth-mac%40listserver.themacintoshguy.com?Subject=%5BBTM%5D%20Cheesy%20fix%20for%20non-syncing%20Tungsten/T%27s%21&In-Reply-To=list-4435083%40mail.ninewire.com"
+       TITLE="[BTM] Cheesy fix for non-syncing Tungsten/T's!">sjj_public at mac.com
+       </A><BR>
+    <I>Mon Jan 13 19:12:30 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002106.html">[BTM] Cheesy fix for non-syncing Tungsten/T's!
+</A></li>
+        <LI>Next message: <A HREF="002108.html">iSync Siemens support
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2107">[ date ]</a>
+              <a href="thread.html#2107">[ thread ]</a>
+              <a href="subject.html#2107">[ subject ]</a>
+              <a href="author.html#2107">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Monday, January 13, 2003, at 06:55  PM, Filipe M. wrote:
+&gt;<i>
+</I>&gt;<i> Guys, I'm sort of out of this question because I don't own a Tungsten 
+</I>&gt;<i> T, but this &quot;blued&quot; thing caught my eye... is there any possibility 
+</I>&gt;<i> this blued process has something to do with the TrueBlue environment? 
+</I>&gt;<i> If I'm not mistaken, TrueBlue was (formerly?...) related to the 
+</I>&gt;<i> Classic environment...
+</I>
+No, &quot;blued&quot; is, I presume, short for &quot;bluetooth daemon&quot;. In any case it 
+is definitely bluetooth related. Look at the root preferences file for 
+it, here:
+
+     /private/var/root/Library/Preferences/blued.plist
+
+NOTE: not to get too unixy, but the privileges for this file are such 
+that only root can read it, so in order to view it you'll have to 
+prepend your viewing/editing command with &quot;sudo&quot; such as this (in the 
+Terminal):
+
+    sudo more /private/var/root/Library/Preferences/blued.plist
+
+You have to be an admin to use the sudo command. Anyway, &quot;bluetooth&quot; is 
+all over the place in there.
+
+When you kill blued, it immediately starts again, but the problem is 
+gone until after the next sync. What I think is happening is that one 
+side or the other is not closing the connection properly and so it 
+stays around. When you kill blued, I believe you kill the leftover 
+connection and that makes the Palm happy until after the next sync, 
+when the connection gets left open again.
+
+Steve
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002106.html">[BTM] Cheesy fix for non-syncing Tungsten/T's!
+</A></li>
+	<LI>Next message: <A HREF="002108.html">iSync Siemens support
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2107">[ date ]</a>
+              <a href="thread.html#2107">[ thread ]</a>
+              <a href="subject.html#2107">[ subject ]</a>
+              <a href="author.html#2107">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/bluetooth-mac.html">More information about the Bluetooth-mac
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

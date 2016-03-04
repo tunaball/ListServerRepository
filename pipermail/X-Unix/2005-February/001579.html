@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Unlinking a file... illegal characters?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Unlinking%20a%20file...%20illegal%20characters%3F&In-Reply-To=05e87b5b2799174fc9d876ea3a81dc24%40mcgillsociety.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001575.html">
+   <LINK REL="Next"  HREF="001581.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Unlinking a file... illegal characters?</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Unlinking%20a%20file...%20illegal%20characters%3F&In-Reply-To=05e87b5b2799174fc9d876ea3a81dc24%40mcgillsociety.org"
+       TITLE="[X-Unix] Unlinking a file... illegal characters?">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Sat Feb 26 03:11:36 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001575.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+        <LI>Next message: <A HREF="001581.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1579">[ date ]</a>
+              <a href="thread.html#1579">[ thread ]</a>
+              <a href="subject.html#1579">[ subject ]</a>
+              <a href="author.html#1579">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Feb 26, 2005, at 2:39 am, William H. Magill wrote:
+&gt;<i>
+</I>&gt;<i> On 25 Feb, 2005, at 12:07, Stroller wrote:
+</I>&gt;&gt;&gt;&gt;<i> Unfortunately:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>   $ ls legoland/
+</I>&gt;&gt;&gt;&gt;<i>   e??y??y??y??vk??????..??????
+</I>&gt;&gt;&gt;&gt;<i>   339 /Volumes/CLEARLIGHT/foo $ ls -lFa -i legoland/
+</I>&gt;&gt;&gt;&gt;<i>   ls: e??y??y??y??vk??????..??????: File name too long
+</I>&gt;&gt;&gt;&gt;<i>   total 128
+</I>&gt;&gt;&gt;&gt;<i>   731381 drwxrwxrwx  1 stroller  admin  32768 22 Nov 03:27 ./
+</I>&gt;&gt;&gt;&gt;<i>   772975 drwxrwxrwx  1 stroller  admin  32768 25 Feb 01:53 ../
+</I>&gt;&gt;&gt;&gt;<i>   $
+</I>&gt;&gt;<i> Would I be over-optimistic if I suggested that a different quoting 
+</I>&gt;&gt;<i> method in the script might fix this? As you suggested, I thought 
+</I>&gt;&gt;<i> about writing a program to do the job, but I never got as far in C as 
+</I>&gt;&gt;<i> file-handling.
+</I>&gt;<i>
+</I>&gt;<i> Have you tried emacs?
+</I>&gt;<i> ...
+</I>&gt;<i> Emacs &quot;dired&quot; will usually deal with all of the &quot;weird&quot; issues 
+</I>&gt;<i> associated with &quot;obscure&quot; character sets i.e. non-ascii. It's 
+</I>&gt;<i> particularly useful when the file name has actual embedded control 
+</I>&gt;<i> characters in it (often inserted by hackers to prevent file discovery 
+</I>&gt;<i> and manipulation or removal).
+</I>&gt;<i> ...
+</I>&gt;<i> cd to the directory involved.
+</I>&gt;<i> launch emacs
+</I>&gt;<i> type &quot;escape-x-dired&quot; and just hit return when it asks for the 
+</I>&gt;<i> directory.
+</I>&gt;<i>
+</I>&gt;<i> You can then use the arrow keys to navigate down the lines of the 
+</I>&gt;<i> buffer.
+</I>&gt;<i> Select one file and press &quot;d&quot; (&quot;u&quot; is the inverse) and a &quot;D&quot; will 
+</I>&gt;<i> appear in the left margin.
+</I>&gt;<i> Type  &quot;x&quot; and emacs will prompt
+</I>&gt;<i> delete &quot;.....&quot; (yes or no)
+</I>
+Unfortunately it doesn't allow me to identify the file.
+Results shown at &lt;<A HREF="http://mac.stroller.uk.eu.org/Emacs.gif">http://mac.stroller.uk.eu.org/Emacs.gif</A>&gt;
+Mr Dyballa has already suggested a reason in his posting of Feb 25, 
+2005, at 10:26 am.
+
+&gt;<i> Since this is &quot;legoland&quot; something, I would assume that the file name 
+</I>&gt;<i> is full of &quot;foreign&quot; (Danish) characters encoded via something other 
+</I>&gt;<i> than utf-8.
+</I>
+It's part of a big back-up of a customer's PeeCee, the rest of which 
+was zipped, burned to DVD &amp; deleted. It was originally in &quot;Program 
+Files&quot;, and I'm sure that this is just some file from the installation 
+of one of the Lego-branded computer games. Since I regularly back-up 
+PCs' whole C: drives to my portable drive by booting to a Linux liveCD 
+&amp; using `cp -Rvf ...` many thousands of files might be copied on &amp; off 
+this drive each week - my guess is simple filesystem corruption.
+
+Stroller.
+  
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001575.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+	<LI>Next message: <A HREF="001581.html">[X-Unix] Unlinking a file... illegal characters?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1579">[ date ]</a>
+              <a href="thread.html#1579">[ thread ]</a>
+              <a href="subject.html#1579">[ subject ]</a>
+              <a href="author.html#1579">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

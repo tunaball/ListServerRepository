@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Servers] remote login to an Xserver
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20remote%20login%20to%20an%20Xserver&In-Reply-To=list-12925825%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000272.html">
+   <LINK REL="Next"  HREF="000274.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Servers] remote login to an Xserver</H1>
+    <B>Chris W.</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX%20Servers%5D%20remote%20login%20to%20an%20Xserver&In-Reply-To=list-12925825%40mail.ninewire.com"
+       TITLE="[X Servers] remote login to an Xserver">chris at uoregon.edu
+       </A><BR>
+    <I>Fri May 21 11:26:56 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000272.html">[X Servers] remote login to an Xserver
+</A></li>
+        <LI>Next message: <A HREF="000274.html">[X Servers] remote login to an Xserver
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#273">[ date ]</a>
+              <a href="thread.html#273">[ thread ]</a>
+              <a href="subject.html#273">[ subject ]</a>
+              <a href="author.html#273">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Id like to put in my 2cents.
+
+The reason you cant access your shared files is most likely a firewall 
+on either end.
+
+Are you unable to access AFP shares? I would assume this.
+
+You may want to look into VPN, FTP, or SCP. All are options on your 
+xserver.
+
+I would also voice in that ARD would allow you to control and send 
+files (unfortunately, only allowing you to send to the controlled 
+machine).
+
+I personally use ARD and FTP and SSH to remote admin my xserver. This 
+gives me the greatest flexibility to avoid firewalls (ARD can be 
+blocked by some), fully admin (see command_line.pdf from apple.com), 
+and retrieve from everywhere. I know a lot of people would argue 
+against FTP for its insecurity, but one has to face the fact that every 
+computer everywhere has an ftp client.
+
+Chris W.
+On May 21, 2004, at 11:11 AM, C Johnson wrote:
+
+&gt;<i> TimbukTu works very well.  We implement that product here.
+</I>&gt;<i>
+</I>&gt;<i> Craig Johnson
+</I>&gt;<i> Internet Engineer
+</I>&gt;<i> Apple Certified Desktop Technician
+</I>&gt;<i> InSoft, Inc.  TriLutions
+</I>&gt;<i>
+</I>&gt;<i> -----
+</I>&gt;<i> Once you go Mac, you won't go back!
+</I>&gt;<i> On May 21, 2004, at 12:46 AM, Christopher Raphael wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> How do I log onto my xserver from home? I want access to my shared 
+</I>&gt;&gt;<i> files there.
+</I>&gt;&gt;<i> I have set access on the sever to allow me access from my static 
+</I>&gt;&gt;<i> address at home. Do I need software other than what came with my G4 
+</I>&gt;&gt;<i> TiBook?
+</I>&gt;&gt;<i> Thanks
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> ----------
+</I>&gt;&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;<i> Need help from a real person? Try.  
+</I>&gt;&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> ----------
+</I>&gt;&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;&gt;<i> Mac ISP Serious Mac Internet Solutions From NineWire!   
+</I>&gt;&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older 
+</I>&gt;&gt;<i> Mac! Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>   Support   | Support this list by clicking here before you buy!
+</I>&gt;&gt;<i>  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Mac OS X email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x-servers.html">X-Servers-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;<i> Mac ISP Serious Mac Internet Solutions From NineWire!   
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> DVIator   | Run Dual ADC displays on your G4 or just one on an older 
+</I>&gt;<i> Mac! Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>   Support   | Support this list by clicking here before you buy!
+</I>&gt;<i>  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000272.html">[X Servers] remote login to an Xserver
+</A></li>
+	<LI>Next message: <A HREF="000274.html">[X Servers] remote login to an Xserver
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#273">[ date ]</a>
+              <a href="thread.html#273">[ thread ]</a>
+              <a href="subject.html#273">[ subject ]</a>
+              <a href="author.html#273">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

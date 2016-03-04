@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] SSH tunnel vs. 10.3.8 vs. port forwarding
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20SSH%20tunnel%20vs.%2010.3.8%20vs.%20port%20forwarding&In-Reply-To=20050306224034.GS14171%40monkey.headgear.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001613.html">
+   <LINK REL="Next"  HREF="001610.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] SSH tunnel vs. 10.3.8 vs. port forwarding</H1>
+    <B>Jeff Winchester</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20SSH%20tunnel%20vs.%2010.3.8%20vs.%20port%20forwarding&In-Reply-To=20050306224034.GS14171%40monkey.headgear.org"
+       TITLE="[X-Unix] SSH tunnel vs. 10.3.8 vs. port forwarding">jeffw at tampabay.rr.com
+       </A><BR>
+    <I>Sun Mar  6 19:26:50 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001613.html">[X-Unix] SSH tunnel vs. 10.3.8 vs. port forwarding
+</A></li>
+        <LI>Next message: <A HREF="001610.html">[X-Unix] System V message queues?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1614">[ date ]</a>
+              <a href="thread.html#1614">[ thread ]</a>
+              <a href="subject.html#1614">[ subject ]</a>
+              <a href="author.html#1614">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+On Mar 06, 2005, at 5:40 PM, Cloyce D. Spradling wrote:
+
+&gt;<i> I think the IPv6 _is_ bugging you.  Actually, I think that SSH is only
+</I>&gt;<i> forwarding IPv4 ports for you.  Thus the 127.0.0.1 suggestion.  But 
+</I>&gt;<i> I've
+</I>&gt;<i> been wrong before, and it'll probably happen again someday...
+</I>
+Very interesting thought. I follow you now, and I'll try things the 
+IPv4 way just to be sure.
+
+
+&gt;<i> Run tcpdump or some other network sniffer on your local connection and
+</I>&gt;<i> verify that that's really what's happening.  And you might also want to
+</I>&gt;<i> verify that the system to which you're connected via SSH is allowed to
+</I>&gt;<i> connect to your ISP's POP server.
+</I>
+Rather than using the SSH Tunnel Manager GUI to initiate the tunnel, I 
+did things the old fashioned way:
+
+ssh -N -p 22 -g -C -c 3des <A HREF="../../../mailman/listinfo/x-unix.html">user_id at ssh_host</A> -L 1100/pop-server/110 -L 
+2500/smtp-server/25
+
+Then I initiated my telnet session to port 1100 in another window 
+(using both localhost and 127.0.0.1 to test the IPv4 theory). Here's 
+what I saw in the SSH command's output:
+
+channel 4: open failed: administratively prohibited: open failed
+
+It would appear that the SSH host I was using doesn't allow the 
+connection to the remote host to be made. I would think with a 
+different SSH host I'll be OK.
+
+Thanks for the ideas.
+
+
+- -- 
+Jeff Winchester
+<A HREF="../../../mailman/listinfo/x-unix.html">jeffw at tampabay.rr.com</A>
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (Darwin)
+
+iD8DBQFCK8n6rwFnct83o/4RAhliAKCUdx4IHnkuU79IBUiXpy32hd91KQCgpCBW
+olD8hgqIqoOZQ43lyoVDDjw=
+=EksB
+-----END PGP SIGNATURE-----
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001613.html">[X-Unix] SSH tunnel vs. 10.3.8 vs. port forwarding
+</A></li>
+	<LI>Next message: <A HREF="001610.html">[X-Unix] System V message queues?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1614">[ date ]</a>
+              <a href="thread.html#1614">[ thread ]</a>
+              <a href="subject.html#1614">[ subject ]</a>
+              <a href="author.html#1614">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

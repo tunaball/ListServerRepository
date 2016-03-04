@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] HD Mounting Trouble
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20HD%20Mounting%20Trouble&In-Reply-To=p0610050bbe266a736ebb%40%5B10.0.2.101%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001519.html">
+   <LINK REL="Next"  HREF="001521.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] HD Mounting Trouble</H1>
+    <B>Dave Higgins</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20HD%20Mounting%20Trouble&In-Reply-To=p0610050bbe266a736ebb%40%5B10.0.2.101%5D"
+       TITLE="[X-Unix] HD Mounting Trouble">dave at just4.com
+       </A><BR>
+    <I>Wed Feb  2 19:15:28 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001519.html">[X-Unix] HD Mounting Trouble
+</A></li>
+        <LI>Next message: <A HREF="001521.html">[X-Unix] Opening a finder window from the terminal 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1520">[ date ]</a>
+              <a href="thread.html#1520">[ thread ]</a>
+              <a href="subject.html#1520">[ subject ]</a>
+              <a href="author.html#1520">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks, Tom. However...
+
+That one liner doesn't do it. If the drive is not mounted it draws an 
+error.
+
+&gt;<i> sudo mount -uw &quot;/Volumes/Bonehead&quot;
+</I>
+Runt:~ dave$ sudo mount -uw &quot;/Volumes/Bonehead&quot;
+Password:
+mount: unknown special file or file system /Volumes/Bonehead.
+
+The other USB drive (with 3 partitions) mounts just fine, and it is 
+reported the same way when running plain &quot;mount&quot; (when the problem 
+drive is also mounted)...
+
+/dev/disk1s10 on /Volumes/Bonehead (local, nodev, nosuid, journaled)
+/dev/disk0s10 on /Volumes/Meathead (local, nodev, nosuid, journaled)
+/dev/disk0s12 on /Volumes/Meathead X (local, nodev, nosuid, journaled)
+/dev/disk0s14 on /Volumes/Meathead X2 (local, nodev, nosuid, journaled)
+
+The problem is that Bonehead does not mount at all when rebooting from 
+OS X back into OS X. If I come from OS 9 (where the drive mounts ok) 
+into OS X, then it will mount.
+
+Anything else? Maybe a way to tell disk1s10 to mount?
+
+If it helps, here's an abbreviated list (the two USB drives) of what's 
+in /dev/. It's the same whether the problem drive is mounted or not...
+
+brw-r-----  1 dave  operator   14,   0  2 Feb 19:57 disk0
+brw-r-----  1 dave  operator   14,   9  2 Feb 19:57 disk0s10
+brw-r-----  1 dave  operator   14,  10  2 Feb 19:57 disk0s12
+brw-r-----  1 dave  operator   14,  11  2 Feb 19:57 disk0s14
+brw-r-----  1 dave  operator   14,  12  2 Feb 19:57 disk1
+brw-r-----  1 dave  operator   14,  21  2 Feb 19:57 disk1s10
+
+Dave.
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001519.html">[X-Unix] HD Mounting Trouble
+</A></li>
+	<LI>Next message: <A HREF="001521.html">[X-Unix] Opening a finder window from the terminal 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1520">[ date ]</a>
+              <a href="thread.html#1520">[ thread ]</a>
+              <a href="subject.html#1520">[ subject ]</a>
+              <a href="author.html#1520">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

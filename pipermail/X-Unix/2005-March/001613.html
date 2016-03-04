@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] SSH tunnel vs. 10.3.8 vs. port forwarding
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20SSH%20tunnel%20vs.%2010.3.8%20vs.%20port%20forwarding&In-Reply-To=605249de88e03128c1cbac3dc021e8dc%40tampabay.rr.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001611.html">
+   <LINK REL="Next"  HREF="001614.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] SSH tunnel vs. 10.3.8 vs. port forwarding</H1>
+    <B>Cloyce D. Spradling</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20SSH%20tunnel%20vs.%2010.3.8%20vs.%20port%20forwarding&In-Reply-To=605249de88e03128c1cbac3dc021e8dc%40tampabay.rr.com"
+       TITLE="[X-Unix] SSH tunnel vs. 10.3.8 vs. port forwarding">cloyce+xunix at headgear.org
+       </A><BR>
+    <I>Sun Mar  6 14:40:34 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001611.html">[X-Unix] SSH tunnel vs. 10.3.8 vs. port forwarding
+</A></li>
+        <LI>Next message: <A HREF="001614.html">[X-Unix] SSH tunnel vs. 10.3.8 vs. port forwarding
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1613">[ date ]</a>
+              <a href="thread.html#1613">[ thread ]</a>
+              <a href="subject.html#1613">[ subject ]</a>
+              <a href="author.html#1613">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sun, Mar 06, 2005 at 03:04:52PM -0500, Jeff Winchester wrote:
+
+:<i> The IPv6 isn't what's bugging me.
+</I>
+I think the IPv6 _is_ bugging you.  Actually, I think that SSH is only
+forwarding IPv4 ports for you.  Thus the 127.0.0.1 suggestion.  But I've
+been wrong before, and it'll probably happen again someday...
+
+:<i> What bothers me is the fact that my 
+</I>:<i> port-forwarded POP3 telnet session terminates immediately after 
+</I>:<i> connecting. I do not terminate it myself. That's what I'm trying to 
+</I>:<i> figure out.
+</I>
+Run tcpdump or some other network sniffer on your local connection and
+verify that that's really what's happening.  And you might also want to
+verify that the system to which you're connected via SSH is allowed to
+connect to your ISP's POP server.
+
+--
+Cloyce
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001611.html">[X-Unix] SSH tunnel vs. 10.3.8 vs. port forwarding
+</A></li>
+	<LI>Next message: <A HREF="001614.html">[X-Unix] SSH tunnel vs. 10.3.8 vs. port forwarding
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1613">[ date ]</a>
+              <a href="thread.html#1613">[ thread ]</a>
+              <a href="subject.html#1613">[ subject ]</a>
+              <a href="author.html#1613">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

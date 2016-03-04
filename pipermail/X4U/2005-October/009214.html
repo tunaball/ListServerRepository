@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Disk Utility on Panther and Tiger
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Disk%20Utility%20on%20Panther%20and%20Tiger&In-Reply-To=20051011135651.5712C54936C%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="009210.html">
+   <LINK REL="Next"  HREF="009215.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Disk Utility on Panther and Tiger</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Disk%20Utility%20on%20Panther%20and%20Tiger&In-Reply-To=20051011135651.5712C54936C%40listserver.themacintoshguy.com"
+       TITLE="[X4U] Disk Utility on Panther and Tiger">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Tue Oct 11 22:36:53 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="009210.html">[X4U] Re: [G4] Re: End of An Era
+</A></li>
+        <LI>Next message: <A HREF="009215.html">[X4U] Re: DiskWarrior is ABSOLUTELY FABULOUS
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9214">[ date ]</a>
+              <a href="thread.html#9214">[ thread ]</a>
+              <a href="subject.html#9214">[ subject ]</a>
+              <a href="author.html#9214">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>From: Wayne Clodfelter &lt;<A HREF="../../../mailman/listinfo/x4u.html">wayne at troutnc.com</A>&gt;
+</I>&gt;&gt;&gt;<i>  From: Wayne Clodfelter &lt;<A HREF="../../../mailman/listinfo/x4u.html">wayne at troutnc.com</A>&gt;
+</I>...
+&gt;&gt;&gt;<i>  Oops! What if DU on Panther is not compatible with Tiger?
+</I>&gt;&gt;&gt;<i>  It probably isn't--though I have not seen a statement to that effect
+</I>&gt;&gt;&gt;<i>  anywhere.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>  ONE, Disk Utility under a superseded version of OS X should not even
+</I>&gt;&gt;&gt;<i>  be able to verify/repair a system disk of a later release unless it
+</I>&gt;&gt;&gt;<i>  is compatible. ...
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>  TWO, it should be possible for the latest version of Disk Utility to
+</I>&gt;&gt;&gt;<i>  be installed/copied over to boot volumes containing earlier OS X
+</I>&gt;&gt;&gt;<i>  releases.
+</I>...
+&gt;&gt;&gt;<i>  Of course, this raises the question whether the latest release of
+</I>&gt;&gt;&gt;<i>  Disk Utility is always backwards compatible with earlier OS X
+</I>&gt;&gt;&gt;<i>  incarnations. Is this true or not?
+</I>&gt;<i>
+</I>&gt;<i>I have a few problems with what you have written.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  ONE.  Filesystem repair utilities look at filesystems; that is they
+</I>&gt;&gt;<i>  see a partition as an array of bytes that must conform to some rules.
+</I>
+&gt;<i>So, if the &quot;rules&quot; are different between Panther and Tiger, DU will
+</I>&gt;<i>do what? Recognize that the file system IS different and do nothing,
+</I>&gt;<i>or try to bend the file system to ITS rules?
+</I>
+The rules are those that define the filesystem, most likely HFS+. 
+This doesn't change between OS revisions without us being told. There 
+are also rules that define the layout of partition maps and the like. 
+The filesystem rules are similar in nature, but vastly more complex. 
+The global disc allocation table must match that allocated to 
+objects, block pointers must point to sensible places ... all that 
+sort of thing.
+
+Later versions of utilities may well be better at doing the job, but 
+what they are trying to check is relatively constant.
+
+&gt;&gt;<i>  They do not look at files. Examining files needs a whole section of
+</I>&gt;&gt;<i>  the OS to support it, and that may not be available. When disc
+</I>&gt;&gt;<i>  utilities start looking at the contents of a disc and then deciding
+</I>&gt;&gt;<i>  that the data indicates that it shouldn't repair it, we've lost
+</I>&gt;&gt;<i>  something - even if it would protect you from Norton.
+</I>
+&gt;<i>I don't know what this is all about. I didn't mention file repair.
+</I>
+Sorry, I wasn't clear. I meant that it would have to read files on 
+the filesystem the determine the release of OS living on it if it 
+were going to implement:  &quot;&gt;&gt;&gt; Disk Utility under a superseded 
+version of OS X should not even be able to verify/repair a system 
+disk of a later release unless it is compatible.&quot;
+
+&gt;&gt;<i>  If the filesystem it's pointed at is incompatible it will notice;
+</I>&gt;&gt;<i>  if it's just created by newer software it may not notice, or be
+</I>&gt;&gt;<i>  written to ignore the fact.
+</I>&gt;<i>Which is it? Will it notice or not? You can't say it will notice if
+</I>&gt;<i>it is incompatible but it won't notice if the incompatibility is
+</I>&gt;<i>caused by being newer than the file system it is analyzing.
+</I>
+In the case of Disk Utility, it is compatible with HFS, HFS+, UFS, (+ 
+various PC filesystems??). Present it with a VMS filesystem or a raw 
+Oracle partition and it will notice it's different (second hand drive 
+in a FW case). It probably can't tell the difference between HFS+ 
+created at various OSXs (unless Apple put some marker in it when you 
+upgrade your OS) other than maybe the presence of Journaling. Disk 
+Utility will probably recognise whatever it was that preceded HFS on 
+the Mac (can't remember what it was called), but may well just refuse 
+to process it. The same with some PC formats.
+
+It's rather like programmatic validation of HTML. There are programs 
+that will check the HTML correctness of a web page, that work whether 
+the page text is English, French or Japanese. They don't verify that 
+the words make sense. They don't look at the words and decide 'this 
+page has factual errors - I won't verify it'. Disc utilities don't, 
+and shouldn't, say 'some of the files on this disc are from a later 
+copy of the OS - I won't fix it'.
+
+&gt;&gt;<i>  TWO.  From what others have said here you can use later versions of
+</I>&gt;&gt;<i>  Disk Utility  to repair discs created by older systems, but I don't
+</I>&gt;&gt;<i>  know how far back that goes. 10.3 Disk Utility worked with my OS9
+</I>&gt;&gt;<i>  partition on my G4. That partition was loaded while booted from the
+</I>&gt;&gt;<i>  OS9 install CD. Havn't repaired that partition since I put Tiger on
+</I>&gt;&gt;<i>  it last weekend (at last - using FireWire disk mode from my PB). If
+</I>&gt;&gt;<i>  a newer utility runs on an older OS it means that the library calls
+</I>&gt;&gt;<i>  have all resolved and so it should be fine.
+</I>
+&gt;<i>So if DU from Tiger will run while booted from Panther, it means that
+</I>&gt;<i>the library calls have all been resolved and so it should be fine? I
+</I>&gt;<i>don't think so.
+</I>&gt;<i>I believe that DU on a Tiger boot volume will run while booted in
+</I>&gt;<i>Panther, but it cannot be used to verify/repair the same Tiger volume
+</I>&gt;<i>because that volume contains a running app, which is DU, itself.
+</I>
+Well, it can verify the boot volume and it can repair another volume. 
+That's a limitation that would also apply if it were a Panther DU.
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+Chair of HPUX SysAdmin SIG of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x4u.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="009210.html">[X4U] Re: [G4] Re: End of An Era
+</A></li>
+	<LI>Next message: <A HREF="009215.html">[X4U] Re: DiskWarrior is ABSOLUTELY FABULOUS
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9214">[ date ]</a>
+              <a href="thread.html#9214">[ thread ]</a>
+              <a href="subject.html#9214">[ subject ]</a>
+              <a href="author.html#9214">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

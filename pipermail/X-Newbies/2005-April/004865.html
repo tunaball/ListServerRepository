@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Newbies] optimizing System Performance
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20optimizing%20System%20Performance&In-Reply-To=8982d3ce33e9efcf2e03011cf4fcf29e%40wanadoo.fr">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004861.html">
+   <LINK REL="Next"  HREF="004871.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Newbies] optimizing System Performance</H1>
+    <B>Alex</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20optimizing%20System%20Performance&In-Reply-To=8982d3ce33e9efcf2e03011cf4fcf29e%40wanadoo.fr"
+       TITLE="[X-Newbies] optimizing System Performance">lists at lexial.ca
+       </A><BR>
+    <I>Sun Apr 17 09:20:34 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004861.html">[X-Newbies] optimizing System Performance
+</A></li>
+        <LI>Next message: <A HREF="004871.html">[X-Newbies] optimizing System Performance
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4865">[ date ]</a>
+              <a href="thread.html#4865">[ thread ]</a>
+              <a href="subject.html#4865">[ subject ]</a>
+              <a href="author.html#4865">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Apr 17, 2005, at 1:55 AM, Cyril Blanc wrote:
+
+&gt;<i> After MAC OS X has install an APP, you have a message that it is  
+</I>&gt;<i> &quot;optimizing System Performance&quot;
+</I>&gt;<i>
+</I>&gt;<i> What is it doing ?
+</I>
+Updating the prebinding information. In Apple's words:
+
+    &quot;The Apple installer application performs an optimization step
+     at the end of an installation. This optimization step looks at
+     the applications on the boot partition and updates their
+     prebinding information to match the current system
+     configuration.&quot;
+
+What is prebinding? Apple again:
+
+    &quot;Prebinding is the process of computing the addresses for symbols
+     imported by a framework or application prior to their use.
+     Resolving these addresses before their use reduces the amount of
+     work performed by the dyld tool at runtime and results in faster
+     launch times for applications.&quot;
+
+In a nutshell, on Mac OS X, prebinding makes applications launch faster.
+
+Here's the long story, in severely simplified, non-techspeak language.  
+Let's say John writes an application which, among other things, needs  
+to calculate the square root of a number. So he writes a segment of  
+code (a subroutine) which does this task. And let's say Peter writes  
+another application, different from John's, but which also needs to  
+calculate the square root. So Peter writes a subroutine to handle this  
+task. This wastes resources -- for instance, if you run both apps at  
+the same time, you use up memory twice loading two different  
+subroutines which do the same thing. A better way of doing this is to  
+put the subroutine which calculates the square root in a separate  
+container (a reusable code library), supplied with the operating  
+system. This way, neither John nor Peter have to waste their time  
+writing a square root calculation routine; they just have to tell their  
+applications to use the subroutine from the library; and when the  
+applications are launched (executed) the library needs to be loaded in  
+memory only once.
+
+But what if the library contains, in addition to square root, many  
+other functions? Then the application will have to be told where to  
+find the square root in the library -- in other words, the square root  
+function's address. But what if the library is changed, say, by  
+replacing it with a new, improved version? Then the application will  
+find the wrong code at the specified address, and it will crash or  
+generate an error. A better way is to specify, instead of an address, a  
+symbol, such as a name. So, instead of blindly executing code found at  
+a particular address, the app will first look for the address  
+corresponding to that symbol, and then execute it, thus making sure it  
+executes the right code.
+
+But what if there are many libraries, each with many functions? Every  
+time an application launches, it will have to spend a lot of time  
+matching subroutines and addresses -- in other words, binding a symbol  
+to an address. But most of the time, this is not necessary, because  
+libraries don't change that often. So the time it takes to launch an  
+application can be shortened considerably by making a list of  
+addresses, and using that predefined list, until one of the libraries  
+changes. In other words, by prebinding. This is what the Apple  
+installer does when it's &quot;optimizing system performance&quot;.
+
+&gt;<i> So what is the need for applications like MOX that also &quot;pre-bind&quot; ?
+</I>
+Mostly, there isn't; at least, there hasn't been since 10.2. Of course,  
+prebinding fails if the system configuration changes, and the Mac OS X  
+installer optimization process itself has a number of limitations (e.g,  
+it only prebinds applications on the boot volume). But the operating  
+system detects when an application with outdated prebinding info is  
+launched, and eventually it runs a faceless application called  
+fix_prebinding, which attempts to fix that app's prebinding data, if  
+possible. (Not all applications can be prebound.) So an application  
+which fixes prebinding is useless for the overwhelming majority of  
+users of Mac OS X v10.2 or later; the small number of users -- mostly  
+developers -- who need it already know that the OS provides two tools  
+for this purpose: redo_prebinding and update_prebinding.
+
+Why would an application provide this function? Here's Tom Harrington's  
+(developer of Macaroni) opinion:
+
+&lt;<A HREF="http://www.atomicbird.com/node/view/41">http://www.atomicbird.com/node/view/41</A>&gt;
+
+For more on prebinding, here's a useful (IMHO, of course) link.
+
+&lt;<A HREF="http://radio.weblogs.com/0100490/stories/2002/08/24/">http://radio.weblogs.com/0100490/stories/2002/08/24/</A> 
+prebindingExplained.html&gt;
+
+You'll find more info on Mac OS X maintenance and troubleshooting  
+(including prebinding) here:
+
+&lt;<A HREF="http://www.thexlab.com/faqs/maintainingmacosx.html">http://www.thexlab.com/faqs/maintainingmacosx.html</A>&gt;
+
+As for MOX Optimize, I'm not a fan at all. There are plenty of, IMHO,  
+better applications for the job, such as
+
+Cocktail &lt;<A HREF="http://www.macosxcocktail.com/">http://www.macosxcocktail.com/</A>&gt;
+Macaroni &lt;<A HREF="http://www.atomicbird.com/?q=">http://www.atomicbird.com/?q=</A>&gt;
+Onyx &lt;<A HREF="http://www.titanium.free.fr/pictures/onyx.gif">http://www.titanium.free.fr/pictures/onyx.gif</A>&gt;
+TinkerTool System &lt;<A HREF="http://www.bresink.de/osx/TinkerToolSys.html">http://www.bresink.de/osx/TinkerToolSys.html</A>&gt;
+
+and others.
+
+&lt;0x0192&gt;
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004861.html">[X-Newbies] optimizing System Performance
+</A></li>
+	<LI>Next message: <A HREF="004871.html">[X-Newbies] optimizing System Performance
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4865">[ date ]</a>
+              <a href="thread.html#4865">[ thread ]</a>
+              <a href="subject.html#4865">[ subject ]</a>
+              <a href="author.html#4865">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

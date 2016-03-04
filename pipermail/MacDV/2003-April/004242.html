@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MacDV] Disk Fragmentation &gt; Reformatting Single Partitions
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Disk%20Fragmentation%20%3E%20Reformatting%20Single%20Partitions&In-Reply-To=list-5726391%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004241.html">
+   <LINK REL="Next"  HREF="004246.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MacDV] Disk Fragmentation &gt; Reformatting Single Partitions</H1>
+    <B>Michael Winter</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Disk%20Fragmentation%20%3E%20Reformatting%20Single%20Partitions&In-Reply-To=list-5726391%40mail.ninewire.com"
+       TITLE="[MacDV] Disk Fragmentation &gt; Reformatting Single Partitions">winter at mac.com
+       </A><BR>
+    <I>Wed Apr 16 06:45:36 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004241.html">[MacDV] Re: Hog Heaven: QuickTime Video through FireWire
+</A></li>
+        <LI>Next message: <A HREF="004246.html">[MacDV] Re: Disk Fragmentation &gt; Reformatting Single Partitions
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4242">[ date ]</a>
+              <a href="thread.html#4242">[ thread ]</a>
+              <a href="subject.html#4242">[ subject ]</a>
+              <a href="author.html#4242">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Tuesday, April 15, 2003, at 02:54  PM, Illovox Media wrote:
+
+&gt;<i> Please share your process for doing that.  I have wanted to be able to 
+</I>&gt;<i> do
+</I>&gt;<i> that for years, and do not know how.  Any reformat I know destroys
+</I>&gt;<i> everything on all partitions...
+</I>
+Sorry I took so long to respond, but since several people were telling 
+me that they didn't think it would work, I decided I'd better be sure, 
+so I hooked up an old 10 GB drive (USB) and went through all the steps 
+to be sure. Here's how it works in OS X:
+
+Open up &quot;Disk Utility&quot; and select the &quot;Erase&quot; tab. Two things to note. 
+First, the list of drives in the pane alone the left. It will list each 
+physical device and just below, indented slightly, will be the list of 
+Volumes (partitions) on that device. So my device shows up as :
+
+9.44 GB IBM -
+      Music
+      Photos
+
+So you can see its a 10 (9.44) GB device with two Volumes (partitions) 
+labeled &quot;Music&quot; and &quot;Photos&quot;.
+
+The second point to note is the warnings in the main panel. The first 
+bullet point is:
+
+&quot;Erasing a disk results in all volumes of that disk being erased and 
+one large volume being created on that disk.&quot;
+
+The second bullet point is :
+
+&quot;Erasing a volume results in a clean volume being created.&quot;
+
+Note the distinction between erasing a disk and a volume (partition).
+
+So I selected the disk (the line that says 9.44 GB IBM-) and clicked 
+the erase button. A warning dialog titled &quot;Erase Disk&quot; pops up saying 
+&quot;Erasing a disk will destroy all information on all of the volumes of 
+the disk...&quot; I hit the Erase button in the dialog box and a minute 
+later everything on the drive is gone and I have one volume with the 
+name &quot;Untitled&quot;.
+
+At this point, I went back and repartitioned the drive the way it was, 
+copied a couple mp3's to the Music partition and a couple photos to the 
+Photo partition, then went back the the Erase tab in Disk Utiltiy.
+
+This time, instead of selecting the device (9.44 GB IBM-), I select the 
+volume &quot;Photos&quot; and clicked erase. This time the warning dialog is 
+titled &quot;Erase Volume&quot; (note difference) and says, &quot;Erasing a volume 
+will destroy all information on the volume. It will not erase 
+information on other volumes on the same disk...&quot;. So again, I click 
+the Erase button. The result is that I still have two partitions, just 
+as before, but the Photos partition is empty, and the Music partition 
+still has the mp3's I copied in.
+
+So the short answer is that if you only want to erase a single volume, 
+you select just that volume in the left pane before you click the erase 
+button. If you select the drive, you will erase the entire drive. If 
+you select a partition, you will erase only that partition.
+
+Just a couple more notes. I hope hope nobody is confused by my using 
+the words device and drive to mean the same thing, or my using 
+partition and volume to mean the same thing in the above discussion. 
+Also, though my test subject was a USB drive, I've done this with 
+internal drives as well as external Firewire and SCSI drives. In fact, 
+until this discussion came up, I didn't know you could erase an entire 
+multi-partition drive with the &quot;Erase&quot; command. I thought you had to do 
+it one partition at a time (which you do if you want to maintain the 
+structure).
+
+Hope this is helpful and not too long.
+
+-Mike
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004241.html">[MacDV] Re: Hog Heaven: QuickTime Video through FireWire
+</A></li>
+	<LI>Next message: <A HREF="004246.html">[MacDV] Re: Disk Fragmentation &gt; Reformatting Single Partitions
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4242">[ date ]</a>
+              <a href="thread.html#4242">[ thread ]</a>
+              <a href="subject.html#4242">[ subject ]</a>
+              <a href="author.html#4242">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

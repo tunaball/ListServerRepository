@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Backup script help
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Backup%20script%20help&In-Reply-To=F14489A3-5D4D-49A3-A254-B267E5FFA749%40charter.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002563.html">
+   <LINK REL="Next"  HREF="002564.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Backup script help</H1>
+    <B>Brian Medley</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Backup%20script%20help&In-Reply-To=F14489A3-5D4D-49A3-A254-B267E5FFA749%40charter.net"
+       TITLE="[X-Unix] Backup script help">bpm-list-osx-unix at 4321.tv
+       </A><BR>
+    <I>Thu Feb 23 21:31:32 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002563.html">[X-Unix] Backup script help
+</A></li>
+        <LI>Next message: <A HREF="002564.html">[X-Unix] Rotating the console logs?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2567">[ date ]</a>
+              <a href="thread.html#2567">[ thread ]</a>
+              <a href="subject.html#2567">[ subject ]</a>
+              <a href="author.html#2567">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Wed, Feb 22, 2006 at 01:28:13PM -0600, Charles Howse wrote:
+
+&gt;<i> 
+</I>&gt;<i> On Feb 22, 2006, at 1:08 PM, Brian Medley wrote:
+</I>&gt;<i> 
+</I>&gt;<i> &gt;On Wed, Feb 22, 2006 at 12:21:45PM -0600, Charles Howse wrote:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt;First, I'm not satisfied with how I'm verifying that the backup
+</I>&gt;<i> &gt;&gt;volume on the remote server is mounted or not.  Can anyone help
+</I>&gt;<i> &gt;&gt;make  that section 'bullet-proof'?
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;What are you not satisfied with?
+</I>&gt;<i> 
+</I>&gt;<i> Sorry I didn't make this clear initially.
+</I>&gt;<i> This part sometimes errors with &quot;mount returned 0, exiting&quot; which  
+</I>&gt;<i> means the volume was mounted successfully.  I added the 'not'  
+</I>&gt;<i> operator, but IMO, there should be a more elegant way to do this  
+</I>&gt;<i> entire section.
+</I>
+Are you sure the mount command exited with 0?  What I'm thinking
+is:
+
+&gt;<i> 		mount -t nfs moe:/backup /Users/charles/mnt &gt; /dev/null 2&gt;&amp;1
+</I>
+$? is set
+
+&gt;<i> 				echo `date` &gt; $file
+</I>&gt;<i> 				echo &gt;&gt; $file
+</I>
+The two echo commands reset $?.  Try saving the value:
+
+        mount -t nfs moe:/backup /Users/charles/mnt &gt; /dev/null 2&gt;&amp;1
+        ret=$?
+        if [ &quot;$?&quot; -eq 0 ] ; then
+            ...
+        else 
+			echo `date` &gt; $file
+			echo &gt;&gt; $file
+			echo &quot;Mount returned&quot; &quot;$ret&quot; &quot;, exiting.&quot; &gt;&gt; $file
+            ...
+        fi
+
+
+&gt;<i> else
+</I>&gt;<i> 		# Volume is not mounted, mount it and continue
+</I>&gt;<i> 		mount -t nfs moe:/backup /Users/charles/mnt &gt; /dev/null 2&gt;&amp;1
+</I>&gt;<i> 		if [ &quot;$?&quot; -eq 0 ] ; then
+</I>&gt;<i> 			# Mounted OK
+</I>&gt;<i> 			echo `date` &gt; $file
+</I>&gt;<i> 			echo &gt;&gt; $file
+</I>&gt;<i> 			echo &quot;Mounted volume successfully, continuing.&quot; &gt;&gt; 
+</I>&gt;<i> 			$file
+</I>&gt;<i> 			echo &gt;&gt; $file
+</I>&gt;<i> 		else	
+</I>&gt;<i> 			# Mount failed
+</I>&gt;<i> 			if [ &quot;$?&quot; ! -eq 0 ] ; then
+</I>&gt;<i> 				echo `date` &gt; $file
+</I>&gt;<i> 				echo &gt;&gt; $file
+</I>&gt;<i> 				echo &quot;Mount returned&quot; &quot;$?&quot; &quot;, exiting.&quot; &gt;&gt; 
+</I>&gt;<i> 				$file
+</I>&gt;<i> 				mail -s &quot;Weekly Backup results&quot; charles &lt; 
+</I>&gt;<i> 				$file
+</I>
+-- 
+~`^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-., \|/  (___)  \|/ _,.-=~'`^`
+                                      @~./'O o`\.~@
+      &quot;Knowledge is Power&quot;           /__( \___/ )__\  *PPPFFBT!*
+         -- Francis Bacon               `\__`U_/'
+ _.-=~'``'~=-._.-=~'``'~=-._.-=~'`^`'~= &lt;____|'  ^^`'~=-.,__,.-=
+~'^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-.,__,.-==--^'~=-.,__,.-=~'`^`
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002563.html">[X-Unix] Backup script help
+</A></li>
+	<LI>Next message: <A HREF="002564.html">[X-Unix] Rotating the console logs?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2567">[ date ]</a>
+              <a href="thread.html#2567">[ thread ]</a>
+              <a href="subject.html#2567">[ subject ]</a>
+              <a href="author.html#2567">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MacDV] Re: how and why to benchmark Last one! 
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20how%20and%20why%20to%20benchmark%20Last%20one%21%20&In-Reply-To=list-10149805%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="008724.html">
+   <LINK REL="Next"  HREF="008726.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MacDV] Re: how and why to benchmark Last one! </H1>
+    <B>Dmytro Koval'ov</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20how%20and%20why%20to%20benchmark%20Last%20one%21%20&In-Reply-To=list-10149805%40mail.ninewire.com"
+       TITLE="[MacDV] Re: how and why to benchmark Last one! ">dmytro.kovalov at nikkocitigroup.com
+       </A><BR>
+    <I>Wed Jan  7 20:57:59 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="008724.html">[MacDV] Re: Garage Band
+</A></li>
+        <LI>Next message: <A HREF="008726.html">[MacDV] Re: how and why to benchmark Last one! 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8725">[ date ]</a>
+              <a href="thread.html#8725">[ thread ]</a>
+              <a href="subject.html#8725">[ subject ]</a>
+              <a href="author.html#8725">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+&gt;&gt;&gt;&gt;&gt;<i> On Wed, 7 Jan 2004, &quot;James&quot; == James Asherman wrote:
+</I>
+  James&gt; A: I do not own Panther(which would be clean) I have dirty old
+  James&gt; 10.2.8
+
+Only internal OS disk optimization is not applicable for Jaguar. All
+the rest still true.
+
+  James&gt;  B: You are wrong. Speed Disk does not split up files, it
+  James&gt; puts them back together and groups like things.  
+
+OK. I am not  sure what prevents you from understanding this stuff, but
+I will try to explain it simpler. Speed Disk and alikes work with
+things like ''disk sector''. This is a number, that is reported by OS
+to SD application. There were times when correspondence between ''disk
+sector'' (visible to application) and actual disk sector was
+one-to-one. This was time of MSDOS 3.x-5.x and has passed long
+ago. This was also possible because under MSDOS application could
+access hardware directly. 
+
+This (access HW directly) is *NOT* possible under UNIX. So, what SD
+actually sees is some layer of abstraction. This abstraction is
+presented to application by OS. And there more such levels. Please
+read Peter's mail once again (maybe even twice). I think he has
+explained this stuff quite well. 
+
+Nobody can tell for sure that sectors reported to SD with numbers N
+and N+1 occupy consecutive sectors (lets say M and M+1) on the same
+disk. The thing get even worse if you happen to use any kind of
+RAID. These N and N+1 ''sectors'' (in SD terms) can be as well on
+different physical disks. But SD will not know that it actually works
+with RAID and will try to &quot;fill the holes&quot; and to make contiguous
+free space out of them.
+
+So... When you say &quot;SD puts files back together&quot; you are actually
+saying is:- &quot;SD puts files on disk in such way, that big files occupy
+some space on the disk with consecutive sector numbers. I.e. such
+space that looks good in SD drive map.&quot;
+
+  James&gt; And you are on the DV list? I'm sorry . 
+
+Yes, I am. And also I am UNIX sys admin and developer. Also I do user
+support and I know difference between &quot;system is slow&quot; and &quot;user
+reported, that system seems slow today&quot;.
+
+  James&gt; Video still likes big
+  James&gt; hunks of space all in a row or reported as such. I keep some
+         ~~~~~~~~~~~~~~~               ~~~~~~~~~~~~~~~~~~ 
+
+Big chunk of space 
+
+  and
+
+space *reported* as big contiguous space 
+
+are very different things. So, if you think that looking at the nice
+contiguous space of lined up rectangles of the same color in Speed
+Disk makes you feeling better, than I personally do not mind about
+this. 
+
+It will probably make more sence if you'll try to listen to people who
+do know HOW things work on computer. Peter was actually citing Apple
+regarding de-fragmenting. In this discussion this was the most reliable
+reference.
+
+  James&gt; extra because stuff walks in the door.  Now I go back to the
+  James&gt; wedding with the defective panasonic tape.
+
+Good luck. Don't forget to de-fragment.
+
+P.S. 
+
+I did have several warnings from iMovie about slow disk. 
+
+Funny thing, that this happened on brand new just few minutes ago
+formatted disk (external FW 4500 rpm with OSX10.1.x). I've captured
+video to internal drive since then until installed Jaguar. I *never* had
+any speed warnings since then. Even though I has never re-formatted or
+de-fragmented drive and I (and all my family) do a lot of downloading/
+capturing/editing/compiling/whatever on the system.
+
+--Dmytro
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="008724.html">[MacDV] Re: Garage Band
+</A></li>
+	<LI>Next message: <A HREF="008726.html">[MacDV] Re: how and why to benchmark Last one! 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8725">[ date ]</a>
+              <a href="thread.html#8725">[ thread ]</a>
+              <a href="subject.html#8725">[ subject ]</a>
+              <a href="author.html#8725">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

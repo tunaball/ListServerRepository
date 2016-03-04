@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] OSX system maintenance utilities
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20OSX%20system%20maintenance%20utilities&In-Reply-To=79054FC4-528F-11D9-A5CA-00039363A87E%40wi.rr.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="008437.html">
+   <LINK REL="Next"  HREF="008426.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] OSX system maintenance utilities</H1>
+    <B>Doug McNutt</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20OSX%20system%20maintenance%20utilities&In-Reply-To=79054FC4-528F-11D9-A5CA-00039363A87E%40wi.rr.com"
+       TITLE="[G4] OSX system maintenance utilities">douglist at macnauchtan.com
+       </A><BR>
+    <I>Mon Dec 20 19:03:42 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="008437.html">[G4] 10.3.7 Include Security Updaters?
+</A></li>
+        <LI>Next message: <A HREF="008426.html">[G4] OSX system maintenance utilities
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8425">[ date ]</a>
+              <a href="thread.html#8425">[ thread ]</a>
+              <a href="subject.html#8425">[ subject ]</a>
+              <a href="author.html#8425">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 08:00 -0600 12/20/04, rich northouse shouted:
+&gt;<i> WHAT DO THESE COMMANDS DO?	
+</I>
+If you really want to know what the periodic scripts do you can read the shell scripts, that they actually are, with any text editor.
+
+/usr/sbin/periodic
+
+is a bash script that is pointed to one of three directories which are
+
+/etc/periodic/daily/
+/etc/periodic/monthly/
+/etc/periodic/weekly/
+
+on any normal UNIX machine. But on Mac OS neXt they are:
+
+/private/etc/periodic/daily/
+/private/etc/periodic/monthly/
+/private/etc/periodic/weekly/
+
+Inside of those folders are separate scripts which are executed. Even if you're not an expert in bash you can get a feel by reading the comments.
+
+It's probably a good idea to make copies in your own user space so as to avoid accidental changes. Finder will likely hide them from you but Terminal will not. Use the UNIX cp command or use cat and then copy and paste the content from the Terminal window.
+
+Actually /usr/sbin/periodic checks for stuff in the defaults system too but I don't think there is anything there. Anyone know about that?
+
+And check out Macaroni. The author is a friend.
+
+-- 
+--&gt;  There are 10 kinds of people:  those who understand binary, and those who don't &lt;--
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="008437.html">[G4] 10.3.7 Include Security Updaters?
+</A></li>
+	<LI>Next message: <A HREF="008426.html">[G4] OSX system maintenance utilities
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8425">[ date ]</a>
+              <a href="thread.html#8425">[ thread ]</a>
+              <a href="subject.html#8425">[ subject ]</a>
+              <a href="author.html#8425">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+</body></html>

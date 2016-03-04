@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Newbies] New Mac user/Airport Extreme
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20New%20Mac%20user/Airport%20Extreme&In-Reply-To=list-7639501%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001855.html">
+   <LINK REL="Next"  HREF="001857.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Newbies] New Mac user/Airport Extreme</H1>
+    <B>Scott</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20New%20Mac%20user/Airport%20Extreme&In-Reply-To=list-7639501%40mail.ninewire.com"
+       TITLE="[X Newbies] New Mac user/Airport Extreme">scott-xlists at scotist.com
+       </A><BR>
+    <I>Sun Jul 20 22:17:34 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001855.html">New Mac user/Airport Extreme
+</A></li>
+        <LI>Next message: <A HREF="001857.html">[X Newbies] New Mac user/Airport Extreme
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1856">[ date ]</a>
+              <a href="thread.html#1856">[ thread ]</a>
+              <a href="subject.html#1856">[ subject ]</a>
+              <a href="author.html#1856">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Sunday, July 20, 2003, at 18:57PM, Watrat wrote:
+
+&gt;<i> Good evening,
+</I>&gt;<i> 	I am not sure if I am posting this in the right forum, but thought I 
+</I>&gt;<i> should start here.  I am a week into being a converted mac person and 
+</I>&gt;<i> am still in the &quot;taking baby steps&quot; process and am lost.  Here is what 
+</I>&gt;<i> I am doing and whats happening and could use any and all advice.
+</I>&gt;<i> 	I have a Windows XP desktop and a 12 inch powerbook with an airport 
+</I>&gt;<i> extreme card.  The XP machine is plugged into the LAN port of the 
+</I>&gt;<i> airport extreme base station, the WAN port has my cable modem, and the 
+</I>&gt;<i> powerbook connects wirelessly.  Both machines connect to the internet 
+</I>&gt;<i> and the range is better than I imagined.  I have a program on my 
+</I>&gt;<i> windows machine called ISPQ which is a video chat program..I can send 
+</I>&gt;<i> messages and not receive them, which is normal with a router.  I 
+</I>&gt;<i> followed their instructions for the airport and added port mapping for 
+</I>&gt;<i> ports 2000-2003.  Still, nothing.  I have this setup in port mapping 
+</I>&gt;<i> as they instructed:
+</I>&gt;<i>
+</I>&gt;<i> Public Port                Private IP Address                     
+</I>&gt;<i> Private Port
+</I>&gt;<i> 2000                            10.0.1.201                             
+</I>&gt;<i>     2000
+</I>&gt;<i> 2001                             10.0.1.201  2001
+</I>&gt;<i> 2002                              10.0.1.201                           
+</I>&gt;<i>     2002
+</I>&gt;<i> 2003                              10.0.1.201 2003
+</I>&gt;<i>
+</I>&gt;<i> my Router is 10.0.1.1
+</I>&gt;<i> my powerbook is 10.0.1.2
+</I>&gt;<i> my pc is10.0.1.3
+</I>&gt;<i>
+</I>&gt;<i> 	I would also love to be able to get music files off of my pc into 
+</I>&gt;<i> itunes and am not sure if thats why the ispq program isn't 
+</I>&gt;<i> working...because I don't have a home network setup to share 
+</I>&gt;<i> files...doing that is a whole other burden at this point.
+</I>&gt;<i> 	I would greatly appreciate any help.  Thanks very much
+</I>
+
+Tom - The port mapping you have listed above has your private IP 
+address as 10.0.1.201. Was this from the ISPQ instructions, or an 
+example sheet? If so, that's your problem. For ISPQ to make use of 
+these ports on your PC, you need to use the PC's private IP address in 
+the port mapping.
+
+If your machines' addresses are:
+&gt;<i> my Router is 10.0.1.1
+</I>&gt;<i> my powerbook is 10.0.1.2
+</I>&gt;<i> my pc is10.0.1.3
+</I>                ^^^^^^^^^^^
+The the private IP mapping to allow traffic to ISPQ on your PC should 
+be:
+Public Port                Private IP Address                     
+Private Port
+2000                            10.0.1.3                                
+  2000
+2001                             10.0.1.3                               
+  2001
+2002                              10.0.1.3                              
+  2002
+2003                              10.0.1.3				 2003
+                                     ^^^^^^^^
+
+
+Hope this helps,
+Scott
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001855.html">New Mac user/Airport Extreme
+</A></li>
+	<LI>Next message: <A HREF="001857.html">[X Newbies] New Mac user/Airport Extreme
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1856">[ date ]</a>
+              <a href="thread.html#1856">[ thread ]</a>
+              <a href="subject.html#1856">[ subject ]</a>
+              <a href="author.html#1856">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

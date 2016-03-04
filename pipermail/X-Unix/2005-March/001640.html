@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] SSH trouble
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20SSH%20trouble&In-Reply-To=10f6f750094824864cf018ae0360a2df%40ldml.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001634.html">
+   <LINK REL="Next"  HREF="001643.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] SSH trouble</H1>
+    <B>Dmytro Koval'ov</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20SSH%20trouble&In-Reply-To=10f6f750094824864cf018ae0360a2df%40ldml.com"
+       TITLE="[X-Unix] SSH trouble">dmytro.kovalov at gmail.com
+       </A><BR>
+    <I>Thu Mar 17 19:31:22 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001634.html">[X-Unix] SSH trouble
+</A></li>
+        <LI>Next message: <A HREF="001643.html">[X-Unix] SSH trouble
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1640">[ date ]</a>
+              <a href="thread.html#1640">[ thread ]</a>
+              <a href="subject.html#1640">[ subject ]</a>
+              <a href="author.html#1640">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Thu, 17 Mar 2005 10:40:55 +0000, Simon Forster &lt;<A HREF="../../../mailman/listinfo/x-unix.html">simon-lists at ldml.com</A>&gt; wrote:
+&gt;<i> offending line from ~/.ssh/known_hosts (on your iBook). Next time you
+</I>&gt;<i> log in, you'll be warned that you're connecting to an unknown host and
+</I>&gt;<i> that it'll be added to known_hosts. This is fine - but you'll then have
+</I>&gt;<i> to remove the new line from known_hosts next time you try to link up
+</I>&gt;<i> from your internal network. i.e. Each time you connect to the PowerMac
+</I>&gt;<i> on a different IP address to last time, you'll need to delete the
+</I>&gt;<i> appropriate line from known_hosts in your iBook.
+</I>&gt;<i> 
+</I>
+What you can do (warning: this wiil disable host sanity checking, so
+do this only if you know for sure, that yuo are connecting to right
+host).
+
+1) add line
+StrictHostKeyChecking no to ~/.ssh/ssh_config
+2) 
+  $ rm ~/.ssh/known_hosts
+  $ ln -s /dev/null ~/.ssh/known_hosts
+
+This way your local host ignores the fact that there's is no line in
+known_hosts corresponding to remote machine, gives you a warning about
+adding new line and adds new line to /dev/null.
+
+Tested. Proved to work.
+
+--Dmytro
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001634.html">[X-Unix] SSH trouble
+</A></li>
+	<LI>Next message: <A HREF="001643.html">[X-Unix] SSH trouble
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1640">[ date ]</a>
+              <a href="thread.html#1640">[ thread ]</a>
+              <a href="subject.html#1640">[ subject ]</a>
+              <a href="author.html#1640">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to determine which network component is failing
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20determine%20which%20network%20component%20is%20failing&In-Reply-To=0C5FB337-FCAB-4A8F-A949-A88DFC0A0373%40charter.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002718.html">
+   <LINK REL="Next"  HREF="002695.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to determine which network component is failing</H1>
+    <B>Alexandre Gauthier</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20determine%20which%20network%20component%20is%20failing&In-Reply-To=0C5FB337-FCAB-4A8F-A949-A88DFC0A0373%40charter.net"
+       TITLE="[X-Unix] How to determine which network component is failing">supernaut at underwares.org
+       </A><BR>
+    <I>Wed Jul 26 04:20:00 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002718.html">[X-Unix] How to determine which network component is failing
+</A></li>
+        <LI>Next message: <A HREF="002695.html">[X-Unix] How to determine which network component is failing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2719">[ date ]</a>
+              <a href="thread.html#2719">[ thread ]</a>
+              <a href="subject.html#2719">[ subject ]</a>
+              <a href="author.html#2719">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Just two quick insights, while you guys are busy writing really delicious
+shell scripts, they or may not be useful at all.
+
+1) My experience with Motorola cable modems is, well, displeasing to say the
+least. These modems are known to remember the last MAC address that was
+connected to them. Either that, or it's the ISP's DHCP server that does
+this. I assume it's the modem since the new Scientific Atlanta modems
+Videotron Cable distributes over here don't have this problem. Basically, a
+reboot of the modem is in order for DHCP to work whenever the Mac address
+changes, and in some other situations. This is probably not useful, but it
+is good to know when you're trying to get a DHCP lease and it's failing
+miserably, and you're spending too much time in obscure network settings.
+
+2) If you are to use an &quot;opened&quot; firmware with your router (I have been
+building my own firmware images for various needs, including a municipal
+wireless project in my local town), you should know that the SSH server that
+is normally used is DropBear SSH, since OpenSSH would waste many precious
+megabytes of Flash memory. I had only limited success in adding public keys
+to DropBear. In fact, I think it downright doesn't support that. You can use
+keys to auth FROM the dropbear client, that will work. But the keys have to
+be in dropbear format, and depending on your distribution on the router (I
+think sveasoft does it that way, don't remember), the keys are stored in
+NVRAM. (this can be access by using the nvram(1) command).
+
+If you get OpenSSH on the router, you could use a passwordless key, but only
+allow it to run one particular command. That would work too. You just have
+to add the following line to authorized_keys.
+
+
+
+On 26/07/06 05:43, &quot;Charles Howse&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">chowse at charter.net</A>&gt; wrote:
+
+&gt;<i> 
+</I>&gt;<i> On Jul 25, 2006, at 10:45 PM, Stroller wrote:
+</I>&gt;<i> 
+</I>&gt;&gt;<i> Well done!
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> I shall be keeping a copy of these notes in my archive. I shall
+</I>&gt;&gt;<i> have to install curl on a customer's Windows PC and give her an
+</I>&gt;&gt;<i> icon to click which will reboot the router for her.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> On 25 Jul 2006, at 23:25, Charles Howse wrote:
+</I>&gt;&gt;&gt;&gt;<i> ...
+</I>&gt;&gt;&gt;&gt;<i> I think the relevant sections of the HTML are...
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> Addendum:
+</I>&gt;&gt;<i>    &lt;form method=get action=Gozila.cgi&gt;
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> &lt;SCRIPT language=JavaScript&gt;function pppoeAction(F,I)
+</I>&gt;&gt;&gt;&gt;<i> { F.pppoeAct.value = I; F.submit();}function DHCPAct(F,I)
+</I>&gt;&gt;&gt;&gt;<i> { F.dhcpAction.value = I; F.submit();}function showAlert(){alert
+</I>&gt;&gt;&gt;&gt;<i> ('');}&lt;/SCRIPT&gt;
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> and:
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> &lt;input type=hidden name=dhcpAction&gt; ...
+</I>&gt;&gt;&gt;&gt;<i> &lt;input type=button value='DHCP Renew' onClick=DHCPAct(this.form,1)&gt;
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> `curl --manual` gives more examples than `man curl`, but the
+</I>&gt;&gt;&gt;&gt;<i> <A HREF="http://curl.haxx.se/">http://curl.haxx.se/</A> website looks more comprehensive still. They
+</I>&gt;&gt;&gt;&gt;<i> have a mailing list, so you might find what you need by searching
+</I>&gt;&gt;&gt;&gt;<i> the archives of that, or posting to it.
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> I made quite a bit of progress playing with curl this afternoon.
+</I>&gt;&gt;&gt;<i> FYI, the following commands work:
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> - Router -
+</I>&gt;&gt;&gt;<i> # dhcp release - $ curl -u admin:pw &quot;<A HREF="http://192.168.254.254/">http://192.168.254.254/</A>
+</I>&gt;&gt;&gt;<i> Gozila.cgi?dhcpAction=0&quot;
+</I>&gt;&gt;&gt;<i> # dhcp renew - $ curl -u admin:pw &quot;<A HREF="http://192.168.254.254/">http://192.168.254.254/</A>
+</I>&gt;&gt;&gt;<i> Gozila.cgi?dhcpAction=1&quot;
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> These curl commands relate to the HTML / Javascript snippet in the
+</I>&gt;&gt;<i> quoted above it, I think...
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> - Modem -
+</I>&gt;&gt;&gt;<i> # Reboot Modem - $ curl -d &quot;BUTTON_INPUT=Restart%20Cable%20Modem&quot;
+</I>&gt;&gt;&gt;<i> 192.168.100.1/configdata.html
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> Can you possibly post the HMTL from the webpage for the modem,
+</I>&gt;&gt;<i> please, so I can see can example of when I might use this form?
+</I>&gt;&gt;<i> 
+</I>&gt;<i> It's too big, over 5k limit.  Here is all you need.
+</I>&gt;<i> 
+</I>&gt;<i> &lt;FORM METHOD=&quot;POST&quot; ACTION=&quot;http:/configdata.html&quot;&gt;
+</I>&gt;<i> &lt;INPUT TYPE=&quot;submit&quot; NAME=&quot;BUTTON_INPUT&quot;
+</I>&gt;<i> value=&quot;Restart Cable Modem&quot;&gt;
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> --
+</I>&gt;<i> Bubba's FAQ -
+</I>&gt;<i> <A HREF="http://bubbabbq.homeunix.net/faq.html">http://bubbabbq.homeunix.net/faq.html</A>
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i> 
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random stuff:
+</I>&gt;<i>          <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002718.html">[X-Unix] How to determine which network component is failing
+</A></li>
+	<LI>Next message: <A HREF="002695.html">[X-Unix] How to determine which network component is failing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2719">[ date ]</a>
+              <a href="thread.html#2719">[ thread ]</a>
+              <a href="subject.html#2719">[ subject ]</a>
+              <a href="author.html#2719">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

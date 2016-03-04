@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] setting the gateway in Jaguar/Network
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20setting%20the%20gateway%20in%20Jaguar/Network&In-Reply-To=list-9763015%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011688.html">
+   <LINK REL="Next"  HREF="011690.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] setting the gateway in Jaguar/Network</H1>
+    <B>Wesley Griffin</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20setting%20the%20gateway%20in%20Jaguar/Network&In-Reply-To=list-9763015%40mail.ninewire.com"
+       TITLE="[Ti] setting the gateway in Jaguar/Network">wgriffin at fraktured.net
+       </A><BR>
+    <I>Sun Dec 14 11:02:32 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011688.html">Router Issue
+</A></li>
+        <LI>Next message: <A HREF="011690.html">[Ti] Router Issue
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11689">[ date ]</a>
+              <a href="thread.html#11689">[ thread ]</a>
+              <a href="subject.html#11689">[ subject ]</a>
+              <a href="author.html#11689">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Dec 14, 2003, at 1:12 AM, Dr Trevor J. Hutley wrote:
+
+&gt;&gt;&gt;<i> On 13 Dec 2003, at 08:53, Dr Trevor J. Hutley wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> There seems no option in the [Jaguar 10.2.8] Network panel to enter 
+</I>&gt;&gt;&gt;<i> the router ID if the main IP address is assigned by the DHCP server. 
+</I>&gt;&gt;&gt;<i> Is there a way round this?
+</I>&gt;<i>
+</I>&gt;<i> Rather than just explaining what I cannot do, perhaps it is helpful to 
+</I>&gt;<i> see the issue like this:
+</I>&gt;<i>
+</I>&gt;<i> 	I am trying to use the Firewall IP address as the gateway,
+</I>&gt;<i> 	whilst at the same time the DHCP server is assigning the IP address 
+</I>&gt;<i> to my Mac.
+</I>&gt;<i>
+</I>&gt;<i> HOW can this be set up in Jaguar 10.2.8 ?
+</I>
+I just noticed this in Panther as well. I'm curious why the DHCP server 
+is not providing the router address when it assigns the IP address. 
+That's an almost universal configuration of a DHCP server.I know you 
+say your PC guy is busy with students, but I'd ask him why that is, 
+because you're not going to be the only one having this problem. That 
+said...
+
+&gt;<i> From reading the Manual in the Unix terminal, I get the impression 
+</I>&gt;<i> that I should be doing something with this command:
+</I>&gt;<i>
+</I>&gt;<i>  	route [-n] command [-net | -host] destination gateway [netmask]
+</I>
+Yes this is the command you want.
+
+&gt;<i> with this modifier:
+</I>&gt;<i>
+</I>&gt;<i>  	-static    RTF_STATIC     - manually added route
+</I>&gt;<i>
+</I>&gt;<i> although I do not plan to &quot;experiment&quot; with such a command unless I 
+</I>&gt;<i> get some specific guidance.
+</I>
+But you don't want the -static option. Here's what you want:
+
+route add default &lt;router ip&gt;
+
+specifying your firewall IP for &lt;router ip&gt;. You could add this command 
+to one of the startup scripts in /etc to have it persist across boots. 
+Or, you could simply edit the /etc/hostconfig file and change the line:
+
+ROUTER=-AUTOMATIC-
+
+to
+
+ROUTER=&lt;router ip&gt;
+
+I haven't personally tried this, but I would expect it to work. That 
+should get you working, but I'd really look into why the DHCP server is 
+not providing a default gateway with the address assignment.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011688.html">Router Issue
+</A></li>
+	<LI>Next message: <A HREF="011690.html">[Ti] Router Issue
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11689">[ date ]</a>
+              <a href="thread.html#11689">[ thread ]</a>
+              <a href="subject.html#11689">[ subject ]</a>
+              <a href="author.html#11689">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

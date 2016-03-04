@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Directory Sizes
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Directory%20Sizes&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000690.html">
+   <LINK REL="Next"  HREF="000692.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Directory Sizes</H1>
+    <B>Alex</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Directory%20Sizes&In-Reply-To="
+       TITLE="Directory Sizes">alist at sprint.ca
+       </A><BR>
+    <I>Tue Apr 13 10:47:19 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000690.html">[X-Unix] procmail
+</A></li>
+        <LI>Next message: <A HREF="000692.html">[X-Unix] Directory Sizes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#691">[ date ]</a>
+              <a href="thread.html#691">[ thread ]</a>
+              <a href="subject.html#691">[ subject ]</a>
+              <a href="author.html#691">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>There's something I don't understand about directory sizes, and I hope 
+some kind soul can explain what for old Unix hands must appear as 
+elementary.
+
+I have a folder containing four files. Finder lists its content as 
+follows:
+
+    file_1    23 MB    (24,172,892)
+    file_2   1.2 MB     (1,345,129)
+    file_3   640 KB       (654,407)
+    file_4   644 KB       (657,208)
+
+    Total:  25.6 MB    (26,835,784)
+
+(I added bytes in parantheses for obvious reasons.) Clearly, the sum of 
+the sizes doesn't match the total, but, if I add the size of the 
+invisible .DS_Store file, they do. So that's fine.
+
+Now, I go to the Terminal. Here's what ls -al lists
+
+       238  .
+       272  ..
+      6148  .DS_Store
+  24172892  file_1
+         0  file_2
+         0  file_3
+         0  file_4
+
+(I draw the conclusion that ls doesn't know about resource forks, and, 
+while file_1 is all data and no resource, the other three files have 
+all their stuff in their resource forks.)
+
+Then I do a du -k and the result is
+
+   26216
+
+which, multiplied by 1024 bytes, is 26,845,184. The sum of the sizes 
+listed by ls is 24,179,550, so I assume that, unlike ls, du knows about 
+resource forks. Nevertheless, there is a discrepancy between the total 
+reported by Finder and the total reported by du. Why? (And, an 
+ancillary question: Is there a command which does what ls does, but 
+knows about resource forks?).
+
+TIA, f
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000690.html">[X-Unix] procmail
+</A></li>
+	<LI>Next message: <A HREF="000692.html">[X-Unix] Directory Sizes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#691">[ date ]</a>
+              <a href="thread.html#691">[ thread ]</a>
+              <a href="subject.html#691">[ subject ]</a>
+              <a href="author.html#691">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] 10.5 cli -what's up with 'more'?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%2010.5%20cli%20-what%27s%20up%20with%20%27more%27%3F&In-Reply-To=A0C14EF5-0DDA-47AA-A32B-A22E2B5C296C%40myrealbox.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="002914.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] 10.5 cli -what's up with 'more'?</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%2010.5%20cli%20-what%27s%20up%20with%20%27more%27%3F&In-Reply-To=A0C14EF5-0DDA-47AA-A32B-A22E2B5C296C%40myrealbox.com"
+       TITLE="[X-Unix] 10.5 cli -what's up with 'more'?">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Sat Dec  1 10:25:26 PST 2007</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="002914.html">[X-Unix] 10.5 cli -what's up with 'more'?   [a}
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2904">[ date ]</a>
+              <a href="thread.html#2904">[ thread ]</a>
+              <a href="subject.html#2904">[ subject ]</a>
+              <a href="author.html#2904">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 22:37 +0000 30/11/07, Stroller wrote:
+&gt;<i>On 30 Nov 2007, at 06:32, David Ledger wrote:
+</I>&gt;&gt;<i>  That's the way some of the Linux distributions are going - at 
+</I>&gt;&gt;<i>least, the HP RedHat one is. It's the thing I most dislike about 
+</I>&gt;&gt;<i>Linux. Lots of people making trivial changes to make it the way 
+</I>&gt;&gt;<i>*they* think it should be. Under HP RedHat, 'ls' sorts the '.' 
+</I>&gt;&gt;<i>files amongst the others. Why?
+</I>&gt;<i>Are you sure this isn't configured in the distro's default 
+</I>&gt;<i>.bash_profile or .bashrc? (or /etc/profile?)
+</I>
+Does the same when using /bin/ls, so it's not an inherited alias or 
+function. I work under ksh with my own aliases pointing back at 
+/bin/ls anyway.
+
+&gt;<i>The GNU versions of the &quot;standard utilities&quot; are different from 
+</I>&gt;<i>those in Posix, System V or the BSDs, but I personally think these 
+</I>&gt;<i>changes are often (much needed) improvements upon the originals and 
+</I>&gt;<i>are generally for the best. IMO Bash &amp; the GNU utilis are what a 
+</I>&gt;<i>modern Unix shouldbe aiming for - it's certainly my expectation in 
+</I>&gt;<i>terms of ease-of-use.
+</I>
+I've yet to find a change that I would class as a much needed 
+improvement other than 'tar's new unwillingness to archive from '/'. 
+I've no problem with them making the changes they do, as long as they 
+require a flag, environment variable or '.' file to trigger them. 
+Just making arbitrary changes break what would be cross platform 
+scripts.
+
+When I used to do 'ssh &lt;host&gt; &lt;command&gt;' I now have to do
+	case &quot;$(ssh &lt;host&gt; uname)&quot; in
+	Linux)	ssh &lt;host&gt; &lt;Linux version of command&gt; ;;
+	*)	ssh &lt;host&gt; &lt;command&gt; ;;
+	esac
+or I would if I didn't have a local cache of what each host runs to 
+query instead.
+
+As for ease of use, I don't know what is easier about Linux. One of 
+the original command line objectives of Unix, never use two 
+keystrokes where one would do, is lost in Linux with its 
+--givetheoptionalongnamesopeopleknowwhatitsdoes flags that you can't 
+remember.
+
+&gt;<i>I'd be surprised if Dead Rat - or any other modern distro - is using 
+</I>&gt;<i>any other version of `ls` than the GNU one. I think that - with a 
+</I>&gt;<i>bit of hunting around - it should be possible to pin down how `ls` 
+</I>&gt;<i>is being called and get it to behave the way you expect.
+</I>
+I wouldn't know what the GNU one is like. My Linux exposure is small, 
+as it's mainly useful on the desktop. These machines are some that 
+are used at the enterprise level, and proving weekly that it's not 
+quite ready yet.
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+HP-UX specialist of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x-unix.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="002914.html">[X-Unix] 10.5 cli -what's up with 'more'?   [a}
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2904">[ date ]</a>
+              <a href="thread.html#2904">[ thread ]</a>
+              <a href="subject.html#2904">[ subject ]</a>
+              <a href="author.html#2904">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] DYLD_LIBRARY_PATH
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20DYLD_LIBRARY_PATH&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001615.html">
+   <LINK REL="Next"  HREF="001617.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] DYLD_LIBRARY_PATH</H1>
+    <B>Phil Dobbin</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20DYLD_LIBRARY_PATH&In-Reply-To="
+       TITLE="[X-Unix] DYLD_LIBRARY_PATH">phildobbin at gmail.com
+       </A><BR>
+    <I>Mon Mar  7 16:15:28 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001615.html">[X-Unix] System V message queues?
+</A></li>
+        <LI>Next message: <A HREF="001617.html">[X-Unix] DYLD_LIBRARY_PATH
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1616">[ date ]</a>
+              <a href="thread.html#1616">[ thread ]</a>
+              <a href="subject.html#1616">[ subject ]</a>
+              <a href="author.html#1616">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I'm having great difficulty using libtool to link DSOs after I upgraded httpd.
+
+Upon completion of `make install' when trying to start the server I got this error message:
+
+---------------------------------------------------------
+
+/Library/Apache2/bin/apachectl start
+dyld: /Library/Apache2/bin/httpd version mismatch for library: /Library/Apache2/lib/libexpat.0.dylib (compatibility version of user: 5.0.0 greater than library's version: 2.0.0)
+/Library/Apache2/bin/apachectl: line 87: 15100 Trace/BPT trap          $HTTPD -k $ARGV
+
+----------------------------------------------------------
+
+I believe one way is to use DYLD_LIBRARY_PATH (I'm using bash) but am struggling. The `make install' advised:
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `DYLD_LIBRARY_PATH' environment variable
+     during execution
+     
+I have asked on the Apache Users list but with no success and I'm wondering if anybody could give me any tips.
+
+Cheers,
+
+Regards,
+
+    Phil (please cc me if possible: I'm on digest).
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001615.html">[X-Unix] System V message queues?
+</A></li>
+	<LI>Next message: <A HREF="001617.html">[X-Unix] DYLD_LIBRARY_PATH
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1616">[ date ]</a>
+              <a href="thread.html#1616">[ thread ]</a>
+              <a href="subject.html#1616">[ subject ]</a>
+              <a href="author.html#1616">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

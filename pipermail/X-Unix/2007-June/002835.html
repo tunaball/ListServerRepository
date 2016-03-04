@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] finding duplicate files
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20finding%20duplicate%20files&In-Reply-To=BC28148A-0BEA-49CD-BEF7-0C05143619F0%40pha.jhu.edu">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002834.html">
+   <LINK REL="Next"  HREF="002836.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] finding duplicate files</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20finding%20duplicate%20files&In-Reply-To=BC28148A-0BEA-49CD-BEF7-0C05143619F0%40pha.jhu.edu"
+       TITLE="[X-Unix] finding duplicate files">ecrist at secure-computing.net
+       </A><BR>
+    <I>Wed Jun 20 11:12:45 PDT 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002834.html">[X-Unix] finding duplicate files
+</A></li>
+        <LI>Next message: <A HREF="002836.html">[X-Unix] finding duplicate files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2835">[ date ]</a>
+              <a href="thread.html#2835">[ thread ]</a>
+              <a href="subject.html#2835">[ subject ]</a>
+              <a href="author.html#2835">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Jun 20, 2007, at 12:27 PMJun 20, 2007, Robert Hoy wrote:
+
+&gt;<i> Hi.  Is there an efficient way to find files which are present in  
+</I>&gt;<i> both gzipped and ungzipped form?
+</I>&gt;<i> They would be in the same directory, but I would like to search  
+</I>&gt;<i> across all directories from one at high level.  That is, I want to  
+</I>&gt;<i> find all cases where &quot;a&quot; and &quot;a.gz&quot; are present in the same directory.
+</I>&gt;<i>
+</I>&gt;<i> Thanks,
+</I>&gt;<i> Rob
+</I>&gt;<i>
+</I>
+If you've got perl available, here's what I used:
+
+#!/usr/bin/perl
+
+foreach $file (`find . | grep -v .gz`) {
+	chomp($file = $file);
+	if (-e &quot;$file.gz&quot;){
+		print &quot;$file\n&quot;;
+	}
+}
+
+If you don't want to put that in a file and run it, you can do the  
+following just as easily:
+ From a command prompt:
+
+perl -e 'foreach $file ( `find . | grep -v .gz` ) { chomp ( $file =  
+$file ) ; if ( -e &quot;$file.gz&quot; ) { print &quot;$file\n&quot; ; } }'
+
+This will search all directories from where it's run for file and if  
+file.gz exists, it will print the file name and directory.  Note,  
+this doesn't search to see if file and file.gz exist in different  
+directories.
+-----
+Eric F Crist
+Secure Computing Networks
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002834.html">[X-Unix] finding duplicate files
+</A></li>
+	<LI>Next message: <A HREF="002836.html">[X-Unix] finding duplicate files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2835">[ date ]</a>
+              <a href="thread.html#2835">[ thread ]</a>
+              <a href="subject.html#2835">[ subject ]</a>
+              <a href="author.html#2835">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

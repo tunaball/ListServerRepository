@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Memory usage
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Memory%20usage&In-Reply-To=BE64967D.1EA4%25rgilmor%40uwo.ca">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="004102.html">
+   <LINK REL="Next"  HREF="004101.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Memory usage</H1>
+    <B>Brian Medley</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Memory%20usage&In-Reply-To=BE64967D.1EA4%25rgilmor%40uwo.ca"
+       TITLE="[X4U] Memory usage">bpm-lists-x4u at 4321.tv
+       </A><BR>
+    <I>Mon Mar 21 15:25:59 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004102.html">[X4U] Memory usage
+</A></li>
+        <LI>Next message: <A HREF="004101.html">[X4U] ISight Camera Questions -  FireWire
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4108">[ date ]</a>
+              <a href="thread.html#4108">[ thread ]</a>
+              <a href="subject.html#4108">[ subject ]</a>
+              <a href="author.html#4108">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Mon, Mar 21, 2005 at 03:19:25PM -0500, Richard Gilmore wrote:
+
+&gt;<i> I was just checking out the Activity Monitor and noticed under
+</I>&gt;<i> system memory is lists, Wired, Active, Inactive and Free what's
+</I>&gt;<i> the difference between these? It also lists virtual memory is
+</I>&gt;<i> that the same as swap space?
+</I>&gt;<i> 
+</I>&gt;<i> Just curious
+</I>
+Active list: Pages currently resident in, and mapped to, physical
+memory and recently accessed.
+
+Inactive list: Pages currently resident in physical memory but
+not recently accessed. These pages contain valid data but may be
+unmapped at present.
+
+Free list: Unmapped pages (no longer containing valid data) of
+physical memory available to the system at no cost; also known as
+the free pool.  These  pages are not associated with any address
+space or VM object, and they are thus  free for immediate use.
+
+When the number of pages on the free list falls below a threshold
+(determined by  the size of physical memory), the pager attempts
+to balance the queues. It does this  by pulling pages from the
+inactive list. If the page has been accessed recently, it is
+placed on the end of the active list (reactivated). If the page
+has not been recently accessed, but the page has been written to,
+the contents of this physical page are  paged out to the
+associated backing store. If the page was neither access recently
+nor written to and is not permanently resident (wired), it is
+stolen (any current virtual  mappings to it are destroyed) and
+added to the free list. Once the free list size  exceeds the
+target threshold, the pager rests.
+
+The kernel moves pages from the active list to the inactive list
+if they are not  accessed; it moves pages from the inactive list
+to the active list on a soft fault (see Paging Virtual Memory In
+(page 19)).  When virtual pages are swapped out, the  associated
+physical pages are placed in the free list. Also, when processes
+explicitly  free memory, the kernel moves the affected pages to
+the free list.
+
+I believe wired means that the page can't be swapped to disk.
+Looks like I didn't copy 'n paste enough ...
+
+-- 
+~`^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-., \|/  (___)  \|/ _,.-=~'`^`
+                                      @~./'O o`\.~@
+      &quot;Knowledge is Power&quot;           /__( \___/ )__\  *PPPFFBT!*
+         -- Francis Bacon               `\__`U_/'
+ _.-=~'``'~=-._.-=~'``'~=-._.-=~'`^`'~= &lt;____|'  ^^`'~=-.,__,.-=
+~'^`'~=-._.-=~'`^`'~=-._.-=~'^'~=-.,__,.-==--^'~=-.,__,.-=~'`^`
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004102.html">[X4U] Memory usage
+</A></li>
+	<LI>Next message: <A HREF="004101.html">[X4U] ISight Camera Questions -  FireWire
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4108">[ date ]</a>
+              <a href="thread.html#4108">[ thread ]</a>
+              <a href="subject.html#4108">[ subject ]</a>
+              <a href="author.html#4108">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] shell script - online or not?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20shell%20script%20-%20online%20or%20not%3F&In-Reply-To=FDAE57AD-670A-470C-819E-B75E65D75F45%40charter.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002671.html">
+   <LINK REL="Next"  HREF="002673.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] shell script - online or not?</H1>
+    <B>Wing Wong</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20shell%20script%20-%20online%20or%20not%3F&In-Reply-To=FDAE57AD-670A-470C-819E-B75E65D75F45%40charter.net"
+       TITLE="[X-Unix] shell script - online or not?">wingedpower at gmail.com
+       </A><BR>
+    <I>Fri Jun  2 09:54:34 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002671.html">[X-Unix] shell script - online or not?
+</A></li>
+        <LI>Next message: <A HREF="002673.html">[X-Unix] shell script - online or not?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2672">[ date ]</a>
+              <a href="thread.html#2672">[ thread ]</a>
+              <a href="subject.html#2672">[ subject ]</a>
+              <a href="author.html#2672">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 6/2/06, Charles Howse &lt;<A HREF="../../../mailman/listinfo/x-unix.html">chowse at charter.net</A>&gt; wrote:
+
+&gt;<i> What might I be doing wrong?
+</I>
+Short answer? Ping's error output needs to be redirected to standard out:
+
+ping ..... 2&gt;&amp;1 | grep ....
+
+Also need to take into account when the logfile doesn't exist.
+
+Longer answer:
+
+In your code, the data tested and the data written would not be the
+same since you are trying to run the same test again when you write to
+the file. Included below is a variation of your script. You can change
+the logfile value at the start of the script instead of having to
+change every instance of it throughout the script.
+
+Tail command using the short parameter version.
+
+Ping's output redirected.
+
+Logfile presence checked beforehand.
+
+
+#!/bin/sh
+host=24.159.64.20
+logfile=ping_results.txt
+
+if [ ! -f $logfile ]; then
+      echo &quot;$logfile either doesn't exist or isn't a file! Please check!&quot;
+      exit 1
+fi
+
+test=`ping -c 5 $host 2&gt;&amp;1 | grep packets`
+look=`tail -1 ping_results.txt`
+
+if [ &quot;$test&quot; == &quot;$look&quot; ] ; then
+        :
+else
+        echo &gt;&gt; $logfile
+        date &gt;&gt; $logfile
+        echo &quot;$test&quot; &gt;&gt; $logfile
+fi
+
+exit 0
+
+
+-- 
+Wing Wong
+<A HREF="../../../mailman/listinfo/x-unix.html">wingedpower at gmail.com</A>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002671.html">[X-Unix] shell script - online or not?
+</A></li>
+	<LI>Next message: <A HREF="002673.html">[X-Unix] shell script - online or not?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2672">[ date ]</a>
+              <a href="thread.html#2672">[ thread ]</a>
+              <a href="subject.html#2672">[ subject ]</a>
+              <a href="author.html#2672">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

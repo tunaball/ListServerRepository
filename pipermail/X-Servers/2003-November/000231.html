@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Webdav authentication problems
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=Webdav%20authentication%20problems&In-Reply-To=listadmin-9524689%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000232.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Webdav authentication problems</H1>
+    <B>Craig Hagerman</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=Webdav%20authentication%20problems&In-Reply-To=listadmin-9524689%40mail.ninewire.com"
+       TITLE="Webdav authentication problems">craighagerman at sympatico.ca
+       </A><BR>
+    <I>Sat Nov 29 21:35:44 PST 2003</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000232.html">Out of Office AutoReply: X-Servers Digest #279
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#231">[ date ]</a>
+              <a href="thread.html#231">[ thread ]</a>
+              <a href="subject.html#231">[ subject ]</a>
+              <a href="author.html#231">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+I need some help figuring out a problem I am having setting up webdav.
+
+I am currently using OS 10.3 (not server), running the default apache.
+Previously under 10.2 I had webdav set up correctly so that I could transfer
+files from home to work etc. However, now I seem to be having a problem with
+authentication that I just can&#185;t figure out. If I use no authentication I
+can log into the webdav folder and PUT and GET files. But when I use
+authentication (which is only proper) it won&#185;t recognise my passwords. I
+have checked out tons of web resources, checked and double-checked
+everything, but I can&#185;t get this problem figured out.
+
+The relevant parts of my httpd.conf file look like this:
+
+DAVLockDB /Library/WebServer/davlocks/DAVLockDB
+DAVMinTimeout 600
+
+&lt;Directory &quot;/Library/WebServer/Documents/dav&quot;&gt;
+
+        DAV on
+
+       AllowOverride None
+        AuthName &quot;DAV Restricted&quot;
+        AuthType Basic
+        AuthUserFile /etc/httpd/passwords/webdav.htaccess
+
+        require valid-user
+
+#       &lt;LimitExcept GET HEAD OPTIONS&gt;
+#               require user craig
+#       &lt;/LimitExcept&gt;
+
+&lt;/Directory&gt;
+
+Of course, I also uncommented both the LoadModule and AddModule parts of
+httpd.conf file.
+
+The DAVLock file (webdav.htaccess) and the dav folder were both chowned to
+&#140;www&#185; (same as Apple&#185;s Apache) and were chmod&#185;ed to 777 just incase those
+permissions were the problem.
+
+The problem seems to be with htpasswd. I did
+%  htpasswd webdav.access craig
+(with the &#173;c flag first time, and with the &#173;m flag sometimes)
+
+And entered a simple password. When I checked out the resultant file
+everything looks correct:
+craig:kOoBaHfoxGw.o
+guest:cDZyVvnO83ggk
+
+But when I try to connect to server <A HREF="http://192.168.123.174/dav">http://192.168.123.174/dav</A> or try to
+publish an iCal calendar I just get error messages saying that one or more
+required items can&#185;t be found (error code -43).  When I try server
+<A HREF="http://127.0.0.1/dav">http://127.0.0.1/dav</A> I at least get the authentication box to come up and it
+would then tell me that my user name or password was incorrect.
+
+Any information or guidance in solving this problem would be much
+appreciated.
+
+Craig Hagerman
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000232.html">Out of Office AutoReply: X-Servers Digest #279
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#231">[ date ]</a>
+              <a href="thread.html#231">[ thread ]</a>
+              <a href="subject.html#231">[ subject ]</a>
+              <a href="author.html#231">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

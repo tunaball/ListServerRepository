@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] [ANN] unmac
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20%5BANN%5D%20unmac&In-Reply-To=C2613D05-0A79-424E-9168-36E2E00A08CC%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003207.html">
+   <LINK REL="Next"  HREF="003209.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] [ANN] unmac</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20%5BANN%5D%20unmac&In-Reply-To=C2613D05-0A79-424E-9168-36E2E00A08CC%40secure-computing.net"
+       TITLE="[X-Unix] [ANN] unmac">macmonster at myrealbox.com
+       </A><BR>
+    <I>Wed Jan  7 08:27:31 PST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003207.html">[X-Unix] [ANN] unmac
+</A></li>
+        <LI>Next message: <A HREF="003209.html">[X-Unix] [ANN] unmac
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3208">[ date ]</a>
+              <a href="thread.html#3208">[ thread ]</a>
+              <a href="subject.html#3208">[ subject ]</a>
+              <a href="author.html#3208">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 7 Jan 2009, at 14:52, Eric F Crist wrote:
+&gt;<i> ...
+</I>&gt;<i> Couldn't this same thing be accomplished with a shell script calling  
+</I>&gt;<i> the find command?  In that instance, ruby/etc isn't required.
+</I>&gt;<i>
+</I>&gt;<i> As an example (this could be cleaned up with a proper regex, I think):
+</I>&gt;<i>
+</I>&gt;<i> find . -name &quot;.DS_Store&quot; \
+</I>&gt;<i> -or -name &quot;.Spotlight-V100&quot; \
+</I>&gt;<i> -or -name &quot;.fseventsd&quot; \
+</I>&gt;<i> -or -name &quot;.Trashes&quot; \
+</I>&gt;<i> -or -name &quot;__MACOSX&quot; \
+</I>&gt;<i> -maxdepth 1 \
+</I>&gt;<i> -delete
+</I>&gt;<i>
+</I>&gt;<i> Again, just an example.
+</I>
+I had a crack at this a while back, and ended up when I realised how  
+poor my solution was.
+
+IMO you really need to use `file` to check that the files really ARE  
+Mac rubbish.
+
+EG:
+         FILE=/usr/bin/file
+         BASENAME=/bin/basename
+
+           if [[ `$FILE -b &quot;$1&quot;` = &quot;data&quot; ]] &amp;&amp; [[ $BASSNAME =  
+&quot;.DS_Store&quot; ]]
+           then
+             echo Removing &quot;$1&quot; &gt;&amp;2  # deal with .DS_Store files once  
+&amp; for all
+                   rm -f &quot;$1&quot;
+           else
+             if [[ `$FILE -b &quot;$1&quot;` = &quot;empty&quot; &amp;&amp; ${BASSNAME:0:4} =  
+&quot;Icon&quot; ]]
+             then
+               echo &quot;Removing $1&quot; &gt;&amp;2  # deal with funny Icon files
+                   rm -f &quot;$1&quot;
+
+           else
+             if [[ `$FILE -b &quot;$1&quot;` = &quot;AppleDouble encoded Macintosh  
+file&quot; ]]
+             then       # file is prolly a resource-fork
+               if [[ $BASSNAME = &quot;._.DS_Store&quot; ]]
+                 then
+                 echo &quot;Removing $1&quot; &gt;&amp;2
+                rm -f &quot;$1&quot;
+
+               else
+                 if [[ ${BASSNAME:0:6} = &quot;._Icon&quot; ]]
+                 then
+                 echo &quot;Removing $1&quot; &gt;&amp;2
+                                rm -f &quot;$1&quot;
+           ...
+
+At the time I was unaware that bash sported functions, so worked  
+around this by having the script call itself recursively and behave  
+differently depending whether it was called with a directory or file  
+for an argument. I gave up when I realised how horrible this was, the  
+script having spawned a zillion children of itself &lt;shame&gt;.
+
+Although I would love someone else to address this problem, I too  
+would be a little reluctant to use a solution that depended upon Ruby,  
+just because I don't know anything about the language. I just really  
+like Bash for this sort of thing, just because it's everywhere.
+
+Stroller.
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003207.html">[X-Unix] [ANN] unmac
+</A></li>
+	<LI>Next message: <A HREF="003209.html">[X-Unix] [ANN] unmac
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3208">[ date ]</a>
+              <a href="thread.html#3208">[ thread ]</a>
+              <a href="subject.html#3208">[ subject ]</a>
+              <a href="author.html#3208">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

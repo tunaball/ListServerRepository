@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MacDV] Re: 23.98 fps when using Cinematize or DVDxDV
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%2023.98%20fps%20when%20using%20Cinematize%20or%20DVDxDV&In-Reply-To=r02010500-1042-C2EF16A4823911DA956B000D93AFEE4E%40%5B24.6.61.95%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="014143.html">
+   <LINK REL="Next"  HREF="014145.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MacDV] Re: 23.98 fps when using Cinematize or DVDxDV</H1>
+    <B>Aaron</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%2023.98%20fps%20when%20using%20Cinematize%20or%20DVDxDV&In-Reply-To=r02010500-1042-C2EF16A4823911DA956B000D93AFEE4E%40%5B24.6.61.95%5D"
+       TITLE="[MacDV] Re: 23.98 fps when using Cinematize or DVDxDV">macuser at aarons.fastmail.fm
+       </A><BR>
+    <I>Wed Jan 11 03:48:06 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="014143.html">[MacDV] Re: 23.98 fps when using Cinematize or DVDxDV
+</A></li>
+        <LI>Next message: <A HREF="014145.html">[MacDV] Re: 23.98 fps when using Cinematize or DVDxDV
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14144">[ date ]</a>
+              <a href="thread.html#14144">[ thread ]</a>
+              <a href="subject.html#14144">[ subject ]</a>
+              <a href="author.html#14144">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>Date: Tue, 10 Jan 2006 16:32:34 -0800
+</I>&gt;<i>From: &quot;Dennis R. Cohen&quot; &lt;<A HREF="../../../mailman/listinfo/macdv.html">drcohen at mac.com</A>&gt;
+</I>&gt;<i>To: <A HREF="../../../mailman/listinfo/macdv.html">macdv at listserver.themacintoshguy.com</A>
+</I>&gt;<i>Subject: [MacDV] Re: 23.98 fps when using Cinematize or DVDxDV
+</I>&gt;<i>Reply-To: &quot;A place to discuss digital video on Macintosh.&quot; &lt;<A HREF="../../../mailman/listinfo/macdv.html">macdv at listserver.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>On 1/10/06 at 5:46 PM, whoisquilty &lt;<A HREF="../../../mailman/listinfo/macdv.html">whoisquilty at gmail.com</A>&gt; the following
+</I>&gt;<i>electronic message:
+</I>&gt;<i>
+</I>&gt;&gt;<i>Hello -
+</I>&gt;&gt;<i>
+</I>&gt;<i> &gt;I keep getting Quicktime files with 23.98 FPS when I convert a DVD to
+</I>&gt;<i> &gt;MOV with both Cinematize and DVDxDV. I'm trying to create a NTSC file
+</I>&gt;&gt;<i>from the DVD. The frame is sized to 720x480. But the frame rate always
+</I>&gt;&gt;<i>comes out to 23.98. I ripped the files using Mac The Ripper 2.6.6.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Any ideas what would cause this?
+</I>
+I know nothing about Cinematize or DVDxDV, but I'll make an educated guess about what's going on:
+
+If an NTSC DVD was created from a 24 fps movie, it really only contains ~24 fps, along with a code that tells the DVD player to create one extra frame for each four given ones. (Presumably, the DVD player uses 3:2 pulldown to create the extra frames, but I don't suppose it has to!) When a program is converting the DVD's MPEG-2 file to a MOV (or AVI or MPEG-4) file for displaying the movie with a computer, there's really no reason to put in the extra frames, so the file is created with a frame rate of ~24 fps, as in the original movie. (I'm not sure why it would be at 23.976 fps rather than 24 fps, although 23.976 fps is exactly 4/5 of the NTSC frame rate of 29.97 fps.)
+
+(BTW, I'm curious why one would want to create a MOV file with a frame rate of ~30 fps if there really are only 24 frames per second in the original movie.)
+
+&gt;<i>DVDxDV and Cinematize both default to encoding at what is called &quot;NTSC
+</I>&gt;<i>Film&quot; rate -- 23.976 fps.
+</I>
+Do they do this even when the DVD was made from original NTSC video with ~30 original frames per second? I doubt it, and would have a low opinion of a program that did that, unless it were creating images to be put back on film!
+
+&gt;<i>If you check the frame rate of the VOB files
+</I>&gt;<i>ripped by MtR, you'll see they're still at 29.97 fps.
+</I>
+According to what indicator?
+
+&gt;<i>DVDxDV refers to
+</I>&gt;<i>the as &quot;3:2 Pulldown&quot; -- you'll need to use DVDxDV Pro (or some other
+</I>&gt;<i>converter) to avoid the pulldown implementation.
+</I>&gt;<i>
+</I>&gt;<i>--
+</I>&gt;<i>Dennis R. Cohen
+</I>
+If I'm right here, the program's that are creating the  23.98 fps MOV files ARE avoiding &quot;the pulldown implementation&quot;, since they aren't creating any extra frames!
+
+BTW, I found a fairly good explanation of &quot;3:2 Pulldown&quot; at &lt;<A HREF="http://www.dvdfile.com/news/special_report/production_a_z/3_2_pulldown.htm">http://www.dvdfile.com/news/special_report/production_a_z/3_2_pulldown.htm</A>&gt; and intend to reread it when I'm more wide awake. ;-)
+
+ - Aaron
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="014143.html">[MacDV] Re: 23.98 fps when using Cinematize or DVDxDV
+</A></li>
+	<LI>Next message: <A HREF="014145.html">[MacDV] Re: 23.98 fps when using Cinematize or DVDxDV
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14144">[ date ]</a>
+              <a href="thread.html#14144">[ thread ]</a>
+              <a href="subject.html#14144">[ subject ]</a>
+              <a href="author.html#14144">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

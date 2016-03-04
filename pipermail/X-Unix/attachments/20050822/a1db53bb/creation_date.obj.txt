@@ -1,0 +1,26 @@
+#import <stdio.h>
+#import <stdlib.h>
+#import <Foundation/NSString.h>
+#import <Foundation/NSFileManager.h>
+#import <Foundation/NSDictionary.h>
+#import <Foundation/NSDateFormatter.h>
+#import <Foundation/NSAutoReleasePool.h>
+
+int main(int argc, const char *argv[]) {
+  if (argc != 2) {
+    puts("Usage: creation_date filename");
+    exit(EXIT_FAILURE);
+  }
+  NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+
+  NSDateFormatter *formatter = [[NSDateFormatter alloc] initWithDateFormat:@"%Y-%m-%d" allowNaturalLanguage:NO];
+  NSString *fileName = [[NSString alloc] initWithCString:argv[1] encoding:[NSString defaultCStringEncoding]];
+  NSDictionary *attrs = [[NSFileManager defaultManager] fileAttributesAtPath:fileName traverseLink:YES];
+  printf("%s\n", [[formatter stringFromDate:[attrs objectForKey:@"NSFileCreationDate"]] UTF8String]);
+
+  [fileName release];
+  [formatter release];
+  [pool release];
+
+  return EXIT_SUCCESS;;
+}

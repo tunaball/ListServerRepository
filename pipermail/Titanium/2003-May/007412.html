@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> No subject
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=No%20subject&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="007411.html">
+   <LINK REL="Next"  HREF="007413.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>No subject</H1>
+    <B>Wayne Swingle</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=No%20subject&In-Reply-To="
+       TITLE="No subject">swingle at ca.inter.net
+       </A><BR>
+    <I>Mon May 19 23:47:43 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="007411.html">[Ti] Dual monitor crash on PB667
+</A></li>
+        <LI>Next message: <A HREF="007413.html">[Ti] 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7412">[ date ]</a>
+              <a href="thread.html#7412">[ thread ]</a>
+              <a href="subject.html#7412">[ subject ]</a>
+              <a href="author.html#7412">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks, Mike.  You may be right about the finder, but I have tried the 
+following, which may be of interest to PB 667 users.  I downloaded the 
+following apps:
+-Quartz Extreme Check (macupdate.com).......(checks all monitors to see 
+if Quartz Extreme is active)
+-PCI Extreme! (macupdate.com)........................(modifies the 
+config.plist to enable Quartz Extreme on PCI Radeon cards, as well as 
+earlier Radeon Notebook on board  video with only 8 meg VRAM. The app 
+will also let users have Extreme enabled and Extreme disabled cards 
+co-exist)
+-Quartz Debugger (apple.com)
+
+The Ti-book 667 has a built in Radeon 16 meg, which just meets Apple's 
+default minimum of 16 meg vram (radeon) to work with Quartz Extreme. 
+With no external VGA connected, I verified that Quartz Extreme was 
+indeed active.  I then re-booted with the VGA monitor attached, and 
+verified with Quartz Extreme Check that Quartz Extreme was off on both 
+monitors.  This is due to the onboard Radeon 16 meg mobility card 
+having to split its Vram between the two monitors.
+
+I then ran the Radeon (8 MB) Install.pkg included with PCI Extreme!,  
+and rebooted. Voila!  Quartz extreme enabeld for both monitors. I then 
+attempted to crash the system by opening,closing, and minimizing 
+windows on the second monitor.  No problems at all.  I would deduce 
+that whatever part of OS 10.2.6 which handles window redraws across 2 
+monitors is faulty when Quartz Extreme is not in use.
+
+I then booted Pro-tools 6.0.1, the app for which I absolutely need 2 
+monitors.  The mix window worked fine on the second monitor.  
+Previously simply dragging it there would crash the system completely, 
+and if it did not, a resize would. Some apps would be ok on the second 
+screen, but the Dock, Finder windows, and Itunes were dangerous to run 
+there. Any operation which caused a window or window animation to cross 
+over the 2 displays would crash. I am happy..almost.
+
+There are a few drawbacks. Enabling Quartz Extreme on both displays 
+with an effective  vram of 8 megs each seemed to speed things up, like 
+they would be with no VGA attached.  However, QuickTime movie playback 
+was nearly impossible.  Forget about Itunes Visualizer at full screen.  
+(without PCI extreme installed, it would automatically scale down its 
+size, with it installed, system crashes if full screen attempted.)  But 
+ProTools runs just fine.  PCI Extreme comes with a script to return the 
+system to default, so it would be fairly easy to switch back and forth 
+as needed.
+
+Aside from getting a newer machine, this seems to be a workaround for 
+now.  I still need to see if I can capture using FC pro with the new 
+settings, somehow I doubt it would work well.  I need to be able to 
+send a dv stream out the firewire from Protools, while using the 8 meg 
+vram hack.  If anyone cares to know the result of that experiment to 
+come, let me know.
+
+Cheers!!!
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="007411.html">[Ti] Dual monitor crash on PB667
+</A></li>
+	<LI>Next message: <A HREF="007413.html">[Ti] 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7412">[ date ]</a>
+              <a href="thread.html#7412">[ thread ]</a>
+              <a href="subject.html#7412">[ subject ]</a>
+              <a href="author.html#7412">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

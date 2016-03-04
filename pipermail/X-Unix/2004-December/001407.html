@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] NFS share?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20NFS%20share%3F&In-Reply-To=20041220160840.2ABEB1E99C9%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001406.html">
+   <LINK REL="Next"  HREF="001408.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] NFS share?</H1>
+    <B>Robert Frank</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20NFS%20share%3F&In-Reply-To=20041220160840.2ABEB1E99C9%40listserver.themacintoshguy.com"
+       TITLE="[X-Unix] NFS share?">robert.frank at unibas.ch
+       </A><BR>
+    <I>Mon Dec 20 22:26:41 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001406.html">[X-Unix] Beginners questions on Unix Mail
+</A></li>
+        <LI>Next message: <A HREF="001408.html">[X-Unix] Beginners questions on Unix Mail
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1407">[ date ]</a>
+              <a href="thread.html#1407">[ thread ]</a>
+              <a href="subject.html#1407">[ subject ]</a>
+              <a href="author.html#1407">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Errm, folks, this MacOS (OPENSTEP), not linux ....
+
+/etc/exports is ignored! You will have to make the entries in NetInfo. 
+On the server  this is done with the WorkgroupManager, on the client 
+this is most probably done with the NFSManger, or manually.
+
+Use NetInfoManger to make the following entry:
+
+Connect to the local domain (the default), and authenticate as the 
+administrator or root, then
+  - create a subdirectory 'exports' under the root [click on /, select 
+Directory -&gt; New Subdirectory from the menu,
+          click on the property's value and enter 'exports']
+  - create a subdirectory '/Users/Shared/fc3' under the exports directory
+    [click on exports, select Directory -&gt; New Subdirectory from the 
+menu, click on the property's value and enter '/Users/Shared/fc3']
+- add the following properties and values:
+   opts  ro
+             mapall=nobody
+             192.254.129.117
+   [click on the name property of '/Users/Shared/fc3', select Directory 
+-&gt; New Property from the menu, enter 'opts'
+   double click on the value and enter 'ro'
+   click on the opts property again, select Directory -&gt; New Value from 
+the menu and enter 'mapall=nobody',
+   click on the opts property again, select Directory -&gt; New Value from 
+the menu and enter '192.254.129.117']
+
+Do not enter the quotes.
+
+Save the settings and reboot [the nfs daemons have to be started].
+
+Check that the nfs daemons (nfsd) are running. You should now be able 
+to see the share with
+showmount -e localhost
+
+Robert
+
+On 20 Dec 2004, at 17:08, <A HREF="../../../mailman/listinfo/x-unix.html">x-unix-request at listserver.themacintoshguy.com</A> 
+wrote:
+
+&gt;<i> Hi there everyone,
+</I>&gt;<i>                              I am attempting to create an NFS share
+</I>&gt;<i> directory on my ibook  in the  /Users/Shared/ location , I named this
+</I>&gt;<i> directory fc3 as I have placed some ISO images there so I can install
+</I>&gt;<i> Fedora Core 3 onto my imac from the ibook. I can't find much info
+</I>&gt;<i> anywhere as to what I have to do to configure the NFS server. I added
+</I>&gt;<i> an exports file ( /Users/Shared/fc3 ro mapall=nobody 192.254.129.117 )
+</I>&gt;<i> to the &quot;/etc&quot;  directory and was wondering exactly what it is I have to
+</I>&gt;<i> add to this file? I have connected to the ibook from the imac via eth0
+</I>&gt;<i> after booting from the &quot;boot.iso&quot; disk and I get the the message &quot;This
+</I>&gt;<i> directory cannot be mounted by the NFS server&quot;.
+</I>&gt;<i>                            Obviously I am leaving something out and as 
+</I>&gt;<i> I
+</I>&gt;<i> am but a novice at this am finding it a bit of a challenge!
+</I>&gt;<i>                  T.I.A    John.
+</I>&gt;<i> P.S. I hope I have enough info?
+</I>&gt;<i>
+</I>Departement Informatik   FGB   tel   +41 (0)61 267 14 66
+Universit&#228;t Basel                          fax. +41 (0)61 267 14 61
+Robert Frank
+Klingelbergstrasse 50                 <A HREF="../../../mailman/listinfo/x-unix.html">Robert.Frank at unibas.ch</A>
+CH-4056 Basel
+Switzerland                                   
+<A HREF="http://www.informatik.unibas.ch/personen/frank_r.html">http://www.informatik.unibas.ch/personen/frank_r.html</A>
+
+</PRE>
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001406.html">[X-Unix] Beginners questions on Unix Mail
+</A></li>
+	<LI>Next message: <A HREF="001408.html">[X-Unix] Beginners questions on Unix Mail
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1407">[ date ]</a>
+              <a href="thread.html#1407">[ thread ]</a>
+              <a href="subject.html#1407">[ subject ]</a>
+              <a href="author.html#1407">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

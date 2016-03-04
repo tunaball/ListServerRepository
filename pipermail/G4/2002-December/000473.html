@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Did I miss my bus?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Did%20I%20miss%20my%20bus%3F&In-Reply-To=list-4193095%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000472.html">
+   <LINK REL="Next"  HREF="000481.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Did I miss my bus?</H1>
+    <B>jeff small</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Did%20I%20miss%20my%20bus%3F&In-Reply-To=list-4193095%40mail.ninewire.com"
+       TITLE="[G4] Did I miss my bus?">youaregod at attbi.com
+       </A><BR>
+    <I>Tue Dec 24 12:15:48 PST 2002</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000472.html">Audio Hijack 1.6.5 out now
+</A></li>
+        <LI>Next message: <A HREF="000481.html">[G4] Did I miss my bus?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#473">[ date ]</a>
+              <a href="thread.html#473">[ thread ]</a>
+              <a href="subject.html#473">[ subject ]</a>
+              <a href="author.html#473">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>To clarify,  here is the question (phrased much more clearly) and the 
+answer from Apple tech forums:
+
+<A HREF="http://discussions.info.apple.com/WebX?12@23.uJ84a1w3ehL.4@.3bbd3c47/1">http://discussions.info.apple.com/WebX?12@23.uJ84a1w3ehL.4@.3bbd3c47/1</A>
+
+  Very educational (for me anyway):
+
+I'm adding a WD SE 120 to my machine. I'm putting the original IBM 80 
+on the ATA 66 bus, and the new drive on the ATA 100. My understanding 
+up to this point has been that *all* drives should be set to cable 
+select.
+
+I just read a comment by Damien in another article stating that each 
+drive should be set to master for optimum performance. Is this an 
+official Apple recommendation? Is there one?
+
+If I set both drives to master, should they be &quot;master only&quot; and then 
+&quot;master + slave&quot; if I add additional drives to their respective 
+busses later?
+
+Thanks ahead of time
+jeff in seattle
+
+Answered:
+
+Hey Jeff,
+
+  IDE only access' a single drive per channel at a time. Damien's 
+point is that when you add a second drive it is best for performance 
+to add that drive to the second channel as that channel's Master 
+drive so that both drives on the computer can access concurrently. If 
+both drives are installed as Master/Slave or Cable Select on the same 
+channel/cable then they would alternate access and be half as fast 
+when both are active.
+
+  I personally prefer to set my drives with Master/Slave jumpers 
+instead of leaving that to cable select. Cable Select is a method 
+where the bus automatically sets Master/Slave. The end result is the 
+same if everything is working but I feel comfortable setting them 
+manually during the install.
+
+  The two musts are that you choose which way you are going to go and 
+stick with that not mixing the drives with one set Cable Select and 
+the other set with a jumper to Master or Slave. And the end connector 
+is always used for the Master Drive.
+
+  The setup you are planning sounds exactly appropriate for best 
+performance. Take your pick on whether to set your drives both as 
+Master or as Cable Select and you'll most likely get the same result. 
+(Damien was referring to the fact that a drive is still the Master 
+drive if it is installed physically in the Master position on a cable 
+no matter if the jumpers are set Cable Select)
+
+  And yes, Apple did say that setting Master/Slave instead of Cable 
+Select is an approved method. I choose to manually set it that way 
+out of surety that it will work the way I want it to work.
+
+Rick
+MacGurus.com
+
+
+
+
+
+At 9:22 AM -0800 12/24/02, jeff small wrote:
+&gt;<i>Thanks for the reply.  The dual has *two* ATA busses, one ATA 100 
+</I>&gt;<i>and one ATA 66.
+</I>&gt;<i>My new drive is a WD SE 120, btw.
+</I>&gt;<i>
+</I>&gt;<i>Thanks
+</I>&gt;<i>jeff
+</I>&gt;<i>
+</I>&gt;<i>At 8:51 AM -0800 12/24/02, T. Brown / groucho wrote:
+</I>&gt;&gt;<i>On Tuesday, December 24, 2002, at 08:38  AM, jeff small wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>I'm installing an additional IDE drive in my dual 1ghz.  Does it 
+</I>&gt;&gt;&gt;<i>matter which bus it's installed on?  I thought I had read 
+</I>&gt;&gt;&gt;<i>somewhere that there was a protocol for adding drives; I can't 
+</I>&gt;&gt;&gt;<i>find any reference now.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>It would be best to put it on the same buss as the original drive. 
+</I>&gt;&gt;<i>There is a slight speed hit if you put it on the CD/DVD drive buss. 
+</I>&gt;&gt;<i>I do have a drive in the atapi chain, but it is for MP3 / iTunes 
+</I>&gt;&gt;<i>storage. The drive is a WD 80 gig special edition
+</I>&gt;&gt;<i>with an 8 meg cache. I notice no speed hit with it for that 
+</I>&gt;&gt;<i>purpose. With other drives though, there was a noticeable 
+</I>&gt;&gt;<i>difference.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>HTH,
+</I>&gt;&gt;<i>groucho
+</I>&gt;&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000472.html">Audio Hijack 1.6.5 out now
+</A></li>
+	<LI>Next message: <A HREF="000481.html">[G4] Did I miss my bus?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#473">[ date ]</a>
+              <a href="thread.html#473">[ thread ]</a>
+              <a href="subject.html#473">[ subject ]</a>
+              <a href="author.html#473">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

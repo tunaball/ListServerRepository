@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] chmod &quot;just doesn't work&quot; on /Volumes/OtherMac
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20chmod%20%22just%20doesn%27t%20work%22%20on%20/Volumes/OtherMac&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] chmod &quot;just doesn't work&quot; on /Volumes/OtherMac</H1>
+    <B>Jerry Krinock</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20chmod%20%22just%20doesn%27t%20work%22%20on%20/Volumes/OtherMac&In-Reply-To="
+       TITLE="[X-Unix] chmod &quot;just doesn't work&quot; on /Volumes/OtherMac">jerry at ieee.org
+       </A><BR>
+    <I>Fri Jun 26 04:19:05 PDT 2009</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3342">[ date ]</a>
+              <a href="thread.html#3342">[ thread ]</a>
+              <a href="subject.html#3342">[ subject ]</a>
+              <a href="author.html#3342">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Am I incorrect in expecting that this should work, or did something  
+change in Mac OS X 10.5.7?
+
+In the session below, ls says that the permissions of a mounted disk  
+is 700, rwx------.  I change it using chmod to 777.  Output indicates  
+that it &quot;did it&quot; -- no error.  But then running ls again shows that it  
+is still 700.
+
+Jerrys-Mac-Mini:~ jk$ cd /Volumes
+
+Jerrys-Mac-Mini:Volumes jk$ ls -al
+total 8
+drwxrwxrwt@  6 root  admin   204 Jun 26 03:22 .
+drwxrwxr-x  71 root  admin  2482 Jun  5 22:30 ..
+lrwxr-xr-x   1 root  admin     1 Jun 24 20:31 JMiniHD -&gt; /
+drwxrwxr-t  15 root  admin   578 May 16 10:03 JTimeHD
+drwx------  35 jk    staff  1146 Feb 24 13:58 Pb800HD
+drwxrwxr-x  13 root  admin   510 Jun  5 22:35 Spare
+
+Jerrys-Mac-Mini:Volumes jk$ chmod -v 777 Pb800HD
+Pb800HD
+
+Jerrys-Mac-Mini:Volumes jk$ ls -al
+total 8
+drwxrwxrwt@  6 root  admin   204 Jun 26 03:22 .
+drwxrwxr-x  71 root  admin  2482 Jun  5 22:30 ..
+lrwxr-xr-x   1 root  admin     1 Jun 24 20:31 JMiniHD -&gt; /
+drwxrwxr-t  15 root  admin   578 May 16 10:03 JTimeHD
+drwx------  35 jk    staff  1146 Feb 24 13:58 Pb800HD
+drwxrwxr-x  13 root  admin   510 Jun  5 22:35 Spare
+
+Thank you,
+
+Jerry Krinock
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3342">[ date ]</a>
+              <a href="thread.html#3342">[ thread ]</a>
+              <a href="subject.html#3342">[ subject ]</a>
+              <a href="author.html#3342">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

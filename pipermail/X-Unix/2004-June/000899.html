@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] syslogd problems
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20syslogd%20problems&In-Reply-To=list-13852735%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000898.html">
+   <LINK REL="Next"  HREF="000900.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] syslogd problems</H1>
+    <B>Kevin Stevens</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20syslogd%20problems&In-Reply-To=list-13852735%40mail.ninewire.com"
+       TITLE="[X-Unix] syslogd problems">groups at pursued-with.net
+       </A><BR>
+    <I>Wed Jun  9 13:17:42 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000898.html">[X-Unix] syslogd problems
+</A></li>
+        <LI>Next message: <A HREF="000900.html">[X-Unix] syslogd problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#899">[ date ]</a>
+              <a href="thread.html#899">[ thread ]</a>
+              <a href="subject.html#899">[ subject ]</a>
+              <a href="author.html#899">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Wed, 9 Jun 2004, James Bucanek wrote:
+
+&gt;<i> Inactive memory can exist in several states.  Inactive+allocated means
+</I>&gt;<i> that the memory block is mapped into a process's memory space, but
+</I>&gt;<i> simply hasn't been accessed in awhile.  Thus the term &quot;inactive&quot; rather
+</I>&gt;<i> than &quot;unused.&quot;  These blocks can not be simply discarded.  They belong
+</I>&gt;<i> to some app and contain data.  These are typically the first candidates
+</I>&gt;<i> for blocks that will be swapped out if new blocks are needed.
+</I>&gt;<i>
+</I>&gt;<i> The kernal periodically sweeps the list of active blocks and marks those
+</I>&gt;<i> as inactive that haven't been touched in awhile.  It has an algorithm
+</I>&gt;<i> that tries to maintain an optimal balance between active and inactive
+</I>&gt;<i> blocks.
+</I>&gt;<i>
+</I>&gt;<i> Inactive+unallocated are used as temporary cache.  These can contain
+</I>&gt;<i> previously loaded code, disk buffers, whatever.  The idea is that the
+</I>&gt;<i> kernel knows what's in these blocks and can instantly resurrect them if
+</I>&gt;<i> the need arises.  These blocks do not have to paged out to be reused.
+</I>&gt;<i>
+</I>&gt;<i> What can be confusing is that most of the system status utility simply
+</I>&gt;<i> list the total amount of &quot;inactive&quot; memory, without regard to what kind
+</I>&gt;<i> or combination of &quot;inactive&quot; it is.  You'll often notice the number of
+</I>&gt;<i> inactive blocks jump up or down as a consequence of a process touching a
+</I>&gt;<i> bunch of memory, or after not touching it for awhile.
+</I>
+I think I'd better stick to networking.  ;)
+
+&gt;<i> &gt;Or why I need 3+ GB of swap in the first place, or why after allocating
+</I>&gt;<i> &gt;all that &quot;base&quot; swap it needs to add another 74MB swap file.
+</I>&gt;<i>
+</I>&gt;<i> Probably because it ran out of real RAM and some process asked for more.
+</I>&gt;<i> This happens quite often. ;)
+</I>
+Yeah, I'm calling 'shenanigans'.  This same OS version runs on an iBook
+with 256MB of ram and half the VM, but when it is loaded on a G5 with
+1.5GB, just the applications that run on system startup require almost 5GB
+of VM?  Yet after running Photoshop and other memory intensive apps, it
+hasn't increased any further?  I'm sorry, I just don't buy it.  There's
+gotta be some automatic sizing and automatic swap file creation stuff
+going on without regard to actual memory use.
+
+Shenanigans!
+
+KeS
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000898.html">[X-Unix] syslogd problems
+</A></li>
+	<LI>Next message: <A HREF="000900.html">[X-Unix] syslogd problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#899">[ date ]</a>
+              <a href="thread.html#899">[ thread ]</a>
+              <a href="subject.html#899">[ subject ]</a>
+              <a href="author.html#899">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

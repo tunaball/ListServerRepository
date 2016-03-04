@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Following a link to a message in Mail.app?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Following%20a%20link%20to%20a%20message%20in%20Mail.app%3F&In-Reply-To=D363A2C1-62A1-4A52-AEB4-C53106ECD5AF%40elastica.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="014110.html">
+   <LINK REL="Next"  HREF="014119.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Following a link to a message in Mail.app?</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Following%20a%20link%20to%20a%20message%20in%20Mail.app%3F&In-Reply-To=D363A2C1-62A1-4A52-AEB4-C53106ECD5AF%40elastica.com"
+       TITLE="[X4U] Following a link to a message in Mail.app?">macmonster at myrealbox.com
+       </A><BR>
+    <I>Fri Jul 14 00:57:53 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="014110.html">[X4U] Following a link to a message in Mail.app?
+</A></li>
+        <LI>Next message: <A HREF="014119.html">[X4U] Following a link to a message in Mail.app?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14111">[ date ]</a>
+              <a href="thread.html#14111">[ thread ]</a>
+              <a href="subject.html#14111">[ subject ]</a>
+              <a href="author.html#14111">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 13 Jul 2006, at 15:32, Robert Nicholson wrote:
+&gt;<i>
+</I>&gt;<i> I maintain a log of incoming email and how it's processed as it's  
+</I>&gt;<i> own mail folder using IMAP. So all I basically do is copy the  
+</I>&gt;<i> original headers and make the body a short notice about how the  
+</I>&gt;<i> mail was filtered.
+</I>&gt;<i>
+</I>&gt;<i> Q. I want to put a link in the body that actually directs me to the  
+</I>&gt;<i> actual message.
+</I>&gt;<i>
+</I>&gt;<i> Any url style that Mail.app can follow using an IMAP connection if  
+</I>&gt;<i> I give it the path to the folder and message id say in the link?
+</I>&gt;<i>
+</I>&gt;<i> So for example I have the following as the headers
+</I>&gt;<i>
+</I>&gt;<i> From:   <A HREF="../../../mailman/listinfo/x4u.html">devlists at softchaos.com</A>
+</I>&gt;<i> Subject: Re: Newbie - Transparent Path stroking/filling question  
+</I>&gt;<i> [Solved]
+</I>&gt;<i> Date: July 13, 2006 9:20:28 AM CDT
+</I>&gt;<i> To:   <A HREF="../../../mailman/listinfo/x4u.html">vinayprabhu at tataelxsi.co.in</A>
+</I>&gt;<i> ....
+</I>&gt;<i>
+</I>&gt;<i> and the body is just
+</I>&gt;<i>
+</I>&gt;<i>    Accepting to folder lists/mac/apple/quartz-dev
+</I>&gt;<i>
+</I>&gt;<i> to let me know where it was processed. I'd like to be able to  
+</I>&gt;<i> follow a link in the body to the actual message.
+</I>
+Because, as you say in your later message, your IMAP server doesn't  
+know where Mail is going to store the message, I don't think there's  
+any way to create a direct link that Mail.app will be able to use to  
+open ITS copy of the message.
+
+I can immediately think of two alternatives:
+- run a webserver on the mailserver &amp; export the maildir over http.  
+It would then be relatively simple to have a link to http:// 
+mail.myserver/lists/mac/apple/quartz-dev
+- export the maildir over Samba or AFP and have the messages  
+associated as an email message filetype. Again, it would be easy to  
+create a link.
+
+In both cases the mailserver (realistically) has to use the maildir  
+format for storing messages. This stores each message individually,  
+rather than as a single file (as in mbox).
+
+In the former case, the message would open in your browser &amp; you can  
+only view it, and do nothing else useful with it.
+In the latter case you have some work to do for the file association  
+(recompile your mailserver to name messages with a reasonably short  
+UID &amp; an .emlx suffix??) ; the message opens in Mail.app but you  
+still can't do much that's useful with it (beyond clicking &quot;reply&quot; or  
+&quot;forward&quot;). The message will not be marked as read on the IMAP server  
+(or therefore within Mail.app) and you won't be able to move it  
+within folders (without using Finder); I'm not sure what effect  
+clicking the delete button would have, but it -might- work as expected.
+
+It seems to me that the best thing to do is have the milter (is that  
+the right word? the mail filter on the server - procmail or I use  
+Courier's maildrop) add a custom header or a tag to the subject of  
+the email (such as &quot;[interesting]&quot;) and create a Smart Mailbox  
+(10.4.x) to show these messages. I'm not sure, but doubt, if  
+Spotlight will search on custom headers, so you might find all the  
+square brackets in a subject like &quot;[interesting] Re:  
+[NameOfMailingList] Newbie - Transparent Path stroking/filling  
+question [Solved]&quot; annoying.
+
+Throwing out more ideas here, it might be possible to modify the  
+message subject uniquely, so that one message gets the tag [12345]  
+and another [12346]  (use a UUID not a counter, tho'. See `apropos  
+uuid`); you may then be able to embed a link into your logging email  
+which calls a Spotlight search for [12345] or whatever that unique  
+identifier is (something like &lt;<A HREF="spotlight://[12345]">spotlight://[12345]</A>&gt; would do this??).
+
+I hope this makes sense. It's kinda early in the morning for me here,  
+and -someone- has been sufficiently demanding of attention that my  
+brain hasn't had a chance to wake up yet.
+
+Stroller.
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="014110.html">[X4U] Following a link to a message in Mail.app?
+</A></li>
+	<LI>Next message: <A HREF="014119.html">[X4U] Following a link to a message in Mail.app?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14111">[ date ]</a>
+              <a href="thread.html#14111">[ thread ]</a>
+              <a href="subject.html#14111">[ subject ]</a>
+              <a href="author.html#14111">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

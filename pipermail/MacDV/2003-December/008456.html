@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MacDV] Re: more about the inutility of defragmenting an OS X FS.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20more%20about%20the%20inutility%20of%20defragmenting%20an%20OS%20X%20FS.&In-Reply-To=list-10014946%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="008455.html">
+   <LINK REL="Next"  HREF="008457.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MacDV] Re: more about the inutility of defragmenting an OS X FS.</H1>
+    <B>James Asherman</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20more%20about%20the%20inutility%20of%20defragmenting%20an%20OS%20X%20FS.&In-Reply-To=list-10014946%40mail.ninewire.com"
+       TITLE="[MacDV] Re: more about the inutility of defragmenting an OS X FS.">jimash at optonline.net
+       </A><BR>
+    <I>Wed Dec 31 09:53:42 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="008455.html">[MacDV] Re: more about the inutility of defragmenting an OS X FS.
+</A></li>
+        <LI>Next message: <A HREF="008457.html">[MacDV] Re: more about the inutility of defragmenting an OS X FS.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8456">[ date ]</a>
+              <a href="thread.html#8456">[ thread ]</a>
+              <a href="subject.html#8456">[ subject ]</a>
+              <a href="author.html#8456">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Wednesday, December 31, 2003, at 12:23  PM, Peter van der Linden 
+wrote:
+
+&gt;<i> On Dec 30, 2003, at 8:45 PM, James Asherman wrote:
+</I>&gt;&gt;<i>  There is a graphic map that shows that a significant portion of what 
+</I>&gt;&gt;<i> you might think is freee space is actually small useless holes in 
+</I>&gt;&gt;<i> otherwise crowded areas. and llarge tracts of frree space have iTunes 
+</I>&gt;&gt;<i> hanging around like muggers waiting for some video to screw up.
+</I>&gt;&gt;<i> Jim
+</I>&gt;<i>
+</I>&gt;<i> Let me put this another way, Jim.
+</I>&gt;<i> Your view on disk defragmenting (whatever that means in the context of 
+</I>&gt;<i> HFS+, which already uses groups of allocation blocks called &quot;clumps&quot; 
+</I>&gt;<i> to limit fragmentation at the sector level) relies on at least three 
+</I>&gt;<i> false assumptions:
+</I>&gt;<i>
+</I>&gt;<i> 1.  The HD map shown by programs like is an accurate representation of 
+</I>&gt;<i> disk sector layout on disk
+</I>&gt;<i> 2.  The disk controller places sectors at the addresses you give it, 
+</I>&gt;<i> at the time you give them
+</I>&gt;<i> 3.  Adjacent sector addresses given to the disk controller represent 
+</I>&gt;<i> adjacent physical addresses on disk
+</I>&gt;<i>
+</I>&gt;<i> All three of these assumptions are false for today's disk drives.  To 
+</I>&gt;<i> give a simple example, multi-platter disks break assumption 3.  
+</I>&gt;<i> Read/write coalescing done by the disk controller (buffering and 
+</I>&gt;<i> reordering disk commands) breaks assumption 2.   Flaw mapping (which 
+</I>&gt;<i> long ago moved from the OS kernel into the disk controller) breaks 
+</I>&gt;<i> assumptions 2 and 3.  Logical Block Addressing and the consequent 
+</I>&gt;<i> geometry translation inside the controller breaks assumption 1.
+</I>&gt;<i>
+</I>&gt;<i> As if that isn't enough, Panther automatically coalesces small and 
+</I>&gt;<i> medium sized files (smaller than 20MB) on journalled HFS+ disks when 
+</I>&gt;<i> they are opened.  Further, MacOSX caches file and directory data 
+</I>&gt;<i> extensively.
+</I>&gt;<i>
+</I>&gt;<i> The bottom line is this: there are multiple levels of translation 
+</I>&gt;<i> within the kernel I/O subsystem, PROM, the disk controller, and the 
+</I>&gt;<i> hard disk itself.  The cylinder/head/sector numbers that people are 
+</I>&gt;<i> trying to optimize with defragmentation long ago stopped having any 
+</I>&gt;<i> real relationship to the actual drive characteristics.  MacOS X 
+</I>&gt;<i> software that does defragmentation is at worst a fraud (like the 
+</I>&gt;<i> Syncronys &quot;RAM doubler&quot; of a few years ago) and at best an unnecessary 
+</I>&gt;<i> holdover from the days of MacOS 9 and earlier.
+</I>&gt;<i>
+</I>&gt;<i> Apple itself says, disk de-fragmentation is &quot;probably not required if 
+</I>&gt;<i> you use MacOS X&quot;  and &quot;there is little benefit to defragmenting.&quot;
+</I>&gt;<i>
+</I>&gt;<i> So far no one claiming that defragmentation is useful has actually 
+</I>&gt;<i> produced any data to support their position.  They just have 
+</I>&gt;<i> &quot;feelings&quot; that they &quot;know&quot;.  I invite anyone who believes that disk 
+</I>&gt;<i> defragmentation does anything measurable to affect performance, to 
+</I>&gt;<i> benchmark a program before and after defragmentation under MacOS 10.3 
+</I>&gt;<i> and send me the data and results.  If I can reproduce results showing 
+</I>&gt;<i> defragmentation is helpful I will gladly eat these words.  That won't 
+</I>&gt;<i> happen because manual defragmenting does nothing measurably useful 
+</I>&gt;<i> under MacOS X 10.3 on HFS+.
+</I>&gt;<i>
+</I>&gt;<i>     Peter
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+I am still on 10.2.8   Nevertheless most of what you say is true.
+  But experience shows that contiguous free space is optimal for media 
+capture.
+
+And absolutely your OS is on one end of the disk and the updates on the 
+other and deleted files become empty useless holes that can be 
+condensed  and like files placed in adjacent locations for even faster 
+location, and more free open space.
+  10.3 may change all of that. I don't know.
+I have benchmarked with Xbench. It shows improvement.
+I could turn journalingg on. Is that a good thing?
+Jim
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="008455.html">[MacDV] Re: more about the inutility of defragmenting an OS X FS.
+</A></li>
+	<LI>Next message: <A HREF="008457.html">[MacDV] Re: more about the inutility of defragmenting an OS X FS.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8456">[ date ]</a>
+              <a href="thread.html#8456">[ thread ]</a>
+              <a href="subject.html#8456">[ subject ]</a>
+              <a href="author.html#8456">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

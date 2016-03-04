@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Protecting your Data [was: TiBook 1GHz/SuperDrive US Mac OS ROM file?]
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=Protecting%20your%20Data%20%5Bwas%3A%20TiBook%201GHz/SuperDrive%20US%20Mac%20OS%20ROM%20file%3F%5D&In-Reply-To=list-4238144%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001398.html">
+   <LINK REL="Next"  HREF="001400.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Protecting your Data [was: TiBook 1GHz/SuperDrive US Mac OS ROM file?]</H1>
+    <B>Neil Cadsawan</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=Protecting%20your%20Data%20%5Bwas%3A%20TiBook%201GHz/SuperDrive%20US%20Mac%20OS%20ROM%20file%3F%5D&In-Reply-To=list-4238144%40mail.ninewire.com"
+       TITLE="Protecting your Data [was: TiBook 1GHz/SuperDrive US Mac OS ROM file?]">rainer3 at mac.com
+       </A><BR>
+    <I>Mon Dec 30 14:40:57 PST 2002</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001398.html">[Ti] FW: TiBook 1GHz/SuperDrive US Mac OS ROM file?
+</A></li>
+        <LI>Next message: <A HREF="001400.html">[Ti] FW: TiBook 1GHz/SuperDrive US Mac OS ROM file?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1399">[ date ]</a>
+              <a href="thread.html#1399">[ thread ]</a>
+              <a href="subject.html#1399">[ subject ]</a>
+              <a href="author.html#1399">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This was posted on Slashdot the other day and I thought that some  
+people here might find it interesting:
+
+<A HREF="http://apple.slashdot.org/article.pl?sid=02/12/29/">http://apple.slashdot.org/article.pl?sid=02/12/29/</A> 
+1353252&amp;mode=thread&amp;tid=179
+
+This is actually something that is covered in the new Mac OS X  
+Administration and Integration sysadmin technical training course from  
+Apple that will be going live in January. As the author of that section  
+of the course, let me give you a bare bones outline here.
+
+
+    1. Log in as the user whose files you want to secure.
+    2. Create an encrypted disk image using Disk Copy at the top level  
+of the user's home directory. When it asks for the disk image password,  
+be sure that the &quot;remember password&quot; option is checked -- this saves  
+the disk image's password on the user's default keychain.
+    3. Use ditto to copy over the following directories from the user's  
+home folder onto the encrypted disk image:
+       ~/Desktop
+       ~/Documents
+       ~/Library/Mail
+       ~/Application Support/Addresses
+       ~/.ssh These are the important ones; you can copy over other  
+items as well, but definitely don't do the entire ~/Library folder, and  
+don't do the ~/Library/Keychains or ~/Library/Preferences folders.
+    4. Set the disk image to automount on login by dragging it into the  
+Login Items preferences pane.
+    5. Use mv to shift the directories aside (e.g. mv ~/Documents  
+~/Documents.save) and set up symlinks onto the disk image (e.g. ln -s  
+/Volumes/Secure/Documents ~/Documents).
+    6. Log out and log back in again. The disk image will be automounted  
+at login, using the password stored on the default keychain which also  
+unlocks on login. Everything should just work! :-D
+    7. Now for the housekeeping: delete the .save directories you  
+created earlier, and be sure to turn off automatic login in the  
+Accounts preferences pane.
+
+Why do it this way instead of the way that Joshua Gitlin wrote up?  
+First, you don't need admin access to a machine to make it work. You  
+may not have admin access on a company machine, or as a sysadmin you  
+may not want to give admin access to most of your users.
+Second, using Joshua's method, once the disk image is mounted it's open  
+to anyone who has admin access on that machine, whether or not you are  
+logged in at the console. By using an automounted image with the  
+password stored on the keychain everything is secure until you actually  
+log in, and everything is secured once you log out.
+Third, this way is a lot more convenient. If you make security too  
+inconvenient, users will circumvent it. Instead of two logins, you only  
+have to do one. Techincally unsophisticated users (secretaries,  
+lawyers, vice-presidents, etc.) don't need to do anything different.
+
+&lt;BLATANT PLUG&gt;
+Go to Apple Training [apple.com] and sign up for a course or two.  
+They're well worth the money and help me keep my job. :-D
+&lt;/BLATANT PLUG&gt;
+
+--Paul
+psuh at apple dot com
+Curriculum Developer
+Techincal Training and Certification
+Apple Computer
+
+
+-Neil
+
+-------
+<A HREF="http://rainer3.com">http://rainer3.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001398.html">[Ti] FW: TiBook 1GHz/SuperDrive US Mac OS ROM file?
+</A></li>
+	<LI>Next message: <A HREF="001400.html">[Ti] FW: TiBook 1GHz/SuperDrive US Mac OS ROM file?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1399">[ date ]</a>
+              <a href="thread.html#1399">[ thread ]</a>
+              <a href="subject.html#1399">[ subject ]</a>
+              <a href="author.html#1399">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

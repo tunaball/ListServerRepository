@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Hiding apps from the command line
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Hiding%20apps%20from%20the%20command%20line&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000513.html">
+   <LINK REL="Next"  HREF="000515.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Hiding apps from the command line</H1>
+    <B>Kirk McElhearn</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Hiding%20apps%20from%20the%20command%20line&In-Reply-To="
+       TITLE="Hiding apps from the command line">kirklists at wanadoo.fr
+       </A><BR>
+    <I>Fri Mar 26 03:12:33 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000513.html">[X-Unix] Call for bash prompts
+</A></li>
+        <LI>Next message: <A HREF="000515.html">[X-Unix] Hiding apps from the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#514">[ date ]</a>
+              <a href="thread.html#514">[ thread ]</a>
+              <a href="subject.html#514">[ subject ]</a>
+              <a href="author.html#514">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Very cool discussion, this. Here's the text I've written up for the next
+edition of Mac OS X Hints:
+
+15-1          Hide an Application from the Command Line
+Here's the scene: you're working in Terminal, and you've got lots of other
+windows behind the Terminal window. You want to get some of them out of the
+way, and you can naturally do so from the Finder. But why not find a way to
+do this from the command line?
+
+Here's a shell script, by Eugene Lee, that fits the bill:
+ 
+#! /bin/sh
+# hide an application in the Finder
+osascript &lt;&lt;END
+      tell application &quot;Finder&quot;
+      if exists application process &quot;$1&quot; then
+            set visible of application process &quot;$1&quot; to false
+      end if
+      end tell
+
+As usual, save this script, with a name such as hide, in a directory that's
+in your PATH, make it executable by typing chmod 755 hide, then you can run
+it as follows:
+
+hide [application name]
+
+You'll need to type the actual application name that the Finder recognizes;
+move your cursor over the Dock to see: for example, Microsoft Word is the
+full name of the Office word processor, and you need to use quotes around
+any application name that contains spaces:
+
+hide &quot;Microsoft Word&quot;
+
+You don't need to respect case; this works even if you type hide safari, for
+example.
+
+*********
+
+You'll not that I put END on the first line, and that you don't need to have
+another END at the end.
+
+Can we take this further and find a way to hide all other applications from
+this script?
+ 
+ 
+Kirk
+ 
+        My latest book: How to Do Everything with Mac OS X Panther
+                  <A HREF="http://www.mcelhearn.com/htde.html">http://www.mcelhearn.com/htde.html</A>
+ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+ . . . . . . .  <A HREF="../../../mailman/listinfo/x-unix.html">kirk at mcelhearn.com</A> | <A HREF="http://www.mcelhearn.com">http://www.mcelhearn.com</A>  . . . . . .
+ . .  Kirk McElhearn | Chemin de la Lauze | 05600 Guillestre | France  . .
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000513.html">[X-Unix] Call for bash prompts
+</A></li>
+	<LI>Next message: <A HREF="000515.html">[X-Unix] Hiding apps from the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#514">[ date ]</a>
+              <a href="thread.html#514">[ thread ]</a>
+              <a href="subject.html#514">[ subject ]</a>
+              <a href="author.html#514">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

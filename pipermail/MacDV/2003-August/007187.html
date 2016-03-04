@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MacDV] Re: Help Blacking a Tape/Time Code
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20Help%20Blacking%20a%20Tape/Time%20Code&In-Reply-To=list-7961271%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="007186.html">
+   <LINK REL="Next"  HREF="007188.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MacDV] Re: Help Blacking a Tape/Time Code</H1>
+    <B>Gregg Gorrie</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Re%3A%20Help%20Blacking%20a%20Tape/Time%20Code&In-Reply-To=list-7961271%40mail.ninewire.com"
+       TITLE="[MacDV] Re: Help Blacking a Tape/Time Code">ggorrie at telus.net
+       </A><BR>
+    <I>Wed Aug 13 01:48:44 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="007186.html">Funny:)
+</A></li>
+        <LI>Next message: <A HREF="007188.html">OT? viewing captions (not subtitles)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7187">[ date ]</a>
+              <a href="thread.html#7187">[ thread ]</a>
+              <a href="subject.html#7187">[ subject ]</a>
+              <a href="author.html#7187">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>on 8/11/03 3:40 PM, Derek Roff at <A HREF="../../../mailman/listinfo/macdv.html">derek at unm.edu</A> wrote:
+ 
+&gt;<i> Drop-frame exists because of the physics of wireless TV broadcasting.
+</I>&gt;<i> If a program isn't going to be sent out over the airwaves of
+</I>&gt;<i> broadcast television, then the difference in speed between drop-frame
+</I>&gt;<i> and non-drop frame has little importance.  For short projects, which
+</I>&gt;<i> the original posting mentioned, the difference in run time between
+</I>&gt;<i> drop frame and non-drop frame is easy to ignore.  So I am curious as
+</I>&gt;<i> to why this project seems to be specified in non-drop frame.
+</I>&gt;<i> 
+</I>&gt;<i> But it gets weirder.  The original posting quoted the specification
+</I>&gt;<i> as saying:  &quot;all material should be striped at 29.97 NDF.&quot;  29.97
+</I>&gt;<i> frames per second is the drop-frame video speed.  30 frames per
+</I>&gt;<i> second is the speed for non-drop frame.  &quot;29.97 NDF&quot; seems like an
+</I>&gt;<i> untenable hybrid.
+</I>&gt;<i> 
+</I>&gt;<i> Can anyone explain &quot;29.97 NDF&quot;?  Am I suffering from brain lock, or
+</I>&gt;<i> is the film festival's specification confused?
+</I>
+Not sure where you got your misinformation concerning drop frame and
+non-drop frame time code, but here are the facts:
+
+1) Due to engineering limitations of the day, when NTSC color TV (North
+America and Japan) was brought in a compromise was made. To make color
+broadcasts backwards compatible with black and white television sets, they
+changed (slowed down) the frame rate from 30 fps to 29.97 fps.
+
+2) Because 29.97 fps still uses a 30 frame count (:00 --&gt; :29), there is a
+discrepancy between the length of a program according to the time code and
+the real length of the program according to the &quot;wall&quot; clock. For example,
+if a program using 29.97 non-drop format starts at 01:00:00:00 and ends at
+02:00:00:00, it's true length according to &quot;real&quot; time is one hour plus 108
+frames (remember, 29.97 fps is just 30 fps slowed down about .1%)
+
+3) This time discrepancy was unacceptable to broadcasters who run on
+precision time, so drop frame time code was created. Drop frame numbering
+&quot;skips&quot; 2 frames (:00, :01) every minute EXCEPT for minutes ending in 0 (ie
+00, 10, 20, etc.). The net result is that 29.97 DF code &quot;catches up&quot; with
+real time and the time code length matches the wall clock time. There is no
+change to the actual video itself, drop frame is just a numbering scheme
+(sometimes called compensated time code).
+
+4) ALL NTSC video (both DF and NDF), is 29.97 fps - NDF is NOT 30 fps.
+Elsewhere in the world (PAL, SECAM at 25fps) there was no need to change the
+frame rate when they converted to color TV, hence they had no need to create
+a drop-frame system.
+
+
+The fact that this thread exists demonstrates just how much confusion those
+decisions (made half a century ago) still create.
+-- 
+Gregg
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="007186.html">Funny:)
+</A></li>
+	<LI>Next message: <A HREF="007188.html">OT? viewing captions (not subtitles)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7187">[ date ]</a>
+              <a href="thread.html#7187">[ thread ]</a>
+              <a href="subject.html#7187">[ subject ]</a>
+              <a href="author.html#7187">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

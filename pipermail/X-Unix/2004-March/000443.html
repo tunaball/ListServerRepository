@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Strange console.app failure
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Strange%20console.app%20failure&In-Reply-To=list-11240542%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000440.html">
+   <LINK REL="Next"  HREF="000444.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Strange console.app failure</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Strange%20console.app%20failure&In-Reply-To=list-11240542%40mail.ninewire.com"
+       TITLE="Strange console.app failure">magill at mcgillsociety.org
+       </A><BR>
+    <I>Wed Mar 10 09:44:25 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000440.html">[X-Unix] Copy old system to new machine
+</A></li>
+        <LI>Next message: <A HREF="000444.html">Copying to multiple directories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#443">[ date ]</a>
+              <a href="thread.html#443">[ thread ]</a>
+              <a href="subject.html#443">[ subject ]</a>
+              <a href="author.html#443">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an esoteric problem, so skip reading unless you are interested 
+in the greasy bowels of OS X.
+
+Sigh... too many balls in the air (assorted changes) to know exactly 
+when this problem started, and hence easily back-out things... (i.e. 
+Quite a few updates to things  since mid-January when I last had went 
+to use console.app)
+
+The symptoms:
+
+1- console.app launches puts up two blank windows (normal for me). The 
+two windows are the console and system log. &quot;Normally&quot; after a period 
+of time, typically 2-5 seconds, the two windows populate with the 
+contents of their respective log files. Now however, they simply spin 
+the beach ball. Trying to quit console.app -- fails... go to the 
+dock... &quot;force quit&quot; is showing... it force quits.
+
+2- clear out /system/library/caches /library/caches and 
+Extensions.kextcache ... it works again.
+
+3- Similar behavior from System profiler.
+
+4- Similar behavior from Disk Utility -- disks are listed ok. Select a 
+disk and the beachball spins.
+
+Nothing obviously wrong with permissions ... (Terminal always works 
+fine.)
+
+The only &quot;wierd error&quot; in startup I find, is that ntpdate now fails on 
+every reboot. (If you run ntpdate manually, it complains, as expected, 
+that the port is in use, but then fails with a bus error. So this one 
+can be easily ignored.)
+And occasionally:
+&quot;mach_init[2]: Server 0 in bootstrap d03 uid 0: &quot;/usr/sbin/lookupd&quot;: 
+exited as a result of signal 1 [pid 162]&quot;
+Then lookupd apparently restarts with no problem. This bothers me, but 
+doesn't appear to be a real problem.
+
+I'm currently favoring a USB related problem:
+
+During the course of tracking this down, I also had my Kensington 
+wireless trackball suddenly stop working... but a &quot;plain&quot; USB mouse 
+plugged into my MacAllay keyboard, and the keyboard work fine.
+Also ... my Epson CX5200 prints with no problems... but the scanner 
+can't be seen.
+
+Power cycling the world doesn't seem to have any effect. Only clearing 
+the ktextcache. So, I assume that the original ktext extension files 
+are intact, but once the ktextcache is created the data there is 
+corrupt.
+
+???
+
+Any ideas.
+
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000 - [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000440.html">[X-Unix] Copy old system to new machine
+</A></li>
+	<LI>Next message: <A HREF="000444.html">Copying to multiple directories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#443">[ date ]</a>
+              <a href="thread.html#443">[ thread ]</a>
+              <a href="subject.html#443">[ subject ]</a>
+              <a href="author.html#443">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

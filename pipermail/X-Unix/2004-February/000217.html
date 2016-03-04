@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> nevermind, figured it out ;) (re: simple commandline one-shot emailer)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=nevermind%2C%20figured%20it%20out%20%3B%29%20%28re%3A%20simple%20commandline%20one-shot%20emailer%29&In-Reply-To=list-10601492%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000216.html">
+   <LINK REL="Next"  HREF="000218.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>nevermind, figured it out ;) (re: simple commandline one-shot emailer)</H1>
+    <B>Peter Marreck</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=nevermind%2C%20figured%20it%20out%20%3B%29%20%28re%3A%20simple%20commandline%20one-shot%20emailer%29&In-Reply-To=list-10601492%40mail.ninewire.com"
+       TITLE="nevermind, figured it out ;) (re: simple commandline one-shot emailer)">prm1 at cornell.edu
+       </A><BR>
+    <I>Mon Feb  2 22:30:51 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000216.html">Simple commandline mail client
+</A></li>
+        <LI>Next message: <A HREF="000218.html">[X-Unix] ethereal for MacOSX
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#217">[ date ]</a>
+              <a href="thread.html#217">[ thread ]</a>
+              <a href="subject.html#217">[ subject ]</a>
+              <a href="author.html#217">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I just went ahead and coded a perl script to accomplish the job. 
+Discovered &quot;Net::SMTP&quot; was included in the stock Perl distribution and 
+then googled it for script ideas since I'm a perl n00b. Enjoy... feel 
+free to add error-handling, I was just going for the quick-and-dirty 
+here. I saved it as &quot;email&quot; and chmod +x'ed it. Usage is like so:
+./email -server=mail.optonline.com -from=<A HREF="../../../mailman/listinfo/x-unix.html">billc at optonline.com</A> 
+-to=<A HREF="../../../mailman/listinfo/x-unix.html">monica at optonline.com</A> -subject=&quot;altoids&quot; -body=&quot;Curiously strong 
+mints. Indeed.&quot;
+
+#!/usr/bin/perl -s
+use Net::SMTP;
+# parameters that this script accepts: -server, -from, -to, -subject, 
+-body
+# This debug flag will print debugging code,
+# depending on its value.
+# Set this to 1 to print debug code.
+# Set it to 0 to turn it off.
+my $DEBUG = 0;
+# Create a new SMTP object
+$smtp = Net::SMTP-&gt;new($server, Debug =&gt; $DEBUG);
+# If you can't connect, don't proceed with the rest of the script
+die &quot;Couldn't connect to server&quot; unless $smtp;
+# Initiate the mail transaction
+$smtp-&gt;mail( $from );
+$smtp-&gt;to( $to );
+# Start the mail
+$smtp-&gt;data();
+# Send the header
+$smtp-&gt;datasend(&quot;To:  $to\n&quot;);
+$smtp-&gt;datasend(&quot;From:  $from\n&quot;);
+$smtp-&gt;datasend(&quot;Subject: $subject\n&quot;);
+$smtp-&gt;datasend(&quot;\n&quot;);
+# Send the body.
+$smtp-&gt;datasend(&quot;$body\n\n&quot;);
+# Send the termination string
+$smtp-&gt;dataend();
+# Close the connection
+$smtp-&gt;quit();
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000216.html">Simple commandline mail client
+</A></li>
+	<LI>Next message: <A HREF="000218.html">[X-Unix] ethereal for MacOSX
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#217">[ date ]</a>
+              <a href="thread.html#217">[ thread ]</a>
+              <a href="subject.html#217">[ subject ]</a>
+              <a href="author.html#217">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

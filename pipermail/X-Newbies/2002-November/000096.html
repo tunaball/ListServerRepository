@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Newbies] swapfiles and changing swapdisk
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20swapfiles%20and%20changing%20swapdisk&In-Reply-To=list-3908979%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000095.html">
+   <LINK REL="Next"  HREF="000097.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Newbies] swapfiles and changing swapdisk</H1>
+    <B>Bill Reburn</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20swapfiles%20and%20changing%20swapdisk&In-Reply-To=list-3908979%40mail.ninewire.com"
+       TITLE="[X Newbies] swapfiles and changing swapdisk">bill at pacificcoast.net
+       </A><BR>
+    <I>Sat Nov 30 08:49:50 PST 2002</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000095.html">[X Newbies] How the Grinch Stole 45GB of My Hard Drive
+</A></li>
+        <LI>Next message: <A HREF="000097.html">[X Newbies] How the Grinch Stole 45GB of My Hard Drive
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#96">[ date ]</a>
+              <a href="thread.html#96">[ thread ]</a>
+              <a href="subject.html#96">[ subject ]</a>
+              <a href="author.html#96">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Gr&#233;goire,
+
+Since OSX came out a lot of heated discussion has gone on over the validity
+of moving your Swap file to another partition/disk. Apparently this is
+another step OSX (Unix?) handles all too well on it's own and for the most
+part could never be bothered with (I would bet more than 90% of OSX users
+don't even know what it is).
+
+Moving the swap file isn't the easiest thing to do - but some very
+Unixy-specific Terminal steps are required. Tutorials exist online.
+
+Unless you are experiencing some specific issues related to memory - I would
+recommend leaving it alone.
+
+Moving it could help with troubleshooting if you know what you're doing,
+many people thought moving swap files to another disk would help in
+performance. For some it did.. But it gets blurry here.
+
+Try to stick with me here - if I get boring;
+
+A program like Adobe Photoshop also uses a disk swapping (ScratchDisk)
+system that fundamentally is the same as OSX's swap. What happens is, when a
+very large image file is loaded into memory - Photoshop may require
+more/extra memory than what is physically available to perform certain steps
+(adding text, changing colours) - so it swaps information/memory to another
+disk or file, swapping back in when necessary, freeing up Ram and other
+resources for the momentary step.
+
+Even if you have 2gigRam, Photoshop (and OSX) will still do this.
+
+If you have another HD installed (not a single partioned HD) you could move
+the swap file location to the other disk so that the performance of that
+'swap' step would improve. The improvement comes from having multiple drives
+with multiple heads reading the information somewhat simultaneously. Having
+the swap location (a 3 gig partition on another HD for example) free of any
+other files, simultaneously allows and restricts all Swap information to
+exist in that space - free of conatamination/fragmention by other files. You
+also prevent the Swap file from being fragmented across your HD - keeping it
+as one contigous file may help with performance.
+
+If you only have one HD, moving the swap to a dedicated partition *could*
+actually slow down your system. It may help if you have 'Runaway Swap File'
+problems, or to keep it from being fragmented itself.
+
+Overall though (outside of any troubleshooting) - I think this step is
+pretty useless. There are websites out there that have done the math and the
+performance gain is not only negligible, but so varied across different
+machines - that it often causes many many problems for ppl.
+
+IMHO - don't bother.
+
+
+On 11/30/02 7:55 AM, &quot;Gr&#233;goire Seither&quot; &lt;<A HREF="../../../mailman/listinfo/x-newbies.html">gregoire at pobox.com</A>&gt; wrote:
+
+&gt;<i> How do you change your swapdisk ? I haven't seen that option in System
+</I>&gt;<i> prefs.
+</I>&gt;<i> 
+</I>&gt;<i> I have one Gig of RAM but - since until a couple of weeks ago, everyone
+</I>&gt;<i> told you to partition your disk - my OSX is on a 5 Gig partitiion. How
+</I>&gt;<i> do I change my swapdisk to use the other 115 Gig partition ? I haven't
+</I>&gt;<i> got the time to reformat right now...
+</I>&gt;<i> 
+</I>&gt;<i> Le samedi, 30 nov 2002, &#224; 16:40 Europe/Paris, Vicki Schalin a &#233;crit :
+</I>&gt;<i> 
+</I>&gt;&gt;<i> I changed swapdisk to a very large (3 GB) empty separate disk
+</I>&gt;&gt;<i> partition and that means that when/if Finder crashes I have some time
+</I>&gt;&gt;<i> to restart Finder before the disk is filled with swapfiles.
+</I>&gt;<i> 
+</I>
+
+
+
+
+
+Bill Reburn
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000095.html">[X Newbies] How the Grinch Stole 45GB of My Hard Drive
+</A></li>
+	<LI>Next message: <A HREF="000097.html">[X Newbies] How the Grinch Stole 45GB of My Hard Drive
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#96">[ date ]</a>
+              <a href="thread.html#96">[ thread ]</a>
+              <a href="subject.html#96">[ subject ]</a>
+              <a href="author.html#96">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

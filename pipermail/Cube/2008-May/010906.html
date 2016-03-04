@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Cube] Power supply replacement.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCube%5D%20Power%20supply%20replacement.&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010905.html">
+   <LINK REL="Next"  HREF="010907.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Cube] Power supply replacement.</H1>
+    <B>James Deamara</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=%5BCube%5D%20Power%20supply%20replacement.&In-Reply-To="
+       TITLE="[Cube] Power supply replacement.">jdeamara at hotmail.com
+       </A><BR>
+    <I>Thu May 29 12:41:23 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010905.html">[Cube] Power supply replacement.
+</A></li>
+        <LI>Next message: <A HREF="010907.html">[Cube] Power supply replacement.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10906">[ date ]</a>
+              <a href="thread.html#10906">[ thread ]</a>
+              <a href="subject.html#10906">[ subject ]</a>
+              <a href="author.html#10906">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Hi all.
+
+If anyone is interested, here is what I've come up with so far.
+
+Given a worst case parallel circuit load configuration (that is, one in which
+each internal device within the cube forms a parallel circuit where the total current
+is divided in proportion to each devices conductance).  Without the need
+to power a monitor thru the apple display connector on the video card should
+reduce the current requirement of the external power supply by about 4A (as 
+noted in the cube specs)...assuming that the DC-to-DC converter board has load 
+sensing (and any good, modern DC-to-DC board should). Hence, as long as one
+does not need, or ever will need, to use a monitor (apple display) that 
+requires power from the video card (as is the case with me) one can
+write off 112W (28V x 4A) from the rating of a replacement supply.  Thus, on
+the high end, one would probably need a 112W (224W - 112W) power supply to 
+run the cube.  Assuming that we would need to &quot;fake out&quot; the DC-to-DC board
+by keeping the input voltage at 28V, this translates into a power supply of
+112W, 28V @ 4A at the high end.
+
+A low ball estimate might be gathered from the apple specs.  That is, 5W for 
+each USB port, 12W for firewire, probably 15-20W for disk and cdrom drives 
+(I have lower power laptop drives in my cube), and probably 20-30W
+for the processor and MB. That's about 57-72W, which translates into a PS
+of 57W, 28V @ 2A or 72W, 28V @ 2.6A at the low end.  Keeping in mind that the
+DC-to-DC board probably has load sensing and this figure would probably
+be very close to what is needed at a minimum, since all these devices don't
+run all at once, all the time.
+
+Since I don't want to spent alot of $$ to keep an aging machine alive, I 
+think I'm going to try to rebuild the power supply with the low end estimate.
+A good candidate looks like the &quot;Mean Well PS-65-27&quot; switching PS from Jameco Electronics,
+(<A HREF="http://www.jameco.com/webapp/wcs/stores/servlet/ProductDisplay?langId=-1&storeId=10001&catalogId=10001&pa=201946&productId=201946">http://www.jameco.com/webapp/wcs/stores/servlet/ProductDisplay?langId=-1&amp;storeId=10001&amp;catalogId=10001&amp;pa=201946&amp;productId=201946</A>).
+It even appears that it will fit into the original apple PS enclosure.
+
+I'll keep you posted on any further progress I might have.
+
+James.
+
+
+----------------------------------------
+&gt;<i> From: <A HREF="../../../mailman/listinfo/cube.html">jdeamara at hotmail.com</A>
+</I>&gt;<i> To: <A HREF="../../../mailman/listinfo/cube.html">cube at listserver.themacintoshguy.com</A>
+</I>&gt;<i> Date: Thu, 29 May 2008 01:37:15 +0000
+</I>&gt;<i> Subject: [Cube] Power supply replacement.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Hi All.
+</I>&gt;<i> 
+</I>&gt;<i> Has anyone out there ever replaced or attempted to replace a cube power supply?  I'm not talking 
+</I>&gt;<i> about replacing it with a stock PS off ebay, I mean replacing it with a similarly rated PS (i.e. similar 
+</I>&gt;<i> current, voltage, wattage).  Does anyone know approximately how many watts a cube consumes without running 
+</I>&gt;<i> an apple monitor thru the video card?  224W (<A HREF="../../../mailman/listinfo/cube.html">28V at 8A</A>) seems rather steep for a cube without a monitor.
+</I>&gt;<i> Looking at the original specs from apple it appears that this higher voltage and current was basically needed
+</I>&gt;<i> to run the crt monitor.
+</I>&gt;<i> 
+</I>&gt;<i> James.
+</I>&gt;<i> _________________________________________________________________
+</I>&gt;<i> Give to a good cause with every e-mail. Join the i&#8217;m Initiative from Microsoft.
+</I>&gt;<i> <A HREF="http://im.live.com/Messenger/IM/Join/Default.aspx?souce=EML_WL_">http://im.live.com/Messenger/IM/Join/Default.aspx?souce=EML_WL_</A> GoodCause_______________________________________________
+</I>&gt;<i> Cube mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/cube.html">Cube at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/cube.html">http://listserver.themacintoshguy.com/mailman/listinfo/cube</A>
+</I>_________________________________________________________________
+Keep your kids safer online with Windows Live Family Safety.
+<A HREF="http://www.windowslive.com/family_safety/overview.html?ocid=TXT_TAGLM_WL_Refresh_family_safety_052008">http://www.windowslive.com/family_safety/overview.html?ocid=TXT_TAGLM_WL_Refresh_family_safety_052008</A>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010905.html">[Cube] Power supply replacement.
+</A></li>
+	<LI>Next message: <A HREF="010907.html">[Cube] Power supply replacement.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10906">[ date ]</a>
+              <a href="thread.html#10906">[ thread ]</a>
+              <a href="subject.html#10906">[ subject ]</a>
+              <a href="author.html#10906">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

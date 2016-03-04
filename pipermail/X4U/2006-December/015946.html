@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Option Key sticking (possibly because of VNC)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Option%20Key%20sticking%20%28possibly%20because%20of%20VNC%29&In-Reply-To=76C89050-85ED-4E30-BDB7-AFD02E025D5E%40gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="015947.html">
+   <LINK REL="Next"  HREF="015950.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Option Key sticking (possibly because of VNC)</H1>
+    <B>Brett Conlon</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Option%20Key%20sticking%20%28possibly%20because%20of%20VNC%29&In-Reply-To=76C89050-85ED-4E30-BDB7-AFD02E025D5E%40gmail.com"
+       TITLE="[X4U] Option Key sticking (possibly because of VNC)">brett.conlon at sonydadc.com
+       </A><BR>
+    <I>Sun Dec 10 20:14:09 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="015947.html">[X4U] OT: using old tower Mac as a Firewire case?
+</A></li>
+        <LI>Next message: <A HREF="015950.html">[X4U] iTunes -  Cleaning / Consolidating The Library
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15946">[ date ]</a>
+              <a href="thread.html#15946">[ thread ]</a>
+              <a href="subject.html#15946">[ subject ]</a>
+              <a href="author.html#15946">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Well, I finally got to testing this and found out what the issue is (I 
+think...).
+
+I tried your suggestion below Phil, but found that I had already activated 
+ARD's VNC so I stopped the VNC server and had a user connect via Chicken, 
+which was successful. However, within that one session the Option key 
+sticking business happened again.
+
+Without restarting the Mac I turned off ARD's VNC access and the keyboard 
+immediately typed as it should. So with us ARD's VNC seems to have been 
+causing it. It's been a few days now since it was deactivated and so far 
+nobody has complained about it.
+
+Many thanks for pointing me in that direction, otherwise I wouldn't have 
+thought about trying it.
+
+Cheers,
+
+Brett
+
+ps. I vaguely remember activating ARD's VNC at the time I was playing 
+around with VNC server so that's why I tied the two together... I was in 
+the right vicinity tho!  8-}
+
+
+
+
+Philip J Robar &lt;<A HREF="../../../mailman/listinfo/x4u.html">philip.robar at gmail.com</A>&gt; 
+Sent by: <A HREF="../../../mailman/listinfo/x4u.html">x4u-bounces at listserver.themacintoshguy.com</A>
+29/11/06 11:36 PM
+Please respond to
+&quot;A place to discuss Mac OS X for the casual user.&quot; 
+&lt;<A HREF="../../../mailman/listinfo/x4u.html">x4u at listserver.themacintoshguy.com</A>&gt;
+
+
+To
+&quot;A place to discuss Mac OS X for the casual user.&quot; 
+&lt;<A HREF="../../../mailman/listinfo/x4u.html">x4u at listserver.themacintoshguy.com</A>&gt;
+cc
+
+Subject
+Re: [X4U] Option Key sticking (possibly because of VNC)
+
+
+
+
+
+
+
+On Nov 28, 2006, at 3:38 PM, Brett Conlon wrote:
+
+&gt;<i> Just wondering if anyone has any ideas... I have a Retrospect Mac
+</I>&gt;<i> (G4/533DP) running 10.4 and Retrospect and from time to time the 
+</I>&gt;<i> Option
+</I>&gt;<i> Key sticks, eg. if I close one window, all windows close or if I type
+</I>&gt;<i> something in, the option key characters show.
+</I>&gt;<i>
+</I>&gt;<i> Rebooting fixes it. Previously it was seldom in occurrence but in 
+</I>&gt;<i> the past
+</I>&gt;<i> few days it has been happening each day.
+</I>&gt;<i>
+</I>&gt;<i> This issue only seemed to show up after I installed VNC Server and the
+</I>&gt;<i> designers connected to it via Chicken of the VNC. So I'm assuming 
+</I>&gt;<i> this has
+</I>&gt;<i> something to do with it. No other Mac in the studio has ever displayed
+</I>&gt;<i> this issue and no other Mac has ever had the VNC Server installed on 
+</I>&gt;<i> it.
+</I>
+This might help narrow down the problem: On the server machine, turn 
+on Apple Remote Desktop in the Sharing Preferences Panel and turn off 
+VNC Server. Then connect with Chicken of the VNC and see if the 
+problem goes away. (Apple Remote Desktop is compatible with Chicken of 
+the VNC. That's how I manage my home server.)
+
+If it does then the problem may be VNC Server, if not then maybe a 
+keyboard setting in Chicken of the VNC is effecting the server's 
+settings.
+
+
+Phil
+--
+&quot;All that is necessary for the triumph of evil is that good men do 
+nothing.&quot;
+- Edmund Burke
+
+
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="015947.html">[X4U] OT: using old tower Mac as a Firewire case?
+</A></li>
+	<LI>Next message: <A HREF="015950.html">[X4U] iTunes -  Cleaning / Consolidating The Library
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15946">[ date ]</a>
+              <a href="thread.html#15946">[ thread ]</a>
+              <a href="subject.html#15946">[ subject ]</a>
+              <a href="author.html#15946">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

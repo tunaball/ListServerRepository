@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] remote access
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20remote%20access&In-Reply-To=p06230901c125bbe5844b%40%5B10.0.1.9%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="014766.html">
+   <LINK REL="Next"  HREF="014791.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] remote access</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20remote%20access&In-Reply-To=p06230901c125bbe5844b%40%5B10.0.1.9%5D"
+       TITLE="[X4U] remote access">macmonster at myrealbox.com
+       </A><BR>
+    <I>Thu Sep  7 06:57:43 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="014766.html">[X4U] remote access
+</A></li>
+        <LI>Next message: <A HREF="014791.html">[X4U] remote access
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14765">[ date ]</a>
+              <a href="thread.html#14765">[ thread ]</a>
+              <a href="subject.html#14765">[ subject ]</a>
+              <a href="author.html#14765">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 7 Sep 2006, at 13:15, Daly Jessup wrote:
+&gt;<i> ...
+</I>&gt;<i> To reach the work machine, I obtained a &quot;SecureID&quot; device, about  
+</I>&gt;<i> the size of a thumb drive. It generates and displays a new network  
+</I>&gt;<i> passkey every 30 seconds or so. I installed a very small  
+</I>&gt;<i> application from Cisco on my Mac with which I access the work  
+</I>&gt;<i> network using a private PIN number and the current password from  
+</I>&gt;<i> the SecurID device. Almost instantly I am admitted into the secure  
+</I>&gt;<i> environment at work.  I got the Cisco utility from the IT  
+</I>&gt;<i> departments web site at work. They have a Cisco VPN server set up  
+</I>&gt;<i> there, so I had to use the Cisco utility.
+</I>
+The &quot;SecureID&quot; device is just a flashy way of doing VPN. It may be  
+more secure to use such a device than to VPN without one, but for a  
+base analysis this is probably in the order of increasing the mean- 
+time-to-crack from a thousand years to 10 million.
+
+One most significant advantage of devices like SecureID may be that  
+they're difficult to get hold of, have to be accounted for and have a  
+physical component - as a consequence you know that an employee has  
+handed his in when he leaves the company. This probably reduces  
+problems with key distribution and compromised keys - a regular VPN  
+can surely be maintained just as securely by generating a key for  
+each employee and maintaining a list of which key is assigned to  
+which member of staff, but it may be more difficult to ensure that an  
+employee's key is not copied &amp; used by a 3rd party. It will be  
+obvious should a device like SecureID be tampered with, but  
+nevertheless such a device is not required for VPN.
+
+&gt;<i> Then at home on my Mac, I use the free application, Microsoft  
+</I>&gt;<i> Remote Desktop Connection (available at versiontracker). All I need  
+</I>&gt;<i> is my work computer's IP address and my regular Windows login name  
+</I>&gt;<i> and password, and there I am, looking at the work computer as if I  
+</I>&gt;<i> were sitting in front of it. I can do anything there that I can do  
+</I>&gt;<i> when I'm at work, including travel through the work network, print  
+</I>&gt;<i> to work printers, and so on. It is nearly as fast as working on the  
+</I>&gt;<i> Windows machine directly.  Oh, I had to set the work machine to  
+</I>&gt;<i> allow remote connections to get this to work.
+</I>&gt;<i>
+</I>&gt;<i> I am describing this because I do not believe I could use VNC or  
+</I>&gt;<i> Timbuktu or anything else to get into the overall network in these  
+</I>&gt;<i> companies.
+</I>
+I believe that Microsoft's Remote Desktop Connection (RDC) software  
+does itself handle encrypted connections. See &lt;<A HREF="http://tinyurl.com/">http://tinyurl.com/</A> 
+obzp5&gt;. A VPN probably provides a higher level of security &amp;  
+confidence than relying upon the encryption within MS's RDC, but you  
+can probably manage without it and you should be able to access a  
+Windows Terminal Server (the server end of RDC) with only a single  
+forwarded port.
+
+Once connected to the VPN, other encryption is unnecessary - you can  
+use RDC within the virtual LAN without it, and you could also use VNC  
+or whatever. RDC is just nice because it comes pre-installed on many  
+Windows systems and because using Microsoft's client software (even  
+on a Mac) just seems to work slightly better than VNC for things like  
+right-clicking, copying and pasting &amp;c.
+
+&gt;<i> If I were you, I would talk to the IT department and just ask how  
+</I>&gt;<i> you can access your work computer from home. You will find out if  
+</I>&gt;<i> they have a secure network set up with special requirements for  
+</I>&gt;<i> access.
+</I>
+Indeed. I second that, although my experience of corporate IT types  
+is that they can be remarkably clueless about anything other than  
+Windows. The lower echelons of support tend to say &quot;no, it only works  
+on Windows&quot; or if you're lucky &quot;we only support Windows&quot;. My  
+experience of &quot;corporate IT&quot;, even with quite a small enterprise, was  
+that the higher echelons who did actually have a bit of an idea how  
+things actually worked and what protocols were used &amp; so on (although  
+this really meant that they knew the acronyms and requirements,  
+rather than a deep understanding of the topic) were remarkably  
+reluctant to talk to or help end-users. They seemed to consider  
+themselves too important to be seen doing much other than &quot;important  
+IT executivey&quot; things and that employees should be happy with the  
+Dell &amp; Windows solution that they had selected.
+
+&gt;<i> I don't know about the web-based services you mention. Who told you  
+</I>&gt;<i> about them? Maybe that person can give you more details?
+</I>
+There are, as you surmise, lots of services that can be accessed over  
+the web, but I couldn't help wondering if the OP was referring to  
+Microsoft's Remote Web Workplace. This allows access to Outlook, RDC  
+and other services &quot;through a web-browser&quot;; it's really cool to be  
+able to remote desktop through a web-browser, and to be able to drag  
+&amp; drop emails within the broswer window, but since Remote Web  
+Workplace uses ActiveX controls it's only compatible with Internet  
+Explorer on Windows.
+
+The OP really needs to help us by posting the brands and names of the  
+technology his employer uses.
+
+Stroller.
+
+</PRE>
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="014766.html">[X4U] remote access
+</A></li>
+	<LI>Next message: <A HREF="014791.html">[X4U] remote access
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14765">[ date ]</a>
+              <a href="thread.html#14765">[ thread ]</a>
+              <a href="subject.html#14765">[ subject ]</a>
+              <a href="author.html#14765">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

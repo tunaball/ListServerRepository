@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Trying to get rid of unwanted files
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Trying%20to%20get%20rid%20of%20unwanted%20files&In-Reply-To=list-12750824%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000791.html">
+   <LINK REL="Next"  HREF="000793.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Trying to get rid of unwanted files</H1>
+    <B>Mark Gibson</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Trying%20to%20get%20rid%20of%20unwanted%20files&In-Reply-To=list-12750824%40mail.ninewire.com"
+       TITLE="[X-Unix] Trying to get rid of unwanted files">gibsonm at bigpond.net.au
+       </A><BR>
+    <I>Thu May 13 14:37:55 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000791.html">[X-Unix] Trying to get rid of unwanted files
+</A></li>
+        <LI>Next message: <A HREF="000793.html">[X-Unix] Trying to get rid of unwanted files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#792">[ date ]</a>
+              <a href="thread.html#792">[ thread ]</a>
+              <a href="subject.html#792">[ subject ]</a>
+              <a href="author.html#792">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 15:56 -0500 13/5/04, Cloyce D. Spradling wrote:
+&gt;<i>On Fri, May 14, 2004 at 06:49:20AM +1000, Mark Gibson wrote:
+</I>&gt;<i>
+</I>&gt;:<i> OK. I'll give rm -f * a go (as I don't want to confirm each deletion).
+</I>&gt;<i>
+</I>&gt;<i>You won't need -f if you aren't using the 'rm' alias that comes standard.
+</I>&gt;<i>Invoke it with its full path (probably /bin/rm or /usr/bin/rm; no OSX system
+</I>&gt;<i>on hand to check), and no confirmation will be needed.
+</I>&gt;<i>
+</I>&gt;<i>You probably _do_ want the -f, though, in order to make it return success
+</I>&gt;<i>no matter what happens.
+</I>&gt;<i>
+</I>&gt;:<i> My concern is that there seems to be an upper limit to the number of
+</I>&gt;:<i> files that rm can cope with.
+</I>&gt;<i>
+</I>&gt;<i>It's actually a shell issue.  To get around it, use xargs:
+</I>&gt;<i>
+</I>&gt;<i>   cd &lt;CUPS dir&gt;; ls | xargs rm -f
+</I>&gt;<i>
+</I>&gt;<i>Of course, one you've started using the Dreaded Pipe, there's no reason
+</I>&gt;<i>to stop there:
+</I>&gt;<i>
+</I>&gt;<i>   cd &lt;CUPS dir&gt;; ls | grep -v '^tmp$' | xargs rm -rf
+</I>&gt;<i>
+</I>&gt;<i>and get that directory _REALLY_ clean!
+</I>&gt;<i>
+</I>&gt;<i>--
+</I>&gt;<i>Cloyce
+</I>&gt;<i>
+</I>
+Cloyce,
+
+Thanks, the problem is I have to clean /tmp more 
+frequently (due to exponential file build up) 
+than /cups.
+
+What I'm looking at for /tmp is:
+
+/usr/bin/find /private/var/spool/cups/tmp -mmin +5 -delete
+
+Which deletes files over 5 minutes old (the cron 
+task runs this every 5 mins to make it a rolling 
+cleanup).
+
+But I'll try:
+
+cd &lt;CUPS dir&gt;; ls | xargs rm -f
+
+To clean /cups on a daily basis.
+
+Thanks to all.
+-- 
+Regards,
+
+Mark (}-:
+
+AIM / iChat: gibsonm1
+
+Guy 1: &quot;Man, you have a horrible virus on your 
+computer!&quot; Guy 2: &quot;I do?&quot; Guy 1: &quot;Oh, my bad, 
+It's just Windows&#169;.&quot;
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000791.html">[X-Unix] Trying to get rid of unwanted files
+</A></li>
+	<LI>Next message: <A HREF="000793.html">[X-Unix] Trying to get rid of unwanted files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#792">[ date ]</a>
+              <a href="thread.html#792">[ thread ]</a>
+              <a href="subject.html#792">[ subject ]</a>
+              <a href="author.html#792">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

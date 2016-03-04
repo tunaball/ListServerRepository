@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Cube] need hard drive for Cube
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BCube%5D%20need%20hard%20drive%20for%20Cube&In-Reply-To=%3C201110091338.37683.macuser330250%40gmx.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011383.html">
+   <LINK REL="Next"  HREF="011384.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[Cube] need hard drive for Cube</H1>
+    <B>Mac User #330250</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BCube%5D%20need%20hard%20drive%20for%20Cube&In-Reply-To=%3C201110091338.37683.macuser330250%40gmx.net%3E"
+       TITLE="[Cube] need hard drive for Cube">macuser330250 at gmx.net
+       </A><BR>
+    <I>Sun Oct  9 04:38:37 PDT 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011383.html">[Cube] need hard drive for Cube
+</A></li>
+        <LI>Next message: <A HREF="011384.html">[Cube] need hard drive for Cube
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11385">[ date ]</a>
+              <a href="thread.html#11385">[ thread ]</a>
+              <a href="subject.html#11385">[ subject ]</a>
+              <a href="author.html#11385">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>----------  Original message  ----------
+Subject: Re: [Cube] need hard drive for Cube
+Date:    Friday, 07. October 2011
+From:    &quot;Mac User #330250&quot; &lt;<A HREF="../../../mailman/listinfo/cube.html">macuser330250 at gmx.net</A>&gt;
+To:      &quot;A place to discuss Apple's Cube.&quot; 
+&lt;<A HREF="../../../mailman/listinfo/cube.html">cube at listserver.themacintoshguy.com</A>&gt;
+&gt;<i> After this restart your system with a 10.5 DVD (you'll propably need an
+</I>&gt;<i> external USB or FW800 drive for this. For USB to work, you need the USB
+</I>&gt;<i> boot hack, here:
+</I>&gt;<i> 
+</I>&gt;<i> <A HREF="https://sites.google.com/site/shawnhcorey/howto-boot-apple-powerpcs-from-a-">https://sites.google.com/site/shawnhcorey/howto-boot-apple-powerpcs-from-a-</A>
+</I>&gt;<i> usb-drive-in-open-firmware
+</I>&gt;<i> 
+</I>&gt;<i> Then add the remaining space as a new partition. Done.
+</I>
+Actually, this won't work when booting from USB.
+
+I've just tried it on my G4 Cube for the first time. I normally use FW to boot 
+from, so I just figured it should also work with USB.
+
+The good news: you can boot from USB 1.1 using the Mac OS X Leopard Install 
+DVD (mine is 10.5.4). My external DVD-RW drive is in an external USB 2.0 
+enclosure.
+
+I used the right USB connector (closer to the reset switch; the other USB 
+connector is the one which is closer to the power connector).
+
+In Open Firmware (holding down Opt+Cmd+O+F simultainiously until the Open 
+Firmware message appears on the display) I used the following to identify the 
+USB port:
+
+Command used: &quot;dev / ls&quot;
+&gt;<i> 0 &gt; dev / ls
+</I>&gt;<i> &#8230;
+</I>&gt;<i> ff926928:   /<A HREF="../../../mailman/listinfo/cube.html">usb at 18</A>
+</I>&gt;<i> ff95ecf8:     /<A HREF="../../../mailman/listinfo/cube.html">disk at 1</A>
+</I>&gt;<i> ...
+</I>&gt;<i>  ok
+</I>&gt;<i> 0 &gt;
+</I>
+Command used: &quot;devalias&quot;
+&gt;<i> 0 &gt; devalias
+</I>&gt;<i> ...
+</I>&gt;<i> usb0               /<A HREF="../../../mailman/listinfo/cube.html">pci at f2000000</A>/<A HREF="../../../mailman/listinfo/cube.html">usb at 18</A>
+</I>&gt;<i> ...
+</I>&gt;<i>  ok
+</I>&gt;<i> 0 &gt;
+</I>
+So, I now knew that &quot;usb0&quot; is the right usb port.
+
+Booting the Leopard Install DVD was a matter of finding the right partition:
+
+Command: boot usb0/<A HREF="../../../mailman/listinfo/cube.html">disk at 1</A>:3,\\:tbxi
+&gt;<i> 0 &gt; boot usb0/<A HREF="../../../mailman/listinfo/cube.html">disk at 1</A>:3,\\:tbxi
+</I>
+
+This worked very well, but quite slow. I don't know if this is due to the 450 
+MHz G4 or due to the USB 1.1 relatively slow speed or a combination of both 
+(most likely).
+The Leopard installer complains about this Mac being not supported &#8211; I know, I 
+don't meet the minimum requirements of 867 MHz processor speed. Yes, there is 
+an Open Firmware hack for that too&#8230;
+<A HREF="http://lowendmac.com/osx/leopard/openfirmware.html">http://lowendmac.com/osx/leopard/openfirmware.html</A>
+
+
+Anyway, all looked well, and I could start Disk Utility from the Install DVD 
+menu.
+
+BUT: the fixed disk in my Cube was not visible.
+
+So why was that the case????
+
+It turned out that this USB boot method makes the USB drive appear as disk0 
+under the booted Mac OS X, so the Install DVD becomes disk0s3. This seems to 
+conflict with the IDE driver, which normally uses disk0 for the first IDE disk 
+drive it can find, i.e. the installed HDD in the Cube.
+
+Thus, you cannot install Leopard from an external DVD drive via USB. And sadly 
+you also cannot use Disk Utility to do the partitioning I was mentioning in my 
+earlier post. Sorry.
+
+So, you need to go the FireWire-400 way!
+
+
+If you don't need to &quot;see&quot; the installed HDD from your booted system, you can 
+always choose the USB boot method. I.e. for an independet Mac OS X system you 
+may want to use from an external USB drive. But you cannot access the internal 
+disk then.
+
+
+Cheers,
+Andreas  aka  Mac User #330250
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011383.html">[Cube] need hard drive for Cube
+</A></li>
+	<LI>Next message: <A HREF="011384.html">[Cube] need hard drive for Cube
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11385">[ date ]</a>
+              <a href="thread.html#11385">[ thread ]</a>
+              <a href="subject.html#11385">[ subject ]</a>
+              <a href="author.html#11385">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

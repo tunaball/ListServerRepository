@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Question about grep
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Question%20about%20grep&In-Reply-To=list-11440565%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000481.html">
+   <LINK REL="Next"  HREF="000483.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Question about grep</H1>
+    <B>Our Pal Al</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Question%20about%20grep&In-Reply-To=list-11440565%40mail.ninewire.com"
+       TITLE="[X-Unix] Question about grep">opa at avalon.rockefeller.edu
+       </A><BR>
+    <I>Wed Mar 17 12:31:18 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000481.html">[X-Unix] Question about grep
+</A></li>
+        <LI>Next message: <A HREF="000483.html">[X-Unix] Question about grep
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#482">[ date ]</a>
+              <a href="thread.html#482">[ thread ]</a>
+              <a href="subject.html#482">[ subject ]</a>
+              <a href="author.html#482">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hmmmm ... I think we're getting there. And I can even follow this! :)
+
+Problems though ...
+
+On 3/17/04 12:07 PM, &quot;Stroller&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">MacMonster at myrealbox.com</A>&gt; wrote:
+&gt;<i> 
+</I>&gt;<i> This seems close to what you require, although I can't immediately seem
+</I>&gt;<i> to see how to drop the leading zero, short of using sed.
+</I>&gt;<i> 
+</I>&gt;<i> $ date
+</I>&gt;<i> Wed Mar 17 17:00:11 GMT 2004
+</I>&gt;<i> $ let &quot;one_week_ago = `date +%s` - 60 * 60 * 24 * 7&quot;; date -r
+</I>
+Trying this out in a term window, I copy and paste this into my bash shell
+and it doesn't work. Error -
+
+&quot;date: option requires an argument -- r
+usage: date [-nu] [-r seconds] [+format]
+       date [[[[[cc]yy]mm]dd]hh]mm[.ss] &quot;
+
+Is this is something that'll only work in a script? Bear with me. All my
+shell scripting needs have been simple so far and there's been nothing I've
+made that I couldn't test out line by line first, then just &quot;sew 'em all
+together&quot; in a script.
+
+So I guess the idea would be to do multiple greps for today, yesterday, the
+day before, etc., appending them all to the same file? Works for me! I just
+want to be sure I'm following correctly.
+
+On 3/17/04 12:18 PM, &quot;Stroller&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">MacMonster at myrealbox.com</A>&gt; wrote:
+
+&gt;<i> And having wasted all that time on an answer involving long date
+</I>&gt;<i> formats, I think the answer is really a weekly `cron` job to
+</I>&gt;<i>    mv Restrospect\ backup\ report Restrospect\ backup\ report-`date
+</I>&gt;<i> +%Y-%m-%d_%X
+</I>&gt;<i> and run your grep on the new one that's subsequently created by the new
+</I>&gt;<i> backup.
+</I>
+Hmmm ... I don't think that will work.
+
+Retrospect's exported Backup Report will give me a bigger file every day
+with everything going back for months and months, new things not even added
+to the top! This is separate from the log. The log is display only and
+presented in a window - which I can truncate to an arbitary k limit,
+chopping off events too old mid-entry, will-nilly, which isn't really my
+preference as I outlined in an earlier post. The Backup Report in contrast
+just grows. It's also an optional thing to export and I've never used it
+until now.
+
+So if I every day grep the file for that day's events, I will in 7 days have
+created a file that goes back a week. And then the next day will go back a
+week and a day. Etc, etc.
+
+To consistenly have a file that always has a week's worth of events, I'll
+still need to at some point have some date-aware contruct which can age out
+old events, not just lop off at a file size, and that brings us back to the
+start of this thread.
+
+Whew!
+
+-opa
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000481.html">[X-Unix] Question about grep
+</A></li>
+	<LI>Next message: <A HREF="000483.html">[X-Unix] Question about grep
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#482">[ date ]</a>
+              <a href="thread.html#482">[ thread ]</a>
+              <a href="subject.html#482">[ subject ]</a>
+              <a href="author.html#482">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

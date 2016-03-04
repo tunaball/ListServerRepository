@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Integod
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Integod&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003980.html">
+   <LINK REL="Next"  HREF="003984.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Integod</H1>
+    <B>Allan Rube &#185; </B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Integod&In-Reply-To="
+       TITLE="[X4U] Integod">allan at nhbungalow.com
+       </A><BR>
+    <I>Wed Mar 16 04:26:36 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003980.html">[X4U] Idisk problem revised
+</A></li>
+        <LI>Next message: <A HREF="003984.html">[X4U] Integod
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3982">[ date ]</a>
+              <a href="thread.html#3982">[ thread ]</a>
+              <a href="subject.html#3982">[ subject ]</a>
+              <a href="author.html#3982">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Can someone tell me if this process is necessary and what it does. Shortly
+after I restart by dual g4 runnin g10.3.8, I get a crash report saying it
+quit. The actual report is below. Should I be concerend with this?
+
+Date/Time:      2005-03-16 05:18:48 -0500
+OS Version:     10.3.8 (Build 7U16)
+Report Version: 2
+
+Command: integod
+Path:    /Library/Intego/integod
+Version: ??? (???)
+PID:     407
+Thread:  0
+
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x00000047
+
+Thread 0 Crashed:
+0   com.apple.Foundation     0x909f2c50 NSPushAutoreleasePool + 0x30
+1   com.apple.Foundation     0x90a5a788 NSLogv + 0x2c
+2   com.apple.Foundation     0x90a74abc NSLog + 0x1c
+3   net.x101.EDInternet      0x35401508 +[EDInternetFramework load] + 0x44
+4   libobjc.A.dylib          0x90834020 _objc_call_loads_for_image + 0xc0
+5   libobjc.A.dylib          0x90834bf4 _objcInit + 0x174
+6   dyld                     0x8fe09938 call_image_init_routines + 0x1f4
+7   dyld                     0x8fe14574
+_dyld_make_delayed_module_initializer_calls + 0x5c
+8   integod                  0x00002534 _call_mod_init_funcs + 0x34
+9   integod                  0x0000241c _start + 0x9c (crt.c:221)
+10  integod                  0x0000237c start + 0x30
+
+PPC Thread State:
+  srr0: 0x909f2c50 srr1: 0x0200f030                vrsave: 0x00000000
+    cr: 0x84000444  xer: 0x20000000   lr: 0x909f2c34  ctr: 0x90001de0
+    r0: 0x909f2c34   r1: 0xbffff9a0   r2: 0xbffffabc   r3: 0xa000a1ec
+    r4: 0x00000048   r5: 0x00000048   r6: 0x00000000   r7: 0x00000000
+    r8: 0x00000000   r9: 0x35417004  r10: 0xfefefeff  r11: 0xa09f11d4
+   r12: 0x90001de0  r13: 0x00000000  r14: 0x8fe50834  r15: 0x8fe50504
+   r16: 0x8fe50528  r17: 0x8fe50538  r18: 0x00000001  r19: 0x44020000
+   r20: 0x8fe50538  r21: 0x00000001  r22: 0x8fe521fc  r23: 0x8fe50834
+   r24: 0x3541bdd0  r25: 0x0000001d  r26: 0x3541bfac  r27: 0x00000001
+   r28: 0x3541bfa0  r29: 0xa000a1ec  r30: 0x0000001f  r31: 0x90a5a76c
+
+Binary Images Description:
+    0x1000 -     0xbfff integod     /Library/Intego/integod
+0x35000000 - 0x3500ffff net.x101.EDCommon ??? (28)
+/Library/Frameworks/EDWOCommon.framework/Versions/A/EDWOCommon
+0x35400000 - 0x35416fff net.x101.EDInternet ??? (12)
+/Library/Frameworks/EDWOInternet.framework/Versions/A/EDWOInternet
+0x8fe00000 - 0x8fe4ffff dyld     /usr/lib/dyld
+0x90000000 - 0x90122fff libSystem.B.dylib     /usr/lib/libSystem.B.dylib
+0x90190000 - 0x9023dfff com.apple.CoreFoundation 6.3.6 (299.33)
+/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundatio
+n
+0x90280000 - 0x904f9fff com.apple.CoreServices.CarbonCore 10.3.6 (10.3.5)
+/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Carb
+onCore.framework/Versions/A/CarbonCore
+0x90570000 - 0x905dffff com.apple.framework.IOKit 1.3.6 (???)
+/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+0x90610000 - 0x9069afff com.apple.CoreServices.OSServices 3.0.1
+/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSSe
+rvices.framework/Versions/A/OSServices
+0x90700000 - 0x90700fff com.apple.CoreServices 10.3 (???)
+/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
+0x907f0000 - 0x907f9fff com.apple.DiskArbitration 2.0.4
+/System/Library/PrivateFrameworks/DiskArbitration.framework/Versions/A/DiskA
+rbitration
+0x90830000 - 0x9089ffff libobjc.A.dylib     /usr/lib/libobjc.A.dylib
+0x909f0000 - 0x90b4bfff com.apple.Foundation 6.3.5 (500.56)
+/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+0x90d00000 - 0x90d1bfff com.apple.SystemConfiguration 1.7.1 (???)
+/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemCo
+nfiguration
+0x910b0000 - 0x91101fff com.apple.bom 1.2.5 (63.2)
+/System/Library/PrivateFrameworks/Bom.framework/Versions/A/Bom
+0x920c0000 - 0x922a7fff com.apple.security 2.4 (177)
+/System/Library/Frameworks/Security.framework/Versions/A/Security
+0x92740000 - 0x92777fff com.apple.CFNetwork 1.2.1 (7)
+/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNe
+twork.framework/Versions/A/CFNetwork
+0x939d0000 - 0x939d4fff libmathCommon.A.dylib
+/usr/lib/system/libmathCommon.A.dylib
+0x94060000 - 0x94078fff com.apple.WebServices 1.1.1 (1.1.0)
+/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/WebS
+ervicesCore.framework/Versions/A/WebServicesCore
+0x945b0000 - 0x945b9fff libz.1.dylib     /usr/lib/libz.1.dylib
+0x94610000 - 0x9462afff libresolv.9.dylib     /usr/lib/libresolv.9.dylib
+0x94650000 - 0x946affff com.apple.SearchKit 1.0.2
+/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Sear
+chKit.framework/Versions/A/SearchKit
+0x94a30000 - 0x94af5fff libxml2.2.dylib     /usr/lib/libxml2.2.dylib
+0x968d0000 - 0x969b2fff libicucore.A.dylib     /usr/lib/libicucore.A.dylib
+0x96cb0000 - 0x96d9efff libiconv.2.dylib     /usr/lib/libiconv.2.dylib
+
+
+Allan
+
+Allan   Nashua, New Hampshire
+homepage: www.nhbungalow.com
+
+
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003980.html">[X4U] Idisk problem revised
+</A></li>
+	<LI>Next message: <A HREF="003984.html">[X4U] Integod
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3982">[ date ]</a>
+              <a href="thread.html#3982">[ thread ]</a>
+              <a href="subject.html#3982">[ subject ]</a>
+              <a href="author.html#3982">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

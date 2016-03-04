@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Newbies] Re: file locks-can't save files
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20Re%3A%20file%20locks-can%27t%20save%20files&In-Reply-To=8D651F8E-AB9C-4C7D-A0FB-EB0DE0CC1F58%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005158.html">
+   <LINK REL="Next"  HREF="005164.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Newbies] Re: file locks-can't save files</H1>
+    <B>Alex</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20Re%3A%20file%20locks-can%27t%20save%20files&In-Reply-To=8D651F8E-AB9C-4C7D-A0FB-EB0DE0CC1F58%40mac.com"
+       TITLE="[X-Newbies] Re: file locks-can't save files">lists at lexial.ca
+       </A><BR>
+    <I>Thu May 26 20:31:27 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005158.html">[X-Newbies] Re: file locks-can't save files
+</A></li>
+        <LI>Next message: <A HREF="005164.html">[X-Newbies] Re: file locks-can't save files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5161">[ date ]</a>
+              <a href="thread.html#5161">[ thread ]</a>
+              <a href="subject.html#5161">[ subject ]</a>
+              <a href="author.html#5161">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On May 26, 2005, at 18:12, Charles Martin wrote:
+
+&gt;<i> [...] your permissions are PROFOUNDLY screwed up [...]
+</I>&gt;<i>
+</I>&gt;<i> The easiest solution to this problem that I have found:
+</I>&gt;<i> 1. Download BatCHmod (available from versiontracker, macupdate, et al)
+</I>&gt;<i> 2. Run the program.
+</I>
+I seriously doubt Charles' diagnosis is correct.
+
+If, as I believe, the problem is the immutable flag, then BatChmod  
+cannot help. It does not handle it.
+
+There are two immutable flags, user and system. The former can be  
+changed with chflags, but, if the system immutable flag is set, then  
+even root can't change it in multi-user mode.
+
+I strongly advise reading the relevant Apple KB doc
+
+&lt;<A HREF="http://docs.info.apple.com/article.html?artnum=106237">http://docs.info.apple.com/article.html?artnum=106237</A>&gt;
+
+and, for slightly more detail
+
+&lt;<A HREF="http://www.osxfaq.com/Tutorials/LearningCenter/AdvancedUnix/ugp2/">http://www.osxfaq.com/Tutorials/LearningCenter/AdvancedUnix/ugp2/</A> 
+page2.ws&gt;
+
+&gt;<i> 4. Set permissions as you want them, which should be as follows:
+</I>&gt;<i> [...]
+</I>&gt;<i> Under owner, all three boxes (r,w,x) should be checked.
+</I>&gt;<i> Under Group, just the r and x boxes should be checked.
+</I>&gt;<i> Under Everyone, just the r and x boxes should be checked.
+</I>&gt;<i>
+</I>&gt;<i> Check the &quot;Apple ownership and privileges&quot; to &quot;Enclosed files and  
+</I>&gt;<i> folders.&quot; Leave the &quot;unlock&quot; box unchecked.
+</I>&gt;<i> 5. Hit Apply.
+</I>
+Assuming Charles' diagnosis is right, this is _not_ good advice.  
+Consider what this action would accomplish. Hit Apply -- and you've  
+given _every_ user permission to search each and every one of your  
+folders, read each and every one of your documents, and launch any  
+scripts you might have. (The only thing they can't do is change or  
+trash your files.) This is a serious breach of security.
+
+User permissions were actually designed in a more subtle manner;  
+applying a batch change at the top level of your home directory is not  
+going to restore them to the correct values. Consider, for instance,  
+the Documents, Public, and Drop Box folders. You do not want to grant  
+any kind of access to either the group or the world to the former. You  
+do want to allow everyone to access but not modify the second, and  
+modify but not see the contents of the latter, otherwise they lose  
+their raison d'etre.
+
+Whenever you propose to use a tool like BatChmod -- which ideally  
+should come with a tutorial on permissions, but unfortunately doesn't  
+-- think first long and hard about what the result will actually be.
+
+And, btw, if you want to see what permissions should be on your home  
+folder, check permissions on the appropriate item in  
+/System/Library/User\ Template/
+
+&lt;0x0192&gt;
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005158.html">[X-Newbies] Re: file locks-can't save files
+</A></li>
+	<LI>Next message: <A HREF="005164.html">[X-Newbies] Re: file locks-can't save files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5161">[ date ]</a>
+              <a href="thread.html#5161">[ thread ]</a>
+              <a href="subject.html#5161">[ subject ]</a>
+              <a href="author.html#5161">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

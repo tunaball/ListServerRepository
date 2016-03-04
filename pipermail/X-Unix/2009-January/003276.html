@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Lingon - launchd - syntax help
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Lingon%20-%20launchd%20-%20syntax%20help&In-Reply-To=C5A4AEEE.40E95%25deansuhr%40deansuhr.us">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003275.html">
+   <LINK REL="Next"  HREF="003277.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Lingon - launchd - syntax help</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Lingon%20-%20launchd%20-%20syntax%20help&In-Reply-To=C5A4AEEE.40E95%25deansuhr%40deansuhr.us"
+       TITLE="[X-Unix] Lingon - launchd - syntax help">ecrist at secure-computing.net
+       </A><BR>
+    <I>Tue Jan 27 12:44:33 PST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003275.html">[X-Unix] Lingon - launchd - syntax help
+</A></li>
+        <LI>Next message: <A HREF="003277.html">[X-Unix] Lingon - launchd - syntax help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3276">[ date ]</a>
+              <a href="thread.html#3276">[ thread ]</a>
+              <a href="subject.html#3276">[ subject ]</a>
+              <a href="author.html#3276">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Jan 27, 2009, at 2:30 PM, Dean Suhr wrote:
+
+&gt;<i> On 1/27/09 12:04 PM, &quot;Eric F Crist&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">ecrist at secure-computing.net</A>&gt;  
+</I>&gt;<i> wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> On Jan 27, 2009, at 1:21 PM, Dean Suhr wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Greetings all,
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I&#8217;m making my first dive into launchd. I want to schedule a script
+</I>&gt;&gt;&gt;<i> and am using Lingon &lt;<A HREF="http://tuppis.com/lingon/">http://tuppis.com/lingon/</A>&gt; to help me a bit.
+</I>&gt;&gt;&gt;<i> The script has permissions of 777 for debug purposes.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> The terminal command that works is:
+</I>&gt;&gt;&gt;&gt;<i> . /somedirectory/poll-blogs-script.sh  (with a space between the
+</I>&gt;&gt;&gt;&gt;<i> period and the first slash)
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> That command in Lingon/launchd gives me a &#8220;posix_spawnp(&#8220;.&#8221;, ...):
+</I>&gt;&gt;&gt;<i> Permission denied&#8221; error
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I am suspecting this is a basic syntax issue ... Can you help?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Different subject, but have a look here:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> <A HREF="http://www.secure-computing.net/wiki/index.php/Leopard_Static_Routes">http://www.secure-computing.net/wiki/index.php/Leopard_Static_Routes</A>
+</I>&gt;&gt;<i> ---
+</I>&gt;&gt;<i> Eric Crist
+</I>&gt;&gt;<i>
+</I>&gt;<i> Thanks Eric ... But I am still stumped.  What I noticed from the  
+</I>&gt;<i> example you
+</I>&gt;<i> gave was ...
+</I>&gt;<i> 1) The shell script filename had no period or extension.  I made  
+</I>&gt;<i> that change
+</I>&gt;<i> to no avail.
+</I>&gt;<i> 2) I changed the first line of my script from #!/bin/shell to #!/bin/ 
+</I>&gt;<i> sh (I
+</I>&gt;<i> told you I was new at this!)
+</I>&gt;<i> 2) The example shell script was is /System/Library/StartupItems and  
+</I>&gt;<i> was
+</I>&gt;<i> called by its &quot;unpathed&quot; name without a path. My script is in its own
+</I>&gt;<i> folder, somefolder, at the root level with 755 permissions.  As a  
+</I>&gt;<i> result I
+</I>&gt;<i> called the shell script by /somefolder/scriptname using the same  
+</I>&gt;<i> syntax as
+</I>&gt;<i> the plist (no leading period).
+</I>&gt;<i>
+</I>&gt;<i> I still get the same permissions error as described above.
+</I>
+
+Try adding -x to the parent script after #!/bin/sh, so the first line  
+looks like:
+
+#!/bin/sh -x
+
+this gives us debug output.
+---
+Eric Crist
+
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003275.html">[X-Unix] Lingon - launchd - syntax help
+</A></li>
+	<LI>Next message: <A HREF="003277.html">[X-Unix] Lingon - launchd - syntax help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3276">[ date ]</a>
+              <a href="thread.html#3276">[ thread ]</a>
+              <a href="subject.html#3276">[ subject ]</a>
+              <a href="author.html#3276">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

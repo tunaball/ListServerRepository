@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] how to view &quot;pageouts?&quot;
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20how%20to%20view%20%22pageouts%3F%22&In-Reply-To=a06240819c4803bf83a1e%40%5B172.16.1.56%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="021387.html">
+   <LINK REL="Next"  HREF="021392.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] how to view &quot;pageouts?&quot;</H1>
+    <B>Ed Gould</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20how%20to%20view%20%22pageouts%3F%22&In-Reply-To=a06240819c4803bf83a1e%40%5B172.16.1.56%5D"
+       TITLE="[X4U] how to view &quot;pageouts?&quot;">edgould1948 at comcast.net
+       </A><BR>
+    <I>Thu Jun 19 10:32:34 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="021387.html">[X4U] how to view &quot;pageouts?&quot;
+</A></li>
+        <LI>Next message: <A HREF="021392.html">[X4U] AirPort Express Base Station
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#21389">[ date ]</a>
+              <a href="thread.html#21389">[ thread ]</a>
+              <a href="subject.html#21389">[ subject ]</a>
+              <a href="author.html#21389">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jun 19, 2008, at 11:47 AM, David Ledger wrote:
+&gt;<i> --------------------- 
+</I>&gt;<i> SNIP----------------------------------------------------------
+</I>&gt;<i> Other than memory mapped file I/O I'd be interested to know what  
+</I>&gt;<i> these other reasons are.
+</I>&gt;<i>
+</I>&gt;<i> David
+</I>&gt;<i>
+</I>&gt;<i>
+</I>The one or two that come to the top of my mind (there are others of  
+course) are 1. The application tells the OS that the page will not be  
+used in quite a long time (perhaps an error routine that is never(?)  
+to be invoked) 2. The OS sees a wait issued by the application and  
+due to other issues (like cpu busy, etc) decided to swap the entire  
+application out. Some of the types of wait are either I/O and or  
+waiting on input from the user. If the system is overloaded say by  
+cpu usage then the system looks at the the applications that are not  
+doing anything and frees up memory by swapping those applications out  
+or another reason is that the OS keeps track of a a &quot;routine&quot;  and if  
+its no longer in use it it moves it to the ready &quot;que&quot; to be paged  
+out que and so long as the use count does not go up by the time its  
+ready to be paged it is paged out or depending on how the OS is  
+written  maybe just the page is freed and when the routine is need  
+again it is paged in from the swap file, again it depends on how  
+sophisticated the OS is.   It maybe just because the application says  
+I am stopped and can go no further until an external event occurs  
+like a time expiring at say 2 hours later(ICAL might be an example  
+here). The MAC internals on scheduling is not externally published so  
+there may be others as well, its difficult to say what was  
+architected into the OS do I can only guess based on how other  
+systems that *ARE* externalized.
+
+I posted a lengthy pageout response yesterday and it was held for  
+length restrictions. Maybe that will answer the question as well.
+
+Ed
+
+</PRE>
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="021387.html">[X4U] how to view &quot;pageouts?&quot;
+</A></li>
+	<LI>Next message: <A HREF="021392.html">[X4U] AirPort Express Base Station
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#21389">[ date ]</a>
+              <a href="thread.html#21389">[ thread ]</a>
+              <a href="subject.html#21389">[ subject ]</a>
+              <a href="author.html#21389">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

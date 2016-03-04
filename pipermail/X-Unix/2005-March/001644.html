@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] local IMAP server?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20local%20IMAP%20server%3F&In-Reply-To=24c58b0b742c770773d9436c675cdf91%40gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001642.html">
+   <LINK REL="Next"  HREF="001645.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] local IMAP server?</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20local%20IMAP%20server%3F&In-Reply-To=24c58b0b742c770773d9436c675cdf91%40gmail.com"
+       TITLE="[X-Unix] local IMAP server?">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Fri Mar 18 09:38:40 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001642.html">[X-Unix] local IMAP server?
+</A></li>
+        <LI>Next message: <A HREF="001645.html">[X-Unix] local IMAP server?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1644">[ date ]</a>
+              <a href="thread.html#1644">[ thread ]</a>
+              <a href="subject.html#1644">[ subject ]</a>
+              <a href="author.html#1644">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Mar 18, 2005, at 4:55 pm, Michael Gmail wrote:
+&gt;<i>
+</I>&gt;<i> I've been avoiding Entourage because I don't want all my mail in a 
+</I>&gt;<i> proprietary database. But Entourage speaks IMAP, doesn't it? Is there 
+</I>&gt;<i> any reason I couldn't set up a local IMAP server on my own machine, 
+</I>&gt;<i> then store all my mail there and access it from any IMAP mail client I 
+</I>&gt;<i> feel like using?
+</I>
+No reason at all. It would probably work very well.
+
+&gt;<i> How difficult is it?
+</I>
+On Linux I did it in my spare time over the course of a few days. 
+Installation is pretty-well documented for Linux but for Mac OS X you 
+can use Fink or Darwin ports. This article 
+&lt;<A HREF="http://www.stepwise.com/Articles/Workbench/eart.index.html">http://www.stepwise.com/Articles/Workbench/eart.index.html</A>&gt; tells you 
+how to compile  from source, but I prefer Courier to UW. Courier uses 
+fairly standard Maildirs containing a single file per email - I _think_ 
+UW normally uses mbox (?) format which, although standard, is a single 
+text file per folder.
+
+&gt;<i> Am I overlooking anything?
+</I>
+What I found complicated was wrapping my head around the other mail 
+transport layers. You don't need to worry about SMTP / Postfix / 
+sendmail, because Entourage / Mail.app on your Mac can talk directly to 
+your ISP's mailserver. but when you've finished installing your IMAP 
+server you'll want some way of getting mail from the mailboxes you have 
+with your ISP to your IMAP inbox. I use fetchmail for this - it can be 
+told to call maildrop for message-filtering. You'll probably find 
+yourself reading a few manpages.
+
+&gt;<i> Can existing mail be imported?
+</I>
+Yes. Add a new account for the server in Entourage &amp; then drag &amp; drop 
+from your local servers onto the server.
+
+Stroller.
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001642.html">[X-Unix] local IMAP server?
+</A></li>
+	<LI>Next message: <A HREF="001645.html">[X-Unix] local IMAP server?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1644">[ date ]</a>
+              <a href="thread.html#1644">[ thread ]</a>
+              <a href="subject.html#1644">[ subject ]</a>
+              <a href="author.html#1644">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

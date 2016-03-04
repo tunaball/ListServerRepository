@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] UFS volume full?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20UFS%20volume%20full%3F&In-Reply-To=A9C5C2CA-1E59-11D9-8240-000A959CEE6A%40pursued-with.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001205.html">
+   <LINK REL="Next"  HREF="001211.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] UFS volume full?</H1>
+    <B>Eric Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20UFS%20volume%20full%3F&In-Reply-To=A9C5C2CA-1E59-11D9-8240-000A959CEE6A%40pursued-with.net"
+       TITLE="[X-Unix] UFS volume full?">ecrist at secure-computing.net
+       </A><BR>
+    <I>Thu Oct 14 20:48:27 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001205.html">[X-Unix] UFS volume full?
+</A></li>
+        <LI>Next message: <A HREF="001211.html">[X-Unix] UFS volume full?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1206">[ date ]</a>
+              <a href="thread.html#1206">[ thread ]</a>
+              <a href="subject.html#1206">[ subject ]</a>
+              <a href="author.html#1206">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Oct 14, 2004, at 10:24 PM, Kevin Stevens wrote:
+
+&gt;<i>
+</I>&gt;<i> On Oct 14, 2004, at 06:09, Eric Crist wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> On Oct 13, 2004, at 11:15 PM, Kevin Stevens wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I have a 20GB UFS partition on my G5, which is used exclusively for 
+</I>&gt;&gt;&gt;<i> a news spool (using leafnode).  Typically, this runs about 10-15% 
+</I>&gt;&gt;&gt;<i> full, with maybe 50 directories containing thousands of files.  
+</I>&gt;&gt;&gt;<i> However, intermittently, the volume will show as being full - df 
+</I>&gt;&gt;&gt;<i> reports 100% usage (space, not inodes), and write attempts to the 
+</I>&gt;&gt;&gt;<i> volume fail with disk full messages.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> When I realize this, I go into the mail spool directory and start 
+</I>&gt;&gt;&gt;<i> doing du -sh summaries on each of the dozen news subdirectories, to 
+</I>&gt;&gt;&gt;<i> see where all the space has gone.  Inevitably, I'll get about 
+</I>&gt;&gt;&gt;<i> halfway through this process, with the directories reporting normal 
+</I>&gt;&gt;&gt;<i> usage; when the volume will revert to normal status.  Note that I'm 
+</I>&gt;&gt;&gt;<i> not deleting any files during this process, just touching them with 
+</I>&gt;&gt;&gt;<i> du.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Any thoughts?  I was thinking inodes or sparse files somehow, but 
+</I>&gt;&gt;&gt;<i> nothing really fits the symptoms.  If I hit a file limit in a 
+</I>&gt;&gt;&gt;<i> directory, would that report the whole volume as full?
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> KeS
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Try doing an fsck on the disk to make sure everything is OK.
+</I>&gt;<i>
+</I>&gt;<i> Done, no errors reported.
+</I>&gt;<i>
+</I>&gt;&gt;<i>   Other than that, are you using UFS1 or UFS2?
+</I>&gt;<i>
+</I>&gt;<i> Umm, not sure how I'd tell?  I'm using whatever Panther creates when 
+</I>&gt;<i> you set up a UFS partition using Disk Utility.
+</I>&gt;<i>
+</I>&gt;&gt;<i>   Is the entire 20GB one logical partition?
+</I>&gt;<i>
+</I>&gt;<i> Sorry, not sure I understand your question.  It's a slice 
+</I>&gt;<i> (/dev/disk1s5) out of a 250GB drive, mounted at /Volumes/Unix.  It has 
+</I>&gt;<i> the directory /var/spool/news with all the files under it, and that is 
+</I>&gt;<i> soft-linked from the &quot;real&quot; /var/spool/news.
+</I>&gt;<i>
+</I>&gt;<i> KeS
+</I>
+Well, that last statement doesn't make any sense.  Keep in mind that / 
+is your ROOT partition.  i.e. this means your primary boot partition.  
+Now, there's the possibility that you've got a 
+/Volumes/Unix/var/spool/news that is a symbolic (what you call soft) 
+link to /var/spool/news, but there is not two /var/spool/news 
+directories on the system.  does this make sense?  It's good that you 
+didn't get any errors on an fsck, but what options did you use when you 
+ran it?  Are you using journaling on the UFS partition?  Are you 
+_certain_ that it's space and not inodes?  Often, with news servers, 
+there are so many small files that you run out of inodes.  check this 
+to make sure, possibly post results of df -h and du -d 1 
+/Volumes/Unix/var.
+
+This would help greatly.
+
+-----
+Eric F Crist
+Secure Computing Networks
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: PGP.sig
+Type: application/pgp-signature
+Size: 194 bytes
+Desc: This is a digitally signed message part
+Url : <A HREF="../attachments/20041014/cfde8187/PGP.bin">http://listserver.themacintoshguy.com/pipermail/x-unix/attachments/20041014/cfde8187/PGP.bin</A>
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001205.html">[X-Unix] UFS volume full?
+</A></li>
+	<LI>Next message: <A HREF="001211.html">[X-Unix] UFS volume full?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1206">[ date ]</a>
+              <a href="thread.html#1206">[ thread ]</a>
+              <a href="subject.html#1206">[ subject ]</a>
+              <a href="author.html#1206">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

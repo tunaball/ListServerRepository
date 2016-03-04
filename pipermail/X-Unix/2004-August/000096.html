@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] what the fork?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20what%20the%20fork%3F&In-Reply-To=list-15851564%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000095.html">
+   <LINK REL="Next"  HREF="000097.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] what the fork?</H1>
+    <B>Juan Manuel Palacios</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20what%20the%20fork%3F&In-Reply-To=list-15851564%40mail.ninewire.com"
+       TITLE="[X-Unix] what the fork?">jmpalaciosp at eml.cc
+       </A><BR>
+    <I>Mon Aug  9 19:56:29 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000095.html">[X-Unix] what the fork?
+</A></li>
+        <LI>Next message: <A HREF="000097.html">Security update for the PNG exploit
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#96">[ date ]</a>
+              <a href="thread.html#96">[ thread ]</a>
+              <a href="subject.html#96">[ subject ]</a>
+              <a href="author.html#96">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Aug 9, 2004, at 9:48 PM, William H. Magill wrote:
+
+&gt;<i>
+</I>&gt;<i> It's a Kernel limit.
+</I>&gt;<i>
+</I>&gt;<i> The problem usually has to do with the defaults for the number of 
+</I>&gt;<i> processes which any single uid may have (or even the system). 
+</I>&gt;<i> [Nominally - &quot;maxprocperuser&quot;]
+</I>&gt;<i>
+</I>&gt;<i> I don't know in Darwin, but in most Unix versions, these are NOT 
+</I>&gt;<i> dynamic numbers but are normally set  when the kernel is built. 
+</I>&gt;<i> However, because most Unix systems are optimized for multi-user time 
+</I>&gt;<i> sharing, and not for &quot;scientific&quot; work or even heavy duty programming, 
+</I>&gt;<i> the limits are frequently encountered doing exactly what you are 
+</I>&gt;<i> trying to do -- install some large package.
+</I>&gt;<i>
+</I>&gt;<i> There is nothing wrong.  The Kernel is just doing what it was told to 
+</I>&gt;<i> do.
+</I>&gt;<i>
+</I>&gt;<i> It looks like in Darwin, the parameter involved might be NPIDS 
+</I>&gt;<i> (maximum number of PIDs per process) which is set to 16. But I'm not 
+</I>&gt;<i> particularly conversant with the kernel.
+</I>&gt;<i>
+</I>&gt;<i> In some Unix versions these can be modified via /etc/sysconfigtab.
+</I>&gt;<i>
+</I>
+	Mac OS X allows tweaking some of these variables with sysctl(8):
+
+$[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: MacOS](58/0,0)-&gt; sysctl kern | grep max
+kern.ipc.maxsockbuf: 262144
+kern.ipc.somaxconn: 128
+kern.ipc.maxsockets: 512
+kern.sysv.shmmax: 4194304
+kern.maxvnodes = 11264
+kern.maxproc = 532
+kern.maxfiles = 12288
+kern.argmax = 262144
+kern.maxfilesperproc = 10240
+kern.maxprocperuid = 100
+kern.aiomax = 90
+kern.aioprocmax = 16
+
+	Passing the -w flag to sysctl, and of course invoking it as sudo, may 
+help you adapt the parameter: sudo sysctl -w kern.maxprocperuid = 
+&lt;desired number&gt;. But I say &quot;may&quot; because I haven't played with this 
+nor tested the implications of such adjustment; so beware Victor, try 
+at your own risk! Also, I'd think rebooting would bring your OS back to 
+its default state, but I'm not too sure about it either.
+
+	Hope that helps! Regards,...
+
+
+		Juan
+
+
+PS: While reading a bit of the /etc/rc startup script I found out it is 
+setup to read from an /etc/sysctl.conf file (lines 99-104), so maybe 
+you could put your changes there if you want to make them permanent 
+after appropriate testing. But as I don't know the format of such file 
+(it is passed through awk(1)) you would have to do your own testing; 
+again, beware... mocking with the kernel is not always a good idea!!
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000095.html">[X-Unix] what the fork?
+</A></li>
+	<LI>Next message: <A HREF="000097.html">Security update for the PNG exploit
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#96">[ date ]</a>
+              <a href="thread.html#96">[ thread ]</a>
+              <a href="subject.html#96">[ subject ]</a>
+              <a href="author.html#96">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

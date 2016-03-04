@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] routing
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20routing&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002519.html">
+   <LINK REL="Next"  HREF="002521.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] routing</H1>
+    <B>John Harrold</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20routing&In-Reply-To="
+       TITLE="[X-Unix] routing">john.m.harrold at gmail.com
+       </A><BR>
+    <I>Thu Dec 29 15:19:35 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002519.html">[X-Unix] safari auto-fill keychain [OT]
+</A></li>
+        <LI>Next message: <A HREF="002521.html">[X-Unix] routing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2520">[ date ]</a>
+              <a href="thread.html#2520">[ thread ]</a>
+              <a href="subject.html#2520">[ subject ]</a>
+              <a href="author.html#2520">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Howdy,
+
+I've recently moved to Samoa as a peace corps volunteer to teach. I've run into
+what I belive is a routing issue. I'm getting internet access from the
+university where I'm working, and I'd like to connect to a computer in my
+research group from grad school. When I try to traceroute there it gets hung up
+at the ipaddress below:
+
+
+<A HREF="../../../mailman/listinfo/x-unix.html">jmh at absent</A>:$ traceroute 136.142.178.208
+traceroute to 136.142.178.208 (136.142.178.208), 64 hops max, 40 byte packets
+ 1  10.10.1.8 (10.10.1.8)  177.767 ms  158.257 ms  174.742 ms
+ 2  10.10.1.1 (10.10.1.1)  185.802 ms  171.917 ms  176.330 ms
+ 3  10.205.141.245 (10.205.141.245)  621.275 ms  972.644 ms  1000.278 ms
+ 4  * * *
+
+However I can connect to things like google just fine.
+
+<A HREF="../../../mailman/listinfo/x-unix.html">jmh at absent</A>:$ traceroute google.com
+traceroute: Warning: google.com has multiple addresses; using 64.233.187.99
+traceroute to google.com (64.233.187.99), 64 hops max, 40 byte packets
+ 1  10.10.1.8 (10.10.1.8)  169.122 ms  167.483 ms  174.354 ms
+ 2  10.10.1.1 (10.10.1.1)  173.447 ms  172.779 ms  185.144 ms
+ 3  10.205.141.1 (10.205.141.1)  612.242 ms  650.055 ms  623.552 ms
+ 4  10.199.109.1 (10.199.109.1)  637.759 ms  623.251 ms  623.899 ms
+ 5  10.199.108.2 (10.199.108.2)  631.367 ms  622.517 ms  625.718 ms
+
+It isn't just the computer from my research group. I'm having random issues
+with other places too like pbs.org. 
+
+<A HREF="../../../mailman/listinfo/x-unix.html">jmh at absent</A>$ traceroute 149.48.228.106
+traceroute to 149.48.228.106 (149.48.228.106), 64 hops max, 40 byte packets
+ 1  10.10.1.8 (10.10.1.8)  174.558 ms  172.094 ms  178.540 ms
+ 2  10.10.1.1 (10.10.1.1)  170.546 ms  171.463 ms  176.176 ms
+ 3  10.205.141.245 (10.205.141.245)  610.937 ms  609.332 ms  625.913 ms
+ 4  *
+
+I'm using the ipaddresses because I cannot resolve their nameservers ;). I can
+however ssh to another computer on the net and access them just
+fine.
+
+So can anyone tell me how to fix this routing problem on my end? 
+
+-- 
+---------------------------------------------------------- 
+                            | /&quot;\                         
+ john harrold               | \ / ASCII ribbon campaign   
+ john.m.harrold _at_ gmail  |  X  against HTML mail       
+ the most useful idiot      | / \                         
+----------------------------------------------------------
+ What difference does it make to the dead, the orphans, 
+ and the homeless, whether the mad destruction is brought 
+ under the name of totalitarianism or the holy name of 
+ liberty and democracy?
+ --Gandhi
+----------------------------------------------------------
+  gpg --keyserver pgp.mit.edu --recv-key B23241CB
+----------------------------------------------------------
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 186 bytes
+Desc: not available
+Url : <A HREF="../attachments/20051229/ca3f1989/attachment-0001.bin">http://listserver.themacintoshguy.com/pipermail/x-unix/attachments/20051229/ca3f1989/attachment-0001.bin</A>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002519.html">[X-Unix] safari auto-fill keychain [OT]
+</A></li>
+	<LI>Next message: <A HREF="002521.html">[X-Unix] routing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2520">[ date ]</a>
+              <a href="thread.html#2520">[ thread ]</a>
+              <a href="subject.html#2520">[ subject ]</a>
+              <a href="author.html#2520">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

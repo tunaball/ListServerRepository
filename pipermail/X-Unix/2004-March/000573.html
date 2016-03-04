@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Hiding apps from the command line
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11734095%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000572.html">
+   <LINK REL="Next"  HREF="000574.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Hiding apps from the command line</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11734095%40mail.ninewire.com"
+       TITLE="[X-Unix] Hiding apps from the command line">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Fri Mar 26 16:21:59 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000572.html">[X-Unix] Hiding apps from the command line
+</A></li>
+        <LI>Next message: <A HREF="000574.html">[X-Unix] 0th Annual Shell X-Unix Scripting Contest (was Re: [X4U] Terminal Comand to Hide App Layers)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#573">[ date ]</a>
+              <a href="thread.html#573">[ thread ]</a>
+              <a href="subject.html#573">[ subject ]</a>
+              <a href="author.html#573">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Mar 26, 2004, at 7:40 pm, Eugene Lee wrote:
+
+&gt;<i> On Fri, Mar 26, 2004 at 05:04:34PM +0000, Stroller wrote:
+</I>&gt;<i> :
+</I>&gt;<i> : On Mar 26, 2004, at 12:15 pm, Eugene Lee wrote:
+</I>&gt;<i> : &gt;
+</I>&gt;<i> : &gt;: #! /bin/sh
+</I>&gt;<i> : &gt;
+</I>&gt;<i> : &gt;No spaces here, it should be &quot;#!/bin/sh&quot; (without the quotes).
+</I>&gt;<i> :
+</I>&gt;<i> : It's probably more elegant to use #!/bin/bash at the beginning of 
+</I>&gt;<i> your
+</I>&gt;<i> : scripts, as we don't actually have a Bourne shell on our Macs.
+</I>&gt;<i>
+</I>&gt;<i> True, but not everyone has /bin/bash.  Some have /usr/local/bin/bash.
+</I>&gt;<i> /bin/sh is guaranteed to be more portable.
+</I>
+You're using applescript in scripts that are intended to be 
+portable..?!?
+
+&gt;<i> : In
+</I>&gt;<i> : additional to its superset of commands `bash` does, I believe, behave
+</I>&gt;<i> : slightly differently from traditional `sh`; if invoked as `sh` Bash
+</I>&gt;<i> : _should_ behave as `sh`, however I am not aware that this has been
+</I>&gt;<i> : demonstrated. [1]
+</I>&gt;<i>
+</I>&gt;<i> Actually, the binary does behave differently according to the man page:
+</I>&gt;<i>
+</I>&gt;<i> 	...
+</I>&gt;<i>        If  bash  is  invoked  with  the name sh, it tries to mimic the 
+</I>&gt;<i> startup
+</I>&gt;<i>        behavior of historical versions of sh as  closely  as  
+</I>&gt;<i> possible...
+</I>
+I quoted that already - see my posting of January 7, 2004 8:46:38 pm 
+GMT.
+
+What I perhaps should have said in my reply to you earlier today is that
+   &quot;..if invoked as `sh` Bash _should_ behave exactly as `sh`, however I 
+am not aware that this has been fully demonstrated. IE: I was unable to 
+provide evidence that GNU bash is bug-free in this respect.
+
+&gt;<i>        If  bash  is  invoked  with  the name sh, it tries to mimic the 
+</I>&gt;<i> startup
+</I>&gt;<i>        behavior of historical versions of sh as  closely  as  
+</I>&gt;<i> possible,  while
+</I>&gt;<i>        conforming  to the POSIX standard as well.
+</I>
+The word &quot;tries&quot; is also very telling in the quoted statement, as is 
+&quot;whilst behaving to the POSIX standard&quot;. What does Bash do if there's a 
+conflict between sh's behaviour &amp; the POSIX standard..?
+
+The rest of your quote from the manpage deals with startup options, 
+about reading initialisation files on startup, but doesn't seem to 
+specify how bash deals with commands that have different syntax (or do 
+not exist) in the Bourne shell, if invoked as /bin/sh.
+
+Believe me, I would have liked nothing more than to be able to 
+demonstrate, in reply to William H. Magill's posting of January 8, 2004 
+8:49:14 pm GMT, that Bash does in fact behave correctly when invoked as 
+`sh`, but I Googled for over an hour and was unable to find anything 
+confirming that it does.
+
+Stroller.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000572.html">[X-Unix] Hiding apps from the command line
+</A></li>
+	<LI>Next message: <A HREF="000574.html">[X-Unix] 0th Annual Shell X-Unix Scripting Contest (was Re: [X4U] Terminal Comand to Hide App Layers)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#573">[ date ]</a>
+              <a href="thread.html#573">[ thread ]</a>
+              <a href="subject.html#573">[ subject ]</a>
+              <a href="author.html#573">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

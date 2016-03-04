@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Bash alias help
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Bash%20alias%20help&In-Reply-To=list-11048971%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000385.html">
+   <LINK REL="Next"  HREF="000388.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Bash alias help</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Bash%20alias%20help&In-Reply-To=list-11048971%40mail.ninewire.com"
+       TITLE="[X-Unix] Bash alias help">magill at mcgillsociety.org
+       </A><BR>
+    <I>Wed Feb 25 17:46:22 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000385.html">[X-Unix] Backdoor method to add users
+</A></li>
+        <LI>Next message: <A HREF="000388.html">[X-Unix] Kill
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#387">[ date ]</a>
+              <a href="thread.html#387">[ thread ]</a>
+              <a href="subject.html#387">[ subject ]</a>
+              <a href="author.html#387">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 25 Feb, 2004, at 02:43, Kirk McElhearn wrote:
+
+&gt;<i> On 2/25/04 5:38 AM, &quot;Brian Medley&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">bpm-list-osx-unix at 4321.tv</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;&gt;&gt;<i> I have the following alias for tcsh:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> alias dict ?curl -s <A HREF="dict://dict.org/d:\!">dict://dict.org/d:\!</A> &lt;#_msocom_1&gt;  :1 | egrep -v
+</I>&gt;&gt;&gt;<i>  '^22.*|^250.*|^150.*'&quot;
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I want to rewrite this for bash, but, as far as I understand, \! 
+</I>&gt;&gt;&gt;<i> doesn't
+</I>&gt;&gt;&gt;<i> work in bash aliases. Does anyone out there who is a bash expert 
+</I>&gt;&gt;&gt;<i> know if
+</I>&gt;&gt;&gt;<i> this is correct? If so, how can I get this to work in bash?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Are you trying to use arguments?  If so, this might be helpful from 
+</I>&gt;&gt;<i> the
+</I>&gt;&gt;<i> bash man page:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>   There  is no mechanism for using arguments in the replacement text.
+</I>&gt;&gt;<i>   If arguments are needed, a shell function should be  used  (see
+</I>&gt;&gt;<i>   FUNCTIONS below).
+</I>&gt;<i>
+</I>&gt;<i> Yes, that's what I found. The original tcsh alias has the argument \!. 
+</I>&gt;<i> Is
+</I>&gt;<i> there no way other than using functions? Because then it won't work as 
+</I>&gt;<i> an
+</I>&gt;<i> alias, right? It'd have to be a shell script, and that's something I 
+</I>&gt;<i> want to
+</I>&gt;<i> avoid.
+</I>
+This is what I use to replace \!* in one case. Don't know if it will 
+work in yours or not.
+(Complements of the ZSH mailing list.)
+
+# -------------------------------------
+#                      set bash defaults
+# ------------------------------------- for the ls comand:
+#     to get bash to do what tcsh does -- with:
+#            alias ll        'ls -lag \!* | more'
+#     this function, works with ksh, bash, zsh:
+
+ll()
+{
+         /bin/ls -alsv $* | less
+}
+#
+
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000 - [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000385.html">[X-Unix] Backdoor method to add users
+</A></li>
+	<LI>Next message: <A HREF="000388.html">[X-Unix] Kill
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#387">[ date ]</a>
+              <a href="thread.html#387">[ thread ]</a>
+              <a href="subject.html#387">[ subject ]</a>
+              <a href="author.html#387">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

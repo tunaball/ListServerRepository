@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Decent book on scripting language
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Decent%20book%20on%20scripting%20language&In-Reply-To=20080523133321.43A1E241BA80%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="021055.html">
+   <LINK REL="Next"  HREF="021059.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Decent book on scripting language</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Decent%20book%20on%20scripting%20language&In-Reply-To=20080523133321.43A1E241BA80%40listserver.themacintoshguy.com"
+       TITLE="[X4U] Decent book on scripting language">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Fri May 23 09:52:15 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="021055.html">[X4U] Decent book on scripting language
+</A></li>
+        <LI>Next message: <A HREF="021059.html">[X4U] PPC a superior chip to Intel?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#21058">[ date ]</a>
+              <a href="thread.html#21058">[ thread ]</a>
+              <a href="subject.html#21058">[ subject ]</a>
+              <a href="author.html#21058">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>From: Ed Gould &lt;<A HREF="../../../mailman/listinfo/x4u.html">edgould1948 at comcast.net</A>&gt;
+</I>&gt;<i>I am spending way too much time doing a repetitive tasks of moving
+</I>&gt;<i>files around.
+</I>&gt;<i>I guess I need some sort of scripting language that will allow me to
+</I>&gt;<i>automate this task. I know I will never be able to totally automate
+</I>&gt;<i>it as (at times) it needs human judgement, but I can live with the
+</I>&gt;<i>&quot;few&quot; exceptions.
+</I>&gt;<i>
+</I>&gt;<i>Simply put I need to move a file from one folder to another folder
+</I>&gt;<i>(BUT) if there is a duplicate don't move it.
+</I>&gt;<i>   The from folder will remain constant but the receiving folder will
+</I>&gt;<i>change depending on the first character of the file.
+</I>&gt;<i>
+</I>&gt;<i>I am somewhat familiar with one or two other scripting languages but
+</I>&gt;<i>have zero knowledge on anything Apple might have.
+</I>&gt;<i>
+</I>&gt;<i>Can someone suggest a scripting language that will be able to test
+</I>&gt;<i>easily if a file exists and *move* files from foldera to folderb (or
+</I>&gt;<i>&quot;c&quot; or &quot;d&quot; or &quot;e&quot; etc)
+</I>
+There are plenty of choices.
+
+'Applescript' is a language for non-programmers (so it used to say) 
+and to someone who has been a programmer for 40 years (me) it's as 
+clear as mud. The non-programmers it's designed for seem to have more 
+success with it. 'Automator' seems to follow in its footsteps.
+
+'Awk' is often overlooked as a language, but it good for working with 
+data rather than manipulating the filesystem tree.
+
+'Perl' is well known for its similarity to line noise, so if you're 
+not a programmer, the learning curve is enormous. That's not to say 
+it isn't a superb language for very many things. Like 'awk' its forte 
+is data handling rather than file management.
+
+csh/tcsh - two Unix 'Shell' languages. If you're used to languages 
+with language elements neatly grouped with parentheses and brackets, 
+these look like what you're used to. But they're badly implemented in 
+some areas and once you get past the basics you can find some things 
+that just aren't possible because there's no way to represent what 
+you need.
+
+sh/ksh/bash/posix-shell/zsh - a 'family' of vaguely related Unix 
+Shell languages based on the almost original Unix Bourne Shell (by 
+Stephen Bourne) that use the same type of syntax but with different 
+capability extensions. The main differences are in many cases only to 
+do with interactive use rather than scripting.
+
+In 'sh' shells, you would need something like below. '#' starts a 
+comment. I've added an unnecessary '#' to
+the beginning of each comment-only line to help re-format the lines. 
+Comment text is indented with the active statement lines. This is in 
+short-form style. if...then...fi can be used.
+Note that to move a file from foldera to folderb, both must be writable.
+
+src=path_of_foldera
+dst=path_of_folderb
+
+[ -d $dst ] || exit        # test ([ ....]) that the variable 'dst' 
+contains the path to a directory (-d)
+#                              # '||' means 'or' or 'otherwise'
+cd $src || exit            # 'cd' will fail if its argument is not 
+the path of an existing directory
+[ -w $src -a -w $dst ] || exit        # -w is the 'test for 
+writeable' flag, -a here means 'and'
+for file in *; do	# '*' expands to all filenames that don't 
+start with a '.'
+#                              # Each time round, variable 'file' is 
+loaded with the next one
+	[ -f $file ] || continue                  # test if the file 
+whose name is in variable
+#                                                              # 
+'file' is a plain file (not a directory etc.)
+#                                                              # skip 
+and go to next if it isn't
+                 [ -f $dst/$file ] || mv $file $dst/$file        # see 
+the pattern of it?
+done                         # end of the loop
+
+Of these, only Perl can be made to do your sort of task itself, and 
+that requires the use of the File module. The rest end up using 
+another program to do the actual work. Applescript uses the Finder, 
+the others would use the Unix utility 'mv'. This means that for 
+general use, for Applescript you also need to learn the script 
+capabilities of all the OS X utilities; for the others you need to 
+learn the Unix commands.
+
+There are many Unix command books but few on Applescript, and less on 
+the scripting capabilities of OSX apps.
+
+David
+
+
+
+
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+HP-UX specialist of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x4u.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="021055.html">[X4U] Decent book on scripting language
+</A></li>
+	<LI>Next message: <A HREF="021059.html">[X4U] PPC a superior chip to Intel?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#21058">[ date ]</a>
+              <a href="thread.html#21058">[ thread ]</a>
+              <a href="subject.html#21058">[ subject ]</a>
+              <a href="author.html#21058">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

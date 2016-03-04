@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Hiding apps from the command line
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11726035%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000514.html">
+   <LINK REL="Next"  HREF="000516.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Hiding apps from the command line</H1>
+    <B>Eugene Lee</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11726035%40mail.ninewire.com"
+       TITLE="[X-Unix] Hiding apps from the command line">list-themacintoshguy at fsck.net
+       </A><BR>
+    <I>Fri Mar 26 04:15:53 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000514.html">Hiding apps from the command line
+</A></li>
+        <LI>Next message: <A HREF="000516.html">[X-Unix] Hiding apps from the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#515">[ date ]</a>
+              <a href="thread.html#515">[ thread ]</a>
+              <a href="subject.html#515">[ subject ]</a>
+              <a href="author.html#515">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Fri, Mar 26, 2004 at 12:12:33PM +0100, Kirk McElhearn wrote:
+:<i> 
+</I>:<i> Very cool discussion, this. Here's the text I've written up for the next
+</I>:<i> edition of Mac OS X Hints:
+</I>:<i> 
+</I>:<i> 15-1          Hide an Application from the Command Line
+</I>:<i> Here's the scene: you're working in Terminal, and you've got lots of other
+</I>:<i> windows behind the Terminal window. You want to get some of them out of the
+</I>:<i> way, and you can naturally do so from the Finder. But why not find a way to
+</I>:<i> do this from the command line?
+</I>:<i> 
+</I>:<i> Here's a shell script, by Eugene Lee, that fits the bill:
+</I>
+Kewl, I'm famous.  :-)
+
+:<i> #! /bin/sh
+</I>
+No spaces here, it should be &quot;#!/bin/sh&quot; (without the quotes).
+
+:<i> # hide an application in the Finder
+</I>:<i> osascript &lt;&lt;END
+</I>:<i>       tell application &quot;Finder&quot;
+</I>:<i>       if exists application process &quot;$1&quot; then
+</I>:<i>             set visible of application process &quot;$1&quot; to false
+</I>:<i>       end if
+</I>:<i>       end tell
+</I>
+To be a proper here document, you must include the ending &quot;END&quot; string.
+Otherwise, you cannot follow the AppleScript with more shell commands.
+For example, let's show the time when the app was hidden.  This script
+hides an app but unexpectedly prints the string &quot;date&quot;.
+
+	#!/bin/sh
+	osascript &lt;&lt;END
+	      tell application &quot;Finder&quot;
+	      if exists application process &quot;$1&quot; then
+		    set visible of application process &quot;$1&quot; to false
+	      end if
+	      end tell
+
+	date
+
+The corrected script hides an app and then runs the &quot;date&quot; command to
+show the current time, which is what we intended.
+
+	#!/bin/sh
+	osascript &lt;&lt;END
+	      tell application &quot;Finder&quot;
+	      if exists application process &quot;$1&quot; then
+		    set visible of application process &quot;$1&quot; to false
+	      end if
+	      end tell
+	END
+	date
+
+:<i> As usual, save this script, with a name such as hide, in a directory that's
+</I>:<i> in your PATH, make it executable by typing chmod 755 hide, then you can run
+</I>:<i> it as follows:
+</I>:<i> 
+</I>:<i> hide [application name]
+</I>:<i> 
+</I>:<i> You'll need to type the actual application name that the Finder recognizes;
+</I>:<i> move your cursor over the Dock to see: for example, Microsoft Word is the
+</I>:<i> full name of the Office word processor, and you need to use quotes around
+</I>:<i> any application name that contains spaces:
+</I>:<i> 
+</I>:<i> hide &quot;Microsoft Word&quot;
+</I>:<i> 
+</I>:<i> You don't need to respect case; this works even if you type hide safari, for
+</I>:<i> example.
+</I>:<i> 
+</I>:<i> *********
+</I>:<i> 
+</I>:<i> You'll not that I put END on the first line, and that you don't need to have
+</I>:<i> another END at the end.
+</I>
+You really should.  See above.
+
+:<i> Can we take this further and find a way to hide all other applications from
+</I>:<i> this script?
+</I>
+Yep.  Here's the basic script.
+
+	#!/bin/sh
+	osascript &lt;&lt;END
+	tell application &quot;Finder&quot;
+		set visible of every process whose visible is true and name is not &quot;Finder&quot; and name is not &quot;$1&quot; to false
+	end tell
+	END
+
+Remove the 'and name is not &quot;Finder&quot;' string if you want to hide the
+Finder as well.
+
+Of course with a bit more work, one could make an all-purpose shell
+script that could something like this:
+
+	hide [-oaf] appname
+
+Without options, it will hide the application named &quot;appname&quot;.
+
+The options might be like:
+
+	-o	Hide all applications other than &quot;appname&quot;.
+	-a	Hide all applications.
+	-f	Hide the Finder.
+
+where -o and -a by default do *not* hide the Finder.
+
+Just an idea.
+
+
+-- 
+Eugene Lee
+<A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000514.html">Hiding apps from the command line
+</A></li>
+	<LI>Next message: <A HREF="000516.html">[X-Unix] Hiding apps from the command line
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#515">[ date ]</a>
+              <a href="thread.html#515">[ thread ]</a>
+              <a href="subject.html#515">[ subject ]</a>
+              <a href="author.html#515">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

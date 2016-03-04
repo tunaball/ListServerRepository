@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Cron problem - Again
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Cron%20problem%20-%20Again&In-Reply-To=20050623215446.BC4D6463CD8%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002200.html">
+   <LINK REL="Next"  HREF="002199.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Cron problem - Again</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Cron%20problem%20-%20Again&In-Reply-To=20050623215446.BC4D6463CD8%40listserver.themacintoshguy.com"
+       TITLE="[X-Unix] Cron problem - Again">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Fri Jun 24 01:30:38 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002200.html">[X-Unix] Cron problem
+</A></li>
+        <LI>Next message: <A HREF="002199.html">[X-Unix] Cron problem - Again
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2198">[ date ]</a>
+              <a href="thread.html#2198">[ thread ]</a>
+              <a href="subject.html#2198">[ subject ]</a>
+              <a href="author.html#2198">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Not a solution to you real problem, but what you have is rather convoluted.
+
+date &quot;+%X&quot;
+gives the same as your exacttime script.
+
+David
+
+
+&gt;<i>From: Marley Graham &lt;<A HREF="../../../mailman/listinfo/x-unix.html">mgraham at aquaflo.com</A>&gt;
+</I>&gt;<i>Subject: Re: [X-Unix] Cron problem - Again
+</I>&gt;<i>To: &quot;A place to discuss Mac OS X from the perspective of the command
+</I>&gt;<i>	line.&quot;	&lt;<A HREF="../../../mailman/listinfo/x-unix.html">x-unix at listserver.themacintoshguy.com</A>&gt;
+</I>&gt;<i>Message-ID: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">ADF3FD09-459E-4513-92CD-753124E82E6B at aquaflo.com</A>&gt;
+</I>&gt;<i>Content-Type: text/plain; charset=US-ASCII; delsp=yes; format=flowed
+</I>&gt;<i>
+</I>&gt;<i>I have my screencapture program running under cron on my machine. So
+</I>&gt;<i>I figured I would do the same on some client machines for which I
+</I>&gt;<i>have set up an admin account. But it doesn't work on the client
+</I>&gt;<i>machines. Here is what I have:
+</I>&gt;<i>
+</I>&gt;<i>On my machine:
+</I>&gt;<i>$ crontab -l
+</I>&gt;<i>0,30 7-16 * * 1-6 /users/marleygraham/screenpict
+</I>&gt;<i>
+</I>&gt;<i>Where screenpict is the script:
+</I>&gt;<i>#!/bin/bash
+</I>&gt;<i>/usr/sbin/screencapture mg$(/users/marleygraham/exacttime)
+</I>&gt;<i>exit
+</I>&gt;<i>
+</I>&gt;<i>And exacttime is the script:
+</I>&gt;<i>#!/bin/bash
+</I>&gt;<i>/bin/date +%r &gt; tempdate
+</I>&gt;<i>awk '{print $1}' tempdate
+</I>&gt;<i>rm tempdate
+</I>&gt;<i>exit
+</I>
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+Chair of HPUX SysAdmin SIG of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x-unix.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002200.html">[X-Unix] Cron problem
+</A></li>
+	<LI>Next message: <A HREF="002199.html">[X-Unix] Cron problem - Again
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2198">[ date ]</a>
+              <a href="thread.html#2198">[ thread ]</a>
+              <a href="subject.html#2198">[ subject ]</a>
+              <a href="author.html#2198">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

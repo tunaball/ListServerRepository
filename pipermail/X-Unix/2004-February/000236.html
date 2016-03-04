@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Port Forwarding ssh using -R option 
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Port%20Forwarding%20ssh%20using%20-R%20option%20&In-Reply-To=list-10675433%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000235.html">
+   <LINK REL="Next"  HREF="000237.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Port Forwarding ssh using -R option </H1>
+    <B>Our Pal Al</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Port%20Forwarding%20ssh%20using%20-R%20option%20&In-Reply-To=list-10675433%40mail.ninewire.com"
+       TITLE="[X-Unix] Port Forwarding ssh using -R option ">opa at avalon.rockefeller.edu
+       </A><BR>
+    <I>Fri Feb  6 09:52:05 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000235.html">[X-Unix] Port Forwarding ssh using -R option 
+</A></li>
+        <LI>Next message: <A HREF="000237.html">dyndns to track your hardware (re: re: CL emailing)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#236">[ date ]</a>
+              <a href="thread.html#236">[ thread ]</a>
+              <a href="subject.html#236">[ subject ]</a>
+              <a href="author.html#236">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks Dan and Bill,
+
+Good advice based on my boneheaded question. Of  course, after I posted I
+figured out what I *should* be doing. AND was able to do it and it works!
+
+I played with sshd_config so ssh listens on port 23 (on the Xandros linux
+box, actually. It's the &quot;new guy&quot; so it has to move! :).
+
+Then I opened up port 23 on the router and port mapped it to the linux box.
+
+Ssh to my home Mac is straight and to get to the Linux box I just use 'ssh
+-p 23 &lt;my dynsdns address&gt;' and works like a charm!
+
+(oops! It did last night! But I'm not sure I left the machine on when I left
+today :)
+
+- al
+
+On 2/5/04 6:19 PM, &quot;Our Pal Al&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">opa at avalon.rockefeller.edu</A>&gt; wrote:
+
+&gt;<i> At least I think the -R option is what I want.
+</I>&gt;<i> 
+</I>&gt;<i> I've already got my home Mac listening to ssh on 22 as normal but moved it
+</I>&gt;<i> behind a wireless router last night (doing ddns so I can still always reach
+</I>&gt;<i> it from outside) and want to be able to ssh into my mac and my Xandros linux
+</I>&gt;<i> box at will. I want to map port 22 on the router to the linux box and then
+</I>&gt;<i> change the mac to listen to another port and I'll append that port # when I
+</I>&gt;<i> ssh to it. 
+</I>&gt;<i> 
+</I>&gt;<i> Or maybe I'll do it the other way around once I figure out how to get ssh to
+</I>&gt;<i> listen on another port. Once I've got the right syntax down I should be able
+</I>&gt;<i> to change either but I can't get -R to work. Or is this even really the
+</I>&gt;<i> option I want? How can I get ssh to listen on another port? Right now I hop
+</I>&gt;<i> from the mac to the linux box but I'd like to eliminate a second step in
+</I>&gt;<i> getting to either.
+</I>&gt;<i> 
+</I>&gt;<i> - opa
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000235.html">[X-Unix] Port Forwarding ssh using -R option 
+</A></li>
+	<LI>Next message: <A HREF="000237.html">dyndns to track your hardware (re: re: CL emailing)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#236">[ date ]</a>
+              <a href="thread.html#236">[ thread ]</a>
+              <a href="subject.html#236">[ subject ]</a>
+              <a href="author.html#236">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

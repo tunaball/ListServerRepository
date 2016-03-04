@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Automator] Yes, we're back!
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:automator%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BAutomator%5D%20Yes%2C%20we%27re%20back%21&In-Reply-To=%3CEA3ADCF1-B074-406F-BE3B-538729878CA0%40themacintoshguy.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[Automator] Yes, we're back!</H1>
+    <B>Eric Prentice</B> 
+    <A HREF="mailto:automator%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BAutomator%5D%20Yes%2C%20we%27re%20back%21&In-Reply-To=%3CEA3ADCF1-B074-406F-BE3B-538729878CA0%40themacintoshguy.com%3E"
+       TITLE="[Automator] Yes, we're back!">eric at themacintoshguy.com
+       </A><BR>
+    <I>Tue Sep 15 11:56:58 PDT 2009</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#45">[ date ]</a>
+              <a href="thread.html#45">[ thread ]</a>
+              <a href="subject.html#45">[ subject ]</a>
+              <a href="author.html#45">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello List Members,
+In case, you didn't notice, the lists at TheMacintoshGuy.com are  
+back! ;-)
+
+Many of you had noticed the lists slowing down over recent months and  
+we'd seen some very long delays in trying to get mail processed.  
+Unfortunately, the poor old XServe we were running on was having a  
+really hard time keeping up. Our IT friends made some attempts to  
+squeeze some life into the old server but as we dug into it, the poor  
+machine just died. Perhaps years of 100% CPU activity wore the poor  
+thing out.
+
+So instead of messing with things too much, we went out and got a new  
+machine, and started completely from scratch. We now have a new server  
+with 10.6 and 64-bit compile of all the server software. (Read below  
+if you want more details.)
+
+With the new server, we're able to put more things in place that will  
+help revitalize this community of lists. We're also looking at some  
+new lists (iPhone, MacTablet, etc.) that will help get us into current  
+areas of interest. We'll let you know when those are live.
+
+I want to thank you all for the community you've created and I look  
+forward to seeing it grow. It really is a special thing that we have  
+all created here together.
+
+We're planning on keeping the lists very open with very little  
+moderation as they have been for the last 10+ years. We appreciate  
+everything you do to keep the lists helpful, on topic, PG, and fun to  
+be a part of. We will work on doing a better job of communicating what  
+is going on. Unfortunately, the email addresses for the lists have  
+been around for a long time and are popular with spammers apparently.  
+While we do a great job of preventing any of that from getting through  
+to the lists, it does keep the admin accounts and server pretty full  
+of junk.
+
+So, take a minute to see what other lists you might want to be a part  
+of and start a discussion there. I was just looking and it looks like  
+we're approaching the 11th anniversary of our oldest list later this  
+month.
+&lt;<A HREF="../../../../www.themacintoshguy.com/lists/index.html">http://www.themacintoshguy.com/lists/</A>&gt;
+
+And for those who didn't know, I'm Eric Prentice, themacintoshguy.com  
+was a site I started in the mid 90s for my Mac consulting business.  
+Since then, I started Dr. Bott LLC, &lt;<A HREF="http://www.drbott.net/">http://www.drbott.net/</A>&gt; a  
+distributor of accessories for the Apple market and that takes the  
+majority of my focus. Dr. Bott LLC is kind enough to host the  
+listserver and lend IT expertise to keeping it running. Our hope is  
+that the new server will be a better platform to keep things running  
+smoothly. If you have something you think we need to know, a email to  
+the list admin addresses are always a good idea, lately you can also  
+find me on Twitter. &lt;<A HREF="http://twitter.com/tunaball">http://twitter.com/tunaball</A>&gt;
+
+Thank you for reading all this and being a part of the lists!
+
+Eric
+
+
+If you are into technical details from our IT friends, read on...
+
+The old machine really had trouble coping with many many files  
+combined in a single HFS directory. We considered re-purposing some  
+existing hardware but decided if we're going to put in the effort, we  
+might as well start with some fast hardware and the latest versions of  
+all the applicable software.
+
+This machine was loaded with 10.6.0 Snow Leopard (client). We went on  
+to compile the current stable release of Mailman and configure  
+Postfix. I'm excited to say that all the software components for the  
+list server (Apache, Postfix, Python, Mailman) are running in native  
+x86_64 mode. Woohoo!
+
+System load and response time on the new server is obviously orders of  
+magnitude faster than the previous server, an Xserve G4. Snow Leopard  
+is still a x.0 release, so we realize there are a few minor glitches,  
+but we didn't run into anything that we could not work around.
+
+Some of the problems we ran into:
+* SoftRAID (we love these guys, but it doesn't seem stable yet on 10.6)
+* SNMP (wonky responses on some standard monitoring attributes)
+* Default configurations more secure (Apple has adjusted some of the  
+default settings for some services, tending to be more secure then  
+previous OS versions. That is generally good, but requires a little  
+extra sleuthing if you plan to install and operate software as  
+documented for installing on 10.4 or 10.5)
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#45">[ date ]</a>
+              <a href="thread.html#45">[ thread ]</a>
+              <a href="subject.html#45">[ subject ]</a>
+              <a href="author.html#45">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/automator.html">More information about the Automator
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

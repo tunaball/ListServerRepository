@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] 120 GB Barrier Question 
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20120%20GB%20Barrier%20Question%20&In-Reply-To=list-12553076%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="006919.html">
+   <LINK REL="Next"  HREF="006921.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] 120 GB Barrier Question </H1>
+    <B>Alex</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20120%20GB%20Barrier%20Question%20&In-Reply-To=list-12553076%40mail.ninewire.com"
+       TITLE="[G4] 120 GB Barrier Question ">alist at sprint.ca
+       </A><BR>
+    <I>Tue May  4 09:53:50 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="006919.html">[G4] Is it Stupid...
+</A></li>
+        <LI>Next message: <A HREF="006921.html">[G4] posting, please?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6920">[ date ]</a>
+              <a href="thread.html#6920">[ thread ]</a>
+              <a href="subject.html#6920">[ subject ]</a>
+              <a href="author.html#6920">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Tuesday, May 4, 2004, at 08:54 Canada/Eastern, Richard Kriss wrote:
+
+&gt;<i> [...] this G4-450 AGP has ATA-4's. [...]  can I go up to 120 GB and 
+</I>&gt;<i> 120 GB?
+</I>
+Yes.
+
+&gt;<i> [...] The 120 barrier is confusing.
+</I>
+Not really.
+
+First of all, is it 120 (128 actually) or 137GB? Both. The IT industry 
+got in the habit of defining the kilobyte as 1KB = 2^5 = 1024 bytes, 
+and the Finder still reports sizes like this. However, strictly 
+speaking, it's incorrect. The SI prefixes (kilo, mega, etc.) should 
+only be used for powers of ten, so 1KB = 10^3 = 1000 bytes. Hard drives 
+manufacturers have been using the correct terminology for some time now 
+(whether out of respect for SI, or for marketing reasons is up to you 
+to guess), and IEC has recommended that the term -binary, with the 
+abbreviation -i, should be added for powers of two. So, to be 
+pedantically accurate, 1KB = 1000 bytes, and 1KiB (kilobinary byte) = 
+1024 bytes. If you do the math, you'll see that 128GiB = 137GB.
+
+Next, why the barrier? Older ATA controllers used 28-bit LBA (logical 
+block addressing). To use space on a hard disk, the controller must 
+know how to find each chunk of space (logical block), and it finds it 
+by assigning an address to it. The highest number of blocks it can use 
+is determined by how many unique addresses can be created out of 28 
+bits; which, it turns out, eventually amounts to 128GiB of disk space. 
+So, with 28-bit LBA, the controller can access a maximum of 128GiB on 
+each device; even if the device has more space available, the 
+controller can't use it. And it's 128GiB on each device, because each 
+device has its own separate set of addresses.
+
+Newer controllers use 48-bit LBA, which means they theoretically can 
+address up to 144 PB of disk space on each device. Jim's post tells you 
+how to determine in Panther (not Jaguar, tho') if your Mac supports the 
+new specification. I believe all Macs since the MDD G4s do.
+
+f
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="006919.html">[G4] Is it Stupid...
+</A></li>
+	<LI>Next message: <A HREF="006921.html">[G4] posting, please?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6920">[ date ]</a>
+              <a href="thread.html#6920">[ thread ]</a>
+              <a href="subject.html#6920">[ subject ]</a>
+              <a href="author.html#6920">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

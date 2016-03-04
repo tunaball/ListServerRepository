@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Airport Problems
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=Airport%20Problems&In-Reply-To=list-9951908%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="008072.html">
+   <LINK REL="Next"  HREF="008074.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Airport Problems</H1>
+    <B>Tom Burke</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=Airport%20Problems&In-Reply-To=list-9951908%40mail.ninewire.com"
+       TITLE="Airport Problems">tom_burke at mac.com
+       </A><BR>
+    <I>Sat Dec 27 03:04:57 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="008072.html">Digest Number 1835
+</A></li>
+        <LI>Next message: <A HREF="008074.html">[P1] Airport problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8073">[ date ]</a>
+              <a href="thread.html#8073">[ thread ]</a>
+              <a href="subject.html#8073">[ subject ]</a>
+              <a href="author.html#8073">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Saturday, December 27, 2003, at 08:00  am, iBook List wrote:
+
+&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Date: Fri, 26 Dec 2003 05:51:01 -0500
+</I>&gt;<i> From: <A HREF="../../../mailman/listinfo/ibook.html">ShardAerithes at aol.com</A>
+</I>&gt;<i> Subject: Re: [P1] Airport Problems
+</I>&gt;<i> Message-ID: &lt;<A HREF="../../../mailman/listinfo/ibook.html">69A69526.7633824F.2EF90B67 at aol.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> I plugged in both airport and ethernet. When I turned off airport 
+</I>&gt;<i> through network prefs I got 192.168.0.102 for getifaddr en0
+</I>&gt;<i>
+</I>&gt;<i> then I got failed for getifaddr en1
+</I>&gt;<i>
+</I>&gt;<i> then I turned airport on I got getifaddr en0 192.168.0.102
+</I>&gt;<i> getifaddr en1 got 192.168.0.101
+</I>&gt;<i>
+</I>&gt;<i> if I unplug the ethernet cord I get  getifaddr en0 failure
+</I>&gt;<i> getifaddr en1 192.168.0.1
+</I>&gt;<i>
+</I>&gt;<i> if I look at my airport card it says
+</I>&gt;<i>
+</I>&gt;<i> 003065276055 is my airport ID
+</I>&gt;<i>
+</I>&gt;<i> which matches the mac address that was given in the router config.
+</I>&gt;<i>
+</I>&gt;<i> Maybe the router is faulty? Perhaps I should exchange it for another 
+</I>&gt;<i> one? I mean...I can't think of why I'd be getting an IP and not being 
+</I>&gt;<i> able to browse the net. Thanks everyone who has responded so far and 
+</I>&gt;<i> everyone who will respond to this message.
+</I>
+OK, this is beginning to look useful. This looks as if the Airport is 
+basically working - you would appear to be getting an ip address for it 
+via DHCP, which strongly suggests that you've got some connectivity.
+
+Next test - disable the on-board ethernet, and confirm that you've got 
+an ip adress for the WiFi card - 'ipconfig getifaddr en1'. Assuming you 
+have, the next step is a 'ping' command or two - 'ping [router ip 
+address]' (eg 'ping 192.168.0.100' or whatever your router ip address 
+is) would be the first one. If this works, then try something like 
+'ping www.microsoft.com'. This is out of the local network, so it's a 
+more complex test.
+
+If the first ping works but the second doesn't then the issue may be to 
+do with address resolution. In Network Preferences for the Location 
+you're using, look at the configuration for Airport: what have you got 
+set for 'DNS server'? My recommendation would be to either set the ip 
+address of your ISP's name server here if you know it, or its FQDN (eg, 
+'ns1.myisp.com'), or indeed just the IP address of your router. Compare 
+the DNS server for Airport settings with the equivalent settings for 
+Built-in Ethernet - it wouldn't hurt to ensure that they match by 
+changing the Airport settings to match the Built-in Ethernet settings. 
+If you've made any change here, Apply it &amp; ping the external 
+destination again. Hopefully this might resolve the problem.
+
+If neither ping works - hmm, have to think about that!
+
+Tom Burke
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="008072.html">Digest Number 1835
+</A></li>
+	<LI>Next message: <A HREF="008074.html">[P1] Airport problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8073">[ date ]</a>
+              <a href="thread.html#8073">[ thread ]</a>
+              <a href="subject.html#8073">[ subject ]</a>
+              <a href="author.html#8073">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

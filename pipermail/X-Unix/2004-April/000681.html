@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] procmail
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20procmail&In-Reply-To=list-11955596%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000680.html">
+   <LINK REL="Next"  HREF="000682.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] procmail</H1>
+    <B>Adrian Simmons</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20procmail&In-Reply-To=list-11955596%40mail.ninewire.com"
+       TITLE="[X-Unix] procmail">adriman at ntlworld.com
+       </A><BR>
+    <I>Wed Apr  7 05:36:09 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000680.html">[X-Unix] procmail
+</A></li>
+        <LI>Next message: <A HREF="000682.html">[X-Unix] procmail
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#681">[ date ]</a>
+              <a href="thread.html#681">[ thread ]</a>
+              <a href="subject.html#681">[ subject ]</a>
+              <a href="author.html#681">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Alexandre Gauthier wrote:
+&gt;<i> Would you mind enlightening me on what this combination does exactlty?
+</I>Already sent this to Rick off list, so here you go:
+
+My personal setup goes like this:
+
+Outward Mail:
+Direct to my ISP email account from Apple Mail
+
+Incoming Mail:
+Fetchmail - collects mail from my ISP pop accounts, passes mail to
+postfix smtp server
+
+Postfix - an smtp server, delivers mail to individual users on my system
+by invoking Procmail
+
+Procmail - sends all mail through Clamav (open source antivirus filter),
+deletes a message if a virus is found and logs this. Sends all remaining
+messages through Spamassassin which tags messages with a spam score,
+Procmail then deletes any messages over a certain score and logs this.
+Finally Procmail delivers remaining messages to the users mail spool.
+
+Qpopper - a pop server, when Apple Mail checks for new mail Qpopper
+retrieves messages from the mail spool and passes them to Apple Mail
+
+&gt;<i> I'm kinda looking for a way to fetch the mail from my ISP's mail server and
+</I>&gt;<i> put it in my local qmail account so I can access it via IMAP...
+</I>Fetchmail, is installed by Apple, and I use that, some people use
+something call Popfile (so you might want to google on that). 'man
+fetchmail'. In theory it's possible to invoke Procmail (also already
+installed by Apple) from fetchmail (I couldn't get it to work, so I go
+via postfix), so you should be able to have fetchmail collect mail from
+your isp accounts, pass it to Procmail which will then place it in your
+mail spool (assuming Qmail picks up mail from there).
+
+So where I go:
+ISP &gt; Fetchmail &gt; Postfix &gt; Procmail [ClamAV, Spamassassin] &gt; spool at
+/var/mail/username &gt; Qpopper &gt; Apple Mail
+
+You could go:
+ISP &gt; Fetchmail &gt; Procmail &gt; spool at /var/mail/username &gt; Qmail &gt; Apple
+Mail
+
+or maybe:
+ISP &gt; Fetchmail &gt; Postfix &gt; Procmail &gt; spool at /var/mail/username &gt;
+Qmail &gt; Apple Mail
+
+&gt;<i> Any how-to on the subject would be very appreciated.
+</I>They're out there on the web, at least various pieces, get googling. I
+should probably write this up though, for my shiny new (it has no posts
+yet) blog, I also have an Apple/Shell script combo I use for turning
+fetchmail on/off I could share (I like to turn it off when I'm gaming
+online).
+Maybe in a month I'll have the time...meanwhile HTH.
+
+Adrian
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000680.html">[X-Unix] procmail
+</A></li>
+	<LI>Next message: <A HREF="000682.html">[X-Unix] procmail
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#681">[ date ]</a>
+              <a href="thread.html#681">[ thread ]</a>
+              <a href="subject.html#681">[ subject ]</a>
+              <a href="author.html#681">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] missing man pages
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20missing%20man%20pages&In-Reply-To=list-10074006%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000242.html">
+   <LINK REL="Next"  HREF="000264.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] missing man pages</H1>
+    <B>Xavier Noria</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20missing%20man%20pages&In-Reply-To=list-10074006%40mail.ninewire.com"
+       TITLE="[X-Unix] missing man pages">fxn at hashref.com
+       </A><BR>
+    <I>Mon Jan  5 04:19:33 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000242.html">[X-Unix] Postfix howto
+</A></li>
+        <LI>Next message: <A HREF="000264.html">[X-Unix] missing man pages
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#253">[ date ]</a>
+              <a href="thread.html#253">[ thread ]</a>
+              <a href="subject.html#253">[ subject ]</a>
+              <a href="author.html#253">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Jan 5, 2004, at 12:46 PM, torhildr wrote:
+
+&gt;<i> On Jan 5, 2004, at 11:21 AM, Xavier Noria wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I see in Terminal.app that MANPATH is empty and manpath(1) returns
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     /usr/local/man:/usr/share/man
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Nevertheless, there were some days where I could have messed that up,  
+</I>&gt;&gt;<i> because following the instructions in the installation of Qt I set  
+</I>&gt;&gt;<i> MANPATH to $QT_MANPATH:$MANPATH, which since MANPATH is empty gave  
+</I>&gt;&gt;<i> just the Qt directory (in those days man didn't work right, of  
+</I>&gt;&gt;<i> course). I have no idea, do you think some man pages could be deleted  
+</I>&gt;&gt;<i> because of that?
+</I>&gt;<i>
+</I>&gt;<i> Do you have the file:
+</I>&gt;<i> /usr/share/man/man3/strerror.3
+</I>&gt;<i> ?
+</I>
+Nope.
+
+&gt;<i> Your manpath seems to be correct, so I don't think that's the problem.
+</I>
+OK.
+
+&gt;<i> You might be simply missing some files.
+</I>&gt;<i> Check the following:
+</I>&gt;<i> [Tor:share/man/man3] tor% pwd
+</I>&gt;<i> /usr/share/man/man3
+</I>&gt;<i> [Tor:share/man/man3] tor% ls | wc -l
+</I>&gt;<i>     2542
+</I>
+That does not coincide with the count here:
+
+     <A HREF="../../../mailman/listinfo/x-unix.html">fxn at conway</A>:~% cd /usr/share/man/man3
+     <A HREF="../../../mailman/listinfo/x-unix.html">fxn at conway</A>:/usr/share/man/man3% ls | wc -l
+          2393
+     <A HREF="../../../mailman/listinfo/x-unix.html">fxn at conway</A>:/usr/share/man/man3% ls | egrep ^str
+     strerror_r.3
+     strict.3pm
+     strtof.3
+     strtoimax.3
+     strtold.3
+     strtoumax.3
+
+Just after an update of the locate database we get:
+
+     <A HREF="../../../mailman/listinfo/x-unix.html">fxn at conway</A>:/usr/share/man/man3% locate strerror
+      
+/System/Library/Perl/5.8.1/darwin-thread-multi-2level/auto/POSIX/ 
+strerror.al
+     /Users/fxn/Public/Drop Box/ruby-1.8.0/missing/strerror.c
+      
+/usr/local/lib/perl5/5.8.2/darwin-thread-multi-2level/auto/POSIX/ 
+strerror.al
+     /usr/share/man/man3/strerror_r.3
+
+&gt;<i> That's from a base install.
+</I>
+Did you install the &quot;Xcode tools&quot; stuff?
+
+-- fxn
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000242.html">[X-Unix] Postfix howto
+</A></li>
+	<LI>Next message: <A HREF="000264.html">[X-Unix] missing man pages
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#253">[ date ]</a>
+              <a href="thread.html#253">[ thread ]</a>
+              <a href="subject.html#253">[ subject ]</a>
+              <a href="author.html#253">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Duo2400] off the wall project
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:duolist%40listserver.themacintoshguy.com?Subject=%5BDuo2400%5D%20off%20the%20wall%20project&In-Reply-To=list-7960681%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002774.html">
+   <LINK REL="Next"  HREF="002776.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Duo2400] off the wall project</H1>
+    <B>Jani Tiainen</B> 
+    <A HREF="mailto:duolist%40listserver.themacintoshguy.com?Subject=%5BDuo2400%5D%20off%20the%20wall%20project&In-Reply-To=list-7960681%40mail.ninewire.com"
+       TITLE="[Duo2400] off the wall project">jani.tiainen at keypro.fi
+       </A><BR>
+    <I>Mon Aug 11 22:59:52 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002774.html">[Duo2400] Re: Dell TrueMobile on a 2400c
+</A></li>
+        <LI>Next message: <A HREF="002776.html">[Duo2400] Re: using DiskCopy on 2400
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2775">[ date ]</a>
+              <a href="thread.html#2775">[ thread ]</a>
+              <a href="subject.html#2775">[ subject ]</a>
+              <a href="author.html#2775">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> That got me thinking about somehow building one out of a duo.  What I
+</I>&gt;<i> thought I might do is somehow build a duo with an etherdock, connect it
+</I>&gt;<i> to an airport base station and wirelessly connect to it with my
+</I>&gt;<i> wallstreet, which has a wireless card.  Any ideas on how to build a big
+</I>&gt;<i> scoreboard and then output to this from a duo?
+</I>
+Well this highly depends on how big characters (and how far they must be
+visible) you want to build.
+
+LEDs are good (durable, small), but expensive if you want to build big
+characters / numbers. Of course you can use LED modules which are a bit
+cheaper than invidiual LEDs but still.. EG rectangular 112.5 x 48 x 6.7mm
+segment costs something like $20 - $40 (mostly depending on color of LEDs)
+
+But that's not a problem. It's &quot;just money&quot;. For a 7 segment display you
+need of course 7 big LED modules for each number.
+
+one LED module draws power 60mA (red, yellow) or 120mA (green, blue, white)
+@10VDC.
+
+Now for each segment you need proper component that can drive segment, with
+proportionally low power and voltage... For a brains of such a scoreboard
+could any uC do a good. well you could control that scoreboard with DUO, or
+of course with that uC (but uC could be used for a just a LED driver).
+
+Still cost is pretty high. For a 3 x 7 segment numbers and two sides (home,
+visitors) you need 42 separate modules, which makes $840 to $1680, pretty
+much eh...
+
+Cheaper solution would be using eg. E10 socketed neon lamps (diameter 10mm)
+. for a $50 you get 100 pieces of them... (w/o sockets)
+Sockets (metallic can't be used for 110/220 volts, so have to use bakelite
+ones) are $1 for each. Of course you need something to drive these lamps
+(like fast relays, transistors...) amd then you need uC to keep numbers in
+showing them. Then again, you could use uC to handle displaying, or DUO for
+controlling those segments. (well, you could use also just plain binary/BCD
+to 7-seg display converter) and drive these converters from DUO...
+
+But using DUO as a display isn't good. it has poor visibility and very
+limited field of viewing. Using &quot;normal&quot; 7 seg displays well, they're
+prettty tiny...
+
+Another thing could be asking how much costs using those neon lamps used in
+signs. (Used in bars, clubs and such those which blinks and beeps =) They
+might not be that expensive after all..
+
+Of course sometimes you can get lucky and get those old big bulb-based signs
+from airports and such when they're renewing and modernizing their
+announcement systems.
+
+Jani Tiainen
+
+&quot;I don't suffer from insanity, I enjoy every minute of it!&quot;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002774.html">[Duo2400] Re: Dell TrueMobile on a 2400c
+</A></li>
+	<LI>Next message: <A HREF="002776.html">[Duo2400] Re: using DiskCopy on 2400
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2775">[ date ]</a>
+              <a href="thread.html#2775">[ thread ]</a>
+              <a href="subject.html#2775">[ subject ]</a>
+              <a href="author.html#2775">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/duolist.html">More information about the DuoList
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

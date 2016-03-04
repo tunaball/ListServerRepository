@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Hardware RAID Setup
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20Hardware%20RAID%20Setup&In-Reply-To=%3C8D333D98-B67D-438E-8E71-D039AC423890%40stellar.eclipse.co.uk%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003399.html">
+   <LINK REL="Next"  HREF="003400.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X-Unix] Hardware RAID Setup</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20Hardware%20RAID%20Setup&In-Reply-To=%3C8D333D98-B67D-438E-8E71-D039AC423890%40stellar.eclipse.co.uk%3E"
+       TITLE="[X-Unix] Hardware RAID Setup">stroller at stellar.eclipse.co.uk
+       </A><BR>
+    <I>Thu May 13 15:08:17 PDT 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003399.html">[X-Unix] Hardware RAID Setup
+</A></li>
+        <LI>Next message: <A HREF="003400.html">[X-Unix] Unremovable folder and the USB key
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3404">[ date ]</a>
+              <a href="thread.html#3404">[ thread ]</a>
+              <a href="subject.html#3404">[ subject ]</a>
+              <a href="author.html#3404">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 13 May 2010, at 14:54, Martin McCormick wrote:
+
+&gt;<i> Alexandre Gauthier writes:
+</I>&gt;&gt;<i> I am still curious as to if these manipulations create a software  
+</I>&gt;&gt;<i> raid
+</I>&gt;&gt;<i> array through OS X, or if that somehow hooks in the hardware and  
+</I>&gt;&gt;<i> does it
+</I>&gt;&gt;<i> there...
+</I>&gt;<i>
+</I>&gt;<i> 	It is done in hardware. Now you see 1 single drive
+</I>&gt;<i> instead of 2 drives. The RAID card has [features]
+</I>
+Yes, but how do you know it's using those features?
+
+I'm unfamiliar with Mac RAID, but how do you know the RAID controller  
+isn't offering the drives as single units, and that you're not using  
+OS X's software RAID drivers to create the array?
+
+On a BIOS-based PC this is fairly obvious. When one boots, after the  
+normal BIOS messages, there is another one (white writing on the black  
+background) inviting one to enter a RAID management utility. In the  
+BIOS-like RAID management utility one can see the individual disks and  
+create an array from them. When booted to Linux or Windows only a  
+single drive is seen by the operating system, and if one wishes to add  
+more drives in a new array (or reconfigure the array on which the host  
+o/s resides) one must install and use the manufacturer's utility (e.g.  
+tw_cli for a 3ware card) in order to do so.
+
+Under Linux one uses a different command `mdadm` to create software  
+RAID arrays. That's the Linux software RAID equivalent to 3ware's  
+Linux `tw_cli` [1] or LSI's Linux `megaraid` [2], the latter of which  
+operate only on hardware RAID cards. If you were using a hardware RAID  
+card under Linux and you created an array using `mdadm` [3] then the o/ 
+s would create a *software* RAID array out of whatever drives or  
+arrays the hardware RAID card was showing it.
+
+I am somewhat confused because you *seem* to be using the same command  
+to configure your hardware array as one would use to create a software  
+RAID array out of drives connected to a dumb SATA controller. This is  
+*probably* Mac OS X being terribly clever and sweet and elegant and  
+using the same front-end interface - Disk Utility &amp;/or raidutil - to  
+manage both kinds of driver (for both hardware and software RAID), but  
+with my background I find it confusing. I would find this the  
+antithesis of reassuring until I had experimented with it thoroughly  
+to assure myself that hardware RAID was indeed being used, and that I  
+hadn't accidentally configured software RAID on my hardware RAID card.
+
+I hope my explanation makes sense, and I'm sorry if it's unhelpful of  
+me to raise my confusion.
+
+I could probably clear up my confusion some with some comprehensive  
+Googling on the subject of Apple's hardware RAID cards, but since  
+we're having this conversation, I might as well throw my confusion on  
+the table for discussion.
+
+As an exercise, if you had the time, it might be interesting for you  
+to physically remove the hardware RAID card, connect the drives  
+directly to the Mac's built-in regular SATA controller, and to  
+configure a software RAID array. How does it behave differently?
+
+Stroller.
+
+
+
+[1] <A HREF="http://www.cyberciti.biz/files/tw_cli.8.html">http://www.cyberciti.biz/files/tw_cli.8.html</A>
+[2] <A HREF="http://www.manpagez.com/man/8/megaraid/">http://www.manpagez.com/man/8/megaraid/</A>
+[3] <A HREF="http://linux.die.net/man/8/mdadm">http://linux.die.net/man/8/mdadm</A>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003399.html">[X-Unix] Hardware RAID Setup
+</A></li>
+	<LI>Next message: <A HREF="003400.html">[X-Unix] Unremovable folder and the USB key
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3404">[ date ]</a>
+              <a href="thread.html#3404">[ thread ]</a>
+              <a href="subject.html#3404">[ subject ]</a>
+              <a href="author.html#3404">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

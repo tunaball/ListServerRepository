@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] setting the gateway in Jaguar/Network
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20setting%20the%20gateway%20in%20Jaguar/Network&In-Reply-To=list-9768874%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011695.html">
+   <LINK REL="Next"  HREF="011697.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] setting the gateway in Jaguar/Network</H1>
+    <B>Dr Trevor J. Hutley</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20setting%20the%20gateway%20in%20Jaguar/Network&In-Reply-To=list-9768874%40mail.ninewire.com"
+       TITLE="[Ti] setting the gateway in Jaguar/Network">hutley_tj at jic.edu.sa
+       </A><BR>
+    <I>Sun Dec 14 22:03:03 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011695.html">[Ti] Eco-friendly laptop bags
+</A></li>
+        <LI>Next message: <A HREF="011697.html">must be root to alter routing table
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11696">[ date ]</a>
+              <a href="thread.html#11696">[ thread ]</a>
+              <a href="subject.html#11696">[ subject ]</a>
+              <a href="author.html#11696">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 14:02 -0500 14/12/03, Wesley Griffin wrote:
+&gt;<i>  I'm curious why the DHCP server is not providing the router address 
+</I>&gt;<i>when it assigns the IP address.
+</I>
+Wesley - perhaps I did not explain the situation clearly enough.  The 
+DHCP server is operating normally - it does assign a router address. 
+What we want to do is over-ride that router address, and set the 
+firewall IP address as the router address.  This enables me to 
+by-pass the firewall for my POP mail account access.
+
+We have been able to do this from my PC, so that I can access my POP 
+email accounts.
+
+What I want to do is get that access from my Mac, so that I can use 
+Eudora on my Mac to access the email accounts.
+
+But in the OS X Network panel, there seems no way to MANUALLY set the 
+gateway address whilst the DHCP server is assigning the IP address to 
+the computer (whereas this can be done on the PC).
+
+&gt;&gt;<i>From reading the Manual in the Unix terminal, I get the impression 
+</I>&gt;&gt;<i>that I should be doing something with this command:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  	route [-n] command [-net | -host] destination gateway [netmask]
+</I>&gt;<i>
+</I>&gt;<i>Yes this is the command you want.
+</I>
+I am pleased to find that as a Unix newbie I was on the right track.... !
+
+&gt;<i>Here's what you want:
+</I>&gt;<i>
+</I>&gt;<i>route add default &lt;router ip&gt;
+</I>
+Than ks for the guidance and help.
+
+&gt;<i>specifying your firewall IP for &lt;router ip&gt;.
+</I>
+I will try that.
+
+&gt;<i>You could add this command to one of the startup scripts in /etc to 
+</I>&gt;<i>have it persist across boots.
+</I>
+I understand what you are suggesting, but I do not know where to find 
+&quot;one of the startup scripts in /etc&quot;, nor do I know how to find and 
+edit the following:
+
+&gt;<i>Or, you could simply edit the /etc/hostconfig file and change the line:
+</I>&gt;<i>
+</I>&gt;<i>ROUTER=-AUTOMATIC-
+</I>&gt;<i>
+</I>&gt;<i>to
+</I>&gt;<i>
+</I>&gt;<i>ROUTER=&lt;router ip&gt;
+</I>
+
+Could you just give me a pointer on where to find the file that I 
+need to change ?  I cannot locate this file using Find.
+
+It sounds a bit like the autoexec.bat file in DOS that we used to 
+customize in the old days.....
+
+Thanks for your help.
+
+regards.  Trevor
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011695.html">[Ti] Eco-friendly laptop bags
+</A></li>
+	<LI>Next message: <A HREF="011697.html">must be root to alter routing table
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11696">[ date ]</a>
+              <a href="thread.html#11696">[ thread ]</a>
+              <a href="subject.html#11696">[ subject ]</a>
+              <a href="author.html#11696">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

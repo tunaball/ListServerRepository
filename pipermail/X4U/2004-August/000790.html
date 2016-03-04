@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Single user not an Admin user: A fix anyone?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Single%20user%20not%20an%20Admin%20user%3A%20A%20fix%20anyone%3F&In-Reply-To=list-15885171%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000789.html">
+   <LINK REL="Next"  HREF="000791.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Single user not an Admin user: A fix anyone?</H1>
+    <B>Robert Ameeti</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Single%20user%20not%20an%20Admin%20user%3A%20A%20fix%20anyone%3F&In-Reply-To=list-15885171%40mail.ninewire.com"
+       TITLE="[X4U] Single user not an Admin user: A fix anyone?">robert at ameeti.net
+       </A><BR>
+    <I>Wed Aug 11 09:18:24 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000789.html">[X4U] Single user not an Admin user: A fix anyone?
+</A></li>
+        <LI>Next message: <A HREF="000791.html">Setting up new G5 (transfer everything from G4)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#790">[ date ]</a>
+              <a href="thread.html#790">[ thread ]</a>
+              <a href="subject.html#790">[ subject ]</a>
+              <a href="author.html#790">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>a while back I posted the procedure for making the setup start over again.
+</I>&gt;<i>here it is:
+</I>&gt;<i>
+</I>&gt;<i>boot into single user mode and type:
+</I>&gt;<i>fsck -y
+</I>&gt;<i>mount -uw /
+</I>&gt;<i>mv /var/db/netinfo/local.nidb /var/db/netinfo/local.nidb.bad
+</I>&gt;<i>rm/var/db/.AppleSetupDone
+</I>&gt;<i>reboot
+</I>&gt;<i>
+</I>&gt;<i>Do that and start over.
+</I>
+What are the odds that I'll lose the current Users folder?
+
+
+
+&gt;<i> &gt; &gt;use the NetInfo manager to enable/disable the root account.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Using NetInfo Manager does show the enable root user menu, and does allow
+</I>&gt;&gt;<i> the entry of an entry user:root and a password which it appears to accept,
+</I>&gt;&gt;<i> but no net change is noted. The login screen still only shows the single
+</I>&gt;&gt;<i> user with no drop down or any way to log in as root.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> &gt; I don't know
+</I>&gt;&gt;<i> &gt;since when, but on all machines I've used the first account created is an
+</I>&gt;&gt;<i> &gt;admin account, if it wasn't you should not be able to create additional,
+</I>&gt;&gt;<i> and
+</I>&gt;&gt;<i> &gt;hence, admin accounts.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Exactly the problem. Some 'authorized repair center' did the dastardly
+</I>&gt;&gt;<i> deed of replacing the System folder which mucked up the system in this
+</I>&gt;&gt;<i> way. The single user is a Standard user. There is no Admin user which
+</I>&gt;<i> &gt; should have been very difficult to have been accomplished.
+</I>
+
+
+&gt;<i> &gt; &gt; &gt; &gt;On 11/08/2004, at 2:46 PM, Robert Ameeti wrote:
+</I>&gt;&gt;<i> &gt; &gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt; &gt;&gt;The single and only user is not an Admin user but is instead a
+</I>&gt;&gt;<i> Standard
+</I>&gt;&gt;<i> &gt;&gt; user. As such, no updates can be done. Root is not enabled as far as I
+</I>&gt;&gt;<i> can
+</I>&gt;&gt;<i> &gt;&gt; tell. Is there any command within Terminal or within NetInfo Manager
+</I>&gt;&gt;<i> that
+</I>&gt;&gt;<i> &gt;&gt; might enable me to modify this single user to Admin status?
+</I>&gt;&gt;<i> &gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt; &gt;You might be able to do it by booting into single user mode and trying
+</I>&gt;&gt;<i> &gt;&gt; arcane commands, but I'd suggest a quick &amp; easy way might be, er,
+</I>&gt;&gt;<i> easier.
+</I>&gt;&gt;<i> &gt;&gt; How about:
+</I>&gt;&gt;<i> &gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt; &gt;1. Boot from install CD, activate root a/c. (Installer menu)
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; It is tough when you get stuck at Step 1
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; I do not see the ability to enable or activate root via a 10.3.2 OS
+</I>&gt;&gt;<i> &gt;&gt; install disc. My options are:
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; Change Startup Disk
+</I>&gt;&gt;<i> &gt;&gt; Reset Password
+</I>&gt;&gt;<i> &gt;&gt; Open Disk Utility
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; Interesting that Reset Password allows the resetting of 'roots'
+</I>&gt;&gt;<i> password.
+</I>&gt;&gt;<i> &gt;&gt; I am not sure whether 'root' is enabled after resetting its password,
+</I>&gt;&gt;<i> but
+</I>&gt;&gt;<i> &gt;&gt; the continuing problem is that at Login, it still only shows the single
+</I>&gt;&gt;<i> &gt;&gt; Standard account user's name so I still can't log in as root if I want.
+</I>&gt;&gt;<i> &gt;&gt; Attempting to make any changes via Accounts is fruitless as the only
+</I>&gt;&gt;<i> login
+</I>&gt;&gt;<i> &gt;&gt; ability is to this Standard user.
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; &gt;2. Boot normally, log in as root
+</I>&gt;&gt;<i> &gt;&gt; &gt;3. Accounts preference panel, assign &quot;User can administer this
+</I>&gt;&gt;<i> computer&quot;
+</I>&gt;&gt;<i> &gt;&gt; to the account in question,
+</I>&gt;&gt;<i> &gt;&gt; &gt;4. Reboot again (IME sometimes adding admin rights to an account
+</I>&gt;&gt;<i> doesn't
+</I>&gt;&gt;<i> &gt;&gt; take effect until you do)
+</I>&gt;<i> &gt; &gt; &gt; &gt;5. (optional, recommended in most cases) Disable root a/c.
+</I>
+-- 
+
+&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;
+Robert Ameeti
+
+The man who does not read books has no advantage over the man that can not read them.
+&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000789.html">[X4U] Single user not an Admin user: A fix anyone?
+</A></li>
+	<LI>Next message: <A HREF="000791.html">Setting up new G5 (transfer everything from G4)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#790">[ date ]</a>
+              <a href="thread.html#790">[ thread ]</a>
+              <a href="subject.html#790">[ subject ]</a>
+              <a href="author.html#790">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

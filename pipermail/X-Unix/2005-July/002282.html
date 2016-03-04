@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Problem with old umask setting
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Problem%20with%20old%20umask%20setting&In-Reply-To=20050728170445.42E9B4B736F%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002283.html">
+   <LINK REL="Next"  HREF="002284.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Problem with old umask setting</H1>
+    <B>John Baltutis</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Problem%20with%20old%20umask%20setting&In-Reply-To=20050728170445.42E9B4B736F%40listserver.themacintoshguy.com"
+       TITLE="[X-Unix] Problem with old umask setting">baltwo at san.rr.com
+       </A><BR>
+    <I>Thu Jul 28 10:46:47 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002283.html">[X-Unix] Re: Problem with old umask setting
+</A></li>
+        <LI>Next message: <A HREF="002284.html">[X-Unix] Problem with old umask setting
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2282">[ date ]</a>
+              <a href="thread.html#2282">[ thread ]</a>
+              <a href="subject.html#2282">[ subject ]</a>
+              <a href="author.html#2282">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 07/27/05, ~flipper &lt;<A HREF="../../../mailman/listinfo/x-unix.html">lord.flipper at gmail.com</A>&gt; wrote:
+&gt;<i>
+</I>&gt;<i> After hours, on and off, troubleshooting a failure on the part of a
+</I>&gt;<i>daemon in StartupItems to maintain its 'state' across rebbots, the
+</I>&gt;<i>situation was 'fixed' by resetting the permission on the particular item's
+</I>&gt;<i>folder in /Library/StartupItems.
+</I>&gt;<i>
+</I>&gt;<i> During that investigation, i ran a simple umask command in Terminal, and
+</I>&gt;<i>the console returned with:
+</I>&gt;<i>
+</I>&gt;<i> % 7
+</I>&gt;<i>
+</I>&gt;<i> That's a bad thing. back in Jaguar I had my own default umak set for 770.
+</I>&gt;<i>But when I checked the .tcshrc file in my Tiger setup here, there is
+</I>&gt;<i>absolutely no umask setting listed at all. The same goes for .login, and
+</I>&gt;<i>the rc file in /etc.
+</I>&gt;<i>
+</I>&gt;<i> I am stumped. Somewhere i have a setting that is forcing the return of
+</I>&gt;<i>that '7' in the console. Anybody have an idea?
+</I>
+AFAIK, the command is umask, not unmask. See
+&lt;<A HREF="http://www.mkssoftware.com/docs/man1/umask.1.asp">http://www.mkssoftware.com/docs/man1/umask.1.asp</A>&gt; for details.
+
+Also, see &lt;<A HREF="http://docs.info.apple.com/article.html?artnum=86135">http://docs.info.apple.com/article.html?artnum=86135</A>&gt; to reset
+default shell.
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002283.html">[X-Unix] Re: Problem with old umask setting
+</A></li>
+	<LI>Next message: <A HREF="002284.html">[X-Unix] Problem with old umask setting
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2282">[ date ]</a>
+              <a href="thread.html#2282">[ thread ]</a>
+              <a href="subject.html#2282">[ subject ]</a>
+              <a href="author.html#2282">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

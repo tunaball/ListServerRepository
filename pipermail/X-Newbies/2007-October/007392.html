@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Newbies] G4/AGP and 160Gig Drives
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20G4/AGP%20and%20160Gig%20Drives&In-Reply-To=20071011100504.155416956%40post.demon.co.uk">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="007391.html">
+   <LINK REL="Next"  HREF="007393.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Newbies] G4/AGP and 160Gig Drives</H1>
+    <B>Randy B. Singer</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20G4/AGP%20and%20160Gig%20Drives&In-Reply-To=20071011100504.155416956%40post.demon.co.uk"
+       TITLE="[X-Newbies] G4/AGP and 160Gig Drives">randy at macattorney.com
+       </A><BR>
+    <I>Thu Oct 11 08:54:37 PDT 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="007391.html">[X-Newbies] G4/AGP and 160Gig Drives
+</A></li>
+        <LI>Next message: <A HREF="007393.html">[X-Newbies] User Interface sounds
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7392">[ date ]</a>
+              <a href="thread.html#7392">[ thread ]</a>
+              <a href="subject.html#7392">[ subject ]</a>
+              <a href="author.html#7392">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Thursday  Oct 11, 2007, at 3:05 AM, Chris wrote:
+
+&gt;<i> I have a G4 Sawtooth which I'm looking to use as a small backup  
+</I>&gt;<i> server.
+</I>&gt;<i> I've been offered a 160gig Maxtor ATA133 which seems to fit the bill,
+</I>&gt;<i> but I'm told there may be problems with any drive which is more  
+</I>&gt;<i> than 128Gig.
+</I>&gt;<i>
+</I>&gt;<i> It may be this limitation was removed with OSX 10.3 and up (I'm on
+</I>&gt;<i> 10.4.10) but has anybody any experience with this?
+</I>
+The limiting factor isn't the version of OS X that you have, it is  
+your Mac's ROM's.
+
+Older Mac's ROM's only support 32-bit LBA (Logical Block Addressing),  
+and support of greater than 128 GB for internal hard drives requires  
+48-bit LBA and OS X 10.2 or later.
+<A HREF="http://docs.info.apple.com/article.html?artnum=86178">http://docs.info.apple.com/article.html?artnum=86178</A>
+<A HREF="http://www.lowendmac.com/macdan/05/1024.html">http://www.lowendmac.com/macdan/05/1024.html</A>
+Mirrored drive doors G4's and later (and 2002 QuickSilvers too) can  
+do 48-bit logical block addressing.  Earlier Macs cannot.
+
+There are three ways you can access the full capacity of an internal  
+drive over 128GB if your model of Mac doesn't natively support 48-bit  
+LBA.
+
+1)You can use a third-party (non-Apple) software driver
+or
+2)You can install a PCI card to give you a 48-bit internal IDE bus  
+(on tower Mac models that can use PCI cards)
+or
+3)You could put your drive into a FireWire hard drive case kit  
+(assuming that the kit uses a recent FireWire to IDE bridge chip.)
+
+Note that partitioning your hard drive will _not_ allow you to access  
+more than a total of 128GB.
+
+Intech's ATA Hi-Cap Support Driver software ($25) allows the use of  
+extended capacity ATA drives (drives greater than 128 Gigabytes in  
+size) on older (Pre-Mirrored Door) G4 and some G3 Macintoshes running  
+MacOS X versions 10.2 and later.
+<A HREF="http://www.speedtools.com/ATA6.shtml">http://www.speedtools.com/ATA6.shtml</A>
+
+OWC includes the ATA Hi-Cap Support Driver for only $15 if you  
+purchase a drive from them:
+<A HREF="http://eshop.macsales.com/item/Intech%20USA/SPEEDHCCD/">http://eshop.macsales.com/item/Intech%20USA/SPEEDHCCD/</A>
+
+Some Mac-compatible UATA/100 PCI cards can support 48-bit LBA, and,  
+to my knowledge, *all* Mac-compatible UATA/133 PCI cards support this  
+feature as well.  Sonnet's Tempo UATA/100 supports 48-bit LBA.
+
+SIIG has a Mac compatible ATA/133 PCI card available for $68 with  
+free shipping from Buy.com if you want to upgrade to be able to  
+access your drive's extra capacity.
+&lt;<A HREF="http://www.buy.com/prod/SIIG_Storage_controller_ATA_133_133_MBps_PCI/">http://www.buy.com/prod/SIIG_Storage_controller_ATA_133_133_MBps_PCI/</A> 
+q/loc/101/10325653.html&gt;
+(This is the best deal on a Mac-compatible UATA/133 card that I've  
+seen.)
+The SIIG card supports 48-bit LBA.
+
+___________________________________________
+Randy B. Singer
+Co-author of The Macintosh Bible (4th, 5th, and 6th editions)
+
+Macintosh OS X Routine Maintenance
+<A HREF="http://www.macattorney.com/ts.html">http://www.macattorney.com/ts.html</A>
+___________________________________________
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="007391.html">[X-Newbies] G4/AGP and 160Gig Drives
+</A></li>
+	<LI>Next message: <A HREF="007393.html">[X-Newbies] User Interface sounds
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7392">[ date ]</a>
+              <a href="thread.html#7392">[ thread ]</a>
+              <a href="subject.html#7392">[ subject ]</a>
+              <a href="author.html#7392">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

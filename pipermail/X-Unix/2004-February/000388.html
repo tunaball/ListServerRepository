@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Kill
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Kill&In-Reply-To=list-11055089%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000387.html">
+   <LINK REL="Next"  HREF="000390.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Kill</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Kill&In-Reply-To=list-11055089%40mail.ninewire.com"
+       TITLE="[X-Unix] Kill">magill at mcgillsociety.org
+       </A><BR>
+    <I>Wed Feb 25 18:07:59 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000387.html">[X-Unix] Bash alias help
+</A></li>
+        <LI>Next message: <A HREF="000390.html">[X-Unix] Restarting AppleFileServer
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#388">[ date ]</a>
+              <a href="thread.html#388">[ thread ]</a>
+              <a href="subject.html#388">[ subject ]</a>
+              <a href="author.html#388">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 25 Feb, 2004, at 11:05, Alex wrote:
+&gt;<i> On Wednesday, Feb 25, 2004, at 10:20 Canada/Eastern, Kirk McElhearn  
+</I>&gt;<i> wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> [...] perhaps it wasn't TextEdit that was stuck - it might be another
+</I>&gt;&gt;<i> process (like the spell check) that TextEdit is using...
+</I>&gt;<i>
+</I>&gt;<i> Good point. That would explain it rather neatly. Lesson to learn: Be  
+</I>&gt;<i> wary of unexamined assumptions, especially when they're implicit.  
+</I>&gt;<i> Thanks, Kirk.
+</I>
+The way to figure out what is actually happening is to use ps (and  
+possibly lsof) to find out what processes are children of the  
+particular login session and then to kill them off.
+
+To list all processes belonging to userid magill AND the ppid - parent  
+process id use:
+  dun&gt; ps -jU magill
+
+In the example below (which is WIDE, so expand your mail window...)
+The PPID of 1 indicates which process is the &quot;beginning&quot;.
+The tasks with a PPID of 28485 are children of the basic user  
+environment.
+You can trace what is attached to what this way.
+
+lsof -p &lt;pid&gt; can be used to find out what files (including sockets) a  
+particular program is using.
+
+  dun&gt; ps -jU magill
+USER     PID  PPID  PGID   SESS JOBC STAT  TT       TIME COMMAND
+magill   259     2   259 18f2a38    0 Ss    ??    3:49.70  
+/System/Library/Frameworks/ApplicationServices.framework/Frameworks/ 
+ATS.framework/Support/ATSServer
+magill 28483     1 28483 18f2f9c    0 Ss    ??    0:02.38  
+/System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow  
+console
+magill 28485     1 28485 18f2e88    0 Us    ??    4:01.66  
+/System/Library/Frameworks/ApplicationServices.framework/Frameworks/ 
+CoreGraphics.framework/Resources/W
+magill 28680 28483 28680 18f1394    0 Ss    ??    0:00.76  
+/System/Library/CoreServices/pbs
+magill 28683 28485 28485 18f2e88    0 S     ??    0:03.37  
+/System/Library/CoreServices/Dock.app/Contents/MacOS/Dock -psn_0_393217
+magill 28686 28485 28485 18f2e88    0 S     ??    1:55.27  
+/System/Library/CoreServices/SystemUIServer.app/Contents/MacOS/ 
+SystemUIServer -psn_0_524289
+magill 28687 28485 28485 18f2e88    0 S     ??    0:01.35  
+/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder  
+-psn_0_655361
+magill 28694 28485 28485 18f2e88    0 S     ??    0:00.70  
+/System/Library/Image  
+Capture/Devices/TWAINBridge.app/Contents/MacOS/TWAINBridge  
+-psn_0_786433
+magill 28696 28485 28485 18f2e88    0 S     ??    0:05.55  
+/Library/PreferencePanes/Scenario.prefPane/Contents/Scenario.app/ 
+Contents/MacOS/Scenario -psn_0_917505
+magill 28697 28485 28485 18f2e88    0 S     ??    0:04.65  
+/Applications/KeyspanDMR.app/Contents/Resources/ 
+DMRMapperApplication.app/Contents/MacOS/DMRMapperAppli
+magill 28700 28485 28485 18f2e88    0 S     ??    0:00.44  
+/Applications/iCal.app/Contents/Resources/iCalAlarmScheduler.app/ 
+Contents/MacOS/iCalAlarmScheduler -ps
+magill 28701 28485 28485 18f2e88    0 S     ??    0:04.76  
+/Library/PreferencePanes/StuffIt  
+AVR.prefPane/Contents/Resources/StuffItAVRDaemon.app/Contents/MacOS/S
+magill 28702 28485 28485 18f2e88    0 S     ??    0:49.78  
+/Library/PreferencePanes/MouseWorks.prefPane/Contents/Resources/ 
+Support/MouseWorks Background.app/Cont
+magill 28703 28485 28485 18f2e88    0 S     ??    0:00.80  
+/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ 
+ImageCapture.framework/Versions/A/Im
+magill 28710 28485 28485 18f2e88    0 S     ??    0:02.41  
+/System/Library/Services/AppleSpell.service/Contents/MacOS/AppleSpell  
+-psn_0_2097153
+magill 28817 28485 28485 18f2e88    0 S     ??    0:34.52  
+/Applications/Utilities/Terminal.app/Contents/MacOS/Terminal  
+-psn_0_2621441
+magill 28948 28485 28485 18f2e88    0 S     ??    0:22.27  
+/Applications/Safari.app/Contents/MacOS/Safari -psn_0_3538945
+magill 29146 28485 28485 18f2e88    0 S     ??    1:41.57  
+/Applications/Mail.app/Contents/MacOS/Mail -psn_0_4063233
+magill 28951 28950 28951 18f23c0    1 S     p1    0:00.10 -bash
+magill 29179 29178 29179 18f15bc    1 S    std    0:00.11 -bash
+
+
+
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000 - [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000387.html">[X-Unix] Bash alias help
+</A></li>
+	<LI>Next message: <A HREF="000390.html">[X-Unix] Restarting AppleFileServer
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#388">[ date ]</a>
+              <a href="thread.html#388">[ thread ]</a>
+              <a href="subject.html#388">[ subject ]</a>
+              <a href="author.html#388">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

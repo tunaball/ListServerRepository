@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Does anybody know what this means?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=Does%20anybody%20know%20what%20this%20means%3F&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001214.html">
+   <LINK REL="Next"  HREF="001216.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Does anybody know what this means?</H1>
+    <B>Nat</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=Does%20anybody%20know%20what%20this%20means%3F&In-Reply-To="
+       TITLE="Does anybody know what this means?">nbaker at discover-net.net
+       </A><BR>
+    <I>Fri Feb  7 07:15:37 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001214.html">[G4] Noise issue
+</A></li>
+        <LI>Next message: <A HREF="001216.html">[G4] g4 new vs old
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1215">[ date ]</a>
+              <a href="thread.html#1215">[ thread ]</a>
+              <a href="subject.html#1215">[ subject ]</a>
+              <a href="author.html#1215">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I'm just trying to do a Command-F (find) in the finder and the finder 
+crashes since updating to 10.2.3
+
+Date/Time:  2003-02-07 09:12:19 -0600
+OS Version: 10.2.3 (Build 6G30)
+
+
+Command:    Finder
+PID:        789
+
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x00000006
+
+Thread 0 Crashed:
+  #0   0x90134d80 in CFGetTypeID
+  #1   0x96b70ddc in 
+_ZN10Accessible26GetNamedAttributeDataCountEPK10__CFStringPl
+  #2   0x96b6a468 in 
+_Z36CarbonGetAttributeValueCountCallbackPK8__CFDatamPK10__CFStringPlPv
+  #3   0x93030150 in _axServerMessageHandler
+  #4   0x9016f314 in __CFMessagePortPerform
+  #5   0x9015bcb8 in __CFRunLoopDoSource1
+  #6   0x90148dbc in __CFRunLoopRun
+  #7   0x90180fe4 in CFRunLoopRunSpecific
+  #8   0x969a36a0 in RunCurrentEventLoopInMode
+  #9   0x969a3e40 in GetNextEventMatchingMask
+  #10  0x969a7b70 in WNEInternal
+  #11  0x969ada34 in WaitNextEvent
+  #12  0x00004340 in 0x4340
+  #13  0x00008c14 in 0x8c14
+  #14  0x00027cd8 in 0x27cd8
+  #15  0x00026d5c in 0x26d5c
+  #16  0x00026bdc in 0x26bdc
+
+Thread 1:
+  #0   0x90073c48 in mach_msg_trap
+  #1   0x90005f90 in mach_msg
+  #2   0xc0007758 in __ape_internal
+  #3   0xc0001160 in __ape_agent
+  #4   0x90020d48 in _pthread_body
+
+Thread 2:
+  #0   0x90073c48 in mach_msg_trap
+  #1   0x90005f90 in mach_msg
+  #2   0x01382bcc in APEBundleMessage
+  #3   0x90020d48 in _pthread_body
+
+Thread 3:
+  #0   0x90073c48 in mach_msg_trap
+  #1   0x90005f90 in mach_msg
+  #2   0x90148b10 in __CFRunLoopRun
+  #3   0x90180fe4 in CFRunLoopRunSpecific
+  #4   0x94d9c1c0 in _ZN10HALRunLoop9OwnThreadEPv
+  #5   0x94d911b0 in _ZN9CAPThread5EntryEPS_
+  #6   0x90020d48 in _pthread_body
+
+Thread 4:
+  #0   0x90042688 in semaphore_timedwait_signal_trap
+  #1   0x9003e8b4 in _pthread_cond_wait
+  #2   0x9022ffd4 in MPWaitOnQueue
+  #3   0x90736fc4 in _ZN13TNodeSyncTask12SyncTaskProcEPv
+  #4   0x9025e3dc in PrivateMPEntryPoint
+  #5   0x90020d48 in _pthread_body
+
+PPC Thread State:
+   srr0: 0x90134d80 srr1: 0x0200f030                vrsave: 0x00000000
+    xer: 0x20000000   lr: 0x90134d70  ctr: 0x90134d60   mq: 0x00000000
+     r0: 0x96b70ddc   r1: 0xbffff120   r2: 0x28802242   r3: 0x00000000
+     r4: 0x6174766c   r5: 0x2a2a2a2a   r6: 0xbffff130   r7: 0x00000000
+     r8: 0x00000000   r9: 0x00000000  r10: 0x00000013  r11: 0xa69a15ac
+    r12: 0x90134d60  r13: 0x00000000  r14: 0x00000000  r15: 0x00000001
+    r16: 0x00000001  r17: 0x00000000  r18: 0x24802280  r19: 0x00000000
+    r20: 0x0000869f  r21: 0x00000000  r22: 0xa01303fc  r23: 0x00000000
+    r24: 0x02ac3520  r25: 0x00000000  r26: 0x03b796b0  r27: 0xbffff308
+    r28: 0xbffff308  r29: 0x00000000  r30: 0x00000000  r31: 0x90134d70
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001214.html">[G4] Noise issue
+</A></li>
+	<LI>Next message: <A HREF="001216.html">[G4] g4 new vs old
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1215">[ date ]</a>
+              <a href="thread.html#1215">[ thread ]</a>
+              <a href="subject.html#1215">[ subject ]</a>
+              <a href="author.html#1215">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

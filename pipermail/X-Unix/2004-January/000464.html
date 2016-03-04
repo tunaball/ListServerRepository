@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Remove last ten lines of files
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Remove%20last%20ten%20lines%20of%20files&In-Reply-To=list-10091517%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000453.html">
+   <LINK REL="Next"  HREF="000475.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Remove last ten lines of files</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Remove%20last%20ten%20lines%20of%20files&In-Reply-To=list-10091517%40mail.ninewire.com"
+       TITLE="[X-Unix] Remove last ten lines of files">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Tue Jan  6 14:07:39 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000453.html">[X-Unix] Postfix howto
+</A></li>
+        <LI>Next message: <A HREF="000475.html">[X-Unix] Postfix howto
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#464">[ date ]</a>
+              <a href="thread.html#464">[ thread ]</a>
+              <a href="subject.html#464">[ subject ]</a>
+              <a href="author.html#464">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>From: Victor Eijkhout &lt;<A HREF="../../../mailman/listinfo/x-unix.html">eijkhout at cs.utk.edu</A>&gt;
+</I>&gt;<i>At 21:45 +0900 2004/01/02, Kino wrote:
+</I>&gt;&gt;<i>On Jan 2, 2004, at 8:04 PM, Kuestner, Bjoern wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>does anybody have a simple solution to remove the last ten lines of files
+</I>&gt;&gt;&gt;<i>(of variable length).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>#! /bin/sh
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>i=`grep -c $ $*`
+</I>&gt;&gt;<i>j=`expr $i - 10`
+</I>&gt;&gt;<i>if [ $j -lt 1 ]; then
+</I>&gt;&gt;<i>j=$i
+</I>&gt;&gt;<i>fi
+</I>&gt;&gt;<i>head -n $j $*
+</I>&gt;<i>
+</I>&gt;<i>   awk -v n=`tail -n +10 YOURFILE | wc -l` 'NR&lt;n {print}' YOURFILE
+</I>&gt;<i>
+</I>&gt;<i>Tada!
+</I>
+	or even
+ed YOURFILE
+1,$-10p
+q
+	which can be done inline as
+echo '1,$-10p;q' | tr &quot;;&quot; &quot;\n&quot; | ed YOURFILE
+	(the version with embedded newlines not being likely to survive email)
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+Chair of HPUX SysAdmin SIG of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x-unix.html">dledger at ivdcs.co.uk</A> (also <A HREF="../../../mailman/listinfo/x-unix.html">dledger at ivdcs.demon.co.uk</A>)
+www.ivdcs.co.uk
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000453.html">[X-Unix] Postfix howto
+</A></li>
+	<LI>Next message: <A HREF="000475.html">[X-Unix] Postfix howto
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#464">[ date ]</a>
+              <a href="thread.html#464">[ thread ]</a>
+              <a href="subject.html#464">[ subject ]</a>
+              <a href="author.html#464">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

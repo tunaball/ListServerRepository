@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Newbies] Connecting to OS X
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20Connecting%20to%20OS%20X&In-Reply-To=list-6636075%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001585.html">
+   <LINK REL="Next"  HREF="001587.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Newbies] Connecting to OS X</H1>
+    <B>Scott</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20Connecting%20to%20OS%20X&In-Reply-To=list-6636075%40mail.ninewire.com"
+       TITLE="[X Newbies] Connecting to OS X">scott-xlists at scotist.com
+       </A><BR>
+    <I>Tue Jun 17 14:58:58 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001585.html">[X Newbies] Mac Mail Question
+</A></li>
+        <LI>Next message: <A HREF="001587.html">[X Newbies] Mac Mail Question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1586">[ date ]</a>
+              <a href="thread.html#1586">[ thread ]</a>
+              <a href="subject.html#1586">[ subject ]</a>
+              <a href="author.html#1586">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Monday, Jun 16, 2003, at 07:53 US/Pacific, G.M. HADLOW wrote:
+
+&gt;<i> I have been trying to get an iMac running on 10.2.6 to connect to a G3
+</I>&gt;<i> running 9.2.2 via ethernet through a hub.
+</I>&gt;<i> The iMac can see the G3 but when I try to connect to the iMac, its 
+</I>&gt;<i> seen in
+</I>&gt;<i> the chooser. Gives the message &quot; The attempted connection to the 
+</I>&gt;<i> server has
+</I>&gt;<i> failed. Try again later.&quot;
+</I>&gt;<i> I have tried to connect as a registered user and a guest but to no 
+</I>&gt;<i> avail.
+</I>&gt;<i> I suspect I have not done something right on the iMac.
+</I>&gt;<i> Any help would be appreciated.
+</I>&gt;<i> Gen
+</I>&gt;<i>
+</I>
+Your settings are probably ok on the iMac. The problem lies on the G3. 
+OS X uses Appletalk *only* to discover services, not to perform the 
+actual transfer or connection.
+
+  Both of your machines need to have valid IP addresses. If you have no 
+router, or no dhcp services from your ISP, both machines should default 
+to an IP address of 169.254.x.x.
+
+Note the IP address and configuration method that appears in the iMac's 
+&quot;System Prefs--&gt; Network--&gt; Show Built-in Ethernet--&gt; TCP/IP. It should 
+be 169.254.x.x  via dhpc.
+
+Now look at the tcp/ip control panel on the G3. To work properly, it 
+should be set to Connect via ethernet, configure via dhcp. It should 
+have an IP address similar to that of the G4. 169.254.x.x, if the G4 
+has a 169, or 10.x.x.x if the G4 has a 10.x.x.x, etc.
+
+In your case, I'd bet the G3's tcp/ip control panel is set to connect 
+via PPP, AOL Link enhanced, freeppp, or some other non-ethernet medium. 
+either write down your current settings and change it to &quot;connect via 
+ethernet, configure using dhcp&quot;, or create a new location where it is 
+set to ethernet/dhcp.
+
+
+-- 
+Scott
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001585.html">[X Newbies] Mac Mail Question
+</A></li>
+	<LI>Next message: <A HREF="001587.html">[X Newbies] Mac Mail Question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1586">[ date ]</a>
+              <a href="thread.html#1586">[ thread ]</a>
+              <a href="subject.html#1586">[ subject ]</a>
+              <a href="author.html#1586">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

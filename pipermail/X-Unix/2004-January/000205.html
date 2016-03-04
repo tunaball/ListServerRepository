@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Question about using RsyncX
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Question%20about%20using%20RsyncX&In-Reply-To=list-10536663%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000204.html">
+   <LINK REL="Next"  HREF="000206.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Question about using RsyncX</H1>
+    <B>Albert Lunde</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Question%20about%20using%20RsyncX&In-Reply-To=list-10536663%40mail.ninewire.com"
+       TITLE="[X-Unix] Question about using RsyncX">atlunde at panix.com
+       </A><BR>
+    <I>Thu Jan 29 18:06:17 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000204.html">[X-Unix] Question about using RsyncX
+</A></li>
+        <LI>Next message: <A HREF="000206.html">[X-Unix] Postfix troubles
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#205">[ date ]</a>
+              <a href="thread.html#205">[ thread ]</a>
+              <a href="subject.html#205">[ subject ]</a>
+              <a href="author.html#205">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> &gt; &gt; I could redirect the output into a file no problem but don't know how to
+</I>&gt;<i> &gt; &gt; &quot;bi-direct&quot; it to screen AND file.  Can anybody tell me how?
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; $ echo `uname -a` 2&gt;&amp;1 | tee ~/uname.output
+</I>&gt;<i> 
+</I>&gt;<i> I forgot to mention...the 2&gt;&amp;1 business assumes bash (it's redirecting
+</I>&gt;<i> STDERR to STDOUT).
+</I>
+The similar tcsh/csh idiom is:
+ 
+command |&amp; tee ~/uname.output
+
+Another option is (still tcsh):
+
+nohup command &gt;&amp; filename &amp;
+tail -f filename
+
+you can control-c out of the tail, or probably even close the terminal
+without affecting the &quot;command&quot; process, which is in the background.
+
+bash for the above: 
+
+nohup command 2&gt;&amp;1 filename &amp;
+tail -f filename
+
+I write shell scripts that do something like this to a file
+named something.$$, echo the name and quit. $$ becomes the pid
+which unique enough to prevent overwriting.
+
+Then I cut and past the name into a &quot;tail -f&quot;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000204.html">[X-Unix] Question about using RsyncX
+</A></li>
+	<LI>Next message: <A HREF="000206.html">[X-Unix] Postfix troubles
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#205">[ date ]</a>
+              <a href="thread.html#205">[ thread ]</a>
+              <a href="subject.html#205">[ subject ]</a>
+              <a href="author.html#205">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

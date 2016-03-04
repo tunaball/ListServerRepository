@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Servers] Authentication - I can't get it to work...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX-Servers%5D%20Authentication%20-%20I%20can%27t%20get%20it%20to%20work...&In-Reply-To=20040919190012.9451AC1EAA%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000008.html">
+   <LINK REL="Next"  HREF="000288.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Servers] Authentication - I can't get it to work...</H1>
+    <B>Frank Flynn</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=%5BX-Servers%5D%20Authentication%20-%20I%20can%27t%20get%20it%20to%20work...&In-Reply-To=20040919190012.9451AC1EAA%40listserver.themacintoshguy.com"
+       TITLE="[X-Servers] Authentication - I can't get it to work...">frank at declan.com
+       </A><BR>
+    <I>Wed Sep 29 12:11:23 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000008.html">[X-Servers] KDC will not run - &quot;Unable to bind to Parent&quot; error?
+</A></li>
+        <LI>Next message: <A HREF="000288.html">[X-Servers] OS X machines very slowww on PC Network
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#287">[ date ]</a>
+              <a href="thread.html#287">[ thread ]</a>
+              <a href="subject.html#287">[ subject ]</a>
+              <a href="author.html#287">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+I have an X-server, new 10.3 - after a fresh install I've got it set up 
+as an Open Directory Master.  I have created a few users.  I have added 
+some Mac's (but now it's set to allow any Mac to connect)
+
+Under the Open Directory tab in the Server Admin tool it shows 
+everything is running.
+
+I can login to this box from any user by:
+  -connect to server (from the finder)
+  -ssh
+  -Server Admin tool (only me because only I can administrate the server)
+
+But I cannot login to a client machine using this LDAP server.  I have 
+set up Directory Access on the client machines (enabled LDAP3, added 
+this server to the search path).  All that happens is anytime I login 
+it refuses my login.
+
+So back to the manual and I try:
+    ldapsearch -h 192.168.100.1 -b &quot;dc=ecxample,dc=com&quot; -x   (adjusted 
+for my server)
+
+and it returns my users and various encoded text I assume to be binary 
+and encrypted passwords and such.
+
+Does anyone have a clue where to look next?  Are there debug tools that 
+can tell me where the break down is?  I'm not sure if I've got the 
+clients or the server set up properly.  Apple manual tells me to look 
+in the kdc.log file for error messages but in fact there is no such 
+file and no obvious way to turn kdc logging on.
+
+Any help appreciated
+Frank
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000008.html">[X-Servers] KDC will not run - &quot;Unable to bind to Parent&quot; error?
+</A></li>
+	<LI>Next message: <A HREF="000288.html">[X-Servers] OS X machines very slowww on PC Network
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#287">[ date ]</a>
+              <a href="thread.html#287">[ thread ]</a>
+              <a href="subject.html#287">[ subject ]</a>
+              <a href="author.html#287">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

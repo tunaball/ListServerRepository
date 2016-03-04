@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] POLL: was &quot;Apple's True Market Share!&quot;
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20POLL%3A%20was%20%22Apple%27s%20True%20Market%20Share%21%22&In-Reply-To=list-4094351%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001028.html">
+   <LINK REL="Next"  HREF="001030.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] POLL: was &quot;Apple's True Market Share!&quot;</H1>
+    <B>Kynan Shook</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20POLL%3A%20was%20%22Apple%27s%20True%20Market%20Share%21%22&In-Reply-To=list-4094351%40mail.ninewire.com"
+       TITLE="[Ti] POLL: was &quot;Apple's True Market Share!&quot;">kshook at mac.com
+       </A><BR>
+    <I>Sun Dec 15 14:27:24 PST 2002</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001028.html">More on Fujitsu Hard Drive Failures
+</A></li>
+        <LI>Next message: <A HREF="001030.html">[Ti] POLL: was &quot;Apple's True Market Share!&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1029">[ date ]</a>
+              <a href="thread.html#1029">[ thread ]</a>
+              <a href="subject.html#1029">[ subject ]</a>
+              <a href="author.html#1029">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Luke Mazzeri &lt;<A HREF="../../../mailman/listinfo/titanium.html">etyrnal at ameritech.net</A>&gt; writes:
+&gt;<i> i wonder if it would be possible to write code into the kernel that
+</I>&gt;<i> would allow 'real time' 'hot swapping' of the cpu ...  i mean that
+</I>&gt;<i> while your machine is booted and operating, would it be possible to put
+</I>&gt;<i> ONE processor into deep sleep or turn it off? and reactivate it when
+</I>&gt;<i> needed?
+</I>&gt;<i>
+</I>&gt;<i> the machine could (if technologically possible) run on one proc. until
+</I>&gt;<i> the primary proc. hit 100% then the 2nd proc. could kick in or 'wake
+</I>&gt;<i> up'...
+</I>
+WARNING: The following text is very geekified.  Persons who do not have 
+at least mildly geeky inclinations beware; your brain may want to pack 
+up shop and leave if you attempt to read the following message...
+
+Well, I'm currently in school learning all about this sort of thing, 
+and as far as I know, it should be quite easily done, and is possibly 
+done already (though I don't know any examples).  The problem though is 
+that running 1 processor at 100% doesn't give you as good performance 
+as two at 50%.  Here's a quick rundown of how multitasking works (in 
+terms of running multiple applications at once, not multiple CPUs):
+Any given processor (with the exception of a few brand new designs that 
+try to get around this) can only execute code from one program at a 
+time.  This is partly because each program needs registers 
+(instantly-available temporary data storage) to store variables, and 
+those registers can be used by any program; so to run a different 
+program, you have to save all those registers to somewhere (like RAM) 
+and then let the next program run for a while.  Then you have to 
+determine how to split up the CPU time while running multiple programs: 
+OS 9 used cooperative multitasking, meaning that when a program was 
+ready to relinquish control, it would tell the OS it was done for a 
+while, and the OS would start running the next program.  If a program 
+wants to monopolize the CPU, it can certainly do this; everything else 
+slows down, but it's how games and Virtual PC and other things can give 
+themselves an extra kick.  OS X uses preemptive multitasking.  In this 
+scheme, each process gets a fixed block of time to run, and then the OS 
+stops it and runs the next program.  Programs can return before their 
+time is up if they have nothing to do.  If you toss in a second 
+processor in OS X, programs can get time on either processor as they 
+need it, so the programs still get the same block of time when they 
+run, they just get time twice as frequently.
+
+Anyway, if you run one processor at 100% before kicking in the second 
+one, you get a fairly large latency between a program needing to do 
+something and having the available resources to run it.  It would be 
+better (though I'm not sure if it would be noticeable or not; but it 
+would depend on what you're running) to run two processors at 50%.
+
+IMNSHO, the best option (if you can cram two CPUs into something so 
+that they don't use too much battery power) would be to have the second 
+processor configurable in Energy Saver for battery versus AC settings:  
+Allow the user turn one processor off, and additionally turn processor 
+cycling on or reduce the clock speed on however many CPUs the user 
+wants to be running.
+
+An interesting thing: in OS X, you can actually have one processor 
+kernel panic while the other continues normal operation.  The computer 
+won't be able to actually handle doing anything, but the CPU is not 
+panicked.  Along these same lines, I was once repairing a dual 1-GHz 
+PowerMac (I work in an Apple Authorized repair shop), and got a 
+computer where the CPUs were running too hot and/or not being cooled 
+fast enough.  After running for about 5 minutes, the computer would 
+panic, and then it would panic AGAIN.  One CPU would panic first after 
+hitting the highest temperature it could handle, then the other CPU 
+would do the same.  That was the only time I've ever seen a double 
+kernel panic.  In a kernel panic, you can even see which processor is 
+panicking; it tells you right at the beginning with either (cpu 0) or 
+(cpu 1).  Those of us with single processor machines (should) always 
+see cpu 0.
+
+
+Kynan Shook
+<A HREF="../../../mailman/listinfo/titanium.html">kshook at mac.com</A>
+<A HREF="http://homepage.mac.com/kshook/index.html">http://homepage.mac.com/kshook/index.html</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001028.html">More on Fujitsu Hard Drive Failures
+</A></li>
+	<LI>Next message: <A HREF="001030.html">[Ti] POLL: was &quot;Apple's True Market Share!&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1029">[ date ]</a>
+              <a href="thread.html#1029">[ thread ]</a>
+              <a href="subject.html#1029">[ subject ]</a>
+              <a href="author.html#1029">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

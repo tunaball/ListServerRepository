@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How make launchd stop trying to launch nonexistent
+	program?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20make%20launchd%20stop%20trying%20to%20launch%20nonexistent%0A%09program%3F&In-Reply-To=6D5E99EF-8191-4E29-B9D4-E0D225B4D54C%40ieee.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003089.html">
+   <LINK REL="Next"  HREF="003091.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How make launchd stop trying to launch nonexistent
+	program?</H1>
+    <B>James Bucanek</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20make%20launchd%20stop%20trying%20to%20launch%20nonexistent%0A%09program%3F&In-Reply-To=6D5E99EF-8191-4E29-B9D4-E0D225B4D54C%40ieee.org"
+       TITLE="[X-Unix] How make launchd stop trying to launch nonexistent
+	program?">subscriber at gloaming.com
+       </A><BR>
+    <I>Thu Apr 17 08:29:49 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003089.html">[X-Unix] How make launchd stop trying to launch nonexistent
+	program?
+</A></li>
+        <LI>Next message: <A HREF="003091.html">[X-Unix] How make launchd stop trying to launch nonexistent
+	program?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3090">[ date ]</a>
+              <a href="thread.html#3090">[ thread ]</a>
+              <a href="subject.html#3090">[ subject ]</a>
+              <a href="author.html#3090">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Jerry Krinock &lt;mailto:<A HREF="../../../mailman/listinfo/x-unix.html">jerry at ieee.org</A>&gt; wrote (Thursday, April 17, 
+2008 6:02 AM -0700):
+
+&gt;<i>I did try ^removing^ the launchd configuration plist for this 
+</I>&gt;<i>nonexisting program, but, not surprisingly, that did not stop 
+</I>&gt;<i>the repeated attempts to launch it.
+</I>
+Removing the .plist will have no effect once the configuration 
+file has been read by launchd when it started up. You need to 
+unload, remove, or stop the job via launchctl (see man launchctl).
+
+For the record, the correct way of removing a .plist is use 
+'launchctl unload &lt;path/to/.plist&gt;'.
+
+If you still have the .plist you can probably stop the job using 
+'launchctl remove &lt;joblabel&gt;' (look in the .plist file to find 
+the &lt;label&gt; property). If you don't, just restart the system.
+
+-- 
+James Bucanek
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003089.html">[X-Unix] How make launchd stop trying to launch nonexistent
+	program?
+</A></li>
+	<LI>Next message: <A HREF="003091.html">[X-Unix] How make launchd stop trying to launch nonexistent
+	program?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3090">[ date ]</a>
+              <a href="thread.html#3090">[ thread ]</a>
+              <a href="subject.html#3090">[ subject ]</a>
+              <a href="author.html#3090">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

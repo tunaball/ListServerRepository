@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Is it possible to set unique umask for folder?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Is%20it%20possible%20to%20set%20unique%20umask%20for%20folder%3F&In-Reply-To=F535FFB8-3E13-11D9-B35E-000A9579123A%40ldml.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001308.html">
+   <LINK REL="Next"  HREF="001310.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Is it possible to set unique umask for folder?</H1>
+    <B>Kirk McElhearn</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Is%20it%20possible%20to%20set%20unique%20umask%20for%20folder%3F&In-Reply-To=F535FFB8-3E13-11D9-B35E-000A9579123A%40ldml.com"
+       TITLE="[X-Unix] Is it possible to set unique umask for folder?">kirklists at wanadoo.fr
+       </A><BR>
+    <I>Wed Nov 24 04:53:05 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001308.html">[X-Unix] Is it possible to set unique umask for folder?
+</A></li>
+        <LI>Next message: <A HREF="001310.html">[X-Unix] Is it possible to set unique umask for folder?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1309">[ date ]</a>
+              <a href="thread.html#1309">[ thread ]</a>
+              <a href="subject.html#1309">[ subject ]</a>
+              <a href="author.html#1309">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 11/24/04 1:25 PM, &quot;Simon Forster&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">simon-lists at ldml.com</A>&gt; wrote:
+
+&gt;<i> We have some files being saved to a directory (by the Finder IIRC).
+</I>&gt;<i> These files have default permissions of 755 - which is Mac OS X's
+</I>&gt;<i> default from what I can gather. What we'd like is that files saved to
+</I>&gt;<i> this particular directory have universal read and write privileges
+</I>&gt;<i> (777). For fairly obvious reasons, we'd prefer not to change the system
+</I>&gt;<i> wide defaults, just the mode for this one directory.
+</I>&gt;<i> 
+</I>&gt;<i> Is this possible? Can one have a directory specific umask?
+</I>
+As far as I understand, no - umask is a system-wide setting.
+&gt;<i> 
+</I>&gt;<i> I can write a cron script to change permissions every 30 minutes. I
+</I>&gt;<i> imagine I can write a folder action script which'll run a chmod when
+</I>&gt;<i> something's added to the folder - and presumably I can write a shell
+</I>&gt;<i> (or Python) script to do a similar task. However, these options seem
+</I>&gt;<i> inelegant as they're fixing the problem after the event.
+</I>&gt;<i> 
+</I>&gt;<i> I've had a look around and have learnt a reasonable amount about
+</I>&gt;<i> permissions and umasks - but I haven't found a direct answer to this
+</I>&gt;<i> (simple) question.
+</I>
+The AppleScript solution seems to be the best, since it happens as soon as
+new items are added.
+ 
+ 
+Kirk
+ 
+          Author of: The Mac OS X Command Line: Unix Under the Hood
+               -        -        -        -        -        -
+             Read my blog: Kirkville -- <A HREF="http://www.mcelhearn.com">http://www.mcelhearn.com</A>
+          Musings, Opinion and Miscellanea, on Macs, iPods and more
+       Kirk McElhearn | Chemin de la Lauze | 05600 Guillestre | France 
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001308.html">[X-Unix] Is it possible to set unique umask for folder?
+</A></li>
+	<LI>Next message: <A HREF="001310.html">[X-Unix] Is it possible to set unique umask for folder?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1309">[ date ]</a>
+              <a href="thread.html#1309">[ thread ]</a>
+              <a href="subject.html#1309">[ subject ]</a>
+              <a href="author.html#1309">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

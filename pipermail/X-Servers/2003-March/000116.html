@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Please Help Interpret this log
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=Please%20Help%20Interpret%20this%20log&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000115.html">
+   <LINK REL="Next"  HREF="000117.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>Please Help Interpret this log</H1>
+    <B>Joey Parshley</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=Please%20Help%20Interpret%20this%20log&In-Reply-To="
+       TITLE="Please Help Interpret this log">kneeland at mac.com
+       </A><BR>
+    <I>Mon Mar 24 11:32:01 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000115.html">[X Servers] &quot;local&quot; home folders
+</A></li>
+        <LI>Next message: <A HREF="000117.html">network installs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#116">[ date ]</a>
+              <a href="thread.html#116">[ thread ]</a>
+              <a href="subject.html#116">[ subject ]</a>
+              <a href="author.html#116">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi all,
+
+I am running OS X 10.2.4 Server on an Xserve. It went non responsive over
+the weekend. All of the drive lights were on and the fans were running but
+it seemed as if it were stuck asleep. I could not ping it. I looked in
+Server status and noticed this in the windows File Service Log it started
+out with this:
+ix_user.59': authentication failed
+[2003/03/23 23:03:50, 1]
+/SourceCache/samba/samba-23/source/smbd/reply.c:reply_sesssetup_and_X(988)
+Rejecting user 'unix_user.59': authentication failed
+
+With many repeating lines until this
+[2003/03/23 23:04:03, 1]
+/SourceCache/samba/samba-23/source/smbd/reply.c:reply_sesssetup_and_X(988)
+  Rejecting user 'unix_user.62': authentication failed
+[2003/03/23 23:04:09, 0]
+/SourceCache/samba/samba-23/source/lib/util_sock.c:read_data(436)
+  read_data: read failure for 4. Error = Connection reset by peer
+[2003/03/23 23:26:50, 0]
+/SourceCache/samba/samba-23/source/smbd/service.c:make_connection(249)
+  50163099sp (61.174.134.71) couldn't find service c
+[2003/03/23 23:44:24, 0]
+/SourceCache/samba/samba-23/source/smbd/service.c:make_connection(249)
+  localhost (66.87.105.53) couldn't find service c
+[2003/03/24 08:54:41, 0]
+/SourceCache/samba/samba-23/source/smbd/service.c:make_connection(249)
+  gustavo (203.193.146.175) couldn't find service c
+
+Can anyone point out what this means or where I should go to further
+understand it? I am particularly concerned about the unix_user.59 and
+ IP addresses as they are unfamiliar.
+
+Thanks
+
+-- 
+
+Joseph K Parshley III
+MIS Manager
+Infinite Media Inc
+781-599-5175 ext 17
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000115.html">[X Servers] &quot;local&quot; home folders
+</A></li>
+	<LI>Next message: <A HREF="000117.html">network installs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#116">[ date ]</a>
+              <a href="thread.html#116">[ thread ]</a>
+              <a href="subject.html#116">[ subject ]</a>
+              <a href="author.html#116">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

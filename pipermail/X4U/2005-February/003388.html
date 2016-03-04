@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Attaching A Router To Router
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Attaching%20A%20Router%20To%20Router&In-Reply-To=Pine.LNX.4.44.0502140047501.24680-100000%40jetsam.detritus.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003405.html">
+   <LINK REL="Next"  HREF="003389.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Attaching A Router To Router</H1>
+    <B>Richard Gilmore</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Attaching%20A%20Router%20To%20Router&In-Reply-To=Pine.LNX.4.44.0502140047501.24680-100000%40jetsam.detritus.net"
+       TITLE="[X4U] Attaching A Router To Router">rgilmor at uwo.ca
+       </A><BR>
+    <I>Mon Feb 14 09:26:40 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003405.html">[X4U] Attaching A Router To Router
+</A></li>
+        <LI>Next message: <A HREF="003389.html">[X4U] Attaching A Router To Router
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3388">[ date ]</a>
+              <a href="thread.html#3388">[ thread ]</a>
+              <a href="subject.html#3388">[ subject ]</a>
+              <a href="author.html#3388">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>What I would use is an Ethernet Hub. Netgear makes some good ones. That's
+what we use. It's a little different from a router in that it doesn't assign
+any IP addresses but redistributes them from the router upstream. Routers
+can distribute hundreds of IP numbers but typically only have 4 ports on
+them a hub allows for more distribution of those numbers without creating
+any of its own. I think they're a little cheaper than a router too and they
+require zero setup just plug and play.
+
+
+&gt;<i> From: Allan Hise &lt;<A HREF="../../../mailman/listinfo/x4u.html">allan at hise.org</A>&gt;
+</I>&gt;<i> Reply-To: &quot;A place to discuss Mac OS X for the casual user.&quot;
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x4u.html">x4u at listserver.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Date: Mon, 14 Feb 2005 00:53:38 -0800 (PST)
+</I>&gt;<i> To: &quot;A place to discuss Mac OS X for the casual user.&quot;
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/x4u.html">x4u at listserver.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Subject: Re: [X4U] Attaching A Router To Router
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> On Sun, 13 Feb 2005, revDAVE wrote:
+</I>&gt;<i> 
+</I>&gt;&gt;<i> A friend of mine has 2 macs in his office -  and wanted to purchase a router
+</I>&gt;&gt;<i> so that they could both be on the Internet and doing some file sharing. ( I
+</I>&gt;&gt;<i> guess currently only one computer is on the Net -  the other is just a non
+</I>&gt;&gt;<i> Internet Business Computer right now.)
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> I  suggested that his company might already be on a Bigger master router
+</I>&gt;&gt;<i> system ( there are about 30 employees) -  and he thought that most likely
+</I>&gt;&gt;<i> there was some previous system set up and that he was already receiving 1
+</I>&gt;&gt;<i> Ethernet cable that was probably on that system already - he wasn't sure -
+</I>&gt;&gt;<i> but that is my guess. However, he still wants to purchase a router to set up
+</I>&gt;&gt;<i> these computers in his room.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> So I am asking - is it possible to purchase a router and set up on top of
+</I>&gt;&gt;<i> another ( bigger) router. Let's assume that the large office gets 1 T1 line
+</I>&gt;&gt;<i> coming and - and goes to a master router - and one Ethernet cable goes into
+</I>&gt;&gt;<i> his office.  Can I then attach his private router to the end of that cable
+</I>&gt;&gt;<i> and set up a &quot; sub system &quot; for his 2 computers?
+</I>&gt;<i> 
+</I>&gt;<i> Yes, this is possible. I would try just using a switch (or, less
+</I>&gt;<i> desirably, a hub) first, especially if the network uses DHCP (and the IT
+</I>&gt;<i> guys allow the 2nd MAC address on the network). That would make things
+</I>&gt;<i> much simpler, and cheaper.
+</I>&gt;<i> 
+</I>&gt;<i> Otherwise, just setup the router to use NAT and the 1st router will see
+</I>&gt;<i> the two machines as having the same IP address. Of course, this is easier
+</I>&gt;<i> said than done and implementation depends on the router. And depending on
+</I>&gt;<i> how the network is set up, you may end up with NAT upon NAT... (it works,
+</I>&gt;<i> but can be ugly).
+</I>&gt;<i> 
+</I>&gt;<i> So, there are a lot of variables. Seriously, see if you can go the
+</I>&gt;<i> switch/hub route first. Is there some reason he can't ask the IT folks in
+</I>&gt;<i> his large office?
+</I>&gt;<i> 
+</I>&gt;<i> Allan
+</I>&gt;<i> 
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X4U mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">X4U at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x4u.html">http://listserver.themacintoshguy.com/mailman/listinfo/x4u</A>
+</I>
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003405.html">[X4U] Attaching A Router To Router
+</A></li>
+	<LI>Next message: <A HREF="003389.html">[X4U] Attaching A Router To Router
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3388">[ date ]</a>
+              <a href="thread.html#3388">[ thread ]</a>
+              <a href="subject.html#3388">[ subject ]</a>
+              <a href="author.html#3388">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

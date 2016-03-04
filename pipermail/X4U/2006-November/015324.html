@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Command to get permissions of a single item?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Command%20to%20get%20permissions%20of%20a%20single%20item%3F&In-Reply-To=20061031135053.09C0C36400F%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="015323.html">
+   <LINK REL="Next"  HREF="015325.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Command to get permissions of a single item?</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Command%20to%20get%20permissions%20of%20a%20single%20item%3F&In-Reply-To=20061031135053.09C0C36400F%40listserver.themacintoshguy.com"
+       TITLE="[X4U] Command to get permissions of a single item?">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Wed Nov  1 09:30:28 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="015323.html">[X4U] DVDs which fail verification
+</A></li>
+        <LI>Next message: <A HREF="015325.html">[X4U] DVDs which fail verification
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15324">[ date ]</a>
+              <a href="thread.html#15324">[ thread ]</a>
+              <a href="subject.html#15324">[ subject ]</a>
+              <a href="author.html#15324">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Once you've got the permissions string from `ls -l pathname` you can 
+convert to the octal version for use with chmod, if you need to with 
+my prots2mode function:
+&lt;<A HREF="http://www.ivdcs.co.uk/fun/prots2mode">http://www.ivdcs.co.uk/fun/prots2mode</A>&gt;
+(written for ksh). It expects and ignores the first character which 
+is the '-', 'd', 'b, or whatever.
+
+Hint:
+If you're using a shell that has array variables you can
+   set -A lsline x $(ls -dl pathname)
+or if not but you don't need the positional parameters any more
+   set x $(ls -dl pathname)
+and ${lsline[1]} or $2 will contain the permission string. The 'x' is 
+only needed because the '-' on the front of a file listing would act 
+as a flag and confuse it. 'lsline' can, of course, be any variable 
+name. The 'd' flag to 'ls' makes it work on directories themselves as 
+well.
+
+David
+
+
+&gt;<i>From: Jerry Krinock &lt;<A HREF="../../../mailman/listinfo/x4u.html">jerry at ieee.org</A>&gt;
+</I>&gt;<i>For a shell script I'm writing.  I need a command which will get the
+</I>&gt;<i>permissions, either as a string or an octal number, for a single item
+</I>&gt;<i>(directory, regular file, or symlink).
+</I>&gt;<i>
+</I>&gt;<i>I thought this would be easy, but after an hour of searching I can't find
+</I>&gt;<i>such a thing.  The only command I can find for reading permissions is &quot;ls&quot;,
+</I>&gt;<i>but of course that gives it for ITEMS IN the subject, which must be a
+</I>&gt;<i>directory.
+</I>&gt;<i>
+</I>&gt;<i>Isn't there a non-recursive command to simply &quot;get item's permissions&quot;,
+</I>&gt;<i>(and/or other metadata)?
+</I>&gt;<i>
+</I>&gt;<i>We have chmod to CHANGE the permissions, but how can we READ them?
+</I>
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+Chair of HPUX SysAdmin SIG of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x4u.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="015323.html">[X4U] DVDs which fail verification
+</A></li>
+	<LI>Next message: <A HREF="015325.html">[X4U] DVDs which fail verification
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15324">[ date ]</a>
+              <a href="thread.html#15324">[ thread ]</a>
+              <a href="subject.html#15324">[ subject ]</a>
+              <a href="author.html#15324">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] A little shell scripting help
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20A%20little%20shell%20scripting%20help&In-Reply-To=p05100300bf68535f5e33%40%5B192.168.1.14%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002401.html">
+   <LINK REL="Next"  HREF="002403.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] A little shell scripting help</H1>
+    <B>Larry Helms</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20A%20little%20shell%20scripting%20help&In-Reply-To=p05100300bf68535f5e33%40%5B192.168.1.14%5D"
+       TITLE="[X-Unix] A little shell scripting help">lhelms at sonic.net
+       </A><BR>
+    <I>Tue Oct  4 09:54:20 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002401.html">[X-Unix] A little shell scripting help
+</A></li>
+        <LI>Next message: <A HREF="002403.html">[X-Unix] [OT] A little shell scripting help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2402">[ date ]</a>
+              <a href="thread.html#2402">[ thread ]</a>
+              <a href="subject.html#2402">[ subject ]</a>
+              <a href="author.html#2402">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+&gt;<i> 
+</I>&gt;<i> At 02:35 -0700 10/4/05, Philip J Robar wrote:
+</I>&gt;&gt;<i> '[' has been a built-in in all modern shells that use it for years.  The '['
+</I>&gt;&gt;<i> in /bin is just there for compatibility.
+</I>&gt;<i> 
+</I>&gt;<i> Most interesting. Why then is the space still required?
+</I>
+Spaces are delimiters.  It helps the parsing mechanism understand where to
+break things up... As stated before 'test' requires a space after it...
+[ = test 
+
+Essentially you should think of your script as being written like this:
+
+    if test $retry &gt; 1 then
+
+If you leave out the space... It becomes syntactically incorrect:
+
+    if test$retry &gt; 1 then
+
+Because the shell will do THIS
+
+    if test1 &gt; 1 then
+
+before processing the line (because retry=1)... THAT is why the spaces are
+necessary.
+
+PLUS SPACES make your script more readable.
+
+&gt;<i> 
+</I>&gt;&gt;<i> You should read &lt;<A HREF="http://www.faqs.org/faqs/unix-faq/shell/csh-whynot/">http://www.faqs.org/faqs/unix-faq/shell/csh-whynot/</A>&gt;  if you
+</I>&gt;&gt;<i> haven't already.
+</I>&gt;<i> 
+</I>&gt;<i> Been there and done that. It still makes no mention of the Debian tcsh. And no
+</I>&gt;<i> shell wars please. Susan Anthony's God wants me to use tcsh, but thank God
+</I>&gt;<i> others can, even in AppleScript, use what they like.
+</I>
+WHO is Susan Anthony???  I would suggest sending her to read that link.
+
+Please understand... That you CAN write scripts in shells that are NOT the
+default login shell.  It is best to use a shell that best meets your
+requirements.  Remember... Just because we can do a thing (write in tcsh)
+doesn't mean we should do a thing.
+
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002401.html">[X-Unix] A little shell scripting help
+</A></li>
+	<LI>Next message: <A HREF="002403.html">[X-Unix] [OT] A little shell scripting help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2402">[ date ]</a>
+              <a href="thread.html#2402">[ thread ]</a>
+              <a href="subject.html#2402">[ subject ]</a>
+              <a href="author.html#2402">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

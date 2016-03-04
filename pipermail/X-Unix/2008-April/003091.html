@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How make launchd stop trying to launch nonexistent
+	program?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20make%20launchd%20stop%20trying%20to%20launch%20nonexistent%0A%09program%3F&In-Reply-To=r245ps-1052i-40525208AD5D4D7A9F2D5D74408B5006%40crocodile.local">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003090.html">
+   <LINK REL="Next"  HREF="003092.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How make launchd stop trying to launch nonexistent
+	program?</H1>
+    <B>Jerry Krinock</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20make%20launchd%20stop%20trying%20to%20launch%20nonexistent%0A%09program%3F&In-Reply-To=r245ps-1052i-40525208AD5D4D7A9F2D5D74408B5006%40crocodile.local"
+       TITLE="[X-Unix] How make launchd stop trying to launch nonexistent
+	program?">jerry at ieee.org
+       </A><BR>
+    <I>Fri Apr 18 23:00:23 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003090.html">[X-Unix] How make launchd stop trying to launch nonexistent
+	program?
+</A></li>
+        <LI>Next message: <A HREF="003092.html">[X-Unix] How make launchd stop trying to launch nonexistent
+	program?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3091">[ date ]</a>
+              <a href="thread.html#3091">[ thread ]</a>
+              <a href="subject.html#3091">[ subject ]</a>
+              <a href="author.html#3091">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 2008 Apr, 17, at 8:29, James Bucanek wrote:
+
+&gt;<i> For the record, the correct way of removing a .plist is use  
+</I>&gt;<i> 'launchctl unload &lt;path/to/.plist&gt;'.
+</I>&gt;<i>
+</I>&gt;<i> If you still have the .plist you can probably stop the job using  
+</I>&gt;<i> 'launchctl remove &lt;joblabel&gt;' (look in the .plist file to find the  
+</I>&gt;<i> &lt;label&gt; property). If you don't, just restart the system.
+</I>
+I know I tried subcommands 'remove' and 'stop' yesterday, and neither  
+work.  I tried 'unload' today with the -w option and it worked.
+
+sudo launchctl unload -w /path/to/.plist
+
+Thanks, all.
+
+Jerry
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003090.html">[X-Unix] How make launchd stop trying to launch nonexistent
+	program?
+</A></li>
+	<LI>Next message: <A HREF="003092.html">[X-Unix] How make launchd stop trying to launch nonexistent
+	program?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3091">[ date ]</a>
+              <a href="thread.html#3091">[ thread ]</a>
+              <a href="subject.html#3091">[ subject ]</a>
+              <a href="author.html#3091">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

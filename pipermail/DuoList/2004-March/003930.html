@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Duo2400] Re: Slow internet pages
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:duolist%40listserver.themacintoshguy.com?Subject=%5BDuo2400%5D%20Re%3A%20Slow%20internet%20pages&In-Reply-To=list-11289458%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003929.html">
+   <LINK REL="Next"  HREF="003931.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Duo2400] Re: Slow internet pages</H1>
+    <B>Thomas G. Monclova</B> 
+    <A HREF="mailto:duolist%40listserver.themacintoshguy.com?Subject=%5BDuo2400%5D%20Re%3A%20Slow%20internet%20pages&In-Reply-To=list-11289458%40mail.ninewire.com"
+       TITLE="[Duo2400] Re: Slow internet pages">samoht at bl.org
+       </A><BR>
+    <I>Tue Mar  9 10:04:07 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003929.html">[Duo2400] Re: OT: online tuning fork??
+</A></li>
+        <LI>Next message: <A HREF="003931.html">Question - no, PLEADING! - concerning resetting 2400c battery
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3930">[ date ]</a>
+              <a href="thread.html#3930">[ thread ]</a>
+              <a href="subject.html#3930">[ subject ]</a>
+              <a href="author.html#3930">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Mon, 8 Mar 2004, Don P. wrote:
+
+&gt;<i> #3 allocate the max. memory (use RamDoubler, not
+</I>&gt;<i> Virtual Memory) and cache space that you can afford.
+</I>
+	Agreed.  This is key.
+
+	As you likely know, hard disk access is much slower than RAM
+access.  Whenever possible, and this is with Web browsers only, increase
+the program's memory allocation (Finder:Get Info) and then within the
+application, increase it's memory cache.  Try to find a nice balance
+between memory cache and disk cache for browsing the Web.  For my PB 2300
+(8.6, 48MB) I prefer memory cache to be 25% of the disk cache with the
+disk cache not to exceed 50% of system memory (where system memory is 64MB
+or less).  This improves the dial-up experience by making the system use
+more of its RAM and HD.
+
+	One caveat, is the use virtual memory as stated above.  It
+increases the burden of the CPU to store system memory to the hard drive.
+This overhead is compounded by browser cache being stored in memory and
+then to the hard drive.  So, opt for one or the other, but not both.
+
+increase virtual memory, negate browser disk cache and increase browser
+RAM cache
+
+	-OR-
+
+decrease virtual memory to 1MB, increase disk cache and find a happy
+medium for RAM cache
+
+
+&gt;<i> #4 Every ISP tech. that I've asked has said that
+</I>&gt;<i> putting in a higher speed setting than indicated for
+</I>&gt;<i> your hardware may help and won't hurt if it is only
+</I>&gt;<i> slightly more. ???comments?
+</I>
+	In my experience this will work for computers with high speed
+ports.  Different logicboard designs have highspeed serial ports and the
+requisite interrupt handlers.
+
+	The PB 2300 can drive data at 115,000 BPS through its single
+modem/printer port, but the CPU responsiveness suffers drastically.
+There's profound mouse lag where the cursor skips several inches of screen
+realestate when I use it at its highest speed.  This made it impossible to
+click on somthing when a page was loading.  The system is much more
+responsive at lower speeds.
+
+	I don't know if the 2400 LB is better (but I should think so).
+
+	With modems, there are two serial port speeds to assign.  One is
+the data speed for the modem going OUT to the ISP and back again to the
+modem, and the other is from the modem to and from the computer itself.
+Set the computer-modem speed lower for better CPU use (PB2300 and other
+Duos), set the modem-ISP speed at higher than 57600 where possible.  The
+old MacSlip dial-up software had this fine level of control.  Open
+Transport does not (to my knowledge) but perhaps FreePPP does.
+
+	Otherwise, you'll end up editing the modem script by hand (any
+text editor will open the file; it lives in Extensions:Modem Scripts).
+This is not for the faint of heart, and it will require a LOT of testing
+to find the bestest speed possible.  Do this if you're the kind of person
+who checks the oxygen sensor vs. fuel injector of your car's engine.
+
+	It's very important to have a highspeed Mac modem cable for external
+modems.  There are data signals for controlling the modem (&quot;flow control&quot;)
+that require all the pins in the connector to be active.  In fact, there's
+a line in the Apple Internal 56K (v.34) file that reads...&quot;This modem has
+been setup to do CTS handshaking and we assume that a CTS handshaking
+cable is being used.&quot;
+
+	CTS is an acronym for modem-computer &quot;clear to send&quot; signals.
+It's like saying &quot;over&quot; when using walkie-talkies.  When dealing with
+modems, it's often called &quot;hardware handshaking.&quot;
+
+	Modem scripts and the special modem commands are rather technical,
+but, I think, should be mentioned if this is a compendium.
+
+	-t
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003929.html">[Duo2400] Re: OT: online tuning fork??
+</A></li>
+	<LI>Next message: <A HREF="003931.html">Question - no, PLEADING! - concerning resetting 2400c battery
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3930">[ date ]</a>
+              <a href="thread.html#3930">[ thread ]</a>
+              <a href="subject.html#3930">[ subject ]</a>
+              <a href="author.html#3930">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/duolist.html">More information about the DuoList
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

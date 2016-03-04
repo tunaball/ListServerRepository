@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] re: quotas - My math stinks!
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20re%3A%20quotas%20-%20My%20math%20stinks%21&In-Reply-To=E728AE0B-D5D5-43C1-A0F0-CCD886AB0F0D%40pursued-with.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003244.html">
+   <LINK REL="Next"  HREF="003246.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] re: quotas - My math stinks!</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20re%3A%20quotas%20-%20My%20math%20stinks%21&In-Reply-To=E728AE0B-D5D5-43C1-A0F0-CCD886AB0F0D%40pursued-with.net"
+       TITLE="[X-Unix] re: quotas - My math stinks!">ecrist at secure-computing.net
+       </A><BR>
+    <I>Thu Jan  8 19:35:46 PST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003244.html">[X-Unix] re: quotas - My math stinks!
+</A></li>
+        <LI>Next message: <A HREF="003246.html">[X-Unix] re: quotas - My math stinks!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3245">[ date ]</a>
+              <a href="thread.html#3245">[ thread ]</a>
+              <a href="subject.html#3245">[ subject ]</a>
+              <a href="author.html#3245">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Now that I'm off my blackberry... ;)
+
+According to DU(1):
+      BLOCKSIZE  If the environment variable BLOCKSIZE is set, and the  
+-k option is not specified, the block
+                 counts will be displayed in units of that size  
+block.  If BLOCKSIZE is not set, and the -k
+                 option is not specified, the block counts will be  
+displayed in 512-byte blocks.
+
+This woudl explain why you're number is so far off between repquota  
+and du.  KeS is right on the money, but I couldn't elaborate on this  
+while I was out and about earlier.  In addition to this, as has been  
+said already, there is the math aspect in terms of what a K really is,  
+vs Megabyte or Gigabyte.  The typical standard has been that sizes are  
+defined as:
+1 bit = a 1 or 0
+1 byte = 8 bits
+1 kilobyte = 1024 bytes
+1 kilobit = 1024 bits
+1 Megabyte = 1024 kilobytes
+1 Megabit = 1024 kilobits
+1 Gigabyte = 1024 Megabytes
+1 Gigabit = 1024 Megabits
+etc...
+
+The odd number for kilobyte has to do with block sizes on drives and  
+their relation to binary.  Modern drive manufacturers have further  
+confused things by selling drives with a capacity derived multiples of  
+1000.  There are class-action lawsuits against some for this practice.  
+For example, one that was settled by seagate early last year:
+
+<A HREF="http://apcmag.com/seagate_settles_class_action_cash_back_over_misleading_hard_drive_capacities.htm">http://apcmag.com/seagate_settles_class_action_cash_back_over_misleading_hard_drive_capacities.htm</A>
+
+Couple this with the misnomer of size output by du, and you've got a  
+whole box of crazy.  I generally avoid the confusion with du by  
+appending the -h option, or the -k.
+
+On Jan 8, 2009, at 9:03 PM, Kevin Stevens wrote:
+
+&gt;<i> I've deleted the original posts, but my initial take was that the OP  
+</I>&gt;<i> may have been wrong in assuming that du is reporting 1K blocks.   
+</I>&gt;<i> Unless you feed it a -k parameter, it reports in 512 byte blocks (OS  
+</I>&gt;<i> X 10.5), making his comparison off by a factor of two, which seems  
+</I>&gt;<i> like the major problem.  Combining that with the 1000/1024  
+</I>&gt;<i> conversion difference should make everything even out.
+</I>&gt;<i>
+</I>&gt;<i> KeS
+</I>&gt;<i>
+</I>&gt;<i> On Jan 8, 2009, at 18:23, Charles Howse wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> I understand what you're saying, but SHOW ME THE MATH that proves  
+</I>&gt;&gt;<i> it, cause I can't make it work.
+</I>&gt;&gt;<i> du says 2341624 1k blocks.  2341624 / 1024 / 1000 = 2.2867421875.   
+</I>&gt;&gt;<i> Close enough to 2.2G for me.
+</I>&gt;&gt;<i> quota says 1040588 / 1024 / 1000 = 1.01619921875.  Not even close!
+</I>&gt;&gt;<i> If we use 1000 instead of 1024, then it comes to 1.040588 vs  
+</I>&gt;&gt;<i> 2.341624.
+</I>&gt;&gt;<i> THEY CAN'T BOTH BE RIGHT, REGARDLESS OF WHETHER THEY'RE USING 1024  
+</I>&gt;&gt;<i> OR 1000.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Pardon my shouting, emphasis only.  :)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Jan 8, 2009, at 6:31 PM, Eric F Crist wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> 1024 is how data is figured. Sometimes, gigs are 1000 megs, which  
+</I>&gt;&gt;&gt;<i> are almost always 1024 K
+</I>&gt;&gt;&gt;<i> ------Original Message------
+</I>&gt;&gt;&gt;<i> From: Charles Howse
+</I>&gt;&gt;&gt;<i> Sender: <A HREF="../../../mailman/listinfo/x-unix.html">x-unix-bounces at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;&gt;<i> To: Eric Crist
+</I>&gt;&gt;&gt;<i> To: A place to discuss Mac OS X from the perspective of the  
+</I>&gt;&gt;&gt;<i> command line.
+</I>&gt;&gt;&gt;<i> ReplyTo: A place to discuss Mac OS X from the perspective of the  
+</I>&gt;&gt;&gt;<i> command  line.
+</I>&gt;&gt;&gt;<i> Sent: Jan 8, 2009 18:05
+</I>&gt;&gt;&gt;<i> Subject: Re: [X-Unix] re: quotas - My math stinks!
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> On Jan 8, 2009, at 3:57 PM, Eric F Crist wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Math error. 1024k in a Meg, 1024M in a Gig....
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I'm wondering...
+</I>&gt;&gt;&gt;<i> 2000000k / 1024 = 1953.125 M, 1.953125 G which is not equal to  
+</I>&gt;&gt;&gt;<i> 2.2GB.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Doesn't work out.  How did you figure it?
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> --
+</I>&gt;&gt;&gt;<i> How I make Great Barbecue -
+</I>&gt;&gt;&gt;<i> <A HREF="http://bubbabbq.homeunix.net/bbq.html">http://bubbabbq.homeunix.net/bbq.html</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;&gt;<i> X-Unix mailing list
+</I>&gt;&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> ---
+</I>&gt;&gt;&gt;<i> Eric F Crist
+</I>&gt;&gt;&gt;<i> Secure Computing Networks
+</I>&gt;&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;&gt;<i> X-Unix mailing list
+</I>&gt;&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> --
+</I>&gt;&gt;<i> Bubba's Funny Stuff -
+</I>&gt;&gt;<i> <A HREF="http://bubbabbq.homeunix.net/humor.html">http://bubbabbq.homeunix.net/humor.html</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> X-Unix mailing list
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>
+---
+Eric Crist
+
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003244.html">[X-Unix] re: quotas - My math stinks!
+</A></li>
+	<LI>Next message: <A HREF="003246.html">[X-Unix] re: quotas - My math stinks!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3245">[ date ]</a>
+              <a href="thread.html#3245">[ thread ]</a>
+              <a href="subject.html#3245">[ subject ]</a>
+              <a href="author.html#3245">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

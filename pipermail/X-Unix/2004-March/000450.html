@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Copying to multiple directories
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Copying%20to%20multiple%20directories&In-Reply-To=list-11333438%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000449.html">
+   <LINK REL="Next"  HREF="000451.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Copying to multiple directories</H1>
+    <B>Raoul Armfield</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Copying%20to%20multiple%20directories&In-Reply-To=list-11333438%40mail.ninewire.com"
+       TITLE="[X-Unix] Copying to multiple directories">armfield at amnh.org
+       </A><BR>
+    <I>Thu Mar 11 07:30:09 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000449.html">[X-Unix] Copying to multiple directories
+</A></li>
+        <LI>Next message: <A HREF="000451.html">Copying to multiple directories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#450">[ date ]</a>
+              <a href="thread.html#450">[ thread ]</a>
+              <a href="subject.html#450">[ subject ]</a>
+              <a href="author.html#450">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>could you not write a script something along the lines of
+
+cp $1 /Users/joe/Library
+cp $1 /Users/bob/Library
+...
+
+
+and name it filecp for instance. then all you have to type is filecp
+fileA
+
+as you add users you simply add a line to your script.  This way it is
+portable to different computers and you are able to copy any file to
+that directory
+
+
+Raoul  
+
+:<i>-----Original Message-----
+</I>:<i>From: Mac OS X Unix [mailto:<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at lists.themacintoshguy.com</A>] 
+</I>:<i>On Behalf Of James Bucanek
+</I>:<i>Sent: Thursday, March 11, 2004 10:11 AM
+</I>:<i>To: Mac OS X Unix
+</I>:<i>Subject: Re: [X-Unix] Copying to multiple directories
+</I>:<i>
+</I>:<i>Harvey Riekoff wrote on Wednesday, March 10, 2004:
+</I>:<i>
+</I>:&gt;<i>I need to copy &quot;fileA&quot; to every users library folder in the Users 
+</I>:&gt;<i>directory. The file resides at t he root level. The command 
+</I>:<i>that I have 
+</I>:&gt;<i>been using is: cp -r fileA /Users/*/Library.  There is obviously 
+</I>:&gt;<i>something that I am doing wrong because nothing is copying. Any help 
+</I>:&gt;<i>would be appreciated.
+</I>:<i>
+</I>:<i>Harvey,
+</I>:<i>
+</I>:<i>The cp command's syntax is like this (use 'man ls' for the 
+</I>:<i>gory details):
+</I>:<i>
+</I>:<i>    cp source_file target_file
+</I>:<i>    
+</I>:<i>- or -
+</I>:<i>
+</I>:<i>    cp source_file [ source_file2 ...] target_directory
+</I>:<i>
+</I>:<i>You can either copy one to another file, or you can copy one 
+</I>:<i>or more files to a single destination directory.
+</I>:<i>
+</I>:<i>Remembering Shell Lessons 101, the wildcard globbing is done 
+</I>:<i>by the shell, not the tool.  When you use 'cp -r fileA 
+</I>:<i>/Users/*/Library' you aren't passing two arguments to the cp 
+</I>:<i>command.  You're passing 5: 'cp -r fileA /Users/A/Library 
+</I>:<i>/Users/B/Library /Users/C/Library /Users/D/Library'
+</I>:<i>
+</I>:<i>The cp command gets this, looks at the last argument, sees 
+</I>:<i>that it's a directory, and switches into the second mode.  
+</I>:<i>That is, it will attempt to copy the first four arguments (one 
+</I>:<i>file and three directories) into the last directory.
+</I>:<i>
+</I>:<i>The -r option is useless.  There is no -r option for the cp command.
+</I>:<i>
+</I>:<i>If you meant -R, then it would have copyied the entire Library 
+</I>:<i>folder of the first three users into the Library folder of the 
+</I>:<i>last user.  So you're lucky you used the wrong option!
+</I>:<i>
+</I>:<i>The solution to your problem is run the cp command once for 
+</I>:<i>each destination user.  So you use the commands
+</I>:<i>
+</I>:<i>    cp fileA /Users/A/Library
+</I>:<i>    cp filaA /Users/B/Library
+</I>:<i>
+</I>:<i>
+</I>:<i>    Brian Medley wrote on Wednesday, March 10, 2004:
+</I>:<i>    &gt;$ ls -d /Users/*/Library | xargs -I % echo cp fileA %
+</I>:<i>    &gt;cp fileA /Users/bpm/Library
+</I>:<i>    &gt;cp fileA /Users/jasonp/Library
+</I>:<i>    &gt;cp fileA /Users/jmh/Library
+</I>:<i>
+</I>:<i>Brian's solution does this by using the ls command to list the 
+</I>:<i>directory names (echo would had do it too), then pipes this 
+</I>:<i>list to xargs.  xargs takes, as input, a list of filenames and 
+</I>:<i>executes a command with that list as the arguments.  It's 
+</I>:<i>primarily used to repeatedly executed commands with a list of 
+</I>:<i>files that too long to fit on one command line, but Brian has 
+</I>:<i>used it here with the -l (replace string) option to execute 
+</I>:<i>the command once for each input line (i.e. each directory 
+</I>:<i>name), replacing the '%' with the directory.  So, xargs takes 
+</I>:<i>the input (/Users/A/Library, /Users/B/Library, ...) and 
+</I>:<i>inserts that into the template ('echo cp fileA %'), and 
+</I>:<i>executes the command once for each.  This results in the output
+</I>:<i>
+</I>:<i>    cp fileA /Users/bpm/Library
+</I>:<i>    cp fileA /Users/jasonp/Library
+</I>:<i>    ...
+</I>:<i>
+</I>:<i>Brian obviously used the 'echo' command as a demonstration.  
+</I>:<i>To do the actual copy, you'd omit that and let xargs execute 
+</I>:<i>the actual cp command.
+</I>:<i>
+</I>:<i>A little less obscure solution is to write a loop, although 
+</I>:<i>you're more likely to see this solution in a script.
+</I>:<i>
+</I>:<i>    (this example is in tcsh; bash has a different syntax)
+</I>:<i>    [whiterabbit:~] james% foreach i ( /Users/*/Library )
+</I>:<i>    foreach? echo cp fileA $i
+</I>:<i>    foreach? end
+</I>:<i>    cp fileA /Users/james/Library
+</I>:<i>    cp fileA /Users/testing/Library
+</I>:<i>
+</I>:<i>The 'foreach' commands starts a loop that sets the 'i' 
+</I>:<i>variable to each argument in the list.  It then executes the 
+</I>:<i>subsequent list of commands using a different value for i 
+</I>:<i>until the list is exhausted.
+</I>:<i>
+</I>:<i>And finally,
+</I>:<i>
+</I>:<i>Harvey Riekoff wrote on Thursday, March 11, 2004:
+</I>:&gt;<i>Also when I run the command &quot;$ ls -d /Users/*/Library | xargs 
+</I>:<i>-I % echo  
+</I>:&gt;<i>cp fileA %&quot;  I get the following message &quot;su: $: Command not found&quot;
+</I>:<i>
+</I>:<i>The '$' is not part of the command.  It's Brian's bash command 
+</I>:<i>prompt.  The command starts with 'ls ...'.
+</I>:<i>
+</I>:<i>Hope that helps,
+</I>:<i>
+</I>:<i>James
+</I>:<i>
+</I>:<i>______________________________________________________
+</I>:<i>James Bucanek       &lt;mailto:<A HREF="../../../mailman/listinfo/x-unix.html">privatereply at gloaming.com</A>&gt;
+</I>:<i>
+</I>:<i>----------
+</I>:<i>Check out the Mac OS X email list FAQ
+</I>:<i><A HREF="../../../../www.themacintoshguy.com/lists/X.html">http://www.themacintoshguy.com/lists/X.html</A>
+</I>:<i>
+</I>:<i>To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-off at lists.themacintoshguy.com</A>&gt;
+</I>:<i>To switch to the DIGEST mode, E-mail to 
+</I>:<i>&lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-digest at lists.themacintoshguy.com</A>&gt;
+</I>:<i>Need help from a real person? Try.  
+</I>:<i>&lt;<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix-request at lists.themacintoshguy.com</A>&gt;
+</I>:<i>
+</I>:<i>----------
+</I>:<i>$14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting 
+</I>:<i>from your Mac ISP 
+</I>:<i>Serious Mac Internet Solutions From NineWire!   
+</I>:<i><A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>:<i>
+</I>:<i>DVIator   | Run Dual ADC displays on your G4 or just one on an 
+</I>:<i>older Mac! 
+</I>:<i>Dr. Bott  | &lt;<A HREF="http://www.drbott.com/prod/DVIator.html">http://www.drbott.com/prod/DVIator.html</A>&gt;
+</I>:<i>
+</I>:<i>   Support   | Support this list by clicking here before you buy!
+</I>:<i>  this List  |  <A HREF="http://www.themacintoshguy.com/support.html">http://www.themacintoshguy.com/support.html</A>
+</I>:<i>
+</I>:<i>OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s - 
+</I>:<i><A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>:<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000449.html">[X-Unix] Copying to multiple directories
+</A></li>
+	<LI>Next message: <A HREF="000451.html">Copying to multiple directories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#450">[ date ]</a>
+              <a href="thread.html#450">[ thread ]</a>
+              <a href="subject.html#450">[ subject ]</a>
+              <a href="author.html#450">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

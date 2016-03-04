@@ -1,0 +1,279 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> My panic logs.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=My%20panic%20logs.&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000436.html">
+   <LINK REL="Next"  HREF="000438.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>My panic logs.</H1>
+    <B>Robert Nicholson</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=My%20panic%20logs.&In-Reply-To="
+       TITLE="My panic logs.">robert at elastica.com
+       </A><BR>
+    <I>Mon Dec  2 22:17:09 PST 2002</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000436.html">[Ti] Big problems with panic dumps today
+</A></li>
+        <LI>Next message: <A HREF="000438.html">New Battery in older PB
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#437">[ date ]</a>
+              <a href="thread.html#437">[ thread ]</a>
+              <a href="subject.html#437">[ subject ]</a>
+              <a href="author.html#437">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Here's the contents of my panic log in case anybody can make some sense 
+out of this.
+
+Again, I've been experiencing kernel panics ever since yesterday.
+
+Mon Dec  2 20:35:02 2002
+
+
+
+
+Unresolved kernel trap(cpu 0): 0x400 - Inst access DAR=0x0134a000 
+PC=0x000001f4
+Latest crash info for cpu 0:
+    Exception state (sv=0x14FEC500)
+       PC=0x000001F4; MSR=0x40009030; DAR=0x0134A000; DSISR=0x40000000; 
+LR=0x000001F5; R1=0x0DAB3E50; XCP=0x00000010 (0x400 - Inst access)
+       Backtrace:
+          0x0002414C 0x00024FE0 0x00092098 0x61C21B34
+Proceeding back via exception chain:
+    Exception state (sv=0x14FEC500)
+       previously dumped as &quot;Latest&quot; state. skipping...
+    Exception state (sv=0x150BD280)
+       PC=0x90074168; MSR=0x0200F030; DAR=0x0134A000; DSISR=0x40000000; 
+LR=0x900064B0; R1=0xBFFEEF60; XCP=0x00000030 (0xC00 - System call)
+
+Kernel version:
+Darwin Kernel Version 6.2:
+Tue Nov  5 22:00:03 PST 2002; root:xnu/xnu-344.12.2.obj~1/RELEASE_PPC
+
+
+panic(cpu 0): 0x400 - Inst access
+Latest stack backtrace for cpu 0:
+       Backtrace:
+          0x00084E9C 0x000852CC 0x00027F8C 0x0008ECA8 0x00091D18
+Proceeding back via exception chain:
+    Exception state (sv=0x14FEC500)
+       PC=0x000001F4; MSR=0x40009030; DAR=0x0134A000; DSISR=0x40000000; 
+LR=0x000001F5; R1=0x0DAB3E50; XCP=0x00000010 (0x400 - Inst access)
+       Backtrace:
+          0x0002414C 0x00024FE0 0x00092098 0x61C21B34
+    Exception state (sv=0x150BD280)
+       PC=0x90074168; MSR=0x0200F030; DAR=0x0134A000; DSISR=0x40000000; 
+LR=0x900064B0; R1=0xBFFEEF60; XCP=0x00000030 (0xC00 - System call)
+
+Kernel version:
+Darwin Kernel Version 6.2:
+Tue Nov  5 22:00:03 PST 2002; root:xnu/xnu-344.12.2.obj~1/RELEASE_PPC
+
+
+
+*********
+
+Mon Dec  2 21:46:42 2002
+
+
+
+
+Unresolved kernel trap(cpu 0): 0x300 - Data access DAR=0x032513b4 
+PC=0x0020e42c
+Latest crash info for cpu 0:
+    Exception state (sv=0x14FB0000)
+       PC=0x0020E42C; MSR=0x00001030; DAR=0x032513B4; DSISR=0x40000000; 
+LR=0x0020E424; R1=0x0DA5BB40; XCP=0x0000000C (0x300 - Data access)
+       Backtrace:
+          0x0022DF58 0x001E93B4 0x0008F814 0x00033AD8 0x00033CB4 
+0x00026814 0x0008EA7C 0x00091D18
+Proceeding back via exception chain:
+    Exception state (sv=0x14FB0000)
+       previously dumped as &quot;Latest&quot; state. skipping...
+    Exception state (sv=0x14E10C80)
+       PC=0x00094728; MSR=0x00009030; DAR=0xF002FEF4; DSISR=0x42000000; 
+LR=0x0008ECB4; R1=0x0DA5BEF0; XCP=0x0000008C (Preemption)
+       Backtrace:
+          0x0008F0A8 0x00091D18
+    Exception state (sv=0x14EF7280)
+       PC=0x91A5C1C0; MSR=0x0200F030; DAR=0xF002FEF4; DSISR=0x42000000; 
+LR=0x91A5C194; R1=0xBFFFD350; XCP=0x00000400 (Unknown code)
+
+Kernel version:
+Darwin Kernel Version 6.2:
+Tue Nov  5 22:00:03 PST 2002; root:xnu/xnu-344.12.2.obj~1/RELEASE_PPC
+
+
+panic(cpu 0): 0x300 - Data access
+Latest stack backtrace for cpu 0:
+       Backtrace:
+          0x00084E9C 0x000852CC 0x00027F8C 0x0008ECA8 0x00091D18
+Proceeding back via exception chain:
+    Exception state (sv=0x14FB0000)
+       PC=0x0020E42C; MSR=0x00001030; DAR=0x032513B4; DSISR=0x40000000; 
+LR=0x0020E424; R1=0x0DA5BB40; XCP=0x0000000C (0x300 - Data access)
+       Backtrace:
+          0x0022DF58 0x001E93B4 0x0008F814 0x00033AD8 0x00033CB4 
+0x00026814 0x0008EA7C 0x00091D18
+    Exception state (sv=0x14E10C80)
+       PC=0x00094728; MSR=0x00009030; DAR=0xF002FEF4; DSISR=0x42000000; 
+LR=0x0008ECB4; R1=0x0DA5BEF0; XCP=0x0000008C (Preemption)
+       Backtrace:
+          0x0008F0A8 0x00091D18
+    Exception state (sv=0x14EF7280)
+       PC=0x91A5C1C0; MSR=0x0200F030; DAR=0xF002FEF4; DSISR=0x42000000; 
+LR=0x91A5C194; R1=0xBFFFD350; XCP=0x00000400 (Unknown code)
+
+Kernel version:
+Darwin Kernel Version 6.2:
+Tue Nov  5 22:00:03 PST 2002; root:xnu/xnu-344.12.2.obj~1/RELEASE_PPC
+
+
+
+*********
+
+Mon Dec  2 21:56:39 2002
+
+
+
+
+Unresolved kernel trap(cpu 0): 0x300 - Data access DAR=0x032513b4 
+PC=0x0020e42c
+Latest crash info for cpu 0:
+    Exception state (sv=0x14FB0000)
+       PC=0x0020E42C; MSR=0x00001030; DAR=0x032513B4; DSISR=0x40000000; 
+LR=0x0020E424; R1=0x0DA5BB40; XCP=0x0000000C (0x300 - Data access)
+       Backtrace:
+          0x0022DF58 0x001E93B4 0x0008F814 0x00033AD8 0x00033CB4 
+0x00026814 0x0008EA7C 0x00091D18
+Proceeding back via exception chain:
+    Exception state (sv=0x14FB0000)
+       previously dumped as &quot;Latest&quot; state. skipping...
+    Exception state (sv=0x14E10C80)
+       PC=0x00094728; MSR=0x00009030; DAR=0xF002FEF4; DSISR=0x42000000; 
+LR=0x0008ECB4; R1=0x0DA5BEF0; XCP=0x0000008C (Preemption)
+       Backtrace:
+          0x0008F0A8 0x00091D18
+    Exception state (sv=0x14EF7280)
+       PC=0x91A5C1C0; MSR=0x0200F030; DAR=0xF002FEF4; DSISR=0x42000000; 
+LR=0x91A5C194; R1=0xBFFFD350; XCP=0x00000400 (Unknown code)
+
+Kernel version:
+Darwin Kernel Version 6.2:
+Tue Nov  5 22:00:03 PST 2002; root:xnu/xnu-344.12.2.obj~1/RELEASE_PPC
+
+
+panic(cpu 0): 0x300 - Data access
+Latest stack backtrace for cpu 0:
+       Backtrace:
+          0x00084E9C 0x000852CC 0x00027F8C 0x0008ECA8 0x00091D18
+Proceeding back via exception chain:
+    Exception state (sv=0x14FB0000)
+       PC=0x0020E42C; MSR=0x00001030; DAR=0x032513B4; DSISR=0x40000000; 
+LR=0x0020E424; R1=0x0DA5BB40; XCP=0x0000000C (0x300 - Data access)
+       Backtrace:
+          0x0022DF58 0x001E93B4 0x0008F814 0x00033AD8 0x00033CB4 
+0x00026814 0x0008EA7C 0x00091D18
+    Exception state (sv=0x14E10C80)
+       PC=0x00094728; MSR=0x00009030; DAR=0xF002FEF4; DSISR=0x42000000; 
+LR=0x0008ECB4; R1=0x0DA5BEF0; XCP=0x0000008C (Preemption)
+       Backtrace:
+          0x0008F0A8 0x00091D18
+    Exception state (sv=0x14EF7280)
+       PC=0x91A5C1C0; MSR=0x0200F030; DAR=0xF002FEF4; DSISR=0x42000000; 
+LR=0x91A5C194; R1=0xBFFFD350; XCP=0x00000400 (Unknown code)
+
+Kernel version:
+Darwin Kernel Version 6.2:
+Tue Nov  5 22:00:03 PST 2002; root:xnu/xnu-344.12.2.obj~1/RELEASE_PPC
+
+
+
+*********
+
+Mon Dec  2 22:11:27 2002
+
+
+panic(cpu 0): Unexpected user state trap(cpu 0): 0x00000401 
+DSISR=0x40000000 DAR=0x8fe4c104 PC=0x8fe1b644, MSR=0x0020d030
+
+Latest stack backtrace for cpu 0:
+       Backtrace:
+          0x00084E9C 0x000852CC 0x00027F8C 0x0008EDB0 0x00091D18
+Proceeding back via exception chain:
+    Exception state (sv=0x14FD9280)
+       PC=0x8FE1B644; MSR=0x0020D030; DAR=0x8FE4C104; DSISR=0x40000000; 
+LR=0x8FE1B61C; R1=0xBFFFFE70; XCP=0x00000400 (Unknown code)
+
+Kernel version:
+Darwin Kernel Version 6.2:
+Tue Nov  5 22:00:03 PST 2002; root:xnu/xnu-344.12.2.obj~1/RELEASE_PPC
+
+
+
+*********
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000436.html">[Ti] Big problems with panic dumps today
+</A></li>
+	<LI>Next message: <A HREF="000438.html">New Battery in older PB
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#437">[ date ]</a>
+              <a href="thread.html#437">[ thread ]</a>
+              <a href="subject.html#437">[ subject ]</a>
+              <a href="author.html#437">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

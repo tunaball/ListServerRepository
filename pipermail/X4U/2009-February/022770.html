@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Connecting to FTP server
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Connecting%20to%20FTP%20server&In-Reply-To=p05100303c5c0b32470e2%40%5B192.168.1.14%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="022766.html">
+   <LINK REL="Next"  HREF="022771.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Connecting to FTP server</H1>
+    <B>Doug McNutt</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Connecting%20to%20FTP%20server&In-Reply-To=p05100303c5c0b32470e2%40%5B192.168.1.14%5D"
+       TITLE="[X4U] Connecting to FTP server">douglist at macnauchtan.com
+       </A><BR>
+    <I>Tue Feb 17 16:41:10 PST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="022766.html">[X4U] Connecting to FTP server
+</A></li>
+        <LI>Next message: <A HREF="022771.html">[X4U] Connecting to FTP server
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#22770">[ date ]</a>
+              <a href="thread.html#22770">[ thread ]</a>
+              <a href="subject.html#22770">[ subject ]</a>
+              <a href="author.html#22770">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I forgot about another option in my last post.
+
+What I really do these days is to use scp which is a part of the ssh 
+(secure shell) protocol.
+
+My web host, pair.com, allows me to login using ssh and I can set up 
+a certificate which provides a public and a private cryptographic 
+key. I can login using ssh and add my public key to 
+$HOME/.ssh/authorized_keys on the host. After that I can use scp in a 
+Terminal window or in a BBEdit worksheet to transfer files. No 
+passwords or other login procedures are required. With worksheets I 
+can create lines that remain as long as I want. All I have to do is 
+select a line I have previously used and poke the ENTER key. It's 
+pretty much just like I once did in MPW on OS 9..
+
+I can even keep the ssh upload line in an html file as a comment. 
+Select and copy the comment line and use the Execute in Shell service 
+and all is done.
+
+Newer versions of curl support sftp, an alternate to scp, which 
+applies when the destination doesn't support the UNIX commands like 
+scp, think Windoze. The cryptographic public and private keys are 
+used. Once you go through the learning curve things get really easy.
+
+-- 
+
+--&gt; From the U S of A, the only socialist country that refuses to admit it. &lt;--
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="022766.html">[X4U] Connecting to FTP server
+</A></li>
+	<LI>Next message: <A HREF="022771.html">[X4U] Connecting to FTP server
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#22770">[ date ]</a>
+              <a href="thread.html#22770">[ thread ]</a>
+              <a href="subject.html#22770">[ subject ]</a>
+              <a href="author.html#22770">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

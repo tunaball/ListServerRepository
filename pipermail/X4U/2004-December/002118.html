@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] connecting to a windows file share?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20connecting%20to%20a%20windows%20file%20share%3F&In-Reply-To=7811FAC6-4D41-11D9-847B-003065F95C54%40braxco.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002084.html">
+   <LINK REL="Next"  HREF="002079.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] connecting to a windows file share?</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20connecting%20to%20a%20windows%20file%20share%3F&In-Reply-To=7811FAC6-4D41-11D9-847B-003065F95C54%40braxco.com"
+       TITLE="[X4U] connecting to a windows file share?">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Tue Dec 14 16:50:12 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002084.html">[X4U] connecting to a windows file share?
+</A></li>
+        <LI>Next message: <A HREF="002079.html">[X4U] choosing a browser for eudora
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2118">[ date ]</a>
+              <a href="thread.html#2118">[ thread ]</a>
+              <a href="subject.html#2118">[ subject ]</a>
+              <a href="author.html#2118">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Dec 13, 2004, at 7:59 pm, Russell McGaha wrote:
+&gt;<i> ...I've a client who's trying to access their shared volumes [they 
+</I>&gt;<i> connect to them at boot time on their PC] from a new G5 with all 
+</I>&gt;<i> updates applied.  I've tried &quot;<A HREF="smb://severname/file/directory">smb://severname/file/directory</A> name&quot; 
+</I>&gt;<i> without success; anyone have any experience doing this??
+</I>
+On Dec 14, 2004, at 9:22 pm, Russell McGaha wrote:
+&gt;<i> ...I think I just need to get the correct SMB syntax to include the 
+</I>&gt;<i> username and password in the url call; should it be in the form of 
+</I>&gt;<i> &quot;<A HREF="smb://Serverename/Directoryname:username:password&quot;">smb://Serverename/Directoryname:username:password&quot;</A> ?
+</I>
+Ok... just to be super-clear about how you're trying to connect... I 
+take it you're trying to connect using the &quot;Go&quot; &gt; &quot;Connect to 
+server...&quot; in the Finder menu, also accessed by Apple-K..?
+
+ From there I rarely give the whole path... just typing 
+&quot;<A HREF="smb://servername&quot;">smb://servername&quot;</A> in that window should give you a drop-down selection 
+of all the shares available on that windows box, as shown at 
+&lt;<A HREF="http://mac.stroller.uk.eu.org/Select%20a%20share.jpg">http://mac.stroller.uk.eu.org/Select%20a%20share.jpg</A>&gt;. I think that if 
+you need a username &amp; password you'll be prompted for it. If 
+&quot;<A HREF="smb://servername&quot;">smb://servername&quot;</A> doesn't work, try &quot;<A HREF="smb://the.i.p.address&quot;.">smb://the.i.p.address&quot;.</A>
+
+As far as full smb-paths are concerned, I think 
+&quot;<A HREF="smb://severname/file/directory">smb://severname/file/directory</A> name&quot; is possibly incorrect syntax: it 
+would be &quot;<A HREF="smb://severname/share">smb://severname/share</A> name&quot;; if referring to individual files 
+on SMB shares is allowed, then hierarchically &quot;<A HREF="smb://severname/share">smb://severname/share</A> 
+name/file&quot; would seem more likely valid. I think that if specifying 
+username &amp; password is allowed, then one would probably use 
+&quot;<A HREF="smb://user:pass@severname/share">smb://user:pass@severname/share</A> name&quot; (it's certainly that order for 
+<A HREF="ftp://user:pass@host&quot;">ftp://user:pass@host&quot;</A>).
+
+Note that &quot;share name&quot; in the paragraph above is different to 
+&quot;directory name&quot; - in Windows when one shares a directory one right 
+clicks on that directory and clicks the &quot;Share this folder...&quot; button - 
+one is then prompted to allocate a name to that share. The share-name 
+can be different from the directory name, presumably to save conflicts 
+when sharing c:\foo and c:\bar\foo.
+
+Hence one could share the &quot;C:\&quot; directory (a horribly bad but 
+widespread practice) of my_box as &quot;the_whole_drive&quot; - when accessing it 
+over the network it would be referred to not as &quot;<A HREF="smb://my_box/c&quot;">smb://my_box/c&quot;</A> but as 
+&quot;<A HREF="smb://my_box/the_whole_drive&quot;.">smb://my_box/the_whole_drive&quot;.</A>
+
+Your post also reminded me that Samba provides some command line tools 
+for querying windows shares - you may  find `smbtree` and `smbutil view 
+//servername` useful.
+
+Stroller.
+
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002084.html">[X4U] connecting to a windows file share?
+</A></li>
+	<LI>Next message: <A HREF="002079.html">[X4U] choosing a browser for eudora
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2118">[ date ]</a>
+              <a href="thread.html#2118">[ thread ]</a>
+              <a href="subject.html#2118">[ subject ]</a>
+              <a href="author.html#2118">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

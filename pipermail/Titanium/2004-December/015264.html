@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Titanium batteries
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Titanium%20batteries&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="015263.html">
+   <LINK REL="Next"  HREF="015278.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Titanium batteries</H1>
+    <B>Dan K</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Titanium%20batteries&In-Reply-To="
+       TITLE="[Ti] Titanium batteries">macdan at comcast.net
+       </A><BR>
+    <I>Thu Dec  2 09:39:24 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="015263.html">[Ti] Battery Blues, Charger Suspicion, CD-Burner mischief ...
+</A></li>
+        <LI>Next message: <A HREF="015278.html">[Ti] Titanium batteries
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15264">[ date ]</a>
+              <a href="thread.html#15264">[ thread ]</a>
+              <a href="subject.html#15264">[ subject ]</a>
+              <a href="author.html#15264">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>First off, I'm NOT the most knowledgable about this topic, but with that 
+caveat firmly in mind I still have a couple of what I hope are a couple 
+of useful suggestions.
+
+Alan Thompson &lt;<A HREF="../../../mailman/listinfo/titanium.html">alan at alanthompson.net</A>&gt; asked:
+&gt;<i>I see a lot of used batteries at various places, but I'm not seeing 
+</I>&gt;<i>anyone with new batteries.  I have a 500MHz model, and the battery 
+</I>&gt;<i>charges fine, and I can get about an hour or so on it, but when it 
+</I>&gt;<i>reaches 50 some odd percent (full or drained, your choice) it will 
+</I>&gt;<i>suddenly drop to the red zone, and quickly go into sleep mode while 
+</I>&gt;<i>working.  I tried resetting the PMU last night to no avail, so I'm 
+</I>&gt;<i>looking for a new battery.
+</I>&gt;<i>
+</I>&gt;<i>So, does anyone know of a good source for a new TiBook battery?
+</I>The quick drop from 50% suggests one or more failing or failed cells, 
+there is no cure. However, before tossing the pack, one might want to run 
+through the steps I outline in the second half of this message.
+
+Complete replacement of the entire battery is one solution, recelling is 
+another. Ti batteries use 8 'standard' tabbed 18650 LiIon cells, cost 
+seems to be $5 to $10 per cell and you must replace them all at the same 
+time. It's DIY doable but you'll likely have trouble cleanly opening the 
+case, not an issue if you don't mind a few cosmetic 'issues'. No, I don't 
+know any takeapart sites, but there's always Google.
+
+I don't know or endorse this outfit but they do sell cells (by the 
+seashore? :-), here's an example:
+&lt;<A HREF="http://www.aspencer1.com/showitem.asp?ItemID=11273">http://www.aspencer1.com/showitem.asp?ItemID=11273</A>&gt;
+
+ - - - - -
+
+then luke &lt;<A HREF="../../../mailman/listinfo/titanium.html">etyrnal at ameritech.net</A>&gt; asked:
+&gt;<i>i am using a tibook 867 w/ 512MB RAM and 40GB hd...
+</I>&gt;<i>recently my battery just decided to go from 2-3 hours of solid battery 
+</I>&gt;<i>life to about 6 minutes...
+</I>&gt;<i>it had never done this before.
+</I>&gt;<i>i've tried 'conditioning' the battery - (i'm not sure if i understand 
+</I>&gt;<i>the specifics of the procedure though)
+</I>Recalibrating is where you fully charge the pack, remove the 'Book from 
+mains power and allow the 'Book to run until the battery's charge falls 
+to the point where the 'Book falls asleep. Then you plug it back into 
+external power and allow the battery to fully recharge.
+ **See the end of this message for a more elaborate technique**
+
+This usually is enough to reset the battery pack's internal memory and 
+lets it communicate correct charge levels to the 'Book. Sometimes the 
+recal doesn't work, but before dashing off to buy a new pack, there is 
+another tool one can use to attempt to reset the battery's internal 
+electronics.
+
+Use the openfirmware nvram reset commands:
+
+Startup into openfirmware by holding down key combo cmd-opt-O-F right 
+after startup.
+at prompt type
+ &quot;reset-nvram&quot; (without quotes of course, and then enter)
+it'll say &quot;OK&quot;
+ &quot;reset-all&quot; (and enter)
+and it'll restart
+
+That's it, if battery now works properly, yer in luck. If it didn't, then 
+the battery may actually be shot after all.
+
+dan k
+
+**
+The best advice I've seen for maximizing LiIon battery runtime, as posted 
+to usenet by &quot;Peter&quot; (whose last name escapes me at this moment):
+------------------------------------------
+(Peter's Trickle Calibration)
+
+1. charge fully and then some
+2. in terminal,
+   ioreg -p IODeviceTree -n battery -w0 | grep Bat
+   (make a note of your Capacity -- should be around 4000 or more)
+   sudo pmset -b spindown 1 sleep 0 reduce 1 dim 1
+   (prevents idle-sleep, and after 1 idle minute spins down your disk,
+   reduces your processor speed, and turns off the LCD when on battery)
+   (Maybe in Panther you can do that without pmset, but Jaguar is broken)
+3. shut down all applications.  turn off airport,
+   disconnect anything external -- keyborad, mouse, printers,
+   and finally, power.
+4. LEAVE IT ALONE -- DO NOT TOUCH IT
+
+5. W A I T (5 hours or more ...)
+6. eventually your notebook will go to sleep
+
+7. plug it in.  wait 3 minutes.  (mebbe 5 to be sure :-)
+8. ioreg -p IODeviceTree -n battery -w0 | grep Bat
+   (Has it re-evaluated your Capacity?)
+9. leave it alone and let it charge fully.
+10. if the Capacity changed significantly, you might want to repeat
+    the calibration cycle.
+11. Adjust your battery-power management settings to make it sleep
+    at a more reasonable time.
+
+Note -- *calibration* means helping the battery's firmware estimate the
+battery's capacity.
+------------------------------------------
+
+
+.................................
+<A HREF="http://macdan.n3.net/">http://macdan.n3.net/</A>
+<A HREF="carracho://dankephoto.dhs.org:9700">carracho://dankephoto.dhs.org:9700</A>
+<A HREF="hotline://dankephoto.dhs.org:9500">hotline://dankephoto.dhs.org:9500</A>
+.................................
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="015263.html">[Ti] Battery Blues, Charger Suspicion, CD-Burner mischief ...
+</A></li>
+	<LI>Next message: <A HREF="015278.html">[Ti] Titanium batteries
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15264">[ date ]</a>
+              <a href="thread.html#15264">[ thread ]</a>
+              <a href="subject.html#15264">[ subject ]</a>
+              <a href="author.html#15264">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

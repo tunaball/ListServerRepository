@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] copy 101 question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20copy%20101%20question&In-Reply-To=list-13755457%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000870.html">
+   <LINK REL="Next"  HREF="000872.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] copy 101 question</H1>
+    <B>James Bucanek</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20copy%20101%20question&In-Reply-To=list-13755457%40mail.ninewire.com"
+       TITLE="[X-Unix] copy 101 question">subscriber at gloaming.com
+       </A><BR>
+    <I>Sun Jun  6 07:48:31 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000870.html">[X-Unix] copy 101 question
+</A></li>
+        <LI>Next message: <A HREF="000872.html">sync Address Book and PostgreSQL?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#871">[ date ]</a>
+              <a href="thread.html#871">[ thread ]</a>
+              <a href="subject.html#871">[ subject ]</a>
+              <a href="author.html#871">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Stroller wrote on Sunday, June 6, 2004:
+&gt;<i>I believe that you have tarred the files &amp; then untarred them again in 
+</I>&gt;<i>order to preserve the directory-tree structure of the files, so that if 
+</I>&gt;<i>the user has ~/foo/some.doc and ~/foo/bar/some.doc then both files will 
+</I>&gt;<i>be copied to the destination drive and appropriate subdirectories made. 
+</I>
+Yes.
+
+&gt;<i>I don't know if this is the default behaviour of xcopy, but believe 
+</I>&gt;<i>it's worth commenting on, because otherwise I'd regard this line as 
+</I>&gt;<i>more intuitive:
+</I>&gt;<i>     find Documents -name '*.doc' -exec cp \{\} /Volumes/firewire ;
+</I>
+I honestly don't remember how xcopy works (since I cut my teeth on UNIX, the DOS command line was so abhorrent to me, that I abandoned it at the first possible opportunity).  If, as I assumed, xcopy preserves the structure of the directories, then the tar trick works.  On the other hand, if it copies all of the source files into the same directory, then your command line is far more direct.  Furthermore, one could use ditto or CpMac in place of cp to copy the files properly, preserving any resource forks and any file meta-data.
+
+&gt;<i>I can't see any shorter way than yours to preserve the directories when 
+</I>&gt;<i>copying found files, however. It seems to me a little inelegant to have 
+</I>&gt;<i>to use `tar` twice in this way
+</I>
+It's actually not that inelegant, nor is it particularly inefficient.  I like to think of most DOS and GUI utilities as Swiss Army knifes.  They are self-contained &quot;do it all internally&quot; monsters.  If you need recursion, there's a recursion option.
+
+The philosophy in UNIX, in contrast, has always emulated the Erector Set.  You connect small tools together to create the solution that you want.  You don't have to relay on the author of some Rube Goldberg contraption to anticipate your solution.  So stringing together three or four &quot;atoms&quot; to make a molecule is &quot;The UNIX Way.&quot;
+
+&gt;<i>I would have expected a single command 
+</I>&gt;<i>to be available to do the the same thing, or a suitable flag to `cp`, 
+</I>&gt;<i>but I can't find either.
+</I>
+As I mentioned, I think the real solution is to find a resource-fork savvy synchronization or backup tool.  It's not like the file backup space hasn't been thoroughly explored.  ;)
+
+______________________________________________________
+James Bucanek       &lt;mailto:<A HREF="../../../mailman/listinfo/x-unix.html">privatereply at gloaming.com</A>&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000870.html">[X-Unix] copy 101 question
+</A></li>
+	<LI>Next message: <A HREF="000872.html">sync Address Book and PostgreSQL?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#871">[ date ]</a>
+              <a href="thread.html#871">[ thread ]</a>
+              <a href="subject.html#871">[ subject ]</a>
+              <a href="author.html#871">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Command to find if a certain app is running?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Command%20to%20find%20if%20a%20certain%20app%20is%20running%3F&In-Reply-To=95679FAF-EC40-49BD-9C1B-0547D54FD08F%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003299.html">
+   <LINK REL="Next"  HREF="003300.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Command to find if a certain app is running?</H1>
+    <B>Juan Manuel Palacios</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Command%20to%20find%20if%20a%20certain%20app%20is%20running%3F&In-Reply-To=95679FAF-EC40-49BD-9C1B-0547D54FD08F%40mac.com"
+       TITLE="[X-Unix] Command to find if a certain app is running?">jmpalaciosp at eml.cc
+       </A><BR>
+    <I>Fri Mar 27 10:09:48 PDT 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003299.html">[X-Unix] Command to find if a certain app is running?
+</A></li>
+        <LI>Next message: <A HREF="003300.html">[X-Unix] Command to find if a certain app is running?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3298">[ date ]</a>
+              <a href="thread.html#3298">[ thread ]</a>
+              <a href="subject.html#3298">[ subject ]</a>
+              <a href="author.html#3298">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Mar 27, 2009, at 2:28 AM, Christoph Hammann wrote:
+
+&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> The first command you're looking for is ps aux | grep processname .
+</I>
+
+	Please note that ps in Leopard changed. I can't for the life of me  
+remember at the moment if Tiger's ps (and that of previous Mac OS X  
+releases) followed the gnu standard (POSIX on some aspects, plus many  
+gnu'isms) or BSD's or SYSV's or who-knows-what-else, but if I'm not  
+mistaken Leopard' ps is UNIX03 compliant.
+
+	Now what does all that mean? That the flags changed considerably from  
+the I-was-already-too-used-to &quot;aux&quot; combo. Leopard's equivalent would  
+be something like &quot;ps -Axv&quot;:
+
+A: display info on all processes, including other users' and those  
+without a controlling terminal (e.g. daemons &amp; GUI apps);
+x: ensure processes without controlling terminals are displayed, as  
+some other ps options might filter their output;
+v: display specific process metadata, consult &quot;man ps&quot; for details.
+
+	To that mix you can add options like -j, for extra process metadata  
+(like the process' parent's Id, aka PPID), -h to repeat the column  
+headers as often as necessary, since the output will likely be pretty  
+long, and as many -w's as needed for desired row length. All in all:
+
+$[jmpp @jmpp: ~](23/1 0,0) -&gt; alias ps
+alias ps='/bin/ps -jAxvwwh'
+
+	Lastly, don't forget to include the dash in front of the ps options,  
+since its presence does change its behavior on some systems (e.g.,  
+Linux's ps sometimes even flat-out bailing due to incorrect command  
+syntax). I don't think it's the case for Leopard, or I least I haven't  
+been able to attest to it, but all in all consistency is a pretty good  
+thing.
+
+
+&gt;<i> The second is apropos .
+</I>&gt;<i>
+</I>
+	That's equivalent to &quot;man -k your-search-term-here&quot;. I find that  
+handy 'cause if I did find the correct command name, I can easily go  
+back to delete the -k part and hit enter right away to get the manual  
+page.
+
+&gt;<i> HTH!
+</I>&gt;<i>
+</I>
+
+	Regards,...
+
+
+-jmpp
+
+
+&gt;<i>
+</I>&gt;<i> Am 27.03.2009 um 06:42 schrieb Jerry Krinock &lt;<A HREF="../../../mailman/listinfo/x-unix.html">jerry at ieee.org</A>&gt;:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Does anyone know if there is a command to find if a certain app is  
+</I>&gt;&gt;<i> running?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I know one way to do this would be via osascript/AppleScript,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  tell application &quot;System Events&quot; set allApps to every application  
+</I>&gt;&gt;<i> process
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> and then parse the list returned but I'd like to avoid the  
+</I>&gt;&gt;<i> backslash-escape hell of osascript if possible.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Is there a command-line interface to System Events?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Thanks,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Jerry Krinock
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> P.S.  More generally, is there a way to search for &quot;a command that  
+</I>&gt;&gt;<i> will do XYZ&quot; on OS X?  Example: Earlier today, I wanted to read/ 
+</I>&gt;&gt;<i> write user preferences but had difficulty remembering the command  
+</I>&gt;&gt;<i> name 'defaults'.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> X-Unix mailing list
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003299.html">[X-Unix] Command to find if a certain app is running?
+</A></li>
+	<LI>Next message: <A HREF="003300.html">[X-Unix] Command to find if a certain app is running?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3298">[ date ]</a>
+              <a href="thread.html#3298">[ thread ]</a>
+              <a href="subject.html#3298">[ subject ]</a>
+              <a href="author.html#3298">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

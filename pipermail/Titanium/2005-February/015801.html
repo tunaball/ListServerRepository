@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] PB Batteries
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20PB%20Batteries&In-Reply-To=BE2D3944.3090%25jwegriffin%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="015800.html">
+   <LINK REL="Next"  HREF="015748.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] PB Batteries</H1>
+    <B>Dr. Trevor J. Hutley</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20PB%20Batteries&In-Reply-To=BE2D3944.3090%25jwegriffin%40mac.com"
+       TITLE="[Ti] PB Batteries">hutley at geneva-link.ch
+       </A><BR>
+    <I>Fri Feb 11 00:01:46 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="015800.html">[Ti] wanted: dead batteries!
+</A></li>
+        <LI>Next message: <A HREF="015748.html">[Ti] PB Batteries
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15801">[ date ]</a>
+              <a href="thread.html#15801">[ thread ]</a>
+              <a href="subject.html#15801">[ subject ]</a>
+              <a href="author.html#15801">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 15:27 -0500 7/2/05, John Griffin wrote:
+&gt;<i>Hmm! All I get is a series of error codes!
+</I>
+
+John - well, the script worked for me, in that it gave me the 
+following output in Terminal:
+
+	capacity=4032 amperage=0 current=3840 voltage=12365
+
+These values presumably reflect my current 95% state of charge, and 
+that of being plugged in.
+
+When I unplug, the values are:
+
+	capacity=4032 amperage=1469 current=3794 voltage=11614
+
+This is the ACTUAL script (between the lines) that I just pasted in 
+to Terminal, so I know it works:
+_________________________________________________________
+
+#
+#!/bin/bash
+
+[ -x /usr/sbin/ioreg ] &amp;&amp; \
+     /usr/sbin/ioreg -p IODeviceTree -n &quot;battery&quot; -w 0 | \
+     sed -ne '/| *{/,/| *}/ {
+	s/^[ |]*//g
+	/^[{}]/!p
+        }' | \
+	   awk '/Battery/ {
+                gsub(&quot;[{}()\&quot;]&quot;,&quot;&quot;, $3)
+                gsub(&quot;,&quot;,&quot; &quot;,$3)
+                split($3,ct,&quot; &quot;)
+                # extract flag value and convert to hex
+                sub(&quot;Flags=&quot;,&quot;&quot;,ct[2])
+                str=sprintf(&quot;Flags=%d/0x%03x&quot;,ct[2],ct[2])
+                sub(&quot;Flags=[0-9]*&quot;,str,$3)
+                # get max and current charge levels
+                sub(&quot;.*=&quot;,&quot;&quot;,ct[4])
+                sub(&quot;.*=&quot;,&quot;&quot;,ct[5])
+                printf(&quot;%s [%.1f%%]\n&quot;, tolower($3), 100*ct[5]/ct[4])
+                }'
+
+#EOF
+#
+______________________________________________________________
+
+regards,  Trevor
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="015800.html">[Ti] wanted: dead batteries!
+</A></li>
+	<LI>Next message: <A HREF="015748.html">[Ti] PB Batteries
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15801">[ date ]</a>
+              <a href="thread.html#15801">[ thread ]</a>
+              <a href="subject.html#15801">[ subject ]</a>
+              <a href="author.html#15801">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Running fsck on a target disk
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Running%20fsck%20on%20a%20target%20disk&In-Reply-To=8F7B8D3D-E26D-4770-9A46-8531FF0E9281%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002712.html">
+   <LINK REL="Next"  HREF="002725.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Running fsck on a target disk</H1>
+    <B>Alexandre Gauthier</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Running%20fsck%20on%20a%20target%20disk&In-Reply-To=8F7B8D3D-E26D-4770-9A46-8531FF0E9281%40secure-computing.net"
+       TITLE="[X-Unix] Running fsck on a target disk">supernaut at underwares.org
+       </A><BR>
+    <I>Thu Jul 27 04:09:29 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002712.html">[X-Unix] Running fsck on a target disk
+</A></li>
+        <LI>Next message: <A HREF="002725.html">[X-Unix] Running fsck on a target disk
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2723">[ date ]</a>
+              <a href="thread.html#2723">[ thread ]</a>
+              <a href="subject.html#2723">[ subject ]</a>
+              <a href="author.html#2723">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Sorry for interrupting, but is that not supposed to be &quot;rdisk0s3&quot;? As
+in, the raw block device? /etc/rc does this when fsck'ing...
+
+Eric F Crist wrote:
+&gt;<i> Thom,
+</I>&gt;<i>
+</I>&gt;<i> There is only one 'trick' to running fsck. You need to define the
+</I>&gt;<i> mount point as one of the arguments, usually the last. On a typical
+</I>&gt;<i> Mac system running Mac OS X, you could run fsck on the primary file
+</I>&gt;<i> system by running:
+</I>&gt;<i>
+</I>&gt;<i> # fsck_hfs /dev/disk0s3
+</I>&gt;<i>
+</I>&gt;<i> To run the above command on an HFS formatted file system, type:
+</I>&gt;<i>
+</I>&gt;<i> # df -h
+</I>&gt;<i>
+</I>&gt;<i> This allows you to find out where your disk is mounted. When I connect
+</I>&gt;<i> a USB HFS formatted disk (an old startup volume, actually) I get:
+</I>&gt;<i>
+</I>&gt;<i> Filesystem Size Used Avail Capacity Mounted on
+</I>&gt;<i> /dev/disk0s3 93G 34G 58G 37% /
+</I>&gt;<i> devfs 100K 100K 0B 100% /dev
+</I>&gt;<i> fdesc 1.0K 1.0K 0B 100% /dev
+</I>&gt;<i> &lt;volfs&gt; 512K 512K 0B 100% /.vol
+</I>&gt;<i> automount -nsl [201] 0B 0B 0B 100% /Network
+</I>&gt;<i> automount -fstab [205] 0B 0B 0B 100% /automount/Servers
+</I>&gt;<i> automount -static [205] 0B 0B 0B 100% /automount/static
+</I>&gt;<i> /dev/disk1s3 74G 67G 7.2G 90% /Volumes/Macintosh HD 1
+</I>&gt;<i>
+</I>&gt;<i> I can see that my new mount, Macintosh HD 1, is filesystem
+</I>&gt;<i> /dev/disk1s3 which means, 2nd hard disk, slice 3. Computers typically
+</I>&gt;<i> start counting from 0, so 1 is actually 2. ;)
+</I>&gt;<i>
+</I>&gt;<i> Finally, to run fsck, we use Apple's fsck_hfs utility against the
+</I>&gt;<i> above listed filesystem, NOT the mount point, /Volumes/Macintosh HD 1.
+</I>&gt;<i>
+</I>&gt;<i> # fsck_hfs /dev/disk1s3
+</I>&gt;<i>
+</I>&gt;<i> I hope this helps!
+</I>&gt;<i>
+</I>&gt;<i> -----
+</I>&gt;<i> Eric F Crist
+</I>&gt;<i> Secure Computing Networks
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random stuff:
+</I>&gt;<i> <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+
+-- 
+Alexandre Gauthier
+<A HREF="../../../mailman/listinfo/x-unix.html">supernaut at underwares.org</A>
+
+underwares.org
+Obscure IT knowledge Open Database
+
+The human brain operates at only 10% of its capacity. The rest is overhead for
+the operating system. 
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002712.html">[X-Unix] Running fsck on a target disk
+</A></li>
+	<LI>Next message: <A HREF="002725.html">[X-Unix] Running fsck on a target disk
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2723">[ date ]</a>
+              <a href="thread.html#2723">[ thread ]</a>
+              <a href="subject.html#2723">[ subject ]</a>
+              <a href="author.html#2723">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

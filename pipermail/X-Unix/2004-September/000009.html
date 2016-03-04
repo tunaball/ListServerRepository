@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to find your DHCP server...
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20find%20your%20DHCP%20server...&In-Reply-To=list-16588149%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000020.html">
+   <LINK REL="Next"  HREF="000010.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to find your DHCP server...</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20find%20your%20DHCP%20server...&In-Reply-To=list-16588149%40mail.ninewire.com"
+       TITLE="[X-Unix] How to find your DHCP server...">magill at mcgillsociety.org
+       </A><BR>
+    <I>Thu Sep 16 15:59:49 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000020.html">[X-Unix] How to use ESC as Meta in Enhanced Carbon Emacs?
+</A></li>
+        <LI>Next message: <A HREF="000010.html">[X-Unix] How to find your DHCP server...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9">[ date ]</a>
+              <a href="thread.html#9">[ thread ]</a>
+              <a href="subject.html#9">[ subject ]</a>
+              <a href="author.html#9">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 15 Sep, 2004, at 21:43, Juan Manuel Palacios wrote:
+&gt;<i> On Sep 14, 2004, at 12:48 PM, William H. Magill wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Just yesterday, I was just pointed to an interesting tool by an Apple 
+</I>&gt;&gt;<i> Supportline chap ...
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> ipconfig getpacket en1   [or which ever interface you are using]
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> In the middle of the output will be:
+</I>&gt;&gt;<i>      server_identifier (ip): 10.0.1.1
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> 	Hi William! I'd be interested in learning more about this tool, but 
+</I>&gt;<i> as you say it is a bummer that it's not documented and I just cannot 
+</I>&gt;<i> be bothered to read through the strings(1) output! For instance, my 
+</I>&gt;<i> box is always connected to the LAN, so I don't understand why your 
+</I>&gt;<i> command above is dying silently and with an error status, both through 
+</I>&gt;<i> sudo and without it:
+</I>&gt;<i>
+</I>&gt;<i> $[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: netwib](163/0,0)-&gt; sudo ipconfig getpacket en0
+</I>&gt;<i> $[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: netwib](164/0,0)-&gt; echo $?
+</I>&gt;<i> 1
+</I>&gt;<i>
+</I>&gt;<i> $[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: netwib](165/0,0)-&gt; ipconfig getpacket en0
+</I>&gt;<i> $[<A HREF="../../../mailman/listinfo/x-unix.html">juan at PowerBook</A>: netwib](166/0,0)-&gt; echo $?
+</I>&gt;<i> 1
+</I>
+You don't need sudo, but you do need the active interface.
+I happen to use airport, and &quot;en1&quot; not &quot;en0&quot; is the active interface.
+(type &quot;ifconfig&quot; to see what's there.)
+
+It does &quot;fail silently,&quot; and $? will yield a &quot;1&quot; ... the program DID 
+complete successfully, it just had nothing to say about the interface.
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000020.html">[X-Unix] How to use ESC as Meta in Enhanced Carbon Emacs?
+</A></li>
+	<LI>Next message: <A HREF="000010.html">[X-Unix] How to find your DHCP server...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9">[ date ]</a>
+              <a href="thread.html#9">[ thread ]</a>
+              <a href="subject.html#9">[ subject ]</a>
+              <a href="author.html#9">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

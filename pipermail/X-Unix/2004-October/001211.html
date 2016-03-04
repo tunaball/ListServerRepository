@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] UFS volume full?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20UFS%20volume%20full%3F&In-Reply-To=12538C66-1E5D-11D9-94C4-000D9333E43C%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001206.html">
+   <LINK REL="Next"  HREF="001208.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] UFS volume full?</H1>
+    <B>Kevin Stevens</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20UFS%20volume%20full%3F&In-Reply-To=12538C66-1E5D-11D9-94C4-000D9333E43C%40secure-computing.net"
+       TITLE="[X-Unix] UFS volume full?">groups at pursued-with.net
+       </A><BR>
+    <I>Fri Oct 15 09:53:25 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001206.html">[X-Unix] UFS volume full?
+</A></li>
+        <LI>Next message: <A HREF="001208.html">[X-Unix] UFS volume full?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1211">[ date ]</a>
+              <a href="thread.html#1211">[ thread ]</a>
+              <a href="subject.html#1211">[ subject ]</a>
+              <a href="author.html#1211">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+
+On Thu, 14 Oct 2004, Eric Crist wrote:
+
+&gt;<i> &gt; Sorry, not sure I understand your question.  It's a slice
+</I>&gt;<i> &gt; (/dev/disk1s5) out of a 250GB drive, mounted at /Volumes/Unix.  It has
+</I>&gt;<i> &gt; the directory /var/spool/news with all the files under it, and that is
+</I>&gt;<i> &gt; soft-linked from the &quot;real&quot; /var/spool/news.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; KeS
+</I>&gt;<i>
+</I>&gt;<i> Well, that last statement doesn't make any sense.  Keep in mind that /
+</I>&gt;<i> is your ROOT partition.  i.e. this means your primary boot partition.
+</I>&gt;<i> Now, there's the possibility that you've got a
+</I>&gt;<i> /Volumes/Unix/var/spool/news that is a symbolic (what you call soft)
+</I>&gt;<i> link to /var/spool/news, but there is not two /var/spool/news
+</I>&gt;<i> directories on the system.  does this make sense?
+</I>
+Yes, that's the situation, sorry if it wasn't clear (that's what I
+intended by saying that /var/spool/news was &quot;under&quot; the /Volumes/Unix
+mount point.
+
+
+&gt;<i>  It's good that you didn't get any errors on an fsck, but what options
+</I>&gt;<i> did you use when you ran it?
+</I>
+None - are there specific ones you'd like me to use?  This volume is
+readily unmounted at any time, since all it holds is news, so I can play
+with it readily.
+
+&gt;<i>  Are you using journaling on the UFS partition?
+</I>No.
+
+&gt;<i>  Are you _certain_ that it's space and not inodes?
+</I>
+No.  I'm certain that df -hi reported 10% inode usage while reporting 100%
+space usage when the problem manifested.
+
+&gt;<i>  Often, with news servers, there are so many small files that you run
+</I>&gt;<i> out of inodes.  check this to make sure, possibly post results of df -h
+</I>&gt;<i> and du -d 1 /Volumes/Unix/var.
+</I>
+Ok, bear in mind that the condition is NOT present at the moment:
+
+babelfish:~ kes$ df -hi /Volumes/Unix
+Filesystem     Size   Used  Avail Capacity iused   ifree %iused  Mounted
+on
+/dev/disk1s5    20G   6.1G    13G    32%  524368 4677678   10%
+/Volumes/Unix
+
+babelfish:~ root# du -d 1 /Volumes/Unix/var
+3798688 /Volumes/Unix/var/spool
+3798690 /Volumes/Unix/var
+
+&gt;<i> This would help greatly.
+</I>
+Here you go!
+
+KeS
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001206.html">[X-Unix] UFS volume full?
+</A></li>
+	<LI>Next message: <A HREF="001208.html">[X-Unix] UFS volume full?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1211">[ date ]</a>
+              <a href="thread.html#1211">[ thread ]</a>
+              <a href="subject.html#1211">[ subject ]</a>
+              <a href="author.html#1211">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

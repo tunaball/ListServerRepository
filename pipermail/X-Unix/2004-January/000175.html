@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] missing man pages
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20missing%20man%20pages&In-Reply-To=list-10066689%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000164.html">
+   <LINK REL="Next"  HREF="000186.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] missing man pages</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20missing%20man%20pages&In-Reply-To=list-10066689%40mail.ninewire.com"
+       TITLE="[X-Unix] missing man pages">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Sun Jan  4 15:51:40 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000164.html">missing man pages
+</A></li>
+        <LI>Next message: <A HREF="000186.html">[X-Unix] missing man pages
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#175">[ date ]</a>
+              <a href="thread.html#175">[ thread ]</a>
+              <a href="subject.html#175">[ subject ]</a>
+              <a href="author.html#175">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jan 4, 2004, at 9:43 pm, Xavier Noria wrote:
+
+&gt;<i> Although whatis perror reports perror(3), man perror does not find any 
+</I>&gt;<i> man page, and in fact there is none under /usr/share/man/man3. Do you 
+</I>&gt;<i> know what could be wrong?
+</I>
+On my Panthar system `man perror` brings up:
+
+STRERROR(3)              BSD Library Functions Manual              
+STRERROR(3)
+
+NAME
+      perror, strerror, strerror_r, sys_errlist, sys_nerr - system error 
+mes-
+      sages
+
+LIBRARY
+      Standard C Library (libc, -lc)
+
+SYNOPSIS
+      #include &lt;stdio.h&gt;
+
+      void
+      perror(const char *string);
+
+      extern const char * const sys_errlist[];
+      extern const int sys_nerr;
+
+      #include &lt;string.h&gt;
+
+      char *
+      strerror(int errnum);
+
+      int
+      strerror_r(int errnum, char *strerrbuf, size_t buflen);
+
+DESCRIPTION
+...
+      The perror() function finds the error message corresponding to the 
+cur-
+      rent value of the global variable errno (intro(2)) and writes it, 
+fol-
+      lowed by a newline, to the standard error file descriptor.  If the 
+argu-
+      ment string is non-NULL and does not point to the null character, 
+this
+      string is prepended to the message string and separated from it by 
+a
+      colon and space (``: ''); otherwise, only the error message string 
+is
+      printed.
+
+
+Maybe you should try running `/usr/libexec/makewhatis` &amp; trying again..?
+
+Stroller.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000164.html">missing man pages
+</A></li>
+	<LI>Next message: <A HREF="000186.html">[X-Unix] missing man pages
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#175">[ date ]</a>
+              <a href="thread.html#175">[ thread ]</a>
+              <a href="subject.html#175">[ subject ]</a>
+              <a href="author.html#175">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X Newbies] Disk First Aid [was Re: [X Newbies] MacJanitor]
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20Disk%20First%20Aid%20%5Bwas%20Re%3A%20%5BX%20Newbies%5D%20MacJanitor%5D&In-Reply-To=list-7758186%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002031.html">
+   <LINK REL="Next"  HREF="002033.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X Newbies] Disk First Aid [was Re: [X Newbies] MacJanitor]</H1>
+    <B>Florin Alexander Neumann</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX%20Newbies%5D%20Disk%20First%20Aid%20%5Bwas%20Re%3A%20%5BX%20Newbies%5D%20MacJanitor%5D&In-Reply-To=list-7758186%40mail.ninewire.com"
+       TITLE="[X Newbies] Disk First Aid [was Re: [X Newbies] MacJanitor]">alexn at ica.net
+       </A><BR>
+    <I>Tue Jul 29 07:25:00 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002031.html">[X Newbies] FTP Question
+</A></li>
+        <LI>Next message: <A HREF="002033.html">[X Newbies] File Server connection
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2032">[ date ]</a>
+              <a href="thread.html#2032">[ thread ]</a>
+              <a href="subject.html#2032">[ subject ]</a>
+              <a href="author.html#2032">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Monday, Jul 28, 2003, at 14:01 Canada/Eastern, Randy B. Singer wrote:
+
+&gt;<i> Mark Gibson said:
+</I>&gt;<i>
+</I>&gt;&gt;<i> The startup disk is repaired automatically, if required, as part of
+</I>&gt;&gt;<i> the startup process.
+</I>&gt;<i>
+</I>&gt;<i> No it isn't.
+</I>
+True, but not the whole story. Here's how it works in Jaguar. After a 
+successful startup, mounted drives are marked &quot;dirty&quot;. When a drive is 
+legitimately dismounted (e.g., by ejecting it from the desktop or 
+during shut-down), it is marked &quot;clean&quot;. At startup, disks are checked 
+for this parameter; when a &quot;dirty&quot; disk is found, fsck is called up to 
+check it and attempt to repair it, if necessary. (Which, basically, is 
+an idea you're already familiar with from Windows or Mac OS 8 or 9.) On 
+the other hand, as Randy pointed out, a Safe Boot calls fsck to check 
+disks regardless of their &quot;dirty&quot; status. Note that the &quot;clean&quot; status 
+doesn't mean the disk has no errors -- it just means it was mounted and 
+dismounted according to proper procedure.
+
+
+On Monday, Jul 28, 2003, at 16:24 Canada/Eastern, Peter Sealy wrote:
+
+&gt;<i> in the instructions window of the First Aid tab of Disk Utility app 
+</I>&gt;<i> [OS X 10.2.6] it says &quot;The startup disk was verified, and repaired if 
+</I>&gt;<i> necessary, at boot time.&quot;
+</I>
+It is indeed ambiguous and therefore misleading. &quot;Verified&quot; can mean 
+&quot;checked to see if the 'dirty' bit was set&quot; or &quot;called fsck to check 
+the disk&quot;.
+
+&gt;<i> I do understand that you can not run DFA on the startup disk once the 
+</I>&gt;<i> startup process has completed
+</I>
+To summarize point already made, in Jaguar Disk Utility has two 
+verify/repair functions on the Disk First Aid tab.
+
+(1) Verify/Repair Disk can be performed on any disk that can be 
+dismounted (I'm simplifying a little). The boot disk or a disk with 
+open files can't be dismounted, therefore it won't work on them. To 
+verify/repair a boot disk the user must either, (a) boot in a different 
+mode (i.e., Safe Mode, which will make fsck run automatically, or 
+Single-User Mode, where fsck can be run manually), or (b) boot from a 
+different copy of the OS X system on another volume (i.e., another 
+partition on the same drive, another internal drive, an external drive, 
+or the OS X Install CD or DVD).
+
+(2) Verify/Repair Permissions can be performed only on bootable 
+volumes, i.e., volumes which have a copy of Mac OS X installed, 
+including the current boot volume. There is a caveat here. This 
+function shouldn't be run on volumes which contain copies of Mac OS X 
+more recent than the one on the current boot volume, because it may 
+generate errors. So, if the internal hard disk has Mac OS X v10.2.6, 
+and the computer is booted from the Mac OS X v10.2.3 CD-ROM or DVD-ROM, 
+running Verify/Repair Permissions is not a good idea; it's better to 
+run it when booted from the internal disk.
+
+A final point on terminology. Some people may not be aware that there 
+is a distinction between &quot;disk&quot; and &quot;disc&quot;. &quot;Disk&quot; refers to magnetic 
+media (e.g., hard disks, floppy, Zip disks); &quot;disc&quot; refers to optical 
+media (e.g., CD-ROM, CD-RW). Unfortunately, this linguistical subtelty 
+is -- like the proper capitalization of titles -- all too often 
+ignored, but Apple still uses it.
+
+f
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002031.html">[X Newbies] FTP Question
+</A></li>
+	<LI>Next message: <A HREF="002033.html">[X Newbies] File Server connection
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2032">[ date ]</a>
+              <a href="thread.html#2032">[ thread ]</a>
+              <a href="subject.html#2032">[ subject ]</a>
+              <a href="author.html#2032">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

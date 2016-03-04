@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Question about using RsyncX
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Question%20about%20using%20RsyncX&In-Reply-To=list-10546002%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000210.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Question about using RsyncX</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Question%20about%20using%20RsyncX&In-Reply-To=list-10546002%40mail.ninewire.com"
+       TITLE="[X-Unix] Question about using RsyncX">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Sun Feb  1 09:13:24 PST 2004</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000210.html">[X-Unix] Postfix troubles
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#209">[ date ]</a>
+              <a href="thread.html#209">[ thread ]</a>
+              <a href="subject.html#209">[ subject ]</a>
+              <a href="author.html#209">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>From: Brian Medley &lt;<A HREF="../../../mailman/listinfo/x-unix.html">bpm-list-osx-unix at 4321.tv</A>&gt;
+</I>&gt;<i>On Thu, Jan 29, 2004 at 07:37:28PM -0500, Our Pal Al wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i>  I could redirect the output into a file no problem but don't know how to
+</I>&gt;&gt;<i>  &quot;bi-direct&quot; it to screen AND file.  Can anybody tell me how?
+</I>&gt;<i>
+</I>&gt;<i>$ echo `uname -a` 2&gt;&amp;1 | tee ~/uname.output
+</I>&gt;<i>Darwin snafu.local 7.2.0 Darwin Kernel Version 7.2.0: Thu Dec 11 
+</I>&gt;<i>16:20:23 PST 2003; root:xnu/xnu-517.3.7.obj~1/RELEASE_PPC Power 
+</I>&gt;<i>Macintosh powerpc
+</I>
+echo `uname -a` 2&gt;&amp;1 | tee ~/uname.output
+takes the stdout of the uname command and saves it in a buffer.  Any 
+stderr o/p that uname might produce goes to wherever stderr goes. 
+The echo then puts the contents of the buffer onto stdout.  The 2&gt;&amp;1 
+joins the stderr *of the echo command* into stdout.
+
+uname is unlikely to produce anything on stderr, but if we regard it 
+as just an example, the above doesn't do  what the left half is 
+intended to do.  To join the streams just do
+uname -a 2&gt;&amp;1 | tee ~/uname.output
+Where the stderr appears in the stdout stream depends on buffering 
+and is not easy to predict.
+
+For a real example try (where /fred doesn't exist)
+ls /private /fred 2&gt;&amp;1 | tee /tmp/list
+then
+cat /tmp/list
+(and then    rm /tmp/list   to tidy up).
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+Chair of HPUX SysAdmin SIG of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x-unix.html">dledger at ivdcs.co.uk</A> (also <A HREF="../../../mailman/listinfo/x-unix.html">dledger at ivdcs.demon.co.uk</A>)
+www.ivdcs.co.uk
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000210.html">[X-Unix] Postfix troubles
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#209">[ date ]</a>
+              <a href="thread.html#209">[ thread ]</a>
+              <a href="subject.html#209">[ subject ]</a>
+              <a href="author.html#209">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

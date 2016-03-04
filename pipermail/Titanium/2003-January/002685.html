@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] OS X on a PC? [forward from a different list]
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20OS%20X%20on%20a%20PC%3F%20%5Bforward%20from%20a%20different%20list%5D&In-Reply-To=list-4595274%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002684.html">
+   <LINK REL="Next"  HREF="002686.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] OS X on a PC? [forward from a different list]</H1>
+    <B>David Remahl</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20OS%20X%20on%20a%20PC%3F%20%5Bforward%20from%20a%20different%20list%5D&In-Reply-To=list-4595274%40mail.ninewire.com"
+       TITLE="[Ti] OS X on a PC? [forward from a different list]">david at ittpoi.com
+       </A><BR>
+    <I>Sun Jan 26 01:21:15 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002684.html">[Ti] MS SQL 2000 Worm
+</A></li>
+        <LI>Next message: <A HREF="002686.html">[Ti] Market Share: 2.3% -- That's NOT good press, coupled
+	with the loss
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2685">[ date ]</a>
+              <a href="thread.html#2685">[ thread ]</a>
+              <a href="subject.html#2685">[ subject ]</a>
+              <a href="author.html#2685">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Of course it is a hoax. It simply isn't possible to get PowerPC code to 
+run without emulation on an x86 architecture. Apple didn't leave 
+&quot;something in the code&quot; that would allow it. They would have to have 
+left an x86 version of the binaries for every little tool and 
+application, and they didn't.
+
+_However_....
+
+There is strong evidence that Apple does have OS X running on Intel. 
+Strong evidence. If you want to see some of it, download Safari and go:
+
+% strings - Safari.app/Contents/MacOS/Safari | grep -A 10 -B 10 Intel
+<A HREF="../../../mailman/listinfo/titanium.html">c0 at 4</A>:<A HREF="../../../mailman/listinfo/titanium.html">8 at 12</A>@16:20
+<A HREF="../../../mailman/listinfo/titanium.html">v0 at 4</A>:<A HREF="../../../mailman/listinfo/titanium.html">8 at 12c16</A>^c20
+{_NSSize=ff}<A HREF="../../../mailman/listinfo/titanium.html">0 at 8</A>:<A HREF="../../../mailman/listinfo/titanium.html">12 at 16</A>{_NSSize=ff}20
+/System/Library/CoreServices/ServerVersion.plist
+/System/Library/CoreServices/SystemVersion.plist
+Unk.
+ProductVersion
+ProductBuildVersion
+%@:%@
+PowerPC
+Intel
+%@ %@ (%@) %d MB
+Single
+Dual
+BugReport
+EmptyIdentifier
+ExtraStuffIdentifier
+Fewer Options
+More Options
+BugReportSheetIsExpanded
+None
+
+Notice the string &quot;Intel&quot; in the middle. This comes from the Safari 
+binary, and provides some support to the fact that OS X is running on 
+Intel somewhere - probably together with Safari - at Apple. I have 
+verified that when sending a bug report Safari checks with the Mach 
+kernel to see what architecture it is runnig on, so this is not simply 
+a compile time flag!
+
+Note that this _could_ also be a leftover from OpenStep. Perhaps they 
+reused some debugging code which was designed to handle different 
+processor families? But Mach didn't run on PPC, did it?
+
+In addition, there is an Open Firmware.app file (or something - my 
+memory deceives me) which is compiled as a fat binary, with both PPC 
+and Mach-O executable code in it. Probably a slip up.
+
+If anyone else has any tangible evidence, please bring it forward. But 
+lets not take the existence of a petition as proof that some unknown 
+person managed to get a normal version of OS X with Aqua running 
+seamlessly on his x86 computer, because that is simply not possible.
+
+/ Regards, David
+
+On Sunday, January 26, 2003, at 02:17 AM, cbirds wrote:
+
+&gt;&gt;<i> It is an obvious hoax. Either by <A HREF="../../../mailman/listinfo/titanium.html">AAWPC at aol.com</A> or by his friend. Lets
+</I>&gt;&gt;<i> not get bogged down in this thread.
+</I>&gt;<i>
+</I>&gt;<i> This is not a hoax. There is something in the code that would allow 
+</I>&gt;<i> this,
+</I>&gt;<i> and I wondered why Apple left it there...someone was bound to crack it.
+</I>&gt;<i> Had you ever seen this website?
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://www.osxonintel.com">http://www.osxonintel.com</A>
+</I>&gt;<i>
+</I>&gt;<i> It had nearly 50,000 signatures on a petition for porting X to Intel 
+</I>&gt;<i> but
+</I>&gt;<i> it seems to have disappeared now.
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002684.html">[Ti] MS SQL 2000 Worm
+</A></li>
+	<LI>Next message: <A HREF="002686.html">[Ti] Market Share: 2.3% -- That's NOT good press, coupled
+	with the loss
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2685">[ date ]</a>
+              <a href="thread.html#2685">[ thread ]</a>
+              <a href="subject.html#2685">[ subject ]</a>
+              <a href="author.html#2685">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

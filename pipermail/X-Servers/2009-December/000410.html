@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Servers] Lost XRaid array, no dhcp
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Servers%5D%20Lost%20XRaid%20array%2C%20no%20dhcp&In-Reply-To=%3C1255BE1F-B11A-40AB-B170-6CE8318779B9%40unibas.ch%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000409.html">
+   <LINK REL="Next"  HREF="000411.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X-Servers] Lost XRaid array, no dhcp</H1>
+    <B>Robert Frank</B> 
+    <A HREF="mailto:x-servers%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Servers%5D%20Lost%20XRaid%20array%2C%20no%20dhcp&In-Reply-To=%3C1255BE1F-B11A-40AB-B170-6CE8318779B9%40unibas.ch%3E"
+       TITLE="[X-Servers] Lost XRaid array, no dhcp">robert.frank at unibas.ch
+       </A><BR>
+    <I>Thu Dec 10 12:50:49 PST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000409.html">[X-Servers] Mac mini server?
+</A></li>
+        <LI>Next message: <A HREF="000411.html">[X-Servers] noSpamViagraCialisLavitra  57% 0FF
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#410">[ date ]</a>
+              <a href="thread.html#410">[ thread ]</a>
+              <a href="subject.html#410">[ subject ]</a>
+              <a href="author.html#410">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+this morning was a catastrophe:
+
+after a seemingly harmless java upgrade on two servers, one suddenly  
+lost the array on the xraid and stopped responding to dhcp requests.
+The set-up:
+xserver PPC with 10.5.8, connected to xRaid via fibre channel with one  
+array on the drives in the right bay (8-14)
+xserver Intel with 10.5.8 connected to xRaid via fibre channel with  
+one array on the drives in the left bay (1-7)
+xRaid with 1.5.1 software, two independent arrays, connected to the  
+inter and intranet
+All green lights, no error messages in the logs anywhere.
+
+Both servers did the update, then rebooted. The PPC server immediately  
+found and mounted the array.
+The Intel server no longer sees the array. (No SCSI address, no LUN  
+when using the system profiler and inspecting the fibre channel).
+The array is there, in good condition and available.
+The xRaid was powered up all times.
+
+Tried powering off the raid, then reapplying power, rebooted the  
+server(s) - nothing changed, no errors reported. The drive simply has  
+no SCSI address assigned to it and thus is invisible to the server.  
+Lun masking is off. I am currently conditioning the array.
+The only good thing is that I have a good backup ... but it would take  
+approx. 3 days to rebuild the array and recover from backup.
+Apple suggested moving all drives to the other controller, or  
+switching controllers. A technician from a company warned about a  
+possible data loss...
+Any suggestions greatly appreciated.
+
+The other very annoying thing is dhcp. The Intel server is and OD  
+master, which also supplied dhcp. I have two networks: the 'internet'  
+and a private intranet with no connection to the 'internet'. The dhcp  
+server serves both. The addresses for the machines (all servers) on  
+the intranet are entered in the static maps of the dhcp service and  
+are all ok. The addresses for all machines on the internet are in the  
+ldap database (machines) and were always used just fine by dhcp (even  
+after reboots). Now, dhcp simply ignores those entries, but ldap is  
+used for other things, amongst them login. Again, I see no errors  
+which could be linked to this phenomena. Anybody any ideas?
+
+Many, many thanks in advance for all help.
+Robert
+
+
+Departement Informatik   FGB   tel   +41 (0)61 267 14 66
+Universit&#228;t Basel                          fax. +41 (0)61 267 14 61
+Robert Frank
+Klingelbergstrasse 50                 <A HREF="../../../mailman/listinfo/x-servers.html">Robert.Frank at unibas.ch</A>
+CH-4056 Basel
+Switzerland                                   <A HREF="http://www.informatik.unibas.ch/personen/frank_r.html">http://www.informatik.unibas.ch/personen/frank_r.html</A>
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000409.html">[X-Servers] Mac mini server?
+</A></li>
+	<LI>Next message: <A HREF="000411.html">[X-Servers] noSpamViagraCialisLavitra  57% 0FF
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#410">[ date ]</a>
+              <a href="thread.html#410">[ thread ]</a>
+              <a href="subject.html#410">[ subject ]</a>
+              <a href="author.html#410">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-servers.html">More information about the X-Servers
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

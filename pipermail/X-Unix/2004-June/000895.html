@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] syslogd problems
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20syslogd%20problems&In-Reply-To=list-13828218%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000894.html">
+   <LINK REL="Next"  HREF="000896.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] syslogd problems</H1>
+    <B>Kevin Stevens</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20syslogd%20problems&In-Reply-To=list-13828218%40mail.ninewire.com"
+       TITLE="[X-Unix] syslogd problems">groups at pursued-with.net
+       </A><BR>
+    <I>Wed Jun  9 10:59:00 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000894.html">[X-Unix] Question about the latest security updates
+</A></li>
+        <LI>Next message: <A HREF="000896.html">[X-Unix] Yet another confirmation on netwrok
+ connection...........
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#895">[ date ]</a>
+              <a href="thread.html#895">[ thread ]</a>
+              <a href="subject.html#895">[ subject ]</a>
+              <a href="author.html#895">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Wed, 9 Jun 2004, William H. Magill wrote:
+
+&gt;<i> It depends.
+</I>&gt;<i> Apple does not simply implement ALL of FreeBSD. Nor is it &quot;current.&quot; I
+</I>&gt;<i> believe Darwin is now &quot;based&quot; on 4.5, but I'd have to go through the
+</I>&gt;<i> Darwin website and read up.
+</I>
+Of course if Apple just put the correct man pages on the system in the
+first place, we wouldn't have to try to decide which alternate
+documentation to use.  ;)
+&gt;<i>
+</I>&gt;<i> &gt; Maybe.  But by &quot;unresponsive&quot; I mean that the mouse will move around
+</I>&gt;<i> &gt; the screen, but won't activate/bring forward different running windows
+</I>&gt;<i> &gt; (though the window contents, for example 'top', keep refreshing).
+</I>&gt;<i> &gt; That doesn't seem very disk-ish.  How would I check, some incantation
+</I>&gt;<i> &gt; of vmstat or iostat?
+</I>&gt;<i>
+</I>&gt;<i> Sounds more like a memory subsystem issue.
+</I>
+I'm very much a casual user (I'm a network guy), without enough insight to
+do much more than run top and be confused by the output.  Typically on
+this 1.5GB system I show very little memory free, but a lot inactive,
+which makes sense.  Here's a typical shot:
+
+Processes:  71 total, 2 running, 69 sleeping... 140 threads 10:30:16 Load
+Avg:  0.06, 0.03, 0.00 CPU usage:  0.5% user, 0.4% sys, 99.0% idle
+SharedLibs: num = 109, resident = 24.3M code, 2.53M data, 6.50M LinkEdit
+MemRegions: num = 3586, resident = 45.3M + 10.7M private, 46.5M shared
+PhysMem:  101M wired, 151M active, 1.20G inactive, 1.45G used, 55.3M free
+VM: 4.84G + 74.3M 28638(0) pageins, 12307(0) pageouts
+
+What I don't understand is why, if I load a largish program from this
+point, I get pageouts instead of simply deallocating some of that vast
+pool of inactive memory (it actually does that, I've watched it with some
+slow growth apps like pine sorting a large newsgroup).  Or why I need 3+
+GB of swap in the first place, or why after allocating all that &quot;base&quot;
+swap it needs to add another 74MB swap file.  But like I said, I'm not a
+memory management expert by any means, and I'm willing to accept that all
+is for the best in the best of all Apple-designed worlds.  ;)
+
+&gt;<i> problems. Virtual memory is not as much a &quot;done deal&quot; as it seems to
+</I>&gt;<i> be. It means different things to different people, and it is
+</I>&gt;<i> implemented differently, as well as with different assumptions by
+</I>&gt;<i> virtually every OS.
+</I>
+Agree, there was a recent discussion on slashdot that basically
+illustrated your conclusion.
+
+&gt;<i>  From comments I've read and some empirical information, it appears that
+</I>&gt;<i> Darwin attempts to keep &quot;maximum stuff for a program in physical
+</I>&gt;<i> memory&quot; if at all possible. Possibly with minimal garbage collection.
+</I>&gt;<i>
+</I>&gt;<i> Frequently, the &quot;expectations&quot; that the user has about how a program
+</I>&gt;<i> works is quite different from those of the original programmer.
+</I>
+Agreed!  For example, I expect to be able to log a small number of
+messages from an external source without my dual processor 1.5GB machine
+locking up.  (ducking)
+
+&gt;<i> That is to say, if there is only one program running, and it has a
+</I>&gt;<i> large data space (like syslogd would after a time running) it could
+</I>&gt;<i> completely fill all of physical memory and all of swap, even though
+</I>&gt;<i> much or most of the space is occupied by data which will not be
+</I>&gt;<i> referenced again... typical of a logging situation. This means that for
+</I>&gt;<i> a new program to launch, the memory subsystem first has to do
+</I>&gt;<i> significant garbage collection and cleanup.
+</I>
+Understand.  All I can report is that the &quot;top&quot; statistics don't seem to
+change much in that scenario:  I don't see a lot of stuck processes, I
+don't see any app tying up memory, the various memory pools seem to be
+allocated in about the same way.
+
+&gt;<i> One &quot;user expectation&quot; about syslogd is that it is a very limited
+</I>&gt;<i> program in its resource demands. However, since it is written to be a
+</I>&gt;<i> &quot;dynamic&quot; program, which will not suddenly fail because the volume of
+</I>&gt;<i> data for its buffers exceeds what the programmer decided was &quot;a
+</I>&gt;<i> reasonable amount,&quot; that is undoubtedly an &quot;unreasonable&quot; assumption.
+</I>
+Ok... but it's running all the time ANYWAY.  Normal mail and news logging
+is massively greater than the few alarm messages I get from my firewall,
+and they have never had any impact on the system whatever.
+
+&gt;<i> I suspect that the only thing which will tell you what is happening is
+</I>&gt;<i> something like the old unix Profiler application, which requirers that
+</I>&gt;<i> the hooks be compiled in.  If Darwin implemented System Accounting, it
+</I>&gt;<i> might be possible to find out fairly painlessly what any given
+</I>&gt;<i> application was actually doing and how it was interacting with the
+</I>&gt;<i> operating system. The problem is that such things generate sufficient
+</I>&gt;<i> overhead that they are eliminated from virtually all modern operating
+</I>&gt;<i> system implementations to enhance performance. (Not to mention the fact
+</I>&gt;<i> that their usage is more than slightly arcane.) Consequently one has to
+</I>&gt;<i> find and install them and hope that they actually do integrate
+</I>&gt;<i> correctly.
+</I>
+I've just enough expertise to flounder through a &quot;truss&quot; log and figure
+out what file an app is looking for that it can't find.  I suspect that's
+not enough.  ;)
+
+&gt;<i> In the end, suspect you will discover that you are not seeing a bug,
+</I>&gt;<i> but rather &quot;unexpected, but correct&quot; behavior.
+</I>
+I understand the distinction you're making, but not sure what to do with
+it.
+
+&gt;<i> One clue would be ... if you play with the system in its sluggish
+</I>&gt;<i> state, does its performance improve over time? ... where time is a
+</I>&gt;<i> parameter defined in the same sense that the timers in SMTP are
+</I>&gt;<i> defined. (Which are NOT as short as most people assume them to be.)
+</I>
+Can't really say.  The system is not perceived as sluggish, it is
+perceived as totally unresponsive, so I've not played with it for more
+than a few minutes before doing a cold start.  I can say that once it
+enters this state, it doesn't recover over a period of several days, since
+that's how long it took me to get someone over to reset the box when I was
+out of town and decided to fiddle with syslogd in the first place.  Power
+cycle is the only way I know to resolve the situation.  Followed by a
+reboot, BTW, as one REALLY, REALLY, BAD THING about OS X 10.3x is that the
+system will not come up reliably after a power cycle.  I don't mean
+unreliable as in fdisk gets stuck and you have to manually intervene, I
+mean unreliable as in it appears to come up properly, after an expected
+interval of &quot;checking local disks&quot;, but is not in fact running critical
+services such as mail, DNS, or remote access (ssh).  You HAVE to do a
+normal reboot after a dirty start in order to ensure proper operation.
+This is a problem if you aren't physically at the box, because you can't
+log in remotely to do it.
+
+My assumption is that the rc dependencies aren't bulletproof, but whatever
+the cause,it's a very, very bad thing.
+
+But I digress.  Thanks very much for your insight!
+
+KeS
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000894.html">[X-Unix] Question about the latest security updates
+</A></li>
+	<LI>Next message: <A HREF="000896.html">[X-Unix] Yet another confirmation on netwrok
+ connection...........
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#895">[ date ]</a>
+              <a href="thread.html#895">[ thread ]</a>
+              <a href="subject.html#895">[ subject ]</a>
+              <a href="author.html#895">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

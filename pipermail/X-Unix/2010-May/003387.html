@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Hardware RAID Setup
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20Hardware%20RAID%20Setup&In-Reply-To=%3C201005121836.o4CIaE20038203%40x.it.okstate.edu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="003388.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X-Unix] Hardware RAID Setup</H1>
+    <B>Martin McCormick</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20Hardware%20RAID%20Setup&In-Reply-To=%3C201005121836.o4CIaE20038203%40x.it.okstate.edu%3E"
+       TITLE="[X-Unix] Hardware RAID Setup">martin at x.it.okstate.edu
+       </A><BR>
+    <I>Wed May 12 11:36:14 PDT 2010</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="003388.html">[X-Unix] Hardware RAID Setup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3387">[ date ]</a>
+              <a href="thread.html#3387">[ thread ]</a>
+              <a href="subject.html#3387">[ subject ]</a>
+              <a href="author.html#3387">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is a new Mac Pro with a hardware RAID card. It came with 2
+1 TB disks and I am trying to set them up as a raid 1 mirroring
+configuration.
+
+raidutil list raidsetinfo
+
+produced the fact that the drive in Bay 1 was a member of
+raidset RS1 and the drive in Bay 2 was a member of raidset RS2.
+to make a RAID 1, I understand that I should have them both
+members of the same raidset so I set about to make that happen.
+This meant dismounting /Volumes/Macintosh HD and ultimately
+/Volumes/Macintosh HD 2 which held the OS so I did this from the
+Installation disk.
+
+	This means that after that time, there was no startup or
+boot disk visible.
+
+going to the GUI in raidutility, the raid 1 was actually the
+default configuration so I clicked Create.
+
+	Going back to Terminal and the Command line, 
+
+raidutil list raidsetinfo shows a 1 TB raid consisting of the
+drives in Bay 1 and Bay 2 just like one would expect.
+
+I used radutility to create a volume which I named main1 with
+the following command:
+
+raidutil create volume --name main1 --raidset RS1 --size all
+
+and there was an appropriate pause of a few seconds after which
+raidutil said it was initializing. A few hours later,
+
+raidutil list status
+
+said all was well with both the raid controller and the volume
+main1.
+
+	I am now stuck as to what to do next. Somehow, I must go
+from this volume to a mountable device that the startup disk
+chooser can see. The man pages for raidutil and diskutil haven't
+made any light bulbs come on in my head yet regarding how to
+turn this volume in to something that looks like a single disk
+which is the whole idea behind the hardware raid.
+
+	Right now, the startup disk selector has only the
+Installation DVD and network startup as options.
+
+	I fully expect to have to reinstall MacOS, but I am
+confused as to how to make the raid volume show up as a disk.
+
+	Thanks for any suggestions.
+
+Martin McCormick WB5AGZ  Stillwater, OK 
+Systems Engineer
+OSU Information Technology Department Telecommunications Services Group
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="003388.html">[X-Unix] Hardware RAID Setup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3387">[ date ]</a>
+              <a href="thread.html#3387">[ thread ]</a>
+              <a href="subject.html#3387">[ subject ]</a>
+              <a href="author.html#3387">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

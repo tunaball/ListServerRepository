@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Using the CLI to delete &quot;pesky&quot; files/folders
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Using%20the%20CLI%20to%20delete%20%22pesky%22%20files/folders&In-Reply-To=B3786D85-BCB8-4D2F-A997-5BA6B0E99B87%40nilzero.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001867.html">
+   <LINK REL="Next"  HREF="001860.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Using the CLI to delete &quot;pesky&quot; files/folders</H1>
+    <B>Mark Gibson</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Using%20the%20CLI%20to%20delete%20%22pesky%22%20files/folders&In-Reply-To=B3786D85-BCB8-4D2F-A997-5BA6B0E99B87%40nilzero.com"
+       TITLE="[X-Unix] Using the CLI to delete &quot;pesky&quot; files/folders">gibsonm at bigpond.net.au
+       </A><BR>
+    <I>Mon Apr 25 00:13:55 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001867.html">[X-Unix] Using the CLI to delete &quot;pesky&quot; files/folders
+</A></li>
+        <LI>Next message: <A HREF="001860.html">[X-Unix] Using the CLI to delete &quot;pesky&quot; files/folders
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1868">[ date ]</a>
+              <a href="thread.html#1868">[ thread ]</a>
+              <a href="subject.html#1868">[ subject ]</a>
+              <a href="author.html#1868">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 02:15 -0400 25/4/05, Chris Garaffa wrote:
+&gt;<i>On Apr 25, 2005, at 2:00 AM, Mark Gibson wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i>rm: /Volumes/Leviathan/.Trashes/501/Alfred 
+</I>&gt;&gt;<i>Hitchcock/.Trashes/501/Macintosh HD/$$$$HFS+ Private 
+</I>&gt;&gt;<i>Data/iNode191746261: Operation not permitted
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>rm: /Volumes/Leviathan/.Trashes/501/Alfred 
+</I>&gt;&gt;<i>Hitchcock/.Trashes/501/Macintosh HD/$$$$HFS+ Private 
+</I>&gt;&gt;<i>Data/iNode212258254: Operation not permitted
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>rm: /Volumes/Leviathan/.Trashes/501/Alfred 
+</I>&gt;&gt;<i>Hitchcock/.Trashes/501/Macintosh HD/$$$$HFS+ Private 
+</I>&gt;&gt;<i>Data/iNode307824737: Operation not permitted
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>I've seen this with corrupted directory structures. Have you tried 
+</I>&gt;<i>rebooting into Single User mode and running fsck?
+</I>&gt;<i>1. Reboot, holding down the Command and S keys
+</I>&gt;<i>2. When shown the UNIX prompt, type &quot;fsck -yf /&quot;.
+</I>&gt;<i>This will at least attempt to repair the startup volume. If it 
+</I>&gt;<i>doesn't work, consider investing in a copy of DiskWarrior or Drive10.
+</I>&gt;<i>Also, since it looks like you have multiple discs or partitions, try 
+</I>&gt;<i>using Disk Utility to repair those that aren't your startup volume.
+</I>&gt;<i>
+</I>&gt;<i>Best of luck
+</I>&gt;<i>
+</I>&gt;<i>--
+</I>&gt;<i>Chris Garaffa
+</I>&gt;<i>&lt;mailto:<A HREF="../../../mailman/listinfo/x-unix.html">chris at nilzero.com</A>&gt;<A HREF="../../../mailman/listinfo/x-unix.html">chris at nilzero.com</A>
+</I>
+Chris,
+
+Disk Utility told me the drive couldn't be unmounted (even though its 
+not the boot disk). So I started the machine off a 10.3 Install CD. 
+That copy of Disk Utility said the volume was OK.
+
+I've also tried Disk Warrior 3.0.2 on this with no success that's why 
+I'm now reluctantly &quot;peeking under the hood&quot;.
+-- 
+
+Regards,
+
+Mark (}-:
++61 (0)4 1927 7198
+Skype / AIM / iChat: gibsonm1
+
+Einstein never accepted quantum mechanics because of this element of 
+chance and uncertainty. He said, &quot;God does not play dice.&quot; It seems 
+that Einstein was doubly wrong. The quantum effects
+of black holes suggests that not only does God play dice, He 
+sometimes throws them where they cannot be seen.  --Steven Hawking
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <A HREF="../attachments/20050425/4d1f8478/attachment.html">http://listserver.themacintoshguy.com/pipermail/x-unix/attachments/20050425/4d1f8478/attachment.html</A>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001867.html">[X-Unix] Using the CLI to delete &quot;pesky&quot; files/folders
+</A></li>
+	<LI>Next message: <A HREF="001860.html">[X-Unix] Using the CLI to delete &quot;pesky&quot; files/folders
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1868">[ date ]</a>
+              <a href="thread.html#1868">[ thread ]</a>
+              <a href="subject.html#1868">[ subject ]</a>
+              <a href="author.html#1868">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

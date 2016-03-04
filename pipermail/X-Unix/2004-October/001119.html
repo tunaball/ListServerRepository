@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] &gt;console login problems
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20%3Econsole%20login%20problems&In-Reply-To=43AFF302-18DE-11D9-8A7E-000D9333E43C%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001118.html">
+   <LINK REL="Next"  HREF="001120.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] &gt;console login problems</H1>
+    <B>Justin Herald</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20%3Econsole%20login%20problems&In-Reply-To=43AFF302-18DE-11D9-8A7E-000D9333E43C%40secure-computing.net"
+       TITLE="[X-Unix] &gt;console login problems">justin.herald at sbcglobal.net
+       </A><BR>
+    <I>Thu Oct  7 21:02:16 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001118.html">[X-Unix] &gt;console login problems
+</A></li>
+        <LI>Next message: <A HREF="001120.html">[X-Unix] &gt;console login problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1119">[ date ]</a>
+              <a href="thread.html#1119">[ thread ]</a>
+              <a href="subject.html#1119">[ subject ]</a>
+              <a href="author.html#1119">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+#
+#       @(#)ttys        5.2 (Berkeley) 6/10/93
+#
+# name  getty                           type    status          comments
+#
+# If the console is marked insecure, single-user requires
+# the root password.
+##
+# Since DirectoryServices is not running by the time we enter
+# single-user mode, init will ask for the non-shadow crypt
+# password stored for root in /etc/master.passwd.  If no such
+# password exists, it will not be possible to enter single-user
+# mode from a console marked insecure.
+##
+#console        &quot;/usr/libexec/getty std.57600&quot;  vt100   on secure
+console  
+&quot;/System/Library/CoreServices/loginwindow.app/Contents/MacOS/ 
+loginwindo$
+#tahoe's only
+
+On Oct 7, 2004, at 11:58 PM, Eric Crist wrote:
+
+&gt;<i> On Oct 7, 2004, at 9:17 PM, Justin Herald wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Yea, I do have root enabled.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I have to wonder if it has anything to do with /etc/ttys because i  
+</I>&gt;&gt;<i> tried editing that file a while ago to accomplish no login window,  
+</I>&gt;&gt;<i> but when I did that what happened was my screen flashed twice, then  
+</I>&gt;&gt;<i> continued to boot up normally until it came to loading the login  
+</I>&gt;&gt;<i> window then it made no more progress. Then I tried logging in with  
+</I>&gt;&gt;<i> single user, but nothing would show up on my display. I was lucky  
+</I>&gt;&gt;<i> that I always enable telnet, ssh, ftp, etc. I couldn't login with  
+</I>&gt;&gt;<i> telnet from my linux machine with the ibook running on airport, so  
+</I>&gt;&gt;<i> what I had to do was plug it into the router and change the comments  
+</I>&gt;&gt;<i> back.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Inconsequential, I know. But maybe that problem would shed light onto  
+</I>&gt;&gt;<i> this current problem.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Oct 7, 2004, at 9:56 PM, Eric Crist wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> If you don't have the root account enabled, try that
+</I>&gt;&gt;<i> -- Justin Herald
+</I>&gt;<i>
+</I>&gt;<i> Copy/paste your /etc/ttys file here and I'll take a look at it, if  
+</I>&gt;<i> you're still having problems.  When you try to boot into single user  
+</I>&gt;<i> mode, you need to press command-s AFTER the startup tone, and before  
+</I>&gt;<i> you get the gray screen with an apple (i.e. during the gray screen  
+</I>&gt;<i> without the apple.  If you press/hold the combination before the  
+</I>&gt;<i> startup tone, the system will hang)
+</I>&gt;<i>
+</I>&gt;<i> -----
+</I>&gt;<i> Eric F Crist
+</I>&gt;<i> Secure Computing Networks
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>- -- Justin Herald
+
+  Somebody ought to cross ball point pens with coat hangers so that the
+pens will multiply instead of disappear.
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.4 (Darwin)
+
+iD8DBQFBZhFJSdn966pqU1gRAlCLAJ4sReHwgaIlSKWDV0VzCRg37i9ajwCfcNSM
+dl/lztkaBMLukFQsE3+6c1c=
+=g7qY
+-----END PGP SIGNATURE-----
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001118.html">[X-Unix] &gt;console login problems
+</A></li>
+	<LI>Next message: <A HREF="001120.html">[X-Unix] &gt;console login problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1119">[ date ]</a>
+              <a href="thread.html#1119">[ thread ]</a>
+              <a href="subject.html#1119">[ subject ]</a>
+              <a href="author.html#1119">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

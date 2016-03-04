@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] SCSI ID question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20SCSI%20ID%20question&In-Reply-To=list-11163133%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="006046.html">
+   <LINK REL="Next"  HREF="006048.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] SCSI ID question</H1>
+    <B>Ron Steinke</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20SCSI%20ID%20question&In-Reply-To=list-11163133%40mail.ninewire.com"
+       TITLE="[G4] SCSI ID question">ronsteinke at mac.com
+       </A><BR>
+    <I>Mon Mar  1 23:35:17 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="006046.html">[G4] SCSI ID question (G3)
+</A></li>
+        <LI>Next message: <A HREF="006048.html">[G4] Forced Dual Boot Mutation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6047">[ date ]</a>
+              <a href="thread.html#6047">[ thread ]</a>
+              <a href="subject.html#6047">[ subject ]</a>
+              <a href="author.html#6047">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 1 Mar, 2004, at 21:49, Donald Town Jr. wrote:
+
+&lt;&lt; After popping two of the newer drives in and starting up, (Thinking 
+I had
+successfully changed a scsi id) I decided I better ask here for someone
+to straighten me out on if that still applies to the different newer
+drives.
+
+Also, the profiler said one drive was on ata 1 and the other on ata 0.
+Both had ID 0, and I don't know of that is allowable on that machine so 
+I
+shut it down to await clarification of what is 'doable' safely. &gt;&gt;
+
+It appears that you have successfully installed the two IDE hard drives 
+on separate bus ribbons. You should have no further problems except 
+that attaching a slower device to the ribbon attached to a fast hard 
+drive may cause the drive to operate at a slower speed than it is rated 
+for. I would suggest attempting to link both drives on the same ribbon 
+after identifying them as &quot;Master&quot; and |&quot;Slave&quot; drives. That would 
+leave the second ribbon available for the CD and Zip drives. You may 
+need to have custom length IDE ribbons built for you at a local 
+computer store.
+
+The SCSI socket on the mother board gives you the ability to attach up 
+to eight SCSI devices to that circuit (SCSI IDs from &quot;0&quot; to &quot;7&quot; equals 
+8 devices). The primary limiting factor here is the number of power 
+connections that are available and the power output of the power 
+supply. You also have the limitation of available mounting locations 
+inside the G3 case - usually there is not space for more than three 
+devices such as Zip drives, hard drives, and CD readers/burners in 
+addition to the original equipment installed (Floppy drive, original 
+hard drive, and CD drive).
+
+As long as you provide the SCSI devices with different identities (no 
+duplicate numbers), you should see each device as a separate icon on 
+your desktop when you boot-up. You can then treat each device as an 
+individual site and choose to store your data in whichever location you 
+want. If you want, you can install separate operating systems on each 
+drive and choose to start up from different drives as the need arises. 
+Just remember to identify each drive as a separate identity.
+
+Look for the SCSI identification bridge pins on the drives. They are 
+usually identified by the letters &quot;A0, A1 and A2&quot; or just as &quot;0, 1, and 
+2&quot; printed on the circuit board. &quot;0&quot; equals ID-1, &quot;1&quot; equals ID-2, and 
+&quot;2&quot; equals ID-4. Placing bridges on the sets of pins in different 
+combinations creates the SCSI identification, ie: no bridge equals 
+SCSI-0, bridge on &quot;0&quot; equals SCSI-1, bridge on &quot;1&quot; equals SCSI-2, 
+bridges on &quot;0&quot; and &quot;1&quot; equals SCSI-3, bridge on &quot;2&quot; equals SCSI-4, 
+bridges on &quot;0&quot; and &quot;2&quot; equals SCSI-5, bridges on &quot;1&quot; and &quot;2&quot; equals 
+SCSI-6, and bridges on all three (&quot;0&quot;, &quot;1&quot;, and &quot;2&quot;) equals SCSI-7.
+
+Good luck with your adventures into the world of SCSI.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="006046.html">[G4] SCSI ID question (G3)
+</A></li>
+	<LI>Next message: <A HREF="006048.html">[G4] Forced Dual Boot Mutation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6047">[ date ]</a>
+              <a href="thread.html#6047">[ thread ]</a>
+              <a href="subject.html#6047">[ subject ]</a>
+              <a href="author.html#6047">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Apache re-compile question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Apache%20re-compile%20question&In-Reply-To=da0a1578ecaf82c97d2d19501359dffc%40mcgillsociety.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001530.html">
+   <LINK REL="Next"  HREF="001532.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Apache re-compile question</H1>
+    <B>Ian Knox</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Apache%20re-compile%20question&In-Reply-To=da0a1578ecaf82c97d2d19501359dffc%40mcgillsociety.org"
+       TITLE="[X-Unix] Apache re-compile question">ianknox at uic.edu
+       </A><BR>
+    <I>Mon Feb 14 08:07:08 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001530.html">[X-Unix] Installing Darwin from Aluminum PowerBook G4
+</A></li>
+        <LI>Next message: <A HREF="001532.html">[X-Unix] Installing Darwin from Aluminum PowerBook G4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1531">[ date ]</a>
+              <a href="thread.html#1531">[ thread ]</a>
+              <a href="subject.html#1531">[ subject ]</a>
+              <a href="author.html#1531">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Howdy folks,
+I recently did a complete re-compile of apache on one of my 10.3.8 machines
+to support a static mod_perl (and some other stuff).  It went fine but I
+used an incorrect --prefix flag so the new apache installed in
+/usr/local/apache/ instead of the default apple weirdness of /usr/sbin for
+httpd and /etc/httpd/ for the config file.
+
+Now I thought I'd be clever and just rename the original httpd, httpd.conf
+and apachectl files and make links to the new ones (sudo ln
+/usr/local/apache/bin/httpd /usr/sbin/httpd etc..)
+
+Well this worked pretty well, apachectl from the command line works
+correctly but the preference pane for sharing seems borked-- when I try to
+start or stop the service it just freezes.  Now I would suspect that there
+is some other file that needs to be re-named and linked but I don't know
+what it is.
+
+Does anyone know what kind of voodoo is required to make the preference pane
+happy?  It's personally no skin off my nose but some of the people who will
+be administering this machine are... well lets say command line challenged.
+:<i>)
+</I>Cheers,
+Ian
+
+--
+Ian Knox
+Technical support/Web programming
+Office of Publications/CAS ITSP
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001530.html">[X-Unix] Installing Darwin from Aluminum PowerBook G4
+</A></li>
+	<LI>Next message: <A HREF="001532.html">[X-Unix] Installing Darwin from Aluminum PowerBook G4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1531">[ date ]</a>
+              <a href="thread.html#1531">[ thread ]</a>
+              <a href="subject.html#1531">[ subject ]</a>
+              <a href="author.html#1531">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Re: Leopard Issues - Some Responses
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Re%3A%20Leopard%20Issues%20-%20Some%20Responses&In-Reply-To=p06240803c37c4f256dc6%40%5B10.0.1.15%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="019322.html">
+   <LINK REL="Next"  HREF="019320.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Re: Leopard Issues - Some Responses</H1>
+    <B>John Douglass - User</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Re%3A%20Leopard%20Issues%20-%20Some%20Responses&In-Reply-To=p06240803c37c4f256dc6%40%5B10.0.1.15%5D"
+       TITLE="[X4U] Re: Leopard Issues - Some Responses">douglass at cs.clemson.edu
+       </A><BR>
+    <I>Wed Dec  5 06:58:01 PST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="019322.html">[X4U] Re: Leopard Issues - Some Responses
+</A></li>
+        <LI>Next message: <A HREF="019320.html">[X4U] Re: Leopard Issues - Some Responses
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19323">[ date ]</a>
+              <a href="thread.html#19323">[ thread ]</a>
+              <a href="subject.html#19323">[ subject ]</a>
+              <a href="author.html#19323">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Dec 5, 2007, at 5:52 AM, Daly Jessup wrote:
+&gt;<i>
+</I>&gt;<i> But then why might it work on his Tiger machine and not on his  
+</I>&gt;<i> Leopard machine. If Verizon were doing it, wouldn't they both fail?
+</I>&gt;<i>
+</I>&gt;<i> Daly
+</I>
+One word answer: NO
+
+Longer answer -- there happens to be more variables then we can control.
+
+As I conceded in a previous post, Tiger and Leopard are using  
+different versions of almost all the open source tools that lie  
+underneath (primarily libresolv [dns resolver library] and WebKit  
+[what Safari is built upon]) and thus may behave differently.  These  
+tools don't come from Apple (although admittedly WebKit does come from  
+Apple but is a forked version of KHTML so it is not ONLY Apple).
+
+It is easy for me to see how these tools could behave differently  
+under what could be may or may not be considered an error condition.   
+Remember, the Verizon DNS server is not returning the NXDOMAIN (non  
+existent domain error) when the 'host jr' question is asked, it is  
+returning NOERROR and not putting anything in the RR (return record).   
+It is not an error then, it is simply a return record that is not  
+defined.  NXDOMAIN tells the browser that the host wasn't found and  
+that  it then applies domain guessing.  NOERROR tells the browser no  
+such thing.
+
+Without reviewing the DNS RFCs I'm not sure whether the handling of  
+NOERROR without an RR is defined or not (I suspect not), which would  
+mean that it could be very implementation dependent.  I suspect the  
+behavior change is in the libresolv or related code and not WebKit  
+since the original poster said that it worked under Tiger under Safari  
+3.0.4, which would use the same version of WebKit as Safari 3.0.4  
+under Leopard
+
+NB: brings up an interesting test if the poster who has problems has  
+access to Windows -- how does Safari under Windows behave?  MS  
+obviously uses different DNS revolver code then does Apple, so it may  
+behave entirely different to either of the others.
+
+I will end with the following:
+
+1) I believe the behavior of handling the NOERROR return from DNS may  
+have changed.  I also believe it was not Apple, as I'm sure that this  
+handler is in one of the open source tools/libraries that OSX is built  
+upon.
+
+2) I believe that Verizon is not returning the appropriate DNS  
+response since &quot;jr&quot; is NOT an existing domain, and thus the proper  
+response should be NXDOMAIN (this is fairly clearly defined in the  
+RFCs).
+
+I would be interested in seeing the output from the various commands  
+suggested (host, dig, and the tcpdump).  I know more than I care to  
+about DNS debugging and tcp packet analysis;  I would be happy to  
+attempt to explain the output to others.
+
+-- John
+
+
+
+
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="019322.html">[X4U] Re: Leopard Issues - Some Responses
+</A></li>
+	<LI>Next message: <A HREF="019320.html">[X4U] Re: Leopard Issues - Some Responses
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19323">[ date ]</a>
+              <a href="thread.html#19323">[ thread ]</a>
+              <a href="subject.html#19323">[ subject ]</a>
+              <a href="author.html#19323">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Advice Re: Security Update/!st Time App Launch Issue
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Advice%20Re%3A%20Security%20Update/%21st%20Time%20App%20Launch%20Issue&In-Reply-To=3E69F14B-0FDA-11D9-A40C-00039301ACF8%40astcomm.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000123.html">
+   <LINK REL="Next"  HREF="000127.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Advice Re: Security Update/!st Time App Launch Issue</H1>
+    <B>Norman Cohen</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Advice%20Re%3A%20Security%20Update/%21st%20Time%20App%20Launch%20Issue&In-Reply-To=3E69F14B-0FDA-11D9-A40C-00039301ACF8%40astcomm.net"
+       TITLE="[Ti] Advice Re: Security Update/!st Time App Launch Issue">nacohen at mac.com
+       </A><BR>
+    <I>Sun Sep 26 10:17:30 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000123.html">[Ti] Advice Re: Security Update/!st Time App Launch Issue
+</A></li>
+        <LI>Next message: <A HREF="000127.html">[Ti] Advice Re: Security Update/!st Time App Launch Issue
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#124">[ date ]</a>
+              <a href="thread.html#124">[ thread ]</a>
+              <a href="subject.html#124">[ subject ]</a>
+              <a href="author.html#124">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Using SystemStarter seems pretty neat; however, reading through the  
+documentation that Chris mentioned raises at least one question for me.  
+Since SystemStarter is a legacy approach, how does one assure that the  
+daemons run via the new in Panther /etc/mach_init.d and  
+/etc/mach_init_per_user.d approach get restarted appropriately after a  
+system update? Just running sudo SystemStarter restart won't get such  
+services as MirrorAgent, lookupd, configd, etc. restarted. It sounds as  
+though one has to either reboot or look through the bom file that came  
+with the updates to determine which components were updated. If the  
+daemon is handled through the new mechanism then the sudo kill -HUP  
+&lt;daemon&gt; approach needs to be done, as best I can tell. Thanks for any  
+additional info!
+
+Norm
+Norman Cohen
+<A HREF="../../../mailman/listinfo/titanium.html">nacohen at mac.com</A>
+
+&quot;I have such poor vision I can date anybody.&quot;
+Garry Shandling
+
+On Sep 26, 2004, at 9:36 AM, Chris Olson wrote:
+
+&gt;<i> On Sep 26, 2004, at 8:16 AM, Peter Krug wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> But how do you know for sure which subsystems were affected and which  
+</I>&gt;&gt;<i> programs to restart?  Or should I RTF man pages?  They always seem to  
+</I>&gt;&gt;<i> confuse me - sample commands explaining the variables would be real  
+</I>&gt;&gt;<i> helpful for me.
+</I>&gt;<i>
+</I>&gt;<i> The documentation is fairly thorough on which systems are affected  
+</I>&gt;<i> just by reading the supporting information on Apple's website  
+</I>&gt;<i> regarding the update.  If it's at all confusing, I'd recommend the  
+</I>&gt;<i> reboot option until you get a better handle on BSD systems in general,  
+</I>&gt;<i> the Darwin system in particular, and understand how the init system  
+</I>&gt;<i> works.
+</I>&gt;<i>
+</I>&gt;<i> Perhaps this link to the ADC documentation would be helpful:
+</I>&gt;<i> <A HREF="http://developer.apple.com/documentation/MacOSX/Conceptual/">http://developer.apple.com/documentation/MacOSX/Conceptual/</A> 
+</I>&gt;<i> BPSystemStartup/Tasks/ManagingStartupItems.html
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000123.html">[Ti] Advice Re: Security Update/!st Time App Launch Issue
+</A></li>
+	<LI>Next message: <A HREF="000127.html">[Ti] Advice Re: Security Update/!st Time App Launch Issue
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#124">[ date ]</a>
+              <a href="thread.html#124">[ thread ]</a>
+              <a href="subject.html#124">[ subject ]</a>
+              <a href="author.html#124">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

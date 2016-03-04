@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Newbies] DiskWarrior recovery help.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20DiskWarrior%20recovery%20help.&In-Reply-To=2552fa090611191306n3d81794dse4295e2542d13313%40mail.gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="006868.html">
+   <LINK REL="Next"  HREF="006873.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Newbies] DiskWarrior recovery help.</H1>
+    <B>Steven Rogers</B> 
+    <A HREF="mailto:x-newbies%40listserver.themacintoshguy.com?Subject=%5BX-Newbies%5D%20DiskWarrior%20recovery%20help.&In-Reply-To=2552fa090611191306n3d81794dse4295e2542d13313%40mail.gmail.com"
+       TITLE="[X-Newbies] DiskWarrior recovery help.">srogers1 at austin.rr.com
+       </A><BR>
+    <I>Sun Nov 19 13:37:57 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="006868.html">[X-Newbies] DiskWarrior recovery help.
+</A></li>
+        <LI>Next message: <A HREF="006873.html">[X-Newbies] DiskWarrior recovery help.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6871">[ date ]</a>
+              <a href="thread.html#6871">[ thread ]</a>
+              <a href="subject.html#6871">[ subject ]</a>
+              <a href="author.html#6871">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Nov 19, 2006, at 3:06 PM, Brian Durant wrote:
+
+&gt;<i> you might be able to copy them with sudo cp -R, as in: sudo cp -R
+</I>&gt;<i> your-user-dir  backup-partition
+</I>&gt;<i>
+</I>&gt;<i> sudo cp -R &quot;user-dir&quot; /mnt/osx2 returns:
+</I>&gt;<i>
+</I>&gt;<i> cp: cannot create directory `/mnt/osx2/&quot;user-dir&quot;': Read-only file  
+</I>&gt;<i> system
+</I>
+Its getting kind of tricky at this point, but it seems like this is  
+working on the copy-from side, so you don't have to worry about doing  
+&quot;chown&quot; to get access to the files. When you mount the file system,  
+you may have to give it a -w to make it read/write (check out the man  
+pages on mount for your system). You can try out that part by just  
+attempting to copy some ordinary file, like a text file that you  
+created in Xubuntu, just to make sure that you can write to that  
+partition.
+
+&gt;<i> &quot;chown: missing operand after `/mnt/osx2'
+</I>&gt;<i> Try `chown --help' for more information.&quot;
+</I>
+You have to also specify what owner you're changing it to, in  
+addition to the file path. But don't worry about that. &quot;sudo cp&quot; is  
+giving you access to the files without changing the owner - you just  
+need write access to the target location.
+
+SR
+
+</PRE>
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="006868.html">[X-Newbies] DiskWarrior recovery help.
+</A></li>
+	<LI>Next message: <A HREF="006873.html">[X-Newbies] DiskWarrior recovery help.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6871">[ date ]</a>
+              <a href="thread.html#6871">[ thread ]</a>
+              <a href="subject.html#6871">[ subject ]</a>
+              <a href="author.html#6871">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-newbies.html">More information about the X-Newbies
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> PowerLogix upgrade/no sleep (solution!!)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=PowerLogix%20upgrade/no%20sleep%20%28solution%21%21%29&In-Reply-To=list-7080686%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005082.html">
+   <LINK REL="Next"  HREF="005084.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>PowerLogix upgrade/no sleep (solution!!)</H1>
+    <B>Gregory P. Perez</B> 
+    <A HREF="mailto:cube%40listserver.themacintoshguy.com?Subject=PowerLogix%20upgrade/no%20sleep%20%28solution%21%21%29&In-Reply-To=list-7080686%40mail.ninewire.com"
+       TITLE="PowerLogix upgrade/no sleep (solution!!)">gpp7824 at mac.com
+       </A><BR>
+    <I>Thu Jul  3 13:41:13 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005082.html">Very cheap, very easy fan cooling.
+</A></li>
+        <LI>Next message: <A HREF="005084.html">PowerLogix upgrade/no sleep (solution!!!) PART2
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5083">[ date ]</a>
+              <a href="thread.html#5083">[ thread ]</a>
+              <a href="subject.html#5083">[ subject ]</a>
+              <a href="author.html#5083">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>The signal/noise ratio on this topic appears to be rather low.
+
+First I'll try to address your questions and then I'll tell describe the
+exact sleep/wake problem I was having and how I fixed it on my own
+PL800-Cube.
+
+1. I'll limit my comments to specifically PL-upgrade related issues. Since
+the fix I used is a software solution, (and if it also works for you) we can
+totally overlook hardware issues.
+
+2. I have essentially the same hardware you are using and my cube is no
+longer plagued with the sleep/coma/wake issue. Powerlogix 800 upgrade, 1.5GB
+RAM, 17&quot; ADC studio display, GeForce 2MX video card, airport card, cube
+speakers, 100GB Western Digital HD, Apple keyboard, Kensinginton Mouse.
+
+3. Regarding Sonnet cards. Don&#185;t know anything about them. Somepeople swear
+by them others (like me) don't care as long as it works. My PL card works
+great but it is a company that catches a lot of heat on this list compared
+to Sonnet. Personally, I've had no complaints with my Powerlogix card (have
+not needed to use customer support) so would gladly consider moving up from
+the 800 to the 1.2GHz in the near future. The best upgrade card in the world
+is the one you can totally forget about. Mine is in my cube, it works, I
+don't think about it and haven't touched it since the day I installed it.
+(Others have reported different experiences.)
+
+Q: Here is the sleep problem I was having until recently.
+If I put the cube to sleep by using the &quot;power button&quot; on the case or if
+used the pull-down menu &quot;sleep&quot; I had the same results. The cube would enter
+a 'sleep-mode' where the harddrive would spin-down, the display would go
+dark and the power light would pulsate. Sounds perfect. However, if I tried
+to wake the cube, by any means, it would never really wake up. The power
+light would stop pulsating, the harddrive would start spinning but the
+desktop would never display on my screen. (tried ADCs and CRTs)
+
+A: I ran across this solution somewhere on the web and it worked for me. If
+your sleep issue is different from what I described above, I don't know if
+it will work for you.
+
+Using the terminal. Delete the following file:
+ 
+/private/var/db/SystemConfiguration
+
+This file is owned by root so you will need to use the sudo command.
+After the file is deleted, Shutdown and restart the machine. (maybe you can
+simply restart or simply logout or do nothing, that is your choice) I'm
+telling you what I did and what worked for me. People will reply saying that
+certain details are not necessary etc. etc.. My mac now sleeps &amp; wakes fine.
+The deleted file is replaced by the machine during the restart.
+
+Hope this solves your problem.
+Greg
+-------------------------------------
+Gregory P. Perez                 Work Phone: (979) 862-1570
+Department of Chemistry          Office: CHEM 020
+Texas A&amp;M University             e-mail: <A HREF="../../../mailman/listinfo/cube.html">perez at mail.chem.tamu.edu</A>
+College Station, TX 77843-3255     -or-  <A HREF="../../../mailman/listinfo/cube.html">perez at tamu.edu</A>
+
+
+&gt;<i> ----------------------------------------------------------------------
+</I>&gt;<i> 
+</I>&gt;<i> Message-ID: &lt;<A HREF="../../../mailman/listinfo/cube.html">3F039E19.9080800 at mac.com</A>&gt;
+</I>&gt;<i> Date: Wed, 02 Jul 2003 22:08:09 -0500
+</I>&gt;<i> From: Tom Spielman &lt;<A HREF="../../../mailman/listinfo/cube.html">tomspielman at mac.com</A>&gt;
+</I>&gt;<i> Subject: [CUBE] PowerLogix upgrade/no sleep - other factors
+</I>&gt;<i> 
+</I>&gt;<i> Maybe I've just missed it, but has there been any speculation or
+</I>&gt;<i> confirmation about other hardware in combination with CPU upgrades
+</I>&gt;<i> causing the coma problem?
+</I>&gt;<i> 
+</I>&gt;<i> I just got a powerlogix 800 mhz upgrade and now my cube won't sleep.
+</I>&gt;<i> Other people don't have this problem and I'm wondering if it has
+</I>&gt;<i> something to do with hardware I have that others may not.
+</I>&gt;<i> 
+</I>&gt;<i> In other words, are those of use with geforce 2 mx cards more likely to
+</I>&gt;<i> have problems than those with other graphics cards?  Are ADC displays
+</I>&gt;<i> contributing factors?
+</I>&gt;<i> 
+</I>&gt;<i> Do sonnet cards wake better?
+</I>&gt;<i> 
+</I>&gt;<i> Just wondering.
+</I>&gt;<i> 
+</I>&gt;<i> Incidentally, the developer version of Panther doesn't fix it, at least
+</I>&gt;<i> not installed on a firewire drive.
+</I>&gt;<i> 
+</I>&gt;<i> Thanks!
+</I>&gt;<i> 
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005082.html">Very cheap, very easy fan cooling.
+</A></li>
+	<LI>Next message: <A HREF="005084.html">PowerLogix upgrade/no sleep (solution!!!) PART2
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5083">[ date ]</a>
+              <a href="thread.html#5083">[ thread ]</a>
+              <a href="subject.html#5083">[ subject ]</a>
+              <a href="author.html#5083">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/cube.html">More information about the Cube
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

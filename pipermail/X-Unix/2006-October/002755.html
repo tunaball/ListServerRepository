@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Install gd-2.0.33 on tiger PPC 10.4.8
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Install%20gd-2.0.33%20on%20tiger%20PPC%2010.4.8&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="002756.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Install gd-2.0.33 on tiger PPC 10.4.8</H1>
+    <B>Sham Khalil</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Install%20gd-2.0.33%20on%20tiger%20PPC%2010.4.8&In-Reply-To="
+       TITLE="[X-Unix] Install gd-2.0.33 on tiger PPC 10.4.8">shamkhalil at famaco.com.my
+       </A><BR>
+    <I>Sun Oct  8 18:30:46 PDT 2006</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="002756.html">[X-Unix] Terminal Syntax for Writing to /private/etc/authorization
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2755">[ date ]</a>
+              <a href="thread.html#2755">[ thread ]</a>
+              <a href="subject.html#2755">[ subject ]</a>
+              <a href="author.html#2755">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi all
+
+I can't install gd-2.0.33 on my ibook G4 Tiger 10.4.8.
+I used command ./configure then make.
+It gave error like this
+
+if /bin/sh ./libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.
+-I/usr/local/include/freetype2 -I/usr/local/include   -g -O2 -MT gdft.lo
+-MD -MP -MF &quot;.deps/gdft.Tpo&quot; -c -o gdft.lo gdft.c; \
+then mv -f &quot;.deps/gdft.Tpo&quot; &quot;.deps/gdft.Plo&quot;; else rm -f
+&quot;.deps/gdft.Tpo&quot;; exit 1; fi
+rm -f .libs/gdft.lo
+gcc -DHAVE_CONFIG_H -I. -I. -I. -I/usr/local/include/freetype2
+-I/usr/local/include -g -O2 -MT gdft.lo -MD -MP -MF .deps/gdft.Tpo -c
+gdft.c  -fno-common -DPIC -o .libs/gdft.lo
+gdft.c:1366:35: error: fontconfig/fontconfig.h: No such file or directory
+gdft.c:1429: error: parse error before '*' token
+gdft.c:1429: error: parse error before '*' token
+gdft.c: In function 'find_font':
+gdft.c:1431: error: 'FcResult' undeclared (first use in this function)
+gdft.c:1431: error: (Each undeclared identifier is reported only once
+gdft.c:1431: error: for each function it appears in.)
+gdft.c:1431: error: parse error before &quot;result&quot;
+gdft.c:1433: error: 'pattern' undeclared (first use in this function)
+gdft.c:1433: error: 'FcMatchPattern' undeclared (first use in this function)
+gdft.c:1434: error: 'FcMatchFont' undeclared (first use in this function)
+gdft.c:1437: error: 'result' undeclared (first use in this function)
+gdft.c:1437: warning: return makes pointer from integer without a cast
+gdft.c: At top level:
+gdft.c:1442: error: parse error before '*' token
+gdft.c: In function 'find_postscript_font':
+gdft.c:1444: error: 'FcPattern' undeclared (first use in this function)
+gdft.c:1444: error: 'font' undeclared (first use in this function)
+gdft.c:1447: error: 'fontpattern' undeclared (first use in this function)
+gdft.c:1449: error: 'fontname' undeclared (first use in this function)
+gdft.c:1450: error: 'FcChar8' undeclared (first use in this function)
+gdft.c:1450: error: 'family' undeclared (first use in this function)
+gdft.c:1452: error: 'pattern' undeclared (first use in this function)
+gdft.c:1454: error: 'FC_FAMILY' undeclared (first use in this function)
+gdft.c:1454: error: 'FcTypeString' undeclared (first use in this function)
+gdft.c:1455: error: 'FC_STYLE' undeclared (first use in this function)
+gdft.c:1460: error: 'FcResultMatch' undeclared (first use in this function)
+gdft.c: In function 'font_pattern':
+gdft.c:1479: error: 'FcPattern' undeclared (first use in this function)
+gdft.c:1479: error: 'font' undeclared (first use in this function)
+gdft.c:1480: error: 'FcChar8' undeclared (first use in this function)
+gdft.c:1480: error: 'file' undeclared (first use in this function)
+gdft.c:1481: error: 'pattern' undeclared (first use in this function)
+gdft.c:1494: error: parse error before &quot;FcChar8&quot;
+gdft.c:1501: error: 'FC_FILE' undeclared (first use in this function)
+gdft.c:1501: error: 'FcResultMatch' undeclared (first use in this function)
+make[2]: *** [gdft.lo] Error 1
+make[1]: *** [all-recursive] Error 1
+make: *** [all] Error 2
+
+I have installed zlib-1.2.3, libpng-1.2.12, jpeg-6b and freetype-2.2.1.
+All above i used ./configure, make, sudo make install.
+freetype-2.2.1 was installed in two locations /usr/local and /usr/X11R6
+
+I also tried to install gd-2.0.33 using configure.pl --prefix
+/usr/local, make and sudo make install.
+It gave out error like this
+
+gcc -fPIC -I. -I/usr/include/freetype2 -I/usr/local/include/freetype2
+-I/usr/include/X11 -I/usr/X11R6/include/X11 -I/usr/local/include -g
+-DHAVE_LIBPNG -DHAVE_LIBZ -DHAVE_LIBJPEG -DHAVE_LIBFREETYPE
+-DHAVE_LIBXPM -DHAVE_LIBX11   -c -o gdft.o gdft.c
+In file included from gdft.c:113:
+/usr/local/include/freetype2/freetype/freetype.h:20:2: error: #error
+&quot;`ft2build.h' hasn't been included yet!&quot;
+/usr/local/include/freetype2/freetype/freetype.h:21:2: error: #error
+&quot;Please always use macros to include FreeType header files.&quot;
+/usr/local/include/freetype2/freetype/freetype.h:22:2: error: #error
+&quot;Example:&quot;
+/usr/local/include/freetype2/freetype/freetype.h:23:2: error: #error &quot;
+#include &lt;ft2build.h&gt;&quot;
+/usr/local/include/freetype2/freetype/freetype.h:24:2: error: #error &quot;
+#include FT_FREETYPE_H&quot;
+make: *** [gdft.o] Error 1
+
+
+It looks like the error has something to do with freetype.
+Could someone help me figure this out?
+
+thanks
+sham khalil
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="002756.html">[X-Unix] Terminal Syntax for Writing to /private/etc/authorization
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2755">[ date ]</a>
+              <a href="thread.html#2755">[ thread ]</a>
+              <a href="subject.html#2755">[ subject ]</a>
+              <a href="author.html#2755">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

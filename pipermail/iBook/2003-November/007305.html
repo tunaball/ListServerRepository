@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [P1] Disappeared Dock Icons
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20Disappeared%20Dock%20Icons&In-Reply-To=list-9180434%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="007304.html">
+   <LINK REL="Next"  HREF="007306.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[P1] Disappeared Dock Icons</H1>
+    <B>Kim Gammelgaard</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20Disappeared%20Dock%20Icons&In-Reply-To=list-9180434%40mail.ninewire.com"
+       TITLE="[P1] Disappeared Dock Icons">kgani at mac.com
+       </A><BR>
+    <I>Sat Nov  8 14:34:34 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="007304.html">Times RO font question
+</A></li>
+        <LI>Next message: <A HREF="007306.html">[P1] Disappeared Dock Icons
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7305">[ date ]</a>
+              <a href="thread.html#7305">[ thread ]</a>
+              <a href="subject.html#7305">[ subject ]</a>
+              <a href="author.html#7305">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>If you are on a Pismo, your Harddisk may not be very large, and perhaps you
+ran out of memory on the harddisk. Virtual Memory of OSX prior to 10.3 took
+chunks 80 MB in size out of your harddisk, and it didn't update the figure
+in the finder properly. The only way I know to make the finder give a fair
+number is to delete something. I have roughly 1 GB left on my main partition
+for swap space, and it is not a rare event that I almost run out of space. I
+have 320 MB RAM for that matter. Copy and past the following lines in your
+Terminal to see how much space the virtual memory uses and how much is left:
+
+cd /var/vm
+ls -l
+df -k .
+
+I get the following right now in Panther:
+
+[Kims-iBook:/var/vm] kgani% cd /var/vm
+[Kims-iBook:/var/vm] kgani% ls -l
+total 524288
+drwx--x--x  8 root  wheel        272 30 Oct 17:45 app_profile
+-rw------T  1 root  wheel   67108864  8 Nov 14:02 swapfile0
+-rw------T  1 root  wheel   67108864  8 Nov 15:05 swapfile1
+-rw------T  1 root  wheel  134217728  8 Nov 16:02 swapfile2
+[Kims-iBook:/var/vm] kgani% df -k .
+Filesystem   1K-blocks    Used  Avail Capacity  Mounted on
+/dev/disk0s9   4455292 3575252 835488    81%    /
+[Kims-iBook:/var/vm] kgani%
+
+This means that I have used about 256 MB of Virtual memory ( The 524288 are
+512 byte blocks, so you have to divide by two to get KB and divide by 1024
+to get MB) and have 816 MB left on the partition. I try to follow those
+numbers closely if I get strange error messages, as low memory situations
+can make your Mac act up very strange indeed.
+
+If you have panther use this instead:
+
+cd /var/vm
+ls -lh
+df -h .
+
+
+The h means: Human readable, and gives this answer instead:
+
+[Kims-iBook:/var/vm] kgani% ls -lh
+total 524288
+drwx--x--x  8 root  wheel       272B 30 Oct 17:45 app_profile
+-rw------T  1 root  wheel        64M  8 Nov 14:02 swapfile0
+-rw------T  1 root  wheel        64M  8 Nov 15:05 swapfile1
+-rw------T  1 root  wheel       128M  8 Nov 16:02 swapfile2
+df -kh .[Kims-iBook:/var/vm] kgani% df -h .
+Filesystem     Size   Used  Avail Capacity  Mounted on
+/dev/disk0s9   4.2G   3.4G   816M    81%    /
+[Kims-iBook:/var/vm] kgani%
+
+I think that is a cool new feature :-)
+
+Cheers,
+
+Kim
+
+On 08/11/03 20:53, &quot;Gary Adams&quot; &lt;<A HREF="../../../mailman/listinfo/ibook.html">gdadams1 at cox.net</A>&gt; wrote:
+
+&gt;<i> This morning, I fired up the Pismo in 10.2.8 and the first thing I
+</I>&gt;<i> noticed was the dock icons were huge instead of small. I ended up
+</I>&gt;<i> restarting after Mail hung and then realized that only the OS X icons
+</I>&gt;<i> (Mail, iChat, etc.) were in the dock.
+</I>&gt;<i> 
+</I>&gt;<i> I booted from another drive and ran Disk Utility which found some
+</I>&gt;<i> allocation errors. Restarted. Still no other icons. Googled and found a
+</I>&gt;<i> suggestion to delete the Finder .plist in the terminal. That didn't fix
+</I>&gt;<i> it either. Found another suggestion to fix the permissions. Anybody
+</I>&gt;<i> have a clue?
+</I>&gt;<i> 
+</I>&gt;<i> (I've since added the icons again, but it was a pain.)
+</I>&gt;<i> 
+</I>&gt;<i> Gary
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="007304.html">Times RO font question
+</A></li>
+	<LI>Next message: <A HREF="007306.html">[P1] Disappeared Dock Icons
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7305">[ date ]</a>
+              <a href="thread.html#7305">[ thread ]</a>
+              <a href="subject.html#7305">[ subject ]</a>
+              <a href="author.html#7305">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

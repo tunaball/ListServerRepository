@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Backup script help
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Backup%20script%20help&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002560.html">
+   <LINK REL="Next"  HREF="002562.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Backup script help</H1>
+    <B>Charles Howse</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Backup%20script%20help&In-Reply-To="
+       TITLE="[X-Unix] Backup script help">chowse at charter.net
+       </A><BR>
+    <I>Wed Feb 22 10:21:45 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002560.html">[X-Unix] [OT] TCP ACK...
+</A></li>
+        <LI>Next message: <A HREF="002562.html">[X-Unix] Backup script help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2561">[ date ]</a>
+              <a href="thread.html#2561">[ thread ]</a>
+              <a href="subject.html#2561">[ subject ]</a>
+              <a href="author.html#2561">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+This is rather long, sorry.
+
+Rather than use a 'third-party' application to do my backups, I have  
+written a bash script to backup my important files to another  
+computer on my home lan.  Why?  Just because I can.
+
+It's working well, with the exception of a couple of things I would  
+like some input on.
+
+First, I'm not satisfied with how I'm verifying that the backup  
+volume on the remote server is mounted or not.  Can anyone help make  
+that section 'bullet-proof'?
+
+Second, is it enough to just backup ~/Library/Application Support/ 
+Firefox/, AddressBook/, iCal/, and ~/Library/Mail/, or should I use  
+those application's Export/Backup feature to generate the files I  
+want to backup?
+
+Here is my script...
+*****
+#!/bin/bash
+
+## NOTE: ADD 'n' TO THE cmd OPTIONS WHEN TESTING
+
+dc=`date +%m%d%y`
+file='/Users/Charles/Documents/backup.log.'$dc'.txt'
+cmd='rsync -uvrtp --delete-after'
+src=/Users/Charles
+dest=/Users/charles/mnt
+
+# Is the server on?
+ping -o -t 5 moe &gt; /dev/null 2&gt;&amp;1
+if [ &quot;$?&quot; -ne 0 ] ; then
+	# Assume server is not on, display alert and quit
+	echo &quot;Cannot ping server, exiting&quot; &gt;&gt; $file
+	mail -s &quot;Weekly Backup results&quot; charles &lt; $file
+     	exit
+else
+	# The server is on, is the backup volume mounted?
+	if [ `ls /Users/charles/mnt/FreeBSD &gt; /dev/null 2&gt;&amp;1` ] ; then
+		#Volume is mounted, continue
+		echo `date` &gt; $file
+		echo &gt;&gt; $file
+		echo &quot;Volume is apparently already mounted, continuing.&quot; &gt;&gt; $file
+		echo &gt;&gt; $file
+	else
+		# Volume is not mounted, mount it and continue
+		mount -t nfs moe:/backup /Users/charles/mnt &gt; /dev/null 2&gt;&amp;1
+		if [ &quot;$?&quot; -eq 0 ] ; then
+			# Mounted OK
+			echo `date` &gt; $file
+			echo &gt;&gt; $file
+			echo &quot;Mounted volume successfully, continuing.&quot; &gt;&gt; $file
+			echo &gt;&gt; $file
+		else	
+			# Mount failed
+			if [ &quot;$?&quot; ! -eq 0 ] ; then
+				echo `date` &gt; $file
+				echo &gt;&gt; $file
+				echo &quot;Mount returned&quot; &quot;$?&quot; &quot;, exiting.&quot; &gt;&gt; $file
+				mail -s &quot;Weekly Backup results&quot; charles &lt; $file					
+				exit
+			fi
+		fi
+	fi
+fi
+
+echo 'AppleScripts...' &gt;&gt; $file
+$cmd $src/AppleScripts/ $dest/AppleScripts &gt;&gt; $file
+echo &gt;&gt; $file
+
+echo 'bin...' &gt;&gt; $file
+$cmd $src/bin/ $dest/bin &gt;&gt; $file
+echo &gt;&gt; $file
+
+echo 'Documents...' &gt;&gt; $file
+$cmd --exclude=/Virtual* $src/Documents/ $dest/Documents &gt;&gt; $file
+echo &gt;&gt; $file
+
+echo 'Downloads...' &gt;&gt; $file
+$cmd $src/Downloads/ $dest/Downloads &gt;&gt; $file
+echo &gt;&gt; $file
+
+echo 'Magazines...' &gt;&gt; $file
+$cmd $src/Magazines/ $dest/Magazines &gt;&gt; $file
+echo &gt;&gt; $file
+
+echo 'Sites/HomeUnix...' &gt;&gt; $file
+$cmd $src/Sites/HomeUnix/ $dest/HomeUnix &gt;&gt; $file
+echo &gt;&gt; $file
+
+echo 'Music...' &gt;&gt; $file
+$cmd $src/Music/ $dest/Music &gt;&gt; $file
+echo &gt;&gt; $file
+
+echo 'Recipes...' &gt;&gt; $file
+$cmd $src/Library/Application*/TLAF/ $dest/TLAF &gt;&gt; $file
+echo &gt;&gt; $file
+
+echo 'Firefox...' &gt;&gt; $file
+$cmd $src/Library/Application*/Firefox/ $dest/Firefox &gt;&gt; $file
+echo &gt;&gt; $file
+
+echo 'AddressBook...' &gt;&gt; $file
+$cmd $src/Library/Application*/AddressBook/ $dest/AddressBook &gt;&gt; $file
+echo &gt;&gt; $file
+
+echo 'iCal...' &gt;&gt; $file
+$cmd $src/Library/Application*/iCal/ $dest/iCal &gt;&gt; $file
+echo &gt;&gt; $file
+
+echo 'Mail...' &gt;&gt; $file
+$cmd $src/Library/Mail/ $dest/Mail &gt;&gt; $file
+echo &gt;&gt; $file
+
+echo &quot;Space available on moe:/backup:&quot; &gt;&gt; $file
+df -h /Users/charles/mnt &gt;&gt; $file
+echo &gt;&gt; $file
+
+umount /Users/charles/mnt &gt; /dev/null 2&gt;&amp;1
+if [ ! &quot;$?&quot; -eq 0 ] ; then
+	echo &quot;Could not unmount /Users/charles/mnt&quot; &gt;&gt; $file
+else
+	echo &quot;/Users/charles/mnt unmounted successfully&quot; &gt;&gt; $file
+fi
+
+mail -s &quot;Weekly Backup results&quot; charles &lt; $file
+*****
+
+
+Thanks,
+Charles
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002560.html">[X-Unix] [OT] TCP ACK...
+</A></li>
+	<LI>Next message: <A HREF="002562.html">[X-Unix] Backup script help
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2561">[ date ]</a>
+              <a href="thread.html#2561">[ thread ]</a>
+              <a href="subject.html#2561">[ subject ]</a>
+              <a href="author.html#2561">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Panthers Virtual Memory
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Panthers%20Virtual%20Memory&In-Reply-To=list-11749402%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000589.html">
+   <LINK REL="Next"  HREF="000591.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Panthers Virtual Memory</H1>
+    <B>Scott J. Kramer</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Panthers%20Virtual%20Memory&In-Reply-To=list-11749402%40mail.ninewire.com"
+       TITLE="[X-Unix] Panthers Virtual Memory">x-unix at sjk.us
+       </A><BR>
+    <I>Sat Mar 27 15:03:04 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000589.html">[X-Unix] Hiding apps from the command line
+</A></li>
+        <LI>Next message: <A HREF="000591.html">[X-Unix] 0th Annual Shell X-Unix Scripting Contest (was Re: [X4U] Terminal Comand to Hide App Layers)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#590">[ date ]</a>
+              <a href="thread.html#590">[ thread ]</a>
+              <a href="subject.html#590">[ subject ]</a>
+              <a href="author.html#590">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>--On Saturday, March 27, 2004 15:33 +0000 Adrian Simmons 
+&lt;<A HREF="../../../mailman/listinfo/x-unix.html">adriman at ntlworld.com</A>&gt; wrote:
+
+&gt;<i> Ok, I set /etc/rc like so (all on one line of course, watch out for the
+</I>&gt;<i> wrap):
+</I>&gt;<i>
+</I>&gt;<i> dynamic_pager -H 40000000 -L 320000000 -S 256000000 -F
+</I>&gt;<i> ${swapdir}/swapfile
+</I>
+10.2 used those options with these values:
+
+  dynamic_pager -H 40000000 -L 160000000 -S 80000000 -F ${swapdir}/swapfile
+
+They were removed in 10.3.
+
+&gt;<i> Just to confirm - all the options detailed in the man page still work.
+</I>
+Thanks for testing that.
+
+&gt;<i> Which means all these people having problems with Panther's VM (creating
+</I>&gt;<i> large swapfiles and then not deleting them till reboot) can probably fix
+</I>&gt;<i> them by playing with how /etc/rc calls dynamic_pager.
+</I>
+Quitting processes or logging out can trigger dynamic_pager to remove one
+or more swapfiles.  I do that more often than rebooting since it won't
+take long before two or three are recreated on my 640MB iBook anyway.  I
+usually have four total, then play the process-quitting game if swapfile4
+(and more) persists awhile.
+
+-sjk
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000589.html">[X-Unix] Hiding apps from the command line
+</A></li>
+	<LI>Next message: <A HREF="000591.html">[X-Unix] 0th Annual Shell X-Unix Scripting Contest (was Re: [X4U] Terminal Comand to Hide App Layers)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#590">[ date ]</a>
+              <a href="thread.html#590">[ thread ]</a>
+              <a href="subject.html#590">[ subject ]</a>
+              <a href="author.html#590">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

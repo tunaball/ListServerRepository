@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Recover from Directory Service database index corruption
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX4U%5D%20Recover%20from%20Directory%20Service%20database%20index%20corruption&In-Reply-To=%3CEE35E476-D3BF-4D3E-A0E2-CC8B77BAB05F%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="025029.html">
+   <LINK REL="Next"  HREF="025031.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X4U] Recover from Directory Service database index corruption</H1>
+    <B>LAL</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX4U%5D%20Recover%20from%20Directory%20Service%20database%20index%20corruption&In-Reply-To=%3CEE35E476-D3BF-4D3E-A0E2-CC8B77BAB05F%40gmail.com%3E"
+       TITLE="[X4U] Recover from Directory Service database index corruption">lazilicata at gmail.com
+       </A><BR>
+    <I>Mon Aug 23 01:46:31 PDT 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="025029.html">[X4U] Sound Output
+</A></li>
+        <LI>Next message: <A HREF="025031.html">[X4U] iTunes splitting album folders
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#25030">[ date ]</a>
+              <a href="thread.html#25030">[ thread ]</a>
+              <a href="subject.html#25030">[ subject ]</a>
+              <a href="author.html#25030">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dear all.
+
+Ever since I upgraded my PPV laptop from Tiger to Leopard,  
+DirectoryService (process 34) had been a real PITA.
+I found this hint and performed it.
+I THINK my problems have been resolved.
+
+Just sharing in case...
+
+Lee
+
+Recover from Directory Service database index corruption
+Over the course of the last week, I had the following problem twice:  
+My MacBook Pro ran with a processor load of 190% &#8212; I had a look at the  
+Activity Monitor utility and found out that this load came from a  
+single process called DirectoryService. Thus the computer became  
+unresponsive and unusable &#8212; and a simple reboot didn&#8217;t help.
+
+I did a little research on the topic and this is what I ended up doing:
+
+	&#8226; Open a new Terminal window
+	&#8226; Go to the following directory: cd /var/db/dslocal/indices/
+	&#8226; Delete the corrupted database index: sudo rm Default/index
+	&#8226; Enter your password and confirm with Return
+	&#8226; Reboot your machine &#8212; since we already have an open shell, let&#8217;s do  
+it geek-style: sudo shutdown -r now
+You can also try to kill the DirectoryService process by executing  
+sudo killall DirectoryService, but you have to go through the steps  
+above to make sure that the database index will be rebuilt and not  
+cause the same problem again after you reboot your machine.
+
+This way I solved the problem on my MacBook Pro running Mac OS X 10.5  
+Leopard &#8212; good luck!
+
+UPDATE: If this doesn&#8217;t work for you because your machine is not  
+responding due to the high processor load, boot pressing the Shift key  
+and try the whole process again in Safe Mode.
+
+<A HREF="http://julianschrader.de/20071224-recover-from-directory-service-database-index-corruption/">http://julianschrader.de/20071224-recover-from-directory-service-database-index-corruption/</A>
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="025029.html">[X4U] Sound Output
+</A></li>
+	<LI>Next message: <A HREF="025031.html">[X4U] iTunes splitting album folders
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#25030">[ date ]</a>
+              <a href="thread.html#25030">[ thread ]</a>
+              <a href="subject.html#25030">[ subject ]</a>
+              <a href="author.html#25030">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

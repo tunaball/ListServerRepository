@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] OSX Advice (long)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20OSX%20Advice%20%28long%29&In-Reply-To=list-4400064%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001965.html">
+   <LINK REL="Next"  HREF="001967.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] OSX Advice (long)</H1>
+    <B>RFD</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20OSX%20Advice%20%28long%29&In-Reply-To=list-4400064%40mail.ninewire.com"
+       TITLE="[Ti] OSX Advice (long)">rfd1 at mac.com
+       </A><BR>
+    <I>Sat Jan 11 21:16:34 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001965.html">[Ti] Travelstar 60 Gb internal HD
+</A></li>
+        <LI>Next message: <A HREF="001967.html">[Ti] OSX Advice (long)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1968">[ date ]</a>
+              <a href="thread.html#1968">[ thread ]</a>
+              <a href="subject.html#1968">[ subject ]</a>
+              <a href="author.html#1968">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>on 1/11/03 8:07 PM, PowerBook G4 Titanium List at
+<A HREF="../../../mailman/listinfo/titanium.html">Titanium at lists.themacintoshguy.com</A> wrote:
+
+&gt;<i> Message-ID: &lt;<A HREF="../../../mailman/listinfo/titanium.html">3E20B738.4070505 at astcomm.net</A>&gt;
+</I>&gt;<i> Date: Sat, 11 Jan 2003 18:30:48 -0600
+</I>&gt;<i> From: Chris Olson &lt;<A HREF="../../../mailman/listinfo/titanium.html">chris at astcomm.net</A>&gt;
+</I>&gt;<i> Subject: Re: [Ti] OSX Advice (long)
+</I>&gt;<i> 
+</I>&gt;<i> RFD wrote:
+</I>&gt;<i> 
+</I>&gt;&gt;<i> When you update or install something on your internal drive, do the same on
+</I>&gt;&gt;<i> your external drive to keep them current (but not until you're sure the
+</I>&gt;&gt;<i> update or install hasn't caused any problems on the internal drive).
+</I>&gt;<i> 
+</I>&gt;<i> Use your unix tools.
+</I>&gt;<i> 
+</I>&gt;<i> rsync -arvz --delete &lt;source&gt; &lt;destination&gt;
+</I>&gt;<i> run from a daily cron job is quite effective for mirroring data backups.
+</I>&gt;<i> It is also totally automatic, and if your MTA is functioning
+</I>&gt;<i> correctly, cron will email you a note outlining what took place during
+</I>&gt;<i> the backup job.
+</I>&gt;<i> 
+</I>&gt;<i> You also don't necessarily have to have an external drive to back up to.
+</I>&gt;<i> Another computer with a large hard disk also works.  You can back up
+</I>&gt;<i> to a Windows box, another Mac, a network file server, or whatever, with
+</I>&gt;<i> rsync over ssh:
+</I>&gt;<i> rsync -e 'ssh -i /root/.ssh/&lt;public_key&gt;' -arvz --delete &lt;source&gt;
+</I>&gt;<i> &lt;destination&gt;
+</I>&gt;<i> also run from a cron job, with a public ssh key stored on the receiving
+</I>&gt;<i> (backup) server to allow login without have to type a password at the
+</I>&gt;<i> command line.
+</I>&gt;<i> 
+</I>&gt;<i> Mirroring an entire drive is not usually needed, IMHO.  Just mirror
+</I>&gt;<i> important system configurations and user space data.  In the event of
+</I>&gt;<i> drive failure, it is better to start with a fresh install of your
+</I>&gt;<i> software, then simply retrieve your important data from your backups.
+</I>&gt;<i> -- 
+</I>&gt;<i> Chris Olson
+</I>&gt;<i> Network Administrator
+</I>&gt;<i> AST Communications,  Inc.
+</I>&gt;<i> Barron,  WI   USA
+</I>
+Chris,
+
+That's excellent advice for an advanced user who is comfortable with the
+command line. Read the original post again. The person who asked the
+question did not seem to be someone who would be comfortable in that
+environment (as I'm sure 99% of OS X users are not). Most people using OS X
+are looking for the path or least resistance and are not looking forward to
+becoming a UNIX geek in order to run their Mac.
+
+I have invested a lot of time talking to a lot of people trying to convince
+them that they don't need to understand UNIX to switch to/run OS X.  I stay
+as far away from the Terminal as I can when it comes to advice for anyone
+not comfortable with OS X's UNIX underpinnings.
+
+When you say, &quot;You can back up  to a Windows box, another Mac, a network
+file server, or whatever, with  rsync over ssh: rsync -e 'ssh -i
+/root/.ssh/&lt;public_key&gt;' -arvz --delete &lt;source&gt;  &lt;destination&gt;
+also run from a cron job, with a public ssh key stored on the receiving
+(backup) server to allow login without have to type a password at the
+command line&quot;, the usual response is, &quot;What&quot;?
+
+I'm quite sure you are very, very good at what you do and your obvious
+knowledge of the UNIX underpinnings of OS X is impressive, but you do this
+marvelous OS and platform a disservice when you don't try to exhaust all the
+avenues of familiarity first. For every person who understands your advice,
+there are a thousand who don't. It's those thousand I want to convert to
+and/or keep in OS X, and please believe me, UNIX speak does not make  it
+easier. Over time, most OS X users will become more comfortable with UNIX,
+but the vast majority don't want to start there.
+
+Just my 2&#162;.
+
+Bob
+
+
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+&lt;&gt; e-Mail:  <A HREF="../../../mailman/listinfo/titanium.html">rfd1 at mac.com</A>
+&lt;&gt; Apple Product Professional
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+&lt;&gt; Apple Product Guide:  <A HREF="http://www.apple.com/guide">http://www.apple.com/guide</A>
+&lt;&gt; <A HREF="http://homepage.mac.com/rfd1/FileSharing.html">http://homepage.mac.com/rfd1/FileSharing.html</A>
+&lt;&gt; Switching to Mac:  <A HREF="http://www.apple.com/switch/stories/">http://www.apple.com/switch/stories/</A>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001965.html">[Ti] Travelstar 60 Gb internal HD
+</A></li>
+	<LI>Next message: <A HREF="001967.html">[Ti] OSX Advice (long)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1968">[ date ]</a>
+              <a href="thread.html#1968">[ thread ]</a>
+              <a href="subject.html#1968">[ subject ]</a>
+              <a href="author.html#1968">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

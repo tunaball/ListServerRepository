@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Login Hooks II - thanks guys. One more issue
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Login%20Hooks%20II%20-%20thanks%20guys.%20One%20more%20issue&In-Reply-To=C95D4201-6322-11D9-B0B2-0030654C9EC6%40eml.cc">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001475.html">
+   <LINK REL="Next"  HREF="001479.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Login Hooks II - thanks guys. One more issue</H1>
+    <B>Our PAl Al</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Login%20Hooks%20II%20-%20thanks%20guys.%20One%20more%20issue&In-Reply-To=C95D4201-6322-11D9-B0B2-0030654C9EC6%40eml.cc"
+       TITLE="[X-Unix] Login Hooks II - thanks guys. One more issue">opa at nyc.rr.com
+       </A><BR>
+    <I>Mon Jan 10 10:57:02 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001475.html">[X-Unix] Login Hooks running items on login a little bit too
+	quickly
+</A></li>
+        <LI>Next message: <A HREF="001479.html">[X-Unix] Login Hooks II - thanks guys. One more issue
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1476">[ date ]</a>
+              <a href="thread.html#1476">[ thread ]</a>
+              <a href="subject.html#1476">[ subject ]</a>
+              <a href="author.html#1476">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks guys! I modifed the code to this -
+
+#!/bin/bash
+# Loop until Finder is up and running
+
+ps -ax | grep [F]inder 2&gt;&amp;1 &gt;/dev/null
+while [ $(echo $?) == 1 ]; do
+ps -ax | grep [F]inder 2&gt;&amp;1 &gt;/dev/null
+done
+
+# now execute script
+&lt;code&gt;
+
+
+Only problem -- Ugh! Mac never logs in!
+
+Script keeps looping until Finder is up, and the whole login process stops
+right there in the looping script! The Finder never comes up.
+
+How can I have this process loop *itself* until the Finder's up and then
+execute, but NOT stop everything along with it?
+
+Alternative would be to use System Preference's Login Items feature, which
+starts things when the GUI is up, instead of using a Login Hook. But I need
+to set this globally for any User who logs in, and I don't know yet which
+.plist file to change to make this a global default.
+
+- opa
+
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001475.html">[X-Unix] Login Hooks running items on login a little bit too
+	quickly
+</A></li>
+	<LI>Next message: <A HREF="001479.html">[X-Unix] Login Hooks II - thanks guys. One more issue
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1476">[ date ]</a>
+              <a href="thread.html#1476">[ thread ]</a>
+              <a href="subject.html#1476">[ subject ]</a>
+              <a href="author.html#1476">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

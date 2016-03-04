@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Converting eps to pdf from commandline
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20Converting%20eps%20to%20pdf%20from%20commandline&In-Reply-To=%3C20090915195328.GB27706%40dhcp068-186.openport.buffalo.edu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003350.html">
+   <LINK REL="Next"  HREF="003349.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X-Unix] Converting eps to pdf from commandline</H1>
+    <B>John Harrold</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20Converting%20eps%20to%20pdf%20from%20commandline&In-Reply-To=%3C20090915195328.GB27706%40dhcp068-186.openport.buffalo.edu%3E"
+       TITLE="[X-Unix] Converting eps to pdf from commandline">john.m.harrold at gmail.com
+       </A><BR>
+    <I>Tue Sep 15 12:53:28 PDT 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003350.html">[X-Unix] Converting eps to pdf from commandline
+</A></li>
+        <LI>Next message: <A HREF="003349.html">[X-Unix] Converting eps to pdf from commandline
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3352">[ date ]</a>
+              <a href="thread.html#3352">[ thread ]</a>
+              <a href="subject.html#3352">[ subject ]</a>
+              <a href="author.html#3352">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Sometime in September, Stroller proposed the following: 
+
+&gt;<i>
+</I>&gt;<i> On 8 Sep 2009, at 19:10, John Harrold wrote:
+</I>&gt;&gt;<i> ...
+</I>&gt;&gt;<i> I'm generating some eps files with latex and I need to convert these  
+</I>&gt;&gt;<i> into
+</I>&gt;&gt;<i> pdf files.
+</I>&gt;<i>
+</I>&gt;<i> I'm sorry that this response doesn't directly answer your question, but 
+</I>&gt;<i> is there a reason you're producing EPS files with LaTeX?
+</I>
+Yes.
+
+:<i>)
+</I>
+But wait you probably want a more verbose reason, and it's based on my
+workflow.  I'm creating figures within matlab which I want to label and
+markup. These labels are all in matlab scripts, and the figure generation
+is automated. I like to have font consistency between my figures and the
+document I'm going to include those figures within (so when I reference the
+Greek letter theta with a subscript I and superscript 2 it looks the same
+on my figure as it does within the document). To do this I use a script
+called 'laprint.m'[a] which basically takes all the textual elements of the
+matlab figure and renders them in latex. It produces an eps file. Now say
+for example I want to include that figure in a presentation I'm creating
+with beamer I need to convert that eps file into a pdf because I'm using
+pdflatex to compile my beamer document. If I use the ps2pdf that comes with
+fink, then the pdf file that is produced has the bounding box all screwed
+up.
+
+&gt;<i> I know different LaTeX distros behave differently - what I remember from 
+</I>&gt;<i> last time I used a multiple-step process is that I used a command to 
+</I>&gt;<i> produce .dvi files (??) from the .tex output, then dvips or dvipdf [1] to 
+</I>&gt;<i> produce a printable file. I see these latter commands appear to be 
+</I>&gt;<i> provided by Ghostscript; I do my LaTeX work on Linux, so have no idea of 
+</I>&gt;<i> the situation of that package or those commands on MacOS.
+</I>
+I generally use Makefiles for my documents this way I can switch between
+tex distributions and explicitly include directories with class or style
+files.
+
+&gt;<i> I think my LaTeX distro (texlive) dropped dvi2pdf, but this shouldn't be 
+</I>&gt;<i> a big deal, as it's easy to convert PS to PDF.
+</I>
+As noted above, the standard tools really screw up the bounding boxes and
+result in images that are pretty useless.
+
+&gt;<i> I'm not clear on the difference between PS &amp; EPS files. My experience of 
+</I>&gt;<i> opening EPS (say, Photoshop / Illustrator) is that they often manifest 
+</I>&gt;<i> this scaling problem you describe.
+</I>
+Yeah, but for some reason the internal ps2pdf converter preview uses seems
+to handle this well.
+ 
+&gt;<i> Anyway, my advice, if you'll forgive it, is to try to avoid the EPS  
+</I>&gt;<i> step. I personally just use `rubber` [2], which turns a multiple-step  
+</I>&gt;<i> process into a single-step one, and saves me having to read a bunch of  
+</I>&gt;<i> uninteresting output as the .dvi file is generated. I simply run `rubber 
+</I>&gt;<i> --pdf source.tex` and get a perfect pdf file as a result (in fact I have 
+</I>&gt;<i> `alias rubber=&quot;rubber --pdf&quot;` in my .bashrc, making the actual command to 
+</I>&gt;<i> type even shorter &amp; more intuitive)
+</I>
+I appreciate your advice, and I'll check out rubber.  But using the built
+in one (/usr/bin/pstopdf) seems to solve my problem, and fits in well with
+my workflow (I can just modify my Makefile to run this on each eps file).
+I'll definitely look into rubber (it's always good to have multiple
+options).
+
+[a] <A HREF="http://www.uni-kassel.de/fb16/rat/matlab/laprint/">http://www.uni-kassel.de/fb16/rat/matlab/laprint/</A>
+
+-- 
+ John M Harrold              
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003350.html">[X-Unix] Converting eps to pdf from commandline
+</A></li>
+	<LI>Next message: <A HREF="003349.html">[X-Unix] Converting eps to pdf from commandline
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3352">[ date ]</a>
+              <a href="thread.html#3352">[ thread ]</a>
+              <a href="subject.html#3352">[ subject ]</a>
+              <a href="author.html#3352">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

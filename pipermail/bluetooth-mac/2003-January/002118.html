@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [BTM] Cheesy fix for non-syncing Tungsten/T's!
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:bluetooth-mac%40listserver.themacintoshguy.com?Subject=%5BBTM%5D%20Cheesy%20fix%20for%20non-syncing%20Tungsten/T%27s%21&In-Reply-To=list-4460765%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002117.html">
+   <LINK REL="Next"  HREF="002119.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[BTM] Cheesy fix for non-syncing Tungsten/T's!</H1>
+    <B>Richard McKay</B> 
+    <A HREF="mailto:bluetooth-mac%40listserver.themacintoshguy.com?Subject=%5BBTM%5D%20Cheesy%20fix%20for%20non-syncing%20Tungsten/T%27s%21&In-Reply-To=list-4460765%40mail.ninewire.com"
+       TITLE="[BTM] Cheesy fix for non-syncing Tungsten/T's!">richard.mckay1 at virgin.net
+       </A><BR>
+    <I>Wed Jan 15 05:33:37 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002117.html">[BTM] Cheesy fix for non-syncing Tungsten/T's!
+</A></li>
+        <LI>Next message: <A HREF="002119.html">[BTM] Cheesy fix for non-syncing Tungsten/T's!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2118">[ date ]</a>
+              <a href="thread.html#2118">[ thread ]</a>
+              <a href="subject.html#2118">[ subject ]</a>
+              <a href="author.html#2118">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Martin,
+
+The first question is: do you have the &quot;superuser&quot; account activated in
+netinfo? If not, are you willing to activate this account? There may be
+security issues involved with doing this that you might wish to
+consider...not to mention the damage that you can do if you do not know what
+you are doing in the root account...If you do proceed...
+
+If the superuser account is activated then you only need to find out the
+&quot;PID&quot; of the blued process, this can be done easiest in Process Viewer
+(applications folder/utilites/Process Viewer) make sure that in the show
+window (upper right) you have the choice &quot;all processes&quot; listed and then you
+can comfortably scroll down to where blued is listed (under the name column)
+highlight this line by clicking on it and click on the arrow at the bottom
+of the window with &quot;more info&quot;, this will list the Process ID number you
+will need in terminal. (this can be done with terminal using top command but
+if you are not familiar with terminal then the above may be more
+comfortable). Next open terminal and switch to the super user account with
+su command...below are examples that should be accurate...I do not have the
+super user activated (your computer name will probably be different and the
+name listed will be as well...
+
+[SAL9000:~] home% cd /
+
+Note that you do not have to be in an administrator account to do this but
+will need to switch users (su) in terminal to an account that does and then
+su to root...
+
+ie.
+your normal account to admin account to root account...each time entering
+the proper password for that account.
+
+
+[SAL9000:/] home% su rmckay (admin account)
+Password: type the password that you use for admin account here
+[SAL9000:/] rmckay% su root
+Password: type the password that you used for root in netinfo here
+
+then it should show you as root
+
+[SAL9000:/] root%
+
+now type the following
+
+[SAL9000:/] root% kill 395
+[SAL9000:/] root%
+
+kill is not verbose (in other words it will not confirm that the process is
+stopped, at least not without using further options...for more info see man
+kill) so there will be no confirmation except in your Process Viewer
+window...
+
+In Process Viewer you should now see that blued is not there anymore, at
+least temporarily...and then you can do the synch (if this fix does work for
+others)
+
+Sorry about the length of this post...tried to be brief but if there are any
+questions let us know...
+
+HTH,
+
+Richard
+--
+
+Martim Weinstein wrote the following:
+
+&gt;<i> I want to try this but using my regular account so my question is how
+</I>&gt;<i> do I kill this process in Terminal using my administrator account since
+</I>&gt;<i> Process Manager doesn't allow me because it belongs to root?
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002117.html">[BTM] Cheesy fix for non-syncing Tungsten/T's!
+</A></li>
+	<LI>Next message: <A HREF="002119.html">[BTM] Cheesy fix for non-syncing Tungsten/T's!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2118">[ date ]</a>
+              <a href="thread.html#2118">[ thread ]</a>
+              <a href="subject.html#2118">[ subject ]</a>
+              <a href="author.html#2118">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/bluetooth-mac.html">More information about the Bluetooth-mac
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

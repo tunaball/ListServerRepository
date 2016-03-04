@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Question about grep
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Question%20about%20grep&In-Reply-To=list-11444822%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000483.html">
+   <LINK REL="Next"  HREF="000485.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Question about grep</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Question%20about%20grep&In-Reply-To=list-11444822%40mail.ninewire.com"
+       TITLE="[X-Unix] Question about grep">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Wed Mar 17 14:10:31 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000483.html">[X-Unix] Question about grep
+</A></li>
+        <LI>Next message: <A HREF="000485.html">postfix anti-uce config
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#484">[ date ]</a>
+              <a href="thread.html#484">[ thread ]</a>
+              <a href="subject.html#484">[ subject ]</a>
+              <a href="author.html#484">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Mar 17, 2004, at 8:31 pm, Our Pal Al wrote:
+
+&gt;<i> Hmmmm ... I think we're getting there. And I can even follow this! :)
+</I>&gt;<i>
+</I>&gt;<i> Problems though ...
+</I>&gt;<i>
+</I>&gt;<i> On 3/17/04 12:07 PM, &quot;Stroller&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">MacMonster at myrealbox.com</A>&gt; wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> This seems close to what you require, although I can't immediately 
+</I>&gt;&gt;<i> seem
+</I>&gt;&gt;<i> to see how to drop the leading zero, short of using sed.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> $ date
+</I>&gt;&gt;<i> Wed Mar 17 17:00:11 GMT 2004
+</I>&gt;&gt;<i> $ let &quot;one_week_ago = `date +%s` - 60 * 60 * 24 * 7&quot;; date -r
+</I>&gt;<i>
+</I>&gt;<i> Trying this out in a term window, I copy and paste this into my bash 
+</I>&gt;<i> shell
+</I>&gt;<i> and it doesn't work. Error -
+</I>&gt;<i>
+</I>&gt;<i> &quot;date: option requires an argument -- r
+</I>&gt;<i> usage: date [-nu] [-r seconds] [+format]
+</I>&gt;<i>        date [[[[[cc]yy]mm]dd]hh]mm[.ss] &quot;
+</I>
+That's because you missed out the &quot;$one_week_ago +%m/%e/%Y&quot; arguments 
+to the 2nd date command. one_week_ago is a variable, which you assign 
+with `one_week_ago = 12345` and read with (say) `echo $one_week_ago`
+
+&gt;<i> Is this is something that'll only work in a script?
+</I>
+No. I used the first $ (one a new line, with a space following it) to 
+indicate I can it at the CLI. I haven't encountered anything that'll 
+run in a script but give problems at the CLI.
+
+&gt;<i> Bear with me. All my
+</I>&gt;<i> shell scripting needs have been simple so far and there's been nothing 
+</I>&gt;<i> I've
+</I>&gt;<i> made that I couldn't test out line by line first, then just &quot;sew 'em 
+</I>&gt;<i> all
+</I>&gt;<i> together&quot; in a script.
+</I>
+Well, I'm not sure why you didn't do this. That's what I had to do when 
+I built it for you.
+
+For instance:
+
+$ date +%m/%e/%Y
+03/17/2004
+
+$ date +%s
+1079559134
+
+$ let &quot;foo = `date +%s` - 10000000&quot;
+$ date -r $foo
+Sun Nov 23 03:50:16 GMT 2003
+
+$ let &quot;foo = `date +%s` - 1000000000&quot;
+$ date -r $foo
+Sun Jul  9 20:51:15 BST 1972
+
+I've already directed you to `man date` and `man strftime` - next time 
+you post you need to quote the parts of those which you don't 
+understand.
+
+*sighs*
+
+Ok... here you go...
+      -r      Print out the date and time that is seconds from the Epoch.
+
+      %s    is replaced by the number of seconds since the Epoch, UTC 
+(see
+            mktime(3)).
+
+Since we can easily calculate the number of seconds in the last week 
+(60 * 60 * 24 * 7), &quot;seconds since the epoch&quot; (I just call this &quot;Unix 
+time&quot;) and easily manipulate bif decimal numbers, this is the way to 
+go.
+
+`date +%s` prints out the time NOW in seconds since 1970, so we 
+subtract 604800 from that to get One Week Ago.
+
+The `date -r some_number` converts some_number of seconds since 1970 
+into a Real Date (tm).
+
+`date +%m/%e/%Y` prints out today's date in that dumb American format, 
+in which months, days and years are in haphazard order.
+
+&gt;<i> On 3/17/04 12:18 PM, &quot;Stroller&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">MacMonster at myrealbox.com</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> And having wasted all that time on an answer involving long date
+</I>&gt;&gt;<i> formats, I think the answer is really a weekly `cron` job to
+</I>&gt;&gt;<i>    mv Restrospect\ backup\ report Restrospect\ backup\ report-`date
+</I>&gt;&gt;<i> +%Y-%m-%d_%X
+</I>&gt;&gt;<i> and run your grep on the new one that's subsequently created by the 
+</I>&gt;&gt;<i> new
+</I>&gt;&gt;<i> backup.
+</I>&gt;<i>
+</I>&gt;<i> Hmmm ... I don't think that will work.
+</I>&gt;<i>
+</I>&gt;<i> Retrospect's exported Backup Report will give me a bigger file every 
+</I>&gt;<i> day
+</I>&gt;<i> with everything going back for months and months, new things not even 
+</I>&gt;<i> added
+</I>&gt;<i> to the top!
+</I>
+So you're saying that if you delete that file, then next time you come 
+back it will have recreate the whole several months' of reporting..? I 
+would have anticipated that it would start a fresh file with only 
+current reports, in which case you could copy the old file into a new 
+filename, delete the filename that Retrospect appends it's data to (I 
+mean, if it doesn't appear at the top, presumably it appears at the 
+bottom..?) and then your grep will only act on that new data when that 
+file is recreated.
+
+But I'm not familiar with Retrospect.
+
+&gt;<i>  This is separate from the log. The log is display only and
+</I>&gt;<i> presented in a window - which I can truncate to an arbitary k limit,
+</I>&gt;<i> chopping off events too old mid-entry, will-nilly, which isn't really 
+</I>&gt;<i> my
+</I>&gt;<i> preference as I outlined in an earlier post.
+</I>
+I would be rather surprised to find that log exists ONLY in a window 
+and not somewhere on your hard-drive. In which case it IS possible to 
+manipulate it. Moving last week's log from log.current to 
+log.old.20040310 is NOT the same as &quot;deleting stuff willy-nilly&quot;.
+
+If your software does not save an *incremental* log (meaning a log to 
+which data is appended (at the end) line-by-line as events occur) to 
+file, then really it's not very good software.
+
+&gt;<i> So if I every day grep the file for that day's events, I will in 7 
+</I>&gt;<i> days have
+</I>&gt;<i> created a file that goes back a week. And then the next day will go 
+</I>&gt;<i> back a
+</I>&gt;<i> week and a day. Etc, etc.
+</I>
+So move the old data out of the file before you grep it.
+
+&gt;<i> To consistenly have a file that always has a week's worth of events, 
+</I>&gt;<i> I'll
+</I>&gt;<i> still need to at some point have some date-aware contruct which can 
+</I>&gt;<i> age out
+</I>&gt;<i> old events, not just lop off at a file size, and that brings us back 
+</I>&gt;<i> to the
+</I>&gt;<i> start of this thread.
+</I>
+`mv logfile last_weeks_logfile` is age-aware - it lops off all entries 
+before this moment. You can run it via a `cron` job.
+
+Stroller.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000483.html">[X-Unix] Question about grep
+</A></li>
+	<LI>Next message: <A HREF="000485.html">postfix anti-uce config
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#484">[ date ]</a>
+              <a href="thread.html#484">[ thread ]</a>
+              <a href="subject.html#484">[ subject ]</a>
+              <a href="author.html#484">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

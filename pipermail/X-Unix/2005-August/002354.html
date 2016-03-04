@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Rsync, mysqldump and cron job help needed - part2
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Rsync%2C%20mysqldump%20and%20cron%20job%20help%20needed%20-%20part2&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002353.html">
+   <LINK REL="Next"  HREF="002355.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Rsync, mysqldump and cron job help needed - part2</H1>
+    <B>Rad Craig</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Rsync%2C%20mysqldump%20and%20cron%20job%20help%20needed%20-%20part2&In-Reply-To="
+       TITLE="[X-Unix] Rsync, mysqldump and cron job help needed - part2">rad at inductionconcepts.com
+       </A><BR>
+    <I>Tue Aug 30 23:18:54 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002353.html">[X-Unix] Rsync, mysqldump and cron-job help needed - part1
+</A></li>
+        <LI>Next message: <A HREF="002355.html">[X-Unix] Rsync, mysqldump and cron job help needed - part3
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2354">[ date ]</a>
+              <a href="thread.html#2354">[ thread ]</a>
+              <a href="subject.html#2354">[ subject ]</a>
+              <a href="author.html#2354">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>5.) Am I on the right track?  I think it will be something like this:
+a.  Setup a cron job for a mysql dump (whatever the correct command  
+is), at say 10pm every Sunday night.
+aa.  Repeat (make another cron job/command) for each different  
+database.  Can I run them one minute apart, and they just run on  
+separate threads?  Or do I need to guess at when they will finish and  
+space them out?
+b.  Setup a cron job to run rsync on most of my directory structure  
+at 11pm every Sunday night.
+c.  Setup a cron job to delete the mysql dumps at 1am, every Monday  
+morning, at least after the first rsync has ran, because it will take  
+longer to make the first full backup.
+
+6.) Ok, here's one thing I'm confused about, rsync will make a full  
+backup, then do incrementals.  Does it just update the entire  
+directory structure I have downloaded, or does it make some kind of  
+incremental files (like tape backups) that will just keep adding up  
+(more files) each week, so that if I have to do a restore, I would  
+have to restore the main files, then a zillion incremental versions?
+
+6a.) How does that work, how do you keep it organized and not a total  
+nightmare if you ever have to do a restore?  Or would I be better off  
+doing a full backup each week as I have been doing, and just keeping  
+6 or more weeks worth of backups?
+
+6b.)  Do I run rsync from my webhost server via a cron job, to have  
+it send the files to my shop machine, or do I run it from my machine  
+at the shop that I'm actually downloading and storing everything on,  
+where it fetches the files off the webhost?  This perspective eludes me.
+
+6c.) I saw an example of:  rsync -azv foo:src/bar /data/tmp
+
+Should I use the 'archive' flag?
+
+6e.) If I want to copy a directory in my root of the webhost (not the  
+machine/OS root), like /foo, including the foo directory itself, and  
+all of its tree and contents, do I use /foo or /foo/?  In other words  
+I want it to create a directory named /foo on my shop machine, then  
+copy all of the contents and subdirectories in it, not just the  
+contents and subdirectories.  What is the correct way to specify  
+this?  If I understand the man page, I think I leave the trailing  
+slash off and it will create the /foo directory, then copy all of its  
+contents.  The wording in the man page about &quot;copy the directory by  
+name&quot;, is whats confusing me.  If it said either &quot;copy the contents  
+only&quot; or &quot;create the directory and copy its contents&quot; it would be  
+more clear, to me anyway.
+
+6f.) Do I format it the command the same way for the destination?  I  
+mean trailing slash or no?  I'm going to be copying from my root on  
+the webhost, say a directory /foo, to some directory on my shop  
+machine like &quot;/website backups&quot;.  So would I use the trailing slash  
+for the destination?
+
+rsync -azv /foo &quot;/website backups&quot;
+or
+rsync -azv /foo &quot;/website backups/&quot;
+
+I want it to create that foo directory inside the &quot;website backups&quot;  
+directory, then copy all of its contents.
+
+6g.) I have some directories with a space in the name, like the  
+&quot;website backups&quot; example above.  Can I use a name like that or do I  
+need to rename the directories that are named in that way?  If I can  
+use them, do I use single or double quotes?
+
+6h.) What are the following flags?  --backup? --update? --inplace?   
+My man page lists about all of the flags and short descriptions, but  
+when it gets down to the long descriptions, it doesn't show which  
+flag the long description goes with, so it makes it very hard to get  
+a detailed description of what a flag means.  It says something like  
+&quot;this flag specifies...&quot;, but doesn't tell me which flag.
+
+6i.)  I'd like to verify the files after transfer, how do I do that?
+
+6j.)  If rsync just makes a mirror, and only copies the changes after  
+the initial download, then I have one mirror of the website.  How can  
+I keep some type of 'roll-back' capable setup?  And I guess if it is  
+making a mirror image of the files/directories I specify, I would  
+also want it to delete the files on the destination that no longer  
+exist on the source, if so, whats the correct flag for that?
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002353.html">[X-Unix] Rsync, mysqldump and cron-job help needed - part1
+</A></li>
+	<LI>Next message: <A HREF="002355.html">[X-Unix] Rsync, mysqldump and cron job help needed - part3
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2354">[ date ]</a>
+              <a href="thread.html#2354">[ thread ]</a>
+              <a href="subject.html#2354">[ subject ]</a>
+              <a href="author.html#2354">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

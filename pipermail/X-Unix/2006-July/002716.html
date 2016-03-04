@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to determine which network component is failing
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20determine%20which%20network%20component%20is%20failing&In-Reply-To=8FD3B716-8443-492A-9E04-7D8D5B080B90%40charter.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002714.html">
+   <LINK REL="Next"  HREF="002720.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] How to determine which network component is failing</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20How%20to%20determine%20which%20network%20component%20is%20failing&In-Reply-To=8FD3B716-8443-492A-9E04-7D8D5B080B90%40charter.net"
+       TITLE="[X-Unix] How to determine which network component is failing">macmonster at myrealbox.com
+       </A><BR>
+    <I>Tue Jul 25 21:20:25 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002714.html">[X-Unix] How to determine which network component is failing
+</A></li>
+        <LI>Next message: <A HREF="002720.html">[X-Unix] How to determine which network component is failing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2716">[ date ]</a>
+              <a href="thread.html#2716">[ thread ]</a>
+              <a href="subject.html#2716">[ subject ]</a>
+              <a href="author.html#2716">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 26 Jul 2006, at 00:33, Charles Howse wrote:
+&gt;<i> ...
+</I>&gt;<i> if [ ! &quot;`ping -c 3 google.com | grep packets`&quot; == &quot;$offline&quot; ] ; then
+</I>&gt;<i> 	date &gt;&gt; $logfile
+</I>&gt;<i> 	echo host1 online, exiting &gt;&gt; $logfile
+</I>&gt;<i> 	exit 0
+</I>&gt;<i> elif
+</I>&gt;<i> 	[ ! &quot;`ping -c 3 microsoft.com | grep packets`&quot; == &quot;$offline&quot; ] ; then
+</I>&gt;<i> 	date &gt;&gt; $logfile
+</I>&gt;<i> 	echo host2 online, exiting &gt;&gt; $logfile
+</I>&gt;<i> 	exit 0
+</I>&gt;<i> elif
+</I>&gt;<i> 	[ ! &quot;`ping -c 3 yahoo.com | grep packets`&quot; == &quot;$offline&quot; ] ; then
+</I>&gt;<i> 	date &gt;&gt; $logfile
+</I>&gt;<i> 	echo host3 online, exiting &gt;&gt; $logfile
+</I>&gt;<i> 	exit 0
+</I>&gt;<i> else
+</I>&gt;<i> 	what_failed
+</I>&gt;<i> fi
+</I>&gt;<i>
+</I>&gt;<i> exit 0
+</I>
+This grepping for &quot;offline&quot; seems a little contrived, if you'll  
+excuse me mentioning it.
+
+You set an exit staus with your script, so why not trust others to do  
+so, too?
+
+    $ ping -c 3 google.com
+    PING google.com (72.14.207.99): 56 data bytes
+    64 bytes from 72.14.207.99: icmp_seq=0 ttl=243 time=90.402 ms
+    64 bytes from 72.14.207.99: icmp_seq=1 ttl=243 time=169.823 ms
+    64 bytes from 72.14.207.99: icmp_seq=2 ttl=243 time=90.617 ms
+
+    --- google.com ping statistics ---
+    3 packets transmitted, 3 packets received, 0% packet loss
+    round-trip min/avg/max/stddev = 90.402/116.947/169.823/37.389 ms
+    $ echo $?
+    0
+    $ ping -c 3 hgurhurhrhufhrh.com
+    ping: cannot resolve hgurhurhrhufhrh.com: Unknown host
+    $ echo $?
+    68
+    $
+
+`man ping` says:
+
+    RETURN VALUES
+        The ping utility returns an exit status of zero if at least  
+one response
+        was heard from the specified host; a status of two if the  
+transmission
+        was successful but no responses were received; or another  
+value (from
+        &lt;sysexits.h&gt;) if an error occurred.
+
+
+I'm not sure how valuable it is to make 3 ping requests, but should  
+you wish to do so then I think I might `grep -o '[[:digit:]]\{1,3\}%  
+packet loss' and provide this as output to the user.
+
+Stroller
+
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002714.html">[X-Unix] How to determine which network component is failing
+</A></li>
+	<LI>Next message: <A HREF="002720.html">[X-Unix] How to determine which network component is failing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2716">[ date ]</a>
+              <a href="thread.html#2716">[ thread ]</a>
+              <a href="subject.html#2716">[ subject ]</a>
+              <a href="author.html#2716">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] question about 'find'
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20question%20about%20%27find%27&In-Reply-To=20051207232443.1A32B5D57CE%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002512.html">
+   <LINK REL="Next"  HREF="002514.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] question about 'find'</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20question%20about%20%27find%27&In-Reply-To=20051207232443.1A32B5D57CE%40listserver.themacintoshguy.com"
+       TITLE="[X-Unix] question about 'find'">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Sat Dec 10 07:39:17 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002512.html">[X-Unix] Re: SSH connection -&gt; Solved
+</A></li>
+        <LI>Next message: <A HREF="002514.html">[X-Unix] installing gle
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2513">[ date ]</a>
+              <a href="thread.html#2513">[ thread ]</a>
+              <a href="subject.html#2513">[ subject ]</a>
+              <a href="author.html#2513">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>From: &quot;Stewart C. Russell&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">scruss at scruss.com</A>&gt;
+</I>&gt;<i>David Ledger wrote:
+</I>&gt;&gt;&gt;<i>  You do have to be careful with xargs if you're processing a *lot* of
+</I>&gt;&gt;&gt;<i>  arguments. BSD xargs has a default argument limit of 5000 (hidden in the
+</I>&gt;&gt;&gt;<i>  '-n' para of the manual), so if you're calling xargs through sort (say),
+</I>&gt;&gt;&gt;<i>  the results may not be what you expect.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  That's not what it means.
+</I>&gt;<i>
+</I>&gt;<i>It might not be what it means, but it's what it does.
+</I>&gt;<i>
+</I>&gt;<i>On OS X:
+</I>&gt;<i>$ perl -le 'for (1..5000) {print $_;}' | xargs echo | wc -l
+</I>&gt;<i>         1
+</I>&gt;<i>$ perl -le 'for (1..5001) {print $_;}' | xargs echo | wc -l
+</I>&gt;<i>         2
+</I>&gt;<i>So in effect, there's a default '-n 5000' in the xargs invocation, for
+</I>&gt;<i>in the second case 'echo' is being called twice. It's different on other
+</I>&gt;<i>unices, f'rinstance with Gnu xargs on Cygwin:
+</I>
+That's what _I_ said.
+_You_ originally said that there's a '5000 argument limit in xargs'. 
+You obviously understand it better than your original email implied, 
+and what I wrote obviously didn't manage to say what I meant to you.
+
+There is no limit in xargs as such. The limit is in other parts of 
+the OS. xargs was written as a way round that limit. It knows 
+(conservatively, possibly inaccurately) what that limit is and works 
+accordingly. It allows control over the value it uses as a limit in 
+case you know better. If there were no OS limit, xargs would not 
+exist, but, being as its there, its a handy alternative to other 
+techniques.
+
+&gt;<i>
+</I>&gt;<i>If you're worried about efficiency over expediency, you shouldn't be
+</I>&gt;<i>using shell.
+</I>
+Shell gives you programmer speed. If you need something it's better 
+to have it as a shell script rather than to not have it at all, which 
+is usually the alternative.
+
+It's probably my assembler programming background, but I always try 
+to make my shell scripts as efficient as possible. Shell scripts are 
+inefficient in cpu, and a poorly written script multiply so. All the 
+more reason to script efficiently. Some boxes I've worked on could 
+probably work as well with one less cpu if the monitoring and 
+housekeeping scripts were better written.
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+Chair of HPUX SysAdmin SIG of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x-unix.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002512.html">[X-Unix] Re: SSH connection -&gt; Solved
+</A></li>
+	<LI>Next message: <A HREF="002514.html">[X-Unix] installing gle
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2513">[ date ]</a>
+              <a href="thread.html#2513">[ thread ]</a>
+              <a href="subject.html#2513">[ subject ]</a>
+              <a href="author.html#2513">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

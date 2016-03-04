@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] [Ti]Journaling, was --&gt; Journeling.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20%5BTi%5DJournaling%2C%20was%20--%3E%20Journeling.&In-Reply-To=list-15783752%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="014932.html">
+   <LINK REL="Next"  HREF="014934.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] [Ti]Journaling, was --&gt; Journeling.</H1>
+    <B>Kynan Shook</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20%5BTi%5DJournaling%2C%20was%20--%3E%20Journeling.&In-Reply-To=list-15783752%40mail.ninewire.com"
+       TITLE="[Ti] [Ti]Journaling, was --&gt; Journeling.">kshook at cae.wisc.edu
+       </A><BR>
+    <I>Sat Aug  7 07:55:49 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="014932.html">[Ti] [Ti]Journaling, was --&gt; Journeling.
+</A></li>
+        <LI>Next message: <A HREF="014934.html">[Ti] [Ti]Journaling, was --&gt; Journeling.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14933">[ date ]</a>
+              <a href="thread.html#14933">[ thread ]</a>
+              <a href="subject.html#14933">[ subject ]</a>
+              <a href="author.html#14933">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Kernel panics aren't the only way to have data lost.  I'm not sure 
+exactly what in the OS would have to fail to cause a half-performed 
+write; just plain freezing comes to mind, plus power outages and the 
+like.  Bad memory could certainly contribute to these things, since 
+many people have no-brand memory (I'm talking about the chips, not the 
+whole stick) and have no clue.
+
+Anyway, working in computer repair for several years, I encountered 
+many, many, many people who had corrupt directories; inconsistencies 
+that probably got started because their computer crashed once, and then 
+two years later the errors had built up so much that their computer 
+would no longer boot or mount the hard drive.  Of course, this always 
+happens to a file that wasn't backed up, and had to be sent to a 
+{professor, boss, relative, pick one} yesterday, and would take days if 
+not weeks or months to reproduce.  Seems to me that a slight 
+performance hit is worth more reliability.
+
+Anyway, you're free to actually perform a benchmark if you like; I'd do 
+it myself, but I'm writing this on a plane as I go on vacation for a 
+couple days, and I'm also in the middle of moving from one apartment to 
+another.  If I remember, I'll try and test it before the end of the 
+month (if somebody really cares, remind me then).  I'd recommend 
+testing copying a large file on a single hard drive, copying a large 
+file from one drive to another, copying many small files on a single 
+drive, and copying many small files from one drive to another; try all 
+with journalling turned on on the hard drive that is being written to, 
+and then again with journalling off.  If you're really ambitious, you 
+should try it with a variety of systems; I only have my two PowerBooks 
+to test with, so perhaps somebody else will test with a G5 (on Serial 
+ATA) and a G4 desktop (with parallel ATA).
+
+However the benchmark turns out though, remember that the supposed 10% 
+slowdown is only slowing down something that your computer spends much 
+much less than 1% of its time doing, and neither you nor the computer 
+generally has to wait around for the write to complete.  You spend 3 
+hours writing a Word document, you save it every 5 minutes, and it 
+still takes you far longer to hit Command-S than it does for the 
+computer to actually write the file.  It might make a difference if 
+you're copying a few GB of data from one place to another, but very few 
+people do this frequently, nor do they necessarily have to stop work 
+while the data copies (eg start a large copy, go work on something else 
+while it completes), and additionally, the writing speed of the drive 
+often isn't the bottleneck; most drives will write faster than they can 
+read, plus often when copying from a network, the network is the 
+weakest (errr, slowest) link in the chain.
+
+The one time that I can think of that somebody would regularly copy 
+several gigabytes of data, may have to completely halt work while doing 
+so, and would have other I/O devices that can keep up with the hard 
+drive is digital video, which I already mentioned as being a good 
+excuse to turn journalling off.
+
+Also, to offset the slowdown when writing files, reading and writing 
+speeds are both improved; reading by moving the most-read files to the 
+hot zone on the disk, and both reading and writing are sped up by the 
+automatic defragmenting that is happening on the background.  Turn 
+journalling off, and you lose these features.
+
+If speed is *truly* essential to you, buy the highest-capacity 5400 RPM 
+laptop drive you can find, or even better, as you've already found, get 
+an external drive running at 7200 RPMs or better (again, higher 
+capacity will also generally give you better speed).  Heck, you can 
+even get a battery-powered RAID if you need to.  Either of those 
+upgrades will give you a much larger speed boost than Journalling will 
+give you a performance hit.
+
+If you do decide to turn journalling off, at least buy DiskWarrior and 
+run it once a month or so.  It'll fix all those little problems that 
+crop up in directories that you don't know about until a catastrophic 
+failure after which you can't read the disk any more.
+
+On Aug 6, 2004, at 5:08 AM, b wrote:
+
+&gt;<i> With all due respect, running a 667 Ti here, that i keep maintained to 
+</I>&gt;<i> the max, with external Firewire 800 drives running on the PC card slot 
+</I>&gt;<i> (that read/write 10MB/sec faster than the internal IBM drive), and a 
+</I>&gt;<i> GB of RAM, and some free disk space.... why on Earth would I want to 
+</I>&gt;<i> save, what, 30 seconds once a week on a reboot, and, in return, give 
+</I>&gt;<i> up 10% of the speed on a constant basis?
+</I>&gt;<i>
+</I>&gt;<i> The logic escapes me totally. In 2 years I've had a grand total of one 
+</I>&gt;<i> kernel panic. Big deal.
+</I>&gt;<i>
+</I>&gt;<i> Lost data due to anything software/hardware related? ZERO.
+</I>&gt;<i>
+</I>&gt;<i> Acidentally hard-rebooting when a big app freezes causes a reboot that 
+</I>&gt;<i> takes about 1 minute 17 seconds. Normal reboot time: 1:17. Where's the 
+</I>&gt;<i> 'issue'? Reboot when booted into OS 9?  Under 40 seconds.
+</I>&gt;<i>
+</I>&gt;<i> Analysis: Apple's 'hybrid' OSX (mach/Darwin/pdf/QuickTime window 
+</I>&gt;<i> manager/Finder has enough problems (speed included0, so why add to the 
+</I>&gt;<i> load?
+</I>&gt;<i>
+</I>&gt;<i> Giving up 10% (if it's even that little) on a constant basis, in 
+</I>&gt;<i> return for a marginally quicker restart after a catastrophic crash 
+</I>&gt;<i> (how often are they happening i'd like to know), ... is like losing 10 
+</I>&gt;<i> bucks every five minutes and saying, &quot;It's cool, I put 30 bucks in my 
+</I>&gt;<i> savings account every two weeks.&quot; Sounds inefficient, pointless, and 
+</I>&gt;<i> almost totally unnecessary.
+</I>&gt;<i>
+</I>&gt;<i> My advice: Back up your docs, email addresses, and passwords to a 
+</I>&gt;<i> gold-ongold CD or DVD, Keep your installers, and dump anything that 
+</I>&gt;<i> slows down the Mac. People, everywhere it seems, are 'filling-up' on 
+</I>&gt;<i> utilities that perform tasks that the OS can already do on its own, 
+</I>&gt;<i> and why? More clutter, more variables to sort through in cases of 
+</I>&gt;<i> conflicts... wasted space, and more missed opportunities to really 
+</I>&gt;<i> know and use the OS that's right in front of us (the one 'hidden' by 
+</I>&gt;<i> the GUI, of course).
+</I>&gt;<i>
+</I>&gt;<i> A Finder that uses thousands of _DS files to supposedly keep track of 
+</I>&gt;<i> each folder's contents, etc, and then pauses whenever any folder or 
+</I>&gt;<i> menu item is clicked for the first time after a login, and can't even 
+</I>&gt;<i> remember to &quot;Open all new folders in Column View&quot; (why is that 
+</I>&gt;<i> 'option' even included?)... does not need more 'baggage'.
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="014932.html">[Ti] [Ti]Journaling, was --&gt; Journeling.
+</A></li>
+	<LI>Next message: <A HREF="014934.html">[Ti] [Ti]Journaling, was --&gt; Journeling.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14933">[ date ]</a>
+              <a href="thread.html#14933">[ thread ]</a>
+              <a href="subject.html#14933">[ subject ]</a>
+              <a href="author.html#14933">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

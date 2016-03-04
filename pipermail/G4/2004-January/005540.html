@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Help! Dead built in ethernet on G4 450DP?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Help%21%20Dead%20built%20in%20ethernet%20on%20G4%20450DP%3F&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005539.html">
+   <LINK REL="Next"  HREF="005541.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Help! Dead built in ethernet on G4 450DP?</H1>
+    <B>k s d</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Help%21%20Dead%20built%20in%20ethernet%20on%20G4%20450DP%3F&In-Reply-To="
+       TITLE="[G4] Help! Dead built in ethernet on G4 450DP?">ksd003 at hotmail.com
+       </A><BR>
+    <I>Thu Jan 22 19:24:02 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005539.html">[G4] Multifunction Printer Recommendation
+</A></li>
+        <LI>Next message: <A HREF="005541.html">[G4] Help! Dead built in ethernet on G4 450DP?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5540">[ date ]</a>
+              <a href="thread.html#5540">[ thread ]</a>
+              <a href="subject.html#5540">[ subject ]</a>
+              <a href="author.html#5540">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Ok...
+When I start &quot;IORegisrtyExplorer&quot; it starts with:
+&quot;Root&quot;
+Clicking on Root opens:
+&quot;PowerPac3,3&quot;
+&quot;Core99PE&quot;
+&quot;<A HREF="../../../mailman/listinfo/g4.html">pci at f4000000</A>&quot;
+&quot;AppleMacRiscPCI&quot;
+&quot;<A HREF="../../../mailman/listinfo/g4.html">ethernet at f</A>&quot;
+&quot;UniNEet&quot;
+&quot;IOEthernetInterface&quot;
+&quot;IONetworkStack&quot;
+&quot;IONetworkStackUserClient&quot;
+END
+
+Not all matching up with yours... didn't see &quot;IODeviceTree&quot; or &quot;device-tree&quot; 
+anywhere and a find
+didn't find them either.
+
+The &quot;look-see&quot; checked out fine.. clean &amp; straight. I've also disconencted 
+and reconnected the
+modem/enet cable 3 times.. checking every time to see if the connection 
+(magically) appears.
+The enet cable has only been connected/disconencted from the enet port 3 
+times ever. I never
+had any other network cables conencted to the machine so it's no real big 
+surprise that everything
+there looks good.
+
+I'll order the Linksys broadband router tomorrow... I can't seem to find any 
+Mac-compatable cards
+on the net for under $30... sucks compared to the $6-$10 (or free after 
+rebate) cards offered to
+PC users.
+
+.....pulling my hair out....
+
+Thanks again,
+-kevin
+
+
+&gt;<i>From: sr ferenczy &lt;<A HREF="../../../mailman/listinfo/g4.html">srf7425 at rit.edu</A>&gt;
+</I>&gt;<i>Reply-To: &quot;Power Macintosh G4 List&quot; &lt;<A HREF="../../../mailman/listinfo/g4.html">G4 at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>To: &quot;Power Macintosh G4 List&quot; &lt;<A HREF="../../../mailman/listinfo/g4.html">G4 at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>Subject: Re: [G4] Help! Dead built in ethernet on G4 450DP?
+</I>&gt;<i>Date: Thu, 22 Jan 2004 21:00:20 -0500
+</I>&gt;<i>
+</I>&gt;<i>sorry for only dishing half the info...  and i have some more tests...
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>open the application &quot;IORegistryExplorer&quot;
+</I>&gt;<i>
+</I>&gt;<i>click on &quot;IODeviceTree&quot;
+</I>&gt;<i>click on &quot;Root&quot;
+</I>&gt;<i>clikc on &quot;device-tree&quot;
+</I>&gt;<i>click on &quot;<A HREF="../../../mailman/listinfo/g4.html">pci at f4000000</A>&quot;  (maybe be another &quot;<A HREF="../../../mailman/listinfo/g4.html">pci at fxxxxxxx</A>)
+</I>&gt;<i>click on &quot;<A HREF="../../../mailman/listinfo/g4.html">ethernet at f</A>&quot;
+</I>&gt;<i>click on &quot;ethernet-phy&quot;
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>if all that comes up, the system &quot;sees&quot; an ethernet port, so the port's 
+</I>&gt;<i>controller chip isnt dead.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>on to more thoughts...
+</I>&gt;<i>
+</I>&gt;<i>if this all checks out kosher so far... do a &quot;look-see&quot; of the ethernet 
+</I>&gt;<i>port. look inside the port on the back of your mac, make sure all 8? of the 
+</I>&gt;<i>pins are in there, parallel, and looking unadulterated.
+</I>&gt;<i>
+</I>&gt;<i>also, does your modem have an &quot;ethernet&quot; light? mine does, when it senses a 
+</I>&gt;<i>live ethernet connection, it lights up. if yours does and it lights up, its 
+</I>&gt;<i>not the port.
+</I>&gt;<i>
+</I>&gt;<i>finally, try to get a hold of a hub, switch, router, some other ethernet 
+</I>&gt;<i>device that you can hook up to your mac to see if it communicates with it.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>....scratching my head...
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>sandor
+</I>&gt;<i>
+</I>&gt;<i>On Jan 22, 2004, at 7:03 PM, k s d wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i>I installed the developer's tools, but I'm lost as to what I'm looking 
+</I>&gt;&gt;<i>for.
+</I>&gt;&gt;<i>AppleMacRiscPCI&gt;<A HREF="../../../mailman/listinfo/g4.html">Ethernet at F</A> etc... Any clue on what I'm looking for or is 
+</I>&gt;&gt;<i>an
+</I>&gt;&gt;<i>issue of if I don't know it's too complicated and may as well not even 
+</I>&gt;&gt;<i>bother?
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>----------
+</I>&gt;<i>G4ist, a listserv for discussion of everything G4.
+</I>&gt;<i>FAQ at &lt;<A HREF="../../../../www.themacintoshguy.com/lists/G4.html">http://www.themacintoshguy.com/lists/G4.html</A>&gt;.
+</I>&gt;<i>Send a message to &lt;<A HREF="../../../mailman/listinfo/g4.html">G4-DIGEST at themacintoshguy.com</A>&gt; to switch to the digest.
+</I>&gt;<i>
+</I>&gt;<i>XRouter | Share your DSL or cable modem between multiple computers! Dr. 
+</I>&gt;<i>Bott | Now $139.99      &lt;<A HREF="http://www.drbott.com/prod/xrouter.html">http://www.drbott.com/prod/xrouter.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>Dr. Bott LLC   4-port USB Hub in translucent Graphite!
+</I>&gt;<i>Dr. Bott LLC   &lt;<A HREF="http://www.drbott.com/prod/ghub.html">http://www.drbott.com/prod/ghub.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>Small Dog Electronics   <A HREF="http://www.smalldog.com">http://www.smalldog.com</A>  | Canon Digital Cameras |
+</I>&gt;<i>--Quicksilver &amp; refurbished G4's arriving daily! |   and Camcorders!!    |
+</I>&gt;<i>
+</I>&gt;<i>MacResQ Specials: LaCie SCSI CDR From $99! PowerBook 3400/200 Only $879! 
+</I>&gt;<i>Norton AntiVirus 6 Only $19! We Stock PARTS! &lt;<A HREF="http://www.macresq.com">http://www.macresq.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>OS X News, Dr.Mac, Forums, Tutorials, Tips, Hints, FAQ?s - 
+</I>&gt;<i><A HREF="http://www.osxfaq.com">http://www.osxfaq.com</A>
+</I>&gt;<i>
+</I>
+_________________________________________________________________
+Scope out the new MSN Plus Internet Software &#151; optimizes dial-up to the max! 
+   <A HREF="http://join.msn.com/?pgmarket=en-us&page=byoa/plus&ST=1">http://join.msn.com/?pgmarket=en-us&amp;page=byoa/plus&amp;ST=1</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005539.html">[G4] Multifunction Printer Recommendation
+</A></li>
+	<LI>Next message: <A HREF="005541.html">[G4] Help! Dead built in ethernet on G4 450DP?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5540">[ date ]</a>
+              <a href="thread.html#5540">[ thread ]</a>
+              <a href="subject.html#5540">[ subject ]</a>
+              <a href="author.html#5540">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

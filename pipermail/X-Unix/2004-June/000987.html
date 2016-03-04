@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Need to log internet connectivity
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Need%20to%20log%20internet%20connectivity&In-Reply-To=list-14390365%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000986.html">
+   <LINK REL="Next"  HREF="000988.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Need to log internet connectivity</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Need%20to%20log%20internet%20connectivity&In-Reply-To=list-14390365%40mail.ninewire.com"
+       TITLE="[X-Unix] Need to log internet connectivity">magill at mcgillsociety.org
+       </A><BR>
+    <I>Mon Jun 28 08:21:32 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000986.html">[X-Unix] Need to log internet connectivity
+</A></li>
+        <LI>Next message: <A HREF="000988.html">Using SYSLOG
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#987">[ date ]</a>
+              <a href="thread.html#987">[ thread ]</a>
+              <a href="subject.html#987">[ subject ]</a>
+              <a href="author.html#987">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 27 Jun, 2004, at 15:27, Jerry Krinock wrote:
+&gt;<i> Thanks, William.  These details would be nice, but I just want to show 
+</I>&gt;<i> my
+</I>&gt;<i> ISP that is failed.  They should have a log of failures at the higher
+</I>&gt;<i> levels.
+</I>
+Yeah, maybe. But with &quot;big&quot; ISP's like Earthlink, they are not much 
+different from TPC (The phone company) ... things get magically fixed 
+even though their logs show no problems.
+
+&gt;&gt;<i> In my case, with my DSL line I have a real ISP and static addresses,
+</I>&gt;&gt;<i> don't have to use PPPOE and DHCP. I have a script which runs
+</I>&gt;&gt;<i> periodically on one of my systems which uses ping to determine if
+</I>&gt;&gt;<i> certain portions of the network are reachable.
+</I>&gt;<i>
+</I>&gt;<i> I do not have static IP with Earthlink, but I don't think that 
+</I>&gt;<i> matters.  I
+</I>&gt;<i> think that pinging their POP server, or, say, yahoo.com would be 
+</I>&gt;<i> sufficient.
+</I>&gt;<i> I presume your script is a cron job?
+</I>
+Correct.
+
+The only trick/problem with PPOE based ISPs is that they frequently 
+block ping (ICMP) traffic.
+
+&gt;&gt;<i> I have had DSL since the beginning, so I have a seriously dumb and
+</I>&gt;&gt;<i> non-manageable DSL modem.
+</I>&gt;<i>
+</I>&gt;<i> Mine may be more manageable but you have to connect a Windows PC with 
+</I>&gt;<i> and
+</I>&gt;<i> old-fashioned RS232 to the &quot;comm&quot; port.  I don't think it is &quot;web
+</I>&gt;<i> addressable.&quot;
+</I>
+That's probably only for the pretty GUI. It probably has an 
+&quot;undocumented&quot; command line interface. Try simply connecting the serial 
+port on the Mac (via a Keyspan serial adapter) and use something like 
+Kermit to connect to it. (you need a serial communications program, not 
+a TCP/IP based program. ... unless of course the modem actually 
+supports PPP itself, which is a possibility.
+
+What kind of modem is it? You can probably find the OEM specs on the 
+web.
+
+&gt;<i> During the last hour, I set my pop email client to check for email 
+</I>&gt;<i> every 1
+</I>&gt;<i> minute.  The trouble I found is that, with PPPoE, once the connection 
+</I>&gt;<i> drops,
+</I>&gt;<i> it seems the Mac OS defaults to the internal modem (even though it is 
+</I>&gt;<i> &quot;not
+</I>&gt;<i> configured&quot;), and does not seem try to re-establish PPPoE until I open
+</I>&gt;<i> System Preferences &gt; Network &gt; Show: Network Status and click Connect. 
+</I>&gt;<i>  This
+</I>&gt;<i> is even though I have checked &quot;Connec automatially when needed&quot; and  
+</I>&gt;<i> &quot;Send
+</I>&gt;<i> PPP echo packets&quot;, and un-checked &quot;Disconnect if idle&quot;.
+</I>&gt;<i>
+</I>&gt;<i> Does anyone know if this can be made to reconnect automatically with 
+</I>&gt;<i> PPPoE?
+</I>
+Check MacOXhints or  MacFixit ... I've heard discussions about this 
+problem but don't recall where.  Although, I know it is common as 
+Linksys has instructions for dealing with it under Windows as part of 
+their Users manual.
+
+They include the comment -- &quot;PPPoE by nature is not a &quot;dedicated 
+connection&quot;. The DSL Internet Service Provider can disconnect the 
+service after a period of inactivity, just like the normal phone 
+dial-up connection to the Internet. There is an option to Keep Alive. 
+This may not ways work, so you may need to re-establish connection.&quot;
+
+&gt;&gt;<i> As far as troubleshooting interference on the DSL line, the most 
+</I>&gt;&gt;<i> likely
+</I>&gt;&gt;<i> problem has to do with the modem loosing sync with the DSLAM. The 
+</I>&gt;&gt;<i> cause
+</I>&gt;&gt;<i> is one of two things -- either you have real &quot;line noise&quot; problem; or
+</I>&gt;&gt;<i> you have CO activity which results in the DSLAM being reset on a
+</I>&gt;&gt;<i> &quot;routine&quot; basis by Telco technicians....
+</I>&gt;<i>
+</I>&gt;<i> I believe the problem is impulse noise which comes and goes.  Until
+</I>&gt;<i> recently, we only had the problem when it rained, but during the past 
+</I>&gt;<i> sunny
+</I>&gt;<i> week it's been doing it on and off all day.  There is a correlation 
+</I>&gt;<i> between
+</I>&gt;<i> the DSL being out of sync, with the amount of impulse noise (which 
+</I>&gt;<i> sounds
+</I>&gt;<i> like kkkkick......kkkkkick) that I hear on our voice telephone.
+</I>&gt;<i>
+</I>&gt;<i> William, please post your script when you get a chance!!
+</I>
+Unless there's a great deal of interest, I'll send it to you 
+independently.
+It's a typical hack ... not packaged or documented.
+
+T.T.F.N.
+William H. Magill
+# Beige G3 - Rev A motherboard - 768 Meg
+# Flat-panel iMac (2.1) 800MHz - Super Drive - 768 Meg
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg]- Tru64 5.1a
+# XP1000  [Alpha EV6]
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000986.html">[X-Unix] Need to log internet connectivity
+</A></li>
+	<LI>Next message: <A HREF="000988.html">Using SYSLOG
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#987">[ date ]</a>
+              <a href="thread.html#987">[ thread ]</a>
+              <a href="subject.html#987">[ subject ]</a>
+              <a href="author.html#987">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

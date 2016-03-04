@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] finding duplicate files
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20finding%20duplicate%20files&In-Reply-To=4AD5CCD6-8408-46AC-9597-12F2FAE4CD35%40mchsi.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002840.html">
+   <LINK REL="Next"  HREF="002823.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] finding duplicate files</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20finding%20duplicate%20files&In-Reply-To=4AD5CCD6-8408-46AC-9597-12F2FAE4CD35%40mchsi.com"
+       TITLE="[X-Unix] finding duplicate files">ecrist at secure-computing.net
+       </A><BR>
+    <I>Wed Jun 20 12:35:59 PDT 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002840.html">[X-Unix] finding duplicate files
+</A></li>
+        <LI>Next message: <A HREF="002823.html">[X-Unix] Application usage reporting
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2841">[ date ]</a>
+              <a href="thread.html#2841">[ thread ]</a>
+              <a href="subject.html#2841">[ subject ]</a>
+              <a href="author.html#2841">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Jun 20, 2007, at 2:19 PMJun 20, 2007, Dave Higgins wrote:
+
+&gt;<i>
+</I>&gt;<i> On Jun 20, 2007, at 1:54 PM, Eric F Crist wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Sorry to reply to myself, but I'm wrong!  the line should be:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> perl -e 'foreach $file ( `find . | grep -v .gz` ) { chomp ( $file  
+</I>&gt;&gt;<i> = $file ) ; if ( !-e &quot;$file.gz&quot; ) { print &quot;gzipping file: $file;  
+</I>&gt;&gt;<i> gzip $file; } }'
+</I>&gt;<i>
+</I>&gt;<i> Love these little one-liners... But, I'm drawing errors when  
+</I>&gt;<i> testing this...
+</I>&gt;<i>
+</I>&gt;<i> in sh: Can't find string terminator '&quot;' anywhere before EOF at -e  
+</I>&gt;<i> line 1.
+</I>&gt;<i>
+</I>&gt;<i> in tcsh: -e: Event not found.
+</I>&gt;<i>
+</I>&gt;<i> The first one, in reply to the OP, works great, though. :-)
+</I>&gt;<i>
+</I>&gt;<i> Dave.
+</I>&gt;<i>
+</I>
+I promise I'll test it before I post next time.  Here's the working  
+line, minus my two typos:
+
+perl -e 'foreach $file (`file . | grep -v .gz`) { chomp($file); if (!  
+-e &quot;$file.gz&quot;) { print &quot;gzipping file: $file&quot; `gzip $file`; }}'
+
+Thanks for playing!
+-----
+Eric F Crist
+Secure Computing Networks
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002840.html">[X-Unix] finding duplicate files
+</A></li>
+	<LI>Next message: <A HREF="002823.html">[X-Unix] Application usage reporting
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2841">[ date ]</a>
+              <a href="thread.html#2841">[ thread ]</a>
+              <a href="subject.html#2841">[ subject ]</a>
+              <a href="author.html#2841">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

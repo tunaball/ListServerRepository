@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Advice Re: Security Update/!st Time App Launch Issue
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Advice%20Re%3A%20Security%20Update/%21st%20Time%20App%20Launch%20Issue&In-Reply-To=AD3F1B47-0FE7-11D9-A40C-00039301ACF8%40astcomm.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000128.html">
+   <LINK REL="Next"  HREF="000130.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Advice Re: Security Update/!st Time App Launch Issue</H1>
+    <B>b</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Advice%20Re%3A%20Security%20Update/%21st%20Time%20App%20Launch%20Issue&In-Reply-To=AD3F1B47-0FE7-11D9-A40C-00039301ACF8%40astcomm.net"
+       TITLE="[Ti] Advice Re: Security Update/!st Time App Launch Issue">syrflip at verizon.net
+       </A><BR>
+    <I>Sun Sep 26 12:54:53 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000128.html">[Ti] Advice Re: Security Update/!st Time App Launch Issue
+</A></li>
+        <LI>Next message: <A HREF="000130.html">[Ti] Advice Re: Security Update/!st Time App Launch Issue
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#134">[ date ]</a>
+              <a href="thread.html#134">[ thread ]</a>
+              <a href="subject.html#134">[ subject ]</a>
+              <a href="author.html#134">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Chris Olson paused, thought it over, and spoke thusly:
+
+&gt;&gt;<i>Question is two-fold: Was coreservicesd the appropriate service to 
+</I>&gt;&gt;<i>add to the arguments,as far as the update in question was 
+</I>&gt;&gt;<i>concerned, and what might have been the cause of the mystery free 
+</I>&gt;&gt;<i>space disappearance?
+</I>&gt;<i>
+</I>&gt;<i>Well, kind of.  Kill coreservicesd and icons start disappearing all 
+</I>&gt;<i>kinds of weird things.
+</I>&gt;<i>
+</I>&gt;<i>Executing /System/Library/CoreServices/coreservicesd as root fires 
+</I>&gt;<i>it up after its dead.  It's probably better to:
+</I>&gt;<i>ps -e | grep coreservicesd
+</I>&gt;<i>to identify it first, then send it a -HUP signal so you don't hose 
+</I>&gt;<i>the look of your desktop while you're trying to figure out how to 
+</I>&gt;<i>restart it :-)
+</I>&gt;<i>
+</I>&gt;<i>On your runaway, you can probably identify the errant process with 
+</I>&gt;<i>top.  I'm guess a logging daemon went wild because it got alarmed 
+</I>&gt;<i>that you perhaps tried to restart a system process that didn't 
+</I>&gt;<i>restart.  Anything that eats several gigs in several minutes has to 
+</I>&gt;<i>pulling major cpu.  Haven't you ever heard the old Unix admin's last 
+</I>&gt;<i>resort?  &quot;kill -9 them all and let inetd sort it out&quot;
+</I>&gt;<i>--
+</I>&gt;<i>Chris
+</I>
+That's funny, yeah. The only thing I can think, because once i 
+rebooted, top was 'new', you know... is when i did the original 
+SystemStarter restart, I did it in verbose mode, and i could see that 
+a little daemon, or something, that is part of Adobe's CS suite (the 
+Version Cue) was not launching properly... -v mode showed lines of 
+repeated text : 'waiting for version cue', over and over. But it did 
+launch, but was very messy afterwards, with some pref files wiped, 
+window 'views' reset to icons, that sort of thing. Took a little 
+tuning up.
+
+I'll just read more, and see what's up.
+
+~flipper
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000128.html">[Ti] Advice Re: Security Update/!st Time App Launch Issue
+</A></li>
+	<LI>Next message: <A HREF="000130.html">[Ti] Advice Re: Security Update/!st Time App Launch Issue
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#134">[ date ]</a>
+              <a href="thread.html#134">[ thread ]</a>
+              <a href="subject.html#134">[ subject ]</a>
+              <a href="author.html#134">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

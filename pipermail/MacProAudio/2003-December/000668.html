@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MPA] Multichannel Interleaving
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macproaudio%40listserver.themacintoshguy.com?Subject=%5BMPA%5D%20Multichannel%20Interleaving&In-Reply-To=list-9715093%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000667.html">
+   <LINK REL="Next"  HREF="000669.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MPA] Multichannel Interleaving</H1>
+    <B>Luke Snarl</B> 
+    <A HREF="mailto:macproaudio%40listserver.themacintoshguy.com?Subject=%5BMPA%5D%20Multichannel%20Interleaving&In-Reply-To=list-9715093%40mail.ninewire.com"
+       TITLE="[MPA] Multichannel Interleaving">luke at snarl.org
+       </A><BR>
+    <I>Thu Dec 11 16:54:44 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000667.html">midi interface
+</A></li>
+        <LI>Next message: <A HREF="000669.html">&quot;Legacy&quot; Digi 001 System
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#668">[ date ]</a>
+              <a href="thread.html#668">[ thread ]</a>
+              <a href="subject.html#668">[ subject ]</a>
+              <a href="author.html#668">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>the spec for WAV and AIFF and similar allows for any number of channels 
+of audio as specified by a number in the header of the file.
+
+most people only think of mono and stereo but you can of course have as 
+many channels as you like.
+
+A place I used to work in the past we commonly used 6-channel audio 
+files. Or 8.
+
+Basically they are interleaved 1, 2, 3, 4, 5, 6, etc
+
+Its up to your apps that use them to adhere to a standard way of 
+choosing what channel number is for what. Typically however L=1 and R=2 
+and everything after that needs to be agreed upon by all users of the 
+files.
+
+We were doing 5.1 surround stuff and I seem to remember (it was like 5 
+yrs ago) that there were two standards for where the channels went:
+
+one was L, R, Ls, Rs, Center, Sub and the other was L, C, R, Rs, Sub, 
+Ls I think (which goes against the L=1 and R=2 thing but its kinda 
+clockwise round the room....)
+
+anyhow hope that helps....
+
+have fun!
+:<i>L
+</I>Sub Bass Snarl sound system
+Sydney, Australia
+<A HREF="http://snarl.org">http://snarl.org</A>
+
+
+On Thursday, December 11, 2003, at 12:38 PM, <A HREF="../../../mailman/listinfo/macproaudio.html">quicktimeguy at hotmail.com</A> 
+wrote:
+
+&gt;<i> Does anyone know how audio with more than 2 channels is interleaved? 
+</I>&gt;<i> Stereo audio is usually interleaved like this:
+</I>&gt;<i>
+</I>&gt;<i> L R L R L R L R
+</I>&gt;<i>
+</I>&gt;<i> with a left sample coming first, followed by a right sample, etc.
+</I>&gt;<i>
+</I>&gt;<i> With more than two channels, though, how does it go?
+</I>&gt;<i>
+</I>&gt;<i> For four channel audio, say, is it
+</I>&gt;<i>
+</I>&gt;<i> L 2 3 R L 2 3 R
+</I>&gt;<i>
+</I>&gt;<i> or is it
+</I>&gt;<i>
+</I>&gt;<i> L R 3 4 L R 3 4
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the MacProAudio email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/MacProAudio.html">http://www.themacintoshguy.com/lists/MacProAudio.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/macproaudio.html">MacProAudio-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/macproaudio.html">MacProAudio-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/macproaudio.html">MacProAudio-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;<i> Mac ISP
+</I>&gt;<i> Serious Mac Internet Solutions From NineWire!   
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i>   iMic   |   Griffin iMic! Add Audio in and out via USB.
+</I>&gt;<i> Dr. Bott |   &lt;<A HREF="http://www.drbott.com/prod/imic.html">http://www.drbott.com/prod/imic.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>    Cyberian   | Support this list when you buy at Outpost.com!
+</I>&gt;<i>    Outpost    |         <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000667.html">midi interface
+</A></li>
+	<LI>Next message: <A HREF="000669.html">&quot;Legacy&quot; Digi 001 System
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#668">[ date ]</a>
+              <a href="thread.html#668">[ thread ]</a>
+              <a href="subject.html#668">[ subject ]</a>
+              <a href="author.html#668">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macproaudio.html">More information about the MacProAudio
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

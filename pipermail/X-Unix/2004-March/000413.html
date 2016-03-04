@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] PS and Stuck Processes
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20PS%20and%20Stuck%20Processes&In-Reply-To=list-11212600%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000412.html">
+   <LINK REL="Next"  HREF="000414.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] PS and Stuck Processes</H1>
+    <B>Gretchen Hayman</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20PS%20and%20Stuck%20Processes&In-Reply-To=list-11212600%40mail.ninewire.com"
+       TITLE="[X-Unix] PS and Stuck Processes">gretchen at sedl.org
+       </A><BR>
+    <I>Thu Mar  4 14:54:23 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000412.html">PS and Stuck Processes
+</A></li>
+        <LI>Next message: <A HREF="000414.html">Tape Backup - DDS3
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#413">[ date ]</a>
+              <a href="thread.html#413">[ thread ]</a>
+              <a href="subject.html#413">[ subject ]</a>
+              <a href="author.html#413">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Mar 4, 2004, at 09:58, Alex wrote:
+
+&gt;<i> This is related to a query about kill I posted last month.
+</I>&gt;<i>
+</I>&gt;<i> First, what does it mean when ps returns U as the state of a process? 
+</I>&gt;<i> It does not appear in man ps.
+</I>
+Ouch, the dreaded U.  I posted about this a long while ago (pre 10.2.6) 
+when I had issues with the WindowServer getting stuck and freezing my 
+entire system.  I can't seem to find it in the archives, but I did dig 
+up an old e-mail I had sent with the info in it.
+
+The state field of U means the thread is set to the state 
+TH_STATE_UNINTERRUPTIBLE (i.e. the thread is in an uninterruptible 
+wait).  Top translates this to a stuck process.
+
+&gt;<i> Second, is it possible to determine if a process is stuck with ps?
+</I>
+Yes; look for the process with the &quot;U&quot;.
+
+Hope this helps.
+
+Gretchen
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000412.html">PS and Stuck Processes
+</A></li>
+	<LI>Next message: <A HREF="000414.html">Tape Backup - DDS3
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#413">[ date ]</a>
+              <a href="thread.html#413">[ thread ]</a>
+              <a href="subject.html#413">[ subject ]</a>
+              <a href="author.html#413">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

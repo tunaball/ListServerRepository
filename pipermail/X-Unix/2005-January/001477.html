@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re-mounting a Firewire Disk
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re-mounting%20a%20Firewire%20Disk&In-Reply-To=BE074F97.88C4%25jerry%40ieee.org">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001470.html">
+   <LINK REL="Next"  HREF="001478.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re-mounting a Firewire Disk</H1>
+    <B>William H. Magill</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re-mounting%20a%20Firewire%20Disk&In-Reply-To=BE074F97.88C4%25jerry%40ieee.org"
+       TITLE="[X-Unix] Re-mounting a Firewire Disk">magill at mcgillsociety.org
+       </A><BR>
+    <I>Mon Jan 10 12:06:35 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001470.html">[X-Unix] Re-mounting a Firewire Disk
+</A></li>
+        <LI>Next message: <A HREF="001478.html">[X-Unix] Re-mounting a Firewire Disk
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1477">[ date ]</a>
+              <a href="thread.html#1477">[ thread ]</a>
+              <a href="subject.html#1477">[ subject ]</a>
+              <a href="author.html#1477">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 10 Jan, 2005, at 00:16, Jerry Krinock wrote:
+&gt;<i> To avoid forgetting to pull the plug without ejecting a firewire disk,  
+</I>&gt;<i> I
+</I>&gt;<i> have a script which ejects it every day.  But sometimes I don't leave  
+</I>&gt;<i> and
+</I>&gt;<i> want it mounted again.  So, I have to pull the plug, count to three,  
+</I>&gt;<i> and the
+</I>&gt;<i> plug it back in.
+</I>&gt;<i>
+</I>&gt;<i> This is so annoyingly silly.  I've been playing with diskutil trying  
+</I>&gt;<i> to find
+</I>&gt;<i> a less labor-intensive way of doing this, but can't find any.  Is  
+</I>&gt;<i> there a
+</I>&gt;<i> way?
+</I>
+It has to do with the design philosophy of the bus -- it really is  
+oriented around &quot;PLUG and play!&quot;
+
+I believe that the dismount operation will cause the FireWire drive to  
+spin down and go quiescent.
+
+Once it has gone quiescent, I would assume that the drive is no longer  
+listening on the data portion of the bus, and that it requires an  
+interrupt (bus reset) on the signal portion of the bus to &quot;wake up&quot; and  
+again listen.
+
+Probably a &quot;firewire bus reset&quot; is needed, but I don't know for certain.
+I found a reference in the Apple lists archive from Feburary 2004:
+
+&quot;Look at the function &quot;BusReset&quot; in IOFireWireLIb.h.
+
+  However, instead of using BusResets to reset the whole system, use an
+  analyzer (FireBug or FireSpy) to see what is really going on.&quot;
+
+(Both FireBug and FireSPy are in the firewire SDK. Weather either is  
+easier or faster than simply unplugging and replugging the connector is  
+problematic.)
+
+<A HREF="http://lists.apple.com/archives/firewire/2003/May/msg00013.html">http://lists.apple.com/archives/firewire/2003/May/msg00013.html</A>
+
+<A HREF="http://developer.apple.com/documentation/DeviceDrivers/Conceptual/">http://developer.apple.com/documentation/DeviceDrivers/Conceptual/</A> 
+WorkingWFireWireDI/FWDevInterfaces/chapter_1_section_2.html
+
+T.T.F.N.
+William H. Magill
+# Beige G3 [Rev A motherboard - 300 MHz 768 Meg] OS X 10.2.8
+# Flat-panel iMac (2.1) [800MHz - Super Drive - 768 Meg] OS X 10.3.7
+# PWS433a [Alpha 21164 Rev 7.2 (EV56)- 64 Meg] Tru64 5.1a
+# XP1000  [Alpha 21264-3 (EV6) - 256 meg] FreeBSD 5.3
+# XP1000  [Alpha 21264-A (EV 6.7) - 384 meg] FreeBSD 5.3
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mcgillsociety.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at acm.org</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">magill at mac.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">whmagill at gmail.com</A>
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001470.html">[X-Unix] Re-mounting a Firewire Disk
+</A></li>
+	<LI>Next message: <A HREF="001478.html">[X-Unix] Re-mounting a Firewire Disk
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1477">[ date ]</a>
+              <a href="thread.html#1477">[ thread ]</a>
+              <a href="subject.html#1477">[ subject ]</a>
+              <a href="author.html#1477">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

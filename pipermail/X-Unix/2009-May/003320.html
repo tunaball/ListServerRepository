@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Finding Parent Directory of Searched-For File
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Finding%20Parent%20Directory%20of%20Searched-For%20File&In-Reply-To=p06230909c624253ad6ac%40%5B192.168.1.69%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003317.html">
+   <LINK REL="Next"  HREF="003321.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Finding Parent Directory of Searched-For File</H1>
+    <B>Philip J Robar</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Finding%20Parent%20Directory%20of%20Searched-For%20File&In-Reply-To=p06230909c624253ad6ac%40%5B192.168.1.69%5D"
+       TITLE="[X-Unix] Finding Parent Directory of Searched-For File">philip.robar at gmail.com
+       </A><BR>
+    <I>Mon May  4 10:07:41 PDT 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003317.html">[X-Unix] Finding Parent Directory of Searched-For File
+</A></li>
+        <LI>Next message: <A HREF="003321.html">[X-Unix] Finding Parent Directory of Searched-For File
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3320">[ date ]</a>
+              <a href="thread.html#3320">[ thread ]</a>
+              <a href="subject.html#3320">[ subject ]</a>
+              <a href="author.html#3320">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On May 4, 2009, at 1:02 AM, Rick Gordon wrote:
+
+&gt;<i> How would I do a recursive search that will  provide a path to the  
+</I>&gt;<i> parent folder of a searched-for file?
+</I>&gt;<i>
+</I>&gt;<i> For instance, this command will find the file in a recursive search,  
+</I>&gt;<i> but it provides no information on the path to that file:
+</I>&gt;<i>
+</I>&gt;<i> (starting from a suitable starting place)
+</I>&gt;<i> 	ls -Rl | grep &quot;Bookmarks.plist&quot;
+</I>&gt;<i>
+</I>&gt;<i> 	-rw-rw-rw- 1 mobile mobile 100934 May  3 20:37 Bookmarks.plist
+</I>&gt;<i> 	-rw-rw-rw- 1 mobile mobile    143 Apr 30 22:12  
+</I>&gt;<i> Bookmarks.plist.anchor.plist
+</I>&gt;<i> 	-rw-rw-rw- 1 root   mobile 203551 Apr  9 09:00 Bookmarks.plist.bup
+</I>&gt;<i>
+</I>&gt;<i> ... will find all instances of files with Bookmarks.plist in the  
+</I>&gt;<i> name, but does not provide any paths to the found files. How can I  
+</I>&gt;<i> get the path?
+</I>
+Use find(1) with an absolute path name for the search starting point:
+
+	find /place/to/start/search -name Bookmarks.plist -exec ls -l {} +
+
+'{}' is replaced with the name of the current file and '+' means  
+provide as many files as possible as arguments to the utility being  
+exec'd each time it's called so as to reduce the number of calls. The  
+latter may not always be appropriate. If you want the exec'd utility  
+to be called individually for each file found use an escaped  
+semicolon, '\;', in place of '+'.
+
+
+Phil
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/pkcs7-signature
+Size: 2688 bytes
+Desc: not available
+Url : <A HREF="../attachments/20090504/8582c3dd/smime.bin">http://listserver.themacintoshguy.com/pipermail/x-unix/attachments/20090504/8582c3dd/smime.bin</A>
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003317.html">[X-Unix] Finding Parent Directory of Searched-For File
+</A></li>
+	<LI>Next message: <A HREF="003321.html">[X-Unix] Finding Parent Directory of Searched-For File
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3320">[ date ]</a>
+              <a href="thread.html#3320">[ thread ]</a>
+              <a href="subject.html#3320">[ subject ]</a>
+              <a href="author.html#3320">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

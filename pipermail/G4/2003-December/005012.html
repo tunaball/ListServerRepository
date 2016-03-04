@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] Connecting to a PC
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Connecting%20to%20a%20PC&In-Reply-To=list-9758183%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005011.html">
+   <LINK REL="Next"  HREF="005013.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] Connecting to a PC</H1>
+    <B>Eric Volker</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20Connecting%20to%20a%20PC&In-Reply-To=list-9758183%40mail.ninewire.com"
+       TITLE="[G4] Connecting to a PC">ebv1 at charter.net
+       </A><BR>
+    <I>Sat Dec 13 21:53:03 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005011.html">[G4] DSL Speed
+</A></li>
+        <LI>Next message: <A HREF="005013.html">[G4] iTunes problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5012">[ date ]</a>
+              <a href="thread.html#5012">[ thread ]</a>
+              <a href="subject.html#5012">[ subject ]</a>
+              <a href="author.html#5012">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Saturday, December 13, 2003, at 02:33  PM, Jim Elmore wrote:
+
+&gt;<i> I have a new PC in the office. I'd like to be able to mount a Mac 
+</I>&gt;<i> volume on
+</I>&gt;<i> the PC. The best I can do is access my home folder. Is there a way to 
+</I>&gt;<i> mount
+</I>&gt;<i> an entire volume on the PC?
+</I>&gt;<i>
+</I>
+The only way that I know of to do this is to edit your /etc/smb.conf 
+file from the Terminal window. If you don't feel comfortable working 
+with a text editor in the Terminal, I'd recommend you just stick with 
+sharing your home folder. Theoretically, you could do it with a 
+graphical editor, but I don't know how to tell you to navigate to the 
+/etc folder. To add another share to your Mac, do the following:
+
+Start a Terminal session.
+At the prompt type &quot;cd /etc&quot; then hit return.
+Type in &quot;pico smb.conf&quot; and hit return
+Go to the end of the file and add lines like these (you'll need to 
+substitute the appropriate values where I've noted words between &lt; and 
+ &gt;.)
+
+[&lt;sharename&gt;]
+
+	path = &quot;&lt;folder path&gt;&quot;
+	browsable = yes
+	read only = no
+	valid users = &lt;list of users&gt;
+
+
+The share name should ideally be one word, though two or more *might* 
+work. The folder path will not be in traditional Mac notation, but in 
+Unix notation. Therefore you'd insert &quot;/Applications/Utilities&quot; not 
+&quot;Macintosh HD:Applications:Utilities&quot; in &lt;folder path&gt;. Under valid 
+users you'd put a list of the users' short names you'd want to have 
+access to that folder, separated by blank spaces. A complete entry 
+might look like this:
+
+[utilities]
+
+	path = &quot;/Applications/Utilities&quot;
+     browsable = yes
+     read only = no
+     valid users = fred dana
+
+If you have problems with users creating or saving files, you'll have 
+to experiment with the &quot;create mask =&quot; parameter. I don't remember off 
+the top of my head what the proper bits are for various access levels.
+
+Hope this helps.
+
+Eric Volker
+<A HREF="../../../mailman/listinfo/g4.html">ebv1 at charter.net</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005011.html">[G4] DSL Speed
+</A></li>
+	<LI>Next message: <A HREF="005013.html">[G4] iTunes problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5012">[ date ]</a>
+              <a href="thread.html#5012">[ thread ]</a>
+              <a href="subject.html#5012">[ subject ]</a>
+              <a href="author.html#5012">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

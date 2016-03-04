@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Re: Using gnutar in Tiger.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Re%3A%20Using%20gnutar%20in%20Tiger.&In-Reply-To=413BF05C-A461-4F8C-A3F9-8B0FBF863FBA%40elastica.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="012713.html">
+   <LINK REL="Next"  HREF="012734.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Re: Using gnutar in Tiger.</H1>
+    <B>Robert Nicholson</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Re%3A%20Using%20gnutar%20in%20Tiger.&In-Reply-To=413BF05C-A461-4F8C-A3F9-8B0FBF863FBA%40elastica.com"
+       TITLE="[X4U] Re: Using gnutar in Tiger.">robert at elastica.com
+       </A><BR>
+    <I>Sat Mar  4 09:04:43 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="012713.html">[X4U] Re: Using gnutar in Tiger.
+</A></li>
+        <LI>Next message: <A HREF="012734.html">[X4U] Network Browser Appears Twice - /Network/Library Appears
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12717">[ date ]</a>
+              <a href="thread.html#12717">[ thread ]</a>
+              <a href="subject.html#12717">[ subject ]</a>
+              <a href="author.html#12717">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>So what I don't understand is why
+
+/usr/bin/gnutar -cvf /Volumes/External/BRUBackups/annie/ 
+backup-20060304-3.tar --show-omitted-dirs -X /usr/local/bruconfig/ 
+gnuxpat2 -N /var/backup/BACKUP-0 /
+
+this has the correct semantics when gnuxpat2 contains nothing.
+
+but lets say I put in .Spotlight-V100 as the very first line
+
+Now when I have that as the first line and I execute the following.
+
+  /usr/bin/gnutar -cvf /Volumes/External/BRUBackups/annie/ 
+backup-20060304-3.tar --show-omitted-dirs -X /usr/local/bruconfig/ 
+gnuxpat2 -N /var/backup/BACKUP-0 /
+
+it will no longer be an &quot;incremental backup&quot; but it will be a full  
+backup.
+
+Doesn't make sense to me.
+
+Note: the exclusion is obeyed. ie. not Spotlight-V100 folder but
+it's adding stuff in the tar that has a mtime longer before the mtime  
+of the BACKUP-0 file.
+
+./
+._.DS_Store
+.DS_Store
+._.hidden
+._.hotfiles.btree
+._.RegisterApplications.ted.tbu
+._.TemporaryItems
+.TemporaryItems/
+.TemporaryItems/folders.0/
+.TemporaryItems/folders.0/TemporaryItems/
+._.Trashes
+.Trashes/
+.Trashes/._501
+.Trashes/501/
+.vol/
+.vol/234881026/
+.vol/234881036/
+Applications/
+
+Strangely enough when I break this down to simple trivial example  
+everything works as expected.
+
+Here's what I mean.
+
+annie:/tmp robert$ cat bla
+*/*.txt
+
+so .txt files should be excluded
+
+annie:/tmp robert$ ls -al /tmp/now
+-rw-r--r--   1 robert  wheel  0 Mar  4 21:24 /tmp/now
+
+annie:/tmp robert$ ls -al /tmp/test
+total 0
+drwxr-xr-x     8 robert  wheel    272 Mar  4 21:46 .
+drwxrwxrwt   418 root    wheel  14212 Mar  4 23:05 ..
+-rw-r--r--     1 robert  wheel      0 Mar  4 21:24 1
+-rw-r--r--     1 robert  wheel      0 Mar  4 21:24 2
+-rw-r--r--     1 robert  wheel      0 Mar  4 21:24 3
+-rw-r--r--     1 robert  wheel      0 Mar  4 21:24 4
+-rw-r--r--     1 robert  wheel      0 Mar  4 21:24 5
+drwxr-xr-x     2 robert  wheel     68 Mar  4 21:46 6.txt
+
+gnutar cvf test1.tar -N /tmp/now -X /tmp/bla test
+test/
+test/4
+test/5
+
+these are the two files that were created after the file /tmp/now was  
+created and notice the 6.txt
+was correctly excluded.
+
+So it all works when you break it down into a simple example like this.
+
+annie:/usr/local/bruconfig robert$ gnutar --version
+tar (GNU tar) 1.14
+Copyright (C) 2004 Free Software Foundation, Inc.
+This program comes with NO WARRANTY, to the extent permitted by law.
+You may redistribute it under the terms of the GNU General Public  
+License;
+see the file named COPYING for details.
+Written by John Gilmore and Jay Fenlason.
+Modified to support extended attributes.
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="012713.html">[X4U] Re: Using gnutar in Tiger.
+</A></li>
+	<LI>Next message: <A HREF="012734.html">[X4U] Network Browser Appears Twice - /Network/Library Appears
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12717">[ date ]</a>
+              <a href="thread.html#12717">[ thread ]</a>
+              <a href="subject.html#12717">[ subject ]</a>
+              <a href="author.html#12717">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

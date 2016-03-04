@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Internet Sharing
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Internet%20Sharing&In-Reply-To=list-7928725%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="009258.html">
+   <LINK REL="Next"  HREF="009260.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Internet Sharing</H1>
+    <B>David DelMonte</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Internet%20Sharing&In-Reply-To=list-7928725%40mail.ninewire.com"
+       TITLE="[Ti] Internet Sharing">ddelmonte at mac.com
+       </A><BR>
+    <I>Fri Aug  8 08:22:26 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="009258.html">[Ti] Internet Sharing
+</A></li>
+        <LI>Next message: <A HREF="009260.html">[Ti] Internet Sharing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9259">[ date ]</a>
+              <a href="thread.html#9259">[ thread ]</a>
+              <a href="subject.html#9259">[ subject ]</a>
+              <a href="author.html#9259">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Jesse, thanks! the configuration is slightly different than you 
+describe. The base station is connected to the ISDN Terminal 
+Adapter(TA)  through USB, and the base station IP address is in the 
+62.103.x.x. range. Does this mean something different?
+
+David
+
+On Friday, August 8, 2003, at 06:13 PM, Jesse Brown wrote:
+
+&gt;<i> On 8/8/03 6:19, &quot;David DelMonte&quot; &lt;<A HREF="../../../mailman/listinfo/titanium.html">ddelmonte at mac.com</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> I have set everything up now. I still cannot connect using the remote
+</I>&gt;&gt;<i> PB. It looks like it's trying to load a page -- I get no errors -- but
+</I>&gt;&gt;<i> Safari times out after 60 secs.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I am on OS 10.2.6 on both machines.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Could it be that my internet connection (dual ISDN - 128KB) wont allow
+</I>&gt;&gt;<i> multiple access?
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> David,
+</I>&gt;<i>
+</I>&gt;<i> Let me take a crack at summarizes what you should have set up based on 
+</I>&gt;<i> your
+</I>&gt;<i> conversation with Woz:
+</I>&gt;<i>
+</I>&gt;<i> 1) Base station Network preferences should be normal Ethernet DHCP, 
+</I>&gt;<i> assuming
+</I>&gt;<i> your ISDN modem is assigning your base station an IP number through 
+</I>&gt;<i> NAT.
+</I>&gt;<i> This is how many of them work. So your base station is set with a 
+</I>&gt;<i> private
+</I>&gt;<i> NAT address &quot;probably&quot; in the 192.168.0.x range.
+</I>&gt;<i>
+</I>&gt;<i> 2) Airport Network Port configuration should be off as it's not needed 
+</I>&gt;<i> in
+</I>&gt;<i> this case on the base station Network Preferences.
+</I>&gt;<i>
+</I>&gt;<i> 3) Internet Sharing should be on , on the base station where  &quot;Share 
+</I>&gt;<i> Your
+</I>&gt;<i> Internet Connection...&quot; is checked.
+</I>&gt;<i>
+</I>&gt;<i> 4) Click on the Airport Options to give your Airport network a name 
+</I>&gt;<i> and to
+</I>&gt;<i> set Encryption and password options if needed.
+</I>&gt;<i>
+</I>&gt;<i> 5) Click the Start button. Your Airport Network should be operational.
+</I>&gt;<i>
+</I>&gt;<i> 6) On the Remote machine you should be able to connect to the Base 
+</I>&gt;<i> Station
+</I>&gt;<i> if your Airport is turned on and DHCP is set in the Network 
+</I>&gt;<i> Preferences. IT
+</I>&gt;<i> will probably assign you an Ip in the 10.x.x.x range.
+</I>&gt;<i>
+</I>&gt;<i> The only hitch I see in this setup is NAT-NAT routing at the base 
+</I>&gt;<i> station.
+</I>&gt;<i> You have a NAT router with the ISDN modem/router assigning your base 
+</I>&gt;<i> station
+</I>&gt;<i> a Private NAT address and the Base station assigning your remote 
+</I>&gt;<i> machine a
+</I>&gt;<i> NAT IP number possibly in the same range.
+</I>&gt;<i>
+</I>&gt;<i> This may be why you can't connect to the internet because there is an
+</I>&gt;<i> attempt to route NAT-NAT through your BS.
+</I>&gt;<i>
+</I>&gt;<i> Check the IP number on your base station. If it's in the same range as 
+</I>&gt;<i> your
+</I>&gt;<i> remote machine then this may be the problem - they can't be in the same
+</I>&gt;<i> range.  (are they both in the 10.x.x.x range?)
+</I>&gt;<i>
+</I>&gt;<i> The only workaround that I can figure would be to log onto the ISDN 
+</I>&gt;<i> router
+</I>&gt;<i> via it's web interface and change the NAT address scheme if that is 
+</I>&gt;<i> possible
+</I>&gt;<i> to use the 192.168.x.x scheme. You can't change the Base station range 
+</I>&gt;<i> as
+</I>&gt;<i> far as I know.
+</I>&gt;<i>
+</I>&gt;<i> In the long run I'm not sure you can route NAT-NAT with simple router
+</I>&gt;<i> configurations like we're dealing with. I suspect you would need a more
+</I>&gt;<i> robust router and some static routing tables configured. If anyone 
+</I>&gt;<i> knows a
+</I>&gt;<i> simple workaround, now would be a good time to jump in.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> -- 
+</I>&gt;<i> Jesse
+</I>&gt;<i>
+</I>&gt;<i> 'Tis sweet to hear the watch-dog's honest bark
+</I>&gt;<i>     Bay deep mouth'd welcome as we draw near home;
+</I>&gt;<i> 'Tis sweet to know an eye will mark
+</I>&gt;<i>     Our coming, and look brighter when we come.
+</I>&gt;<i> - Lord Byron
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> Check out the Titanium email list FAQ
+</I>&gt;<i> <A HREF="../../../../www.themacintoshguy.com/lists/Titanium.html">http://www.themacintoshguy.com/lists/Titanium.html</A>
+</I>&gt;<i>
+</I>&gt;<i> To unsubscribe, E-mail to: &lt;<A HREF="../../../mailman/listinfo/titanium.html">Titanium-off at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> To switch to the DIGEST mode, E-mail to 
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/titanium.html">Titanium-digest at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i> Need help from a real person? Try.  
+</I>&gt;<i> &lt;<A HREF="../../../mailman/listinfo/titanium.html">Titanium-request at lists.themacintoshguy.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ----------
+</I>&gt;<i> $14.99 Unlimited Nationwide Mac Dialup and Mac Web Hosting from your 
+</I>&gt;<i> Mac ISP
+</I>&gt;<i> Serious Mac Internet Solutions From NineWire!   
+</I>&gt;<i> <A HREF="http://macinternetaccess.com">http://macinternetaccess.com</A>
+</I>&gt;<i>
+</I>&gt;<i> RoadTools $30 PodiumPad available at Apple retail stores, $20 Traveler
+</I>&gt;<i> CoolPad at Staples. Both in white for iBooks at &lt;<A HREF="http://roadtools.com">http://roadtools.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>   Cyberian   | Support this list when you buy at Outpost.com!
+</I>&gt;<i>   Outpost    |         <A HREF="http://www.themacintoshguy.com/outpost.shtml">http://www.themacintoshguy.com/outpost.shtml</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="009258.html">[Ti] Internet Sharing
+</A></li>
+	<LI>Next message: <A HREF="009260.html">[Ti] Internet Sharing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9259">[ date ]</a>
+              <a href="thread.html#9259">[ thread ]</a>
+              <a href="subject.html#9259">[ subject ]</a>
+              <a href="author.html#9259">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

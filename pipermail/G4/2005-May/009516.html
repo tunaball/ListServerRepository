@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] HD slave_detection problem
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20HD%20slave_detection%20problem&In-Reply-To=4283BB16.2040301%40speakeasy.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="009507.html">
+   <LINK REL="Next"  HREF="009518.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] HD slave_detection problem</H1>
+    <B>Ron Steinke</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20HD%20slave_detection%20problem&In-Reply-To=4283BB16.2040301%40speakeasy.net"
+       TITLE="[G4] HD slave_detection problem">ronsteinke at mac.com
+       </A><BR>
+    <I>Thu May 12 18:43:44 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="009507.html">[G4] HD slave_detection problem
+</A></li>
+        <LI>Next message: <A HREF="009518.html">[G4] HD slave_detection problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9516">[ date ]</a>
+              <a href="thread.html#9516">[ thread ]</a>
+              <a href="subject.html#9516">[ subject ]</a>
+              <a href="author.html#9516">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 12 May, 2005, at 13:22, RobertCBuitron wrote:
+
+I have a G4 Dual Mirror Drives, OS 10.3.9, 1.25 MHz, original 80 GB HD, 
+two internal&#160; Maxtor MaxLine II&#160; ATA/133 300 GB, and one internal 
+Maxtor Diamond ATA/133 40 GB. The Maxtors HDs are connected to an ACard 
+adapter ATA/133 two channel/four IDE HD max. I installed the 300 GB 
+drives on the ACard, each on its own channel (in other words set to 
+Master and each on their own cable), formatted, and in use. I added the 
+40 GB HD as a slave (setting the jumper correctly after double-checking 
+Maxtor Web site) but my&#160; computer does not detect this new HD. I've 
+checked System Profiler and Disk Utility and neither show a new HD on 
+the ACard. The ACard does show in System Profiler. I tried using the 40 
+GB as master by disconnecting one of the 300 GB, but to no avail... no 
+detection. I've tried other configurations such as CS setting, 
+switching the Master/Slave HD settings, etc. but nothing works. Is 
+there a way to determine if the 40 GB HD is actually spinning (&quot;getting 
+juice&quot;) or a LED indicator light that comes on when the HD is powered 
+up?
+
+Robert,
+
+You didn't say which ribbon you connected the 40Gig drive to. Was it to 
+the same ribbon that you have the original 80Gig connected to? If the 
+two drives are on the same IDE bus from the motherboard, you may be 
+seeing a problem that I found in some of the Blue&amp;White G3s. They would 
+refuse to recognize a second drive on the internal IDE bus ribbon. The 
+only solution that I found was to install a PCI IDE controller card and 
+plug the second drive into that on a separate bus ribbon.
+
+If you can position the suspect drive in such a way that you can look 
+at the circuit board of the drive during operation, you might be able 
+to see a visible LED somewhere on the board that will indicate that 
+power is getting to the drive and the drive is being accessed by some 
+software.  The LED will not stay lit during operation, only when the 
+drive is being accessed by a program. It does not matter what the 
+program is, it can be a program trying to write to it or read from it 
+or simply Disk Utility trying to recognize the drive.
+
+If the drive is active (receiving power), the LED should light up when 
+the drive receives a &quot;call&quot; from a program. If there is no power to the 
+drive, of course, there will be no light.
+
+You could always try the drive in another machine to test whether that 
+drive is good or not.
+
+I had a similar problem with my G4 Gbit using a Sonnet ATA-133 card. I 
+purchased two dual connector ribbons for the card and tried connecting 
+four drives at the same time. My two 40Gig WD drives would show up 
+consistantly, one id'ed as Master and the other as Slave on the same 
+ribbon. My two Maxtor 60Gig drives would not play the same for me on 
+the other ribbon.
+
+The Master id'ed Maxtor would always mount at boot up, but the Slave 
+id'ed Maxtor might not show or it might. If I rebooted immediately 
+after not seeing the Slave Maxtor, then it would show up on the desktop 
+like normal and I could use it until I shut down again. Then, the same 
+thing might happen again the next time I started up. I could never tell 
+whether the Slave Maxtor would show up. I finally pulled it back out 
+and put in into an external FireWire box where it has worked perfectly 
+ever since.
+
+My G4 Gbit just seems to not like having four drives internally. Maybe 
+the whole issue is the amount of power available from the power supply 
+of the G4. I don't have any numbers for power consumption of the four 
+drive arrangement, but I would have to add in the CD/DVD and Zip drives 
+also to get the correct total power demand and then check that number 
+against the power capability of the power supply.
+
+You might try only running three drives at the same time. If you get 
+good results from that, you may be hitting the power wall like I did.
+
+HTH,
+Ron
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="009507.html">[G4] HD slave_detection problem
+</A></li>
+	<LI>Next message: <A HREF="009518.html">[G4] HD slave_detection problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9516">[ date ]</a>
+              <a href="thread.html#9516">[ thread ]</a>
+              <a href="subject.html#9516">[ subject ]</a>
+              <a href="author.html#9516">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

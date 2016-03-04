@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Terminal Syntax for Writing to /private/etc/authorization
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Terminal%20Syntax%20for%20Writing%20to%20/private/etc/authorization&In-Reply-To=B736ED20-B6B3-476D-BBAB-D5D949B20270%40hughes.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002755.html">
+   <LINK REL="Next"  HREF="002757.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Terminal Syntax for Writing to /private/etc/authorization</H1>
+    <B>Rick Gordon</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Terminal%20Syntax%20for%20Writing%20to%20/private/etc/authorization&In-Reply-To=B736ED20-B6B3-476D-BBAB-D5D949B20270%40hughes.net"
+       TITLE="[X-Unix] Terminal Syntax for Writing to /private/etc/authorization">rick at rickgordon.com
+       </A><BR>
+    <I>Thu Oct 12 12:39:50 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002755.html">[X-Unix] Install gd-2.0.33 on tiger PPC 10.4.8
+</A></li>
+        <LI>Next message: <A HREF="002757.html">[X-Unix] Terminal Syntax for Writing to /private/etc/authorization
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2756">[ date ]</a>
+              <a href="thread.html#2756">[ thread ]</a>
+              <a href="subject.html#2756">[ subject ]</a>
+              <a href="author.html#2756">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This really breaks down into two questions:
+
+1) Even trying to read the file (which is in XML plist format) doesn't seem to work with the following syntax:
+
+	sudo defaults read /private/etc/authorization
+
+I get a &quot;Domain /private/etc/authorization does not exist&quot; error.
+
+
+2) Assuming I could get around that, how does the defaults command deal with nested entries in a plist file? For instance, I'm looking for a quick and convenient way (other than opening authorization in the Property List Editor via Pseudo) to toggle the entry &quot;rights &gt; system.privilege.admin  &gt; group&quot; from admin to wheel, or vice versa.
+
+Can someone straighten me out here? Thanks in advance.
+-- 
+ 
+___________________________________________________
+
+RICK GORDON
+EMERALD VALLEY GRAPHICS AND CONSULTING
+___________________________________________________
+
+WWW:   <A HREF="http://www.shelterpub.com">http://www.shelterpub.com</A>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002755.html">[X-Unix] Install gd-2.0.33 on tiger PPC 10.4.8
+</A></li>
+	<LI>Next message: <A HREF="002757.html">[X-Unix] Terminal Syntax for Writing to /private/etc/authorization
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2756">[ date ]</a>
+              <a href="thread.html#2756">[ thread ]</a>
+              <a href="subject.html#2756">[ subject ]</a>
+              <a href="author.html#2756">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

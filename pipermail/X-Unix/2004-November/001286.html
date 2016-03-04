@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] FIXED, Re: IP Aliasing + DNS gives freaky hostname.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20FIXED%2C%20Re%3A%20IP%20Aliasing%20%2B%20DNS%20gives%20freaky%20hostname.&In-Reply-To=418A5D85.4010605%40ntlworld.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001285.html">
+   <LINK REL="Next"  HREF="001287.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] FIXED, Re: IP Aliasing + DNS gives freaky hostname.</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20FIXED%2C%20Re%3A%20IP%20Aliasing%20%2B%20DNS%20gives%20freaky%20hostname.&In-Reply-To=418A5D85.4010605%40ntlworld.com"
+       TITLE="[X-Unix] FIXED, Re: IP Aliasing + DNS gives freaky hostname.">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Thu Nov  4 14:40:27 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001285.html">[X-Unix] FIXED, Re: IP Aliasing + DNS gives freaky hostname.
+</A></li>
+        <LI>Next message: <A HREF="001287.html">[X-Unix] Re: X-Unix Digest, Vol 3, Issue 1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1286">[ date ]</a>
+              <a href="thread.html#1286">[ thread ]</a>
+              <a href="subject.html#1286">[ subject ]</a>
+              <a href="author.html#1286">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Nov 4, 2004, at 4:49 pm, Adrian Simmons wrote:
+&gt;<i>
+</I>&gt;&gt;<i> Perhaps you should make all the subdomains aliases (CNAME records) of 
+</I>&gt;&gt;<i> the
+</I>&gt;&gt;<i> actual domain.
+</I>&gt;<i> IFAIK Apache needs the A records, or it will just treat them all as 
+</I>&gt;<i> alias' to a single domain.
+</I>
+Are you talking about name-based virtual hosting..?
+
+Stroller.
+
+
+
+<A HREF="../../../mailman/listinfo/x-unix.html">stroller at compaq</A> stroller $ cat /var/bind/db.stroller.uk.eu.org
+$TTL 3h
+stroller.uk.eu.org. IN SOA compaq.stroller.uk.eu.org.  
+stroller.bigfoot.com.  (
+         7       ; Serial
+         3h      ; Refresh
+         1h      ; Retry
+         1w      ; Expire
+         1h)     ; Negative caching
+
+; Name servers for domain
+;
+stroller.uk.eu.org.     IN NS compaq.stroller.uk.eu.org.
+stroller.uk.eu.org.     IN NS ns.syroidmanor.com.
+stroller.uk.eu.org.     IN NS ns1.granitecanyon.com.
+
+; Addresses for canonical names
+;
+pornpipe.stroller.uk.eu.org.    IN A 213.152.39.89
+silva.stroller.uk.eu.org.       IN A 213.152.39.91
+
+stroller.uk.eu.org.             IN A 213.152.39.90
+
+; Aliases
+;
+compaq.stroller.uk.eu.org.      IN CNAME stroller.uk.eu.org.
+;
+; In fact, any aliases pointing to the-compaq-in-the-airing-cupboard 
+are made
+; redundant by the following section, but we're gonna leave that in 
+there to be
+; explicit
+
+; Try appending our domain to any failing searches
+; - allows computers in the domain to address each other by short 
+hostname ;
+*.stroller.uk.eu.org.  IN CNAME stroller.uk.eu.org.; GLOBALOK
+
+<A HREF="../../../mailman/listinfo/x-unix.html">stroller at compaq</A> stroller $ ls -d /var/www/*.stroller*
+/var/www/bodyart.stroller.uk.eu.org  /var/www/mail.stroller.uk.eu.org
+/var/www/compaq.stroller.uk.eu.org   
+/var/www/oldstuff.stroller.uk.eu.org
+/var/www/junk.stroller.uk.eu.org     /var/www/stuff.stroller.uk.eu.org
+/var/www/linux.stroller.uk.eu.org    
+/var/www/uploaded.stroller.uk.eu.org
+/var/www/mac.stroller.uk.eu.org
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001285.html">[X-Unix] FIXED, Re: IP Aliasing + DNS gives freaky hostname.
+</A></li>
+	<LI>Next message: <A HREF="001287.html">[X-Unix] Re: X-Unix Digest, Vol 3, Issue 1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1286">[ date ]</a>
+              <a href="thread.html#1286">[ thread ]</a>
+              <a href="subject.html#1286">[ subject ]</a>
+              <a href="author.html#1286">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

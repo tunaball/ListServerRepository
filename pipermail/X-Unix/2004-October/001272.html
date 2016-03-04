@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Disk &amp; System maintenance
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Disk%20%26%20System%20maintenance&In-Reply-To=831EB0ED-28F0-11D9-922C-000D9333E43C%40secure-computing.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001271.html">
+   <LINK REL="Next"  HREF="001268.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Disk &amp; System maintenance</H1>
+    <B>Mullany, Ryan</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Disk%20%26%20System%20maintenance&In-Reply-To=831EB0ED-28F0-11D9-922C-000D9333E43C%40secure-computing.net"
+       TITLE="[X-Unix] Disk &amp; System maintenance">Ryan.Mullany at europe.mccann.com
+       </A><BR>
+    <I>Thu Oct 28 07:54:59 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001271.html">[X-Unix] Disk &amp; System maintenance
+</A></li>
+        <LI>Next message: <A HREF="001268.html">[X-Unix] SSH without requiring password between 2 machines
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1272">[ date ]</a>
+              <a href="thread.html#1272">[ thread ]</a>
+              <a href="subject.html#1272">[ subject ]</a>
+              <a href="author.html#1272">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Try utilities like Onyx and Cocktail for prebinding and other useful system
+optimisation.
+
+Defragmenting is generally not necessary in OSX.
+
+Cheers
+
+Ryan M.
+
+
+On 28/10/04 3:49 pm, &quot;Eric Crist&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">ecrist at secure-computing.net</A>&gt; wrote:
+
+&gt;<i> On Oct 28, 2004, at 2:49 AM, Mark Philip wrote:
+</I>&gt;<i> 
+</I>&gt;&gt;<i> Hi all,
+</I>&gt;&gt;<i> With OSX 10.2, other than the CRON utility, are there other utilities
+</I>&gt;&gt;<i> that can optimise the system and disks?
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> Specifically:
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> 1) Tuning overall system performance
+</I>&gt;&gt;<i> 2) Defragmenting the hard disk (I used to do this on Windows
+</I>&gt;&gt;<i> machines). Is this now necessary on OSX?
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> --
+</I>&gt;&gt;<i> Best,
+</I>&gt;&gt;<i> Mark.
+</I>&gt;<i> 
+</I>&gt;<i> The cron utility is not a disk optimization program, rather it is a
+</I>&gt;<i> scheduling daemon.  From the cron(8) man page:
+</I>&gt;<i> 
+</I>&gt;<i> Cron searches /var/cron/tabs for crontab files which are named after
+</I>&gt;<i>       accounts in /etc/passwd; crontabs found are loaded into memory.
+</I>&gt;<i> Cron
+</I>&gt;<i>       also searches for /etc/crontab which is in a different format (see
+</I>&gt;<i>       crontab(5)).  Cron then wakes up every minute, examining all stored
+</I>&gt;<i>       crontabs, checking each command to see if it should be run in the
+</I>&gt;<i> current
+</I>&gt;<i>       minute.  When executing commands, any output is mailed to the
+</I>&gt;<i> owner of
+</I>&gt;<i>       the crontab (or to the user named in the MAILTO environment
+</I>&gt;<i> variable in
+</I>&gt;<i>       the crontab, if such exists).
+</I>&gt;<i> 
+</I>&gt;<i>       Additionally, cron checks each minute to see if its spool
+</I>&gt;<i> directory's
+</I>&gt;<i>       modtime (or the modtime on /etc/crontab) has changed, and if it
+</I>&gt;<i> has, cron
+</I>&gt;<i>       will then examine the modtime on all crontabs and reload those
+</I>&gt;<i> which have
+</I>&gt;<i>       changed.  Thus cron need not be restarted whenever a crontab file
+</I>&gt;<i> is mod-
+</I>&gt;<i>       ified.  Note that the crontab(1) command updates the modtime of
+</I>&gt;<i> the spool
+</I>&gt;<i>       directory whenever it changes a crontab.
+</I>&gt;<i> 
+</I>&gt;<i> As far as your questions into tuning system performance and
+</I>&gt;<i> de-fragmenting the hard disk,  Apple is of the opinion that you
+</I>&gt;<i> generally don't need to defragment your hard drive if you are running
+</I>&gt;<i> OS X 10.2 or higher:
+</I>&gt;<i> 
+</I>&gt;<i> <A HREF="http://docs.info.apple.com/article.html?artnum=25668">http://docs.info.apple.com/article.html?artnum=25668</A>
+</I>&gt;<i> 
+</I>&gt;<i> Generally, you could purchase the Norton suite of software to tune your
+</I>&gt;<i> system for you, but simply adding RAM is the best thing you could do to
+</I>&gt;<i> improve performance.
+</I>&gt;<i> 
+</I>&gt;<i> HTH
+</I>&gt;<i> 
+</I>&gt;<i> -----
+</I>&gt;<i> Eric F Crist
+</I>&gt;<i> Secure Computing Networks
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A> 
+</I>This message contains information which may be confidential and privileged.  Unless you are the intended  
+recipient (or authorized to receive this message for the intended recipient), you may not use, copy, 
+disseminate or disclose to anyone the message or any information contained in the message.  If you have 
+received the message in error, please advise the sender by reply e-mail, and delete the message. 
+Thank you very much. 
+ 
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001271.html">[X-Unix] Disk &amp; System maintenance
+</A></li>
+	<LI>Next message: <A HREF="001268.html">[X-Unix] SSH without requiring password between 2 machines
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1272">[ date ]</a>
+              <a href="thread.html#1272">[ thread ]</a>
+              <a href="subject.html#1272">[ subject ]</a>
+              <a href="author.html#1272">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

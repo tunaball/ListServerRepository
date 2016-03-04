@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Mysterious Volume in Terminal
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Mysterious%20Volume%20in%20Terminal&In-Reply-To=20080309205042.880D7125FA58%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003059.html">
+   <LINK REL="Next"  HREF="003064.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Mysterious Volume in Terminal</H1>
+    <B>John Baltutis</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Mysterious%20Volume%20in%20Terminal&In-Reply-To=20080309205042.880D7125FA58%40listserver.themacintoshguy.com"
+       TITLE="[X-Unix] Mysterious Volume in Terminal">baltwo at san.rr.com
+       </A><BR>
+    <I>Sun Mar  9 14:17:12 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003059.html">[X-Unix] Mysterious Volume in Terminal
+</A></li>
+        <LI>Next message: <A HREF="003064.html">[X-Unix] Mysterious Volume in Terminal
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3063">[ date ]</a>
+              <a href="thread.html#3063">[ thread ]</a>
+              <a href="subject.html#3063">[ subject ]</a>
+              <a href="author.html#3063">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 03/09/08, Richard Hartman &lt;<A HREF="../../../mailman/listinfo/x-unix.html">seasoft at west.net</A>&gt; wrote:
+&gt;<i>
+</I>&gt;<i> This is giving me fits.
+</I>&gt;<i>
+</I>&gt;<i> When booted from the (unpartitioned) internal drive of my Intel iMac 
+</I>&gt;<i> (OS 10.5.2), *with all firewire and usb drives unplugged*, I see the 
+</I>&gt;<i> following in terminal:
+</I>&gt;<i>
+</I>&gt;<i> $ ls -la /Vol*
+</I>&gt;<i> total 24
+</I>&gt;<i> drwxrwxrwt@  5 root  admin   170 Mar  9 12:48 .
+</I>&gt;<i> drwxrwxr-t@ 60 root  admin  2108 Mar  4 12:41 ..
+</I>&gt;<i> -rw-rw-rw-@  1 rjh   admin  6148 May 17  2007 .DS_Store
+</I>&gt;<i> drwxr-xr-x   3 root  admin   102 Nov  6 19:08Back2
+</I>&gt;<i> lrwxr-xr-x   1 root  admin     1 Mar 9 12:48 iMac20 -&gt; /
+</I>&gt;<i>
+</I>&gt;<i> The &quot;Back2&quot; volume does not show in the Finder or on the desktop,does 
+</I>&gt;<i> not show as a partition of my internal drive (in Drive Utility), or 
+</I>&gt;<i> anywhere else other than the above listing.
+</I>&gt;<i>
+</I>&gt;<i> I HAD a &quot;Back2&quot; volume a long while back on a firewire drive, butit 
+</I>&gt;<i> no longer exists on any drive (it was on a drive later reformatted 
+</I>&gt;<i> and, in any case, not even plugged into the mac at the moment).
+</I>&gt;<i>
+</I>&gt;<i> If I cd into the &quot;Back2&quot; volume and view its contents, it appearsto 
+</I>&gt;<i> comprise the long-since lost Back2 firewire volume. I can drill down 
+</I>&gt;<i> and open files that no longer even exist in my iMac20 directory 
+</I>&gt;<i> structure, so the indicated &quot;Back2&quot; data is actually present.
+</I>&gt;<i>
+</I>&gt;<i> I have done a repair from Disk Utility, which gave a clean bill of 
+</I>&gt;<i> health. The console &amp; system logs show no mention of Back2, and 
+</I>&gt;<i> DiskWarrior 4.0 sees nothing either.
+</I>&gt;<i>
+</I>&gt;<i> My best guess: I inadvertently made a superduper clone of Back2 onto 
+</I>&gt;<i> my internal hard drive at some point (evidently, from the time stamps 
+</I>&gt;<i> on the terminal directories, last November). Could that be the cause 
+</I>&gt;<i> of what I am seeing?
+</I>&gt;<i>
+</I>&gt;<i> Here is some of the Back2 directory info; the time stamps seem to 
+</I>&gt;<i> point to November 2007, which is about when Back2 disappeared from the 
+</I>&gt;<i> scene.
+</I>&gt;<i> ========================
+</I>&gt;<i> $ ls -la /Volumes/Back2/
+</I>&gt;<i> total 0
+</I>&gt;<i> drwxr-xr-x  3 root  admin  102 Nov  6 19:08 .
+</I>&gt;<i> drwxrwxrwt@ 5 root  admin  170 Mar  9 12:48 ..
+</I>&gt;<i> drwxr-xr-x  7 root  admin  238 Nov  6 19:26 Users
+</I>&gt;<i>
+</I>&gt;<i> How do I delete this rogue volume and make it disappear from my 
+</I>&gt;<i> Volumes listing? And, presumably, recover a bit of disk space in the
+</I>&gt;<i> process.
+</I>
+A classic &quot;false backup/clone&quot; which occurs when using SuperDuper! or Carbon
+Copy Cloner and the app loses connection to the original target HD. See
+&lt;<A HREF="http://forums.bombich.com/viewtopic.php?t=3852">http://forums.bombich.com/viewtopic.php?t=3852</A>&gt; for details. Just run this in
+the Terminal:
+
+sudo rm -R /Volumes/Back2
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003059.html">[X-Unix] Mysterious Volume in Terminal
+</A></li>
+	<LI>Next message: <A HREF="003064.html">[X-Unix] Mysterious Volume in Terminal
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3063">[ date ]</a>
+              <a href="thread.html#3063">[ thread ]</a>
+              <a href="subject.html#3063">[ subject ]</a>
+              <a href="author.html#3063">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

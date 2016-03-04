@@ -1,0 +1,16 @@
+#!/bin/sh
+
+cat source.csv | sed \
+	-e 's/"","","","","","","","","","","","","","","","",/,/g' \
+	-e 's/^/#HEAD#/'  | \
+	tr '\012' ' ' | \
+	sed \
+	-e 's/^#HEAD#//' \
+	-e 's/[ ]#HEAD#[,]/,/g' \
+	-e 's/,[ ]*#HEAD#["]/, "/g' \
+	-e 's/[ ]#HEAD#"/#BREAK#"/g' \
+	-e 's/[ ]#HEAD#/ /g' \
+	-e 's/#BREAK#/\n/g' \
+	> processed.csv
+
+

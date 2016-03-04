@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] OpenFirmware can't open bootdevice anymore
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20OpenFirmware%20can%27t%20open%20bootdevice%20anymore&In-Reply-To=14fc4e870079a1a7c9c6f745e2cf6496%40gifutiger.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="013459.html">
+   <LINK REL="Next"  HREF="013461.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] OpenFirmware can't open bootdevice anymore</H1>
+    <B>Till Wimmer</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20OpenFirmware%20can%27t%20open%20bootdevice%20anymore&In-Reply-To=14fc4e870079a1a7c9c6f745e2cf6496%40gifutiger.com"
+       TITLE="[G4] OpenFirmware can't open bootdevice anymore">g4-lisz at tonarchiv.ch
+       </A><BR>
+    <I>Mon Jul  3 10:36:27 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="013459.html">[G4] OpenFirmware can't open bootdevice anymore
+</A></li>
+        <LI>Next message: <A HREF="013461.html">[G4] OpenFirmware can't open bootdevice anymore
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13460">[ date ]</a>
+              <a href="thread.html#13460">[ thread ]</a>
+              <a href="subject.html#13460">[ subject ]</a>
+              <a href="author.html#13460">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Harry,
+
+* | *
+It can't be the Startup Disk control panel - i used this hundred times 
+befor without any problems. But maybe it was the ATTO tool for my SCSI 
+disks :(
+My OsX sytem partition seems to be intact, i checked this with Disk 
+Utility... But some of the other (bootstrap... wahtever) partitions is 
+probably crap. There MUST be a tool soewhere to correct this without the 
+need of reinstalling everything :(
+
+bg
+Till
+
+
+I think it was the ATTO tool ...
+
+Harry Freeman wrote:
+
+&gt;<i> Greetings ( + )!( + )
+</I>&gt;<i>
+</I>&gt;<i> Till I think that you have learned a hard lesson, just like I did soon 
+</I>&gt;<i> after installing 10.3 on my G4 Sawthooth.
+</I>&gt;<i>
+</I>&gt;<i> Never, Never, never use any of the OS 9 disk tools on the disk that 
+</I>&gt;<i> contains OSX.
+</I>&gt;<i> I used Norton's disk utilities to clean up the disk fragmentation, 
+</I>&gt;<i> well that was &quot;IT&quot; I had to reload OS X and reinstall all of the 
+</I>&gt;<i> application that I had before I could use OS X again.
+</I>&gt;<i>
+</I>&gt;<i> I know that you don't want to hear this but your only option (I think, 
+</I>&gt;<i> unless someone else knows) is to reload OS X and never again use any 
+</I>&gt;<i> of the OS 9 Disk Utilities.
+</I>&gt;<i>
+</I>&gt;<i> On Jul 3, 2006, at 6:33 AM, Till Wimmer wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Hello
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Yesterday I booted into Os9 and did some work there (Protools) - 
+</I>&gt;&gt;<i> everything worked fine. Then I changed the startup disk back to Os 
+</I>&gt;&gt;<i> 10.3.9 using the control panel.
+</I>&gt;&gt;<i> But after rebooting only the &quot;no system found&quot; icon came up. Next i 
+</I>&gt;&gt;<i> rebooted holding down the option key, but there was no system folder 
+</I>&gt;&gt;<i> displayed for selection.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Of course i resetted PRAM, pressed the PMU button... still the &quot;no 
+</I>&gt;&gt;<i> system found&quot; icon!
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Then i put my PPC linux disk in it and.. IT WORKED!  Putting back my 
+</I>&gt;&gt;<i> OsX / Os 9 disk - no booting.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> OpenFirmware says:
+</I>&gt;&gt;<i> 0 &gt; boot hd:,\\:tbxi  can't OPEN: hd:,\\:tbxi
+</I>&gt;&gt;<i> ok
+</I>&gt;&gt;<i> 0 &gt;
+</I>&gt;&gt;<i> It tried this with ide0, ide1, hd, ultra0, ultra1...
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> My next step was to put the OsX/Os9 system disk in an other mac and 
+</I>&gt;&gt;<i> run Disk Utility on it. It reported no problem.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Now i'm at my wit's end.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Is there a tool to check every partition on a disk i.e. all the 
+</I>&gt;&gt;<i> relevant things for booting? Maybe i deleted some driver on the the 
+</I>&gt;&gt;<i> disk?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> It's a G4 Digital Audio with OsX 10.3.9 and Os 9.2.2
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Any help would be much appreciated!
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Till
+</I>&gt;&gt;<i> -- 
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Cheers, /\*_*/\
+</I>&gt;<i>
+</I>&gt;<i> Harry (*^_^*)
+</I>&gt;<i> * If pro is the opposite of con, then what is the opposite of 
+</I>&gt;<i> progress? Congress!
+</I>&gt;<i> Men's restroom House of Representatives,
+</I>&gt;<i> Washington, DC
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> G4 mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">G4 at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">http://listserver.themacintoshguy.com/mailman/listinfo/g4</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+
+
+-- 
+********************************************************
+*        &quot;Deutschland vor!&quot; - Die WM Gegenhymne        *
+*  <A HREF="http://www.zittrige-haende.com/download/antiwm.mp3">http://www.zittrige-haende.com/download/antiwm.mp3</A>  *
+********************************************************
+
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="013459.html">[G4] OpenFirmware can't open bootdevice anymore
+</A></li>
+	<LI>Next message: <A HREF="013461.html">[G4] OpenFirmware can't open bootdevice anymore
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13460">[ date ]</a>
+              <a href="thread.html#13460">[ thread ]</a>
+              <a href="subject.html#13460">[ subject ]</a>
+              <a href="author.html#13460">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

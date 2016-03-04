@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Duplicate files
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Duplicate%20files&In-Reply-To=BFB3564E.3DFE%25rgilmor%40uwo.ca">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="010457.html">
+   <LINK REL="Next"  HREF="010346.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Duplicate files</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Duplicate%20files&In-Reply-To=BFB3564E.3DFE%25rgilmor%40uwo.ca"
+       TITLE="[X4U] Duplicate files">macmonster at myrealbox.com
+       </A><BR>
+    <I>Wed Nov 30 17:17:14 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="010457.html">[X4U] Duplicate files
+</A></li>
+        <LI>Next message: <A HREF="010346.html">[X4U] Software Coupons
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10464">[ date ]</a>
+              <a href="thread.html#10464">[ thread ]</a>
+              <a href="subject.html#10464">[ subject ]</a>
+              <a href="author.html#10464">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Nov 30, 2005, at 6:14 pm, Richard Gilmore wrote:
+&gt;&gt;<i>
+</I>&gt;&gt;<i> ... IMHO the best way to remove
+</I>&gt;&gt;<i> duplicates already within iPhoto would be to use an Applescript to 
+</I>&gt;&gt;<i> call
+</I>&gt;&gt;<i> the iPhoto delete functions, so that iPhoto is aware of the file
+</I>&gt;&gt;<i> changes;
+</I>&gt;<i>
+</I>&gt;<i> What sort of Applescript? Would I have to write one? I don't know the 
+</I>&gt;<i> first
+</I>&gt;<i> thing about Applescript and I have no idea how I would use it to 
+</I>&gt;<i> &quot;call&quot; the
+</I>&gt;<i> iPhoto delete function and make it compare every file name.
+</I>
+Yeah, I guess you would. I don't know any Applescript, either - I was 
+just supposing on the basis of what little I do know - so I guess 
+there's not much point in discussing this further.
+
+&gt;&gt;<i> I'd personally MD5 the files to ensure they're duplicates
+</I>&gt;&gt;<i> you're removing, not just ones with the same name (and so that you
+</I>&gt;&gt;<i> don't get duplicates with different names).
+</I>&gt;<i>
+</I>&gt;<i> MD5? Mulitple Delete?
+</I>
+ From `man md5`
+
+DESCRIPTION
+      Md5 takes as input a message of arbitrary length and produces as 
+output a
+      128-bit ``fingerprint'' or ``message digest'' of the input.  It is 
+con-
+      jectured that it is computationally infeasible to produce two 
+messages
+      having the same message digest, or to produce any message having a 
+given
+      prespecified target message digest.  The MD5 algorithm is intended 
+for
+      digital signature applications,
+
+So basically if you run `md5 /path/to/file` it gives a &quot;magic number&quot; 
+for that file. If you get two files with the same md5 then they're both 
+the same, irrespective of filename or anything else. If you have two 
+images with different md5s then they're different, even if they look 
+the same (one could be the low-res version you made to send by email, 
+for instance) or if they have the same filename.
+
+&gt;&gt;<i> IMHO the best way to handle all your back-ups is to delete all of 
+</I>&gt;&gt;<i> those
+</I>&gt;&gt;<i> from iPhoto &amp; start again.
+</I>&gt;<i>
+</I>&gt;<i> This gives me a headache just thinking about it. I've got over 18,000 
+</I>&gt;<i> photos
+</I>
+Well, I was just thinking of the ones that you'd imported recently from 
+these DVDs. I assumed they'd be easy to find because they all been 
+imported in recent weeks.
+
+&gt;&gt;<i> Copy all the photos off the backups into
+</I>&gt;&gt;<i> _folders_ then you can trivially run `for foo in `ls -R`; do md5 $foo 
+</I>&gt;&gt;<i> ;
+</I>&gt;&gt;<i> other stuff ; done`.
+</I>&gt;<i>
+</I>&gt;<i> I don't anything about Unix either. &quot;foo&quot;?
+</I>
+&quot;foo&quot; is an arbitrary variable, in this case referenced by &quot;$foo&quot;.
+
+At a command prompt try typing:
+   for foo in `ls` ; do echo &quot;There is a file in this directory called 
+$foo&quot; ; done
+
+
+I'm not necesserily saying that YOU should learn Applescript or Bash 
+scripting, or md5 all your files - learning how to do this might take 
+longer than removing all the duplicates by hand (but at least you'll 
+save time the next time you have a repetitive task) just that it's the 
+way I would do it. I'd like to be sure that I had a working automated 
+process so that I could just run it &amp; be sure that I hadn't made any 
+mistakes removing files by hand.
+
+Stroller.
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="010457.html">[X4U] Duplicate files
+</A></li>
+	<LI>Next message: <A HREF="010346.html">[X4U] Software Coupons
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10464">[ date ]</a>
+              <a href="thread.html#10464">[ thread ]</a>
+              <a href="subject.html#10464">[ subject ]</a>
+              <a href="author.html#10464">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

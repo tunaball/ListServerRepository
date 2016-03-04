@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] how to send mail from commandline?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20how%20to%20send%20mail%20from%20commandline%3F&In-Reply-To=08211B15-5113-41D3-831D-3538B5F63ACE%40acedsl.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002446.html">
+   <LINK REL="Next"  HREF="002456.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] how to send mail from commandline?</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20how%20to%20send%20mail%20from%20commandline%3F&In-Reply-To=08211B15-5113-41D3-831D-3538B5F63ACE%40acedsl.com"
+       TITLE="[X-Unix] how to send mail from commandline?">ecrist at secure-computing.net
+       </A><BR>
+    <I>Thu Nov 10 13:19:08 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002446.html">[X-Unix] how to send mail from commandline?
+</A></li>
+        <LI>Next message: <A HREF="002456.html">[X-Unix] how to send mail from commandline?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2455">[ date ]</a>
+              <a href="thread.html#2455">[ thread ]</a>
+              <a href="subject.html#2455">[ subject ]</a>
+              <a href="author.html#2455">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Nov 9, 2005, at 12:58 PM, Ben Gold wrote:
+
+&gt;<i> I've wanted occasionally to be able to send an email from the  
+</I>&gt;<i> command line also.
+</I>&gt;<i>
+</I>&gt;<i> I've always wondered if there is no way to send one without turning  
+</I>&gt;<i> on Postfix?   I always thought it would be possible to simply send  
+</I>&gt;<i> out a message much like my Apple Mail program does &#8211; some command  
+</I>&gt;<i> where I type in the destination, message, AND my ISPs mail server.
+</I>&gt;<i>
+</I>&gt;<i> Is this not possible?
+</I>&gt;<i>
+</I>&gt;<i> Why do I need to run a server just to send an email?  If numerous  
+</I>&gt;<i> programs can connect to my ISPs mail server, why can't I?
+</I>&gt;<i>
+</I>&gt;<i> Or do I misunderstand that Postfix is a server, not a client?
+</I>&gt;<i>
+</I>&gt;<i> I don't know a lot about *nix, but I was hoping this was possible.
+</I>
+If you have access to a mail server, you can telnet to port 25 and  
+send a text email that way.
+
+See below:
+
+[Swordfish:~] username% telnet grog 25
+Trying 216.243.161.73...
+Connected to grog.secure-computing.net.
+Escape character is '^]'.
+220 grog.secure-computing.net ESMTP Sendmail 8.13.1/8.13.1; Thu, 10  
+Nov 2005 15:16:51 -0600 (CST)
+helo snipe.secure-computing.net
+250 grog.secure-computing.net Hello snipe.secure-computing.net  
+[216.243.161.77], pleased to meet you
+mail from: <A HREF="../../../mailman/listinfo/x-unix.html">god at heaven.com</A>
+250 2.1.0 <A HREF="../../../mailman/listinfo/x-unix.html">god at heaven.com...</A> Sender ok
+rcpt to: <A HREF="../../../mailman/listinfo/x-unix.html">username at secure-computing.net</A>
+250 2.1.5 <A HREF="../../../mailman/listinfo/x-unix.html">username at secure-computing.net...</A> Recipient ok
+data
+354 Enter mail, end with &quot;.&quot; on a line by itself
+This is a test email.  I can type all of my text to send, followed by  
+a . to end the email.
+.
+250 2.0.0 jAALGp7P044763 Message accepted for delivery
+quit
+221 2.0.0 grog.secure-computing.net closing connection
+Connection closed by foreign host.
+
+
+-----
+Eric F Crist
+Secure Computing Networks
+<A HREF="http://www.secure-computing.net">http://www.secure-computing.net</A>
+
+
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002446.html">[X-Unix] how to send mail from commandline?
+</A></li>
+	<LI>Next message: <A HREF="002456.html">[X-Unix] how to send mail from commandline?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2455">[ date ]</a>
+              <a href="thread.html#2455">[ thread ]</a>
+              <a href="subject.html#2455">[ subject ]</a>
+              <a href="author.html#2455">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

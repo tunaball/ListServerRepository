@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Setting disk quotas
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Setting%20disk%20quotas&In-Reply-To=A0686067-974D-4C4A-BE97-DB5DDF04A178%40charter.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003198.html">
+   <LINK REL="Next"  HREF="003201.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Setting disk quotas</H1>
+    <B>gurple</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Setting%20disk%20quotas&In-Reply-To=A0686067-974D-4C4A-BE97-DB5DDF04A178%40charter.net"
+       TITLE="[X-Unix] Setting disk quotas">gurple at mac.com
+       </A><BR>
+    <I>Mon Jan  5 05:48:13 PST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003198.html">[X-Unix] Setting disk quotas
+</A></li>
+        <LI>Next message: <A HREF="003201.html">[X-Unix] Setting disk quotas
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3200">[ date ]</a>
+              <a href="thread.html#3200">[ thread ]</a>
+              <a href="subject.html#3200">[ subject ]</a>
+              <a href="author.html#3200">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Eric,
+
+If it isn't any trouble I'd love to read the solution you've come up  
+with to Charles's question.
+
+Cheers,
+gurp
+
+--
+We've secretly replaced his regular signature with Folgers Crystals&#174;
+
+On Jan 4, 2009, at 3:56 PM, Charles Howse wrote:
+
+&gt;<i>
+</I>&gt;<i> On Jan 3, 2009, at 9:48 PM, Eric F Crist wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> On Jan 3, 2009, at 9:36 PM, Eric F Crist wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> On Jan 3, 2009, at 5:18 PM, Charles Howse wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> HI,
+</I>&gt;&gt;&gt;&gt;<i> I need to set a disk quota for my daughter.
+</I>&gt;&gt;&gt;&gt;<i> I've read man edquota and quotaon/off
+</I>&gt;&gt;&gt;&gt;<i> When I su to root and enter: edquota -u randi
+</I>&gt;&gt;&gt;&gt;<i> nothing happens.  I was expecting vi to open a temp file and let  
+</I>&gt;&gt;&gt;&gt;<i> me edit the soft limit.
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> What am I doing wrong?
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I have a few questions for you.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> 1) have you enabled quotas for the root file system?
+</I>&gt;&gt;&gt;<i> 2) do the mount option files (as mentioned in man quotaon) exist?  
+</I>&gt;&gt;&gt;<i> (you may need to create)
+</I>&gt;&gt;&gt;<i> 3) Is this method of quotas actually supported on OS X with HFS+?
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> The third question is important, as there have been other FreeBSD  
+</I>&gt;&gt;&gt;<i> utilities that have made it into OS X that aren't supported by a  
+</I>&gt;&gt;&gt;<i> vanilla install.  There may be another method of setting up quotas  
+</I>&gt;&gt;&gt;<i> on OS X.  I'll try to look into this myself a bit and get back to  
+</I>&gt;&gt;&gt;<i> you, probably tomorrow.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> OK, I've found a complete solution, which I will write up for you  
+</I>&gt;&gt;<i> tomorrow.  It's marginally involved, so let me do my homework  
+</I>&gt;&gt;<i> before I send you down a seldom-beaten path.
+</I>&gt;<i>
+</I>&gt;<i> Hi Eric,
+</I>&gt;<i> Thank you so much for the offer to help.  However, in the time since  
+</I>&gt;<i> I wrote, I have solved the issue.  It's working as expected, the  
+</I>&gt;<i> only thing I need to do is configure the grace period.
+</I>&gt;<i> Thanks again!
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003198.html">[X-Unix] Setting disk quotas
+</A></li>
+	<LI>Next message: <A HREF="003201.html">[X-Unix] Setting disk quotas
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3200">[ date ]</a>
+              <a href="thread.html#3200">[ thread ]</a>
+              <a href="subject.html#3200">[ subject ]</a>
+              <a href="author.html#3200">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

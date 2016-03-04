@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: Pokey LAN transfers (Resolved)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Pokey%20LAN%20transfers%20%28Resolved%29&In-Reply-To=d2ecb10b0712271916u4b6b8c91p91f3dda18ccea5b3%40mail.gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002962.html">
+   <LINK REL="Next"  HREF="002961.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: Pokey LAN transfers (Resolved)</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Pokey%20LAN%20transfers%20%28Resolved%29&In-Reply-To=d2ecb10b0712271916u4b6b8c91p91f3dda18ccea5b3%40mail.gmail.com"
+       TITLE="[X-Unix] Re: Pokey LAN transfers (Resolved)">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Fri Dec 28 01:27:41 PST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002962.html">[X-Unix] Re: Pokey LAN transfers (Resolved)
+</A></li>
+        <LI>Next message: <A HREF="002961.html">Copying Large Amounts of data via USB/FW (was Re: [X-Unix] Re: Pokey
+	LAN transfers (Resolved))
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2963">[ date ]</a>
+              <a href="thread.html#2963">[ thread ]</a>
+              <a href="subject.html#2963">[ subject ]</a>
+              <a href="author.html#2963">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 22:16 -0500 27/12/07, TjL wrote:
+&gt;<i>On 12/27/07, Richard Hartman &lt;<A HREF="../../../mailman/listinfo/x-unix.html">seasoft at west.net</A>&gt; wrote:
+</I>&gt;&gt;<i>  - Unmounting the LAN volume and instead using scp or rsync (and the
+</I>&gt;&gt;<i>  IP address of the source mac) produced the expected transfer rate of
+</I>&gt;&gt;<i>  100 megabits/sec, which was the speed limit expected by the slowest
+</I>&gt;&gt;<i>  network element in the loop (the 100 mbps nic on one of the macs).
+</I>&gt;<i>Someone else had suggested FTP.  Would it work similarly well?
+</I>&gt;<i>
+</I>&gt;<i>I don't know much about this, but it would seem to me that scp would
+</I>&gt;<i>be slower if there's encryption going on.  rsync would, I assume, be
+</I>&gt;<i>faster than scp, but would rsync and ftp be comparable?
+</I>
+scp does have the encryption overhead. CPUs are fast, but encryption 
+will be a measurable overhead for a 1Gbps network connection. The 
+network handles data one bit at a time. The encryption works on 32 or 
+64 bits at a time at a clock speed of up to about twice that of the 
+network. Any processing taking more than 64 or 128 clock cycles per 
+32 or 64 bit chunk will slow the transfer - not even considering all 
+the other extra systemy things that including that processing will 
+add.
+
+rsync uses extra network traffic to find out what is already at the 
+destination.
+
+The only extra that FTP requires is the normal TCP validation etc. 
+It's the transfer protocol that gets closest to raw network speed and 
+is used to test network throughput.
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+HP-UX specialist of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x-unix.html">david.ledger at ivdcs.co.uk</A>
+www.ivdcs.co.uk
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002962.html">[X-Unix] Re: Pokey LAN transfers (Resolved)
+</A></li>
+	<LI>Next message: <A HREF="002961.html">Copying Large Amounts of data via USB/FW (was Re: [X-Unix] Re: Pokey
+	LAN transfers (Resolved))
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2963">[ date ]</a>
+              <a href="thread.html#2963">[ thread ]</a>
+              <a href="subject.html#2963">[ subject ]</a>
+              <a href="author.html#2963">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Altering .bashrc in bash to add to $PATH
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Altering%20.bashrc%20in%20bash%20to%20add%20to%20%24PATH&In-Reply-To=list-10163397%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000797.html">
+   <LINK REL="Next"  HREF="000819.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Altering .bashrc in bash to add to $PATH</H1>
+    <B>Eugene Lee</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Altering%20.bashrc%20in%20bash%20to%20add%20to%20%24PATH&In-Reply-To=list-10163397%40mail.ninewire.com"
+       TITLE="[X-Unix] Altering .bashrc in bash to add to $PATH">list-themacintoshguy at fsck.net
+       </A><BR>
+    <I>Fri Jan  9 01:09:22 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000797.html">[X-Unix] Remove last ten lines of files
+</A></li>
+        <LI>Next message: <A HREF="000819.html">[X-Unix] script question (cron - adobefnt*.lst)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#808">[ date ]</a>
+              <a href="thread.html#808">[ thread ]</a>
+              <a href="subject.html#808">[ subject ]</a>
+              <a href="author.html#808">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Thu, Jan 08, 2004 at 02:10:00PM -0800, Robert Ameeti wrote:
+:<i> 
+</I>:<i> &gt; &gt;&gt;At 22:05 -0800 1/7/04, Robert Ameeti wrote:
+</I>:<i> 
+</I>:<i> Before:
+</I>:<i> 
+</I>:<i> &gt; &gt;&gt;&gt;echo $SHELL gives me /bin/bash
+</I>:<i> &gt; &gt;&gt;&gt;echo $PATH gives me /bin:/sbin:/usr/bin:/usr/sbin
+</I>:<i> 
+</I>:<i> I wanted $PATH to be:
+</I>:<i> /Library/mySQL/bin:/bin:/sbin:/usr/bin:/usr/sbin
+</I>:<i> 
+</I>:<i> It seems that Apple has changed the default shell from tcsh to bash as
+</I>:<i> of Panther.
+</I>
+And, IMO, one of Apple's best decisions.
+
+:<i> Most users seem to be more familiar with tcsh.
+</I>
+Actually, most Mac users unfamiliar with anything Unix seem to be more
+familiar with tcsh.
+
+:<i> bash uses the .bash_profile file in the ~ directory for path
+</I>:<i> enhancement. So for me, the answer was:
+</I>:<i> 
+</I>:<i> echo 'export PATH=/Library/MySQL/bin:$PATH' &gt;&gt; ~/.bash_profile
+</I>
+You can also edit the file with the command-line too &quot;pico&quot;, or even
+edit it in TextEdit:
+
+	$ open ~/.bash_profile
+
+:<i> Others will need to alter the above path enhancement as necessary to
+</I>:<i> accomplish their goal.
+</I>
+As well as letting everyone know what your default shell is!
+
+:<i> Thanks to all for your pointers. It took a village to get this simple
+</I>:<i> thing done.  lol
+</I>
+(-:
+
+
+-- 
+Eugene Lee
+<A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000797.html">[X-Unix] Remove last ten lines of files
+</A></li>
+	<LI>Next message: <A HREF="000819.html">[X-Unix] script question (cron - adobefnt*.lst)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#808">[ date ]</a>
+              <a href="thread.html#808">[ thread ]</a>
+              <a href="subject.html#808">[ subject ]</a>
+              <a href="author.html#808">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

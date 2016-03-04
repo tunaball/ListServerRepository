@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] SSH trouble
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20SSH%20trouble&In-Reply-To=BE5F0456.ACE4%25DDeRusha%40schawk.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001637.html">
+   <LINK REL="Next"  HREF="001639.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] SSH trouble</H1>
+    <B>Chris Ruscio</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20SSH%20trouble&In-Reply-To=BE5F0456.ACE4%25DDeRusha%40schawk.com"
+       TITLE="[X-Unix] SSH trouble">cruscio at cem.uvm.edu
+       </A><BR>
+    <I>Thu Mar 17 14:29:47 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001637.html">[X-Unix] SSH trouble
+</A></li>
+        <LI>Next message: <A HREF="001639.html">[X-Unix] SSH trouble
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1638">[ date ]</a>
+              <a href="thread.html#1638">[ thread ]</a>
+              <a href="subject.html#1638">[ subject ]</a>
+              <a href="author.html#1638">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Not gui... Think htpasswd.
+
+&quot;htpasswd - Create and update user authentication files&quot; - man page
+
+I was wondering if there was a similar way to maintain the known hosts file.
+
+Thanks,
+Chris
+
+
+Dan DeRusha wrote:
+
+&gt;<i>I always have done it this way, I'm not aware of any GUI app to do it.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>On 3/17/05 8:47 AM, &quot;Chris Ruscio&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">cruscio at cem.uvm.edu</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;&gt;<i>I removed the line and managed to login... thanks :)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>As to adding a line though, something multiple people suggested, it
+</I>&gt;&gt;<i>didn't seem like the kind of file I should be editing by hand. Is there
+</I>&gt;&gt;<i>a program to add a line to it, or will a text editor work?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Thanks for the help,
+</I>&gt;&gt;<i>Chris
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Dan DeRusha wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>It tells you right in the error message what to do.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>Add correct host key in /Users/[Username]/.ssh/known_hosts to get rid of
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>      
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>this message.
+</I>&gt;&gt;&gt;&gt;<i>   
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>        
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>I would vi the file and remove the line of the offending IP address that you
+</I>&gt;&gt;&gt;<i>are ssh to.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>On 3/16/05 9:32 PM, &quot;Chris Ruscio&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">cruscio at cem.uvm.edu</A>&gt; wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>      
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>Hi all,
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>I have an old powerMac running behind a router in my dorm room.
+</I>&gt;&gt;&gt;&gt;<i>I set the router to forward port 22 to it.
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>When I'm on my network with my iBook, I can ssh to it's local IP
+</I>&gt;&gt;&gt;&gt;<i>(192.168.blah.blah). or if the powerMac is pluged right into the wall
+</I>&gt;&gt;&gt;&gt;<i>there's no issues...
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>However, when I ssh to the router's IP from outside the local network, I
+</I>&gt;&gt;&gt;&gt;<i>get the message below...
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>How do I add a key to the known_hosts file? or should i be doing
+</I>&gt;&gt;&gt;&gt;<i>something else to fix things... ???
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>Thanks,
+</I>&gt;&gt;&gt;&gt;<i>Chris
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>[Username]&gt;ssh ###.###.###.###
+</I>&gt;&gt;&gt;&gt;<i>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</I>&gt;&gt;&gt;&gt;<i>@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+</I>&gt;&gt;&gt;&gt;<i>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</I>&gt;&gt;&gt;&gt;<i>IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+</I>&gt;&gt;&gt;&gt;<i>Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+</I>&gt;&gt;&gt;&gt;<i>It is also possible that the RSA host key has just been changed.
+</I>&gt;&gt;&gt;&gt;<i>The fingerprint for the RSA key sent by the remote host is
+</I>&gt;&gt;&gt;&gt;<i>13:4c:....:blah:blah:....:9a:30.
+</I>&gt;&gt;&gt;&gt;<i>Please contact your system administrator.
+</I>&gt;&gt;&gt;&gt;<i>Add correct host key in /Users/[Username]/.ssh/known_hosts to get rid of
+</I>&gt;&gt;&gt;&gt;<i>this message.
+</I>&gt;&gt;&gt;&gt;<i>Offending key in /Users/[Username]/.ssh/known_hosts:30
+</I>&gt;&gt;&gt;&gt;<i>RSA host key for ###.###.###.### has changed and you have requested
+</I>&gt;&gt;&gt;&gt;<i>strict checking.
+</I>&gt;&gt;&gt;&gt;<i>Host key verification failed.
+</I>&gt;&gt;&gt;&gt;<i>[Username]&gt;
+</I>&gt;&gt;&gt;&gt;<i>_______________________________________________
+</I>&gt;&gt;&gt;&gt;<i>X-Unix mailing list
+</I>&gt;&gt;&gt;&gt;<i><A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;&gt;&gt;<i><A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>Listmom is trying to clean out his closets! Vintage Mac and random stuff:
+</I>&gt;&gt;&gt;&gt;<i>        <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;&gt;&gt;&gt;<i>   
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>        
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>Dan DeRusha
+</I>&gt;&gt;&gt;<i>IT Manager
+</I>&gt;&gt;&gt;<i>Schawkchicago
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>847 287-1337 mobile
+</I>&gt;&gt;&gt;<i>847 296-6000 main
+</I>&gt;&gt;&gt;<i>847 296-9466 fax
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>_______________________________________________
+</I>&gt;&gt;&gt;<i>X-Unix mailing list
+</I>&gt;&gt;&gt;<i><A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;&gt;<i><A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>Listmom is trying to clean out his closets! Vintage Mac and random stuff:
+</I>&gt;&gt;&gt;<i>        <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>      
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;<i>_______________________________________________
+</I>&gt;&gt;<i>X-Unix mailing list
+</I>&gt;&gt;<i><A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;&gt;<i><A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Listmom is trying to clean out his closets! Vintage Mac and random stuff:
+</I>&gt;&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;&gt;<i>    
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>Dan DeRusha
+</I>&gt;<i>IT Manager
+</I>&gt;<i>Schawkchicago
+</I>&gt;<i>
+</I>&gt;<i>847 287-1337 mobile
+</I>&gt;<i>847 296-6000 main
+</I>&gt;<i>847 296-9466 fax
+</I>&gt;<i>
+</I>&gt;<i>_______________________________________________
+</I>&gt;<i>X-Unix mailing list
+</I>&gt;<i><A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i><A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i>Listmom is trying to clean out his closets! Vintage Mac and random stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001637.html">[X-Unix] SSH trouble
+</A></li>
+	<LI>Next message: <A HREF="001639.html">[X-Unix] SSH trouble
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1638">[ date ]</a>
+              <a href="thread.html#1638">[ thread ]</a>
+              <a href="subject.html#1638">[ subject ]</a>
+              <a href="author.html#1638">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

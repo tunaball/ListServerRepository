@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Stealth Mode connection attempts 
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Stealth%20Mode%20connection%20attempts%20&In-Reply-To=07E51E72-9316-4E90-B990-99BE55984273%40mac.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="007704.html">
+   <LINK REL="Next"  HREF="007709.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Stealth Mode connection attempts </H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Stealth%20Mode%20connection%20attempts%20&In-Reply-To=07E51E72-9316-4E90-B990-99BE55984273%40mac.com"
+       TITLE="[X4U] Stealth Mode connection attempts ">macmonster at myrealbox.com
+       </A><BR>
+    <I>Fri Jul 22 21:53:04 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="007704.html">[X4U] (no subject) Oooooops
+</A></li>
+        <LI>Next message: <A HREF="007709.html">[X4U] Stealth Mode connection attempts 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7705">[ date ]</a>
+              <a href="thread.html#7705">[ thread ]</a>
+              <a href="subject.html#7705">[ subject ]</a>
+              <a href="author.html#7705">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jul 23, 2005, at 12:25 am, Nick Scalise wrote:
+&gt;<i> On Jul 22, 2005, at 6:18 PM, John Kiss wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> I just recently decided to turn on my firewall logging. I'm finding a 
+</I>&gt;&gt;<i> lot of Stealth Mode connection attempts in the list. Shown below is 
+</I>&gt;&gt;<i> an example. The 192.168.0.100 is my IP address.
+</I>&gt;<i>
+</I>&gt;&gt;<i> Who is 38.113.192.83?
+</I>&gt;<i>
+</I>&gt;<i> Not really. It's probably just a compromised Windows box looking for 
+</I>&gt;<i> other Windows boxes to compromise.
+</I>
+A port-scan (`nmap -O`) seems to suggest that 38.113.192.83  is 
+actually a Linux box, which would make sense if the IP belongs to a 
+web-hosting company.
+
+&gt;&gt;<i> .... ipfw: Stealth Mode connection attempt to TCP 192.168.0.100:49425 
+</I>&gt;&gt;<i> from 38.113.192.83:80
+</I>&gt;<i>
+</I>&gt;<i> Ain't logging great? Tells you all sorts of stuff you wish you never 
+</I>&gt;<i> knew.
+</I>&gt;<i>
+</I>&gt;<i> If you really want, you could email the folks at svwh.net and ask them 
+</I>&gt;<i> why a machine in their control is attempting to gain access to your 
+</I>&gt;<i> machine.
+</I>
+&quot;Attempting to gain access&quot; seems an unhelpful synonym for &quot;a 
+connection attempt&quot; to me. Am I &quot;attempting to gain access&quot; when I open 
+a webpage?
+
+The original log entry looks bogus to me. 192.168.0.100 is an internal 
+address, so unless ports are forwarded to it at the router it shouldn't 
+see any attempts to initiate connections - only responses from already 
+existing connections. 49425 is an unprivileged port and not listed in 
+/etc/services, so I doubt it's one someone would try &amp; run any sort of 
+exploits against. It looks to me like the router &amp; `ipfw` have 
+different criteria for connection tracking.
+
+Since port is 80 is that of a webserver, is it possible that this is 
+something coming back from a webopage Mr Kiss looked at?
+
+... Googling for &quot;ipfw Stealth Mode connection attempts&quot; brings up a 
+bunch of relevant-looking hits. I'm inclined to believe Kampl at 
+<A HREF="http://forums.macnn.com/showthread.php?t=259581">http://forums.macnn.com/showthread.php?t=259581</A> when he says:
+
+    This is not an attack. It is return traffic from a web server for
+    which the firewall connection table timeouts have been exceeded.
+    It can be ignored. Latency or misconfiguration on the remote end
+    is what I would blame for the delayed response from the server that
+    got dropped by the firewall.
+and:
+    Scans of all kinds from the Internet are a given. It was blocked,
+    so nothing to really react to. If you really are paranoid I would
+    recommend running an IDS to parse the incoming traffic for further
+    insight to the nature of the intrusion attempt.
+
+Stroller.
+  
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="007704.html">[X4U] (no subject) Oooooops
+</A></li>
+	<LI>Next message: <A HREF="007709.html">[X4U] Stealth Mode connection attempts 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7705">[ date ]</a>
+              <a href="thread.html#7705">[ thread ]</a>
+              <a href="subject.html#7705">[ subject ]</a>
+              <a href="author.html#7705">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

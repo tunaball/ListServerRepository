@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] parsing help?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20parsing%20help%3F&In-Reply-To=7097bd8c0604271247x7f54366o61b2a96484308a0%40mail.gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002642.html">
+   <LINK REL="Next"  HREF="002644.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] parsing help?</H1>
+    <B>Russell McGaha</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20parsing%20help%3F&In-Reply-To=7097bd8c0604271247x7f54366o61b2a96484308a0%40mail.gmail.com"
+       TITLE="[X-Unix] parsing help?">RussellMcGaha at hughes.net
+       </A><BR>
+    <I>Thu Apr 27 14:18:23 PDT 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002642.html">[X-Unix] parsing help?
+</A></li>
+        <LI>Next message: <A HREF="002644.html">[X-Unix] parsing help?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2643">[ date ]</a>
+              <a href="thread.html#2643">[ thread ]</a>
+              <a href="subject.html#2643">[ subject ]</a>
+              <a href="author.html#2643">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Wing;
+	I didn't originally send actual data because the lines are VERY  
+long; but since it's requested:
+
+[4lines]
+
+&quot;2HPC12&quot;,&quot;1/2&quot;&quot; CTS 2-HOLE PIPE CLAMP&quot;,&quot;1/2&quot;&quot; COPPER TUBE SIZE. FITS  
+COPPER, CPVC, AND POLYBUTYLENE&quot;,&quot;CARTON QUANTITY ONLY&quot;,&quot;. 
+01&quot;,&quot;693374000068&quot;,&quot;. 
+24&quot;,&quot;2000&quot;,&quot;G-04&quot;,&quot;C612&quot;,&quot;*461260&quot;,&quot;559-2&quot;,&quot;&quot;,&quot;&quot;,&quot;H28-050&quot;,&quot;&quot;,&quot;H28-050&quot;, 
+&quot;&quot;
+&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;16051&quot;,&quot;&quot;
+&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;559-2&quot;,&quot;&quot;
+&quot;2HPC34&quot;,&quot;3/4&quot;&quot; CTS 2-HOLE PIPE CLAMP&quot;,&quot;3/4&quot;&quot; COPPER TUBE SIZE. FITS  
+COPPER, CPVC, AND POLYBUTYLENE&quot;,&quot;CARTON QUANTITY ONLY&quot;,&quot;. 
+01&quot;,&quot;693374000075&quot;,&quot;. 
+26&quot;,&quot;1000&quot;,&quot;G-04&quot;,&quot;C634&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;H28-075&quot;,&quot;&quot;,&quot;H28-075&quot;,&quot;&quot;
+&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;16052&quot;,&quot;&quot;
+&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;559-3&quot;,&quot;&quot;
+
+Should become: [2 lines]
+
+&quot;2HPC12&quot;,&quot;1/2&quot;&quot; CTS 2-HOLE PIPE CLAMP&quot;,&quot;1/2&quot;&quot; COPPER TUBE SIZE. FITS  
+COPPER, CPVC, AND POLYBUTYLENE&quot;,&quot;CARTON QUANTITY ONLY&quot;,&quot;. 
+01&quot;,&quot;693374000068&quot;,&quot;. 
+24&quot;,&quot;2000&quot;,&quot;G-04&quot;,&quot;C612&quot;,&quot;*461260&quot;,&quot;559-2&quot;,&quot;&quot;,&quot;&quot;,&quot;H28-050&quot;,&quot;&quot;,&quot;H28-050&quot;, 
+&quot;&quot;,&quot;16051&quot;,&quot;&quot;,&quot;559-2&quot;,&quot;&quot;
+&quot;2HPC34&quot;,&quot;3/4&quot;&quot; CTS 2-HOLE PIPE CLAMP&quot;,&quot;3/4&quot;&quot; COPPER TUBE SIZE. FITS  
+COPPER, CPVC, AND POLYBUTYLENE&quot;,&quot;CARTON QUANTITY ONLY&quot;,&quot;. 
+01&quot;,&quot;693374000075&quot;,&quot;. 
+26&quot;,&quot;1000&quot;,&quot;G-04&quot;,&quot;C634&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;H28-075&quot;,&quot;&quot;,&quot;H28-075&quot;,&quot;&quot;,&quot;16052&quot;,&quot; 
+&quot;,&quot;559-3&quot;,&quot;&quot;
+
+the pattern: [\r&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,]  
+should become: [,]
+
+Russell
+
+On Apr 27, 2006, at 2:47 PM, Wing Wong wrote:
+
+&gt;<i> On 4/27/06, Russell McGaha &lt;<A HREF="../../../mailman/listinfo/x-unix.html">RussellMcGaha at hughes.net</A>&gt; wrote:
+</I>&gt;&gt;<i> All;
+</I>&gt;&gt;<i>         I guess what I REALY need to do, is change the pattern
+</I>&gt;&gt;<i> &quot;&lt;return&gt;,,, ... ,&quot; to &quot;,&quot; . Is there a simple way to do this?
+</I>&gt;&gt;<i> because of the &lt;return&gt; char, I'm not sure how to correctly do this.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Russell
+</I>&gt;<i>
+</I>&gt;<i> Russell,
+</I>&gt;<i>
+</I>&gt;<i> Can you post an actual couple of lines of the actual data and then a
+</I>&gt;<i> couple of lines of what you would like that data to actually look
+</I>&gt;<i> like? The various commas and dots are confusing to read and interpret
+</I>&gt;<i> accurately.
+</I>&gt;<i>
+</I>&gt;&gt;<i> From what you just posted, I'm hearing:
+</I>&gt;<i>
+</I>&gt;<i> You have a series of lines in the exported csv file that takes the  
+</I>&gt;<i> form of:
+</I>&gt;<i>
+</I>&gt;<i> &lt;CR/LF&gt;,,,,,,,,,,,
+</I>&gt;<i> &lt;CR/LF&gt;,,,,,,,,,,,
+</I>&gt;<i> &lt;CR/LF&gt;,,,,,,,,,,,
+</I>&gt;<i>
+</I>&gt;<i> And you want to reduce the commas to a single comma?
+</I>&gt;<i>
+</I>&gt;<i> # To reduce a string of commas into one comma:
+</I>&gt;<i> cat source.csv | sed -e 's/[,][,]*/,/g' &gt; single_comma.csv
+</I>&gt;<i>
+</I>&gt;<i> # To get rid of the CR/LF and reduce the string of commas to one  
+</I>&gt;<i> comma:
+</I>&gt;<i> cat source.csv | sed -e 's/[\n][,][,]*/,/g' &gt; no_crlf_single_comma.csv
+</I>&gt;<i>
+</I>&gt;<i> Not sure if that is what you really want to do. If you are looking to
+</I>&gt;<i> change the order of the various parameters, you can use awk to do
+</I>&gt;<i> that.
+</I>&gt;<i>
+</I>&gt;<i> IF, your file is actually looking something like this:
+</I>&gt;<i>
+</I>&gt;<i> ,,,,,,,,,^M
+</I>&gt;<i> ,,,,,,,,,^M
+</I>&gt;<i> ,,,,,,,,,^M
+</I>&gt;<i> ,,,,,,,,,^M
+</I>&gt;<i>
+</I>&gt;<i> Ie, a an exported csv file using DOS/WIN cr/lf conventions, and you
+</I>&gt;<i> just want to get rid of the ^M's, but want to retain the line breaks:
+</I>&gt;<i>
+</I>&gt;<i> cat source.csv | tr '^V^M' '\012' &gt; convertedlinefeeds.csv
+</I>&gt;<i> # The ^V is CTRL-V and the ^M is hitting the ENTER key after the  
+</I>&gt;<i> CTRL-V
+</I>&gt;<i>
+</I>&gt;<i> or, you can use the dos2unix binary to convert the linefeeds for you.
+</I>&gt;<i>
+</I>&gt;<i> But like I noted above, if you can send a sample of what the actual
+</I>&gt;<i> lines look like and a sample of what you'd like the lines to look
+</I>&gt;<i> like, it would be much easier to give example code snippets.
+</I>&gt;<i>
+</I>&gt;<i> Wing
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> Wing Wong
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">wingedpower at gmail.com</A>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>          <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002642.html">[X-Unix] parsing help?
+</A></li>
+	<LI>Next message: <A HREF="002644.html">[X-Unix] parsing help?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2643">[ date ]</a>
+              <a href="thread.html#2643">[ thread ]</a>
+              <a href="subject.html#2643">[ subject ]</a>
+              <a href="author.html#2643">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

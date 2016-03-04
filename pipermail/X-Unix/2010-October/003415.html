@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] How to *quietly* unarchive a .bz2 file?
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20How%20to%20%2Aquietly%2A%20unarchive%20a%20.bz2%20file%3F&In-Reply-To=%3C17284075-B3F8-4E58-B90A-4A2CC5FBB06B%40ieee.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="003416.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+   <H1>[X-Unix] How to *quietly* unarchive a .bz2 file?</H1>
+    <B>Jerry Krinock</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=Re%3A%20%5BX-Unix%5D%20How%20to%20%2Aquietly%2A%20unarchive%20a%20.bz2%20file%3F&In-Reply-To=%3C17284075-B3F8-4E58-B90A-4A2CC5FBB06B%40ieee.org%3E"
+       TITLE="[X-Unix] How to *quietly* unarchive a .bz2 file?">jerry at ieee.org
+       </A><BR>
+    <I>Sun Oct  3 07:15:13 PDT 2010</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="003416.html">[X-Unix] How to *quietly* unarchive a .bz2 file?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3415">[ date ]</a>
+              <a href="thread.html#3415">[ thread ]</a>
+              <a href="subject.html#3415">[ subject ]</a>
+              <a href="author.html#3415">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>For remote diagnosis of problems, I have a script which unarchives .bz2 system logs, filters them for certain keywords, and zips the resulting text into an archive which the user can email to me.
+
+This works except that for unarchiving the .bz2 logs, I use /usr/bin/open, which launches the Archive Utility app, which opens a Finder window that activates for each .bz2 file, creating visual pollution and intercepting any keystrokes which the user might be typing in another app.  Very annoying.
+
+Archive Utility.app is in /System/Library/CoreServices and has no documentation.
+
+It appears that on Linux, people use 'bunzip' or 'tar -x' for this.  Well, bunzip seems to not exist on Mac OS X, and although 'man tar' says that &quot;this implementation recognizes bzip2 compression automatically when reading archives&quot;, it doesn't work on a .bz2&#8230;
+
+JerryMacMini:~ jk$ tar -x -f /var/log/system.log.0.bz2
+tar: This does not look like a tar archive
+tar: Skipping to next header
+tar: Archive contains obsolescent base-64 headers
+tar: Error exit delayed from previous errors
+
+I get the same problem if I use the -j option (which, according to 'man tar', is not necessary for extracting)
+
+JerryMacMini:~ jk$ tar -x -j -f /var/log/system.log.0.bz2
+tar: This does not look like a tar archive
+tar: Skipping to next header
+tar: Archive contains obsolescent base-64 headers
+tar: Error exit delayed from previous errors
+
+How can I quietly unarchive a .bz2 file?
+
+Thanks,
+
+Jerry
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="003416.html">[X-Unix] How to *quietly* unarchive a .bz2 file?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3415">[ date ]</a>
+              <a href="thread.html#3415">[ thread ]</a>
+              <a href="subject.html#3415">[ subject ]</a>
+              <a href="author.html#3415">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

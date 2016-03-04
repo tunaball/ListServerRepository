@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] problem with bash shell
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20problem%20with%20bash%20shell&In-Reply-To=B64A4D7B-4B5C-4B50-96DC-7A179122CF44%40swarthmore.edu">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="007861.html">
+   <LINK REL="Next"  HREF="007862.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] problem with bash shell</H1>
+    <B>Eugene</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20problem%20with%20bash%20shell&In-Reply-To=B64A4D7B-4B5C-4B50-96DC-7A179122CF44%40swarthmore.edu"
+       TITLE="[X4U] problem with bash shell">list-themacintoshguy at fsck.net
+       </A><BR>
+    <I>Tue Aug  2 11:49:58 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="007861.html">[X4U] problem with bash shell
+</A></li>
+        <LI>Next message: <A HREF="007862.html">[X4U] MAC address vs &#179; Ethernet Address &#178;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7871">[ date ]</a>
+              <a href="thread.html#7871">[ thread ]</a>
+              <a href="subject.html#7871">[ subject ]</a>
+              <a href="author.html#7871">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Tue, Aug 02, 2005 at 12:38:17PM CDT, John Boccio &lt;<A HREF="../../../mailman/listinfo/x4u.html">boccio at swarthmore.edu</A>&gt; wrote:
+:<i> 
+</I>:<i> OSX 10.4.2
+</I>:<i> 
+</I>:<i> .bashrc
+</I>:<i> 
+</I>:<i> and
+</I>:<i> 
+</I>:<i> .profile
+</I>:<i> 
+</I>:<i> files not being read (executed)
+</I>:<i> 
+</I>:<i> when I open a terminal window or an x-term.
+</I>:<i> 
+</I>:<i> Has something changed with 10.4..x?
+</I>
+Look in your Terminal prefs.  Is bash started as a login shell?
+If it is not, it will never read ~/.profile.  If it is, make
+sure that there is no ~/.bash_profile or ~/.bash_login files;
+otherwise, either of those files have precedence and will be
+used first and again will never read ~/.profile.
+
+Also, if it's a login shell, bash doesn't read ~/.bashrc.  If
+you want it read, then add a &quot;source ~/.bashrc&quot; to your init
+file (~/.bash_profile, ~/.bash_login, or ~/.profile).
+
+
+-- 
+Eugene
+<A HREF="http://www.coxar.pwp.blueyonder.co.uk/">http://www.coxar.pwp.blueyonder.co.uk/</A>
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="007861.html">[X4U] problem with bash shell
+</A></li>
+	<LI>Next message: <A HREF="007862.html">[X4U] MAC address vs &#179; Ethernet Address &#178;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7871">[ date ]</a>
+              <a href="thread.html#7871">[ thread ]</a>
+              <a href="subject.html#7871">[ subject ]</a>
+              <a href="author.html#7871">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

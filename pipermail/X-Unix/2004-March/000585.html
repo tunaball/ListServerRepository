@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Hiding apps from the command line
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11730187%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000581.html">
+   <LINK REL="Next"  HREF="000582.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Hiding apps from the command line</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Hiding%20apps%20from%20the%20command%20line&In-Reply-To=list-11730187%40mail.ninewire.com"
+       TITLE="[X-Unix] Hiding apps from the command line">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Sat Mar 27 02:12:30 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000581.html">Programming contest idea
+</A></li>
+        <LI>Next message: <A HREF="000582.html">[X-Unix] Panthers Virtual Memory
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#585">[ date ]</a>
+              <a href="thread.html#585">[ thread ]</a>
+              <a href="subject.html#585">[ subject ]</a>
+              <a href="author.html#585">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>Subject: Re: [X-Unix] Hiding apps from the command line
+</I>&gt;<i>From: Kirk McElhearn &lt;<A HREF="../../../mailman/listinfo/x-unix.html">kirklists at wanadoo.fr</A>&gt;
+</I>&gt;<i>Message-ID: &lt;BC8A14EF.86C6C%<A HREF="../../../mailman/listinfo/x-unix.html">kirklists at wanadoo.fr</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>On Fri, 26 Mar 2004 15:08:09 +0000, &quot;Simon Forster&quot; 
+</I>&gt;<i>&lt;<A HREF="../../../mailman/listinfo/x-unix.html">simon-lists at ldml.com</A>&gt; wrote:
+</I>
+&gt;&gt;<i>if &quot;$1&quot; contains &quot;a&quot; then set visible of every process whose 
+</I>&gt;&gt;<i>visible is true and name is not &quot;Finder&quot; and name is not &quot;$2&quot; to 
+</I>&gt;&gt;<i>false
+</I>
+&gt;&gt;<i>  Hmm. Once again I need to supply 2 arguments. hide Mail Mail for
+</I>&gt;&gt;<i>  example works (for me).
+</I>&gt;<i>
+</I>&gt;<i>So how can we get it to work if two args are not supplied? That's a waste...
+</I>&gt;<i>It has something to do with the tell Finder bit.
+</I>
+	Change:
+if &quot;$1&quot; contains &quot;a&quot; then set visible of every process whose visible 
+is true and name is not &quot;Finder&quot; and name is not &quot;$2&quot; to false
+	to:
+if &quot;$1&quot; contains &quot;a&quot; then set visible of every process whose visible 
+is true and name is not &quot;Finder&quot; ${2+and name is not \&quot;$2\&quot;} to false
+	Do similar to '-o' line
+	and change:
+if &quot;$1&quot; contains &quot;v&quot; then tell me to tell application &quot;$2&quot; to activate
+	to:
+${2+if \&quot;$1\&quot; contains \&quot;v\&quot; then tell me to tell application \&quot;$2\&quot; 
+to activate}
+
+$var is replaced by the value of var
+${var+some text} is replaced by nothing at all if var is unset, or by 
+'some text' if var has a value
+Here, the text introducing the use of the 2nd parameter is only 
+included if the 2nd parameter is given.
+See the man page for full details.  There is also ${var-}, ${var=} 
+and ${var?} and more.
+
+This 'here is' approach will only work with applications that have 
+single word names.  '$*' would include the flags, so they need to be 
+captured and shifted off first.  My solution at
+&lt;<A HREF="http://homepage.mac.com/david_ledger/Scripts/index.html">http://homepage.mac.com/david_ledger/Scripts/index.html</A>&gt;
+gets round this.  You probably won't like my multi-char flags, but 
+those can be changed to something that makes sense to you.
+
+I do still get the error:
+## Component Manager: attempting to find symbols in a component alias 
+of type (regR/carP/x!bt)
+but I get that in other places too.  Any ideas?
+
+David
+
+
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+Chair of HPUX SysAdmin SIG of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x-unix.html">dledger at ivdcs.co.uk</A> (also <A HREF="../../../mailman/listinfo/x-unix.html">dledger at ivdcs.demon.co.uk</A>)
+www.ivdcs.co.uk
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000581.html">Programming contest idea
+</A></li>
+	<LI>Next message: <A HREF="000582.html">[X-Unix] Panthers Virtual Memory
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#585">[ date ]</a>
+              <a href="thread.html#585">[ thread ]</a>
+              <a href="subject.html#585">[ subject ]</a>
+              <a href="author.html#585">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

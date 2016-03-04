@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [G4] EIDE and Ultra ATA RAID
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20EIDE%20and%20Ultra%20ATA%20RAID&In-Reply-To=F3510DB0-3B65-4555-A6B8-13B81EB213F2%40gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="009371.html">
+   <LINK REL="Next"  HREF="009373.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[G4] EIDE and Ultra ATA RAID</H1>
+    <B>shopdog</B> 
+    <A HREF="mailto:g4%40listserver.themacintoshguy.com?Subject=%5BG4%5D%20EIDE%20and%20Ultra%20ATA%20RAID&In-Reply-To=F3510DB0-3B65-4555-A6B8-13B81EB213F2%40gmail.com"
+       TITLE="[G4] EIDE and Ultra ATA RAID">shopdog at mac.com
+       </A><BR>
+    <I>Fri Apr 29 07:58:01 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="009371.html">[G4] EIDE and Ultra ATA RAID
+</A></li>
+        <LI>Next message: <A HREF="009373.html">[G4] Re: Network Sharing Oddity
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9380">[ date ]</a>
+              <a href="thread.html#9380">[ thread ]</a>
+              <a href="subject.html#9380">[ subject ]</a>
+              <a href="author.html#9380">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Phil:
+
+Excellent response.  Very informative.  I think when I pick up Tiger 
+(soon), I will try a RAID 1 (mirror) and test it out to see what 
+happens if one drive fails.  I'm tired of trying to maintain an exact 
+backup.  I mean, I will still do an occasional offsite backup, but I 
+would also like one that is in-house.
+
+Sounds as though I will stay away from striping and JBOD, unless it's 
+just for non-critical things, or I want to use JBOD to link some small 
+drive together.  Of course I would still back them up.  My biggest 
+concern is data loss.
+
+Any suggestions on good backup software?  I'd like for it to be able to 
+backup to DVD (span several, if possible).
+
+shopdog
+
+On Apr 29, 2005, at 7:57 AM, Philip J Robar wrote:
+
+&gt;<i>
+</I>&gt;<i> On Apr 29, 2005, at 3:26 AM, shopdog wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Phil:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Thank you for the insight. A few things I can't seem to find definite 
+</I>&gt;&gt;<i> answers on, although you hint at one of them...
+</I>&gt;<i>
+</I>&gt;<i> First, let me be clear that my postings have been based on things I've 
+</I>&gt;<i> read and actual use of Sun's Volume Management software. I've never 
+</I>&gt;<i> set up or tested an OS X RAID 1 (mirror) array. (I've played with 
+</I>&gt;<i> stripping though.)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i> 1) You say the remaining drive should be able to keep running on its 
+</I>&gt;&gt;<i> own. Do you mean that it should have a full directory, and therefore 
+</I>&gt;&gt;<i> I should be able to treat it as a single drive (i.e., as if it was 
+</I>&gt;&gt;<i> never part of an array), and therefore the file should show up and I 
+</I>&gt;&gt;<i> could get the file, and then continue using the drive as a single 
+</I>&gt;&gt;<i> drive?
+</I>&gt;<i>
+</I>&gt;<i> Yes.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i> Or do I need to rebuild the array, and only then be able to get to 
+</I>&gt;&gt;<i> the file?
+</I>&gt;<i>
+</I>&gt;<i> No.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i> Or can I rebuild the array at any point (presumably the array would 
+</I>&gt;&gt;<i> be rebuilt so that any files I have added since the failure would 
+</I>&gt;&gt;<i> then be duplicated to the new second drive)?
+</I>&gt;<i>
+</I>&gt;<i> Yes.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i> 2) How does one set up a JBOD, and can OS X Disk Utility do it (My 
+</I>&gt;&gt;<i> guess is no.)?
+</I>&gt;<i>
+</I>&gt;<i> Yes, this is new in Tiger. (At least I think it is, I don't have 
+</I>&gt;<i> Panther running anywhere at the moment.)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i> If one drive in a JBOD fails, is it only the data on that drive that 
+</I>&gt;&gt;<i> is lost? That is my understanding, since files are saved sequentially 
+</I>&gt;&gt;<i> as the disc space fills up (the system uses one drive first, then the 
+</I>&gt;&gt;<i> next, etc.), as opposed to saving files at random places across the 
+</I>&gt;&gt;<i> JBOD. Does a JBOD ever save parts of a file on one of the drives and 
+</I>&gt;&gt;<i> part of the file on another drive, so that if one drive failed you 
+</I>&gt;&gt;<i> would lose the file? Or does a JBOD make sure that a file never spans 
+</I>&gt;&gt;<i> more than one drive? (My guess is it spans drives sometimes.)
+</I>&gt;<i>
+</I>&gt;<i> There's no guarantee that the data on the surviving disks will be 
+</I>&gt;<i> recoverable. It varies with the RAID software/hardware, OS, and 
+</I>&gt;<i> filesystem combination being used. And I don't know the specifics for 
+</I>&gt;<i> OS X. What you need to keep in mind is that while the files are 
+</I>&gt;<i> written sequentially the file system spans all of the drives in the 
+</I>&gt;<i> array. Loosing one of the array's drive is the same as having a huge 
+</I>&gt;<i> section of a single drive fail - the result is a corrupt file system. 
+</I>&gt;<i> While you might be able to recover some data with Disk First Aid, or 
+</I>&gt;<i> Disk Warrior, or an (expensive) data recovery organization, I wouldn't 
+</I>&gt;<i> count on it. You certainly can't expect to be able to just mount the 
+</I>&gt;<i> surviving disks and read them as if they were regular individual 
+</I>&gt;<i> drives.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Phil
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> G4 mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">G4 at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/g4.html">http://listserver.themacintoshguy.com/mailman/listinfo/g4</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random 
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="009371.html">[G4] EIDE and Ultra ATA RAID
+</A></li>
+	<LI>Next message: <A HREF="009373.html">[G4] Re: Network Sharing Oddity
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9380">[ date ]</a>
+              <a href="thread.html#9380">[ thread ]</a>
+              <a href="subject.html#9380">[ subject ]</a>
+              <a href="author.html#9380">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/g4.html">More information about the G4
+mailing list</a><br>
+
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+
+</body></html>

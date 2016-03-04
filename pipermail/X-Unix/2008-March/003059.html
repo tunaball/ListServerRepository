@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Mysterious Volume in Terminal
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Mysterious%20Volume%20in%20Terminal&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003070.html">
+   <LINK REL="Next"  HREF="003063.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Mysterious Volume in Terminal</H1>
+    <B>Richard Hartman</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Mysterious%20Volume%20in%20Terminal&In-Reply-To="
+       TITLE="[X-Unix] Mysterious Volume in Terminal">seasoft at west.net
+       </A><BR>
+    <I>Sun Mar  9 13:25:54 PDT 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003070.html">[X-Unix] Altering system parameters (e.g. IP addresses) on Mac OS
+	X server
+</A></li>
+        <LI>Next message: <A HREF="003063.html">[X-Unix] Mysterious Volume in Terminal
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3059">[ date ]</a>
+              <a href="thread.html#3059">[ thread ]</a>
+              <a href="subject.html#3059">[ subject ]</a>
+              <a href="author.html#3059">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is giving me fits.
+
+When booted from the (unpartitioned) internal drive of my Intel iMac  
+(OS 10.5.2), *with all firewire and usb drives unplugged*, I see the  
+following in terminal:
+
+$ ls -la /Vol*
+total 24
+drwxrwxrwt@  5 root  admin   170 Mar  9 12:48 .
+drwxrwxr-t@ 60 root  admin  2108 Mar  4 12:41 ..
+-rw-rw-rw-@  1 rjh   admin  6148 May 17  2007 .DS_Store
+drwxr-xr-x   3 root  admin   102 Nov  6 19:08 Back2
+lrwxr-xr-x   1 root  admin     1 Mar  9 12:48 iMac20 -&gt; /
+
+The &quot;Back2&quot; volume does not show in the Finder or on the desktop, does  
+not show as a partition of my internal drive (in Drive Utility), or  
+anywhere else other than the above listing.
+
+I HAD a &quot;Back2&quot; volume a long while back on a firewire drive, but it  
+no longer exists on any drive (it was on a drive later reformatted  
+and, in any case, not even plugged into the mac at the moment).
+
+If I cd into the &quot;Back2&quot; volume and view its contents, it appears to  
+comprise the long-since lost Back2 firewire volume. I can drill down  
+and open files that no longer even exist in my iMac20 directory  
+structure, so the indicated &quot;Back2&quot; data is actually present.
+
+I have done a repair from Disk Utility, which gave a clean bill of  
+health. The console &amp; system logs show no mention of Back2, and  
+DiskWarrior 4.0 sees nothing either.
+
+My best guess: I inadvertently made a superduper clone of Back2 onto  
+my internal hard drive at some point (evidently, from the time stamps  
+on the terminal directories, last November). Could that be the cause  
+of what I am seeing?
+
+Here is some of the Back2 directory info; the time stamps seem to  
+point to November 2007, which is about when Back2 disappeared from the  
+scene.
+========================
+$ ls -la /Volumes/Back2/
+total 0
+drwxr-xr-x  3 root  admin  102 Nov  6 19:08 .
+drwxrwxrwt@ 5 root  admin  170 Mar  9 12:48 ..
+drwxr-xr-x  7 root  admin  238 Nov  6 19:26 Users
+$ ls -la /Volumes/Back2/Users
+total 16
+drwxr-xr-x   7 root  admin   238 Nov  6 19:26 .
+drwxr-xr-x   3 root  admin   102 Nov  6 19:08 ..
+-rw-rw-r--@  1 rjh   admin  6148 Oct 15 12:51 .DS_Store
+-rw-r--r--   1 root  wheel     0 Dec 25  2005 .localized
+drwxr-xr-x  14 root  admin   476 Nov  6 19:25 Shared
+drwxr-xr-x  44 root  admin  1496 Nov  6 19:25 rjh
+drwxr-xr-x  17 root  admin   578 Nov  6 19:26 sss
+==================
+
+How do I delete this rogue volume and make it disappear from my  
+Volumes listing? And, presumably, recover a bit of disk space in the  
+process.
+
+Grateful for any guidance here,
+
+Richard
+</PRE>
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003070.html">[X-Unix] Altering system parameters (e.g. IP addresses) on Mac OS
+	X server
+</A></li>
+	<LI>Next message: <A HREF="003063.html">[X-Unix] Mysterious Volume in Terminal
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3059">[ date ]</a>
+              <a href="thread.html#3059">[ thread ]</a>
+              <a href="subject.html#3059">[ subject ]</a>
+              <a href="author.html#3059">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

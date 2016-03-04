@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Renaming files with spaces
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Renaming%20files%20with%20spaces&In-Reply-To=452D75D0-0E99-4AD9-8C40-54D7CC0375E4%40charter.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003337.html">
+   <LINK REL="Next"  HREF="003339.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Renaming files with spaces</H1>
+    <B>Artifex Maximus</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Renaming%20files%20with%20spaces&In-Reply-To=452D75D0-0E99-4AD9-8C40-54D7CC0375E4%40charter.net"
+       TITLE="[X-Unix] Renaming files with spaces">artifexor at gmail.com
+       </A><BR>
+    <I>Sun May 24 12:48:38 PDT 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003337.html">[X-Unix] Renaming files with spaces
+</A></li>
+        <LI>Next message: <A HREF="003339.html">[X-Unix] Renaming files with spaces
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3338">[ date ]</a>
+              <a href="thread.html#3338">[ thread ]</a>
+              <a href="subject.html#3338">[ subject ]</a>
+              <a href="author.html#3338">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi!
+
+On Thu, May 14, 2009 at 4:26 PM, Charles Howse &lt;<A HREF="../../../mailman/listinfo/x-unix.html">chowse at charter.net</A>&gt; wrote:
+&gt;<i> I need to batch rename all files with extension .PDF to extension .pdf.
+</I>&gt;<i> They may or may not have spaces in the filenames.
+</I>Use find, read and quotation mark. Try this one:
+
+find . -maxdepth 1 -type f -name *.PDF \
+|<i> while read i ; do
+</I> base=&quot;`basename \&quot;$i\&quot; .PDF`&quot;
+ mv &quot;$i&quot; &quot;$base.pdf&quot;
+done
+
+Bye,
+a
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003337.html">[X-Unix] Renaming files with spaces
+</A></li>
+	<LI>Next message: <A HREF="003339.html">[X-Unix] Renaming files with spaces
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3338">[ date ]</a>
+              <a href="thread.html#3338">[ thread ]</a>
+              <a href="subject.html#3338">[ subject ]</a>
+              <a href="author.html#3338">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

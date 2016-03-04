@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] DVD Regional Settings
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20DVD%20Regional%20Settings&In-Reply-To=list-7524548%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="008854.html">
+   <LINK REL="Next"  HREF="008856.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] DVD Regional Settings</H1>
+    <B>Trevor J. Hutley</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20DVD%20Regional%20Settings&In-Reply-To=list-7524548%40mail.ninewire.com"
+       TITLE="[Ti] DVD Regional Settings">hutley at geneva-link.ch
+       </A><BR>
+    <I>Tue Jul 15 04:15:15 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="008854.html">[Ti] My iChat Adventure with Mom
+</A></li>
+        <LI>Next message: <A HREF="008856.html">[Ti] With PowerBook G4 and OS X, which Sprintpcs cell phone to  enable 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8855">[ date ]</a>
+              <a href="thread.html#8855">[ thread ]</a>
+              <a href="subject.html#8855">[ subject ]</a>
+              <a href="author.html#8855">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>At 21:31 +0300 7/13/03, S. Moussly wrote:
+&gt;<i>I just got a DVD from Europe and I had a prompt about Regional settings, in
+</I>&gt;<i>which I can only change it 3 times and then it will lock up. Is there a
+</I>&gt;<i>software or anyway to avoid the lock.
+</I>&gt;<i>
+</I>&gt;<i>Thanks
+</I>&gt;<i>
+</I>&gt;<i>Sam
+</I>
+
+Since every few weeks on this List, the question of &quot;how to make my
+DVD region free&quot; comes up again, I thought that I would just re-post
+my (FEB 2002) step-by-step action to make the DVD drive on my Ti-500
+in to a region-free one.  I hope it is a helpful guide to anyone who
+plans a similar action.  For later DVD drives, I 
+have no specific knowledge or information.
+_______________________________________________________________________
+
+THIS NOTE DESCRIBES THE STEPS TO MAKE MY DVD DRIVE REGION FREE (RPC-1)
+
+Version 2 [26-FEB-02]
+
+
+I have a Ti-500 with a DVD-drive from Matsushita, model SR-8187 (look
+in Apple System Profiler, under Devices &amp; Volumes).
+
+My DVD-drive was an RPC2 drive, set at Region 2 [Europe].
+
+Since I have DVD from the USA [Region 1] and Hong Kong [Region 3], I
+wanted to make my DVD drive region-free.
+
+I thought that I would summarize the process, for those who are interested.
+
+	THIS IS ALL AT YOUR OWN RISK.
+	I AM NOT RECOMMENDING NOR PROPOSING ANYTHING.
+	I AM JUST DESCRIBING WHAT I DID AND THE RESULTS.
+	READ ALL THE INFO THAT COMES WITH THE UTILITIES BEFORE YOU START
+
+ESPECIALLY MAKE SURE NOT TO INTERRUPT THE APPLE OR HACK FIRMWARE
+UPDATE PROCESSES.
+
+
+This URL (Mac DVD Resource) is the place from which to find all the
+utilities and hacks, either hosted there or linked:
+
+	&lt;<A HREF="http://www.WormInTheApple.gr/macdvd/">http://www.WormInTheApple.gr/macdvd/</A>&gt;
+
+
+THE STEPS TO MAKE MY DVD DRIVE REGION FREE (RPC-1)
+
+
+PRIOR to this process, you must have already played a DVD in your drive.
+You cannot run this process on a brand new unused drive.
+
+1. run DVDInfo 2.0.3 (by xvi) and you will see a result like this:
+
+		Model:    MATSHITA DVD-ROM SR-8187
+  &#160;&#160;		Firmware: HA15
+  &#160;&#160;&#160;&#160;&#160;	RPC-2:    Region locked (Phase II)
+
+2. run  the APPLE &quot;PowerBook G4 DVD-ROM Update&quot; 1.0
+
+&lt;<A HREF="http://www.versiontracker.com/redir.fcgi/kind=1&db=mac&id=11021/_PB_G4_DVDROM_Update.smi.bin">http://www.versiontracker.com/redir.fcgi/kind=1&amp;db=mac&amp;id=11021/_PB_G4_DVDROM_Update.smi.bin</A>&gt;
+
+This updates the HA15 to an HA18 firmware.
+
+Apple System Profiler should show that the DVD drive is now HA18.
+
+3. RESTART
+
+4. run the Matsushita SR-8187 XA18 updater,
+    which then updates (hacks) the firmware to XA18
+
+5, restart
+
+6. run DVDInfo 2.0.3, which then shows:
+
+        Vendor: MATSHITA
+         Model: DVD-ROM SR-8187
+      Firmware: XA18
+    RPC Status: RPC-1 (region-free)
+
+The DVD drive is now region-free.
+
+What this means is that it will (should) read DVD from any region.
+All mine are OK.
+
+If you put in a DVD from another region, you will be prompted for a
+region change.
+
+You can manage the number of region changes with the utility REGION
+1.0.9 (also by xvi).
+
+Note that Region ONLY works on RPC-1 drives, so you need to go
+through steps 1 - 6 above to get to that type of drive.
+
+I hope that this overview is helpful.
+
+I have appreciated all the input from Fred Clarke on this subject,
+who tells me that he has made about 50 DVD drives region free.  I am
+a relative beginner, as this is only my second one !
+
+regards, Trevor
+
+_______________________________________________________________________
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="008854.html">[Ti] My iChat Adventure with Mom
+</A></li>
+	<LI>Next message: <A HREF="008856.html">[Ti] With PowerBook G4 and OS X, which Sprintpcs cell phone to  enable 
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8855">[ date ]</a>
+              <a href="thread.html#8855">[ thread ]</a>
+              <a href="subject.html#8855">[ subject ]</a>
+              <a href="author.html#8855">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

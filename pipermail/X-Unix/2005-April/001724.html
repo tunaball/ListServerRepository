@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Root Exploit via sudo
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Root%20Exploit%20via%20sudo&In-Reply-To=97586c78fdeda72c46ea08d84a6e91da%40myrealbox.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001723.html">
+   <LINK REL="Next"  HREF="001725.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Root Exploit via sudo</H1>
+    <B>Stephen Jonke</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Root%20Exploit%20via%20sudo&In-Reply-To=97586c78fdeda72c46ea08d84a6e91da%40myrealbox.com"
+       TITLE="[X-Unix] Root Exploit via sudo">sjj_public at mac.com
+       </A><BR>
+    <I>Fri Apr  8 06:23:30 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001723.html">[X-Unix] Root Exploit via sudo
+</A></li>
+        <LI>Next message: <A HREF="001725.html">[X-Unix] Root Exploit via sudo
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1724">[ date ]</a>
+              <a href="thread.html#1724">[ thread ]</a>
+              <a href="subject.html#1724">[ subject ]</a>
+              <a href="author.html#1724">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Apr 8, 2005, at 6:49 AM, Stroller wrote:
+&gt;<i> Erm... the way I'm reading this is that `sudo` is used anytime an 
+</I>&gt;<i> application needs an admin user to enter their password. EG: run dodgy 
+</I>&gt;<i> trojan, that sits in background &amp; waits until updates are ready to 
+</I>&gt;<i> install, user enters password to install updates, trojan elevates its 
+</I>&gt;<i> privileges. Am I reading this incorrectly?
+</I>&gt;<i>
+</I>
+That's how I had interpreted it too, but I do see now that this is not 
+the case. I just tried running an installer with authentication and 
+then immediately tried a sudo in the terminal - it still requested my 
+password. I had thought it did work that way, but it would seem I was 
+mistaken. I think my mistake in this regard goes to back when there was 
+the issue that Finder authentication worked just like sudo, so you 
+could authenticate to drag copy a file into a restricted folder, and 
+then for 5 minutes all gates were open. They fixed that a while ago.
+
+So the alleged security risk does seem to be a fairly marginal one - it 
+only applies to doing sudo in the terminal. Well, almost...
+
+There is one exception. Via applescript you can effectively invoke the 
+sudo command, so such scripts do make it easy for Mom to use &quot;sudo&quot;. 
+For example I created a script application that runs repairPermissions 
+&quot;with administrator privileges&quot; specifically to make that easier for 
+others to do. That prompts for an admin password and it uses &quot;sudo&quot; to 
+do its thing! Thus *I* have made it easy for my Mom to use the sudo 
+command! I tested this and verified that after a successful &quot;with 
+authentication&quot; you can do &quot;sudo&quot; in the terminal to your hearts 
+content (for 5 minutes anyway.) I'll have to rethink such things now. 
+The behavior of that should probably have its default behavior changed 
+to not stay authenticated after the command is issued!
+
+Steve
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001723.html">[X-Unix] Root Exploit via sudo
+</A></li>
+	<LI>Next message: <A HREF="001725.html">[X-Unix] Root Exploit via sudo
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1724">[ date ]</a>
+              <a href="thread.html#1724">[ thread ]</a>
+              <a href="subject.html#1724">[ subject ]</a>
+              <a href="author.html#1724">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

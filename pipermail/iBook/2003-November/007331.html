@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [P1] Times RO font question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20Times%20RO%20font%20question&In-Reply-To=list-9182783%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="007330.html">
+   <LINK REL="Next"  HREF="007332.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[P1] Times RO font question</H1>
+    <B>Tom R. no spam</B> 
+    <A HREF="mailto:ibook%40listserver.themacintoshguy.com?Subject=%5BP1%5D%20Times%20RO%20font%20question&In-Reply-To=list-9182783%40mail.ninewire.com"
+       TITLE="[P1] Times RO font question">tr5374 at csc.albany.edu
+       </A><BR>
+    <I>Sat Nov  8 22:17:46 PST 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="007330.html">[P1] Disappeared Dock Icons
+</A></li>
+        <LI>Next message: <A HREF="007332.html">[P1] How to apply for lawsuit settlement? &amp; Panther on 366
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7331">[ date ]</a>
+              <a href="thread.html#7331">[ thread ]</a>
+              <a href="subject.html#7331">[ subject ]</a>
+              <a href="author.html#7331">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I didn't pay much attention to the start of this, but FWIW
+it may be worth a try doing the following.  Basically, it is
+telling your Mac where to go to figure out IP addresses for
+urls instead of relying on your cable company to do that.
+
+And re an ISP saying it is a Mac issue:  TCP/IP doesn't
+care if you have a Mac, or a Window$, or a Linux, or a
+green cheese computer, all it cares about is IP addresses.
+When you enter a url in a browser, the browser just sends
+that to the ISP which is supposed to figure out the matching
+numerical IP address and send your browser request on its
+way.  Your ISP tech support should have looked at your
+browser's packets, and if techsupp isn't saying your computer
+is sending bad browser packets then it's not likely to be
+your computer's fault.
+
+(By the way, the OSX (10.2.6 here) &quot;hosts&quot; file is an
+invisible file, and according to the comment at the start of
+it is used only for startups in single user mode and has only
+localhost'ish entries.)
+
+A:
+1-In a terminal window, do &quot;nslookup www.yahoo.com&quot; (or
+if it is yahoo you are having trouble with, you can
+substitute for the &quot;www.yahoo.com&quot; the base url of any site,
+a big one you know you can reach would be good).
+2-The result should have a few lines.  the first should
+start &quot;Server:&quot; and the 2nd should start &quot;Address:&quot;.
+That 2nd line should continue with a numerical internet
+address (four sets of 1, 2, or 3 digits each, each set
+separated by a period (&quot;.&quot;)).  This is the IP address of
+the DNS server serving your Macintosh.  (If you don't
+know what DNS is, don't worry about it, it can be
+explained later.)  If you don't see any Server IP address
+here, skip to #6 below.
+3-Open your Network System Preferences.
+4-(I'm assuming you have cable access (that's what Cox is,
+right?))  In your Network SysPref, in the TCP/IP tab pane,
+in the box on the right titled &quot;DNS Servers&quot;, enter the
+IP address of the DNS server you got in step #2 above.
+Then click the &quot;Apply Now&quot; to make your new entry take
+effect.
+5-Try whatever site you have been having trouble reaching.
+6-If you still can't reach the site, insert another DNS server
+entry above the one you entered in step #4 (or like step #4
+says to do, if you skipped to here from step #2).  Use, say,
+204.60.203.179, which is a DNS server used by a major ISP
+company.  (If you know someone in your area with cable
+access, have them do step #1 for you and use what they get
+here instead of the IP address I've just given you.  There
+*should* not be any significant difference between using the
+IP address I've just given and whatever someone gets locally
+where you are, but who knows ..., &amp; we want to keep things
+simple in your odd case.)
+7-Try whatever site you have been having trouble reaching.
+
+B.
+----steps 1 -&gt; 7 are the simple fix for some ISP DNS service
+    failings; the rest below are troubleshooting----
+8-If you still can't reach the site, in a terminal window
+do &quot;ping &lt;some big site you can reach&gt;&quot;, then after you get
+a result do control-c (press the ctrl key and the &quot;c&quot; key at
+the same time) to stop the ping; then do &quot;ping &lt;whatever IP
+address you got for that big site in step #1&gt;&quot;, then the
+ctrl-c; then ping the base url of the site you can't reach,
+and ctrl-c this ping; then ping the numerical IP address of
+that base url (as discovered by a nslookup like step#1),
+and ctrl-c this ping.  (Cf 216.109.118.69 is one of many
+Yahoo IP addresses.)
+9-What the heck, ping the IP address of the DNS server you,
+or your friend, found in step #1.
+10-Have a friend with a Window$, or a different Mac, unit
+try what isn't working for you, while they are connected to
+your cable hookup the way you are usually connected to it.
+11-Then tell us what you got from the tries in steps #8 - 10,
+icluding tell if step #1 didn't work for you and step #9
+was to what your friend found.
+
+:<i>-)
+</I>
+On Saturday, November 8, 2003, at 06:30 PM, Gary Adams wrote:
+
+&gt;<i> It's their DNS servers. I don't think anything else would account for
+</I>&gt;<i> it.
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="007330.html">[P1] Disappeared Dock Icons
+</A></li>
+	<LI>Next message: <A HREF="007332.html">[P1] How to apply for lawsuit settlement? &amp; Panther on 366
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7331">[ date ]</a>
+              <a href="thread.html#7331">[ thread ]</a>
+              <a href="subject.html#7331">[ subject ]</a>
+              <a href="author.html#7331">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/ibook.html">More information about the iBook
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] rsync &amp; ssh
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20rsync%20%26%20ssh&In-Reply-To=list-14543295%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001033.html">
+   <LINK REL="Next"  HREF="001035.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] rsync &amp; ssh</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20rsync%20%26%20ssh&In-Reply-To=list-14543295%40mail.ninewire.com"
+       TITLE="[X-Unix] rsync &amp; ssh">MacMonster at myrealbox.com
+       </A><BR>
+    <I>Mon Jul  5 17:14:32 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001033.html">[X-Unix] rsync &amp; ssh
+</A></li>
+        <LI>Next message: <A HREF="001035.html">[X-Unix] rsync &amp; ssh
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1034">[ date ]</a>
+              <a href="thread.html#1034">[ thread ]</a>
+              <a href="subject.html#1034">[ subject ]</a>
+              <a href="author.html#1034">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jul 5, 2004, at 10:30 pm, <A HREF="../../../mailman/listinfo/x-unix.html">amoser at sewanee.edu</A> wrote:
+
+&gt;<i> ...in
+</I>&gt;<i> the wee hours of the morning the powerbook would connect to
+</I>&gt;<i> the imac via ssh, using public key authentication, and would
+</I>&gt;<i> then use rsync to synchronize some key folders. ...but I've recently 
+</I>&gt;<i> noticed that the ssh connection no
+</I>&gt;<i> longer works -- any attempt to ssh from the powerbook to the
+</I>&gt;<i> imac yields the following msg:
+</I>&gt;<i>
+</I>&gt;<i> WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+</I>&gt;<i> @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</I>&gt;<i> IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+</I>...
+&gt;<i> It is also possible that the RSA host key has just been
+</I>&gt;<i> changed.
+</I>
+This means that the secure key associated with the ssh server on that 
+IP address has changed.
+Have you reinstalled the o/s on the iMac recently..?
+
+&gt;<i> RSA host key for 10.0.1.2 has changed and you have requested
+</I>&gt;<i> strict checking.
+</I>
+Is it possible that the  iMac no longer has this IP address, and that 
+it has been allocated to another machine on your LAN..?
+
+&gt;<i> The fingerprint for the RSA key sent by the remote host is
+</I>&gt;<i> 5f:6a:9d:b6:63:b1:3b:5f:65:91:ee:62:44:e9:3d:d7.
+</I>
+This is the secure key that the server at 10.0.1.2 has sent.
+
+&gt;<i> Please contact your system administrator.
+</I>&gt;<i> Add correct host key in /var/root/.ssh/known_hosts to get
+</I>&gt;<i> rid of this message.
+</I>
+It doesn't match the one in this file, which is the PowahBook's &quot;master 
+list&quot; of trusted SSH keys.
+
+&gt;<i> Offending key in /var/root/.ssh/known_hosts:1
+</I>
+Specifically on line one of that file.
+
+&gt;<i> Keeping in mind that my knowledge of unix (and the technical
+</I>&gt;<i> terms associated with it) is woefully inadequate, any
+</I>&gt;<i> suggestions about what I need to do to get the ssh and
+</I>&gt;<i> backup scheme up and running again?
+</I>
+Check the iMac still has the IP address that the PowahBook is trying to 
+connect to.
+If it doesn't, then reassign IP addresses statically on your LAN so 
+that it does.
+If it does still have that IP address, delete the line corresponding to 
+that IP address from /var/root/.ssh/known_hosts on the PowahBook.
+
+&gt;<i> Also, it seems like there just aren't many unix resources
+</I>&gt;<i> (books, websites, etc.) geared toward showing people who
+</I>&gt;<i> aren't unix gurus but are competent with computers how they
+</I>&gt;<i> can leverage the unix commands inn Mac OS X to accomplish
+</I>&gt;<i> useful things like backups. (Man pages tend to be pretty
+</I>&gt;<i> unhelpful in this respect.) Any thoughts on this score?
+</I>
+Any &quot;Unix resources geared to toward showing people who aren't unix 
+gurus but are competent with computers how they
+can leverage&quot; ANY unix commands to accomplish stuff will be more or 
+less applicable to Mac OS X.
+
+Unfortunately, learning Unix is just plain hard. Any Unix &quot;gurus&quot; you 
+meet will probably have suffered a great deal of frustration &amp; 
+exasperation in the acquisition of their knowledge, and they surely 
+spent lots of time doing things the long &amp;/or hard way in the process. 
+Unix is *horribly* obscure &amp; complex, and for no good reason other than 
+compatibility with legacy systems. I personally spent several hours 
+trying to change the time on my first Unix system, although that 
+includes time spent reading some of the fascinating notes notes on 
+world timezones which I am sure were distributed with that version of 
+Irix (perhaps they were these 
+&lt;<A HREF="ftp://elsie.nci.nih.gov/pub/tzarchive.gz">ftp://elsie.nci.nih.gov/pub/tzarchive.gz</A>&gt;). If you find what you're 
+learning useful &amp;/or interesting then stick with it! It will become 
+easier.
+
+Stroller.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001033.html">[X-Unix] rsync &amp; ssh
+</A></li>
+	<LI>Next message: <A HREF="001035.html">[X-Unix] rsync &amp; ssh
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1034">[ date ]</a>
+              <a href="thread.html#1034">[ thread ]</a>
+              <a href="subject.html#1034">[ subject ]</a>
+              <a href="author.html#1034">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

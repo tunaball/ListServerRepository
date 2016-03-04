@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] powerbook crashing [panic.log]
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20powerbook%20crashing%20%5Bpanic.log%5D&In-Reply-To=7B313091-BA3A-4BB2-8B34-7BC32C28CDDE%40cae.wisc.edu">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="019454.html">
+   <LINK REL="Next"  HREF="019455.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] powerbook crashing [panic.log]</H1>
+    <B>alexandre</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20powerbook%20crashing%20%5Bpanic.log%5D&In-Reply-To=7B313091-BA3A-4BB2-8B34-7BC32C28CDDE%40cae.wisc.edu"
+       TITLE="[Ti] powerbook crashing [panic.log]">mac.k at a2k.ch
+       </A><BR>
+    <I>Thu Mar 23 02:49:09 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="019454.html">[Ti] powerbook crashing [panic.log]
+</A></li>
+        <LI>Next message: <A HREF="019455.html">[Ti] Adobe Reader Issues
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19456">[ date ]</a>
+              <a href="thread.html#19456">[ thread ]</a>
+              <a href="subject.html#19456">[ subject ]</a>
+              <a href="author.html#19456">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>ok. so i've just ghad another kernel panic&#8230; great. here is the log:
+
+Thu Mar 23 11:44:23 2006
+
+
+Unresolved kernel trap(cpu 0): 0x300 - Data access  
+DAR=0x0000000000000010 PC=0x00000000000818A8
+Latest crash info for cpu 0:
+    Exception state (sv=0x37F18000)
+       PC=0x000818A8; MSR=0x00009030; DAR=0x00000010;  
+DSISR=0x40000000; LR=0x0008188C; R1=0x21F03990; XCP=0x0000000C (0x300  
+- Data access)
+       Backtrace:
+0x00969C7C 0x0008229C 0x00075E18 0x000757D8 0x0006B31C 0x0006B5F0
+          0x002DBA40 0x00955C40 0x00948E5C 0x002EAAEC 0x0008CB88  
+0x000291C0 0x000233AC 0x000AC02C
+          0x0CD80BB8
+       Kernel loadable modules in backtrace (with dependencies):
+          com.apple.ATIRadeon9700(4.1.8)@0x93f000
+             dependency: com.apple.iokit.IOPCIFamily(1.7)@0x458000
+             dependency: com.apple.iokit.IOGraphicsFamily(1.4.1) 
+@0x8d7000
+             dependency: com.apple.iokit.IONDRVSupport(1.4.1)@0x8fb000
+Proceeding back via exception chain:
+    Exception state (sv=0x37F18000)
+       previously dumped as &quot;Latest&quot; state. skipping...
+    Exception state (sv=0x38E07A00)
+       PC=0x9000B1E8; MSR=0x0000F030; DAR=0x0211A782;  
+DSISR=0x00002402; LR=0x9000B13C; R1=0xBFFED4A0; XCP=0x00000030 (0xC00  
+- System call)
+
+Kernel version:
+Darwin Kernel Version 8.5.0: Sun Jan 22 10:38:46 PST 2006;  
+root:xnu-792.6.61.obj~1/RELEASE_PPC
+panic(cpu 0 caller 0xFFFF0003): 0x300 - Data access
+Latest stack backtrace for cpu 0:
+       Backtrace:
+          0x00095718 0x00095C30 0x0002683C 0x000A8384 0x000ABD00
+Proceeding back via exception chain:
+    Exception state (sv=0x37F18000)
+       PC=0x000818A8; MSR=0x00009030; DAR=0x00000010;  
+DSISR=0x40000000; LR=0x0008188C; R1=0x21F03990; XCP=0x0000000C (0x300  
+- Data access)
+       Backtrace:
+0x00969C7C 0x0008229C 0x00075E18 0x000757D8 0x0006B31C 0x0006B5F0
+          0x002DBA40 0x00955C40 0x00948E5C 0x002EAAEC 0x0008CB88  
+0x000291C0 0x000233AC 0x000AC02C
+          0x0CD80BB8
+       Kernel loadable modules in backtrace (with dependencies):
+          com.apple.ATIRadeon9700(4.1.8)@0x93f000
+             dependency: com.apple.iokit.IOPCIFamily(1.7)@0x458000
+             dependency: com.apple.iokit.IOGraphicsFamily(1.4.1) 
+@0x8d7000
+             dependency: com.apple.iokit.IONDRVSupport(1.4.1)@0x8fb000
+    Exception state (sv=0x38E07A00)
+       PC=0x9000B1E8; MSR=0x0000F030; DAR=0x0211A782;  
+DSISR=0x00002402; LR=0x9000B13C; R1=0xBFFED4A0; XCP=0x00000030 (0xC00  
+- System call)
+
+Kernel version:
+D`
+*********
+
+
+alexandre
+::<i> 17&quot; 1.5ghz powerbook / 1.5gb / <A HREF="../../../mailman/listinfo/titanium.html">100gb at 7200</A> / X.4.5 ::
+</I>
+
+
+On 23 mars 06, at 06:07, Kynan Shook wrote:
+
+&gt;<i> Make sure you're looking in the system /Library/Logs/ folder, not  
+</I>&gt;<i> in your user library.  Alternatively, open System Profiler, click  
+</I>&gt;<i> on Logs on the left side, and choose the panic.log file.  To see  
+</I>&gt;<i> Logs in the contents pane, you'll have to have View-&gt;Full Profile  
+</I>&gt;<i> set in the menu.
+</I>&gt;<i>
+</I>&gt;<i> If you still can't find it, then apparently your computer hasn't  
+</I>&gt;<i> logged any of the panics.
+</I>&gt;<i>
+</I>
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="019454.html">[Ti] powerbook crashing [panic.log]
+</A></li>
+	<LI>Next message: <A HREF="019455.html">[Ti] Adobe Reader Issues
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19456">[ date ]</a>
+              <a href="thread.html#19456">[ thread ]</a>
+              <a href="subject.html#19456">[ subject ]</a>
+              <a href="author.html#19456">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

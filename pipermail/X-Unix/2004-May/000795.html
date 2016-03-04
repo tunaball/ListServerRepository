@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Trying to get rid of unwanted files
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Trying%20to%20get%20rid%20of%20unwanted%20files&In-Reply-To=list-12764026%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000794.html">
+   <LINK REL="Next"  HREF="000796.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Trying to get rid of unwanted files</H1>
+    <B>David Ledger</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Trying%20to%20get%20rid%20of%20unwanted%20files&In-Reply-To=list-12764026%40mail.ninewire.com"
+       TITLE="[X-Unix] Trying to get rid of unwanted files">dledger at ivdcs.demon.co.uk
+       </A><BR>
+    <I>Sat May 15 07:14:57 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000794.html">[X-Unix] Trying to get rid of unwanted files
+</A></li>
+        <LI>Next message: <A HREF="000796.html">Console Output Creates An Email Message
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#795">[ date ]</a>
+              <a href="thread.html#795">[ thread ]</a>
+              <a href="subject.html#795">[ subject ]</a>
+              <a href="author.html#795">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>From: Mark Gibson &lt;<A HREF="../../../mailman/listinfo/x-unix.html">gibsonm at bigpond.net.au</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>My concern is that there seems to be an upper limit to the number of
+</I>&gt;<i>files that rm can cope with.
+</I>
+The shell command line has a maximum length.  The shell expands the 
+'*' to be a list of all files &amp; directories except those starting 
+with a '.'.  If the the result of that expansion is too big, the rm 
+command doesn't get run.  The shorter your average filename, the more 
+of them you can rm at once.
+
+	cd  /var/spool/cups
+	pwd	# to make sure you're in the right place
+	ls | xargs rm
+
+will do any number (man xargs).  Non-interactive version:
+
+	cd  /var/spool/cups &amp;&amp; ls | xargs rm
+
+the command after the '&amp;&amp;' isn't run if the cd failed (because you 
+typed it wrong, and you're still where you were).
+
+David
+
+
+&gt;<i>Hopefully running this script daily will keep the number of files in
+</I>&gt;<i>/cups beneath that.
+</I>&gt;<i>
+</I>&gt;<i>I know I have to use a different approach in /tmp because the files
+</I>&gt;<i>there can reach several thousands in a 24 hr period.
+</I>
+-- 
+David Ledger - Freelance Unix Sysadmin in the UK.
+Chair of HPUX SysAdmin SIG of hpUG technical user group (www.hpug.org.uk)
+<A HREF="../../../mailman/listinfo/x-unix.html">dledger at ivdcs.co.uk</A> (also <A HREF="../../../mailman/listinfo/x-unix.html">dledger at ivdcs.demon.co.uk</A>)
+www.ivdcs.co.uk
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000794.html">[X-Unix] Trying to get rid of unwanted files
+</A></li>
+	<LI>Next message: <A HREF="000796.html">Console Output Creates An Email Message
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#795">[ date ]</a>
+              <a href="thread.html#795">[ thread ]</a>
+              <a href="subject.html#795">[ subject ]</a>
+              <a href="author.html#795">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] My ip address
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20My%20ip%20address&In-Reply-To=BAY19-DAV482B3CF6D07E7E4B501CBEA6B0%40phx.gbl">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001533.html">
+   <LINK REL="Next"  HREF="001536.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] My ip address</H1>
+    <B>Kevin Stevens</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20My%20ip%20address&In-Reply-To=BAY19-DAV482B3CF6D07E7E4B501CBEA6B0%40phx.gbl"
+       TITLE="[X-Unix] My ip address">groups at pursued-with.net
+       </A><BR>
+    <I>Wed Feb 16 16:24:08 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001533.html">[X-Unix] My ip address
+</A></li>
+        <LI>Next message: <A HREF="001536.html">[X-Unix] My ip address
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1535">[ date ]</a>
+              <a href="thread.html#1535">[ thread ]</a>
+              <a href="subject.html#1535">[ subject ]</a>
+              <a href="author.html#1535">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Mon, 14 Feb 2005, KL Tah wrote:
+
+&gt;<i> Hi,
+</I>&gt;<i> Anyone know a slick one-liner in xterm to find out what ip address I'm
+</I>&gt;<i> assigned (i.e. Without having to go to System Prefrences)?
+</I>
+ifconfig?
+
+babelfish:~ kes$ ifconfig
+lo0: flags=8049&lt;UP,LOOPBACK,RUNNING,MULTICAST&gt; mtu 16384
+        inet6 ::1 prefixlen 128
+        inet6 fe80::1 prefixlen 64 scopeid 0x1
+        inet 127.0.0.1 netmask 0xff000000
+gif0: flags=8010&lt;POINTOPOINT,MULTICAST&gt; mtu 1280
+stf0: flags=0&lt;&gt; mtu 1280
+en0: flags=8863&lt;UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500
+        inet 10.0.0.42 netmask 0xffffff00 broadcast 10.0.0.255
+        ether 00:0a:95:d7:c3:c6
+        media: autoselect (1000baseTX &lt;full-duplex&gt;) status: active
+        supported media: none autoselect 10baseT/UTP &lt;half-duplex&gt;
+10baseT/UTP &lt;full-duplex&gt; 10baseT/UTP &lt;full-duplex,hw-loopback&gt; 100baseTX
+&lt;half-duplex&gt; 100baseTX &lt;full-duplex&gt; 100baseTX &lt;full-duplex,hw-loopback&gt;
+1000baseTX &lt;full-duplex&gt; 1000baseTX &lt;full-duplex,hw-loopback&gt; 1000baseTX
+&lt;full-duplex,flow-control&gt; 1000baseTX
+&lt;full-duplex,flow-control,hw-loopback&gt;
+fw0: flags=8822&lt;BROADCAST,SMART,SIMPLEX,MULTICAST&gt; mtu 4078
+        lladdr 00:0a:95:ff:fe:d7:c3:c6
+        media: autoselect &lt;full-duplex&gt; status: inactive
+        supported media: autoselect &lt;full-duplex&gt;
+
+If you know the interface you're on, you can narrow it down:
+
+babelfish:~ kes$ ifconfig en0
+en0: flags=8863&lt;UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500
+        inet 10.0.0.42 netmask 0xffffff00 broadcast 10.0.0.255
+        ether 00:0a:95:d7:c3:c6
+        media: autoselect (1000baseTX &lt;full-duplex&gt;) status: active
+        supported media: none autoselect 10baseT/UTP &lt;half-duplex&gt;
+10baseT/UTP &lt;full-duplex&gt; 10baseT/UTP &lt;full-duplex,hw-loopback&gt; 100baseTX
+&lt;half-duplex&gt; 100baseTX &lt;full-duplex&gt; 100baseTX &lt;full-duplex,hw-loopback&gt;
+1000baseTX &lt;full-duplex&gt; 1000baseTX &lt;full-duplex,hw-loopback&gt; 1000baseTX
+&lt;full-duplex,flow-control&gt; 1000baseTX
+&lt;full-duplex,flow-control,hw-loopback&gt;
+
+And I imagine there's options to specify just the IP info; man ifconfig
+for details.  Oh hell, let me look...
+
+Try this:
+
+babelfish:~ kes$ ifconfig en0 inet
+en0: flags=8863&lt;UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500
+        inet 10.0.0.42 netmask 0xffffff00 broadcast 10.0.0.255
+
+Anything more specific may need scripting.
+
+KeS
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001533.html">[X-Unix] My ip address
+</A></li>
+	<LI>Next message: <A HREF="001536.html">[X-Unix] My ip address
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1535">[ date ]</a>
+              <a href="thread.html#1535">[ thread ]</a>
+              <a href="subject.html#1535">[ subject ]</a>
+              <a href="author.html#1535">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

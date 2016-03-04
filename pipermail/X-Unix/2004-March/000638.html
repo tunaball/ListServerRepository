@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Memory Question
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Memory%20Question&In-Reply-To=list-11814675%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000637.html">
+   <LINK REL="Next"  HREF="000639.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Memory Question</H1>
+    <B>James Bucanek</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Memory%20Question&In-Reply-To=list-11814675%40mail.ninewire.com"
+       TITLE="[X-Unix] Memory Question">subscriber at gloaming.com
+       </A><BR>
+    <I>Tue Mar 30 21:27:45 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000637.html">[X-Unix] Memory Question
+</A></li>
+        <LI>Next message: <A HREF="000639.html">boot/shutdown messages
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#638">[ date ]</a>
+              <a href="thread.html#638">[ thread ]</a>
+              <a href="subject.html#638">[ subject ]</a>
+              <a href="author.html#638">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>William H. Magill wrote on Tuesday, March 30, 2004:
+&gt;<i>&quot;Inactive&quot; is not a bad thing in and of itself.
+</I>&gt;<i>Some &quot;process&quot; has used (is using) memory and failed to release it.
+</I>
+No, &quot;inactive&quot; memory is just that.  Memory that hasn't been accessed in a while.  Inactive memory can be allocated, or unallocated.  It has nothing to do with releasing memory.
+
+The Kernel periodically sweeps the VM map and marks pages of memory that have not been accessed recently as inactive.  It then preemptively pages out and frees memory to maintain an optimal balance between active and inactive pages.
+
+Another reason that a page can be marked as inactive, is if it contains a known data but isn't allocated.  For instance, the file system buffers everything it reads from the disk in memory, then marks it as inactive.  This allows every block of free memory in your system to be used as a disk cache.  Even though the page is marked as unallocated+inactive, if you need that disk block again it can come from RAM instead.
+
+&lt;<A HREF="http://developer.apple.com/documentation/Performance/Conceptual/ManagingMemory/Concepts/AboutMemory.html">http://developer.apple.com/documentation/Performance/Conceptual/ManagingMemory/Concepts/AboutMemory.html</A>&gt;
+
+______________________________________________________
+James Bucanek       &lt;mailto:<A HREF="../../../mailman/listinfo/x-unix.html">privatereply at gloaming.com</A>&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000637.html">[X-Unix] Memory Question
+</A></li>
+	<LI>Next message: <A HREF="000639.html">boot/shutdown messages
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#638">[ date ]</a>
+              <a href="thread.html#638">[ thread ]</a>
+              <a href="subject.html#638">[ subject ]</a>
+              <a href="author.html#638">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

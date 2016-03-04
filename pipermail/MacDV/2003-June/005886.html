@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [MacDV] Partitioning a hard drive
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Partitioning%20a%20hard%20drive&In-Reply-To=list-6573863%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="005884.html">
+   <LINK REL="Next"  HREF="005887.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[MacDV] Partitioning a hard drive</H1>
+    <B>Mark M. Florida</B> 
+    <A HREF="mailto:macdv%40listserver.themacintoshguy.com?Subject=%5BMacDV%5D%20Partitioning%20a%20hard%20drive&In-Reply-To=list-6573863%40mail.ninewire.com"
+       TITLE="[MacDV] Partitioning a hard drive">markflo at mac.com
+       </A><BR>
+    <I>Wed Jun 11 08:11:18 PDT 2003</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="005884.html">Emptying Trash/Download
+</A></li>
+        <LI>Next message: <A HREF="005887.html">[MacDV] Re: iDVD 3 and looping
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5886">[ date ]</a>
+              <a href="thread.html#5886">[ thread ]</a>
+              <a href="subject.html#5886">[ subject ]</a>
+              <a href="author.html#5886">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>You shouldn't need to reinstall anything -- you should be able to copy your
+current drive to an external and back again with no ill effects.
+
+Here's how:
+
+If you're running under Mac OS 9, just install a minimal system folder on
+your external FireWire drive then start up from that and copy your entire
+internal hard drive to it by dragging your hd icon (this will copy all
+invisible root-level folders as well).  Then to restore onto your new
+internal hard drive, just drag the folder created from copying your old hard
+drive back onto your new one, putting the folders back at the root level of
+the drive (after partitioning if that's what you want to do -- I would
+recommend it in this case, maybe 20/60).
+
+One tip -- you may want to drag the folders back onto your new drive in this
+order:  System Folder, Applications (Mac OS 9), Documents, (then the rest)
+-- this will put your System Folder on the fastest part of your drive with
+the Applications and Documents folders on a fairly fast part as well.
+
+If you're running under Mac OS X (or if you dual boot between 9 and X), you
+should use the great &quot;donation-ware&quot; app Carbon Copy Cloner --
+<A HREF="http://www.bombich.com/software/ccc.html">http://www.bombich.com/software/ccc.html</A> -- and make sure to make a donation
+if you use it...  ;-)  Basically, you would (first move all existing files
+currently on your FireWire drive to a single folder for easy identification)
+use CCC to clone existing internal hd onto your FireWire drive (make sure to
+enable the option for booting in CCC) -- and you do this while booted from
+the drive you are copying FROM.  Next install the new hd and startup from
+your FireWire drive (that should now be a clone of your old hd) -- use Disk
+Utility to format/partition your new drive (make sure to install Mac OS 9
+drivers if you dual boot).  After you new drive is set up, just use CCC to
+clone from your FireWire drive back to your system partition on your new
+internal hd (make sure to exclude the folder you made for your FireWire
+drive files so you don't copy those as well).
+
+That's it.  (and that's enough, eh? -- I'm good at making a simple process
+seem complicated by possible over-explanation -- but some details are
+critical to this process).
+
+Hope that helps.
+
+- Mark
+
+&gt;<i> I'm getting an 80GB hard drive for my G3 600MHz iBook.  I've heard that
+</I>&gt;<i> it's good to partition the drive (e.g., 40GB for video editing, and 40GB
+</I>&gt;<i> for everything else) so that if it gets too fragmented you can wipe the
+</I>&gt;<i> DV partition to defrag it.
+</I>&gt;<i> 
+</I>&gt;<i> Is that still the recommended procedure? Obviously it's a little bit
+</I>&gt;<i> more convenient to just have one partition, since you don't have the
+</I>&gt;<i> problem of running out of room on one partition when there's still
+</I>&gt;<i> plenty on the other, and you don't have the problem of files getting
+</I>&gt;<i> &quot;copied&quot; from one partition to the other instead of just moved.
+</I>&gt;<i> 
+</I>&gt;<i> I've heard discussion here about running the daily/weekly/monthly
+</I>&gt;<i> scripts to do defragmentation.  Is that sufficient, or is a partition
+</I>&gt;<i> really needed?
+</I>&gt;<i> 
+</I>&gt;<i> Also, any tips on moving to a new hard drive, i.e., should I start from
+</I>&gt;<i> CD and re-install everything fresh, or can I somehow grab a snapshot of
+</I>&gt;<i> everything I've got and put it on my external firewire drive, and then
+</I>&gt;<i> somehow copy everything back to the new drive? [I don't have an external
+</I>&gt;<i> case for the iBook's little hard drive, so that's not an option at the
+</I>&gt;<i> moment].
+</I>&gt;<i> 
+</I>&gt;<i> Thanks for your help!
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="005884.html">Emptying Trash/Download
+</A></li>
+	<LI>Next message: <A HREF="005887.html">[MacDV] Re: iDVD 3 and looping
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5886">[ date ]</a>
+              <a href="thread.html#5886">[ thread ]</a>
+              <a href="subject.html#5886">[ subject ]</a>
+              <a href="author.html#5886">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/macdv.html">More information about the MacDV
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

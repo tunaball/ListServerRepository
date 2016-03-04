@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] /dev basics
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20/dev%20basics&In-Reply-To=">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001910.html">
+   <LINK REL="Next"  HREF="001912.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] /dev basics</H1>
+    <B>Kuestner, Bjoern</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20/dev%20basics&In-Reply-To="
+       TITLE="[X-Unix] /dev basics">Bjoern.Kuestner at drkw.com
+       </A><BR>
+    <I>Sun May  8 23:45:50 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001910.html">[X-Unix] System files being deleted! (/dev/stdout...)
+</A></li>
+        <LI>Next message: <A HREF="001912.html">[X-Unix] /dev basics
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1911">[ date ]</a>
+              <a href="thread.html#1911">[ thread ]</a>
+              <a href="subject.html#1911">[ subject ]</a>
+              <a href="author.html#1911">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+&gt;<i> Why do you think it is so different?
+</I>
+Different devices:
+
+- No hd*, disk0s[1-9] instead, disk0 exists
+- tty[p-w]* instead of tty[C,D,X,S,R]*
+- bpf, console, cu.modem, fd, fsevents, klog, kmem, mem, vn* exist
+
+But more generally I considered the /dev directory something that's very
+close to the kernel. And isn't that where OS X differs a good bit from the
+rest? 
+
+I just find it awkward to rely on information which might look similar but
+actually isn't.
+
+That's okay if I look up a Linux or Solaris description of the bash in the
+internet, knowing that OS X's bash might be a slightly different version.
+But for something like /dev I was simply very sceptical. 
+
+My original post was also broader than just &quot;what is in /dev&quot;:
+
+&gt;<i>Would somebody please give an intro to what what can be learnt about the
+</I>&gt;<i>system by looking at the /dev directory?
+</I>
+What are the tools for instance to read information from /dev beyond &quot;ls&quot;?
+&quot;cat disk0&quot; for instance has some output but not very valuable it seems.
+What tools are fit to explore and learn about /dev entries?
+
+I simply could not find any info page about /dev in OS X. I tried Google.
+But something like &quot;os x cu.modem fsevents klog kmem&quot; or &quot;os x '/dev'
+-developer&quot; is about as explicit as my Google-skills go, and it still
+doesn't turn out with anything useful.
+
+Maybe I'm just brain dead at this point and I'm missing the most obvious
+search string. That, too, would help. I really don't need a &quot;personal&quot; reply
+if the information is already out there on a web page for me to study.
+
+Thanks,
+
+Bjorn
+
+
+
+
+_______________________________________________
+X-Unix mailing list
+<A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+<A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+
+Listmom is trying to clean out his closets! Vintage Mac and random stuff:
+         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------
+The information contained herein is confidential and is intended solely for the
+addressee. Access by any other party is unauthorised without the express 
+written permission of the sender. If you are not the intended recipient, please 
+contact the sender either via the company switchboard on +44 (0)20 7623 8000, or
+via e-mail return. If you have received this e-mail in error or wish to read our
+e-mail disclaimer statement and monitoring policy, please refer to 
+<A HREF="http://www.drkw.com/disc/email/">http://www.drkw.com/disc/email/</A> or contact the sender. 3166
+--------------------------------------------------------------------------------
+
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001910.html">[X-Unix] System files being deleted! (/dev/stdout...)
+</A></li>
+	<LI>Next message: <A HREF="001912.html">[X-Unix] /dev basics
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1911">[ date ]</a>
+              <a href="thread.html#1911">[ thread ]</a>
+              <a href="subject.html#1911">[ subject ]</a>
+              <a href="author.html#1911">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

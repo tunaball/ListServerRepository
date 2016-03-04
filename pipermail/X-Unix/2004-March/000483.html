@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Question about grep
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Question%20about%20grep&In-Reply-To=list-11444822%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000482.html">
+   <LINK REL="Next"  HREF="000484.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Question about grep</H1>
+    <B>Raoul Armfield</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Question%20about%20grep&In-Reply-To=list-11444822%40mail.ninewire.com"
+       TITLE="[X-Unix] Question about grep">armfield at amnh.org
+       </A><BR>
+    <I>Wed Mar 17 12:39:28 PST 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000482.html">[X-Unix] Question about grep
+</A></li>
+        <LI>Next message: <A HREF="000484.html">[X-Unix] Question about grep
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#483">[ date ]</a>
+              <a href="thread.html#483">[ thread ]</a>
+              <a href="subject.html#483">[ subject ]</a>
+              <a href="author.html#483">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>:<i>On 3/17/04 12:18 PM, &quot;Stroller&quot; &lt;<A HREF="../../../mailman/listinfo/x-unix.html">MacMonster at myrealbox.com</A>&gt; wrote:
+</I>:<i>
+</I>:&gt;<i> And having wasted all that time on an answer involving long date
+</I>:&gt;<i> formats, I think the answer is really a weekly `cron` job to
+</I>:&gt;<i>    mv Restrospect\ backup\ report Restrospect\ backup\ report-`date
+</I>:&gt;<i> +%Y-%m-%d_%X
+</I>:&gt;<i> and run your grep on the new one that's subsequently created 
+</I>:<i>by the new
+</I>:&gt;<i> backup.
+</I>:<i>
+</I>:<i>Hmmm ... I don't think that will work.
+</I>:<i>
+</I>:<i>Retrospect's exported Backup Report will give me a bigger file 
+</I>:<i>every day
+</I>:<i>with everything going back for months and months, new things 
+</I>:<i>not even added
+</I>:<i>to the top! This is separate from the log. The log is display only and
+</I>:<i>presented in a window - which I can truncate to an arbitary k limit,
+</I>:<i>chopping off events too old mid-entry, will-nilly, which isn't 
+</I>:<i>really my
+</I>:<i>preference as I outlined in an earlier post. The Backup Report 
+</I>:<i>in contrast
+</I>:<i>just grows. It's also an optional thing to export and I've 
+</I>:<i>never used it
+</I>:<i>until now.
+</I>:<i>
+</I>:<i>So if I every day grep the file for that day's events, I will 
+</I>:<i>in 7 days have
+</I>:<i>created a file that goes back a week. And then the next day 
+</I>:<i>will go back a
+</I>:<i>week and a day. Etc, etc.
+</I>:<i>
+</I>:<i>To consistenly have a file that always has a week's worth of 
+</I>:<i>events, I'll
+</I>:<i>still need to at some point have some date-aware contruct 
+</I>:<i>which can age out
+</I>:<i>old events, not just lop off at a file size, and that brings 
+</I>:<i>us back to the
+</I>:<i>start of this thread.
+</I>
+
+I see what you are saying but what if you start on this mon for instance
+by moving the one retrospect file to a different location.Then run a
+cron job Sunday after your backup is complete that does cat logfile |
+grep succesfull &gt; successful_logfile.log and then mv
+successful_logfile.log destination_folder
+
+The syntax may not be perfect but that is the idea that I think was
+behind what Stroller was trying to say
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000482.html">[X-Unix] Question about grep
+</A></li>
+	<LI>Next message: <A HREF="000484.html">[X-Unix] Question about grep
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#483">[ date ]</a>
+              <a href="thread.html#483">[ thread ]</a>
+              <a href="subject.html#483">[ subject ]</a>
+              <a href="author.html#483">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

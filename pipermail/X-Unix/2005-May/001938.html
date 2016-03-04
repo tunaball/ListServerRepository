@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Beginner Questions: Setting up access to localhost for
+	testing only.
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Beginner%20Questions%3A%20Setting%20up%20access%20to%20localhost%20for%0A%09testing%20only.&In-Reply-To=a06200604bea9869e22a6%40%5B206.172.188.14%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001937.html">
+   <LINK REL="Next"  HREF="001935.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Beginner Questions: Setting up access to localhost for
+	testing only.</H1>
+    <B>Jakob Peterh&#228;nsel</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Beginner%20Questions%3A%20Setting%20up%20access%20to%20localhost%20for%0A%09testing%20only.&In-Reply-To=a06200604bea9869e22a6%40%5B206.172.188.14%5D"
+       TITLE="[X-Unix] Beginner Questions: Setting up access to localhost for
+	testing only.">jakob at hjemme.dk
+       </A><BR>
+    <I>Thu May 12 16:06:13 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001937.html">[X-Unix] Beginner Questions: Setting up access to localhost for
+	testing only.
+</A></li>
+        <LI>Next message: <A HREF="001935.html">[X-Unix] Tiger X11.app and xforwarding in ssh
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1938">[ date ]</a>
+              <a href="thread.html#1938">[ thread ]</a>
+              <a href="subject.html#1938">[ subject ]</a>
+              <a href="author.html#1938">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+Well, the world will not be able to read your config.inc.php file, as  
+it's PHP and only set up a lot of variable in the current session.
+If PHP is enabled, if will parse the file, and if you look at the  
+code, it will not output anything. Try it!
+
+Permissions on the files under the wedserver documents should be as  
+the top level is, unless you create a special folder where PHP should  
+be able to Write/delete files. If you set you a XOOPS site (or  
+anything else that needs a cache access), you will permit this on  
+special folder, but only to the WWW user/group - ie. Apache.
+
+Hope it helps,
+
+     Jakob Peterh&#228;nsel
+
+&quot;Tell me why, don't we try, not to break our hearts
+   and make it so hard for our selfs&quot;
+P.S.B. 1987
+
+Email:     <A HREF="../../../mailman/listinfo/x-unix.html">jakob at hjemme.dk</A>
+AIM:         Marook
+Phone:     +45 22684961
+
+On 13/05/2005, at 0:38, <A HREF="../../../mailman/listinfo/x-unix.html">dm87 at proparallax.com</A> wrote:
+
+&gt;<i> Thanks Jon and Jakob!  I have it setup now and running.  I have run  
+</I>&gt;<i> it in WebServer and thought I'd give it a go in Sites to see how  
+</I>&gt;<i> that works.
+</I>&gt;<i>
+</I>&gt;<i> I have been looking at file permissions.  Obviously I do not want  
+</I>&gt;<i> the world to be able to read my phpMyAdmin config file, it has  
+</I>&gt;<i> passwords in it.
+</I>&gt;<i>
+</I>&gt;<i> Questions:
+</I>&gt;<i>
+</I>&gt;<i> 1)  I have used octet numbers for permissions before, and am having  
+</I>&gt;<i> a little trouble getting used to the way Panther &quot;Get Info&quot; handles  
+</I>&gt;<i> permissions.  I am still painfully slow on the command line, so I  
+</I>&gt;<i> tend to use the GUI when possible.  I want to set the files to 644,  
+</I>&gt;<i> and I think the following reflects 644:
+</I>&gt;<i> owner: read/write
+</I>&gt;<i> group: read only
+</I>&gt;<i> other: read only
+</I>&gt;<i> Is this correct?  And are these the appropriate permissions to use  
+</I>&gt;<i> for developing a php site on Panther?
+</I>&gt;<i>
+</I>&gt;<i> 2)  When I look at the permissions for the config.php file I find  
+</I>&gt;<i> that they are greyed out and I may not change them.  So, that means  
+</I>&gt;<i> they are left at 644.  That makes the config.php file readable to  
+</I>&gt;<i> the world, in theory.  However, when I try to bring up the config  
+</I>&gt;<i> file with the browser, I get a blank page.  This is good, I think.   
+</I>&gt;<i> But what is going on?  Is the config.php file secure from viewing  
+</I>&gt;<i> by the world?  Are my passwords secure?
+</I>&gt;<i>
+</I>&gt;<i> Thanks
+</I>&gt;<i> Donna dm87
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> X-Unix mailing list
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">X-Unix at listserver.themacintoshguy.com</A>
+</I>&gt;<i> <A HREF="../../../mailman/listinfo/x-unix.html">http://listserver.themacintoshguy.com/mailman/listinfo/x-unix</A>
+</I>&gt;<i>
+</I>&gt;<i> Listmom is trying to clean out his closets! Vintage Mac and random  
+</I>&gt;<i> stuff:
+</I>&gt;<i>         <A HREF="http://search.ebay.com/_W0QQsassZmacguy1984">http://search.ebay.com/_W0QQsassZmacguy1984</A>
+</I>&gt;<i>
+</I>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/pkcs7-signature
+Size: 1873 bytes
+Desc: not available
+Url : <A HREF="../attachments/20050513/915b8ff0/smime-0001.bin">http://listserver.themacintoshguy.com/pipermail/x-unix/attachments/20050513/915b8ff0/smime-0001.bin</A>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001937.html">[X-Unix] Beginner Questions: Setting up access to localhost for
+	testing only.
+</A></li>
+	<LI>Next message: <A HREF="001935.html">[X-Unix] Tiger X11.app and xforwarding in ssh
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1938">[ date ]</a>
+              <a href="thread.html#1938">[ thread ]</a>
+              <a href="subject.html#1938">[ subject ]</a>
+              <a href="author.html#1938">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: Need help w/.login and unix exec files
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Need%20help%20w/.login%20and%20unix%20exec%20files&In-Reply-To=p0620070abf07655aaa5b%40192.168.1.100">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002274.html">
+   <LINK REL="Next"  HREF="002276.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: Need help w/.login and unix exec files</H1>
+    <B>Timothy Luoma</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20Need%20help%20w/.login%20and%20unix%20exec%20files&In-Reply-To=p0620070abf07655aaa5b%40192.168.1.100"
+       TITLE="[X-Unix] Re: Need help w/.login and unix exec files">lists at tntluoma.com
+       </A><BR>
+    <I>Fri Jul 22 20:40:09 PDT 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002274.html">[X-Unix] Re: Need help w/.login and unix exec files
+</A></li>
+        <LI>Next message: <A HREF="002276.html">[X-Unix] Re: Need help w/.login and unix exec files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2275">[ date ]</a>
+              <a href="thread.html#2275">[ thread ]</a>
+              <a href="subject.html#2275">[ subject ]</a>
+              <a href="author.html#2275">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jul 22, 2005, at 11:28 PM, ~flipper wrote:
+
+&gt;<i> Timothy Luoma wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> On Jul 22, 2005, at 8:09 PM, ~flipper wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> All of a sudden, my tcsh isn't launching with my .tschrc file  
+</I>&gt;&gt;&gt;<i> being read first.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> That's a .login file issue, isn't it?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Not necessarily.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Do all these match?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    finger `whoami` | fgrep 'Shell:' | sed 's#.*Shell: ##'
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    nidump passwd /|grep &quot;`whoami`:&quot; |sed 's#.*:##'
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    echo $SHELL
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Well, all three of the command lines echo back:
+</I>&gt;<i>
+</I>&gt;<i> /bin/bash
+</I>&gt;<i>
+</I>&gt;<i> but with 'currently running processes displayed on the window bar,  
+</I>&gt;<i> i see tcsh, and i'm getting my % prompt, rather than the bash $
+</I>&gt;<i>
+</I>&gt;<i> that leads me to believe that the sheel is appearing as a normal  
+</I>&gt;<i> tcsh,but using tc version of the default OS X bash sh... does that  
+</I>&gt;<i> make sense? It makes sense to me, but... again, I don't actually  
+</I>&gt;<i> know what's going on.
+</I>
+Very strange.  Try this:
+
+         exec /bin/tcsh -l
+
+and see if that gives you back your tcsh shell.
+
+
+&gt;<i> For &quot;When creating a new Terminal window&quot;, it's got 'Execute this  
+</I>&gt;<i> command (shpecify complete path) and it's reading :  /bin/tcsh
+</I>&gt;<i>  But I've lost my imlicitcd, my 'less' setting for setenv PAGER,  
+</I>&gt;<i> all of my great aliases, etc.
+</I>&gt;<i>
+</I>&gt;<i> I know that when i migrated from Jag to panther to Tiger on one  
+</I>&gt;<i> Powerbook, and Panther to Tiger on the other, I dragged my  
+</I>&gt;<i> old .tcshrc file over, and i'm reading it now. It's still the same.
+</I>&gt;<i>
+</I>&gt;<i> It looks to be encoded in Western ASCII, but maybe it should be in  
+</I>&gt;<i> Unicode-8 now? i don't know.
+</I>
+does
+
+     file .tcshrc
+
+show 'ASCII'?  That's what my .zshenv and .bash_profile are listed as.
+
+TjL
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002274.html">[X-Unix] Re: Need help w/.login and unix exec files
+</A></li>
+	<LI>Next message: <A HREF="002276.html">[X-Unix] Re: Need help w/.login and unix exec files
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2275">[ date ]</a>
+              <a href="thread.html#2275">[ thread ]</a>
+              <a href="subject.html#2275">[ subject ]</a>
+              <a href="author.html#2275">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

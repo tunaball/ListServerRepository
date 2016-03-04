@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] xclock
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20xclock&In-Reply-To=list-14044121%40mail.ninewire.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000964.html">
+   <LINK REL="Next"  HREF="000966.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] xclock</H1>
+    <B>John Woodrow</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20xclock&In-Reply-To=list-14044121%40mail.ninewire.com"
+       TITLE="[X-Unix] xclock">john at wohome.f9.co.uk
+       </A><BR>
+    <I>Sat Jun 19 04:04:50 PDT 2004</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000964.html">[X-Unix] sync Address Book and PostgreSQL?
+</A></li>
+        <LI>Next message: <A HREF="000966.html">BOMArchive Helper ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#965">[ date ]</a>
+              <a href="thread.html#965">[ thread ]</a>
+              <a href="subject.html#965">[ subject ]</a>
+              <a href="author.html#965">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks for the advice. I can now set xclock to colours that do not  
+clash horribly with my Blackbox theme!
+
+
+On Friday, June 18, 2004, at 01:42 PM, Mac OS X Unix wrote:
+
+&gt;<i> I don't know that the &quot;hands&quot; variable does what you think it should do
+</I>&gt;<i> (if it works at all in the application, I've never had it work in any
+</I>&gt;<i> version of X.) [Note that in the man page it is defined only in the
+</I>&gt;<i> context of &quot;reverseVideo.&quot; (And, since it only defines &quot;the insides&quot; of
+</I>&gt;<i> the hands ...?)]
+</I>
+I got it from NC State University page  
+&lt;<A HREF="http://www.ncsu.edu/it/essentials/learn_more/a_z_tutorials/unix/">http://www.ncsu.edu/it/essentials/learn_more/a_z_tutorials/unix/</A> 
+unity_intro/31_colors_cl.html&gt;
+I also got the idea of modifying my .Xdefaults file from their site.
+
+&gt;<i> Use these in your .xresources file (or is .Xresources, I forget which
+</I>&gt;<i> one is used, I have them both linked to the same file.) ... .Xdefaults
+</I>&gt;<i> is not read unless defined via XENVIRONMENT as I recall.)
+</I>
+[ From X manpage
+
+XENVIRONMENT
+	 ... ...
+	 If this variable is not defined, a file named  
+$HOME/.Xdefaults-hostname  is
+	       looked  for  instead,  where  hostname  is the name of the host
+	       where the application is executing.
+]
+
+My .Xdefaults file is read whenever X starts up, but now I've created  
+an .xresources file, that seems to overrule .Xdefaults.
+As someone lacking a Unix background, I find initialisation files and  
+the order in which they are read rather obscure, and proceed largely by  
+trial and error.
+
+
+&gt;<i> xclock*background:                      LightSteelBlue
+</I>&gt;<i> xclock*secondColor:                     Red
+</I>&gt;<i> xclock*minuteColor:                     green
+</I>&gt;<i> xclock*hourColor:                       purple
+</I>
+This worked perfectly after restarting X.
+
+&gt;<i> Yeah, none of them are documented, but if you do a strings on the
+</I>&gt;<i> executable you will discover that they exist.
+</I>
+Hadn't thought about that. Yup - there are quite a few strings there  
+that look as though they should represent modifiable options.
+
+&gt;<i> And if you believe the man page, it should be &quot;Xclock.xclock&quot;, not
+</I>&gt;<i> &quot;Xclock.clock&quot; ...
+</I>&gt;<i> (or use xwininfo and/or xprop)
+</I>&gt;<i> and use xrdb -q to verify that you don't have conflicting definitions.
+</I>
+----
+John Woodrow
+
+email: &lt;<A HREF="../../../mailman/listinfo/x-unix.html">johnwoodrow at goldendustman.co.uk</A>&gt;
+web site: &lt;<A HREF="http://www.goldendustman.co.uk">http://www.goldendustman.co.uk</A>&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000964.html">[X-Unix] sync Address Book and PostgreSQL?
+</A></li>
+	<LI>Next message: <A HREF="000966.html">BOMArchive Helper ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#965">[ date ]</a>
+              <a href="thread.html#965">[ thread ]</a>
+              <a href="subject.html#965">[ subject ]</a>
+              <a href="author.html#965">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

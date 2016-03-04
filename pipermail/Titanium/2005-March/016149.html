@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Lengthy Startup Time
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Lengthy%20Startup%20Time&In-Reply-To=20050316141824.A566633EB22%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="016148.html">
+   <LINK REL="Next"  HREF="016150.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Lengthy Startup Time</H1>
+    <B>Kynan Shook</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Lengthy%20Startup%20Time&In-Reply-To=20050316141824.A566633EB22%40listserver.themacintoshguy.com"
+       TITLE="[Ti] Lengthy Startup Time">kshook at cae.wisc.edu
+       </A><BR>
+    <I>Wed Mar 16 10:05:10 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="016148.html">[Ti] Lengthy Startup Time
+</A></li>
+        <LI>Next message: <A HREF="016150.html">[Ti] Lengthy Startup Time
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#16149">[ date ]</a>
+              <a href="thread.html#16149">[ thread ]</a>
+              <a href="subject.html#16149">[ subject ]</a>
+              <a href="author.html#16149">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>That's not necessarily true - although it's possible that it's looking 
+for something on the network (and I've seen this happen), it's also 
+possible that it's beachballing because it can't read part of the disk 
+(and I've seen this happen too, quite a bit).  In fact, I would 
+consider this to be more likely.  Generally, there doesn't need to be 
+much disk activity while looking for a network resource.  I'd expect 
+disk activity to taper off after a minute or two as other parts of 
+startup finish loading.
+
+Instead, I expect that it's repeatedly trying to read a block on the 
+disk that isn't accessible.  This is especially the case if you hear a 
+repetitive loud clicking - not the normal soft clicking that 
+accompanies normal disk access, which also tends to not have a very 
+regular pattern.  I'm talking like one loud click from a couple times 
+each second, to once each couple seconds.  But this isn't always 
+present.
+
+Anyway, go out and buy a new hard drive and back everything up.  You 
+might not be able to get everything (like the OS) off the disk, seeing 
+as how some of it may already be unreadable.  I'd recommend backing up 
+your most important documents first.
+
+The SMART feature was developed for a reason - to warn you *before* 
+your drive fails that it is expected to fail in the near future because 
+its performance has been dropping rapidly in one of any number of 
+metrics.  It's not very useful if you just ignore its warnings.
+
+Chris Olson &lt;<A HREF="../../../mailman/listinfo/titanium.html">chris.olson at astcomm.net</A>&gt; writes:
+&gt;<i> On Mar 16, 2005, at 3:51 AM, Wilcox, Jeffrey S. LCDR (VFA37) wrote:
+</I>&gt;&gt;<i> The SMART features say the drive is &quot;failing&quot; which has me obviously
+</I>&gt;&gt;<i> concerned.
+</I>&gt;<i>
+</I>&gt;<i> Well, I don't know about your drive, but the S.M.A.R.T. status has
+</I>&gt;<i> nothing to do with your long Finder startup times.  Finder is trying to
+</I>&gt;<i> locate a network resource during startup that's either not available or
+</I>&gt;<i> misconfigured.  Turn off your Airport card and unplug the ethernet
+</I>&gt;<i> cable, then make a new &quot;Location&quot; with a static IP address, but give
+</I>&gt;<i> the machine no address.  Now, log out and log back in.  If Finder
+</I>&gt;<i> starts up immediately, then you've just verified what I stated above.
+</I>
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="016148.html">[Ti] Lengthy Startup Time
+</A></li>
+	<LI>Next message: <A HREF="016150.html">[Ti] Lengthy Startup Time
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#16149">[ date ]</a>
+              <a href="thread.html#16149">[ thread ]</a>
+              <a href="subject.html#16149">[ subject ]</a>
+              <a href="author.html#16149">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

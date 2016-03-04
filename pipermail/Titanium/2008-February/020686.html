@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ti] Permissions Repair
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Permissions%20Repair&In-Reply-To=20080301012251.1736422787%40mail.messagingengine.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="020685.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[Ti] Permissions Repair</H1>
+    <B>Tarik Bilgin</B> 
+    <A HREF="mailto:titanium%40listserver.themacintoshguy.com?Subject=%5BTi%5D%20Permissions%20Repair&In-Reply-To=20080301012251.1736422787%40mail.messagingengine.com"
+       TITLE="[Ti] Permissions Repair">tarik at opalblue.com
+       </A><BR>
+    <I>Fri Feb 29 21:02:27 PST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="020685.html">[Ti] Permissions Repair
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20686">[ date ]</a>
+              <a href="thread.html#20686">[ thread ]</a>
+              <a href="subject.html#20686">[ subject ]</a>
+              <a href="author.html#20686">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 1 Mar 2008, at 01:22, MB wrote:
+
+&gt;<i> Tarik Bilgin said:
+</I>&gt;<i>
+</I>&gt;&gt;<i> It should be noted that &quot;su&quot; is usually considered unsafe by most  
+</I>&gt;&gt;<i> UNIX
+</I>&gt;&gt;<i> administrators and should be avoided, unless there is no alternative.
+</I>&gt;<i> The obvious alternative would be executing sudo as a user with admin
+</I>&gt;<i> priviligies. You know of such a way?
+</I>
+Yes, by using sudo. I'm not sure why you asked that, or maybe I  
+didn't understand the question.
+&gt;<i>
+</I>&gt;<i> The cited article is about Linux, not Unix-flavours like OS X. Not the
+</I>&gt;<i> same cat necessarily. None of the reason listed on the main page are
+</I>&gt;<i> really valid in the situation described, except if one forgets to log
+</I>&gt;<i> out with
+</I>&gt;<i> exit [return]
+</I>&gt;<i> (One can also just close the Terminal window)
+</I>
+Not exactly the same cat perhaps, but in this respect OS X has  
+implemented su and sudo in exactly the same was as a modern UNIX like  
+openBSD or a modern Linux like Ubuntu.
+
+Allow me to go into some more detail:
+
+When you use sudo, the OS doesn't change your user to root and leave  
+it there (as in su) but simply uses the set UID feature of UNIX to  
+set the user id of the process to 0, i.e. root. So when you invoke  
+sudo you escalate your privilege to the level of root for the single  
+command that follows the line sudo and the bounce back down again.
+
+If I type ls -ail /user/bin/sudo into my Terminal i get:
+
+3438311 -r-s--x--x   1 root  wheel  104588 Dec 20  2006 /usr/bin/sudo
+
+As you can see sudo is owned by root, and can't be written to by  
+anyone (to prevent someone trojaning your sudo) including root. The  
+&quot;s&quot; is the setUID flag, which is what gives sudo (and su) its special  
+powers.
+
+This might seem like not a big deal, and I am in no position to judge  
+the security needs of your system; every administrator makes there  
+own judgements,, but there are a few more subtleties  playing a part  
+here:
+
+When you invoke sudo, the system will first check if the user is a  
+valid sudoer (by default any member of the admin group in OS X, but  
+this can be changed) and then check the password entered, and only  
+then execute the command.
+
+This also means that sudo can only execute a single command, before  
+you are bounced back down to normal privilege.
+&gt;<i>
+</I>&gt;<i> As it's obviously would be bad to leave your machine logged in as su.
+</I>&gt;<i> One could also use &quot;sudo&quot; when logged in with su, for whatever reason.
+</I>&gt;<i> Some commands demand this even as you are logged in as su.
+</I>
+Almost every UNIX admin I've ever worked with has  at some stage left  
+a session logged in as root via su, and either paid a heavy price or  
+just got very embarrassed and felt thankful no one got to their  
+keyboard during their lunch break. Again it's up to you , and there  
+are times when it would be a total pain to be sudoing every command  
+and yes there are times when I  do su, but it's really in the  
+minority of cases since most of the time I want to run a single  
+command, exactly as  in the example that was given regarding diskutils.
+
+sudo is also protecting you from some more subtle  threats like  
+spoofing certain environment variables related to the shell which  
+affect how the command after sudo would be run. Basically it's  
+possible for a hacker with an unprivileged account to force certain  
+environment variables in your shell (which you wouldn't normally even  
+be aware of) to then force you to execute the binary that we need to  
+run as root in a certain way, which would then give them access to  
+the resulting process. su doesn't have these benefits. I don't want  
+to get too technical here as I feel I'm getting way off topic but I'm  
+trying to illustrate that sudo is designed with security in mind,  
+while su is not.
+
+OS X (and Ubuntu linux) come with the root account disabled by  
+default. This is not a coincidence or Apple &quot;dumbing down&quot; the OS.  
+The number one breach that I have seen into systems in recent years  
+is hackers sshing into boxes with the root account. The beauty of  
+that account (to the attacker) is that they already know the name of  
+the user and (generally) that user has access to everything on the  
+box. If you do enable your root user , disable root access to the  
+machine via ssh as a precaution.
+
+I fail to see why the root account is needed on any OS X workstation  
+(it is disabled on mine). sudo gets me everywhere I need to go. If  
+you are doing a lot of work with services as in OS X Server, then  
+yes, you will need a root account and su. sudo is not the tool for  
+that job. But if all you need to do is run the occasional command as  
+root, sudo is by far the safer tool.
+
+I am repeating myself but I will say it again: Everyone is free to  
+administer their own system the way they see fit, but running a  
+single command like the diskutils in the original post is exactly  
+what sudo is designed for. su is designed for the root password  
+knowing, bearded unix sysadmin to spend hours administering and  
+tweaking the OS X Server install which runs services. It is also on  
+the sysadmin's conscience to protect the root password and to  
+minimise the risk of it being abused.
+
+--
+Tarik Bilgin
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="020685.html">[Ti] Permissions Repair
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20686">[ date ]</a>
+              <a href="thread.html#20686">[ thread ]</a>
+              <a href="subject.html#20686">[ subject ]</a>
+              <a href="author.html#20686">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/titanium.html">More information about the Titanium
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

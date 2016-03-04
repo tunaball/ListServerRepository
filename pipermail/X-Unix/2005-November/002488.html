@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] question about 'find'
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20question%20about%20%27find%27&In-Reply-To=r02010500-1043-E70837C45F0B11DA85D9000A959D1544%40%5B10.0.1.3%5D">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002487.html">
+   <LINK REL="Next"  HREF="002492.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] question about 'find'</H1>
+    <B>Charles Howse</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20question%20about%20%27find%27&In-Reply-To=r02010500-1043-E70837C45F0B11DA85D9000A959D1544%40%5B10.0.1.3%5D"
+       TITLE="[X-Unix] question about 'find'">chowse at charter.net
+       </A><BR>
+    <I>Sat Nov 26 22:25:19 PST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002487.html">[X-Unix] question about 'find'
+</A></li>
+        <LI>Next message: <A HREF="002492.html">[X-Unix] Processor/process Context Switching
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2488">[ date ]</a>
+              <a href="thread.html#2488">[ thread ]</a>
+              <a href="subject.html#2488">[ subject ]</a>
+              <a href="author.html#2488">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> Charles Howse wrote on Saturday, November 26, 2005:
+</I>&gt;<i> 
+</I>&gt;&gt;<i> $ find ~/bin -name \*.sh -maxdepth 1 -perm 0644 -exec chmod 744 {} \;
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> This works as expected (I found the '\;' part on a web site), but I'm not
+</I>&gt;&gt;<i> sure why I have to use the '\' as the next-to-last character.
+</I>&gt;&gt;<i> Can't find anything about it in 'man find'.
+</I>&gt;&gt;<i> Can anyone enlighten me?
+</I>&gt;<i> 
+</I>&gt;<i> The semicolon syntax is clearly documented in each argument that takes a
+</I>&gt;<i> variable number of arguments:
+</I>&gt;<i> 
+</I>&gt;<i>      -exec utility [argument ...];
+</I>&gt;<i>              ...  Optional arguments may be passed to the utility.
+</I>&gt;<i>              The expression must be terminated by a semicolon (``;'').
+</I>&gt;<i>              ...
+</I>&gt;<i>      
+</I>&gt;<i>      ...
+</I>&gt;<i> 
+</I>&gt;<i>      -execdir utility [argument ...];
+</I>&gt;<i> 
+</I>&gt;<i>      -ok utility [argument ...];
+</I>&gt;<i> 
+</I>&gt;<i>      -okdir utility [argument ...];
+</I>&gt;<i> 
+</I>&gt;<i>      ...
+</I>&gt;<i> 
+</I>&gt;<i> The fact that you have to escape a semicolon on the command line is an issue
+</I>&gt;<i> with the shell you are using, not find. Although that fact is still noted in
+</I>&gt;<i> find's man page:
+</I>&gt;<i> 
+</I>&gt;<i>   BUGS
+</I>&gt;<i>      The special characters used by find are also special characters to many
+</I>&gt;<i>      shell programs.  In particular, the characters ``*'', ``['', ``]'',
+</I>&gt;<i>      ``?'', ``('', ``)'', ``!'', ``\'' and ``;'' may have to be escaped from
+</I>&gt;<i>      the shell.
+</I>&gt;<i> 
+</I>&gt;&gt;<i> If I missed it in 'man find', please point me to the correct section.  :-)
+</I>&gt;<i> 
+</I>&gt;<i> Man pages are sometimes hard to read, but after this many years the core ones
+</I>&gt;<i> are pretty complete, having been picked over by a thousand software engineers.
+</I>
+I failed to read the BUGS section!  That's where I missed it.
+Thanks James.
+
+
+
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002487.html">[X-Unix] question about 'find'
+</A></li>
+	<LI>Next message: <A HREF="002492.html">[X-Unix] Processor/process Context Switching
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2488">[ date ]</a>
+              <a href="thread.html#2488">[ thread ]</a>
+              <a href="subject.html#2488">[ subject ]</a>
+              <a href="author.html#2488">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

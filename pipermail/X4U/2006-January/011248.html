@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Hard drive or hard drive controller gone (mirrored doors G4)
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Hard%20drive%20or%20hard%20drive%20controller%20gone%20%28mirrored%20doors%20G4%29&In-Reply-To=BFE724B5.AA2B%25jamesrob%40sonic.net">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="011246.html">
+   <LINK REL="Next"  HREF="011250.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Hard drive or hard drive controller gone (mirrored doors G4)</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Hard%20drive%20or%20hard%20drive%20controller%20gone%20%28mirrored%20doors%20G4%29&In-Reply-To=BFE724B5.AA2B%25jamesrob%40sonic.net"
+       TITLE="[X4U] Hard drive or hard drive controller gone (mirrored doors G4)">macmonster at myrealbox.com
+       </A><BR>
+    <I>Mon Jan  9 03:15:34 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="011246.html">[X4U] Hard drive or hard drive controller gone (mirrored doors G4)
+</A></li>
+        <LI>Next message: <A HREF="011250.html">[X4U] Hard drive or hard drive controller gone (mirrored doors G4)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11248">[ date ]</a>
+              <a href="thread.html#11248">[ thread ]</a>
+              <a href="subject.html#11248">[ subject ]</a>
+              <a href="author.html#11248">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 9 Jan 2006, at 04:21, Jim Robertson wrote:
+
+&gt;<i> ...There are two internal drives in this Mac, both IBM/Hitachi  
+</I>&gt;<i> DeskStars....
+</I>&gt;<i>
+</I>&gt;<i> ... I tried to do a secure erase (write all zeros) of the boot  
+</I>&gt;<i> drive. That
+</I>&gt;<i> ...hung up with the progress bar about 3/4 done and the timer
+</I>&gt;<i> saying it had about 5 minutes to go...
+</I>&gt;<i> I waited an hour, and it STILL said it had 5 minutes to go
+</I>&gt;<i> to complete the secure erase. So, I force-restarted the computer,  
+</I>&gt;<i> and now
+</I>&gt;<i> the installer (and Disk Utility and System Profiler) couldn't see  
+</I>&gt;<i> EITHER of
+</I>&gt;<i> the two internal drives - including the one that Disk Utility had said
+</I>&gt;<i> earlier was fine.
+</I>&gt;<i>
+</I>&gt;<i> Several restarts later, both internal drives appeared again. I was  
+</I>&gt;<i> able to
+</I>&gt;<i> &quot;quick erase&quot; the former boot drive. I'm now in the middle of doing  
+</I>&gt;<i> another
+</I>&gt;<i> erase, this time erasing free space. I'm guessing there's a  
+</I>&gt;<i> hardware problem
+</I>&gt;<i> on this drive, but I'm puzzled why sometimes the Mac, booted from  
+</I>&gt;<i> the Tiger
+</I>&gt;<i> install DVD, can't see EITHER of the two internal drive mechanisms (I
+</I>&gt;<i> haven't erased the non-boot drive).
+</I>&gt;<i>
+</I>&gt;<i> I'm willing to buy another ATA drive for this Mac, but I'm  
+</I>&gt;<i> wondering if the
+</I>&gt;<i> ATA controller is suspect. Any recommendations for things I should  
+</I>&gt;<i> try?
+</I>
+Disclaimer: I haven't seen a knackered hard-drive on a Mac yet, but I  
+see them on a weekly basis on PeeCees. This yells out &quot;knackered hard- 
+drive&quot; to me. The secure erase wasn't necessary, but it has  
+illustrated the problem - difficulties writing to a disk sector 3/4  
+of the way across the drive - in a way that random writes have not.  
+It's likely that during the reinstall after the force-restart the  
+drive was nowhere near 3/4 full, and so the dodgy sector was never used.
+
+Hard-drives often deteriorate incrementally, typically over a period  
+of a few weeks, First they have trouble reading or writing to one or  
+two sectors, causing the computer to hang for no apparent reason (but  
+in fact when it's trying to use those sectors), then a few more  
+sectors go causing Windows boxes (no idea about Macs) to do  
+filesystem checking on bootup. Finally the disk becomes just  
+completely unusable, either showing no usable filesystems or being  
+unrecognised by the BIOS. Drive noise can may (or may not) become  
+pronounced during this period - if you hear a regular clicking noise  
+then backup your data IMMEDIATELY &amp; replace the drive.
+
+I think the reason the knackered drive is causing the good one to be  
+unrecognised is probably something like it causing additional &amp;/or  
+extraneous data to be spewed down the EIDE bus. The controller is  
+probably so busy trying to talk to the bad one that the good one  
+can't get a word in edgeways, and goes unnoticed in the noise.  
+Whatever the reason it's common for a knackered drive to *apparently*  
+take out the good one - I'm pretty confident that if you remove the  
+duff drive the other one will work perfectly.
+
+Check the dead drive's serial number in the manufacturer's warranty  
+database - it's not unusual for hard-drives to have 3-year  
+guarantees. I've heard this model of IBMs referred to as  
+&quot;DeathStars&quot;, but I don't think that this is a reflection of any real  
+quality-control issues with them, more like just geeks' propensity  
+for such wordplay. I heard there was a period a couple of years ago  
+when IBM had a higher-than-normal failure rate, but hard-drives are  
+the most failure-prone component in a computer and all manufacturers  
+have problems occasionally - I'm sure IBM have sorted it out, and I  
+wouldn't hesitate to buy IBM drives myself.
+
+Stroller.
+</PRE>
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="011246.html">[X4U] Hard drive or hard drive controller gone (mirrored doors G4)
+</A></li>
+	<LI>Next message: <A HREF="011250.html">[X4U] Hard drive or hard drive controller gone (mirrored doors G4)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11248">[ date ]</a>
+              <a href="thread.html#11248">[ thread ]</a>
+              <a href="subject.html#11248">[ subject ]</a>
+              <a href="author.html#11248">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

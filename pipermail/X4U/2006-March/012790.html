@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Compare folders
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Compare%20folders&In-Reply-To=20060309132554.86A606C2DA3%40listserver.themacintoshguy.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="012788.html">
+   <LINK REL="Next"  HREF="012791.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Compare folders</H1>
+    <B>John Baltutis</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Compare%20folders&In-Reply-To=20060309132554.86A606C2DA3%40listserver.themacintoshguy.com"
+       TITLE="[X4U] Compare folders">baltwo at san.rr.com
+       </A><BR>
+    <I>Thu Mar  9 10:41:47 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="012788.html">[X4U] web hosting information needed
+</A></li>
+        <LI>Next message: <A HREF="012791.html">[X4U] Upgrading an older iBook query
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12790">[ date ]</a>
+              <a href="thread.html#12790">[ thread ]</a>
+              <a href="subject.html#12790">[ subject ]</a>
+              <a href="author.html#12790">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 03/09/06, Paul Moortgat &lt;<A HREF="../../../mailman/listinfo/x4u.html">paul.moortgat at pandora.be</A>&gt; wrote:
+&gt;<i>
+</I>&gt;<i> Is there an Applescript file which allows me to compare the content 
+</I>&gt;<i> of 2 folders and copy items from folder 1 to folder 2 if the latter
+</I>&gt;<i> isn't like folder 1?
+</I>
+&gt;<i>From yesterday's MacFixIt, but not tested here:
+</I>
+MacFixIt reader Marlinespike offers an AppleScript will display detail about
+every file contained in a given folder. This script can be run on multiple
+folders, then the user can compare results, determining if an exact copy was
+made.
+
+Open Script Editor (located in Applications/AppleScript), and past the
+followingtext, then click the &quot;Compile&quot; then &quot;Run&quot; buttons. Select the folder
+about which you would like information. A series of stats which will be
+generated, and automatically put in your clipboard. You can then paste this
+text into a document, and run the script on another folder, comparingthe
+results.
+
+tell application &quot;Finder&quot;
+set my_folder to (choose folder)
+set item_all to count items of entire contents of my_folder
+set doc_all to count document files of entire contents of my_folder
+set alias_all to count alias files of entire contents of my_folder
+set folder_all to count folders of entire contents of my_folder
+set container_all to count containers of entire contents of my_folder
+set disk_all to count disks of entire contents of my_folder
+set application_file_all to count application files of entire contents of
+my_folder
+set internet_location_file_all to count internet location files of entire
+contents of my_folder
+set clipping_all to count clippings of entire contents of my_folder
+set package_all to count packages of entire contents of my_folder
+set the clipboard to the &quot;The folder &quot; &amp; my_folder &amp; &quot; contains &quot; &amp; (item_all
+as string) &amp; &quot; items of the types, &quot;&amp; (doc_all as string) &amp; &quot; documents, &quot; &amp;
+(folder_allas string) &amp; &quot; folders, &quot; &amp; (alias_all as string) &amp;&quot; alias files, &quot;
+&amp; (container_all as string) &amp; &quot; containers, &quot; &amp; (disk_all as string) &amp; &quot; disks,
+&quot; &amp; (application_file_all as string) &amp; &quot; application files, &quot; &amp; (clipping_all
+as string) &amp; &quot; clippings, &quot; &amp; (package_all as string) &amp; &quot; packages, and &quot; &amp;
+(internet_location_file_all as string) &amp; &quot; internet location files.&quot;
+display dialog &quot;The folder &quot; &amp; my_folder &amp; &quot; contains &quot;&amp; (item_all as string) &amp;
+&quot; items of the types, &quot; &amp; (doc_all as string) &amp; &quot; documents, &quot; &amp; (folder_all as
+string) &amp; &quot; folders, &quot; &amp; (alias_all as string) &amp; &quot; alias files, &quot; &amp;
+(container_all as string) &amp; &quot; containers, &quot; &amp;(disk_all as string) &amp; &quot; disks, &quot;
+&amp; (application_file_allas string) &amp; &quot; application files, &quot; &amp; (clipping_all as
+string) &amp; &quot; clippings, &quot; &amp; (package_all as string) &amp; &quot; packages, and &quot; &amp;
+(internet_location_file_all as string) &amp; &quot; iinternet location files.&quot; &amp; return
+&amp; return &amp;&quot;You can copy from the clipboard now. :D&quot; buttons {&quot;OK&quot;} default
+button 1
+end tell
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="012788.html">[X4U] web hosting information needed
+</A></li>
+	<LI>Next message: <A HREF="012791.html">[X4U] Upgrading an older iBook query
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12790">[ date ]</a>
+              <a href="thread.html#12790">[ thread ]</a>
+              <a href="subject.html#12790">[ subject ]</a>
+              <a href="author.html#12790">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

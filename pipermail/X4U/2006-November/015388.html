@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X4U] Printing to Linux box via CUPS
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Printing%20to%20Linux%20box%20via%20CUPS&In-Reply-To=200611042221.48916.jvollmer%40visi.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="015385.html">
+   <LINK REL="Next"  HREF="015389.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X4U] Printing to Linux box via CUPS</H1>
+    <B>Stroller</B> 
+    <A HREF="mailto:x4u%40listserver.themacintoshguy.com?Subject=%5BX4U%5D%20Printing%20to%20Linux%20box%20via%20CUPS&In-Reply-To=200611042221.48916.jvollmer%40visi.com"
+       TITLE="[X4U] Printing to Linux box via CUPS">macmonster at myrealbox.com
+       </A><BR>
+    <I>Sat Nov  4 21:32:23 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="015385.html">[X4U] Printing to Linux box via CUPS
+</A></li>
+        <LI>Next message: <A HREF="015389.html">[X4U] OT:  iPod crash when listening to a particular podcast
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15388">[ date ]</a>
+              <a href="thread.html#15388">[ thread ]</a>
+              <a href="subject.html#15388">[ subject ]</a>
+              <a href="author.html#15388">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 5 Nov 2006, at 04:21, Jay C Vollmer wrote:
+&gt;<i>
+</I>&gt;<i> I'm the happy owner of a new Mac Mini which is sitting next to a
+</I>&gt;<i> SuSE Linux system.  Anyway, I'm trying to get the Mac Mini running OSX
+</I>&gt;<i> 10.4.8 to print to an Epson Stylus Color 850 on the SuSE 10.1 system
+</I>&gt;<i> via CUPS.
+</I>
+What does `lpstat -v` on each machine say?
+
+Can you `lpr -P printername somefile.txt` from each machine?
+
+Have you tried looking on the CUPS web-based administration page  
+&lt;<A HREF="http://localhost:631/">http://localhost:631/</A>&gt; on each machine?
+
+I used CUPS for the first time a couple of weeks ago on Gentoo Linux  
+- I was amazed how easy it was to set up, to the extent that I can  
+offer you very few tips about troubleshooting. But I have to confess  
+that I cheated when adding the printer to the Linux box and simply  
+chose &quot;Add printer&quot; on the Linux box then copied &amp; pasted from the  
+Mac's CUPS page (mine is a printer with internal network card) -  
+maybe you could do something similar?
+
+Here, CUPS on the Linux box automagically recognised the printers  
+installed on my Mac (slightly annoyingly this includes the Adobe PDF  
+printer, OS X's built-in fax printer &amp; some kind of bluetooth  
+printing facility). I tried printing in Linux to the Canon Pixma  
+ip3000 installed on the Mac and it worked perfectly first time with  
+no configuration. I found that somewhat impressive.
+
+I assume that all machines are on the same subnet? CUPS can be  
+configured to allow &amp; deny by host.
+
+/etc/cups/cupsd.conf is essential reading.
+
+You may need to give more details of the version of CUPS on each  
+machine and of which PPDs you're using (where appropriate - see /etc/ 
+cups/ppd/) and the contents of /etc/cups/printers.conf. I found the  
+CUPS website &lt;<A HREF="http://www.cups.org/">http://www.cups.org/</A>&gt; rather overwhelming - there's TOO  
+MUCH documentation - but have noticed a number of helpful &amp;  
+knowledgeable responses on the CUPS mailing lists &lt;http:// 
+lists.easysw.com/mailman/listinfo/cups&gt;. It seems like CUPS is well- 
+maintained and bugs documented - it seems to me like I've seen more  
+than one post saying &quot;we know about this one - it's fixed in version  
+1.x.y&quot;.
+
+Stroller.
+
+</PRE>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="015385.html">[X4U] Printing to Linux box via CUPS
+</A></li>
+	<LI>Next message: <A HREF="015389.html">[X4U] OT:  iPod crash when listening to a particular podcast
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15388">[ date ]</a>
+              <a href="thread.html#15388">[ thread ]</a>
+              <a href="subject.html#15388">[ subject ]</a>
+              <a href="author.html#15388">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x4u.html">More information about the X4U
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>

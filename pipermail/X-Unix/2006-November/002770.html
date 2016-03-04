@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [X-Unix] Re: [PB] Compiling on MacOS X (source was written for
+	winblow...) [moved from PB]
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20%5BPB%5D%20Compiling%20on%20MacOS%20X%20%28source%20was%20written%20for%0A%09winblow...%29%20%5Bmoved%20from%20PB%5D&In-Reply-To=E559078C-5308-44E3-A131-08392085BCE6%40gmail.com">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="002769.html">
+   <LINK REL="Next"  HREF="002771.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+   <H1>[X-Unix] Re: [PB] Compiling on MacOS X (source was written for
+	winblow...) [moved from PB]</H1>
+    <B>Eric F Crist</B> 
+    <A HREF="mailto:x-unix%40listserver.themacintoshguy.com?Subject=%5BX-Unix%5D%20Re%3A%20%5BPB%5D%20Compiling%20on%20MacOS%20X%20%28source%20was%20written%20for%0A%09winblow...%29%20%5Bmoved%20from%20PB%5D&In-Reply-To=E559078C-5308-44E3-A131-08392085BCE6%40gmail.com"
+       TITLE="[X-Unix] Re: [PB] Compiling on MacOS X (source was written for
+	winblow...) [moved from PB]">ecrist at secure-computing.net
+       </A><BR>
+    <I>Sun Nov 26 06:44:27 PST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="002769.html">[X-Unix] Re: [PB] Compiling on MacOS X (source was written for
+	winblow...) [moved from PB]
+</A></li>
+        <LI>Next message: <A HREF="002771.html">[X-Unix] Re: [PB] Compiling on MacOS X (source was written for
+	winblow...) [moved from PB]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2770">[ date ]</a>
+              <a href="thread.html#2770">[ thread ]</a>
+              <a href="subject.html#2770">[ subject ]</a>
+              <a href="author.html#2770">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Nov 25, 2006, at 11:38 PM, Philip J Robar wrote:
+
+&gt;<i>
+</I>&gt;<i> On Nov 25, 2006, at 6:48 PM, Eric F Crist wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Nov 25, 2006, at 3:25 PM, Philip J Robar wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> On Nov 25, 2006, at 1:09 PM, Eric F Crist wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Please help me understand the following output:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> root# gcc *.c -o test
+</I>&gt;&gt;&gt;&gt;<i> /usr/bin/ld: Undefined symbols:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> How do I fix this?
+</I>&gt;<i>
+</I>&gt;<i> Oops, sorry I didn't notice that you have moved this to the list I  
+</I>&gt;<i> suggested. Hopefully I or someone else can help you get this working.
+</I>&gt;<i>
+</I>&gt;<i> Phil
+</I>
+Ok,
+
+So I installed mysql on my Mac from fink, and I have the following  
+files under /sw/lib/mysql:
+
+Swordfish:/sw/lib/mysql ecrist$ ls
+libmysqlclient.15.0.0.dylib     libmysqlclient_r.15.0.0.dylib
+libmysqlclient.15.dylib         libmysqlclient_r.15.dylib
+
+When I run the compile with the options people suggest, here's what I  
+get:
+
+gcc *.c -o test -L/sw/lib/mysql -lmysqlclient
+/usr/bin/ld: can't locate file for: -lmysqlclient
+collect2: ld returned 1 exit status
+
+
+-----
+Eric F Crist
+Secure Computing Networks
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="002769.html">[X-Unix] Re: [PB] Compiling on MacOS X (source was written for
+	winblow...) [moved from PB]
+</A></li>
+	<LI>Next message: <A HREF="002771.html">[X-Unix] Re: [PB] Compiling on MacOS X (source was written for
+	winblow...) [moved from PB]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2770">[ date ]</a>
+              <a href="thread.html#2770">[ thread ]</a>
+              <a href="subject.html#2770">[ subject ]</a>
+              <a href="author.html#2770">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="../../../mailman/listinfo/x-unix.html">More information about the X-Unix
+mailing list</a><br>
+<hr />
+<!--GoogleAdsAutomaticSizeSTART-->
+<p align=CENTER>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Automatic Size -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1785703837751368"
+     data-ad-slot="4468313549"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<!--GoogleAdsAutomaticSizeEND-->
+
+</body></html>
